@@ -1,0 +1,177 @@
+[
+ {
+  "label": "M4a_capture_sign_flowsheet",
+  "desc": "negative capture efficiency in the MEA island",
+  "exit": 101,
+  "failed": [
+   "comb_h_export_and_comb_n_ledgers",
+   "eq_n_10_4_reported_residual_carries_its_tolerance_and_statuses",
+   "eq_n_10_intensities_and_the_reduction",
+   "eq_n_1_1_carbon_per_kmol_and_feed_carbon",
+   "eq_n_1_2_hydrogen_potential_table_and_conservation",
+   "eq_n_1_3_hydrogen_at_the_absorber",
+   "eq_n_1_4_psa_loop_with_the_hydrogen_return",
+   "eq_n_1_5_gas_rate_from_the_hydrogen_target",
+   "eq_n_2_1_tube_carbon_closed_form_for_three_tear_starts",
+   "eq_n_2_2_stream_vector_of_the_modelled_streams",
+   "eq_n_3_1_captured_co2_is_the_specified_capture_times_the_absorber_co2",
+   "eq_n_3_2_plant_capture_stays_below_one",
+   "eq_n_4_1_recycle_fraction_read_back_from_the_streams",
+   "eq_n_4_2_nitrogen_balance_of_the_cut",
+   "eq_n_4_4_stack_carbon_curve",
+   "eq_n_5_1_complete_combustion_of_the_cut",
+   "eq_n_5_2_direct_emission_is_the_stack_plus_the_vented_condensate",
+   "eq_n_6_1_tolerance_and_the_exported_residual",
+   "eq_n_6_1_verdicts_are_never_closed_while_a_stream_is_unknown",
+   "eq_n_6_2_the_tear_check_against_the_closed_forms",
+   "eq_n_7_4_system_terms_are_added_once",
+   "eq_n_7_floors_lie_below_every_published_reference",
+   "eq_n_8_3_annual_hydrogen_and_the_unit_conversions",
+   "eq_n_9_1_hand_ledger_of_the_direct_abatement",
+   "eq_n_9_2_decomposition_of_the_direct_abatement",
+   "eq_n_9_3_capture_based_abatement",
+   "eq_n_9_4_net_abatement_after_transport_and_storage",
+   "eq_n_9_5_lifecycle_view_counts_transport_and_storage_once",
+   "eq_n_9_5_the_exported_lifecycle_is_the_closed_form_on_the_aggregate_factor",
+   "inls_reference_gas_is_a_comparison_with_a_reported_cost_effect",
+   "ledger_cache_is_deterministic",
+   "ledger_run_equals_the_suite_run",
+   "ledger_streams_are_non_negative_and_close_for_every_kind",
+   "legacy_export_matches_the_snapshot",
+   "no_co2e_quantity_appears_without_a_label_in_any_view",
+   "only_the_ledger_rows_of_the_plant_carry_the_independent_status",
+   "plant_and_reference_make_the_same_hydrogen",
+   "rule_1_of_n_7_the_gas_line_the_decomposition_and_the_lifecycle_read_one_gas_difference",
+   "the_cost_denominator_is_the_net_abatement",
+   "the_implied_gas_reproduces_inls_gas_when_given_inls_intensity"
+  ],
+  "compile_error": false,
+  "summary": [
+   "test result: FAILED. 13 passed; 40 failed; 0 ignored; 0 measured; 0 filtered out; finished in 18.42s"
+  ]
+ },
+ {
+  "label": "M13_ts_sign",
+  "desc": "transport and storage emission added instead of subtracted",
+  "exit": 101,
+  "failed": [
+   "eq_n_9_4_net_abatement_after_transport_and_storage",
+   "eq_n_9_5_lifecycle_view_counts_transport_and_storage_once",
+   "eq_n_9_5_the_exported_lifecycle_is_the_closed_form_on_the_aggregate_factor"
+  ],
+  "compile_error": false,
+  "summary": [
+   "test result: FAILED. 50 passed; 3 failed; 0 ignored; 0 measured; 0 filtered out; finished in 20.29s"
+  ]
+ },
+ {
+  "label": "M15_reference_carbon_drops_product",
+  "desc": "reference carbon omits the product methane P",
+  "exit": 101,
+  "failed": [
+   "eq_n_9_2_decomposition_of_the_direct_abatement"
+  ],
+  "compile_error": false,
+  "summary": [
+   "test result: FAILED. 52 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 19.39s"
+  ]
+ },
+ {
+  "label": "M18_c2_atoms",
+  "desc": "ethane counted with one carbon atom in the ledger",
+  "exit": 101,
+  "failed": [
+   "comb_h_export_and_comb_n_ledgers",
+   "cryogenic_defaults_equal_their_calibration",
+   "eq_n_10_4_reported_residual_carries_its_tolerance_and_statuses",
+   "eq_n_1_1_carbon_per_kmol_and_feed_carbon",
+   "eq_n_1_5_gas_rate_from_the_hydrogen_target",
+   "eq_n_2_1_tube_carbon_closed_form_for_three_tear_starts",
+   "eq_n_2_2_stream_vector_of_the_modelled_streams",
+   "eq_n_3_2_plant_capture_stays_below_one",
+   "eq_n_4_4_stack_carbon_curve",
+   "eq_n_6_1_tolerance_and_the_exported_residual",
+   "eq_n_6_1_verdicts_are_never_closed_while_a_stream_is_unknown",
+   "eq_n_6_2_the_tear_check_against_the_closed_forms",
+   "eq_n_7_1_reference_process_gas_and_its_limits",
+   "eq_n_7_3_reference_identity_on_the_inl_gas_flows",
+   "eq_n_9_2_decomposition_of_the_direct_abatement",
+   "eq_n_9_3_capture_based_abatement",
+   "inls_reference_gas_is_a_comparison_with_a_reported_cost_effect",
+   "ledger_run_equals_the_suite_run",
+   "ledger_streams_are_non_negative_and_close_for_every_kind",
+   "legacy_export_matches_the_snapshot",
+   "the_implied_gas_reproduces_inls_gas_when_given_inls_intensity"
+  ],
+  "compile_error": false,
+  "summary": [
+   "test result: FAILED. 32 passed; 21 failed; 0 ignored; 0 measured; 0 filtered out; finished in 21.90s"
+  ]
+ },
+ {
+  "label": "M19_hours_in_k",
+  "desc": "annual conversion uses 8760 h instead of availability hours",
+  "exit": 101,
+  "failed": [
+   "eq_n_5_2_direct_emission_is_the_stack_plus_the_vented_condensate",
+   "eq_n_8_2_annual_mass_of_a_carbon_flow",
+   "eq_n_9_1_hand_ledger_of_the_direct_abatement",
+   "eq_n_9_2_decomposition_of_the_direct_abatement",
+   "eq_n_9_3_capture_based_abatement",
+   "rule_1_of_n_7_the_gas_line_the_decomposition_and_the_lifecycle_read_one_gas_difference"
+  ],
+  "compile_error": false,
+  "summary": [
+   "test result: FAILED. 47 passed; 6 failed; 0 ignored; 0 measured; 0 filtered out; finished in 20.23s"
+  ]
+ },
+ {
+  "label": "M10w_ts_terminal_dropped_workspace",
+  "desc": "terminal share dropped from the T&S sum, whole workspace test run",
+  "exit": 101,
+  "failed": [
+   "eq_s_8_the_committed_table_matches_the_engine",
+   "eq_s_9b_zero_subsidy_reproduces_the_committed_ledger_and_dcf",
+   "tests::case_a_kpis_match_the_case_a_mea_cells",
+   "tests::default_solve_matches_the_published_results"
+  ],
+  "compile_error": false,
+  "summary": [
+   "test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s",
+   "test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.87s",
+   "test result: ok. 29 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.25s",
+   "test result: ok. 20 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.94s",
+   "test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.09s",
+   "test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s",
+   "test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s",
+   "test result: ok. 52 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 3.30s",
+   "test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.36s",
+   "test result: FAILED. 37 passed; 2 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.00s",
+   "test result: ok. 53 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 21.23s",
+   "test result: ok. 20 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.09s",
+   "test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 18.16s",
+   "test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.32s",
+   "test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.68s",
+   "test result: ok. 35 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s",
+   "test result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s",
+   "test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s",
+   "test result: ok. 69 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.86s",
+   "test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.41s",
+   "test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.11s",
+   "test result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 30.52s",
+   "test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 19.35s",
+   "test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.75s",
+   "test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s",
+   "test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 229.13s",
+   "test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.45s",
+   "test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 65.70s",
+   "test result: FAILED. 17 passed; 2 failed; 0 ignored; 0 measured; 0 filtered out; finished in 22.78s",
+   "test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s",
+   "test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s",
+   "test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s",
+   "test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s",
+   "test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s",
+   "test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s"
+  ]
+ }
+]

@@ -1,0 +1,292 @@
+AIChE Journal - January 1989 - Xu - Methane steam reforming  II  Diffusional limitations and reactor simulation.pdf
+HTGR_SMR_MEA_CCS_Research_Local\03_SMR_Reactor\Xu_Froment_1989_Part2_SMR_Mass_Transfer_Numerical_Methods.pdf
+=====
+--- PDF p.1 ---
+Methane Steam 
+Limitations and 
+Reforming: II. Diffusional 
+Reactor Simulation 
+Given the intrinsic kinetics, the tortuosity factor of a Ni/MgAI,O, cat- 
+alyst was determined under reaction conditions by minimizing the sum of 
+squares of residuals of the experimental and the simulated conversions. 
+The parallel cross-linked pore model with uncorrelated pore size distri- 
+bution and orientation was used in the calculation of the effective diffu- 
+sivities. A modified collocation method was used to obtain the partial 
+pressure profiles of the reacting components in the catalyst pellet. The 
+simulation of the experimental reactor during the optimization of the tor- 
+tuosity factor also yielded the effectiveness factors of the reactions. 
+The results of the simulation of an industrial steam reformer are also 
+discussed. 
+Jianguo Xu 
+Gilbert F. Froment 
+Laboratorium voor 
+Petrochemische Techniek 
+Rijksuniversiteit Gent 
+Gent, Belgium 
+Introduction 
+In Part I of this paper, the intrinsic kinetics of the reactions 
+occurring in the steam reformation of methane were deter- 
+mined. The application of these kinetic equations in the simula- 
+tion of a commercial reformer, in which large catalyst particles 
+In the present paper, these are first experimentally studied and 
+related to the tortuosity factor, a characteristic of the pore net- 
+work of the catalyst. Then, this information is combined with 
+the intrinsic kinetics to simulate an industrial steam reformer. 
+Tortuosity Factor of a Steam Reforming Catalyst 
+Eflective diffusivities and tortuosity factor 
+to the molecular and Knudsen diffusivities by: 
+The pore size distribution of the steam reforming catalyst was 
+measured by mercury penetration and nitrogen desorption. It is 
+presented in Table 1. Given this distribution, an average value 
+can be calculated from: 
+are used, requires the diffusional limitations to be accounted for. 
+= s" DA(ri) - f(ri) dr 
+(2) 
+0 
+or rather from: 
+iTA = 
+DA(ri) * S(rJ 
+(3) 
+i 
+where S(ri) is the void volume fraction taken by the pores with 
+radii between ri and r i + ~ : 
+The diffusivities of the reacting components A, . . . are related 
+(4) 
+V ' 
+Vg.i 
+S(r,) = 2 
+= - 
+VP 
+(1) 
+X 
+Vg.i 
+1 
+1 
+1 
+- 
++- 
+DA(ri) 
+D- 
+&Ari) 
+January 1989 Vol. 35, No. 1 
+97 
+AICbE Journal 
+
+--- PDF p.2 ---
+Table 1. Pore Size Distribution of Catalyst 
+CONVERSION 
+t 
+Pore Dia. 
+A 
+30 
+30-50 
+50-80 
+80- 120 
+120-200 
+200-500 
+500- 1 ,OOO 
+1,ooo-1o,oO0 
+I0,Ooo- 100,000 
+A Vol. of Voids 
+AV,, cm’/g 
+0.0040 
+0.0250 
+0.0262 
+0.0379 
+0.0573 
+0.0388 
+0.0190 
+0.0290 
+0.0136 
+Sum 
+0.2508 
+With this average, o,, an effective diffusivity is calculated from 
+the relation: 
+The tortuosity factor T is the simplified and lumped effect of 
+many complexities. Tortuosity factors ranging from 1.5 up to 10 
+or more have been reported. Model predictions lead to values of 
+the tortuosity factor of I/% according to Wakao and Smith 
+(1962). of 2 with the parallel-path pore model (Wheeler, 1951), 
+of 3 with the parallel cross-linked pore model (Feng and Stew- 
+ard, 1973), or of 4 when using the random pore model (Beeck- 
+man and Froment, 1982). De Deken et al. (1982) obtained a 
+value of about 4.7 by the gas chromatographic technique by 
+applying the van Deemter equation (Van Deemter et al.. 1956) 
+and using the average pore diameter in calculating the Knudsen 
+diffusivities. Dumez and Froment (1976) found a value of 5 
+using Eq. 2 and the mass balance equation considering both dif- 
+fusion and reaction. They fitted the experimental results ob- 
+tained in a differential reactor and used the macropore radius as 
+the r value in calculating the Knudsen diffusivities, since the 
+micropores were so short that no diffusional resistance occurred 
+in them. Since the tortuosity factors obtained by different 
+authors cover such a wide range, it is preferable, at this stage, to 
+measure T for the catalyst under consideration. 
+The experimental determination of the tortuosity factor is 
+done in two ways. 
+1. The purely physical method, which does not require the 
+knowledge of the intrinsic kinetics of the reaction, but which has 
+the drawback that the conditions for determination may be far 
+away from the reaction conditions. 
+2. The method that determines 7 under reaction conditions- 
+the approach used in the present paper. Combination of the 
+intrinsic kinetics and the diffusion aspects permits the simula- 
+tion of the reactor, in which diffusional limitations occur. Fitting 
+the calculated results to the experimental ones permits T to be 
+determined. Because a certain deactivation of the catalyst was 
+observed under steam reforming conditions, T was determined 
+under conditions of reverse water gas shift. 
+Reverse water-gas shift experiments 
+For the details of the reactor, see Part I. 
+The commercial catalyst used is a nickel catalyst supported 
+on MgA1204, the core of which is completely inert. The catalyst 
+100 
+01 
+n 
+m 
+* w i FtOz ( pC., hri motCO2 i 
+Figure 1. Reverse of water gas shift. 
+1s 
+Experimental (0, 
+A) and simulated (curvts) conversions in tbe 
+presence of diffusional limitations: T - 4WC; p, - 3.0 x l@ Pa; 
+H,/C02 molar fced ratio - 1.0; and d, - 1.1 mm 
+rings were crushed into 1.0-1.2 mm particles. The particles 
+without nickel were eliminated from the sample by magnetic 
+separation. A catalyst sample of 0.4 g was diluted with inert a 
+alumina. 
+The reactor was heated in a hydrogen stream under atmo- 
+spheric pressure. The heating rate was 2OC/min. The tempera- 
+ture was maintained at 81OOC for 12 hours after it reached that 
+value, still in a hydrogen stream at atmospheric pressure. The 
+temperature was reduced in a hydrogen stream to 400OC. When 
+the temperature reached 4OO0C, the back pressure of the reactor 
+was raised to 3 bar. Then, the hydrogen flow rate was raised to 
+1.6 mol/h and the C02 flow was switched on, also at 1.6 mol/h. 
+Carbon monoxide and CH, were formed via the reverse of the 
+water-gas shift and methanation reactions. The above condi- 
+tions were kept for 24 hours to confirm that the activity level of 
+the catalyst was stable. Then, the experiments at different 
+WIFE, values were carried out. The pressure, temperature, and 
+H2/C0, feed ratio were kept at 3 bar, 400°C and 1 mol H2/mol 
+COz. The reactor effluent was analyzed by gas chromatography. 
+Since no significant carbon deposition occurred, the total con- 
+version of C 0 2 and the conversion of C02 into CHI completely 
+describe the composition of the effluent gas. The results are 
+shown in Figure 1. 
+Estimation of the tortuosity factor 
+Even when C02 and H2 are fed and the temperature is kept at 
+400°C, methanation cannot be avoided, so that the continuity 
+equations for two key components have to be integrated to 
+obtain the concentration gradients inside the catalyst particle, 
+considered to be spherical: 
+98 
+January 1989 Vol. 35, No. 1 
+AIChE Journal 
+,
+, ,
+p
+y
+y
+y
+y
+g p
+,
+y
+y
+[
+]
+(
+p
+y
+y
+)
+y
+y
+;
+g
+y
+pp
+
+--- PDF p.3 ---
+Boundary conditions: 
+The profiles of the dependent components are obtained from the 
+algebraic equations: 
+The rate equations were given in Part 1. 
+The global spline orthogonal collocation method was used in 
+solving the coupled differential equations. A modified iteration 
+algorithm which strongly reduces the computation time of the 
+collocation method was developed and will be published later. 
+After the concentration profiles are calculated, the actual, 
+observed rates can be obtained. The actual rates at a certain 
+reactor coordinate (or certain WIFEol value) can be calculated 
+according to Eq. 7: 
+(7) 
+The Dc, values were calculated from Eq. 5, with the tortuosity to 
+be determined. The molecular diffusivities were calculated by 
+Eq. (3.2s-7) given in Froment and Bischoff (1979), while the 
+binary diffusivities used in this formula were obtained from the 
+Wilke-Chang equation (1955). 
+One way to determine 7 is to match the calculated (fCh)& 
+and (&,& 
+to the experimental values by optimizing the 7 val- 
+ue. Since an integral reactor was used in the present work, the 
+integral method of kinetic analysis was applied. This requires 
+the residual sum of squares Z(x, - 3,)' to be minimized by 
+optimizing 7. The fluid-phase continuity equations for CO, and 
+CH, are: 
+with 
+x&, = x&, 
+= 0 at W/F& - 0 
+They were integrated by means of a Runge-Kutta routine. The 
+conversions x&, and x& are the conversion of CO, into CH, 
+and the total conversion of COz. The rates (/&Jobs and (JcH4)* 
+are those obtained through Eq. 7. In each node used in the 
+numerical integration of Eq. 8, the set of second-order differen- 
+tial equations (Eqs. 6a-6b) also had to be integrated. 
+The simulated conversions are plotted in Figure 1, together 
+with the experimental ones. 
+I 
+0 1 
+$ 3 
+* 
+WIF&,I 
+gcot - hr/mdCq) 
+Figure 2. Reverse of water gas shift. 
+Evolution of efTactivencss factors: T - 4OOOC, p, - 3.0 bar; H,/CO, 
+molar feed ratio - 1.0; and ifp - 1.1 mm 
+Minimizing the sum of squares of residuals of the calculated 
+conversions and the experimental ones yielded a 7 value of 
+3.54. 
+Figure 2 shows the evolution of the effectiveness factors with 
+The effectiveness factor qr was calculated from: 
+WIF:oz. 
+(9) 
+It can be seen that q;, the effectiveness factor for the reverse 
+of reaction I (uiz. Table 2 of Part I) exceeds 1 in the upper part 
+of the reactor. This is not surprising, since the reaction is Consec- 
+utive to the reverse of the water-gas shift. Further down in the 
+bed, where more CO is present, the CO gradient inside the par- 
+ticle reverses. This, together with the profile of the other reac- 
+tant and feed component, H2, which also decreases from the sur- 
+face toward the center of the particle, leads to values of q; which 
+become smaller than one. The effectiveness factor of the reverse 
+of the water-gas shift, q;, is smaller than one and continuously 
+increases with W/F& i.e., with x,. 
+The effectiveness factor 
+of the methanation, the reverse of reaction I11 (viz-Table 2 of 
+Part I), also behaves in the usual way. 
+Simulation of an Industrial Steam Reformer 
+The conditions used in the simulation of an industrial steam 
+reformer are similar to those dealt with previously by De Deken 
+et al. (1982). They are listed in Table 2. 
+The one-dimensional heterogeneous model was used (Fro- 
+ment and Bischoff, 1979). The equations are: 
+Continuity equations for CH, and C02: 
+AIChE Journal 
+January 1989 
+~~ 
+, 
+Vol. 35. No. 1 
+99 
+

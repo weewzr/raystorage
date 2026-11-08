@@ -1,0 +1,17 @@
+Close the energy and node balances, add the mature and co-funding runs, and clean the design record
+
+Energy balance: the electricity side of each fixed run now closes on its own rows. The reformer, purification, steam-system and water-treatment loads and the tail-gas power are exported as rows, and a closure_group column says which rows sum together; BRANCH_EXTRACTION_WORK is marked as a part of the power branch and of POWER_GENERATED. Each Level 3 run adds its unit duties and envelope enthalpy flows, so the envelope closes from the table, and the energy closure there is worded as bookkeeping for the duty-closed blocks.
+
+Capture island: the absorber ran its liquid enthalpy on a 50 C path temperature and the stripper on 110 C, which lost 2.49 MW (5.1% of the reboiler duty) at the hand-offs. Every unit of the island now uses 110 C, the exchanger hands the lean side the duty that heated the rich feed, and a test holds the island to 1e-6 of the reboiler duty (1.3e-13 measured). The packed height moves from 15.06 to 15.16 m, the modelled SRD from 3.650 to 3.646 GJ/t and the T08 slot from 0.6897 to 0.7257 MWe. No validation row changed status and the gates are unchanged.
+
+Mass balance: H2_PRODUCT mass counts its CH4, the PSA feed row carries the capture outlet only, and runs without a cryogenic unit no longer route the reject through it. Every anchored node closes on carbon, and on H2 where the rows hold it. The N2-rich cut burner's O2 is a row of each Level 3 run. Case B REC_F on the Modelled preset is written to the mass balance and the emissions ledger, and the drift values, with the high corner against the 210 MWth rating (214.09 MWth), are rows of the design basis.
+
+Sensitivities: MATURE_60Y (10OAK_P46, 60 y, n = 1.0, 210 MWth charged) with its cost at the central gas price and at S$20/GJ and the gas price that reaches the author's mature target; the co-funding share of reactor capital to the same target; term T05 at the flowsheet's own syngas heat; the held cryogenic split stated on the reformer rows.
+
+Validation record: closure, tear and code-check rows are labelled same_dataset_disclosed; TAN-TREND states that the Tan magnitudes miss by 52 to 69 points and is not counted as evidence; the JAERI rows state that the 0.03 limit is absolute; DICE is described as a design value. Test names follow the zero-padded register ids, and card H.6 carries the decision S5 note.
+
+Tooling: build_numbers.py drops the modelled SRD token and takes the unrounded IEAGHG baseline; check_clean.py adds the withdrawn gas line and says that it has no rule for names. The flowsheet closure rows leave out the tear pass count, which follows round-off and differed between the release and dev exports.
+
+docs/FINAL_DESIGN_DECISIONS.md is rebuilt from the results: headline, design basis, ledger, levers, scenario and drift, with citations in place of working-note keys. The largest gap between LAC_DCF and L5 is 0.47% of L5 over all 72 DCF points, not the 0.42% stated before.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>

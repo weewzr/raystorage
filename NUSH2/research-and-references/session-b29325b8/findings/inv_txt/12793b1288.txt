@@ -1,0 +1,271 @@
+HTGR_SMR_MEA_CCS_Research_Local\Part 5b  Solvent chemistry  reaction kinetics of CO2 absorption into reactive amine solutions.pdf
+=====
+--- PDF p.1 ---
+Carbon Management
+ISSN: 1758-3004 (Print) 1758-3012 (Online) Journal homepage: www.tandfonline.com/journals/tcmt20
+Part 5b: Solvent chemistry: reaction kinetics of
+CO2 absorption into reactive amine solutions
+Teerawat Sema, Abdulaziz Naami, Zhiwu Liang, Huancong Shi, Aravind V
+Rayer, Kazi Z Sumon, Pathamaporn Wattanaphan, Amr Henni, Raphael
+Idem, Chintana Saiwan & Paitoon Tontiwachwuthikul
+To cite this article: Teerawat Sema, Abdulaziz Naami, Zhiwu Liang, Huancong Shi, Aravind
+V Rayer, Kazi Z Sumon, Pathamaporn Wattanaphan, Amr Henni, Raphael Idem, Chintana
+Saiwan & Paitoon Tontiwachwuthikul (2012) Part 5b: Solvent chemistry: reaction kinetics of CO2
+absorption into reactive amine solutions, Carbon Management, 3:2, 201-220, DOI: 10.4155/
+cmt.12.13
+To link to this article:  https://doi.org/10.4155/cmt.12.13
+Published online: 10 Apr 2014.
+Submit your article to this journal 
+Article views: 6044
+View related articles 
+Citing articles: 16 View citing articles 
+Full Terms & Conditions of access and use can be found at
+https://www.tandfonline.com/action/journalInformation?journalCode=tcmt20
+
+--- PDF p.2 ---
+future science group
+201
+ISSN 1758-3004
+10.4155/CMT.12.13 © 2012 Future Science Ltd
+Background
+There is an urgent need to control GHG emissions to 
+the atmosphere, particularly CO2, which is considered 
+to be a major contributor due to its abundance [1,2]. In 
+addition to environmental reasons for CO2 removal, 
+there are some industrial processes, such as ammo­
+nia production and hydrogen production, which also 
+require the removal of CO2 [3]. The absorption of CO2 
+into chemical solvents (alkanolamines) is one of the 
+most promising technologies for capturing CO2 due to 
+its maturity, cost–effectiveness and capability of han­
+dling large amounts of exhaust stream [3]. One of the 
+key parameters for this technology is to use an effec­
+tive solvent, which should have fast reaction kinetics, 
+high mass-transfer performance, high absorption 
+capacity, low energy requirement for regeneration, low 
+degradation rate and low corrosiveness.
+It is generally accepted that reaction kinetics data are 
+one of the most important parameters for CO2 absorp­
+tion with chemical solvents. This is because reaction 
+kinetics data are required for effectively designing 
+and simulating an absorption column [4]. In order to 
+obtain reaction kinetics data, CO2 absorption experi­
+ments need to be performed using laboratory-scale 
+gas–liquid contactors such as stirred cell reactor, wet­
+ted wall column, laminar jet absorber, wetted sphere 
+absorber, string of disc contactor or stopped-flow appa­
+ratus. The absorption rate data obtained from the CO2 
+absorption equipment can then be interpreted using 
+graphical methods, simplified kinetics models based on 
+reaction mechanisms (i.e., zwitterion, termolecular or 
+base-catalyzed hydration mechanisms) and compre­
+hensive numerically solved reaction kinetics models 
+that take into account the coupling between chemical 
+equilibrium, mass-transfer and chemical kinetics of all 
+possible reactions.
+This article is a comprehensive review of the kinet­
+ics of CO2 absorption into amine solutions, including 
+measurement and determination of kinetics data from 
+laboratory-scale gas–liquid contactors, proposed reac­
+tion mechanisms for the CO2–amine reaction, proposed 
+reaction kinetics models and kinetics behavior.
+Background of post-combustion amine-based 
+CO2 capture 
+Typically, the principal amines in commercial CO2 
+absorption processes are monoethanolamine (MEA), 
+diethanolamine (DEA), methyldiethanolamine 
+Carbon Management (2012) 3(2), 201–220
+Part 5b: Solvent chemistry: reaction kinetics of CO2 
+absorption into reactive amine solutions
+Teerawat Sema1, Abdulaziz Naami1, Zhiwu Liang1,2, Huancong Shi1,2, Aravind V Rayer1, 
+Kazi Z Sumon1, Pathamaporn Wattanaphan1, Amr Henni1, Raphael Idem1,2, Chintana Saiwan1,3 & 
+Paitoon Tontiwachwuthikul*1,2
+Reaction kinetics is one of the most important parameters for the amine-based CO2 capture process because 
+it indicates how fast CO2 reacts with amine, and it is one of the key parameters required for simulating 
+and designing the absorption column. Reaction kinetics has been studied for several decades to aid the 
+understanding of the reaction mechanism, obtaining the kinetics data and understanding the kinetics 
+behavior. This article will comprehensively review these research activities from past to present and look at 
+the future perspective of the study of CO2 absorption kinetics.
+ Review Series
+1International Test Centre for CO2 Capture, Faculty of Engineering and Applied Science, University of Regina, Regina, Saskatchewan, S4S 0A2, Canada
+2Joint International Center for CO2 Capture and Storage, Department of Chemical Engineering, Hunan University, Changsha, 410082, P.R. China
+3Petroleum and Petrochemical College, Chulalongkorn University, Phya Thai Road, Patumwan, Bangkok 10330, Thailand
+*Author for correspondence: Tel.: +1 306 585 4160; E–mail: paitoon@uregina.ca
+For reprint orders, please contact reprints@future-science.com
+
+--- PDF p.3 ---
+Carbon Management (2012) 3(2)
+future science group
+202
+ Review Series  Sema, Naami, Liang et al.
+(MDEA) and 2-amino-2-methyl-1-
+propanol (AMP) [4,5]. It is generally 
+accepted that primary and second­
+ary amines, such as MEA and DEA, 
+react rapidly with CO2 to form car­
+bamates. However, there is relatively 
+high heat of CO2 absorption asso­
+ciated with carbamate formation; 
+thus, the cost of regenerating MEA 
+and DEA is high [6,101]. MEA and 
+DEA also have the disadvantage of 
+a limited CO2 absorption capacity at 
+0.5 mol of CO2 per mol of amine. 
+On the other hand, tertiary amine, 
+such as MDEA, does not react with 
+CO2 directly. It acts as a base that promotes the hydro­
+lysis of CO2 to form bicarbonate and protonated amine. 
+This reaction is much slower than the direct reactions 
+of MEA and DEA. However, the heat associated with 
+bicarbonate formation is much lower than that with 
+carbamate formation; thus, the regeneration cost for 
+MDEA is much lower than that of MEA and DEA. 
+MDEA also has an advantage over MEA and DEA on 
+the CO2 absorption capacity, which is limited to 1 mol 
+of CO2 per mol of amine. Primary sterically hindered 
+amine, such as AMP, is also reactive with CO2. Similar 
+to MEA and DEA, AMP reacts directly with CO2 to 
+form carbamate. However, the carbamate generated 
+from the CO2–AMP reaction is not stable because of 
+the high branches of AMP. The instable carbamate is 
+easily hydrolyzed to form bicarbonate and free AMP. 
+The released free AMP can then react with CO2 again. 
+Therefore, the CO2 absorption capacity of AMP is 
+limited to 1 mol of CO2 per mol of amine, which is 
+higher than that of MEA and DEA [5,7]. Recently, sol­
+vents containing polyamines, such as piperazine (PZ) 
+[8,9,102], 2-([2-aminoethyl]amino)ethanol (AEEA) [10,11] 
+and diethylenetriamine (DETA) [12,13], have gained con­
+siderable attention due to their very high absorption 
+capacity and exceptionally fast reaction kinetics.
+Mass-transfer model
+The amine-based CO2 capture process is strongly 
+related to gas–liquid mass transfer, since CO2 is absorbed 
+by amine absorbent. In order to describe the mass-
+transfer behavior in gas–liquid systems, several theo­
+retical approaches (e.g., the film model, the penetration 
+model and the surface renewal model) have been pro­
+posed [14,15]. These models are also able to predict the 
+physical absorption rate, which can then be further used 
+to determine an enhancement factor and an apparent 
+rate constant. 
+The film model proposes that there is a stagnant film 
+with thickness d at the surface of the liquid next to the 
+gas [16]. The concentration in the film falls from inter­
+facial CO2 concentration (CCO2
+)
+) at its surface to CO2 
+concentration in the bulk liquid (CCO
+0
+2). There is no 
+convection in the film and the dissolved gas crosses the 
+film by molecular diffusion only. Therefore, the relation 
+between the physical mass-transfer coefficient (kL
+0) and 
+d in the film model is:
+k
+D
+L
+0
+CO2
+=
+d
+Equation 1 
+where DCO2 is physical diffusivity of CO2 into liquid.
+The penetration model considered a replacement of 
+liquid elements at the surface by liquid elements from 
+the bulk composition. Every element at the surface is 
+exposed to the gas for the same length of contact time 
+(t) [17]. The relation between kL
+0
+ and t in the penetration 
+model is:
+k
+2
+D
+L
+0
+CO2
+=
+rx
+Equation 2
+The surface renewal model is also based on the 
+replacement of liquid elements at the surface by liquid 
+from the bulk composition, but the exposure times for 
+all elements of the surface to the gas are not the same [18]. 
+In this case, kL
+0 is related to a parameter called fraction 
+rate of surface renewal(s), given as: 
+k
+D
+s
+L
+0
+CO2
+=
+Equation 3
+The average rates of physical absorption of gas into 
+liquid obtained based on the above three models are 
+similar and can be calculated as [14]: 
+N
+k C
+C
+ave phy
+L
+0
+CO
+CO
+0
+2
+2
+=
+-
+-
+)
+^
+h
+Equation 4
+The effect of chemical reaction in terms of the 
+enhancement factor (E) is given by [14]:
+E
+k C
+C
+N
+L
+0
+CO
+CO
+0
+ave
+2
+2
+=
+-
+)
+^
+h
+Equation 5
+where Nave is the average gas-absorption rate per unit 
+area, which can be measured experimentally using a 
+gas–liquid contactor.
+Experimental determination of the CO2 
+absorption rate
+Several experimental gas–liquid contactors (e.g., stirred 
+cell reactor, wetted wall column, laminar jet absorber, 
+wetted sphere absorber, string of disc contactor and 
+Key terms
+Kinetics: Study of the rate or speed of 
+chemical reaction of a chemical process.
+Kinetics models: Mathematical models 
+that can be used for extracting kinetics 
+data and predicting CO2 absorption rate.
+Mechanism: Step or sequence of 
+chemical reaction that describes how a 
+reaction proceeds.
+Gas–liquid mass transfer: Movement of 
+mass from gas phase into liquid phase.
+Rate constant: Parameter that 
+quantifies the speed of chemical 
+reaction (the higher the rate constant, 
+the faster the reaction).
+

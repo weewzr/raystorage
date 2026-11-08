@@ -1,0 +1,62 @@
+\subsection{Singapore feasibility and implementation roadmap}
+
+
+Singapore feasibility depends on physical connections as well as reactor physics: natural gas arrives, hydrogen must find users, captured CO$_2$ must reach permanent storage, and the plant must reject heat safely. Jurong offers industrial context but no approved nuclear parcel.
+
+The following conceptual map illustrates possible industrial interfaces only. It deliberately does not identify a parcel or demonstrate that a nuclear installation could meet site, external-hazard, emergency-planning or security requirements.
+
+\IfFileExists{../attachments/02_Jurong_Conceptual_Integration.png}{%
+\begin{figure}[htbp]\centering
+\includegraphics[width=\textwidth,height=0.73\textheight,keepaspectratio]{../attachments/02_Jurong_Conceptual_Integration.png}
+\caption{Illustrative Jurong Island industrial-integration context. Locations, routes and proposed facilities are conceptual and not evidence of an available, proposed or approved nuclear site; not to scale.}\label{fig:jurong-concept}
+\end{figure}
+}{}
+
+\subsubsection{Scale and infrastructure}
+The preferred future two-train architecture produces approximately 195,892 tH$_2$/y and captures approximately 1.085 MtCO$_2$/y. One 600 MWth-class reactor module supplies two parallel 130 MMSCFD process trains requiring 353.6 MWth total reformer heat. These totals are project-derived duplication/scaling of the verified per-train INL basis, not source-reported operation of an integrated plant. This is industrial-scale infrastructure rather than a laboratory demonstration: it requires a nuclear site, an integrated hydrogen/CCS complex, natural-gas and water/steam services, CO$_2$ conditioning/export facilities and a dependable storage chain.
+
+\subsubsection{Nuclear readiness in Singapore}
+Singapore has \textbf{not made a decision to deploy nuclear energy}. The Government is building capability to assess advanced nuclear technologies, and an International Atomic Energy Agency (IAEA) Integrated Nuclear Infrastructure Review (INIR) Phase-1 mission is planned from 2027~\cite{mti2026inir}. Singapore's Ministry of Trade and Industry (MTI) states that any deployment decision must consider safety, reliability, affordability and environmental sustainability, while the Energy Market Authority (EMA) describes safety as an overriding priority for a small, densely populated city-state~\cite{mti2026safetycriteria,ema2026safety}. The IAEA Milestones/INIR framework spans institutional issues including nuclear safety, radioactive waste and emergency planning. Consequently, regulatory framework, siting, emergency planning, safeguards/security, waste strategy, workforce and public/institutional readiness are deployment gates, not details solved by the process model.
+
+\subsubsection{Siting and cooling: options, not a selected site}
+No Singapore nuclear site is selected in this study.  Jurong Island is an obvious industrial-integration screening case, but its refinery/chemical concentration also creates external fire, explosion, toxic-release, security and emergency-planning questions.  The peer-reviewed Jurong modular-nuclear siting study is explicitly a preliminary optimisation/screening method using a virtual J-Park environment, not licensing or EPZ evidence~\cite{devanand2019siting}.
+
+Other options remain open: another coastal/industrial site, underground siting, offshore/floating concepts, and future land.  Singapore's 2026 western-island plan explicitly allows for new power-generation infrastructure, but does not designate nuclear technology or a nuclear site~\cite{govsg2026western}.  Site selection therefore remains a future nuclear-safety/regulatory study rather than an optimisation performed here.
+
+Cooling has the same two-sided character.  PUB confirms that seafront/Jurong Island industry can use once-through seawater cooling or seawater cooling towers, reducing freshwater dependence~\cite{pubseawater2026}.  Coastal access is therefore attractive for heat rejection, but a nuclear site must simultaneously address coastal flooding/sea-level/storm-surge hazards, intake blockage/fouling, corrosion, thermal discharge and marine impacts.  E3 calculates illustrative seawater-flow envelopes, but the exact project heat-rejection duty remains undefined. The preferred two-train full-power residual identity is 600-353.6=246.4 MWth; this is \emph{not} automatically waste heat, decay heat or the required ultimate heat sink.
+
+\subsubsection{CCS feasibility}
+Singapore does not have suitable domestic geological CO$_2$ storage resources and is pursuing cross-border CCS with regional partners~\cite{mti2026carbon}. Cooperation with Indonesia and Malaysia has advanced through government agreements / memoranda of understanding (MOUs), but an agreement is not an operating transport-and-storage service. MTI continues to study the complete CCS value chain and its costs~\cite{mticcs2025cost,mti2025indonesiaccs}. The approximately 1.085 MtCO$_2$/y captured by the preferred two-train design therefore requires contracted conditioning, transport, injection, monitoring and liability arrangements outside Singapore. CCS availability is a binding deployment dependency for the proposed CCS architecture even though the assignment's numerical abatement threshold is surprisingly robust to partial capture.  The historical one-train Rust screening sensitivity finds approximately 0.388 MtCO$_2$e/y avoided even if none of the canonical captured stream is stored, because nuclear heat still displaces furnace gas and upstream gas burden.  That endpoint has much higher direct emissions and is not a capture-plant outage model; it therefore does not justify deleting CCS from the proposed deep-decarbonisation configuration.
+
+\subsubsection{Natural-gas transition character}
+Each Case-6 train consumes 34 MMSCFD natural gas; the preferred two-train candidate therefore consumes 68 MMSCFD. Nuclear heat removes fired reformer duty but does not remove methane as feedstock. Upstream gas emissions remain inside the lifecycle boundary, which is why this study describes the pathway as lower-carbon hydrogen rather than zero-carbon hydrogen. Continued imported-gas exposure and methane-supply-chain performance remain transition risks.
+
+\subsubsection{Economic feasibility versus bankability}
+The historical one-train approximately S\$3.725/tCO$_2$e is a \emph{superseded differential screening abatement cost}, not a quotation for a Singapore nuclear project. It uses mature design-study reactor economics, explicit normalization, a screening CCS cost structure and zero project electricity revenue. It does not constitute a bankable estimate of First-of-a-Kind (FOAK) financing, Singapore site premium, licensing, security, detailed EPC, contingency, decommissioning/waste, insurance, schedule risk or negotiated CCS contracts. The controlling two-train FOAK case is approximately S\$137.74/tCO$_2$e (FAIL); BOAK and mature 10-OAK are projected at approximately S\$74.14/tCO$_2$e and S\$42.84/tCO$_2$e, respectively. None establishes commercial investment readiness.
+
+\subsubsection{Implementation decisions}
+The nine authoritative E7 stages and their conditional dependencies are shown in Figure~\ref{fig:implementation-roadmap-artwork} and explained in Section~\ref{sec:deployment}. Singapore nuclear readiness, component qualification, integrated safety, site acceptance, hydrogen offtake and contracted permanent CO$_2$ storage are binding gates. The earlier preliminary eight-item implementation sketch has been superseded; no alternative numbered sequence is introduced here.
+
+\subsubsection{Overall feasibility classification}
+\begin{table}[htbp]\centering\small
+\caption{Feasibility status of the final concept. Categories describe evidence status, not numerical scores.}
+\begin{tabular}{p{0.25\linewidth}p{0.22\linewidth}p{0.42\linewidth}}
+\toprule Dimension & Status & Basis \\ \midrule
+Thermodynamic/process & Supported & INL Case-6 process model and source mass/heat balance \\
+Heat-source compatibility & Supported at screening level & HTTR temperature precedent; 176.8 MWth below selected 370 MWth source heat branch \\
+High-temperature IHX/materials & Conditional & Demonstrated HTTR IHX precedent, but project-scale exchanger not designed \\
+Nuclear safety & Conditional & Favourable HTGR/TRISO features and HTTR tests; project/site safety case not performed \\
+Chemical/process safety & Conditional & Known industrial safeguards exist; integrated PHA/LOPA/QRA and propagation analysis absent \\
+Singapore regulation/siting & Unresolved & No nuclear deployment decision; capability/INIR work ongoing \\
+Cross-border CCS & Conditional / unresolved & Regional cooperation exists; operating storage chain and tariff not secured \\
+Economic threshold & Supported within model & Two-train FOAK ~S\$137.74/t FAIL; BOAK/10-OAK projected numerical passes, not bankable economics \\
+Deployment readiness & Not demonstrated & Multiple regulatory, component, CCS and project-development gates remain \\
+\bottomrule\end{tabular}\end{table}
+
+The correct overall interpretation is therefore not simply ``feasible'' or ``infeasible''. The preferred mature numerical screening thresholds are projected to pass, while FOAK economics fail; engineering, safety, regulatory and infrastructure feasibility remain conditional or unresolved until the roadmap gates are satisfied.
+\subsubsection{Cooling-screen notation}
+E3 uses the sensible-heat relation
+\[
+\dot m_w=\frac{\dot Q}{c_{p,w}\Delta T_w},
+\]
+where $\dot m_w$ is seawater mass flow (kg/s), $\dot Q$ is the screened heat load (kW), $c_{p,w}$ is seawater specific heat (approximately 4.0 kJ/kg-K for the screening calculation) and $\Delta T_w$ is the assumed temperature rise (K). Volumetric flow follows from $\dot V_w=\dot m_w/\rho_w$ using the declared seawater-density basis. For an illustrative 8 K rise, the 246.4 MWth full-power residual-disposition envelope gives approximately 7.53 m$^3$/s; a deliberately conservative full-600-MWth envelope gives approximately 18.34 m$^3$/s. These are \textbf{illustrative heat-sink envelopes}, not a designed normal cooling-water requirement and not reactor decay-heat/UHS duty. The actual cooling design requires the complete plant heat balance, decay-heat transient and candidate-site intake/outfall or tower design.

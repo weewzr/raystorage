@@ -1,0 +1,243 @@
+============================================================================================================== 
+A. CHAPTER 3 AND SLIDES 12-18: EMISSIONS, SOXAL BASIS
+ ==============================================================================================================
+OK  Hours at 85%                                                   calc       7,446.0000  claimed     7,446.0000 
+OK  H2 t/h                                                         calc           8.9880  claimed         8.9880 
+OK  H2 t/d                                                         calc         215.7120  claimed       215.7100 
+ERR H2 t/y from 0.08988 kg/Nm3                                     calc      66,924.6480  claimed    66,927.0000 
+    diff t/y -2.3519999999989523 (66,927 needs rho = 0.08988315874294923 )
+OK  Baseline tCO2e/y                                               calc     625,767.4500  claimed   625,767.0000 
+OK  Comb at 3.27 t/t                                               calc     218,851.2900  claimed   218,851.0000 
+OK  Proc at 6.08 t/t                                               calc     406,916.1600  claimed   406,916.0000 
+    exact 35/65 split: 35% = 3.2724999999999995 t/t -> 219018.60749999995 ; 65% = 6.0775 t/t -> 406748.84249999997
+OK  Captured 90%                                                   calc     366,224.4000  claimed   366,224.0000 
+OK  Residual 10%                                                   calc      40,691.6000  claimed    40,692.0000 
+OK  Net                                                            calc     585,075.0000  claimed   585,075.0000 
+OK  Reduction %                                                    calc          93.4973  claimed        93.5000 
+OK  Intensity kg/kg                                                calc           0.6080  claimed         0.6100 
+OK  Multiple of target                                             calc           2.3403  claimed         2.3400 
+    share of 45-50 Mt: 1.3001666666666667 1.17015
+OK  Net at capture 80%                                             calc           0.5444  claimed         0.5440 Mt
+OK  Net at capture 85%                                             calc           0.5647  claimed         0.5650 Mt
+OK  Net at capture 95%                                             calc           0.6054  claimed         0.6050 Mt
+OK  Net heat only (capture 0)                                      calc           0.2189  claimed         0.2190 Mt
+OK  Net at availability 70%                                        calc           0.4818  claimed         0.4820 Mt
+OK  Net at availability 90%                                        calc           0.6195  claimed         0.6190 Mt
+OK  Hours 70%                                                      calc       6,132.0000  claimed     6,132.0000 
+OK  Hours 90%                                                      calc       7,884.0000  claimed     7,884.0000 
+
+Lifecycle add-on (slide 16, sec 3.4):
+   nuclear on 206 MWth x 7446 h           :      8,436 t; + logistics 9,156 =     17,592 t = 0.0176 Mt; net 0.5675 Mt
+   nuclear on 210 MWth x 7446 h           :      8,600 t; + logistics 9,156 =     17,756 t = 0.0178 Mt; net 0.5673 Mt
+   nuclear on 176.8 MWth x 7446 h         :      7,240 t; + logistics 9,156 =     16,396 t = 0.0164 Mt; net 0.5687 Mt
+   nuclear on 11.6 MWe x 7446 h only      :        475 t; + logistics 9,156 =      9,631 t = 0.0096 Mt; net 0.5754 Mt
+
+ ============================================================================================================== 
+B. SCALE MISMATCH: 100,000 Nm3/h VERSUS 130 MMSCFD
+ ==============================================================================================================
+OK  97,946 from 29,000 lb/h                                        calc      97,946.0148  claimed    97,946.0000 
+   130 MMSCFD at 60F, 1 atm = 145118.1319404515 Nm3/h (0 C)
+   mass at 0.08988 kg/Nm3 = 97119.79898532275 t/y; difference to 97,946: 0.8507029702585323 %
+   130 MMSCFD via 379.5 scf/lbmol (60F): 28772.990777338608 lb/h
+   Scale factor mass 66,927/97,946 = 0.6833050864762216   volume 100,000/Nm3: 0.6890937656297457
+   Heat duty at SOXAL scale: 120.80833928899598 MWth; electricity (11.6): 7.92633900312417 MWe; (17.3): 11.821177996038633
+   Screening reactor at SOXAL scale: 140.77392871752033 MWth vs selected 210, utilisation 0.6703548281706246
+   SOXAL H2 expressed in MMSCFD: 88.82966124190881
+
+If slide 15 method is run on 97,946 t/y (Chapter 1/2 basis):
+   baseline 915,795; comb 320,283; proc 595,512; captured 535,961; residual 59,551; net 856,244 t/y
+   capture 80%: net 0.797 Mt
+   capture 85%: net 0.826 Mt
+   capture 95%: net 0.886 Mt
+   heat only: 0.320 Mt; 70% avail 0.705; 90% avail 0.907
+
+INL stream basis (no Cho factor), short tons/day, TEV-953 Table 2 / TEV-961 Table 2:
+   925 C ROT (1,927 captured, 142 emitted)       : conv 902,060  emitted 39,966  direct avoided 862,094 t/y  captured 542,362; SOXAL scale avoided 589,073; capture frac 0.931
+   775 C ROT (2,076/403)                         : conv 902,060  emitted 113,426  direct avoided 788,634 t/y  captured 584,299; SOXAL scale avoided 538,878; capture frac 0.837
+   725 C ROT = TEV-953 750 C ROT (2,123/525)     : conv 902,060  emitted 147,763  direct avoided 754,297 t/y  captured 597,527; SOXAL scale avoided 515,415; capture frac 0.802
+   CO2 ratio check for 35/65 split: (3205-2069)/3205 = 0.3544461778471139 ; gas (52.5-34.0)/52.5 = 0.3523809523809524 ; (52.5-43.5)/52.5 = 0.17142857142857143
+   Conventional intensity INL:  9.209771508789792 tCO2/tH2; process CO2 925 C: 5.945403198654003 t/t
+
+ ============================================================================================================== 
+C. SLIDES 6, 12, 20: SIZING
+ ==============================================================================================================
+OK  Sum of 925 C loads less purge                                  calc          11.6000  claimed        11.6000 
+OK  17.3 - 5.7                                                     calc          11.6000  claimed        11.6000 
+OK  11.6/0.397                                                     calc          29.2191  claimed        29.2000 
+OK  176.8 + 29.2                                                   calc         206.0191  claimed       206.0000 
+   Margin 210 vs 206.0: 3.9808564231738046 MWth = 1.932275008069495 %
+   Report basis: 176.8 + 17.3/0.397 = 220.37682619647356  margin at 230: 9.623173803526441
+   Same 206 via INL excess heat: 178.8 + (11.6-0.794)/0.397 = 206.0191435768262
+   v1_7 basis: 184.9 + 11/0.47 = 208.30425531914895 ; 25.1*.47 = 11.797 ; IHX allowance 184.9-176.8 = 8.099999999999994 ; 184.9/176.8 = 1.045814479638009
+   If v1_7 IHX allowance kept with deck electricity: 184.9 + 29.2 = 214.1191435768262 > 210
+   Xe-100 module 200 MWth vs 206.0: shortfall 6.02000000000001
+   He duty check 78.49 kg/s x 5.193 x (900-466) = 176.89777937999997 MW
+   Steam export 83.7 MMBtu/h = 24.530145 MWth
+
+MEA reboiler heat:
+   SOXAL 366,224 t/y: 49.2 t/h; 3.46: 47.3 MWth; 3.9: 53.3; 4.0: 54.6; 4.05: 55.3 MWth
+      q=3.46: 1.267 PJ/y; gas value at S$15/GJ S$19.0M/y; CO2 if gas boiler (56.1 kg/GJ, 90% eff) 78,985 t/y
+      q=4.05: 1.483 PJ/y; gas value at S$15/GJ S$22.2M/y; CO2 if gas boiler (56.1 kg/GJ, 90% eff) 92,453 t/y
+   INL 524,096 t/y: 70.4 t/h; 3.46: 67.6 MWth; 3.9: 76.3; 4.0: 78.2; 4.05: 79.2 MWth
+      q=3.46: 1.813 PJ/y; gas value at S$15/GJ S$27.2M/y; CO2 if gas boiler (56.1 kg/GJ, 90% eff) 113,034 t/y
+      q=4.05: 2.123 PJ/y; gas value at S$15/GJ S$31.8M/y; CO2 if gas boiler (56.1 kg/GJ, 90% eff) 132,308 t/y
+   Reactor needed if reboiler heat came 1:1 from HTGR, INL scale: 282.2866666666667 285.22
+   Heat left: 4.0 MWth margin plus 24.5 MWth exported steam = 28.5 MWth vs 76-79 MWth
+
+ ============================================================================================================== 
+D. SLIDES 22-29: ECONOMICS
+ ==============================================================================================================
+OK  Ceiling S$M/y (slide 22)                                       calc          58.5075  claimed        58.5100 
+OK  CCS US$M (slide 24)                                            calc          29.2979  claimed        29.3000 
+OK  CCS S$M (slide 24)                                             calc          38.0873  claimed        38.0900 
+OK  Delta Q GJ/d (slide 25)                                        calc       9,913.3438  claimed     9,913.3400 
+OK  Operating days                                                 calc         310.2500  claimed       310.2500 
+   Unscaled gas saving at 130 MMSCFD: 46.134223523100005 S$M/y
+OK  C_avoided,SOXAL (slide 25) = saving x 66,927/97,946            calc          31.5237  claimed        31.5000 
+   With volume scale 100,000/145,118: 31.79080581193738
+   With 34.0 MMSCFD: 20,377 GJ/d, S$94.83M/y at INL scale (v1_7 94.8), S$64.80M/y at SOXAL scale
+OK  Remaining budget (slide 28)                                    calc          51.9200  claimed        51.9000 
+   CO2 implied by gas saving, 56.1 kg/GJ, SOXAL scale: 43.5 case 117898.82348142976 t/y; 34.0 case 242347.5816007168 t/y; slide 15 claims 218,851
+OK  BOAK capex 5250 x 80,000                                       calc         420.0000  claimed       420.0000 
+OK  FOAK = 1.6 x BOAK                                              calc         672.0000  claimed       672.0000 
+   Slide 26 $9,200/kWe x 80 MWe = 736.0 US$M; at US$3,600/kW = 288.0 US$M; 4-pack $1.1-1.2bn / 4 = 275.0 300.0
+   FOAK/BOAK implied $/kWe: 8,400 / 5,250; 5,250/3,600 = 1.4583333333333333 ; 8,400/3,600 = 2.3333333333333335
+OK  CRF 8%/25y                                                     calc           0.0937  claimed         0.0937 
+OK  Annualised 546M at 25y                                         calc          51.1486  claimed        51.2000 
+OK  CRF 8%/40y                                                     calc           0.0839  claimed         0.0839 
+OK  Annualised 546M at 40y                                         calc          45.7876  claimed        45.8000 
+OK  CRF 8%/60y                                                     calc           0.0808  claimed         0.0808 
+OK  Annualised 546M at 60y                                         calc          44.1157  claimed        44.1000 
+OK  Units for FOAK to BOAK at 10% per doubling                     calc          22.0225  claimed        22.0000 
+   X-energy p37 states NOAK after 25 reactors. In deck terms N=22 is reached by 5.5 four-packs.
+   FOAK annualised at 25y:  81.83778137979935
+
+Deck-own abatement cost (ceiling test) with every item the deck actually quantifies:
+   BOAK 25y / 0.585                   dC =  57.79 S$M/y  AC = S$ 98.77/t
+   BOAK 40y / 0.585                   dC =  52.39 S$M/y  AC = S$ 89.54/t
+   BOAK 60y / 0.585                   dC =  50.69 S$M/y  AC = S$ 86.64/t
+   BOAK 25y / lifecycle 0.5673        dC =  57.79 S$M/y  AC = S$101.87/t
+   BOAK 25y / 0.544 unchanged CCS     dC =  57.79 S$M/y  AC = S$106.16/t
+   FOAK 25y / 0.585: 88.42778137979936 S$M/y -> 151.13922382566227
+   80% capture, CCS rescaled: 33.855411200000006 -> 53.55541120000001 S$M/y -> 98.37800376205034
+   S$96 target implies dC = 56.1672 on 0.585; 52.260864 on 0.544; room left after reactor+CCS-gas at 0.585: 0.7100000000000009
+
+Brute force for S$96/t from deck numbers (result 95.5 to 96.5):
+    (95.99, 'react25+react40+react60', '-gas948', '/0.482')
+    (95.99, 'react60+ccs+ccs95', '-gas648', '/0.60')
+    (95.95, 'logistics+reactUS+ccs95', '-gas315', '/0.60')
+    (96.07, 'react40+ccs95', '-gas315', '/0.5673')
+    (95.93, 'react40+reactUS+ccs80', '-gas648', '/0.565')
+    (95.89, 'react40+react60+ccsUS', '-gas648', '/0.5673')
+    (95.89, 'react40+capture_only+ccsUS', '-gas461', '/0.60')
+    (95.89, 'ccs+foak25+ccsUS', '-gas948', '/0.5673')
+    (96.13, 'react25+capture_only+reactUS', '-gas648', '/0.565')
+    (96.13, 'react25+logistics+ccs95', '-gas461', '/0.570')
+    (96.13, 'react40+logistics+ccs80', '-gas315', '/0.60')
+    (96.14, 'foak25+ccsUS', '-gas648', '/0.482')
+    (95.86, 'ccs+capture_only+ccs80', '-gas461', '/0.5673')
+    (95.79, 'react40+ccs+ccs95', '-gas648', '/0.619')
+    (96.23, 'react40+capture_only+logistics', '-gas315', '/0.544')
+    (96.24, 'react40+ccs', '-gas315', '/0.544')
+    (96.25, 'ccs+capture_only+ccs80', '-gas461', '/0.565')
+    (96.25, 'ccs+logistics+ccs95', '-gas315', '/0.585')
+    (95.74, 'react25+capture_only+reactUS', '-gas648', '/0.5673')
+    (96.28, 'ccs+foak25+ccsUS', '-gas948', '/0.565')
+    (96.29, 'react25+reactUS+ccs80', '-gas648', '/0.619')
+    (96.29, 'react40+react60+ccsUS', '-gas648', '/0.565')
+    (96.31, 'react25+capture_only+logistics', '-gas315', '/0.60')
+    (96.32, 'react25+ccs', '-gas315', '/0.60')
+   count 41
+   Old repo margin: 100 - 3.725 = 96.275
+
+ ============================================================================================================== 
+E. WHAT ADDING OMITTED ITEMS DOES
+ ==============================================================================================================
+   Reactor O&M v1_7 rate US$10/MWth-h: 200 MWth S$24.1M/y; 210 MWth S$25.3M/y; v1_7 600 MWth 72.4; scaled n=0.6 to 210: 38.5
+   The O&M rate is per MWth-h of reactor rating, v1_7 applied at 7,446 h.
+   Lost export steam vs conventional no-CC, valued at S$15/GJ: 925 case S$12.4M/y INL scale, S$8.5M/y SOXAL; 750 case S$1.5M/y INL, 1.0 SOXAL
+
+Scenario table. A in Mt/y, costs S$M/y, AC S$/t. Reactor charge = BOAK 25y 51.2 unless stated.
+scenario                                                                A    CCS    gas  react    O&M   IHX  steam      dC      AC
+S1 deck as shown (43.5 gas, SOXAL)                                  0.585   38.1   31.5   51.2    0.0   0.0    0.0    57.8    98.8
+S2 S1 + reactor O&M 200 MWth                                        0.585   38.1   31.5   51.2   24.1   0.0    0.0    81.9   140.0
+S3 S2 + IHX allowance 11.4                                          0.585   38.1   31.5   51.2   24.1  11.4    0.0    93.3   159.5
+S4 S3 with lost steam (750 case)                                    0.585   38.1   31.5   51.2   24.1  11.4    1.0    94.4   161.3
+S5 925 C gas (34.0), SOXAL, deck reactor                            0.585   38.1   64.8   51.2    0.0   0.0    0.0    24.5    41.9
+S6 S5 + O&M + IHX + lost steam                                      0.585   38.1   64.8   51.2   24.1  11.4    8.5    68.5   117.1
+S7 all at 97,946 t/y, 34.0 gas, deck reactor                        0.856   55.7   94.8   51.2    0.0   0.0    0.0    12.1    14.1
+S8 S7 + O&M + IHX + lost steam                                      0.856   55.7   94.8   51.2   24.1  11.4   12.4    60.1    70.1
+S9 S8 with FOAK 672M                                                0.856   55.7   94.8   81.8   24.1  11.4   12.4    90.7   105.9
+S10 true 750 C case: INL streams (525 st/d emitted), SOXAL scale    0.515   42.5   31.5   51.2    0.0   0.0    0.0    62.2   120.6
+S11 S10 + O&M + IHX + lost steam                                    0.515   42.5   31.5   51.2   24.1  11.4    1.0    98.7   191.5
+S12 true 750 C case: INL streams, 97,946 t/y scale                  0.754   62.1   46.1   51.2    0.0   0.0    0.0    67.2    89.1
+S13 S12 + O&M + IHX + lost steam                                    0.754   62.1   46.1   51.2   24.1  11.4    1.5   104.3   138.2
+   Reactor at Xe-100 NOAK US$3,600/kWe: capex US$288M, S$M/y 35.073334877056865
+   Reactor per module from 4-pack $1.1-1.2bn: US$275-300M, S$M/y 33.4901635110786 36.534723830267566
+   Reactor at $9,200/kWe AP1000 upper bound: US$736M, S$M/y 89.63185579692309
+   Revenue licence fee X-energy deck: FOAK $75mm NOAK $250mm per 4-pack; fuel initial load $45-50mm; refuel ~$10mm/y; LTS $4-7mm/y (p37).
+   Per-module fuel+LTS from p37 (4-pack/4): US$ 3.625 to 4.25 M/y
+
+ ============================================================================================================== 
+F. DOUBLE COUNT: US$60/t CAPTURE VERSUS HTGR ENERGY
+ ==============================================================================================================
+   Capture part of CCS line: S$28.57M/y (S$78/tCO2); logistics S$9.52M/y (S$26/tCO2)
+   Share of reactor rating used for electricity: 29.2/206.0 = 0.142; of BOAK 51.2 = S$7.26M/y = S$12.4/t; plus same share of O&M S$3.4M/y
+   Of the 11.6 MWe, CO2 compression 6.4 MWe (TEV-961) is 55.2%; ETC note says capture cost includes compression.
+   Compression share of reactor rating: 16.1 MWth = 7.8% of 206; S$4.01M/y
+   Electricity value at S$0.20/kWh (v1_7): 11.6 MWe x 7446 h = 86,374 MWh = S$17.3M/y; compression only 6.4 MWe S$9.5M/y; SOXAL-scale 11.6: S$11.8M/y
+   Grid emissions if imported, 0.402 t/MWh (EMA 2024 via old-repo csv): 11.6 MWe 34,722 t/y; SOXAL scale 23,726 t/y
+   v1_7 bottom-up at 366,224 t/y: capex S$89.9M, annual S$8.43M, fixed O&M S$2.43M, T&S S$8.50M; total S$19.35M/y vs deck S$38.09M/y; gap S$18.74M/y = S$32.0/t
+   v1_7 non-energy capture S$29.6/tCO2 vs deck capture S$78/tCO2, residual S$48.4/tCO2
+   Reboiler at S$15/GJ: 3.46 GJ/t S$ 51.9 /tCO2, 4.05 GJ/t S$ 60.75 /tCO2
+
+ ============================================================================================================== 
+G. v1_7 CHECKS
+ ==============================================================================================================
+OK  CO2 proposed                                                   calc     582,328.4617  claimed   582,328.0000 
+OK  Captured 90%                                                   calc     524,095.6155  claimed   524,096.0000 
+OK  Conventional CO2                                               calc     902,060.2802  claimed   902,060.0000 
+OK  Upstream conv                                                  calc     206,323.0755  claimed   206,322.0000 
+OK  Upstream prop                                                  calc     133,616.9188  claimed   133,618.0000 
+OK  Nuclear LC                                                     calc       3,649.2072  claimed     3,649.0000 
+OK  Aux LC                                                         calc         450.4830  claimed       450.0000 
+OK  T&S LC                                                         calc      13,102.4000  claimed    13,102.0000 
+OK  Net                                                            calc     899,330.0000  claimed   899,330.0000 
+    (843,827 + 72,704 - 3,649 - 450 - 13,102 = 899330 ; report prints 899,329 from unrounded inputs)
+OK  Gas conv S$M                                                   calc         269.1171  claimed       269.1000 
+OK  Gas prop S$M                                                   calc         174.2829  claimed       174.3000 
+OK  CRF                                                            calc           0.0937  claimed         0.0937 
+OK  Size factor                                                    calc           0.5326  claimed         0.5330 
+    FOAK: capex600 S$3,395.1M, annual 390.4, at 210 208.0, capex210 S$1,808M, dC 152.3, AC 169.4
+    BOAK: capex600 S$2,122.2M, annual 271.2, at 210 144.4, capex210 S$1,130M, dC 88.8, AC 98.7
+    10-OAK: capex600 S$1,495.4M, annual 212.5, at 210 113.2, capex210 S$797M, dC 57.5, AC 64.0
+OK  Ceiling                                                        calc          89.9329  claimed        89.9000 
+OK  S$/GJ ceiling                                                  calc          30.7223  claimed        30.7000 
+OK  S$/kgH2                                                        calc           0.9179  claimed         0.9200 
+ERR Lifecycle intensity                                            calc           2.1344  claimed         2.1300 
+OK  Tax saving S$M                                                 calc          37.9722  claimed        38.0000 
+OK  Tax AC BOAK                                                    calc          56.4372  claimed        56.4400 
+OK  Co-pay S$bn                                                    calc           0.6650  claimed         0.6650 
+OK  2.322 factor                                                   calc           2.3223  claimed         2.3220 
+OK  Gas price S$/GJ                                                calc          14.9713  claimed        14.9700 
+    Slide FX 1.30 vs v1_7 1.3065; effect on CCS line: 0.19045 S$M/y; on BOAK: 0.255743066811873
+
+ ============================================================================================================== 
+H. TAIL GAS SIZE (AMINE SPEC COMPOSITION, INL-SCALE FLOWS)
+ ==============================================================================================================
+   CH4+CO 592 kmol/h as CO2 if burned: 193,997 t/y; with CO2 slip 252,328 t/y; SOXAL scale 132,559 and 172,417 t/y
+   Spec composition is from Chen and Ahn 2021, not INL. Indicative only.
+   Abatement after adding SOXAL-scale CH4+CO carbon: 0.45251552946733264 Mt
+
+ ============================================================================================================== 
+I. PROPOSAL CHECKS
+ ==============================================================================================================
+OK  0.146                                                          calc           0.1460  claimed         0.1460 
+OK  0.67                                                           calc           0.6716  claimed         0.6700 
+OK  92%                                                            calc          92.0000  claimed        92.0000 
+OK  7.4                                                            calc           7.3600  claimed         7.4000 
+OK  34 kt                                                          calc          33.7838  claimed        34.0000 
+OK  60 MWth                                                        calc          61.3388  claimed        60.0000 
+   91 kt x 8.0 = 0.728 Mt
+
+Done.

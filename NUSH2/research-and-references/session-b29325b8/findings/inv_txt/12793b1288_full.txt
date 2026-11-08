@@ -1,0 +1,3999 @@
+
+=== PDF p.1 ===
+Carbon Management
+ISSN: 1758-3004 (Print) 1758-3012 (Online) Journal homepage: www.tandfonline.com/journals/tcmt20
+Part 5b: Solvent chemistry: reaction kinetics of
+CO2 absorption into reactive amine solutions
+Teerawat Sema, Abdulaziz Naami, Zhiwu Liang, Huancong Shi, Aravind V
+Rayer, Kazi Z Sumon, Pathamaporn Wattanaphan, Amr Henni, Raphael
+Idem, Chintana Saiwan & Paitoon Tontiwachwuthikul
+To cite this article: Teerawat Sema, Abdulaziz Naami, Zhiwu Liang, Huancong Shi, Aravind
+V Rayer, Kazi Z Sumon, Pathamaporn Wattanaphan, Amr Henni, Raphael Idem, Chintana
+Saiwan & Paitoon Tontiwachwuthikul (2012) Part 5b: Solvent chemistry: reaction kinetics of CO2
+absorption into reactive amine solutions, Carbon Management, 3:2, 201-220, DOI: 10.4155/
+cmt.12.13
+To link to this article:  https://doi.org/10.4155/cmt.12.13
+Published online: 10 Apr 2014.
+Submit your article to this journal 
+Article views: 6044
+View related articles 
+Citing articles: 16 View citing articles 
+Full Terms & Conditions of access and use can be found at
+https://www.tandfonline.com/action/journalInformation?journalCode=tcmt20
+
+=== PDF p.2 ===
+future science group
+201
+ISSN 1758-3004
+10.4155/CMT.12.13 © 2012 Future Science Ltd
+Background
+There is an urgent need to control GHG emissions to 
+the atmosphere, particularly CO2, which is considered 
+to be a major contributor due to its abundance [1,2]. In 
+addition to environmental reasons for CO2 removal, 
+there are some industrial processes, such as ammo­
+nia production and hydrogen production, which also 
+require the removal of CO2 [3]. The absorption of CO2 
+into chemical solvents (alkanolamines) is one of the 
+most promising technologies for capturing CO2 due to 
+its maturity, cost–effectiveness and capability of han­
+dling large amounts of exhaust stream [3]. One of the 
+key parameters for this technology is to use an effec­
+tive solvent, which should have fast reaction kinetics, 
+high mass-transfer performance, high absorption 
+capacity, low energy requirement for regeneration, low 
+degradation rate and low corrosiveness.
+It is generally accepted that reaction kinetics data are 
+one of the most important parameters for CO2 absorp­
+tion with chemical solvents. This is because reaction 
+kinetics data are required for effectively designing 
+and simulating an absorption column [4]. In order to 
+obtain reaction kinetics data, CO2 absorption experi­
+ments need to be performed using laboratory-scale 
+gas–liquid contactors such as stirred cell reactor, wet­
+ted wall column, laminar jet absorber, wetted sphere 
+absorber, string of disc contactor or stopped-flow appa­
+ratus. The absorption rate data obtained from the CO2 
+absorption equipment can then be interpreted using 
+graphical methods, simplified kinetics models based on 
+reaction mechanisms (i.e., zwitterion, termolecular or 
+base-catalyzed hydration mechanisms) and compre­
+hensive numerically solved reaction kinetics models 
+that take into account the coupling between chemical 
+equilibrium, mass-transfer and chemical kinetics of all 
+possible reactions.
+This article is a comprehensive review of the kinet­
+ics of CO2 absorption into amine solutions, including 
+measurement and determination of kinetics data from 
+laboratory-scale gas–liquid contactors, proposed reac­
+tion mechanisms for the CO2–amine reaction, proposed 
+reaction kinetics models and kinetics behavior.
+Background of post-combustion amine-based 
+CO2 capture 
+Typically, the principal amines in commercial CO2 
+absorption processes are monoethanolamine (MEA), 
+diethanolamine (DEA), methyldiethanolamine 
+Carbon Management (2012) 3(2), 201–220
+Part 5b: Solvent chemistry: reaction kinetics of CO2 
+absorption into reactive amine solutions
+Teerawat Sema1, Abdulaziz Naami1, Zhiwu Liang1,2, Huancong Shi1,2, Aravind V Rayer1, 
+Kazi Z Sumon1, Pathamaporn Wattanaphan1, Amr Henni1, Raphael Idem1,2, Chintana Saiwan1,3 & 
+Paitoon Tontiwachwuthikul*1,2
+Reaction kinetics is one of the most important parameters for the amine-based CO2 capture process because 
+it indicates how fast CO2 reacts with amine, and it is one of the key parameters required for simulating 
+and designing the absorption column. Reaction kinetics has been studied for several decades to aid the 
+understanding of the reaction mechanism, obtaining the kinetics data and understanding the kinetics 
+behavior. This article will comprehensively review these research activities from past to present and look at 
+the future perspective of the study of CO2 absorption kinetics.
+ Review Series
+1International Test Centre for CO2 Capture, Faculty of Engineering and Applied Science, University of Regina, Regina, Saskatchewan, S4S 0A2, Canada
+2Joint International Center for CO2 Capture and Storage, Department of Chemical Engineering, Hunan University, Changsha, 410082, P.R. China
+3Petroleum and Petrochemical College, Chulalongkorn University, Phya Thai Road, Patumwan, Bangkok 10330, Thailand
+*Author for correspondence: Tel.: +1 306 585 4160; E–mail: paitoon@uregina.ca
+For reprint orders, please contact reprints@future-science.com
+
+=== PDF p.3 ===
+Carbon Management (2012) 3(2)
+future science group
+202
+ Review Series  Sema, Naami, Liang et al.
+(MDEA) and 2-amino-2-methyl-1-
+propanol (AMP) [4,5]. It is generally 
+accepted that primary and second­
+ary amines, such as MEA and DEA, 
+react rapidly with CO2 to form car­
+bamates. However, there is relatively 
+high heat of CO2 absorption asso­
+ciated with carbamate formation; 
+thus, the cost of regenerating MEA 
+and DEA is high [6,101]. MEA and 
+DEA also have the disadvantage of 
+a limited CO2 absorption capacity at 
+0.5 mol of CO2 per mol of amine. 
+On the other hand, tertiary amine, 
+such as MDEA, does not react with 
+CO2 directly. It acts as a base that promotes the hydro­
+lysis of CO2 to form bicarbonate and protonated amine. 
+This reaction is much slower than the direct reactions 
+of MEA and DEA. However, the heat associated with 
+bicarbonate formation is much lower than that with 
+carbamate formation; thus, the regeneration cost for 
+MDEA is much lower than that of MEA and DEA. 
+MDEA also has an advantage over MEA and DEA on 
+the CO2 absorption capacity, which is limited to 1 mol 
+of CO2 per mol of amine. Primary sterically hindered 
+amine, such as AMP, is also reactive with CO2. Similar 
+to MEA and DEA, AMP reacts directly with CO2 to 
+form carbamate. However, the carbamate generated 
+from the CO2–AMP reaction is not stable because of 
+the high branches of AMP. The instable carbamate is 
+easily hydrolyzed to form bicarbonate and free AMP. 
+The released free AMP can then react with CO2 again. 
+Therefore, the CO2 absorption capacity of AMP is 
+limited to 1 mol of CO2 per mol of amine, which is 
+higher than that of MEA and DEA [5,7]. Recently, sol­
+vents containing polyamines, such as piperazine (PZ) 
+[8,9,102], 2-([2-aminoethyl]amino)ethanol (AEEA) [10,11] 
+and diethylenetriamine (DETA) [12,13], have gained con­
+siderable attention due to their very high absorption 
+capacity and exceptionally fast reaction kinetics.
+Mass-transfer model
+The amine-based CO2 capture process is strongly 
+related to gas–liquid mass transfer, since CO2 is absorbed 
+by amine absorbent. In order to describe the mass-
+transfer behavior in gas–liquid systems, several theo­
+retical approaches (e.g., the film model, the penetration 
+model and the surface renewal model) have been pro­
+posed [14,15]. These models are also able to predict the 
+physical absorption rate, which can then be further used 
+to determine an enhancement factor and an apparent 
+rate constant. 
+The film model proposes that there is a stagnant film 
+with thickness d at the surface of the liquid next to the 
+gas [16]. The concentration in the film falls from inter­
+facial CO2 concentration (CCO2
+)
+) at its surface to CO2 
+concentration in the bulk liquid (CCO
+0
+2). There is no 
+convection in the film and the dissolved gas crosses the 
+film by molecular diffusion only. Therefore, the relation 
+between the physical mass-transfer coefficient (kL
+0) and 
+d in the film model is:
+k
+D
+L
+0
+CO2
+=
+d
+Equation 1 
+where DCO2 is physical diffusivity of CO2 into liquid.
+The penetration model considered a replacement of 
+liquid elements at the surface by liquid elements from 
+the bulk composition. Every element at the surface is 
+exposed to the gas for the same length of contact time 
+(t) [17]. The relation between kL
+0
+ and t in the penetration 
+model is:
+k
+2
+D
+L
+0
+CO2
+=
+rx
+Equation 2
+The surface renewal model is also based on the 
+replacement of liquid elements at the surface by liquid 
+from the bulk composition, but the exposure times for 
+all elements of the surface to the gas are not the same [18]. 
+In this case, kL
+0 is related to a parameter called fraction 
+rate of surface renewal(s), given as: 
+k
+D
+s
+L
+0
+CO2
+=
+Equation 3
+The average rates of physical absorption of gas into 
+liquid obtained based on the above three models are 
+similar and can be calculated as [14]: 
+N
+k C
+C
+ave phy
+L
+0
+CO
+CO
+0
+2
+2
+=
+-
+-
+)
+^
+h
+Equation 4
+The effect of chemical reaction in terms of the 
+enhancement factor (E) is given by [14]:
+E
+k C
+C
+N
+L
+0
+CO
+CO
+0
+ave
+2
+2
+=
+-
+)
+^
+h
+Equation 5
+where Nave is the average gas-absorption rate per unit 
+area, which can be measured experimentally using a 
+gas–liquid contactor.
+Experimental determination of the CO2 
+absorption rate
+Several experimental gas–liquid contactors (e.g., stirred 
+cell reactor, wetted wall column, laminar jet absorber, 
+wetted sphere absorber, string of disc contactor and 
+Key terms
+Kinetics: Study of the rate or speed of 
+chemical reaction of a chemical process.
+Kinetics models: Mathematical models 
+that can be used for extracting kinetics 
+data and predicting CO2 absorption rate.
+Mechanism: Step or sequence of 
+chemical reaction that describes how a 
+reaction proceeds.
+Gas–liquid mass transfer: Movement of 
+mass from gas phase into liquid phase.
+Rate constant: Parameter that 
+quantifies the speed of chemical 
+reaction (the higher the rate constant, 
+the faster the reaction).
+
+=== PDF p.4 ===
+Solvent chemistry: reaction kinetics of CO2 absorption into reactive amine solutions  Review Series
+future science group
+www.future-science.com
+203
+stopped-flow apparatus) have generally been used for 
+measuring the CO2 absorption rate. Moreover, some of 
+them (i.e., the wetted wall column and the laminar jet 
+absorber) can also be used for estimating the physical 
+diffusivity of CO2 into the absorbent [15].
+  
+ Stirred cell reactor
+In the stirred cell reactor (Figure 1A), the gas and liquid 
+phases are stirred separately using separated adjustable 
+impellers. The gas–liquid interface needs to be smooth, 
+and a consistent interface is achieved by controlling the 
+agitation speed from impellers. A pressure transducer 
+is located in the gas-phase side for measuring the total 
+pressure in the reactor. In addition, temperature sensors 
+are located in both the gas and liquid sides of the reactor, 
+and baffles are installed in the liquid side in order to 
+avoid formation of vortices. The gas absorption rate is 
+determined by measuring the change in total pressure 
+in the reactor [15,19]. The advantage of the stirred cell 
+reactor is that only gas-phase measurement is required. 
+Therefore, this reactor is suitable for toxic gas or liq­
+uid. In addition, the reactor can be used to measure 
+the solubility of gas into liquid. However, its disadvan­
+tage is the difficulty of maintaining the smooth and 
+consistent gas–liquid interface. Many researchers have 
+used the stirred cell reactor for studying the kinetics 
+of CO2 absorption in various amine solutions, such as 
+MEA, MDEA, triethanolamine (TEA), AMP, blended 
+MEA–MDEA and blended MEA–TEA [19–21].
+Based on the conservation principle and ideal gas 
+law, the CO2 absorption rate per unit area (NCO2) can 
+be calculated as [19]:
+N
+aV RT
+V
+dt
+dP
+CO
+L
+G
+A
+2 =-
+Equation 6
+where VG is volume of gas in the reactor, VL is volume 
+of liquid in the reactor, ‘a’ is gas–liquid interfacial area, 
+R is gas constant, T is temperature in Kelvin and PCO2 
+is partial pressure of CO2.
+  
+ Wetted wall column
+The wetted wall column diagram is presented in 
+Figure 1B. The liquid is continuously pumped to the bot­
+tom of the wetted wall column then overflows from the 
+interior of the tube and forms a thin liquid film over the 
+outer surface of the tube. This thin liquid film contacts 
+the inlet gas counter currently. The gas absorption rate 
+can be calculated from the gas-phase material balance 
+by measuring the concentration and volumetric flow 
+rate of inlet gas and outlet gas [22,23]. The disadvantages 
+of this equipment are the possibility of creating ripples 
+in the liquid film and inactive film at the bottom of the 
+column [15]. The wetted wall column has been used for 
+studying the reaction kinetics of CO2 absorption in vari­
+ous amine solutions such as MDEA, AMP, PZ, blended 
+MDEA–PZ and blended AMP–PZ [9,22–24].
+Based on the penetration theory, the physical dif­
+fusivity of CO2 into liquid (DCO2) can be calculated 
+by [14,15]:
+D
+2C
+R
+CO
+CO
+CO
+2
+2
+2
+2
+= rx
+)
+c
+m
+Equation 7
+where RCO2 is the physical absorption rate of CO2 into 
+liquid, CCO2
+)
+ is the interfacial concentration of CO2, and 
+t is the contact time, which can be calculated by [15]:
+3
+2h
+L
+d
+g
+3
+w
+w
+2 3
+1 3
+=
+x
+r
+t
+h
+c
+c
+c
+m
+m
+m
+Equation 8
+where hw is height of overflow liquid, dw is diameter of 
+wetted wall column, L is volumetric liquid flow rate, h 
+is viscosity of liquid and r is density of liquid.
+Based on the film theory, contact time t can be 
+calculated as [9]:
+u
+h
+s
+w
+=
+x
+Equation 9
+where us is surface velocity, which can be calculated 
+as [9]:
+u
+2
+g
+2
+s =
+h
+t d
+Equation 10
+where d is film thickness, which can be calculated as [9]:
+gW
+3 L
+w
+3
+=
+d
+t
+h
+Equation 11
+where Ww is the circumference of the wetted wall 
+column.
+  
+ Laminar jet absorber
+In this technique, the liquid is degassed by spraying it 
+into a vacuum and then the degassed liquid is passed 
+through the temperature-controlled water jacket, in 
+order to reach the desired temperature. The degassed 
+liquid is then passed through the jet nozzle in order 
+to continuously generate a smooth-surfaced, rod-like 
+jet in the absorption chamber. The soap-film meter 
+is used to measure the rate of gas absorption. A 2D 
+microscope is used to measure jet height (hj) and jet 
+diameter (dj). Finally, the discharged liquid is col­
+lected, and liquid flow rate (L) is measured [25,26]. The 
+laminar jet absorber is shown in Figure 1C. The advan­
+tage of the laminar jet absorber is that the gas–liquid 
+
+=== PDF p.5 ===
+Carbon Management (2012) 3(2)
+future science group
+204
+ Review Series  Sema, Naami, Liang et al.
+interface can be measured directly from the microscope. 
+Furthermore, this technique is suitable for very reac­
+tive liquid solvents due to the short contact time in the 
+laminar jet absorber. However, the disadvantages of this 
+technique are the possibility of creating turbulent liquid 
+surface, a reduction in the liquid jet caused by gravity, 
+and stagnant surface and ripples at the bottom of liquid 
+jet created by the liquid jet receiver. These behaviors 
+can be avoided by good design of the liquid jet nozzle 
+and liquid jet receiver [15,27]. Another limitation of the 
+Gas reservoir
+Reactor
+Liquid reservoir
+T
+p
+n
+p
+T
+T
+T
+n
+Gas out
+Paraffin oil
+out of bath
+Amine solution
+to bath
+Paraffin oil
+from bath
+Amine solution
+from bath
+Reaction chamber
+Paraffin oil
+circulating chamber
+Gas in
+A
+B
+Gas purge
+Soap 
+film
+meter
+Liqid feed
+Gas feed
+Absorption
+chamber of the 
+laminar jet
+Exit liquid
+C
+D
+Water saturation
+cell
+Temperature-controlled
+liquid in
+Liquid
+feed
+Exit liquid
+Constant level
+device
+Soap film meter
+Gas purge
+Gas feed
+Temperature-controlled
+liquid out
+Figure 1. Experimental equipment for measuring the CO2 absorption rate. (A) Stirred cell reactor; (B) wetted wall column; (C) laminar 
+jet absorber; and (D) wetted sphere absorber.
+n: Molar hold-up (kmol); p: partial pressure (kPa); T: Temperature (K).
+(A) Modified with permission from [74]; (B) Modified with permission from [60]; (C) Modified with permission from [26]; (D) Modified with 
+permission from [29]. 
+
+=== PDF p.6 ===
+Solvent chemistry: reaction kinetics of CO2 absorption into reactive amine solutions  Review Series
+future science group
+www.future-science.com
+205
+laminar jet absorber is that the jet length cannot be 
+varied over a wide range, thereby restricting the range 
+of gas–liquid interfacial area. The laminar jet absorber 
+has been used for investigating the kinetics of CO2 
+absorption into several aqueous amine solutions such 
+as MEA, DEA, blended MEA–MDEA and blended 
+MDEA–PZ [8,25–28].
+According to the penetration theory for physical 
+absorption (RCO2) can be defined as [15,26,27]:
+R
+4C
+D
+Lh
+CO
+CO
+CO
+j
+2
+2
+2
+1 2
+=
+)
+^
+h
+Equation 12
+The physical diffusivity of CO2 into liquid (DCO2) can 
+be determined by a plot of RCO2 and Lhj
+1 2
+^
+h at vari­
+ous liquid flow rates and jet heights. This plot should 
+provide a straight line through the origin with a slope 
+of 4C
+D
+CO
+CO
+2
+2
+1 2
+)
+.
+The contact time t can be calculated by [27]:
+4L
+d h
+2
+=
+x
+r
+Equation 13
+  
+ Wetted sphere absorber
+The wetted sphere absorber (Figure 1D) is similar to the 
+laminar jet absorber. This technique introduces liquid 
+solvent into the absorption chamber by overflowing the 
+sphere instead of generating a liquid jet as in the lami­
+nar jet absorber [29]. The absorption surface area can be 
+calculated from the surface of the sphere. In addition, 
+the operating procedure for the wetted sphere absorber 
+Liquid in
+Liquid feed jet
+Absorption
+element
+Lute 
+vessel
+Liquid out
+Supporting wire held
+externally
+Gas out
+Distance between jet and
+first disc = 4 – 5 cm
+Outer tube
+Liquid run-off
+tube
+Gas in
+Drain for liquid lost
+by splash
+Pneumatic plate
+Thermostat
+Waste
+Mixer
+Conductivity
+meter
+Microprocessor
+Stop syringes
+Amine solution
+CO2 solution
+E
+F
+Figure 1. Experimental equipment for measuring the CO2 absorption rate (cont.). (E) String of disc contactor and (F) stopped-flow 
+apparatus. 
+ (E) Modified with permission from [11]; (F) Modified with permission from [31]. 
+
+=== PDF p.7 ===
+Carbon Management (2012) 3(2)
+future science group
+206
+ Review Series  Sema, Naami, Liang et al.
+is the same as the laminar jet absorber. The advantage of 
+this technique is that the laminar liquid surface over the 
+sphere can be generated and controlled easier than that 
+of laminar jet absorber, since the liquid is flown over the 
+sphere. However, the disadvantages of this equipment are 
+that the absorption surface area cannot be varied, and the 
+possibility of creating ripples in the liquid film and inac­
+tive film at the bottom of the sphere [15]. Seo and Hong 
+used the wetted sphere absorber for investigating the 
+kinetics of CO2 absorption of blended AMP and PZ [29].
+  
+ String of disc contactor
+The string of disc contactor is presented in Figure 1E. 
+A number of circular discs are held together by a verti­
+cal wire in the absorption column. The reactive liquid 
+flows downward from the top of the contactor. CO2 is 
+introduced counter-currently from the bottom of the 
+contactor. The active surface area can be calculated based 
+on the diameter and number of the discs. In addition, 
+the absorption surface area of this contactor can be var­
+ied by introducing or removing the disc elements in the 
+column. A disadvantage of this contactor is that absorp­
+tion rate at specific concentrations of liquids and/or gas 
+cannot be achieved. This is because the concentration of 
+CO2 and the composition of reactive liquid are changed 
+accordingly along the height of the string column [14,30]. 
+Therefore, the overall absorption rate, which can be cal­
+culated by the difference of mass flux at inlet and outlet 
+of the column, is applied [11]. The reaction kinetics of 
+AEEA and DETA were successfully investigated using 
+the string of disc contactor.
+  
+ Stopped-flow apparatus
+The stopped-flow technique is a homogeneous direct 
+method for measuring the gas absorption into liquid 
+solvent. Saturated gas and liquid solutions are mixed in 
+the stopped-flow apparatus as presented in Figure 1F. The 
+conductivity cell monitors ion formation as a function of 
+time, since the ion formation initiates a voltage change. 
+Thereafter, the microcomputer automatically generates 
+the observed pseudo first-order constant based on the 
+output voltage values [31]. However, the disadvantage of 
+this technique is that a conductivity measurement can 
+only be done at low amine concentration. The kinetics of 
+CO2 absorption into aqueous solution of several amines 
+(i.e., AMP, ethylenediamine, ethyl ethanolamine and 
+diethyl monoethanolamine) have been determined using 
+the stopped-flow apparatus [31,32].
+  
+ Overview
+Several experimental gas–liquid contactors for measuring 
+the CO2 absorption rate (e.g., stirred cell reactor, wetted 
+wall column, laminar jet absorber, wetted sphere absorber, 
+string of disc contactor and stopped-flow apparatus) have 
+been reviewed. Aboudheir et al. summarized the values of 
+kinetics parameters in terms of the reaction-rate constant 
+for MEA obtained from different gas–liquid contactors 
+at various concentrations (0.05–4.8 M) and tempera­
+tures (295–353 K) [26]. They pointed out that the use of 
+different measurement methods provide different val­
+ues of the reaction rate constant, even the experiments 
+that are operated under similar MEA concentration and 
+temperature. This is due to the difference in physics and 
+chemistry associated with the absorption process in the 
+contactors. For stirred cell reactor, laminar jet absorber 
+and wetted sphere absorber, the CO2 concentration feed 
+into the absorber needs to be pure CO2 (or almost 100% 
+CO2). This is because these absorbers are a closed system; 
+after introducing a certain amount of CO2, the system 
+will be closed. The absorbed CO2 is then measured by a 
+change in pressure in the reactor for stirred cell reactor 
+or by soap flow meter for laminar jet and wetted sphere 
+absorbers. If CO2 balanced with inert gas (e.g., N2) is fed 
+into the system, the concentration of CO2 will be reduced 
+(i.e., gas-phase mass-transfer coefficient will be increased) 
+accordingly as the absorption reaction proceeds. Thus, 
+the measured CO2 absorption rate is found to be unreli­
+able. On the other hand, CO2 is flown continuously in 
+the wetted wall column and string of disc contactor. The 
+overall CO2 absorption rate is calculated based on the 
+difference of mass flux of inlet and outlet gas streams. 
+Therefore, in this case, the inlet CO2 can be mixed with 
+inert gas. Unlike the other techniques, the stopped-flow 
+apparatus is a homogeneous direct method. The CO2 will 
+be saturated in liquid phase and reacts with reactive liq­
+uid. Following this, the kinetics data will be interpreted 
+via conductivity measurement. Although the experiments 
+are performed under the same amine concentration and 
+temperature, the physics and chemistry of the absorption 
+process in the various contactors differ. 
+However, among the experimental gas–liquid contac­
+tors, the wetted wall column and laminar jet absorber 
+have been found to be predominantly used in the litera­
+ture. This is because their absorption surface area can be 
+measured directly (for laminar jet absorber, the surface 
+area can be varied) [15,27] and the physical diffusivity of 
+CO2 into the absorbent can be accurately determined 
+[9,15,27]. In addition, the laminar jet absorber is suggested 
+for the fast absorption process because of a short contact 
+time generated in the jet absorber [15,27]. For toxic solvent, 
+the stirred cell reactor is recommended, since it is a closed 
+system [15,30]. Lastly, for novel solvents screening, the 
+stopped-flow apparatus is suggested. This is because a 
+very small quantity of solvent is required and the experi­
+mental procedure is simple [30,31]. However, the limita­
+tion is that only very low solvent concentration can be 
+applied. In the work of Li et al. the solvent concentration 
+is found to be in a range of 0.0026–0.196 M [31].
+
+=== PDF p.8 ===
+Solvent chemistry: reaction kinetics of CO2 absorption into reactive amine solutions  Review Series
+future science group
+www.future-science.com
+207
+CO2–amine reaction mechanisms
+  
+ Zwitterion mechanism
+The zwitterion mechanism was originally proposed by 
+Caplow [33] and later reintroduced by Danckwerts [14] 
+as a two-step reaction between CO2 and primary or 
+secondary amine (denoted as R1R2NH) through for­
+mation of a zwitterion intermediate (R1R2NH+COO-) 
+and then a deprotonation of zwitterion intermediate 
+by a base (denoted as B) to carbamate (R1R2NCOO-) 
+as presented in Equations 14 & 15, respectively.
+CO
+R R NH
+R R NH COO
+2
+1
+2
+1
+2
+k ,k
+2
+Z
+1
+Z
++
++
+-
+-
+Equation 14
+R R NH COO
+B
+R R NCOO
+BH
+1
+2
+1
+2
+k ,k
+b
+b
++
++
++
+-
++
+-
+-
+Equation 15
+where k2
+Z and k 1
+Z
+- are the second-order forward rate 
+constant and first-order reverse rate constant for 
+Equation 14, respectively, and a superscript Z represents 
+the zwitterion mechanism.
+In Equation 15, base (B) can be either R1R2NH, 
+OH- or H2O [34]. By applying the pseudo-steady state 
+approximation for the concentration of R1R2NCOO-, 
+the rate of CO2 absorption based on the zwitterion 
+mechanism can be derived as [34]:
+r
+1
+k B
+k
+k
+CO
+R R NH
+1
+k
+R R NH
+k
+OH
+k
+H O
+k
+k
+CO
+R R NH
+CO
+b
+1
+Z
+2
+Z
+2
+1
+2
+R R NH
+1
+2
+OH
+H O
+2
+1
+Z
+2
+Z
+2
+1
+2
+2
+1
+2
+2
+=
++
+=
++
++
++
+-
+-
+-
+-
+6
+6
+6
+6
+6
+6
+6
+6
+@
+@
+@
+@
+@
+@
+@
+@
+/
+Equation 16
+In the case of:
+k B
+k
+1
+b
+1
+Z
+11
+-
+6 @
+/
+, 
+Equation 16 can be simplified to be the second-order 
+rate reaction as [34]:
+r
+k
+CO
+R R NH
+CO
+2
+Z
+2
+1
+2
+2 =
+6
+6@
+@
+Equation 17
+From Equation 17, it can be inferred that the forma­
+tion of the zwitterion mechanism (Equation 14) is the 
+rate-determining step in the case of: 
+k B
+k
+1
+b
+1
+Z
+11
+-
+6 @
+/
+ 
+(e.g., reaction of CO2 and MEA) [35]. If:
+k B
+k
+1
+b
+1
+Z
+22
+-
+6 @
+/
+, 
+then Equation 16 is simplified to be the third order 
+reaction rate as [34]: 
+r
+k
+k
+k B CO
+R R NH
+CO
+1
+Z
+2
+Z
+b
+2
+1
+2
+2 =
+-
+6
+6
+6
+@
+@
+@
+/
+Equation 18
+Versteeg and van Swaaij [36] and Laddha and 
+Danckwerts [37] suggested that OH- and H2O are the 
+minor contributors to a deprotonation of zwitterion 
+(Equation 15) due to a low concentration of OH- and 
+a low basicity of H2O, compared with R1R2NH and 
+OH-. Therefore, Equation 18 can be simplified as [36,37]:
+r
+k
+k k
+CO
+R R NH
+CO
+1
+Z
+2
+Z
+R R NH
+2
+1
+2
+2
+2
+1
+2
+=
+-
+6
+6@
+@
+Equation 19
+If R1R2NH is the main contribution of Equation 
+15, as suggested by Versteeg and van Swaaij [36] and 
+Laddha and Danckwerts [37], the overall reaction 
+between CO2 and primary or secondary amine can 
+be represented as:
+CO
+2R R NH
+R R NCOO
+R R NH
+2
+1
+2
+1
+2
+1
+2
+2
++
++
+)
+-
++
+Equation 20
+Thus, it is implied from Equation 20 that the theo­
+retical equilibrium loading capacity of primary and 
+secondary amine is limited to 0.5 mol CO2 per mol 
+of amine. However, this statement is only applicable 
+if the carbamate species is quite stable (e.g., carbamate 
+species from MEA and DEA) [22].
+Therefore, the overall reaction order for CO2 absorp­
+tion into primary or secondary amine, including both 
+cases of
+ 
+k B
+k
+1
+b
+1
+Z
+11
+-
+6 @
+/
+ and 
+k B
+k
+1
+b
+1
+Z
+22
+-
+6 @
+/
+ 
+is found to be 2 or 3.
+Although the zwitterion mechanism seems to be 
+applicable for both primary and secondary amines, a 
+few limitations and uncertainties have been recently 
+pointed out [38–40]. Based on the chemical species stud­
+ies by vibration spectroscopy and ab initio theories, it 
+has been suggested that the zwitterion species, which is 
+possibly formed during absorption reaction, may have 
+very low stability [38–40]. In addition, the exact form 
+of the zwitterion species is not entirely known [40]. 
+Lastly, the protonation rate constant (kb) of Equation 15 
+is found to be meaningless for the reaction kinetics 
+studies [26].
+  
+ Termolecular mechanism
+The termolecular mechanism was originally proposed 
+by Crooks and Dannellan [41] and states that the reac­
+tion is a single step where the initial product is not a 
+zwitterion, but a loosely bound encounter complex with 
+
+=== PDF p.9 ===
+Carbon Management (2012) 3(2)
+future science group
+208
+ Review Series  Sema, Naami, Liang et al.
+a mechanism of the type as shown 
+in Figure 2. Most of these complexes 
+are intermediates, which break up to 
+give reagent molecules, again, while 
+a few react with a second molecule 
+of either R1R2NH, OH-, or H2O to 
+give ionic products. Bond formation 
+and charge separation occur only in 
+the second step [26,38,41].
+The reaction-rate expression 
+according to the termolecular 
+mechanism can be written as [21]:
+Equation 21
+If R1R2NH is assumed to be the main contributor in the 
+termolecular mechanism, the rate expression can then be 
+reduced (superscript T denotes termolecular mechanism):
+r
+k
+CO
+R R NH
+CO
+R R NH
+T
+2
+1
+2
+2
+2
+1
+2
+=
+6
+6@
+@
+Equation 22
+It can be seen from Equation 22 that, in this case, the rate 
+expression for the termolecular mechanism is the third-
+order reaction rate, which is the as same as that of the 
+zwitterion mechanism with 
+k B
+k
+1
+b
+1
+Z
+22
+-
+6 @
+/
+ (Equation 19).
+  
+ Base-catalyzed hydration mechanism
+The base-catalyzed hydration of the CO2 mechanism by 
+tertiary amine (denoted as R3N) was originally proposed 
+by Donaldson and Nguyen [42]. They proposed that the 
+tertiary amine does not react directly with CO2 but acts 
+as a base that catalyzes the hydration of CO2, as presented 
+in Equation 23.
+R N
+CO
+H O
+R NH
+HCO
+3
+2
+2
+3
+3
+kR N
+3
++
++
++
++
+-
+Equation 23
+The rate expression for the base-catalyzed hydration 
+mechanism for tertiary amine can be written as [33]:
+r
+k
+R N CO
+CO
+R N
+3
+2
+2
+3
+=
+6
+6@
+@
+Equation 24
+In the case of the base-catalyzed hydration mechanism, 
+the rate of CO2 absorption is a second-order reaction rate.
+Reaction rate/kinetics model
+In reaction kinetics studies, it is 
+generally accepted that one of the 
+most important parameters is the 
+second-order reaction rate constant 
+(k2; m3/kmol.s), because k2 directly represents the reaction 
+kinetics (speed of the reaction) and is required for process 
+simulation and design of the absorption column [4,14,15,26]. 
+After measuring the CO2 absorption rate using the experi­
+mental gas–liquid contactor (e.g., stirred cell reactor, 
+wetted wall column, laminar jet absorber, wetted sphere 
+absorber, string of disc contactor or stopped-flow appara­
+tus), the interpretation of the experimental kinetics data 
+is required for determining the second-order reaction rate 
+constant. For the CO2 absorption into amine solutions, 
+several approaches have been applied, including graphical 
+methods, simplified models based on reaction mechanism 
+and a numerically solved comprehensive model.
+  
+ Graphical method
+The graphical method was used during the 1980s until 
+the mid 1990s for determining the order of reaction, 
+and the reaction rate constant of MEA, DEA, TEA and 
+AMP [22,34,36,42,43].
+Assuming that the reaction between CO2 and amine 
+is an mth order reaction with respect to concentration of 
+dissolved CO2 at the interface and an nth order reaction 
+with respect to amine concentration, the reaction rate 
+expression for a single amine system can be written as [22]:
+r
+k
+C
+C
+CO
+mn
+CO
+m
+Am
+n
+2
+2
+=
+)
+Equation 25
+where kmn is the reaction rate constant (m3/kmol s) and 
+CCO2
+)
+ is the molar concentration of CO2 at the interface 
+(kmol/m3), which can be calculated by the Henry’s law 
+relationship, as presented in Equation 26; CAm is the molar 
+concentration of amine (kmol/m3) and He is Henry’s law 
+constant (kPa m3/kmol): 
+C
+He
+P
+CO
+CO
+2
+2
+=
+)
+Equation 26
+A specific rate of CO2 absorption for the gas and liquid 
+sides can be written as [14,15,43]:
+N
+A
+r
+k
+P
+P
+Ek C
+CO
+CO
+G
+CO
+CO
+i
+CO
+2
+2
+2
+2
+2
+=
+=
+-
+=
+)
+)
+^
+h
+Equation 27
+where NCO2 is specific CO2 absorption rate per unit area 
+(kmol/m2 s), A is gas–liquid interface (m2), kG is gas-phase 
+mass-transfer coefficient (kmol/m3s kPa), PCO2 is partial 
+pressure of CO2 at bulk gas (kPa), PCO2
+) is partial pressure 
+of CO2 at interface (kPa), E is enhancement factor and kl 
+liquid-phase mass-transfer coefficient (m/s).
+For fast pseudo m–nth order reactions, the specific CO2 
+absorption rate (NCO2) based on the penetration theory 
+with neglecting the gas-phase resistant (kG = 0) can be 
+expressed as [22]:
+Key term
+Second-order reaction rate constant: 
+Rate constant obtained from a 
+second-order reaction (reaction in 
+which total power in respect to 
+reactants concentration is 2).
+R
+R
+B:
+N:
+C
+O
+O
+H
+Figure 2. Single-step termolecular 
+reaction mechanism for carbamate 
+formation.
+Redrawn with permission from [26]. 
+© Elsevier (2003).
+r
+k
+R R NH
+k
+OH
+k
+H O
+R R NH CO
+CO
+R R NH
+1
+2
+OH
+H O
+2
+1
+2
+2
+2
+1
+2
+2
+=
++
++
+-
+-
+^
+h
+6
+6
+6
+6
+6
+@
+@
+@
+@
+@
+
+=== PDF p.10 ===
+Solvent chemistry: reaction kinetics of CO2 absorption into reactive amine solutions  Review Series
+future science group
+www.future-science.com
+209
+N
+C
+m
+1
+2
+D
+k
+C
+C
+CO
+CO
+CO
+mn
+CO
+m 1
+Am n
+2
+2
+2
+2
+=
++
+-
+)
+)
+^
+^
+h
+h
+Equation 28
+At constant temperature and amine concentration, the 
+values of m, DCO2, kmn and (CAm)n in Equation 28 are found 
+to be constant. The mth order with respect to CCO2
+)
+ can be 
+obtained by plotting NCO2 versus CCO2
+)
+ at constant temper­
+ature and amine concentration. The m value can be calcu­
+lated from the slope. Generally, reaction order with respect 
+to CO2 is 1 for all aqueous–amine solutions [14,15,22].
+Once the value of m is known, the nth order with respect 
+to CAm and reaction rate constant kmn can be determined 
+by plotting: 
+D
+C
+N
+CO
+CO
+CO
+2
+2
+2
+1 2
+m 1
+2
+)
++
+^
+`
+h
+j 
+versus CAm at constant temperature. The n value can be 
+obtained from the slope and the kmn can be determined 
+from the x intercept. 
+The results show that the order of reaction with respect 
+to concentration of CO2 is 1 for aqueous MEA, DEA, 
+TEA and AMP systems, as presented in Table 1. In addi­
+tion, the reaction rate constants for MEA, DEA, TEA and 
+AMP are shown in Table 1.
+  
+ Simplified model based on reaction mechanism
+In this approach, the reaction rate/kinetics data obtained 
+from the gas–liquid contactor are interpreted based on 
+the proposed mechanism between CO2 and amine (i.e., 
+zwitterion, termolecular and base-catalyzed hydration 
+mechanisms). In addition, the single and blended amines 
+solutions are also treated differently.
+First, the overall rate of CO2 absorption (rov) is defined 
+as [28]:
+r
+k
+CO
+ov
+ov
+2
+=
+6
+@
+Equation 29
+For fast pseudo first-order absorption reactions, the 
+specific CO2 absorption rate NCO2 can be expressed as [28]:
+N
+C
+k D
+He
+P
+k D
+CO
+CO
+ov
+CO
+CO
+ov
+CO
+2
+2
+2
+2
+2
+=
+=
+)
+Equation 30
+Thus, the experimental overall reaction rate constant 
+(kov) can be calculated via the measurement of CO2 
+absorption rate as [28]:
+k
+N
+P
+He
+D
+1
+ov
+CO
+CO
+2
+CO
+2
+2
+2
+= c
+m
+Equation 31
+In addition to the CO2–amine reaction in aqueous 
+amine solution, there are two other reactions related to 
+hydration of CO2 and bicarbonate from CO2, as shown 
+in Equations 32 & 33, respectively.
+CO
+H O
+HCO
+H
+2
+2
+3
++
++
+)
+-
++
+Equation 32
+This reaction has been found to be very slow, compared 
+with others in CO2 absorption in aqueous amine solu­
+tion (reaction rate constant k of 0.026 s-1 at 298 K) [44]. 
+Therefore, this reaction can be neglected [34].
+CO
+OH
+HCO
+2
+3
+kOH
++
+-
+-
+)
+-
+Equation 33
+The formation of bicarbonate from CO2 and OH- is 
+faster than that of Equation 32, with a reaction-rate constant 
+(kOH
+*
+-) of 8322 m3/kmol s at 298 K. The rate expression 
+and the reaction-rate constant can be written as [45]:
+r
+k
+CO
+OH
+OH
+OH
+2
+=
+-
+)
+)
+-
+-6
+6@
+@
+Equation 34
+log
+k
+;m /kmol s
+13.635
+T
+2985
+10
+OH
+3
+=
+-
+$
+)
+-
+^
+h
+Equation 35
+Primary & secondary amines
+For the primary and secondary amines (e.g., MEA and 
+DEA), the overall reaction rate for CO2 absorption based 
+on the zwitterion mechanism can be written as [34,36]:
+Equation 36
+Table 1. The values of mth and nth order, and kmn of MEA, DEA, TEA and AMP.
+Amine 
+Concentration (M)
+Temperature (K)
+m
+n
+kmn (m3/kmol.s)
+Ref.
+MEA
+0.2–2.02
+293
+1
+1
+4300 
+[43]
+DEA
+0.25–0.82
+293
+1
+2
+849
+[43]
+AMP
+0.5–2
+294
+1
+1
+473 
+[22]
+TEA
+0.1–1
+298
+1
+2
+2.7 
+[34]
+AMP: 2-amino-2-methyl-1-propanol; DEA: Diethanolamine; MEA: Monoethanolamine; TEA: Triethanolamine.
+r
+k
+CO
+r
+r
+1
+k
+R R NH
+k
+OH
+k
+H O
+k
+k
+CO
+R R NH
+k
+CO
+OH
+ov
+ov
+2
+CO
+R R NH
+Z
+OH
+R R NH
+1
+2
+OH
+H O
+2
+1
+Z
+2,R R NH
+Z
+2
+1
+2
+OH
+2
+2
+1
+2
+1
+2
+2
+1
+2
+=
+=
++
++
++
++
+=
++
+-
+-
+-
+-
+)
+)
+-
+-
+-
+6
+6
+6
+6
+6
+6
+6
+6
+@
+@
+@
+@
+@
+@
+@
+@
+
+=== PDF p.11 ===
+Carbon Management (2012) 3(2)
+future science group
+210
+ Review Series  Sema, Naami, Liang et al.
+The apparent rate constant (kapp) is defined as [34,36]:
+k
+k
+k
+OH
+ov
+OH
+app =
+-
+-
+)
+-6
+@
+Equation 37
+Therefore, kapp for aqueous primary or secondary 
+amine solution can be written as [34,36]:
+k
+1
+k
+R R NH
+k
+OH
+k
+H O
+k
+k
+R R NH
+app
+R R NH
+1
+2
+OH
+H O
+2
+1
+Z
+2,R R NH
+Z
+1
+2
+1
+2
+2
+1
+2
+=
++
++
++
+-
+-
+-
+6
+6
+6
+6
+@
+@
+@
+@
+Equation 38
+where k2,R R NH
+Z
+1
+2
+ is a second-order reaction rate constant 
+of primary or secondary amine based on the zwitterion 
+mechanism for Equation 14. kR R NH
+1
+2
+, kOH- and kH O
+2 are 
+reaction-rate constants for deprotonation of the zwit­
+terion intermediate (Equation 15) by R1R2NH, OH- and 
+H2O, respectively.
+For Equation 38, kov can be calculated via experimental 
+measurement of specific CO2 absorption rate, as shown 
+in Equation 31. The concentration of OH-can be estimated 
+using a relation proposed by Astarita et al. as [15]:
+OH
+K
+K
+1
+for
+10
+K
+K
+amine for
+10
+a
+w
+3
+a
+w
+3
+=
+-
+=
+$
+#
+a
+a
+a
+a
+-
+-
+-
+c
+m
+6
+6
+@
+@
+Equation 39
+where Kw is equilibrium dissociation constant of water 
+(Kw = [H+][OH-]), Ka, is equilibrium deprotonation 
+constant of amine:
+K
+R R NH
+R R NH H
+a
+1
+2
+2
+1
+2
+=
++
++
+6
+6
+6
+@
+@
+@
+ 
+and a is CO2 loading (mol CO2/mol amine). In addi­
+tion, OH- can also be estimated with the vapor–liquid 
+equilibrium model [26,28].
+The experimental values of kapp at specific tempera­
+tures are now correlated with the zwitterion mechanism 
+of Equation 38 in order to obtain individual rate constants 
+of k2,R R NH
+Z
+1
+2
+, kOH- and kH O
+2 .
+In the case of the termolecular mechanism, the kapp 
+for aqueous primary or secondary amine solution can be 
+written as [26]:
+Equation 40
+The experimental values of kapp at a specific tempera­
+ture are then correlated with the termolecular mechanism 
+of Equation 40 in order to obtain individual rate constants 
+of k2,R R NH
+T
+1
+2
+, kOH- and kH O
+2 .
+It has been generally accepted that the zwitterion 
+mechanism is sufficiently applicable for MEA [21,45–47]. 
+The reaction order is 1 respect to CO2 concentration 
+and MEA concentration (hence, the overall reaction 
+order is two). This suggests that for MEA, the forma­
+tion of zwitterions (Equation 14) is the rate-determining 
+step and the deprotonation of zwitterions (Equation 15) 
+is an instantaneous reaction [35]. The second-order rate 
+constant for MEA based on the zwitterion mechanism 
+(k2,MEA
+Z
+) proposed by Versteeg et al. can be expressed as [45]:
+k
+m /kmol s
+4.4
+10 exp
+T
+5400
+2,MEA
+Z
+3
+11
+=
+-
+$
+#
+^
+c
+h
+m
+Equation 41
+The termolecular mechanism was also applied to MEA 
+by Aboudheir et al., and the rate constant for MEA based 
+on the termolecular mechanism (kMEA
+T
+) is [26]:
+k
+m /kmol
+s
+4.61
+10 exp
+T
+4412
+MEA
+T
+6
+2
+9
+=
+-
+$
+#
+^
+c
+h
+m
+Equation 42
+In the case of DEA (a secondary amine), the reac­
+tion order with respect to DEA concentration has been 
+found to be in the range of 1 and 2, but for the zwit­
+terion mechanism, if the rate-determining step is the 
+zwitterion formation, the reaction order with respect to 
+DEA concentration will be 1 [34,36,48,49]. On the other 
+hand, if the rate-determining step is the deprotonation 
+of zwitterion, the reaction order with respect to DEA 
+concentration will be 2. Hence, it can be inferred from 
+this evidence that neither zwitterion formation nor depro­
+tonation of zwitterions is the rate-determining step for 
+DEA. Therefore, the reaction order with respect to DEA 
+concentration is found to be a fraction between 1 and 
+2. For the termolecular mechanism, Little et al. pointed 
+out that the termolecular mechanism cannot explain the 
+fractional reaction order that is observed in the DEA 
+system, since the reaction order with respect to DEA con­
+centration based on the termolecular mechanism is 2 [50]. 
+According to Zhang et al. the second-order rate constant 
+for DEA based on the zwitterion mechanism (k2,DEA
+Z
+) can 
+be written as [51]: 
+k
+m /kmol s
+exp 24.515
+T
+5411.3
+2,DEA
+Z
+3
+=
+-
+$
+^
+c
+h
+m
+Equation 43
+Tertiary amine
+Tertiary amine (e.g., TEA and MDEA) does not react 
+with CO2 directly, but it acts as a base that catalyzes 
+the hydration of CO2 (base-catalyzed hydration mecha­
+nism). The apparent rate constant for tertiary amine 
+based on the base-catalyzed hydration mechanism can 
+be expressed as [52]:
+k
+k
+R N
+app
+R N
+3
+3
+=
+6
+@
+Equation 44
+k
+k
+R R NH
+k
+OH
+k
+H O
+R R NH
+app
+R R NH
+T
+1
+2
+OH
+H O
+2
+1
+2
+1
+2
+2
+=
++
++
+-
+-
+^
+h
+6
+6
+6
+6
+@
+@
+@
+@
+
+=== PDF p.12 ===
+Solvent chemistry: reaction kinetics of CO2 absorption into reactive amine solutions  Review Series
+future science group
+www.future-science.com
+211
+The kinetics of CO2 absorption into aqueous solution 
+of tertiary amine (e.g., TEA and MDEA) has been studied 
+by many researchers [52–55]. They have found that the reac­
+tion order with respect to the tertiary amine concentration 
+is 1, which is in good agreement with the base-catalyzed 
+hydration mechanism. The second-order rate constants of 
+TEA (k2,TEA) [55] and MDEA (k2,MDEA) [54] based on the 
+base-catalyzed hydration mechanism can be expressed as:
+k
+m /kmol s
+8.741
+10 exp
+T
+8625
+2,TEA
+3
+12
+=
+-
+$
+#
+^
+c
+h
+m
+Equation 45
+k
+m /kmol s
+2.661
+10 exp
+T
+6573
+2,MDEA
+3
+11
+=
+-
+$
+#
+^
+c
+h
+m
+Equation 46
+Primary sterically hindered amine
+One of the best-known hindered amines is AMP, which 
+is the hindered amine of MEA. The reaction kinetics 
+of AMP have been studied widely. Chakraborty et al. 
+were among the first to study the reaction mechanism 
+and kinetics of CO2 absorption in AMP solution [56]. By 
+using 13C NMR, they observed that no carbamate peak 
+can be detected. Therefore, they suggested the hydration 
+of CO2 (as shown in Equation 47) as an alternative mecha­
+nism instead of carbamate formation (denoted R´R´´NH 
+as AMP):
+R R NH
+CO
+H O
+R R NH
+HCO
+2
+2
+2
+3
++
++
++
+)
++
+-
+l
+m
+l
+m
+Equation 47 
+In addition, Yi and Shen assumed that carbamate spe­
+cies cannot be formed in the case of AMP [57]. Therefore, 
+they suggested an alternative mechanism as shown in 
+Equation 48:
+R R NCOO H
+H O
+R R NH
+HCO
+2
+2
+3
++
++
+)
+-
++
++
+-
+l
+m
+l
+m
+Equation 48
+However, these mechanisms do not represent the fast 
+absorption rate of AMP very well. Later, Alper [32] and 
+Bosch et al. [58] successfully applied the zwitterion mech­
+anism to AMP. Since an unstable carbamate species is 
+formed in the case of AMP, the unstable carbamate is then 
+hydrolyzed to form bicarbonate, as shown in Equation 49.
+R R NCOO
+H O
+R R NH
+HCO
+2
+3
++
++
+)
+-
+-
+l
+m
+l
+m
+Equation 49
+In addition, Alper [32] and Bosch et al. [58] also found 
+that the reaction order with respect to CO2 concentration 
+and AMP concentration is 1 (the overall reaction order is 
+2). It can be inferred from this evidence that the formation 
+of zwitterion mechanism is the rate-determining step in 
+the AMP system. Based on the zwitterion mechanism, 
+kapp can be written as [58]:
+k
+1
+k
+AMP
+k
+OH
+k
+H O
+k
+k
+AMP
+app
+AMP
+OH
+H O
+2
+1
+Z
+2,AMP
+Z
+2
+=
++
++
++
+-
+-
+-
+6
+6
+6
+6
+@
+@
+@
+@
+Equation 50
+Thus, the k2,AMP can be calculated and expressed as [59]:
+k
+m /kmol s
+1.399
+10 exp
+T
+2918
+2,AMP
+3
+7
+=
+-
+$
+#
+^
+c
+h
+m
+Equation 51
+Solvents containing polyamines
+PZ (which is a secondary cyclical amine with two second­
+ary amine groups) has been studied the most due to its 
+high reactivity and absorption capacity [60]. Since PZ is 
+a secondary amine, the zwitterion mechanism has been 
+generally applied. In addition, PZ has two nitrogen atoms, 
+and carbamate species can be formed from both of them. 
+The reactions between CO2 and PZ can be written as:
+CO
+PZ
+PZH COO
+2
+k2,PZ
++
++
+-
+Equation 52
+PZH COO
+B
+PZCOO
+BH
+kb
++
++
++
+-
+-
++
+Equation 53
+In the case of PZ, base (B) can be PZ, PZCOO-, PZH+, 
+H2O or OH-. By applying a pseudo-steady state approxi­
+mation for the zwitterion, the rate expression of PZ is 
+found to be the same as that of primary and secondary 
+amines (Equation 16):
+r
+1
+k B
+k
+k
+CO
+PZ
+CO
+b
+1
+Z
+2,PZ
+Z
+2
+2 =
++
+-
+6
+6
+6
+@
+@
+@
+/
+Equation 54
+It has been reported by several researchers that:
+k B
+k
+1
+b
+1
+Z
+11
+-
+6 @
+/
+ 
+in the case of PZ [9,23,61]. This is because of the high basic 
+strength of PZ and PZCOO- (pKa value of PZ is 9.731 
+at 298 K [62] and that of PZCOO- is 9.44 at 298 K) [63]. 
+Therefore, the second-order rate constant for PZ (k2,PZ
+Z ) 
+based on the simplified model can be expressed as [61]:
+k
+m /mol s
+128.4exp
+T
+6.2
+10
+D
+m /s
+1
+2,PZ
+Z
+3
+3
+CO
+2
+2
+=
+-
+$
+#
+^
+c
+^
+h
+m
+h
+Equation 55
+For AEEA, which has a primary and a secondary amine 
+group, a potentially promising solvent has been found 
+for capturing CO2, due to its high absorption capac­
+ity, net cyclic capacity and fast reaction kinetics [10,11]. 
+Ma’mun et al. investigated the reaction kinetics of AEEA 
+
+=== PDF p.13 ===
+Carbon Management (2012) 3(2)
+future science group
+212
+ Review Series  Sema, Naami, Liang et al.
+in a string of disc contactor [11]. Since AEEA has both 
+primary and secondary amine groups, the carbamate 
+can, therefore, be formed from both groups as primary 
+carbamate (AEEACOOp
+- ) and secondary carbamate 
+(AEEACOOs
+-). However, the main product is found to 
+be AEEACOOp
+- , because the primary amine group reacts 
+faster than the secondary amine group [10]. Based on the 
+termolecular mechanism, Ma’mun et al. [11] proposed the 
+kapp as:
+Equation 56
+The second-order reaction rate constant for AEEA 
+based on the termolecular mechanism (k2,AEEA
+T
+) is [11]:
+k
+m /mol s
+k
+exp
+R
+E
+T
+1
+298.15
+1
+2,AEEA
+T
+3
+2,298K
+=
+-
+-
+$
+D
+^
+c
+h
+m
+;
+E
+Equation 57
+where k2,298K is 1.21  ×  104m3/kmol.s, DE is 
+3.25 × 104 kJ/kmol and R is 8.314kJ/kmol K.
+For a more complex solvent containing two primary 
+and one secondary amine groups, DETA, a large number 
+of species can be formed as the CO2 absorption reaction 
+proceed. However, at low CO2 loading, the major species 
+is found to be the carbamate species (DETACOO-) from 
+one of the primary amine groups [12,13]. Hartono et al. [13] 
+studied reaction kinetics of DETA at low CO2 loading 
+using string of disc contactor. They have found that both 
+zwitterion and termolecular mechanisms can be applied 
+for DETA. The kapp based on zwitterion mechanism and 
+termolecular mechanism can be expressed as shown in 
+Equations 58 & 59, respectively.
+k
+1
+k
+DETA
+k
+OH
+k
+H O
+k
+k
+DETA
+app
+DETA
+OH
+H O
+2
+1
+Z
+2,DETA
+Z
+2
+=
++
++
++
+-
+-
+-
+6
+6
+6
+6
+@
+@
+@
+@
+Equation 58
+k
+k
+DETA
+k
+H O
+k
+OH
+DETA
+app
+DETA
+T
+H O
+2
+OH
+2
+=
++
++
+-
+-
+^
+h
+6
+6
+6
+6
+@
+@
+@
+@
+Equation 59
+Thus, the reaction rate constant (k) can then be 
+determined, as expressed by:
+k
+m /kmol s
+2.6883
+10 exp
+T
+2614.5
+2,DETA
+Z
+3
+15
+=
+-
+$
+#
+^
+c
+h
+m
+Equation 60
+k
+m /kmol
+s
+7.4592
+10 exp
+T
+3869.3
+3,DETA
+T
+6
+2
+9
+=
+-
+$
+#
+^
+c
+h
+m
+Equation 61
+It was mentioned by Hartono et al. that both zwit­
+terion and termolecular mechanisms can be used to 
+explain the reaction kinetics of DTEA [13]. It can be 
+reasoned that for both zwitterion and termolecular 
+mechanisms, if:
+k
+DETA
+k
+OH
+k
+H O
+k
+1
+DETA
+OH
+H O
+2
+1
+Z
+2
++
++
+22
+-
+-
+-
+6
+6
+6
+@
+@
+@
+and DETA dominates the absorption reaction, the 
+rate expression for both mechanisms (Equations 58 & 59, 
+respectively) will be reduced to be the same as shown 
+in Equation 62:
+k
+k
+k
+k
+DETA
+k
+DETA
+app
+1
+Z
+2,DETA
+Z
+DETA
+2
+DETA
+T
+2
+=
+=
+-
+6
+6
+@
+@
+Equation 62
+Blended amine system
+Chakravarty et al. first suggested a mixing of primary 
+or secondary amines with tertiary amines to take 
+advantage of each amine’s high-performing compo­
+nents [64]. This means the disadvantages of one amine 
+are compensated for by another amine. The benefits of 
+blended amine systems have been proven widely in the 
+literature (e.g., MEA–MDEA, MEA–AMP, MEA–PZ, 
+MDEA–PZ and AMP–PZ) [8,23,28,33,46,65].
+The simplified kinetics model for the blended amine 
+applies the same procedure as that for single amine. The 
+overall rate expression for the blended amine takes into 
+account all of the individual amines. 
+For example, the overall rate expression for blended 
+MEA–AMP can be written as [46]:
+Equation 63
+Therefore, the kapp(MEA–AMP) can be written as [46]:
+Equation 64
+r
+k
+CO
+r
+r
+r
+k
+CO
+MEA
+1
+k
+H O
+k
+OH
+k
+AMP
+k
+MEA
+k
+k
+CO
+AMP
+k
+CO
+OH
+ov MEA AMP
+ov
+2
+CO
+MEA
+CO
+AMP
+OH
+2,MEA
+2
+H O
+2
+OH
+AMP
+MEA
+1
+2,AMP
+2
+OH
+2
+2
+2
+2
+=
+=
++
++
+=
++
++
++
++
++
++
+-
+-
+-
+-
+-
+-
+)
+)
+-
+-
+-
+^
+h
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+6
+@
+@
+@
+@
+@
+@
+@
+@
+@
+@
+@
+k
+k
+AEEA
+k
+AEEA
+k
+H O
+k
+OH
+AEEA
+app
+2
+T
+AEEA
+T
+H O
+2
+OH
+2
+=
+=
++
++
+-
+-
+^
+h
+6
+6
+6
+6
+6
+@
+@
+@
+@
+@
+k
+k
+MEA
+1
+k
+H O
+k
+OH
+k
+AMP
+k
+MEA
+k
+k
+AMP
+app MEA AMP
+2,MEA
+H O
+2
+OH
+AMP
+MEA
+1
+2,AMP
+2
+=
++
++
++
++
++
+-
+-
+-
+-
+^
+h
+6
+6
+6
+6
+6
+6
+@
+@
+@
+@
+@
+@
+
+=== PDF p.14 ===
+Solvent chemistry: reaction kinetics of CO2 absorption into reactive amine solutions  Review Series
+future science group
+www.future-science.com
+213
+By applying nonlinear regression ana­lysis, Xiao et al. 
+reported k2,MEA and k2,AMP as [46]:
+log
+k
+;m /kmol s
+15.907
+T
+3706.5
+10
+2,MEA
+3
+=
++ -
+$
+^
+c
+h
+m
+Equation 65
+log
+k
+;m /kmol s
+6.595
+T
+1059.2
+10
+2,AMP
+3
+=
++ -
+$
+^
+c
+h
+m
+Equation 66
+  
+ Numerically solved comprehensive model
+One of the very first numerically solved comprehensive 
+reaction rate/kinetics models, which takes into account 
+the coupling between chemical equilibrium, mass-trans­
+fer and chemical kinetics of all possible chemical reac­
+tions, was developed by Hagewiesche et al. [66]. They 
+measured the rate of CO2 absorption into an aqueous 
+solution of unloaded, blended MEA–DEAB over a con­
+centration range of 1.5 wt% MEA + 28.5 wt% MDEA 
+to 4.5 wt% MEA + 25.5 wt% MDEA. The developed 
+model is governed by a system of partial differential-
+nonlinear algebraic equations based on the mass trans­
+port equation, as shown in Equations 67 & 68 [15]. The 
+method of lines was used to transform the partial dif­
+ferential equations into ordinary differential equations 
+(ODEs); they were then solved using the code DDASSL 
+in FORTRAN. Their developed reaction rate/kinet­
+ics model is capable of predicting the CO2 absorption 
+rate, the enhancement factor, and the rate coefficient of 
+reaction between CO2 and MEA. However, the experi­
+ment was performed with unloaded solution and at only 
+313 K.
+D
+C
+u
+C
+t
+C
+R
+2
+=
++
++
+$
+d
+d
+2
+2
+Equation 67
+D
+r
+C
+r
+1
+r
+C
+r
+1
+C
+z
+C
+u
+r
+C
+r
+u
+C
+u
+z
+C
+t
+C
+R
+2
+2
+2
+2
+r
+z
++
++
++
+=
++
++
++
++
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+2
+i
+i
+i
+;
+;
+E
+E
+Equation 68
+Rinker et al. developed the numerically solved CO2 
+absorption rate/kinetics models for unloaded DEA and 
+MDEA (10 wt% to 30 wt%) over a temperature range of 
+293–343 K [25,67]. The method of lines was also used to 
+transform the partial differential equations into ODEs. 
+The system of ODEs was solved numerically using the 
+code DDASSL in FORTRAN. Their predicted CO2 
+absorption rates were found to agree reasonably well 
+with the experimental results.
+A more comprehensive reaction rate/kinetics model 
+was developed by Aboudheir et al., who measured the 
+rates of CO2 absorption into an aqueous solution of 
+loaded MEA over a temperature range of 293–333 K, 
+a concentration range of 3–9 M and a CO2 loading 
+range of 0.1–0.49 mol of CO2/mol of amine [26]. In 
+their study, the partial differential-nonlinear algebraic 
+equations were solved using the finite difference method 
+(FDM) based on the Barakat–Clark scheme [68]. They 
+reported that the developed comprehensive reaction 
+rate/kinetics model favorably predicted CO2 absorption 
+rates. In addition, the absorption rate constant obtained 
+from the model is in good agreement with the values 
+reported in the literature.
+Recently, the comprehensive reaction rate/kinetics 
+model has been extended to other promising amine 
+systems such as blended MEA–MDEA and blended 
+MDEA–PZ by Edali et al. [8,69,70] and Idem et al. [71]. 
+In their studies, the partial differential nonlinear alge­
+braic equations have been solved using two numerical 
+techniques: the FDM based on the Barakat–Clark 
+scheme and the finite element method (FEM) based 
+on COMSOL software in both 1D and 2D modeling. 
+They have found that both FDM and FEM produce 
+very accurate predictions of CO2 absorption rate results. 
+In addition, no significant difference between the 
+results obtained from FDM and FEM were observed. 
+Therefore, they suggested that the FEM based on 
+COMSOL software could be used for the numerical 
+solution of the partial differential-algebraic equations 
+because coding the program of the numerical scheme 
+can be eliminated.
+In addition, Edali et al. mentioned that the 2D axi-
+symmetrical model, which seems to be one of the  most 
+comprehensive reaction rate/kinetics models, leads to 
+more accurate representation of the concentration pro­
+files of the species in both radial and axial directions 
+[70]. The concentration profiles of all species for the CO2 
+absorption in aqueous blended MEA–MDEA are pre­
+sented in Figure 3A–D.
+The second-order reaction rate constant based on the 
+comprehensive numerically solved reaction rate/kinetics 
+model for MEA [70], DEA [25], MDEA [67], AMP [72] and 
+PZ [8] are listed as follows:
+k
+m /kmol s
+5.127
+10 exp
+T
+3373.8
+2,MEA
+3
+8
+=
+-
+$
+#
+^
+c
+h
+m
+Equation 69
+k
+m /kmol s
+1.24
+10 exp
+T
+1701
+2,DEA
+3
+6
+=
+-
+$
+#
+^
+c
+h
+m
+Equation 70
+k
+m /kmol s
+2.91
+10 exp
+T
+4579
+2,MDEA
+3
+7
+=
+-
+$
+#
+_
+a
+i
+k
+Equation 71
+
+=== PDF p.15 ===
+Carbon Management (2012) 3(2)
+future science group
+214
+ Review Series  Sema, Naami, Liang et al.
+k
+m /kmol s
+exp 25.815
+T
+5801.7
+2,AMP
+3
+=
+-
+$
+^
+c
+h
+m
+Equation 72
+k
+m /kmol s
+2.572
+10 exp
+T
+5211
+2,PZ
+3
+12
+=
+-
+$
+#
+^
+c
+h
+m
+Equation 73
+Kinetics behavior
+The second-order CO2 absorption 
+rate constants for MEA, DEA, 
+MDEA, AMP, PZ,  AEEA and 
+DETA obtained from the graphical 
+method, simplified kinetics model­
+ing and comprehensive numerically 
+solved kinetics modeling, are sum­
+marized in Table 2. It can be observed 
+that the k2,PZ >>> k2,DETA > k2,AEEA >> 
+k2,MEA >> k2,AMP ≈ k2,DEA > 2,MDEA. It 
+can be inferred from this observa­
+tion that the CO2 absorption rate 
+with PZ is much faster than that 
+with DETA and AEEA, which with 
+DETA and AEEA is faster than 
+that with MEA, which with MEA 
+is faster than that of AMP and DEA 
+(AMP and DEA are considered to 
+have comparable absorption rates), 
+and that with AMP and DEA are 
+faster than that with MDEA, 
+respectively. In addition, the activa­
+tion energy for the absorption reac­
+tion can also be simply predicted 
+by the kinetics behavior of amine. 
+This is due to the fact that the lower 
+activation energy, the more easily 
+the reaction can proceed. It can be 
+seen from Table 2 that the activation 
+energy follows the same trend of k2 
+as Ea-PZ ≈ Ea-DETA ≈ Ea-AEEA < Ea-MEA 
+<  Ea-AMP < Ea-MDEA  ≈  Ea-DEA. PZ, 
+which is the most reactive amine, 
+is found to have very low activa­
+tion energy, compared with others 
+amines. On the other hand, DEA 
+and MDEA, which are considerably 
+less reactive than PZ, are found to 
+have the highest activation energy.
+It can also be seen from Table 2 
+that reaction rate constants extracted 
+from the simplified kinetics model 
+are comparable with those extracted 
+from the comprehensive numeri­
+cally solved kinetics model, but not 
+for those extracted from the graphical method. This 
+observation shows that the graphical method might not 
+be a very good technique for determining the reaction 
+kinetics (compared with the comprehensive numerically 
+solved and simplified kinetics models) because it only 
+depends on the penetration theory and the assumption 
+of fast pseudo m-nth order reaction, and it is applicable 
+with only single amine systems (while the comprehensive 
+0
+0.005
+0.01
+0.015
+0.02
+0.025
+0.03
+0.00E+00
+1.00E-05
+2.00E-05
+3.00E-05
+Species concentration profiles (mol/l)
+A
+Radial distance from gas/liquid interface to center of liquid jet (m)
+[HCO3
+-], top
+[CO2], bottom
+[HCO3
+-], mid-height
+[HCO3
+-], bottom
+[CO2], mid-height
+[OH-], bottom
+[OH-], mid-height
+[OH-], top
+[CO2], top
+B
+Species concentration profiles (mol/l)
+0
+0.05
+0.1
+0.15
+0.2
+0.25
+0.3
+0.35
+Radial distance from gas/liquid interface to center of liquid jet (m)
+0.00E+00
+1.00E-05
+2.00E-05
+3.00E-05
+[MEACOO-], bottom
+[CO3
+2-], top
+[MEACOO-], mid-height
+[MEACOO-], top
+[CO3
+2-], mid-height
+[CO3
+2-], bottom
+Figure 3. The radial and axial concentration profiles (based on the 2D comprehensive 
+numerically solved reaction rate/kinetics model) of all species in the CO2 absorption 
+into aqueous solution of blended monoethanolamine–methyldiethanolamine. Radial 
+concentration profiles for (A) CO2, HCO3
+- and OH- and (B) MEACOO- and CO3
+2- at the top, 
+mid-height and bottom of a laminar liquid jet. 
+MEA: Monoethanolamine.
+Modified with permission from [70]. © Elsevier (2009).
+
+=== PDF p.16 ===
+Solvent chemistry: reaction kinetics of CO2 absorption into reactive amine solutions  Review Series
+future science group
+www.future-science.com
+215
+numerically solved and simplified 
+kinetics models are applicable for 
+both single and blended amine sys­
+tems). However, the comprehensive 
+numerically solved kinetics model 
+seems to be the most comprehensive 
+and accurate model among the three 
+as it takes into account the coupling 
+between chemical equilibrium, 
+mass-transfer and chemical kinetics 
+of all possible chemical reactions. 
+Moreover, the recently developed 
+comprehensive numerically solved 
+kinetics models have been expanded 
+to 1D and 2D modeling, and various 
+operating temperatures, amine con­
+centrations, gas–liquid contact times 
+and CO2 loadings [8,70,71].
+It is generally accepted that 
+the chemical equilibrium con­
+stants – acid dissociation constant 
+(Ka  =  [AmineH+]/[Amine]|[H+]) 
+a nd 
+ca rba mate 
+stabilit y 
+(Kc  =  [R1R2NCOO-]/[R1R2NH]
+[HCO3
+-]) – can be simply used for 
+predicting the kinetics behavior 
+[38,45]. In addition, it was suggested 
+by da Silva and Svendsen that, for 
+a carbamate formation system such 
+as primary and secondary amines, 
+the kinetics behavior can be sim­
+ply predicted by the free energy for 
+carbamate formation (DGc), which 
+is a reverse reaction of Equation 49; 
+and for a noncarbamate formation 
+system (bicarbonate formation is 
+the main reaction) such as tertiary 
+amine, the kinetics behavior can 
+be simply predicted by the base 
+strength of the amine (which can 
+be represented by pKa) [73]. For the 
+carbamate formation system, fast 
+kinetics can be observed in the case 
+of high carbamate stability:
+Carbamate stability 
+K
+G
+1
+c
+c
+\
+\ D
+as shown in Figure 4. In addition, it can be seen from 
+Figure 4 that the carbamate stability in terms of both 
+Kc and
+ 
+G
+1
+c
+D
+ 
+are in the same trend. For the noncarbamate formation 
+system (bicarbonate formation is the main reaction), 
+fast kinetics can be observed in the case of high base 
+strength of amine (base strength of amine 
+Ka
+\
+), as 
+presented in Figure 5.
+Summary
+Kinetics of CO2 absorption studies have been conducted 
+to aid investigation of how fast CO2 reacts with amine 
+in terms of k2 (the higher the k2, the faster the reaction 
+kinetics). The k2 can be extracted 
+from the CO2 absorption experi­
+ment using a gas–liquid contactor 
+such as a stirred cell reactor, wetted 
+wall column, laminar jet absorber or 
+Species concentration profiles (mol/l)
+Species concentration profiles (mol/l)
+Radial distance from gas–liquid interface to center of liquid jet (m)
+Radial distance from gas–liquid interface to center of liquid jet (m)
+C
+D
+2
+1.8
+1.6
+1.4
+1.2
+1
+0.8
+0.6
+0.4
+0.2
+0
+0.00E+00
+1.00E-05
+2.00E-05
+3.00E-05
+[MDEA], bottom
+[MDEA], mid-height
+[MDEA], top
+[MEA], top
+[MEA], mid-height
+[MEA], bottom
+0
+0.05
+0.1
+0.15
+0.2
+0.25
+0.3
+0.35
+0.4
+0.00E+00
+1.00E-05
+2.00E-05
+3.00E-05
+[MEAH+], top
+[MEAH+], mid-height
+[MEAH+], bottom
+[MDEAH+], top
+[MDEAH+], mid-height
+[MDEAH+], bottom
+Figure 3. The radial and axial concentration profiles (based on the 2D comprehensive 
+numerically solved reaction rate/kinetics model) of all species in the CO2 absorption 
+into aqueous solution of blended monoethanolamine–methyldiethanolamine (cont.). 
+Radial concentration profiles for (C) MEA and MDEA and (D) MEAH+ and MDEAH+ at the top, 
+mid-height and bottom of a laminar liquid jet.
+MDEA: Methyldiethanolamine; MDEAH+: Protonated methyldiethanolamine; 
+MEA: Monoethanolamine; MEAH+: Protonated monoethanolamine.
+Modified with permission from [70]. © Elsevier (2009).
+Key term
+Activation energy: Minimum energy 
+that must be overcome for the chemical 
+reaction to proceed.
+
+=== PDF p.17 ===
+Carbon Management (2012) 3(2)
+future science group
+216
+ Review Series  Sema, Naami, Liang et al.
+stopped-flow apparatus. Several mechanisms for CO2–
+amine reaction have been proposed. The zwitterion 
+mechanism is usually applicable for primary and second­
+ary amines. The base-catalyzed hydration mechanism is 
+usually applicable for tertiary amines. For the generally 
+used amines, the k2 can be ranked as k2,PZ >>> k2,DETA > 
+k2,AEEA >> k2,MEA >> k2,AMP ≈ k2,DEA > k2,MDEA. In addition, 
+the kinetics behavior can also be simply determined using 
+carbamate stability (Kc) and free energy for carbamate 
+formation (DGc) for primary and secondary amines, and 
+base strength of amine (pKa) for tertiary amines.
+Future perspective
+Studies of the kinetics of CO2 absorption into amine 
+solutions have been carried out for several decades. The 
+reaction kinetics has generally been reported in terms of 
+Table 2. The second-order CO2 absorption rate constants and activation energy for MEA, DEA, MDEA, AMP, PZ, 
+AEEA and DETA obtained from the graphical method, simplified kinetics modeling and comprehensive 
+numerically solved kinetics modeling.
+Amine
+Temperature (K)
+k2 (m3/kmol.s)
+Methodology
+Ref.
+Activation energy (kJ/mol)
+MEA
+293
+4300
+Graphical method
+[43]
+41.2 [75]
+298
+5939
+Simplified model
+[45]
+298
+6209
+Numerical model
+[70]
+DEA
+293
+849
+Graphical method
+[43]
+53.1 [75]
+298
+576
+Simplified model
+[51]
+298
+412
+Numerical model
+[25]
+MDEA
+298
+2.33
+Simplified model
+[54]
+47.9 [21]
+298
+6.17
+Numerical model
+[67]
+AMP
+294
+473
+Graphical method
+[22]
+41.7 [32]
+298
+782
+Simplified model
+[59]
+298
+570
+Numerical model
+[72]
+PZ
+298
+70,000
+Simplified model
+[61]
+33.6 [9]
+298
+65,460
+Numerical model
+[8]
+AEEA
+298
+12,100
+Simplified model
+[11]
+32.5 [11]
+DETA
+298
+17,510
+Simplified model
+[13]
+32.2 [13]
+AEEA: 2-([2-aminoethyl]amino)ethanol; AMP: 2-amino-2-methyl-1-propanol; DEA: Diethanolamine; DETA: Diethylenetriamin; k2: Second-order reaction 
+rate constant; MDEA: Methyldiethanolamine; MEA: Monoethanolamine; PZ: Piperazine.
+20
+15
+10
+5
+0
+1
+2
+3
+4
+5
+6
+0
+25
+50
+AMP
+DEA
+DGA
+DIPA
+MEA
+MMEA
+EDA
+PZ
+PZ
+DEA
+∆Gc (kcal/mol)
+In (k2) (m3/mol s)
+100
+Kc
+kmol
+m3
+0
+Carbamate stability in terms of ∆Gc
+Carbamate stability in terms of Kc
+MEA
+Figure 4. Carbamate stability and free energy for carbamate formation versus second-order reaction rate 
+constant for various primary and secondary amines.
+DGc: Free energy for carbamate formation; AMP: 2-amino-2-methyl-1-propanol; DEA: Diethanolamine; 
+DGA: Diglycolamine; DIPA: Diisopropanolamine; EDA: Ethylenediamine; k2: Second-order reaction rate constant; 
+Kc: Carbamate stability; MEA: Monoethanolamine; MMEA: Methylmonoethanolamine; PZ: Piperazine.
+Data taken from [9,22,73].
+
+=== PDF p.18 ===
+Solvent chemistry: reaction kinetics of CO2 absorption into reactive amine solutions  Review Series
+future science group
+www.future-science.com
+217
+Executive summary
+Kinetics of CO2 absorption
+ Reaction kinetics is generally reported in terms of second-order rate constant (k2).
+ The k2 can be extracted from CO2 absorption experiments conduct in a gas–liquid contactor (e.g., stirred cell reactor, wetted wall column, 
+laminar jet absorber, wetted sphere absorber, string of disc contactor or stopped-flow apparatus).
+Reaction mechanism
+ A zwitterion mechanism is usually applicable for primary and secondary amines (i.e., primary sterically hindered and secondary cyclical 
+amines) such as monoethanolamine (MEA), diethanolamine (DEA), 2-amino-2-methyl-1-propanol (AMP) and piperazine (PZ).
+ Recently, a termolecular mechanism has been reintroduced and found to be applicable for several amines such as and diethylenetriamine 
+(DETA), 2-([2-aminoethyl]amino)ethanol (AEEA) and MEA.
+ Base-catalyzed hydration mechanism is usually applicable for tertiary amine such as triethanolamine and methyldiethanolamine (MDEA).
+Kinetics model
+ Comprehensive numerically solved and simplified models provide similar k2.
+ The comprehensive numerically solved model seems to be more accurate than the simplified model because it takes into account the 
+coupling between chemical equilibrium, mass-transfer and chemical kinetics of all possible chemical reactions.
+Kinetics behavior
+ The higher the k2, the faster the reaction kinetics.
+ Reactions related to carbamate formation (primary and secondary amines) are generally faster than noncarbamate formation reactions; 
+the main reaction is bicarbonate formation (tertiary amines).
+ The reaction kinetics ranking is: k2,PZ>>>k2,DETA>k2,AEEA>>k2,MEA>>k2,AMP ≈ k2,DEA>k2,MDEA.
+ For the carbamate formation systems, fast kinetics can be observed in the case of high carbamate stability – carbamate stability
+ 
+K
+G
+1
+c
+c
+\
+\ D
+
+                        .
+ For the noncarbamate formation systems (bicarbonate formation is the main reaction), a fast kinetics can be observed in the case of high 
+base strength of amine (base strength of amine \Ka).
+the second-order reaction rate constant (k2). The values 
+and correlations of k2 for several amine systems (i.e., both 
+single and blended amines of aqueous and non-aqueous 
+solutions) have been explicitly published in open litera­
+ture. However, these kinetics models are mostly devel­
+oped without considering the effect of CO2 loading or 
+only considering it at the low CO2 loading range (<0.3). 
+Therefore, the model should be expanded to the higher 
+CO2 loading range.
+Recently, one of the most comprehensive numerically 
+solved CO2 absorption rate/kinetic models was established 
+by the International Test Centre for CO2 Capture. The 
+developed 1D and 2D models take into account the cou­
+pling between chemical equilibrium, mass-transfer and 
+chemical kinetics of all possible chemical reactions at 
+various operating temperatures, amine concentrations, 
+gas–liquid contact times and CO2 loadings. It is generally 
+accepted that the CO2 absorption reaction is an exother­
+mic reaction. This generated heat directly affects reaction 
+kinetics in the absorption process. Therefore, more com­
+prehensive kinetics models should be developed by incor­
+porating the heat transfer equation into the calculation 
+scheme. 
+Generally, for both simplified and comprehensive 
+numerically solved kinetics models, the concentration 
+of chemical species is an estimated value from either 
+Equation 39 or vapor–liquid equilibrium models. The 
+experimental value of chemical species should be measured 
+for the aid of generating more accurate kinetics models.
+Moreover, the real industrially used amine-based CO2 
+absorption processes not only have CO2–amine–water, 
+but also amine degradation products, by­products from 
+corrosion processes, degradation inhibitors and corrosion 
+inhibitors. Therefore, further investigation on the effects 
+of these chemical species on the reaction kinetics needs 
+to be completed.
+-6.5
+-6
+In (k2) (m3/mol s)
+-5.5
+-5
+-4.5
+-4
+-3.5
+-3
+10
+9.5
+9
+8.5
+8
+7.5
+pKa
+TEA
+MDEA
+DMEA
+DEMEA
+Figure 5. Base strength of amine and second-order reaction rate constant 
+for various tertiary amines.
+Modified with permission from [73]. © Elsevier (2007).
+DEMEA: Diethyl monoethanolamine; DMEA: Dimethylethanolamine; 
+k2: Second-order reaction rate constant; MDEA: Methyldiethanolamine; 
+pKa: Base strength of amine; TEA: Triethanolamine.
+
+=== PDF p.19 ===
+Carbon Management (2012) 3(2)
+future science group
+218
+ Review Series  Sema, Naami, Liang et al.
+In addition, screening for the promising alternative 
+amines (rather than conventional amines; i.e., MEA, 
+AMP, MDEA and PZ) is suggested.
+Acknowledgements
+The authors would like to acknowledge research support over recent 
+years to the International Test Centre for CO2 Capture from the 
+followings organizations: Natural Sciences and Engineering 
+Research Council of Canada (Canada), Canada Foundation for 
+Innovation (Canada), Saskatchewan Ministry of Energy & 
+Resources (Canada), Western Economic Diversification (Canada), 
+EnCana Energy Inc. (Canada), E.ON Energy (UK), RWE Corp. 
+(Germany), Saudi Aramco (Saudi Arabia), Doosan Heavy 
+Industries (South Korea), HTC Purenergy Inc. (Canada), 
+Saskatchewan Power Corporation (Canada), StatOil Hydro 
+(Norway), SaskFerco Inc. (Canada), Sulzer Chemtech 
+(Switzerland), Fluor Corporation (USA), the Canada Centre for 
+Mineral and Energy Technology (Canada), Alberta Energy 
+Research Institute (Canada) and Research Institute of Innovative 
+and Technology for the Earth (Japan). In addition, we would also 
+like to acknowledge recent research support from the Provincial 
+Government of Hunan (China), the Federal Government of China 
+and Hunan University (China) to the Joint International Center 
+for CO2 Capture and Storage.
+Financial & competing interests disclosure
+The authors have no relevant affiliations or financial involvement 
+with any organization or entity with a financial interest in or finan­
+cial conflict with the subject matter or materials discussed in the 
+manuscript. This includes employment, consultancies, honoraria, 
+stock ownership or options, expert t­estimony, grants or patents 
+received or pending, or royalties.
+No writing assistance was utilized in the production of this 
+manuscript. 
+References
+Papers of special note have been highlighted as:
+n 
+of interest
+n  n 
+of considerable interest
+1	
+Houghton R, Jenkins GJ, Ephraums E. 
+Climate Change: the IPCC Scientific 
+Assessment. Cambridge University Press, 
+Cambridge, UK (1990).
+2	
+International Energy Agency. CO2 Emissions 
+from Fuel Combustion. International Energy 
+Agency Head of Publication Service, Paris, 
+France (2009).
+3	
+Rao AB, Rubin ES. A technical, economical, 
+and environmental assessment of amine based 
+CO2 capture technology for power plant 
+greenhouse gas control. Environ. Sci. Technol. 
+36, 4467–4475 (2002).
+4	
+Kohl AL, Nielsen RB. Gas Purification (5th 
+Edition). Gulf Publishing Co., Houston, TX, 
+USA (1997).
+n 
+Useful book providing principles of gas 
+purification.
+5	
+Sartori G, Savage DW. Sterically hindered 
+amines for CO2 removal from gases. Ind. Eng. 
+Chem. Fundam. 22, 239–249 (1983).
+n  n 
+First paper introducing 2-amino-2-methyl-1-
+propanol (AMP) for acid gas treating.
+6	
+Sema T, Naami A, Iden R, 
+Tontiwachwuthikul P. Correlations for 
+equilibrium solubility of carbon dioxide in 
+aqueous 4-(diethylamino)-2-butanol 
+solutions. Ind. Eng. Chem. Res. 50, 
+14008–14015 (2011).
+7	
+Tontiwachwuthikul P, Meisen A, Lim JC. 
+Solubility of CO2 in 2-amino-2-methyl-1-
+propanol solutions. J. Chem. Eng. Data 36, 
+130–133 (1991).
+8	
+Edali M, Idem R, Aboudheir A. 1D and 2D 
+absorption-rate/kinetic modeling and 
+simulation of carbon dioxide into aqueous 
+solutions of MDEA and PZ in a laminar jet 
+apparatus. Int. J. Greenh. Gas Control 4, 
+143–151 (2010).
+n  n 
+One of the most comprehensive numerically 
+solved kinetics models.
+9	
+Bishnoi S, Rochelle GT. Absorption of carbon 
+dioxide in aqueous piperazine/
+methyldiethanolamine. AIChE J. 48, 
+2788–2799 (2002).
+10	
+Ma’mun S, Jakobsen JP, Svendsen HF, 
+Juliussen O. Experimental and modeling 
+study of the solubility of carbon dioxide in 
+aqueous 30 mass % 2-((2-aminoethyl)amino)
+ethanol solution. Ind. Eng. Chem. Res. 45, 
+2505–2512 (2006).
+11	
+Ma’mun S, Dindore VY, Svendsen HF. 
+Kinetics of the reaction of carbon dioxide 
+with aqueous solutions of 2-((2-aminoethyl)
+amino)ethanol. Ind. Eng. Chem. Res. 46, 
+385–394 (2007).
+12	
+Hartono A, Hoff KA, Mejdell T, Svendsen 
+HF. Solubility of carbon dioxide in aqueous 
+2.5 M of diethylenetriamine (DETA) 
+solution. Energy Procedia 4, 179–186 (2011).
+13	
+Hartono A, da Silva EF, Svendsen HF. 
+Kinetics of carbon dioxide absorption in 
+aqueous solution of diethylenetriamine 
+(DETA). Chem. Eng. Sci. 64, 3205–3213 
+(2009).
+14	
+Danckwert PV. Gas-Liquid Reaction. 
+McGraw-Hill, NY, USA (1979).
+15	
+Astarita G, Savage DW, Bisio A. Gas Treating 
+with Chemical Solvents. John Wiley, NY, USA 
+(1983).
+n 
+Useful book providing principle of acid gas 
+treating with amine.
+16	
+Lewis WK, Whiteman WG. Principles of gas 
+absorption. Ind. Eng. Chem. 16, 1215–1200 
+(1924).
+17	
+Higbie R. The rate of absorption of a pure gas 
+into a still liquid during short periods of 
+exposure. Trans. Am. Inst. Chem. Eng. 35, 
+36–60 (1935).
+18	
+Danckwert PV. Significant of liquid-film 
+coefficients in gas absorption. Ind. Eng. Chem. 
+43, 1460–1467 (1951).
+19	
+Pani F, Gaunand A, Cadours R, Bouallou C, 
+Richon D. Kinetics of absorption of CO2 in 
+concentrated methyldiethanolamine solutions 
+in the range 296 K to 343 K. J. Chem. Eng. 
+Data 42, 353–359 (1997).
+20	
+Xu S, Wang YW, Otto FD, Mather AE. 
+Kinetics of the reaction of carbon dioxide 
+with 2-amino-2-methyl-1-propanol solutions. 
+Chem. Eng. Sci. 51, 841–850 (1996).
+21	
+Rangwala HA, Morrell BR, Mather AE, Otto 
+FD. Absorption of CO2 into aqueous tertiary 
+amine/MEA solutions. Can. J. Chem. Eng. 70, 
+482–490 (1992).
+22	
+Saha AK, Bandyopadhyay SS, Biswas AK. 
+Kinetics of absorption of CO2 into aqueous 
+solutions of 2-amino-2-methyl-1-propanol. 
+Chem. Eng. Sci. 50, 3587–3598 (1995).
+n 
+Useful paper on kinetics determination 
+using a graphical method.
+23	
+Ko JJ, Li MH. Kinetics of the absorption of 
+carbon dioxide into solutions of 
+
+=== PDF p.20 ===
+Solvent chemistry: reaction kinetics of CO2 absorption into reactive amine solutions  Review Series
+future science group
+www.future-science.com
+219
+N-methyldiethanilamine + water. Chem. Eng. 
+Sci. 55, 4139–4147 (2000).
+24	
+Sun WC, Yong CB, Li MH. Kinetics of the 
+absorption of carbon dioxide into mixed 
+aqueous solutions of 2-amino-2-methyl-1-
+propanol and piperazine. Chem. Eng. Sci. 60, 
+503–516 (2005).
+25	
+Rinker EB, Ashour SS, Sandall OC. 
+Kinetics and modeling of carbon dioxide 
+absorption into aqueous solutions of 
+diethanolamine. Ind. Eng. Chem. Res. 35, 
+1107–1114 (1996).
+26	
+Aboudheir A, Tontiwachwuthikul P, 
+Chakma A, Idem R. Kinetics of the reactive 
+absorption of carbon dioxide in high 
+CO2-loaded, concentrated aqueous 
+monoethanolamine solutions. Chem. Eng. 
+Sci. 58, 5195–5210 (2003).
+27	
+Aboudheir A, Tontiwachwuthikul P, 
+Chakma A, Idem R. Novel design for the 
+nozzle of laminar jet absorber. Ind. Eng. 
+Chem. Res. 43, 2568–2574 (2004).
+28	
+Ramachandran N, Aboudheir A, Idem R, 
+Tontiwachwuthikul P. Kinetics of the 
+absorption of CO2 into mixed aqueous 
+loaded solutions of monoethanolamine and 
+methyldiethanolamine. Ind. Eng. Chem. Res. 
+45, 2608–2616 (2006).
+29	
+Seo DJ, Hong WH. Effect of piperazine on 
+the kinetics of carbon dioxide with aqueous 
+solutions of 2-amino-2-methyl-1-propanol. 
+Ind. Eng. Chem. Res. 39, 2062–2067 (2000).
+30	
+Vaidya PD, Kenig EY. Gas–liquid reaction 
+kinetics: a review of determination methods. 
+Chem. Eng. Comm. 194, 1543–1565 (2007).
+31	
+Li J, Henni A, Tontiwachwuthikul P. 
+Reaction kinetics of CO2 in aqueous 
+ethylenediamine, ethyl ethanolamine, and 
+diethyl monoethanolamine solutions in the 
+temperature range of 298–313 K using 
+stopped-flow technique. Ind. Eng. Chem. 
+Res. 46, 4426–4434 (2007).
+32	
+Alper E. Reaction mechanism and kinetics 
+of aqueous solutions of 2-amino-2-methyl-1-
+propanol and carbon dioxide. Ind. Eng. 
+Chem. Res. 29, 1725–1728 (1990).
+n  n 
+Useful paper that successfully describes the 
+reaction mechanism of AMP.
+33	
+Caplaw M. Kinetics of carbamate formation 
+and breakdown. J. Am. Chem. Soc. 90, 
+6795–6803 (1968).
+34	
+Blauwhoff PMM, Versteeg GF, van Swaaij 
+WPM. A study on the reaction between CO2 
+and alkanolamines in aqueous solution. 
+Chem. Eng. Sci. 38, 1411–1429 (1983).
+n 
+Useful paper describing reactions between 
+CO2 and amine.
+35	
+Sholeh M, Dindore VY, Svendsen HF. 
+Kinetics of the reaction of carbon dioxide 
+with aqueous solutions of 2-((2-aminoethyl) 
+amino) ethanol. Ind. Eng. Chem. Res. 46, 
+385–394 (2007).
+36	
+Versteeg GF, van Swaaij WPM. On the 
+kinetics between CO2 and alkanolamines 
+both in aqueous and non-aqueous solution 
+– I. Primary and secondary amines. Chem. 
+Eng. Sci. 43, 573–585 (1988).
+37	
+Laddha SS, Danckwerts PV. Reaction of 
+CO2 with ethanolamines; kinetics from 
+gas-absorption. Chem. Eng. Sci. 36, 229–230 
+(1981).
+38	
+da Silva EF, Svenden HF. Ab initio study of 
+the reaction of carbamate formation from 
+CO2 and alkanolamines. Ind. Eng. Chem. 
+Res. 43, 3413–3418 (2004).
+n 
+Useful paper on carbamate stability.
+39	
+Ohno K, Inoue Y, Yoshida H, Matsuura H. 
+Reaction of aqueous 2-(N-methylamino)
+ethanol solutions with carbon dioxide. 
+Chemical species and their conformations 
+studies by vibration spectroscopy and ab 
+initio theories. J. Phys. Chem. A 103, 
+4283–4292 (1999).
+40	
+Vaidya PD, Kenig EY. Termolecular kinetics 
+model for CO–alkanolamine reactions: an 
+overview. Chem. Eng. Technol. 33, 1577–1581 
+(2010).
+41	
+Crooks JE, Donnellan JP. Kinetics and 
+mechanism of the reaction between carbon 
+dioxide and amines in aqueous solutions. 
+J. Chem. Soc. Perkin Trans. II 331–333 
+(1989).
+n  n 
+First paper describing the termolecular 
+mechanism.
+42	
+Donaldson TL, Nguyen YN. Carbon dioxide 
+reaction kinetics and transport in aqueous 
+amine membranes. Ind. Eng. Chem. Fundam. 
+10, 260–266 (1980).
+n 
+First paper proposing the base-catalyzed 
+hydration mechanism of CO2.
+43	
+Alvarez-Fuster C, Midoux N, Laurent A, 
+Charoentier JC. Chemical kinetics of carbon 
+dioxide with amine in pseudo m–nth order 
+conditions in aqueous and organic solutions. 
+Chem. Eng. Sci. 35, 1717–1723 (1980).
+44	
+Pinsent BRW, Pearson L, Roughton FWJ. 
+The kinetics of combination of carbon 
+dioxide with hydroxide ions. Trans. Faraday 
+Soc. 52, 1512–1520 (1956).
+45	
+Versteeg GF, van Dijck LA, van Swaaij PM. 
+On the kinetics between CO2 and 
+alkanolamines both in aqueous and 
+non-aqueous solutions, an overview. Chem. 
+Eng. Commu. 144, 113–158 (1996).
+n  n 
+Useful paper on the kinetics of CO2 
+absorption into amine solutions.
+46	
+Xiao J, Li CW, Li MH. Kinetics of 
+absorption of carbon dioxide in aqueous 
+solutions of 2-amino-2-methyl-1-
+propanol + monoethanolamine. Chem. Eng. 
+Sci. 55, 161–175 (2000).
+47	
+Vaidya PD, Mahajani VV. Kinetics of the 
+reaction of CO2 with aqueous solution 
+containing monoethanolamine, N-methyl-2-
+pyrrolidone, and diethylene glycol. Ind. Eng. 
+Chem. Res. 44, 1868–1873 (2005).
+48	
+Sada E, Kumazawa H, Han Q, Matsuyama 
+H. Chemical kinetics of the carbon dioxide 
+with ethanolamines in nonaqueous solvents. 
+AIChE J. 31, 1297–1303 (1985).
+49	
+Versteeg GF, Oyevaar MH. The reaction 
+between CO2 and diethanolamine at 298 K. 
+Chem. Eng. Sci. 44, 1264–1268 (1989).
+50	
+Little RJ, Versteeg GF, van Swaaij WPM. 
+Kinetics of CO2 with primary and secondary 
+amines in aqueous solutions – II. Influence 
+of temperature on zwitterion formation and 
+deprotonation rates. Chem. Eng. Sci. 47, 
+2037–2045 (1992).
+51	
+Zhang X, Zhang CF, Liu Y. Kinetics of 
+absorption of CO2 into aqueous solution of 
+MDEA and blended with DEA. Ind. Eng. 
+Chem. Res. 41, 1135–1141 (2002).
+52	
+Yu WC, Astarita G, Savage DW. Kinetics of 
+carbon dioxide absorption in aqueous 
+solutions of methyldiethanolamine. Chem. 
+Eng. Sci. 40, 1585–1590 (1985).
+53	
+Little RJ, van Swaaij WPM, Versteeg GF. 
+Kinetics of carbon dioxide with tertiary 
+amines in aqueous solution. AIChE J. 36, 
+1633–1640 (1990).
+54	
+Haimour N, Ali B, Sandall OC. Kinetics of 
+the reaction between carbon dioxide and 
+methyldiethanolamine. Chem. Eng. Sci. 42, 
+1393–1398 (1987).
+55	
+Javier BG, Gabriel RI, Ali B, Sandall OC. 
+Kinetics of the reaction between carbon 
+dioxide and triethanolamine in aqueous 
+solutions. Chem. Eng. Sci. 45, 3407–3415 
+(1990).
+56	
+Chakraborty AK, Astarita G, Bischoff KB. 
+CO2 absorption in aqueous solutions of 
+hindered amines. Chem. Eng. Sci. 41, 
+997–1003 (1986).
+n 
+One of the first papers studying the 
+reaction mechanism of AMP.
+57	
+Yih SM, Shen KP. Kinetics of carbon 
+dioxide reaction with sterically hindered 
+2-amino-2-methyl-1-propanol aqueous 
+solutions. Ind. Eng. Chem. Res. 27, 
+2237–2241 (1988).
+
+=== PDF p.21 ===
+Carbon Management (2012) 3(2)
+future science group
+220
+ Review Series  Sema, Naami, Liang et al.
+58	
+Bosch H, Versteeg GF, van Swaaij WPM. 
+Kinetics of the reaction of CO2 with the 
+sterically hindered amine 2-amino-2-
+methylpropanol at 298 K. Chem. Eng. Sci. 45, 
+1167–1173 (1990).
+59	
+Xu S, Wang YW, Otto FD, Mather AE. 
+Kinetics of the reaction of carbon dioxide 
+with 2-amino-2-methyl-1-propanol solutions. 
+Chem. Eng. Sci. 51, 841–850 (1996).
+60	
+Dang H, Rochelle GT. CO2 absorption rate 
+and solubility in monoethanolamine/
+piperazine/water. Sep. Sci. Technol. 38, 
+337–357 (2003).
+61	
+Derks PWJ, Kleingeld C, van Aken C, 
+Hogendoorn JA, Versteeg GF. Kinetics of 
+absorption of carbon dioxide in aqueous 
+piperazine solution. Chem. Eng. Sci. 61, 
+6837–6854 (2006).
+n  n 
+First paper describing the zwitterion 
+mechanism.
+62	
+Hetzer H, Robinson R, Bates R. Dissociation 
+constant of piperazinium ion and related 
+thermodynamic quantities from 0 to 50°C. 
+J. Phy. Chem. 72, 2081–2086 (1967).
+63	
+Ermathkov V, Kamps APS, Maurer G. 
+Chemical equilibrium constant for the 
+formation of carbamates in (carbon 
+dioxide + piperazine + water) from 
+1H-NMR-spectroscopy. J. Chem. Therm. 
+35, 1277–1289 (2002).
+64	
+Chakravaty T, Phukan UK, Weiland RH. 
+Reaction of acid gases with mixtures of 
+amines. Chem. Eng. Prog. 81, 32–36 (1985).
+65	
+Bruder P, Grimstvedt A, Mejdell T, Svendsen 
+HF. CO2 capture into aqueous solutions of 
+piperazine activated 2-amino-2-methyl-1-
+propanol. Chem. Eng. Sci. 66, 6193–6198 
+(2011).
+66	
+Hagewiesche DP, Ashour SS, Al-Ghawas HA, 
+Sandall OC. Absorption of carbon dioxide 
+into aqueous blends of monoethanolamine 
+and N-methyldiethanolamine. Chem. Eng. 
+Sci. 50, 1071–1079 (1995).
+n 
+One of the first papers on comprehensive 
+numerically solved kinetics modeling.
+67	
+Rinker EB, Ashour SS, Sandall OC. Kinetics 
+and modeling of carbon dioxide absorption 
+into aqueous solutions of 
+N-methyldiethanolamine. Chem. Eng. Sci. 50, 
+755–768 (1995).
+68	
+Barakat HZ, Clark JA. On the solution of the 
+diffusion equation by numerical methods. 
+J. Heat Transfer 88, 421–427 (1966).
+69	
+Edali M, Aboudheir A, Idem R. Kinetics of 
+carbon dioxide absorption into mixed aqueous 
+solutions of MDEA and MEA using laminar 
+jet apparatus and numerically solved 
+absorption-rate/kinetic model. Presented at: 
+2007 COMSOL Conference. Boston, USA, 
+4–6 October 2007.
+70	
+Edali M, Aboudheir A, Idem R. Kinetics of 
+carbon dioxide absorption into mixed aqueous 
+solutions of MDEA and MEA using laminar 
+jet apparatus with numerically solved 2D 
+absorption rate/kinetics model. Int. J. Greenh. 
+Gas Control 3, 550–560 (2009).
+n  n 
+First paper presenting 2D comprehensive 
+numerically solved kinetics model.
+71	
+Idem R, Edali M, Aboudheir A. Kinetics, 
+modeling, and simulation of the experimental 
+kinetics data of carbon dioxide absorption 
+into mixed aqueous solutions of MDEA and 
+PZ using laminar jet apparatus with a 
+numerically solved absorption-rate/kinetics 
+model. Energ. Procedia 1, 1343–1350 (2009).
+72	
+Mandal BP, Bandyopadhyay SS. Simulation 
+absorption of carbon dioxide and hydrogen 
+sulfide into aqueous blends of 2-amino-2-
+methyl-1-propanol and diethanolamine. 
+Chem. Eng. Sci. 60, 6438–6451 (2005).
+73	
+da Silva EF, Svendsen HF. Computational 
+chemistry study of reactions, equilibrium and 
+kinetics of chemical CO2 absorption. Int. 
+J. Greenh. Gas Control 1, 151–157 (2007).
+74	
+Kucka L, Richer J, Kenig EY, Gorak A. 
+Determination of gas–liquid reaction kinetics 
+with stirred cell reactor. Sep. Purif. Technol. 
+31, 163–175 (2003).
+75	
+Hikita H, Asai S, Ishikawa H, Honda M. The 
+kinetics of reactions of carbon dioxide with 
+monoethanolamine, diethanolamine and 
+triethanolamine by a rapid mixing method. 
+Chem. Eng. J. 13, 7–12 (1977).
+  
+ Patents
+101	 Gelowitz D, Idem RO, Tontiwachwuthikul P: 
+PCT/CA2008/001029 (2008).
+102	 Appl M, Wagner U, Henrici HJ, Kuessner K, 
+Volkamer K, Fuerst E: US4336233 (1982).

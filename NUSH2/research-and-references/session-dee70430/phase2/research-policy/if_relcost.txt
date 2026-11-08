@@ -1,0 +1,1335 @@
+                      EU Grants: InnovFund Relevant Costs methodology: V5.0 ­ 01.12.2025
+
+                      HISTORY OF CHANGES
+
+Version  Publication                                        Changes
+    1.0       date
+    2.0                Initial version
+    3.0  01.11.2022
+         01.03.2023    New section for Small-Scale Call (SSC); updated glossary
+    3.1  01.11.2023
+    4.0                Deletion of the "levelised cost" methodology and reduction to two
+         15.12.2023      methodologies ("no reference plant" and "reference plant")
+    5.0
+         15.11.2024    "no reference plant" becomes the default methodology
+                       Deletion of the decision tree
+         01.12.2025    Alignment of the methodologies for Large, Medium and Small
+
+                         scale topics
+                       Simplification of the WACC computation with default beta and
+
+                         default Equity Risk Premium Clarification of definition of Capex
+                         used for relevant costs computation for multi-phase projects
+
+                       Clarification on computation of revenues and cost before entry
+                         into operation
+
+                       Change in wording on relevant costs computation during
+                         operation
+
+                       Clarification on public support
+
+                       Clarification on maintenance CAPEX
+                       Clarification on the possibility to combine sheets from the
+
+                         detailed financial model and FIF
+                       Clarification on the calculation of relevant costs if entry into
+
+                         operation date does not coincide with the start of a calendar year
+                       Additional guidance specific to maritime and aviation projects
+                       Update of Appendix with support data materials for the WACC
+
+                         calculation
+
+                       Clarification on wording related to 1/ the duration of the financial
+                         projections; 2/ requirements regarding the applicant's detailed
+                         financial model; 3/ rules on lease financing; 4/ treatment of
+                         revenue arising from decommissioning
+
+                       Additional guidance on boundaries for relevant costs calculation
+                         and revenue/cost assumptions for integrated projects
+
+                       Simplification of the WACC computation with fixed beta, default
+                         equity risk premium and innovation premium
+
+                       Update on rules related to other public support
+                       Update of the list of other excluded items
+                       Update of definitions in Glossary definition (i.e. CAPEX, lease,
+
+                         operational benefit, OPEX, project lifetime)
+                       Update of Appendix with support data materials for the WACC
+
+                         calculation
+
+                                          2
+                                                       EU Grants: InnovFund Relevant Costs methodology: V5.0 ­ 01.12.2025
+                                                          Table of contents
+
+1. Background...............................................................................................................4
+2. Relevant costs methodologies......................................................................................5
+
+         2.1 Description of the methodologies.......................................................................5
+                      2.1.1 Option 1 ­ The no reference plant ......................................................5
+                      2.1.2 Option 2 ­ The Reference plant methodology .......................................5
+
+         2.2 Selection of the appropriate relevant costs methodology ......................................6
+3. Calculation of relevant costs........................................................................................7
+
+         3.1 The no reference plant methodology [Option 1] ..................................................7
+         3.2 The reference plant methodology [Option 2] .......................................................7
+
+                      3.2.1 WACC to be used in the Reference plant methodology...........................8
+         3.3 Detailed budget table/relevant costs calculator/financial information file (FIF) template
+
+                  to calculate relevant costs ..............................................................................8
+         3.4 Parameters applicable to Relevant Cost methodologies.........................................9
+
+                      3.4.1 General considerations .................................................................... 10
+                      3.4.2 Maritime and Aviation transport sectors ............................................ 12
+                      3.4.3 Financial projections ....................................................................... 13
+                      3.4.4 Project WACC................................................................................. 14
+                      3.4.5 Carbon price and EU ETS allowances................................................. 16
+                      3.4.6 Indexation/inflation ........................................................................ 17
+                      3.4.7 By-products and savings ................................................................. 17
+                      3.4.8 Decommissioning ........................................................................... 17
+                      3.4.9 Other public support ....................................................................... 17
+                      3.4.10 Parameters excluded from relevant costs calculation ......................... 18
+Appendix 1 ................................................................................................................. 20
+Appendix 2 ................................................................................................................. 24
+
+                                                                                                                                                                  3
+                                                       EU Grants: InnovFund Relevant Costs methodology: V5.0 ­ 01.12.2025
+
+1. Background
+The Commission Delegated Regulation (EU) 2019/856 of 26 February 2019, defines
+relevant costs in Article 5(1), as follows:
+"The relevant costs shall be the net extra costs that are borne by the project proponent
+as a result of the application of the innovative technology related to the reduction or
+avoidance of the greenhouse gas emissions.
+The net extra costs shall be calculated as the difference between (i) the best estimate
+of economic costs (covering investment and operation) and economic revenues and
+operational benefits, and (ii) the best estimate of the economic costs and revenues and
+operational benefits of a project using a conventional technology with the same capacity
+in terms of effective production of the analogous final product.
+The Commission may also decide that the relevant costs shall be the net extra costs,
+calculated as the difference between the best estimate of (i) the economic costs
+(covering investment and operation) and (ii) the economic revenues and operational
+benefits."
+The latter methodology described in the article above will be referred to in this
+document as the "no reference plant" methodology while the former methodology
+(where the calculation includes a comparison with a conventional technology) will be
+referred to in this document as the "reference plant" methodology.
+
+                                                                                                                                                                  4
+                                                       EU Grants: InnovFund Relevant Costs methodology: V5.0 ­ 01.12.2025
+
+2. Relevant costs methodologies
+
+As mentioned in the background section, two relevant costs methodologies exist to
+compute the relevant costs of a project which constitute the basis for calculating the
+Innovation Fund Grant: the no reference plant (Option 1) and the reference plant
+(Option 2) methodologies. The no reference plant methodology is the default option to
+use. Only under the specific conditions set out in this document may the reference plant
+methodology be used as a fallback option.
+
+These methodologies apply to all topics as defined in the Innovation Fund `regular' calls
+for proposals (and do not apply to the Innovation Fund auction calls).
+
+2.1 Description of the methodologies
+
+2.1.1 Option 1 ­ The no reference plant methodology
+
+Option 1 is the default option and corresponds to the provision of the Innovation Fund
+Delegated Regulation which defines the relevant costs as "the net extra costs,
+calculated as the difference between the best estimate of (i) the economic costs
+(covering investment and operation) and (ii) the economic revenues and operational
+benefits."
+
+More specifically, the relevant costs shall be calculated using the best estimate of the
+undiscounted total eligible project capital expenditure (CAPEX) and the net present
+value (NPV)1 of the eligible project revenues, operational benefits, maintenance CAPEX,
+and operational costs (OPEX), arising during construction and over the first ten years
+of the project's operation. This is the default methodology for all projects.
+
+2.1.2 Option 2 ­ The Reference plant methodology
+
+Option 2 is the-fall back option and corresponds to the provision of the Innovation Fund
+Delegated Regulation which defines the relevant costs as "the difference between (i)
+the best estimate of economic costs (covering investment and operation) and economic
+revenues and operational benefits, and (ii) the best estimate of the economic costs and
+revenues and operational benefits of a project using a conventional technology with the
+same capacity in terms of effective production of the analogous final product."
+
+This methodology compares the eligible project CAPEX and the NPV of the eligible
+project revenues, operational benefits, maintenance CAPEX and OPEX arising during
+construction and over the first ten years of operation to those of a reference plant or
+unit of the same size and output using a conventional technology.
+
+This fallback methodology must not be used in the case of modification of an existing
+plant/unit (for instance building or transforming a part of the existing installation) or
+integration of only parts of the equipment, system or process of a new plant/unit. In
+this instance, applicants shall use the no reference plant methodology and consider the
+incremental step to the existing production process as the Innovation Fund project.
+
+The reference plant methodology may only be used if:
+
+     - The Innovation Fund project relates to the building and operation of a new
+          plant/unit.
+
+     - The reference plant/unit has similar characteristics in terms of capacity and
+          output as the Innovation Fund project.
+
+1 Net Present Value (NPV) is the difference between the present value (PV) of cash inflows and present value
+  of cash outflows with a specific discount rate.
+
+                                                                                                                                                                  5
+                                                       EU Grants: InnovFund Relevant Costs methodology: V5.0 ­ 01.12.2025
+
+     - The reference plant must be established in an EU/EEA country and complies with
+          the EU environmental standards and with EU legislation, including the EU ETS
+          benchmark for industrial products where relevant2.
+
+     - Applicants provide the documents necessary to assess the credibility of the
+          financial and technical data of the reference plant, including proof of planning of
+          such a (reference) plant/unit as an alternative to the project, formal board
+          documents, financial reports, internal business plans or studies. These
+          documents must include the description of assumptions underlying the financial
+          data and calculations (notably for the WACC, price, volumes, inflation rate used
+          to calculate projected revenues, CAPEX, OPEX, maintenance CAPEX), where
+          relevant supported by quotes from (potential) suppliers and customers and by
+          external market studies if available.
+
+     - A complete and detailed set of verifiable financial projections including CAPEX,
+          revenues, operational benefits, maintenance CAPEX, and operational costs
+          (OPEX) for the reference plant is added to the applicant's detailed financial
+          model.
+
+2.2 Selection of the appropriate relevant costs methodology
+
+In order to harmonize the relevant costs calculation among applicants, the "default"
+methodology is Option 1: the no reference plant methodology, that should be suitable
+for all projects.
+
+In situations where a reference plant can be defined as described in section 2.1.2 above,
+applicants may use Option 2: the reference plant methodology. In this "fall back"
+methodology, the project costs and revenues are compared to the CAPEX, OPEX,
+maintenance CAPEX and revenues of a plant/unit with conventional technology that
+must be established in an EEA country and complying with EU environmental standards
+and with EU legislation, including the EU ETS benchmarks for industrial products (where
+relevant).
+
+Applicants will need to decide whether or not to apply the default methodology of Option
+1. When choosing Option 2, applicants will have to demonstrate that the conditions for
+using the reference plant methodology listed in section 2.1.2 apply and ensure the
+traceability and transparency of the calculations. Applicants must demonstrate that
+they fulfill these conditions and justify the choice of Option 2 in the specific box on cost
+efficiency in the Application Form Part B.
+
+If the data is not fully available and/or the estimated values for the reference plant
+cannot be justified in full transparency, applicants must use the no reference plant
+methodology.
+
+Insufficient demonstration that the conditions for the use of the reference plant
+methodology are satisfied will be penalized during the evaluation and may lead to a
+score below the threshold for the `quality of the cost efficiency' award criterion.
+
+2 A product benchmark is based on the average GHG emissions of the best performing 10% of the
+installations producing that product in the EU and EEA-EFTA states. Applicants should refer to: Commission
+Implementing Regulation (EU) 2021/447 of 12 March 2021 determining revised benchmark values for free
+allocation of emission allowances for the period from 2021 to 2025 pursuant to Article 10a(2) of Directive
+2003/87/EC of the European Parliament and of the Council. Available at: https://eur-
+lex.europa.eu/eli/reg_impl/2021/447.
+
+                                                                                                                                                                  6
+                                                       EU Grants: InnovFund Relevant Costs methodology: V5.0 ­ 01.12.2025
+
+3. Calculation of relevant costs
+
+3.1 The no reference plant methodology [Option 1]
+
+Under the no reference plant methodology, the relevant costs are calculated as follows:
+
+      Relevant costs = CAPEX + PV of OPEX + PV of maintenance CAPEX ­ PV of
+      operational benefits ­ PV of revenues (including during construction where
+      applicable), over the first 10 years of operation after entry into operation
+
+Where PV stands for present value; CAPEX, OPEX, maintenance CAPEX, operational
+benefits and revenues are defined in the glossary of Appendix 1.
+
+      CAPEX : Project capital expenditure incurred before the entry into operation of the
+      project
+
+      PV of OPEX : Present value of project operational expenditure
+
+      PV of maintenance CAPEX : Present value of project maintenance CAPEX incurred
+      after the entry into operation of the project
+
+      PV of operational Benefits : Present value of project operational benefits
+
+      PV of revenues : Present value of project revenues
+
+This methodology derives the relevant costs as the best estimate of the total CAPEX
+and the NPV of revenues, OPEX, maintenance CAPEX and operational benefits arising
+during construction and over the first ten years of operation after the project's
+entry into operation3. The PV (and hence the NPV) should be computed using the
+project weighted average cost of capital (WACC) described in sections 3.2.1 and 3.4.4
+below.
+
+Any additional revenues of the project (for example in the form of monetisation of the
+by-products value(s)) or cost savings must also be included in the calculation.
+
+Applicants should pay attention to the parameters described in section 3.4 below. In
+particular, non-eligible parameters must be excluded from the relevant costs
+calculation. In addition, applicants must justify in detail the scope and computation of
+the revenues and costs in their business plan, the applicant's detailed financial model
+and application form Part B. All these documents are mandatory and will form an
+integral part of the application. Please refer to section 5 of the call document for the
+full list of mandatory documents.
+
+3.2 The reference plant methodology [Option 2]
+
+The methodology derives the relevant costs from the difference in CAPEX, net present
+value (NPV) of the OPEX, maintenance CAPEX, revenues and operational benefits
+arising during construction and over the first ten years of operation after the
+project's entry into operation between the project and the reference plant:
+
+      Relevant costs = InnovFund project CAPEX ­ reference plant CAPEX + (PV of
+      InnovFund project OPEX and maintenance CAPEX ­ PV of reference plant OPEX and
+      maintenance CAPEX) ­ (PV InnovFund project operational benefits ­ PV of
+
+3 The glossary of the call text defines entry into operation as "The moment in the project development cycle
+where all elements and systems required for operation of the project have been tested and activities resulting
+in effective avoidance of greenhouse gas emissions have commenced. For projects with multiple phases
+(meaning several entry into operation dates in connection with implementation of successive phases, for
+example for manufacturing projects), the entry into operation is defined as the entry into operation of the
+last phase of the project."
+
+                                                                                                                                                                  7
+                                                       EU Grants: InnovFund Relevant Costs methodology: V5.0 ­ 01.12.2025
+
+      reference plant operational benefits) ­ (PV of InnovFund project revenues ­ PV of
+      reference plant revenues)
+
+See glossary in Appendix 1 for the definition of CAPEX, OPEX, maintenance CAPEX,
+operational benefits and revenues.
+
+The PV (and hence the NPV) for the reference plant should be computed using a WACC
+that will be different than the one for the project (see sections 3.2.1 and 3.4.4 below
+for more details).
+
+Any additional revenues of the project (for example in the form of monetisation of the
+by-products value(s)) or cost savings also need to be included in the calculation of the
+relevant costs.
+
+Applicants should pay attention to the parameters described in section 3.4 below. In
+particular, non-eligible parameters must be excluded from the relevant costs
+calculation. In addition, applicants must justify in detail the scope and computation of
+the revenues and costs in the project's business plan, application form Part B, reference
+plant documents, and applicant's detailed financial model, which should include all
+computation details for both the project and the reference plant. All these documents
+are mandatory and will form an integral part of the application. Please refer to section
+5 of the call document for the full list of mandatory documents.
+
+3.2.1 WACC to be used in the Reference plant methodology
+
+In addition to the conditions governing the selection of the reference plant described in
+section 2.1.2, applicants need to make specific assumptions with respect to the WACC
+for the reference plant to enable a robust calculation of relevant costs under the
+reference plant methodology.
+
+WACC for the (innovative) project: Project WACC should follow the guidelines laid down
+in section 3.4.4.
+
+WACC for the reference plant: same guidelines as for project WACC except for the
+following:
+
+     · for cost of debt, applicants should use levels generally assumed for the sector;
+          and
+
+     · for cost of equity, applicants should remove any innovation premium assumed
+          in the calculation of the cost of equity for the (proposed innovative) project.
+
+For the leverage in the WACC for the reference plant, applicants should use the same
+gearing ratio (D/V and E/V ratios as defined under 3.4.4) as for the project WACC.
+
+3.3 Detailed budget table/relevant costs calculator/financial information file
+(FIF) template to calculate relevant costs
+
+The relevant costs are calculated automatically once the appropriate cells in the detailed
+budget table/relevant costs calculator (also called `financial information file (FIF)')
+relevant costs excel file are filled in.
+
+This template is available via the Funding and Tenders Portal and its use is mandatory
+for all applicants. Changes to the formulas or sheets of the FIF are not allowed.
+
+The FIF and the applicant's detailed financial model must include financial projections
+over the expected project lifetime, as defined in the glossary of this methodology
+and the call text, to ensure that the project's profitability is computed over the whole
+expected project lifetime. The project lifetime must not be confused with the project
+duration which is also defined in the glossary of the call document. The relevant costs
+
+                                                                                                                                                                  8
+                                                       EU Grants: InnovFund Relevant Costs methodology: V5.0 ­ 01.12.2025
+
+will be automatically calculated in the FIF on the basis of the total CAPEX, and the NPV
+of revenues, OPEX, maintenance CAPEX, and operational benefits arising during
+construction and over the first 10 years of operation after entry into operation (including
+during construction where applicable). If financial projections are not computed in the
+FIF and the applicant's detailed financial model over the expected project lifetime, this
+may be penalized during the proposal evaluation under the `financial maturity' award
+criterion.
+
+The FIF contains amongst others the following information:
+
+    (1) "Financial Model Summary Sheet" including a summary overview of the financial
+
+           projections including revenues, OPEX and CAPEX, as well as key elements of
+           the profit & loss account, balance sheet and cash flow statements. If a project
+           anticipates to generate OPEX savings during operation (for example lower fuel
+           or heat consumption), these should be appropriately reflected in the projections.
+
+     (2) funding sources and uses table in the "Summary Chart" sheet with the financing
+           plan of the project's total CAPEX (eligible and ineligible items) expected at
+           financial close
+
+     (3) table in the "Grant Breakdown Inputs" sheet with Innovation Fund grant
+           breakdown per work package and beneficiary/affiliated entity
+
+     (4) "RC Calculation" sheet including the details of the relevant costs calculation
+           based on the selected relevant costs methodology. Applicants are instructed to
+           copy the values of the relevant costs and requested Innovation Fund grant
+           amount rounded to the nearest euro as shown at the bottom of the sheet into
+           the application form Part A
+
+     (5) cost efficiency calculation in the "Cost Efficiency Calculation" sheet; and
+
+    (6) "Part C Support Sheet" as a support for manually entering the corresponding
+
+           data/indicators in the application form Part C. This sheet is indicative and it is
+           the responsibility of the applicant to ensure that the data provided in the Part C
+           Support Sheet is accurate and consistent with the other application documents.
+
+The FIF calculates the relevant costs over the first 10 years of the project's operation.
+If the entry into operation date does not coincide with the start of a particular calendar
+year, the FIF will automatically take the pro rata share of revenues, OPEX, maintenance
+CAPEX and operational benefits for the calendar year corresponding to the 10th year of
+operation for the calculation of the relevant costs.
+
+3.4 Parameters applicable to Relevant Cost methodologies
+
+Applicants must pay attention to the following parameters as further detailed below to
+enable a robust calculation of relevant costs:
+
+     - general considerations
+
+     - maritime and aviation transport sectors
+
+     - financial projections (including revenues, CAPEX, maintenance CAPEX and
+          OPEX)
+
+     - project WACC (discount rate)
+
+     - carbon price and EU ETS allowances
+
+     - indexation/inflation
+
+                                                                                                                                                                  9
+                                                       EU Grants: InnovFund Relevant Costs methodology: V5.0 ­ 01.12.2025
+
+     - by-products and savings
+
+     - decommissioning
+
+     - other public support
+
+     - parameters excluded from relevant costs calculation.
+
+As indicated in the business plan template, explain the assumptions made on expected
+Revenues, CAPEX, and OPEX breakdowns used for the financial projections of the FIF
+and the applicant's detailed financial model. In addition, applicants need to justify the
+assumptions on volumes and prices from potential off-takers, suppliers, and
+construction contractors, and make precise references to the documents submitted in
+the project contract terms annexes (cf. section 5 of the call text) that provide the basis
+for these assumptions.
+
+3.4.1 General considerations
+
+Boundaries for relevant costs calculation
+
+Applicants must calculate relevant costs in line with the project scope (please refer to
+section 2 of the call document for details on activities that can be funded) and the
+guidelines in the methodology for the calculation of relevant costs.
+
+All CAPEX, revenues, operating expenditure, maintenance CAPEX and operational
+benefits related to investments within the project scope shall be included in the financial
+projections. CAPEX and OPEX within the project scope but not eligible for the calculation
+of relevant costs must be included in the "Financial Model Summary Inputs" sheet of
+the FIF as "CAPEX items not included in relevant costs (if relevant)" or "OPEX items not
+included in relevant costs (if relevant)". This is to ensure that these costs are taken
+into account in the project's financial projections without impacting the relevant costs
+calculation.
+
+The detailed description of which CAPEX and OPEX items are eligible for the calculation
+of the relevant costs can be found in the glossary of this document, as well as the
+"Intro& Definitions" sheet of the FIF.
+
+The scope of the project must be consistent across the whole application. The same
+project scope shall be considered for the description of the `degree of innovation',
+`project maturity', `GHG emission avoidance calculation' award criteria, and for the
+calculation of the relevant costs, unless otherwise stated in the call document.
+
+Intermediary products
+
+All projects will have an identifiable product or more (final or intermediary) products
+which are the output of the project (the valorization of captured CO2 is also an output).
+All CAPEX, OPEX, revenues and operational benefits taken into account in the
+applicant's detailed financial model and business plan must be linked to this
+product/these products. If the product uses intermediary products or goods produced
+by installations which are outside of the project scope, then only their purchase price
+can be taken into account as project costs.
+
+Incremental / add-on projects
+
+When a project relates to building or transforming part of an existing installation, only
+the CAPEX of this new part may be taken into account for the relevant costs
+calculations. Likewise, only the contribution of this partial process/installation to the
+overall operational cost of the full process/installation may be used in the calculations.
+The revenues that can be used are the ones generated by the incremental investment,
+not those of the overall existing process. The logic applied for the calculation of relevant
+
+                                                                                                                                                                10
+                                                       EU Grants: InnovFund Relevant Costs methodology: V5.0 ­ 01.12.2025
+
+costs must be the same as the one used for the calculation of GHG emissions (i.e.
+capturing what has changed with the proposed project).
+
+For example: for a carbon capture project, applicants must use as input for the FIF the
+CAPEX of the capture project, its dedicated operational cost (including maintenance
+CAPEX as specified above) and the project revenues as well as potential savings related
+to the carbon capture project (such as avoided purchase of EU ETS allowances (EUA),
+sale of excess of free EUA, and any green premium for the base product of the
+existing plant to which the capture unit is added).
+
+Incremental projects may be expected to have low profitability and/or negative
+operational cash flows when considered in isolation, but the overall process/installation
+with the integrated project included could still be financially viable. Applicants must in
+this case add in the applicant's detailed financial model financial projections
+demonstrating the aggregated impact of the innovative project on the existing
+installation, by inserting separate sheets with the detailed computations.
+
+Integrated projects
+
+In the case of integrated projects (e.g., the off-taker or the feedstock supplier is the
+same legal entity or belongs to the same group as the beneficiary producing the
+principal/ by-products), the sales price of the production or the purchase price of the
+feedstock should be a fair market price, such as the estimated production costs plus a
+reasonable margin.
+
+Applicants shall provide a detailed justification for the assumed prices and operating
+costs in the business plan. These assumptions must be evidenced through relevant
+supporting documents (letters of support, external market studies, past orders, as
+appropriate).
+
+Lease financing
+
+Applicants are allowed to include lease expenses (excluding cost of financing the lease)
+as OPEX in the relevant costs calculation.
+
+Applicants must clearly identify the owner of an asset that is leased (the lessor) and
+submit indicative contract terms to justify the assumed length, schedule and expected
+payments of the lease. The purchase option price upon termination of the lease can be
+included in the financial projections as OPEX, if there is a reasonable certainty that it
+will be exercised and provided that the price is backed by the terms of an indicative
+lease contract in the application.
+
+Applicants shall provide the financial projections in connection with the lease contract
+over the expected project lifetime to ensure that the project's profitability is computed
+over the expected project lifetime. However, for the relevant costs, the FIF will
+automatically include only the payments associated with the lease contract in the
+calculation that arise within the first ten years of operation after the entry into
+operation.
+
+In particular, financial leases are widely used for the financing of newbuilt ships or
+planes. The ability of the lessor to reach final investment decision for the constructed
+ship or plane and for the lease agreement to be secured by financial close, will be
+important aspects for the evaluation of the `financial maturity' award criterion.
+
+Leasing of existing producing assets/facilities commissioned and under operation before
+submission of the application (such as existing manufacturing plants or energy
+generation assets) is not permitted (in line with provisions under "Other excluded
+items" in section 3.4.9).
+
+                                                                                                                                                                11
+                                                       EU Grants: InnovFund Relevant Costs methodology: V5.0 ­ 01.12.2025
+
+Contingencies
+
+Applicants are allowed to include contingencies in their CAPEX. However, robust
+justification must be included in the business plan as to why these contingencies are
+required, why they are at the level proposed. For example, this justification can be
+presented in the form of a deterministic calculation supported by a benchmark or
+previous experience which must be referenced, or a probabilistic calculation which must
+be accompanied by a summary of the calculation method. The soundness of this
+justification will be taken into account in the evaluation of the project's financial
+maturity.
+
+3.4.2 Maritime and Aviation transport sectors
+
+Installation of innovative technology into a new or retrofitted ship/plane
+
+Eligible activities for maritime and aviation projects are described in the call text.
+
+The examples below provide guidance for projects related to the production and/or
+installation of innovative technology (e.g. energy system, engine or equipment) into a
+new or retrofitted ship or plane.
+
+Example 1: manufacturing and installation of an energy-efficient engine on a newbuild
+vessel where construction of the newbuild vessel falls outside the project's scope
+
+Applicants must provide sufficiently detailed information in their application (for
+example in the form of indicative contracts/heads of terms) to justify the scope and
+estimated costs related to the part of the innovative technology which is built and
+installed on the vessel.
+
+For the relevant costs calculation, applicants shall use the no reference plant
+
+methodology and consider as the Innovation Fund project the incremental CAPEX,
+revenue and OPEX associated with the installation of the new equipment/system
+technology on the newbuilt ship.
+
+The CAPEX, OPEX, savings and revenues for the relevant costs calculation shall remain
+within the following boundaries: the CAPEX of producing and installing the innovative
+technology; the OPEX for operating the innovative technology; and revenues and
+savings proven to be directly derived solely from the new technology.
+
+In this specific example, applicants will use as input for the FIF: the CAPEX for the
+engineering, manufacturing and installation of the engine (where relevant), the OPEX
+linked to the engine's operation (for example fuel costs and maintenance service costs),
+and revenues directly related to the engine installation (such as avoided purchase of
+EU ETS allowances or the potential green premium paid by customers for operating the
+vessel with the new technology). However, in this specific example, any CAPEX related
+to the construction of the newbuild vessel, or revenues (such as charter income), or
+OPEX (for example crewing, insurance, port or dry docking costs) from operation of the
+vessel with no direct link to the operation of the engine must be excluded from the
+relevant costs calculation since they are falling outside of the project scope.
+
+Example 2: construction of a manufacturing plant of engines for small and medium-
+sized vessels
+
+For the relevant costs calculation, the project scope is limited to the manufacturing of
+engines.
+
+In this specific example, applicants will use as input for the FIF: the CAPEX associated
+with the plant construction and equipment; Revenues from the sale of engines to
+
+                                                                                                                                                                12
+                                                       EU Grants: InnovFund Relevant Costs methodology: V5.0 ­ 01.12.2025
+
+customers and OPEX for the operation the plant such as material, components, power
+and labor costs.
+
+3.4.3 Financial projections
+
+Key data inputs are based on financial projections over the expected project lifetime,
+which applicants are required to provide when filling in the FIF.
+
+In addition, applicants are required to provide the applicant's detailed financial model
+(i.e. mandatory as defined in section 5 of the call document). This model should include
+all detailed financial assumptions - derived among others from feasibility studies,
+preliminary contract terms, market analysis and other evidence based on the status of
+the project to date - as well as project financial statements (i.e. cash flow, profit and
+loss and balance sheet statements for the project), return computation, and sensitivity
+analysis. The detailed model should use formulas instead of hard figures and no macros.
+The projections of the applicant's detailed financial model must be consistent with those
+used in the FIF to derive the calculation of relevant costs. For this purpose, applicants
+can add and merge sheets of the detailed financial model and the FIF. Applicants
+must still submit the FIF and the applicant's detailed financial model as two
+distinct mandatory documents.
+
+If the applicants chose the reference plant methodology, they should add in the
+applicant's detailed financial model the same type of information for the reference plant
+as for the innovative project, by inserting separate sheets with the detailed
+computations.
+
+The financing plan must cover all the project costs. Non-eligible CAPEX and OPEX, which
+are excluded from the relevant costs calculation, should be clearly identified and
+encoded in the appropriate cells in the FIF4.
+
+Expansion CAPEX incurred after the defined date for entry into operation must not be
+included in the financial projections of the FIF, as they are considered outside the scope
+of the Innovation Fund project.
+
+The details of which elements of CAPEX are eligible for the calculation of the relevant
+costs can be found in the glossary of this document and in the sheet "Intro & definitions"
+of the FIF.
+
+Applicants must separate maintenance CAPEX from CAPEX in the applicant's detailed
+financial model. For the purposes of the relevant costs calculation, maintenance CAPEX
+must be solely related to maintaining the project's operational capacity and can only
+be incurred after the project's entry into operation and are discounted, alongside OPEX.
+
+Costs for activities incurred before the first day of the month after the proposal
+submission date are not eligible for the calculation of the relevant costs (please refer
+to section 10 of the call document). Therefore, any expenses incurred before the first
+day of the month following the proposal submission date, must be included in the
+"Financial Model Summary Inputs" sheet of the FIF as "CAPEX items not included in the
+relevant costs (if relevant)". This is to ensure that costs incurred before the proposal's
+submission do not impact the relevant costs calculation.
+
+4 In particular, lines "CAPEX items not included in relevant cost (if relevant) " and "Other OPEX for items
+      not included in relevant cost (if relevant)" in the "Fin Model Summary Inputs tab" of the FIF
+
+                                                                                                                                                                13
+                                                       EU Grants: InnovFund Relevant Costs methodology: V5.0 ­ 01.12.2025
+
+CAPEX taken into account in the relevant costs calculations should therefore include
+costs to be incurred before the project's entry into operation and should be connected
+with the development and construction of the project.
+
+For projects with multiple phases (meaning several entry into operation dates linked to
+successive phases, for example for manufacturing projects), the entry into operation
+will consequently be the entry into operation of the last phase of the project.
+
+This means that any CAPEX projected after entry into operation should not be intended
+to further expand the project's activities and production capacity. Only maintenance
+CAPEX (i.e. CAPEX in connection with replacement of key equipment implementation
+of periodic system updates, or other significant one-off purchases that are likely to
+occur periodically throughout the expected project lifetime) should be included in the
+calculation separately after the project's entry into operation. In the relevant costs
+calculation, maintenance CAPEX is discounted alongside OPEX.
+
+If the project is expected to have a low profitability (negative NPV), the confirmation
+of the funding support from the project shareholders to cover both the construction
+costs and any negative operational cash flows despite this low profitability, is
+considered essential. Furthermore, a clear explanation of the project's legal ownership
+structure and demonstration of the ability of the applicant and/or shareholders to inject
+the required equity will be important aspects for the evaluation of the financial maturity
+criterion.
+
+3.4.4 Project WACC
+
+The minimum required project return from investors is represented through the
+weighted average cost of capital (WACC) of the Project. This is the blended cost of
+capital of the project depending on the ratio of equity and debt expected to be secured
+at financial close to finance the project CAPEX. It is calculated using the following
+formula and the parameters detailed in Table 1 below:
+
+WACC = E/V * Re + D/V*Rd * (1-Td)5
+
+     · Re = cost of equity
+
+     · Rd = cost of debt
+
+     · E/V = equity portion of total capital (equity over total value of capital) to fund
+          project CAPEX
+
+     · D/V = debt portion of total capital (debt over total value of capital) to fund
+          project CAPEX
+
+     · Td = marginal tax rate prevailing in the country of the project
+
+The WACC is applied to discount future revenue and cost streams over the expected
+project lifetime. The WACC is an important mechanism to help reflect overall project
+risks. The WACC level also underpins the assessment of project profitability by external
+evaluators and must therefore be realistic. For example, using a very low WACC level
+- more in line with a company WACC - for a high-risk project is likely to be challenged
+by evaluators.
+
+To ensure equal treatment between projects, applicants must follow the methodology
+provided in this section to derive the project WACC and are not allowed to use their
+
+5 This is a nominal discount rate calculation (cost of debt and cost of equity already take into account
+inflation), consistent with the FIF inputs, which is also expressed in nominal terms.
+
+                                                                                                                                                                14
+                           EU Grants: InnovFund Relevant Costs methodology: V5.0 ­ 01.12.2025
+
+own corporate or company WACC. The assumptions of the WACC must be detailed and
+justified in the business plan.
+
+Table 1. Main parameters and instructions to calculate the project WACC
+
+Item                       Definition
+
+Cost of equity (Re)        Re = Rf + ( * ERP) + IP, where
+                           Rf = risk free rate
+                            = beta of the project
+                           ERP = equity risk premium6
+                           IP = innovation premium
+
+Risk-free rate (Rf)        Risk-free rate is the theoretical interest rate that a zero-risk investment will achieve.
+                           Applicants are required to select a value from the Table 2 in Appendix 2. This value
+                           corresponds to the monthly average over the last ten years of the ten-year government
+                           bond rate of the country where the project will be implemented.
+
+Equity risk premium (ERP)  For comparability across applications, the default equity risk premium is 6%, which
+                           reflects the European ERP.
+
+                           In duly justified cases, the equity risk premium can be adjusted to reflect the
+                           development, technical and/or operational risks associated with their project. Applicants
+                           may increase or decrease the default value, subject to a proper justification and must
+                           respect the lower boundary of 4% and the upper boundary of 8%.
+
+                           To the extent possible, applicants should quantify the perceived risks (in line with the
+                           risks identified in the proposal) and use this to justify any deviation from the default
+                           equity risk premium. Lack of a proper justification for the deviation from the default value
+                           may be penalized during the evaluation under the `quality of cost efficiency' award
+                           criterion.
+
+Beta ()                    For comparability across applications, the value of beta is fixed at 1.
+
+Innovation premium (IP)    For comparability across applications, the default innovation premium is 2.5% to reflect
+                           the risks associated with innovative projects.
+
+                           Applicants can add up to 0.5 percentage point to the default innovation premium to
+                           reflect the risks associated with highly innovative projects only in cases, where the
+                           project is representing a very strong innovation (that must also be demonstrated under
+                           the `degree of innovation' award criterion). Lack of a proper justification for the
+                           deviation from the default value maybe penalized during the evaluation under the
+                           `quality of cost efficiency' award criterion.
+
+Cost of debt               Rd = base rate + credit spread
+
+Base rate                  Applicants should use swap rates consistent with the average maturity of the project
+                           debt. Please take into account that, even if swap rates can be negative, banks will not
+                           lend money at negative rates, as most credit facility agreements will contain a `zero floor'
+                           which provides that, if the base rate is negative, it is deemed to be zero for the purposes
+                           of calculating interest under the agreement.
+
+Credit spread              The margin should be based on terms expected by debt providers and justified by the
+                           project risks, projected cash flows and in line with loan/debt market standards.
+                           Applicants should provide appropriate documentation for their chosen cost of debt.
+
+6 Additional return over the risk-free rate requested by investors to invest in the stock market.
+                                                                                                                                                                15
+                        EU Grants: InnovFund Relevant Costs methodology: V5.0 ­ 01.12.2025
+
+                        If a reference is not available for the particular technology, a premium over an
+                        established technology debt margin can be used and should be justified.
+
+Other elements of WACC
+
+Value of capital (V)    Total value of capital (equity plus debt), required to finance project CAPEX, as expected
+                        at financial close7. This does not include the Innovation Fund grant, any other EU grant
+                        or state aid used in the project financing plan.
+
+Debt portion of total Applicants should take the D/V ratio (i.e. proportion of debt relative to the total value of
+
+capital (D/V)           capital minus the public support injected to finance the project CAPEX) they contemplate
+
+                        and expect to be achievable for the project at financial close as implied by their projected
+
+                        financing plan and reflected in their "Financial Model Summary Input Sheet".
+
+                        If the project is carried out at applicant level and is financed directly from the balance
+                        sheet of the applicant legal entity, the corporate debt should be treated as debt in the
+                        D/V ratio. If the project financing plan envisages to raise debt, equity or equity linked
+                        instruments at parent company level and inject it into a distinct project legal entity, or to
+                        raise debt at project level with a mother company guarantee or use inter-company debt
+                        or bridge loan to equity, these funds must be treated as equity, not as debt in the D/V
+                        ratio.
+
+                        Applicants should not add any grant to the numerator of this D/V ratio.
+
+Equity portion of total Financing sources provided by existing shareholders or external equity investors
+
+capital (E/V)           including shareholder loans or other equity-like instruments should be treated as equity.
+
+                        Applicants should not add any grant to the numerator of this E/V ratio.
+
+3.4.5 Carbon price and EU ETS allowances
+
+Projects in sectors regulated by the EU ETS Directive that reduce their GHG emissions
+will, in most cases, benefit from revenues from the sale of the free allocation of EU ETS
+allowances that they will receive and do not need to surrender because of the reduced
+emissions below the applicable benchmark(s). Revenues from the sale of excess CO2
+
+emission allowances need to be included in the "Financial Model Summary Inputs" sheet
+
+of the FIF and will be treated as operational benefits in the relevant costs calculation.
+
+Applicants should assume carbon prices as they consider appropriate over the expected
+project lifetime, explaining why they have chosen to follow this approach in the
+application form and/or business plan. The carbon price projected over time must be
+consistently stated in the FIF.
+
+While installations could theoretically hold onto the excess allowances for sale later, for
+the purposes of the relevant costs calculation, the excess allowances are assumed to
+be sold in the year received. Similarly, applicants should include as OPEX savings of
+the project any savings made from the need to buy a smaller amount of EU ETS
+allowances due to the lower emissions of the proposed project.
+
+If, in addition, applicants are expecting to generate revenues from the sale of CO2 as
+a final product or by-product for commercial use, irrespective of whether this will lead
+to saved EU ETS allowances or not, these revenues should also be included as
+operational benefits.
+
+Finally, if applicants are expecting to generate revenues from the sale of carbon
+removal certificates, these revenues should also be included as operational benefits.
+
+7 Applicants need to present their projected capital structure at financial close (i.e. as agreed by the project
+funders), in line with the financial information provided in the "Financial Model Summary Inputs" sheet.
+
+                                                                                                                                                                16
+                                                       EU Grants: InnovFund Relevant Costs methodology: V5.0 ­ 01.12.2025
+
+3.4.6 Indexation/inflation
+
+Indexation refers to the adjustment of OPEX, CAPEX and sale prices to the forecast
+inflation over the expected project lifetime. Applicants are free to provide their best
+estimates of indexed OPEX, CAPEX and sales prices, including inflation, with a clear
+breakdown of the different components and justification for the assumptions used for
+inflation. All values in the financial projections must be in nominal terms.
+
+3.4.7 By-products and savings
+
+If the project anticipates to generate additional revenues by selling by-products (such
+as heat or biochar) or services (for instance, waste gate fees) derived from the
+innovative production process, the corresponding value generated should be considered
+as a revenue from by-products in the "Financial Model Summary Inputs" sheet of the
+FIF.
+
+If the production process will reduce costs through more efficient use of energy/heat
+for example, the corresponding value of cost savings should be encoded as "OPEX
+savings" in the "Financial Model Summary Inputs" sheet of the FIF and will have the
+effect of reducing OPEX in the relevant costs calculation.
+
+3.4.8 Decommissioning
+
+If decommissioning costs of the assets of the project arise during the first 10-year
+period, they may be taken into account as part of the relevant costs calculation. Cost
+estimates will vary from project to project and therefore need to be accurately
+accounted for in the calculation. Applicants will have to justify both the presence and
+the amount of these costs. Any revenue resulting from the sale of decommissioned
+assets arising during the first 10 years of operation after entry into operation shall also
+be included in the relevant costs calculation.
+
+3.4.9 Other public support
+
+Additional 8 public support can take the form of support from other EU funding
+programmes or state aid9.
+
+When state aid or other EU funding, in connection with costs incurred after the first day
+of the month following the proposal submission date, is secured, has been requested
+or is considered to be part of the financing plan, and this additional public support is
+necessary to proceed with the final investment decision (FID) for the full investment
+envisaged within the project scope, applicants must include the state aid or other EU
+funding in their financial projections and provide any information and evidence available
+to demonstrate this public support was secured or is in the process of being secured,
+to convince evaluators of the likelihood of obtaining this additional public support. The
+risk analysis should also include credible mitigation measures such as back-up financing
+to close the financing plan if this additional public support is not confirmed before
+financial close.
+
+If applicants consider that their financing plan (and FID) does not rely on state aid or
+any other EU funds, that could be requested in the future, then this additional public
+support does not necessarily have to be included in the FIF and the applicant's detailed
+financial model.
+
+8 Additional to the InnovFund grant.
+9 For further information on what type of public support constitutes state aid, please refer to DG COMP
+
+     website: https://competition-policy.ec.europa.eu/state-aid/overview_en. EU ETS allowances are not
+     considered as additional public support.
+
+                                                                                                                                                                17
+                                                       EU Grants: InnovFund Relevant Costs methodology: V5.0 ­ 01.12.2025
+
+The way in which necessary state aid and other EU funding must be included in the FIF
+depends on the form this public support takes:
+
+          A. Any other EU support or state aid in the form of grants (e.g. CAPEX or OPEX
+                grants), for which the amount can be estimated at the moment of
+                application, must be included in the numerator of the cost efficiency ratio
+                (see call document, section 9).
+
+                State aid or other EU support in the form of grants must be included as
+                "other public CAPEX subsidies" or "other public OPEX subsidies" on a non-
+                discounted basis, in the "Financial Model Summary Inputs" sheet of the FIF.
+                They will be included in the numerator of the cost efficiency ratio (see call
+                document, section 9) and excluded from the relevant costs calculation.
+
+          B. As opposed to this, any other type of other EU support or state aid, such as
+                fiscal or parafiscal measures, tariff reductions resulting in lower operating
+                costs (for example, exemption of payment of levy/tax on power prices),
+                contracts-for-difference, feed-in-tariffs and indirect CO2 cost compensation
+                measures, must be included as revenues, operational benefit or other
+                revenues/OPEX savings in the "Financial Model Summary Inputs" sheet of
+                the FIF and will impact the relevant costs calculation. Such forms of state
+                aid will not be included in the numerator of the cost efficiency ratio (see call
+                document, section 9).
+
+                Applicants should describe clearly and in detail in the business plan and the
+                applicant's detailed financial model how these state aid measures are taken
+                into account in their revenue and cost assumptions.
+
+                For example, national schemes to compensate for increases in electricity
+                prices resulting from the inclusion of the costs of greenhouse gas emissions
+                due to the EU ETS (commonly referred to as `indirect CO2 costs
+                compensation' measures) should be considered as operational benefit or
+                OPEX saving in the relevant costs calculation. They should not be considered
+                as an "other public OPEX subsidy" and shall be excluded from the cost
+                efficiency ratio numerator.
+
+3.4.10 Parameters excluded from relevant costs calculation
+
+The two relevant costs methodologies derive the relevant costs from the best estimate
+of the CAPEX and the net present value of revenues, OPEX, maintenance CAPEX and
+operational benefits arising during construction and over the first ten years of
+operation. These terms are defined in the glossary of this guidance.
+
+Any other components should be excluded from the relevant costs calculation.
+
+Examples of such excluded components are presented in the list below. This list of
+examples should be considered as non-exhaustive.
+
+     - Terminal value
+
+          Terminal value of assets must not be taken into account in the relevant costs
+          calculation. The exclusion of terminal value is consistent with the fact that the
+          project IRR is computed over the expected project lifetime.
+
+     - Write-off of existing (old) assets or technologies
+
+          It is recognized that some applicants may have to replace old technology that is
+          not fully depreciated. For the purposes of calculating the relevant costs and
+          regardless of the relevant costs methodology selected, any write-off cost
+
+                                                                                                                                                                18
+                                                EU Grants: InnovFund Relevant Costs methodology: V5.0 ­ 01.12.2025
+
+     associated with the replacement of existing technologies should be excluded.
+     Similarly, costs linked to accelerated depreciation of stranded assets (e.g.
+     depleted fields), decommissioning of existing assets, reallocation of existing
+     buildings, cleaning of used sites to be used for the project, are not eligible.
+- Costs incurred before submission of the application
+     As stated in section 3.4.3, costs for activities incurred before the first day of the
+     month after the proposal submission date are not eligible for the calculation of
+     the relevant costs (please refer to section 10 of the Call document). Any
+     expenses incurred before the first day of the month following the proposal
+     submission date must be included in the "Financial Model Summary Inputs"
+     sheet of the FIF as "CAPEX items not included in the relevant costs (if relevant)"
+     to ensure that they are not included in the relevant costs calculation. Costs are
+     considered as incurred on a certain date if on that date they have already been
+     paid or if the obligation to pay has been established on or before that date.
+     In other words, costs linked to a contract concluded before the proposal
+     submission date can be considered eligible for the relevant costs computation if
+     all the following conditions are met:
+
+           - they are linked to services to be performed /equipment delivered after
+                 that date
+
+           - they relate to invoices issued after that date, and
+           - the corresponding payments are made after that date.
+- Debt financing-related Costs
+     Costs linked to the debt financing of the project are not eligible and must be
+     excluded from the relevant costs computation. A non-exhaustive list of such
+     costs is the following: interest during construction, working capital needs, bank
+     fees, legal fees, upfront fees, commitment fees, interest payments, additions to
+     the maintenance reserve account or debt service reserve account.
+- Other excluded items
+     VAT, taxes, royalties/license fees paid to project shareholders, management
+     fees, acquisition of producing assets/facilities commissioned and under
+     operation before submission of the application, communication and marketing
+     costs of other products, or reorganization costs are also excluded from the
+     relevant costs computation. In-kind contributions are not eligible for the purpose
+     of the relevant costs calculations.
+
+                                                                                                                                                         19
+                             EU Grants: InnovFund Relevant Costs methodology: V5.0 ­ 01.12.2025
+
+                                       Appendix 1
+
+                             Glossary
+
+Term                         Meaning
+Capital expenditure (CAPEX)
+Construction costs           All costs as referred to below in connection with the development,
+                             construction of the project that are incurred or to be incurred before
+Contingencies                project's entry into operation exclusively in relation to the following
+                             categories:
+
+                                   (a) construction costs
+
+                                   (b) site infrastructure costs
+
+                                   (c) development costs
+
+                                   (d) intangible assets
+
+                                   (e) contingencies
+
+                             (For each area of capital expenditure, please see individual term
+                             definitions for their full meanings)
+
+                             Further details of which elements of CAPEX are eligible for the
+                             calculation of the relevant costs can be found in the sheet "Intro &
+                             definitions" of the FIF.
+
+                             All costs and expenses incurred in connection with design,
+                             engineering, procurement, construction, commissioning and testing
+                             of the project including exclusively:
+
+                                   (i) costs of employees arising directly from the construction or
+                                        the acquisition of the item of property, plant and
+                                        equipment
+
+                                   (ii) costs of site preparation
+
+                                   (iii) initial delivery and handling costs
+
+                                   (iv) installation and assembly costs
+
+                                   (v) costs of testing whether the asset is functioning properly,
+                                        after deducting the net proceeds from selling any items
+                                        produced while bringing the asset to that location and
+                                        condition
+
+                                   (vi) certifications expenses for necessary repairs during the
+                                        construction phase
+
+                                   (vii) expenses for removing hurdles on the site (however costs
+                                        associated with replacement of existing technologies
+                                        should be excluded from the relevant costs calculation as
+                                        per section 3.4.9)
+
+                                   (viii) land lease cost incurred during construction and capitalized
+
+                                   (ix) equipment cost.
+
+                             Contingencies refer to additional CAPEX that may arise from
+                             unforeseen risks and issues occurring during project construction (e.g.
+                             increased cost of equipment), thereby impacting on original project
+                             financing projections. The contingency is typically held in reserve.
+
+                                                                                                        20
+                   EU Grants: InnovFund Relevant Costs methodology: V5.0 ­ 01.12.2025
+
+Detailed budget table/relevant costs   Excel file, for which the template is available for downloading from
+calculator/financial information file  the Funding and Tenders Portal10, that must be filled out with the
+(FIF)                                  output of the applicant's detailed financial model which should
+                                       include all technical and financial assumptions, project financial
+                                       statements, return computation, sensitivities. Both the FIF and the
+                                       applicant's detailed financial model are mandatory application
+                                       documents.
+
+Development costs                      All costs and expenditures incurred that are specifically required for
+                                       the development activities of the project exclusively related to the
+                                       following categories:
+
+                                       (i)    permitting and environmental assessment;
+
+                                       (ii)   planning, design, engineering, start-up and testing;
+
+                                       (iii)  legal, insurance and other advisors;
+
+                                       (iv)   personnel costs;
+
+                                       (v)    professional fees and fees for environmental permits.
+
+                                       Development costs must not include costs or expenses which are not
+                                       directly linked to the development of the project's activities.
+
+Financial close                        The point in time in the project development cycle where all the
+Lease                                  project and financing agreements have been signed and all the
+                                       required conditions contained in them have been met. Financial close
+                                       may not be confused with the final investment decision which is only
+                                       one of the steps required for reaching the stage of financial close.
+
+                                       Contract or financial product in which a leasing company (`lessor')
+                                       gives operating control of an asset to a business (`lessee') for an
+                                       agreed period against periodic lease payments. In some cases, at the
+                                       end of the contract, the lessee will have a purchase option to become
+                                       the owner of the asset.
+
+                                       Contractually, the lessor remains the legal owner of the asset
+                                       throughout the lease period, but the lessee takes responsibility for all
+                                       the risks and rewards associated with the ownership of the asset.
+
+                                       Applicants are allowed to include lease expenses (excluding cost of
+                                       financing the lease) as OPEX in the relevant costs calculation. Leasing
+                                       of existing producing assets/facilities commissioned and under
+                                       operation before submission of the application (such as existing
+                                       manufacturing plants or energy generation assets) is not permitted.
+
+Intangible assets                      Non-physical assets that hold a certain value. These include patents,
+                                       trademarks, copyrights and Intellectual property rights (IPR) that are
+                                       related to the project and purchased by the project.
+
+                                       The acquisition of intangible assets from a third party for the purposes
+                                       of its use by the project can be capitalized and included in the
+                                       Intangible assets under the following conditions:
+
+                                             (i) the intangible assets must be a pre-requisite for the
+                                                  implementation of the project. Intangible assets that are
+                                                  only an option for possible future use by the project may
+                                                  not be included.
+
+                                             (ii) The valuation of the intangible asset must be established in
+                                                  accordance with applicable valuation rules and be
+
+10 https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/home
+                                                                                                                                                                21
+                                 EU Grants: InnovFund Relevant Costs methodology: V5.0 ­ 01.12.2025
+
+Maintenance CAPEX                           proportionate to the level of development of these
+(OPEX) Savings                              intangible assets.
+Operational benefits
+Operational expenditures (OPEX)        (iii) Both the relevance of the intangible assets for the project
+                                            and their valuation should be verified by an independent
+Project                                     expert.
+
+                                       (iv) Under no condition can a member of the project
+                                            consortium sell intangible assets at a profit to one of the
+                                            companies in the project benefiting from the Innovation
+                                            Fund.
+
+                                 All costs necessary to maintain the project's operational capacity. For
+                                 instance, costs related to the replacement of key equipment or the
+                                 implementation of periodic system updates. Capital expenditures
+                                 intended to expand the project's activities and/or increase production
+                                 volumes should not be included as maintenance CAPEX. Any
+                                 expansion CAPEX foreseen to increase production volumes after the
+                                 defined entry into operation is considered to fall outside the scope of
+                                 the proposed Innovation Fund project and should be excluded from
+                                 the FIF.
+
+                                 All savings generated by the substitution of the existing technology
+                                 with the proposed project.
+
+                                 Any additional revenue received by the project, such as from (non-
+                                 exhaustive list):
+
+                                  · the sale of EU ETS allowances for reductions in CO2 emissions
+
+                                  · the sale of CO2 as a final product or by-product for commercial
+                                       use
+
+                                  · the monetization of the value added/certificates from
+                                       reductions in GHG emissions not already captured elsewhere in
+                                       the revenues or cost savings
+
+                                  · any state aid, other than direct CAPEX/OPEX grants/subsidies,
+                                       such as fiscal / parafiscal measures, tariff reduction, contract-
+                                       for-difference or feed-in-tariff
+
+                                 All costs related to the following categories:
+
+                                       - operations and maintenance (O&M) of a project, including,
+                                             where applicable, any feedstock costs such as costs of fuel
+
+                                       - decommissioning costs, provided they occur in the first ten
+                                             years after entry into operation of a project.
+
+                                       - lease costs
+
+                                       - R&D cost provided that these are needed to keep the
+                                             innovation competitive. This necessity should be duly
+                                             justified.
+
+                                 Important! Depreciation, provisions and amortization costs are not
+                                 considered as OPEX.
+
+                                 For full transparency, applicants must provide a detailed breakdown
+                                 and justification of the OPEX.
+
+                                 Advance payments on supply contracts cannot be capitalized, and
+                                 shall be considered as OPEX and the expense should be recognized as
+                                 an expense incurred when the input is delivered and used.
+
+                                 All activities related to the implementation of a project for which
+                                 support from the Innovation Fund is requested or provided.
+
+                                                                                                          22
+Project costs              EU Grants: InnovFund Relevant Costs methodology: V5.0 ­ 01.12.2025
+Project lifetime
+                                All costs carried by the entities benefiting from the Innovation Fund
+Revenues                        grant that are necessary to implement the project.
+Reference plant
+Site infrastructure costs       Refers to the expected lifetime of the assets within the project scope,
+                                also known as the useful life or economic life, meaning the estimated
+                                period during which the assets financed by the project are expected
+                                to be usable and generate revenues.
+                                Project lifetime should therefore not be limited to the period of time
+                                during which the project benefits from Innovation Fund support.
+                                The feasibility study, business plan, the applicant's detailed financial
+                                model and the financial projections must be based on the expected
+                                project lifetime.
+
+                                All sources of revenues generated by the project, excluding
+                                operational benefits and external benefits outside the project scope.
+
+                                A project using the conventional technology with similar size and
+                                output as those of the project and which complies with Union
+                                environmental standards and with EU legislation including, where
+                                relevant, in relation to achieving the EU ETS benchmark for industrial
+                                products.
+
+                                All the costs related to the development or maintaining of the basic
+                                physical and operational components of the location of a project,
+                                including the following:
+
+                                      (i) the purchase of land
+                                      (ii) expenses incurred to obtain or maintain authorization for
+
+                                            the operation on the site (for example license, filing,
+                                            notarization or registration)
+                                      (iii) site preparation
+                                      (iv) landscaping and environmental features
+                                      (v) utilities
+                                      (vi) site transportation infrastructure
+                                      (vii) security systems and infrastructure
+                                      (viii) communication infrastructure
+                                      (ix) drainage and sewer systems
+                                      (x) lightning
+                                      (xi) fencing and enclosures
+                                      (xii) waste management infrastructure
+                                      (xiii) fire protection installations
+                                      (xiv) accessibility.
+
+                           23
+EU Grants: InnovFund Relevant Costs methodology: V5.0 ­ 01.12.2025
+
+                                                           Appendix 2
+
+Support data materials for WACC calculation
+
+Table 2 - Risk-Free Rate (Rf) by country  Risk-Free Rate¹
+                          Country              1.13%
+                          Austria              1.22%
+                          Belgium              1.83%
+                          Bulgaria             2.41%
+                          Croatia              2.41%
+                          Cyprus               2.37%
+                          Czech Republic       0.89%
+                          Denmark              2.29%
+                          Estonia              1.12%
+                          Finland              1.22%
+                          France               0.75%
+                          Germany              3.90%
+                          Greece               4.43%
+                          Hungary              5.23%
+                          Iceland              1.25%
+                          Ireland              2.43%
+                          Italy                1.45%
+                          Latvia               0.70%
+                          Liechtenstein        1.10%
+                          Lithuania            1.00%
+                          Luxembourg           1.74%
+                          Malta                0.95%
+                          Netherlands
+
+                                                           24
+                          Norway    EU Grants: InnovFund Relevant Costs methodology: V5.0 ­ 01.12.2025
+                          Poland
+                          Portugal                                                 3.66%
+                          Romania                                                  3.75%
+                          Slovakia                                                 2.08%
+                          Slovenia                                                 5.03%
+                          Spain                                                    1.42%
+                          Sweden                                                   1.45%
+Sources:                                                                           1.73%
+¹ ECB September 2025                                                               1.02%
+
+                                    25
+

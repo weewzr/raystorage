@@ -1,0 +1,44 @@
+[S1_solve_at0_le] exit=101 compile_error=False failed=2
+     eq_s_7e_cases_of_the_break_even_share_and_the_strict_target_flag
+     subsidy::tests::eq_s_7d_a_closed_form_that_fails_the_residual_check_falls_back_to_bisection
+[S2_solve_atmax_gt] exit=0 compile_error=False failed=0
+[S3_bisect_le] exit=101 compile_error=False failed=1
+     subsidy::tests::eq_s_7d_a_closed_form_that_fails_the_residual_check_falls_back_to_bisection
+[R1_private_capital] exit=101 compile_error=False failed=4
+     eq_s_2_private_capital_never_rises_with_the_share_and_the_grant_stays_within_eligible
+     eq_s_8_reported_quantities_are_consistent
+     eq_s_8_the_committed_table_matches_the_engine
+     eq_s_9b_limiting_cases_at_zero_and_full_share
+[R2_ledger_state_pv_close] exit=101 compile_error=False failed=1
+     eq_s_8_the_committed_table_matches_the_engine
+[R3_export_swap_interest_cols] exit=0 compile_error=False failed=0
+[R4_outlay_wrong_factor] exit=101 compile_error=False failed=2
+     eq_s_8_reported_quantities_are_consistent
+     eq_s_8_the_committed_table_matches_the_engine
+[R5_export_private_col] exit=0 compile_error=False failed=0
+[R7_dcf_interest_private_sign] exit=101 compile_error=False failed=1
+     eq_s_8_the_committed_table_matches_the_engine
+[R8_progressive_year0_dropped] exit=101 compile_error=False failed=9
+     eq_s_2_private_capital_never_rises_with_the_share_and_the_grant_stays_within_eligible
+     eq_s_4a_a_progressive_grant_scales_every_private_payment
+     eq_s_6a_derivation_tables_for_definition_b_follow_from_its_membership
+     eq_s_6b_dcf_cost_follows_the_closed_form_for_each_timing
+     eq_s_7a_progressive_cost_is_affine_and_the_cost_at_close_bends
+     eq_s_7d_the_exact_route_and_the_bisection_agree_and_the_orderings_hold
+     eq_s_8_the_committed_table_matches_the_engine
+     eq_s_9c_the_gap_between_the_methods_equals_the_prediction_and_stays_below_the_limit
+     eq_s_9c_the_grant_effect_by_four_routes_that_share_no_code_with_the_engine
+[R9_licence_uses_power_island] exit=101 compile_error=False failed=15
+     eq_s_1_eligible_capital_is_the_flagged_sum_and_b_contains_a
+     eq_s_1_worked_numbers_of_the_derivation_follow_from_its_membership
+     eq_s_4a_a_progressive_grant_scales_every_private_payment
+     eq_s_4b_a_progressive_grant_scales_the_ledger_reactor_value
+     eq_s_6a_derivation_tables_for_definition_b_follow_from_its_membership
+     eq_s_6a_ledger_cost_follows_the_closed_form_for_each_timing
+     eq_s_6b_dcf_cost_follows_the_closed_form_for_each_timing
+     eq_s_7a_progressive_cost_is_affine_and_the_cost_at_close_bends
+     eq_s_7c_break_even_at_close_in_both_regimes_of_the_ledger
+     eq_s_7d_the_exact_route_and_the_bisection_agree_and_the_orderings_hold
+     eq_s_8_reported_quantities_are_consistent
+     eq_s_8_the_committed_table_matches_the_engine
+     ... 3 more

@@ -1,0 +1,671 @@
+
+=== PDF p.1 ===
+Methane Steam 
+Limitations and 
+Reforming: II. Diffusional 
+Reactor Simulation 
+Given the intrinsic kinetics, the tortuosity factor of a Ni/MgAI,O, cat- 
+alyst was determined under reaction conditions by minimizing the sum of 
+squares of residuals of the experimental and the simulated conversions. 
+The parallel cross-linked pore model with uncorrelated pore size distri- 
+bution and orientation was used in the calculation of the effective diffu- 
+sivities. A modified collocation method was used to obtain the partial 
+pressure profiles of the reacting components in the catalyst pellet. The 
+simulation of the experimental reactor during the optimization of the tor- 
+tuosity factor also yielded the effectiveness factors of the reactions. 
+The results of the simulation of an industrial steam reformer are also 
+discussed. 
+Jianguo Xu 
+Gilbert F. Froment 
+Laboratorium voor 
+Petrochemische Techniek 
+Rijksuniversiteit Gent 
+Gent, Belgium 
+Introduction 
+In Part I of this paper, the intrinsic kinetics of the reactions 
+occurring in the steam reformation of methane were deter- 
+mined. The application of these kinetic equations in the simula- 
+tion of a commercial reformer, in which large catalyst particles 
+In the present paper, these are first experimentally studied and 
+related to the tortuosity factor, a characteristic of the pore net- 
+work of the catalyst. Then, this information is combined with 
+the intrinsic kinetics to simulate an industrial steam reformer. 
+Tortuosity Factor of a Steam Reforming Catalyst 
+Eflective diffusivities and tortuosity factor 
+to the molecular and Knudsen diffusivities by: 
+The pore size distribution of the steam reforming catalyst was 
+measured by mercury penetration and nitrogen desorption. It is 
+presented in Table 1. Given this distribution, an average value 
+can be calculated from: 
+are used, requires the diffusional limitations to be accounted for. 
+= s" DA(ri) - f(ri) dr 
+(2) 
+0 
+or rather from: 
+iTA = 
+DA(ri) * S(rJ 
+(3) 
+i 
+where S(ri) is the void volume fraction taken by the pores with 
+radii between ri and r i + ~ : 
+The diffusivities of the reacting components A, . . . are related 
+(4) 
+V ' 
+Vg.i 
+S(r,) = 2 
+= - 
+VP 
+(1) 
+X 
+Vg.i 
+1 
+1 
+1 
+- 
++- 
+DA(ri) 
+D- 
+&Ari) 
+January 1989 Vol. 35, No. 1 
+97 
+AICbE Journal 
+
+=== PDF p.2 ===
+Table 1. Pore Size Distribution of Catalyst 
+CONVERSION 
+t 
+Pore Dia. 
+A 
+30 
+30-50 
+50-80 
+80- 120 
+120-200 
+200-500 
+500- 1 ,OOO 
+1,ooo-1o,oO0 
+I0,Ooo- 100,000 
+A Vol. of Voids 
+AV,, cm’/g 
+0.0040 
+0.0250 
+0.0262 
+0.0379 
+0.0573 
+0.0388 
+0.0190 
+0.0290 
+0.0136 
+Sum 
+0.2508 
+With this average, o,, an effective diffusivity is calculated from 
+the relation: 
+The tortuosity factor T is the simplified and lumped effect of 
+many complexities. Tortuosity factors ranging from 1.5 up to 10 
+or more have been reported. Model predictions lead to values of 
+the tortuosity factor of I/% according to Wakao and Smith 
+(1962). of 2 with the parallel-path pore model (Wheeler, 1951), 
+of 3 with the parallel cross-linked pore model (Feng and Stew- 
+ard, 1973), or of 4 when using the random pore model (Beeck- 
+man and Froment, 1982). De Deken et al. (1982) obtained a 
+value of about 4.7 by the gas chromatographic technique by 
+applying the van Deemter equation (Van Deemter et al.. 1956) 
+and using the average pore diameter in calculating the Knudsen 
+diffusivities. Dumez and Froment (1976) found a value of 5 
+using Eq. 2 and the mass balance equation considering both dif- 
+fusion and reaction. They fitted the experimental results ob- 
+tained in a differential reactor and used the macropore radius as 
+the r value in calculating the Knudsen diffusivities, since the 
+micropores were so short that no diffusional resistance occurred 
+in them. Since the tortuosity factors obtained by different 
+authors cover such a wide range, it is preferable, at this stage, to 
+measure T for the catalyst under consideration. 
+The experimental determination of the tortuosity factor is 
+done in two ways. 
+1. The purely physical method, which does not require the 
+knowledge of the intrinsic kinetics of the reaction, but which has 
+the drawback that the conditions for determination may be far 
+away from the reaction conditions. 
+2. The method that determines 7 under reaction conditions- 
+the approach used in the present paper. Combination of the 
+intrinsic kinetics and the diffusion aspects permits the simula- 
+tion of the reactor, in which diffusional limitations occur. Fitting 
+the calculated results to the experimental ones permits T to be 
+determined. Because a certain deactivation of the catalyst was 
+observed under steam reforming conditions, T was determined 
+under conditions of reverse water gas shift. 
+Reverse water-gas shift experiments 
+For the details of the reactor, see Part I. 
+The commercial catalyst used is a nickel catalyst supported 
+on MgA1204, the core of which is completely inert. The catalyst 
+100 
+01 
+n 
+m 
+* w i FtOz ( pC., hri motCO2 i 
+Figure 1. Reverse of water gas shift. 
+1s 
+Experimental (0, 
+A) and simulated (curvts) conversions in tbe 
+presence of diffusional limitations: T - 4WC; p, - 3.0 x l@ Pa; 
+H,/C02 molar fced ratio - 1.0; and d, - 1.1 mm 
+rings were crushed into 1.0-1.2 mm particles. The particles 
+without nickel were eliminated from the sample by magnetic 
+separation. A catalyst sample of 0.4 g was diluted with inert a 
+alumina. 
+The reactor was heated in a hydrogen stream under atmo- 
+spheric pressure. The heating rate was 2OC/min. The tempera- 
+ture was maintained at 81OOC for 12 hours after it reached that 
+value, still in a hydrogen stream at atmospheric pressure. The 
+temperature was reduced in a hydrogen stream to 400OC. When 
+the temperature reached 4OO0C, the back pressure of the reactor 
+was raised to 3 bar. Then, the hydrogen flow rate was raised to 
+1.6 mol/h and the C02 flow was switched on, also at 1.6 mol/h. 
+Carbon monoxide and CH, were formed via the reverse of the 
+water-gas shift and methanation reactions. The above condi- 
+tions were kept for 24 hours to confirm that the activity level of 
+the catalyst was stable. Then, the experiments at different 
+WIFE, values were carried out. The pressure, temperature, and 
+H2/C0, feed ratio were kept at 3 bar, 400°C and 1 mol H2/mol 
+COz. The reactor effluent was analyzed by gas chromatography. 
+Since no significant carbon deposition occurred, the total con- 
+version of C 0 2 and the conversion of C02 into CHI completely 
+describe the composition of the effluent gas. The results are 
+shown in Figure 1. 
+Estimation of the tortuosity factor 
+Even when C02 and H2 are fed and the temperature is kept at 
+400°C, methanation cannot be avoided, so that the continuity 
+equations for two key components have to be integrated to 
+obtain the concentration gradients inside the catalyst particle, 
+considered to be spherical: 
+98 
+January 1989 Vol. 35, No. 1 
+AIChE Journal 
+,
+, ,
+p
+y
+y
+y
+y
+g p
+,
+y
+y
+[
+]
+(
+p
+y
+y
+)
+y
+y
+;
+g
+y
+pp
+
+=== PDF p.3 ===
+Boundary conditions: 
+The profiles of the dependent components are obtained from the 
+algebraic equations: 
+The rate equations were given in Part 1. 
+The global spline orthogonal collocation method was used in 
+solving the coupled differential equations. A modified iteration 
+algorithm which strongly reduces the computation time of the 
+collocation method was developed and will be published later. 
+After the concentration profiles are calculated, the actual, 
+observed rates can be obtained. The actual rates at a certain 
+reactor coordinate (or certain WIFEol value) can be calculated 
+according to Eq. 7: 
+(7) 
+The Dc, values were calculated from Eq. 5, with the tortuosity to 
+be determined. The molecular diffusivities were calculated by 
+Eq. (3.2s-7) given in Froment and Bischoff (1979), while the 
+binary diffusivities used in this formula were obtained from the 
+Wilke-Chang equation (1955). 
+One way to determine 7 is to match the calculated (fCh)& 
+and (&,& 
+to the experimental values by optimizing the 7 val- 
+ue. Since an integral reactor was used in the present work, the 
+integral method of kinetic analysis was applied. This requires 
+the residual sum of squares Z(x, - 3,)' to be minimized by 
+optimizing 7. The fluid-phase continuity equations for CO, and 
+CH, are: 
+with 
+x&, = x&, 
+= 0 at W/F& - 0 
+They were integrated by means of a Runge-Kutta routine. The 
+conversions x&, and x& are the conversion of CO, into CH, 
+and the total conversion of COz. The rates (/&Jobs and (JcH4)* 
+are those obtained through Eq. 7. In each node used in the 
+numerical integration of Eq. 8, the set of second-order differen- 
+tial equations (Eqs. 6a-6b) also had to be integrated. 
+The simulated conversions are plotted in Figure 1, together 
+with the experimental ones. 
+I 
+0 1 
+$ 3 
+* 
+WIF&,I 
+gcot - hr/mdCq) 
+Figure 2. Reverse of water gas shift. 
+Evolution of efTactivencss factors: T - 4OOOC, p, - 3.0 bar; H,/CO, 
+molar feed ratio - 1.0; and ifp - 1.1 mm 
+Minimizing the sum of squares of residuals of the calculated 
+conversions and the experimental ones yielded a 7 value of 
+3.54. 
+Figure 2 shows the evolution of the effectiveness factors with 
+The effectiveness factor qr was calculated from: 
+WIF:oz. 
+(9) 
+It can be seen that q;, the effectiveness factor for the reverse 
+of reaction I (uiz. Table 2 of Part I) exceeds 1 in the upper part 
+of the reactor. This is not surprising, since the reaction is Consec- 
+utive to the reverse of the water-gas shift. Further down in the 
+bed, where more CO is present, the CO gradient inside the par- 
+ticle reverses. This, together with the profile of the other reac- 
+tant and feed component, H2, which also decreases from the sur- 
+face toward the center of the particle, leads to values of q; which 
+become smaller than one. The effectiveness factor of the reverse 
+of the water-gas shift, q;, is smaller than one and continuously 
+increases with W/F& i.e., with x,. 
+The effectiveness factor 
+of the methanation, the reverse of reaction I11 (viz-Table 2 of 
+Part I), also behaves in the usual way. 
+Simulation of an Industrial Steam Reformer 
+The conditions used in the simulation of an industrial steam 
+reformer are similar to those dealt with previously by De Deken 
+et al. (1982). They are listed in Table 2. 
+The one-dimensional heterogeneous model was used (Fro- 
+ment and Bischoff, 1979). The equations are: 
+Continuity equations for CH, and C02: 
+AIChE Journal 
+January 1989 
+~~ 
+, 
+Vol. 35. No. 1 
+99 
+
+=== PDF p.4 ===
+Table 2. Input Data for the Simulation 
+of a Commercial Reformer 
+To - 793.15 K 
+pIo - 29 bar 
+Feed per tube 
+135.00 Nm’/h natural gas 
+399.17 Nm3/h steam 
+Natural gas composition 
+CH, 
+= 81.5 VOI. ’3% 
+NZ 
+= 14.1 
+C2H6 = 2.8 
+co2 = 1.0 
+CJH, - 0.4 
+C4H,, - 0.1 
+C>H,Z = 0.2 
+Equiv. CH, feed = 5.168 kmol/h 
+Molar ratio H20/CH4 = 3.358 
+CO,/CH4 - 0.056 
+H2/CH4 = 0.122 
+NZ/CH.+ 3 0.164 
+Internal tubedia. 
+= 0.1016 m 
+External tube dia. = 0.1322 m 
+Total tube length - 12 m 
+Heated tube length = 11.12 m 
+Dimensions of catalyst ring 
+dp = 0.0173 m 
+dpi - 0.0084 m 
+H = 0.010 m 
+ps = 2,355.2 kg/m’ 
+Thickness of active layer = 0.002 m 
+Energy equation: 
+- 
+dT = - [ p J ( - 
+1 
+AHi)riq, - 
+dz 
+CpPgU, 
+Momentum equation: 
+with xcH, - xco2; T = To; p, = (pJ0 at z = 0. 
+The heat transfer coefficient U is calculated from: 
+To predict as closely as possible by means of the above one- 
+dimensional model, the cross-sectional averaged conversions 
+and temperatures that would be calculated by a two-dimen- 
+sional model ai is related to the heat transfer parameters of the 
+two-dimensional model by means of the following formula (Fro- 
+ment and Bischoff, 1979): 
+where 
+a, = a: + 0.444 Re Pr - 
+A, 
+dP 
+A, 
+= A:, 
++ 0.14 A s e Pr 
+with at: calculated from (De Wasch and Froment, 1972): 
+A” 
+8.694 
+(dti),/’ ” 
+ap, = - 
+and A:, 
+from the relation introduced by Kunii and Smith 
+(1960). 
+The friction factor in Eq. 10d is that of Ergun (1952). The 
+equivalent diameter of the catalyst rings is calculated according 
+to Brauer (1957) and the porosity of the bed according to Rei- 
+chelt and Blasz (1971). 
+Since the partial pressure gradients are limited to a very thin 
+layer near the surface, planar geometry was used. The con- 
+tinuity equations for CH, and C 0 2 then become: 
+with the boundary and other equations as in Eqs. 6c to 6g and Rp 
+here the half width of the slab. 
+The effectiveness factors were calculated from Eq. 7, using 
+spline orthogonal collocation to calculate the concentration pro- 
+files. Three splines were used, with zero reaction rate in the 
+innermost. The two splines, in which the concentration gradients 
+occur, have a total thickness of 0.08 mm. The spline point was 
+positioned at the dimensionless coordinate of 0.7, with 14 collo- 
+cation points in the outer and eight in the inner of the splines. 
+The industrial catalyst is ring-shaped, with active layers at 
+the external and internal surface of 2 mm. The slab upon which 
+the calculation of the effectiveness factor was based, was chosen 
+to contain the same amount of active material, therefore the 
+same volume as the active part of the ring. This active volume- 
+equivalent slab has an external surface per unit volume (a, or 
+a,,,ps) which is easily cafculated to be 1.071 times that of the 
+active part of the ring, for the dimensions given in Table 2. 
+Therefore, the 7) calculated on the basis of the active volume- 
+equivalent slab has to be divided by this factor to obtain the 
+value for the industrial ring-shaped catalyst. The temperature of 
+the external reactor wall is generated from a coupled simulation 
+of the fire box and the reactor. A zone model, developed by Rao 
+et al. (1988) for the simulation of the temperature distribution 
+in an ethylene furnace, was adapted to the reformer furnace. 
+The results of the simulation are shown in Figures 3 to 7. 
+The evolution of the total conversion of methane and of the 
+conversion of methane into C 0 2 is shown in Figure 3, together 
+with the process gas temperature, total pressure and wall tem- 
+perature profiles. The temperature drop over the film surround- 
+ing the catalyst particle is negligible, as shown already by De 
+Deken et al. (1982). 
+The profiles of the intrinsic rates in the reactor are shown in 
+Figure 4. The intrinsic rate r, changes from positive to negative 
+at a reactor length of about 4 m. 
+The approach to equilibrium of the reactions, defined by: 
+100 
+January 1989 Vol. 35, No. 1 
+AIChE Journal 
+
+=== PDF p.5 ===
+d 1 
+Figure 3. Evolution of conversions, total Dressure. DrO- 
+Figure 5. Approach to equilibrium in a commercial steam 
+- 
+. _ 
+cess gas and external and internal tube skin 
+temperature in a commercial steam reformer. 
+is shown in Figure 5. Beyond 3 m already, reaction I1 (viz. Table 
+2 of Part I) comes very close to equilibrium. For reactions I and 
+111, the approach to equilibrium exceeds 70% in the second half 
+of the reactor. It only slowly increases to 80% because the rising 
+process gas temperature shifts the equilibrium of these reactions 
+further to the right. The conversion in a steam reformer is lim- 
+ited mainly by the heat flux supplied per unit weight of cata- 
+lyst. 
+Figure 5 also shows AT, the local difference between the 
+actual process gas temperature and the temperature that would 
+be reached if the process gas were at equilibrium. This AT is 
+often used to characterize the operation of an industrial reform- 
+er. Its value is about 10°C at the end of the heated part of the 
+tube. 
+The evolution of the various effectiveness factors is shown in 
+Figure 6. The effectiveness factor of reaction I1 shows a discon- 
+tinuity at a reactor length of 3.4 m, because the direction of 
+reaction I1 changes from positive to negative on the catalyst sur- 
+face, while there is no such tendency yet inside the catalyst par- 
+ticle. The q2 value switches back from negative to positive values 
+reformer. 
+V(1): CH, + HzO = CO + 3H2 (reaction I of Part I) 
+Y(2): CO + H20 == C02 + Hz 
+(reaction 11) 
+Y(3): CHI + 2H20 * CO, + 4H2 (reaction 111) 
+at a reactor length of 9 m only, meaning that the overall effect of 
+the reaction inside the catalyst pellet reverses from the forma- 
+tion of C 0 2 and H2 out of CO and H 2 0 to the formation of CO 
+and H 2 0 out of C02 and H,. 
+The effectiveness factors of reactions I and I11 both decrease 
+through the reactor, despite the decrease of the rate of reaction 
+111. When the reaction is near equilibrium, the reaction rate is 
+even more sensitive with respect to changes in concentration, 
+since the rate of the reverse reaction increases with a similar 
+value as the reduction in rate of the forward reaction. The values 
+of the effectiveness factors q, and q3 obtained in the present 
+study are close to those calculated by De Deken et al. (1982) for 
+a different catalyst. These low effectiveness factors also explain 
+why many authors obtained activation energies for steam 
+reforming of approximately half the intrinsic values. The partial 
+pressures of the catalyst surface components are very close to 
+the equilibrium values at reactor lengths exceeding 6 m. In spite 
+of this, the reaction rates do not drop to very small values, 
+because of the temperature rise which shifts the equilibrium to 
+- 2 1 
+I 
+I 
+Figure 4. Evolution of intrinsic reaction rates in a com- 
+mercial steam reformer. 
+Figure 6. Evolution of effectiveness factors in a commer- 
+cial steam reformer. 
+AIChE Journal 
+January 1989 Vol. 35, No. 1 
+101 
+,
+, ,
+p
+y
+y
+y
+y
+g p
+,
+y
+y
+[
+]
+(
+p
+y
+y
+)
+y
+y
+;
+g
+y
+pp
+
+=== PDF p.6 ===
+I 
+I 
+I 
+8 
+1 
+L
+,
+ 
+~ 5 . i 
+Figure 7. Partial pressure proflles In the catalyst pellet at 
+2 - 4.00 m from the inlet in a commercial steam 
+reformer tube. 
+the right. The partial pressure profiles in the catalyst pellet at a 
+reactor length of 4.00 m are shown in Figure 7. 
+Acknowledgment 
+The pore size distribution was measured by Dr. Cahen, Labofina, 
+Feluy, Belgium. J. Xu is grateful to Commissariaat-Generaal voor de 
+Internationale Culturele Samenwerking van de Vlaamse Gemeenschap 
+for the financial support during the work. 
+Notation 
+a, - surface area of the catalyst pellet per kg cat, m’/kg cat 
+c, - concentration of component i in gas phase, kmol/m’ 
+c, - heat capacity of the process gas, kJ/(kg a K) 
+C, - vector of c,~ 
+clS - concentration of component i inside catalyst pellet, kmol/ 
+DA - diffusivity of component A, m2/h 
+DeA - effective diffusivity of component A, m’/h 
+Dd - molecular diffusivity of component A, m2/h 
+Dm - Knudsen diffusivity of component A, m2/h 
+m3 
+d, - diameter of the catalyst pellet, m 
+dp - external diameter of catalyst ring, m 
+d@ - inner diameter of the catalyst ring, m 
+d, - external diameter of the reactor, tube, m 
+dl, - inner diameter of the reactor tube, m 
+F’& - molar flow rate of CHI in the feed, kmol/h 
+F&, - molar flow rate of CO, in the feed, kmol/h 
+f- friction factor in the momentum equation 
+f ( r ) - fraction of pores with radius r 
+g - acceleration of gravity, m/h’ 
+H - height of the catalyst ring, m 
+AH, - enthalpy change of reaction i, kJ/kmol 
+K, - equilibrium constant of reactions I, 11,111. bar’, -, bar’ 
+Kj - adsorption constant for component j, 
+j - CO, H,. CH,, bar-’ 
+j - HZO 
+k, - rate coefficient of reaction i, 
+i - I, 111, kmol . baro,5/(kg cat - h) 
+i - 11, kmol/(kg cat . h - bar) 
+m 
+I - thickness of the active part on each side of the catalyst ring, 
+pi - partial pressure of component i, bar 
+pl - total pressure, bar 
+R - gas constant, kJ/(kmol . K) 
+R, - equivalent radius of the catalyst particle, m 
+rc,, = total rate of disappearance of CH, in steam reforming, kmol 
+Jc,, - rate of formation of CH, in reverse of water gas shift, kmol 
+rml - rate of conversion of CH4 into C02 in steam reforming, kmol 
+r‘‘ - rate of disappearance of CO, in reverse of water gas shift, 
+CH4/(kg cat - h) 
+CH,/(kg cat * h) 
+CH,/(kg cat - h) 
+kmol CO,/(kg cat . h) 
+r = pore radius, m or A 
+S - volume fraction of pores with radius r, < r < ri+, 
+T - process gas temperature, K 
+T, - internal tube skin temperature, K 
+T, - external tube skin temperature, K 
+U = overall heat transfer coefficient, kJ/(m’ . h . K) 
+u, - superficial velocity, m:/(m: . h) 
+Y - volume of catalyst pellet, m3 
+V, - volume of voids in a gram of catalyst mL/Lt 
+V, - volume of void with pore radius r, < r < ri+, in a gram of 
+catalyst, mL/G, 
+V(i) - exponential of reaction affinity, defined by 
+W - amount of catalyst in the reactor, kg 
+x - distance from surface of catalyst onwards 
+xCH, - conversion of CH4 
+xcol - conversion of CH, into CO, 
+xkH4 - conversion of CO, into CH, when CO, and H2 are fed 
+2% - total conversion of CO, in reverse of water gas shift 
+xj - estimated value of xj 
+z - reactor coordinate, m 
+Greek letters 
+a, - convective heat transfer coefficient in packed bed, kJ/(m2 
+h * K) 
+T~~~ - effectiveness factor for methane disappearance 
+11cq - effectiveness factor for CO, formation 
+q, - effectiveness factor of reaction i, i - I, 11,111 
+q;, q;, q; = effectiveness factors of the reverse of reactions I, 11,111 
+c, = porosity of catalyst particle, dd/d, 
+A, - thermal conductivity of the process gas, W / ( m h - K) 
+A,l - thermal conductivity of the tube metal, kJ/(m - h - K) 
+ps - density of the catalyst bed, k&,/m: 
+pr = density of the process gas, kg/m: 
+p, - density of the catalyst solid, kgJm2, 
+f - radial position in particle 
+j- - C02/CH4 molar feed ratio, kmOl~l/kmOlcH, 
+r - tortuosity factor 
+p - viscosity of the fluid, kg/(m . s) 
+Q - cross section of the reactor, m2 
+vj = stoichiometric coefficient of component j in reaction i 
+Literature Cited 
+Beeckman, J., and G. F. Froment, “Deactivation of Catalysts by Coke 
+Formation in the Presence of internal Diffusional Limitation,” Ind. 
+Eng. Chem. Fund., 11,242 (1982). 
+Brauer, H., “Druckverlust in Fiillkorpersaiilen Bei Einphasen- 
+Str6mung,” Chem. Ing. Techn., 29(12), 785 (1957). 
+De Deken, J., E. F. Devos, and G. F. Froment, “Steam Reforming of 
+Natural Gas: Intrinsic Kinetics, Diffusional Influences and Reactor 
+Design,” Chem. React. Eng.. ACSSymp. Ser.. 196, Boston (1982). 
+De Wasch, A. P., and G. F. Froment, “Heat Transfer in Packed Beds,” 
+Chem. Eng. Sci., 27,561 (1972). 
+Dumez, F. J., and G. F. Froment, “Dehydrogenation of I-Butene into 
+Butadiene. Kinetics, Catalyst Coking, and Reactor Design,” Ind. 
+Eng. Chem. Proc. Des. Dev.. 15(2), 291 (1976). 
+Ergun, S., “Fluid Flow through Packed Columns,” Chem. Eng. Prog., 
+48(2), 89 (1952). 
+Feng, C., and W. Steward, “Practical Models for Isothermal Diffusion 
+and Flow of Gases in Porous Solids,” Znd. Eng. Chem. Fund., 12, 143 
+(1973). 
+102 
+January 1989 Vol. 35, No. 1 
+AIChE Journal 
+ 15475905, 1989, 1, Downloaded from https://aiche.onlinelibrary.wiley.com/doi/10.1002/aic.690350110 by National University Of Singapore, Wiley Online Library on [30/10/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+=== PDF p.7 ===
+Froment, G. F., and K. B. Bischoff, Chemical Reactor Analysis and 
+Johnson, M. L., and W. E. Steward, “Pore Structure and Gaseous Dif- 
+Kunii, D., and J. M. Smith, “Heat Transfer Characteristics of Porous 
+mit Raschig-Ringen Gefiillten Filllkorperrohren und Saiilen,” Chem. 
+fng. Techn.. 43,949 (1971). 
+Van Deemter, J., F. Zuiderweg, and I. Klinkenberg, “Longitudinal Dif- 
+fusion and Resistance to Mass Transfer as Causes of Nonideality in 
+Chromatography*” Chem. 
+Wakao, N., and J. Smith, “Diffusion in Catalyst Pellets,” Chem. Eng. 
+Sci., 17,825 (1962). 
+Cat., 3,248 (1951). 
+Dilute Solutions,” AfChE J., 1,264 (Mar., 1955). 
+Design, John Wiley, New York (1979). 
+fusion in Solid Catalysts,” J. Catal., 4,248 (1965). 
+Rocks;” AfChE J.. 6 7 1 (Jan., 1960). 
+(1 949). 
+Rao, M. 
+V. R., P. M. 
+Plehiers, and G. 
+F. Froment, “The coupled Simu- 
+lation of Heat Transfer and Reaction in a Pyrolysis Furnace,” Chem. 
+Eng. Sci.. 43(6), 1223 (1988). 
+Reichelt, W., and E. Blasz, “Stri5mungstechnische Untersuchungen an 
+sci., 5, 271 (1956). 
+Leva. M.9 “Fluid Flow through Packed Beds,” Chem. Ens. 56, 115 
+Wheeler, A,, ti^^ ~~t~ and selectivity in catalyst pores,” Adv. 
+Wilke, c. R., and P. Chang, “Correlation of Diffusion Coefficients in 
+Manuscripr received Feb. 29,1988, and revision received Sept. 2.1988. 
+AIChE Journal 
+January 1989 Vol. 35, No. 1 
+103 
+,
+, ,
+p
+y
+y
+y
+y
+g p
+,
+y
+y
+[
+]
+(
+p
+y
+y
+)
+y
+y
+;
+g
+y
+pp

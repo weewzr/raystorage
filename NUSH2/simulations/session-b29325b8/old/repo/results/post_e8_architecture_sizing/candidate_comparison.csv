@@ -1,0 +1,5 @@
+candidate,trains,heat_per_train_MWth,total_heat_MWth,branch_utilization,reactor_utilization,H2_t_y,avoided_tCO2e_y,evidence,economics
+benchmark_1x_case6,1,176.800000,176.800000,0.477838,0.294667,97946.036,917138.900,SOURCE-ANCHORED,E2B stage economics calculable
+preferred_2x_case6,2,176.800000,353.600000,0.955676,0.589333,195892.072,1834277.800,SOURCE-ANCHORED + PROJECT REPLICATION,E2B stage economics calculable
+sensitivity_3x_smaller,3,117.866667,353.600000,0.955676,0.589333,195892.072,1834277.800,BOUNDED TOPOLOGY SENSITIVITY,equipment/cost/reliability scaling unresolved
+sensitivity_1x_custom_large,1,353.600000,353.600000,0.955676,0.589333,195892.072,1834277.800,BOUNDED TOPOLOGY SENSITIVITY,scale-up/equipment economics unresolved

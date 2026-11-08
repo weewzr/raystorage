@@ -1,0 +1,100 @@
+[
+ {
+  "label": "M1a_drop_condensate_stream",
+  "desc": "drop the vented condensate CO2 from the atmospheric carbon of the plant",
+  "file": "engine/plant/src/abatement.rs",
+  "old": "            c.burn = a.burned * k + vented;\n            c.exported = 0.0;",
+  "new": "            c.burn = a.burned * k;\n            c.exported = 0.0;"
+ },
+ {
+  "label": "M1b_drop_product_from_account",
+  "desc": "drop the PRODUCT carbon stream from the closure account",
+  "file": "engine/plant/src/carbon.rs",
+  "old": "            known(\n                \"PRODUCT\",\n                \"methane in the hydrogen product, S13\",\n                false,\n                self.product,\n                false,\n            ),\n",
+  "new": ""
+ },
+ {
+  "label": "M2_unknown_set_to_zero",
+  "desc": "enter the unknown CO2 vent U2 as a known zero",
+  "file": "engine/plant/src/carbon.rs",
+  "old": "            unknown(\"U2\", \"CO2 vented between S19 and S20\", false, true),",
+  "new": "            known(\"U2\", \"CO2 vented between S19 and S20\", false, 0.0, true),"
+ },
+ {
+  "label": "M3_swap_baseline",
+  "desc": "central IEAGHG baseline reads the Cho intensity",
+  "file": "engine/plant/src/abatement.rs",
+  "old": "            BaselineKind::Ieaghg => self.base_ieaghg,",
+  "new": "            BaselineKind::Ieaghg => self.base_cho,"
+ },
+ {
+  "label": "M4a_capture_sign_flowsheet",
+  "desc": "negative capture efficiency in the MEA island",
+  "file": "engine/plant/src/flowsheet.rs",
+  "old": "        let cap = self.eta * feed.n[CO2];\n        let mut gas = feed.n;\n        gas[CO2] -= cap;",
+  "new": "        let cap = -self.eta * feed.n[CO2];\n        let mut gas = feed.n;\n        gas[CO2] -= cap;"
+ },
+ {
+  "label": "M4b_capture_sign_closed_form",
+  "desc": "sign of the capture term in the loop denominator D",
+  "file": "engine/plant/src/abatement.rs",
+  "old": "        1.0 - f * (1.0 - kappa - eta * phi)",
+  "new": "        1.0 - f * (1.0 - kappa + eta * phi)"
+ },
+ {
+  "label": "M5_double_count_condensate",
+  "desc": "condensate CO2 counted twice in the atmospheric carbon",
+  "file": "engine/plant/src/abatement.rs",
+  "old": "            c.burn = a.burned * k + vented;\n            c.exported = 0.0;",
+  "new": "            c.burn = a.burned * k + vented + a.condensate * k;\n            c.exported = 0.0;"
+ },
+ {
+  "label": "M6_baseline_sign",
+  "desc": "direct abatement adds the plant emission to the baseline",
+  "file": "engine/plant/src/emissions.rs",
+  "old": "        let a_direct = baseline_central - atm;",
+  "new": "        let a_direct = baseline_central + atm;"
+ },
+ {
+  "label": "M7_verdict_closed_with_unknowns",
+  "desc": "overall closure verdict ignores unknown streams",
+  "file": "engine/plant/src/carbon.rs",
+  "old": "    let overall = if unknown.is_empty() {",
+  "new": "    let overall = if true {"
+ },
+ {
+  "label": "M8_drop_co2e_label",
+  "desc": "upstream credit row loses its CO2e label",
+  "file": "engine/plant/src/export.rs",
+  "old": "\"Saved upstream gas, CO2e (GWP100 = {}, IEA 2026, global gas supply mix)\",",
+  "new": "\"Saved upstream gas (GWP100 = {}, IEA 2026, global gas supply mix)\","
+ },
+ {
+  "label": "M9_gas_back_to_inl",
+  "desc": "reference gas reads INL conventional-plant gas again (regression of finding 1)",
+  "file": "engine/plant/src/abatement.rs",
+  "old": "        if c.src != CarbonSrc::Plant {\n            let h_s = s * c.h_scale;\n            return Ok(self.ng_conv * h_s);\n        }",
+  "new": "        if true {\n            let h_s = s * c.h_scale;\n            return Ok(self.ng_conv * h_s);\n        }"
+ },
+ {
+  "label": "M10_ts_terminal_dropped",
+  "desc": "terminal share dropped from the T&S sum",
+  "file": "engine/plant/src/abatement.rs",
+  "old": "            terminal: t.terminal,",
+  "new": "            terminal: 0.0,"
+ },
+ {
+  "label": "M11_kappa_zero",
+  "desc": "condensate carbon share silently zero",
+  "file": "engine/plant/src/abatement.rs",
+  "old": "            kappa: l.condensate / l.tube,",
+  "new": "            kappa: 0.0,"
+ },
+ {
+  "label": "M12_ts_ship_units",
+  "desc": "ship term unit error (multiply instead of divide by 1000)",
+  "file": "engine/plant/src/abatement.rs",
+  "old": "ship: t.ship_g_t_km * t.dist_km / 1000.0 * kg_co2_per_kg_fuel / 1000.0,",
+  "new": "ship: t.ship_g_t_km * t.dist_km / 1000.0 * kg_co2_per_kg_fuel * 1000.0,"
+ }
+]

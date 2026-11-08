@@ -1,0 +1,61 @@
+Price the reference gas that the central intensity implies and label the CO2e terms
+
+Two findings of the independent verifier on the carbon track.
+
+1. The cost per tonne depended on a copied INL plant result. The L0 GAS
+   line, the gas lines of the DCF, the saved upstream gas and the gas keys
+   of the case summary priced the gas saved against INL's conventional-plant
+   gas (NG_CONV_NOCC, 52.5 MMSCFD scaled), while the abatement reference is
+   the central intensity. Model::reference_carbon and
+   Model::reference_gas_mmscfd (N.7.3, N.9.2) now give the one reference gas
+   of the independent basis, and the ledger, the DCF, the lifecycle credit,
+   the summary and the decomposition read it (rule 1 of N.7). The legacy
+   basis returns INL's gas with the same expression as before. INL's gas is
+   a comparison input (CostQuery::ng_smr) with three reported validation rows
+   (IND_GAS_LINE_UNDER_INL_GAS, IND_L5_UNDER_INL_GAS,
+   IND_LAC_DCF_UNDER_INL_GAS).
+
+2. A CO2e quantity sat among CO2 rows. EF_UPSTREAM is a CO2e total at a
+   100-year potential of 30 (IEA 2026) and EF_NUCLEAR is a CO2e range with no
+   stated horizon. Lifecycle fields are now up_credit_co2e and nuclear_co2e;
+   every row of lifecycle_burdens and lifecycle_upstream on the plant ledger
+   says CO2e, names the horizon and the source; EF_UPSTREAM_GWP100 is added
+   to the registry as the label of EF_UPSTREAM. The CO2 and CH4 split of
+   N.9.5 is not made: the sources read give only the aggregate and a split
+   would need an invented share. The wasm label of the lifecycle KPI says
+   CO2e total.
+
+Tests: rule 1 of N.7 (gas line, decomposition, lifecycle and summary read one
+gas difference), INL's gas as a comparison with an exact cost effect, the
+implied gas reproduces INL's gas within 0.5 percent on INL's own intensity,
+legacy bit identity of the gas, the exported lifecycle equals the closed form
+of N.9.5 on the aggregate factor, and a CO2e guard over every lifecycle view
+of every run on the plant ledger (it flags all 90 unlabelled rows of the table
+before the fix). The wasm verdict test needed a point below the target: the
+old fixture (stage 10OAK_P46, gas S$25/GJ) now reads 102.9 and 103.2 S$/t, so
+it adds transport and storage at S$40/t. No tolerance changed.
+
+Effect on B_REC_F, BOAK, 25 y, n = 1.0 (results/ regenerated with the
+exporter): implied reference gas 35.092267 MMSCFD (INL scaled 35.872251);
+L0 GAS -65.478036 -> -61.479836 S$M/y; L5 196.012113 -> 203.180333 S$/t;
+LAC_DCF 196.332684 -> 203.500904 S$/t; abatement unchanged at 557767.415516
+t/y. Break-even share of the progressive grant, both methods: 0.643381 ->
+0.691256 (definition A), 0.480129 -> 0.515856 (definition B); 17 grid points of
+Subsidy_Scenarios.csv flip target_met from true to false.
+
+Changed cells: Economic_Ledger (GAS value, low, high; all cumulative cells
+from L0; dcf_value; one status word of LAC_L5_GAP_REL, B_REC_F 10OAK_P47 40 y),
+Emissions_Ledger (line text of 126 lifecycle rows and source text of the 90 that
+carry a CO2e term; values of the 36 UPSTREAM_CREDIT and lifecycle_upstream
+ABATEMENT rows), Final_Design_Basis (58
+result rows and the new input row EF_UPSTREAM_GWP100), Sensitivity_Results
+(619 result cells), Subsidy_Scenarios (cost, interest, share and verdict cells),
+Validation_Results (3 new reported rows, one explanation, the registry count).
+The two mass and energy balance tables are byte-identical.
+
+Gate: cargo fmt --all --check, cargo clippy --workspace --all-targets -- -D
+warnings, cargo test --workspace (468 passed), export against results/ (8
+tables agree), export --basis legacy against the snapshot of main 8750b09
+(7 tables agree), scripts/check_clean.py (0 hits).
+
+Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>

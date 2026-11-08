@@ -1,0 +1,24 @@
+wrote C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/web_integrate/export_check\Final_Design_Basis.csv (83827 bytes)
+wrote C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/web_integrate/export_check\Integrated_Mass_Balance.csv (66958 bytes)
+wrote C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/web_integrate/export_check\Integrated_Energy_Balance.csv (37598 bytes)
+wrote C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/web_integrate/export_check\Emissions_Ledger.csv (33400 bytes)
+wrote C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/web_integrate/export_check\Economic_Ledger.csv (265355 bytes)
+wrote C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/web_integrate/export_check\Sensitivity_Results.csv (67877 bytes)
+wrote C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/web_integrate/export_check\Validation_Results.csv (246701 bytes)
+validation rows 642: pass 324, fail 29, reported 249, not_run 40
+
+real	2m40.254s
+user	0m0.000s
+sys	0m0.015s
+export exit 0
+Economic_Ledger.csv: agrees, 28056 cells compared, 0 unequal as text but within tolerance
+Emissions_Ledger.csv: agrees, 2808 cells compared, 0 unequal as text but within tolerance
+Final_Design_Basis.csv: agrees, 7599 cells compared, 0 unequal as text but within tolerance
+Integrated_Energy_Balance.csv: agrees, 3248 cells compared, 0 unequal as text but within tolerance
+Integrated_Mass_Balance.csv: agrees, 6944 cells compared, 83 unequal as text but within tolerance
+Sensitivity_Results.csv: agrees, 4896 cells compared, 0 unequal as text but within tolerance
+Validation_Results.csv: differs, 9630 cells compared, 23 unequal as text but within tolerance
+  Validation_Results.csv line 147 [FS_ENVELOPE_ELEMENTS_FS_B_REC_F_T800,3] conditions: 'FS_B_REC_F_T800, tears converged in 1 passes' against 'FS_B_REC_F_T800, tears converged in 31 passes'
+  Validation_Results.csv line 153 [FS_ENVELOPE_ENERGY_FS_B_REC_F_T800,3] conditions: 'FS_B_REC_F_T800, tears converged in 1 passes' against 'FS_B_REC_F_T800, tears converged in 31 passes'
+FAIL: 2 difference(s)
+compare exit 1

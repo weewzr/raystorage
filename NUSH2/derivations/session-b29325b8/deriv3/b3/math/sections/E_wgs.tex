@@ -1,0 +1,192 @@
+\section{E. Water-gas shift}\label{sec:E}
+Shift turns the carbon monoxide left by the reformer into CO$_2$ and more hydrogen. INL runs two adiabatic beds in series in all its reforming cases, a high-temperature bed followed by a low-temperature bed, and the plant keeps that layout. The Case 6 sheets are missing, so operating points come from TEV-961 Case 5 as a proxy. Both beds are written as an approach to equilibrium. The Chinchen rate data for iron-chromium catalyst size the first bed as a check, and the library holds no rate law for the copper-zinc catalyst that a bed at this temperature would use.
+
+In this section $k_{HTS}$ replaces the plain $k$ of the source, because $k$ is thermal conductivity elsewhere, and $X_{CO}$ replaces Chinchen's $C$. Numbers tagged \tagC{} are hand arithmetic on printed source values, shown so that a reader can redo them. No engine test was run for this document, so each benchmark below is a stated target. Implementation lines give the planned name first and the present code second.
+
+\begin{eqcard}{E.1}{R}{CO conversion}
+\Stmt{X_{CO}=\frac{F_{CO,in}-F_{CO,out}}{F_{CO,in}}}
+\Interp{The share of incoming carbon monoxide that a bed consumes. It can be read across one bed or across the whole train.}
+\Deriv{This is a definition. Shift keeps the total moles constant, so on wet mole fractions it reduces to $X_{CO}=1-y_{CO,out}/y_{CO,in}$, which is the form that a printed stream table allows.}
+\Vars{\V{X_{CO}}{CO conversion}{1} \V{F_{CO,in}}{CO molar flow into the bed}{\U{mol\ s^{-1}}} \V{F_{CO,out}}{CO molar flow out of the bed}{\U{mol\ s^{-1}}}}
+\Assume{None.}
+\Source{\tagT{} Definition. Stream values from IEAGHG 2017-02 \cite{IEAGHG17}, PDF p.~44.}
+\Impl{\fn{units::wgs::conversion}}
+\Valid{PUB}{eq_e_01}{Target: 68\% across the IEAGHG high-temperature bed. Streams 5 and 6 print $y_{CO}$ falling from 0.1156 to 0.0366 at constant molar flow, which gives 68.3\% \tagC.}
+\end{eqcard}
+
+\begin{eqcard}{E.2}{R}{Species from one extent}
+\Stmt{F_i=F_{i,in}+\nu_i\xi,\qquad\nu_{CO}=\nu_{H_2O}=-1,\quad\nu_{CO_2}=\nu_{H_2}=+1}
+\Interp{One number fixes the whole outlet composition. Each mole of shift removes a mole of CO and of steam and adds a mole of CO$_2$ and of hydrogen.}
+\Deriv{\Eq{A.3} at steady state, integrated over the bed with \Eq{D.2} as the only reaction. Methane and nitrogen carry $\nu_i=0$, so they pass through unchanged. The stoichiometric coefficients sum to zero, so the total molar flow stays constant across a bed.}
+\Vars{\V{\xi}{extent of shift across a bed}{\U{mol\ s^{-1}}}}
+\Assume{SS. One reaction, with no methanation.}
+\Source{\tagT{} Consequence of \Eq{A.3} and \Eq{D.2}.}
+\Impl{\fn{units::wgs::species}}
+\Valid{ID}{eq_e_02}{Element balance by \Eq{A.5} and constant total moles.}
+\end{eqcard}
+
+\begin{eqcard}{E.3}{R}{Equilibrium limit}
+\Stmt{Q_2\left(T_{out}\right)\le K_2\left(T_{out}\right)}
+\Interp{A bed can approach equilibrium at its exit temperature and can never pass it. Shift releases heat, so an adiabatic bed lowers its own limit as it warms.}
+\Deriv{By the second law the reaction runs forward only while the quotient of \Eq{D.10} stays below $K_2$. \Eq{D.8} falls as temperature rises, while the quotient rises with $\xi$, so the two curves cross at one extent for a given feed.}
+\Vars{\V{T_{out}}{gas temperature at the bed exit}{\U{K}}}
+\Assume{IG.}
+\Source{\tagT{} Second law. $K_2$ from \Eq{D.8}, Zhang et al.\ \cite{Zhang21}, Table 1, PDF p.~5.}
+\Impl{\fn{units::wgs::eq_limit}, present code \fn{units::wgs::extent_at}}
+\Valid{ID}{eq_e_03}{The solver never returns $Q_2$ above $K_2$ at the exit.}
+\end{eqcard}
+
+\begin{eqcard}{E.4}{O}{Approach to equilibrium}
+\Stmt{Q_2\left(T_{out}\right)=K_2\left(T_{out}+\Delta T_{eq}\right),\qquad\Delta T_{eq}=10\ \mathrm{K}}
+\Interp{The exit gas sits where the equilibrium curve runs 10 K hotter than the gas itself. One number stands in for finite catalyst activity on both beds.}
+\Deriv{Three printed outlets fix the value. Solving $K_2(T)=Q_2$ with \Eq{D.8} gives the equilibrium temperature of each stream \tagC. Case 5 high-temperature bed: raw gas from sheet A-50 and 3.01 mol\% dry CO from A-53 give $Q_2=10.56$ against $K_2=11.43$ at 764 F, a ratio of 0.92 and a gap of 8.5 K. Case 5 low-temperature bed: 0.33 mol\% dry CO gives $Q_2=122.8$ against $K_2=151.3$ at 415 F, a ratio of 0.81 and a gap of 11.4 K. IEAGHG high-temperature bed: $Q_2=9.78$ against $K_2=10.87$ at 412 C, a ratio of 0.90 and a gap of 11.5 K. The gaps run from 8.5 to 11.5 K, so 10 K is a round central value carried from two independent flowsheets.}
+\Vars{\V{\Delta T_{eq}}{equilibrium approach temperature}{\U{K}}}
+\Assume{Same approach on both beds.}
+\Source{\tagC{} Calculated here from TEV-961 \cite{TEV961}, A-50 and A-53, PDF p.~74 and p.~77, and IEAGHG 2017-02 \cite{IEAGHG17}, PDF p.~44.}
+\Impl{\fn{units::wgs::approach}. The present code applies the approach on the second bed only, in \fn{units::wgs::lts}. Its first bed, \fn{units::wgs::hts}, integrates \Eq{E.7} instead. Its bed is sized either at Chinchen's own space velocity or to stop at the IEAGHG ratio of $Q_2/K_2$ above, and in the second option the third anchor still sets that exit.}
+\Valid{PUB}{eq_e_04}{Target: $Q_2/K_2$ of 0.92 for the high-temperature bed, 0.81 for the low-temperature bed and 0.90 for the IEAGHG bed.}
+\end{eqcard}
+
+\begin{eqcard}{E.5}{R}{Adiabatic bed}
+\Stmt{\sum_iF_ih_i\Big|_{out}=\sum_iF_ih_i\Big|_{in}}
+\Interp{No heat leaves the bed, so the reaction heat stays in the gas and appears as a temperature rise.}
+\Deriv{\Eq{A.8} with $\dot Q=0$ and no shaft work. The enthalpies of \Eq{A.9} sit on a formation basis, so the heat of reaction needs no separate term. INL prints a duty of 0.0 on both WGS-1 and WGS-2.}
+\Vars{\V{\sum_iF_ih_i}{enthalpy flow of the stream}{\U{W}}}
+\Assume{AD, NKE, IG.}
+\Source{\tagT{} Consequence of \Eq{A.8}. INL duty from TEV-961 \cite{TEV961}, A-56, PDF p.~80.}
+\Impl{\fn{units::wgs::adiabatic}, present code \fn{units::wgs::t_from_h}}
+\Valid{PUB}{eq_e_05}{Target: 335 to 407 C on the high-temperature bed and 191 to 213 C on the low-temperature bed, Case 5, sheets A-53 and A-56. Hand check on the first bed: the NIST enthalpies with the printed outlet composition give 408 C \tagC. The tools script holds the NIST water row from 500 K only, so no hand check was run on the second bed.}
+\end{eqcard}
+
+\begin{eqcard}{E.6}{R}{Heat release}
+\Stmt{\dot Q_{WGS}=\xi\left(-\Delta_rh_2\right)}
+\Interp{The heat set free by shift. The beds hold it as sensible heat, and the coolers of Section F take it out again.}
+\Deriv{\Eq{A.10} with one reaction. $\Delta_rh_2$ is negative, so the term is positive. Evaluate it at the mean bed temperature with \Eq{A.9}, because the 298 K value of \Eq{D.2} sits slightly away from bed conditions.}
+\Vars{\V{\dot Q_{WGS}}{heat released by shift}{\U{W}}}
+\Assume{None.}
+\Source{\tagT{} Consequence of \Eq{A.10}.}
+\Impl{\fn{units::wgs::heat_release}}
+\Valid{ID}{eq_e_06}{Equal to the sensible rise of \Eq{E.5}. This is a reported term of the plant balance, and its results row still reads not run. Hand value in the worked example.}
+\end{eqcard}
+
+\begin{eqcard}{E.7}{E}{High-temperature rate}
+\Stmt{\frac{dp_{CO}}{dt_r}=-k_{HTS}\left(p_{CO}-p_{CO,eq}\right)}
+\Interp{The rate is proportional to how far CO sits above its equilibrium level. It closes to zero at equilibrium, as it must.}
+\Deriv{Fit form from semi-technical runs on ICI catalyst 15, in two pellet sizes, with 350 ml of catalyst at 310 to 450 C and 16 to 31 bar. The feed was 1.75 m$^3$/h of dry gas at 20 C and 1 bar, at a steam ratio of 1.0, and the gas was nominally 80\% H$_2$, 10\% CO and 10\% CO$_2$. Chinchen prints the equation with no minus sign, so $k$ there is a rate of disappearance. The sign is written out here.}
+\Vars{\V{k_{HTS}}{pseudo-first-order shift constant, empty bed basis}{\U{s^{-1}}} \V{p_{CO,eq}}{CO partial pressure at equilibrium}{\U{Pa}} \V{t_r}{contact time on the empty bed}{\U{s}}}
+\Assume{Pseudo first order.}
+\Source{\tagP{} Chinchen et al.\ \cite{Chinchen}, PDF p.~6, printed p.~74. Feed from PDF p.~5.}
+\Impl{\fn{units::wgs::hts_rate}, present code inside \fn{units::wgs::hts}}
+\Valid{EXP}{eq_e_07}{Target: Table 1, PDF p.~6, through validation matrix rows CH-1 and CH-2. Chinchen Table 1 is calibration data, so this row tests the fit only.}
+\end{eqcard}
+
+\begin{eqcard}{E.8}{E}{Integrated rate}
+\Stmt{k_{HTS}=S_v\ln\left[\frac{1}{1-X_{CO}/X_{CO,e}}\right]}
+\Interp{This turns a measured conversion into a rate constant. A conversion close to equilibrium needs a long contact time, and the logarithm shows how fast that demand grows.}
+\Deriv{Separate \Eq{E.7} and integrate from $t_r=0$ to $t_r=1/S_v$ at constant $k_{HTS}$ and $p_{CO,eq}$, which gives $\ln[(p_{CO,0}-p_{CO,eq})/(p_{CO}-p_{CO,eq})]=k_{HTS}/S_v$. Conversion is linear in $p_{CO}$, so each difference becomes a difference in conversion, and the bracket follows. Chinchen defines both $k$ and $S_v$ on empty bed volume at reaction conditions.}
+\Vars{\V{S_v}{space velocity at reaction conditions, empty bed}{\U{s^{-1}}} \V{X_{CO,e}}{CO conversion at equilibrium}{1}}
+\Assume{Plug flow, isothermal. Steam ratio 1.0 in the source against $S/DG=0.50$ here, with no correction.}
+\Source{\tagP{} Chinchen et al.\ \cite{Chinchen}, PDF p.~6 for the equation and PDF p.~7 for the definitions.}
+\Impl{\fn{units::wgs::hts_volume}}
+\Valid{ID}{eq_e_08}{Round trip with \Eq{E.7} in the test.}
+\end{eqcard}
+
+\begin{eqcard}{E.9}{E}{Rate constant table}
+\Stmt{k_{HTS}\left(T\right)\ \text{from}\quad\begin{array}{r|cc|cc|cc}T\ (\mathrm{C})&\multicolumn{2}{c|}{16\ \mathrm{bar}}&\multicolumn{2}{c|}{21\ \mathrm{bar}}&\multicolumn{2}{c}{31\ \mathrm{bar}}\\&\mathrm{S}&\mathrm{L}&\mathrm{S}&\mathrm{L}&\mathrm{S}&\mathrm{L}\\\hline310&0.019&0.018&0.018&0.018&0.017&0.017\\330&\cdot&0.041&0.046&0.044&0.043&0.043\\350&0.103&0.090&0.114&0.091&0.092&0.097\\370&\cdot&0.156&0.216&0.139&0.190&0.154\\400&0.461&0.334&\cdot&\cdot&0.404&0.256\\425&\cdot&\cdot&\cdot&\cdot&0.586&0.358\\450&1.200&0.829&\cdot&\cdot&0.918&0.565\end{array}}
+\Interp{The measured rate constant in \U{s^{-1}}. It rises between thirtyfold and sixtyfold across the range, and the larger pellet falls behind the smaller one above about 350 C, where the gas can no longer reach the inside of the pellet fast enough.}
+\Deriv{Table 1 read from the page image. S is the 5.4 by 3.6 mm pellet, type 15-5, and L is the 8.5 by 11.0 mm pellet, type 15-4. A dot marks a blank cell. Chinchen finds significant pore diffusion limits above 370 C for the small pellet and above 350 C for the large pellet at 31 bar, with apparent activation energy falling from about 125 to about 63 \U{kJ\ mol^{-1}}. The true value is 121.8 \U{kJ\ mol^{-1}}. Values are interpolated in $\ln k_{HTS}$ against $1/T$ between the 31 bar points, the pressure closest to the plant.}
+\Vars{\V{T}{temperature of the table, in C}{\U{K}}}
+\Assume{Range 310 to 450 C and 16 to 31 bar. Catalyst age about 2 weeks on stream.}
+\Source{\tagP{} Chinchen et al.\ \cite{Chinchen}, Table 1, PDF p.~6. Diffusion limits from PDF p.~1 and p.~10, and true activation energy from PDF p.~12.}
+\Impl{\fn{units::wgs::hts_k}, present code \fn{units::wgs::k_chinchen}, which holds both 31 bar columns and takes the pellet as an input}
+\Valid{PUB}{eq_e_09}{Target: Table 1 itself, matrix row CH-1, AARD 15\%.}
+\end{eqcard}
+
+\begin{eqcard}{E.10}{O}{Catalyst volume}
+\Stmt{V_{cat}=\frac{\dot V}{k_{HTS}}\ln\left[\frac{1}{1-X_{CO}/X_{CO,e}}\right]}
+\Interp{A rough size for the first bed. It answers one question only: whether the assumed approach to equilibrium needs a plausible amount of catalyst.}
+\Deriv{Put $S_v=\dot V/V_{cat}$ in \Eq{E.8}. At Case 5 the gas flow is 6.0 \U{m^3\ s^{-1}} at the inlet and 7.0 \U{m^3\ s^{-1}} at the outlet by the ideal gas law \tagC. With 7 \U{m^3\ s^{-1}}, $k_{HTS}$ of 0.1 to 0.2 \U{s^{-1}} and $X_{CO}/X_{CO,e}=0.92$, the volume is 88 to 177 \U{m^3}. Confidence is low, because the steam ratio differs by a factor of two from Chinchen's runs and most of the bed runs above the temperature where pore diffusion sets in.}
+\Vars{\V{V_{cat}}{catalyst volume, empty bed basis}{\U{m^3}} \V{\dot V}{gas volume flow at reaction conditions}{\U{m^3\ s^{-1}}}}
+\Assume{Low confidence. Isothermal bed at a representative $k_{HTS}$.}
+\Source{\tagC{} Calculated here on \Eq{E.8} with TEV-961 \cite{TEV961} Case 5 flows.}
+\Impl{\fn{units::wgs::hts_volume}, present code inside \fn{units::wgs::hts}, which returns the bed volume when the bed is sized to an exit ratio}
+\Valid{PUB}{eq_e_10}{Check only. No published bed volume exists for this plant, so the target is the project band of 90 to 180 \U{m^3} at Case 5.}
+\end{eqcard}
+
+\begin{eqcard}{E.11}{O}{Temperature profile}
+\Stmt{\left(\sum_iF_ic_{p,i}\right)\frac{dT}{d\xi}=-\Delta_rh_2}
+\Interp{Each mole of shift heats the gas by the same small step. Plotted against extent, the bed temperature is close to a straight line.}
+\Deriv{Differentiate \Eq{E.5} with respect to $\xi$. The term $\sum_i\nu_ih_i$ is $\Delta_rh_2$ by \Eq{A.10}, and the term $\sum_iF_ic_{p,i}\,dT$ is the sensible change.}
+\Vars{\V{dT/d\xi}{temperature rise per unit extent}{\U{K\ mol^{-1}\ s}}}
+\Assume{AD.}
+\Source{\tagT{} Consequence of \Eq{E.5}.}
+\Impl{\fn{units::wgs::profile}}
+\Valid{PUB}{eq_e_11}{Target: the end points of \Eq{E.5}.}
+\end{eqcard}
+
+\begin{eqcard}{E.12}{F}{Bed pressure drop}
+\Stmt{\Delta p_{bed}=17\ \mathrm{psi}=1.17\ \mathrm{bar}\quad\text{across each bed}}
+\Interp{The pressure lost across one shift bed, taken directly from the INL sheets.}
+\Deriv{Case 5 labels give 436 to 419 psi across WGS-1 and 413 to 396 psi across WGS-2. The Ergun form \Eq{A.12} is kept as a check only, because the bed geometry is unpublished.}
+\Vars{\V{\Delta p_{bed}}{pressure drop across one shift bed}{\U{Pa}}}
+\Assume{INL Case 5 labels.}
+\Source{\tagP{} TEV-961 \cite{TEV961}, A-55 and A-56, PDF p.~79 and p.~80.}
+\Impl{\fn{units::wgs::dp}}
+\Valid{ID}{eq_e_12}{The stream pressures close across the train.}
+\end{eqcard}
+
+\begin{eqcard}{E.13}{F}{Steam to dry gas ratio}
+\Stmt{S/DG=\frac{F_{H_2O}}{\sum_{dry}F_i}}
+\Interp{The steam carried by each mole of dry gas. It pushes shift forward and protects the catalyst, and it falls from one bed to the next because shift consumes steam.}
+\Deriv{INL prints 0.50 with a minimum of 0.4 at the high-temperature inlet, and 0.37 with a minimum of 0.3 at the low-temperature inlet. TEV-953 says the 0.30 limit keeps good catalyst activity while inhibiting Fischer-Tropsch reactions.}
+\Vars{\V{S/DG}{steam to dry gas mole ratio}{1}}
+\Assume{INL values, 0.50 and 0.37, with minimum 0.4 and 0.3.}
+\Source{\tagP{} TEV-961 \cite{TEV961}, A-53, PDF p.~77. TEV-953 \cite{TEV953}, PDF p.~18 and p.~19.}
+\Impl{\fn{units::wgs::check_window}}
+\Valid{PUB}{eq_e_13}{Target: 0.50 and 0.37 as printed. Case 5 raw gas gives 33.4/66.6 = 0.50 at the first inlet, and the extent of the worked example gives 0.368 at the second \tagC.}
+\end{eqcard}
+
+\begin{eqcard}{E.14}{F}{Temperature window}
+\Stmt{T_{HTS,in}\ge600\ \mathrm{F},\qquad T_{LTS,in}\ge\max\left(375\ \mathrm{F},\ T_{dp}+27\ \mathrm{F}\right)}
+\Interp{Each bed needs its inlet warm enough to stay active, and the second bed must also stay clear of liquid water.}
+\Deriv{In SI the limits are 588.7 K and 463.7 K, with a dew margin of 15 K. Case 5 runs 635 F and 375 F against a printed dew point of 331 F, a margin of 44 F. \Eq{F.3} gives the dew point.}
+\Vars{\V{T_{HTS,in}}{high-temperature bed inlet}{\U{K}} \V{T_{LTS,in}}{low-temperature bed inlet}{\U{K}} \V{T_{dp}}{dew point}{\U{K}}}
+\Assume{INL limits carried unchanged.}
+\Source{\tagP{} TEV-961 \cite{TEV961}, A-53, PDF p.~77, which prints the limits. Operating values also in TEV-953 \cite{TEV953}, PDF p.~18 and p.~19.}
+\Impl{\fn{units::wgs::check_window}}
+\Valid{ID}{eq_e_14}{The window check trips on inlets set just outside each limit.}
+\end{eqcard}
+
+\begin{eqcard}{E.15}{O}{Low-temperature bed}
+\Stmt{Q_2\left(T_{LTS,out}\right)=K_2\left(T_{LTS,out}+\Delta T_{eq}\right),\qquad\text{with \Eq{E.5} across the bed}}
+\Interp{The second bed has no kinetics at all. Its exit is set by the equilibrium approach and the energy balance.}
+\Deriv{Solve \Eq{E.2}, \Eq{E.4} and \Eq{E.5} together for $\xi$ and $T_{LTS,out}$. The library holds no copper-zinc rate law, so a rate form cannot be written here. TECDOC-1236 states only that copper-zinc catalyst allows 200 to 240 C.}
+\Vars{\V{T_{LTS,out}}{low-temperature bed exit}{\U{K}}}
+\Assume{Equilibrium approach, anchored on INL operating points.}
+\Source{\tagC{} INL operating points, TEV-961 \cite{TEV961}, A-53, PDF p.~77. \tagM{4}: no copper-zinc rate law. TECDOC-1236 \cite{TE1236}, PDF p.~36.}
+\Impl{\fn{units::wgs::lts}, the same name in the present code}
+\Valid{PUB}{eq_e_15}{Target: 0.33 mol\% dry CO and 213 C, sheet A-53.}
+\end{eqcard}
+
+\begin{eqcard}{E.16}{E}{Power law, listed and unused}
+\Stmt{r=k_0\exp\left(-\frac{E_{a,K}}{RT}\right)p_{CO}^{\,1.77}\,p_{H_2O}^{\,0.23}\,p_{CO_2}^{\,-0.17}\,p_{H_2}^{\,-0.12}\left(1-\frac{Q_2}{K_2}\right)}
+\Interp{A published rate law for iron-chromium catalyst on biomass gas. It is printed for completeness and takes no part in the plant.}
+\Deriv{Kraussler Eq 2 with $k_0=117.8$ \U{mol\ g^{-1}\ Pa^{-1.71}\ s^{-1}} from Table 1. Table 3 raises $E_{a,K}$ from 101.9 to 126.6 \U{kJ\ mol^{-1}}, changing that parameter alone on one operating point. The rig ran at ambient pressure on real gas holding H$_2$S and tar. The orders sum to 1.71, so taking the law to 28 bar would multiply the rate by about 300, and Kraussler attributes the CO order of 1.77 to its low pressure, against about 1.0 elsewhere. That is why the law does not extrapolate to this plant. Kraussler's $K_{MAL}$ and $K_g$ are $Q_2$ and $K_2$ here.}
+\Vars{\V{r}{shift rate per unit mass of catalyst}{\U{mol\ g^{-1}\ s^{-1}}} \V{k_0}{pre-exponential factor}{\U{mol\ g^{-1}\ Pa^{-1.71}\ s^{-1}}} \V{E_{a,K}}{activation energy of this law}{\U{J\ mol^{-1}}}}
+\Assume{Ambient pressure, biomass gas.}
+\Source{\tagP{} Kraussler et al.\ \cite{Kraussler}, Eq 2 and Table 1, PDF p.~2, and Table 3, PDF p.~8.}
+\Impl{none. The equation is listed only.}
+\Valid{NONE}{eq_e_16}{No plant benchmark. The validation matrix keeps one ambient comparison, KR-1, on Kraussler's own rig as a weak test of the code.}
+\end{eqcard}
+
+\subsection*{Worked example: Case 5 shift, carried to Case B}
+Take 100 mol of Case 5 raw syngas from sheet A-50: H$_2$ 48.8, CO 8.7, CO$_2$ 4.8, H$_2$O 33.4, CH$_4$ 3.6 and N$_2$ 0.7. The dry gas is 66.6 mol, so $S/DG=0.50$ by \Eq{E.13}.
+
+First bed. A-53 prints 3.01 mol\% dry CO at the exit. Each mole of shift removes one mole of CO and adds one mole of dry gas, so $(8.7-\xi)/(66.6+\xi)=0.0301$ and $\xi=6.50$ mol. By \Eq{E.2} the gas becomes H$_2$ 55.30, CO 2.20, CO$_2$ 11.30 and H$_2$O 26.90, with $X_{CO}=74.7$\% by \Eq{E.1}. The quotient of \Eq{D.10} is 10.56, close to the $K_2$ of 11.43 at 764 F.
+
+Second bed. A-53 prints 0.33 mol\% dry CO, so $\xi=1.95$ mol. The gas becomes H$_2$ 57.25, CO 0.25, CO$_2$ 13.25 and H$_2$O 24.95, with 88.7\% conversion across this bed and 97.2\% across both. On a dry basis the gas holds 17.66 mol\% CO$_2$, 76.3 mol\% H$_2$, 4.80 mol\% CH$_4$ and 0.33 mol\% CO, which matches the 17.7 mol\% printed at the Selexol inlet. The second bed adds 3.5\% more hydrogen and 17\% more CO$_2$ for capture, measured on the first bed outlet.
+
+Heat. The mean molar mass is 12.32 \U{g\ mol^{-1}}, so 349,724 \U{lb\ h^{-1}} is 3,576 \U{mol\ s^{-1}}, which sits within 0.3\% of the 3,568 \U{mol\ s^{-1}} from the printed 258 \U{MMSCFD}. \Eq{E.6} then gives 232.4 \U{mol\ s^{-1}} at 38.5 \U{kJ\ mol^{-1}} on the first bed and 69.8 \U{mol\ s^{-1}} at 39.8 \U{kJ\ mol^{-1}} on the second, or 8.9 and 2.8 MW. Scaling by 1,927/1,970 for captured CO$_2$ and by $s=\vScaleB$ for Case B gives 6.0 and 1.9 MW, a total of 7.8 MW. All of this is hand arithmetic on the Case 5 proxy.
+
+\subsection*{Link to the sources}
+INL and IEAGHG reach almost the same outlet from different feeds, and the printed streams of both fall within 2 K of a 10 K approach to equilibrium. That agreement is the evidence behind \Eq{E.4}. Chinchen supports the first bed at the right pressure and a steam ratio twice the plant value. No library source supports the rate of the second bed, so \Eq{E.15} stands on operating points alone, which is recorded as \tagM{4}.

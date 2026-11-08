@@ -1,0 +1,568 @@
+ids removed set() added set() 231 231
+AVAILABILITY.locator:
+  - s6
+  + D05
+AVAILABILITY.source:
+  - Project value; no availability in TEV-953 or TEV-961 (inl.md s6)
+  + Author assumption (decision D05); TEV-953 and TEV-961 state no availability factor, and IEAGHG 2017-02 Table 4 uses 95%
+RHO_H2_NORMAL.locator:
+  - slide 14
+  + Table 2, PDF p16
+RHO_H2_NORMAL.source:
+  - Deck slide 14; IEAGHG 2017 uses 8.994 t/h per 100,000 Nm3/h (0.08994)
+  + Normal density of H2 at 0 C and 1 atm, a handbook value, not verified; IEAGHG 2017-02 Table 2 PDF p16 implies 0.08994 (8.994 t/h per 100,000 Nm3/h)
+RHO_H2_NORMAL.source_status:
+  - via_reader
+  + not_verified
+H2_B.locator:
+  - s9
+  + press releases 15 Jan 2008, 30 Nov 2011
+H2_B.source:
+  - Air Liquide releases 15 Jan 2008, 30 Nov 2011 (econ_lit.md s9)
+  + Air Liquide press releases of 15 Jan 2008 and 30 Nov 2011: the SOXAL hydrogen plant on Jurong Island, close to 100,000 Nm3/h (decision D03)
+NG_NORECYCLE.locator:
+  - Table 2
+  + Table 2, PDF p30, doc p29
+NG_NORECYCLE.source:
+  - TEV-953 Table 2: HTGR no CC, all PSA reject fired, no recycle. Fit of Cases 2-5 gives 44.3 (inl_calcs_output)
+  + TEV-953 Table 2 doc p29 (PDF p30): HTGR case with no capture, all PSA reject fired, no recycle; a linear fit over TEV-961 Cases 2 to 5 gives 44.3
+WATER_GPM_CASE_A.locator:
+  - freeze section 4.1
+  + Table 2, PDF p17, doc p16
+WATER_GPM_CASE_A.source:
+  - TEV-961 process water, freeze section 4.1
+  + TEV-961 Table 2 doc p16 (PDF p17): Case 6 process water, which excludes reactor heat rejection
+WATER_GPM_CASE_A.source_status:
+  - via_reader
+  + primary
+CO2_CAPTURED_C6.locator:
+  - Table 2, doc p16, s4.5
+  + Table 2, PDF p17, doc p16, A-50, A-51
+CO2_CAPTURED_C6.source:
+  - TEV-961 Table 2 doc p16. Ton = short ton, inl.md s4.5
+  + TEV-961 Table 2 doc p16 (PDF p17). INL's ton is the short ton: the Case 5 and Case 2 CO2 mass flows of TEV-961 A-50 and A-51 give the published tons per day only in short tons
+ETA_MEA.locator:
+  - whole source
+  + D25
+ETA_MEA.source:
+  - Project per-pass capture on absorber-inlet CO2 (amine_spec rows 42-45)
+  + Author design value of the MEA train, 90% per pass on absorber-inlet CO2 (decision D25); the CAPTURE sweep runs 80 to 95%
+PHI_RECYCLE.locator:
+  - s9
+  + A-53 to A-56, PDF p77 to p80
+PHI_RECYCLE.source:
+  - CO2/(CO2+CH4+CO) after shift. Case 5 reconstruction, mea_columns s9, inl_calcs_output 3754/(3754+1020+70)
+  + CO2/(CO2+CH4+CO) after the shift, 3754/(3754+1020+70) lbmol/h, reconstructed from TEV-961 Case 5 stream tables, A-53 to A-56 (PDF p77 to p80)
+BASELINE_IEAGHG_ROUNDED.source:
+  - IEAGHG 2017-02 Table 2 PDF p16, the rounded bound printed in the freeze
+  + IEAGHG 2017-02 Table 2 PDF p16 bound rounded to 9.00 kg/kg; kept only for the frozen screening key A_900 of engine/vv/data/freeze_values.json, and no result uses it
+GRID_EF.locator:
+  - whole source
+  + grid emission factor 2024
+GRID_EF.source:
+  - EMA 2024 via old repo csv, audit_recompute section F; not re-verified
+  + Energy Market Authority 2024 grid emission factor, not verified
+GRID_EF.source_status:
+  - via_old_repo
+  + not_verified
+EF_NG_LHV.locator:
+  - whole source
+  + Vol. 2, Ch. 2, Table 2.2
+EF_NG_LHV.source:
+  - IPCC 2006 via Stationary Combustion Guidance Table (htgr_ihx.md)
+  + IPCC 2006 Guidelines, Volume 2, Chapter 2, Table 2.2, natural gas, not verified
+EF_NG_LHV.source_status:
+  - via_reader
+  + not_verified
+EF_UPSTREAM.locator:
+  - Table A2
+  + whole report
+EF_UPSTREAM.source:
+  - IEA 2026 via final_v1_7 Table A2 (not re-verified)
+  + IEA 2026, Assessing Emissions from LNG Supply and Abatement Options, not verified
+TS_BURDEN.locator:
+  - Table A2
+  + author assumption
+TS_BURDEN.source:
+  - final_v1_7 Table A2, project assumption
+  + Author assumption for the ship transport and storage burden, not verified
+TS_BURDEN.source_status:
+  - via_reader
+  + not_verified
+EF_NUCLEAR.locator:
+  - Table A2
+  + whole report
+EF_NUCLEAR.source:
+  - UNECE 2022 via final_v1_7 Table A2 (not re-verified)
+  + UNECE 2022, Life Cycle Assessment of Electricity Generation Options, nuclear, not verified
+IHX_APPROACH_K.locator:
+  - freeze section 4.2
+  + Table 2 cont., PDF p18; printed p.10
+IHX_APPROACH_K.source:
+  - Primary return 491 C against secondary return 466 C, freeze section 4.2
+  + Primary return 491 C against the secondary return of 466 C, TEV-961 Table 2 cont. doc p17 (PDF p18), the 25 K approach INL assumes (TEV-961 printed p.10)
+LOADING_RICH.locator:
+  - s3
+  + D28
+LOADING_RICH.source:
+  - mea_columns s3 design value; mea_thermo cap, no kinetic data above 0.50
+  + Author design cap (decision D28); no kinetic, density or viscosity data for MEA above a loading of 0.50 were found
+LOADING_LEAN.source:
+  - amine_spec line 34, Guo 2018 Table 2 (not read)
+  + Author design value of the MEA train (decision D25); Guo et al. 2018 Table 2, not verified
+P_STRIPPER.locator:
+  - whole source
+  + D25
+P_STRIPPER.source:
+  - amine_spec line 51
+  + Author design value of the MEA train (decision D25), not verified against a syngas plant
+P_STRIPPER.source_status:
+  - via_reader
+  + not_verified
+Q_EX4_ABOVE_130C.locator:
+  - whole source
+  + A-55 to A-59, PDF p79 to p83
+Q_EX4_ABOVE_130C.source:
+  - inl_calcs_output: WGS-EX4 300 to 266 F; independent check in Section 4 of this script
+  + TEV-961 Case 5 WGS-EX4 cooler, 300 to 266 F, A-55 to A-59 (PDF p79 to p83), heat above 130 C by the author's calculation; the EX4_CHECK inputs check it on an independent cooling curve
+SRD_LOW.locator:
+  - s6
+  + Table D.19, PDF p38
+SRD_LOW.source:
+  - mea_columns s6 recommendation; low end needs good heat recovery
+  + Author range (decision D26): the low end needs good heat recovery; Vinjarapu et al. 2024 minimum 3.46 GJ/t, Appl. Energy 355 122193 Table D.19 PDF p38
+SRD_CENTRAL.locator:
+  - s6
+  + Table D.19, PDF p38
+SRD_CENTRAL.source:
+  - mea_columns s6: 88-92% window median 3.75; Kwak 3.92; DICE 3.64
+  + Author central value (decision D26): Vinjarapu et al. 2024 Table D.19 PDF p38, median 3.75 GJ/t over the 88 to 92% runs; Kwak et al. 2012 3.92; Nexant and Bechtel 2020 DICE design 3.64
+SRD_HIGH.locator:
+  - s6
+  + Fig. 3
+SRD_HIGH.source:
+  - mea_columns s6: Mongstad cluster 3.95-4.25
+  + Author range (decision D26): Brigman et al. 2014, Mongstad runs at 3.95 to 4.25 GJ/t, Fig. 3
+CP_HE.locator:
+  - s5
+  + Eq. 4-4
+CP_HE.source:
+  - Petersen 1970, via htgr_ihx.md s5; INL implied 5190
+  + Petersen 1970, Riso Report 224, Eq. 4-4: cp 5195 J/kg/K; TEV-961 implies 5190
+SLIP_CP_KJ_KMOL_K.locator:
+  - screening.py balance
+  + author assumption
+SLIP_CP_KJ_KMOL_K.source:
+  - CO2 slip sensible heat, screening balance, RWGS excluded
+  + Author assumption for the CO2 slip sensible heat, RWGS excluded, not verified
+SLIP_DT_K.locator:
+  - screening.py balance
+  + author assumption
+SLIP_DT_K.source:
+  - CO2 slip temperature rise to the reformer, screening balance
+  + Author assumption for the CO2 slip temperature rise to the reformer, not verified
+CIRC_LOW_P_MPA.locator:
+  - s6
+  + PDF p11 to p12; App. A-6, PDF p116
+CIRC_LOW_P_MPA.source:
+  - htgr_ihx.md s6 budget from INL-11109 and JAERI values
+  + Author pressure-drop budget, low case, from the loop drops of INL/EXT-06-11109 PDF p11 to p12 (50 kPa per heat exchanger and per pipe leg) and the JAERI-Tech 2005-031 reformer mock-up, App. A-6 PDF p116
+CIRC_LOW_DP_SEC_KPA.locator:
+  - s6
+  + PDF p11 to p12; App. A-6, PDF p116
+CIRC_LOW_DP_SEC_KPA.source:
+  - htgr_ihx.md s6 budget from INL-11109 and JAERI values
+  + Author pressure-drop budget, low case, from the loop drops of INL/EXT-06-11109 PDF p11 to p12 (50 kPa per heat exchanger and per pipe leg) and the JAERI-Tech 2005-031 reformer mock-up, App. A-6 PDF p116
+CIRC_LOW_DP_PRIM_KPA.locator:
+  - s6
+  + PDF p11 to p12; App. A-6, PDF p116
+CIRC_LOW_DP_PRIM_KPA.source:
+  - htgr_ihx.md s6 budget from INL-11109 and JAERI values
+  + Author pressure-drop budget, low case, from the loop drops of INL/EXT-06-11109 PDF p11 to p12 (50 kPa per heat exchanger and per pipe leg) and the JAERI-Tech 2005-031 reformer mock-up, App. A-6 PDF p116
+CIRC_LOW_ETA.locator:
+  - s6
+  + PDF p11 to p12; App. A-6, PDF p116
+CIRC_LOW_ETA.source:
+  - htgr_ihx.md s6 budget from INL-11109 and JAERI values
+  + Author pressure-drop budget, low case, from the loop drops of INL/EXT-06-11109 PDF p11 to p12 (50 kPa per heat exchanger and per pipe leg) and the JAERI-Tech 2005-031 reformer mock-up, App. A-6 PDF p116
+CIRC_CENTRAL_P_MPA.locator:
+  - Table 2, s6
+  + Table 2; PDF p11 to p12
+CIRC_CENTRAL_P_MPA.source:
+  - htgr_ihx.md s6; INL-21537 Table 2 gives eta 0.75
+  + Author budget, central case at 7.0 MPa, from the loop drops of INL/EXT-06-11109 PDF p11 to p12 (50 kPa per heat exchanger and per pipe leg) and the JAERI-Tech 2005-031 reformer mock-up, App. A-6 PDF p116; INL/EXT-11-21537 Table 2 gives circulator efficiency 0.75
+CIRC_CENTRAL_DP_SEC_KPA.locator:
+  - Table 2, s6
+  + Table 2; PDF p11 to p12
+CIRC_CENTRAL_DP_SEC_KPA.source:
+  - htgr_ihx.md s6; INL-21537 Table 2 gives eta 0.75
+  + Author budget, central case at 7.0 MPa, from the loop drops of INL/EXT-06-11109 PDF p11 to p12 (50 kPa per heat exchanger and per pipe leg) and the JAERI-Tech 2005-031 reformer mock-up, App. A-6 PDF p116; INL/EXT-11-21537 Table 2 gives circulator efficiency 0.75
+CIRC_CENTRAL_DP_PRIM_KPA.locator:
+  - Table 2, s6
+  + Table 2; PDF p11 to p12
+CIRC_CENTRAL_DP_PRIM_KPA.source:
+  - htgr_ihx.md s6; INL-21537 Table 2 gives eta 0.75
+  + Author budget, central case at 7.0 MPa, from the loop drops of INL/EXT-06-11109 PDF p11 to p12 (50 kPa per heat exchanger and per pipe leg) and the JAERI-Tech 2005-031 reformer mock-up, App. A-6 PDF p116; INL/EXT-11-21537 Table 2 gives circulator efficiency 0.75
+CIRC_CENTRAL_ETA.locator:
+  - Table 2, s6
+  + Table 2; PDF p11 to p12
+CIRC_CENTRAL_ETA.source:
+  - htgr_ihx.md s6; INL-21537 Table 2 gives eta 0.75
+  + Author budget, central case at 7.0 MPa, from the loop drops of INL/EXT-06-11109 PDF p11 to p12 (50 kPa per heat exchanger and per pipe leg) and the JAERI-Tech 2005-031 reformer mock-up, App. A-6 PDF p116; INL/EXT-11-21537 Table 2 gives circulator efficiency 0.75
+CIRC_CENTRAL_5P15_P_MPA.locator:
+  - s6
+  + PDF p11 to p12; App. A-6, PDF p116
+CIRC_CENTRAL_5P15_P_MPA.source:
+  - htgr_ihx.md s6
+  + Author budget, central case at 5.15 MPa, from the loop drops of INL/EXT-06-11109 PDF p11 to p12 (50 kPa per heat exchanger and per pipe leg) and the JAERI-Tech 2005-031 reformer mock-up, App. A-6 PDF p116
+CIRC_CENTRAL_5P15_DP_SEC_KPA.locator:
+  - s6
+  + PDF p11 to p12; App. A-6, PDF p116
+CIRC_CENTRAL_5P15_DP_SEC_KPA.source:
+  - htgr_ihx.md s6
+  + Author budget, central case at 5.15 MPa, from the loop drops of INL/EXT-06-11109 PDF p11 to p12 (50 kPa per heat exchanger and per pipe leg) and the JAERI-Tech 2005-031 reformer mock-up, App. A-6 PDF p116
+CIRC_CENTRAL_5P15_DP_PRIM_KPA.locator:
+  - s6
+  + PDF p11 to p12; App. A-6, PDF p116
+CIRC_CENTRAL_5P15_DP_PRIM_KPA.source:
+  - htgr_ihx.md s6
+  + Author budget, central case at 5.15 MPa, from the loop drops of INL/EXT-06-11109 PDF p11 to p12 (50 kPa per heat exchanger and per pipe leg) and the JAERI-Tech 2005-031 reformer mock-up, App. A-6 PDF p116
+CIRC_CENTRAL_5P15_ETA.locator:
+  - s6
+  + PDF p11 to p12; App. A-6, PDF p116
+CIRC_CENTRAL_5P15_ETA.source:
+  - htgr_ihx.md s6
+  + Author budget, central case at 5.15 MPa, from the loop drops of INL/EXT-06-11109 PDF p11 to p12 (50 kPa per heat exchanger and per pipe leg) and the JAERI-Tech 2005-031 reformer mock-up, App. A-6 PDF p116
+CIRC_HIGH_P_MPA.locator:
+  - s6
+  + Fig. 3.35, PDF p198
+CIRC_HIGH_P_MPA.source:
+  - htgr_ihx.md s6; HTTR map peak efficiency about 0.65
+  + Author budget, high case, from the loop drops of INL/EXT-06-11109 PDF p11 to p12 (50 kPa per heat exchanger and per pipe leg) and the JAERI-Tech 2005-031 reformer mock-up, App. A-6 PDF p116; HTTR circulator map peak efficiency about 0.65, IAEA-TECDOC-1382 Fig. 3.35 PDF p198
+CIRC_HIGH_DP_SEC_KPA.locator:
+  - s6
+  + Fig. 3.35, PDF p198
+CIRC_HIGH_DP_SEC_KPA.source:
+  - htgr_ihx.md s6; HTTR map peak efficiency about 0.65
+  + Author budget, high case, from the loop drops of INL/EXT-06-11109 PDF p11 to p12 (50 kPa per heat exchanger and per pipe leg) and the JAERI-Tech 2005-031 reformer mock-up, App. A-6 PDF p116; HTTR circulator map peak efficiency about 0.65, IAEA-TECDOC-1382 Fig. 3.35 PDF p198
+CIRC_HIGH_DP_PRIM_KPA.locator:
+  - s6
+  + Fig. 3.35, PDF p198
+CIRC_HIGH_DP_PRIM_KPA.source:
+  - htgr_ihx.md s6; HTTR map peak efficiency about 0.65
+  + Author budget, high case, from the loop drops of INL/EXT-06-11109 PDF p11 to p12 (50 kPa per heat exchanger and per pipe leg) and the JAERI-Tech 2005-031 reformer mock-up, App. A-6 PDF p116; HTTR circulator map peak efficiency about 0.65, IAEA-TECDOC-1382 Fig. 3.35 PDF p198
+CIRC_HIGH_ETA.locator:
+  - s6
+  + Fig. 3.35, PDF p198
+CIRC_HIGH_ETA.source:
+  - htgr_ihx.md s6; HTTR map peak efficiency about 0.65
+  + Author budget, high case, from the loop drops of INL/EXT-06-11109 PDF p11 to p12 (50 kPa per heat exchanger and per pipe leg) and the JAERI-Tech 2005-031 reformer mock-up, App. A-6 PDF p116; HTTR circulator map peak efficiency about 0.65, IAEA-TECDOC-1382 Fig. 3.35 PDF p198
+T_CIRC_SEC_K.locator:
+  - whole source
+  + Table 2 cont., PDF p18
+T_CIRC_SEC_K.source:
+  - Secondary circulator inlet, 466 C, htgr_calc2.py
+  + Secondary circulator inlet at the secondary helium return, 466 C, TEV-961 Table 2 cont. doc p17 (PDF p18)
+T_CIRC_PRIM_K.locator:
+  - whole source
+  + Table 2 cont., PDF p18; printed p.10
+T_CIRC_PRIM_K.source:
+  - Primary circulator inlet, 491 C, htgr_calc2.py
+  + Primary circulator inlet at the primary return, 491 C: the 466 C secondary return of TEV-961 Table 2 cont. (PDF p18) plus INL's 25 K approach (TEV-961 printed p.10)
+LOSS_LOW_IHX.locator:
+  - Table 3, s7
+  + Table 3, PDF p15; Table 3-21, PDF p164
+LOSS_LOW_IHX.source:
+  - 90 m duct, INL-11109 Table 3 scaled (htgr_ihx.md s7); vessel P^(2/3)
+  + 90 m duct of INL/EXT-06-11109 Table 3 PDF p15 scaled on flow; vessel loss scaled with P^(2/3) from IAEA-TECDOC-1382 Table 3-21 PDF p164, the author's scaling
+LOSS_LOW_DUCT.locator:
+  - Table 3, s7
+  + Table 3, PDF p15; Table 3-21, PDF p164
+LOSS_LOW_DUCT.source:
+  - 90 m duct, INL-11109 Table 3 scaled (htgr_ihx.md s7); vessel P^(2/3)
+  + 90 m duct of INL/EXT-06-11109 Table 3 PDF p15 scaled on flow; vessel loss scaled with P^(2/3) from IAEA-TECDOC-1382 Table 3-21 PDF p164, the author's scaling
+LOSS_CENTRAL_IHX.locator:
+  - Table 3
+  + Table 3-23
+LOSS_CENTRAL_IHX.source:
+  - IHX 0.8% from HTTR heat balance residual, TECDOC-1382 Table 3-23 (htgr_ihx.md)
+  + IHX loss of 0.8% from the HTTR heat balance residual, IAEA-TECDOC-1382 Table 3-23
+LOSS_CENTRAL_DUCT.locator:
+  - Table 3
+  + Table 3-23
+LOSS_CENTRAL_DUCT.source:
+  - IHX 0.8% from HTTR heat balance residual, TECDOC-1382 Table 3-23 (htgr_ihx.md)
+  + IHX loss of 0.8% from the HTTR heat balance residual, IAEA-TECDOC-1382 Table 3-23
+LOSS_HIGH_IHX_MWTH.locator:
+  - whole source
+  + Table 3, PDF p15; Table 3-21, PDF p164
+LOSS_HIGH_IHX_MWTH.source:
+  - IHX 8.1 MWth is the final_v1_7 allowance (no source); 500 m duct; vessel 2.7% of power
+  + IHX 8.1 MWth from an earlier project allowance, not verified; 500 m duct of INL/EXT-06-11109 Table 3 PDF p15; vessel 2.7% of power from IAEA-TECDOC-1382 Table 3-21 PDF p164
+LOSS_HIGH_DUCT.locator:
+  - whole source
+  + Table 3, PDF p15; Table 3-21, PDF p164
+LOSS_HIGH_DUCT.source:
+  - IHX 8.1 MWth is the final_v1_7 allowance (no source); 500 m duct; vessel 2.7% of power
+  + IHX 8.1 MWth from an earlier project allowance, not verified; 500 m duct of INL/EXT-06-11109 Table 3 PDF p15; vessel 2.7% of power from IAEA-TECDOC-1382 Table 3-21 PDF p164
+LOSS_HIGH_VESSEL_FRACTION.locator:
+  - whole source
+  + Table 3, PDF p15; Table 3-21, PDF p164
+LOSS_HIGH_VESSEL_FRACTION.source:
+  - IHX 8.1 MWth is the final_v1_7 allowance (no source); 500 m duct; vessel 2.7% of power
+  + IHX 8.1 MWth from an earlier project allowance, not verified; 500 m duct of INL/EXT-06-11109 Table 3 PDF p15; vessel 2.7% of power from IAEA-TECDOC-1382 Table 3-21 PDF p164
+R_WORK_HIGH.locator:
+  - s10
+  + author assumption
+R_WORK_HIGH.source:
+  - mea_columns s10, assumed upper value
+  + Author upper value of the back-pressure work ratio, not verified
+R_WORK_CENTRAL.locator:
+  - s10
+  + PDF p68, p75 to p76
+R_WORK_CENTRAL.source:
+  - IEAGHG 2017-02 Case 1A back-pressure ratio, mea_columns s10
+  + IEAGHG 2017-02 Case 1A back-pressure work per unit of condensing heat (PDF p68, p75 to p76), the author's calculation
+CO_SHARE_OF_UNCONVERTED_CO.locator:
+  - whole source
+  + A-53 to A-56, PDF p77 to p80
+CO_SHARE_OF_UNCONVERTED_CO.source:
+  - Case 5 reconstruction, inl_calcs_output line 54
+  + CO and CH4 leaving the shift, 70 and 1020 lbmol/h, reconstructed from TEV-961 Case 5 stream tables, A-53 to A-56 (PDF p77 to p80)
+CO_SHARE_OF_UNCONVERTED_CH4.locator:
+  - whole source
+  + A-53 to A-56, PDF p77 to p80
+CO_SHARE_OF_UNCONVERTED_CH4.source:
+  - Case 5 reconstruction, inl_calcs_output line 54
+  + CO and CH4 leaving the shift, 70 and 1020 lbmol/h, reconstructed from TEV-961 Case 5 stream tables, A-53 to A-56 (PDF p77 to p80)
+EX4_CHECK_DRY_KMOL_H.locator:
+  - whole source
+  + A-53 to A-56, PDF p77 to p80
+EX4_CHECK_DRY_KMOL_H.source:
+  - Independent check of the WGS-EX4 heat above 130 C, screening syngas cooling curve; Case 5 dry gas from inl_calcs_output
+  + Independent check of the WGS-EX4 heat above 130 C on a syngas cooling curve; Case 5 dry gas reconstructed from TEV-961 Case 5 stream tables, A-53 to A-56 (PDF p77 to p80)
+EX4_CHECK_CP_DRY.locator:
+  - whole source
+  + A-53 to A-56, PDF p77 to p80
+EX4_CHECK_CP_DRY.source:
+  - Independent check of the WGS-EX4 heat above 130 C, screening syngas cooling curve; Case 5 dry gas from inl_calcs_output
+  + Independent check of the WGS-EX4 heat above 130 C on a syngas cooling curve; Case 5 dry gas reconstructed from TEV-961 Case 5 stream tables, A-53 to A-56 (PDF p77 to p80); heat capacity an author assumption
+EX4_CHECK_CP_VAP.locator:
+  - whole source
+  + A-53 to A-56, PDF p77 to p80
+EX4_CHECK_CP_VAP.source:
+  - Independent check of the WGS-EX4 heat above 130 C, screening syngas cooling curve; Case 5 dry gas from inl_calcs_output
+  + Independent check of the WGS-EX4 heat above 130 C on a syngas cooling curve; Case 5 dry gas reconstructed from TEV-961 Case 5 stream tables, A-53 to A-56 (PDF p77 to p80); heat capacity an author assumption
+EX4_CHECK_LATENT.locator:
+  - whole source
+  + A-53 to A-56, PDF p77 to p80
+EX4_CHECK_LATENT.source:
+  - Independent check of the WGS-EX4 heat above 130 C, screening syngas cooling curve; Case 5 dry gas from inl_calcs_output
+  + Independent check of the WGS-EX4 heat above 130 C on a syngas cooling curve; Case 5 dry gas reconstructed from TEV-961 Case 5 stream tables, A-53 to A-56 (PDF p77 to p80); latent heat an author assumption
+EX4_CHECK_P_BAR.locator:
+  - whole source
+  + A-53 to A-56, PDF p77 to p80
+EX4_CHECK_P_BAR.source:
+  - Independent check of the WGS-EX4 heat above 130 C, screening syngas cooling curve; Case 5 dry gas from inl_calcs_output
+  + Independent check of the WGS-EX4 heat above 130 C on a syngas cooling curve; Case 5 dry gas reconstructed from TEV-961 Case 5 stream tables, A-53 to A-56 (PDF p77 to p80); pressure an author assumption
+EX4_CHECK_T_IN_C.locator:
+  - whole source
+  + A-53 to A-56, PDF p77 to p80
+EX4_CHECK_T_IN_C.source:
+  - Independent check of the WGS-EX4 heat above 130 C, screening syngas cooling curve; Case 5 dry gas from inl_calcs_output
+  + Independent check of the WGS-EX4 heat above 130 C on a syngas cooling curve; Case 5 dry gas reconstructed from TEV-961 Case 5 stream tables, A-53 to A-56 (PDF p77 to p80)
+EX4_CHECK_T_OUT_C.locator:
+  - whole source
+  + A-53 to A-56, PDF p77 to p80
+EX4_CHECK_T_OUT_C.source:
+  - Independent check of the WGS-EX4 heat above 130 C, screening syngas cooling curve; Case 5 dry gas from inl_calcs_output
+  + Independent check of the WGS-EX4 heat above 130 C on a syngas cooling curve; Case 5 dry gas reconstructed from TEV-961 Case 5 stream tables, A-53 to A-56 (PDF p77 to p80); outlet an author assumption
+PSA_REJECT_KMOL_H.locator:
+  - whole source
+  + A-53 to A-56, PDF p77 to p80
+PSA_REJECT_KMOL_H.source:
+  - Case 5 reject molar flow, inl_calcs_output, used to raise purge load with CO2 slip
+  + TEV-961 Case 5 PSA reject molar flow reconstructed from TEV-961 Case 5 stream tables, A-53 to A-56 (PDF p77 to p80); it raises the purge load with the CO2 slip
+ETA_MOTOR.locator:
+  - s8
+  + author assumption
+ETA_MOTOR.source:
+  - htgr_ihx.md s8, reader assumption, applied to pumps and circulators
+  + Author assumption for pump and circulator motors, not verified
+LIVES_SHORT.locator:
+  - slide 29
+  + D08
+LIVES_SHORT.source:
+  - Task; deck slide 29
+  + Author choice of economic life; 25 y and 60 y form the printed pair (decision D08)
+LIVES_MID.locator:
+  - slide 29
+  + D08
+LIVES_MID.source:
+  - Task; deck slide 29
+  + Author choice of economic life; 25 y and 60 y form the printed pair (decision D08)
+LIVES_LONG.locator:
+  - slide 29
+  + D08
+LIVES_LONG.source:
+  - Task; deck slide 29
+  + Author choice of economic life; 25 y and 60 y form the printed pair (decision D08)
+FX.locator:
+  - whole source
+  + AEXSIUS 2025
+FX.source:
+  - FRED AEXSIUS 2025 (econ_lit.md s9h)
+  + FRED series AEXSIUS, 2025 annual average, S$1.3065 per US$
+F_2019USD_TO_2025SGD.locator:
+  - Table A2
+  + GDPDEF 2019 and 2025; AEXSIUS 2025
+F_2019USD_TO_2025SGD.source:
+  - 128.885/103.9745 GDP deflator x 1.3065, final_v1_7 Table A2; GDP deflator understates nuclear escalation
+  + US GDP implicit price deflator (BEA, FRED series GDPDEF) 128.885 over 103.9745, times FRED AEXSIUS 2025, 1.3065; a GDP deflator understates nuclear escalation
+F_2014EUR_TO_2025SGD.locator:
+  - Table A9
+  + AEXUSEU 2014; GDPDEF; AEXSIUS 2025
+F_2014EUR_TO_2025SGD.source:
+  - final_v1_7 Table A9 check 9
+  + FRED AEXUSEU 2014 annual average, US GDP implicit price deflator (FRED GDPDEF) 2014 mean 96.417 and 2025 128.885, and FRED AEXSIUS 2025, 1.3065
+GAS_LOW.locator:
+  - s3.6
+  + author assumption
+GAS_LOW.source:
+  - final_v1_7 s3.6
+  + Author sensitivity value, not verified
+GAS_CENTRAL.locator:
+  - whole source
+  + PNGASJPUSDM 2025; AEXSIUS 2025
+GAS_CENTRAL.source:
+  - US$12.09/MMBtu 2025 mean x 1.3065 / 1.05506 = S$14.97 (econ_lit.md s9h)
+  + IMF global LNG price, Asia (FRED PNGASJPUSDM), 2025 mean US$12.09/MMBtu, times FRED AEXSIUS 1.3065 and over 1.05506 GJ/MMBtu, S$14.97/GJ
+GAS_HIGH.locator:
+  - s3.6
+  + author assumption
+GAS_HIGH.source:
+  - final_v1_7 s3.6
+  + Author sensitivity value, not verified
+TS_CENTRAL.locator:
+  - s11
+  + Fig. 2.13, PDF p121
+TS_CENTRAL.source:
+  - econ_lit.md s11; ERIA network transport about US$43/t = S$56, storage extra
+  + Author central tariff (decision D10); ERIA and GCCSI 2024 Fig. 2.13 (report PDF p121) puts transport in a Singapore CCS network at about US$43/t, S$56/t, with storage extra
+OCC_CENTRAL.locator:
+  - s3.4
+  + Table 1, PDF p5; PDF p47
+OCC_CENTRAL.source:
+  - Same recipe with 6,000/kWe; final_v1_7 s3.4
+  + INL/RPT-23-72972 Rev 3 Table 1 (PDF p5) central US$6,000/kWe through the PDF p47 recipe: x 0.91 x 0.4
+OPEX_CENTRAL.locator:
+  - s3.2
+  + Table 1, PDF p5
+OPEX_CENTRAL.source:
+  - US$25/MWh at 40%, final_v1_7 s3.2
+  + INL/RPT-23-72972 Rev 3 Table 1 (PDF p5) central OPEX US$25/MWh at 40% conversion
+REACTOR_COST_REF_SIZE.locator:
+  - Table 1, s3.4, s11
+  + Table 1, PDF p5
+REACTOR_COST_REF_SIZE.source:
+  - final_v1_7 s3.4; INL Table 1 is not tied to any size (econ_lit.md s11)
+  + 600 MWth GTHTR300C class, Nishihara, Mouri and Kunitomi 2007, ICONE15, not verified; INL/RPT-23-72972 Table 1 ties its cost to no size
+REACTOR_COST_REF_SIZE.source_status:
+  - via_reader
+  + not_verified
+N_TEAM.locator:
+  - s3.4
+  + D09
+N_TEAM.source:
+  - final_v1_7 s3.4, Carelli 2010, Peters 2003 (not read)
+  + Size exponent 0.6, Carelli et al. 2010 Prog. Nucl. Energy 52 403 and Peters, Timmerhaus and West 2003, not verified (decision D09)
+REACTOR_RATED_MWTH.locator:
+  - Q3
+  + D03
+REACTOR_RATED_MWTH.source:
+  - User decision Q3: headline reactor rating and the size charged
+  + Author decision D03: headline reactor rating and the size charged
+IHX_LOOP_COST.locator:
+  - Table 3
+  + Table 3.17
+IHX_LOOP_COST.source:
+  - IAEA-TECDOC-1682 Table 3.17 via old repo E1 model; primary not opened (HTTP 402), so not verified at source
+  + IAEA-TECDOC-1682 Table 3.17, not verified
+IHX_LOOP_COST.source_status:
+  - via_old_repo
+  + not_verified
+IHX_REF_MW.locator:
+  - Table 3
+  + Table 3.17
+IHX_REF_MW.source:
+  - IAEA-TECDOC-1682 Table 3.17 via old repo E1 model; primary not opened (HTTP 402), so not verified at source
+  + IAEA-TECDOC-1682 Table 3.17, not verified
+IHX_REF_MW.source_status:
+  - via_old_repo
+  + not_verified
+DEFLATOR_2012_2025_NUM.locator:
+  - whole source
+  + author assumption
+DEFLATOR_2012_2025_NUM.source:
+  - Old repo E1 proxy deflators
+  + Proxy deflator of an earlier project cost model, not verified
+DEFLATOR_2012_2025_NUM.source_status:
+  - via_old_repo
+  + not_verified
+DEFLATOR_2012_2025_DEN.locator:
+  - whole source
+  + author assumption
+DEFLATOR_2012_2025_DEN.source:
+  - Old repo E1 proxy deflators
+  + Proxy deflator of an earlier project cost model, not verified
+DEFLATOR_2012_2025_DEN.source_status:
+  - via_old_repo
+  + not_verified
+IHX_LOW_USD_KWTH.locator:
+  - whole source
+  + whole report
+IHX_LOW_USD_KWTH.source:
+  - GA-A24265 USD43/kWth loop only, via old repo; not verified at source
+  + General Atomics GA-A24265, US$43/kWth for the loop only, not verified
+IHX_LOW_USD_KWTH.source_status:
+  - via_old_repo
+  + not_verified
+IHX_LOW_REF_MWTH.locator:
+  - whole source
+  + whole report
+IHX_LOW_REF_MWTH.source:
+  - GA-A24265 USD43/kWth loop only, via old repo; not verified at source
+  + General Atomics GA-A24265, US$43/kWth for the loop only, not verified
+IHX_LOW_REF_MWTH.source_status:
+  - via_old_repo
+  + not_verified
+CAPTURE_FOM.locator:
+  - Table A2
+  + D10
+CAPTURE_FOM.source:
+  - final_v1_7 Table A2, derived from IEAGHG cases
+  + 2.7% of capture capital per year, derived from IEAGHG 2017-02 cases, not verified (decision D10)
+CAPTURE_ALLIN.locator:
+  - slide 23
+  + ETC exhibit
+CAPTURE_ALLIN.source:
+  - ETC exhibit via deck slide 23; includes compression; energy content not verified
+  + Energy Transitions Commission exhibit, US$10 plus US$10 per t, not verified at source; includes compression
+ELECTRICITY_PRICE.locator:
+  - s3.2
+  + author assumption
+ELECTRICITY_PRICE.source:
+  - final_v1_7 s3.2 (source not verified)
+  + Author assumption, not verified
+AMDEA_ETA.locator:
+  - s2
+  + PDF p75 to p76
+AMDEA_ETA.source:
+  - mea_columns.md s2, aMDEA sensitivity from IEAGHG 2017-02 Case 1A
+  + IEAGHG 2017-02 Case 1A, aMDEA on shifted syngas, 98.7% absorber removal (PDF p75 to p76), the aMDEA sensitivity of decision D25
+AMDEA_SRD.locator:
+  - s2
+  + PDF p68, p75 to p76
+AMDEA_SRD.source:
+  - mea_columns.md s2, aMDEA sensitivity from IEAGHG 2017-02 Case 1A
+  + IEAGHG 2017-02 Case 1A, aMDEA on shifted syngas, about 3.03 GJ/t from its LP steam (PDF p68, p75 to p76), the author's estimate, not verified; the aMDEA sensitivity of decision D25

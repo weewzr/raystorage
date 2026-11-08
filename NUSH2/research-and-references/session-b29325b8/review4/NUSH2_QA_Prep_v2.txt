@@ -1,0 +1,104 @@
+NUS-H2 Q&A preparation
+Nuclear-Upgraded Steam Methane Reforming with Carbon Capture for Low-Carbon Hydrogen in Singapore
+Short answers to the questions the brief lists, with the line to give if pressed and the slides to open. Every figure is read from the model results or the published inputs when this sheet is built.
+Status of the numbers: reduced-order balances anchored on INL cases. 0 of 59 checks are independent of the source data, so no physics is validated yet. Sensitivities move one input at a time, and corner runs carry no probability.
+Numbers to have ready
+
+Questions
+Q1. Why 210 ?
+210  is the rating we hold. The process needs 179.0 , so 31.0  is margin that earns no revenue.
+The rating comes from the team’s original basis, and the user kept it with Case B as the headline (decision D03). The sizing walk starts from the team’s first sum of 206.0  at INL Case A scale, which is 140.8  at our 100,000 . Counting every real load, from the restored purge load to MEA’s reboiler gap, brings the need to 179.0 , within a range of 155.8 to 214.9 .
+We keep the rating because the need is uncertain. On Ahn and Lee’s heat basis the margin falls to 6.0 , and at the adverse corner the plant is 4.9  short. The spare capacity is paid for: full cost is  charged at 210  against  sized to need, at BOAK over 25 .
+INL’s Case A cannot be the design at this rating. With MEA and recycle it needs 261.5 , 51.5  above the rating, so it stays a reference.
+If pressed: The reboiler gap rests on an SRD of 3.8  with no syngas measurement behind it. Across 3.4 to 4.2  the need moves from 174.6 to 183.4 .
+Show: Slides 14, 15 and 16.
+Q2. Why HTGR instead of a PWR?
+Reforming needs heat near 871 , and of the reactor types we compared only a high-temperature gas-cooled reactor reaches that band.
+On the process temperature chart, light-water reactors stop far short of the reforming band, which is why we use a gas-cooled reactor in place of a PWR. A helium-cooled HTGR with a 925  outlet gives secondary helium at 900 , and 925  is INL’s only case that removes the fired stage. INL’s yield optimum is 875 , with a fired stage kept.
+TRISO coatings are the first barrier to fission product release, provided fuel stays below about 1,600 , which leaves headroom above the outlet temperature.
+If pressed: Only test reactors of 46  or less have run this hot. Commercial HTR-PM, and Xe-100 as our analogue, run near 750 , so our 925  reactor is generic and unproven at scale.
+Show: Slides 12, 13 and 35.
+Q3. Why MEA instead of Selexol?
+MEA is our design basis (decision D25). The evidence is mixed, and our own sensitivity favours Selexol slightly.
+IEAGHG 2022-07 calls MEA the preferred chemical solvent, while IEAGHG 2017-02 favours aMDEA on shifted syngas, and INL’s reference plant uses Selexol. We run 30  MEA as the reference and carry Selexol and aMDEA as sensitivities.
+In our model Selexol abates 0.589  at a full cost of , against 0.578  at  for MEA, at BOAK over 25 . It also leaves 44.1  spare against 31.0 . aMDEA sits close to Selexol, at 0.589  and . Selexol would also keep the recycle INL actually modelled, which removes our largest process risk.
+If pressed: Say plainly that our numbers do not show MEA ahead. MEA stays the basis by the team’s decision, and a switch to Selexol or aMDEA remains open.
+Show: Slides 10 and 31.
+Q4. How is MEA regeneration powered?
+By steam, taken in a fixed order, with reactor steam covering only the last gap.
+The reboiler needs 51.0  at an SRD of 3.8 . It draws first on the steam freed by removing Selexol, 12.7 , then on diverted export steam, 16.8 , then on recovered syngas heat, 7.7 . Reactor steam covers the remaining 13.8 , and that gap is the last step of the sizing walk.
+Diverting export steam is a real cost: lost steam export adds  at L5. Electricity for the MEA pumps and fans comes from the site power block, inside the 12.3  of process loads.
+If pressed: SRD has no syngas measurement behind it. Across 3.4 to 4.2  the reactor need moves from 174.6 to 183.4 , and cost barely moves because the reactor is charged at its rating.
+Show: Slide 15; backup 51.
+Q5. Is the system thermally self-sufficient?
+Yes on the central balance: the reactor covers every heat and power load with 31.0  to spare.
+The reactor needs 179.0  against a 210  rating. Unmet thermal duty is 0.0  and unmet electrical load is 0.0 . A small power block supplies the 19.8  site load, 12.3  of it for process loads and the rest for helium circulators, so grid import at rated size is 0 .
+If pressed: The margin is thin. It falls to 6.0  on Ahn and Lee’s heat basis, and the adverse corner leaves the plant 4.9  short. Ship liquefaction load for CO2 is unmodelled. The balance also rests on the IHX delivering 900 , which no measured unit has done. Outside the 85% availability hours there is no hydrogen unless backup firing is added, a sensitivity whose furnace capital is unpriced.
+Show: Slides 13, 15, 16 and 20.
+Q6. Why exclude PSA tail gas?
+We no longer exclude it. The PSA stays outside the boundary as an unsimulated block, and its reject now returns across the boundary to be recycled (decision D04).
+A recycle compressor feeds the reject to a cryogenic unit. Its methane-rich cut returns to the reformer feed and its hydrogen goes back towards the PSA, while the nitrogen-rich cut is burned and vented. That stack is the plant’s only residual source: 38,309 , or 0.57 . The PSA purge load is restored in the power balance.
+Recycle is why NUS-H2 takes 23.2  of gas against 35.9  for a same-size unabated SMR.
+If pressed: INL modelled recycle with Selexol, never with MEA. If it fails to transfer, gas rises to 30.4  and abatement falls to 0.467 . Full cost then rises to . INL also never modelled the larger CO2 slip that MEA sends through the cryogenic unit, which stays an open risk.
+Show: Slides 6, 9, 28 and 31.
+Q7. What are the safety barriers?
+TRISO fuel coatings come first, inside the reactor’s own barriers, and the IHX is the boundary to the chemical plant.
+TRISO coatings are the first barrier to fission product release, provided fuel stays below about 1,600 . HTTR counts four barriers: coatings, pressure vessel, containment and reactor building. Tritium is the known exception, since it can leave cracked coatings and also forms in graphite.
+The IHX tubes separate the nuclear island from the process helium loop. Secondary helium is held slightly above primary pressure, so a leak runs towards the reactor, and purification with monitoring manages tritium permeation. Isolation needs a high-temperature emergency shutoff valve, which our figure omits.
+The emergency planning zone follows source term and dose, so only a design-specific safety case can size it, and we claim no distance. That case must also cover process hazards beside the reactor, such as fire and toxic release.
+If pressed: A thermal buffer for a reformer trip is still open in our design.
+Show: Slides 18, 19 and 21.
+Q8. Why Singapore?
+Singapore runs on imported gas and plans for hydrogen, so low-carbon hydrogen made here meets a national need.
+Natural gas made up 94% of the electricity fuel mix in 2024, and the national hydrogen strategy sees low-carbon hydrogen supplying up to 50% of power needs by 2050. Hydrogen is already made at industrial scale on Jurong Island, and SOXAL’s plant sets our size of 100,000 , used for size only.
+Singapore is also building the capability to decide on nuclear energy: the IAEA INIR Phase 1 assessment is tentatively set for 2027 and covers 19 areas.
+If pressed: Singapore has made no decision on nuclear energy. CO2 has to be stored abroad under the Singapore-Indonesia arrangement, and the accounting across the border is unresolved. For scale only, our abatement equals 1.2 to 1.3% of Singapore’s 2035 target level.
+Show: Slides 1, 2 and 22.
+Q9. Why Western Island?
+It is the team’s proposal, with no official approval: new land planned for energy and industry, linked to Jurong Island.
+The new western island from the 2026 National Day Rally is planned for future energy and industry use among others, with a planned link to Jurong Island, where gas supply and hydrogen users already sit. Our plant is a new build there, compared with a same-size unabated SMR.
+If pressed: The government page does not mention nuclear. Reclamation runs over coming decades, so the land may not exist at our milestone dates, and every link to the island is unpriced.
+Show: Slides 24 and 25.
+Q10. How realistic is the 2050 roadmap?
+Possible on paper. Every date is illustrative, and each gate opens only if the stage before it delivers.
+The roadmap has four gated stages: national readiness from 2027, reactor and process-heat qualification from 2030, project development and an investment decision from 2035, then construction from 2039 towards potential operation by 2050. The construction window leans on the 11 years HTR-PM took from construction start to commercial operation.
+If pressed: The weakest links are the IHX and the land. The highest measured IHX secondary temperature in our sources is 859  on a 10  unit, against the 900  we need, and reclamation has no published date. The first plant would also be first of a kind, at a full cost of  over 25 .
+Show: Slides 22, 25 and 20.
+Q11. Does the project satisfy the emissions target?
+Yes. Net abatement is 0.578  against a target of more than 0.250 , 2.3 times the target.
+This counts direct emissions to atmosphere against a same-size unabated SMR on INL’s 9.21  baseline, a 93.8% cut. The plant captures 90.4% of its carbon at 90% per pass, and 218,274  never forms. With the storage chain burden charged the result is 0.569 . Cho’s and IEAGHG’s baselines give 0.587 and 0.564 .
+Every stress case with working capture stays above the target: 0.442  at 65% availability, and 0.467  if recycle fails.
+If pressed: With capture offline only 0.218  remains, which misses the target, so capture has to work. Abatement is counted at the Singapore stack while the CO2 is stored abroad.
+Show: Slides 28, 29, 30 and 31.
+Q12. Does the project satisfy the cost target?
+No. 0 of 8 central cases reach , so the cost target is missed.
+The full cost by the annual ledger is  at BOAK over 25  and  over 60 . A first of a kind costs  and . The discounted cash flow agrees within 0.2%, at  for BOAK over 25 . Hydrogen costs  against  unabated.
+No single lever closes the gap. Gas would have to reach , about 2.0 times our central price. Reactor capital would have to fall to , under INL’s low of . Transport and storage would have to go negative.
+Only a stack of favourable conditions crosses the target. A tenth unit sized to need over 60  reaches , and gas at  or T&S at  then gives  or . These are conditions, and no central case meets them.
+If pressed: Do not quote the named step L3 as the answer. L3, at , leaves out real costs of this plant such as construction interest and lost steam export, and it still misses.
+Show: Slides 37, 38, 39, 40 and 41.
+Q13. Which assumptions dominate uncertainty?
+Recycle transfer to MEA and the reactor cost treatment move the result most. The IHX temperature decides whether the design works at all.
+Recycle transfer to MEA. Without it abatement is 0.467  and full cost , against 0.578  and .
+Reactor size law. At BOAK over 25 , full cost is  at n = 1.0,  at n = 0.6 and  at n = 0.31.
+Build maturity. A first of a kind carries a 1.6 times premium on reactor capital, which gives  against . INL’s low and high reactor capital give  and .
+Availability. 85% has no measured HTGR record behind it. At 65% abatement falls to 0.442  and full cost rises to .
+Gas price.  gives  and  gives . On Ahn and Lee’s lower gas saving, full cost is .
+Capture capital basis. Our capture capital follows IEAGHG’s aMDEA plant; an MEA flue gas basis gives .
+IHX approach. At the IAEA’s typical 50  approach the reformer pinch falls from 29  to 4 , which puts the no-furnace claim at risk.
+SRD moves the spare margin, from 35.4 to 26.6 , and leaves cost almost unchanged.
+If pressed: Each case moves one input at a time. Corner runs carry no probability, so a range here is no confidence interval.
+Show: Slides 30, 31 and 36; backup 53.
+Item | Central value
+Hydrogen | 100,000 , 66,925  at 85% availability
+Reactor | 210  rated, 179.0  needed, 31.0  spare
+Process heat | 120.8  at 900  secondary helium
+Natural gas | 23.2  against 35.9  for the unabated SMR
+Net abatement | 0.578 , 93.8% cut; target met
+Capture | 90% per pass, 90.4% of plant carbon
+To atmosphere | 38,309 , 0.57 
+Full cost, BOAK |  at 25 ,  at 60 
+Full cost, FOAK |  at 25 ,  at 60 
+Cost target | 0 of 8 central cases reach ; target missed
+Hydrogen cost |  at BOAK against  unabated, 25 
+Reactor capital |  at BOAK,  at FOAK

@@ -1,0 +1,250 @@
+\section{K. Emissions}\label{sec:K}
+This section turns the carbon balance into tonnes per year and asks how much CO$_2$ the plant keeps out of the atmosphere. The headline basis is direct emissions to atmosphere against a same-size unabated SMR, a new-build at SOXAL scale, using the INL baseline. Per-pass and plant capture are shown together, and lifecycle stays a sensitivity. The PSA stays external, and its reject carbon is still counted, so the boundary cannot hide carbon. The compressor and offshore storage sit inside the dashed line of Figure 2. \Eq{K.17} explains this, and the accounting of carbon stored outside Singapore remains open.
+
+\begin{eqcard}{K.1}{R}{Baseline intensity}
+\Stmt{e_{base}=\frac{\dot E_{base,A}}{\dot m_{H_2,A}}}
+\Interp{What an unabated SMR emits per kilogram of hydrogen. Abatement is measured against this number.}
+\Deriv{INL's conventional plant without capture emits 3,205 \U{st\ d^{-1}} of CO$_2$ while making 29,000 \U{lb\ h^{-1}} of hydrogen. INL's ton is the short ton, at 907.185 kg. Dividing gives the statement.}
+\Vars{\V{e_{base}}{baseline intensity}{\U{kg\ kg^{-1}}} \V{\dot E_{base,A}}{CO$_2$ of the INL conventional plant}{\U{kg\ s^{-1}}}}
+\Assume{Short tons. Same gas and H$_2$ basis as INL.}
+\Source{\tagP{} TEV-953 \cite{TEV953}, Table 2, PDF p.~30.}
+\Impl{\fn{plant::anchored::Model::case_summary}, key baseline\_kg\_kg}
+\Valid{GOLD}{eq_k_01}{\vEbaseInt{} \U{kg\ kg^{-1}}.}
+\end{eqcard}
+
+\begin{eqcard}{K.2}{F}{Baseline bounds}
+\Stmt{e_{base}\in\left\{9.35,\ 9.00\right\}\ \mathrm{kg\ kg^{-1}}}
+\Interp{Two other baselines bracket the INL number from above and below, so the result never rests on one plant.}
+\Deriv{9.35 is the mean of Cho et al.\ for 33 US facilities, from the abstract only \tagM{25}. IEAGHG gives 0.8091 \U{kg\ Nm^{-3}} of H$_2$ at 8.994 \U{t\ h^{-1}} per 100,000 \U{Nm^3\ h^{-1}}, which is \cIeaBase{} \U{kg\ kg^{-1}}, rounded to 9.00.}
+\Vars{\V{e_{base}}{alternative baseline intensity}{\U{kg\ kg^{-1}}}}
+\Assume{Cho abstract only.}
+\Source{\tagP{} IEAGHG 2017-02 \cite{IEAGHG17}, Table 2, PDF p.~16. Cho 2022 abstract.}
+\Impl{\fn{plant::anchored::Model::case_summary}, keys base\_cho and base\_ieaghg}
+\Valid{PUB}{eq_k_02}{Published values printed. The IEAGHG ratio is computed here.}
+\end{eqcard}
+
+\begin{eqcard}{K.3}{R}{Annual baseline}
+\Stmt{E_{base}=e_{base}M_{H_2}}
+\Interp{What the unabated plant would emit in a year making the same hydrogen in the same hours.}
+\Deriv{\Eq{K.1} times \Eq{J.3}.}
+\Vars{\V{E_{base}}{annual baseline CO$_2$}{\U{t\ y^{-1}}}}
+\Assume{Same H$_2$, same hours.}
+\Source{\tagC{} This document.}
+\Impl{\fn{plant::emissions::Model::emissions}, field baseline}
+\Valid{GOLD}{eq_k_03}{\vEbaseB{} \U{t\ y^{-1}}.}
+\end{eqcard}
+
+\begin{eqcard}{K.4}{R}{Furnace CO$_2$ of the conventional plant}
+\Stmt{\dot E_{furn}=M_{CO_2}\left(f_{fire}F_{C}^{conv}+\dot n_{rej}^{conv}\right)}
+\Interp{A conventional reformer burns gas and PSA reject in its furnace, so its stack is the one point source that a helium-heated plant removes.}
+\Deriv{Carbon balance on the furnace. INL fires 15.14\% of the natural gas for heat in the conventional case. IEAGHG's fuel share computed from its Table 2 is \cIeaFuel\%, the same order.}
+\Vars{\V{\dot E_{furn}}{furnace CO$_2$}{\U{kg\ s^{-1}}} \V{f_{fire}}{share of gas fired}{1} \V{F_{C}^{conv}}{feed carbon of the conventional plant}{\U{mol\ s^{-1}}} \V{\dot n_{rej}^{conv}}{reject carbon burned}{\U{mol\ s^{-1}}}}
+\Assume{Conventional plant.}
+\Source{\tagP{} TEV-953 \cite{TEV953}, A-7, PDF p.~41. IEAGHG 2017-02 \cite{IEAGHG17}, Table 2, PDF p.~16.}
+\Impl{Not implemented as a separate engine line, because the INL total of \Eq{K.1} already holds the furnace. Planned name \fn{plant::emissions::furnace}.}
+\Valid{PUB}{eq_k_04}{Shares compared here. The furnace is not a separate line in the results, because the INL total of \Eq{K.1} already holds it.}
+\end{eqcard}
+
+\begin{eqcard}{K.5}{R}{Process minimum}
+\Stmt{e_{st}=\frac{M_{CO_2}}{4M_{H_2}}}
+\Interp{Even a perfect plant makes this much CO$_2$ from methane, because the carbon has to go somewhere.}
+\Deriv{Reaction III, $\mathrm{CH_4+2H_2O\to CO_2+4H_2}$, run to completion. One mole of CO$_2$ per four of H$_2$.}
+\Vars{\V{e_{st}}{stoichiometric CO$_2$ per unit H$_2$}{\U{kg\ kg^{-1}}} \V{M_{H_2}}{molar mass of hydrogen in this ratio}{\U{g\ mol^{-1}}}}
+\Assume{Reaction III complete.}
+\Source{\tagT{} Stoichiometry.}
+\Impl{Not implemented in the engine at this build. The value is computed in this document. Planned name \fn{plant::emissions::stoich}.}
+\Valid{ID}{eq_k_05}{Computed here: \cEst{} \U{kg\ kg^{-1}}.}
+\end{eqcard}
+
+\begin{eqcard}{K.6}{R}{Carbon bound}
+\Stmt{e_{feed}=\frac{F_CM_{CO_2}}{\dot m_{H_2}}}
+\Interp{Burn all the carbon fed to this plant and this is the most CO$_2$ it could make per kilogram of H$_2$. It sits above the stoichiometric floor because some gas stays unconverted and heavier gases add carbon.}
+\Deriv{Carbon balance, all feed carbon to CO$_2$.}
+\Vars{\V{e_{feed}}{feed carbon intensity}{\U{kg\ kg^{-1}}}}
+\Assume{All feed carbon counted.}
+\Source{\tagC{} This document.}
+\Impl{\fn{plant::export::results_block}, which writes the feed carbon row}
+\Valid{GOLD}{eq_k_06}{Computed here: \cEfeed{} \U{kg\ kg^{-1}}. A process share of 65\% of the 9.35 baseline would be \cChoProc, which is \cChoPct\% above this bound, one reason the split from the Cho abstract is dropped.}
+\end{eqcard}
+
+\begin{eqcard}{K.7}{R}{Captured CO$_2$}
+\Stmt{E_{cap}=C\,M_{CO_2}t_h}
+\Interp{Tonnes sent to storage each year.}
+\Deriv{\Eq{J.9} in mass units over the operating hours.}
+\Vars{\V{E_{cap}}{CO$_2$ captured}{\U{t\ y^{-1}}}}
+\Assume{No loss in compression or transport.}
+\Source{\tagC{} This document.}
+\Impl{\fn{plant::emissions::Model::emissions}, field captured}
+\Valid{GOLD}{eq_k_07}{\vEcapB{} \U{t\ y^{-1}}.}
+\end{eqcard}
+
+\begin{eqcard}{K.8}{R}{Residual to atmosphere}
+\Stmt{E_{atm}=\left(1-f_r\right)G\,M_{CO_2}t_h}
+\Interp{The nitrogen-rich cut is burned, so its carbon is the plant's only direct stack CO$_2$.}
+\Deriv{\Eq{J.10} in mass units. Its carbon is the whole residual because the rest of the tail gas recycles.}
+\Vars{\V{E_{atm}}{residual CO$_2$ to atmosphere}{\U{t\ y^{-1}}}}
+\Assume{Nitrogen-rich cut burned.}
+\Source{\tagC{} This document.}
+\Impl{\fn{plant::emissions::Model::vent_condensate} for the vented-condensate case of decision S14. The central residual is the atmosphere line of \fn{plant::emissions::Model::emissions}.}
+\Valid{GOLD}{eq_k_08}{\vEatmB{} \U{t\ y^{-1}}. With the condensate CO$_2$ vented (decision S14), abatement falls by \vCondVent{} \U{t\ y^{-1}} and the L5 cost at BOAK and 25 y rises by S\$\vCondVentCost/t.}
+\end{eqcard}
+
+\begin{eqcard}{K.9}{O}{Electricity emissions}
+\Stmt{E_{el}=E_{imp}t_hEF_{grid}}
+\Interp{Grid electricity would carry its own CO$_2$. At Case B the reactor supplies all power, so this line is zero.}
+\Deriv{Energy times emission factor.}
+\Vars{\V{E_{el}}{CO$_2$ from imported power}{\U{t\ y^{-1}}} \V{EF_{grid}}{grid emission factor, 0.402}{\U{t\ MWh^{-1}}}}
+\Assume{Zero central. \tagM{27}: the factor was not re-checked at source.}
+\Source{\tagC{} This document.}
+\Impl{Not implemented as written: the engine applies the grid factor only to the baseline power of the system view in \Eq{K.18}, and the import at the rating is \vImpB{} \U{MW_e} at Case B. Planned name \fn{plant::emissions::electricity}.}
+\Valid{GOLD}{eq_k_09}{\vImpB{} at Case B.}
+\end{eqcard}
+
+\begin{eqcard}{K.10}{R}{Operating hours}
+\Stmt{t_h=8760f_{av}}
+\Interp{The same hours as hydrogen output, so no tonne of abatement is counted outside production.}
+\Deriv{Definition.}
+\Vars{\V{f_{av}}{availability}{1}}
+\Assume{85\% central.}
+\Source{\tagC{} This document.}
+\Impl{\fn{plant::anchored::Model::case_summary}, key hours}
+\Valid{ID}{eq_k_10}{\vHours{} \U{h\ y^{-1}}.}
+\end{eqcard}
+
+\begin{eqcard}{K.11}{R}{Net abatement}
+\Stmt{\mathcal A=E_{base}-E_{atm}}
+\Interp{The headline climate number: CO$_2$ that would have reached the atmosphere and now does not.}
+\Deriv{Direct emissions to atmosphere on the same hydrogen. Stored CO$_2$ is not an emission on this boundary.}
+\Vars{\V{\mathcal A}{direct abatement}{\U{t\ y^{-1}}}}
+\Assume{Direct, atmosphere view.}
+\Source{\tagC{} This document.}
+\Impl{\fn{plant::emissions::Model::emissions}, field a\_atm}
+\Valid{GOLD}{eq_k_11}{\vAbateB{} \U{t\ y^{-1}}. \vValKeleven}
+\end{eqcard}
+
+\begin{eqcard}{K.12}{R}{Abatement on the bounds}
+\Stmt{\mathcal A\left(e_{base}\right)=e_{base}M_{H_2}-E_{atm}}
+\Interp{Only the baseline moves. The plant's own emissions stay the same, so a higher baseline simply credits more abatement.}
+\Deriv{Replace \Eq{K.1} by \Eq{K.2} in \Eq{K.3}.}
+\Vars{\V{\mathcal A}{abatement at a chosen baseline}{\U{t\ y^{-1}}}}
+\Assume{Baselines of \Eq{K.2}.}
+\Source{\tagC{} This document.}
+\Impl{\fn{plant::anchored::Model::case_summary}, with the baseline of each bound}
+\Valid{GOLD}{eq_k_12}{\vAbCho{} and \vAbIea{} \U{Mt\ y^{-1}}.}
+\end{eqcard}
+
+\begin{eqcard}{K.13}{R}{Carbon intensity}
+\Stmt{CI=\frac{E_{atm}}{M_{H_2}}}
+\Interp{The direct intensity of the product, the number to set against low-carbon hydrogen standards.}
+\Deriv{\Eq{K.8} over \Eq{J.3}.}
+\Vars{\V{CI}{direct carbon intensity}{\U{kg\ kg^{-1}}}}
+\Assume{Direct only.}
+\Source{\tagC{} This document.}
+\Impl{\fn{plant::anchored::Model::case_summary}, keys ci\_kg\_kg and reduction}
+\Valid{GOLD}{eq_k_13}{\vIntensity{} \U{kg\ kg^{-1}}, \vReduction\% below the baseline.}
+\end{eqcard}
+
+\begin{eqcard}{K.14}{R}{Capture pair with abatement}
+\Stmt{\left\{\mathcal A,\ \eta_{pp},\ \eta_{pl}\right\}}
+\Interp{Abatement is never printed without saying which capture figure sits behind it.}
+\Deriv{Reporting rule, set by project decision. See \Eq{J.33}.}
+\Vars{\V{\eta_{pp}}{per-pass capture}{1}}
+\Assume{Reporting rule.}
+\Source{\tagC{} This document.}
+\Impl{\fn{plant::carbon::CarbonLedger::capture_pair}}
+\Valid{ID}{eq_k_14}{Both capture figures sit in the same row of the emissions results.}
+\end{eqcard}
+
+\begin{eqcard}{K.15}{O}{Capture sensitivity}
+\Stmt{\mathcal A\left(\eta_{pp}\right)=E_{base}-\left(1-f_r\right)G\left(\eta_{pp}\right)M_{CO_2}t_h}
+\Interp{Abatement is much less sensitive to per-pass capture than a simple scaling would suggest, because slip mostly returns through the recycle and gets another pass.}
+\Deriv{\Eq{J.8} and \Eq{J.10} with $\eta_{pp}$ varied, then \Eq{K.11}.}
+\Vars{\V{\eta_{pp}}{per-pass capture, 0.85 to 0.95}{1}}
+\Assume{0.85 to 0.95. Results also hold 0.80.}
+\Source{\tagC{} This document.}
+\Impl{\fn{plant::sens::sweeps}, sweep CAPTURE}
+\Valid{GOLD}{eq_k_15}{\vAbCapLow{} and \vAbCapHigh{} \U{Mt\ y^{-1}} at 0.85 and 0.95, and \vAbCapEight{} at 0.80.}
+\end{eqcard}
+
+\begin{eqcard}{K.16}{R}{Availability sensitivity}
+\Stmt{\mathcal A\propto f_{av}}
+\Interp{Fewer running hours mean fewer tonnes abated. The target margin is wide enough to survive it.}
+\Deriv{\Eq{K.3} and \Eq{K.8} are both linear in $t_h$, since baseline and plant emissions run on the same hours.}
+\Vars{\V{f_{av}}{availability, 0.65 to 0.90}{1}}
+\Assume{Baseline scales too.}
+\Source{\tagC{} This document.}
+\Impl{\fn{plant::sens::sweeps}, sweep AVAILABILITY}
+\Valid{GOLD}{eq_k_16}{\vAbAvA, \vAbAvB, \vAbAvC{} and \vAbAvD{} \U{Mt\ y^{-1}} at 0.65, 0.75, 0.85 and 0.90.}
+\end{eqcard}
+
+\begin{eqcard}{K.17}{O}{Tail-gas fates}
+\Stmt{\mathcal A_{fate}=E_{base}-M_{CO_2}t_h\left(\dot n_{burn}+\dot n_{exp}\right)}
+\Interp{Carbon in the PSA reject has three possible fates: recycle, burn on site or export. Moving it across a boundary never removes it. The atmosphere view counts it wherever it is finally burned.}
+\Deriv{\Eq{K.11} with exported carbon added. An export route would look clean at the site boundary, since $\dot n_{burn}$ is then zero, yet its carbon still reaches the air. That is why the headline counts the atmosphere. Compressor and offshore storage follow Figure 2 and sit inside the line. Whether carbon stored outside Singapore counts as Singapore abatement is an open question and is not settled here.}
+\Vars{\V{\mathcal A_{fate}}{abatement by tail-gas fate}{\U{t\ y^{-1}}} \V{\dot n_{exp}}{carbon leaving the boundary as fuel gas}{\U{mol\ s^{-1}}}}
+\Assume{Atmosphere view.}
+\Source{\tagC{} This document.}
+\Impl{\fn{plant::sens::sweeps}, sweep TAIL\_GAS, on the scenarios of \fn{plant::anchored::Model::carbon}}
+\Valid{GOLD}{eq_k_17}{Case B: recycle \vAbateMt, burn on site \vAbCombH, export \vAbExport{} \U{Mt\ y^{-1}}. Burn on site with gas held instead of hydrogen gives \vAbCombN.}
+\end{eqcard}
+
+\begin{eqcard}{K.18}{O}{System view}
+\Stmt{\mathcal A_{sys}=\mathcal A-E_{lost\,steam}+E_{base\,power}}
+\Interp{The plant diverts export steam that a neighbour must then raise by burning gas, while an unabated SMR would have bought grid power. This view counts both.}
+\Deriv{Lost steam over a 90\% boiler at 56.1 \U{kg\ GJ^{-1}} LHV gives $E_{lost\,steam}$. Baseline grid power of 6.3 \U{MW_e} scaled by $s$ at 0.402 \U{t\ MWh^{-1}} gives $E_{base\,power}$.}
+\Vars{\V{\mathcal A_{sys}}{system abatement}{\U{t\ y^{-1}}} \V{E_{lost\,steam}}{CO$_2$ to replace lost steam}{\U{t\ y^{-1}}} \V{E_{base\,power}}{CO$_2$ of the avoided baseline grid power}{\U{t\ y^{-1}}}}
+\Assume{Boiler 90\%, 56.1 \U{kg\ GJ^{-1}} LHV.}
+\Source{\tagC{} This document. The emission factor is the IPCC default as carried in the project inputs. The EU ETS table of the GHG Protocol guidance, Table 14, PDF p.~50, was checked for its location and the factor was not read from it. \tagM{27} for the grid factor.}
+\Impl{\fn{plant::emissions::Model::system_adjust}}
+\Valid{GOLD}{eq_k_18}{\vAbSystem{} \U{Mt\ y^{-1}}.}
+\end{eqcard}
+
+\begin{eqcard}{K.19}{O}{Lifecycle view}
+\Stmt{\mathcal A_{LC}=\mathcal A+E_{up}-E_{nuc}-E_{TS}}
+\Interp{A sensitivity only. Saved gas also saves its upstream emissions, while the nuclear chain and storage have small burdens of their own.}
+\Deriv{Upstream gas at 11.5 \U{kg\ GJ^{-1}} on the gas saved, nuclear at 5.5 \U{kg\ MWh^{-1}} on electricity-equivalent output at the charged rating, and transport and storage at 2.5\% of the tonnes stored.}
+\Vars{\V{\mathcal A_{LC}}{lifecycle abatement}{\U{t\ y^{-1}}} \V{E_{up}}{saved upstream gas emissions}{\U{t\ y^{-1}}} \V{E_{nuc}}{nuclear lifecycle burden}{\U{t\ y^{-1}}} \V{E_{TS}}{transport and storage burden}{\U{t\ y^{-1}}}}
+\Assume{Sensitivity only. The factors were not re-read at source.}
+\Source{\tagC{} This document. Factors as carried in the project inputs.}
+\Impl{\fn{plant::emissions::Model::lifecycle_terms}}
+\Valid{GOLD}{eq_k_19}{\vAbLife{} \U{Mt\ y^{-1}} with saved gas counted, \vAbBurden{} with burdens only.}
+\end{eqcard}
+
+\begin{eqcard}{K.20}{O}{Backup firing}
+\Stmt{e_{bk}=e_{site}+\frac{\dot Q_{proc}EF}{\eta_{bk}\dot m_{H_2}}}
+\Interp{Central hydrogen runs only in the 85\% availability hours. If the plant kept running through reactor outages, it would burn gas for process heat, and the intensity of those hours would rise sharply.}
+\Deriv{Site intensity plus fired heat per kilogram of H$_2$ at boiler efficiency $\eta_{bk}$ and emission factor $EF$. Computed here: $e_{site}=$ \vIntensity{} and the fired term is \cBkTerm, so $e_{bk}=$ \cBkE{} \U{kg\ kg^{-1}}, or \cBkAnnual{} \U{t\ y^{-1}} on the extra H$_2$. The engine runs this card as its heater route: \vBkEmitHeat{} \U{t\ y^{-1}} emitted and \vBkAddHeat{} \U{t\ y^{-1}} of added abatement. It also runs two conventional-train routes at INL's rates: \vBkEmitCc{} \U{t\ y^{-1}} emitted with capture, adding \vBkAddCc, and \vBkEmitNo{} unabated, adding \vBkAddNo. Over \vBkHours{} \U{h\ y^{-1}} every route adds \vBkHtwo{} \U{t\ y^{-1}} of H$_2$. Furnace and heater capital are unpriced.}
+\Vars{\V{e_{bk}}{intensity in backup hours}{\U{kg\ kg^{-1}}} \V{e_{site}}{site intensity}{\U{kg\ kg^{-1}}} \V{EF}{combustion emission factor}{\U{kg\ J^{-1}}} \V{\eta_{bk}}{backup firing efficiency, 0.85}{1}}
+\Assume{Sensitivity only, by project decision. $\eta_{bk}=0.85$ assumed.}
+\Source{\tagM{29}. The need for backup is stated in IAEA NP-T-4.3, PDF p.~23.}
+\Impl{\fn{plant::emissions::Model::backup_heater}, with the conventional-train routes in \fn{plant::emissions::Model::backup}}
+\Valid{NONE}{eq_k_20}{No benchmark. The hand route above is an independent check on the engine heater route.}
+\end{eqcard}
+
+\begin{eqcard}{K.21}{O}{SMR plus CCS comparator}
+\Stmt{\eta_{cmp}=\frac{\dot E_{cap}^{cmp}}{\dot E_{cap}^{cmp}+\dot E_{em}^{cmp}}}
+\Interp{One labelled alternative at the same hydrogen rate, so the reader sees what plain capture on a fired plant achieves. Two published cases are in view, one partial and one near full capture.}
+\Deriv{INL's conventional plant with capture stores 2,143 and emits 855 \U{st\ d^{-1}}, which gives \cInlCcCap\%. IEAGHG Case 3, MEA on flue gas at 100,000 \U{Nm^3\ h^{-1}}, captures 90.0\% with 0.0888 \U{kg\ Nm^{-3}} emitted. The cost row is \Eq{L.32}.}
+\Vars{\V{\eta_{cmp}}{comparator capture}{1} \V{\dot E_{cap}^{cmp}}{comparator CO$_2$ captured}{\U{kg\ s^{-1}}} \V{\dot E_{em}^{cmp}}{comparator CO$_2$ emitted}{\U{kg\ s^{-1}}}}
+\Assume{New-build, same H$_2$, one labelled row.}
+\Source{\tagP{} TEV-953 \cite{TEV953}, Table 2, PDF p.~30. IEAGHG 2017-02 \cite{IEAGHG17}, Table 2, PDF p.~16.}
+\Impl{\fn{plant::comparator::Model::comparator}}
+\Valid{PUB}{eq_k_21}{Computed here: \cInlCcCap\% for INL, and \cCmpAbate{} \U{Mt\ y^{-1}} for IEAGHG Case 3 against its own baseline at this availability.}
+\end{eqcard}
+
+\begin{eqcard}{K.22}{R}{Target test}
+\Stmt{\mathcal A>0.25\ \mathrm{Mt\ y^{-1}}}
+\Interp{The project statement's abatement requirement.}
+\Deriv{Compare \Eq{K.11} with the target.}
+\Vars{\V{\mathcal A}{direct abatement}{\U{t\ y^{-1}}}}
+\Assume{Direct abatement.}
+\Source{\tagA{} Project statement.}
+\Impl{\fn{plant::export::results_block}, which writes the row of abatement above the target}
+\Valid{ID}{eq_k_22}{\vAbateMt{} \U{Mt\ y^{-1}} at Case B, \vAbAbove{} \U{t\ y^{-1}} above the target. The lowest mass-balanced case is burn on site with gas held, at \vAbCombN{} \U{Mt\ y^{-1}}.}
+\end{eqcard}
+
+\subsection*{Worked example: abatement at Case B}
+\Eq{K.1} gives \vEbaseInt{} \U{kg\ kg^{-1}}, and \vMHtwoB{} \U{t\ y^{-1}} of hydrogen makes the baseline \vEbaseB{} \U{t\ y^{-1}} by \Eq{K.3}. The plant stores \vEcapB{} \U{t\ y^{-1}} and emits \vEatmB{} \U{t\ y^{-1}} from the nitrogen-rich cut. The rest of the baseline never forms as CO$_2$ because reactor heat replaces the furnace and recycle cuts the gas bought. \Eq{K.11} gives \vAbateB{} \U{t\ y^{-1}}, or \vAbateMt{} \U{Mt\ y^{-1}}, with per-pass capture 0.90 and plant capture \vEtaPl.
+
+\subsection*{Link to the sources}
+INL published a plant emitting 142 \U{st\ d^{-1}} at Case 6 (TEV-961, Table 2, PDF p.~17). Scaled, that is below the residual here, because MEA slip raises the burned cut above the Selexol case. The difference is the price of swapping a physical solvent for MEA, and it is the reason \Eq{J.8} carries the recycle explicitly.

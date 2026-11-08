@@ -1,0 +1,64 @@
+\section{Deployment constraints and decision-gated implementation}\label{sec:deployment}
+
+A promising equation is not a construction permit. Deployment is a sequence of tests in which a failure can force a smaller design, another site or cancellation. The roadmap below is a dependency chain, not a prediction of when Singapore will deploy nuclear power.
+
+The preferred mature numerical case is not a deployment claim. Implementation follows the E7 falsification pathway:
+\begin{enumerate}
+\item Current research and evidence-gap closure.
+\item Component and nuclear/process-interface qualification.
+\item First-of-a-kind (FOAK) process-heat demonstration.
+\item Two-train 353.6 MWth process-heat demonstration.
+\item Replication and early-commercial (BOAK) cost validation.
+\item Mature 10-OAK economic decision gate.
+\item Singapore site, licensing and contract closure.
+\item Construction and commissioning.
+\item Commercial operation and measured verification.
+\end{enumerate}
+This sequence is a logical set of evidence gates, not a calendar schedule; failure at a gate requires redesign, relocation, delay or termination as appropriate.
+
+The authoritative implementation pathway contains exactly nine decision stages. The uploaded roadmap illustration includes an additional numbered stage and is therefore not used as a quantitative or authoritative stage diagram. The following vector figure is generated directly from the nine-stage sequence above, with no dates or implied automatic approval.
+
+\begin{figure}[htbp]\centering
+\begin{tikzpicture}[font=\scriptsize,>=Latex,
+ stage/.style={draw=blue!65!black,rounded corners,fill=blue!5,align=center,text width=0.27\linewidth,minimum height=13mm}]
+\node[stage] (a) at (0,0) {1. Current research\\and evidence gaps};
+\node[stage] (b) at (4.2,0) {2. Component and\\interface qualification};
+\node[stage] (c) at (8.4,0) {3. FOAK process-heat\\demonstration};
+\node[stage] (d) at (8.4,-2.1) {4. Two-train 353.6 MWth\\demonstration};
+\node[stage] (e) at (4.2,-2.1) {5. Replication / BOAK\\cost validation};
+\node[stage] (f) at (0,-2.1) {6. Mature 10-OAK\\economic gate};
+\node[stage] (g) at (0,-4.2) {7. Singapore site, licensing\\and contract closure};
+\node[stage] (h) at (4.2,-4.2) {8. Construction\\and commissioning};
+\node[stage] (i) at (8.4,-4.2) {9. Commercial operation\\and measured verification};
+\draw[->,thick] (a)--(b);\draw[->,thick] (b)--(c);
+\draw[->,thick] (c)--(d);\draw[->,thick] (d)--(e);
+\draw[->,thick] (e)--(f);\draw[->,thick] (f)--(g);
+\draw[->,thick] (g)--(h);\draw[->,thick] (h)--(i);
+\end{tikzpicture}
+\caption{Nine authoritative decision stages from E7, shown as a logical maturity sequence rather than a calendar schedule. Every transition is conditional on evidence and regulatory/commercial gates; failure may require redesign, delay, relocation or termination.}
+\label{fig:implementation-roadmap-artwork}
+\end{figure}
+
+\subsection{Binding implementation gates}
+Before a real Singapore project can proceed, the following must close:
+\begin{itemize}
+\item \textbf{national/regulatory readiness:} an applicable power-reactor policy, competent regulator, licensing/legal framework, safeguards/security, waste/spent-fuel, EPR, liability and workforce arrangements;
+\item \textbf{technology qualification:} 600 MWth coupled transients, high-temperature IHX/secondary-He/reformer qualification, tritium, controls/isolation, materials and inspection;
+\item \textbf{two-train proof:} physical delivery of 353.6 MWth within the source process-heat branch, including one- and two-train trips, turndown, restart, CCS interaction and H$_2$ quality;
+\item \textbf{integrated safety:} PRA, mechanistic source term, IHX leak/rupture, tritium, chemical HAZOP/QRA, propagation/common cause, UHS/SBO, dispersion/dose, EPR/EPZ and security;
+\item \textbf{site/Jurong:} parcel, geotechnical/coastal/external hazards, QRA/PRA-derived separation, protected area, emergency access, cooling and environmental baseline;
+\item \textbf{infrastructure/market:} credible H$_2$ offtake for approximately 195,892 t/y, firm 68 MMSCFD NG supply, water/cooling, and contracted permanent storage for at least approximately 1.085 MtCO$_2$/y;
+\item \textbf{economic maturation:} observed replication cost, construction, operations and maintenance (O\&M), and integrated availability must support a recalculated cost below S\$100/tCO$_2$e, including known site, licensing, security and CCS costs;
+\item \textbf{commercial/FID:} full project CAPEX/TCI, financing/IDC, insurance/liability, decommissioning/waste, EPC/owner costs and binding contracts.
+\end{itemize}
+
+Jurong failure does not automatically falsify the technology: another Singapore context may be evaluated. Conversely, if no Singapore context can satisfy siting, safety, security and emergency requirements, Singapore deployment is stopped.
+
+\subsection{STOP/REDESIGN logic}
+The project does not advance automatically. It is redesigned, relocated, reduced in scale, delayed or stopped if high-temperature coupling cannot be qualified; the two-train dynamics fail; integrated availability invalidates the model; observed mature economics remain at or above S\$100/tCO$_2$e; nuclear/chemical separation is infeasible; source-term/dose or external hazards are incompatible with a site; no credible UHS exists; H$_2$ offtake or the CCS chain cannot be contracted; or the future Singapore regulator rejects the design/site.
+
+Only measured commissioning and commercial operation can convert the projected BOAK/10-OAK performance into demonstrated performance.
+
+\input{sections/11_limitations}
+\input{sections/05_nuclear_feasibility_safety}
+\input{sections/10_singapore}

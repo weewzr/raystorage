@@ -1,0 +1,131 @@
+carbon per mol NG = 1.05379
+
+== carbon closure, short ton/d CO2-eq vs reported captured+emitted ==
+Conv noCC      NG  52.5 ->  3208.0 ; reported  3205 ; closure  99.9% ; capture   0.0% ; in metric would be  2910.2 t/d
+Conv CC        NG  49.2 ->  3006.4 ; reported  2998 ; closure  99.7% ; capture  71.5% ; in metric would be  2727.3 t/d
+HTGR noCC 750  NG  44.5 ->  2719.2 ; reported  2713 ; closure  99.8% ; capture   0.0% ; in metric would be  2466.8 t/d
+Case2          NG  43.5 ->  2658.1 ; reported  2648 ; closure  99.6% ; capture  80.2% ; in metric would be  2411.3 t/d
+Case3          NG  40.8 ->  2493.1 ; reported  2479 ; closure  99.4% ; capture  83.7% ; in metric would be  2261.7 t/d
+Case4          NG  37.7 ->  2303.6 ; reported  2291 ; closure  99.5% ; capture  88.3% ; in metric would be  2089.8 t/d
+Case5          NG  34.5 ->  2108.1 ; reported  2096 ; closure  99.4% ; capture  94.0% ; in metric would be  1912.4 t/d
+Case6          NG  34.0 ->  2077.6 ; reported  2069 ; closure  99.6% ; capture  93.1% ; in metric would be  1884.7 t/d
+
+== short ton proof: CO2 mass flow lb/h ==
+Case2 lb/h*24/2000 = 2125.9 reported 2123 ; /2204.6 = 1928.6
+Case5 lb/h*24/2000 = 1972.6 reported 1970 ; /2204.6 = 1789.5
+
+== conversions ==
+captured Case6: 1927 st/d = 1748.1 t/d = 0.5424 Mt/y at 85% ; 0.6381 at 100%
+emitted Case6: 142 st/d = 128.8 t/d = 0.0400 Mt/y at 85% ; 0.0470 at 100%
+sum: 2069 st/d = 1877.0 t/d = 0.5823 Mt/y at 85% ; 0.6851 at 100%
+conv noCC: 3205 st/d = 2907.5 t/d = 0.9021 Mt/y at 85% ; 1.0612 at 100%
+H2 29000 lb/h: 13154.2 kg/h ; 97946.0 t/y @85% ; 115230.6 t/y @100%
+130 MMSCFD check, 99.9%H2 0.1%CH4: 28976.0 lb/h
+Export 83.7 MMBtu/h = 24.53 MWth ; 81818 lb/h ; 2.82 lb/lb H2
+Water 743 gpm = 168.7 m3/h ; 354 gpm = 80.4
+CO2 2015 psia = 138.9 bar ; 184 F = 84.4 C
+389 psia = 26.8 bar ; 439 psia = 30.3 bar ; 460 psia = 31.7 bar; 445 = 30.7 bar
+He duty 78.49*5.193*434 = 176.9 MW ; excess 78.49*5.193*5 = 2.04
+
+== reactor screening ==
+slide 6: 176.8+11.6/0.397 = 206.0 MWth
+Case6 full: 176.8+17.3/0.397 = 220.4 MWth
+Case5 full: 166.6+15.3/0.39 = 205.8 MWth
+11.6 at 47.5%: 176.8+11.6/0.475 = 201.2 MWth
+17.3 at 47.5%: 176.8+17.3/0.475 = 213.2 MWth
+210 MWth at 39.7%: power from (210-176.8) = 13.18 MWe ; shortfall vs 17.3 = 4.12
+Sum of Case 6 rows: 17.3
+
+== recycle trend ==
+Case2: recycled   8.6% of reject; recycle/NG mass   2.6%; kW per lb/h 0.1775; lb/h per MMSCFD 1887.0; REC-COMP share of NG-reforming row 20%
+Case3: recycled  30.2% of reject; recycle/NG mass  10.1%; kW per lb/h 0.1759; lb/h per MMSCFD 1884.2; REC-COMP share of NG-reforming row 52%
+Case4: recycled  54.0% of reject; recycle/NG mass  20.1%; kW per lb/h 0.1724; lb/h per MMSCFD 1885.7; REC-COMP share of NG-reforming row 71%
+Case5: recycled  78.4% of reject; recycle/NG mass  35.0%; kW per lb/h 0.1688; lb/h per MMSCFD 1885.4; REC-COMP share of NG-reforming row 84%
+fit NG = 83499 -0.8269 * RECY-2 ; intercept 44.26 MMSCFD ; Case6 34.0 MMSCFD implies RECY-2 = 23410 lb/h
+Case5->6 NG row change -3.5 MW; Case5 REC-COMP 3.94
+NG-COMP scaled to Case 6: 600.9 kW -> residual in 1.2 MW row: 599 kW (includes air blower and pumps)
+  recycle compression at 23358 lb/h with 0.165-0.169 kW/(lb/h): 3.85-3.95 MW
+  recycle compression at 26000 lb/h with 0.165-0.169 kW/(lb/h): 4.29-4.39 MW
+  recycle compression at 29786 lb/h with 0.165-0.169 kW/(lb/h): 4.91-5.03 MW
+  recycle compression at 33000 lb/h with 0.165-0.169 kW/(lb/h): 5.45-5.58 MW
+
+== Case 5 shifted-gas reconstruction ==
+raw lbmol/h 28327 mass 349099 vs 349724
+CO shifted 2394; dry 21260 lbmol/h = 9644 kmol/h; CO2 3754 (17.66%, reported 17.7%) = 1703 kmol/h; H2 16218 (32696 lb/h); CH4 1020; CO 70; N2 198
+H2 needed at PSA feed at 88%: 32694 lb/h; in reject: 3923 lb/h = 1946 lbmol/h
+reject est lbmol/h {'H2': 1946, 'CH4': 996, 'N2': 198, 'CO': 70, 'CO2': 38} total 3248 mass 29067 vs 29786; mol% {'H2': 59.9, 'CH4': 30.7, 'N2': 6.1, 'CO': 2.2, 'CO2': 1.2}
+NG carbon 3992 lbmol/h; recycled carbon 865 = 21.7% of NG carbon; recycled H2 1526 lbmol/h = 3077 lb/h
+N2 in NG 45.1 lbmol/h vs N2 leaving via FUEL 42.8
+
+== Case 6 estimate (conversion ASSUMED 0.76-0.78 from Cases 2/5) ==
+NG C 3934; captured 3649; emitted 269; shifted CO2 at 99% = 3686 lbmol/h = 1672 kmol/h = 1946 st/d
+ X=0.76: tube C 4973; reject C 1300 (33% of NG C); recycled C 1039 (26%); burned C 261 (vs emitted 269)
+ X=0.77: tube C 4909; reject C 1236 (31% of NG C); recycled C 975 (25%); burned C 261 (vs emitted 269)
+ X=0.78: tube C 4846; reject C 1173 (30% of NG C); recycled C 912 (23%); burned C 261 (vs emitted 269)
+N2 in NG Case 6: 44.4 lbmol/h = 0.405 MMSCFD; CO2 emitted volume 2.45 MMSCFD; so N2 mole share of N2+carbon in burned gas = 14.2 %
+
+== no-recycle consequences ==
+yield no recycle 2.921 scf/scf ; tube feed Case 1: 44.76 -> 2.904
+Case 1 noCC tube feed 44.55 NG fired 7.95
+At 34.0 no recycle: H2 99.3 MMSCFD; 22157 lb/h; 74835 t/y; change -23.6 %
+At 130 no recycle: NG 44.5 delta 10.5 30.9 %
+Extra NG energy 11566 GJ/d; 3.588 PJ/y; at S$15/GJ = S$53.8M/y
+NG energy saved vs 52.5: at 34.0 = 18.5  at 44.5 = 8.0  at 43.5 = 9.0
+  avoided NG slide 25 43.5: 9913 GJ/d, S$46.1M/y
+  avoided NG 34.0: 20377 GJ/d, S$94.8M/y
+  avoided NG 44.5: 8812 GJ/d, S$41.0M/y
+CO2 total no recycle at 130: 2719 st/d; syngas CO2 anchored on Case 1: 2152 st/d; 90% capture: 1937 st/d = 0.545 Mt/y; rest emitted: 782 st/d
+CO2 total no recycle at 34.0: 2078 st/d; syngas CO2: 1644 ; 90%: 1480 ; rest: 598
+
+== 90% capture basis ==
+Syngas CO2 Case 6 1946 st/d; 90% = 1752 st/d = 1589 t/d = 493056 t/y; report 90% of 2069 = 1862 st/d = 524096 t/y; diff 31039 t/y
+Emitted at 90% of syngas 317 st/d = 89272 t/y vs report 58,233; slip 195 st/d vs INL 1% 19
+
+== heat inventory ==
+Selexol Case5 65.0: 19.0 MWth
+Selexol Case2 65.5: 19.2 MWth
+ZLD 56.7: 16.6 MWth
+Export C6 83.7: 24.5 MWth
+Export C5 54.3: 15.9 MWth
+HPS-GEN1: 69.3 MWth
+HPS-GEN2: 13.3 MWth
+LPS-GEN: 1.6 MWth
+WGS-EX1: 19.5 MWth
+WGS-EX2: 7.1 MWth
+WGS-EX3: 19.3 MWth
+WGS-EX4: 34.3 MWth
+KO: 5.8 MWth
+HW cooler: 21.7 MWth
+HW users: 12.6 MWth
+REFORM-1: 118.5 MWth
+REFORM-2: 21.7 MWth
+Selexol steam specific: 904 Btu/lb; Case2 905 ; per t CO2 Case5: 0.92 GJ/t
+T 300F psat 67.2 psia nw 4422 lbmol/h
+T 266F psat 39.2 psia nw 2376 lbmol/h
+T 250F psat 29.8 psia nw 1761 lbmol/h
+T 158F psat 4.5 psia nw 250 lbmol/h
+water after shift 7067 lbmol/h =  127313 lb/h; y 0.249 ; dew p 97.3 psia; COND reported 126553
+WGS-EX4 part 300->266F: [34.1, 5.2, 39.3] MMBtu/h -> 11.5 MWth
+WGS-EX4 part 300->250F: [44.6, 7.7, 52.2] MMBtu/h -> 15.3 MWth
+
+== MEA balance (project 76-79 MWth, amine_spec line 55) ==
+{'selexol_freed': 19.0, 'export_C6': 24.5, 'wgs4_above130': 11.5} sum 55.1 shortfall 20.9 23.9 ; with ZLD steam 71.7
+Reject heat, Case 5 LHV est: 554.0 MMBtu/h = 162.0 MWth
+He circulator est: rho 4.29 kg/m3 at 955 psia 466C; dP 60 psi = 4.14 bar; ideal 7.57 MW; at 80% eff 9.46
+
+== added checks ==
+Case5 water to tubes lbmol/h 14537 tube C at S/C 3: 4846 implied recycled C: 854
+Case5 process heat sum 568.4 vs 568.4; Case2 398.7 vs 398.8
+LPS users Case5 121.7 vs 121.7; Case2 147.8 vs 147.8; HW users Case2 64.3 vs 64.3
+WGS-EX3 model MMBtu/h latent 42.4 dry sens 17.6 vapour sens 6.7 total 66.8 vs published 65.7
+H2 14270 CH4 1000: dry total 19126 lbmol/h, CO2 19.3%
+H2 14270 CH4 1200: dry total 19326 lbmol/h, CO2 19.1%
+H2 16220 CH4 1000: dry total 21076 lbmol/h, CO2 17.5%
+H2 16220 CH4 1200: dry total 21276 lbmol/h, CO2 17.3%
+Case 2 reject fired share 91.4 Case 5 fired share 21.6
+Burned C share of NG C 6.6 to 6.8
+Selexol share of MEA demand 25.0 24.0
+5.7 MWe at S$0.20/kWh 8.49 ; 4.12 MWe 6.14
+CO2 partial pressure bar: Case5 4.74 Case2 5.07 spec 3.78
+Case 5 absorber feed t/h 101.2
+Scaled He heat 176.8*49.2/34.0 = 255.8 ; H2 kg/s 3.82*49.2*(3.63/130) = 5.25

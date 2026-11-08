@@ -1,0 +1,110 @@
+source,locator,read_method,data_kind,series,quantity,value,unit,read_uncertainty,conditions
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 1 PDF p2,table,constant,kinetics_former,k0,117.8,mol/g/Pa^(a+b+c+d)/s,,
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 1 PDF p2,table,constant,kinetics_former,Ea,101.9,kJ/mol,,
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 1 PDF p2,table,constant,kinetics_former,a_CO,1.77,-,,
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 1 PDF p2,table,constant,kinetics_former,b_H2O,0.23,-,,
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 1 PDF p2,table,constant,kinetics_former,c_CO2,-0.17,-,,
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 1 PDF p2,table,constant,kinetics_former,d_H2,-0.12,-,,
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 3 PDF p8,table,constant,kinetics_improved,k0,117.8,mol/g/Pa^(a+b+c+d)/s,,
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 3 PDF p8,table,constant,kinetics_improved,Ea,126.6,kJ/mol,,
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 3 PDF p8,table,constant,kinetics_improved,a_CO,1.77,-,,
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 3 PDF p8,table,constant,kinetics_improved,b_H2O,0.23,-,,
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 3 PDF p8,table,constant,kinetics_improved,c_CO2,-0.17,-,,
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 3 PDF p8,table,constant,kinetics_improved,d_H2,-0.12,-,,
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 2 PDF p7,table,measured,OP1,GHSV,495,1/h,,pressure=ambient
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 2 PDF p7,table,measured,OP1,STDGR,1.6,-,,pressure=ambient
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 2 PDF p7,table,measured,OP1,V_dry,1.24,m3/h,,pressure=ambient
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 2 PDF p7,table,measured,OP2,GHSV,445,1/h,,pressure=ambient
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 2 PDF p7,table,measured,OP2,STDGR,1.9,-,,pressure=ambient
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 2 PDF p7,table,measured,OP2,V_dry,1.11,m3/h,,pressure=ambient
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 2 PDF p7,table,measured,OP3,GHSV,326,1/h,,pressure=ambient
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 2 PDF p7,table,measured,OP3,STDGR,1.6,-,,pressure=ambient
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 2 PDF p7,table,measured,OP3,V_dry,0.82,m3/h,,pressure=ambient
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 2 PDF p7,table,measured,OP4,GHSV,414,1/h,,pressure=ambient
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 2 PDF p7,table,measured,OP4,STDGR,1.2,-,,pressure=ambient
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 2 PDF p7,table,measured,OP4,V_dry,1.04,m3/h,,pressure=ambient
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP1,inlet_H2,38.9,vol percent,,
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP1,outlet_H2,48.9,vol percent,,H2_by_balance=1
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP1,outlet_H2,49.9,vol percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP1,rel_error_H2,1.9,percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP1,inlet_CO,25.4,vol percent,,
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP1,outlet_CO,3.4,vol percent,,H2_by_balance=0
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP1,outlet_CO,2.9,vol percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP1,rel_error_CO,14.1,percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP1,inlet_CO2,20.7,vol percent,,
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP1,outlet_CO2,35.0,vol percent,,H2_by_balance=0
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP1,outlet_CO2,34.9,vol percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP1,rel_error_CO2,0.3,percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP1,inlet_CH4,10.5,vol percent,,
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP1,outlet_CH4,9.0,vol percent,,H2_by_balance=0
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP1,outlet_CH4,8.6,vol percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP1,rel_error_CH4,3.7,percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP1,inlet_N2,4.5,vol percent,,
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP1,outlet_N2,3.7,vol percent,,H2_by_balance=0
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP1,outlet_N2,3.7,vol percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP1,rel_error_N2,0.3,percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP2,inlet_H2,37.3,vol percent,,
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP2,outlet_H2,46.7,vol percent,,H2_by_balance=1
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP2,outlet_H2,46.4,vol percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP2,rel_error_H2,0.6,percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP2,inlet_CO,23.0,vol percent,,
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP2,outlet_CO,4.4,vol percent,,H2_by_balance=0
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP2,outlet_CO,5.1,vol percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP2,rel_error_CO,17.2,percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP2,inlet_CO2,24.1,vol percent,,
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP2,outlet_CO2,36.0,vol percent,,H2_by_balance=0
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP2,outlet_CO2,35.2,vol percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP2,rel_error_CO2,2.4,percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP2,inlet_CH4,10.4,vol percent,,
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP2,outlet_CH4,9.0,vol percent,,H2_by_balance=0
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP2,outlet_CH4,8.9,vol percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP2,rel_error_CH4,1.0,percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP2,inlet_N2,5.2,vol percent,,
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP2,outlet_N2,3.9,vol percent,,H2_by_balance=0
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP2,outlet_N2,4.4,vol percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP2,rel_error_N2,12.7,percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP3,inlet_H2,39.8,vol percent,,
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP3,outlet_H2,49.8,vol percent,,H2_by_balance=1
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP3,outlet_H2,50.3,vol percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP3,rel_error_H2,0.8,percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP3,inlet_CO,25.3,vol percent,,
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP3,outlet_CO,5.1,vol percent,,H2_by_balance=0
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP3,outlet_CO,3.6,vol percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP3,rel_error_CO,30.0,percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP3,inlet_CO2,21.1,vol percent,,
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP3,outlet_CO2,33.3,vol percent,,H2_by_balance=0
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP3,outlet_CO2,34.8,vol percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP3,rel_error_CO2,4.5,percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP3,inlet_CH4,9.5,vol percent,,
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP3,outlet_CH4,8.4,vol percent,,H2_by_balance=0
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP3,outlet_CH4,7.9,vol percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP3,rel_error_CH4,6.6,percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP3,inlet_N2,4.3,vol percent,,
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP3,outlet_N2,3.4,vol percent,,H2_by_balance=0
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP3,outlet_N2,3.6,vol percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP3,rel_error_N2,4.7,percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP4,inlet_H2,38.2,vol percent,,
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP4,outlet_H2,48.4,vol percent,,H2_by_balance=1
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP4,outlet_H2,48.7,vol percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP4,rel_error_H2,0.6,percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP4,inlet_CO,23.3,vol percent,,
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP4,outlet_CO,3.4,vol percent,,H2_by_balance=0
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP4,outlet_CO,2.5,vol percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP4,rel_error_CO,27.5,percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP4,inlet_CO2,22.7,vol percent,,
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP4,outlet_CO2,35.2,vol percent,,H2_by_balance=0
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP4,outlet_CO2,35.8,vol percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP4,rel_error_CO2,1.7,percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP4,inlet_CH4,10.0,vol percent,,
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP4,outlet_CH4,8.7,vol percent,,H2_by_balance=0
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP4,outlet_CH4,8.3,vol percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP4,rel_error_CH4,3.9,percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP4,inlet_N2,5.8,vol percent,,
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,measured,OP4,outlet_N2,4.5,vol percent,,H2_by_balance=0
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP4,outlet_N2,4.8,vol percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 4 PDF p10,table,reported_model,OP4,rel_error_N2,8.1,percent,,model=improved
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 5 PDF p10,table,reported_model,OP1,outlet_H2,50.5,vol percent,,model=former
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 5 PDF p10,table,reported_model,OP1,outlet_CO,1.7,vol percent,,model=former
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 5 PDF p10,table,reported_model,OP1,outlet_CO2,35.7,vol percent,,model=former
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 5 PDF p10,table,reported_model,OP1,outlet_CH4,8.5,vol percent,,model=former
+Kraussler et al. 2017 Biomass Conv. Bioref. 7 153-165,Table 5 PDF p10,table,reported_model,OP1,outlet_N2,3.6,vol percent,,model=former

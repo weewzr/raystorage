@@ -1,0 +1,52 @@
+== CHECK 1: element closure unit by unit, all Level 3 runs
+PASS  every unit and the envelope close C, H, O and N to the CSV print precision in all FS runs   worst relative residual 1.19e-09 over 6 runs
+== CHECK 2: H2 at S09 from C/H/O balances only, and the N.1.5 gas rate from a linear system
+PASS  FS_B_REC_F: H2 and H2O at S09 from the H and O balances   H2 4506.247104 vs CSV 4506.247104
+PASS  FS_B_REC_F_T800: H2 and H2O at S09 from the H and O balances   H2 4506.247107 vs CSV 4506.247104
+PASS  FS_B_REC_F_T825: H2 and H2O at S09 from the H and O balances   H2 4506.247102 vs CSV 4506.247104
+PASS  FS_A_REC_F: H2 and H2O at S09 from the H and O balances   H2 6595.013329 vs CSV 6595.013329
+PASS  FS_B_INL_SEL: H2 and H2O at S09 from the H and O balances   H2 4506.247106 vs CSV 4506.247104
+PASS  FS_A_INL_SEL: H2 and H2O at S09 from the H and O balances   H2 6595.013328 vs CSV 6595.013329
+PASS  N.1.5 equals the gas rate from an element-balance linear system (H, O, C explicit, no hydrogen potential, shares summing to 1)   linear 1150.37360009 vs closed form 1150.37360009
+PASS  same identity at 10 random exact rational points (f, r, xi, eta, phi, psi, kappa, pi, H2 all varied)
+PASS  the gas rate 1150.3736 of the closed form is within 2e-7 of the S01 carbon / cbar of FS_B_REC_F (shares rounded to 6 digits)   1150.37360
+== CHECK 3: the draft's chain on every Level 3 run
+PASS  FS_A_INL_SEL: T (N.2.1), n_NG (N.1.5), G (N.2.2)   9.8e-10 7.0e-10 2.3e-09; f=0.752178 phi=0.7969 psi=0.1850
+PASS  FS_A_REC_F: T (N.2.1), n_NG (N.1.5), G (N.2.2)   7.1e-10 6.4e-10 1.8e-09; f=0.752178 phi=0.8226 psi=0.1596
+PASS  FS_B_INL_SEL: T (N.2.1), n_NG (N.1.5), G (N.2.2)   6.2e-10 1.5e-9 3.4e-09; f=0.752178 phi=0.7969 psi=0.1850
+PASS  FS_B_REC_F: T (N.2.1), n_NG (N.1.5), G (N.2.2)   0.0e+00 3.7e-10 4.5e-16; f=0.752178 phi=0.8226 psi=0.1596
+PASS  FS_B_REC_F_T800: T (N.2.1), n_NG (N.1.5), G (N.2.2)   5.8e-10 1.0e-9 1.4e-09; f=0.752178 phi=0.6728 psi=0.3162
+PASS  FS_B_REC_F_T825: T (N.2.1), n_NG (N.1.5), G (N.2.2)   8.0e-10 6.6e-10 2.0e-16; f=0.752178 phi=0.7305 psi=0.2565
+PASS  closed forms hold on all Level 3 runs, including two reformer temperatures and both scales   worst 3.4e-09
+== CHECK 4: annualisation, unit conversion, legacy ledger numbers
+PASS  1 short ton = 0.90718474 t from 2000 lb
+PASS  379.49 scf/lbmol is the ideal-gas value at 60 F and 1 atm to 0.01 percent   379.484
+PASS  M_CO2 44.0095 agrees with 12.011 + 2x15.999 to 0.003 percent   44.009
+PASS  1 MMSCFD = 49.803 kmol/h   49.8028
+PASS  1927 st/d = 1655.083 kmol/h   1655.0830
+PASS  hours 7446 and k = M_CO2 t_h/1000 = 327.695 t/y per kmol/h   327.6947
+PASS  scale s_b = 8988/(29000 lb/h x 0.45359237) = 0.683281   0.683281
+PASS  legacy baseline 616360.62 t/y from 3205 st/d, 310.25 d, s_b   616360.62
+PASS  legacy ledger: A = baseline - residual   578051.6117 vs 578051.6117
+PASS  N.9.4 T&S burden = 0.025 x captured   8994.4338
+PASS  N.9.5 lifecycle rows: A_TS - E_nuc and + upstream credit
+PASS  annual hydrogen 66924.65 t/y and a_H2 = 8.637350   66924.648 8.637350
+PASS  system minus direct is the same for the three baselines (-50420.05)
+PASS  N.7.3 identity on INL 52.5 MMSCFD: 3200.4 st/d vs published 3205   -0.143 percent
+PASS  N.7.3 identity on INL 44.5 MMSCFD: 2711.6 st/d vs published 2713   -0.052 percent
+== CHECK 5: decomposition with unmodelled streams
+PASS  with unknown streams the draft decomposition gains exactly k*(eout_oth - ein) (zero only if every unmodelled outlet reaches the air)   residual = k*(-ein + eout_oth)
+== CHECK 6: stack carbon against f at fixed gas (N.4.4) and at fixed hydrogen
+   f=0.000000  B(fixed F_C)= 305.992  n_NG= 1305.530  B(fixed H2)= 347.865 kmol C/h
+   f=0.500000  B(fixed F_C)= 175.464  n_NG= 1205.422  B(fixed H2)= 183.983 kmol C/h
+   f=0.752178  B(fixed F_C)=  93.924  n_NG= 1150.374  B(fixed H2)=  93.924 kmol C/h
+   f=0.881200  B(fixed F_C)=  46.946  n_NG= 1120.903  B(fixed H2)=  45.726 kmol C/h
+   f=0.900000  B(fixed F_C)=  39.764  n_NG= 1116.532  B(fixed H2)=  38.578 kmol C/h
+PASS  N.4.4 reproduces S15 at the run's f
+PASS  at fixed H2 the draft's statement 'f = 0.8812 halves the stack' is not exact (it halves it at fixed gas only)   B at fixed H2 = 45.726 vs half = 46.962
+   slope per 0.01 of f: fixed gas -1144.3 t/y, fixed H2 -1205.4 t/y (shares held at the run's values)
+== CHECK 7: dimensions
+PASS  tau_TS = lambda + e_ship + w_TS EF_el: t/t + t/t + (MWh/t)(t/MWh) is dimensionless
+PASS  A_LC term DeltaG*e_up: GJ/y x t/GJ = t/y; GWP_H x e_up,CH4 x DeltaG: (t CO2e/t CH4)(t CH4/GJ)(GJ/y) = t CO2e/y
+
+37 of 37 own checks passed

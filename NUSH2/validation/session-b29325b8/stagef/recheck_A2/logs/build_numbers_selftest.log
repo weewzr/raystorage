@@ -1,0 +1,14 @@
+PASS an unlisted metric stops the build
+PASS AC_L5_25 carries S$/t
+PASS LAC_DCF_60 carries S$/t
+PASS TS_NEEDED carries S$/tCO2
+PASS LCOH_NUSH2 carries S$/kg
+PASS OCC_NEEDED carries US$2019/kWt
+PASS EMIT_BACKUP_T_Y carries t/y
+PASS TUBE_C_KMOL_H carries kmol/h
+PASS GAP_MW carries MW
+PASS FS_NG_MMSCFD carries MMSCFD
+PASS PHI_AFTER_SHIFT carries -
+PASS every SENS token from results/ carries its metric's unit (0 wrong)
+PASS 38 metrics in results/, all listed
+self test: 0 failed

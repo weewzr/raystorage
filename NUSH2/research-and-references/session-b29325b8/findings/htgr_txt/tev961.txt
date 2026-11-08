@@ -1,0 +1,1576 @@
+
+=====PDFPAGE 1=====
+ 
+  
+Document ID: TEV-961
+Revision ID: 0
+Effective Date: 09/15/2010
+Technical Evaluation Study 
+ 
+Project No. 23843 
+ 
+Sensitivity of Hydrogen 
+Production via Steam 
+Methane Reforming to High
+Temperature Gas-Cooled 
+Reactor Outlet  
+Temperature Process 
+Analysis 
+ 
+ 
+ 
+
+=====PDFPAGE 2=====
+
+=====PDFPAGE 3=====
+ 
+ 
+ 
+ 
+Form 412.09 (Rev. 10)
+ 
+Idaho National Laboratory 
+ 
+ 
+ 
+SENSITIVITY OF HYDROGEN PRODUCTION 
+VIA STEAM METHANE REFORMING TO HIGH 
+TEMPERATURE GAS-COOLED REACTOR 
+OUTLET  TEMPERATURE PROCESS ANALYSIS 
+Identifier: 
+Revision: 
+Effective Date: 
+TEV-961 
+ 
+0 
+ 
+09/15/2010 
+Page: 2 of 22
+ 
+ 
+REVISION LOG 
+Rev. 
+Date 
+Affected Pages 
+Revision Description 
+0 
+09/15/10 
+All 
+Newly issued document. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+=====PDFPAGE 4=====
+ 
+ 
+ 
+ 
+Form 412.09 (Rev. 10)
+ 
+Idaho National Laboratory 
+ 
+ 
+ 
+SENSITIVITY OF HYDROGEN PRODUCTION 
+VIA STEAM METHANE REFORMING TO HIGH 
+TEMPERATURE GAS-COOLED REACTOR 
+OUTLET  TEMPERATURE PROCESS ANALYSIS 
+Identifier: 
+Revision: 
+Effective Date: 
+TEV-961 
+ 
+0 
+ 
+09/15/2010 
+Page: 3 of 22
+ 
+ 
+EXECUTIVE SUMMARY 
+This technical evaluation (TEV) has been prepared as part of a study for the Next 
+Generation Nuclear Plant (NGNP) Project to evaluate integration of High Temperature 
+Gas-cooled Reactor (HTGR) technology with conventional chemical processes. This 
+TEV addresses the impact of increasing HTGR reactor outlet temperature (ROT) on 
+hydrogen production via steam methane reforming (SMR) of natural gas. 
+The production of hydrogen via SMR has previously been addressed in detail in 
+TEV-953 (INL 2010a). In that report, detailed process models for both conventional 
+SMR hydrogen production and HTGR-integrated SMR hydrogen production with an 
+ROT of 750C (1,382F) were developed. This report is done as a follow-up to TEV-953, 
+and evaluates the impact of increasing the ROT to 925C (1,697F). 
+For this evaluation, six cases were considered, all of which include carbon capture (CC): 
+Case 1 – Conventional non-HTGR-integrated SMR 
+Case 2 – HTGR-integrated SMR with an ROT of 725C (supplying 700C heat) 
+Case 3 – HTGR-integrated SMR with an ROT of 775C (supplying 750C heat) 
+Case 4 – HTGR-integrated SMR with an ROT of 825C (supplying 800C heat) 
+Case 5 – HTGR-integrated SMR with an ROT of 875C (supplying 850C heat) 
+Case 6 – HTGR-integrated SMR with an ROT of 925C (supplying 900C heat). 
+The optimal steam reforming temperature selected for this analysis was 871C (1,600F). 
+In Case 6, the HTGR is capable of providing heat to the process at 900C (1,652F), 
+thereby supplying the entire heat duty required for reforming. Although follow-on 
+HTGRs are planned to have an ROT as high as 950C (1,742F), there is little or no 
+benefit to the SMR process of pushing the ROT higher than required to supply heat to the 
+reformer. Hence, ROTs above 925C (1,697F) were not investigated in this study. 
+A simplified diagram showing the major inputs and outputs from the process is shown in 
+Figure ES-1 (Case 5 results shown). Primary inputs to the process are natural gas, heat in 
+the form of hot helium from the HTGR, electricity from the HTGR, and water. Primary 
+outputs from the process are hydrogen, 4.2 MPa (600 psig) steam, concentrated CO2 
+(suitable for sequestration or use in enhanced oil recovery), and combustion exhaust that 
+also contains CO2. 
+In Case 1, reforming heat is provided to a single reformer by combusting a combination 
+of natural gas and fuel gas. In Cases 2–5, two reforming stages are used. In the first stage, 
+heat is provided from hot helium supplied by the HTGR. In the second stage, combustion 
+
+=====PDFPAGE 5=====
+ 
+ 
+ 
+ 
+Form 412.09 (Rev. 10)
+ 
+Idaho National Laboratory 
+ 
+ 
+ 
+SENSITIVITY OF HYDROGEN PRODUCTION 
+VIA STEAM METHANE REFORMING TO HIGH 
+TEMPERATURE GAS-COOLED REACTOR 
+OUTLET  TEMPERATURE PROCESS ANALYSIS 
+Identifier: 
+Revision: 
+Effective Date: 
+TEV-961 
+ 
+0 
+ 
+09/15/2010 
+Page: 4 of 22
+ 
+ 
+of fuel gas is used to raise the reforming temperature to the target temperature of 871C 
+(1,600F). In Case 6, all reforming heat is provided from hot helium supplied by the 
+HTGR to a single reformer. In all cases, heat recuperation is utilized to raise steam for 
+use within the plant. Steam generated in excess of that required for use within the plant is 
+exported as a saleable byproduct. 
+ 
+Figure ES-1. SMR SMR H2 production material balance results for Case 5. 
+Significant results from this evaluation are: 
+ 
+Increasing the HTGR ROT significantly reduces natural gas consumption, as 
+shown in Figure ES-2. By integrating nuclear heat at the lowest temperature 
+considered, 725C (1,337F) ROT, natural gas consumption can be reduced by 
+11.6% compared to the conventional process. If the ROT is increased to 925C 
+(1,697F), a reduction of 30.9% can be realized compared to the conventional 
+process. 
+ 
+As the ROT is increased, the ratio of hydrogen product to natural gas feed 
+increases significantly. Also, by shifting the required reforming duty from fuelgas 
+combustion to nuclear heat, less combustion exhaust gas is generated. Because 
+steam is raised to recover heat from the combustion exhaust gas, a decrease in 
+fuelgas combustion leads to a corresponding decrease in the amount of steam 
+generated and exported from the plant. These results are shown in Figure ES-3. 
+ 
+CO2 emissions are also reduced as the ROT is increased. For an ROT of 725C 
+(1,337F), CO2 emissions are reduced by 39% compared to the conventional SMR 
+case. For an ROT of 925C (1,697F), CO2 emissions are reduced by an 
+additional 73% from the 725C (1,337F) ROT case, representing a total CO2 
+emissions reduction of 83% compared to the conventional SMR case. CO2 
+disposition for each case is shown graphically in Figure ES-4. 
+ 
+As the ROT increases, the difference between the helium return temperature and 
+the optimal helium inlet temperature to the HTGR decreases. At an ROT of 
+
+=====PDFPAGE 6=====
+ 
+ 
+ 
+ 
+Form 412.09 (Rev. 10)
+ 
+Idaho National Laboratory 
+ 
+ 
+ 
+SENSITIVITY OF HYDROGEN PRODUCTION 
+VIA STEAM METHANE REFORMING TO HIGH 
+TEMPERATURE GAS-COOLED REACTOR 
+OUTLET  TEMPERATURE PROCESS ANALYSIS 
+Identifier: 
+Revision: 
+Effective Date: 
+TEV-961 
+ 
+0 
+ 
+09/15/2010 
+Page: 5 of 22
+ 
+ 
+725C (1,337F), the difference is 71C (128F), while an ROT of 925C 
+(1,697F) produces a difference of only 3C (5F). Hence, the higher ROT is 
+more compatible with a “heat-only” HTGR configuration. At lower ROTs, 
+inserting a power cycle is the most likely scenario to utilize the excess heat 
+returned from the reformer. 
+ 
+Of all the HTGR-integrated cases considered, only the 925C (1,697F) ROT case 
+completely eliminates the need for two reforming stages—nuclear heat alone is 
+adequate in this case to provide the desired reforming temperature. This greatly 
+simplifies the design of the reformer. 
+Based on the results of this study, an economic analysis is recommended to further 
+quantify the benefits offered by increasing the ROT from 725C (1,337F) to 925C 
+(1,697F). 
+ 
+Figure ES-2. Natural gas consumption as a function of ROT. 
+
+=====PDFPAGE 7=====
+ 
+ 
+ 
+ 
+Form 412.09 (Rev. 10)
+ 
+Idaho National Laboratory 
+ 
+ 
+ 
+SENSITIVITY OF HYDROGEN PRODUCTION 
+VIA STEAM METHANE REFORMING TO HIGH 
+TEMPERATURE GAS-COOLED REACTOR 
+OUTLET  TEMPERATURE PROCESS ANALYSIS 
+Identifier: 
+Revision: 
+Effective Date: 
+TEV-961 
+ 
+0 
+ 
+09/15/2010 
+Page: 6 of 22
+ 
+ 
+ 
+Figure ES-3. SMR H2 product and steam export yields as a function of ROT. 
+
+=====PDFPAGE 8=====
+ 
+ 
+ 
+ 
+Form 412.09 (Rev. 10)
+ 
+Idaho National Laboratory 
+ 
+ 
+ 
+SENSITIVITY OF HYDROGEN PRODUCTION 
+VIA STEAM METHANE REFORMING TO HIGH 
+TEMPERATURE GAS-COOLED REACTOR 
+OUTLET  TEMPERATURE PROCESS ANALYSIS 
+Identifier: 
+Revision: 
+Effective Date: 
+TEV-961 
+ 
+0 
+ 
+09/15/2010 
+Page: 7 of 22
+ 
+ 
+ 
+Figure ES-4. SMR CO2 disposition as a function of ROT. 
+
+=====PDFPAGE 9=====
+ 
+ 
+ 
+ 
+Form 412.09 (Rev. 10)
+ 
+Idaho National Laboratory 
+ 
+ 
+ 
+SENSITIVITY OF HYDROGEN PRODUCTION 
+VIA STEAM METHANE REFORMING TO HIGH 
+TEMPERATURE GAS-COOLED REACTOR 
+OUTLET  TEMPERATURE PROCESS ANALYSIS 
+Identifier: 
+Revision: 
+Effective Date: 
+TEV-961 
+ 
+0 
+ 
+09/15/2010 
+Page: 8 of 22
+ 
+ 
+CONTENTS 
+EXECUTIVE SUMMARY .............................................................................................................3 
+ACRONYMS AND NOMENCLATURE .......................................................................................9 
+1. 
+INTRODUCTION .............................................................................................................10 
+2. 
+SENSITIVITY ANALYSIS DESCRIPTION ...................................................................11 
+2.1 
+Baseline Process Configuration .............................................................................11 
+2.2 
+Cases Considered ...................................................................................................13 
+2.3 
+Gas Recycle Considerations ..................................................................................13 
+3. 
+PROCESS MODELING RESULTS AND OBSERVATIONS ........................................14 
+4. 
+FUTURE WORK AND RECOMMENDATIONS ...........................................................21 
+5. 
+REFERENCES ..................................................................................................................21 
+6. 
+APPENDIXES ...................................................................................................................21 
+ 
+ 
+ 
+
+=====PDFPAGE 10=====
+ 
+ 
+ 
+ 
+Form 412.09 (Rev. 10)
+ 
+Idaho National Laboratory 
+ 
+ 
+ 
+SENSITIVITY OF HYDROGEN PRODUCTION 
+VIA STEAM METHANE REFORMING TO HIGH 
+TEMPERATURE GAS-COOLED REACTOR 
+OUTLET  TEMPERATURE PROCESS ANALYSIS 
+Identifier: 
+Revision: 
+Effective Date: 
+TEV-961 
+ 
+0 
+ 
+09/15/2010 
+Page: 9 of 22
+ 
+ 
+ACRONYMS AND NOMENCLATURE 
+CC 
+carbon capture 
+DOE 
+Department of Energy 
+HHV 
+higher heating value 
+HTGR 
+High Temperature Gas-cooled Reactor 
+INL 
+Idaho National Laboratory 
+MMBTU 
+1,000,000 British thermal units 
+MMSCF 
+1,000,000 standard cubic feet 
+NGNP 
+Next Generation Nuclear Plant 
+ROT 
+reactor outlet temperature 
+SMR 
+steam methane reformer 
+TEV 
+technical evaluation 
+
+=====PDFPAGE 11=====
+ 
+ 
+ 
+ 
+Form 412.09 (Rev. 10)
+ 
+Idaho National Laboratory 
+ 
+ 
+ 
+SENSITIVITY OF HYDROGEN PRODUCTION 
+VIA STEAM METHANE REFORMING TO HIGH 
+TEMPERATURE GAS-COOLED REACTOR 
+OUTLET  TEMPERATURE PROCESS ANALYSIS 
+Identifier: 
+Revision: 
+Effective Date: 
+TEV-961 
+ 
+0 
+ 
+09/15/2010 
+Page: 10 of 22
+ 
+ 
+1. 
+INTRODUCTION 
+This technical evaluation (TEV) has been prepared as part of a study for the Next 
+Generation Nuclear Plant (NGNP) Project to evaluate integration of High Temperature 
+Gas-cooled Reactor (HTGR) technology with conventional chemical processes. The 
+NGNP Project is being conducted under U.S. Department of Energy (DOE) direction to 
+meet a national strategic need identified in the 2005 Energy Policy Act to promote 
+reliance on safe, clean, economical nuclear energy and to establish a greenhouse-gas-free 
+technology for the production of hydrogen. NGNP represents an integration of high-
+temperature reactor technology with advanced hydrogen, electricity, and process heat 
+production capabilities, thereby meeting the mission need identified by DOE. The 
+strategic goal of the NGNP Project is to broaden the environmental and economic 
+benefits of nuclear energy in the U.S. economy by demonstrating its applicability to 
+market sectors not being served by light water reactors. 
+The HTGR produces steam, high-temperature helium that can be used for process heat, 
+and/or electricity. Previous studies conducted by Idaho National Laboratory (INL) over 
+the past year have assumed an HTGR outlet temperature of 750°C (1,382F); this reflects 
+the initial HTGR design and assumes a more conservative outlet temperature. 
+Additionally, a 50°C (90F) temperature approach was assumed between the primary and 
+secondary helium loops when helium was the delivered working fluid. As a result, the 
+maximum helium stream temperature available for heat exchange in those studies was 
+700°C (1,292F).a 
+Although initial HTGR implementations will likely target an HTGR outlet temperature of 
+750°C (1,382F), temperatures of up to 950°C (1,742F) are anticipated for later designs. 
+Unlike previous INL studies performed during the last year, this study removes the 
+750°C (1,382F) maximum HTGR outlet temperature assumption. Instead, the impact of 
+increasing the HTGR reactor outlet temperature (ROT) is assessed. For this study, a 25°C 
+(45F) temperature approach is assumed between the primary and secondary helium 
+loops, as opposed to the 50°C (90F) assumption used in previous studies. This study 
+investigates the impact of varying ROTs from 725°C (1,337F) to 925°C (1,697F). 
+Hence, using the 25°C (45F) temperature approach assumption between the primary and 
+secondary loops, high-temperature helium can be delivered at temperatures between 
+700°C (1,292F) and 900°C (1,652F). HTGR product conditions assumed for this 
+analysis are shown in Table 1. 
+                                                 
+a. 
+See TEV-666, TEV-667, TEV-671, TEV-672, TEV-674, TEV-693, TEV-704, TEV-953, and 
+INL/EXT-09-16942. 
+
+=====PDFPAGE 12=====
+ 
+ 
+ 
+ 
+Form 412.09 (Rev. 10)
+ 
+Idaho National Laboratory 
+ 
+ 
+ 
+SENSITIVITY OF HYDROGEN PRODUCTION 
+VIA STEAM METHANE REFORMING TO HIGH 
+TEMPERATURE GAS-COOLED REACTOR 
+OUTLET  TEMPERATURE PROCESS ANALYSIS 
+Identifier: 
+Revision: 
+Effective Date: 
+TEV-961 
+ 
+0 
+ 
+09/15/2010 
+Page: 11 of 22
+ 
+ 
+Table 1. Projected outputs of NGNP. 
+HTGR Product 
+Product Description 
+Steam  
+540°C (1,004°F) and 17 MPa 
+High-Temperature Helium Delivered at 700°C (1,292°F) and 9.1 MPa 
+Electricity 
+Generated by Rankine cycle with 40% thermal efficiency 
+ 
+The production of hydrogen via steam methane reforming (SMR) of natural gas has 
+previously been addressed in detail in TEV-953 (INL 2010a). In that report, detailed 
+process models for both conventional SMR hydrogen production and HTGR-integrated 
+SMR hydrogen production were developed. The models documented in TEV-953 are 
+used as the basis for the temperature sensitivity analysis conducted in this report. This 
+TEV assumes familiarity with TEV-953; hence, detailed descriptions of the process 
+models documented in TEV-953 are not presented here. 
+The process simulations used for this analysis have been developed in Aspen Plus, a 
+state-of-the-art, steady-state chemical process simulator (Aspen 2006). This study makes 
+extensive use of these models; this TEV assumes familiarity with Aspen Plus. A detailed 
+explanation of the software capabilities, thermodynamic packages, unit operation models, 
+and solver routines is beyond the scope of this study. 
+This TEV first presents the general process configuration on which the sensitivity 
+analysis is based. Next, conditions for the specific cases modeled are presented. Issues 
+discovered during modeling that required slight modification to the process flowsheet are 
+then presented, followed by a brief discussion of the study limitations. Finally, results of 
+the temperature sensitivity analysis are presented and discussed. 
+2. 
+SENSITIVITY ANALYSIS DESCRIPTION 
+2.1 
+Baseline Process Configuration 
+The process configuration selected as the basis for the temperature sensitivity 
+study includes carbon capture (CC) and is taken from TEV-953. A simplified 
+block flow diagram of the process is presented in Figure 1; a detailed process 
+description can be found in TEV-953, “HTGR-Integrated Hydrogen Production 
+via Steam Methane Reforming (SMR) Process Analysis.” Carbon capture was 
+included in this study for the following reasons: 
+1. 
+Removal of CO2 produces a smaller volume of fuelgas. It is more reasonable 
+to recycle a smaller volume to the reformer, as it will not dramatically 
+increase the size of the reformer and gas cleanup equipment. 
+
+=====PDFPAGE 13=====
+ 
+ 
+ 
+ 
+Form 412.09 (Rev. 10)
+ 
+Idaho National Laboratory 
+ 
+ 
+ 
+SENSITIVITY OF HYDROGEN PRODUCTION 
+VIA STEAM METHANE REFORMING TO HIGH 
+TEMPERATURE GAS-COOLED REACTOR 
+OUTLET  TEMPERATURE PROCESS ANALYSIS 
+Identifier: 
+Revision: 
+Effective Date: 
+TEV-961 
+ 
+0 
+ 
+09/15/2010 
+Page: 12 of 22
+ 
+ 
+2. 
+Fuelgas in excess of what is required to fire the second stage reformer can be 
+recycled to the reformer tubes to increase syngas production and ultimately 
+maximize hydrogen production. 
+3. 
+Removal of CO2 limits CO2 concentration in the reformer which improves 
+hydrogen yield by suppressing the reverse water gas shift reaction. This 
+reduces the load on the downstream water gas shift reactors. 
+4. 
+The feasibility of recycling fuel gas to the reformer tubes is questionable 
+unless CC is implemented. If fuel gas cannot be recycled, it must be used for 
+a purpose other than to increase hydrogen production. The most likely use 
+would be to generate additional steam for export from the plant. However, 
+the nuclear reactor is itself an excellent heat source—generation of additional 
+export heat in the form of steam from the reformer is therefore undesirable. 
+ 
+Figure 1. SMR process used in the sensitivity analysis. 
+As described in TEV-953, two reforming stages are utilized: the first stage uses 
+helium from the HTGR as the heat transfer medium, and the second stage 
+combusts fuelgas to supply additional higher-temperature heat to complete the 
+reforming process. Increasing the ROT of the HTGR allows more of the 
+reforming to be accomplished in the first stage. When helium can be supplied to 
+
+=====PDFPAGE 14=====
+ 
+ 
+ 
+ 
+Form 412.09 (Rev. 10)
+ 
+Idaho National Laboratory 
+ 
+ 
+ 
+SENSITIVITY OF HYDROGEN PRODUCTION 
+VIA STEAM METHANE REFORMING TO HIGH 
+TEMPERATURE GAS-COOLED REACTOR 
+OUTLET  TEMPERATURE PROCESS ANALYSIS 
+Identifier: 
+Revision: 
+Effective Date: 
+TEV-961 
+ 
+0 
+ 
+09/15/2010 
+Page: 13 of 22
+ 
+ 
+the process at a temperature above 871°C (1,600F) [corresponding to an ROT of 
+896°C (1,645F) for the assumed 25°C (45F) temperature approach between the 
+primary and secondary loops], the potential exists to supply all reforming heat 
+from the HTGR, thus completely eliminating the fuelgas-fired reformer stage. 
+2.2 
+Cases Considered 
+Two cases from TEV-953 are included in this study for comparison purposes: 
+(1) the conventional non-HTGR-integrated SMR case with CC, and (2) the 
+HTGR-integrated SMR case with an ROT of 725C (1,337F) and CC.b Four 
+additional cases are evaluated as part of this study, each increasing the HTGR 
+ROT by 50C (90F) until a maximum ROT of 925C (1,697F) is achieved. 
+Hence, a total of six cases are compared and evaluated in this study, all of which 
+include CC: 
+Case 1 – Conventional non-HTGR-integrated SMR 
+Case 2 – HTGR-integrated SMR with an ROT of 725C (supplying 700C heat) 
+Case 3 – HTGR-integrated SMR with an ROT of 775C (supplying 750C heat) 
+Case 4 – HTGR-integrated SMR with an ROT of 825C (supplying 800C heat) 
+Case 5 – HTGR-integrated SMR with an ROT of 875C (supplying 850C heat) 
+Case 6 – HTGR-integrated SMR with an ROT of 925C (supplying 900C heat). 
+The optimal steam reforming temperature selected for this analysis was 871C 
+(1,600F). In Case 6, the HTGR is capable of providing heat to the process at 
+900C (1,652F), thereby supplying the entire heat duty required for reforming. 
+Although follow-on HTGRs are planned to have an ROT as high as 950C 
+(1,742F), there is little or no benefit to the SMR process of pushing the ROT 
+higher than required to supply heat to the reformer. Hence, ROTs above 925C 
+(1,697F) were not investigated in this study. 
+2.3 
+Gas Recycle Considerations 
+The natural gas feedstock considered in this study contains 1.2 mol% nitrogen. 
+Because the Selexol solvent used for CO2 removal is not selective for nitrogen 
+removal, and because the pressure swing absorption process is extremely efficient 
+                                                 
+b. 
+A process description and flowsheet for the conventional non-HTGR-integrated case can be found in 
+TEV-953. Note that for Case 2, a ROT of 725C (1,337F) corresponds to the 750C (1,382F) ROT case from 
+TEV-953 due to changing the assumption for temperature approach between the primary and secondary helium 
+loops from 50C (90F) to 25C (45F). 
+
+=====PDFPAGE 15=====
+ 
+ 
+ 
+ 
+Form 412.09 (Rev. 10)
+ 
+Idaho National Laboratory 
+ 
+ 
+ 
+SENSITIVITY OF HYDROGEN PRODUCTION 
+VIA STEAM METHANE REFORMING TO HIGH 
+TEMPERATURE GAS-COOLED REACTOR 
+OUTLET  TEMPERATURE PROCESS ANALYSIS 
+Identifier: 
+Revision: 
+Effective Date: 
+TEV-961 
+ 
+0 
+ 
+09/15/2010 
+Page: 14 of 22
+ 
+ 
+at separating only hydrogen, the nitrogen present in the feedstock is partitioned 
+almost exclusively to the fuelgas stream. As the ROT is increased, the fraction of 
+fuelgas recycled to the reformer tubes also increases. In Case 6 where it is 
+possible to recycle all of the fuelgas to the reformer tubes, there is no outlet in the 
+system for nitrogen; hence, nitrogen will build up to unacceptable levels in the 
+process. There are several options to alleviate this problem, the two most obvious 
+being: (1) purge a small fraction of fuelgas solely for the purpose of controlling 
+nitrogen buildup; and (2) include a small separation unit to remove nitrogen from 
+the fuelgas. For this analysis, it was decided to add a small cryogenic separation 
+unit to remove nitrogen from the fuelgas in Case 6. This option was selected over 
+the purge option because it has the potential to maximize hydrogen production for 
+a given natural gas feed rate. Hence, for Case 6 the flowsheet shown in Figure 1 
+was modified to eliminate the second reforming stage and to add a small 
+cryogenic separation unit on the fuelgas stream. Details of the modified flowsheet 
+for Case 6 can be found in Appendix A. 
+3. 
+PROCESS MODELING RESULTS AND OBSERVATIONS 
+High-level material and energy balances from the modeling are presented in Figure 2 and 
+detailed results are tabulated in Table 2. For the complete modeling results, see Appendix 
+A. Aspen stream results for all cases are presented in electronic Appendixes B, C, D, E, 
+F, and G. Analysis indicates that integrating nuclear heat into the SMR flowsheet and 
+increasing the HTGR ROT significantly reduces natural gas consumption. By integrating 
+nuclear heat at the lowest temperature considered [700C (1,292F) helium supply; 
+725C (1,337F) ROT], natural gas consumption can be reduced by 11.6% compared to 
+the conventional process. If the helium supply temperature can be increased to 900C 
+(1,652F) [925C (1,697F) ROT], a reduction of 30.9% can be realized compared to the 
+conventional process. Natural gas consumption results for each case are shown 
+graphically in Figure 3. 
+
+=====PDFPAGE 16=====
+ 
+ 
+ 
+ 
+Form 412.09 (Rev. 10)
+ 
+Idaho National Laboratory 
+ 
+ 
+ 
+SENSITIVITY OF HYDROGEN PRODUCTION 
+VIA STEAM METHANE REFORMING TO HIGH 
+TEMPERATURE GAS-COOLED REACTOR 
+OUTLET  TEMPERATURE PROCESS ANALYSIS 
+Identifier: 
+Revision: 
+Effective Date: 
+TEV-961 
+ 
+0 
+ 
+09/15/2010 
+Page: 15 of 22
+ 
+ 
+ 
+Figure 2. SMR hydrogen production temperature sensitivity modeling material balance results. 
+
+=====PDFPAGE 17=====
+ 
+ 
+ 
+ 
+Form 412.09 (Rev. 10)
+ 
+Idaho National Laboratory 
+ 
+ 
+ 
+SENSITIVITY OF HYDROGEN PRODUCTION 
+VIA STEAM METHANE REFORMING TO HIGH 
+TEMPERATURE GAS-COOLED REACTOR 
+OUTLET  TEMPERATURE PROCESS ANALYSIS 
+Identifier: 
+Revision: 
+Effective Date: 
+TEV-961 
+ 
+0 
+ 
+09/15/2010 
+Page: 16 of 22
+ 
+ 
+Table 2. SMR hydrogen production temperature sensitivity modeling results. 
+ 
+ 
+ 
+ 
+Conventional 
+HTGR-
+Integrated 
+(725°C ROT) 
+HTGR-
+Integrated 
+(775°C ROT) 
+HTGR-
+Integrated 
+(825°C ROT) 
+HTGR-
+Integrated 
+(875°C ROT) 
+HTGR-
+Integrated 
+(925°C ROT) 
+Inputs 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Natural Gas Feed Rate (MMSCFD)1 
+49.2 
+43.5 
+40.8 
+37.7 
+34.5 
+34.0 
+Outputs 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Hydrogen (MMSCFD)1 
+130 
+130 
+130 
+130 
+130 
+130 
+ 
+Steam Export (MMBtu/hr) 
+23.6 
+176.2 
+138.8 
+97.4 
+54.3 
+83.7 
+Performance Metrics 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+H2 Product/Natural Gas Feed (scf/scf) 
+2.64 
+2.99 
+3.19 
+3.45 
+3.77 
+3.82 
+ 
+Steam Export/H2 Product (lb/lb) 
+0.80 
+5.94 
+4.68 
+3.28 
+1.83 
+2.82 
+ 
+Process Thermal Efficiency, HHV Basis (%) 
+77.8 
+80.1 
+80.7 
+81.5 
+82.2 
+82.5 
+Utility Usage 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Total Power (MWe) 
+14.4 
+13.7 
+14.1 
+14.6 
+15.3 
+17.3 
+ 
+ 
+Natural Gas Reforming 
+3.3 
+2.0 
+2.7 
+3.6 
+4.7 
+1.2 
+ 
+ 
+Syngas Purification 
+2.3 
+2.3 
+2.3 
+2.3 
+2.3 
+2.1 
+ 
+ 
+Steam System 
+0.2 
+0.4 
+0.3 
+0.3 
+0.3 
+0.3 
+ 
+ 
+CO2 Compression 
+7.1 
+7.0 
+6.9 
+6.7 
+6.5 
+6.4 
+ 
+ 
+Purge Recovery 
+n/a 
+n/a 
+n/a 
+n/a 
+n/a 
+5.7 
+ 
+ 
+Cooling Towers 
+0.1 
+0.1 
+0.1 
+0.1 
+0.1 
+0.1 
+ 
+ 
+Water Treatment 
+1.4 
+2.0 
+1.8 
+1.6 
+1.4 
+1.5 
+ 
+Total Water (gpm)2 
+650 
+958 
+876 
+786 
+692 
+743 
+ 
+ 
+Evaporation Rate (gpm) 
+341 
+348 
+350 
+353 
+355 
+354 
+CO2 Emissions 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Captured (ton/day CO2) 
+2,143 
+2,123 
+2,076 
+2,024 
+1,970 
+1,927 
+ 
+Emitted (ton/day CO2) 
+855 
+525 
+403 
+267 
+126 
+142 
+Nuclear Integration Summary 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Electricity Demand (MWe) 
+n/a 
+13.7 
+14.1 
+14.6 
+15.3 
+17.3 
+ 
+Process Heat Demand (MWt) 
+n/a 
+116.9 
+132.2 
+149.1 
+166.6 
+176.8 
+
+=====PDFPAGE 18=====
+ 
+ 
+ 
+ 
+Form 412.09 (Rev. 10)
+ 
+Idaho National Laboratory 
+ 
+ 
+ 
+SENSITIVITY OF HYDROGEN PRODUCTION 
+VIA STEAM METHANE REFORMING TO HIGH 
+TEMPERATURE GAS-COOLED REACTOR 
+OUTLET  TEMPERATURE PROCESS ANALYSIS 
+Identifier: 
+Revision: 
+Effective Date: 
+TEV-961 
+ 
+0 
+ 
+09/15/2010 
+Page: 17 of 22
+Table 2. (continued). 
+ 
+ 
+ 
+ 
+ 
+Conventional 
+HTGR-
+Integrated 
+(725°C ROT) 
+HTGR-
+Integrated 
+(775°C ROT) 
+HTGR-
+Integrated 
+(825°C ROT) 
+HTGR-
+Integrated 
+(875°C ROT) 
+HTGR-
+Integrated 
+(925°C ROT) 
+ 
+ 
+Helium Flow Rate (kg/s) 
+n/a 
+83.62 
+79.78 
+79.21 
+79.42 
+78.49 
+ 
+ 
+Helium Supply Temperature (°C) 
+n/a 
+700 
+750 
+800 
+850 
+900 
+ 
+ 
+Helium Return Temperature (°C) 
+n/a 
+431 
+431 
+437 
+446 
+466 
+ 
+Integration Assessment 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Ideal Helium Return Temperature (°C)3 
+n/a 
+303 
+343 
+382 
+421 
+461 
+ 
+ 
+Excess Heat for Power Generation (MWt)4 
+n/a 
+55.6 
+36.5 
+22.6 
+10.3 
+2.0 
+ 
+ 
+Power Generation Efficiency (%)3 
+n/a 
+38.4 
+38.4 
+38.7 
+39.0 
+39.7 
+ 
+ 
+Power Generation Capability (MWe)5 
+n/a 
+21.4 
+14.0 
+8.7 
+4.0 
+0.8 
+ 
+ 
+Excess Power Generation Capability (MWe)6 
+n/a 
+7.7 
+-0.1 
+-5.9 
+-11.3 
+-16.5 
+ 
+# 600 MWt HTGRs Required (Heat + Power) 
+n/a 
+0.29 
+0.28 
+0.29 
+0.29 
+0.30 
+ 
+ 
+# 600 MWt HTGRs Required (Heat Only) 
+n/a 
+0.19 
+0.22 
+0.25 
+0.28 
+0.29 
+ 
+ 
+# 600 MWt HTGRs Required (Power Only) 
+n/a 
+0.09 
+0.06 
+0.04 
+0.02 
+0.00 
+ 
+ 
+Equivalent Reactor Size Required (MWt) 
+n/a 
+172.5 
+168.7 
+171.7 
+176.9 
+178.8 
+1. Standard temperature of 60 degrees F. 
+ 
+ 
+ 
+ 
+ 
+2. Does not include heat rejection for the nuclear plant; does not include credit for export steam condensate return. 
+3. Interpolated from TEV-981. 
+ 
+ 
+ 
+ 
+ 
+ 
+4. Based on the calculated helium flowrate and the calculated and ideal helium return temperatures. 
+5. Based on the excess heat available and power generation efficiency. 
+ 
+ 
+6. A negative value indicates that a small amount of power would need to be imported from the grid, or the reactor size could be increased accordingly. 
+ 
+
+=====PDFPAGE 19=====
+ 
+ 
+ 
+ 
+Form 412.09 (Rev. 10)
+ 
+Idaho National Laboratory 
+ 
+ 
+ 
+SENSITIVITY OF HYDROGEN PRODUCTION 
+VIA STEAM METHANE REFORMING TO HIGH 
+TEMPERATURE GAS-COOLED REACTOR 
+OUTLET  TEMPERATURE PROCESS ANALYSIS 
+Identifier: 
+Revision: 
+Effective Date: 
+TEV-961 
+ 
+0 
+ 
+09/15/2010 
+Page: 18 of 22
+ 
+ 
+ 
+Figure 3. Natural gas consumption as a function of ROT. 
+As ROT is increased, the ratio of hydrogen product to natural gas feed increases 
+significantly. Also, by shifting the required reforming duty from fuelgas combustion to 
+nuclear heat, less combustion exhaust gas is generated. Because steam is raised to recover 
+heat from the combustion exhaust gas, a decrease in fuelgas combustion leads to a 
+corresponding decrease in the amount of steam generated and exported from the plant. 
+These results are shown in Figure 4. The increase in hydrogen product yield going from 
+an ROT of 875C (1,607F) to 925C (1,697F) is relatively small. In addition, steam 
+export increases slightly between these cases. This result is due in part to the flowsheet 
+modifications made for the 925C (1,697F) ROT case—complete removal of the fired 
+reforming stage and inclusion of the cryogenic separation unit to remove nitrogen from 
+the fuelgas prior to recycle to the reformer. 
+
+=====PDFPAGE 20=====
+ 
+ 
+ 
+ 
+Form 412.09 (Rev. 10)
+ 
+Idaho National Laboratory 
+ 
+ 
+ 
+SENSITIVITY OF HYDROGEN PRODUCTION 
+VIA STEAM METHANE REFORMING TO HIGH 
+TEMPERATURE GAS-COOLED REACTOR 
+OUTLET  TEMPERATURE PROCESS ANALYSIS 
+Identifier: 
+Revision: 
+Effective Date: 
+TEV-961 
+ 
+0 
+ 
+09/15/2010 
+Page: 19 of 22
+ 
+ 
+ 
+Figure 4. SMR H2 product and steam export yields as a function of ROT. 
+Power consumption in the conventional SMR process is quite modest. Integrating nuclear 
+heat with limited fuelgas recycle (i.e., ROT of 725C) results in a small decrease in 
+power consumption, primarily due to a reduction in the CO2 compression power 
+requirement. However, as ROT increases, fuelgas recycle compression requirements also 
+increase, resulting in a small increase in power consumption. 
+As seen in Table 2, the trend for water consumption mirrors the trend for steam export 
+from the plant. This is because the model does not make the assumption that condensate 
+will be returned from exported steam; hence, an increase in export steam will result in 
+additional water loss from the plant. 
+CO2 emissions are also reduced as a result of integrating nuclear heat. As the ROT 
+increases, a higher percentage of the fuelgas is recycled, leading to a decrease in CO2 
+emissions. For an ROT of 725°C (1,337F), CO2 emissions are reduced by 39% 
+compared to the conventional SMR case. For an ROT of 925°C (1,697F), CO2 emissions 
+are reduced by an additional 73% from the 725°C (1,337F) ROT case, representing a 
+total CO2 emissions reduction of 83% compared to the conventional SMR case. Due to 
+
+=====PDFPAGE 21=====
+ 
+ 
+ 
+ 
+Form 412.09 (Rev. 10)
+ 
+Idaho National Laboratory 
+ 
+ 
+ 
+SENSITIVITY OF HYDROGEN PRODUCTION 
+VIA STEAM METHANE REFORMING TO HIGH 
+TEMPERATURE GAS-COOLED REACTOR 
+OUTLET  TEMPERATURE PROCESS ANALYSIS 
+Identifier: 
+Revision: 
+Effective Date: 
+TEV-961 
+ 
+0 
+ 
+09/15/2010 
+Page: 20 of 22
+ 
+ 
+the recycle of fuelgas, the amount of captured CO2 also decreases slightly as ROT is 
+increased. CO2 disposition for each case is shown graphically in Figure 5. 
+ 
+Figure 5. SMR CO2 disposition as a function of ROT. 
+As the ROT increases, the difference between the helium return temperature and the 
+optimal helium inlet temperature to the HTGR decreases. At an ROT of 725C (1,337F), 
+the difference is 71C (128F), while an ROT of 925C (1,697F) produces a difference 
+of only 3C (5F). Hence, the higher ROT is more compatible with a “heat-only” HTGR 
+configuration. At lower ROTs, inserting a power cycle is the most likely scenario to 
+utilize the excess heat returned from the reformer. 
+As the ROT increases from 725°C (1,337F) to 925°C (1,697F), the process heat 
+demand increases from 117 MWt to 177 MWt. However, over this same range, the heat 
+available for power generation decreases from 56 MWt to 2 MWt. Hence, the output 
+required from the nuclear plant to support the SMR does not change appreciably as a 
+result of increasing the ROT. In all cases, less than ⅓ of a 600 MWt reactor would be 
+sufficient to support a world-scale single-train hydrogen plant regardless of the ROT 
+selected. 
+
+=====PDFPAGE 22=====
+ 
+ 
+ 
+ 
+Form 412.09 (Rev. 10)
+ 
+Idaho National Laboratory 
+ 
+ 
+ 
+SENSITIVITY OF HYDROGEN PRODUCTION 
+VIA STEAM METHANE REFORMING TO HIGH 
+TEMPERATURE GAS-COOLED REACTOR 
+OUTLET  TEMPERATURE PROCESS ANALYSIS 
+Identifier: 
+Revision: 
+Effective Date: 
+TEV-961 
+ 
+0 
+ 
+09/15/2010 
+Page: 21 of 22
+ 
+ 
+As the ROT increases from 725°C (1,337F) to 925°C (1,697F), the amount of excess 
+heat available to generate power decreases. Above an ROT of 775°C, import of power 
+from an external source would be required to support operation of the SMR (17 MWe for 
+the 925°C (1,697F) ROT case). As an alternative, the capacity of the HTGR could be 
+increased slightly to meet the power demand of the SMR. This is the likely scenario if the 
+HTGR is built to support the needs of multiple industrial users. 
+Of all the HTGR-integrated cases considered, only the 925°C (1,697F) ROT case 
+completely eliminates the need for two reforming stages—nuclear heat alone is adequate 
+in this case to provide the desired reforming temperature. This greatly simplifies the 
+design of the reformer. 
+4. 
+FUTURE WORK AND RECOMMENDATIONS 
+Several recommendations relating to HTGR-integrated SMR development were 
+previously summarized in TEV-953. In addition to those recommendations, the following 
+items are also recommended for future consideration: 
+ 
+An economic analysis should be performed using the modeling results from this 
+study as input. It is believed that such an analysis is required in order to further 
+quantify the benefits offered by increasing the ROT from 725°C (1,337F) to 
+925°C (1,697F). 
+ 
+If HTGR-integrated SMR technology is selected for further development, a more 
+detailed model of the cryogenic separation unit should be developed for the 
+925°C (1,697F) ROT case. The current model uses simplistic flash separators 
+rather than multi-stage distillation columns, which significantly under-predicts the 
+actual separation efficiency that could be achieved. 
+5. 
+REFERENCES 
+Aspen Plus, Version 2006, Burlington, Massachusetts: Aspen Tech, 2006. 
+INL, 2010a, “HTGR-Integrated Hydrogen Production via Steam Methane Reforming 
+(SMR) Process Analysis,” Idaho National Laboratory, TEV-953, Rev. 0. 
+INL, 2010b, “An Analysis of the Effect of Reactor Outlet Temperature of a High 
+Temperature Reactor on Electric Power Generation, Hydrogen Production, and 
+Process Heat,” Idaho National Laboratory, TEV-981, Rev. 0. 
+6. 
+APPENDIXES 
+Appendix A, Detailed Modeling Results and Flowsheets 
+Appendix B, [Electronic] Case 1 – Conventional SMR Stream Results.xlsx 
+
+=====PDFPAGE 23=====
+ 
+ 
+ 
+ 
+Form 412.09 (Rev. 10)
+ 
+Idaho National Laboratory 
+ 
+ 
+ 
+SENSITIVITY OF HYDROGEN PRODUCTION 
+VIA STEAM METHANE REFORMING TO HIGH 
+TEMPERATURE GAS-COOLED REACTOR 
+OUTLET  TEMPERATURE PROCESS ANALYSIS 
+Identifier: 
+Revision: 
+Effective Date: 
+TEV-961 
+ 
+0 
+ 
+09/15/2010 
+Page: 22 of 22
+ 
+ 
+Appendix C, [Electronic] Case 2 – 725C ROT SMR Stream Results.xlsx 
+Appendix D, [Electronic] Case 3 – 775C ROT SMR Stream Results.xlsx 
+Appendix E, [Electronic] Case 4 – 825C ROT SMR Stream Results.xlsx 
+Appendix F, [Electronic] Case 5 – 875C ROT SMR Stream Results.xlsx 
+Appendix G, [Electronic] Case 6 – 925C ROT SMR Stream Results.xlsx 
+ 
+
+=====PDFPAGE 24=====
+ 
+ 
+ 
+ 
+Form 412.09 (Rev. 10)
+ 
+Idaho National Laboratory 
+ 
+ 
+ 
+SENSITIVITY OF HYDROGEN PRODUCTION 
+VIA STEAM METHANE REFORMING TO HIGH 
+TEMPERATURE GAS-COOLED REACTOR 
+OUTLET  TEMPERATURE PROCESS ANALYSIS 
+Identifier: 
+Revision: 
+Effective Date: 
+TEV-961 
+ 
+0 
+ 
+09/15/2010 
+ 
+Appendix A 
+Appendix A 
+Detailed Modeling Results and Flowsheets 
+ 
+ 
+ 
+
+=====PDFPAGE 25=====
+
+=====PDFPAGE 26=====
+
+=====PDFPAGE 27=====
+
+=====PDFPAGE 28=====
+
+=====PDFPAGE 29=====
+
+=====PDFPAGE 30=====
+
+=====PDFPAGE 31=====
+
+=====PDFPAGE 32=====
+
+=====PDFPAGE 33=====
+
+=====PDFPAGE 34=====
+
+=====PDFPAGE 35=====
+
+=====PDFPAGE 36=====
+
+=====PDFPAGE 37=====
+
+=====PDFPAGE 38=====
+
+=====PDFPAGE 39=====
+
+=====PDFPAGE 40=====
+
+=====PDFPAGE 41=====
+
+=====PDFPAGE 42=====
+
+=====PDFPAGE 43=====
+
+=====PDFPAGE 44=====
+
+=====PDFPAGE 45=====
+
+=====PDFPAGE 46=====
+
+=====PDFPAGE 47=====
+
+=====PDFPAGE 48=====
+
+=====PDFPAGE 49=====
+
+=====PDFPAGE 50=====
+
+=====PDFPAGE 51=====
+
+=====PDFPAGE 52=====
+
+=====PDFPAGE 53=====
+
+=====PDFPAGE 54=====
+
+=====PDFPAGE 55=====
+
+=====PDFPAGE 56=====
+
+=====PDFPAGE 57=====
+
+=====PDFPAGE 58=====
+
+=====PDFPAGE 59=====
+
+=====PDFPAGE 60=====
+
+=====PDFPAGE 61=====
+
+=====PDFPAGE 62=====
+
+=====PDFPAGE 63=====
+
+=====PDFPAGE 64=====
+
+=====PDFPAGE 65=====
+
+=====PDFPAGE 66=====
+
+=====PDFPAGE 67=====
+
+=====PDFPAGE 68=====
+
+=====PDFPAGE 69=====
+
+=====PDFPAGE 70=====
+
+=====PDFPAGE 71=====
+
+=====PDFPAGE 72=====
+
+=====PDFPAGE 73=====
+
+=====PDFPAGE 74=====
+
+=====PDFPAGE 75=====
+
+=====PDFPAGE 76=====
+
+=====PDFPAGE 77=====
+
+=====PDFPAGE 78=====
+
+=====PDFPAGE 79=====
+
+=====PDFPAGE 80=====
+
+=====PDFPAGE 81=====
+
+=====PDFPAGE 82=====
+
+=====PDFPAGE 83=====

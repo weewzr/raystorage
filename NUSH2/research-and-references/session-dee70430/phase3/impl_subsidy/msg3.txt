@@ -1,0 +1,11 @@
+Fill in the implementation and test lines of the subsidy derivation
+
+Each of the 27 equation blocks S.0.1 to S.9c of
+docs/derivation/02_cost_and_subsidy.md now names the Rust function that
+implements it and the test that validates it. Line numbers wait for the final
+documentation pass. The S.1 line records that the registry follows decision
+D7b for definition B, while the derivation table and the worked numbers of
+S.6a, S.7d and S.8 use another membership, which the tests reproduce by
+setting the flags.
+
+Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>

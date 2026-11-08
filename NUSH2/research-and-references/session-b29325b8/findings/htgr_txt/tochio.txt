@@ -1,0 +1,914 @@
+
+=====PDFPAGE 1=====
+Journal of Nuclear Science and Technology
+ISSN: 0022-3131 (Print) 1881-1248 (Online) Journal homepage: www.tandfonline.com/journals/tnst20
+Thermal Performance of Intermediate Heat
+Exchanger during High-Temperature Continuous
+Operation in HTTR
+Daisuke TOCHIO & Shigeaki NAKAGAWA
+To cite this article: Daisuke TOCHIO & Shigeaki NAKAGAWA (2011) Thermal Performance of
+Intermediate Heat Exchanger during High-Temperature Continuous Operation in HTTR, Journal
+of Nuclear Science and Technology, 48:11, 1361-1368, DOI: 10.1080/18811248.2011.9711828
+To link to this article:  https://doi.org/10.1080/18811248.2011.9711828
+Published online: 05 Jan 2012.
+Submit your article to this journal 
+Article views: 1415
+View related articles 
+Citing articles: 1 View citing articles 
+Full Terms & Conditions of access and use can be found at
+https://www.tandfonline.com/action/journalInformation?journalCode=tnst20
+
+=====PDFPAGE 2=====
+Thermal Performance of Intermediate Heat Exchanger
+during High-Temperature Continuous Operation in HTTR
+Daisuke TOCHIO1; and Shigeaki NAKAGAWA2
+1Oarai Research and Development Center, Japan Atomic Energy Agency,
+4002 Narita-cho, Oarai-machi, Higashi-ibaraki-gun, Ibaraki 311-1393, Japan
+2Nuclear Hydrogen and Heat Application Research Center, Japan Atomic Energy Agency,
+4002 Narita-cho, Oarai-machi, Higashi-ibaraki-gun, Ibaraki 311-1393, Japan
+(Received February 17, 2011 and accepted in revised form July 12, 2011)
+To use the High-Temperature Gas-cooled Reactor (HTGR) system as a commercial reactor similar to
+the future HTGR ‘GTHTR300C,’ supplying stable high-temperature heat from the reactor to the heat
+utilization system such as the hydrogen production system over a prolonged period should be demon-
+strated. The 50-day high-temperature continuous operation with full power, which is the ﬁrst long-term
+operation with a reactor outlet coolant temperature over 900C, was achieved in March 2010 in the High
+Temperature Engineering Test Reactor (HTTR) of the Japan Atomic Energy Agency (JAEA). In order to
+supply stable high-temperature heat from the reactor to the heat utilization system using the HTTR, the
+heat exchange performance and structure integrity of the intermediate heat exchanger (IHX) should be
+conﬁrmed. In this paper, the heat exchange performance and structure temperature of the IHX were
+evaluated with the high-temperature continuous operation data and compared with the designed one or
+estimated one. As a result, it was conﬁrmed that the IHX can exchange stable high-temperature heat from
+the primary coolant to the secondary helium, and the IHX structure temperature is under the allowable
+working temperature in the operation. Moreover, it was conﬁrmed that the heat exchange performance is
+almost the same as the designed one and that the structure temperature estimated with the analysis code is
+almost the same as the measured one.
+KEYWORDS: HTGR, HTTR, high-temperature continuous operation, intermediate heat exchang-
+er, heat exchange performance, structural integrity
+I. Introduction
+The
+High
+Temperature
+Engineering
+Test
+Reactor
+(HTTR),1) which is the ﬁrst High-Temperature Gas-cooled
+Reactor (HTGR) in Japan, having a thermal power of
+30 MW and 950C maximum reactor outlet coolant temper-
+ature, was constructed in the Japan Atomic Energy Agency
+(JAEA) for the purpose of establishing and improving the
+technologies of HTGRs as well as nuclear heat utilization.
+The HTTR attained its ﬁrst criticality in November 1998,
+and in-service operation has been conducted through ﬁve-
+phase rise-to-power tests.
+To develop the commercial HTGR system such as the
+future HTGR ‘GTHTR300C,’ supplying stable heat to a
+heat utilization system over a prolonged period should be
+demonstrated. Thus, the long-term continuous operation
+with full power and over 900C reactor outlet coolant tem-
+perature (called ‘high-temperature continuous operation’)
+was planned.
+Before the high-temperature continuous operation, the
+long-term continuous operation with 850C maximum reac-
+tor outlet coolant temperature mode was conducted from
+March to April in 20072) in order to verify and conﬁrm the
+safety of the high-temperature continuous operation.
+The high-temperature continuous operation was started
+from January 2010, and the 50-day high-temperature con-
+tinuous operation with full power was achieved in March
+2010.3) As a result of these operations, it was demonstrated
+that the HTTR can supply stable heat to the heat utilization
+system such as the thermochemical hydrogen production
+system over a prolonged period. These operations are the
+ﬁrst achievements in the history of the HTTR. The data
+obtained, such as core burnup characteristics, helium purity
+management, high-temperature instrument performance, and
+core internal structure integrity, are very useful for the
+development of a commercial HTGR.
+The intermediate heat exchanger (IHX) is one of the high-
+temperature instruments installed in the HTTR. It is planned
+that the thermochemical hydrogen production system is con-
+nected to the HTTR through the IHX, so the IHX is the most
+important instrument in the development of a hydrogen
+production system and the future HTGR ‘GTHTR300C.’
+ 2011 Atomic Energy Society of Japan, All Rights Reserved.
+Corresponding author, E-mail: tochio.daisuke@jaea.go.jp
+Journal of NUCLEAR SCIENCE and TECHNOLOGY, Vol. 48, No. 11, p. 1361–1368 (2011)
+1361
+ARTICLE
+
+=====PDFPAGE 3=====
+In this paper, the heat exchange performance and structure
+temperature of the IHX for the high-temperature continuous
+operation were evaluated and compared with the designed
+data or estimation result.
+II. Outline of the HTTR and the High-Temperature
+Continuous Operation
+1. Outline of the HTTR
+(1) Reactor and Fuel
+Table 1 shows the major speciﬁcations of the HTTR and
+Fig. 1 shows the structure of the reactor of the HTTR. The
+reactor is composed of fuel elements, reﬂector block, core
+restraint mechanism, reactor pressure vessel (RPV), and so
+on. The reactor core is composed of 30 columns of the
+fuel blocks and 7 columns of the control rod guide blocks.
+The permanent reﬂector blocks and the replaceable reﬂector
+blocks are arranged around the reactor core.
+Figure 2 shows the components of the fuel element. The
+fuel element of the HTTR is the so-called pin-in-block type
+composed of fuel rods and a hexagonal graphite block (fuel
+block). The fuel block has 31 or 33 holes, and the fuel rods
+are inserted in the hole. The primary coolant ﬂows through
+the annulus formed between the fuel rod and hole of the fuel
+block.
+In the reactor, the primary coolant ﬂows in from the
+annulus of the primary concentric hot gas duct arranged at
+the bottom of the RPV. It rises to the upper plenum through
+the gap between the RPV and the permanent reﬂector blocks.
+Next, it turns over and ﬂows downward through the fuel
+channel. Lastly, heated coolant is joined at the hot plenum
+and ﬂows out to the inner pipe of the primary concentric hot
+gas duct through the primary coolant outlet nozzle.
+(2) HTTR Cooling System
+Figure 3 shows the HTTR cooling system. The HTTR
+cooling system is composed of the main cooling system
+(MCS), the auxiliary cooling system (ACS), and the vessel
+cooling system (VCS). The MCS is operated in normal
+operation to remove the generated heat at the reactor.
+The ACS and VCS are the engineered safety features. The
+ACS is in standby during normal operation and starts up to
+remove residual heat after a reactor scram. The VCS cools
+the biological concrete shield surrounding the RPV at nor-
+Table 1
+Major speciﬁcations of the HTTR
+Thermal power
+30 MW
+Fuel
+UO2
+Uranium enrichment
+3–10% (average 6%)
+Fuel assembly type
+Pin-in-block type
+Core
+Structure material
+Graphite
+Height
+2.9 m
+Diameter
+2.3 m
+Number of main cooling loop
+1
+Coolant
+Helium
+Primary coolant pressure
+4 MPa
+Reactor inlet coolant temperature
+395C
+Reactor outlet coolant temperature
+950C
+A
+A-A cross section
+A
+Core support grid
+Primary coolant
+outlet nozzle
+Core restraint
+mechanism
+Fuel element
+Reactor pressure
+vessel (RPV)
+Control rod
+standpipe
+Control rod
+guide block
+Fuel element
+Core restraint
+mechanism
+RPV
+RPV top cover
+Hot plenum
+Upper plenum
+Reflector 
+block
+(replaceable)
+(permanent)
+Reflector block
+(permanent)
+(replaceable)
+Core support plate
+Mixing promoter
+RPV skirt
+RPV bottom lid
+Fig. 1
+Structure of the HTTR reactor
+Handling hole
+Dowel pin
+Coolant channel
+Graphite block
+Fuel rod
+Dowel socket
+Control rod
+insertion
+hole
+Reserved shutdown
+pellet insertion hole
+Fuel block
+Control rod guide block
+Fig. 2
+Component of fuel element
+1362
+D. TOCHIO and S. NAKAGAWA
+JOURNAL OF NUCLEAR SCIENCE AND TECHNOLOGY
+
+=====PDFPAGE 4=====
+mal operation, and removes heat from the core by natural
+convection and thermal radiation outside the reactor pressure
+vessel under ‘accident without forced cooling’ conditions
+such as a rupture of the primary concentric hot gas duct,
+when neither the MCS nor the ACS can cool the core
+eﬀectively.
+The MCS is composed of the primary cooling system, the
+secondary cooling system, and the pressurized water cooling
+system. The heat generated at the reactor core is dispersed
+into the atmosphere by way of these cooling systems. The
+HTTR has the following primary missions: (1) establish heat
+utilization technology using heat generated at the reactor,
+and (2) demonstrate the inherent safety features of HTGR.
+To achieve mission (1), the 10 MW high-temperature gas-
+gas-type heat exchanger is needed. Also, to achieve mission
+(2), the 30 MW heat exchanger is needed. Thus, the heat
+exchanger of one IHX and one primary pressurized water
+cooler (PPWC) are installed in the primary cooling system
+and connected to the reactor with the primary coolant con-
+centric hot gas duct in the HTTR. The heat exchanger of one
+secondary pressurized water cooler (SPWC) is installed in
+the secondary cooling system and connected to the IHX with
+the secondary helium concentric hot gas duct. The heat
+exchanger of one air-cooler is installed in the pressurized
+water cooling system. The primary gas circulators (PGCs)
+are arranged around the IHX and PPWC; the secondary gas
+circulator (SGC) is arranged around the SPWC. The heated
+primary coolant at the reactor ﬂows inside the inner tube of
+the primary concentric hot gas duct to the IHX and PPWC.
+The primary coolant is cooled to about 400C at the IHX and
+PPWC, and returns to the reactor through the annular space
+between the inner pipe and outer pipe of the primary con-
+centric hot gas duct.
+The HTTR has two reactor outlet coolant temperature
+modes and two systematical operation modes. One of the
+reactor outlet coolant temperature modes is called the ‘‘Rated
+operation mode’’ with a maximum reactor outlet coolant
+temperature of 850C; the other is the ‘‘High-temperature
+test operation mode’’ with a maximum reactor outlet coolant
+temperature of 950C. In these operation modes, the reactor
+outlet coolant temperature is changed by changing the pri-
+mary coolant mass ﬂow rate.
+The HTTR has two systematical operation modes of
+‘‘Single-loaded operation mode’’ and ‘‘Parallel-loaded oper-
+ation mode.’’ The generated heat of 30 MW at the reactor
+is removed using only the PPWC in the single-loaded oper-
+ation mode. On the other hand, the generated heat is re-
+moved using both the PPWC and IHX in the parallel-loaded
+operation mode; the amounts of heat removed are 20 MW at
+the PPWC and 10 MW at the IHX. Thus, the HTTR oper-
+ation mode is generally called the ‘‘Rated/Single-loaded
+operation.’’
+(3) IHX
+Table 2 shows the major speciﬁcations of the IHX and
+Fig. 4 shows the structure of the IHX. The IHX is the
+vertical helically-coiled counterﬂow-type gas-gas heat ex-
+changer. The body of the IHX is composed of the inner shell
+and outer shell. A thermal insulator is arranged inside of the
+inner shell. Figure 5 shows the structure around the heat
+transfer tube in the IHX. The IHX has 96 heat transfer tubes
+arranged with 6 lamination layer structures. The heat transfer
+enhancement plates are installed between the heat transfer
+tubes in order to enhance the heat exchange performance
+(i.e., the heat is exchanged with convective heat transfer and
+thermal radiation due to the heat transfer enhancement plates
+in the IHX).
+VCS cooling pipe
+Auxiliary cooling system
+Reactor
+AHX
+AGC
+(x2)
+Auxiliary
+ACL
+Reactor
+containment
+vessel
+Main cooling system
+ACL
+PGC
+(x3)
+PPWC
+IHX
+SGC
+SPWC
+PGC
+1
+3
+4
+6
+Temperature
+measurement
+point
+Flow mass rate
+measurement
+point
+2
+5
+IHX 
+: Intermediate heat exchanger 
+PPWC 
+: Primary pressurized water cooler
+PGC : Primary gas circulator 
+SPWC 
+: Secondary pressurized water cooler
+SGC : Secondary gas circulator 
+ACL 
+: Air-cooler
+AHX : Auxiliary heat exchanger 
+AGC 
+: Auxiliary gas circulator
+VCS : Vessel cooling system
+Fig. 3
+HTTR main cooling system
+Thermal Performance of Intermediate Heat Exchanger during High-Temperature Continuous Operation in HTTR
+1363
+VOL. 48, NO. 11, NOVEMBER 2011
+
+=====PDFPAGE 5=====
+The hot primary coolant enters into the IHX through the
+inner tube of the primary concentric hot gas duct. It is
+deﬂected under the hot header and discharged around the
+heat transfer tubes to transfer the heat to the secondary
+helium cooling system. It ﬂows to the PGC via the upper
+outlet nozzle and ﬂows back to the annular space between
+the inner shell and outer shell.
+On the other hand, the secondary helium gas ﬂows down-
+wards in the heat transfer tubes and upwards in the central
+hot gas duct through the hot header. The inner thermal
+insulator is installed inside the inner shell to maintain its
+temperature under the allowable one. The thermal insulators
+are installed outside and inside of the central hot gas duct.
+The heat transfer is reduced by them at the central hot gas
+duct so that high eﬃciency can be obtained. Moreover, the
+central hot gas duct temperature is kept under the allowable
+working temperature by them. The pressure of the secondary
+helium is controlled higher than that in the primary coolant
+because of the prevention of the primary helium leak due to
+the rupture of the heat transfer tube in the IHX.
+The tube support assemblies hold the heat transfer tube.
+Both the central hot gas duct and heat transfer tube support
+assemblies are hung from the vessel top so that the thermal
+expansion is not constrained.
+Table 2
+Major speciﬁcations of the IHX
+Heat exchanger capacity
+10 MW
+IHX primary/secondary helium gas
+Flow rate
+12 t/h/12 t/h
+Inlet temperature
+950C/300C
+Outlet temperature
+390C/860C
+Heat transfer tube
+Number
+96
+Outer diameter
+31.8 mm
+Thickness
+3.5 mm
+Outer shell outer diameter
+2.0 m
+Total height
+11.0 m
+Material
+Heat transfer tube
+Hastelloy XR
+Hot header
+Hastelloy XR
+Hot duct
+Hastelloy XR
+Outer/Inner shell
+Low-alloy steel
+Allowable working pressure
+Outer shell
+4.8 MPa
+Heat transfer tube
+0.3 MPaa)
+Allowable working temperature
+Outer shell
+430C
+Heat transfer tube
+955C
+a)diﬀerential pressure
+Secondary helium
+(to SPWC)
+Secondary helium
+(from SPWC)
+Primary helium
+(from reactor)
+Primary helium
+(to reactor)
+Primary
+helium
+(to PGC)
+Primary helium
+(from PGC)
+Primary
+Secondary
+helium inlet
+nozzle
+Manhole
+Tube support
+assembly
+Central hot
+gas duct
+(Center pipe)
+Hot header
+Helical coil heat
+transfer tube
+Thermal
+insulation
+Outer shell
+Inner shell
+Cold header
+Secondary helium 
+double nozzle
+Secondary
+8
+7
+Temperature
+measurement
+point
+Fig. 4
+Structural diagram of the IHX
+Central hot gas duct
+Heat transfer tube
+support plate
+Heat transfer enhancement plate
+Heat transfer tube
+Heat transfer enhancement plate
+spacer
+Fig. 5
+Structure around the heat transfer tube in the IHX
+1364
+D. TOCHIO and S. NAKAGAWA
+JOURNAL OF NUCLEAR SCIENCE AND TECHNOLOGY
+
+=====PDFPAGE 6=====
+2. Outline of the High-Temperature Continuous Opera-
+tion
+The high-temperature continuous operation (called HP-
+11) started from 17 December 2009 to 21 March 2010.3)
+The reactor was started up on 17 December 2009 and shut
+down on 27 December 2009 for the purpose of measurement
+of control rod worth.
+Figure 6 shows the historical trend during the high-
+temperature continuous operation. The reactor was started
+up on 5 January 2010. The reactor power was raised gradual-
+ly and reached to about 98% (29.5 MW) on 22 January 2010.
+After the thermal power calibration, the reactor power was
+raised to about 99% (29.7 MW) on 31 January 2010. The 50-
+day high-temperature continuous operation with full power
+was achieved from 22 January 2010 to 13 March 2010.
+The reactor power decrease was started on 14 March 2010
+and the reactor was shut down on 21 March 2010. The
+69 eﬀective full-power operation days were added in the
+operation.
+III. Evaluation of Heat Exchange Performance and
+Structure Temperature of the IHX
+1. Evaluation Method
+(1) Heat Exchange Performance of the IHX
+The heat exchange performance of the IHX was evaluated
+with the high-temperature 50-day continuous operation data.
+The results were compared with previous operation data to
+conﬁrm the degradation of the performance.
+Generally, exchanged heat at the heat exchanger is given
+by the following equation.
+Q ¼ UAT
+ð1Þ
+The UA in this equation, which is the product of heat trans-
+mission coeﬃcient U and heat transfer area of the heat
+exchanger A, is the characteristic value of each heat ex-
+changer and it shows the heat exchange performance. Thus,
+the heat exchange performance of the IHX was evaluated
+with the UA. The UA of the IHX is given by the following
+equation, which is given by the transformation of Eq. (1).
+UA ¼ QIHX=TIHX
+ð2Þ
+The logarithmic mean temperature diﬀerence for the IHX is
+given by the following equation.
+TIHX ¼ TP
+in  TS
+out  ðTP
+out  TS
+inÞ
+ln
+"
+TP
+in  TS
+out
+TP
+out  TS
+in
+#
+ð3Þ
+The heat exchanged at the IHX is considered as the heat
+received at the IHX given by the following equation.
+QIHX ¼ QS
+IHX ¼ CS
+PGS
+IHXðTS
+out  TS
+inÞ
+ð4Þ
+Table 3 shows the measurement point used in the present
+evaluation. The numbers of measurement points shown in
+Table 3 correspond to that shown in Figs. 3 and 4. The plant
+is most stable at 7:00 am–7:59 am in a day, so the average
+data obtained during that interval was used in the evaluation.
+(2) IHX Structure Temperature
+The IHX structure temperature obtained in the high-tem-
+perature continuous operation is compared with result esti-
+mated using the estimation code. The structure and coolant
+temperatures in the IHX were estimated using the IHX
+steady-state estimation code, which is used to solve the heat
+balance equation. The code is constructed with a two-dimen-
+sional cylindrical coordinate thermal network model shown
+in Fig. 7. Thermal conductivity, convective heat transfer
+between the structures and the coolant, thermal radiation
+between the structures, and heat transport by coolant ﬂow
+were considered in the code.
+The Nusselt number outside of the heat transfer tube (i.e.,
+primary coolant side) is based on the following equation.4,5)
+Fig. 6
+Historical trend during the high-temperature continuous
+operation
+Table 3
+Measurement equipment and measurement accuracy
+No.
+Measurement point
+Range
+Accuracy
+(Measurement equipment)
+1
+Reactor outlet primary
+0–1,200C
+0:4%
+coolant temperature
+(K-type thermocouple)
+2
+IHX outlet primary
+0–500C
+0:4%
+coolant temperature
+(K-type thermocouple)
+3
+IHX inlet secondary
+0–500C
+0:4%
+coolant temperature
+(K-type thermocouple)
+4
+IHX outlet secondary
+0–1,000C
+0:4%
+coolant temperature
+(K-type thermocouple)
+5
+IHX primary coolant
+0.0–17.0 t/h
+0:5%
+ﬂow mass rate
+(D/P-type ﬂow meter)
+6
+SPWC secondary
+0.0–17.0 t/h
+0:5%
+coolant ﬂow mass rate
+(D/P-type ﬂow meter)
+7
+IHX hot header
+0–1,000C
+0:4%
+ligament temperature
+(K-type thermocouple)
+8
+IHX heat transfer
+0–1,000C
+0:4%
+tube temperature
+(K-type thermocouple)
+Thermal Performance of Intermediate Heat Exchanger during High-Temperature Continuous Operation in HTTR
+1365
+VOL. 48, NO. 11, NOVEMBER 2011
+
+=====PDFPAGE 7=====
+Nuout ¼ 0:057  C0  Re0:8  Pr0:4
+ð800 < Re  7;000Þ
+¼ 0:33  C0  Re0:6  Pr0:3
+ð7;000 < ReÞ
+ð5Þ
+C0 ¼ f  e    s  E
+ð6Þ
+The Nusselt number on the heat enhancement plate sur-
+face is based on the following Nusselt number equation.6)
+Nuenh ¼ C1  Re0:54  Pr0:4 
+Xw
+dout
+ 1
+
+0:47
+
+Pa
+dout
+ 1
+
+0:5
+ð7Þ
+The Nusselt number inside of the heat transfer tube
+(i.e., secondary coolant side) is based on the following
+equation.4,5,7)
+Nuin ¼
+0:148
+ﬃﬃﬃ
+D
+p
+1  1:813
+ﬃﬃﬃ
+D
+p
+ 
+!
+ 0:021  Re0:8  Pr0:4
+ðLaminar regionÞ
+¼ 0:0228  Re5=6  Pr0:4 
+d
+D
+
+1=12
+
+1 þ
+0:0732
+½Re  ðdin=DhÞ2:51=6
+
+
+ðTurbulent regionÞ
+ð8Þ
+D ¼ Re 
+ﬃﬃﬃﬃﬃﬃ
+din
+Dh
+s
+ð9Þ
+The convective heat transfer and thermal radiation are
+modeled as the thermal path shown in Fig. 7. The primary
+coolant/secondary helium IHX inlet temperature and ﬂow
+rate were given as the boundary condition.
+2. Evaluation Result
+(1) Heat Exchange Performance
+To supply stable high-temperature heat from the reactor
+to the heat utilization system, it is necessary to conﬁrm a
+stable heat exchange at the IHX. Thus, the stabilities of the
+supplying heat, supplying temperature, and heat exchange
+performance were conﬁrmed.
+Figure 8 shows the historical trend of the reactor power,
+exchanged heat at the IHX, and UA of the IHX in the high-
+z
+r
+Upper junction tube
+Lower junction tube
+Helical coil
+PGC
+Symmetry axis
+Primary inlet
+Outlet
+Outlet
+Secondary inlet
+Thermal insulator
+Heat transfer tube
+Heat transfer 
+enhancement plate
+Inner shell
+Inner shell liner
+Outer shell
+Lagging
+Concentric hot
+gas duct liner
+Concentric hot
+gas duct
+1st layer
+6th layer
+5th layer
+4th layer
+3rd layer
+2nd layer
+Heat transfer path
+Thermal radiation path
+Atmosphere
+Fig. 7
+Estimation model for IHX temperature estimation
+Fig. 8
+Historical trend of the reactor power, exchanged heat, and
+UA of the IHX
+1366
+D. TOCHIO and S. NAKAGAWA
+JOURNAL OF NUCLEAR SCIENCE AND TECHNOLOGY
+
+=====PDFPAGE 8=====
+temperature continuous operation. The exchanged heat at
+the IHX and UA of the IHX were almost constant throughout
+the operation period. Also, the exchanged heat was almost
+10 MW, which is 1/3 of the generated heat at the reactor
+and design value.
+Figure 9 shows the historical trend of the primary coolant
+and secondary helium temperature at the IHX. The high-
+temperature primary coolant was supplied to the IHX, and
+then the high-temperature secondary helium was generated
+and supplied to the secondary helium cooling system.
+Figure 10 shows the relationship between the UA and
+logarithmic mean temperature diﬀerence on the IHX. In
+this ﬁgure, the result for the high-temperature continuous
+operation and previous high-temperature test operation8)
+(performed in 2004) is shown.9) Both results are almost the
+same, so the degradation of the heat exchange performance
+is not conﬁrmed. It is conﬁrmed that the IHX can exchange
+the stable high-temperature heat from the primary coolant to
+the secondary helium.
+(2) IHX Structure Temperature
+Figure 11 shows the comparison of the measured temper-
+ature with the estimated one at the IHX heat transfer tube
+and hot header. The diﬀerence between the estimated tem-
+perature and the measured one becomes larger as the tem-
+perature increases at the IHX heat transfer tube and the hot
+header. Under the condition of IHX inlet coolant temper-
+ature over 900C, the estimated temperature at the heat
+transfer tube is about 5C higher than the measured one;
+this value is about 0.5% of the measured one. The estimated
+temperature at the hot header is about 20C lower than the
+measured one; this value is about 2% of the measured one.
+The temperature diﬀerence is caused by the modeling of
+the hot header. The structure near the measurement point of
+the hot header is very complex, which is composed of the hot
+header and the lower junction tube. The estimation model
+does not represent these complex structures in detail.
+Thus, the diﬀerence between the measured temperature
+and the estimated one can be identiﬁed, and it can be con-
+sidered that this estimation method can be applied to predict
+the temperature for a vertical helically coiled gas-gas heat
+exchanger.
+3. Development
+of
+Design
+for
+Future
+HTGR
+‘GTHTR300C’
+In order to demonstrate the hydrogen production with the
+heat generated at the reactor, it is planned that the HTTR is
+connected to a hydrogen production system through the IHX
+and secondary helium cooling system (called as ‘‘HTTR-
+IS’’). The conceptual design of the HTTR-IS system is on-
+going in JAEA. It is planned that the temperature of the
+secondary helium gas being supplied to the hydrogen pro-
+duction system (i.e., secondary helium IHX outlet temper-
+ature) is set to about 900C by the reduction of the secondary
+helium gas ﬂow rate.
+Moreover, in order to make practical use of HTGR, a
+future HTGR system ‘GTHTR300C’ producing electric
+power and hydrogen is researched and developed in JAEA.
+It is planned that a vertical helically-coiled gas-gas heat
+exchanger like the IHX is adopted in the GTHTR300C.10)
+Fig. 9
+Historical trend of the primary coolant and secondary
+helium gas temperature at the IHX
+Fig. 10
+Relationship between the UA and logarithmic mean tem-
+perature diﬀerence on the IHX
+Fig. 11
+Comparison of the measured temperature with estimated
+one at IHX heat transfer tube and hot header
+Thermal Performance of Intermediate Heat Exchanger during High-Temperature Continuous Operation in HTTR
+1367
+VOL. 48, NO. 11, NOVEMBER 2011
+
+=====PDFPAGE 9=====
+It is very important to estimate the temperature of the inter-
+nal structure in the heat exchanger with high accuracy be-
+cause the temperature of the internal structure is high and the
+heat transfer tube is a part of the primary coolant pressure
+boundary. The results such as the heat exchange perform-
+ance and estimation of the IHX structure temperature are
+very useful for these research and development eﬀorts.
+IV. Conclusions
+The 50-day high-temperature continuous operation with
+full power was achieved in March 2010 in the HTTR. In this
+paper, the heat exchange performance and structure temper-
+ature of the IHX were evaluated with the high-temperature
+continuous operation data and compared with the designed
+one or estimated one.
+As a result, the following facts were conﬁrmed:
+(1) The IHX can exchange stable high-temperature heat
+from the primary coolant to the secondary helium in
+the operation.
+(2) The structure temperature is under the allowable work-
+ing temperature in the operation.
+(3) The heat exchange performance is almost the same as
+the designed one.
+(4) The structure temperature estimated using the analysis
+code is almost the same as the measured one; the diﬀer-
+ence is about 2%.
+The results are very useful for the research and develop-
+ment of the HTTR-IS and the future HTGR.
+Nomenclature
+A: Heat transfer area of the IHX (m2)
+C1: Coeﬃcient based on the deﬁnition mentioned in the thesis6)
+(—)
+CS
+P: Secondary helium speciﬁc heat (J/kgK)
+Dh: Diameter of helical coil (m)
+din: Inner diameter of heat transfer tube (m)
+dout: Outer diameter of heat transfer tube (m)
+E: Coeﬃcient on the heat transfer enhancement eﬀect (—)
+GS
+IHX: Secondary helium mass ﬂow rate at the IHX (kg/s)
+Nuenh: Nusselt number on heat transfer enhancement plate (—)
+Nuin: Nusselt number inside of heat transfer tube (—)
+Nuout: Nusselt number outside of heat transfer tube (—)
+Pa: Pitch of heat transfer tube in ﬂow direction (m)
+Pr: Prandtl number (—)
+QR: HTTR reactor thermal power (W)
+QIHX: Exchanged heat at the IHX (W)
+QS
+IHX: Secondary helium heat received at the IHX (W)
+Re: Reynolds number (—)
+TP
+in: Primary helium IHX inlet temperature (C)
+TP
+out: Primary helium IHX outlet temperature (C)
+TS
+in: Secondary helium IHX inlet temperature (C)
+TS
+out: Secondary helium IHX outlet temperature (C)
+U: Heat transmission coeﬃcient of the IHX (W/m2K)
+Xw: Width of ﬂow path between heat transfer enhancement plates
+(m)
+T: Logarithmic mean temperature diﬀerence (C)
+TIHX: Logarithmic mean temperature diﬀerence of the IHX
+(C)
+f: Coeﬃcient on degradation caused by deformation of heat
+transfer tube at bending process (—)
+e: Coeﬃcient on degradation caused by decentering of helically-
+coiled tube (—)
+: Coeﬃcient on skew ﬂow at helically-coiled heat transfer tube
+(—)
+s: Coeﬃcient on the pitch of heat transfer tube in ﬂow direction
+(—)
+References
+1) S. Saito, T. Tanaka, Y. Sudo et al., Design of High Temper-
+ature Engineering Test Reactor (HTTR), JAERI 1332, Japan
+Atomic Energy Research Institute (JAERI) (1994).
+2) D. Tochio, N. Nojiri, S. Hamamoto et al., Result of Long-Term
+Operation of HTTR —Rated/Parallel-Loaded 30-Days Oper-
+ation—, JAEA-Technology 2009-005, Japan Atomic Energy
+Agency (JAEA) (2009), [in Japanese].
+3) D. Tochio, S. Hamamoto, H. Inoi et al., Result of Long-Term
+Operation
+of HTTR
+—High-Temperature/Parallel-Loaded
+50-Days Operation—, JAEA-Technology 2010-038, Japan
+Atomic Energy Agency (JAEA) (2010), [in Japanese].
+4) O. Baba, I. Nishiguchi, A. Tokura et al., Status and Future
+Studies of the IHX Design of the Experimental VHTR, JAERI-
+M 85-182, Japan Atomic Energy Research Institute (1985),
+[in Japanese].
+5) S. Nakagawa, A. Saikusa, D. Tochio et al., ‘‘Validation of IHX
+temperature calculation code for future HTGR,’’ 16th Paciﬁc
+Basin Nuclear Conf. (16PBNC), Aomori, Japan, Oct. 13–18,
+2008, Paper ID P16P1083 (2008).
+6) M. Mori, M. Mizuno, M. Itoh et al., ‘‘Design of performance
+and analysis of dynamic and transient thermal behaviors on the
+intermediate heat exchanger for HTGR,’’ IHI Review, 25[4],
+(1985), [in Japanese].
+7) Y. Mori, K. Watanabe, ‘‘Study on degradation of heat transfer
+performance in tube under high thermal-load condition,’’
+J. Jpn. Soc. Mech. Eng., 45[397], 1343–1353 (1979), [in
+Japanese].
+8) S. Fujikawa, H. Hayashi, T. Nakazawa et al., ‘‘Achievement
+of reactor-outlet coolant temperature of 950C in HTTR,’’ J.
+Nucl. Sci. Technol., 41[12], 1245–1254 (2004).
+9) D. Tochio, S. Nakagawa, T. Furusawa, ‘‘Heat exchanger per-
+formance in main cooling system on high temperature test
+operationat high temperature gas-cooled reactor ‘HTTR’,’’
+Trans. At. Energy Soc. Jpn., 4[2], 147–155 (2005), [in Japa-
+nese].
+10) K. Kunitomi, X. Yang, T. Nishihara et al., ‘‘JAEA’s VHTR for
+hydrogen and electricity cogeneration: GTHTR300C,’’ Nucl.
+Eng. Technol., 39[1], 9–20 (2007).
+1368
+D. TOCHIO and S. NAKAGAWA
+JOURNAL OF NUCLEAR SCIENCE AND TECHNOLOGY

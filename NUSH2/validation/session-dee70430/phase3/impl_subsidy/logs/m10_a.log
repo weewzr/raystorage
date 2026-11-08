@@ -1,0 +1,43 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.26s
+     Running tests\m10_subsidy.rs (C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/cargo/engine_final\debug\deps\m10_subsidy-f77224870013deee.exe)
+
+running 36 tests
+test eq_s_1_worked_numbers_of_the_derivation_follow_from_its_membership ... ok
+test eq_s_0_1_dcf_bucket_factor_equals_the_dated_buckets ... ok
+test eq_s_0_2_the_two_interest_factors_differ_by_the_closed_form_gap ... ok
+test eq_s_1_eligible_capital_is_the_flagged_sum_and_b_contains_a ... ok
+test eq_s_3a_a_grant_at_close_pays_the_earliest_buckets_and_leaves_the_owner_the_rest ... ok
+test eq_s_0_3_replacement_factor_gives_the_replaced_item_gap ... ok
+test eq_s_0_4_decommissioning_sinking_fund_equals_the_discounted_payment ... ok
+test eq_s_3d_idle_cash_earning_the_rate_gives_the_lowest_break_even_share ... ok
+test eq_s_0_6_the_gap_between_the_methods_at_zero_subsidy_is_predicted ... ok
+test eq_s_3c_the_ledger_form_at_close_and_its_limits ... ok
+test eq_s_4b_a_progressive_grant_scales_the_ledger_reactor_value ... ok
+test eq_s_0_5_closed_forms_reproduce_both_costs_per_tonne ... ok
+test eq_s_4a_a_progressive_grant_scales_every_private_payment ... ok
+test eq_s_3b_the_closed_form_equals_the_balance_recursion ... ok
+test eq_s_5a_interest_is_charged_on_the_private_balance_and_the_saving_is_reported ... ok
+test eq_s_5b_the_net_cost_is_the_gross_cost_less_the_grant_and_the_interest_it_saves ... ok
+test eq_s_2_private_capital_never_rises_with_the_share_and_the_grant_stays_within_eligible ... ok
+test eq_s_6a_derivation_tables_for_definition_b_follow_from_its_membership ... ok
+test eq_s_7b_break_even_for_a_progressive_grant ... ok
+test eq_s_8_a_grant_leaves_the_rx_mult_lever_alone ... ok
+test eq_s_7e_a_break_even_set_is_a_pure_function_of_its_inputs ... ok
+test eq_s_8_reported_quantities_are_consistent ... ok
+test eq_s_7e_cases_of_the_break_even_share_and_the_strict_target_flag ... ok
+test eq_s_2_the_subsidy_changes_no_physical_flow_and_no_operating_cost ... ok
+test eq_s_9b_limiting_cases_at_zero_and_full_share ... ok
+test eq_s_7a_progressive_cost_is_affine_and_the_cost_at_close_bends ... ok
+test eq_s_9b_a_zero_share_changes_nothing_bit_for_bit ... ok
+test eq_s_9c_gap_terms_still_sum_to_the_gap_with_a_grant ... ok
+test eq_s_9c_the_grant_effect_by_four_routes_that_share_no_code_with_the_engine ... ok
+test eq_s_7c_break_even_at_close_in_both_regimes_of_the_ledger ... ok
+test eq_s_9b_zero_subsidy_reproduces_the_committed_ledger_and_dcf ... ok
+test eq_s_6a_ledger_cost_follows_the_closed_form_for_each_timing ... ok
+test eq_s_6b_dcf_cost_follows_the_closed_form_for_each_timing ... ok
+test eq_s_9c_the_gap_between_the_methods_equals_the_prediction_and_stays_below_the_limit ... ok
+test eq_s_7d_the_exact_route_and_the_bisection_agree_and_the_orderings_hold ... ok
+test eq_s_9a_the_cost_falls_strictly_with_the_share_and_bends_one_way ... ok
+
+test result: ok. 36 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.51s
+

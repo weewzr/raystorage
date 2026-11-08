@@ -1,0 +1,774 @@
+Methodology
+The HTTR calculational model was developed (Figure 3.19) on the basis of data 
+presented in [3-8, 3-9]. The number of breakdown sections that were adopted included the 
+following: 
+- core height  
+42 
+- IHX and PPWC length 
+10 
+- heat exchange tube thickness 
+4 
+- gas spaces 
+2. 
+For a description of the transient heat transfer in the core, two types of cells with 
+average and peak power are chosen. Every cell includes a fuel rod, a gap with cooling helium 
+and equivalent mass of graphite in one block per one cell. The heat transfer in the axial 
+direction by conductivity is not taken into account. 
+The heat exchange equipment is simulated as a single equivalent tube. Axial heat 
+transfer is ignored. 
+Results 
+Results of the calculation of HTTR behavior during the loss of power are shown on 
+Figures 3.20, 3.21, 3.22 and 3.23 for 15 MW thermal power and on Figures 3.24, 3.25, 3.26 
+and 3.27 for 30 MW thermal power. 
+Flow rates of coolant through the primary gas circulators are reduced to zero in 10 s 
+after the “loss of off-site electric power” signal. 
+Emergency protection actuates in 1.6 s after loss of off-site electric power. Neutron 
+power decreases down to close to decay heat for 7 s. 
+The comparison of the calculated and experimental data shows the following. 
+In the beginning of the transient (0-2 hr) one can see a good agreement between 
+calculated and experimental values of coolant temperatures. Ratios of experimental and 
+calculated heating of the coolant are more than 1.1 and 1.3 for 15 and 30 MW tests, 
+respectively. Further, the discrepancy increases up to 2 for 15 MW and 1.5 for 30 MW at the 
+transient end-point (10 hrs). 
+The calculated values of heat removal for 15 MW are in a good agreement with the 
+experimental data during first five hours of the transient. Further, the experimental values are 
+well higher than calculated ones. Their ratio is 1.75 for the transient end-point (10 hrs). 
+For 30 MW an acceptable agreement between calculated and experimental results is 
+only during first hour of the transient. The further transient behavior is also characterized by 
+excess of the experimental heat removal as against the experimental one which reaches ~ 1.7 
+for the end-point. 
+The discrepancies can be explained by the following reasons: 
+1) The decay heat error has a strong effect on the calculated results of temperatures 
+and heat removal, since the decay heat several times more than accumulated in the core and 
+181
+
+reflectors. This specially affects on the discrepancies in the interval of 5-10 hrs. Increase of 
+decay heat leads to reduction of discrepancies. For example, decay heat 1.5 as large gives full 
+agreement between calculated and experimental results. 
+2) Another reason may be connected with influence of the finite break-down of the 
+core in axial and radial directions on the results. Further analysis is needed to be carried out 
+for this case. 
+182
+
+3.2.3 South Africa [3-11]
+This report details the benchmarking of the Flownet Nuclear simulation package as used 
+by Pebble Bed Modular Reactor in South Africa.  The benchmark is of a loss of off-site power 
+event that was tested at the HTTR facility.  The event involves the electric power supply to 
+the circulators being cut off, reactor SCRAM and the activation of the Auxiliary Cooling 
+system to remove decay heat. 
+3.2.3.1 System Overview 
+The HTTR system was modelled and analysed with Flownet Nuclear and is comprised 
+of a graphite-moderated prismatic block reactor, a primary cooling circuit, a secondary 
+cooling circuit and an auxiliary cooling circuit.  Helium is used as the working fluid.  During 
+normal operation the helium is heated in the reactor and is then circulated via concentric ducts 
+to two parallel heat exchangers.  The first is the Primary Pressurised Water Cooler (PPWC) 
+that is a shell-and-tube water-cooled exchanger.  The second is the Intermediate Heat 
+Exchanger (IHX) that is a spirally wound shell and tube type.  Its function is to transfer heat 
+to the secondary helium circuit.  Both heat exchangers’ exits are connected to helium 
+circulators providing the mass flow rate needed in the circuit.  The HTTR system can either 
+be operated using only the PPWC as cooler or both the PPWC and the secondary circuit (the 
+latter is called parallel cooling operation). A schematic of the HTTR cycle is shown in Figure 
+3.28.
+Secondary cooling circuit
+Reactor
+AHX
+IHX
+PPWC
+SPWC
+Primary cooling circuit
+Auxiliary cooling circuit
+FIG. 3.28. Schematic diagram of the High Temperature engineering Test Reactor. 
+183
+
+In the secondary helium circuit a helium circulator is used to circulate flow between the 
+IHX and the Secondary Pressurised Water Cooler (SPWC), the latter being of similar but 
+smaller design to the PPWC.  Both water coolers’ watersides are on water circuits that 
+exchange heat with the atmosphere via water-to-air heat exchangers.   
+During an accident condition such as the loss of off-site electrical power the Auxiliary 
+cooling circuit is used.   This circuit uses two gas circulators to force a low mass flow rate of 
+helium between the reactor and the Auxiliary Heat Exchanger (AHX).  The AHX is a water 
+cooler of similar but smaller design to the PPWC.  The function of this system is to remove 
+decay heat from the reactor core after a reactor shutdown or SCRAM has been initiated. 
+3.2.3.2 Flownet Nuclear 
+Flownet Nuclear is a pipe-network simulation code used for solving thermodynamic and 
+fluidic problems in pipe networks and energy systems.  M-Tech Industrial in collaboration 
+with the School for Mechanical and Materials Engineering at Potchefstroom University in 
+South Africa has developed the code over the past ten years.  Initially the code was used for 
+large gas pipe networks but has since been extended to handle most types of thermal-
+hydraulic systems.  The following points highlight the capabilities of the program: 
+• The ability to deal with compressible as well as incompressible fluids. 
+• Full heat transfer by means of conduction, convection and radiation. 
+• High solution speed. The typical solution time of a 200-element network is less than 
+30 seconds on a standard PC. 
+• Various types of network components are available in the program 
+
+Constant and variable area pipes and ducts 
+
+Restrictors with loss or discharge coefficients. 
+
+Cooling orifices for which NASA empirical correlations are used to calculate the 
+discharge coefficient. 
+
+Non-circular ducts with area changes. With this element the user has the option of 
+taking the effect of the injected momentum and variations in total temperature on 
+the change in total pressure into account. 
+
+Various types of heat exchangers. 
+
+Compressible flow through long pipes. 
+
+Compressors and turbines 
+
+Pebble-bed and solid fuel HTGR reactors as special models. 
+
+Heat transfer paths 
+
+The ability to specify a fixed mass source or a sink in junctions and volumes 
+between flow elements 
+
+Variable fluid properties. 
+
+Ability to automatically subdivide long pipes into smaller increments. 
+
+Gravitational effects in compressible flows 
+Flownet Nuclear has also been extensively benchmarked and it was found that results 
+are in close agreement with experimental data and analytical calculations.  An example is a 
+test involving compressible gas flow through a long pipe.  At time zero a valve is suddenly 
+closed at the end of the pipe.  The inertia of the fluid causes auto-compression at the end of 
+the pipe that in turn results in a pressure wave travelling back through the pipe.  Flownet 
+Nuclear data is benchmarked against data obtained using the Lax-Wendroff method.  Figure 
+3.29 shows a plot of total pressure in the middle of the pipe verses time. 
+184
+
+Figure 3.30 is a diagram of the HTTR system as implemented in terms of Flownet elements 
+and nodes.  Elements are shown as numbered circles while the numbered squares are nodes.  
+The diagram shows the use of pipe elements (DW and DG), compressors (CM), heat 
+exchangers (HX and RX) and conductive heat transfer paths (CHT). Only the main, auxiliary 
+and secondary cooling systems are modelled for simplicity.  Cooling water flows are 
+modelled as constant-mass flow cold-water streams.  The vessel cooling system is not 
+modelled in this investigation.   
+1
+1
+20
+2
+2
+4
+8
+3
+32
+4
+29
+5
+5
+6
+6
+7
+7
+30
+8
+28
+11
+9
+27
+PH
+10
+H
+HX
+11
+49
+12
+25
+13
+13
+9
+14
+15
+33
+16
+3
+17
+34
+18
+16
+19
+12
+20
+21
+22
+21
+23
+22
+24
+25
+24
+HX
+27
+14
+AHX
+28
+29
+18
+30
+31
+31
+32
+33
+34
+15
+35
+36
+17
+19
+37
+26
+38
+35
+39
+36
+40
+37
+41
+38
+42
+39
+43
+40
+44
+45
+41
+46
+42
+43
+47
+44
+48
+45
+49
+46
+50
+51
+47
+52
+48
+53
+24
+24
+24
+AHC
+Reactor
+PPWC
+IHX
+PHC
+SPWC
+SHC
+FIG. 3.30. HTTR Flownet Network 
+The descriptions of the elements used in the network are shown in Table 3-30. 
+Table 3-30. Elements used in Flownet network
+Element 
+no.
+Description 
+Type 
+1 
+Annular duct to top of reactor 
+ Gas duct 
+2 
+Reactor to T-junction 
+ Gas duct 
+3 
+Contraction to gas duct 
+ Gas duct 
+4 
+Contraction from T-junction 
+ Gas duct 
+Element 
+no.
+Description 
+Type 
+5 
+Intermediate heat exchanger 
+Heat exchanger 
+6 
+IHX to PHC 
+ Gas duct 
+7 
+SPWC circulator 
+Helium circulator 
+8 
+PPWC circulator B 
+Helium circulator 
+9 
+PPWC to PHC 
+ Gas duct 
+10 
+Primary Pressurized Water Cooler 
+Heat exchanger 
+186
+
+11 
+PPWC circulator C 
+Helium circulator 
+12 
+IHX secondary side 
+Heat exchanger 
+13 
+PPWC to T-junction 
+ Gas duct 
+14 
+T-junction to reactor 
+ Gas duct 
+15 
+PPWC circulator A 
+Helium circulator 
+16 
+9th reflector layer 
+ Gas duct 
+17 
+Hot plenum block 
+ Gas duct 
+18 
+T-junction to PPWC 
+ Gas duct 
+19 
+Secondary IHX to T-junction A 
+ Gas duct 
+20 
+Annulus around PPWC 
+ Gas duct 
+22 
+Upper reflector and shield layers 
+ Gas duct 
+23 
+Fuel assembly (Reactor core) 
+HTTR 
+24 
+Lower reflector layer 
+ Gas duct 
+25 
+PPWC water side 
+Heat exchanger 
+26 
+HTTR 
+HTTR 
+27 
+Secondary IHX to T-junction B 
+ Gas duct 
+28 
+Distribution plate 
+ Gas duct 
+29 
+PHC to PPWC 
+ Gas duct 
+30 
+Contraction to IHX 
+ Gas duct 
+31 
+PHC to IHX 
+ Gas duct 
+32 
+Annulus around IHX 
+ Gas duct 
+33 
+IHX to T-junction 
+ Gas duct 
+34 
+Distribution plate 
+ Gas duct 
+35 
+Hot plenum outlet channel 
+ Gas duct 
+36 
+Secondary Pressurized Water Cooler 
+Heat exchanger 
+37 
+SPWC water side 
+Heat exchanger 
+38 
+SPWC to SHC 
+ Gas duct 
+39 
+Secondary Helium Circulator 
+Helium circulator 
+40 
+SHC to SPWC 
+ Gas duct 
+41 
+Annulus around SPWC 
+ Gas duct 
+42 
+SPWC to T-junction 
+ Gas duct 
+43 
+T-junction to tube header feed pipes 
+ Gas duct 
+44 
+Header feed pipes 
+ Gas duct 
+45 
+Reactor to AHX 
+ Gas duct 
+46 
+Auxiliary Heat Exchanger 
+Heat exchanger 
+47 
+AHX water side 
+Heat exchanger 
+48 
+AHX to AHC 
+ Gas duct 
+49 
+Auxiliary Helium Circulator A 
+Helium circulator 
+50 
+Auxiliary Helium Circulator B 
+Helium circulator 
+51 
+AHC to AHX 
+ Gas duct 
+52 
+Annulus around AHX 
+ Gas duct 
+53 
+AHX to Reactor 
+ Gas duct 
+The detailed modelling falls beyond the scope of this document, however some 
+comments can be made on the modelling of generic components 
+Piping and duct elements 
+Most of the piping in the HTTR plant consists of double-walled pipes with hot flow 
+from the reactor in the inner pipe and cooled return gas in the outer annulus of the pipe. 
+Figure 3.31 shows a lateral cross-section through the primary cooling circuit piping. The 
+187
+
+diagram clearly shows the double-walled piping and the lagging material surrounding the pipe 
+for insulation. Flow from the reactor goes via the inner pipe to a T-junction where the flow is 
+split up to a ratio of 3:1 between the PPWC and the IHX. Upon returning to the reactor the 
+helium flows through the outer annular pipe.  
+The pipes are modelled as Darcy-Weisbach (DW) elements in Flownet. These pipe 
+elements use the following formula to calculate the pressure drop through a pipe for 
+compressible flow.
+2
+2
+0
+0
+0
+0
+M
+p
+T
+T
+D
+fL
+p
+γ
+
+
+
+
+
+
+∆
++
+=
+∆
+                                                                               (1)
+where f – friction factor 
+L – Pipe length  
+[m] 
+D – Pipe diameter 
+[m] 
+T0 – Total temperature  
+[K] 
+           p0 – Total pressure 
+[Pa] 
+γ  − ratio of specific heats of the gas 
+M – Mach number 
+The friction factor is calculated using a correlation fitted to the Moody diagram with the 
+transition between laminar and turbulent flow beginning at Reynolds numbers greater than 
+2300.
+FIG. 3.31. Primary circuit piping. 
+188
+
+In the case of the annular flows the cross-sectional flow area and wetted perimeter are 
+inputs to Flownet that will then calculate a hydraulic diameter for use in (1).  The flow area is 
+used along with mass flow rate to calculate the velocity component of (1).  All the other terms 
+are inputs in the pipe element model. 
+Heat exchanger elements 
+Shell-and-tube heat exchangers  
+The PPWC, SPWC and AHX are three shell-and-tube heat exchangers of similar 
+design.  Figure 3.32 shows a bird’s eye view of the inside of the HTTR’s PPWC.  The tubes 
+used are un-finned. There are 5 gas passes and 2 tube passes in the heat exchanger. A 
+distribution plate is placed at the inlet to spread the gas flow evenly through the first stage. 
+Flownet Nuclear has a Shell-and-Tube Heat exchanger or STX type element specifically 
+catering for this type of heat exchanger.  In all Flownet’s heat exchanger models provision is 
+made for both steady-state heat transfer parameters and parameters describing the heat 
+exchanger’s thermal inertia.  Thermal inertia is very important when one wants simulating 
+transient changes in the heat exchanger’s inlet and outlet conditions. 
+In Flownet’s STX model the tube and baffle layout and dimensions are required as 
+inputs along with parameters such as total heat transfer area, primary/secondary area ratio and 
+tube conduction coefficients.  For transient simulations the mass capacitance and gas volume 
+are inputs.  The heat transfer coefficient and friction factor on the tube side are calculated 
+using the Dittus-Boelter equation and the standard Darcy-Weisbach pipe model, respectively.  
+On the shell side the Reynolds number is calculated and a corresponding Colburn j factor and 
+friction factor is read off an input graph.  These two graphs are specifically set-up for the tube 
+layout used in the heat exchanger.  The two values are then used to calculate the heat transfer 
+and pressure drop through the heat exchanger using standard correlations.  
+FIG. 3.32. Bird’s eye view of the PPWC. 
+189
+
+Intermediate Heat Exchanger 
+This heat exchanger functions as an energy interface between the primary and 
+secondary cooling circuits. The IHX is a helically coiled shell-and-tube gas-to-gas heat 
+exchanger. Figure 3.33 shows a diagram of the actual IHX heat exchanger. Hot gas from the 
+reactor enters from below and flows up over the helical tube bundles to a manifold volume at 
+the top of the heat exchanger. From there it goes to a circulator and back again through the 
+outer annulus of the heat exchanger pressure vessel. 
+The tubes contain cool gas from the secondary cooling circuit. This gas flows down 
+from the top of the heat exchanger making the configuration counter flow. 
+The gas-to-gas type heat exchanger is modelled as a recuperator heat exchanger (RX) in 
+Flownet. This type of element requires the hydraulic diameter, total free flow area and flow 
+length of both the hot and cold sides. It calculates the heat transfer and friction losses by 
+means of Nusselt number and friction factor correlations respectively. The thermal inertia is 
+accounted for by means of a mass-capacitance or MC value. 
+FIG. 3.33. Bird’s eye view and sections of the Intermediate Heat Exchanger. 
+190
+
+The RX model is mostly suited to simple plate-fin recuperators where the hot and cold 
+side are of similar length and cross-section.  As such the helical-coil configuration of the IHX, 
+that has a much longer flow path on the secondary side, had to be tuned to get correct heat 
+transfer in steady-state operation.  This was done by altering the Nusselt and friction drop 
+factors that are inputs in the RX model.   
+Helium circulators
+The helium circulators used in the gas circuits are single-stage centrifugal compressors. 
+Helium from the associated cooler enters the circulator inlet and goes through a filter before 
+being compressed. A variable speed motor is used to control the helium flow rate delivered by 
+the circulator. 
+In Flownet turbines, blowers and compressors are modelled by means of characteristic 
+curve data. The pressure ratio verses corrected mass flow (
+)
+0
+0 /P
+T
+m 
+ and efficiency verses 
+corrected mass flow characteristic curves for different corrected shaft speeds (
+)
+0
+/ T
+N
+ are used. 
+An input shaft speed is used along with the inlet gas conditions to find the operating point on 
+the curves.  
+The graphs of pressure ratio versus invariant mass flow rate and invariant power versus 
+invariant mass flow rate were supplied by JAERI. Graphs were supplied for the primary, 
+secondary and auxiliary circuit machines. These graphs had to be converted into the Flownet 
+compressor curve file format before it could be used in the circuit.  
+Conversion of invariant mass flow to corrected mass flow: 
+3600
+/
+inv
+cor
+m
+m
+=
+                                                                                                       (2) 
+01
+01
+T
+p
+m
+m
+cor
+ =
+                                                                                                             (3) 
+Since Flownet requires a graph of efficiency versus corrected mass flow rate the 
+invariant power data had to be modified to obtain efficiency. This was done as follows: 
+01
+01 T
+p
+P
+P
+Inv
+=
+                                                                                                         (4) 
+1000
+/
+)1
+(
+01
+/)
+1
+(
+m
+T
+c
+p
+P
+P
+ratio
+fluidic
+−
+=
+−
+γ
+γ
+                                                                               (5) 
+P
+Pfluidic /
+=
+η
+                                                                                                            (6) 
+Where P – Power input to the compressor 
+        Pfluidic – Power delivered to fluid 
+pratio – pressure ratio (JAERI) 
+           η - compressor efficiency 
+           T01 – Inlet temperature 
+p01 – Inlet pressure 
+191
+
+The characteristic maps for the primary and secondary circulators are the same and are 
+shown in Figure 3.34 and 3.35. The primary circulator runs at a speed of 9400 rpm while the 
+secondary machine is slightly faster at 9900rpm at 30MW. For 15MW they operate at 8900 
+rpm and 9500 rpm respectively. 
+FIG. 3.34. Primary and Secondary circuit Pressure ratio map. 
+FIG. 3.35. Primary and Secondary circuit Efficiency map. 
+192
+
+HTTR Reactor 
+The reactor is modeled by means of a specially developed HTTR element in Flownet 
+Nuclear.  This model encompasses all the core internals starting from the channel entry at the 
+upper reflector through to the hot plenum beneath the core.  The core nuclear dynamics are 
+modeled with a point kinetics model that uses the core dynamics parameters as prescribed by 
+JAERI.  During the transient event the decay heat production of the core is input by means of 
+the prescribed decay heat equation given by JAERI. 
+3.2.3.4 Steady State Results 
+Steady-state results comparison – 15MW operation 
+This section discusses the results for the 15MW loss of power benchmark.  The results 
+tables contain three columns: the first column tabulates the predicted HTTR data as sent out in 
+JAERI’s first document on the benchmark [3-12], the second column contains the test data as 
+obtained in the 15MW loss of power experiment while the last column gives the Flownet 
+Nuclear data.   
+The data shows that the Flownet Nuclear results are closer to the experiment than to the 
+predicted values.  This is possibly because, for the experiment, the speeds of the circulators 
+were greatly reduced from predicted values.  It was found that if the predicted speeds are used 
+in the simulation the mass flow becomes much higher than what is needed for 15MW power 
+delivery in the reactor.  It is assumed that JAERI was conservative in their calculation of the 
+system resistance and hence the circulators were over sized. 
+Table 3-31. Reactor core results comparison 
+Parameter 
+HTTR Estimate 
+HTTR 
+Experimental 
+Flownet 
+Nuclear 
+Thermal power 
+[MW] 
+15 
+15 
+15 
+Helium inlet temp. 
+[°C] 
+241 (About) 
+242 
+240.5 
+Helium outlet 
+temp. [°C] 
+470 (About) 
+468 
+472.7 
+Helium pressure 
+[kPa] 
+3000 (About) 
+2900 
+2795 
+Helium mass flow 
+rate [kg/s] 
+12.4 
+12.4 
+12.44 
+Hot plenum block 
+temp. [°C] 
+490 (About) 
+391 
+- 
+193
+
+Table 3-32. Intermediate Heat Exchanger results comparison 
+Parameter 
+HTTR 
+Estimate 
+HTTR 
+Experimental 
+Flownet 
+Nuclear 
+Primary helium inlet 
+temp. [°C] 
+468 (About) 
+468 
+472.7 
+Primary helium 
+outlet temp. [°C] 
+238 (About) 
+235 
+240.77 
+Primary helium 
+pressure [kPa] 
+3000 (About) 
+2800 
+2784 
+Primary helium mass 
+flow rate [kg/s] 
+4.1 
+4.1 
+4.078 
+Secondary helium 
+inlet temp. [°C] 
+154 (About) 
+158 
+160.6 
+Secondary helium 
+outlet temp. [°C] 
+431 (About) 
+420 
+423.7 
+Circulator speed 
+[rpm] 
+9500 
+8770 
+8770 
+Secondary helium 
+pressure [kPa] 
+3100 (About) 
+2900 
+2900 
+Secondary helium 
+mass flow rate [kg/s] 
+3.6 
+3.6 
+3.59 
+Otherwise, there are small differences in pressure and temperatures but until more 
+detailed data becomes available on pressure drops through the HTTR these differences are 
+considered negligible.  Tables 3-31, 3-32, 3-33 and 3-34 provide a comparison of the Flownet 
+results against the computed results supplied by JAERI for the various parts of the HTTR 
+system.   
+Steady-state results comparison – 30MW operation 
+This section gives the results for the 30MW simulations. Tables 3-35, 3-36, 3-37 and 3-
+38 each contain the following: HTTR predicted results, Flownet Nuclear results using the 
+prescribed shaft speeds and lastly Flownet results based on the same shaft speeds as used in 
+the 15MW test.  As can be seen the first column of Flownet results contains large differences 
+to the predicted HTTR results.  After careful analysis of the 15MW experimental data it was 
+found that the system resistance was overestimated and so the 15MW shaft speeds were 
+reduced.
+194
+
+#### tecdoc1382 PDF page 187
+#### tecdoc1382 PDF page 188
+#### tecdoc1382 PDF page 189
+#### tecdoc1382 PDF page 190
+#### tecdoc1382 PDF page 192
+#### tecdoc1382 PDF page 193
+#### tecdoc1382 PDF page 194
+#### tecdoc1382 PDF page 195
+#### tecdoc1382 PDF page 196
+#### tecdoc1382 PDF page 197
+#### tecdoc1382 PDF page 198
+#### tecdoc1382 PDF page 199
+#### tecdoc1382 PDF page 200

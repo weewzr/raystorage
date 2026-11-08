@@ -1,0 +1,1264 @@
+
+
+=== PDF page 1 of 9 ===
+Fluid Phase Equilibria 311 (2011) 67–75
+Contents lists available at SciVerse ScienceDirect
+Fluid Phase Equilibria
+journal homepage: www.elsevier.com/locate/fluid
+Thermodynamic modeling for CO2 absorption in aqueous MEA solution with
+electrolyte NRTL model
+Ying Zhang a, Huiling Que a, Chau-Chyun Chen b,∗
+a AspenTech Limited, Pudong, Shanghai 201203, China
+b Aspen Technology, Inc., Burlington, MA 01803, USA
+a r t i c l e
+i n f o
+Article history:
+Received 8 April 2011
+Received in revised form 16 July 2011
+Accepted 27 August 2011
+Available online 3 September 2011
+Keywords:
+Electrolyte NRTL model
+Vapor–liquid equilibrium
+CO2 absorption
+Monoethanolamine
+Enthalpy of absorption
+Activity coefﬁcient
+a b s t r a c t
+Accurate modeling of thermodynamic properties of CO2 absorption in aqueous alkanolamine solutions
+is essential for simulation and design of such CO2 capture processes. In this study, we use the Electrolyte
+Nonrandom Two-liquid activity coefﬁcient model in Aspen Plus to develop a rigorous and thermody-
+namically consistent representation for the MEA–H2O–CO2 system. Vapor–liquid equilibrium (VLE), heat
+capacity and excess enthalpy data for the binary aqueous amine system (MEA–H2O) are used to determine
+the NRTL interaction parameters for the MEA–H2O binary. VLE, enthalpy of absorption, heat capacity and
+NMR spectroscopic data for the MEA–H2O–CO2 ternary system are used to identify the electrolyte NRTL
+interaction parameters for the molecule–electrolyte binaries and the previously unavailable standard
+state properties of the amine ions, MEA protonate and carbamate. The predicted VLE, enthalpy of absorp-
+tion, heat capacity and speciation for the MEA–H2O–CO2 system are compared favorably to experimental
+data.
+© 2011 Elsevier B.V. All rights reserved.
+1. Introduction
+For many decades aqueous monoethanolamine (MEA) solution
+has been widely used in the absorption/stripping operations for
+acid gas removal [1]. The recent interest in CO2 capture with amines
+has further increased attention on the MEA solution. To properly
+simulate and design the CO2 absorption/stripping processes with
+the aqueous MEA solutions, it is essential to understand the process
+fundamentals. Knowledge of vapor–liquid equilibrium is the basis
+for the simulation and design of acid gas absorption/stripping pro-
+cesses [2]. In addition, mass transfer rate-based simulation models
+requires knowledge on liquid phase speciation resulting from aque-
+ous phase reactions [3]. Furthermore, to evaluate and optimize
+energy consumption for CO2 capture, accurate knowledge on the
+enthalpy of CO2 absorption is essential. In other words, scalable
+simulation, design and optimization of the CO2 capture processes
+start with the modeling of thermodynamic properties, speciﬁcally
+vapor–liquid equilibrium, chemical reaction equilibrium, as well as
+calorimetric properties.
+Excess Gibbs energy-based activity coefﬁcient models provide
+a practical and rigorous thermodynamic framework to model ther-
+modynamic properties of aqueous electrolyte systems including
+aqueous alkanolamines systems for CO2 capture [4,5]. For example,
+∗Corresponding author. Tel.: +1 781 221 6420; fax: +1 781 221 6410.
+E-mail address: chauchyun.chen@aspentech.com (C.-C. Chen).
+Austgen et al. [2] and Posey [6] applied electrolyte NRTL model
+[7–9] to correlate CO2 solubilities in aqueous MEA solution and
+other aqueous alkanolamines. Hilliard [10] updated these MEA
+modeling studies and ﬁtted the VLE, enthalpy of absorption, heat
+capacity and speciation data from NMR spectrum. Faramarzi et al.
+[11] used the extended UNIQUAC model [12] to represent VLE
+for CO2 absorption in aqueous MDEA, MEA and mixtures of the
+two alkanolamines. They also predicted concentrations of the
+species in both MDEA and MEA solutions containing CO2 and in
+the case of MEA compared to NMR spectroscopic measurements
+[10,13]. Recently, Hessen et al. [14] used a reﬁned electrolyte NRTL
+model [15] to correlate CO2 solubility in aqueous MEA and MDEA
+solutions and predict the speciation for the MEA–H2O–CO2 and
+MDEA–H2O–CO2 systems.
+In this work, we aim to develop an accurate and compre-
+hensive thermodynamic model for CO2 absorption in aqueous
+MEA solutions. Speciﬁcally we extend our recent work on
+thermodynamic
+modeling
+the
+MDEA–H2O–CO2
+system
+[5],
+the
+MDEA–H2O–CO2–H2S
+system
+[16],
+the
+DIPA–H2O–CO2
+system,
+the
+DIPA–sulfolane–H2O–CO2
+system,
+and
+the
+MDEA–sulfolane–H2O–CO2 system [17]. We use the 2009 version
+[7] of the electrolyte NRTL model as the thermodynamic frame-
+work to correlate available experimental data for CO2 absorption
+in aqueous MEA solution. Many of the thermodynamic properties
+and calorimetric properties data for the MEA–H2O–CO2 system
+have become available in recent years and they cover wider ranges
+of temperature, pressure, MEA concentration and CO2 loading.
+0378-3812/$ – see front matter © 2011 Elsevier B.V. All rights reserved.
+doi:10.1016/j.ﬂuid.2011.08.025
+
+
+=== PDF page 2 of 9 ===
+68
+Y. Zhang et al. / Fluid Phase Equilibria 311 (2011) 67–75
+Table 1
+Parameters for PC-SAFT equation of state.
+m
+ε
+
+εAB
+kAB
+Source
+MEA
+2.9029
+306.20
+3.1067
+2369.0
+0.01903
+This work
+m, segment number parameter; ε, segment energy parameter (K); , segment size parameter ( ˚A); εAB, association energy parameter (K); kAB, effective association volume
+parameter ( ˚A3).
+Table 2
+Parameters for the standard states properties.
+Property
+f Gig
+298.15 (J/kmol)
+f Hig
+298.15 (J/kmol)
+f G∞,aq
+298.15 (J/kmol)
+f H∞,aq
+298.15 (J/kmol)
+Source
+MEA
+−1.0330 × 108
+−2.0670 × 108
+Aspen Databank [23]
+MEAH+
+−1.8992 × 108a
+−3.3442 × 108a
+This work
+MEACOO−
+−4.8994 × 108a
+−6.9313 × 108a
+This work
+a The values of MEAH+ are calculated from the chemical equilibrium constant in Hamborg and Versteeg [20]. The values of MEACOO−are calculated from the chemical
+equilibrium constant in Kim et al. [21]. They are used as the initial guess to ﬁt the experimental data.
+Table 3
+Parameters for ideal gas heat capacity.a
+Unit
+C1i
+C2i
+C3i
+C4i
+Source
+MEA
+J/kmol K
+1.3207 × 104
+2.8158 × 102
+−0.1513
+3.1287 × 10−5
+Aspen Databank [23]
+a Correlation for the ideal gas heat capacity, Cig
+p = C1i + C2iT + C3iT2 + C4iT3, 283 < T < 1000, The unit for temperature is K.
+The binary NRTL parameters for MEA–water binary are regressed
+from the binary VLE, excess enthalpy and heat capacity data.
+The binary electrolyte NRTL parameters for water–electrolyte
+binaries and the standard state properties of protonated MEA ion
+and MEA carbamate are obtained by ﬁtting to the ternary VLE,
+enthalpy of absorption, heat capacity and NMR spectroscopic data.
+This updated model for the MEA–H2O–CO2 system should cover
+broader range of conditions and give more reliable predictions
+over previous works.
+In conjunction with use of the electrolyte NRTL model for the
+liquid phase activity coefﬁcients, we use the PC-SAFT [18,19] equa-
+tion of state (EOS) for the vapor phase fugacity coefﬁcients. PC-SAFT
+EOS is chosen over typical cubic EOS because of its ability to model
+accurately vapor phase fugacity coefﬁcients at high pressures, an
+important consideration for CO2 capture and compression. The PC-
+SAFT parameters for H2O and CO2 are taken from our previous
+work for the MDEA–H2O–CO2 system [5]. The parameters for MEA,
+summarized in Table 1, are obtained from regression of exper-
+imental data on vapor pressure, enthalpy of vaporization, liquid
+heat capacity and liquid density. All the PC-SAFT binary interaction
+parameters are set to 0.
+2. Thermodynamic framework
+2.1. Aqueous phase chemical equilibrium
+The acid gas solubility in aqueous amines solutions is deter-
+mined by both its physical solubility and the chemical equilibrium
+for the aqueous phase reactions among acid gas, water and amines.
+Aqueous
+phase
+chemical
+reactions
+involved
+in
+the
+MEA–H2O–CO2 system can be expressed as:
+2H2O ↔H3O+ + OH−
+(1)
+MEAH+ + H2O ↔MEA + H3O+
+(2)
+MEACOO−+ H2O ↔MEA + HCO3
+−
+(3)
+CO2 + 2H2O ↔H3O+ + HCO3
+−
+(4)
+HCO3
+−+ H2O ↔H3O+ + CO3
+−2
+(5)
+We calculate chemical equilibrium constants from the reference
+state Gibbs free energies of the participating components
+−RT
+ln Kj = G◦
+j
+(6)
+where Kj is the chemical equilibrium constant of reaction j, G◦
+j
+is the reference state Gibbs energy change for reaction j, R is the
+universal gas constant, and T is the system temperature.
+For the aqueous phase reactions, the reference states chosen
+are pure liquid for the solvents water and MEA and aqueous phase
+inﬁnite dilution for the solutes, ionic and molecular.
+The calculation method for the Gibbs energies of the solvents
+and solutes together with the standard state property constants
+have been summarized in our previous work [5]. Additional stan-
+dard state property constants for MEA, MEAH+, and MEACOO−are
+given in Tables 2–4. We calculate the standard state properties of
+MEAH+ ion from the experimental chemical equilibrium constant
+of Eq. (2), as reported by Hamborg and Versteeg [20]. Likewise,
+we calculate those of MEACOO−ion from the chemical equilibrium
+constant of Eq. (3), as reported by Kim et al. [21] These calculated
+standard state properties for MEAH+ and MEACOO−are then used
+as part of the adjustable parameters in ﬁtting the experimental data
+of thermodynamic properties.
+2.2. Physical solubility
+Physical solubility is the equilibrium between gaseous CO2
+molecules and CO2 molecules in the aqueous amine solutions. It
+can be expressed by Henry’s law:
+P · yCO2 · CO2 = HCO2 · xCO2 · ∗
+CO2
+(7)
+Table 4
+Parameters for aqueous phase inﬁnite dilution heat capacity.a
+MEAH+ (J/kmol K)
+MEACOO−(J/kmol K)
+Source
+This work
+This work
+C∞,aq
+p,i
+1.82 × 105
+−1.80 × 105
+a The C∞,aq
+p,i
+values of MEAH+ and MEACOO−are calculated from the chemical
+equilibrium constants in Hamborg and Versteeg [20] and Kim et al. [21], which are
+used as the initial guess to ﬁt experimental data.
+
+
+=== PDF page 3 of 9 ===
+Y. Zhang et al. / Fluid Phase Equilibria 311 (2011) 67–75
+69
+Table 5
+Parameters for dielectric constant.a
+Ai
+Bi
+Ci
+Source
+MEA
+37.72
+0
+298.15
+Aspen Databank [23]
+a Correlation for the dielectric constant, εi(T) = Ai + Bi((1/T) −(1/Ci)). The unit for temperature is K.
+where P is the system pressure, yCO2 is the CO2 mole fraction in
+vapor phase, CO2 is the CO2 fugacity coefﬁcient in vapor phase,
+HCO2 is the Henry’s law constant of CO2 in the mixed solvent of
+water and amine, xCO2 is the CO2 mole fraction in liquid phase, ∗
+CO2
+is the unsymmetric activity coefﬁcient of CO2 in the mixed solvent
+of water and amine.
+The Henry’s constant in the mixed solvent is calculated from
+those in the pure solvents:
+ln
+
+Hi
+∞
+i
+
+=
+
+A
+wA
+ln
+
+HiA
+∞
+iA
+
+(8)
+where Hi is the Henry’s constant of molecular solute i, i.e., CO2, in
+the mixed solvent, HiA is the Henry’s constant of molecular solute
+i in pure solvent A, ∞
+i
+is the inﬁnite dilution activity coefﬁcient of
+molecular solute i in the mixed solvent, ∞
+iA is the inﬁnite dilution
+activity coefﬁcient of molecular solute i in pure solvent A.
+Weighting factor wA is calculated by Eq. (9)
+wA =
+xA(V ∞
+iA )2/3
+
+BxB(V ∞
+iB )2/3
+(9)
+where xA is the mole fraction of solvent A on solute-free basis, V ∞
+iA
+is the partial molar volume of molecular solute i at inﬁnite dilution
+in pure solvent A. V ∞
+iA is calculated from the Brelvi-O’Connell model
+[22] with the characteristic volume for the solute (V BO
+CO2) and sol-
+vent (V BO
+s
+). We use the critical volume from Aspen Databank [23],
+0.225 m3/kmol, as the characteristic volume for MEA. V BO
+CO2 and V BO
+H2O
+can be found in our previous work [5].
+The Henry’s law constants for CO2 with water and with MEA
+are required. The former has been well studied [24] while the
+knowledge about the latter is relatively limited. The concept of N2O
+analogy used to determine the Henry’s constant for CO2 with amine
+has been summarized previously [5]. Based on the works of Wang
+et al. [25] and Versteeg and van Swaaij [26], we obtain the following
+expression for the Henry’s constant for CO2 with MEA:
+HCO2,MEA
+(Pa) = 6.6434 × 108
+exp
+ −896.5
+T
+
+(10)
+2.3. Enthalpy of absorption
+Enthalpy of CO2 absorption in aqueous MEA solution can be
+derived from enthalpy balance of the absorption process:
+Habs =
+nFinalHl
+Final −nInitialHl
+Initial −nCO2Hv
+CO2
+nCO2
+(11)
+where Habs is the enthalpy of absorption per unit mole of CO2,
+Hl
+Final is the molar enthalpy of the ﬁnal solution, Hl
+Initial is the
+molar enthalpy of the initial solution, Hv
+CO2 is the molar enthalpy
+of gaseous CO2 absorbed, nFinal is the number of moles of the ﬁnal
+solution, nInitial is the number of moles of the initial solution, nCO2
+is the number of moles of CO2 absorbed.
+There are two kinds of enthalpy of absorption, i.e. the integral
+enthalpy of absorption and the differential enthalpy of absorption.
+The integral enthalpy of absorption for a certain amine–H2O–CO2
+system is the heat effect per unit mole of CO2 during the CO2 load-
+ing process with the CO2 loading increasing from zero to the ﬁnal
+value of the amine–H2O–CO2 system. The differential enthalpy of
+absorption for an amine–H2O–CO2 system is the heat effect per unit
+mole of CO2 when an inﬁnitesimal amount of CO2 is added into this
+amine–H2O–CO2 system.
+2.4. Activity coefﬁcients
+Activity coefﬁcients are required in aqueous phase chemical
+equilibrium calculations, phase equilibrium calculations, enthalpy
+of absorption, liquid enthalpy and liquid heat capacity calculations.
+Activity coefﬁcient of a component in a liquid mixture is func-
+tion of temperature, pressure, mixture composition and choice of
+reference state. In vapor–liquid equilibrium calculations we use
+the inﬁnite dilution mixed solvent reference state for molecular
+solute CO2 and in aqueous phase chemical equilibrium calculations
+we choose the inﬁnite dilution aqueous phase reference state for
+molecular solute CO2 and all ionic species.
+In applying electrolyte NRTL model for activity coefﬁcient calcu-
+lations, binary NRTL interaction parameters for molecule–molecule
+binary, molecule–electrolyte binary and electrolyte–electrolyte
+binary are required. Here electrolytes are deﬁned as pairs of cation
+and anion. In addition, solvent dielectric constants are needed to
+facilitate calculations of long-range ion–ion interaction contribu-
+tion to activity coefﬁcients. Table 5 shows the dielectric constant
+correlation for MEA.
+Unless speciﬁed otherwise, all molecule–molecule binary
+parameters and electrolyte–electrolyte binary parameters are
+defaulted to zero and all molecule–electrolyte binary parameters
+are defaulted to (8, −4). The nonrandomness factor, ˛, is ﬁxed at 0.2.
+The calculated thermodynamic properties of the electrolyte solu-
+tion are dominated by the binary NRTL parameters associated with
+the major species in the system. For the MEA–H2O–CO2 system, the
+binary parameters for the water–MEA binary, the water–(MEAH+,
+HCO3−) binary, the water–(MEAH+, MEACOO−) binary determine
+the predicted thermodynamic properties. These binary parameters
+are in turn to be identiﬁed from ﬁtting to available experimental
+data.
+3. Modeling results
+Table 6 summarizes the model parameters and how these
+parameters are identiﬁed in this work. Most of the parameters
+can be obtained from Aspen Plus databank (see Tables 2–5). Other
+parameters are determined by ﬁtting to the experimental data.
+3.1. MEA
+Extensive experimental vapor pressure data, enthalpy of vapor-
+ization data, liquid heat capacity data and liquid density data are
+available for MEA. The PC-SAFT parameters of MEA are regressed
+from the vapor pressure data [27–30] with average relative devi-
+ation of 3.9%, enthalpy of vaporization data [31,32] with average
+relative deviation of 2.8%, liquid heat capacity data [33,34] with
+average relative deviation of 0.5% and liquid density data [35–37]
+with average relative deviation of 0.03%. The identiﬁed PC-SAFT
+parameters for MEA are given in Table 1.
+
+
+=== PDF page 4 of 9 ===
+70
+Y. Zhang et al. / Fluid Phase Equilibria 311 (2011) 67–75
+Table 6
+Model parameters.
+Parameters
+Component
+Source
+Data used for regression
+PC-SAFT EOS
+parameters
+H2O
+Gross and Sadowski [19]
+MEA
+Regression
+Vapor pressure, enthalpy of
+vaporization, liquid heat capacity and
+liquid density data of MEA
+CO2
+Aspen Databank [23]
+Antoine equation
+MEA
+Aspen Databank [23]
+vapH
+MEA
+Aspen Databank [23]
+Dielectric constant
+MEA
+Aspen Databank [23]
+Henry’s constant
+CO2 in H2O
+Yan and Chen [24]
+CO2 in MEA
+This work
+NRTL binary
+parameters
+CO2–H2O binary
+Yan and Chen [24]
+MEA–H2O binary
+Regression
+VLE, excess enthalpy and heat capacity
+for MEA–H2O binary
+Molecule–electrolyte binaries
+Regression
+VLE, excess enthalpy, heat capacity and
+species concentration from NMR
+spectra for MEA–H2O–CO2
+f Gig
+298.15, f Hig
+298.15, Cig
+p
+H2O, MEA, CO2
+Aspen Databank [23]
+f G∞,aq
+298.15, f H∞,aq
+298.15
+H3O+, OH−, HCO3−, CO3−2
+Aspen Databank [23]
+MEAH+, MEACOO−
+Regression
+VLE, excess enthalpy, heat capacity and
+species concentration from NMR
+spectra for MEA–H2O–CO2
+C∞,aq
+p
+H3O+, OH−
+Aspen Databank [23]
+HCO3−, CO3−2
+Zhang and Chen [5]
+MEAH+, MEACOO−
+Regression
+VLE, excess enthalpy, heat capacity and
+species concentration from NMR
+spectra for MEA–H2O–CO2
+3.2. MEA–H2O system
+Table 7 summarizes the extensive literature data on VLE
+[30,38–42],
+excess
+enthalpy
+[6,38,43,44]
+and
+heat
+capacity
+[34,45,46] of the MEA–H2O binary system. These data cover the
+complete MEA–H2O binary concentration range from room tem-
+perature to 443 K. Together all these data are used to identify the
+NRTL binary parameters including their temperature dependencies
+for the MEA–H2O binary system.
+The regressed NRTL parameters are summarized in Table 8. The
+experimental data for the binary MEA–H2O system are well rep-
+resented. The average relative deviations between the calculated
+values and the experimental data are reported in Table 7. Fig. 1
+shows the parity plot while Fig. 2 shows the comparison for the
+experimental total pressure data and the calculated results from
+the model. Fig. 3 shows the comparison results for the MEA vapor
+and liquid composition. The rather large deviations of some data
+points from Cai et al. [40] and Park and Lee [41] in Fig. 1 show
+up again in Fig. 3 as these data points deviate signiﬁcantly from
+the calculated T–X and T–Y curves. The excess enthalpy ﬁt is given
+in Fig. 4. The experimental excess enthalpy data from Touhara
+Fig. 1. Parity plot for MEA–H2O system total pressure: experiment vs. model, (♦)
+Tochigi et al. [30]; (△) Touhara et al. [38]; (□) Nath and Bender [39]; (+) Cai et al.
+[40]; (×) Park and Lee [41]; and (⃝) Kim et al. [42].
+Table 7
+Experimental data used in the regression for the MEA–H2O system.
+Data type
+T (K)
+Pressure (kPa)
+MEA mole fraction
+Data points
+Average relative
+deviation, |Y/Y| (%)
+Reference
+VLE (isothermal), TPxy
+363
+4.0–70.1
+0–1
+11
+3.3a
+Tochigi et al. [30]
+VLE (isothermal), TPX
+298–308
+0.065–5.6
+0–1
+30
+4.2a
+Touhara et al. [38]
+VLE (isothermal), TPX
+333–364
+1.3–75.8
+0–1
+41
+4.6a
+Nath and Bender [39]
+VLE (isobaric), TPxy
+361–443
+66.7, 101.3
+0–1
+29
+5.2a
+Cai et al. [40]
+VLE (isobaric), TPxy
+373–443
+101.3
+0–1
+18
+3.3a
+Park and Lee [41]
+VLE (isothermal), TPxy
+313–373
+6.1–99.6
+0–0.57
+87
+2.3a
+Kim et al. [42]
+Excess enthalpy (isothermal)
+298
+0.006–0.98
+52
+3.3
+Touhara et al. [38]
+Excess enthalpy (isothermal)
+298
+0.10–0.95
+10
+5.3
+Buslaeva et al. [43]
+Excess enthalpy (isothermal)
+298
+0.0016–0.0098
+5
+7.1
+Dohnal et al. [44]
+Excess enthalpy (isothermal)
+298, 342
+0.15–0.67
+6
+2.1
+Posey [6]
+Heat capacity (isobaric)
+303–353
+0.2–0.8
+44
+2.2
+Chiu et al. [34]
+Heat capacity (isobaric)
+283–313
+0–1.0
+54
+2.3
+Page et al. [45]
+Heat capacity (isobaric)
+298
+0.10–0.40
+4
+3.6
+Weiland et al. [46]
+a The average relative deviations are those of total pressure.
+
+
+=== PDF page 5 of 9 ===
+Y. Zhang et al. / Fluid Phase Equilibria 311 (2011) 67–75
+71
+Table 8
+Regressed NRTL parameters for MEA–H2O system with ˛ = 0.2.a
+Parameter
+Component i
+Component j
+Value
+Standard deviation
+aij
+H2O
+MEA
+0.1559
+0.4085
+aij
+MEA
+H2O
+1.5201
+0.3234
+bij
+H2O
+MEA
+110.80
+89.04
+bij
+MEA
+H2O
+−910.30
+73.64
+a Correlation for the NRTL parameters, ij = aij + bij/T, the unit for temperature is K.
+Fig. 2. Comparison of the experimental data (symbols) for the total pressure of
+MEA–H2O system and the model results (lines). (×) T = 298 K, Touhara et al. [38]; (⃝)
+T = 308 K [38]; (△) T = 333 K, Nath and Bender [39]; (♦) T = 351 K [39]; (□) T = 364 K
+[39].
+et al. [38], Dohnai et al. [44] and Posey [6] are represented very well.
+The experimental data of Buslaeva et al. [43] are more negative in
+value than the others. Fig. 5 shows satisfactory representation of
+the heat capacity data.
+3.3. MEA–H2O–CO2 system
+Extensive experimental data on VLE [10,47–66], enthalpy of
+absorption [67], heat capacity [10,46] and NMR spectra [13,68]
+of the ternary MEA–H2O–CO2 system are available. Of particular
+interesting are the recently released high temperature VLE data of
+Fig. 3. Comparison of the experimental data (symbols) for the vapor and liquid
+compositions of MEA–H2O system and the model results (lines). (⃝) P = 101 kPa, Cai
+et al. [40], () P = 67 kPa, [40], (×) P = 101 kPa, Park and Lee [41].
+Fig. 4. Comparison of the experimental data (symbols) for the excess enthalpy of
+MEA–H2O system and the model results (lines). (⃝) T = 298 K, Touhara et al. [38];
+(△) T = 298 K, Buslaeva et al. [43]; (♦) T = 298 K, Dohnai et al. [44]; (×) T = 298 K, Posey
+[6]; and (□) T = 342 K [6].
+Xu and Rochelle [66] extending the high temperature limit from
+423 K to 443 K.
+Standard
+state
+thermodynamic
+property
+parameters
+(f G∞,aq
+298.15, f H∞,aq
+298.15,
+and C∞,aq
+p
+) of MEAH+ ion and MEACOO−
+ion
+together
+with
+the
+binary
+NRTL
+parameters
+for
+major
+molecule–electrolyte pairs are regressed from selected exper-
+imental data of the MEA–H2O–CO2 system. Table 9 summarizes
+the VLE [10,58,65,66], enthalpy of absorption [67], heat capacity
+[10,46] and species concentration [68] data used to obtain these
+parameters. The VLE data of Lee et al. [51] are not used because
+Fig. 5. Comparison of the experimental data from Chiu et al. [34] (symbols) for the
+heat capacity of MEA–H2O system and the model results (lines). (⃝) MEA mole
+fraction 0.2; (□) MEA mole fraction 0.4; (△) MEA mole fraction 0.6; and (♦) MEA
+mole fraction 0.8.
+
+
+=== PDF page 6 of 9 ===
+72
+Y. Zhang et al. / Fluid Phase Equilibria 311 (2011) 67–75
+Table 9
+Experimental data used in the regression for the MEA–H2O–CO2 system.
+Data type
+T (K)
+Pressure (kPa)
+MEA mole fraction
+CO2 loading
+Data points
+Average relative
+deviation |Y/Y|,
+(%)
+Reference
+VLE, TPxy
+313–333
+0.005–50
+0.06–0.16
+0.11–0.59
+55
+35.5
+Hilliard [10]
+VLE, TPx, CO2 pressure
+273–423
+0.001–20,000
+0.11
+0.002–1.33
+124
+33.5
+Jou et al. [58]
+VLE, TPx, CO2 pressure
+393
+7–192
+0.11
+0.16–0.42
+19
+13.5
+Ma’mun et al. [65]
+VLE, TPxy
+373–443
+12–1626
+0.11
+0.30–0.52
+63
+28.0
+Xu and Rochelle [66]
+Enthalpy of absorption
+313–393
+0.11
+0.04–0.72
+84
+10.9
+Kim and Svendsen [67]
+Heat capacity, isobaric
+313–393
+0.06–0.11
+0.10–0.58
+102
+2.4
+Hilliard [10]
+Heat capacity, isobaric
+298
+0.03–0.16
+0.05–0.50
+20
+2.0
+Weiland et al. [46]
+Species concentration
+293–313
+0.05–0.11
+0.09–0.96
+24
+35.7
+Jakobsen et al. [68]
+Fig. 6. Comparison of the chemical equilibrium constants from Hamborg and Ver-
+steeg [20] for the MEAH+ dissociation reaction and Kim et al. [21] for the MEACOO−
+dissociation reaction (–) with those calculated from the regressed f G∞,aq
+298.15,
+f H∞,aq
+298.15 and C∞,aq
+p
+parameters (—-).
+their measured CO2 partial pressure data appear to be too low at
+low CO2 loading. The speciation data of Böttinger et al. [13] are
+also excluded because their data lack speciﬁc information about
+the concentrations of MEA, MEAH+ ion and CO3−2 ion.
+For VLE data, we choose the CO2 partial pressure data of Jou et al.
+[58], Ma’mun et al. [65], Hilliard [10] and Xu and Rochelle [66] in
+Fig. 7. Ratio of experimental to calculated CO2 partial pressure as function of CO2
+loading for MEA–H2O–CO2 system. (⃝) Jou et al. [58], (×) Ma’mun et al. [65], (+)
+Hilliard [10].
+Fig. 8. Parity plot for MEA–H2O–CO2 system total pressure: experiment vs. model.
+(⃝) Jou et al. [58], (×) Ma’mun et al. [65], and (+) Hilliard [10].
+the regression. Together these data cover temperature from 273 to
+443 K, pressure from 0.001 to 20000 kPa, MEA mole fraction from
+0.06 to 0.16 (weight fraction from 0.18 to 0.40) and CO2 loading
+from 0.002 to 1.33.
+The average relative deviations between the correlation results
+and the various experimental data are also given in Table 9. The
+regressed parameters for the MEA–H2O–CO2 system are summa-
+rized in Table 10. As expected, the regressed values of f G∞,aq
+298.15,
+f H∞,aq
+298.15 and C∞,aq
+p
+for MEAH+ ion in Table 10 are comparably close
+Fig. 9. Comparison of the experimental data (symbols) for CO2 partial pressure of
+MEA–H2O–CO2 system and the model results (lines), MEA concentration is around
+30 wt%. (♦) T = 313 K, Jou et al. [58], (×) T = 313 K, Hilliard [10], (■) T = 353 K, [58], ()
+T = 393 K, [58], (+) T = 393 K, Ma’mun et al. [65], (△) T = 393 K, Xu and Rochelle [66],
+and (▲) T = 433 K, [66].
+
+
+=== PDF page 7 of 9 ===
+Y. Zhang et al. / Fluid Phase Equilibria 311 (2011) 67–75
+73
+Table 10
+Regressed parameters for MEA–H2O–CO2 system with ˛ = 0.2.a
+Parameter
+Unit
+Component i
+Component j
+Value
+Standard deviation
+f G∞,aq
+298.15
+J/kmol
+MEAH+
+−1.8962 × 108
+3.9474 × 105
+f H∞,aq
+298.15
+J/kmol
+MEAH+
+−3.3164 × 108
+2.7557 × 1010
+C∞,aq
+p
+J/kmol K
+MEAH+
+2.1022 × 105
+1.0326 × 104
+f G∞,aq
+298.15
+J/kmol
+MEACOO−
+−4.9299 × 108
+2.7020 × 105
+f H∞,aq
+298.15
+J/kmol
+MEACOO−
+−7.0747 × 108
+2.7557 × 1010
+C∞,aq
+p
+J/kmol K
+MEACOO−
+−4.9781 × 10−2
+5.2297 × 10−1
+aij
+H2O
+(MEAH+, MEACOO−)
+6.7320
+0.4891
+aij
+(MEAH+, MEACOO−)
+H2O
+−3.1628
+0.3606
+aij
+H2O
+(MEAH+, HCO3−)
+8.5721
+0.2403
+aij
+(MEAH+, HCO3−)
+H2O
+−4.0092
+0.0815
+bij
+K
+H2O
+(MEAH+, MEACOO−)
+−9.2407
+110.73
+bij
+K
+(MEAH+, MEACOO−)
+H2O
+39.498
+80.84
+a Correlation for the NRTL parameters, ij = aij + bij/T, the unit for temperature is K.
+Fig. 10. Comparison of the experimental data (symbols) for CO2 partial pressure
+of MEA–H2O–CO2 system from Lee et al. [51] and the model results (lines), MEA
+concentration is around 30 wt%, (♦) T = 313 K, (□) T = 353 K, and (⃝) T = 393 K.
+to the estimated values reported in Tables 2 and 4. The regressed
+values of f G∞,aq
+298.15 and f H∞,aq
+298.15 for MEACOO−ion are also close
+to the estimated values. However, the value of C∞,aq
+p
+for MEACOO−
+ion is more difﬁcult to determine and the result is a small nega-
+tive value. The chemical equilibrium constants calculated with the
+Fig. 11. Comparison of the experimental data (symbols) for species concentration
+in MEA–H2O–CO2 system from Jakobsen et al. [68] and the model results (lines) at
+T = 293 K. MEA concentration is 30 wt%. (⃝) MEA, (△) MEAH+, (□) MEACOO−, (♦)
+HCO3−, and (×) CO3−2.
+regressed values of f G∞,aq
+298.15, f H∞,aq
+298.15 and C∞,aq
+p
+are compared
+with those from the literature [20,21] and shown in Fig. 6. The cal-
+culated chemical equilibrium constant for the MEAH+ dissociation
+reaction (Eq. (2)) is almost identical to those reported by Hamborg
+and Versteeg [20] while the calculated constant for the MEACOO−
+dissociation reaction (Eq. (3)) is slightly higher than those reported
+by Kim et al. [21].
+Figs. 7 and 8 show that most of the CO2 partial pressure data of
+Jou et al. [58], Ma’mun et al. [65], Hilliard [10] and Xu and Rochelle
+[66] are ﬁtted within ±30%. The experimental CO2 partial pressure
+data are very well correlated by the model. Fig. 9 shows the satis-
+factory correlation results for the CO2 partial pressure data for MEA
+concentration of 30 wt%, CO2 loading from 0.003 to 1.20, tempera-
+ture from 313 to 433 K and pressure up to 20,000 kPa. Fig. 10 further
+shows that under the same conditions, i.e., T = 353 and 393 K, there
+are systematic deviations between the calculated CO2 pressures
+and the experimental data of Lee et al. [51] at low CO2 loading.
+Table 11 shows comparison of the model predictions and the
+experimental VLE data from numerous other sources not included
+in the regression. With the exception of the data from Lee et al. [51],
+Issac et al. [52], Treckmann [54], Song et al. [59], Park et al. [63] and
+Bonenfant et al. [64], the model predictions are very satisfactory
+with the average relative deviation on pressure (either total pres-
+sure or CO2 partial pressure) in the range of 28–44%. The results
+highlight the fact that we cannot match all the VLE data because
+the experimental data from different sources can be inconsistent.
+Fig. 11 shows species distribution as a function of CO2 loading
+for a 30 wt% MEA solution at 293 K. The calculated species concen-
+trations are consistent with the experimental NMR measurements
+from Jakobsen et al. [68].
+Figs. 12–14 show comparisons of the model correlations and
+the experimental data of Kim and Svendsen [67] for the differential
+enthalpy of CO2 absorption in aqueous MEA solution at 313, 353 and
+393 K, respectively. The calculated values are in reasonable agree-
+ment with the experimental data except those at 393 K. Also shown
+in Figs. 12–14 are the predicted integral enthalpies of CO2 absorp-
+tion. The integral enthalpy and the differential enthalpy overlap at
+low CO2 loading and then diverge much at high CO2 loading, i.e.,
+greater than 0.5, where the differential enthalpy drops by more
+than 50%. We further show the computed differential enthalpy of
+absorption as sum of the various contributions from reactions 1 to
+5, CO2 dissolution, and excess enthalpy.
+Habs =
+k
+
+i=1
+niHo
+i + Hdissolution + Hex
+(12)
+where Habs is the differential enthalpy of absorption per mol of
+CO2, Ho
+i is the standard enthalpy of reaction for reaction i per mole
+of key component reacted, ni is the reaction extent of the reac-
+tion key component for reaction i when one mole CO2 is absorbed,
+
+
+=== PDF page 8 of 9 ===
+74
+Y. Zhang et al. / Fluid Phase Equilibria 311 (2011) 67–75
+Table 11
+Comparison between experimental data and model predictions for CO2 partial pressure of the MEA–H2O–CO2 system.
+Source
+Data points
+T (K)
+P (kPa)
+MEA concentration
+CO2 loading
+|P/P| (%)
+Muhlbauer and Monaghan [47]
+18
+298–373
+0.1–140
+0.05
+0.38–0.74
+30.4
+Jones et al. [48]
+48
+313–413
+0.08–930
+0.05
+0.13–0.73
+32.2
+Lee et al. [49]
+45
+315–373
+1–6600
+0.05
+0.14–1.19
+44.4
+Lawson and Garst [50]
+24
+313–413
+3–2800
+0.05–0.11
+0.11–1.0
+30.7
+Lee et al. [51]
+256
+298–393
+0.1–10000
+0.02–0.11
+0.11–2.19
+50.5
+Isaacs et al. [52]
+19
+353–373
+0.007–1.8
+0.05
+0.035–0.32
+112
+Maddox et al. [53]
+60
+298–353
+4–6800
+0.05
+0.41–1.33
+28.6
+Treckmann [54]
+7
+298
+5–37
+0.02
+0.60–0.78
+54.1
+Austgen et al. [55]
+8
+313–353
+0.1–230
+0.05
+0.27–0.69
+42.6
+Shen and Li [56]
+13
+313
+16–2600
+0.05
+0.56–1.05
+35.5
+Dawodu and Meisen [57]
+5
+373
+460–3900
+0.09
+0.54–0.72
+43.2
+Song et al. [59]
+10
+313
+3–2400
+0.11
+0.49–1.06
+74.4
+Jane and Li [60]
+7
+353
+4–120
+0.05
+0.36–0.58
+37.7
+Park et al. [61]
+7
+313
+3–2100
+0.05
+0.51–1.05
+28.6
+Mathonat et al. [62]
+9
+313–393
+2000–10,000
+0.11
+0.55–1.67
+36.0
+Park et al. [63]
+13
+313
+3–2200
+0.03–0.05
+0.48–1.07
+49.8
+Bonenfant et al. [64]
+2
+296
+101
+0.02
+0.81
+80.6
+Fig. 12. Differential enthalpy of CO2 absorption in 30 wt% MEA aqueous solution
+at 313 K. Symbols (⃝) represent experimental data from Kim and Svendsen [67];
+lines represent model results. (–) integral enthalpy of absorption, (– ·· –) differen-
+tial enthalpy of solution, (—-) contribution of reactions, (– · –) contribution of CO2
+dissolution, and (– –) contribution of excess enthalpies.
+Fig. 13. Differential enthalpy of CO2 absorption in 30 wt% MEA aqueous solution
+at 353 K. Symbols (⃝) represent experimental data from Kim and Svendsen [67];
+lines represent model results. (–) integral enthalpy of absorption, (– ·· –) differen-
+tial enthalpy of solution, (—-) contribution of reactions, (– · –) contribution of CO2
+dissolution, and (– –) contribution of excess enthalpies.
+Fig. 14. Differential enthalpy of CO2 absorption in 30 wt% MEA aqueous solution
+at 393 K. Symbols (⃝) represent experimental data from Kim and Svendsen [67];
+lines represent model results. (–) integral enthalpy of absorption, (– ·· –) differen-
+tial enthalpy of solution, (—-) contribution of reactions, (– · –) contribution of CO2
+dissolution, and (– –) contribution of excess enthalpies.
+Fig. 15. Comparison of the experimental data (symbols) for heat capacity of
+MEA–H2O–CO2 system from Weiland et al. [46] and the model results (lines) at
+T = 298 K. (⃝) 10 wt% MEA, (△) 20 wt% MEA, (□) 30 wt% MEA, and (♦) 40 wt% MEA.
+
+
+=== PDF page 9 of 9 ===
+Y. Zhang et al. / Fluid Phase Equilibria 311 (2011) 67–75
+75
+Hdissolution is the enthalpy of CO2 physical dissolution, Hex is the
+excess enthalpy.
+The results in Figs. 12–14 show that the enthalpy of absorption
+is dominated by MEAH+ ion and MEACOO−ion dissociation, and
+excess enthalpy. In addition, CO2 dissolution is important around
+room temperature while CO2 dissociation becomes more important
+at higher temperatures.
+Fig. 15 shows comparison of the model correlations and the
+experimental data of Weiland et al. [46] for heat capacity of the
+MEA–H2O–CO2 system. The model results are slightly lower than
+the experimental data at high loading and high MEA concentration.
+4. Conclusion
+To support process modeling and simulation of the CO2 cap-
+ture process with MEA, the electrolyte NRTL model has been
+successfully applied to correlate the available data on various ther-
+modynamic properties of the MEA–H2O–CO2 system. The model
+has been validated for predictions of VLE, heat capacity, CO2
+enthalpy of absorption and speciation of the MEA–H2O–CO2 sys-
+tem with temperature up to 443 K, pressure up to 20 MPa, MEA
+concentration up to 40 wt% and CO2 loading up to 1.33. It should
+provide a comprehensive thermodynamic representation for the
+MEA–H2O–CO2 system over a broader range of conditions and give
+more reliable predictions over previous works.
+Acknowledgements
+The authors thank our colleagues Yuhua Song and Joseph DeVin-
+centis for their reviews and inputs.
+References
+[1] A.L. Kohl, F.C. Riesenfeld, Gas Puriﬁcation, 4th ed., Gulf Publishing, Houston,
+1985.
+[2] D.M. Austgen, G.T. Rochelle, X. Peng, C.-C. Chen, Ind. Eng. Chem. Res. 28 (1989)
+1060–1073.
+[3] Y. Zhang, H. Chen, C.-C. Chen, J.M. Plaza, R. Dugas, G.T. Rochelle, Ind. Eng. Chem.
+Res. 48 (2009) 9233–9246.
+[4] C.-C. Chen, Fluid Phase Equilib. 241 (2006) 103–112.
+[5] Y. Zhang, C.-C. Chen, Ind. Eng. Chem. Res. 50 (2011) 163–175.
+[6] M.L. Posey, Thermodynamic Model for Acid Gas Loaded Aqueous Alkanolamine
+Solutions, PhD thesis, The University of Texas at Austin, 1996.
+[7] Y. Song, C.-C. Chen, Ind. Eng. Chem. Res. 48 (2009) 7788–7797.
+[8] C.-C. Chen, L.B. Evans, AIChE J. 32 (1986) 444–454.
+[9] C.-C. Chen, H.I. Britt, J.F. Boston, L.B. Evans, AIChE J. 28 (1982) 588–596.
+[10] M.A. Hilliard, Predictive Thermodynamic Model for an Aqueous Blend of Potas-
+sium Carbonate, Piperazine, and Monoethanolamine for Carbon Dioxide, Ph.D.
+Dissertation, University of Texas at Austin, 2008.
+[11] L. Faramarzi, G.M. Kontogeorgis, K. Thomsen, E.H. Stenby, Fluid Phase Equilib.
+282 (2009) 121–132.
+[12] K. Thomsen, P. Rasmussen, Chem. Eng. Sci. 54 (1999) 1787–1802.
+[13] W. Böttinger, M. Maiwald, H. Hasse, Fluid Phase Equilib. 263 (2008) 131–143.
+[14] E.T. Hessen, T. Haug-Warberg, H.F. Svendsen, Chem. Eng. Sci. 65 (2010)
+3638–3648.
+[15] G.M. Bollas, C.-C. Chen, P.I. Barton, AIChE J. 54 (2008) 1608–1624.
+[16] Y. Zhang, C.-C. Chen, Ind. Eng. Chem. Res. 50 (2011) 6436–6446.
+[17] L. Zong, C.-C. Chen, Fluid Phase Equilib. 306 (2011) 190–203.
+[18] J. Gross, G. Sadowski, Ind. Eng. Chem. Res. 40 (2001) 1244–1260.
+[19] J. Gross, G. Sadowski, Ind. Eng. Chem. Res. 41 (2002) 5510–5515.
+[20] E.S. Hamborg, G.F. Versteeg, J. Chem. Eng. Data 54 (2009) 1318–1328.
+[21] I. Kim, K.A. Hoff, E.T. Hessen, T. Haug-Warberg, H.F. Svendsen, Chem. Eng. Sci.
+64 (2009) 2027–2038.
+[22] S.W. Brelvi, J.P. O’Connell, AIChE J. 18 (1972) 1239–1243.
+[23] Aspen Technology Inc., Aspen Physical Property System, v7.2, Burlington, MA,
+2010.
+[24] Y.-Z. Yan, C.-C. Chen, J Supercrit. Fluids 55 (2010) 623–634.
+[25] Y.-W. Wang, S. Xu, F.D. Otto, A.E. Mather, Chem. Eng. J. 48 (1992) 31–40.
+[26] G.F. Versteeg, W.P.M. van Swaaij, J. Chem. Eng. Data 33 (1988) 29–34.
+[27] J.B. Matthews, J.F. Sumner, E.A. Moelwyn-Hughes, Trans. Faraday Soc. 46 (1950)
+797–803.
+[28] S.M. Danov, N.B. Mashin, R.V. Efremov, K.K. Slashchinina, Zh. Fiz. Khim. 43
+(1969) 733–736.
+[29] T.E. Daubert, J.W. Jalowka, V. Goren, AIChE Symp. Ser. 83 (1987) 128–156.
+[30] K. Tochigi, K. Akimoto, K. Ochi, F. Liu, Y. Kawase, J. Chem. Eng. Data 44 (1999)
+588–590.
+[31] G. Liessmann, W. Schmide, S. Reiffarth, Recommended Thermophysical Data.
+Detherm Database, Dechema e.V.
+[32] D. Hopfe, Thermophysical Data of Pure Substances, Detherm Database,
+Dechema e.V.
+[33] Y. Maham, L.G. Hepler, A.E. Mather, A.W. Hakin, R. Marriott, J. Chem. Soc. Fara-
+day Trans. 93 (1997) 1747–1750.
+[34] L.-F. Chiu, H.-F. Liu, M.-H. Li, J. Chem. Eng. Data 44 (1999) 631–636.
+[35] A. Valtz, C. Coquelet, D. Richon, Thermochim. Acta 428 (2005) 185–191.
+[36] J. Aguila-Hernandez, A. Trejo, B.E. Garcia-Flores, R. Molnar, Fluid Phase Equilib.
+267 (2008) 172–180.
+[37] E. Álvares, F. Cerdeira, D. Gómez-Diaz, J.M. Navaza, J. Chem. Eng. Data 55 (2010)
+994–999.
+[38] H. Touhara, S. Okazaki, F. Okino, H. Tanaka, K. Ikari, K. Nakanishi, J. Chem.
+Thermodyn. 14 (1982) 145–156.
+[39] A. Nath, E. Bender, J. Chem. Eng. Data 28 (1983) 370–375.
+[40] Z. Cai, R. Xie, Z. Wu, J. Chem. Eng. Data 41 (1996) 1101–1103.
+[41] S.-B. Park, H. Lee, Korean J. Chem. Eng. 14 (1997) 146–148.
+[42] I. Kim, H.F. Svendsen, E. Børresen, J. Chem. Eng. Data 53 (2008) 2521–2531.
+[43] M.N. Buslaeva, V.B. Tsvetkov, V.B. Markova, I.F. Kaimin, Koord Khim. 9 (1983)
+752–754.
+[44] V. Dohnal, A.H. Roux, V. Hynek, J. Solution Chem. 23 (1994) 889–900.
+[45] M. Page, J.Y. Huot, C. Jolicoeur, Can. J. Chem. 71 (1993) 1064–1072.
+[46] R.H. Weiland, J.C. Dingman, D.B. Cronin, J. Chem. Eng. Data 42 (1997)
+1004–1006.
+[47] H.G. Muhlbauer, P.R. Monaghan, Oil Gas J. 29 (1957) 139–145.
+[48] J.H. Jones, H.R. Froning, E.E. Claytor, J. Chem. Eng. Data 4 (1959) 85–92.
+[49] J.I. Lee, F.D. Otto, A.E. Mather, Can. J. Chem. Eng. 52 (1974) 803–805.
+[50] J.D. Lawson, A.W. Garst, J. Chem. Eng. Data 21 (1976) 20–30.
+[51] J.I. Lee, F.D. Otto, A.E. Mather, J. Appl. Chem. Biotechnol. 26 (1976) 541–549.
+[52] E.E. Isaacs, F.D. Otto, A.E. Mather, J. Chem. Eng. Data 25 (1980) 118–120.
+[53] R.N. Maddox, A.H. Bhairi, J.R. Diers, P.A. Thomas, Equilibrium Solubility of Car-
+bon Dioxide or Hydrogen Sulﬁde in Aqueous Solutions of Monoethanolamine
+Diglycolamine, Diethanolamine and Methyldiethanolamine, 1987, pp. 1–47,
+GPA Research Report, RR-104.
+[54] R. Treckmann, Thermodynamic modelling of the phase equilibrium behavior
+of H2S and CO2 in aqueous solutions of alkanolamines, Diplomarbeit (1987)
+1–151.
+[55] D.M. Austgen, G.T. Rochelle, C.-C. Chen, Ind. Eng. Chem. Res. 30 (1991) 543–555.
+[56] K.-P. Shen, M.-H. Li, J. Chem. Eng. Data 37 (1992) 96–100.
+[57] O.F. Dawodu, A. Meisen, J. Chem. Eng. Data 39 (1994) 548–552.
+[58] F.-Y. Jou, A.E. Mather, F. Otto, Can. J. Chem. Eng. 73 (1995) 140–147.
+[59] J.-H. Song, J.-H. Yoon, H. Lee, K.-H. Lee, J. Chem. Eng. Data 41 (1996) 497–499.
+[60] I.-S. Jane, M.-H. Li, J. Chem. Eng. Data 42 (1997) 98–105.
+[61] S.-B. Park, C.-S. Shim, H. Lee, K.-H. Lee, Fluid Phase Equilib. 134 (1997) 141–149.
+[62] C. Mathonat, V. Majer, A.E. Mather, J.P.E. Grolier, Ind. Eng. Chem. Res. 37 (1998)
+4136–4141.
+[63] J.-Y. Park, S.J. Yoon, H. Lee, J.-H. Yoon, J.-G. Shim, J.K. Lee, B.-Y. Min, H.-M. Eum,
+M.C. Kang, Fluid Phase Equilib. 202 (2002) 359–366.
+[64] D. Bonenfant, M. Mimeault, R. Hausler, Ind. Eng. Chem. Res. 42 (2003)
+3179–3184.
+[65] S. Ma‘mun, R. Nilsen, H.F. Svendsen, O. Juliussen, J. Chem. Eng. Data 50 (2005)
+630–634.
+[66] Q. Xu, G. Rochelle, Energy Procedia 4 (2011) 117–124.
+[67] I. Kim, H.F. Svendsen, Ind. Eng. Chem. Res. 46 (2007) 5803–5809.
+[68] J.P. Jakobsen, J. Krane, H.F. Svendsen, Ind. Eng. Chem. Res. 44 (2005) 9894–9903.

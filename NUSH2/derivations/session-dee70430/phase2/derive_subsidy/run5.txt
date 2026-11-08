@@ -1,0 +1,216 @@
+
+==============================================================================
+PART A. SymPy identities
+==============================================================================
+[PASS] A1 CRF * alpha = 1: symbolic zero
+[PASS] A2 v^L CRF = SFF  (decommissioning identity, S.0.4): symbolic zero
+[PASS] A3a geometric sum, induction step: symbolic zero
+[PASS] A3b geometric sum, base case: symbolic zero
+[PASS] A4 f_D - f_IDC = (1+i)^w [1+q i-(1+i)^q]/(N i): symbolic zero
+[PASS] A5a g''(q) = -ln(1+i)^2 (1+i)^q: symbolic zero
+[PASS] A5b: g(0) = 0 and g(1) = 0 and g'' < 0 (SymPy sign inference), so g >= 0 on [0,1] and f_D >= f_IDC
+[PASS] A6: g(q) = q(1-q) i^2/2 + O(i^3)  (series)
+[PASS] A7a (1-u) f_IDC(t_c(1-u)) = h(u): symbolic zero
+[PASS] A7b h(0) = f_IDC(t_c): symbolic zero
+[PASS] A7c: h(1) = 0
+[PASS] A7d h'(u) = -ln(1+i)(1+i)^(t_c(1-u))/i < 0: symbolic zero
+[PASS] A7e h''(u) > 0 (convex): symbolic zero
+[PASS] A8a: progressive LAC is affine: d2/ds2 = 0
+[PASS] A8b progressive s* solves LAC(s*) = T: symbolic zero
+[PASS] A9a h(u*) = H*  (u* is the exact root of the reactor regime): symbolic zero
+[PASS] A9b: waterfall s* = u* C/E, with G = s E
+[PASS] A10a: progressive: B1 - B2 = B3 with B2 = (1-s)B1 and B3 = s B1
+[PASS] A10b: at close: B1 - B2 = B3
+[PASS] A11a: dated-flow IDC changes sign at s0 = (f-1)/((1+i)^t_c - 1)
+[PASS] A11b: dated-flow private PV at s=1 equals C (f - (1+i)^t_c)
+[PASS] A12: g_k + p_k = b_k for the bucket waterfall (8 cases covering all regimes)
+
+==============================================================================
+PART B. Zero-subsidy reproduction of results/Economic_Ledger.csv
+==============================================================================
+i = 0.08, t_c = 5.5, w = 5, q = 0.5, t_u = 25, T = 100.0
+CRF(25) = 0.09367877905   CRF(60) = 0.08079794876   SFF(25) = 0.013678779
+f_IDC = 1.19766029364   f_D = 1.20022999971   f_D - f_IDC = 0.002569706066
+[PASS] B0a: f_D - f_IDC closed form numerically  (0.002569706066)
+leading-order series of the gap: 0.0026715056 (exact 0.0025697061, ratio 1.03962)
+rho_R(25) = 1.0  rho_R(60) = 1.161413621
+
+stage      L   C_R(S$M)   L5 recomputed   L5 CSV       LAC_DCF model  LAC_DCF CSV   gap model  gap CSV
+[PASS] B1 FOAK 25y: L5 = sum of lines x 1e6 / A equals the CSV cumulative value  (-1.6e-6)
+[PASS] B2 FOAK 25y: IDC line = C_R (f_IDC - 1) CRF(L)  (-4.34e-7)
+[PASS] B3 FOAK 25y: LAC_DCF rebuilt from dated flows equals the CSV value  (-3.01e-6)
+[PASS] B4 FOAK 25y: LAC_DCF closed form (S.0.5) equals the flow-by-flow PV  (-2.35e-38)
+[PASS] B5 FOAK 25y: gap term REACTOR_CAP_WITH_IDC = C_R CRF(L)(f_D - f_IDC) 1e6/A  (3.44e-7)
+[PASS] B6 FOAK 25y: replacement gap terms CAPTURE_CAP, IHX, RECYCLE_TRAIN  (0.0, 0.0, 0.0)
+[PASS] B7 FOAK 25y: all other gap terms are zero (annual lines, licence, power island, decommissioning)
+[PASS] B8 FOAK 25y: total gap model equals stored LAC_L5_GAP  (3.44e-7)
+FOAK        25   1188.428    277.9306324   277.930634     278.425547    278.42555  0.4949153  0.494915
+[PASS] B1 FOAK 60y: L5 = sum of lines x 1e6 / A equals the CSV cumulative value  (-6.73e-7)
+[PASS] B2 FOAK 60y: IDC line = C_R (f_IDC - 1) CRF(L)  (-1.52e-7)
+[PASS] B3 FOAK 60y: LAC_DCF rebuilt from dated flows equals the CSV value  (-1.63e-6)
+[PASS] B4 FOAK 60y: LAC_DCF closed form (S.0.5) equals the flow-by-flow PV  (-2.35e-38)
+[PASS] B5 FOAK 60y: gap term REACTOR_CAP_WITH_IDC = C_R CRF(L)(f_D - f_IDC) 1e6/A  (4.94e-7)
+[PASS] B6 FOAK 60y: replacement gap terms CAPTURE_CAP, IHX, RECYCLE_TRAIN  (3.54e-8, 4.81e-7, 2.98e-7)
+[PASS] B7 FOAK 60y: all other gap terms are zero (annual lines, licence, power island, decommissioning)
+[PASS] B8 FOAK 60y: total gap model equals stored LAC_L5_GAP  (3.08e-7)
+FOAK        60   1188.428    241.6964163   241.696417    242.1892694   242.189271  0.4928533  0.492853
+[PASS] B1 BOAK 25y: L5 = sum of lines x 1e6 / A equals the CSV cumulative value  (-1.51e-6)
+[PASS] B2 BOAK 25y: IDC line = C_R (f_IDC - 1) CRF(L)  (-1.97e-7)
+[PASS] B3 BOAK 25y: LAC_DCF rebuilt from dated flows equals the CSV value  (-1.76e-6)
+[PASS] B4 BOAK 25y: LAC_DCF closed form (S.0.5) equals the flow-by-flow PV  (-1.18e-38)
+[PASS] B5 BOAK 25y: gap term REACTOR_CAP_WITH_IDC = C_R CRF(L)(f_D - f_IDC) 1e6/A  (9.18e-8)
+[PASS] B6 BOAK 25y: replacement gap terms CAPTURE_CAP, IHX, RECYCLE_TRAIN  (0.0, 0.0, 0.0)
+[PASS] B7 BOAK 25y: all other gap terms are zero (annual lines, licence, power island, decommissioning)
+[PASS] B8 BOAK 25y: total gap model equals stored LAC_L5_GAP  (9.18e-8)
+BOAK        25  742.76748    189.7494995   189.749501    190.0588212   190.058823  0.3093221  0.309322
+[PASS] B1 BOAK 60y: L5 = sum of lines x 1e6 / A equals the CSV cumulative value  (-1.1e-6)
+[PASS] B2 BOAK 60y: IDC line = C_R (f_IDC - 1) CRF(L)  (4.54e-7)
+[PASS] B3 BOAK 60y: LAC_DCF rebuilt from dated flows equals the CSV value  (-1.9e-7)
+[PASS] B4 BOAK 60y: LAC_DCF closed form (S.0.5) equals the flow-by-flow PV  (-1.18e-38)
+[PASS] B5 BOAK 60y: gap term REACTOR_CAP_WITH_IDC = C_R CRF(L)(f_D - f_IDC) 1e6/A  (3.1e-7)
+[PASS] B6 BOAK 60y: replacement gap terms CAPTURE_CAP, IHX, RECYCLE_TRAIN  (3.54e-8, 4.81e-7, 2.98e-7)
+[PASS] B7 BOAK 60y: all other gap terms are zero (annual lines, licence, power island, decommissioning)
+[PASS] B8 BOAK 60y: total gap model equals stored LAC_L5_GAP  (1.24e-7)
+BOAK        60  742.76748    165.6401869   165.640188    165.9729668   165.972967  0.3327791  0.332779
+[PASS] B1 10OAK_P46 25y: L5 = sum of lines x 1e6 / A equals the CSV cumulative value  (-3.12e-6)
+[PASS] B2 10OAK_P46 25y: IDC line = C_R (f_IDC - 1) CRF(L)  (-9.33e-8)
+[PASS] B3 10OAK_P46 25y: LAC_DCF rebuilt from dated flows equals the CSV value  (-3.71e-6)
+[PASS] B4 10OAK_P46 25y: LAC_DCF closed form (S.0.5) equals the flow-by-flow PV  (-8.82e-39)
+[PASS] B5 10OAK_P46 25y: gap term REACTOR_CAP_WITH_IDC = C_R CRF(L)(f_D - f_IDC) 1e6/A  (-4.21e-7)
+[PASS] B6 10OAK_P46 25y: replacement gap terms CAPTURE_CAP, IHX, RECYCLE_TRAIN  (0.0, 0.0, 0.0)
+[PASS] B7 10OAK_P46 25y: all other gap terms are zero (annual lines, licence, power island, decommissioning)
+[PASS] B8 10OAK_P46 25y: total gap model equals stored LAC_L5_GAP  (-4.21e-7)
+10OAK_P46   25  523.41936    146.3479269    146.34793    146.5659023   146.565906  0.2179756  0.217976
+[PASS] B1 10OAK_P46 60y: L5 = sum of lines x 1e6 / A equals the CSV cumulative value  (-1.46e-6)
+[PASS] B2 10OAK_P46 60y: IDC line = C_R (f_IDC - 1) CRF(L)  (1.85e-7)
+[PASS] B3 10OAK_P46 60y: LAC_DCF rebuilt from dated flows equals the CSV value  (-1.38e-6)
+[PASS] B4 10OAK_P46 60y: LAC_DCF closed form (S.0.5) equals the flow-by-flow PV  (-8.82e-39)
+[PASS] B5 10OAK_P46 60y: gap term REACTOR_CAP_WITH_IDC = C_R CRF(L)(f_D - f_IDC) 1e6/A  (-5.84e-8)
+[PASS] B6 10OAK_P46 60y: replacement gap terms CAPTURE_CAP, IHX, RECYCLE_TRAIN  (3.54e-8, 4.81e-7, 2.98e-7)
+[PASS] B7 10OAK_P46 60y: all other gap terms are zero (annual lines, licence, power island, decommissioning)
+[PASS] B8 10OAK_P46 60y: total gap model equals stored LAC_L5_GAP  (-2.44e-7)
+10OAK_P46   60  523.41936    128.2063305   128.206332    128.4603236   128.460325  0.2539928  0.253993
+[PASS] B1 10OAK_P47 25y: L5 = sum of lines x 1e6 / A equals the CSV cumulative value  (-2.36e-6)
+[PASS] B2 10OAK_P47 25y: IDC line = C_R (f_IDC - 1) CRF(L)  (4.09e-7)
+[PASS] B3 10OAK_P47 25y: LAC_DCF rebuilt from dated flows equals the CSV value  (-1.72e-6)
+[PASS] B4 10OAK_P47 25y: LAC_DCF closed form (S.0.5) equals the flow-by-flow PV  (-1.76e-38)
+[PASS] B5 10OAK_P47 25y: gap term REACTOR_CAP_WITH_IDC = C_R CRF(L)(f_D - f_IDC) 1e6/A  (-6.93e-8)
+[PASS] B6 10OAK_P47 25y: replacement gap terms CAPTURE_CAP, IHX, RECYCLE_TRAIN  (0.0, 0.0, 0.0)
+[PASS] B7 10OAK_P47 25y: all other gap terms are zero (annual lines, licence, power island, decommissioning)
+[PASS] B8 10OAK_P47 25y: total gap model equals stored LAC_L5_GAP  (-6.93e-8)
+10OAK_P47   25  837.47099    208.4881186   208.488121    208.8368803   208.836882  0.3487609  0.348761
+[PASS] B1 10OAK_P47 60y: L5 = sum of lines x 1e6 / A equals the CSV cumulative value  (-8.08e-7)
+[PASS] B2 10OAK_P47 60y: IDC line = C_R (f_IDC - 1) CRF(L)  (1.75e-7)
+[PASS] B3 10OAK_P47 60y: LAC_DCF rebuilt from dated flows equals the CSV value  (-3.83e-7)
+[PASS] B4 10OAK_P47 60y: LAC_DCF closed form (S.0.5) equals the flow-by-flow PV  (-5.88e-39)
+[PASS] B5 10OAK_P47 60y: gap term REACTOR_CAP_WITH_IDC = C_R CRF(L)(f_D - f_IDC) 1e6/A  (3.08e-7)
+[PASS] B6 10OAK_P47 60y: replacement gap terms CAPTURE_CAP, IHX, RECYCLE_TRAIN  (3.54e-8, 4.81e-7, 2.98e-7)
+[PASS] B7 10OAK_P47 60y: all other gap terms are zero (annual lines, licence, power island, decommissioning)
+[PASS] B8 10OAK_P47 60y: total gap model equals stored LAC_L5_GAP  (1.22e-7)
+10OAK_P47   60  837.47099    181.8022472   181.802248    182.1690426   182.169043  0.3667951  0.366795
+[PASS] B9 25y: reactor capital ratios FOAK/BOAK = 1.6, P46/BOAK = lf10, P47/BOAK = 1.6 lf10
+[PASS] B9 60y: reactor capital ratios FOAK/BOAK = 1.6, P46/BOAK = lf10, P47/BOAK = 1.6 lf10
+[PASS] B10: BOAK reactor capital from the registry (eq L.5, L.6, n=1) equals the CSV-derived value  (742.76748 vs 742.7674838)
+[PASS] B11: at 25 y the whole gap is the reactor IDC term
+
+BOAK 25 y capital items rebuilt from the ledger lines (S$M):
+  reactor C_R                      742.76748
+  capture K_cap                    98.760382
+  IHX K_ihx                        89.247374
+  licence K_lic                    65.324997
+  power island K_pi                17.296874
+  recycle K_rec                    48.830275
+  decommissioning D (liability)    109.74598
+  total capital K_tot (overnight, ex IDC, ex decommissioning) = 1062.2274
+  E_A = 742.76748   E_B = 914.63673   X_B = 171.86924
+
+==============================================================================
+PART C. Grant model, four routes
+==============================================================================
+[PASS] C1: L5: closed form (S.6a) equals the line-by-line ledger over 224 cases  (1.18e-38)
+[PASS] C2: DCF: closed form (S.6b) equals the dated cash-flow list  (3.12e-38)
+[PASS] C3: DCF: dated cash-flow list equals the year-by-year funded-balance recursion  (3.12e-38)
+[PASS] C4: s = 0 changes nothing: every route returns the zero-subsidy L5 and DCF value
+[PASS] C5: the zero-subsidy values equal the committed CSV (tolerance of its 6-decimal rounding)
+[PASS] C6: s = 1 on definition A removes exactly the REACTOR_CAP and IDC lines of the CSV (both timings)
+[PASS] C7: progressive grant: gap(s) = gap(0) - s x reactor IDC gap term, i.e. the reactor term scales by (1-s)
+largest |LAC_DCF - L5| at close over s in [0,1], both definitions: 0.49491 S$/t at FOAK 25 y def A s=0.0
+[PASS] C8: at close the two methods stay within 1 S$/t for every s  (0.4949)
+[PASS] C8b: at close the method gap stays between 0 and its zero-subsidy value for every s on a 101-point grid, both definitions
+[PASS] C9: LAC is strictly decreasing in s for both methods, timings and definitions (201-point scan)
+[PASS] C10a: progressive grant: LAC is affine, so its second differences vanish (both methods)
+[PASS] C10b: at close: the DCF is convex in s over [0,1] (piecewise linear, slopes shrink as the grant reaches later buckets)
+[PASS] C10c: at close, definition A: the ledger form is convex over [0,1]
+[PASS] C10d: at close, definition B: the ledger form is convex up to s = C_R/E (u = 1)
+ledger slope ratio left/right of u = 1 (definition B): 0.96201301  vs ln(1+i)/i = 0.96201301
+[PASS] C10e: ledger kink at u = 1: slope ratio equals ln(1+i)/i (concave kink of relative size 1 - ln(1+i)/i)
+[PASS] C11: second difference at s = 0.25, 0.5, 0.75: zero for progressive, positive at close  (prog 0.0, close 3.7892)
+
+==============================================================================
+Break-even shares s* (definition A, B; progressive, at close; L5, DCF)  [placeholder A from the legacy CSV]
+==============================================================================
+stage        L | A prog L5 A prog DCF  A cls L5 A cls DCF | B prog L5 B prog DCF  B cls L5 B cls DCF | dated A
+FOAK        25 |   0.77138    0.77187   0.73126   0.73301 |   0.68382    0.68442   0.63403   0.63555 | 0.60502
+FOAK        60 |   0.71223    0.71317   0.66643   0.66778 |   0.63138    0.63238   0.57782   0.57899 | 0.55863
+BOAK        25 |   0.62255    0.62335   0.57142   0.57302 |   0.52174     0.5226   0.46405   0.46535 | 0.48829
+BOAK        60 |    0.5279    0.52944   0.47513   0.47638 |   0.44242    0.44387   0.38585   0.38687 | 0.41405
+10OAK_P46   25 |   0.45622    0.45738   0.40473   0.40611 |   0.36036    0.36144   0.30694   0.30799 | 0.35783
+10OAK_P46   60 |   0.32191    0.32411   0.27821   0.27913 |   0.25427    0.25612   0.21099   0.21169 | 0.25248
+10OAK_P47   25 |   0.66743    0.66814   0.61849   0.61911 |   0.56872    0.56951   0.51206   0.51257 | 0.52349
+10OAK_P47   60 |   0.58348    0.58484    0.5312    0.5334 |   0.49719    0.49851   0.43979   0.44161 | 0.45765
+[PASS] C12: closed-form s* equals the bisection root (progressive L5 and DCF, at-close L5)
+[PASS] C13: strict test: LAC(s*) < T and LAC(s* - 1e-12) > T (the infimum is approached from the passing side)
+
+Cases of s* (progressive, definition A, L5), rescaling the placeholder abatement:
+  BOAK 25 y, A x 2.0: s* = -0.0711023  s* < 0: target met without a grant  grid pass (0, .25, .5, .75) = [True, True, True, True]
+  BOAK 25 y, A x 1.0: s* = 0.622545  0 < s* <= 0.75: some grid shares pass  grid pass (0, .25, .5, .75) = [False, False, False, True]
+  FOAK 25 y, A x 1.0: s* = 0.771382  0.75 < s* <= 1: no grid share passes, a larger share does  grid pass (0, .25, .5, .75) = [False, False, False, False]
+  BOAK 25 y, A x 0.4: s* = 1.03873  s* > 1: unreachable on this eligible set  grid pass (0, .25, .5, .75) = [False, False, False, False]
+  tie: LAC(0) = 100.0, s* = 0.0  grid pass = [False, True, True, True]
+[PASS] C19: case analysis of s*: negative, inside the grid range, beyond 75 percent, above 1, and the exact tie
+[PASS] C20: allowance form of s*: the abatement A enters only through the allowed annual cost T A 1e-6
+[PASS] C14: DCF at close: piecewise-linear exact root equals the bisection root
+
+==============================================================================
+Worked example, BOAK 25 y, definition A, s = 0.5 (placeholder A)
+==============================================================================
+C_R = 742.76748  G = 371.38374  f_IDC = 1.1976603  h(0.5) = 0.53569657
+IDC basis 1 (gross spend)             = 146.81564 S$M
+IDC basis 2 private, progressive      = 73.407819 S$M   saving (basis 3) = 73.407819
+IDC basis 2 private, at close         = 26.51425 S$M   saving (basis 3) = 120.30139
+dated-flow bound (not default)        = -48.892648 S$M (negative = interest income); sign change at s0 = 0.375088
+L5 zero 189.7495; progressive 117.66678; at close 110.06723
+DCF zero 190.05882; progressive 117.82144; at close 110.25258
+mistake W1/W2 (grant base includes IDC, or IDC reduced twice): L5 too low by 11.8964 S$/t
+mistake W3 (progressive rule applied to an at-close grant): L5 too high by 7.59955 S$/t
+[PASS] C15: W1/W2 magnitude equals s C (f-1) kappa and is the gap between a PV-based and a nominal grant base
+
+==============================================================================
+Funded balance of the private reactor funding, BOAK 25 y, s = 0.5, S$M (year-end)
+==============================================================================
+ year      gross  progressive   at close  dated bound
+   -5  67.524317    33.762158        0.0   -318.42899
+   -4   207.9749    103.98745        0.0   -208.85468
+   -3  359.66152    179.83076        0.0   -90.514416
+   -2  523.48308    261.74154  101.28648    37.293065
+   -1  700.41036    350.20518  244.43803    175.32514
+    0  891.49182    445.74591   399.0417    324.39979
+[PASS] C16: balance at year 0: gross = C f_D, progressive = (1-s) C f_D, close = P_D(G)
+[PASS] C17: the dated-flow bound holds a negative balance in the early years (a cash surplus earning interest) and gives negative private IDC  (min balance -318.429, IDC -48.8926)
+dated bound, definition A: private PV at year 0 changes sign at s = f_IDC/(1+i)^t_c = 0.784338; at s = 1 it is -244.60094 S$M
+[PASS] C18: dated bound at s = 1 overshoots: it removes more than the reactor capital and its interest
+
+==============================================================================
+Reported quantities, BOAK 25 y, s = 0.5 (S.8), placeholder A
+==============================================================================
+def A: K_tot = 1062.2274  TCR gross = 1209.043  E = 742.76748  G = 371.38374  K_priv = 690.84364
+   prog : dC_gross = 109.685 S$M/y  dC_net = 68.017474 S$M/y  LAC5 gross 189.7495 net 117.6668;  DCF gross 190.0588 net 117.8214
+   close: dC_gross = 109.685 S$M/y  dC_net = 63.624541 S$M/y  LAC5 gross 189.7495 net 110.0672;  DCF gross 190.0588 net 110.2526
+def B: K_tot = 1062.2274  TCR gross = 1209.043  E = 914.63673  G = 457.31836  K_priv = 604.90902
+   prog : dC_gross = 109.685 S$M/y  dC_net = 59.967223 S$M/y  LAC5 gross 189.7495 net 103.7403;  DCF gross 190.0588 net 103.8949
+   close: dC_gross = 109.685 S$M/y  dC_net = 54.285229 S$M/y  LAC5 gross 189.7495 net 93.9107;  DCF gross 190.0588 net 94.00868
+
+==============================================================================
+SUMMARY
+==============================================================================
+116 checks, 116 passed, 0 failed

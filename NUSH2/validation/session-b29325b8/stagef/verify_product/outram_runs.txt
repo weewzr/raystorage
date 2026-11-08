@@ -1,0 +1,50 @@
+ 105 tokens  mea\src\aronu.rs  <-  outram-park-backend\crates\tampines-steam-tables\src\interfaces\tests_and_examples\pt_flash_steam_table\region_5_high_temp_100_bar_and_below.rs
+      N , N , N , N , N , N , N , N , N ] , [ N , N , N , N , N , N , N , N , N , ] , [ N , N , N , N , N , N , N , N , N , ] , [ N , N , N , N , N , N , N , N , N , ] , [ N , N , N , N , N , N , N , N , N , ] , ] ;
+ 103 tokens  wasm\src\registry.rs  <-  outram-park-backend\crates\buangkok\src\pydoseia\config.rs
+      & [ ( S , S , ) , ( S , S , ) , ( S , S , ) , ( S , S , ) , ( S , S , ) , ( S , S , ) , ( S , S , ) , ( S , S , ) , ( S , S ) , ( S , S ) , ( S , S ) , ( S , S , ) , ( S , S ) , ( S , S , ) , ( S , S , ) ,
+  93 tokens  props\src\species.rs  <-  outram-park-backend\crates\tampines-steam-tables\examples\tampines-steam-tables-gui\reference_data\moody.rs
+      N , points : & [ ( N , N ) , ( N , N ) , ( N , N ) , ( N , N ) , ( N , N ) , ( N , N ) , ( N , N ) , ( N , N ) , ( N , N ) , ( N , N ) , ( N , N ) , ( N , N ) , ( N , N ) , ( N , N ) , ] , }
+  87 tokens  mea\src\solve.rs  <-  outram-park-backend\crates\outram-park-fork-offbeat\src\rheology\aster\integration.rs
+      - N ) * ( s - N ) ; } if p > N { q = - q ; } else { p = - p ; } if N * p < ( N * m * q - ( tol * q ) . abs ( ) ) . min ( ( e * q ) . abs ( ) ) { e = d ; d = p / q ; } else { d = m ; e = m ;
+  78 tokens  plant\tests\no_internal_pointers.rs  <-  outram-park-backend\crates\boon-lay\tests\triso_atops_upstream_run_file.rs
+      : [ & str ; N ] = [ S , S , S , S , S , S , S , S , S , S , S , S , S , S , S , S , S , S , S , S , S , S , S , S , S , S , S , S , S , S , S , S , S , ] ; fn
+  74 tokens  plant\src\anchored.rs  <-  outram-park-backend\crates\boon-lay\src\fuel_failure\history.rs
+      : [ ( & str , f64 , f64 ) ; N ] = [ ( S , N , N ) , ( S , N , N ) , ( S , N , N ) , ( S , N , N ) , ( S , N , N ) , ( S , N , N ) , ( S , N , N ) , ( S ,
+  68 tokens  units\src\absorber.rs  <-  outram-park-backend\crates\outram-blender\src\unstructured\geometry.rs
+      fn add ( a : [ f64 ; N ] , b : [ f64 ; N ] ) -> [ f64 ; N ] { [ a [ N ] + b [ N ] , a [ N ] + b [ N ] , a [ N ] + b [ N ] , a [ N ] + b [ N ] ] }
+  63 tokens  wasm\src\tests.rs  <-  outram-park-backend\crates\boon-lay\src\triso_atops_fork\run_file\upstream.rs
+      ; const REQUIRED : [ & str ; N ] = [ S , S , S , S , S , S , S , S , S , S , S , S , S , S , S , S , S , S , S , S , S , S , S , S , ] ; const
+  59 tokens  units\src\solve.rs  <-  outram-park-backend\crates\outram-park-fork-offbeat\src\rheology\aster\integration.rs
+      { c = a ; fc = fa ; d = b - a ; e = d ; } if fc . abs ( ) < fb . abs ( ) { a = b ; b = c ; c = a ; fa = fb ; fb = fc ; fc = fa ; } let
+  58 tokens  plant\tests\m8_level4.rs  <-  outram-park-backend\crates\boon-lay\src\triso_atops_fork\run_selection\mod.rs
+      , want ) in [ ( S , S ) , ( S , S ) , ( S , S ) , ( S , S ) , ( S , S ) , ( S , S ) , ( S , S ) , ( S , S ) , ] { assert_eq ! (
+  54 tokens  vv\tests\benchmark_rows.rs  <-  outram-park-backend\crates\kovan-literature\src\zotero\translators\citavi5_xml.rs
+      ) in [ ( S , S ) , ( S , S ) , ( S , S ) , ( S , S ) , ( S , S ) , ( S , S ) , ( S , S ) , ( S , S ) , ] { let
+  46 tokens  plant\src\drift.rs  <-  outram-park-backend\crates\kovan-metrics\src\zotero\import_report.rs
+      | n S | - - - | - - - | - - - | - - - | - - - | - - - | - - - | - - - | - - - | - - - | n S
+  44 tokens  units\src\bench\columns.rs  <-  outram-park-backend\crates\dhoby-ghaut\examples\common\htr10_beds.rs
+      = Vec :: new ( ) ; for ( i , line ) in text . lines ( ) . enumerate ( ) . skip ( N ) { if line . trim ( ) . is_empty ( ) { continue ; } let
+  44 tokens  vv\src\fixture.rs  <-  outram-park-backend\crates\dhoby-ghaut\examples\common\htr10_beds.rs
+      = Vec :: new ( ) ; for ( i , line ) in text . lines ( ) . enumerate ( ) . skip ( N ) { if line . trim ( ) . is_empty ( ) { continue ; } let
+  42 tokens  vv\src\bench.rs  <-  outram-park-backend\crates\njoy-outram-park-fork\tests\acer_thermal_ifeng_vs_njoy2016.rs
+      line . trim ( ) . is_empty ( ) { continue ; } let f : Vec < & str > = line . split ( , ) . collect ( ) ; if f . len ( ) != N {
+  41 tokens  props\src\shomate.rs  <-  outram-park-backend\crates\outram-blender\src\csg\surface\quadric.rs
+      { pub a : f64 , pub b : f64 , pub c : f64 , pub d : f64 , pub e : f64 , pub f : f64 , pub g : f64 , pub h : f64 ,
+  40 tokens  units\src\wgs.rs  <-  outram-park-backend\crates\nee_soon\src\httr\spec.rs
+      : [ f64 ; N ] = [ N , N , N , N , N , N , N ] ; # [ derive ( Debug , Clone , Copy , PartialEq , Eq ) ] pub enum
+  40 tokens  mea\tests\common\mod.rs  <-  outram-park-backend\crates\boon-lay\tests\mhtgr_stoyer_workflow.rs
+      ) ; let mut lines = text . lines ( ) . filter ( | l | ! l . starts_with ( # ) ) ; let header : Vec < String > = lines . next ( ) .
+  40 tokens  plant\src\export.rs  <-  outram-park-backend\crates\changi\src\activity\primary_helium.rs
+      ( & [ S , S , S , S , S , S , S , S , S , S , S , S , S , S , S , S , S , ] ) ;
+  39 tokens  wasm\src\solve.rs  <-  outram-park-backend\crates\outram-park-digital-twin-engine\examples\ciet_web\main.rs
+      : [ & str ; N ] = [ S , S , S , S , S , S , S , S , S , S , S , S , S , ] ; pub struct
+  39 tokens  plant\src\params.rs  <-  outram-park-backend\crates\outram-foam-basic-lib\src\io\dict.rs
+      ) } pub fn len ( & self ) -> usize { self . entries . len ( ) } pub fn is_empty ( & self ) -> bool { self . entries . is_empty ( ) } }
+  38 tokens  mea\src\validation.rs  <-  outram-park-backend\crates\outram-mc-libs\src\model\report\mod.rs
+      ( s : & str ) -> String { if s . contains ( [ , , S S , s . replace ( S S ) ) } else { s . to_string ( ) } }
+  38 tokens  vv\tests\concept_checks.rs  <-  outram-park-backend\crates\kovan\src\site_search.rs
+      . path ( ) ; if p . is_dir ( ) { stack . push ( p ) ; } else if p . extension ( ) . is_some_and ( | x | x == S ) {
+  36 tokens  mea\src\kinetics.rs  <-  outram-park-backend\crates\kovan-codegen\src\nonlinear\mod.rs
+      , N , N , N ) . unwrap ( ) ; assert ! ( ( r - N ) . abs ( ) < N , S ) ; } # [ test ] fn
+  34 tokens  numerics\src\lib.rs  <-  outram-park-backend\crates\kovan-literature\src\citeproc\mod.rs
+      impl fmt :: Display for EngineError { fn fmt ( & self , f : & mut fmt :: Formatter < _ > ) -> fmt :: Result { match self { EngineError ::

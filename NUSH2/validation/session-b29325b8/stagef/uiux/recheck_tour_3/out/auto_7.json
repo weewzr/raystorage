@@ -1,0 +1,2231 @@
+[
+ {
+  "size": "375x812m",
+  "path": "start_mouse",
+  "target": "none",
+  "stepped": true,
+  "steps": [
+   [
+    "primary",
+    4525
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 571,
+  "max0": 3857,
+  "max1": 3585,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "start_mouse",
+  "target": "card",
+  "stepped": true,
+  "steps": [
+   [
+    "secondary",
+    1889
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "dl.tour-figs"
+  },
+  "hold": {
+   "win": [
+    23.7,
+    "#tour-body",
+    1
+   ]
+  },
+  "y0": 1159,
+  "max0": 3585,
+  "max1": 5438,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "start_mouse",
+  "target": "drawing",
+  "stepped": true,
+  "steps": [
+   [
+    "feed",
+    1067
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 665,
+  "max0": 5438,
+  "max1": 5453,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "start_mouse",
+  "target": "panel",
+  "stepped": true,
+  "steps": [
+   [
+    "shift",
+    1279
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": -116,
+  "dside": 0,
+  "ref": {
+   "win": "span.p-label"
+  },
+  "hold": {
+   "win": [
+    -0.9,
+    "#pfd-panel",
+    4
+   ]
+  },
+  "y0": 1987,
+  "max0": 5453,
+  "max1": 3823,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "start_mouse",
+  "target": "bottom",
+  "stepped": true,
+  "steps": [
+   [
+    "cooling",
+    1092
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": -650,
+  "dside": 0,
+  "ref": {
+   "win": "li."
+  },
+  "hold": {
+   "win": [
+    614.1,
+    "#pfd-panel",
+    6
+   ]
+  },
+  "y0": 3823,
+  "max0": 3823,
+  "max1": 3173,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "start_mouse",
+  "target": "top",
+  "stepped": true,
+  "steps": [
+   [
+    "absorber",
+    1942
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "p.lede"
+  },
+  "hold": {
+   "win": [
+    0,
+    "p.lede",
+    0
+   ]
+  },
+  "y0": 0,
+  "max0": 3173,
+  "max1": 4470,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "start_mouse",
+  "target": "mid",
+  "stepped": true,
+  "steps": [
+   [
+    "psa",
+    1579
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "text.t"
+  },
+  "hold": {
+   "win": [
+    0,
+    "text.t",
+    0
+   ]
+  },
+  "y0": 300,
+  "max0": 4470,
+  "max1": 2868,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "start_mouse",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:53706"
+   ],
+   "network": []
+  }
+ },
+ {
+  "size": "375x812m",
+  "path": "start_key",
+  "target": "none",
+  "stepped": true,
+  "steps": [
+   [
+    "primary",
+    3819
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 571,
+  "max0": 3857,
+  "max1": 3585,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "start_key",
+  "target": "card",
+  "stepped": true,
+  "steps": [
+   [
+    "secondary",
+    1370
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "dl.tour-figs"
+  },
+  "hold": {
+   "win": [
+    23.7,
+    "#tour-body",
+    1
+   ]
+  },
+  "y0": 1159,
+  "max0": 3585,
+  "max1": 5438,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "start_key",
+  "target": "drawing",
+  "stepped": true,
+  "steps": [
+   [
+    "feed",
+    1227
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 665,
+  "max0": 5438,
+  "max1": 5453,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "start_key",
+  "target": "panel",
+  "stepped": true,
+  "steps": [
+   [
+    "shift",
+    1711
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": -116,
+  "dside": 0,
+  "ref": {
+   "win": "span.p-label"
+  },
+  "hold": {
+   "win": [
+    -0.9,
+    "#pfd-panel",
+    4
+   ]
+  },
+  "y0": 1987,
+  "max0": 5453,
+  "max1": 3823,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "start_key",
+  "target": "bottom",
+  "stepped": true,
+  "steps": [
+   [
+    "cooling",
+    1304
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": -650,
+  "dside": 0,
+  "ref": {
+   "win": "li."
+  },
+  "hold": {
+   "win": [
+    614.1,
+    "#pfd-panel",
+    6
+   ]
+  },
+  "y0": 3823,
+  "max0": 3823,
+  "max1": 3173,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "start_key",
+  "target": "top",
+  "stepped": true,
+  "steps": [
+   [
+    "absorber",
+    2291
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "p.lede"
+  },
+  "hold": {
+   "win": [
+    0,
+    "p.lede",
+    0
+   ]
+  },
+  "y0": 0,
+  "max0": 3173,
+  "max1": 4470,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "start_key",
+  "target": "mid",
+  "stepped": true,
+  "steps": [
+   [
+    "psa",
+    1888
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "text.t"
+  },
+  "hold": {
+   "win": [
+    0,
+    "text.t",
+    0
+   ]
+  },
+  "y0": 300,
+  "max0": 4470,
+  "max1": 2868,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "start_key",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:57213"
+   ],
+   "network": []
+  }
+ },
+ {
+  "size": "375x812m",
+  "path": "play_mouse",
+  "target": "none",
+  "stepped": true,
+  "steps": [
+   [
+    "primary",
+    1646
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 571,
+  "max0": 3857,
+  "max1": 3585,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "play_mouse",
+  "target": "card",
+  "stepped": true,
+  "steps": [
+   [
+    "secondary",
+    1979
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "dl.tour-figs"
+  },
+  "hold": {
+   "win": [
+    23.7,
+    "#tour-body",
+    1
+   ]
+  },
+  "y0": 1159,
+  "max0": 3585,
+  "max1": 5438,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "play_mouse",
+  "target": "drawing",
+  "stepped": true,
+  "steps": [
+   [
+    "feed",
+    1270
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 665,
+  "max0": 5438,
+  "max1": 5453,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "play_mouse",
+  "target": "panel",
+  "stepped": true,
+  "steps": [
+   [
+    "shift",
+    1429
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": -116,
+  "dside": 0,
+  "ref": {
+   "win": "span.p-label"
+  },
+  "hold": {
+   "win": [
+    -0.9,
+    "#pfd-panel",
+    4
+   ]
+  },
+  "y0": 1987,
+  "max0": 5453,
+  "max1": 3823,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "play_mouse",
+  "target": "bottom",
+  "stepped": true,
+  "steps": [
+   [
+    "cooling",
+    1735
+   ],
+   [
+    "absorber",
+    2466
+   ]
+  ],
+  "auto": 2,
+  "calls": [],
+  "drawing_calls": 2,
+  "other_calls": [],
+  "dy": -675,
+  "dside": 0,
+  "ref": {
+   "win": "li."
+  },
+  "hold": {
+   "win": [
+    614.3,
+    "#pfd-panel",
+    6
+   ]
+  },
+  "y0": 3823,
+  "max0": 3823,
+  "max1": 4470,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "play_mouse",
+  "target": "top",
+  "stepped": true,
+  "steps": [
+   [
+    "psa",
+    1351
+   ],
+   [
+    "reject",
+    7552
+   ]
+  ],
+  "auto": 2,
+  "calls": [],
+  "drawing_calls": 2,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "p.lede"
+  },
+  "hold": {
+   "win": [
+    0,
+    "p.lede",
+    0
+   ]
+  },
+  "y0": 0,
+  "max0": 4470,
+  "max1": 3840,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "play_mouse",
+  "target": "mid",
+  "stepped": true,
+  "steps": [
+   [
+    "stripper",
+    1762
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "text.t"
+  },
+  "hold": {
+   "win": [
+    0,
+    "text.t",
+    0
+   ]
+  },
+  "y0": 300,
+  "max0": 3840,
+  "max1": 3402,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "play_mouse",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:63692"
+   ],
+   "network": []
+  }
+ },
+ {
+  "size": "375x812m",
+  "path": "play_space",
+  "target": "none",
+  "stepped": true,
+  "steps": [
+   [
+    "primary",
+    1699
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 571,
+  "max0": 3857,
+  "max1": 3585,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "play_space",
+  "target": "card",
+  "stepped": true,
+  "steps": [
+   [
+    "secondary",
+    1451
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "dl.tour-figs"
+  },
+  "hold": {
+   "win": [
+    23.7,
+    "#tour-body",
+    1
+   ]
+  },
+  "y0": 1159,
+  "max0": 3585,
+  "max1": 5438,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "play_space",
+  "target": "drawing",
+  "stepped": true,
+  "steps": [
+   [
+    "feed",
+    1249
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 665,
+  "max0": 5438,
+  "max1": 5453,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "play_space",
+  "target": "panel",
+  "stepped": true,
+  "steps": [
+   [
+    "shift",
+    1293
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": -116,
+  "dside": 0,
+  "ref": {
+   "win": "span.p-label"
+  },
+  "hold": {
+   "win": [
+    -0.9,
+    "#pfd-panel",
+    4
+   ]
+  },
+  "y0": 1987,
+  "max0": 5453,
+  "max1": 3823,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "play_space",
+  "target": "bottom",
+  "stepped": true,
+  "steps": [
+   [
+    "cooling",
+    1346
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": -650,
+  "dside": 0,
+  "ref": {
+   "win": "li."
+  },
+  "hold": {
+   "win": [
+    614.1,
+    "#pfd-panel",
+    6
+   ]
+  },
+  "y0": 3823,
+  "max0": 3823,
+  "max1": 3173,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "play_space",
+  "target": "top",
+  "stepped": true,
+  "steps": [
+   [
+    "absorber",
+    1613
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "p.lede"
+  },
+  "hold": {
+   "win": [
+    0,
+    "p.lede",
+    0
+   ]
+  },
+  "y0": 0,
+  "max0": 3173,
+  "max1": 4470,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "play_space",
+  "target": "mid",
+  "stepped": true,
+  "steps": [
+   [
+    "psa",
+    1294
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "text.t"
+  },
+  "hold": {
+   "win": [
+    0,
+    "text.t",
+    0
+   ]
+  },
+  "y0": 300,
+  "max0": 4470,
+  "max1": 2868,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "play_space",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:49681"
+   ],
+   "network": []
+  }
+ },
+ {
+  "size": "375x812m",
+  "path": "next_mouse",
+  "exception": "ConnectionError('websocket closed')"
+ },
+ {
+  "size": "375x812m",
+  "path": "next_key",
+  "target": "none",
+  "stepped": true,
+  "steps": [
+   [
+    "secondary",
+    1692
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "dl.tour-figs"
+  },
+  "hold": {
+   "win": [
+    23.7,
+    "#tour-body",
+    1
+   ]
+  },
+  "y0": 1191,
+  "max0": 3585,
+  "max1": 5438,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "next_key",
+  "target": "card",
+  "stepped": true,
+  "steps": [
+   [
+    "feed",
+    1313
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "dl.tour-figs"
+  },
+  "hold": {
+   "win": [
+    0,
+    "#tour-body",
+    1
+   ]
+  },
+  "y0": 1159,
+  "max0": 5438,
+  "max1": 5453,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "next_key",
+  "target": "drawing",
+  "stepped": true,
+  "steps": [
+   [
+    "shift",
+    1393
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 665,
+  "max0": 5453,
+  "max1": 3823,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "next_key",
+  "target": "panel",
+  "stepped": true,
+  "steps": [
+   [
+    "cooling",
+    1354
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": -36,
+  "dside": 0,
+  "ref": {
+   "win": "span.src"
+  },
+  "hold": {
+   "win": [
+    0.1,
+    "#pfd-panel",
+    5
+   ]
+  },
+  "y0": 1870,
+  "max0": 3823,
+  "max1": 3173,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "next_key",
+  "target": "bottom",
+  "stepped": true,
+  "steps": [
+   [
+    "absorber",
+    754
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": -25,
+  "dside": 0,
+  "ref": {
+   "win": "span.p-meta"
+  },
+  "hold": {
+   "win": [
+    0.2,
+    "#pfd-panel",
+    4
+   ]
+  },
+  "y0": 3173,
+  "max0": 3173,
+  "max1": 4470,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "next_key",
+  "target": "top",
+  "stepped": true,
+  "steps": [
+   [
+    "psa",
+    1327
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "p.lede"
+  },
+  "hold": {
+   "win": [
+    0,
+    "p.lede",
+    0
+   ]
+  },
+  "y0": 0,
+  "max0": 4470,
+  "max1": 2868,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "next_key",
+  "target": "mid",
+  "stepped": true,
+  "steps": [
+   [
+    "reject",
+    1299
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 300,
+  "max0": 2868,
+  "max1": 3840,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "next_key",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:54228"
+   ],
+   "network": []
+  }
+ },
+ {
+  "size": "375x812m",
+  "path": "arrow",
+  "target": "none",
+  "stepped": true,
+  "steps": [
+   [
+    "secondary",
+    2028
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 571,
+  "max0": 3585,
+  "max1": 5438,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "arrow",
+  "target": "card",
+  "stepped": true,
+  "steps": [
+   [
+    "feed",
+    1154
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "dl.tour-figs"
+  },
+  "hold": {
+   "win": [
+    0,
+    "#tour-body",
+    1
+   ]
+  },
+  "y0": 1159,
+  "max0": 5438,
+  "max1": 5453,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "arrow",
+  "target": "drawing",
+  "stepped": true,
+  "steps": [
+   [
+    "shift",
+    1426
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 665,
+  "max0": 5453,
+  "max1": 3823,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "arrow",
+  "target": "panel",
+  "stepped": true,
+  "steps": [
+   [
+    "cooling",
+    1386
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": -36,
+  "dside": 0,
+  "ref": {
+   "win": "span.src"
+  },
+  "hold": {
+   "win": [
+    0.1,
+    "#pfd-panel",
+    5
+   ]
+  },
+  "y0": 1870,
+  "max0": 3823,
+  "max1": 3173,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "arrow",
+  "target": "bottom",
+  "stepped": true,
+  "steps": [
+   [
+    "absorber",
+    1590
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": -25,
+  "dside": 0,
+  "ref": {
+   "win": "span.p-meta"
+  },
+  "hold": {
+   "win": [
+    0.2,
+    "#pfd-panel",
+    4
+   ]
+  },
+  "y0": 3173,
+  "max0": 3173,
+  "max1": 4470,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "arrow",
+  "target": "top",
+  "stepped": true,
+  "steps": [
+   [
+    "psa",
+    1997
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "p.lede"
+  },
+  "hold": {
+   "win": [
+    0,
+    "p.lede",
+    0
+   ]
+  },
+  "y0": 0,
+  "max0": 4470,
+  "max1": 2868,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "arrow",
+  "target": "mid",
+  "stepped": true,
+  "steps": [
+   [
+    "reject",
+    1441
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 300,
+  "max0": 2868,
+  "max1": 3840,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "arrow",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:50659"
+   ],
+   "network": []
+  }
+ },
+ {
+  "size": "375x812m",
+  "path": "barnext_mouse",
+  "target": "none",
+  "stepped": true,
+  "steps": [
+   [
+    "secondary",
+    2136
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 571,
+  "max0": 3585,
+  "max1": 5438,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[next]",
+   "bar button[next]"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "barnext_mouse",
+  "target": "card",
+  "stepped": true,
+  "steps": [
+   [
+    "feed",
+    959
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "dl.tour-figs"
+  },
+  "hold": {
+   "win": [
+    0,
+    "#tour-body",
+    1
+   ]
+  },
+  "y0": 1159,
+  "max0": 5438,
+  "max1": 5453,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[next]",
+   "bar button[next]"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "barnext_mouse",
+  "target": "drawing",
+  "stepped": true,
+  "steps": [
+   [
+    "shift",
+    1437
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 665,
+  "max0": 5453,
+  "max1": 3823,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[next]",
+   "bar button[next]"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "barnext_mouse",
+  "target": "panel",
+  "stepped": true,
+  "steps": [
+   [
+    "cooling",
+    1335
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": -36,
+  "dside": 0,
+  "ref": {
+   "win": "span.src"
+  },
+  "hold": {
+   "win": [
+    0.1,
+    "#pfd-panel",
+    5
+   ]
+  },
+  "y0": 1870,
+  "max0": 3823,
+  "max1": 3173,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[next]",
+   "bar button[next]"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "barnext_mouse",
+  "target": "bottom",
+  "stepped": true,
+  "steps": [
+   [
+    "absorber",
+    1308
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": -25,
+  "dside": 0,
+  "ref": {
+   "win": "span.p-meta"
+  },
+  "hold": {
+   "win": [
+    0.2,
+    "#pfd-panel",
+    4
+   ]
+  },
+  "y0": 3173,
+  "max0": 3173,
+  "max1": 4470,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[next]",
+   "bar button[next]"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "barnext_mouse",
+  "target": "top",
+  "stepped": true,
+  "steps": [
+   [
+    "psa",
+    1262
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "p.lede"
+  },
+  "hold": {
+   "win": [
+    0,
+    "p.lede",
+    0
+   ]
+  },
+  "y0": 0,
+  "max0": 4470,
+  "max1": 2868,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[next]",
+   "bar button[next]"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "barnext_mouse",
+  "target": "mid",
+  "stepped": true,
+  "steps": [
+   [
+    "reject",
+    1294
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 300,
+  "max0": 2868,
+  "max1": 3840,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[next]",
+   "bar button[next]"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "barnext_mouse",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:55468"
+   ],
+   "network": []
+  }
+ },
+ {
+  "size": "375x812m",
+  "path": "replay",
+  "target": "none",
+  "stepped": true,
+  "steps": [
+   [
+    "primary",
+    2657
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 571,
+  "max0": 3857,
+  "max1": 3585,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "replay",
+  "target": "card",
+  "stepped": true,
+  "steps": [
+   [
+    "secondary",
+    1448
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "dl.tour-figs"
+  },
+  "hold": {
+   "win": [
+    23.7,
+    "#tour-body",
+    1
+   ]
+  },
+  "y0": 1159,
+  "max0": 3585,
+  "max1": 5438,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "replay",
+  "target": "drawing",
+  "stepped": true,
+  "steps": [
+   [
+    "feed",
+    1183
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 665,
+  "max0": 5438,
+  "max1": 5453,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "replay",
+  "target": "panel",
+  "stepped": true,
+  "steps": [
+   [
+    "shift",
+    1414
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": -116,
+  "dside": 0,
+  "ref": {
+   "win": "span.p-label"
+  },
+  "hold": {
+   "win": [
+    -0.9,
+    "#pfd-panel",
+    4
+   ]
+  },
+  "y0": 1987,
+  "max0": 5453,
+  "max1": 3823,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "replay",
+  "target": "bottom",
+  "stepped": true,
+  "steps": [
+   [
+    "cooling",
+    1345
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": -650,
+  "dside": 0,
+  "ref": {
+   "win": "li."
+  },
+  "hold": {
+   "win": [
+    614.1,
+    "#pfd-panel",
+    6
+   ]
+  },
+  "y0": 3823,
+  "max0": 3823,
+  "max1": 3173,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "replay",
+  "target": "top",
+  "stepped": true,
+  "steps": [
+   [
+    "absorber",
+    1492
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "p.lede"
+  },
+  "hold": {
+   "win": [
+    0,
+    "p.lede",
+    0
+   ]
+  },
+  "y0": 0,
+  "max0": 3173,
+  "max1": 4470,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "replay",
+  "target": "mid",
+  "stepped": true,
+  "steps": [
+   [
+    "psa",
+    1353
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "text.t"
+  },
+  "hold": {
+   "win": [
+    0,
+    "text.t",
+    0
+   ]
+  },
+  "y0": 300,
+  "max0": 4470,
+  "max1": 2868,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "replay",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:50943"
+   ],
+   "network": []
+  }
+ }
+]

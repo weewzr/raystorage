@@ -1,0 +1,173 @@
+\section{A. Conservation laws}\label{sec:A}
+Every balance in this document is one statement applied to a chosen quantity: what accumulates in a control volume equals what crosses its boundary plus what is made inside. This section sets that statement down once, reduces it to the forms the engine solves, and fixes the closure tests that every unit must pass.
+
+\begin{eqcard}{A.1}{R}{General balance}
+\Stmt{\frac{d}{dt}\int_V\rho\psi\,dV+\oint_S\rho\psi\,\mathbf u\cdot\mathbf n\,dS=-\oint_S\mathbf j_\psi\cdot\mathbf n\,dS+\int_V\dot s_\psi\,dV}
+\Interp{The rate of change of $\psi$ held in a fixed volume, plus what the flow carries out, equals what diffusion brings in plus what is produced inside. Picture a tank with pipes: the level changes because of the pipes and because of anything made in the tank.}
+\Deriv{Start from a material volume and apply the Reynolds transport theorem to a fixed control volume, which gives the first two terms. Split the boundary transport into a convective part and a non-convective flux $\mathbf j_\psi$. Choosing $\psi$ gives each balance used here: $\psi=1$ with $\mathbf j_\psi=0$ and $\dot s_\psi=0$ gives total mass, \Eq{A.2}. $\psi$ equal to a species mass fraction gives \Eq{A.3}. $\psi=\mathbf u$ gives momentum, \Eq{A.11}. $\psi=e+u^2/2+gz$ gives energy, \Eq{A.7}.}
+\Vars{\V{\rho}{density}{\U{kg\ m^{-3}}} \V{\psi}{conserved quantity per unit mass}{per \U{kg}} \V{\mathbf u}{velocity}{\U{m\ s^{-1}}} \V{\mathbf n}{outward unit normal}{1} \V{\mathbf j_\psi}{non-convective flux of $\psi$}{per \U{m^2\ s}} \V{\dot s_\psi}{volumetric source of $\psi$}{per \U{m^3\ s}} \V{V}{control volume}{\U{m^3}} \V{S}{control surface}{\U{m^2}}}
+\Assume{Continuum. Fixed control volume.}
+\Source{\tagT{} Bird, Stewart and Lightfoot \cite{BSL2002}, ch 3, 11, 19.}
+\Impl{Theory, no code. Parent of \Eq{A.2}, \Eq{A.3}, \Eq{A.7} and \Eq{A.11}.}
+\Valid{ID}{eq_a_01}{The reduction in the working above is the identity. Each child equation carries its own test.}
+\end{eqcard}
+
+\begin{eqcard}{A.2}{R}{Total mass}
+\Stmt{\frac{dM}{dt}=\sum_{in}\dot m-\sum_{out}\dot m,\qquad\text{steady state: }\sum_{in}\dot m=\sum_{out}\dot m}
+\Interp{Mass in equals mass out once nothing accumulates. It is the first test a stream table must pass.}
+\Deriv{Set $\psi=1$, $\mathbf j_\psi=0$ and $\dot s_\psi=0$ in \Eq{A.1}. The volume integral becomes $dM/dt$. The surface integral becomes a sum over the openings of $\rho\mathbf u\cdot\mathbf n\,A$, which is the mass flow with its sign.}
+\Vars{\V{M}{mass held in the control volume}{\U{kg}} \V{\dot m}{mass flow of a stream}{\U{kg\ s^{-1}}}}
+\Assume{None beyond \Eq{A.1}.}
+\Source{\tagT{} As \Eq{A.1}.}
+\Impl{\fn{plant::flowsheet::check_mass}}
+\Valid{ID, PUB}{eq_a_02}{Computed here on INL Case 5, TEV-961 \cite{TEV961} A-56, PDF p.~80: 223{,}172 lb/h into the Selexol block equals 58{,}787 plus 164{,}385 lb/h out, exact to the printed digit.}
+\end{eqcard}
+
+\begin{eqcard}{A.3}{R}{Component balance}
+\Stmt{\frac{dn_i}{dt}=\sum_{in}F_i-\sum_{out}F_i+\int_VR_i\,dV}
+\Interp{Moles of a species change through flow and through reaction. Reaction is what separates this from \Eq{A.2}: a species can appear or vanish while atoms stay fixed.}
+\Deriv{Put $\psi$ equal to the mass fraction of species $i$ in \Eq{A.1}, with $\dot s_\psi$ the mass rate of production. Divide by the molar mass and let the control surface sit where diffusive flux is small against convection, so the flux term drops at the openings.}
+\Vars{\V{n_i}{moles of species $i$ held}{\U{mol}} \V{F_i}{molar flow of species $i$}{\U{mol\ s^{-1}}} \V{R_i}{volumetric production rate of $i$}{\U{mol\ m^{-3}\ s^{-1}}}}
+\Assume{A well defined control volume. Diffusion across the openings is negligible.}
+\Source{\tagT{} As \Eq{A.1}.}
+\Impl{\fn{plant::flowsheet::check_species}}
+\Valid{ID}{eq_a_03}{Unit test on species residuals of each reactor.}
+\end{eqcard}
+
+\begin{eqcard}{A.4}{R}{Source term}
+\Stmt{R_i=\sum_j\nu_{ij}r_j,\qquad\text{catalytic: }R_i=\rho_B\sum_j\nu_{ij}\eta_j^{cat}r_j}
+\Interp{Each reaction contributes to a species in proportion to its stoichiometric coefficient. In a packed bed the rate is carried per kilogram of catalyst, so the bed density turns it into a rate per unit of reactor volume, and the effectiveness factor corrects it for diffusion inside the pellet.}
+\Deriv{One event of reaction $j$ changes species $i$ by $\nu_{ij}$ moles, so summing over reactions gives the first form with $r_j$ per unit volume. For a bed, $\rho_B\,dV$ is the catalyst mass in $dV$, and the observed rate is $\eta_j^{cat}r_j$ evaluated at bulk conditions, which gives the second form.}
+\Vars{\V{\nu_{ij}}{stoichiometric coefficient of $i$ in reaction $j$}{1} \V{r_j}{rate of reaction $j$}{\U{mol\ m^{-3}\ s^{-1}}, or \U{mol\ kg^{-1}\ s^{-1}} per mass of catalyst} \V{\rho_B}{catalyst bed density}{\U{kg\ m^{-3}}} \V{\eta_j^{cat}}{effectiveness factor of reaction $j$}{1}}
+\Assume{Rates do not depend on the size of the control volume.}
+\Source{\tagT{} Fogler \cite{Fogler}. \tagP{} Xu and Froment Part II \cite{XF2}, Eq 10a, 10b, PDF p.~3.}
+\Impl{\fn{units::xf::rates}; \fn{units::wgs::rate}}
+\Valid{ID}{eq_a_04}{Species rates from \Eq{D.19} equal the stoichiometric sum.}
+\end{eqcard}
+
+\begin{eqcard}{A.5}{R}{Element balance}
+\Stmt{\sum_ia_{ki}\left(F_{i,out}-F_{i,in}\right)=0,\qquad\mathbf a\boldsymbol\nu=0}
+\Interp{Atoms survive every chemical reaction. A stream table that loses carbon has an error, whatever the kinetics say.}
+\Deriv{Multiply the steady form of \Eq{A.3} by $a_{ki}$ and sum over species. The source becomes $\int_V\sum_jr_j\sum_ia_{ki}\nu_{ij}\,dV$. Each reaction conserves atoms, so $\sum_ia_{ki}\nu_{ij}=0$ for every $j$, which is the matrix condition, and the source vanishes.}
+\Vars{\V{a_{ki}}{atoms of element $k$ per molecule of $i$}{1} \V{\mathbf a}{element by species matrix}{1} \V{\boldsymbol\nu}{species by reaction matrix}{1}}
+\Assume{No nuclear change in the process streams.}
+\Source{\tagT{} As \Eq{A.1}.}
+\Impl{\fn{plant::flowsheet::check_elements}}
+\Valid{ID, PUB}{eq_a_05}{Target: carbon closure of 99.4 to 99.9\% across the eight INL cases. The worked example below closes the Case B carbon balance.}
+\end{eqcard}
+
+\begin{eqcard}{A.6}{R}{Independent reactions}
+\Stmt{N_r=N_s-\mathrm{rank}(\mathbf a)}
+\Interp{Only this many reactions can be set independently. The rest are sums of those, so their equilibrium constants are products and carry no new information.}
+\Deriv{Allowed changes of composition form the null space of $\mathbf a$, and rank plus nullity equals the number of species. For the reformer the species are CH$_4$, H$_2$O, CO, CO$_2$ and H$_2$ with elements C, H and O, so $N_s=5$, the rank computed here is \cRankRef{} and $N_r=2$. That is why $K_3=K_1K_2$ in \Eq{D.9}. For aqueous MEA, with MEA, MEAH$^+$, MEACOO$^-$, CO$_2$, HCO$_3^-$, CO$_3^{2-}$, H$_2$O, H$_3$O$^+$ and OH$^-$, charge joins the rows of $\mathbf a$. The rank computed here is \cRankMea, because four moieties span the set, so $N_r=5$.}
+\Vars{\V{N_r}{number of independent reactions}{1} \V{N_s}{number of species}{1}}
+\Assume{A closed list of species.}
+\Source{\tagT{} As \Eq{A.1}. Aronu PDF p.~4 prints ``four'' and lists five reactions. Section M records this.}
+\Impl{\fn{plant::flowsheet::reaction_rank}}
+\Valid{ID}{eq_a_06}{Rank by exact arithmetic on the two matrices above, computed here and to be repeated in the test.}
+\end{eqcard}
+
+\begin{eqcard}{A.7}{R}{First law}
+\Stmt{\frac{dE}{dt}=\dot Q-\dot W_{sh}+\sum_{in}\dot m\left(h+\frac{u^2}{2}+gz\right)-\sum_{out}\dot m\left(h+\frac{u^2}{2}+gz\right)}
+\Interp{Stored energy changes through heat, shaft work and the energy each stream carries. Enthalpy appears in place of internal energy because a stream also does flow work at its boundary.}
+\Deriv{Set $\psi=e+u^2/2+gz$ in \Eq{A.1}. The stress work at the openings is $\dot m\,p/\rho$, and adding it to the internal energy of the stream gives $h=e+p/\rho$. What remains on the boundary is $\dot Q$, and the moving parts inside supply $\dot W_{sh}$.}
+\Vars{\V{E}{energy held in the control volume}{\U{J}} \V{\dot Q}{heat into the control volume}{\U{W}} \V{\dot W_{sh}}{shaft work out of the control volume}{\U{W}} \V{h}{specific enthalpy}{\U{J\ kg^{-1}}} \V{u}{velocity magnitude}{\U{m\ s^{-1}}} \V{g}{gravity}{\U{m\ s^{-2}}} \V{z}{elevation}{\U{m}}}
+\Assume{None beyond \Eq{A.1}.}
+\Source{\tagT{} As \Eq{A.1}.}
+\Impl{Theory, no code. Parent of \Eq{A.8}.}
+\Valid{ID}{eq_a_07}{Reduction to \Eq{A.8} shown on that card.}
+\end{eqcard}
+
+\begin{eqcard}{A.8}{R}{Enthalpy balance}
+\Stmt{\sum_{out}F_ih_i-\sum_{in}F_ih_i=\dot Q-\dot W_{sh}}
+\Interp{Each unit in the plant closes on this line. Because $h_i$ is on a formation basis, the heat of reaction needs no separate term: it shows up as the difference between what comes out and what goes in.}
+\Deriv{Set $dE/dt=0$ in \Eq{A.7}, drop the kinetic and potential terms, and write the mass flows as molar flows over each species.}
+\Vars{\V{h_i}{molar enthalpy of species $i$, formation basis}{\U{J\ mol^{-1}}}}
+\Assume{SS, NKE.}
+\Source{\tagT{} As \Eq{A.1}.}
+\Impl{\fn{plant::flowsheet::check_energy}}
+\Valid{ID}{eq_a_08}{Residual inside the limit of \Eq{A.15}.}
+\end{eqcard}
+
+\begin{eqcard}{A.9}{E}{Species enthalpy}
+\Stmt{h_i(T)=\Delta_fh_i^\circ+\int_{T_{ref}}^Tc_{p,i}\,dT,\qquad c_{p,i}=A+Bt+Ct^2+Dt^3+\frac{E_S}{t^2},\quad t=\frac{T}{1000}}
+\Interp{A species holds its formation enthalpy at the reference state plus the sensible heat taken up on the way to $T$.}
+\Deriv{The form is Hoseinzade and Adams Eq 28, 29, PDF p.~6. The Shomate polynomial integrates to $h_i-h_i(T_{ref})=At+Bt^2/2+Ct^3/3+Dt^4/4-E_S/t+F-H$ in \U{kJ\ mol^{-1}}. Coefficients come from the NIST Chemistry WebBook gas phase tables \cite{NIST69}, read on 2 November 2026. The ranges in K are CH$_4$ 298 to 1300, CO 298 to 1300, CO$_2$ 298 to 1200 and 1200 to 6000, H$_2$ 298 to 1000 and 1000 to 2500, H$_2$O 500 to 1700 and N$_2$ 500 to 2000. The H$_2$O and N$_2$ rows used here do not reach below 500 K.}
+\Vars{\V{\Delta_fh_i^\circ}{standard enthalpy of formation}{\U{J\ mol^{-1}}} \V{c_{p,i}}{molar heat capacity of species $i$}{\U{J\ mol^{-1}\ K^{-1}}} \V{T}{temperature}{\U{K}} \V{T_{ref}}{reference temperature, 298.15}{\U{K}} \V{t}{temperature over 1000}{1} \V{A,B,C,D,E_S,F,H}{Shomate coefficients}{mixed, per NIST}}
+\Assume{Ideal gas mixture, so mixing adds no enthalpy.}
+\Source{\tagP{} Form from Hoseinzade and Adams \cite{HA}, Eq 28, 29, PDF p.~6. Coefficients \tagM{6}: absent from the library, read from NIST \cite{NIST69}, listed there as Chase 1998.}
+\Impl{\fn{props::shomate::h_i}; \fn{props::shomate::cp_i}}
+\Valid{PUB}{eq_a_09}{Target: JANAF tables at 700 and 1144 K within 0.2\%.}
+\end{eqcard}
+
+\begin{eqcard}{A.10}{R}{Hess law}
+\Stmt{\Delta_rh_j(T)=\sum_i\nu_{ij}h_i(T)}
+\Interp{The heat of a reaction at any temperature is the enthalpy of its products less that of its reactants, on a common basis. It shifts with $T$ because products and reactants have different heat capacities.}
+\Deriv{Apply \Eq{A.8} to one event of reaction $j$ at constant temperature, with no shaft work. Substitute \Eq{A.9} to carry the result to any $T$.}
+\Vars{\V{\Delta_rh_j}{enthalpy of reaction $j$}{\U{J\ mol^{-1}}}}
+\Assume{As \Eq{A.9}.}
+\Source{\tagT{} Textbook result. \tagP{} Values in Xu and Froment Part I \cite{XF1}, Table 7, PDF p.~8.}
+\Impl{\fn{props::shomate::dh_rxn}}
+\Valid{PUB}{eq_a_10}{XF1 Table 7 prints 206.1, -41.15 and 164.9 \U{kJ\ mol^{-1}} at 298 K, and 224.0, -37.3 and 187.5 at 948 K, for reactions I, II and III. Computed here at 298 K from formation values: \cDhRoomOne, \cDhRoomTwo{} and \cDhRoomThree. Computed here at 948 K from Shomate: \cDhNineOne, \cDhNineTwo{} and \cDhNineThree. The largest gap at 948 K is \cDhGapMax{} \U{kJ\ mol^{-1}}, inside the target of 2.5, and the Shomate values are the ones the plant uses.}
+\end{eqcard}
+
+\begin{eqcard}{A.11}{R}{Momentum in a channel}
+\Stmt{\frac{dp}{dz}=-\rho u\frac{du}{dz}-\frac{f_D}{D}\frac{\rho u^2}{2}-\rho g\sin\theta}
+\Interp{Wall drag usually dominates the pressure loss along a channel. Acceleration of the gas and lift against gravity make up the rest, and both are small in these loops.}
+\Deriv{Write \Eq{A.1} with $\psi=u$ on a slice $A\,dz$ at steady state. The pressure force per unit volume is $-dp/dz$, the convective term is $\rho u\,du/dz$, gravity gives $\rho g\sin\theta$, and the wall shear $\tau_w\,\pi D/A=4\tau_w/D$ is written with the Darcy factor as $f_D\rho u^2/(2D)$.}
+\Vars{\V{p}{pressure}{\U{Pa}} \V{f_D}{Darcy friction factor}{1} \V{D}{hydraulic diameter}{\U{m}} \V{\theta}{channel inclination}{rad}}
+\Assume{1D, SS.}
+\Source{\tagT{} As \Eq{A.1}.}
+\Impl{\fn{props::transport::dp_dz}}
+\Valid{ID}{eq_a_11}{The acceleration and gravity terms vanish for a level channel at constant speed, leaving the Darcy form used in \Eq{C.16}.}
+\end{eqcard}
+
+\begin{eqcard}{A.12}{E}{Packed bed pressure drop}
+\Stmt{-\frac{dp}{dz}=\frac{G}{\rho D_p}\,\frac{1-\varepsilon_b}{\varepsilon_b^3}\left[\frac{150(1-\varepsilon_b)\mu}{D_p}+1.75G\right]}
+\Interp{Gas forcing through catalyst pays a viscous term, which grows with flow, and an inertial term, which grows with flow squared. Porosity enters strongly, so a small change in packing moves the pressure drop a long way.}
+\Deriv{Ergun 1952, the friction law named in Xu and Froment Part II, PDF p.~4, for their Eq 10d. In factor form it is $f=\frac{1-\varepsilon_b}{\varepsilon_b^3}[150(1-\varepsilon_b)/Re+1.75]$ with $Re=D_pG/\mu$ and $-dp/dz=fG^2/(\rho D_p)$, which rearranges to the statement. Hoseinzade and Adams write it with a positive sign because their $z$ runs against the flow. Do not copy Yin Eq 15, which defines the diameter as the tube diameter and drops $(1-\varepsilon_b)$ from the viscous term.}
+\Vars{\V{G}{superficial mass velocity}{\U{kg\ m^{-2}\ s^{-1}}} \V{D_p}{particle diameter}{\U{m}} \V{\varepsilon_b}{bed porosity}{1} \V{\mu}{gas viscosity}{\U{Pa\ s}}}
+\Assume{Friction dominates the momentum balance, so acceleration is dropped.}
+\Source{\tagP{} Hoseinzade and Adams \cite{HA}, Eq 26, PDF p.~5. Xu and Froment Part II \cite{XF2}, Eq 10d, PDF p.~4.}
+\Impl{\fn{units::smr_tube::ergun}; \fn{units::wgs::ergun}}
+\Valid{EXP}{eq_a_12}{Target given on \Eq{D.26}, the measured process drop of the JAERI tube.}
+\end{eqcard}
+
+\begin{eqcard}{A.13}{R}{Plug-flow reduction}
+\Stmt{\frac{dF_i}{dz}=A_cR_i,\qquad\sum_iF_ic_{p,i}\frac{dT}{dz}=\dot q'+A_c\sum_j\left(-\Delta_rh_j\right)r_j}
+\Interp{Move along a tube in slices. Each slice changes composition through reaction, and its temperature changes with wall heat plus the heat released by reaction, shared across the heat capacity of the flow.}
+\Deriv{Apply \Eq{A.3} at steady state to the slice $A_c\,dz$, which gives $dF_i/dz=A_cR_i$. Apply \Eq{A.8} to the same slice with heat $\dot q'dz$: $\frac{d}{dz}\sum_iF_ih_i=\dot q'$. Expand the derivative as $\sum_ih_idF_i/dz+\sum_iF_ic_{p,i}dT/dz$. Substitute the species result and \Eq{A.4}, so $\sum_ih_iA_c\sum_j\nu_{ij}r_j=A_c\sum_jr_j\Delta_rh_j$ by \Eq{A.10}. Moving it to the right gives the statement. In a bed, $r_j$ becomes $\rho_B\eta_j^{cat}r_j$.}
+\Vars{\V{A_c}{flow cross section}{\U{m^2}} \V{\dot q'}{heat into the gas per unit length}{\U{W\ m^{-1}}}}
+\Assume{SS, PF, NKE.}
+\Source{\tagT{} Fogler \cite{Fogler}.}
+\Impl{\fn{numerics::ode::ode_rhs}}
+\Valid{ID}{eq_a_13}{A long tube limit returns the equilibrium of \Eq{D.11}.}
+\end{eqcard}
+
+\begin{eqcard}{A.14}{R}{Gas closure}
+\Stmt{p_i=y_ip,\qquad c=\frac{p}{ZRT}}
+\Interp{A partial pressure is a share of the total. Concentration follows from the gas law, with $Z$ holding any departure from ideal behaviour.}
+\Deriv{Dalton's law and the definition of $Z$. Syngas at reformer conditions is taken as ideal. Helium uses the correction in \Eq{B.1}.}
+\Vars{\V{p_i}{partial pressure of $i$}{\U{Pa}} \V{y_i}{mole fraction of $i$}{1} \V{c}{molar concentration}{\U{mol\ m^{-3}}} \V{Z}{compressibility factor}{1} \V{R}{gas constant, 8.314462}{\U{J\ mol^{-1}\ K^{-1}}}}
+\Assume{$Z=1$ for syngas. \Eq{B.1} for helium.}
+\Source{\tagT{} As \Eq{A.1}.}
+\Impl{\fn{props::mixture::conc}}
+\Valid{ID}{eq_a_14}{Round trip between $p_i$, $y_i$ and $c$.}
+\end{eqcard}
+
+\begin{eqcard}{A.15}{F}{Closure residuals}
+\Stmt{\epsilon_m=\frac{\left|\sum_{in}\dot m-\sum_{out}\dot m\right|}{\sum_{in}\dot m},\quad\epsilon_k=\frac{\left|\sum_ia_{ki}(F_{i,out}-F_{i,in})\right|}{\sum_ia_{ki}F_{i,in}},\quad\epsilon_E=\frac{\left|\sum_{out}F_ih_i-\sum_{in}F_ih_i-\dot Q+\dot W_{sh}\right|}{\sum_{in}\left|F_ih_i\right|}}
+\Interp{These numbers say how far a result sits from obeying the laws above. Limits are $10^{-8}$ per unit and $10^{-6}$ on the flowsheet.}
+\Deriv{Fixed by the project. Solver tolerances sit below these limits, so a failure points first to a modelling error. Each residual is relative to its inlet flow, so the same limit serves every plant size.}
+\Vars{\V{\epsilon_m}{relative mass residual}{1} \V{\epsilon_k}{relative residual of element $k$}{1} \V{\epsilon_E}{relative energy residual}{1}}
+\Assume{None.}
+\Source{\tagA{} Project limits.}
+\Impl{\fn{vv::harness::closure}}
+\Valid{ID}{eq_a_15}{Evaluated on every run.}
+\end{eqcard}
+
+\subsection*{Worked example: carbon closure at Case B}
+Use \Eq{A.5} for carbon around two control volumes, in \U{kmol\ h^{-1}}. Around the whole plant, \cFeedC{} enters with the gas. Leaving are \cCapC{} captured, \cBurnC{} in the part of the tail gas that is burned and \cProdC{} in the hydrogen, which sum to the feed within rounding. Around the reformer, tube carbon is feed plus recycle: \cFeedC{} plus \cRecyC{} gives \cTubeC. Plant capture is then \cCapC{} over \cFeedC, which is \vEtaPl, the value of $\eta_{pl}$ in the Reference Frame. Recycle explains why capture relative to feed stays close to capture per pass: unconverted carbon gets a second chance at the absorber.
+
+\subsection*{Link to the sources}
+The closure of INL Case 5 at the Selexol block in \Eq{A.2}, to the printed digit, shows that the INL stream tables close as mass balances, so their stream values can serve as anchors. The Hess comparison in \Eq{A.10} shows the Shomate enthalpies sit within \cDhGapMax{} \U{kJ\ mol^{-1}} of the values Xu and Froment used.

@@ -1,0 +1,217 @@
+\section{C. Intermediate heat exchanger}\label{sec:C}
+The IHX passes reactor heat to a clean secondary loop. Its job here is hard for one reason: the secondary helium comes back at 466 C, so both ends of the exchanger run on a small temperature difference. This section takes the exchanger from energy balance to size, then checks the size against the only IHX that has operated, the HTTR unit.
+
+\begin{eqcard}{C.1}{R}{Hot side}
+\Stmt{\dot Q_h=\dot m_pc_p\left(T_{h,in}-T_{h,out}\right)}
+\Interp{Heat leaving the primary helium, read from its flow and temperature drop.}
+\Deriv{\Eq{A.8} on the hot channels with no shaft work and constant $c_p$.}
+\Vars{\V{\dot Q_h}{heat lost by the hot stream}{\U{W}} \V{T_{h,in}}{hot stream inlet}{\U{K}}}
+\Assume{SS, CP.}
+\Source{\tagT{} Consequence of \Eq{A.8}.}
+\Impl{\fn{units::ihx::hot_side}}
+\Valid{PUB}{eq_c_01}{Computed here on HTTR data in TECDOC-1382 \cite{T1382}, Table 3-23: \cHttrQh{} \U{MW} at the 30 MW set and \cHttrQhLow{} \U{MW} at the 15 MW set.}
+\end{eqcard}
+
+\begin{eqcard}{C.2}{R}{Cold side}
+\Stmt{\dot Q_c=\dot m_sc_p\left(T_{c,out}-T_{c,in}\right)}
+\Interp{Heat reaching the secondary helium, read in the same way.}
+\Deriv{\Eq{A.8} on the cold channels.}
+\Vars{\V{\dot Q_c}{heat gained by the cold stream}{\U{W}} \V{T_{c,in}}{cold stream inlet}{\U{K}} \V{T_{c,out}}{cold stream outlet}{\U{K}}}
+\Assume{SS, CP.}
+\Source{\tagT{} Consequence of \Eq{A.8}.}
+\Impl{\fn{units::ihx::cold_side}}
+\Valid{PUB}{eq_c_02}{Computed here on the same data: \cHttrQ{} and \cHttrQlow{} \U{MW}. The two sides close within \cIhxResLow\%.}
+\end{eqcard}
+
+\begin{eqcard}{C.3}{R}{Closure}
+\Stmt{\dot Q_h=\dot Q_c+\dot Q_{ihx}}
+\Interp{The two sides differ only by what the exchanger loses to its surroundings.}
+\Deriv{\Eq{A.8} on the whole exchanger, with the loss from \Eq{B.15}.}
+\Vars{\V{\dot Q_{ihx}}{IHX heat loss}{\U{W}}}
+\Assume{Loss from \Eq{B.15}.}
+\Source{\tagT{} Consequence of \Eq{A.8}.}
+\Impl{\fn{units::ihx::closure}}
+\Valid{ID}{eq_c_03}{Closure inside the limit of \Eq{A.15}.}
+\end{eqcard}
+
+\begin{eqcard}{C.4}{R}{Resistance network}
+\Stmt{\frac{1}{UA}=\frac{1}{h_{fi}A_i}+\frac{R_{f,i}}{A_i}+\frac{\ln\left(d_o/d_i\right)}{2\pi k_wLN_t}+\frac{R_{f,o}}{A_o}+\frac{1}{h_{fo}A_o}}
+\Interp{Heat crosses five barriers in series: two gas films, two fouling layers and the tube wall. As with resistors in series, the largest one controls.}
+\Deriv{Steady conduction through a cylinder gives a resistance $\ln(d_o/d_i)/(2\pi k_wL)$ per tube. Convection gives $1/(hA)$ and fouling gives $R_f/A$. The same heat crosses each one, so resistances add.}
+\Vars{\V{UA}{overall conductance}{\U{W\ K^{-1}}} \V{h_{fi}}{film coefficient, tube side}{\U{W\ m^{-2}\ K^{-1}}} \V{h_{fo}}{film coefficient, shell side}{\U{W\ m^{-2}\ K^{-1}}} \V{A_i}{inner surface area}{\U{m^2}} \V{A_o}{outer surface area}{\U{m^2}} \V{R_{f,i}}{inner fouling resistance}{\U{m^2\ K\ W^{-1}}} \V{R_{f,o}}{outer fouling resistance}{\U{m^2\ K\ W^{-1}}} \V{d_i}{tube inner diameter}{\U{m}} \V{d_o}{tube outer diameter}{\U{m}} \V{k_w}{wall conductivity}{\U{W\ m^{-1}\ K^{-1}}} \V{L}{tube length}{\U{m}} \V{N_t}{number of tubes}{1}}
+\Assume{Radial conduction.}
+\Source{\tagT{} Incropera \cite{Incropera}.}
+\Impl{\fn{units::ihx::ua_network}}
+\Valid{ID}{eq_c_04}{Unit test on the series sum.}
+\end{eqcard}
+
+\begin{eqcard}{C.5}{R}{Overall coefficient}
+\Stmt{U_o=\frac{UA}{A_o}}
+\Interp{The conductance spread over the outer area, which lets exchangers of different size be compared.}
+\Deriv{Definition, on the outer area basis.}
+\Vars{\V{U_o}{overall coefficient on outer area}{\U{W\ m^{-2}\ K^{-1}}}}
+\Assume{Outer area basis.}
+\Source{\tagT{} Incropera \cite{Incropera}.}
+\Impl{\fn{units::ihx::u_outer}}
+\Valid{EXP}{eq_c_05}{Computed here from measured HTTR temperatures and flows, on an area of 212.9 \U{m^2} derived from 96 tubes of 31.8 mm over 22.2 m: \cHttrU{} \U{W\ m^{-2}\ K^{-1}} at the 30 MW set and \cHttrULow{} at the 15 MW set.}
+\end{eqcard}
+
+\begin{eqcard}{C.6}{E}{Nusselt correlations}
+\Stmt{\begin{aligned}Nu_{out}&=0.057\,C_0Re^{0.8}Pr^{0.4}\ (800<Re\le7000),\quad0.33\,C_0Re^{0.6}Pr^{0.3}\ (7000<Re)\\Nu_{in}&=0.0228\,Re^{5/6}Pr^{0.4}\left(\frac{d}{D}\right)^{1/12}\left\{1+\frac{0.0732}{\left[Re\left(d_{in}/D_h\right)^{2.5}\right]^{1/6}}\right\}\quad\text{(turbulent)}\end{aligned}}
+\Interp{These are the helical coil correlations behind the HTTR thermal model. They would give the film coefficients of \Eq{C.4} if the shell factor were known.}
+\Deriv{Tochio and Nakagawa Eq 5, 6 and 8. Eq 6 defines $C_0=\eta_f\eta_e\eta_\theta\eta_s E$, and the paper gives no number for it, so the shell side cannot be evaluated from the paper. The nomenclature defines $D_h$ and $d_{in}$ but gives no separate meaning for $d/D$ in the turbulent form, and Eq 9 uses $D$ for a Dean number, so the group is printed as published. The fit range is helical HTTR geometry. Design therefore uses the measured conductance in \Eq{C.14}.}
+\Vars{\V{Nu_{out}}{shell-side Nusselt number}{1} \V{Nu_{in}}{tube-side Nusselt number}{1} \V{C_0}{shell-side correction factor, value not printed}{1} \V{Re}{Reynolds number}{1} \V{Pr}{Prandtl number}{1} \V{d_{in}}{tube inner diameter in the source}{\U{m}} \V{D_h}{helix diameter in the source}{\U{m}}}
+\Assume{Helical HTTR geometry.}
+\Source{\tagP{} Tochio and Nakagawa \cite{Tochio}, Eq 5, 6, 8, PDF p.~7. \tagM{15}: $C_0$ is not printed.}
+\Impl{\fn{units::ihx::nu_tochio}, disabled.}
+\Valid{NONE}{eq_c_06}{No benchmark can run without $C_0$. Design uses the conductance anchor \Eq{C.14}.}
+\end{eqcard}
+
+\begin{eqcard}{C.7}{R}{Log-mean temperature difference}
+\Stmt{\Delta T_{lm}=\frac{\Delta T_1-\Delta T_2}{\ln\left(\Delta T_1/\Delta T_2\right)}}
+\Interp{The driving difference changes along the exchanger, so an average is needed. The right average is logarithmic because the difference itself decays exponentially with area.}
+\Deriv{Along a counterflow exchanger, $d\dot Q=U\Delta T\,dA$, and each stream changes by $d\dot Q/C$, so $d(\Delta T)=-d\dot Q\,(1/C_h-1/C_c)$. Substituting the first relation gives $d(\Delta T)/\Delta T=-U\,dA\,(1/C_h-1/C_c)$. Integrating from end 1 to end 2 gives $\ln(\Delta T_2/\Delta T_1)=-UA(1/C_h-1/C_c)$. The first relation integrated over the whole duty gives $\Delta T_2-\Delta T_1=-\dot Q(1/C_h-1/C_c)$. Dividing removes the bracket and leaves $\dot Q=UA\,\Delta T_{lm}$.}
+\Vars{\V{\Delta T_{lm}}{log-mean temperature difference}{\U{K}} \V{\Delta T_1}{terminal difference at end 1}{\U{K}} \V{\Delta T_2}{terminal difference at end 2}{\U{K}} \V{U}{overall heat transfer coefficient}{\U{W\ m^{-2}\ K^{-1}}} \V{A}{heat transfer area}{\U{m^2}} \V{C_h}{hot stream capacity rate}{\U{W\ K^{-1}}} \V{C_c}{cold stream capacity rate}{\U{W\ K^{-1}}}}
+\Assume{Counterflow, constant $U$.}
+\Source{\tagT{} Incropera \cite{Incropera}.}
+\Impl{\fn{units::ihx::lmtd}}
+\Valid{ID, PUB}{eq_c_07}{Computed here for the HTTR 30 MW set, with end differences of 77 and 135 K: \cHttrLmtd{} K.}
+\end{eqcard}
+
+\begin{eqcard}{C.8}{R}{Balanced limit}
+\Stmt{\Delta T_{lm}\to\Delta T\quad\text{as}\quad\Delta T_1\to\Delta T_2=\Delta T}
+\Interp{With equal capacity rates the two temperature lines run parallel, so the difference is the same everywhere and needs no averaging.}
+\Deriv{Put $\Delta T_1=\Delta T(1+\delta)$ and $\Delta T_2=\Delta T$. Then $\ln(1+\delta)\approx\delta$ for small $\delta$, and \Eq{C.7} returns $\Delta T$. The code uses this form when the two ends agree to within rounding, because \Eq{C.7} is then zero over zero.}
+\Vars{\V{\Delta T}{local temperature difference}{\U{K}}}
+\Assume{Equal capacity rates.}
+\Source{\tagT{} Incropera \cite{Incropera}.}
+\Impl{\fn{units::ihx::lmtd}}
+\Valid{ID}{eq_c_08}{Limit test.}
+\end{eqcard}
+
+\begin{eqcard}{C.9}{R}{Effectiveness}
+\Stmt{\varepsilon_{HX}=\frac{\dot Q}{C_{min}\left(T_{h,in}-T_{c,in}\right)}}
+\Interp{The share of the thermodynamic maximum that the exchanger achieves. A value of one would need infinite area.}
+\Deriv{The stream with the smaller capacity rate sees the larger temperature change, and no stream can change by more than the inlet difference. So $C_{min}(T_{h,in}-T_{c,in})$ is the largest possible duty.}
+\Vars{\V{\varepsilon_{HX}}{exchanger effectiveness}{1} \V{C_{min}}{smaller capacity rate}{\U{W\ K^{-1}}}}
+\Assume{No loss in the definition.}
+\Source{\tagT{} Incropera \cite{Incropera}. The same definition is INL-11109 \cite{INL11109}, Eq 1, PDF p.~12.}
+\Impl{\fn{units::ihx::effectiveness}}
+\Valid{PUB}{eq_c_09}{Computed here: \cHttrEps{} for the HTTR 30 MW set and \cEpsb{} for the balanced NUS-H2 exchanger, far tighter than the measured value.}
+\end{eqcard}
+
+\begin{eqcard}{C.10}{R}{Number of transfer units}
+\Stmt{NTU=\frac{UA}{C_{min}},\qquad C^*=\frac{C_{min}}{C_{max}}}
+\Interp{$NTU$ says how large the exchanger is against the flow it serves. It measures size with the flow rate taken out.}
+\Deriv{Definitions. For a balanced exchanger with $\dot Q=UA\,\Delta T$, it follows that $NTU$ equals the stream temperature change over the approach.}
+\Vars{\V{NTU}{number of transfer units}{1} \V{C^*}{capacity ratio}{1} \V{C_{max}}{larger capacity rate}{\U{W\ K^{-1}}}}
+\Assume{None.}
+\Source{\tagT{} Incropera \cite{Incropera}.}
+\Impl{\fn{units::ihx::ntu}}
+\Valid{PUB}{eq_c_10}{Computed here: \cHttrNTU{} for HTTR, and 434 K over 25 K gives \cNTUb{} at the NUS-H2 balanced point.}
+\end{eqcard}
+
+\begin{eqcard}{C.11}{R}{Counterflow effectiveness}
+\Stmt{\varepsilon_{HX}=\frac{1-e^{-NTU\left(1-C^*\right)}}{1-C^*e^{-NTU\left(1-C^*\right)}}}
+\Interp{Given size and flows, this predicts the outlet temperatures with no iteration. The exchanger model runs on it.}
+\Deriv{Take the cold stream as $C_{min}$. The difference at the end where the hot stream enters is $\Delta T_{hot}=(T_{h,in}-T_{c,in})(1-\varepsilon_{HX})$, and at the other end it is $\Delta T_{cold}=(T_{h,in}-T_{c,in})(1-C^*\varepsilon_{HX})$. The integration in \Eq{C.7} gives $\Delta T_{hot}/\Delta T_{cold}=e^{-NTU(1-C^*)}$. Solving for $\varepsilon_{HX}$ gives the statement. Swapping the roles of the streams gives the same result.}
+\Vars{\V{\dot Q}{exchanger duty}{\U{W}}}
+\Assume{Constant $U$.}
+\Source{\tagT{} Incropera \cite{Incropera}.}
+\Impl{\fn{units::ihx::eps_ntu}}
+\Valid{EXP}{eq_c_11}{Computed here for HTTR at 30 MW, with 828 and 248 C inlets, 4.1 and 3.6 \U{kg\ s^{-1}} and \U{UA=91\ kW\ K^{-1}}: \cHttrTc{} and \cHttrTh{} C, against measured 751 and 383 C, inside the 5 K target. At 15 MW with \U{UA=80\ kW\ K^{-1}}: \cHttrTcLow{} and \cHttrThLow{} C against 420 and 235 C. Each $UA$ was derived from the same data set, so this tests the algebra and the balance, and it is no blind prediction. Targets for the test: HTTR-SR at 905 C, and the INL IHX within 2 K.}
+\end{eqcard}
+
+\begin{eqcard}{C.12}{R}{Balanced effectiveness}
+\Stmt{\varepsilon_{HX}=\frac{NTU}{1+NTU}}
+\Interp{At equal capacity rates, each extra unit of size pays back less. Going from effectiveness 0.87 to 0.95 needs about three times the $NTU$.}
+\Deriv{Take $C^*\to1$ in \Eq{C.11}. Both numerator and denominator vanish. Expanding the exponential to first order in $(1-C^*)$ gives the statement.}
+\Vars{\V{C_h}{hot stream capacity rate}{\U{W\ K^{-1}}}}
+\Assume{$C^*=1$.}
+\Source{\tagT{} Incropera \cite{Incropera}.}
+\Impl{\fn{units::ihx::eps_ntu}}
+\Valid{ID}{eq_c_12}{Limit test against \Eq{C.11}.}
+\end{eqcard}
+
+\begin{eqcard}{C.13}{R}{Area}
+\Stmt{A=\frac{\dot Q}{U\Delta T_{lm}}}
+\Interp{Small temperature differences cost area. Halving the approach doubles the surface.}
+\Deriv{Rearrange the result of \Eq{C.7}.}
+\Vars{\V{A}{heat transfer area}{\U{m^2}}}
+\Assume{Uniform $U$.}
+\Source{\tagT{} Incropera \cite{Incropera}.}
+\Impl{\fn{units::ihx::area}}
+\Valid{PUB}{eq_c_13}{Computed here for Case B, balanced at 25 K: \U{UA=}\cUAb{} \U{MW\ K^{-1}}, which is \cAreab{} \U{m^2} at \U{400\ W\ m^{-2}\ K^{-1}}, or \cAreabHigh{} \U{m^2} at \U{760\ W\ m^{-2}\ K^{-1}}.}
+\end{eqcard}
+
+\begin{eqcard}{C.14}{E}{Module anchor}
+\Stmt{UA_{mod}=\frac{UA}{N_{mod}},\qquad UA_{HTTR}=85\ \mathrm{kW\ K^{-1}}}
+\Interp{The only measured conductance for a large helical helium exchanger is the HTTR value. Dividing the plant duty over modules, and reporting the ratio to HTTR, shows the scale of the claim.}
+\Deriv{Tochio and Nakagawa plot UA at about \U{85\ kW\ K^{-1}} at full power in Fig 8, and Fig 10 shows it falling to about \U{65\ kW\ K^{-1}} at a lower LMTD. This is read from the figures. The module count of 2 to 4 is a project position, because no source supports a single unit at this conductance.}
+\Vars{\V{UA_{mod}}{conductance per module}{\U{W\ K^{-1}}} \V{UA_{HTTR}}{measured HTTR conductance}{\U{W\ K^{-1}}} \V{N_{mod}}{number of modules}{1}}
+\Assume{2 to 4 modules. The ratio to HTTR is reported.}
+\Source{\tagP{} Tochio and Nakagawa \cite{Tochio}, Figs 8, 10, PDF p.~7 to 8.}
+\Impl{\fn{units::ihx::modules}}
+\Valid{EXP}{eq_c_14}{Computed here: Case B needs \cUAratio{} times HTTR overall, so no single unit is claimed. With four modules, each needs \cUAmodule{} \U{MW\ K^{-1}}, or \cUAmoduleRatio{} times HTTR.}
+\end{eqcard}
+
+\begin{eqcard}{C.15}{O}{Unbalanced option}
+\Stmt{\dot m_p=\frac{\dot Q}{c_p\left(T_{h,in}-T_{h,out}\right)},\qquad\Delta T_{cold}=T_{h,out}-T_{c,in},\qquad UA=\frac{\dot Q}{\Delta T_{lm}\left(\Delta T_{hot},\Delta T_{cold}\right)}}
+\Interp{Run more flow on the primary side and the cold end opens up, so the exchanger needs far less conductance. The price is a hotter reactor inlet.}
+\Deriv{Hold the 25 K hot end. Choose $T_{h,out}$. Then \Eq{C.1} gives the primary flow, the cold end follows from the secondary return, and \Eq{C.7} and \Eq{C.13} give the conductance. This is a design option, and the central plant stays balanced.}
+\Vars{\V{\Delta T_{cold}}{cold-end temperature difference}{\U{K}} \V{\Delta T_{hot}}{hot-end temperature difference}{\U{K}}}
+\Assume{25 K hot end fixed.}
+\Source{\tagC{} Calculated here.}
+\Impl{\fn{units::ihx::flow_imbalance}}
+\Valid{PUB}{eq_c_15}{Computed here at $T_{h,out}=600$ C with an LMTD of \cImbalLm{} K. Case A: \cImbalMp{} \U{kg\ s^{-1}} and \cImbalUA{} \U{MW\ K^{-1}}. Case B: \cImbalMpB{} \U{kg\ s^{-1}} and \cImbalUAB{} \U{MW\ K^{-1}}, or \cImbalRatioB{} times HTTR.}
+\end{eqcard}
+
+\begin{eqcard}{C.16}{E}{Tube friction}
+\Stmt{\Delta p=f_D\frac{L}{D}\frac{\rho u^2}{2},\qquad f_D=0.3164\,Re^{-1/4}}
+\Interp{Friction in a smooth tube at moderate Reynolds number. It is enough for a pressure estimate, and it leaves out coil effects.}
+\Deriv{Blasius, as printed in Sato Eq 10 with a coefficient of 0.3164. Yin Eq 14 prints the same law without the exponent on Reynolds number, which is a misprint recorded in Section M.}
+\Vars{\V{\Delta p}{pressure drop}{\U{Pa}}}
+\Assume{Straight smooth tube.}
+\Source{\tagP{} Sato \cite{Sato}, Eq 10, PDF p.~4. \tagM{14}: no measured IHX drop.}
+\Impl{\fn{units::ihx::dp_tube}}
+\Valid{PUB}{eq_c_16}{Budget targets: HTR-10 design drops of 15 and \U{70\ kPa}, TECDOC-1236 \cite{TE1236} Table 5-5, PDF p.~89. INL assumes \U{50\ kPa}.}
+\end{eqcard}
+
+\begin{eqcard}{C.17}{F}{Temperature cascade}
+\Stmt{T_{s,sup}=T_{ROT}-\Delta T_{app}-\Delta T_{duct}}
+\Interp{Each step from core to reformer spends temperature. This line shows how little is left to spend.}
+\Deriv{INL assumes a 25 K approach and no duct drop. At 925 C those give 900 C, and 29 K above the 871 C reformer exit. A 5 K duct drop leaves 24 K. A 50 K approach leaves 4 K, and with a 5 K drop the helium falls below the reformer exit, so a fired stage would return.}
+\Vars{\V{\Delta T_{duct}}{duct temperature drop}{\U{K}}}
+\Assume{25 K approach, duct 0 K.}
+\Source{\tagP{} TEV-961 \cite{TEV961}, printed p.~10. INL-21537 \cite{INL21537}, Table 2, PDF p.~16.}
+\Impl{\fn{units::ihx::cascade}}
+\Valid{PUB}{eq_c_17}{The figures above are arithmetic on published assumptions. Measured HTTR hot ends sit at 77 to 82 K.}
+\end{eqcard}
+
+\begin{eqcard}{C.18}{F}{Constraints}
+\Stmt{T_{s,sup}-T_{ref,out}\ge10\ \mathrm{K},\qquad T_{tube}\le955\ ^{\circ}\mathrm{C},\qquad\Delta p_{tube}\le0.3\ \mathrm{MPa}}
+\Interp{Limits the design must respect. The first is an INL approach rule, and the other two are HTTR tube limits taken by analogy.}
+\Deriv{INL-21537 Table 2 sets a 10 C minimum process approach. Tochio Table 2 gives the allowable tube temperature of 955 C and differential pressure of 0.3 MPa for Hastelloy XR. They apply to NUS-H2 only by analogy, because the tube and service life differ.}
+\Vars{\V{T_{tube}}{IHX tube temperature}{\U{K}, stated in C} \V{\Delta p_{tube}}{differential pressure across the tube}{\U{Pa}}}
+\Assume{HTTR limits apply by analogy.}
+\Source{\tagP{} INL-21537 \cite{INL21537}, Table 2, PDF p.~16. Tochio and Nakagawa \cite{Tochio}, Table 2, PDF p.~5.}
+\Impl{\fn{units::ihx::check_limits}}
+\Valid{ID}{eq_c_18}{A test sets each limit and reads the flag. Reported: a 50 K approach leaves a 4 K pinch and fails the first limit.}
+\end{eqcard}
+
+\begin{eqcard}{C.19}{F}{Pressure sign}
+\Stmt{p_s\ge p_p+0.1\ \mathrm{MPa}\quad\text{(HTTR)}}
+\Interp{HTTR keeps the secondary helium above the primary, so a tube leak pushes clean gas into the reactor circuit and contains radioactivity. The project leaves its own sign to the safety case.}
+\Deriv{IAEA-TECDOC-1382 printed p.~8 states the HTTR rule and its reason. INL-11109 makes the same argument for a 7.1 MPa loop on PDF p.~16. No safety case exists for NUS-H2, so the balance holds both loops at 7.0 MPa and marks the sign as open.}
+\Vars{\V{p_s}{secondary helium pressure}{\U{Pa}} \V{p_p}{primary helium pressure}{\U{Pa}}}
+\Assume{An open item.}
+\Source{\tagP{} IAEA-TECDOC-1382 \cite{T1382}, printed p.~8, PDF p.~14.}
+\Impl{\fn{units::ihx::check_limits}}
+\Valid{NONE}{eq_c_19}{No benchmark. The item stays open for the safety case.}
+\end{eqcard}
+
+\subsection*{Worked example: sizing the IHX at Case B}
+Take the balanced design with \vQprocxB{} \U{MW} and a 25 K approach at both ends. \Eq{C.8} gives $\Delta T_{lm}=25$ K, so \Eq{C.13} gives \U{UA=}\cUAb{} \U{MW\ K^{-1}}. Each stream changes by 434 K, so $NTU=$ \cNTUb{} by \Eq{C.10} and $\varepsilon_{HX}=$ \cEpsb{} by \Eq{C.12}. At the HTTR scale of \U{400\ W\ m^{-2}\ K^{-1}}, the surface is \cAreab{} \U{m^2}. The measured HTTR conductance is \U{85\ kW\ K^{-1}}, so Case B needs \cUAratio{} HTTR units in conductance. Four modules bring that to \cUAmoduleRatio{} per module, and the unbalanced option at a 600 C primary outlet brings the total to \cImbalRatioB{} at the cost of a hotter reactor inlet.
+
+\subsection*{Link to the sources}
+Tochio and Nakagawa report a stable UA of about \U{85\ kW\ K^{-1}} over a 50-day high-temperature run, with no sign of degradation. That is the strongest evidence for this class of machine. It also marks the distance to this design: the balanced approach of 25 K sits a factor of three below the 77 to 82 K measured hot ends, and INL adopted 25 K as an assumption. The IHX therefore stays a labelled risk, and the 50 K sensitivity is carried through the cascade of \Eq{C.17}.

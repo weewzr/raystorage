@@ -1,0 +1,408 @@
+HTGR_SMR_MEA_CCS_Research_Local\ie504024m (1).pdf
+=====
+--- PDF p.1 ---
+Mass Transfer Performance of CO2 Absorption from Natural Gas
+using Monoethanolamine (MEA) in High Pressure Operations
+Hairul N. Abdul Halim,†,‡ Azmi M. Shariﬀ,*,† Lian S. Tan,† and Mohammad A. Bustam†
+†Department of Chemical Engineering, Universiti Teknologi PETRONAS, Bandar Seri Iskandar, 31750 Tronoh, Perak Malaysia
+‡School of Bioprocess Engineering, Universiti Malaysia Perlis, Kompleks Pusat Pengajian Jejawi 3, 02600 Arau, Perlis Malaysia
+ABSTRACT: Most carbon dioxide (CO2) absorption studies that use amine based solvents for ﬂue gas treatments were
+conducted at atmospheric pressure. This study reports the absorption performance of monoethanolamine (MEA) for the
+removal of CO2 from natural gas (NG) at high pressure conditions. The absorption experiments were conducted in an
+absorption column packed with Sulzer metal gauze packing at 5.0 MPa operating pressure. The eﬀects of gas ﬂow rate (18.89−
+35.08 kmol/m2·h), liquid ﬂow rate (1.81−4.51 m3/m2·h), MEA concentration (1.0−4.0 kmol/m3), and liquid temperature (27−
+45 °C) on the mass transfer performance were evaluated in terms of CO2 removal (%) and overall volumetric mass transfer
+coeﬃcient (KGav). From this study, the KGav was found to increase with increasing liquid ﬂow rate and MEA concentration.
+However, the mass transfer performance was not aﬀected by the total gas ﬂow rate. The optimum condition for liquid
+temperature was found to be at 40 °C.
+■INTRODUCTION
+Natural gas (NG) is a fossil fuel which consists of combustible
+mixtures of hydrocarbon gases such as methane (CH4), ethane
+(C2H6), propane (C3H8), butane (C4H10), pentane (C5H12),
+and impurities such as carbon dioxide (CO2), oxygen (O2),
+nitrogen (N2), and hydrogen sulﬁde (H2S) as well as rare gases
+(argon, helium, xenon). NG has a high energy conversion for
+power generation and emits low potentially harmful byproducts
+to the atmosphere, making it one of the superior choices for
+fuel.
+Removing acid gases such as CO2 is an important step in
+natural gas puriﬁcation technology because the presence of
+CO2 reduces its heating value. Furthermore, in the presence of
+moisture, CO2 may react with water to produce carbonic acid
+which would accelerate corrosion in the pipelines and process
+equipment. It must also be removed in order to prevent
+crystallization during cryogenic processes (liquefaction proc-
+ess).
+CO2 removal technologies include absorption, adsorption,
+membrane, and cryogenic separation. Among them, chemical
+absorption is the most established technology for CO2 removal
+due to its ability to eﬀectively reduce CO2 concentration to the
+desired target. Amine-based solvent is the most preferred
+choice as it oﬀers fast reactivity, thus reducing the capital cost
+by allowing the use of smaller process equipment compared to
+physical absorption. For ﬂue gas treatment, numerous
+researches for CO2 removal via chemical absorption have
+been conducted at atmospheric pressure with low CO2
+concentrations (<15%).1−10 The motivation behind these
+studies is to reduce CO2 concentration before releasing the
+treated gas into the atmosphere. The performance of several
+solvents such as ethanolamine (MEA), methyldiethanolamine
+(MDEA), 2-amino-2-methyl-1-propanol (AMP), diethylenetri-
+amine (DETA), and ammonia have been extensively studied in
+packed absorption columns at atmospheric pressure. However,
+the performance of chemical solvents at high pressure
+operations, speciﬁcally for natural gas puriﬁcation, is still
+limited and has to be further explored.
+Mass transfer studies in packed absorption columns have
+been previously reported by Benadda et al.11 and Maalej et al.12
+for high pressure operations of up to 1.2 and 5.0 MPa,
+respectively. The CO2 removal in their systems involved the use
+of Na2CO3, NaHCO3, and NaOH while the performances were
+reported in terms of interfacial area (a) and volumetric liquid
+mass transfer coeﬃcient (kLa). A selectivity study of H2S and
+CO2 removal from nitrogen gas (N2) using MEA in a packed
+absorption column at 1.0 MPa was conducted by Godini and
+Mowla.13 They discovered that by increasing the pressure and
+the ratio of molar ﬂow rate of liquid/molar ﬂow rate of gas (L/
+G), the absolute eﬃciency in H2S and CO2 absorptions was
+also increased. Tan et al.14 reported the removal of 75 vol %
+CO2 in NG at 1.0 MPa using a mixed amines solvent, known as
+Stonvent-II in a pilot scale absorption column packed with
+IMTP No. 25 packing. They discovered that the performance
+of liquid temperature at 35 °C was better than at 45 °C.
+However, the overall volumetric mass transfer coeﬃcient
+(KGav) study, in packed absorption columns at high pressure
+has never been reported in the open literature.
+In this paper, the mass transfer performance of CO2
+absorption from CO2/NG gas mixture in a high pressure
+operation using MEA solvent is reported. Two of the most
+commonly used evaluation criteria, KGav and CO2 removal (%)
+that represented the mass transfer performance, were
+determined by conducting experiments at various process
+parameters such as gas ﬂow rate, liquid ﬂow rate, MEA
+concentration, and liquid temperature. In this study, the
+experiments were conducted with CO2 concentration of 20%
+Received:
+October 12, 2014
+Revised:
+January 12, 2015
+Accepted:
+January 20, 2015
+Published: January 20, 2015
+Article
+pubs.acs.org/IECR
+© 2015 American Chemical Society
+1675
+DOI: 10.1021/ie504024m
+Ind. Eng. Chem. Res. 2015, 54, 1675−1680
+Downloaded from pubs.​acs.​org/​iecred/​article-pdf/​54/​5/​1675/​12061011/​ie504024m.​pdf by NATL UNIV OF SINGAPORE user on 01 November 2026
+
+--- PDF p.2 ---
+and operating pressure of 5.0 MPa in a bench scale absorber
+packed with Sulzer metal gauze packing. This particular CO2
+concentration was chosen because it is slightly above the limit
+of MEA practical applications. On the other hand, many
+oﬀshore operations and natural gas pipelines are conducted at
+operating pressures of 4.0−10.0 MPa.
+■MASS TRANSFER IN A PACKED COLUMN
+The overall mass transfer rate in separation processes is usually
+aﬀected by the diﬀusion rates in gas and liquid phases. In a two-
+ﬁlm theory, a thin gas ﬁlm exists on one side of the interface
+while a thin liquid ﬁlm exists on the other. Equilibrium is
+assumed at the interface, and the resistances to mass transfer
+between the two phases are added to obtain the overall
+resistance based on the following equation:15
+=
++
+K a
+k a
+m
+k a
+1
+1
+y
+y
+x
+v
+v
+v
+(1)
+The term 1/Kyav can be considered as the overall resistance
+to mass transfer, while the terms 1/kyav and m/kxav are
+resistances in the gas and liquid ﬁlms, respectively. The term m
+is the slope of the equilibrium curve.
+In a chemical absorption reaction, CO2 must move from the
+gas to the liquid phase for the reaction to occur. Therefore, the
+overall rate of expression for this reaction will have to account
+for the mass transfer resistance (to bring reactants together)
+and the resistance of the chemical reaction steps.16 Hence, both
+the mass transfer and the chemical rates will enter the overall
+rate expression.
+The gas-ﬁlm coeﬃcients are often reported based on a partial
+pressure driving force instead of mole-fraction diﬀerences (as
+shown in eq 1) and written as KGav or kGav. The relationship
+between KGav and the individual-phase coeﬃcients, accom-
+panied by the related chemical reactions, can be expressed as a
+function of enhancement factor (E), as shown below:
+=
++
+◦
+K a
+k a
+H
+Ek a
+1
+1
+G v
+G v
+L v
+(2)
+where kGav is the individual volumetric mass transfer coeﬃcient
+for the gas phase, based on partial pressure driving force, H is
+the Henry’s law coeﬃcient, and kL°av is the mass transfer
+coeﬃcient for liquid phase without chemical reactions.
+Meanwhile, E is deﬁned as mass transfer ﬂux with chemical
+reaction divided by mass transfer ﬂux without chemical
+reaction.
+In an absorption process consisting of a binary mixture of
+components A (solute) and B (inert/carrier gas), the total gas
+ﬂow rate is expected to decrease along the height of the column
+due to component A being absorbed into the absorbent.
+However, the eﬀect of changes in the total gas ﬂow rate is
+usually ignored for dilute gas containing less than 10% of
+component A in the bulk gas.15 In the derivation of KGav for
+dilute gas, it is assumed that the total ﬂow rate in the gas and
+liquid phases are unchanged and that the KGav would not be
+signiﬁcantly changed along the height of the tower. Therefore,
+the KGav can be calculated as follows:
+=
+K a
+V S
+PZ
+y
+y
+/
+ln
+G v
+T
+b
+a
+(3)
+where V is the molar ﬂow rate of the gas phase, S is the cross
+section area of the absorption column, P is the total pressure
+inside the column, and ZT is the total height of the packed
+section in the column. The terms ya and yb represent the mole
+fraction of component A in the bulk gas at the outlet and inlet
+of the column, respectively. The use of the same fundamental
+equation was reported by Aroonwilas and Tontiwachwuthi-
+kul,1,2 Aroonwilas et al.,3 Dey and Aroonwilas,4 Fu et al.,5
+Naami et al.,6 Sema et al.,7 and Tsai et al.17
+For a rich gas containing higher than 10% of component A,
+the decrease in total gas ﬂow and increase in liquid ﬂow must
+be accounted for in the material balance.15 Any variations in the
+Figure 1. Schematic diagram of the experimental setup.
+Industrial & Engineering Chemistry Research
+Article
+DOI: 10.1021/ie504024m
+Ind. Eng. Chem. Res. 2015, 54, 1675−1680
+1676
+Downloaded from pubs.​acs.​org/​iecred/​article-pdf/​54/​5/​1675/​12061011/​ie504024m.​pdf by NATL UNIV OF SINGAPORE user on 01 November 2026
+
+--- PDF p.3 ---
+total gas ﬂow rate along the height of the column are signiﬁcant
+because the inert gas concentration would vary between 10−
+90%. Therefore, the overall mass transfer coeﬃcient is the
+average value for the column rather than a constant due to the
+changes in gas ﬂow rate, as shown in the following equation:
+∫
+=
+−*
+⎛
+⎝
+⎜⎜
+⎞
+⎠
+⎟⎟
+Z
+V S
+K a
+y
+y
+y
+/
+d
+(
+)
+y
+a
+b
+T
+v
+(4)
+The overall volumetric gas-ﬁlm coeﬃcient (KGav) can be
+reported based on a partial pressure driving force with Kyav and
+KGav being relatable via KGav = Kyav/P. The chemical
+absorption between CO2 and amine may rapidly occur, thus
+the value of y* can be assumed to be zero. Integrating eq 4 will
+result in the following ﬁnal equation:
+=
+K a
+V S
+PZ
+y
+y
+/
+ln
+G v
+T
+b
+a
+(5)
+Thus, comparing with the KGav for dilute gas described in eq
+3, eq 5 diﬀers in terms of the average values of gas ﬂow rate at
+the bottom and top of the column which resulted in the
+averaged KGav.
+The percentage of CO2 removal is calculated based on the
+following equation:18
+=
+−
+×
+y
+y
+y
+CO removal
+100%
+2
+b
+a
+b
+(6)
+■MATERIALS AND METHODS
+Chemical. Monoethanolamine (MEA) (99% purity) was
+purchased from Acros Brand. CO2 (99.99% purity) used in this
+experiment was purchased from Air Product Malaysia, while
+NG with 97% CH4, 2% CO2, and 1% heavier hydrocarbon was
+supplied by Petronas Dagangan Bhd. All materials were used as
+received without further puriﬁcation.
+Equipment and Procedures. Absorption experiments
+were performed in a 2.040 m height and 0.046 m inside
+diameter (ID) packed column. This column was packed with
+Sulzer metal gauze packing (Sulzer Chemtech Pte Ltd.,
+Winterthur, Switzerland). The surface area of the structured
+packing is approximately 500 m2/m3. The column and
+structured packing were made of 316 stainless steel. The
+absorption column was designed with six sampling points at
+diﬀerent levels for measuring gas concentration proﬁle along
+the column.
+A schematic diagram of the experimental set up is shown in
+Figure 1. Prior to conducting the experiments, the desired gas
+composition of CO2 and NG was prepared by setting the gas
+ﬂow rate of each gas using the individual mass ﬂow controllers.
+Then, the mixed gas was compressed and stored in a high
+pressure gas vessel. This gas was then introduced into the
+bottom of the packed absorption column at the desired ﬂow
+rate using a gas ﬂow controller.
+All experiments were conducted at 5.0 MPa with a back
+pressure regulator strategically placed at the outlet of the
+absorption column. The liquid absorbent was pumped into the
+absorber at the desired ﬂow rate by using a high pressure liquid
+pump. It was also introduced from the top of the column to
+create a countercurrent contact with the gas. Thus, the CO2 in
+the gas phase will be absorbed into the liquid. The treated gas
+exited the column at the top while the CO2 rich solution exited
+from the bottom of the column and collected in a storage tank.
+Each absorption experiment was operated until steady-state
+conditions were reached. CO2 concentrations at the inlet,
+outlet, and sampling points along the column were measured
+using a CO2−CH4 IR gas analyzer (Fuji Electric Instrument).
+The gas concentration at diﬀerent levels along the column were
+sampled by switching from one sampling point to another, and
+readings were taken only after a steady state for each level was
+reached. The liquid entrainment was avoided by installing a
+ﬁlter in the sampling line. Details of the experimental
+conditions of the absorption process are listed in Table 1.
+■RESULTS AND DISCUSSION
+Validation of the Experimental data. In order to validate
+the experimental results produced by this bench-scale packed
+absorption system, a few experimental runs have been
+conducted with the same conditions and compared with the
+results reported by Maneeintr et al.19 The equipment set up
+and experimental conditions for both processes are summarized
+in Table 2. The main diﬀerences between these two systems are
+the type of structured packing used and the size of the column.
+Validations were conducted by comparing the trend of the KGav
+results.
+Maneeintr et al.19 has reported that with increasing MEA
+concentrations, ranging from 1.0 to 3.0 kmol/m3, the KGav
+values had increased from 0.2 to about 0.6 kmol/m3·h·kPa. In
+comparison, our experimental results (see Figure 2) clearly
+followed the same trends. In addition, the KGav values were
+within the range previously reported by Maneeintr et al.19
+This validation study conﬁrmed that the system had
+performed well and in agreement with the results reported by
+Maneeintr et al.19 Unfortunately, due to the unavailability of
+Table 1. Experimental Conditions of the Absorption Process
+parameter
+condition
+gas ﬂow rate (kmol/m2·h)
+18.89−35.08
+CO2 concentration (%)
+20
+operating pressure (MPa)
+5.0
+liquid ﬂow rate (L/h)
+3.0−7.5
+(m3/m2·h)
+1.81−4.51
+MEA concentration (kmol/m3)
+1.0−4.0
+liquid temperature (°C)
+27−45
+Table 2. Equipment Setup and Experimental Conditions for
+Validation Study
+parameter
+Maneeintr et al.19
+this study
+ID column (m)
+0.030
+0.046
+height of packed column (m)
+2.035
+2.040
+structured packing
+DX structured
+packing
+Sulzer metal gauze
+packing
+surface area per element
+(m2/m3)
+900
+approx. 500
+Testing Condition
+inert gas ﬂow rate (kmol/m2·
+h)
+20.00
+20.00
+CO2 concentration (%)
+13.4−14.8
+14.0
+operating pressure (kPa)
+101
+101
+liquid ﬂow rate (mL/min)
+84
+84
+MEA concentration (kmol/
+m3)
+1.0−3.0
+1.0−3.0
+temperature (°C)
+25
+27
+Industrial & Engineering Chemistry Research
+Article
+DOI: 10.1021/ie504024m
+Ind. Eng. Chem. Res. 2015, 54, 1675−1680
+1677
+Downloaded from pubs.​acs.​org/​iecred/​article-pdf/​54/​5/​1675/​12061011/​ie504024m.​pdf by NATL UNIV OF SINGAPORE user on 01 November 2026
+

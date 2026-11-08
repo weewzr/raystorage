@@ -1,0 +1,327 @@
+AIChE Journal - January 1989 - Xu - Methane steam reforming  methanation and water‐gas shift  I  Intrinsic kinetics.pdf
+HTGR_SMR_MEA_CCS_Research_Local\03_SMR_Reactor\Xu_Froment_1989_Part1_SMR_Kinetic_Equations.pdf
+=====
+--- PDF p.1 ---
+Methane Steam Reforming, Methanation 
+and Water-Gas Shift: 1. Intrinsic Kinetics 
+Intrinsic rate equations were derived for the steam reforming of 
+methane, accompanied by water-gas shift on a Ni / MgA1204 catalyst. A 
+large number of detailed reaction mechanisms were considered. Ther- 
+modynamic analysis helped in reducing the number of possible mecha- 
+nisms. Twenty one sets of three rate equations were retained and 
+subjected to model discrimination and parameter estimation. The pa- 
+rameter estimates in the best model are statistically significant and 
+thermodynamically consistent. 
+Introduction 
+Steam reforming on nickel-alumina catalysts is the main pro- 
+cess for the production of hydrogen or synthesis gas. It is a large- 
+scale operation carried out in rows of tubular reactors inserted 
+into a gas-fired furnace. The temperature in the tubes evolves 
+from 675 to 1,000 K, necessitating very high heat fluxes. Com- 
+bined with a pressure of the order of 30 bar, this leads to severe 
+demands for the tube material. The simulation and design of the 
+tubular reactor requires information on thermodynamics and on 
+the kinetics. Whereas the first aspect is fairly well accounted for 
+in the design, the second is often neglected or reduced to very 
+simple elements. It will be shown in the present paper that sev- 
+eral reactions have to be considered for a proper description of 
+the process and that the reaction mechanism has to be investi- 
+gated in some depth to come to a reasonable description of the 
+kinetics. Also, although it is known that the diffusion limitations 
+are severe, most of the kinetic studies either neglect these or 
+resort to so-called “effective” rate equations which do not 
+explicitly account for the resistance to diffusion. The present 
+paper deals with true, intrinsic kinetics on a Ni/MgAl,O,-spi- 
+nel catalyst. 
+Experimental Study 
+Equipment and materials 
+The equipment is classical. The preheater and the tubular 
+reactor are made of HK 40 stainless steel (25-20 Cr-Ni). 
+The 
+reactor tube has an inner diameter of 1.07 cm. A thermocouple 
+is sliding in a central tube of 0.35 cm outer diameter. The reac- 
+tion zone containing the catalyst and inert solid diluent has a 
+length of 10 cm. It is heated by two heaters, each 5 cm long. 
+Four thermocouples are welded on the external reactor wall. 
+Pure a-alumina spheres are used in the preheating section and 
+the section after the catalyst bed. The latter is diluted with a- 
+88 
+January 1989 
+Jianguo Xu 
+Gilbert F. Froment 
+Laboratorium voor 
+Petrochemische Techniek 
+Rijksuniversiteit Gent 
+Gent, Belgium 
+alumina spheres of the same diameter. The flows of CH, and H2 
+are measured by rotameters and that of C02 by a mass flow 
+meter. Deionized water is fed through a volumetric pump. The 
+hydrogen and methane used are N40 (99.99% purity) and N35 
+(99.95%) supplied by L’Air Liquide. Carbon dioxide is N25 
+(99.5%), also from L‘Air Liquide. The back pressure is regu- 
+lated by a membrane pressure regulator. After condensation of 
+the steam and drying, the effluent gas is directed to two gas 
+chromatographs (GC) or to the gas meter and then to the vent. 
+One of the gas chromatographs uses hydrogen as the carrier 
+gas. The column, with a length of 15 m, is packed with Porapak 
+Q. The other GC, which uses nitrogen as the carrier gas, is used 
+to detect the concentration of hydrogen. The column is filled 
+with 10 m of Porapak Q and 5 m of Porapak N. 
+Pretreatment of the catalyst 
+The catalyst contains 15.2% nickel, supported on magnesium 
+spinel. Its BET-surface area is 58 m2, the nickel surface area 9.3 
+m2/gca, (fresh catalyst) and the void fraction 0.528. The original 
+ring-shaped catalyst with outer diameter of 10 mm is crushed 
+into particles of 0.18-0.25 mm. 
+The amount of catalyst is 0.4 g, which is mixed with about 8 
+mL of a-alumina diluent. The reactor is first heated in a hydro- 
+gen flow, at about 2 K/minute to about 1,083 K. It is kept at 
+that temperature for 12 hrs, after which the temperature is 
+reduced to 823 K. Upon reaching this temperature the pressure 
+is set to 5 bar and the water feed is switched on. The flow con- 
+trollers are then adjusted to set the reference conditions for test- 
+ing the activity for steam reforming: W/F& = 0.2 g, 
+- 
+h/mol,,, 
+molar ratio H20/CH4 = 5.0, molar ratio Hz/CH, = 
+1.25. The activity of the catalyst drops very rapidly during the 
+first 24 hours, but then much more gradually. The kinetic study, 
+with its specific conditions, is started after some 70 hours on 
+stream, when the deactivation has become so slow that only 
+Vol. 35, No. 1 
+AIChE Journal 
+
+--- PDF p.2 ---
+XCH' 
+t 
+0 1 
+25 
+50 
+15 
+100 
+125 
+150 
+175- 
+TIME ON STREAM 
+Figure 1. Methane conversion as a function of time at 
+55OOC, pt = 5 bar, steam to methane molar 
+ratio = 5, hydrogen to methane molar ratio = 
+1.25, W/F& = 0.2 gc., . h/mol CH,. 
+minor corrections, as explained below, are sufficient to account 
+for it. The deactivation is probably caused by sintering. 
+The pretreatment of fresh catalyst for the experiments on the 
+reverse of the water-gas shift and on the methanation is initially 
+identical to that described above, including the measurement of 
+the reference activity for steam reforming. Then the reference 
+conditions for the reverse of the water-gas shift and methanation 
+are set: T = 673 K; p, = 3 bar; H,/CO, molar ratio = 1; 
+WIF",, 
+= 0.25 g, 
+h/mol,,,. 
+From then on, there is no more 
+deactivation, except when, under extreme conditions, carbon is 
+accumulating on the catalyst. Because of this, the reference 
+activity level of the reverse of the water-gas shift and methana- 
+tion is 1.225 times that of steam reforming. This factor is 
+accounted for in the model discrimination and parameter esti- 
+mation based on the simultaneous treatment of the two sets of 
+experimental results. 
+Experimental results 
+A typical methane conversion vs. time on stream behavior is 
+shown in Figure 1. Higher pressures, temperatures, and steam to 
+Table 1. Experimental Conditions 
+Pres. 
+H20/CH4 
+H,/CH4 
+Temp. 
+bar 
+molar 
+molar 
+K 
+Steam Reforming 
+5 .O 
+5 .O 
+5.0 
+3.0 
+10.0 
+3 .O 
+1.25 
+113,198,823,848 
+15.0 
+5.0 
+3.0 
+5 .o 
+3.0 
+3 .O 
+Pres. 
+H2/C02 
+Temp. 
+bar 
+molar 
+K 
+~~~~ 
+Reverse of Water-Gas Shvt and Methanation 
+8.0 
+10.0 
+1 .O, 0.5 
+513,598,623,648,613 
+3 .O 
+10.0 
+/ 
+/------ 
+Figure2. Total conversion of methane vs. space time: 
+W/F& 
+p, = 10 bar, steam to methane molar 
+ratio = 3. 
+methane molar ratios increase the deactivation rate. Tests under 
+reference conditions were carried out every day, prior to the runs 
+at other conditions. Because of deactivation, however, the space 
+time required to reach the same conversion as in the first refer- 
+ence test was, say, 
+against (W/F&,)I 
+in the first test. 
+All the data collected that day were corrected to the reference 
+activity level by multiplying their respective space times with 
+the ratio: (W/F&),/( 
+W/F&,)2. 
+The conditions covered by the experiments are listed in Table 
+1. For steam reforming, the temperature range is well below that 
+practiced industrially. Yet, the temperature had to be limited to 
+these values to avoid measuring only equilibrium conversions. 
+Hydrogen was added to the steam reforming feed to avoid reoxi- 
+dation of the catalyst by steam (De Deken et al., 1982). Figures 
+2 and 3 show examples of curves of total methane conversion 
+and of conversion of methane into C02 vs. W/F'&,, 
+experimental 
+and simulated on the basis of rate equations to be presented fur- 
+"CO) 
+,$ 
+Figure 3. Conversion of methane into COz vs. space time: 
+W/F& 
+p, = 10 bar, steam to methane molar 
+ratio = 3. 
+AIChE Journal 
+January 1989 Vol. 35, No. 1 
+89 
+ 15475905, 1989, 1, Downloaded from https://aiche.onlinelibrary.wiley.com/doi/10.1002/aic.690350109 by National University Of Singapore, Wiley Online Library on [29/10/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+
+--- PDF p.3 ---
+ther in this paper. Two hundred and twenty runs were per- 
+formed on steam reforming. 
+All the experimental data for the reverse of the water-gas 
+shift and methanation were collected with one load of catalyst, 
+since there was no deactivation. The total C02 conversion and 
+the conversion of COz into CH4 at 10 bar and H,/C02 = 1 are 
+plotted in Figures 4 and 5, corrected already for the difference in 
+activity with respect to the steam reforming reference activity 
+level. Sixty runs of this type were performed. 
+Experiments were carried out with different catalyst sizes for 
+both steam reforming and reverse of the water-gas shift and 
+methanation. It was shown that there were no significant inter- 
+nal diffusion limitations for the size 0.17-0.25 mm. Calculation 
+also proved that external mass and heat transfer resistances 
+were negligible. 
+Model Development 
+Thermodynamic analysis 
+Table 2 lists 11 reactions which may occur, in principle at 
+least, among CHI, COz, CO, HZ, H20 and carbon. The ratios 
+of 
+represented by V(i), calculated from the experimental results 
+for steam reforming, exceed 1 for the reactions VI-XI, so that 
+no carbon deposition can occur. The values of V(IV) and V(V) 
+are always below 1, so that these two reactions could proceed to 
+the right. Since the observed methane disappearance rate 
+decreased as the methane conversion and therefore the C02 con- 
+centration increased, in contradiction with IV and V, these reac- 
+tions were not considered to occur and were left out of the reac- 
+tion scheme. The ratios V(I) and V(II1) monotonously increase 
+with space time, W/F& and temperature, at fixed pressure and 
+steam to methane molar ratio. The values are always smaller 
+than one, so that reactions I and I11 proceed to the right. 
+x‘ 
+c o 2 
+t 
+W / F c o 2 1gcathr/mo$-021 
+Figure4. Total conversion of C02 vs. space time: 
+W/F& 
+pt - 10 bar, molar H2/C02 I 
+1.0. 
+Figure 5. Conversion of C02 into methane vs. space time: 
+W/F&,, pt = 10 bar, molar H,/C02 = 1.0. 
+The V(II) values are shown in Figure 6 for various ratios of 
+water to methane, pressures, and temperatures. At 10 to 15 bar, 
+V(I1) is always close to 1, so that the water-gas shift is close to 
+equilibrium; but this is not the case for 3 and 5 bar. Although 
+the V(I1) values decrease when W/F& is decreased, extrapola- 
+tion of the curves does not lead to the origin. Therefore, it is 
+unlikely that C02 would be formed exclusively out of CO. Reac- 
+tion schemes with a parallel contribution to the C 0 2 formation 
+are required. 
+A similar reasoning applied to the data on the reverse of the 
+water-gas shift and methanation, indicates that among the six 
+reactions involving carbon, five reactions (VII to XI) proceed to 
+the right and could yield carbon. Even then, they would not sig- 
+nificantly affect the mass balance, however. The process can be 
+described on the basis of reactions I to 111. 
+Reaction schemes 
+Among the large number of reaction schemes developed, only 
+the two schemes which remained competitive to the very end of 
+the model discrimination, Figures 7 and 8, are discussed here. In 
+developing these schemes the following assumptions were made, 
+based on our observations and information which is fairly well 
+accepted in the literature: 
+1) H20 reacts with surface nickel atoms, yielding adsorbed 
+oxygen and gaseous hydrogen. 
+Table 2. 
+Possible Reactions in Methane Steam Reforming 
+No. 
+I 
+I1 
+111 
+IV 
+V 
+VI 
+VII 
+VIII 
+IX 
+X 
+XI 
+Reactions 
+CH4+ HZO= CO + 3H2 
+CO + H2O = COZ + Hz 
+CH,+ 2H20= CO2 + 4H2 
+CH, + C02 = 2CO + 2Hz 
+CH4 + 3C0, = 4CO 
+CH4 
+= C 
++2H2 
+CO + H2 - C 
++ HZO 
+CO2 + 2H2 
+= C 
++ 2H20 
+CH4+ 2CO = 3 C 
++ 2H20 
+CH4 + CO2 = 2C 
++ 2H20 
++ 2H20 
+2 c o 
+= c 
++ co2 
+-AHzg8, kJ/mol 
++41.15 
+-206.1 
+- 165.0 
+-241.3 
+- 330.0 
++ 173.3 
++131.3 
++ 181.6 
++ 15.3 
+-14.82 
++90.13 
+90 
+January 1989 Vol. 35, No. 1 
+AIChE Journal 
+ 15475905, 1989, 1, Downloaded from https://aiche.onlinelibrary.wiley.com/doi/10.1002/aic.690350109 by National University Of Singapore, Wiley Online Library on [29/10/2026]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+

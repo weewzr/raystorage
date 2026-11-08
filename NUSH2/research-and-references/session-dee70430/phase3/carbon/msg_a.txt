@@ -1,0 +1,15 @@
+Commit the legacy tables of main 8750b09 and a keyed compare for them
+
+The seven tables that main 8750b09 wrote are stored under
+engine/vv/data/legacy_results/ as regression data for the legacy carbon basis.
+They are the output of the engine before the co-funding model and the
+independent carbon basis, taken with git show from that commit.
+
+scripts/compare_results.py gains three options. --subset compares by key
+instead of by position, so every row of the snapshot must be present with equal
+cells while rows that later work added are counted and not failed. --names
+restricts the comparison to named files. --allow-cell FILE:KEY:COLUMN names one
+cell that may differ, which the entry count of the registry needs. Without the
+options the script behaves as before.
+
+Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>

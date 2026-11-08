@@ -1,0 +1,28 @@
+   Compiling proc-macro2 v1.0.107
+   Compiling quote v1.0.47
+   Compiling unicode-ident v1.0.27
+   Compiling serde_core v1.0.229
+   Compiling serde v1.0.229
+   Compiling nush2_numerics v0.1.0 (C:\Users\Alf\AppData\Local\Temp\claude\C--Ray-Claude-Ray-Debug-VS-Code\b29325b8-d1b9-49cd-bfe6-262261d7ffef\scratchpad\stagef\uiux\verify_engine_site_parity\src\engine\numerics)
+   Compiling zmij v1.0.23
+   Compiling seuif97 v2.3.8
+   Compiling serde_json v1.0.154
+   Compiling itoa v1.0.18
+   Compiling memchr v2.8.3
+   Compiling syn v3.0.9
+   Compiling nush2_props v0.1.0 (C:\Users\Alf\AppData\Local\Temp\claude\C--Ray-Claude-Ray-Debug-VS-Code\b29325b8-d1b9-49cd-bfe6-262261d7ffef\scratchpad\stagef\uiux\verify_engine_site_parity\src\engine\props)
+   Compiling nush2_mea v0.1.0 (C:\Users\Alf\AppData\Local\Temp\claude\C--Ray-Claude-Ray-Debug-VS-Code\b29325b8-d1b9-49cd-bfe6-262261d7ffef\scratchpad\stagef\uiux\verify_engine_site_parity\src\engine\mea)
+   Compiling serde_derive v1.0.229
+   Compiling nush2_units v0.1.0 (C:\Users\Alf\AppData\Local\Temp\claude\C--Ray-Claude-Ray-Debug-VS-Code\b29325b8-d1b9-49cd-bfe6-262261d7ffef\scratchpad\stagef\uiux\verify_engine_site_parity\src\engine\units)
+   Compiling nush2_plant v0.1.0 (C:\Users\Alf\AppData\Local\Temp\claude\C--Ray-Claude-Ray-Debug-VS-Code\b29325b8-d1b9-49cd-bfe6-262261d7ffef\scratchpad\stagef\uiux\verify_engine_site_parity\src\engine\plant)
+   Compiling nush2_wasm v0.1.0 (C:\Users\Alf\AppData\Local\Temp\claude\C--Ray-Claude-Ray-Debug-VS-Code\b29325b8-d1b9-49cd-bfe6-262261d7ffef\scratchpad\stagef\uiux\verify_engine_site_parity\src\engine\wasm)
+    Finished `wasm-release` profile [optimized] target(s) in 1m 23s
+copied 1067548 bytes to nush2.wasm
+
+real	1m24.183s
+user	0m0.016s
+sys	0m0.015s
+build_wasm exit 0
+size 1067548 bytes, imports 0, exports ['__data_end', '__heap_base', 'abi_version', 'alloc', 'call', 'dealloc', 'memory']
+PASS
+check_wasm exit 0

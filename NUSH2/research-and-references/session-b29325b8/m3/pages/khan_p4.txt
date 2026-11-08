@@ -1,0 +1,734 @@
+chemical
+ engineering
+ research
+ and
+ design
+ 8 9 ( 2
+ 0
+ 1 1 ) 1600–1608
+ 
+1603
+solubility
+ of
+ CO2 in
+ MEA
+ solutions
+ as
+ a
+ function
+ of
+ MEA
+ con-
+centration,
+ CMEA,
+ and
+ solution
+ temperature:
+HCO2 =
+ 10(5.3−0.035CMEA−1140/T)
+(8)
+This
+ approach
+ was adopted
+ instead
+ of
+ a
+ rigorous
+ method
+based
+ on
+ the
+ electrolyte
+ NRTL
+ model
+ (Austgen
+ et
+ al.,
+ 1989)
+ for
+the
+ vapour-liquid
+ equilibrium
+ of
+ CO2–MEA
+ system
+ for
+ the
+ ease
+of
+ computation.
+2.4.
+Gas–liquid
+ contactor
+ model
+A
+ gas–liquid
+ contactor
+ model
+ is
+ developed
+ using
+ appropriate
+forms
+ of
+ the
+ species
+ and
+ energy
+ conservation
+ equations
+ for
+ the
+predictions
+ of
+ CO2 and
+ MEA
+ concentrations
+ and
+ temperatures
+in
+ the
+ gas
+ and
+ liquid
+ phases
+ as
+ a
+ function
+ of
+ packing
+ height.
+The
+ model
+ is
+ based
+ on
+ the
+ following
+ assumptions:
+•
+ Steady-state
+ and
+ adiabatic
+ operations.
+•
+ Plug-ﬂow
+ of
+ gas
+ and
+ liquid.
+• Diffusion
+ in
+ the
+ axial
+ direction
+ is
+ negligible
+ compared
+ with
+convective
+ transport.
+• The
+ gas
+ and
+ liquid
+ ﬂow
+ rates
+ are
+ constant
+ throughout
+ the
+column
+ (i.e.,
+ dilute
+ gas–liquid
+ system).
+•
+ Evaporation
+ of
+ solvent
+ is
+ negligible.
+• Pressure
+ is
+ constant.
+2.4.1.
+ 
+Mass
+ balance
+The
+ variation
+ of
+ CO2 concentration
+ in
+ the
+ gas
+ phase
+ along
+ the
+height
+ of
+ the
+ column
+ is
+ given
+ by
+ the
+ following
+ steady-state,
+one-dimensional
+ species
+ conservation
+ equation:
+d(uzCCO2,g)
+dz
+= dNCO2,g
+dz
+=
+ SCO2
+(9)
+where
+ CCO2,g is
+ the
+ molar
+ concentration
+ of
+ CO2 in
+ the
+ gas
+phase,
+ NCO2,g(=
+ uzCCO2,g =
+ GYCO2) is
+ the
+ molar
+ ﬂux
+ of
+ CO2, G
+ is
+the
+ molar
+ ﬂow
+ rate
+ of
+ gas
+ per
+ unit
+ cross-sectional
+ area
+ of
+ the
+column,
+ SCO2 is
+ the
+ source
+ term
+ representing
+ the
+ overall
+ rate
+of
+ absorption
+ of
+ CO2, uz is
+ the
+ gas
+ velocity
+ in
+ the
+ axial
+ direc-
+tion
+ (along
+ the
+ column
+ height),
+ and
+ YCO2 is
+ the
+ mole
+ ratio
+ of
+CO2 in
+ the
+ gas
+ phase.
+ The
+ source
+ term
+ for
+ a
+ fast
+ second-order
+reaction
+ is
+ given
+ by
+ Eq.
+ (3).
+ Eq.
+ (9)
+ is
+ discretised
+ over
+ an
+ incre-
+mental
+ height
+ of
+ the
+ column
+ (z),
+ as
+ shown
+ in
+ Fig.
+ 2,
+ using
+ a
+forward
+ difference
+ scheme.
+The
+ MEA
+ concentration
+ in
+ the
+ solution
+ can
+ be
+ obtained
+ by
+performing
+ a
+ mass
+ balance
+ over
+ the
+ incremental
+ height:
+XMEAi =
+ XMEAi+1 +
+(YCO2i −
+ YCO2i+1)bG
+L
+(10)
+where
+ b
+ is
+ the
+ stoichiometric
+ factor
+ of
+ reaction
+ (R1), XMEA is
+the
+ mole
+ ratio
+ of
+ MEA
+ in
+ water,
+ and
+ L
+ is
+ the
+ molar
+ ﬂow
+ rate
+ of
+water.
+2.4.2.
+Energy
+ balance
+The
+ absorption
+ of
+ CO2 in
+ a
+ MEA
+ solution
+ results
+ in
+ the
+ release
+of
+ heat
+ of
+ solution
+ followed
+ by
+ heat
+ of
+ reaction
+ due
+ to
+ the
+exothermic
+ chemical
+ reaction.
+ Both
+ of
+ these
+ effects
+ increase
+the
+ liquid
+ temperature,
+ and
+ consequently
+ the
+ gas
+ temperature
+due
+ to
+ it
+ being
+ in
+ direct
+ contact
+ with
+ the
+ liquid,
+ from
+ the
+ inlet
+to
+ the
+ outlet
+ of
+ the
+ column.
+ The
+ variations
+ of
+ the
+ gas
+ and
+ the
+liquid
+ temperature
+ are
+ determined
+ from
+ the
+ thermal
+ energy
+equations
+ given
+ below.
+Fig.
+ 2
+ – Schematic
+ of
+ a
+ packed-bed
+ CO2 absorption
+ column
+with
+ an
+ inﬁnitesimal
+ element
+ for
+ mass
+ and
+ energy
+balances.
+Gas
+ phase
+ energy
+ equation:
+GYCO2Cpg
+dTg
+dz =
+ hga(Tg −
+ Tl) 
+(11)
+Liquid
+ phase
+ energy
+ equation:
+LCpl
+dTl
+dz =
+ GYCO2Cpg
+dTg
+dz + G(HR +
+ HS)dYCO2
+dz
+(12)
+where
+ Tg and
+ Tl are
+ the
+ gas
+ and
+ the
+ liquid
+ temperature,
+respectively,
+ hg is
+ the
+ gas
+ phase
+ heat
+ transfer
+ coefﬁcient,
+and
+ HR and
+ HS are
+ the
+ heat
+ of
+ reaction
+ and
+ heat
+ of
+ solu-
+tion,
+ respectively.
+ The
+ values
+ of
+ HR and
+ HS given
+ by
+ Akanksha
+et
+ al.
+ (2007)
+ were
+ used
+ in
+ the
+ calculation.
+ Eqs.
+ (11)
+ and
+ (12)
+were
+ discretised
+ using
+ the
+ forward
+ difference
+ scheme
+ over
+the
+ incremental
+ height
+ as
+ shown
+ in
+ Fig.
+ 2.
+2.5.
+ 
+Numerical
+ solution
+The
+ absorption
+ column
+ was
+ divided
+ into
+ a
+ number
+ of
+ inﬁnites-
+imal
+ elements
+ of
+ height
+ z
+ and
+ the
+ discretised
+ species
+conservation
+ and
+ thermal
+ energy
+ equations
+ were
+ solved
+ for
+each
+ element
+ using
+ Microsoft
+ Excel
+ spreadsheet.
+ For
+ the
+ sim-
+ulation
+ of
+ counter-current
+ absorption
+ columns,
+ the
+ mass
+ and
+energy
+ balance
+ equations
+ for
+ the
+ gas
+ phase
+ were
+ solved
+from
+ the
+ bottom
+ to
+ the
+ top
+ of
+ the
+ column,
+ whilst
+ the
+ liq-
+uid
+ phase
+ equations
+ were
+ solved
+ from
+ the
+ top
+ to
+ the
+ bottom
+of
+ the
+ column.
+ Calculations
+ were
+ performed
+ using
+ the
+ given
+inlet
+ concentration,
+ temperature
+ and
+ ﬂow
+ rate
+ of
+ the
+ gaseous
+stream
+ at
+ the
+ bottom
+ and
+ the
+ liquid
+ stream
+ at
+ the
+ top
+ of
+the
+ column
+ (see
+ Fig.
+ 2).
+ Although
+ the
+ compositions
+ and
+ tem-
+peratures
+ of
+ the
+ streams
+ at
+ the
+ outlets
+ were
+ known
+ for
+ the
+experimental
+ cases
+ simulated
+ in
+ this
+ study,
+ they
+ were
+ not
+speciﬁed
+ as
+ the
+ exit
+ conditions
+ needed
+ for
+ the
+ calculation.
+Instead,
+ these
+ data
+ were
+ speciﬁed
+ as
+ initial
+ guess
+ and
+ itera-
+tive
+ calculations
+ were
+ performed
+ until
+ a
+ converged
+ solution
+was
+ achieved.
+ For
+ the
+ estimation
+ of
+ the
+ enhancement
+ factor
+using
+ Eq.
+ (4), an
+ iterative
+ procedure
+ was adapted
+ to
+ determine
+the
+ unknown
+ CO2 concentration
+ at
+ the
+ gas–liquid
+ interface
+ in
+each
+ element
+ of
+ the
+ absorption
+ column
+ following
+ an
+ approach
+similar
+ to
+ that
+ used
+ by
+ Aroonwilas
+ et
+ al.
+ (2003).

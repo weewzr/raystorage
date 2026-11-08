@@ -1,0 +1,235 @@
+% BEGIN local numbers
+% Generated from results, build tokens and project inputs. A later values pass that
+% defines the same name wins, because these are \providecommand.
+\providecommand{\cDiceApproach}{9.7}
+\providecommand{\cDiceBtu}{919}
+\providecommand{\cDiceLeanC}{123.2}
+\providecommand{\cDiceLeanLoad}{0.160}
+\providecommand{\cDicePstar}{0.99}
+\providecommand{\cDiceQdes}{1.94}
+\providecommand{\cDiceQsens}{0.73}
+\providecommand{\cDiceQstrip}{0.97}
+\providecommand{\cDiceRatio}{0.905}
+\providecommand{\cDiceSrd}{3.64}
+\providecommand{\cDiceTph}{70.2}
+\providecommand{\cDiceTsat}{145}
+\providecommand{\cIhTerm}{1.07}
+\providecommand{\cIhTotal}{3.78}
+\providecommand{\cInlLpBtu}{905}
+\providecommand{\cKtwoRatio}{25}
+\providecommand{\cMeaKmol}{4{,}392}
+\providecommand{\cQsensB}{0.70}
+\providecommand{\cSrdBottomB}{3.61}
+\providecommand{\cSteamKgS}{24.2}
+\providecommand{\cStrInt}{195}
+\providecommand{\cVinjMax}{4.82}
+\providecommand{\cVinjMedian}{3.75}
+\providecommand{\cVinjMin}{3.46}
+\providecommand{\cVinjN}{16}
+% END local numbers
+\section{I. MEA stripper}\label{sec:I}
+The stripper takes the loaded solvent back to its lean state and releases CO$_2$ at low pressure. Heat is the whole cost of this step, so the question here is how much reboiler duty each tonne of CO$_2$ needs and what grade of heat can supply it. The model is reduced order: at 120 C reactions are fast, so the column is treated as equilibrium limited. The specific reboiler duty (SRD) of \U{3.8\ GJ\ t^{-1}} stays the ledger input. \Eq{I.13} is an independent bottom-up check, and it never replaces the input without a benchmark on syngas, which does not exist in the library \tagM{12}. All worked numbers are at Case B unless the card says otherwise.
+
+\begin{eqcard}{I.1}{R}{CO$_2$ balance}
+\Stmt{\dot n_{CO_2}=\dot n_{MEA}\left(\alpha_{rich}-\alpha_{lean}\right)}
+\Interp{The CO$_2$ released equals the loading the solvent gives up on one pass. The cyclic capacity $\alpha_{rich}-\alpha_{lean}$ therefore sets how much solvent must circulate.}
+\Deriv{\Eq{A.3} for CO$_2$ on the column at steady state, with MEA conserved: $\dot n_{MEA}\alpha_{rich}=\dot n_{MEA}\alpha_{lean}+\dot n_{CO_2}$.}
+\Vars{\V{\dot n_{CO_2}}{CO$_2$ released}{\U{mol\ s^{-1}}} \V{\dot n_{MEA}}{MEA circulation}{\U{mol\ s^{-1}}}}
+\Assume{SS. No solvent degradation.}
+\Source{\tagT{} Consequence of \Eq{A.3}.}
+\Impl{\fn{units::stripper::co2_balance}}
+\Valid{ID}{eq_i_01}{Unit identity. Computed here: \cCapC{} \U{kmol\ h^{-1}} over a capacity of 0.25 needs \cMeaKmol{} \U{kmol\ h^{-1}} of MEA.}
+\end{eqcard}
+
+\begin{eqcard}{I.2}{O}{Desorption driving force}
+\Stmt{N_{CO_2}=K_G\left(p^*-p_{CO_2}\right)}
+\Interp{Absorption run in reverse. CO$_2$ leaves the liquid while the equilibrium pressure over the solvent exceeds the pressure in the gas.}
+\Deriv{\Eq{H.4} with the sign reversed, so that a positive flux leaves the liquid. The form is kept only to scope the claim made in \Eq{I.3}. By \Eq{H.5} the second-order rate constant rises by a factor of \cKtwoRatio{} between 40 and 120 C, which is why this document stops short of integrating a rate model here.}
+\Vars{\V{N_{CO_2}}{CO$_2$ flux, positive out of the liquid}{\U{mol\ m^{-2}\ s^{-1}}} \V{K_G}{overall gas-phase coefficient}{\U{mol\ m^{-2}\ s^{-1}\ Pa^{-1}}} \V{p^*}{equilibrium CO$_2$ pressure}{\U{Pa}} \V{p_{CO_2}}{CO$_2$ partial pressure in the gas}{\U{Pa}}}
+\Assume{Equilibrium limited. This equation is not integrated.}
+\Source{\tagT{} Reverse of \Eq{H.4}.}
+\Impl{\fn{units::stripper::desorb}}
+\Valid{Scoped}{eq_i_02}{No separate benchmark. The stage model in \Eq{I.3} carries the test.}
+\end{eqcard}
+
+\begin{eqcard}{I.3}{O}{Equilibrium stage}
+\Stmt{y_{CO_2,k}\,p=p^*_{CO_2}\left(T_k,\alpha_k\right),\qquad k=1,\dots,N}
+\Interp{Each of $N$ stages brings vapour and liquid to equilibrium. This suits a hot, fast system, where the column is limited by how much steam reaches each height and hardly at all by reaction rate.}
+\Deriv{Set the flux of \Eq{I.2} to its limit of zero driving force on each stage, then link stages by \Eq{I.1} and an enthalpy balance. Equilibrium pressures come from Section G. The kinetic expressions in Plaza are quoted for reference and are not used.}
+\Vars{\V{y_{CO_2,k}}{CO$_2$ mole fraction on stage $k$}{1} \V{p^*_{CO_2}}{equilibrium CO$_2$ pressure over the solvent}{\U{Pa}} \V{T_k}{stage temperature}{\U{K}} \V{\alpha_k}{stage loading}{\U{mol\ mol^{-1}}} \V{N}{number of equilibrium stages}{1}}
+\Assume{Fast reaction at 120 C. Stage efficiency of one.}
+\Source{\tagP{} Plaza \cite{Plaza}, Eq 3.46, 3.47, PDF p.~98, kinetics quoted and unused. Cownden and Lucquiaud 2026, PDF p.~11, compare regenerator temperature profiles with pilot data.}
+\Impl{\fn{units::stripper::stages}}
+\Valid{EXP}{eq_i_03}{Target, test not run: outlet lean loading of NCCC runs K14, K15 and K16, measured at 0.224, 0.224 and 0.124 (Morgan \cite{Morgan}, SI Table S4, PDF p.~5). The rich and pressure inputs are in SI Table S2.}
+\end{eqcard}
+
+\begin{eqcard}{I.4}{O}{Rich-end pinch}
+\Stmt{\frac{\dot n_{H_2O}}{\dot n_{CO_2}}=\frac{p-p^*_{CO_2}}{p^*_{CO_2}}}
+\Interp{Water leaving the top of the column carries heat that the condenser throws away. The higher the equilibrium pressure over the rich feed, the less water each mole of CO$_2$ takes with it.}
+\Deriv{The overhead vapour leaves close to equilibrium with the rich feed, so $y_{CO_2}=p^*_{CO_2}/p$. Water makes up the rest, so $y_{H_2O}=1-y_{CO_2}$, and the mole ratio is the ratio of the two.}
+\Vars{\V{\dot n_{H_2O}}{water in the overhead}{\U{mol\ s^{-1}}} \V{p}{column pressure}{\U{Pa}}}
+\Assume{Vapour leaves near equilibrium with the feed. MEA and inert gases neglected.}
+\Source{\tagC{} This document.}
+\Impl{\fn{units::stripper::steam_ratio}}
+\Valid{PUB}{eq_i_04}{Computed here from DICE \cite{DICE}, Fig 5-2, stream 23, PDF p.~192: 3,183 and 3,519 \U{lbmol\ h^{-1}} give \cDiceRatio. At 27.35 psia this implies $p^*_{CO_2}=$ \cDicePstar{} \U{bar} at the top.}
+\end{eqcard}
+
+\begin{eqcard}{I.5}{R}{Lean-end bubble point}
+\Stmt{p^*_{CO_2}\left(T_{reb},\alpha_{lean}\right)+p^*_{H_2O}\left(T_{reb},\alpha_{lean}\right)+p^*_{MEA}\left(T_{reb},\alpha_{lean}\right)=p_{strip}}
+\Interp{The reboiler sits at the boiling point of the lean solvent. Choose the pressure and the lean loading, and the temperature follows.}
+\Deriv{At the bottom of the column the liquid boils, so the partial pressures over it sum to the total pressure. All three terms come from Section G.}
+\Vars{\V{T_{reb}}{reboiler temperature}{\U{K}} \V{p^*_{H_2O}}{equilibrium water pressure over the solvent}{\U{Pa}} \V{p^*_{MEA}}{equilibrium MEA pressure over the solvent}{\U{Pa}} \V{p_{strip}}{stripper pressure, 2.0 bar}{\U{Pa}}}
+\Assume{Liquid at its bubble point. Pressure 2.0 bar.}
+\Source{\tagA{} Project solvent specification, 121.9 C at 2.0 bar.}
+\Impl{\fn{units::stripper::t_reboiler}}
+\Valid{PUB}{eq_i_05}{Targets, test not run. DICE \cite{DICE}, Fig 5-2, PDF p.~192, gives lean solvent at 253.8 F, which is \cDiceLeanC{} C, at 28.21 psia, with loading \cDiceLeanLoad. Vinjarapu et al., Appl.\ Energy 355 (2024) 122193, Fig 12, PDF p.~13, runs 117 to 119.8 C near 1.9 bar, read from the figure.}
+\end{eqcard}
+
+\begin{eqcard}{I.6}{R}{Reboiler energy balance}
+\Stmt{\dot Q_{reb}=\sum_{out}\dot n\,h-\sum_{in}\dot n\,h}
+\Interp{The reboiler supplies whatever the streams leaving the stripper carry above the streams entering it.}
+\Deriv{\Eq{A.8} around the column and reboiler with no shaft work.}
+\Vars{\V{\dot n}{molar flow of a stream}{\U{mol\ s^{-1}}} \V{h}{molar enthalpy}{\U{J\ mol^{-1}}}}
+\Assume{SS. Adiabatic column.}
+\Source{\tagT{} Consequence of \Eq{A.8}.}
+\Impl{\fn{units::stripper::reboiler}}
+\Valid{ID}{eq_i_06}{Unit identity on the column balance.}
+\end{eqcard}
+
+\begin{eqcard}{I.7}{R}{Condenser}
+\Stmt{\dot Q_{cond}=\dot Q_{H_2O}+\dot Q_{steam}+\dot Q_{CO_2}}
+\Interp{The condenser removes latent and sensible heat from the wet overhead. This duty is the heat lost at the top of the column, and it is the size of the stripping term in \Eq{I.13}.}
+\Deriv{Enthalpy balance on the overhead between the column top and the separator: steam cooled and condensed, condensate cooled and CO$_2$ cooled.}
+\Vars{\V{\dot Q_{cond}}{condenser duty}{\U{W}} \V{\dot Q_{H_2O}}{cooling of condensed water}{\U{W}} \V{\dot Q_{steam}}{cooling and condensing of steam}{\U{W}} \V{\dot Q_{CO_2}}{cooling of CO$_2$}{\U{W}}}
+\Assume{Vent saturated at separator temperature.}
+\Source{\tagP{} Vinjarapu et al., Appl.\ Energy 355 (2024) 122193, Eq 24 to 27, PDF p.~13.}
+\Impl{\fn{units::stripper::condenser}}
+\Valid{PUB}{eq_i_07}{Target, test not run: 64.4 \U{MMBtu\ h^{-1}} for the DICE stripper condenser \cite{DICE}, Table 5-3, PDF p.~197. Computed here, that is \cDiceQstrip{} \U{GJ\ t^{-1}}.}
+\end{eqcard}
+
+\begin{eqcard}{I.8}{R}{Reflux}
+\Stmt{\dot n_{ref}=\dot n_{H_2O}-\dot n_{CO_2}\frac{p_{sat}\left(T_{cond}\right)}{p-p_{sat}\left(T_{cond}\right)}}
+\Interp{Almost all the water in the overhead returns to the column. Only the small amount that stays saturated in the CO$_2$ vent leaves.}
+\Deriv{Water balance on the separator, with the vent saturated: $y_{H_2O}=p_{sat}/p$, so the vent carries $y_{H_2O}/(1-y_{H_2O})$ moles of water per mole of CO$_2$.}
+\Vars{\V{\dot n_{ref}}{condensate returned}{\U{mol\ s^{-1}}} \V{T_{cond}}{separator temperature}{\U{K}} \V{p_{sat}}{water saturation pressure}{\U{Pa}}}
+\Assume{Vent saturated.}
+\Source{\tagP{} Saturated vent as in Vinjarapu et al., Appl.\ Energy 355 (2024) 122193, Eq 23, PDF p.~12.}
+\Impl{\fn{units::stripper::reflux}}
+\Valid{ID}{eq_i_08}{Water balance identity.}
+\end{eqcard}
+
+\begin{eqcard}{I.9}{R}{Circulation}
+\Stmt{\dot m_{solv}=\frac{\dot n_{CO_2}M_{MEA}}{w\left(\alpha_{rich}-\alpha_{lean}\right)}}
+\Interp{The solvent rate follows directly from the capacity: half the capacity means twice the pumping and twice the sensible heat.}
+\Deriv{\Eq{I.1} with $\dot n_{MEA}=w\dot m_{solv}/M_{MEA}$. The same relation is \Eq{H.28}.}
+\Vars{\V{M_{MEA}}{molar mass of MEA, 61.08}{\U{g\ mol^{-1}}} \V{w}{MEA mass fraction, 0.30}{\U{kg\ kg^{-1}}}}
+\Assume{Lean solvent basis.}
+\Source{\tagC{} Restated from \Eq{H.28}.}
+\Impl{\fn{units::absorber::solvent_rate}}
+\Valid{GOLD}{eq_i_09}{\vMsolvB{} \U{t\ h^{-1}} at Case B.}
+\end{eqcard}
+
+\begin{eqcard}{I.10}{R}{Rich-lean exchanger}
+\Stmt{\dot m_rc_p\left(T_{r,out}-T_{r,in}\right)=\dot m_lc_p\left(T_{l,in}-T_{l,out}\right),\qquad T_{r,out}=T_{l,in}-\Delta T_{hx}}
+\Interp{Hot lean solvent preheats the cold rich solvent. Each kelvin of approach left at the hot end must be paid for in the reboiler, so this exchanger sets the sensible term of \Eq{I.13}.}
+\Deriv{\Eq{A.8} on each side with equal heat capacity. The approach is fixed at 10 K as a design choice.}
+\Vars{\V{\dot m_r}{rich solvent flow}{\U{kg\ s^{-1}}} \V{\dot m_l}{lean solvent flow}{\U{kg\ s^{-1}}} \V{T_{r,out}}{rich solvent leaving the exchanger}{\U{K}} \V{T_{l,in}}{lean solvent entering the exchanger}{\U{K}} \V{\Delta T_{hx}}{hot-end approach, 10 K}{\U{K}}}
+\Assume{CP, with equal heat capacity on both sides. \tagM{21}: the solvent value of \U{3.6\ kJ\ kg^{-1}\ K^{-1}} is a figure axis range.}
+\Source{\tagC{} This document.}
+\Impl{\fn{units::regen::rich_lean}}
+\Valid{PUB}{eq_i_10}{Computed here from DICE \cite{DICE}: rich solvent at 138.1 F and 3,242,115 \U{lb\ h^{-1}} (Fig 5-2, PDF p.~192), exchanger duty 274 \U{MMBtu\ h^{-1}} (PDF p.~215) and lean solvent at 253.8 F give an approach of \cDiceApproach{} K.}
+\end{eqcard}
+
+\begin{eqcard}{I.11}{R}{Heating steam}
+\Stmt{\dot m_{st}=\frac{\dot Q_{reb}}{\Delta h_{cond}}}
+\Interp{Steam gives up its latent heat in the reboiler, so the steam flow is the duty over that latent heat.}
+\Deriv{\Eq{A.8} on the steam side, with saturated steam in and saturated condensate out. The code takes $\Delta h_{cond}$ from IAPWS-IF97.}
+\Vars{\V{\dot m_{st}}{heating steam flow}{\U{kg\ s^{-1}}} \V{\Delta h_{cond}}{latent heat of the heating steam}{\U{J\ kg^{-1}}}}
+\Assume{Saturated steam, full condensation.}
+\Source{\tagT{} Consequence of \Eq{A.8}.}
+\Impl{\fn{units::regen::steam}}
+\Valid{PUB}{eq_i_11}{Computed here. DICE \cite{DICE}: 242 \U{MMBtu\ h^{-1}} (PDF p.~215) on 263.3 \U{klb\ h^{-1}} (Table 5-3, PDF p.~197) is \cDiceBtu{} \U{Btu\ lb^{-1}}. INL: 121.7 \U{MMBtu\ h^{-1}} on 134,540 \U{lb\ h^{-1}} (TEV-961 \cite{TEV961}, A-57, PDF p.~81, read as an image) is \cInlLpBtu{} \U{Btu\ lb^{-1}}. At the INL value Case B needs \cSteamKgS{} \U{kg\ s^{-1}}.}
+\end{eqcard}
+
+\begin{eqcard}{I.12}{R}{Specific reboiler duty}
+\Stmt{SRD=\frac{\dot Q_{reb}}{\dot m_{CO_2}}}
+\Interp{The headline energy number for a solvent plant: heat per tonne captured.}
+\Deriv{Definition. Vinjarapu writes it as $RD\cdot3.6/m_{CO_2}$ with duty in kW and CO$_2$ in \U{kg\ h^{-1}}, which returns \U{GJ\ t^{-1}}.}
+\Vars{\V{SRD}{specific reboiler duty}{\U{J\ kg^{-1}}}}
+\Assume{Reboiler duty basis, heat loss included.}
+\Source{\tagP{} Vinjarapu et al., Appl.\ Energy 355 (2024) 122193, Eq 19, PDF p.~11.}
+\Impl{\fn{units::regen::srd}}
+\Valid{EXP}{eq_i_12}{Computed here from the same paper, Table D.19, PDF p.~38: the \cVinjN{} steady states with capture of 88 to 92\% have a median of \cVinjMedian{} \U{GJ\ t^{-1}}, from \cVinjMin{} to \cVinjMax. DICE gives \cDiceSrd{} on its \cDiceTph{} \U{t\ h^{-1}}. Both are flue gas.}
+\end{eqcard}
+
+\begin{eqcard}{I.13}{O}{SRD split}
+\Stmt{SRD=q_{des}+q_{sens}+q_{strip},\qquad q_{des}=\frac{\Delta h_{abs}}{M_{CO_2}}}
+\Interp{The first term breaks the chemical bond and is set by the solvent. The other two, warming the solvent over the last few kelvin and raising steam that the condenser later removes, respond to design choices.}
+\Deriv{Split \Eq{I.6} by where the enthalpy goes. The first term is the heat of absorption per unit mass of CO$_2$. The second is $\dot m_rc_p\Delta T_{hx}/\dot m_{CO_2}$ from \Eq{I.10}. The third is $\dot Q_{cond}/\dot m_{CO_2}$ from \Eq{I.7}.}
+\Vars{\V{q_{des}}{desorption term}{\U{J\ kg^{-1}}} \V{q_{sens}}{sensible term}{\U{J\ kg^{-1}}} \V{q_{strip}}{stripping steam term}{\U{J\ kg^{-1}}} \V{\Delta h_{abs}}{heat of absorption}{\U{J\ mol^{-1}}} \V{M_{CO_2}}{molar mass of CO$_2$, 44.01}{\U{g\ mol^{-1}}}}
+\Assume{No separate heat loss term.}
+\Source{\tagC{} This document, on DICE \cite{DICE} data.}
+\Impl{\fn{units::regen::srd_split}}
+\Valid{PUB}{eq_i_13}{Computed here for DICE: $q_{sens}=$ \cDiceQsens{} and $q_{strip}=$ \cDiceQstrip, so a total of \cDiceSrd{} leaves $q_{des}=$ \cDiceQdes{} \U{GJ\ t^{-1}}. The desorption term is back-calculated, so this split closes by construction and tests nothing about it. At Case B, $q_{sens}=$ \cQsensB{} and with the same two other terms the bottom-up total is \cSrdBottomB{} \U{GJ\ t^{-1}}. It stays a check on flue-gas terms.}
+\end{eqcard}
+
+\begin{eqcard}{I.14}{F}{Carried SRD}
+\Stmt{SRD=3.8\ \mathrm{GJ\ t^{-1}},\qquad 3.4\le SRD\le4.2\ \mathrm{GJ\ t^{-1}}}
+\Interp{The value the ledger actually uses. It sits above the bottom-up figure and close to the measured pilot median.}
+\Deriv{The central value rounds the pilot median of \Eq{I.12} up slightly, and allows for heat loss in a plant that has never run on syngas. The range spans good heat recovery at the low end and unsettled flue-gas campaigns at the high end.}
+\Vars{\V{SRD}{carried specific reboiler duty}{\U{J\ kg^{-1}}}}
+\Assume{Flue-gas evidence extrapolated to syngas.}
+\Source{\tagA{} Project value. \tagM{12}: no SRD on syngas in the library.}
+\Impl{\fn{units::regen::srd_input}}
+\Valid{NONE}{eq_i_14}{No benchmark on syngas exists. Flue-gas values are in \Eq{I.12}.}
+\end{eqcard}
+
+\begin{eqcard}{I.15}{R}{Stripping intensity}
+\Stmt{I_{str}=\frac{\dot Q_{reb}}{\dot m_{rich}}}
+\Interp{Heat per kilogram of solvent. Too little leaves the solvent rich. Too much makes excess steam. Pilots show a U-shaped curve of SRD against this number.}
+\Deriv{Definition. Vinjarapu writes $RD\cdot3600/m_{rich}$ with duty in kW and solvent in \U{kg\ h^{-1}}, which returns \U{kJ\ kg^{-1}}.}
+\Vars{\V{I_{str}}{stripping intensity}{\U{J\ kg^{-1}}} \V{\dot m_{rich}}{rich solvent flow}{\U{kg\ s^{-1}}}}
+\Assume{Total rich solvent basis.}
+\Source{\tagP{} Vinjarapu et al., Appl.\ Energy 355 (2024) 122193, Eq 16, 17, PDF p.~11.}
+\Impl{\fn{units::regen::intensity}}
+\Valid{EXP}{eq_i_15}{The pilot optimum is 200 to 210 \U{kJ\ kg^{-1}} at a minimum SRD of 3.65 \U{GJ\ t^{-1}} (same paper, Fig 10(a), PDF p.~11). Computed here for Case B: \cStrInt{} \U{kJ\ kg^{-1}}, just below that band.}
+\end{eqcard}
+
+\begin{eqcard}{I.16}{R}{Reboiler area}
+\Stmt{\dot Q_{reb}=U_rA_r\Delta T_{LMTD}}
+\Interp{Reboiler duty needs a surface and a driving difference. Hotter steam shrinks the reboiler, and it also costs more.}
+\Deriv{\Eq{C.7} applied to a kettle reboiler.}
+\Vars{\V{U_r}{reboiler overall coefficient}{\U{W\ m^{-2}\ K^{-1}}} \V{A_r}{reboiler area}{\U{m^2}} \V{\Delta T_{LMTD}}{reboiler log-mean difference}{\U{K}}}
+\Assume{Uniform coefficient.}
+\Source{\tagP{} Vinjarapu et al., Appl.\ Energy 355 (2024) 122193, Eq 22, PDF p.~11.}
+\Impl{\fn{units::regen::reboiler_area}}
+\Valid{ID}{eq_i_16}{Unit identity.}
+\end{eqcard}
+
+\begin{eqcard}{I.17}{F}{Source temperature}
+\Stmt{T_{source}\ge T_{reb}+\Delta T_{min}}
+\Interp{Heat must arrive hotter than the reboiler. This line decides which plant streams count as reboiler heat, and it rules out most low-grade syngas heat.}
+\Deriv{Second law, with a minimum approach. DICE heats its kettle with 60 psia saturated steam, which is \cDiceTsat{} C by the Antoine fit in the engine inputs. INL distributes LP steam at 307 F and 75 psia, which is 153 C. With a reboiler at 121.9 C those set the working band, and syngas counts only above 130 C.}
+\Vars{\V{T_{source}}{heating medium temperature}{\U{K}} \V{\Delta T_{min}}{minimum approach}{\U{K}}}
+\Assume{Steam near 145 to 153 C.}
+\Source{\tagP{} DICE \cite{DICE}, PDF p.~186. TEV-961 \cite{TEV961}, A-57, PDF p.~81, read as an image.}
+\Impl{\fn{plant::heatrec::check_grade}}
+\Valid{PUB}{eq_i_17}{Grade rule only. The stack in \Eq{J.17} counts syngas above 130 C and nothing colder.}
+\end{eqcard}
+
+\begin{eqcard}{I.18}{F}{Interheating, listed and not carried}
+\Stmt{SRD_{tot}=SRD_{reb}+q_{IH}}
+\Interp{A stripper interheater moves duty out of the reboiler to a cooler source. The reboiler figure falls and the total heat barely changes.}
+\Deriv{Vinjarapu report 2.71 \U{GJ\ t^{-1}} on the reboiler with 28\% interheating, against 3.71 in the base case. Adding the interheater back at 53 \U{kJ\ kg^{-1}} on 264 \U{kg\ h^{-1}} of solvent and 13.1 \U{kg\ h^{-1}} of CO$_2$ gives \cIhTerm, for a total of \cIhTotal{} \U{GJ\ t^{-1}}. So 2.71 is a reboiler figure, and it is never quoted here as a saving.}
+\Vars{\V{SRD_{tot}}{total stripping heat per unit CO$_2$}{\U{J\ kg^{-1}}} \V{SRD_{reb}}{reboiler share}{\U{J\ kg^{-1}}} \V{q_{IH}}{interheater share}{\U{J\ kg^{-1}}}}
+\Assume{Not in the design.}
+\Source{\tagP{} Vinjarapu et al., Energy 320 (2025) 134973, Table 4, PDF p.~17. \tagC{} for the sum.}
+\Impl{none. No code path.}
+\Valid{NONE}{eq_i_18}{Not carried, because total heat is unchanged and the plant has no surplus cool source above the band in \Eq{I.17}.}
+\end{eqcard}
+
+\subsection*{Worked example: regeneration at Case B}
+Start from \cCapC{} \U{kmol\ h^{-1}} captured, which is \vMcotwoB{} \U{t\ h^{-1}}. \Eq{I.1} with a capacity of 0.25 gives \cMeaKmol{} \U{kmol\ h^{-1}} of MEA, and \Eq{I.9} turns that into \vMsolvB{} \U{t\ h^{-1}} of solvent at 30 wt\%. \Eq{I.12} at \U{3.8\ GJ\ t^{-1}} gives a reboiler duty of \vQrebB{} \U{MW}. Dividing by the rich solvent flow gives \cStrInt{} \U{kJ\ kg^{-1}} by \Eq{I.15}, which sits just under the pilot optimum. The plant steam stack of \Eq{J.17} covers \vQstackB{} \U{MW} of this, and the other \vQgapB{} \U{MW} falls to the reactor.
+
+\subsection*{Link to the sources}
+The flue-gas pilots agree on a narrow band of SRD, and the DICE design shows how that heat divides. What does not transfer cleanly is the absorber side: syngas at 26.8 bar reaches its rich loading with little pinch, yet the stripper still works at 2 bar, so the desorption term is unchanged. That is why the carried value stays near flue-gas practice, and why \tagM{12} remains open.

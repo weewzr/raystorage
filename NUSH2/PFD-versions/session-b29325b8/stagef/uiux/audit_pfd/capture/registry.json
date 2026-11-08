@@ -1,0 +1,1074 @@
+{
+ "dropped": [
+  {
+   "id": "baseline",
+   "reason": "Every solve returns abatement on the INL baseline with the Cho and IEAGHG bounds, so no selector is needed"
+  },
+  {
+   "id": "backup_firing",
+   "reason": "The engine has a backup firing estimate, yet its abatement and cost totals do not take a backup switch"
+  },
+  {
+   "id": "t_he_supply_c",
+   "reason": "The anchored heat balance does not read helium supply temperature; it is shown as a fixed value"
+  },
+  {
+   "id": "circ_case",
+   "reason": "The engine run uses the central circulator set; no run input selects another"
+  },
+  {
+   "id": "credit_export",
+   "reason": "The engine run always uses export steam in the reboiler heat order"
+  },
+  {
+   "id": "credit_zld",
+   "reason": "The engine run never counts ZLD steam as free"
+  },
+  {
+   "id": "t_ref_out_c",
+   "reason": "Reformer outlet acts only in the Level 3 flowsheet, which the Headline solve does not run"
+  },
+  {
+   "id": "p_ref_bar",
+   "reason": "Reformer pressure acts only in the Level 3 flowsheet"
+  },
+  {
+   "id": "s_c",
+   "reason": "Steam to carbon acts only in the Level 3 flowsheet"
+  },
+  {
+   "id": "t_hts_in_c",
+   "reason": "HTS inlet acts only in the Level 3 flowsheet"
+  },
+  {
+   "id": "t_lts_in_c",
+   "reason": "LTS inlet acts only in the Level 3 flowsheet"
+  },
+  {
+   "id": "wgs_approach_k",
+   "reason": "Shift approach acts only in the Level 3 flowsheet"
+  },
+  {
+   "id": "wgs_mode",
+   "reason": "Shift arrangement acts only in the Level 3 flowsheet"
+  },
+  {
+   "id": "solvent_spec",
+   "reason": "The Headline solve fixes capture and returns solvent rate; a rate-specified mode is absent"
+  },
+  {
+   "id": "solvent_t_h",
+   "reason": "Solvent rate is an output of the Headline solve"
+  }
+ ],
+ "engine": {
+  "commit": "local",
+  "preset": "headline",
+  "tier": "fast",
+  "version": "0.1.0"
+ },
+ "fixed": [
+  {
+   "class": "published",
+   "id": "T_HE_SUPPLY",
+   "label": "Helium supply temperature",
+   "model_max": 859,
+   "note": "Highest measured secondary helium temperature is 859 C, HTTR 2004 high-temperature run (IAEA NP-T-4.3 printed p.14)",
+   "source": "TEV-961 Table 2 cont.; Table 2 cont.",
+   "unit": "C",
+   "value": 900
+  },
+  {
+   "class": "published",
+   "id": "H2_B",
+   "label": "Hydrogen product at Case B",
+   "model_max": null,
+   "note": "",
+   "source": "Air Liquide press releases of 15 Jan 2008 and 30 Nov 2011: the SOXAL hydrogen plant on Jurong Island, close to 100,000 Nm3/h (decision D03); press releases 15 Jan 2008, 30 Nov 2011",
+   "unit": "Nm3/h",
+   "value": 100000
+  },
+  {
+   "class": "published",
+   "id": "T_HE_RETURN",
+   "label": "Helium return temperature",
+   "model_max": null,
+   "note": "",
+   "source": "TEV-961 Table 2 cont.; Table 2 cont.",
+   "unit": "C",
+   "value": 466
+  },
+  {
+   "class": "published",
+   "id": "ROT",
+   "label": "Reactor outlet temperature",
+   "model_max": null,
+   "note": "",
+   "source": "TEV-961 Table 2; Table 2",
+   "unit": "C",
+   "value": 925
+  },
+  {
+   "class": "assumed",
+   "id": "LOADING_RICH",
+   "label": "Rich loading cap",
+   "model_max": null,
+   "note": "",
+   "source": "Author design cap (decision D28); no kinetic, density or viscosity data for MEA above a loading of 0.50 were found; D28",
+   "unit": "mol/mol",
+   "value": 0.5
+  },
+  {
+   "class": "published",
+   "id": "PSA_H2_RECOVERY",
+   "label": "PSA H2 recovery, external block",
+   "model_max": null,
+   "note": "",
+   "source": "TEV-953 doc p18, doc p20; TEV-961 A-53; doc p18, doc p20, A-53",
+   "unit": "-",
+   "value": 0.88
+  },
+  {
+   "class": "assumed",
+   "id": "ELECTRICITY_PRICE",
+   "label": "Electricity price",
+   "model_max": null,
+   "note": "",
+   "source": "Author assumption, not verified; author assumption",
+   "unit": "S$/kWh",
+   "value": 0.2
+  },
+  {
+   "class": "published",
+   "id": "GRID_EF",
+   "label": "Grid emission factor",
+   "model_max": null,
+   "note": "",
+   "source": "Energy Market Authority 2024 grid emission factor, not verified; grid emission factor 2024",
+   "unit": "t/MWh",
+   "value": 0.402
+  },
+  {
+   "class": "published",
+   "id": "FX",
+   "label": "Exchange rate",
+   "model_max": null,
+   "note": "",
+   "source": "FRED series AEXSIUS, 2025 annual average, S$1.3065 per US$; AEXSIUS 2025",
+   "unit": "S$/US$",
+   "value": 1.3065
+  }
+ ],
+ "kpis": [
+  {
+   "id": "rating_mwth",
+   "label": "HTGR rating",
+   "required": true,
+   "unit": "MWth"
+  },
+  {
+   "id": "reactor_required_mwth",
+   "label": "Reactor heat the process needs",
+   "required": true,
+   "unit": "MWth"
+  },
+  {
+   "id": "surplus_mwth",
+   "label": "Thermal surplus at rating",
+   "required": true,
+   "unit": "MWth"
+  },
+  {
+   "id": "surplus_ahn_mwth",
+   "label": "Thermal surplus on the Ahn heat basis",
+   "required": true,
+   "unit": "MWth"
+  },
+  {
+   "id": "unmet_heat_mwth",
+   "label": "Unmet thermal demand",
+   "required": true,
+   "unit": "MWth"
+  },
+  {
+   "id": "unmet_power_mwe",
+   "label": "Grid import at rating, a J.29 memo",
+   "required": true,
+   "unit": "MWe"
+  },
+  {
+   "id": "q_process_mwth",
+   "label": "SMR process heat, includes preheat",
+   "required": true,
+   "unit": "MWth"
+  },
+  {
+   "id": "h2_rich_kmol_h",
+   "label": "H2 in absorber overhead to PSA",
+   "required": true,
+   "unit": "kmol/h"
+  },
+  {
+   "id": "h2_rich_kg_h",
+   "label": "H2 in absorber overhead to PSA",
+   "required": true,
+   "unit": "kg/h"
+  },
+  {
+   "id": "h2_product_t_y",
+   "label": "Purified H2 after the external PSA",
+   "required": true,
+   "unit": "t/y"
+  },
+  {
+   "id": "ng_mmscfd",
+   "label": "Natural gas feed",
+   "required": true,
+   "unit": "MMSCFD"
+  },
+  {
+   "id": "co2_captured_t_y",
+   "label": "CO2 captured",
+   "required": true,
+   "unit": "t/y"
+  },
+  {
+   "id": "co2_atm_t_y",
+   "label": "CO2 to atmosphere",
+   "required": true,
+   "unit": "t/y"
+  },
+  {
+   "id": "capture_per_pass",
+   "label": "Capture per pass",
+   "required": true,
+   "unit": "-"
+  },
+  {
+   "id": "capture_plant",
+   "label": "Plant capture",
+   "required": true,
+   "unit": "-"
+  },
+  {
+   "id": "q_reboiler_mw",
+   "label": "MEA regeneration duty",
+   "required": true,
+   "unit": "MW"
+  },
+  {
+   "id": "reboiler_gap_mw",
+   "label": "Reboiler heat from reactor steam",
+   "required": true,
+   "unit": "MW"
+  },
+  {
+   "id": "e_aux_mwe",
+   "label": "Auxiliary electricity",
+   "required": true,
+   "unit": "MWe"
+  },
+  {
+   "id": "abatement_t_y",
+   "label": "Annual abatement, INL baseline",
+   "required": true,
+   "unit": "t/y"
+  },
+  {
+   "id": "abatement_cho_t_y",
+   "label": "Annual abatement, Cho baseline",
+   "required": true,
+   "unit": "t/y"
+  },
+  {
+   "id": "abatement_ieaghg_t_y",
+   "label": "Annual abatement, IEAGHG baseline",
+   "required": true,
+   "unit": "t/y"
+  },
+  {
+   "id": "abatement_system_t_y",
+   "label": "Annual abatement, system view",
+   "required": true,
+   "unit": "t/y"
+  },
+  {
+   "id": "abatement_lifecycle_t_y",
+   "label": "Annual abatement, lifecycle view with upstream gas",
+   "required": true,
+   "unit": "t/y"
+  },
+  {
+   "id": "cost_s_per_t",
+   "label": "Abatement cost, L5 ledger, selected stage, life and exponent",
+   "required": true,
+   "unit": "S$/t"
+  },
+  {
+   "id": "cost_l3_s_per_t",
+   "label": "Abatement cost at ladder step L3",
+   "required": false,
+   "unit": "S$/t"
+  },
+  {
+   "id": "cost_lac_dcf_s_per_t",
+   "label": "Levelised abatement cost, discounted cash flow",
+   "required": false,
+   "unit": "S$/t"
+  },
+  {
+   "id": "lcoh_nush2_s_per_kg",
+   "label": "LCOH of NUS-H2",
+   "required": false,
+   "unit": "S$/kg"
+  },
+  {
+   "id": "lcoh_smr_s_per_kg",
+   "label": "LCOH of the unabated SMR",
+   "required": false,
+   "unit": "S$/kg"
+  },
+  {
+   "id": "reactor_charged_mwth",
+   "label": "Reactor size charged",
+   "required": false,
+   "unit": "MWth"
+  },
+  {
+   "id": "solvent_t_h",
+   "label": "Lean solvent rate",
+   "required": false,
+   "unit": "t/h"
+  },
+  {
+   "id": "target_abatement_t_y",
+   "label": "Abatement target",
+   "required": false,
+   "unit": "t/y"
+  },
+  {
+   "id": "target_cost_s_per_t",
+   "label": "Cost target",
+   "required": false,
+   "unit": "S$/t"
+  }
+ ],
+ "levels": [
+  "L0",
+  "L1",
+  "L2",
+  "L3",
+  "L4",
+  "L5"
+ ],
+ "limits": {
+  "rot_max_c": 950,
+  "sweep_max_values": 25
+ },
+ "params": [
+  {
+   "class": "user_decision",
+   "default": "case_b",
+   "engine_id": null,
+   "group": "Plant basis",
+   "hard_max": null,
+   "hard_min": null,
+   "id": "basis",
+   "kind": "enum",
+   "label": "Plant basis",
+   "model_max": null,
+   "model_min": null,
+   "note": "Case A is the INL reference plant",
+   "options": [
+    {
+     "label": "Case B, 100,000 Nm3/h H2",
+     "tag": "headline",
+     "value": "case_b"
+    },
+    {
+     "label": "Case A, INL reference",
+     "tag": "reference",
+     "value": "case_a"
+    }
+   ],
+   "rigour": null,
+   "source": "Decision D03 in docs/FINAL_DESIGN_DECISIONS.md",
+   "step": null,
+   "unit": ""
+  },
+  {
+   "class": "user_decision",
+   "default": "recycle",
+   "engine_id": null,
+   "group": "Plant basis",
+   "hard_max": null,
+   "hard_min": null,
+   "id": "tail_gas",
+   "kind": "enum",
+   "label": "PSA reject fate",
+   "model_max": null,
+   "model_min": null,
+   "note": "Recycle is the approved basis; the others are sensitivities",
+   "options": [
+    {
+     "label": "Recycle to the reformer",
+     "tag": "approved",
+     "value": "recycle"
+    },
+    {
+     "label": "Recycle, cryogenic cut carbon held",
+     "tag": "sensitivity",
+     "value": "recycle_fixed"
+    },
+    {
+     "label": "Burn on site, H2 held",
+     "tag": "sensitivity",
+     "value": "burn_on_site"
+    },
+    {
+     "label": "Export across the boundary",
+     "tag": "sensitivity",
+     "value": "export"
+    },
+    {
+     "label": "INL Case 6 with Selexol",
+     "tag": "sensitivity",
+     "value": "inl_selexol"
+    }
+   ],
+   "rigour": null,
+   "source": "Project decision on the PSA reject fate",
+   "step": null,
+   "unit": ""
+  },
+  {
+   "class": "user_decision",
+   "default": "inl_scaled",
+   "engine_id": null,
+   "group": "Plant basis",
+   "hard_max": null,
+   "hard_min": null,
+   "id": "heat_basis",
+   "kind": "enum",
+   "label": "Process heat basis",
+   "model_max": null,
+   "model_min": null,
+   "note": "Ahn basis sets process heat to the Ahn Case B value and scales helium flow with duty",
+   "options": [
+    {
+     "label": "INL process heat, scaled",
+     "tag": "central",
+     "value": "inl_scaled"
+    },
+    {
+     "label": "Ahn 2026 process heat, helium flow following duty",
+     "tag": "sensitivity",
+     "value": "ahn_2026"
+    }
+   ],
+   "rigour": null,
+   "source": "Engine sensitivity HEAT_BASIS",
+   "step": null,
+   "unit": ""
+  },
+  {
+   "class": "user_decision",
+   "default": 210,
+   "engine_id": "REACTOR_RATED_MWTH",
+   "engine_scale": 1,
+   "group": "Reactor and helium loop",
+   "hard_max": 350,
+   "hard_min": 100,
+   "id": "rating_mwth",
+   "kind": "number",
+   "label": "Reactor rating",
+   "model_max": 215,
+   "model_min": 150,
+   "note": "Required range 98 to 330 MWth from the project screening model; HTR-Modul 170, MHR-100 215 concept",
+   "options": null,
+   "rigour": "fixed_assumption",
+   "source": "Author decision D03: headline reactor rating and the size charged; D03",
+   "step": 1,
+   "unit": "MWth"
+  },
+  {
+   "class": "calculated",
+   "default": 25,
+   "engine_id": "IHX_APPROACH_K",
+   "engine_scale": 1,
+   "group": "Reactor and helium loop",
+   "hard_max": 50,
+   "hard_min": 25,
+   "id": "ihx_approach_k",
+   "kind": "number",
+   "label": "IHX approach",
+   "model_max": 50,
+   "model_min": 50,
+   "note": "Evidence range: about 50 K typical (IAEA) up to the 77 to 82 K measured at the HTTR hot end (IAEA TECDOC-1382 Table 3-23, IAEA NP-T-4.3 printed p.14); 25 K is the INL assumption (TEV-961 printed p.10)",
+   "options": null,
+   "rigour": "fixed_assumption",
+   "source": "Primary return 491 C against the secondary return of 466 C, TEV-961 Table 2 cont. doc p17 (PDF p18), the 25 K approach INL assumes (TEV-961 printed p.10); Table 2 cont., PDF p18; printed p.10",
+   "step": 1,
+   "unit": "K"
+  },
+  {
+   "class": "published",
+   "default": 0.397,
+   "engine_id": "ETA_POWER",
+   "engine_scale": 1,
+   "group": "Reactor and helium loop",
+   "hard_max": 0.48,
+   "hard_min": 0.35,
+   "id": "eta_power",
+   "kind": "number",
+   "label": "Power conversion efficiency",
+   "model_max": 0.475,
+   "model_min": 0.397,
+   "note": "TEV-961 note 3; INL/EXT-11-21537 Table 4",
+   "options": null,
+   "rigour": "fixed_assumption",
+   "source": "TEV-961 Table 2 cont. note 3, interpolated from TEV-981 (primary not held locally); Table 2 cont.",
+   "step": 0.001,
+   "unit": "-"
+  },
+  {
+   "class": "published",
+   "default": 26.8,
+   "engine_id": "P_ABSORBER",
+   "engine_scale": 1,
+   "group": "Capture",
+   "hard_max": 30,
+   "hard_min": 20,
+   "id": "p_abs_bar",
+   "kind": "number",
+   "label": "Absorber pressure",
+   "model_max": 26.8,
+   "model_min": 21,
+   "note": "Sets the lean pump head in the Headline solve",
+   "options": null,
+   "rigour": "fixed_assumption",
+   "source": "TEV-961 A-53 (PDF p77), 389 psia, Case 5; PDF p77, A-53",
+   "step": 0.1,
+   "unit": "bar"
+  },
+  {
+   "class": "assumed",
+   "default": 30,
+   "engine_id": "W_MEA",
+   "engine_scale": 0.01,
+   "group": "Capture",
+   "hard_max": 40,
+   "hard_min": 20,
+   "id": "w_mea",
+   "kind": "number",
+   "label": "MEA strength",
+   "model_max": 30,
+   "model_min": 30,
+   "note": "Column data exist at 30 wt% only; sets solvent rate and lean pump power",
+   "options": null,
+   "rigour": "fixed_assumption",
+   "source": "Project solvent; whole source",
+   "step": 1,
+   "unit": "wt%"
+  },
+  {
+   "class": "assumed",
+   "default": 0.25,
+   "engine_id": "LOADING_LEAN",
+   "engine_scale": 1,
+   "group": "Capture",
+   "hard_max": 0.4,
+   "hard_min": 0.15,
+   "id": "lean_loading",
+   "kind": "number",
+   "label": "Lean loading",
+   "model_max": 0.3,
+   "model_min": 0.15,
+   "note": "Rich loading stays at the fixed cap; sets solvent rate",
+   "options": null,
+   "rigour": "fixed_assumption",
+   "source": "Author design value of the MEA train (decision D25); Guo et al. 2018 Table 2, not verified; Table 2",
+   "step": 0.01,
+   "unit": "mol/mol"
+  },
+  {
+   "class": "assumed",
+   "default": 0.9,
+   "engine_id": "ETA_MEA",
+   "engine_scale": 1,
+   "group": "Capture",
+   "hard_max": 0.95,
+   "hard_min": 0.7,
+   "id": "capture_target",
+   "kind": "number",
+   "label": "Capture per pass",
+   "model_max": 0.92,
+   "model_min": 0.88,
+   "note": "Per-pass capture on absorber-inlet CO2",
+   "options": null,
+   "rigour": "fixed_assumption",
+   "source": "Author design value of the MEA train, 90% per pass on absorber-inlet CO2 (decision D25); the CAPTURE sweep runs 80 to 95%; D25",
+   "step": 0.005,
+   "unit": "-"
+  },
+  {
+   "class": "assumed",
+   "default": 3.8,
+   "engine_id": "SRD_CENTRAL",
+   "engine_scale": 1,
+   "group": "Capture",
+   "hard_max": 5,
+   "hard_min": 3,
+   "id": "srd",
+   "kind": "number",
+   "label": "Specific reboiler duty",
+   "model_max": 4.2,
+   "model_min": 3.4,
+   "note": "Decision D26 in docs/FINAL_DESIGN_DECISIONS.md",
+   "options": null,
+   "rigour": "fixed_assumption",
+   "source": "Author central value (decision D26): Vinjarapu et al. 2024 Table D.19 PDF p38, median 3.75 GJ/t over the 88 to 92% runs; Kwak et al. 2012 3.92; Nexant and Bechtel 2020 DICE design 3.64; Table D.19, PDF p38",
+   "step": 0.05,
+   "unit": "GJ/t"
+  },
+  {
+   "class": "assumed",
+   "default": 2,
+   "engine_id": "P_STRIPPER",
+   "engine_scale": 1,
+   "group": "Capture",
+   "hard_max": 2,
+   "hard_min": 1.5,
+   "id": "p_strip_bar",
+   "kind": "number",
+   "label": "Stripper pressure",
+   "model_max": 2,
+   "model_min": 1.5,
+   "note": "Sets the lean pump head in the Headline solve",
+   "options": null,
+   "rigour": "fixed_assumption",
+   "source": "Author design value of the MEA train (decision D25), not verified against a syngas plant; D25",
+   "step": 0.05,
+   "unit": "bar"
+  },
+  {
+   "class": "assumed",
+   "default": 0.85,
+   "engine_id": "AVAILABILITY",
+   "engine_scale": 1,
+   "group": "Operation",
+   "hard_max": 0.92,
+   "hard_min": 0.6,
+   "id": "availability",
+   "kind": "number",
+   "label": "Availability",
+   "model_max": 0.9,
+   "model_min": 0.65,
+   "note": "Hydrogen counted only in availability hours",
+   "options": null,
+   "rigour": "fixed_assumption",
+   "source": "Author assumption (decision D05); TEV-953 and TEV-961 state no availability factor, and IEAGHG 2017-02 Table 4 uses 95%; D05",
+   "step": 0.01,
+   "unit": "-"
+  },
+  {
+   "class": "user_decision",
+   "default": "BOAK",
+   "engine_id": null,
+   "group": "Cost",
+   "hard_max": null,
+   "hard_min": null,
+   "id": "stage",
+   "kind": "enum",
+   "label": "Cost stage",
+   "model_max": null,
+   "model_min": null,
+   "note": "The dashboard prints BOAK and FOAK side by side whatever is selected",
+   "options": [
+    {
+     "label": "BOAK",
+     "tag": "central",
+     "value": "BOAK"
+    },
+    {
+     "label": "FOAK",
+     "tag": "",
+     "value": "FOAK"
+    },
+    {
+     "label": "10-OAK, learning from BOAK (INL PDF p46)",
+     "tag": "",
+     "value": "10OAK_P46"
+    },
+    {
+     "label": "10-OAK, learning from FOAK (INL PDF p47)",
+     "tag": "",
+     "value": "10OAK_P47"
+    }
+   ],
+   "rigour": null,
+   "source": "INL/RPT-23-72972",
+   "step": null,
+   "unit": ""
+  },
+  {
+   "class": "user_decision",
+   "default": "25",
+   "engine_id": null,
+   "group": "Cost",
+   "hard_max": null,
+   "hard_min": null,
+   "id": "life_y",
+   "kind": "enum",
+   "label": "Reactor life",
+   "model_max": null,
+   "model_min": null,
+   "note": "",
+   "options": [
+    {
+     "label": "25 y",
+     "tag": "central",
+     "value": "25"
+    },
+    {
+     "label": "40 y",
+     "tag": "",
+     "value": "40"
+    },
+    {
+     "label": "60 y",
+     "tag": "",
+     "value": "60"
+    }
+   ],
+   "rigour": null,
+   "source": "Engine registry LIVES_SHORT, LIVES_MID, LIVES_LONG",
+   "step": null,
+   "unit": ""
+  },
+  {
+   "class": "user_decision",
+   "default": "1.0",
+   "engine_id": null,
+   "group": "Cost",
+   "hard_max": null,
+   "hard_min": null,
+   "id": "n",
+   "kind": "enum",
+   "label": "Size exponent",
+   "model_max": null,
+   "model_min": null,
+   "note": "The cost table prints all three exponents at equal prominence",
+   "options": [
+    {
+     "label": "1.0, INL recipe, engine value 1.0000",
+     "tag": "central",
+     "value": "1.0"
+    },
+    {
+     "label": "0.6, engine value 0.6000",
+     "tag": "",
+     "value": "0.6"
+    },
+    {
+     "label": "0.31, NGNP 350 and 600 MWth pair, engine value 0.3107",
+     "tag": "",
+     "value": "0.31"
+    }
+   ],
+   "rigour": null,
+   "source": "Decision D09 in docs/FINAL_DESIGN_DECISIONS.md",
+   "step": null,
+   "unit": ""
+  },
+  {
+   "class": "user_decision",
+   "default": "rating",
+   "engine_id": null,
+   "group": "Cost",
+   "hard_max": null,
+   "hard_min": null,
+   "id": "charged",
+   "kind": "enum",
+   "label": "Reactor charged at",
+   "model_max": null,
+   "model_min": null,
+   "note": "",
+   "options": [
+    {
+     "label": "Reactor rating",
+     "tag": "central",
+     "value": "rating"
+    },
+    {
+     "label": "Reactor required by the process",
+     "tag": "",
+     "value": "required"
+    }
+   ],
+   "rigour": null,
+   "source": "Project screening model, reactor size charged",
+   "step": null,
+   "unit": ""
+  },
+  {
+   "class": "assumed",
+   "default": 0.08,
+   "engine_id": "DISCOUNT",
+   "engine_scale": 1,
+   "group": "Cost",
+   "hard_max": 0.12,
+   "hard_min": 0.03,
+   "id": "discount",
+   "kind": "number",
+   "label": "Discount rate",
+   "model_max": 0.1,
+   "model_min": 0.05,
+   "note": "Project basis",
+   "options": null,
+   "rigour": "fixed_assumption",
+   "source": "Project basis; same as IEAGHG 2017 (PDF p12); PDF p12",
+   "step": 0.005,
+   "unit": "-"
+  },
+  {
+   "class": "published",
+   "default": 15,
+   "engine_id": "GAS_CENTRAL",
+   "engine_scale": 1,
+   "group": "Cost",
+   "hard_max": 25,
+   "hard_min": 8,
+   "id": "gas_s_gj",
+   "kind": "number",
+   "label": "Natural gas price",
+   "model_max": 20,
+   "model_min": 10,
+   "note": "",
+   "options": null,
+   "rigour": "fixed_assumption",
+   "source": "IMF global LNG price, Asia (FRED PNGASJPUSDM), 2025 mean US$12.09/MMBtu, times FRED AEXSIUS 1.3065 and over 1.05506 GJ/MMBtu, S$14.97/GJ; PNGASJPUSDM 2025; AEXSIUS 2025",
+   "step": 0.5,
+   "unit": "S$/GJ"
+  },
+  {
+   "class": "assumed",
+   "default": 60,
+   "engine_id": "TS_CENTRAL",
+   "engine_scale": 1,
+   "group": "Cost",
+   "hard_max": 112,
+   "hard_min": 23.2,
+   "id": "ts_s_t",
+   "kind": "number",
+   "label": "CO2 transport and storage",
+   "model_max": 112,
+   "model_min": 23.2,
+   "note": "Decision D10 in docs/FINAL_DESIGN_DECISIONS.md",
+   "options": null,
+   "rigour": "fixed_assumption",
+   "source": "Author central tariff (decision D10); ERIA and GCCSI 2024 Fig. 2.13 (report PDF p121) puts transport in a Singapore CCS network at about US$43/t, S$56/t, with storage extra; Fig. 2.13, PDF p121",
+   "step": 0.1,
+   "unit": "S$/t"
+  },
+  {
+   "class": "user_decision",
+   "default": "central",
+   "engine_id": null,
+   "group": "Cost",
+   "hard_max": null,
+   "hard_min": null,
+   "id": "occ_level",
+   "kind": "enum",
+   "label": "Reactor overnight cost",
+   "model_max": null,
+   "model_min": null,
+   "note": "Selects which registry value the central cost query uses",
+   "options": [
+    {
+     "label": "Low",
+     "tag": "",
+     "value": "low"
+    },
+    {
+     "label": "Central",
+     "tag": "central",
+     "value": "central"
+    },
+    {
+     "label": "High",
+     "tag": "",
+     "value": "high"
+    }
+   ],
+   "rigour": null,
+   "source": "Engine registry OCC_LOW, OCC_CENTRAL, OCC_HIGH",
+   "step": null,
+   "unit": ""
+  },
+  {
+   "class": "assumed",
+   "default": 0.027,
+   "engine_id": "CAPTURE_FOM",
+   "engine_scale": 1,
+   "group": "Cost",
+   "hard_max": 0.06,
+   "hard_min": 0.027,
+   "id": "capture_fom",
+   "kind": "number",
+   "label": "Capture fixed O&M",
+   "model_max": 0.06,
+   "model_min": 0.027,
+   "note": "",
+   "options": null,
+   "rigour": "fixed_assumption",
+   "source": "2.7% of capture capital per year, derived from IEAGHG 2017-02 cases, not verified (decision D10); D10",
+   "step": 0.001,
+   "unit": "1/y"
+  }
+ ],
+ "schema": 1,
+ "status": "ok",
+ "units": {
+  "absorber": {
+   "basis": "rigour of engine registry entry ETA_MEA",
+   "driver": "ETA_MEA",
+   "label": "MEA absorber",
+   "status": "fixed_assumption",
+   "term": "T02"
+  },
+  "circ_primary": {
+   "basis": "balance computed by the anchored port, tagged reduced order by the engine exporter",
+   "driver": null,
+   "label": "Helium circulators",
+   "status": "reduced_order",
+   "term": "T11"
+  },
+  "co2_compressor": {
+   "basis": "rigour of engine registry entry E_CO2COMP",
+   "driver": "E_CO2COMP",
+   "label": "CO2 compressor",
+   "status": "fixed_assumption",
+   "term": "T09"
+  },
+  "co2_storage": {
+   "basis": "rigour of engine registry entry TS_CENTRAL",
+   "driver": "TS_CENTRAL",
+   "label": "CO2 storage, ship offshore",
+   "status": "fixed_assumption",
+   "term": null
+  },
+  "condenser": {
+   "basis": "rigour of engine registry entry SRD_CENTRAL",
+   "driver": "SRD_CENTRAL",
+   "label": "Overhead condenser",
+   "status": "fixed_assumption",
+   "term": null
+  },
+  "cryogenic": {
+   "basis": "rigour of engine registry entry PHI_RECYCLE",
+   "driver": "PHI_RECYCLE",
+   "label": "Cryogenic unit",
+   "status": "reduced_order",
+   "term": "T04"
+  },
+  "htgr": {
+   "basis": "balance computed by the anchored port, tagged reduced order by the engine exporter",
+   "driver": null,
+   "label": "HTGR and helium loop",
+   "status": "reduced_order",
+   "term": null
+  },
+  "ihx": {
+   "basis": "rigour of engine registry entry LOSS_CENTRAL_IHX",
+   "driver": "LOSS_CENTRAL_IHX",
+   "label": "Intermediate heat exchanger",
+   "status": "fixed_assumption",
+   "term": "T12"
+  },
+  "lean_cooler": {
+   "basis": "rigour of engine registry entry K_COOLING",
+   "driver": "K_COOLING",
+   "label": "Lean amine cooler",
+   "status": "fixed_assumption",
+   "term": "T08"
+  },
+  "lean_pump": {
+   "basis": "balance computed by the anchored port, tagged reduced order by the engine exporter",
+   "driver": null,
+   "label": "Lean amine pump",
+   "status": "reduced_order",
+   "term": "T07"
+  },
+  "power": {
+   "basis": "rigour of engine registry entry ETA_POWER",
+   "driver": "ETA_POWER",
+   "label": "Power and steam block",
+   "status": "fixed_assumption",
+   "term": null
+  },
+  "psa": {
+   "basis": "rigour of engine registry entry PSA_H2_RECOVERY",
+   "driver": "PSA_H2_RECOVERY",
+   "label": "PSA, external block",
+   "status": "external",
+   "term": null
+  },
+  "reboiler": {
+   "basis": "rigour of engine registry entry SRD_CENTRAL",
+   "driver": "SRD_CENTRAL",
+   "label": "Reboiler",
+   "status": "fixed_assumption",
+   "term": "T06"
+  },
+  "recycle_compressor": {
+   "basis": "rigour of engine registry entry E_PURGE",
+   "driver": "E_PURGE",
+   "label": "Recycle compressor",
+   "status": "fixed_assumption",
+   "term": null
+  },
+  "rich_lean_hx": {
+   "basis": "rigour of engine registry entry SRD_CENTRAL",
+   "driver": "SRD_CENTRAL",
+   "label": "Rich and lean amine exchanger",
+   "status": "fixed_assumption",
+   "term": null
+  },
+  "separator": {
+   "basis": "rigour of engine registry entry SYNGAS_CHAIN_C5_KO_DRM_1_MMBTU_H",
+   "driver": "SYNGAS_CHAIN_C5_KO_DRM_1_MMBTU_H",
+   "label": "Condensate separator",
+   "status": "fixed_assumption",
+   "term": null
+  },
+  "smr": {
+   "basis": "rigour of engine registry entry Q_PROCESS",
+   "driver": "Q_PROCESS",
+   "label": "Helium-heated steam methane reformer",
+   "status": "reduced_order",
+   "term": "T03"
+  },
+  "stripper": {
+   "basis": "rigour of engine registry entry SRD_CENTRAL",
+   "driver": "SRD_CENTRAL",
+   "label": "MEA stripper",
+   "status": "fixed_assumption",
+   "term": "T06"
+  },
+  "syngas_cooler": {
+   "basis": "rigour of engine registry entry Q_EX4_ABOVE_130C",
+   "driver": "Q_EX4_ABOVE_130C",
+   "label": "Syngas cooler and heat recovery",
+   "status": "fixed_assumption",
+   "term": "T05"
+  },
+  "wgs": {
+   "basis": "rigour of engine registry entry PHI_RECYCLE",
+   "driver": "PHI_RECYCLE",
+   "label": "Water gas shift",
+   "status": "reduced_order",
+   "term": "T01"
+  }
+ }
+}

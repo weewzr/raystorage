@@ -1,0 +1,35 @@
+Add the government co-funding model to the plant engine
+
+Implements equations S.1 to S.9c of docs/derivation/02_cost_and_subsidy.md on
+the annual net abatement that the caller passes in, so the legacy basis and the
+independent basis can both use it.
+
+subsidy.rs holds the grant plan (eligible capital, grant, private capital,
+interest on the gross and on the private balance, the part the grant saves, the
+dated GRANT flows), the funded-balance recursion and its closed form for a
+grant at close, the ledger form at close, the reported quantities of both
+methods, the strict target flag and the break-even solve. The progressive
+break-even is the closed form of S.7b. At close the ledger uses S.7c and the
+cash flow uses the exact piecewise-linear route of S.7d. Every closed-form
+share is checked against the cost the model returns at that share, and a
+residual above the registry tolerance sends the solve to a bracketed bisection.
+A cost already below the target returns a share of 0, and a cost at or above
+the target at the largest share returns the cost at that share and no share.
+A share outside 0 to 1, or not a number, is refused.
+
+economics.rs gains the grant field of CostQuery and the net-of-grant block of
+the Ledger (grant credit and interest effect, after L5). dcf.rs gains dcf_at,
+which takes the abatement as an argument, adds one GRANT line and one GRANT gap
+term when the share is not zero, and leaves the path unchanged otherwise. The
+existing rx_mult lever is untouched.
+
+The registry follows decision D7b for definition B. The derivation table of S.1
+lists another membership (power island in, capture plant and recycle train
+out); tests/m10_subsidy.rs reproduces the derivation numbers by setting those
+flags.
+
+tests/m10_subsidy.rs has 36 tests named after the equation they check. The
+closed forms in it are written from the derivation, not through the engine.
+Workspace tests: 409 passed. The seven tables regenerate byte for byte.
+
+Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>

@@ -1,0 +1,74 @@
+== fmt
+fmt exit 0
+== clippy
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.14s
+clippy exit 0
+== test
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.19s
+test aronu::tests::bad_mole_fractions_are_an_error ... ok
+test kinetics::tests::bad_inputs_are_errors ... ok
+test result: ok. 29 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.12s
+test eq_g_32_range_error_outside_validity ... ok
+test result: ok. 20 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.52s
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test gates::tests::a_failed_row_blocks_and_a_reported_row_does_not_count ... ok
+test params::tests::unknown_id_is_an_error ... ok
+test result: ok. 52 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.95s
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.17s
+test result: ok. 39 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.58s
+test a_run_that_cannot_solve_is_an_error_and_never_the_legacy_ledger ... ok
+test result: ok. 47 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 20.29s
+test result: ok. 20 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.03s
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 18.81s
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.69s
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.36s
+test helium::tests::outside_the_range_is_an_error ... ok
+test shomate::tests::empty_table_is_a_range_error ... ok
+test steam::tests::out_of_range_is_an_error ... ok
+test result: ok. 35 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+test shomate_range_error ... ok
+test result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 69 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.19s
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.74s
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.06s
+test result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 32.59s
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 24.61s
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.54s
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 193.04s
+test failed_rows_state_value_and_limit ... ok
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.12s
+test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 31.79s
+test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 10.92s
+test done
+== export default
+wrote C:/Users/Alf/AppData/Local/Temp/claude/f97511ab42c3e41a/dee70430-6901-4bdf-a7a6-7fbb5c9a2058/scratchpad/phase3/verifycarbon/exp_default\Economic_Ledger.csv (449157 bytes)
+wrote C:/Users/Alf/AppData/Local/Temp/claude/f97511ab42c3e41a/dee70430-6901-4bdf-a7a6-7fbb5c9a2058/scratchpad/phase3/verifycarbon/exp_default\Sensitivity_Results.csv (213116 bytes)
+wrote C:/Users/Alf/AppData/Local/Temp/claude/f97511ab42c3e41a/dee70430-6901-4bdf-a7a6-7fbb5c9a2058/scratchpad/phase3/verifycarbon/exp_default\Subsidy_Scenarios.csv (138740 bytes)
+wrote C:/Users/Alf/AppData/Local/Temp/claude/f97511ab42c3e41a/dee70430-6901-4bdf-a7a6-7fbb5c9a2058/scratchpad/phase3/verifycarbon/exp_default\Validation_Results.csv (263874 bytes)
+validation rows 668: pass 331, fail 32, reported 263, not_run 42
+export exit 0
+== compare default
+Economic_Ledger.csv: agrees, 40656 cells compared, 0 unequal as text but within tolerance
+Emissions_Ledger.csv: agrees, 5928 cells compared, 0 unequal as text but within tolerance
+Final_Design_Basis.csv: agrees, 9129 cells compared, 0 unequal as text but within tolerance
+Integrated_Energy_Balance.csv: agrees, 6600 cells compared, 0 unequal as text but within tolerance
+Integrated_Mass_Balance.csv: agrees, 7448 cells compared, 0 unequal as text but within tolerance
+Sensitivity_Results.csv: agrees, 12552 cells compared, 0 unequal as text but within tolerance
+Subsidy_Scenarios.csv: agrees, 12320 cells compared, 0 unequal as text but within tolerance
+Validation_Results.csv: agrees, 10020 cells compared, 0 unequal as text but within tolerance
+PASS
+== export legacy
+wrote C:/Users/Alf/AppData/Local/Temp/claude/f97511ab42c3e41a/dee70430-6901-4bdf-a7a6-7fbb5c9a2058/scratchpad/phase3/verifycarbon/exp_legacy\Economic_Ledger.csv (449159 bytes)
+wrote C:/Users/Alf/AppData/Local/Temp/claude/f97511ab42c3e41a/dee70430-6901-4bdf-a7a6-7fbb5c9a2058/scratchpad/phase3/verifycarbon/exp_legacy\Sensitivity_Results.csv (185463 bytes)
+wrote C:/Users/Alf/AppData/Local/Temp/claude/f97511ab42c3e41a/dee70430-6901-4bdf-a7a6-7fbb5c9a2058/scratchpad/phase3/verifycarbon/exp_legacy\Subsidy_Scenarios.csv (138723 bytes)
+wrote C:/Users/Alf/AppData/Local/Temp/claude/f97511ab42c3e41a/dee70430-6901-4bdf-a7a6-7fbb5c9a2058/scratchpad/phase3/verifycarbon/exp_legacy\Validation_Results.csv (255517 bytes)
+validation rows 650: pass 325, fail 32, reported 251, not_run 42
+export legacy exit 0
+== check_clean
+scanned 245 files, 0 hits
+GATE_DONE

@@ -1,0 +1,28 @@
+   Compiling seuif97 v2.3.8
+   Compiling nush2_numerics v0.1.0 (C:\Users\Alf\AppData\Local\Temp\claude\C--Ray-Claude-Ray-Debug-VS-Code\b29325b8-d1b9-49cd-bfe6-262261d7ffef\scratchpad\stagef\recheck_A2\head\engine\numerics)
+   Compiling itoa v1.0.18
+   Compiling memchr v2.8.3
+   Compiling serde_core v1.0.229
+   Compiling zmij v1.0.23
+   Compiling serde v1.0.229
+   Compiling serde_json v1.0.154
+   Compiling nush2_props v0.1.0 (C:\Users\Alf\AppData\Local\Temp\claude\C--Ray-Claude-Ray-Debug-VS-Code\b29325b8-d1b9-49cd-bfe6-262261d7ffef\scratchpad\stagef\recheck_A2\head\engine\props)
+   Compiling nush2_mea v0.1.0 (C:\Users\Alf\AppData\Local\Temp\claude\C--Ray-Claude-Ray-Debug-VS-Code\b29325b8-d1b9-49cd-bfe6-262261d7ffef\scratchpad\stagef\recheck_A2\head\engine\mea)
+   Compiling nush2_units v0.1.0 (C:\Users\Alf\AppData\Local\Temp\claude\C--Ray-Claude-Ray-Debug-VS-Code\b29325b8-d1b9-49cd-bfe6-262261d7ffef\scratchpad\stagef\recheck_A2\head\engine\units)
+   Compiling nush2_plant v0.1.0 (C:\Users\Alf\AppData\Local\Temp\claude\C--Ray-Claude-Ray-Debug-VS-Code\b29325b8-d1b9-49cd-bfe6-262261d7ffef\scratchpad\stagef\recheck_A2\head\engine\plant)
+   Compiling nush2_vv v0.1.0 (C:\Users\Alf\AppData\Local\Temp\claude\C--Ray-Claude-Ray-Debug-VS-Code\b29325b8-d1b9-49cd-bfe6-262261d7ffef\scratchpad\stagef\recheck_A2\head\engine\vv)
+   Compiling nush2_cli v0.1.0 (C:\Users\Alf\AppData\Local\Temp\claude\C--Ray-Claude-Ray-Debug-VS-Code\b29325b8-d1b9-49cd-bfe6-262261d7ffef\scratchpad\stagef\recheck_A2\head\engine\cli)
+    Finished `release` profile [optimized] target(s) in 27.77s
+     Running `C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/cargo/recheck_A2\release\nush2.exe export --out 'C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/stagef/recheck_A2/exp1'`
+wrote C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/stagef/recheck_A2/exp1\Final_Design_Basis.csv (103542 bytes)
+wrote C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/stagef/recheck_A2/exp1\Integrated_Mass_Balance.csv (73105 bytes)
+wrote C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/stagef/recheck_A2/exp1\Integrated_Energy_Balance.csv (77922 bytes)
+wrote C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/stagef/recheck_A2/exp1\Emissions_Ledger.csv (39028 bytes)
+wrote C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/stagef/recheck_A2/exp1\Economic_Ledger.csv (449159 bytes)
+wrote C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/stagef/recheck_A2/exp1\Sensitivity_Results.csv (185463 bytes)
+wrote C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/stagef/recheck_A2/exp1\Validation_Results.csv (255515 bytes)
+validation rows 650: pass 325, fail 32, reported 251, not_run 42
+
+real	0m45.507s
+user	0m0.000s
+sys	0m0.030s

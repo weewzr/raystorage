@@ -1,0 +1,55 @@
+% Card layout and small helpers. Numbers never live here: engine results and calculated
+% values are macros in generated/values.tex.
+
+% Units go inside math with \mathrm.
+\newcommand{\U}[1]{\ensuremath{\mathrm{#1}}}
+
+% Engine function reference, printed as code.
+\newcommand{\fn}[1]{\texttt{\detokenize{#1}}}
+
+% Link to another equation by id.
+\newcommand{\Eq}[1]{\hyperref[eq:#1]{Eq.~#1}}
+
+% Evidence tags, section 3.2 of the conventions.
+\newcommand{\tagP}{\textbf{[P]}}
+\newcommand{\tagT}{\textbf{[T]}}
+\newcommand{\tagC}{\textbf{[C]}}
+\newcommand{\tagA}{\textbf{[A]}}
+\newcommand{\tagM}[1]{\textbf{[M#1]}}
+
+% One equation card. Arguments: id, tier, title.
+\newcommand{\cardid}{}
+\newcommand{\cardtier}{}
+\newcommand{\derivlabel}{Derivation}
+\newenvironment{eqcard}[3]{%
+  \par\addvspace{8pt}%
+  \renewcommand{\cardid}{#1}\renewcommand{\cardtier}{#2}%
+  \ifx#2R\renewcommand{\derivlabel}{Derivation}\fi
+  \ifx#2O\renewcommand{\derivlabel}{Derivation}\fi
+  \ifx#2E\renewcommand{\derivlabel}{Fit range and origin}\fi
+  \ifx#2F\renewcommand{\derivlabel}{Justification}\fi
+  \ifx#2X\renewcommand{\derivlabel}{Boundary}\fi
+  {\color{cardrule}\hrule height 0.4pt}\vspace{-2pt}%
+  \subsection*{Equation #1: #3\hfill{\normalfont\small Tier #2}}%
+}{\par}
+
+\newcommand{\Stmt}[1]{\begin{equation}\tag{\cardid}\label{eq:\cardid}#1\end{equation}}
+\newcommand{\cardfield}[2]{\par{\small\sffamily\bfseries\color{cardlabel}#1.}\ #2\par}
+\newcommand{\Interp}[1]{\cardfield{Interpretation}{#1}}
+\newcommand{\Deriv}[1]{\cardfield{\derivlabel}{#1}}
+% Items are separated by a semicolon; the list ends with a full stop.
+\newcommand{\varsep}{}
+\newcommand{\Vars}[1]{\gdef\varsep{}\cardfield{Variables}{#1\unskip.}}
+\newcommand{\V}[3]{\varsep$#1$, #2, #3\gdef\varsep{\unskip; }}
+\newcommand{\Assume}[1]{\cardfield{Assumptions}{#1}}
+\newcommand{\Source}[1]{\cardfield{Source}{#1}}
+\newcommand{\Impl}[1]{\cardfield{Implementation}{#1}}
+\newcommand{\Valid}[3]{\cardfield{Validation}{#1, test \texttt{\detokenize{#2}}. #3}}
+
+% One variable block. Arguments: name, symbol, meaning, typical value, units, role, caveat.
+\newcommand{\VarBlock}[7]{%
+  \subsection*{Variable: #1 (#2)}
+  #3 \textit{Typical value:} #4 \textit{Units:} #5 \textit{Role:} #6 \textit{Caveat:} #7\par}
+
+% Placeholder for a section that is still to be written.
+\newcommand{\pending}{\textit{This section is written in the next build pass.}\par}

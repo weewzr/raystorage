@@ -1,0 +1,10 @@
+ .github/workflows/site.yml |    2 +
+ docs/UI_UX_ASSESSMENT.md   |  218 ++++++++
+ frontend/index.html        |   94 ++--
+ frontend/panels.js         |    2 +-
+ frontend/pfd.js            |   31 +-
+ frontend/selftest.js       |  437 +++++++++++++++
+ frontend/tour.css          |  283 ++++++++++
+ frontend/tour.js           | 1292 ++++++++++++++++++++++++++++++++++++++++++++
+ scripts/selftest.py        |   13 +-
+ 9 files changed, 2336 insertions(+), 36 deletions(-)

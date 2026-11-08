@@ -1,0 +1,132 @@
+id,value,unit,class,source
+availability,0.85,-,assumed,Project value; no availability in TEV-953 or TEV-961 (inl.md s6)
+H2_A,29000.0,lb/h,published,"TEV-953 doc p15 (PDF p16): net 130 MMSCFD = 29,000 lb/h"
+H2_A_MMSCFD,130.0,MMSCFD,published,TEV-961 Table 2 doc p16 (PDF p17)
+rho_H2_normal,0.08988,kg/Nm3,published,"Deck slide 14; IEAGHG 2017 uses 8.994 t/h per 100,000 Nm3/h (0.08994)"
+H2_B,100000.0,Nm3/h,published,"Air Liquide releases 15 Jan 2008, 30 Nov 2011 (econ_lit.md s9)"
+NG_case6,34.0,MMSCFD,published,"TEV-961 Table 2 doc p16 (PDF p17), 925 C ROT"
+NG_conv_noCC,52.5,MMSCFD,published,TEV-953 Table 2 doc p29 (PDF p30)
+NG_norecycle,44.5,MMSCFD,published,"TEV-953 Table 2: HTGR no CC, all PSA reject fired, no recycle. Fit of Cases 2-5 gives 44.3 (inl_calcs_output)"
+NG_tube_convCC,44.76216000000001,MMSCFD,calculated,TEV-953 A-18 (PDF p52): 90.98% of 49.2 to tubes
+NG_HHV,1044.0,Btu/scf,published,TEV-961 A-50 (PDF p74)
+C_per_mol_NG,1.05379,mol C/mol,calculated,TEV-953 A-5 (PDF p39) composition
+CO2_captured_C6,1927.0,st/d,published,"TEV-961 Table 2 doc p16. Ton = short ton, inl.md s4.5"
+CO2_emitted_C6,142.0,st/d,published,TEV-961 Table 2 doc p16
+CO2_conv_noCC,3205.0,st/d,published,TEV-953 Table 2 doc p29
+CO2_HTGR_noCC,2713.0,st/d,published,"TEV-953 Table 2 doc p29 (44.5 MMSCFD, no recycle, no capture)"
+CO2_captured_convCC,2143.0,st/d,published,TEV-953 Table 2 doc p29
+eta_Selexol,0.99,-,published,"TEV-953 doc p20; TEV-961 A-53 (PDF p77); separation block, not rigorous"
+eta_MEA,0.9,-,assumed,Project per-pass capture on absorber-inlet CO2 (amine_spec rows 42-45)
+CH4_in_H2,0.001,mol/mol,published,"TEV-953 A-40; TEV-961 A-50: product 99.9% H2, 0.1% CH4"
+phi_recycle,0.775,-,calculated,"CO2/(CO2+CH4+CO) after shift. Case 5 reconstruction, mea_columns s9, inl_calcs_output 3754/(3754+1020+70)"
+phi_recycle_range,0.76-0.79,-,calculated,Case 5 and Case 1 anchors
+PSA_H2_recovery,0.88,-,published,"TEV-953 doc p18, doc p20; TEV-961 A-53"
+Q_process,176.8,MWth,published,"TEV-961 Table 2 doc p16: total process heat, not reformer only"
+He_flow,78.49,kg/s,published,TEV-961 Table 2 cont. doc p17 (PDF p18)
+T_He_supply,900.0,C,published,TEV-961 Table 2 cont.
+T_He_return,466.0,C,published,TEV-961 Table 2 cont.
+ROT,925.0,C,published,TEV-961 Table 2
+eta_power,0.397,-,published,"TEV-961 Table 2 cont. note 3, interpolated from TEV-981 (not local)"
+eta_power_alt,0.475,-,published,"INL/EXT-11-21537 Table 4 doc p7 (PDF p20), 66% of Carnot at 900 C"
+E_reforming,1.2,MWe,published,TEV-961 Table 2
+E_purification,2.1,MWe,published,"TEV-961 Table 2, Selexol plus PSA"
+E_steam,0.3,MWe,published,TEV-961 Table 2
+E_co2comp,6.4,MWe,published,"TEV-961 Table 2, 30 psia to 2,015 psia"
+E_purge,5.7,MWe,published,"TEV-961 Table 2, Purge Recovery"
+E_cooling,0.1,MWe,published,TEV-961 Table 2
+E_water,1.5,MWe,published,TEV-961 Table 2
+E_PSA,0.0173,MWe,published,"TEV-961 A-56 (PDF p80) PSA-PWR 17.3 kW, Case 5"
+export_steam_C6,83.7,MMBtu/h,published,TEV-961 Table 2 doc p16
+export_steam_C5,54.3,MMBtu/h,published,"TEV-961 Table 2. Used as the no-recycle proxy, since the 83.7 in Case 6 includes N2-rich cut combustion (TEV-961 doc p18)"
+export_steam_conv,189.2,MMBtu/h,published,TEV-953 Table 2 doc p29
+E_conv_noCC,6.3,MWe,published,TEV-953 Table 2 doc p29
+syngas_chain_C5,see table,MMBtu/h,published,"TEV-961 A-55 to A-59 (PDF pp79-83), Case 5 used as proxy; Case 6 sheets not local"
+Q_selexol_C5,19.04961951388889,MWth,published,TEV-961 A-56 (PDF p80): 65.0 MMBtu/h LP steam
+Q_ZLD_C5,16.6171296375,MWth,published,TEV-961 A-57 (PDF p81): 56.7 MMBtu/h LP steam
+CO2_captured_C5,1970.0,st/d,published,TEV-961 Table 2
+Q_EX4_above_130C,11.5,MWth,calculated,inl_calcs_output: WGS-EX4 300 to 266 F; independent check in Section 4 of this script
+SRD_low,3.4,GJ/tCO2,assumed,mea_columns s6 recommendation; low end needs good heat recovery
+SRD_central,3.8,GJ/tCO2,assumed,mea_columns s6: 88-92% window median 3.75; Kwak 3.92; DICE 3.64
+SRD_high,4.2,GJ/tCO2,assumed,mea_columns s6: Mongstad cluster 3.95-4.25
+loading_rich,0.5,mol/mol,assumed,"mea_columns s3 design value; mea_thermo cap, no kinetic data above 0.50"
+loading_lean,0.25,mol/mol,assumed,"amine_spec line 34, Guo 2018 Table 2 (not read)"
+w_MEA,0.3,kg/kg,assumed,Project solvent
+rho_solvent,1050.0,kg/m3,assumed,"Between Hartono Table 3 values at loading 0.25 and 0.50, about 1,050-1,105"
+P_absorber,26.8,bar,published,"TEV-961 A-53 (PDF p77), 389 psia, Case 5"
+P_stripper,2.0,bar,assumed,amine_spec line 51
+eta_pump,0.75,-,assumed,Typical centrifugal; no letdown recovery credited
+eta_motor,0.9,-,assumed,"htgr_ihx.md s8, reader assumption, applied to pumps and circulators"
+k_cooling,0.015,MWe/MWth,assumed,Pumps and fans per MWth rejected. Same order as DICE circ. pumps plus fans 3.4 MWe (PDF p18); no direct published ratio
+cp_He,5195.0,J/kg/K,published,"Petersen 1970, via htgr_ihx.md s5; INL implied 5190"
+circ_low,"(7.0, 150.0, 100.0, 0.8)","MPa, dP sec, dP prim kPa, eta",assumed,htgr_ihx.md s6 budget from INL-11109 and JAERI values
+circ_central,"(7.0, 200.0, 150.0, 0.75)",as above,assumed,htgr_ihx.md s6; INL-21537 Table 2 gives eta 0.75
+circ_central_5p15,"(5.15, 200.0, 150.0, 0.75)",as above,assumed,htgr_ihx.md s6
+circ_high,"(5.15, 300.0, 200.0, 0.65)",as above,assumed,htgr_ihx.md s6; HTTR map peak efficiency about 0.65
+vessel_loss_HTTR,0.81,MW at 30 MW,published,"TECDOC-1382 Table 3-21 (PDF p164), measured"
+loss_low,"{'ihx': 0.0, 'duct': 0.45, 'vessel': 'area'}",mixed,assumed,"90 m duct, INL-11109 Table 3 scaled (htgr_ihx.md s7); vessel P^(2/3)"
+loss_central,"{'ihx': 0.008, 'duct': 0.45, 'vessel': 'area'}",mixed,calculated,"IHX 0.8% from HTTR heat balance residual, TECDOC-1382 Table 3-23 (htgr_ihx.md)"
+loss_high,"{'ihx': 0.04581447963800905, 'duct': 3.12, 'vessel': 'prop'}",mixed,assumed,IHX 8.1 MWth is the final_v1_7 allowance (no source); 500 m duct; vessel 2.7% of power
+r_work_high,0.3,MWe/MWth,assumed,"mea_columns s10, assumed upper value"
+r_work_central,0.169,MWe/MWth,calculated,"IEAGHG 2017-02 Case 1A back-pressure ratio, mea_columns s10"
+eta_boiler,0.85,-,assumed,"Tail-gas boiler, LHV basis"
+eta_tailgas_power,0.3,-,assumed,Small steam cycle on tail-gas boiler; TEV-953 Table 2 note 2 uses 33% for fossil power
+CO_share_of_unconverted,0.06422018348623854,-,calculated,"Case 5 reconstruction, inl_calcs_output line 54"
+discount,0.08,-,assumed,Project basis; same as IEAGHG 2017 (PDF p12)
+lives,"(25, 40, 60)",y,assumed,Task; deck slide 29
+FX,1.3065,S$/US$,published,FRED AEXSIUS 2025 (econ_lit.md s9h)
+F_2019USD_to_2025SGD,1.6195,S$/US$2019,calculated,"128.885/103.9745 GDP deflator x 1.3065, final_v1_7 Table A2; GDP deflator understates nuclear escalation"
+F_2014EUR_to_2025SGD,2.322,S$/EUR2014,calculated,final_v1_7 Table A9 check 9
+gas_low,10.0,S$/GJ,assumed,final_v1_7 s3.6
+gas_central,15.0,S$/GJ,published,US$12.09/MMBtu 2025 mean x 1.3065 / 1.05506 = S$14.97 (econ_lit.md s9h)
+gas_high,20.0,S$/GJ,assumed,final_v1_7 s3.6
+TS_low,23.2,S$/tCO2,published,IEAGHG 2017 EUR10/t x 2.322; NL EOR pipeline basis
+TS_central,60.0,S$/tCO2,assumed,"econ_lit.md s11; ERIA network transport about US$43/t = S$56, storage extra"
+TS_high,112.0,S$/tCO2,published,"ERIA 2024 Fig 2.13 about US$86/t integrated, transport only, chart read"
+OCC_low,1456.0,US$2019/kWt,published,"INL/RPT-23-72972 Rev 3 PDF p47: 4,000 x 0.91 x 0.4"
+OCC_central,2184.0,US$2019/kWt,calculated,"Same recipe with 6,000/kWe; final_v1_7 s3.4"
+OCC_high,2548.0,US$2019/kWt,published,"INL/RPT-23-72972 Rev 3 PDF p47: 7,000 x 0.91 x 0.4"
+OPEX_low,6.0,US$2019/MWth-h,published,"INL/RPT-23-72972 PDF p47, includes annualised fuel"
+OPEX_central,10.0,US$2019/MWth-h,calculated,"US$25/MWh at 40%, final_v1_7 s3.2"
+OPEX_high,14.0,US$2019/MWth-h,published,INL/RPT-23-72972 PDF p47
+OPEX_fuel_share_HTGR,0.4438,-,published,"INL/RPT-23-72972 Table 9 (PDF p37); fuel scales linearly, staff scales with n"
+FOAK_low,1.3,x,published,INL/RPT-23-72972 Table 1 (PDF p5)
+FOAK_central,1.6,x,published,INL/RPT-23-72972 Table 1
+FOAK_high,2.1,x,published,INL/RPT-23-72972 Table 1
+learning,0.1,per doubling,published,"INL/RPT-23-72972 Table 1, applied to FOAK in its worked example PDF p47"
+reactor_cost_ref_size,600.0,MWth,assumed,final_v1_7 s3.4; INL Table 1 is not tied to any size (econ_lit.md s11)
+n_team,0.6,-,assumed,"final_v1_7 s3.4, Carelli 2010, Peters 2003 (not read)"
+n_linear,1.0,-,assumed,"No size penalty, INL per kWt applied directly"
+n_NGNP,0.31069766688467315,-,calculated,"INL/RPT-23-72972 PDF p25: single-unit FOAK NGNP US$18,313/kWe at 600 MWth, US$26,553/kWe at 350 MWth"
+power_island_addback,540.0,US$2019/kWe,calculated,"6,000 x 9% removed in the no-turbine recipe, restored for MWe actually generated"
+decom_low,750.0,US$2022/kWe,published,INL NZW09 Table (PDF p7): US LWR history; applied to R x 0.40
+decom_central,1000.0,US$2022/kWe,published,Same
+decom_high,1250.0,US$2022/kWe,published,Same
+decom_fund_rate_high,0.03,-,assumed,"Trust fund real return, adverse case"
+licence_low,0.0,US$M,assumed,"Plant licensing 0.56% and site permits 0.23% already in INL OCC, COA 12-13 (PDF p34)"
+licence_central,50.0,US$M,published,"NRC blog 29 Oct 2015: US$50-75M design certification fees; generic proxy, first-licence country not costed"
+licence_high,137.5,US$M,published,NRC upper US$75M plus X-energy deck p37 NOAK fee US$250M per four-pack / 4
+IHX_loop_cost,69.0,"US$M, about 2012",published,"IAEA-TECDOC-1682 Table 3.17 via old repo E1 model; primary not opened (HTTP 402), so not verified at source"
+deflator_2012_2025,1.383131133730757,x,calculated,Old repo E1 proxy deflators
+IHX_low,13.737999225249105,S$M at 176.8 MWth,published,"GA-A24265 USD43/kWth loop only, via old repo; not verified at source"
+IHX_high_mult,1.6,x,assumed,FOAK premium on the IAEA anchor
+IHX_life_high,14.117647058823529,y,calculated,"HTTR basis 105,120 h (TECDOC-1236 PDF p17) at 7,446 h/y"
+capture_K_1A,2.043957939914163,S$M/(t/h),calculated,IEAGHG 2017-02 Tables 2-3: Case 1A less Base TCR EUR41.02M at 46.6 tCO2/h; aMDEA on syngas
+capture_K_3,5.093952773613193,S$M/(t/h),calculated,IEAGHG 2017-02: Case 3 less Base TCR EUR175.59M at 80.04 tCO2/h; MEA on flue gas
+capture_K_low,1.7373642489270387,S$M/(t/h),calculated,"Case 1A at the -15% AACE Class 4 bound, IEAGHG PDF p219"
+capture_FOM,0.027,1/y,assumed,"final_v1_7 Table A2, derived from IEAGHG cases"
+capture_FOM_high,0.06,1/y,published,"Ahn and Lee 2026 Table 3, maintenance 6% of FCI"
+capture_allin,60.0,US$2019/tCO2,published,ETC exhibit via deck slide 23; includes compression; energy content not verified
+recycle_train_K,4.153454100737714,EUR M TPC/MW,calculated,IEAGHG Case 1A CO2 compression TPC EUR17.0M (PDF p223) over power at INL 3.32 kW per st/d
+TCR_over_TPC,1.3,x,calculated,IEAGHG 2017-02 Table 2
+recycle_train_high,307.479015625357,S$M at Case A,calculated,"IEAGHG Case 2B cryogenic block TPC EUR69.6M at 100,000 Nm3/h (PDF p226), scaled to Case A"
+electricity_price,0.2,S$/kWh,assumed,final_v1_7 s3.2 (source not verified)
+grid_EF,0.402,t/MWh,published,"EMA 2024 via old repo csv, audit_recompute section F; not re-verified"
+EF_NG_LHV,56.1,kg/GJ LHV,published,IPCC 2006 via Stationary Combustion Guidance Table (htgr_ihx.md)
+EF_upstream,11.5,kg/GJ,published,IEA 2026 via final_v1_7 Table A2 (not re-verified)
+TS_burden,0.025,t/t,assumed,"final_v1_7 Table A2, project assumption"
+EF_nuclear,5.5,kg/MWh,published,UNECE 2022 via final_v1_7 Table A2 (not re-verified)
+baseline_Cho,9.35,kg/kg,published,"Cho 2022 abstract, 33 US facilities, direct"
+baseline_IEAGHG,8.995997331554369,kg/kg,calculated,"IEAGHG 2017-02 Table 2 Base, 0.8091 kg/Nm3"
+phi_norecycle,0.791417711987843,-,calculated,"TEV-953 Case 1: 2,143/0.99 st/d over tube carbon at 44.76 MMSCFD"
+construction_years,5.5,y,published,INL NZW09 base case (PDF p7); uniform spend at 8%
+NG_Ahn_equivalent,42.628014265615285,MMSCFD,calculated,Ahn and Lee 2026 Table 6: 18.8% gas saving applied to 52.5

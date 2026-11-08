@@ -1,0 +1,2389 @@
+
+===== PDF PAGE 1 =====
+Energy 320 (2025) 134973
+Available online 20 February 2025
+0360-5442/© 2025 The Authors. Published by Elsevier Ltd. This is an open access article under the CC BY license (http://creativecommons.org/licenses/by/4.0/).
+Contents lists available at ScienceDirect
+Energy
+journal homepage: www.elsevier.com/locate/energy
+Pilot-scale CO2 capture demonstration of stripper interheating using 30 wt%
+MEA at a Waste-to-Energy facility
+Sai Hema Bhavya Vinjarapu a
+,∗, Randi Neerup a, Anders Hellerup Larsen a,
+Sebastian Nis Bay Villadsen a, Søren Jensen b, Jakob Lindkvist Karlsson b, Jannik Kappel c,
+Henrik Lassen c, Peter Blinksbjerg c, Nicolas von Solms a, Philip Loldrup Fosbøl a
+a Technical University of Denmark (DTU), Department of Chemical Engineering, Center for Energy Resources Engineering (CERE), Søltofts Plads, Building
+229, 2800 Kongens Lyngby, Denmark
+b Pentair Union Engineering A/S, Snaremosevej 27, 7000 Fredericia, Denmark
+c Amager Bakke, ARC, Vindmøllevej 6, 2300 Copenhagen, Denmark
+A R T I C L E
+I N F O
+Keywords:
+Climate action
+CO2 capture
+Stripper interheating
+Heat integration
+Pilot scale demonstration
+Process optimisation
+A B S T R A C T
+Post-combustion CO2 capture is a widely recognised technology for controlling industrial CO2 emissions.
+However, issues like the substantial energy demands for solvent regeneration still need to be solved. The
+current work aims to discuss the outcomes of process optimisation within a pilot-scale CO2 capture facility
+by implementing interheating in the stripper to reduce energy consumption. The pilot-scale experiments
+were executed at Amager Bakke, a Waste-to-Energy plant in Copenhagen, Denmark. These tests used 30 wt%
+Monoethanolamine as the solvent. A semi-lean solvent from the middle of the stripper is withdrawn for external
+heating by an interheater and fed to the stripper at the same height. A steam generator with adjustable
+electrical duty is used as the heat source for the interheater. The novelty of this work lies in the pilot scale
+demonstration of stripper interheating at an industrial facility, which has seldom been done. The objective is to
+experimentally demonstrate the performance of the Interheating configuration at the pilot scale and analyse
+the potential improvements in the energy consumption of the process. The interheating experiments were
+conducted by varying the reboiler duty in the range of 12 to 20 kW and the interheater duty in the range of 2
+to 5 kW while maintaining a solvent flow of 267 kg/h and a flue gas flow of 99 kg/h. The results provide several
+possible scenarios, are discussed in detail, and are compared to previously obtained base case results. While
+maintaining a capture efficiency of around 83%, stripper interheating has demonstrated a specific reboiler duty
+of 2.71 GJ/tonne CO2 compared to 3.71 GJ/tonne CO2 achieved by the base case operation. A 3% reduction in
+the specific reboiler duty was achieved by interheating at a capture efficiency slightly over 90%. A preliminary
+model based on the experimental results has shown a further reduction of SRD to 2.25 GJ/tonne CO2 at high
+capture efficiencies.
+1. Introduction
+Post-combustion capture (PCC) is a critical technology essential to
+eliminate industrial CO2 emissions into the atmosphere. PCC is closely
+linked to achieving SDG goals such as Climate Action and Afford-
+able and Clean Energy. Amine-based CO2 capture is a well-established
+technology which can effectively capture 90 to 100% of the CO2
+emissions from flue gases released by fossil-based power plants, Waste-
+to-Energy (WtE) facilities processing Municipal Solid Waste (MSW)
+and biogenic waste, and biogas plants. Monoethanolamine (MEA) is
+one of the most known and commonly used amine solvents. MEA
+has several advantages, such as fast reaction kinetics, high solvent
+∗Corresponding author.
+E-mail address: shbvin@kt.dtu.dk (S.H.B. Vinjarapu).
+capacity, and operational knowledge [1–5]. However, drawbacks like
+high solvent regeneration energy requirements, solvent degradation,
+and equipment corrosion persist [1,6,7]. The regeneration of CO2-
+rich MEA solution requires a significant amount of energy, typically
+ranging from 3.6 to 3.8 GJ/tonne CO2 [8]. This energy demand can
+reduce the net efficiency of a power plant when the energy is sourced
+internally. Reports indicate a decrease in net efficiency of between
+5% and 28.5%, depending on the level of CO2 recovery achieved.
+Additionally, compressing the recovered CO2 for transportation further
+diminishes net efficiency. As a result, retrofitting a power plant with
+PCC technology will likely result in an overall loss of net efficiency.
+https://doi.org/10.1016/j.energy.2025.134973
+Received 20 November 2024; Received in revised form 31 January 2025; Accepted 9 February 2025
+
+===== PDF PAGE 2 =====
+Energy 320 (2025) 134973
+2
+S.H.B. Vinjarapu et al.
+Nomenclature
+Abbreviations
+𝐻 𝐸
+Heat exchanger
+𝐼 𝐻
+Interheater
+𝐿𝑀 𝑇 𝐷
+Logarithmic mean temperature difference
+𝐿𝑉 𝐶
+Lean Vapour Compression
+𝑀 𝐸 𝐴
+Monoethanolamine
+𝑀 𝑇 𝑈
+Mobile Test Unit
+𝑃 𝐶 𝐶
+Post-combustion capture
+𝑃 𝐹 𝐷
+Process flow diagram
+𝑅𝐷
+Reboiler duty
+𝑆 𝐼
+Fraction of total stripping intensity
+𝑆 𝑅𝐷
+Specific reboiler duty
+𝑆 𝑡𝑟𝑖𝑛𝑡
+Stripping intensity
+𝑊 𝑡𝐸
+Waste-to-Energy
+Symbols
+𝛼
+Loading
+𝛥𝑇
+Temperature difference
+𝜖
+Capture efficiency
+𝐶𝑝,𝑇
+Specific heat capacity at temperature 𝑇
+𝑚
+Mass flow rate
+𝑛
+Molar flow rate
+𝑃
+Partial pressure
+𝑄
+Duty exchanged
+𝑞
+Percentage of reboiler duty excluding heat
+loss
+𝑇
+Temperature
+𝑢
+Slope of linear correlation
+𝑦
+Concentration in gas phase
+Subscripts
+𝑐
+Condenser exit stream
+𝑐 𝑙
+Cold lean stream
+CO2, 𝑐 𝑎𝑝
+CO2 captured
+CO2, 𝑖𝑛
+CO2 in the inlet stream
+CO2, 𝑜𝑢𝑡
+CO2 in the outlet stream
+𝑐 𝑜𝑛𝑑
+Condenser
+𝑐 𝑜𝑜𝑙 𝑖𝑛𝑔
+Total cooling in the lean cooler and the
+condenser
+𝑐 𝑟
+Cold rich stream
+𝑒𝑥𝑝
+Experimental
+𝑓 𝑙 𝑢𝑒𝑔 𝑎𝑠, 𝑖𝑛
+Inlet flue gas stream
+𝑓 𝑙 𝑢𝑒𝑔 𝑎𝑠, 𝑜𝑢𝑡
+Outlet flue gas stream
+ℎ𝑙
+Hot lean stream
+ℎ𝑟
+Hot rich stream
+𝐼 𝐻 , ℎ𝑒𝑎𝑡𝑙 𝑜𝑠𝑠
+Heat loss in the interheater
+𝐼 𝐻
+Interheater
+𝑖𝑛𝑡, 𝑝𝑟𝑒𝑑
+Integrated case, predicted
+𝑙 𝑒𝑎𝑛𝑐 𝑜𝑜𝑙 𝑒𝑟
+Cooling in the lean cooler
+𝑙 𝑒𝑎𝑛
+Lean solvent stream
+𝑚𝑎𝑖𝑛𝐻 𝐸
+Main heat exchanger
+𝑚𝑎𝑥, 𝑟𝑒𝑐
+Maximum energy recovery possible in the
+main heat exchanger
+Research is underway to develop new solvents and process technolo-
+gies to overcome the drawbacks. The disadvantages are encountered
+mainly due to high temperature and pressure conditions maintained in
+𝑟𝑒𝑏, ℎ𝑒𝑎𝑡𝑙 𝑜𝑠𝑠
+Heat loss in the reboiler
+𝑟𝑒𝑏
+Reboiler
+𝑟𝑒𝑐
+Energy recovery in the main heat exchanger
+𝑟𝑖𝑐 ℎ
+Rich solvent stream
+𝑠𝑒𝑛𝑠, 𝑟𝑖𝑐 ℎ
+Sensible heating of the hot rich stream
+𝑠𝑒𝑛𝑠, 𝑠𝑓
+Sensible heating of the split flow stream
+𝑠𝑒𝑛𝑠
+Total sensible heating of the solvent in the
+stripper
+𝑠𝑓
+Split flow stream
+𝑆 𝑇 𝐸
+Liquid distributor above stripper packed
+bed E
+𝑆 𝑇 𝐹
+Liquid distributor above stripper packed
+bed F
+𝑡𝑜𝑡𝑎𝑙
+Total stream flow rate
+𝑤𝑙
+Warm lean stream
+the stripper for desorption of CO2 and solvent regeneration. Therefore,
+advanced process configurations that optimise the stripper operation
+can help overcome the disadvantages. MEA is a well-documented and
+tested solvent in operation, solvent degradation, emissions, and process
+simulation. Therefore, it is a good candidate for testing advanced
+process configurations. There are several documented process config-
+urations in the literature which report an improvement in the energy
+efficiency of CO2 capture, such as intercooled absorber, interheated
+stripper, split flow, lean vapour compression, among several others [9].
+In our previous work, we have discussed in detail the demonstration
+of split flow configuration [10]. The current work aims to discuss the
+implementation of stripper interheating.
+Interheating is done by withdrawing a stream of semi-lean solvent
+from the middle of the stripper and injecting it back into the strip-
+per [9,11–15]. This is a simplified version of heat integrated stripper
+and is easier to implement on existing structures [9]. Interheating in
+the stripper optimises the temperature profile in the stripper’s top and
+middle. An optimal temperature profile can be achieved by heating
+the semi-lean solvent, bringing the stripper temperature in the middle
+closer to the reboiler temperature [9]. The interheater modification was
+predicted to reduce the stripper parasitic loss by 4.6 to 6.1% [13,15,
+16]. Several other works can be found in the literature which conducted
+simulations of interheating of the stripper [17–26].
+The semi-lean solvent could be interheated by various sources [9]:
+• the hot flue gas before it is cooled and sent to the absorber [27]
+• the reboiler condensate [11,16]
+• the hot lean solvent exiting the stripper bottom [11,16,28]
+• a combination [11]
+• high-temperature heat pumps integrated with waste heat recov-
+ery.
+Simulations were conducted to model waste heat recovery from
+different parts of a post-combustion power plant as a heat source for
+interheating the semi-lean solvent in the stripper [12]. The patent
+says that waste heat recovery for interheating in the stripper causes
+a reduction in the reboiler duty by 6.77% and an increase in the
+condenser duty by 1% [18].
+Muhammad et al. [29] has simulated the use of reboiler conden-
+sate for interheating the stripper. Simulations were done to optimise
+the withdrawal and feed stages in the stripper. An optimal SRD was
+observed when a CO2-rich solvent was withdrawn from stage 2 (from
+the top) and fed to the stripper at stage 15 (from the top). When the
+solvent was interheated, it caused further steam and CO2 production.
+As the interheated solvent was fed to stage 15, the vapour stream had
+a longer contact time with the solvent in the stripper, thus stripping
+
+===== PDF PAGE 3 =====
+Energy 320 (2025) 134973
+3
+S.H.B. Vinjarapu et al.
+Fig. 1. CO2 capture pilot plant. (a) 3D model of the pilot. (b) The pilot plant located at the WtE facility (June 2021 to April 2022).
+more CO2 and reducing the SRD. SRD values as low as 2.63 GJ/tonne
+CO2 were obtained [29].
+De Miguel Mercader et al. [15] provides an overall perspective of
+the implementation of several configurations with no and low level of
+heat integration and their impact on the net efficiency of a 1070 MWe
+coal-fired power plant connected to a CO2 capture plant (250 MWe
+equivalent). It was reported that implementing an interheated stripper
+with low-level heat integration results in the least penalty on the net
+efficiency of the power plant. The interheated case with low-level heat
+integration gave the best results compared to several configurations,
+such as base case, Lean Vapour compression (LVC), split flow, and
+LVC + split flow. However, an interheated stripper without any heat
+integration was shown to have a higher penalty on efficiency when
+compared to LVC + split flow with no integration. Karimi et al. [30]
+has detailed the positive and negative effects of interheating through a
+simulation study. Interheating was shown to negatively impact the SRD
+of the process without heat integration in the system. However, when
+done in conjugation with heat integration, interheating was beneficial
+by bringing the temperature profile in the stripper closer to the optimal.
+An optimal stripper temperature profile would be linear, eliminating
+pinch regions and efficiently using the packing. Both the reboiler and
+the condenser duty were shown to be reduced by 5.7% and 13.3% for
+one interheater and 9.9% and 22.7%, respectively, for two interheater
+cases. The optimal location for the placement of the interheater was
+also simulated and said to be 1/3rd from the top of the column.
+Van Wagener [26] has shown that interheating has the most sig-
+nificant impact when done in the middle of the stripper. When the
+interheater was placed at the bottom, directly above the reboiler, the
+extracted solvent from the stripper was much hotter than the middle
+of the stripper. Therefore, less heat could be exchanged. Additionally,
+the driving force at the reboiler was higher than the middle or the
+stripper top. Implementing interheating just above the reboiler would
+cause desorption of CO2 due to a high driving force rather than heating
+the solvent. The interheater at the stripper middle would operate
+closer to the mass transfer pinch point, thus effectively heating the
+solvent. The equivalent work was shown to be reduced by 1.5 kJ/mol
+CO2 by implementing interheating. It was presented that the stripper’s
+performance was improved by interheating due to higher selectivity of
+CO2 compared to water at high temperatures. Hot lean solvent exiting
+the stripper was used to interheat the semi-lean solvent.
+Frailie et al. [17] conducted a simulation study of interheating in
+stripper for 8 m PZ, 7 m MDEA/2 m PZ, and 5 m PZ solvents. The hot
+fluid for interheating was the hot lean solvent exiting the stripper.
+As the duty was displaced from the main HE to the interheater, the
+temperature of the hot rich solvent entering the stripper top was lower.
+A decrease in the hot rich solvent temperature resulted in an increased
+value of PCO2∕PH2O and consequently reduced the SRD of the system. Li
+et al. [19] also showed that the use of hot lean solvent for interheating
+the stripper reduces the energy requirement for the production of
+steam and sensible heating of the solvent, thus reducing the SRD by
+6.1% from 3.6 GJ/tonne CO2 to 3.38 GJ/tonne CO2. Zhao et al. [20]
+has shown that the SRD could be reduced to 2.56 GJ/tonne CO2 by
+implementing interheating by hot lean solvent for MDEA/PZ based
+solvent. Additionally, the net efficiency penalty was reported to reduce
+from 8.49% to 8.25%.
+Li et al. [25] conducted a Techno-economic assessment on several
+advanced process configurations such as split flow, intercooling, and
+interheating. Interheating the stripper was reported to reduce the net
+costs by US$2.9/tonne CO2 despite the increased capital costs due to
+extra heat exchanger requirements.
+Stoffregen et al. [31] reported a pilot-scale demonstration of strip-
+per interheating at a coal-fired power plant. However, no informa-
+tion is available regarding the configuration’s performance. Stripper
+interheating by use of the hot lean solvent and steam condensate
+from the reboiler has been commercialised by Mitsubishi Heavy In-
+dustries at a natural gas-fired power plant in Abu Dhabi [32]. The
+commercial plant utilised KS-1 solvent, and an energy consumption of
+2.9 GJ/tonne CO2 was obtained using stripper interheating. However,
+there is no documentation of the operation or detailed analysis of the
+configuration.
+
+===== PDF PAGE 4 =====
+Energy 320 (2025) 134973
+4
+S.H.B. Vinjarapu et al.
+Fig. 2. PFD of the stripper interheater configuration. The interheater section is highlighted in red. A steam generator (electric heating element) simulates a heat source (heat
+recovered from hot flue gas, reboiler condensate, hot lean solvent) for interheating the semi-lean solvent. The interheater, steam generator, withdrawal and feed of the semi-lean
+solvent are shown in red. The individual packing bed heights are: C- 3.4 m, D- 3.5 m, E- 3.5 m, F- 3.5 m. Packed bed F is unused for desorption of CO2.
+Pilot-scale studies have been reported for heat-integrated stripper
+configuration [8,33,34]. The pilot plant had internal heat exchangers
+built in the stripper [35,36]. Due to the location of the heat exchangers
+internal to the stripper, ambient losses were reduced, column internal
+temperatures and solvent regeneration rates were improved, and SRD
+values were reduced [18,28,37]. The reboiler duties were reported to
+reduce by 9 to 11% using a combination of split flow configuration and
+interheated stripper through internal heat exchangers [33]. However,
+no difficulties or challenges were reported regarding servicing such
+internal heat exchangers in the stripper.
+It can, therefore, be concluded that interheating in stripper can
+reduce the penalty on the net efficiency of a power plant, reduce the
+SRD of the capture plant, and reduce the capital costs of captured
+CO2 [15,19,20,25]. Though there are abundant simulation studies of
+the stripper interheating configuration, there is a lack of experimen-
+tal implementation and detailed analysis of this configuration, which
+leaves a considerable knowledge gap in its practical implementation
+and operation at a pilot-scale. Implementing such advanced configu-
+rations at a pilot scale is critical to understanding the performance of
+the capture plant and operational difficulties, validating the existing
+models, developing better ones, and conducting FEED studies.
+The current work aims to bridge this considerable knowledge gap
+by presenting the results of a pilot scale demonstration of the strip-
+per interheating configuration. The goal of the stripper interheating
+configuration is to optimise the energy consumed in the stripper by
+improving the temperature profile while maintaining a high capture
+efficiency compared to the base case configuration.
+Implementing advanced configurations such as interheating at a pi-
+lot scale is crucial before scaling up to full-scale plants. Uncertainties in
+the operating and ambient conditions can be challenging and influence
+the performance of capture plants, as detailed in Vinjarapu et al. [5].
+Therefore, this study is valuable in understanding the improvements in
+the performance of the process in an industrial setting as opposed to
+controlled environments maintained in a laboratory.
+The tests were conducted at Amager Bakke, operated by Amager
+Resource Center (ARC), in Copenhagen, Denmark. Amager Bakke is a
+WtE facility that annually emits 600,000 tonnes of CO2. It incinerates
+non-recyclable MSW collected from the neighbouring communities and
+industries. The waste comprises biogenic (66%) and non-biogenic waste
+(34%) and is processed for co-generation of district heating and elec-
+tricity. The experiments were conducted on the flue gas emitted by
+the WtE facility using 30 wt% MEA as the solvent. The results of the
+interheater configuration will be compared to the base case results. The
+base case results have been presented in detail in a previous work [38].
+2. Description
+DTU, in association with Pentair Union Engineering A/S, designed
+and constructed a Mobile Test Unit (MTU) for pilot-scale CO2 capture.
+The pilot plant can be transported to multiple industrial facilities for
+conducting tests. The plant can process 150 Nm3/h of flue gas and has
+a reboiler capacity of 40 kW. A 3D illustration of the pilot plant and a
+picture of the pilot plant at the WtE facility are presented in Figs. 1(a)
+and 1(b), respectively.
+Fig. 1(a) shows that the pilot plant has four columns and two
+skids. The absorber and desorber are located on the skid to the right.
+The wash column and an additional column for advanced process
+configurations are on the skid to the left. Process equipment, such
+as pumps, heat exchangers, flash vessel, filters, knockout drums, and
+electrical cabinets, are in the bottom of the two skids. A detailed
+description of the pilot plant and the equipment is presented in an
+earlier publication [38]. The pilot plant can be configured in several
+ways to optimise its performance. The process flow diagram (PFD) for
+the interheater configuration is presented in Fig. 2.
+Fig. 2 exhibits the PFD of the pilot plant for the interheater con-
+figuration. The PFD of the base case configuration is detailed in a
+previous work [38]. In the base case, the flue gas is scrubbed with
+the solvent (30 wt% MEA) in the absorber. The solvent captures CO2,
+resulting in a CO2-depleted flue gas that passes through a wash tower
+to eliminate any residual amine and maintain a water balance. The
+CO2-rich solution, known as the ‘‘rich solvent’’, is discharged from the
+bottom of the absorber and is then pumped through the main heat
+exchanger (main HE) before entering the stripper at a height of 10.4 m
+(referred to as bed E in Fig. 2). The stripper operates at a pressure
+range of 0.85 to 0.89 barg, with the reboiler maintaining a temperature
+between 117 oC and 120 oC. Within the stripper, the rich solvent is
+subjected to a stripping process, separating the CO2 from the solvent.
+The resulting CO2-lean solvent, known as the ‘‘lean solvent’’, exits the
+stripper and undergoes further energy recovery by passing through a
+flash vessel and the main HE.
+At the bottom of the stripper is a reboiler, which functions in
+conjunction with a steam generator with a capacity of 40 kW. The
+
+===== PDF PAGE 5 =====
+Energy 320 (2025) 134973
+5
+S.H.B. Vinjarapu et al.
+Fig. 3. (a) 3D illustration of the interheater section. (b) PFD of the interheater section.
+steam generator comprises an electric heating element submerged in
+demineralised water. When the steam generator is activated and heat
+is supplied, the water is heated, generating steam once the saturation
+temperature is reached. As steam is produced, the pressure within the
+steam generator rises. The reboiler is a plate heat exchanger. The steam
+generated in the steam generator serves as the hot fluid, while the de-
+scending lean solvent in the stripper acts as the cold fluid. As a result of
+this heat exchange, the steam is cooled and then condensed as it reaches
+the dew point at the maintained pressure within the steam generator.
+This condensation further heats the lean solvent until it reaches the
+saturation temperature at the stripper’s operating pressure. Once the
+saturation temperature is attained, steam is generated from the lean
+solvent, serving as the stripping agent within the desorber. The steam
+and condensate circulate between the steam generator and the reboiler
+
+===== PDF PAGE 6 =====
+Energy 320 (2025) 134973
+6
+S.H.B. Vinjarapu et al.
+via the thermosiphon concept, with the steam flow rate corresponding
+to the electrical input provided to the heating element. Any surplus
+steam exits from the top of the stripper along with the stripped CO2.
+This steam-CO2 mixture is then cooled in an overhead condenser. The
+steam is condensed, and the resulting water is reintroduced into the
+absorber sump. The separated CO2 is discharged from the pilot plant
+and joins the exhaust line of the WtE facility (Amager Bakke). The
+electrical duty provided as an input to the steam generator is considered
+the reboiler duty in the subsequent sections.
+The concentration of the solvent was maintained close to 30 wt%
+MEA by the water wash column. The operation and the principle of
+the water wash column have been discussed in detail in a previous
+publication [38].
+2.1. Interheater design and operation
+A 3D illustration highlighting the interheater section is presented
+in Fig. 3(a). As shown in Fig. 3(a), the interheater is in the first skid,
+external to the stripper column. Withdrawal and feed pipes from the
+stripper on the second skid are connected to the interheater section in
+the first skid. The original 3D illustration has been edited to point to
+the interheater section.
+The PFD of the interheater section is presented in Fig. 3(b). As
+shown in Fig. 3(b), the stream withdrawn from the stripper is pumped
+through a plate-heat exchanger known as the interheater and fed to
+the stripper. On the hot side, the interheater is connected to a steam
+generator. The steam generator consists of an electrical heating element
+submerged in demineralised water. Electrical duty is provided as an
+input to the steam generator. The heating element produces steam
+from the water, which rises into the interheater. The steam acts as
+the hot fluid to heat the withdrawn stream. The condensed steam
+flows back into the steam generator. This is the functioning of the
+interheater section. The interheater and its steam generator are sized
+similarly to the reboiler and its steam generator. Therefore, the capacity
+of the interheater’s steam generator is 40 kW and the electrical input
+given to the steam generator is considered the interheater duty in the
+subsequent sections.
+2.1.1. Operation of the interheater
+During the start-up of the interheater section, a solvent flow is
+first established by switching on the interheater pump. The flow rate
+through the interheater is maintained by a pressure or flow PI controller
+(PC or FC, respectively). The pressure PC manipulates the flow rate
+to maintain a desired suction pressure (PT1). The FC maintains a
+desired flow rate (FT1), which results in the manipulation of suction
+and discharge pressures (PT1 and PT2, respectively). The PI controller
+giving the lowest opening signal to the motorised valve is automatically
+selected during operation. The pressure PI controller ensures that the
+suction pressure does not get too low, which would empty the suction
+pipe and damage the pump (as they should not run without liquids
+in the pipe). The flow PI controller ensures that the flow rate through
+the interheater is not disturbed. However, using a flow controller could
+risk emptying the suction pipe. This is why a pressure controller is also
+provided. Recycling around the interheater is also provided to ensure
+the pump does not run empty. The recycle flow is controlled by a needle
+valve (V1). During the start-up, the flow rate is established by manip-
+ulating the controllers and by manually changing the position of the
+needle valve V1. A steady flow from the stripper to the interheater was
+first established before electrical duty is provided to the interheater.
+In the interheater configuration, while the gas flow operation is
+the same as in the base case, a difference in the stripper operation
+is prominent as an additional heat exchanger provides energy to the
+middle of the stripper at a height of 6.9 m. The interheater is a plate
+heat exchanger located external to the stripper. A solvent stream is
+withdrawn from the liquid collector above packed bed D in the stripper.
+This stream is pumped through the interheater and fed to the liquid
+distributor above packed bed D in the stripper. The liquid distributor
+is located below the liquid collector above every packed bed in the
+stripper.
+A steam generator provides steam to the interheater on the hot
+side. The steam generator’s duty is provided as an input. The steam
+generator integrated with the interheater has the same design as that
+used for the reboiler. The design of the reboiler’s steam generator was
+duplicated to avoid issues with permits. Both the steam generators have
+a capacity of 40 kW. The input to the reboiler and the interheater were
+provided as electrical duties. The hot rich solvent exiting the main
+heat exchanger (main HE) is fed to the stripper above packed bed E
+at an accumulated packing height of 10.4 m. Three packing stages (E,
+D, and C) are available for stripping. Packing bed C is right above
+the reboiler section. The temperature and the driving forces are the
+highest at the stripper bottom. The temperature usually decreases from
+the bottom to the top of the column, and a mass transfer pinch is
+observed at the top [28]. Therefore, it is ideal for the stripper to have
+high temperatures in the middle and bottom sections of the column to
+maintain a consistent driving force. At the top, it is better to have low
+temperatures to reduce the condenser duty. Low temperatures at the
+top help condense the steam and reduce latent heat loss through steam
+escape. Therefore, it is ideal to provide interheating at the middle of the
+column to maintain temperatures close to the reboiler and compensate
+for heat loss. In the current setup, the interheated stream has a packing
+of 6.9 m below it and 7 m above it. However, the top 3.5 m of the
+packing bed (F) is unused for stripping to maintain consistency with
+the base case. The details about the relevant equipment are provided
+in the Supplementary information.
+Ideally, the semi-lean solvent could be interheated by the hot flue
+gas before it is cooled and sent to the absorber [27], the reboiler con-
+densate [11,16], the hot lean solvent exiting the stripper bottom [11,
+16,28], or a combination [9,11]. As shown in Fig. 2, a steam generator
+provides the hot fluid to the interheater in the current setup. The influ-
+ence of using various heat sources mentioned above can be simulated
+by varying the reboiler and interheater duties.
+3. Methodology
+The pilot plant operation in base case configuration has been dis-
+cussed in detail previously [38]. For the most part, the interheater
+configuration is similar to the base case. The additional component
+is the operation of the interheating section of the pilot plant. The
+interheater is located external to the stripper. Therefore, a stream of
+the solvent was withdrawn from the liquid collector above the packed
+bed D, pumped through the interheater and fed to the liquid distributor
+above the packed bed D in the stripper. Base case testing of the pilot
+has shown the presence of a pinch region in packed beds D and
+C [38]. As bed B is not used for stripping, packed bed C would be the
+topmost section where the steam and the solvent are in contact with
+each other before the steam-CO2 mixture exits the stripper and enters
+the condenser. Therefore, implementing interheating at bed C would
+cause additional steam losses. Based on this rationale, interheating was
+implemented at bed D.
+The flow through the interheater is controlled by a Proportional–
+Integral controller (PI controller). The duty provided to the interheater
+steam generator was varied from 0 to 5 kW. This range was selected
+to avoid operational difficulties in the interheater, which were more
+prominent at higher duties.The reboiler duty was altered from 12 to
+22 kW. The experiments were conducted by fixing the interheater duty
+and varying the reboiler duty in steps, as presented in Fig. 4(a).
+Fig. 4(a) shows that multiple steady states could be obtained by
+changing the reboiler duty in steps while keeping the other operating
+parameters at reasonably constant values. The rich solvent flow rate
+is maintained around 268 ± 8 kg/h. The reboiler duty was stepped
+from 15 kW to 20 kW in steps of 1 kW. The heat loss in the stripper
+and the reboiler was between 2 to 3 kW. As previously mentioned, the
+interheater was located outside the stripper. Therefore, around 0.9 kW
+of heat loss to the environment was incurred as the interheated solvent
+exited the interheater and entered the stripper.
+
+===== PDF PAGE 7 =====
+Energy 320 (2025) 134973
+7
+S.H.B. Vinjarapu et al.
+Fig. 4. Steady state operation of the pilot. (a) Steady state operation of the pilot plant
+with automated step changes in the reboiler duty. The interheater duty is represented
+by dashed lines and is maintained as a constant for the period depicted (28-10-2021 to
+29-10-2023). (b) Inlet and outlet CO2 concentrations at a steady state. The red region
+depicts the change in the reboiler set point, and the green region shows the steady
+state achieved.
+3.1. Steady state determination
+As previously mentioned, the solvent flow rate maintained was
+around 268 kg/h. During the start-up of the pilot plant, approximately
+300 kg of 30 wt% MEA was added to the pilot, implying that it would
+take almost an hour for the solvent to circulate through the pilot once.
+The solvent was allowed to circulate two to three times in a stable
+condition for obtaining a steady state. Therefore, each step change
+was maintained for 2.5 to 3 h and the plant reached a steady state
+within 2 h. Every steady state was held for 30 min to 1 hour. The steady-
+state operation of the pilot was mainly determined by the inlet and
+outlet CO2 gas concentrations. The flue gas flow rate was maintained
+throughout the operation with no disturbances. Inlet flue gas CO2
+concentration is one of the major sources of disturbance in the pilot,
+and the outlet CO2 concentration is one of the main consequences of
+the pilot’s operation. Therefore, these two parameters were observed
+when determining a steady state of pilot operation.
+Fig. 4(b) shows the inlet and outlet CO2 concentrations. The red
+region is the period where the reboiler duty was stepped up. While the
+inlet CO2 concentration is stable, the outlet concentration takes about
+an hour to reach a steady value with a fluctuation within ±10%. The
+operation was maintained in this steady state (green region) for about
+45 min before changing the reboiler duty. Extensive details regarding
+the calibration of equipment such as gas flow meters and CO2 probes
+can be found in a previous publication [38].
+3.2. Experimental campaigns
+The most important operating parameters of the pilot plant for all
+the experiments (19 steady states in total) are presented in Table 1.
+The base case experiments were initially performed in the experi-
+mental campaigns. Several operating parameters, such as the solvent
+flow rate, gas flow rate, stripper pressure, and reboiler duties, were
+tested. The results for these campaigns have been discussed in detail
+in a previous publication [38]. Based on the operational experience
+gained with the base case configuration, the operating parameters
+for the interheating configuration have been chosen. The base case
+operation was stable for a solvent flow range of 250 to 300 kg/h, with a
+gas flow of 100 kg/h and stripper pressure of 0.8 to 0.9 barg. The lean
+temperature of 40 oC is a standard in CO2 capture plants. Therefore,
+these conditions were used as a basis for developing the experimental
+campaigns for the interheater configuration. The range of the inter-
+heater duty was maintained between 2 and 5 kW to avoid operational
+difficulties. Furthermore, the heat loss in the pilot is approximately
+2.91 kW (Section 3.3.1). One of the purposes of the interheater is to
+minimise the heat loss in the pilot. Therefore, the range selected is
+appropriate for the estimated heat loss. Nevertheless, minor changes in
+the design of the interheating section will enable the plant to explore
+a wider range of interheater duties. However, these changes could not
+be implemented in the current work due to limited time availability.
+Table 1 depicts some of the most critical operating parameters of
+the pilot for the base case and interheater configurations. It can be
+observed that most of the parameters, such as solvent and gas flow
+rates, solvent and gas inlet temperatures, and stripper bottom pressure,
+were maintained consistently for both cases. This was deliberately done
+to ensure that the changes observed in the interheating configuration
+are not caused by variations in the main operating parameters. The
+reboiler and interheater duties were adjusted to test the pilot’s perfor-
+mance. Due to operational difficulties (expanded in the Supplementary
+information), the interheating experiments were conducted as night
+runs with the remote pilot operation. Consequently, liquid samples
+could not be collected for these experiments to determine the rich
+and lean loadings. Therefore, the loadings of the configuration are not
+discussed in the interpretation of the experimental results.
+The objectives of the study are to understand the influence of
+stripper interheating on the performance of the pilot. In the range of
+operations chosen for the campaigns, it would be clear whether inter-
+heating improves the temperature profile in the stripper by reducing
+heat loss. An improvement in the temperature profile is expected to
+reduce the energy consumption. Furthermore, the impact of interheat-
+ing on the capture efficiency of the process will also be determined.
+A reduction in energy consumption and an improvement in capture
+efficiency would be desirable outcomes. Parameters such as gas flow
+rates and concentrations, temperatures along the length of the stripper,
+reboiler and interheater duties, CO2 capture flow rates are measured
+for analysing and interpreting the results. The performance of the
+interheating configuration compared to the base case will be presented
+in detail in the subsequent sections.
+3.3. Heat loss determination
+This section details the determination of heat loss in the pilot system
+and the interheater sections.
+
+===== PDF PAGE 8 =====
+Energy 320 (2025) 134973
+8
+S.H.B. Vinjarapu et al.
+Table 1
+Important operating parameters of the pilot for analysing the influence of stripping intensity for the base
+case and interheater configurations. The reboiler and interheater duties are the only variable parameters in
+the tests conducted.
+Parameter
+Base case [38]
+Interheated case
+Rich solvent flow [kg/h]
+276 ± 1
+267 ± 4
+Gas flow [kg/h]
+100 ± 1
+99 ± 1
+CO2 concentration [vol%, wet basis]
+12.5 ± 0.2
+12.4 ± 0.4
+Gas temperature [𝑜C]
+37 ± 4
+43 ± 4
+Stripper bottom pressure [barg]
+0.89 ± 0.01
+0.87 ± 0.01
+Reboiler duty [kW]
+16–22
+12–20
+Interheater duty [kW]
+0
+2–5
+Lean temperature [𝑜C]
+40 ± 1
+41 ± 1
+3.3.1. Pilot heat loss
+The heat loss in the pilot is determined by circulating water through
+the system with the reboiler switched on. Based on the electrical duty
+provided to the steam generator, the water flowing through the stripper
+is heated until the boiling point is reached at the stripper pressure.
+Once the boiling point is reached, steam is produced in the reboiler,
+which flows up through the stripper and enters the condenser. Cooling
+water is circulated in the condenser to cool and condense the water
+vapour exiting the stripper top. Furthermore, the water circulated is
+cooled at the lean cooler before it enters the absorber. Cooling water
+is also circulated in the lean cooler. The cooling water flow rates and
+the cooling water inlet and outlet temperatures were noted for the lean
+cooler and the condenser. The total cooling duty was determined. The
+difference between the reboiler and total cooling duties was estimated
+as the reference heat loss.
+𝑅𝐷r eb, heat loss, r ef [k W] = 𝑅𝐷r eb, r ef −𝑅𝐷t ot al cooling, r ef
+(1)
+The reference reboiler duty (RDreb, ref) was maintained at 22 kW
+and the total cooling required (RDtotal cooling, ref) was approximately
+19.09 ± 0.20 kW. This test was repeated thrice to ensure its validity.
+The average heat loss in the pilot was estimated to be 2.91 kW at an
+ambient temperature of 20 oC. The pilot heat loss for every steady state
+was estimated by extrapolating this value.
+𝑅𝐷r eb, heat loss [k W] = 2.91 ⋅
+( 𝑇r eb −𝑇amb, r ef
+𝑇r eb, r ef −𝑇amb, r ef
+)
+(2)
+Where Treb is the temperature in the reboiler, and Treb, ref, Tamb, ref
+are the reboiler and ambient temperatures for the reference experiment
+conducted with water. Treb, ref = 120 oC and Tamb, ref = 20 oC. The
+ambient conditions were assumed to be similar to 20 oC as the reference
+and steady state experiments were conducted in similar conditions.
+3.3.2. Interheater heat loss
+The heat loss in the interheater was determined during the inter-
+heater start-up procedure. The base case operation of the pilot was
+first established by enabling steady capture and desorption of CO2.
+Therefore, the reboiler is operational, causing the temperatures in
+the stripper to be in the range of 90 oC to 120 oC. After establishing
+the base case operation, the flow of the solvent from the stripper to
+the interheater was established by following the procedure described
+previously in Section 2.1.1. Once a steady flow from the stripper to
+the interheater was established, heat loss in the interheater could be
+determined based on the temperature of the solvent being withdrawn
+from the stripper (TT1 in Fig. 3(b)) and then fed back to the stripper
+from the interheater (TT2 in Fig. 3(b)). Electrical duty was not provided
+to the interheater during this determination. Therefore, the decrease
+in temperature TT2 indicates the heat loss to the environment as the
+solvent exits the interheater and enters the stripper. Heat loss in the
+interheater was thus determined as follows:
+𝑅𝐷IH, heat loss [k W] = 𝑚𝐼 𝐻⋅𝐶𝑝,IH ⋅(𝑇 𝑇1 −𝑇 𝑇2)
+(3)
+Where RDIH,heatloss [kW] is the heat loss in the interheater sec-
+tion, mIH [kg/s] is the solvent flow rate around the interheater, and
+Cp,IH [kJ/(kg K)] is the average specific heat capacity of the solvent.
+The heat loss was determined to be 0.9 kW, and this value was expected
+to hold for all the interheating experiments as they were conducted at
+similar operating and ambient conditions.
+4. Results and discussion
+In the current work, experiments were conducted to understand the
+influence of interheating the solvent in the stripper. A steam generator
+provides the hot fluid to the interheater (Fig. 2). The steam produced by
+the generator was used as the heat source to heat the semi-lean solvent
+extracted from the middle of the stripper. The duty was provided to the
+steam generator by the operator. The interheater was located outside of
+the stripper. The steam (from the steam generator) is a simulated case
+for heat from hot flue gas, high-temperature heat pump installation,
+and other heat integration methods.
+Generally, experimental results of CO2 capture are analysed at a
+capture efficiency of 90%, especially when comparing the performance
+of an advanced configuration against the base case. However, it is not
+necessary that the capture efficiency is 90% to be able to compare the
+performances. Two or more configurations can be compared against
+each other by considering different criteria. In the current work, strip-
+per interheating and base case configurations are compared based on
+the following criteria:
+• At a constant energy provided to the reboiler
+• At a constant total energy provided to the stripper
+When constant energy is provided to the reboiler for both config-
+urations (base case and stripper interheating), interheating is done in
+addition to reboiling. On the other hand, when constant total energy
+is provided to the stripper for both configurations, interheating is done
+as a replacement to reboiling. This distinction is presented in Fig. 5.
+Fig. 5a shows that both the base case and stripper interheating
+configurations have the same reboiler duty, and the energy provided to
+the interheater is an addition. Fig. 5b shows that both configurations
+have the same total duty; therefore, interheating replaces reboiling.
+The subsequent sections discuss the results considering the scenarios
+mentioned above.
+4.1. Interheating as an addition to reboiling
+In this scenario, the heat source for the interheater is obtained from
+external sources such as the hot flue gas, steam condensate from the
+reboiler, or heat pump installation. Therefore, any heat provided to
+the stripper through the interheater is an added benefit and does not
+influence the determination of the SRD. The SRD of the system can be
+obtained as follows:
+SRD [GJ∕t onne CO2] =
+(𝑅𝐷r eb −𝑅𝐷r eb, heat loss)
+𝑚CO2, cap
+(4)
+Where RDreb [kW] is the reboiler duty, RDreb,heatloss [kW] is the heat
+loss at the reboiler and in the stripper, and mCO2,cap [kg/s] is the CO2
+
+===== PDF PAGE 9 =====
+Energy 320 (2025) 134973
+9
+S.H.B. Vinjarapu et al.
+Fig. 5. Comparison of base case with interheating at (a) a constant reboiler duty and
+(b) a constant total duty.
+captured or stripped. The method of estimation of mCO2,cap is presented
+in the Supplementary information. Interheating in this scenario could
+be construed as enhancing the stripper’s performance by compensating
+for the heat loss and improving the temperature profile. The energy
+supplied to the system can be discussed in terms of stripping intensity
+instead of reboiler duty. Stripping intensity serves as an independent
+term and can thus aid in scaling the process. Stripping intensity is
+defined as the energy available per kg of the solvent. This energy is
+derived solely from the reboiler duty in the base case configuration. In
+the interheater configuration, this energy is provided by the reboiler
+and the secondary heat source (interheater).
+The stripping intensity of the reboiler and the interheater are deter-
+mined as follows:
+𝑆 𝑡𝑟𝑖𝑛𝑡r eb [k J∕k gt ot al] =
+(𝑅𝐷r eb −𝑅𝐷r eb, heat loss)
+𝑚r ich
+(5)
+𝑆 𝑡𝑟𝑖𝑛𝑡IH [k J∕k gt ot al] =
+(𝑅𝐷IH −𝑅𝐷IH, heat loss)
+𝑚r ich
+(6)
+𝑆 𝑡𝑟𝑖𝑛𝑡t ot al [k J∕k gt ot al] = 𝑆 𝑡𝑟𝑖𝑛𝑡r eb + 𝑆 𝑡𝑟𝑖𝑛𝑡IH
+(7)
+Where Strintreb [kJ/kgtotal], StrintIH [kJ/kgtotal], and Strinttotal
+[kJ/kgtotal] represent the stripping intensity provided through the
+reboiler, the interheater, and combination of the two, respectively.
+RDreb [kW] and RDIH [kW] are the duties provided by the reboiler and
+the interheater, respectively. RDreb,heat loss [kW] and RDIH,heat loss [kW]
+are the heat losses in the stripper and the interheater. mrich [kg/s] is the
+rich solvent flow rate. Stripping intensity indicates the energy supplied
+per kilogramme of solvent. It is a normalised term which eliminates
+variations in reboiler duty and solvent flow rate. Therefore, it helps in
+easier comparison of results and parameter scaling.
+4.1.1. Influence of interheater on the SRD
+The specific reboiler duty (SRD) is a critical indicator of the energy
+consumed for solvent regeneration. Interheating is likely to impact the
+SRD. The SRD observed at various Strintreb and Strinttotal values is
+presented in Fig. 6. In these results, the energy obtained through the
+interheater simulates heat integration through upgraded waste heat
+recovery from flue gas and other sources.
+Fig. 6 shows a heat map of the SRD at varying Strintreb and Strinttotal
+values. The data present on the dashed diagonal is for the cases where
+Strintreb = Strinttotal. These cases have no interheating and are thus
+referred to as base cases. The steady states for which Strinttotal >
+Strintreb indicate interheated cases. Each circle corresponds to the base
+case and interheated configurations with the same Strintreb. Meaning
+these data points have the same steam flow rate from the reboiler.
+It can be observed that the SRD for all the base cases is con-
+sistently higher than the interheated cases. The SRD for the base
+Fig. 6. Influence of varying Strintreb and Strinttotal values on the SRD of the system. The
+dashed line indicates the cases where Strintreb = Strinttotal, implying no interheating.
+The circled data show the experiments for which the Strintreb is similar for the base
+case and interheater configurations.
+case configuration changes with the stripping intensity and is be-
+tween 3.65 to 4.01 GJ/tonne CO2. For the interheater configuration, the
+SRD changes in the range of 2.71 to 3.86 GJ/tonne CO2. A minimum
+SRD of 2.71 GJ/tonne CO2 was observed at Strintreb of approximately
+127 kJ/kgtotal and Strinttotal of 187 kJ/kgtotal. SRD values as low as
+2.63 GJ/tonne CO2 have been reported by [29] in a simulation study,
+which aligns with the current results in terms of order of magnitude.
+The SRD can thus be reduced by adding an interheater to the base
+cases. However, this SRD can be reduced even more by manipulating
+the operating conditions (discussed in Section 4.2.1). Further analysis
+of the behaviour of the stripper provided in subsequent sections can
+help understand this reduction in the SRD.
+Another metric used for assessing the performance of CO2 capture
+is the capture efficiency (𝜖). 𝜖of the system is determined as follows:
+𝜖[%] =
+𝑦CO2, in ⋅𝑛f lue gas, in −𝑦CO2, out ⋅𝑛f lue gas, out
+𝑦CO2, in ⋅𝑛f lue gas, in
+⋅100
+(8)
+Where yCO2, in [vol%, wet] and yCO2, out [vol%, wet] are the inlet and
+outlet concentrations of CO2 in the raw and clean flue gas, respectively,
+nflue gas,in [mol/h] and nflue gas,out [mol/h] are the molar flow rates of the
+raw and clean flue gas respectively. The capture efficiency (𝜖) indicates
+the percentage of CO2 in the inlet flue gas captured by the solvent.
+Generally, an 𝜖of 90% is desirable. The 𝜖of the system at varying
+Strintreb and Strinttotal values is presented in Fig. 7.
+Fig. 7 shows the 𝜖of the system at the varying Strintreb and
+Strinttotal values. It can be observed that, in general, capture efficiency
+(𝜖) increases with Strintreb for both the base case and interheater
+configurations. As Strintreb changes, the rich and lean loadings are
+expected to vary, thus influencing 𝜖. It is notable that 𝜖is slightly
+higher for the interheater configuration when compared to the base
+case. Based on the available data, it appears that to achieve an 𝜖of 90%
+or higher, the stripper should be operated at Strintreb > 200 kJ/kgtotal.
+However, since the addition of interheating can be observed to improve
+𝜖, there is a possibility that efficiencies close to 90% could be achieved
+at low Strintreb values of 120 to 180 kJ/kgtotal and Strinttotal values of
+200 to 220 kJ/kgtotal. An improved 𝜖due to interheating implies that
+the CO2 captured is higher for the interheated cases. This is confirmed
+in Fig. 8, which shows that the CO2 captured is higher for all the
+interheater configurations when compared to the corresponding base
+case results. For instance at an Strintreb ∼180 kJ/kgtotal, an 𝜖of 78% is
+obtained for base case as opposed to 83.2% of the interheating case. At
+this condition, the CO2 captured is 12.9 kg/h and 14.2 kg/h for the base
+
+===== PDF PAGE 10 =====
+Energy 320 (2025) 134973
+10
+S.H.B. Vinjarapu et al.
+Fig. 7. Influence of varying Strintreb and Strinttotal values on 𝜖. The dashed line
+indicates the cases where Strintreb = Strinttotal, implying no interheating. The circled
+data show the experiments for which the Strintreb is similar for the base case and
+interheater configurations.
+Fig. 8. Influence of varying Strintreb and Strinttotal values on the CO2 captured and
+stripped. The dashed line indicates the cases where Strintreb = Strinttotal, implying no
+interheating. The circled data show the experiments for which the Strintreb is similar
+for the base case and interheater configurations.
+case and interheating configurations, respectively. Similarly, at Strintreb
+∼200 kJ/kgtotal, an 𝜖of 91.5% and 92.5%, and CO2 capture rates of
+14.8 kg/h and 15.4 kg/h are observed for the base case and interheating
+configurations respectively. However, at Strintreb > 200 kJ/kgtotal, the
+improvement in 𝜖by adding interheating to the base case is not
+significant due to potentially large steam losses from the stripper top.
+Therefore, it is beneficial to operate the interheater and reboiler such
+that Strintreb < 200 kJ/kgtotal and Strinttotal > 220 kJ/kgtotal to gain
+capture efficiencies higher than 90%.
+Interheating the stripper in the middle, in addition to the reboiler
+duty, has added benefit in terms of SRD reduction and 𝜖. At Strintreb
+values between 120 and 140 kJ/kgtotal, 𝜖of 70% and 80% are achieved
+respectively. Minimum SRD values are also obtained at these operating
+conditions (Fig. 6). It would be beneficial to operate at these Strintreb
+values with higher interheating to obtain 𝜖close to 90% while main-
+taining a low SRD. Higher values of 𝜖due to the addition of interheating
+could imply an increased rate of stripped CO2. An improvement in
+the SRD, 𝜖, CO2 captured is likely due to an improved temperature
+Fig. 9. Qualitative representation of characteristic stripper temperature profiles for
+different ranges of Strintreb.
+profile in the stripper by the interheater. The influence of adding an
+interheater to the base case will be discussed in the following sections.
+4.1.2. Characteristic stripper temperature profiles
+Before discussing the influence of interheating on the stripper tem-
+perature profiles, the characteristic curves for low, intermediate, and
+high stripping intensities are presented in Fig. 9. The characteristic
+curves do not have any values on the X and Y axes, as they are meant
+to qualitatively show the temperature profiles developed in a stripper
+column independent of the scale and operating pressure.
+Fig. 9 shows a clear distinction between the stripper temperature
+profiles at low, intermediate, and high Strintreb values. At low Strintreb,
+a significant temperature difference is usually observed at the strip-
+per bottom, indicating condensation of steam and desorption of CO2.
+However, the middle and top sections of the stripper have similar
+temperatures, indicating a pinch region. A pinch region indicates the
+absence of steam condensation. Condensing steam provides the energy
+required for desorption of CO2 and sensible heating of the solvent. In
+the pinch region, there is no condensation of steam and, therefore,
+no desorption of CO2. Additionally, the driving force for mass transfer
+from the liquid phase to the gas phase is minimised in the pinch region.
+Consequently, the packing in the stripper is not efficiently utilised.
+A linear temperature profile is expected in the intermediate Strintreb.
+This can also be referred to as the optimal temperature profile. The
+temperature along the stripper is constantly changing. Therefore, a
+consistent driving force is available throughout the stripper, leading to
+better efficiency of the packing and higher desorption of CO2. At high
+Strintreb, the temperature profile is a reversed case of the low Strintreb.
+At high stripping intensities, the driving force is lower at the bottom
+and middle sections of the stripper. However, a large 𝛥T at the stripper
+top exits. Therefore, most steam condensation occurs at the top, which
+provides energy for CO2 desorption, while the bottom two-thirds are
+not utilised efficiently.
+To optimise the stripper operation, it is desirable to operate it in
+the intermediate Strintreb range or modify the configuration to ensure
+a linear temperature profile in the stripper so that pinch regions are
+eliminated. Furthermore, it is desirable to have low temperatures at the
+stripper top to minimise the overhead steam loss and condenser duty.
+4.1.3. Influence of interheating on stripper temperature profiles
+When energy is added to the middle of the stripper in addition
+to the reboiler, the temperature profile developed along the column
+is likely to be impacted. Two sets of data are considered here to
+
+===== PDF PAGE 11 =====
+Energy 320 (2025) 134973
+11
+S.H.B. Vinjarapu et al.
+Fig. 10. Stripper temperature profiles comparing base case and interheater configu-
+rations at (a) ow Strintreb ∼175 kJ/kgtotal (b) intermediate Strintreb ∼225 kJ/kgtotal.
+The yellow box shows the hot rich inlet to the stripper, and the red box shows the
+interheater location.
+understand the effect of interheating on the stripper. The sets chosen
+belong to two ranges of Strintreb (low ∼175 kJ/kgtotal and intermediate
+∼225 kJ/kgtotal). The stripper temperature profiles for the two ranges
+of Strintreb are presented in Figs. 10(a) and 10(b). Important operating
+parameters such as rich solvent flow rate, gas flow rate, gas CO2
+concentration, stripper pressure, reboiler and interheater duties, lean
+temperature, etc. provided as inputs are presented in Tables 2 and 3.
+These parameters indicate that the experiments’ operating conditions
+have been maintained as similar as possible, except for the IH duty.
+Furthermore, derived parameters such as SRD, CO2 captured, and 𝜖are
+presented to indicate the performance.
+Fig. 10(a) depicts the temperature profiles at low (∼175 kJ/kgtotal)
+Strintreb value. The temperature profile is improved in the stripper
+by interheating a stream of semi-lean solvent in the middle. At a
+low Strintreb, the temperatures above the interheater location are also
+higher than the base case, indicating higher steam loss from the strip-
+per. Since the Strintreb and reboiler duty are the same for the base
+case and interheated configurations (175 and 177 kJ/kgtotal as shown
+in Table 4), the amount of steam generated from the reboiler should
+be the same. However, the temperature of the hot rich solvent is
+higher for the interheated configuration than the base case, causing a
+higher saturation temperature and steam loss from the stripper (yellow
+box in Fig. 10(a)). The CO2 stripped and the SRD are considerably
+improved by interheating. The CO2 stripped increased from 12.9 kg/h
+to 14.2 kg/h. At the same time, the SRD reduced from 3.75 GJ/tonne
+CO2 to 3.38 GJ/tonne CO2 on implementing interheating. Interheating
+has increased the temperature in most of the stripper compared to
+the base case (red box in Fig. 10(a)). As the temperatures in the
+column are brought closer to that of the reboiler, the sensible heating
+requirements of the solvent are likely reduced. Consequently, higher
+energy is available for desorption of CO2 from carbamate, carbonate,
+and bicarbonate forms to aqueous CO2, thereby increasing the CO2
+stripped and reducing the SRD. 𝜖increases from 78% in base to 83%
+by adding interheating. This indicates an increase in the cyclic capacity
+of the solvent by interheating. The cyclic capacity of the solvent can
+increase if the rich loading increases, the lean loading decreases, or
+both happen simultaneously. As the gas CO2 concentrations are similar
+for both the cases (12.5 vol% and 12.4 vol%), the rich loading could
+be assumed to be similar. This implies that the cyclic capacity of
+the solvent is improved by reducing the lean loading, indicating that
+interheating can improve the desorption of CO2 by accommodating the
+sensible heat requirements in the stripper. However, this hypothesis
+cannot be proved due to the lack of rich and lean solvent loadings.
+On the other hand, Fig. 10(b) shows that the temperature profiles
+for the base case and interheating configurations are similar. At a
+packing height of 6.9 m, the interheated case has a slightly higher
+temperature (red box in Fig. 10(b)). Below the interheater section,
+the base case has a higher temperature. Throughout the length of
+the stripper, the interheating case has a better temperature profile
+as the 𝛥T across every packing section is higher than the base case,
+which indicates a better driving force for desorption of CO2. The CO2
+stripped is 17 kg/h for the interheating case and 16.4 kg/h for the base
+case. Based on the CO2 stripped and SRD values, it appears that the
+interheated case has a better utilisation of steam than the base case.
+Therefore, 𝜖of 99% can be achieved at a low SRD of 3.47 GJ/tonne CO2
+by interheating the stripper compared to 3.82 GJ/tonne CO2 achieved
+in the base case.
+The measurement uncertainty of the majority of the temperature
+sensors in the stripper is in the order of ±0.2 oC. Therefore, the impact
+of stripper interheating on the temperature profile is significant.
+4.1.4. Influence of interheating on condenser duty
+As the temperature profiles have been improved by including inter-
+heating, the magnitude of steam lost from the stripper top is influenced.
+The condenser duty is impacted by the amount of steam lost from
+the stripper. The condenser duty is calculated based on the magnitude
+of steam lost from the stripper top. Fig. 11 depicts the operating
+conditions measured at the stripper top.
+The steam and CO2 mixture exiting from the stripper top (stream 1)
+is cooled and condensed in the condenser. The condensate from stream
+2 is separated in a gas–liquid separator and added to the solvent in the
+absorber (stream 4). The CO2 exiting from the separator top (stream 3)
+is assumed to be saturated with water. The pressure, temperature and
+flow of stream 3 are measured, as shown in Fig. 11. Based on Antoine’s
+equation, the partial pressure and mole fraction of water (PH2O) in
+streams 3 and 1 are determined as:
+log 𝑃H2O = 𝐴−
+𝐵
+𝑇+ 𝐶
+(9)
+𝑥H2O =
+𝑃H2O
+𝑃t ot al
+(10)
+𝑛CO2,3 = 𝑛CO2,1 = (1 −𝑥H2O,3) ⋅𝑛t ot al,3
+(11)
+𝑛t ot al,1 =
+𝑛CO2,3
+(1 −𝑥H2O,1)
+(12)
+𝑛H2O,1 = 𝑥H2O,1 ⋅𝑛t ot al,1
+(13)
+
+===== PDF PAGE 12 =====
+Energy 320 (2025) 134973
+12
+S.H.B. Vinjarapu et al.
+Table 2
+Important operating parameters of the pilot for analysing the influence of interheating at low Strintreb
+(∼175 kJ/kgtotal).
+Parameter
+Base case
+Interheated case
+Strinttotal [kJ/kgtotal]
+175
+189
+Strintreb [kJ/kgtotal]
+175
+177
+StrintIH [kJ/kgtotal]
+0
+12
+Rich solvent flow [kg/h]
+276 ± 1
+272 ± 2
+Gas flow [kg/h]
+101.0 ± 0.1
+99.0 ± 0.1
+CO2 Concentration [vol%, wet basis]
+12.3
+± 0.7
+12.7 ± 0.5
+Gas temperature [𝑜C]
+32.0 ± 0.1
+40.0 ± 0.2
+Stripper bottom pressure [barg]
+0.87
+0.87
+Reboiler duty [kW]
+16.3 ± 0.2
+16.2 ± 0.0
+IH duty [kW]
+0
+2
+IH exit temperature
+–
+101.1 ± 0.1
+Lean temperature [𝑜C]
+38.9 ± 0.3
+41.0 ± 0.2
+Hot rich temperature [𝑜C]
+99.9 ± 0.1
+103.0 ± 0.1
+𝜖[%]
+78
+83
+CO2 stripped [kg/h]
+12.9 ± 0.2
+14.2 ± 0.1
+SRD [GJ/tonne CO2]
+3.75 ± 0.05
+3.38 ± 0.02
+Table 3
+Important operating parameters of the pilot for analysing the influence of interheating at intermediate
+Strintreb (∼225 kJ/kgtotal).
+Parameter
+Base case
+Interheated case
+Strinttotal [kJ/kgtotal]
+225
+237
+Strintreb [kJ/kgtotal]
+225
+221
+StrintIH [kJ/kgtotal]
+0
+16
+Rich solvent flow [kg/h]
+278 ± 1
+268 ± 1
+Gas flow [kg/h]
+101 ± 0
+100 ± 0
+CO2 Concentration [vol%, wet basis]
+12.5 ± 0.5
+12.4 ± 0.4
+Gas temperature [𝑜C]
+30.8 ± 0.1
+41.2 ± 0.0
+Stripper bottom pressure [barg]
+0.89
+0.87
+Reboiler duty [kW]
+20.3 ± 0.0
+19.3 ± 0.0
+IH duty [kW]
+0
+2
+IH exit temperature
+–
+102.2 ± 0.1
+Lean temperature [𝑜C]
+40.0 ± 0.2
+41.2 ± 0.2
+Hot rich temperature [𝑜C]
+106.0 ± 0.2
+104.0 ± 0.2
+𝜖[%]
+98
+99
+CO2 stripped [kg/h]
+16.4 ± 0.5
+17 ± 0.4
+SRD [GJ/tonne CO2]
+3.82 ± 0.11
+3.47 ± 0.09
+Fig. 11. PFD of the stripper and overhead condensation section.
+The parameters 𝐴, 𝐵, and 𝐶are obtained from the NIST WebBook [39]
+based on data by Gubkov et al. [40]. 𝑛𝑖,𝑗and 𝑥𝑖,𝑗represent the molar
+flow and molar fraction of component 𝑖in stream 𝑗. nH2O,1 represents
+the loss of steam from the stripper top. The condenser is required for
+sensible cooling of steam, condensation of steam, sensible cooling of
+water, and sensible cooling of CO2. The cooling duty provided to the
+condenser is determined as follows:
+𝑅𝐷cond [k W] = 𝑅𝐷st eam + 𝑅𝐷H2O + 𝑅𝐷CO2
+(14)
+𝑅𝐷st eam [k W] = 𝑚H2O,1 ⋅𝐶𝑝,st eam ⋅(𝑇 𝑇1 −𝑇sat) + 𝑛H2O,1 ⋅𝜆vap
+(15)
+𝑅𝐷H2O [k W] = 𝑚H2O,1 ⋅𝐶𝑝,H2O ⋅(𝑇𝑠𝑎𝑡−𝑇 𝑇3)
+(16)
+𝑅𝐷CO2 [k W] = 𝑚CO2,3 ⋅𝐶𝑝,CO2 ⋅(𝑇 𝑇1 −𝑇 𝑇3)
+(17)
+Where RDcond is the condenser duty, RDsteam is the duty required
+for cooling and condensing steam, RDH2O and RDCO2 are the duties for
+cooling the condensed water and CO2 respectively. Tsat is the saturation
+temperature at the pressure maintained and 𝜆sat is the latent heat of
+vaporisation of water [41]. Cp,k [kJ/(kg oC)] is the specific heat capacity
+of component 𝑘obtained by use of the Extended UNIQUAC model
+developed by Kaj Thomsen [42].
+Figs. 12(a) and 12(b) show the condenser duty and the ratio of
+partial pressures of CO2 and H2O (PCO2∕PH2O), respectively at different
+Strintreb and Strinttotal values.
+Fig. 12(a) shows that the condenser duty increases with Strintreb.
+As the reboiler duty rises, more steam is produced and lost from
+the stripper top. When interheating is added, the condenser duty is
+impacted depending on Strintreb and corresponding Strinttotal values.
+For Strintreb < 210 kJ/kgtotal, the condenser duty required for the
+interheater configuration is higher than the base case in the range of 2%
+to 32%. This implies that the steam lost from the stripper top is higher
+
+===== PDF PAGE 13 =====
+Energy 320 (2025) 134973
+13
+S.H.B. Vinjarapu et al.
+Fig. 12. Influence of varying Strintreb and Strinttotal values on (a) condenser duty for
+cooling the steam escaping the stripper and (b) selectivity of CO2 at the stripper top
+shown as PCO2 ∕PH2O. The dashed line indicates the cases where Strintreb = Strinttotal,
+implying no interheating. The circled data show the experiments for which the Strintreb
+is similar for the base case and interheater configurations.
+when interheating is added to the base case. Muhammad et al. [29] has
+presented an increase in the condenser duty by 1% in a simulation study
+of stripper interheating. The steam loss from the stripper top could
+be reduced by optimising the reboiler and interheater duties to ensure
+efficient utilisation of steam in the stripper. The excess steam depends
+on the magnitude of interheating. For Strintreb > 210 kJ/kgtotal, the
+condenser duties for the base case and interheater configuration are
+similar, indicating no excess steam generation due to interheating.
+Another aspect of importance is the selectivity of CO2 in the strip-
+per. Based on a mass balance at the stripper top, the value of partial
+pressure ratio of CO2 to H2O (PCO2∕PH2O) can be determined. The CO2
+stream exiting the stripper top is saturated with steam. The partial
+pressure of H2O (in stream 1 of Fig. 11) is determined based on the
+saturation temperature, employing the Antoine Eq. (9). The partial
+pressure of CO2 is then determined as:
+𝑃CO2,1 = 𝑃t ot al,1 −𝑃H2O,1
+(18)
+𝑃CO2
+𝑃H2O
+=
+𝑃t ot al,1 −𝑃H2O,1
+𝑃H2O,1
+(19)
+Where Ptotal,1 is the pressure of the vapour stream exiting the stripper
+top. PCO2∕PH2O indicates the loss of steam from the stripper top for
+every mole of desorbed CO2. The partial pressures depend on the
+temperature at the stripper top. Fig. 12(b) shows that (PCO2∕PH2O)
+decreases with increasing Strintreb. As the reboiler duty increases, more
+steam is produced than is utilised for desorbing CO2, leading to high
+parasitic losses from the stripper top. Operating at low Strintreb values
+is beneficial to avoid parasitic losses. The addition of interheating
+can be seen to impact the selectivity of CO2 depending on Strintreb.
+At Strintreb < 200 kJ/kgtotal, PCO2∕PH2O is lower for the interheater
+configuration compared to corresponding base cases, indicating excess
+steam loss. Nevertheless, the CO2 captured for these cases was shown
+to be improved by interheating (Fig. 8) due to reduced pinch regions
+in the stripper. In contrast, at Strintreb > 200 kJ/kgtotal, PCO2∕PH2O is
+higher for the interheated cases in comparison to the corresponding
+base cases. This is due to a lower temperature at the stripper top in the
+interheater configurations (Fig. 10(b))
+Therefore, to improve both desorption rates and selectivity of CO2,
+the temperature of the column should be high in the bottom two-thirds
+and low in the top one-third of the column. The addition of interheating
+helps maintain the temperature in the bottom two-thirds of the column.
+However, to lower the temperature in the top one-third of the stripper,
+the following options are viable:
+• Use of hot lean solvent for interheating, thus redirecting energy
+from the top of the stripper (through the hot rich solvent) to the
+middle (through the semi-lean solvent).
+• Implementation of interheating and split flow configurations si-
+multaneously.
+These options are further discussed in Sections 4.3 and 4.4 respectively.
+4.2. Interheating as a replacement to reboiling
+This section discusses the replacement of reboiling with interheat-
+ing. The extent to which reboiling is replaced by interheating can be
+presented as a percentage of Strinttotal. Two new terms are introduced:
+𝑆 𝐼r eb [%] = 𝑆 𝑡𝑟𝑖𝑛𝑡r eb ⋅100
+𝑆 𝑡𝑟𝑖𝑛𝑡t ot al
+(20)
+𝑆 𝐼IH [%] = 𝑆 𝑡𝑟𝑖𝑛𝑡IH ⋅100
+𝑆 𝑡𝑟𝑖𝑛𝑡t ot al
+(21)
+SI indicates the percentage of the total stripping intensity con-
+tributed by the reboiler (reb) or the interheater (IH). The definitions
+of Strintreb, StrintIH, and Strinttotal can be found in Eqs. (5), (6), and
+(7) respectively. This section will compare base case and interheater
+configurations with similar Strinttotal. The operating parameters are
+presented in Table 1.
+4.2.1. Influence of replacing reboiling with interheating on SRD
+As a fraction of the reboiler duty is replaced with the interheater,
+the SRD of the system is likely to be impacted. The influence of a
+changing SIreb is presented in Fig. 13.
+Fig. 13 shows the SRD values obtained for different values of SIreb.
+The Strinttotal for these results are in the range of 168 to 255 kJ/kgtotal.
+It can be seen that the SRD and SIreb are linearly proportional to each
+other, assuming that the Strinttotal does not influence the SRD. Fitting
+a linear trend between SIreb and SRD can help in predicting the SRD
+of the system at values of SIreb experimentally unexplored. The linear
+fit follows the theoretical expectation. Based on the definition of SRD,
+when SIreb = 0, the reboiler duty is zero. Consequently, the SRD = 0
+(see Eq. (4)). However, this is true only when replacing reboiling with
+interheating does not negatively impact the desorption of CO2, and the
+source of interheating is obtained through heat integration within the
+WtE facility and no heat losses are incurred at the heat exchangers. The
+blue dashed line in Fig. 13 depicts the penalty obtained in terms of SRD
+due to losses in the heat exchangers. The correlation between the SRD
+and SIreb considering heat loss is as follows:
+SRD [GJ∕t onne CO2] = 𝑢⋅SIr eb + HEhl
+(22)
+
+===== PDF PAGE 14 =====
+Energy 320 (2025) 134973
+14
+S.H.B. Vinjarapu et al.
+Fig. 13. Influence of replacing reboiling with interheating on the SRD of the system.
+The red dashed lines show a correlation, assuming no heat loss in the heat exchangers.
+The blue dashed line shows the correlation, assuming heat loss in the heat exchangers.
+Fig. 14. Influence of replacing reboiling with interheating at different Strinttotal values.
+The region highlighted in yellow shows the region of operation for lowered SRD values
+compared to the base case.
+Where 𝑢= 0.0341 [GJ/tonne CO2] is the slope of the linear fit and HEhl
+= 0.38 [GJ/tonne CO2] is the heat loss penalty in the heat exchangers
+(intercept of the fit). These parameters are obtained by linearly fitting
+the experimental data. The correlation is based on the assumption
+that Strinttotal does not impact the SRD. This assumption might not
+hold, especially at high Strintreb (> 240 kJ/kgtotal) values because of
+excessive steam losses from the stripper top [38]. Excessive steam
+leads cause high parasitic losses, impacting the SRD. The correlation
+developed between the SRD and SIreb will be utilised in the following
+discussion. The SRD of the system at varying SIreb and Strinttotal is
+presented in Fig. 14.
+Fig. 14 depicts the SRD of the system at varying Strinttotal and
+SIreb values. At SIreb = 100% (base case), the available energy is only
+through the reboiler. For the base case, the SRD observed is in the range
+of 3.65 to 4 GJ/tonne CO2. A minimum SRD of 3.65 GJ/tonne CO2 is
+obtained at an Strinttotal of 210 kJ/kgtotal for the base case. At Strinttotal
+> 210 kJ/kgtotal, excess of steam is lost from the stripper top, causing
+high SRD values.
+A decrease in the SRD can be seen as SIreb decreases from 100% to
+70%. At SIreb ∼90%, SRD ranges from 3.36 to 3.86 GJ/tonne CO2. At
+Fig. 15. Influence of varying Strinttotal and SIreb on the capture efficiency of the system.
+The region highlighted in blue represents the ideal region of operation for ∼90%
+capture efficiency.
+Strinttotal < 215 kJ/kgtotal, the SRD values close to 3.4 GJ/tonne CO2
+are observed. At Strinttotal > 215 kJ/kgtotal, an increase in the SRD can
+be observed. This is likely due to the loss of steam from the stripper
+top.
+Similarly, a further decrease in the SIreb to ∼70% can be observed
+to reduce the SRD further to 2.71 and 2.73 GJ/tonne CO2. These SRD
+values are observed at Strinttotal of 187 and 181kJ/kgtotal respectively.
+The SRD is reduced by 27% when the SIreb is changed from 100% to
+70% at an Strinttotal of ∼187 to 189 kJ/kgtotal. Replacing even 10%
+of reboiling with interheating has been shown to reduce the SRD by
+9% (at Strinttotal = 190 kJ/kgtotal). Therefore, replacing reboiling with
+interheating is beneficial in reducing the SRD. Karimi et al. has demon-
+strated a reduction in the SRD by 5.7% and 9.9% by implementing one
+and two interheaters, respectively, in a simulation study.
+Even though the number of experimental results is limited for SIreb
+of the range 50 to 95%, based on the observed trend, it would be
+ideal to operate the plant at SIreb < 100%. This region is highlighted
+in yellow (Fig. 14). However, SRD is only one aspect of the efficient
+pilot operation. Capture efficiency (𝜖) is another important criterion
+for determining the optimal pilot operation. Variation of Strinttotal and
+SIreb is likely to influence the capture efficiency of the pilot as presented
+in Fig. 15.
+Fig. 15 displays the capture efficiencies (𝜖) observed at varying
+Strinttotal and SIreb values. It can be observed that 𝜖changes with
+Strinttotal. However, the influence of SIreb is not significant, especially
+at Strinttotal ∼190 kJ/kgtotal. For Strinttotal in the range of 160 to
+200 kJ/kgtotal, 𝜖in the range of 71% to 83% is observed. For Strinttotal
+in the range of 200 to 230 kJ/kgtotal, 𝜖close to 90% is observed for
+the interheater configuration. However, high 𝜖(> 95%) is obtained for
+two base case results. At Strinttotal > 230 kJ/kgtotal, capture efficiencies
+close to 100% are observed for both the configurations. Conventionally,
+operating a capture plant at 90% 𝜖is desirable. Based on the experimen-
+tal data available and trends observed, a 90% capture efficiency can be
+expected when the Strinttotal is in the range of 200 to 230 kJ/kgtotal
+where SIreb contributes 50% to 95% of the total stripping intensity.
+This range of operation is highlighted in blue in Fig. 15. The capture
+efficiency increases with Strinttotal and SIreb as the cyclic capacity of the
+solvent increases. As the stripping intensity increases, higher amounts
+of CO2 are stripped, causing the solvent to be leaner and thus able
+to capture more CO2 in the absorber. By manipulating the fraction of
+duties provided to the reboiler and the interheater, desirable capture
+efficiencies (>90%) can be obtained.
+
+===== PDF PAGE 15 =====
+Energy 320 (2025) 134973
+15
+S.H.B. Vinjarapu et al.
+Fig. 16. Influence of replacing reboiling with interheating on the SRD at different
+Strinttotal values. The region highlighted in yellow shows the region of operation for
+lowered SRD values. The region highlighted in blue shows operation at a capture
+efficiency of 90%. The intersection of both is the optimal operating area.
+SRD and 𝜖are both indicators of the performance of a capture plant.
+Therefore, both of them are to be optimised. As previously mentioned,
+a reduction in the SRD is observed when Strinttotal is in the range of 160
+to 260 kJ/kgtotal and SIreb is in the range of 50% to 95%. Similarly, for
+an 𝜖of 90%, Strinttotal of the range 200 to 230 kJ/kgtotal and SIreb of
+the range 50% to 100% are required. There is an overlap in the region
+of operation for reducing the SRD and ensuring an 𝜖of 90%. Fig. 16
+presents this overlap of operation regions.
+Fig. 16 presents the optimal region of operation where Strinttotal is
+between 200 and 230 kJ/kgtotal and SIreb is between 50% and 80%.
+As experimental data are limited in this region of operation, the SRD
+of the system was predicted based on the correlation developed ear-
+lier (Eq. (22), Fig. 13). The uncertainty of the model is ±12%. The
+correlation shows that the SRD could be further reduced from 3.28
+to 2.25 GJ/tonne CO2 when the SIreb is reduced from 75% to 55%
+respectively, while possibly obtaining a capture efficiency of 90%. A
+lower SRD while maintaining the desired capture efficiency is thus
+possible by replacing reboiling with interheating.
+Therefore, based on the predictions, it could be worthwhile to inves-
+tigate the plant’s performance in the region of intersection presented in
+Fig. 16 in the future.
+4.2.2. Energy lost in main HE vs gained by IH
+Interheating in this section is considered as a replacement for reboil-
+ing. As the reboiling at the stripper bottom reduces, the temperature of
+the hot lean solvent exiting the stripper could be impacted, thus ma-
+nipulating the performance of the main HE. The influence of replacing
+reboiling with interheating on the energy exchanged in the main HE is
+presented in Fig. 17.
+Fig. 17 displays the influence of replacing reboiling with interheat-
+ing on the main HE duty. The main HE duty (Qmain HE) is calculated as
+(assuming no flashing):
+𝑄main HE [k W] = 𝑚lean ⋅(𝐶𝑝,lean,𝑇ℎ𝑙⋅𝑇ℎ𝑙−𝐶𝑝,lean,𝑇𝑤𝑙⋅𝑇𝑤𝑙)
+(23)
+Qmain HE [kW] is the duty exchanged by the hot lean solvent in the
+main HE, mlean [kg/s] is the mass flow rate of the lean solvent, Thl [K]
+and Twl [K] are the temperatures of the hot and cold lean sides of the
+main HE, Cp,lean,Thl [kJ/kg K] and Cp,lean,Twl [kJ/kg K] are the respective
+heat capacities. The duty exchanged by the lean solvent is used instead
+of the duty gained by the cold rich solvent. This avoids inconsistencies
+Fig. 17. Influence of varying Strinttotal and SIreb values on the heat exchanged by the
+hot lean solvent in the main HE.
+Fig. 18. The interheater duty available (excluding heat loss) at various Strinttotal and
+SIreb values.
+from flashing of the rich solvent in the heat exchanger.
+When the interheater provides a fraction of the total stripping
+intensity, the magnitude of the reboiler duty reduces. Consequently,
+the temperature of the hot lean solvent and Qmain HE may be affected.
+It can be observed that the change in Qmain HE spans from 19 to 21 kW.
+At SIreb = 100%, Qmain HE increases with increasing Strinttotal. As SIreb
+decreases, Qmain HE can be observed to decrease. However, the Qmain HE
+decrease is < 2 kW. Therefore, Qmain HE is not significantly impacted
+when < 30% of Strinttotal is replaced by an interheater. The interheater
+duty made available by displacing the energy to the middle of the
+stripper is presented in Fig. 18.
+Fig. 18 shows the duty available when a fraction of Strinttotal is
+replaced by the interheater. The interheater duty presented excludes
+the heat lost to the environment. It can be observed that as the SIreb
+value decreases, the interheater duty increases. This trend is expected
+based on the definition of SIreb. To exemplify the energy lost in the
+main HE vs energy gained in the interheater, four data points which
+have a constant Strinttotal of 188 ± 8 kJ/kgtotal and SIreb in the range of
+70 to 90% are considered (Figs. 19(a) and 19(b)). The distribution of
+the reboiler duty and the interheater duty are presented in Fig. 19(a).
+The loss in main HE duty due to decreased reboiler duty and the gain
+
+===== PDF PAGE 16 =====
+Energy 320 (2025) 134973
+16
+S.H.B. Vinjarapu et al.
+in interheater duty for the same data points are presented in Fig. 19(b).
+Fig. 19(a) shows that the total duty comprising the reboiler and
+the interheater, excluding øheat loss, is similar for all three results. As
+the value of SIreb increases, the reboiler duty’s contribution increases,
+and the interheater’s contribution decreases. Reduction in the reboiler
+duty shifts the energy available at the stripper bottom to the middle
+of the stripper. As the duty at the stripper bottom is reduced, the duty
+available at the main HE from the hot lean solvent is expected to be
+lowered.
+Fig. 19(b) shows the duty extracted from the hot lean solvent in
+the main HE and the interheater duties for different SIreb values. The
+light red region for the interheater configuration depicts the loss of duty
+in the main HE compared to the base case. It can be observed that at
+SIreb = 100%, Qmain HE is approximately 20 kW. As the value of SIreb
+decreases, Qmain HE drops. However, this decrease is < 2 kW and the
+duty lost from the hot lean solvent (shown as the light red region in
+Fig. 19(b)) is lower than the duty gained in the middle of the stripper
+through the interheater. For SIreb = 70%, the duty gained through the
+interheater is 3.9 kW, whereas the duty decrease in the main HE is
+0.7 kW. Similarly, for SIreb = 82% and 90%, the energy gained by the
+interheater is higher than the decrease in Qmain HE compared to the base
+case.
+Reduction of SIreb is expected to reduce the hot lean temperature
+exiting the stripper bottom. However, the temperature at the stripper
+bottom depends on the steam generator’s steam pressure, as presented
+in Fig. 20.
+Fig. 20 shows that at a constant Strinttotal of 188 ± 8 kJ/kgtotoal,
+the change in the steam pressure and the reboiler temperature is
+minor, when SIreb increases from 70 to 100%. The reboiler temper-
+ature strongly depends on the steam generator’s steam pressure. As
+a reduction in the reboiler duty does not significantly impact the
+steam pressure, the reboiler temperature is also not reduced. Due to
+an unchanged reboiler temperature, Qmain HE is not reduced when the
+interheater replaces a fraction of the total duty. This observation cannot
+be generalised as it depends on the operating parameters.
+4.2.3. Influence of replacing reboiling with interheating on stripper temper-
+ature profiles
+The temperature profile in the stripper is critical to the performance
+of the stripper. Replacing reboiling with interheating will impact the
+stripper temperature profile. The Strinttotal of the experimental results
+is varied in the range of 180 to 250 kJ/kgtotal. Therefore, the results
+can be split into two categories (low ∼190 kJ/kgtotal and high ∼
+240 kJ/kgtotal). The temperature profiles are presented in Figs. 21(a),
+and 21(b). Important operating parameters such as rich solvent flow,
+gas flow, CO2 concentration, inlet gas temperature, stripper pressure,
+reboiler and interheater duties, lean temperature for these results are
+presented in Tables 4 and 5. Furthermore, derived and performance
+parameters such as stripping intensity, capture efficiency, CO2 stripped,
+and SRD are also given. These parameters are crucial to the analysis of
+the pilot performance.
+Fig. 21(a) shows the temperature profiles in the stripper for various
+SIIH values at Strinttotal of 191 ± 4 kJ/kgtotal and Table 4 provides
+important details for the three steady states presented in Fig. 21(a).
+It can be seen that with increasing SIIH, the temperature in the stripper
+at the height of 6.9 m and 3.4 m increases. The temperature increases
+from 96 oC (base case) to 109 oC (SIIH = 28%) at the height of 6.9 m.
+It can also be seen that, as SIIH increases, the temperature along the
+length of the stripper is higher. Furthermore, the temperature pinch in
+the base case (at 3.4 m and 6.9 m) is eliminated by replacing reboiling
+with interheating. Eliminating a pinch region will increase the driving
+force and ensure an efficient use of the packing in the stripper. Imple-
+mentation of the interheater results in sensible solvent heating. This is
+reflected in the increase in the solvent temperature at a height of 6.9 m.
+Without interheating (SIIH = 0%), the solvent reaches 97 oC. However,
+for the interheating cases, the temperature at this height reaches 99 oC
+Fig. 19. (a) Reboiler and interheater duties for the three cases at Strinttotal =
+188 ± 8 kJ/kgtotal. (b) Comparison of the reduction of the main HE duty and gain
+in interheater duty. The light red region shows the duty decrease in the main HE in
+the interheater cases compared to the base case.
+and 104 oC for SIIH = 7% and 28% respectively. Therefore, displacing
+energy from the reboiler to the interheater causes an efficient sensible
+heating of the solvent. Furthermore, for SIIH = 28%, the 𝛥T across the
+first packed (10.4 m to 6.9 m) is 11 oC as opposed to 5 oC for the base
+case. This increased 𝛥T creates a large driving force for desorption
+of CO2 from the solvent. The pinch region observed in packed bed 2
+(6.9 m to 3.4 m) for the base case where 𝛥T is 0.7 oC is only slightly
+improved to 2 oC for SIIH = 28%. A further optimisation in displacing
+reboiler duty to the interheater is required to improve the driving force
+throughout the stripper.
+The improvement of the temperature profile in the stripper is re-
+flected in parameters such as the SRD. When compared to the base
+case, the SRD is improved by 8.9% and 27% for SIIH = 7% and 28% re-
+spectively (Table 4). As the reboiler duty is reduced in the interheating
+cases, the amount of steam generated will be lower, resulting in a lower
+steam loss from the stripper top. The amount of steam lost also depends
+on the rich inlet temperature. For the base case, 3.7 kg/h of steam loss is
+determined. For the interheating cases SIIH = 7% and 28%, the steam
+lost is 4 kg/h and 3.3 kg/h, respectively. The steam lost is higher for
+
+===== PDF PAGE 17 =====
+Energy 320 (2025) 134973
+17
+S.H.B. Vinjarapu et al.
+Fig. 20. Influence of replacing reboiling with interheating on the steam pressure and the reboiler temperature.
+Table 4
+Important operating parameters of the pilot for analysing the influence of replacing reboiling with interheating at Strinttotal ∼190 kJ/kgtotal.
+Parameter
+Base case
+SIIH = 7%
+SIIH = 28%
+Strinttotal [kJ/kgtotal]
+189
+190
+187
+Strintreb [kJ/kgtotal]
+189
+177
+134
+StrintIH [kJ/kgtotal]
+0
+13
+53
+Rich solvent flow [kg/h]
+275 ± 1
+272 ± 2
+264 ± 2
+Gas flow [kg/h]
+100.0 ± 0.1
+99.0 ± 0.1
+100.0 ± 0.1
+CO2 Concentration [vol%, wet basis]
+12.7 ± 0.5
+12.7 ± 0.5
+12.3 ± 0.5
+Gas temperature [𝑜C]
+32.7 ± 0.0
+39.5 ± 0.2
+38.8 ± 0.5
+Stripper bottom pressure [barg]
+0.88
+0.87
+0.86
+Reboiler duty [kW]
+17.3 ± 0.0
+16.2 ± 0.0
+12.7 ± 0.4
+IH duty [kW]
+0
+2
+5
+Lean temperature [𝑜C]
+39.1 ± 0.3
+41.0 ± 0.2
+40.3 ± 0.4
+Steam lost [kg/h]
+3.7
+4.0
+3.3
+𝜖[%]
+83
+83
+80
+CO2 stripped [kg/h]
+14.0 ± 0.2
+14.2 ± 0.1
+13.1 ± 0.5
+SRD [GJ/tonne CO2]
+3.71 ± 0.06
+3.38 ± 0.02
+2.71 ± 0.10
+Table 5
+Important operating parameters of the pilot for analysing the influence of replacing reboiling with
+interheating at Strinttotal ∼240 kJ/kgtotal.
+Parameter
+Base case
+SIIH = 7%
+Strinttotal [kJ/kgtotal]
+240
+237
+Strintreb [kJ/kgtotal]
+240
+221
+StrintIH [kJ/kgtotal]
+0
+16
+Rich solvent flow [kg/h]
+276 ± 1
+268 ± 1
+Gas flow [kg/h]
+101.0 ± 0.1
+100.0 ± 0.2
+CO2 Concentration [vol%, wet basis]
+12.8 ± 0.6
+12.4 ± 0.4
+Gas temperature [𝑜C]
+34.0 ± 0.1
+41.2 ± 0.0
+Stripper bottom pressure [barg]
+0.89
+0.87
+Reboiler duty [kW]
+21.3 ± 0.0
+19.3 ± 0.0
+IH duty [kW]
+0
+2
+Lean temperature [𝑜C]
+41.4 ± 0.1
+41.4 ± 0.3
+Steam lost [kg/h]
+6.5
+5.5
+𝜖[%]
+99
+99
+CO2 stripped [kg/h]
+16.8 ± 0.3
+17 ± 0.4
+SRD [GJ/tonne CO2]
+3.95 ± 0.06
+3.47 ± 0.09
+SIIH = 7% than the base case as the rich inlet temperature is higher. In
+the interheating cases, the sensible heating requirement of the solvent
+is lower from packing height 6.9 m compared to the base case. This
+results in a higher amount of steam being used for CO2 desorption in
+the stripper. Consequently, the SRD for interheating cases is reduced.
+Fig. 21(b) displays the temperature profile in the stripper for a high
+Strinttotal of 240 kJ/kgtotal and Table 5 provides some of the essential
+details. In Fig. 21(b), both the base case and Interheating configurations
+depict linear temperature profiles, indicating the absence of any pinch
+regions. This implies that the sensible heating of the solvent, desorption
+of CO2, and condensation of steam occur throughout the packed beds
+utilised in the stripper. The temperatures are higher for the base case
+compared to the interheater configuration. This is due to a higher
+steam production in the base case, as the reboiler duty is 21 kW. In
+the interheater configuration, the reboiler duty is 19 kW and 2 kW of
+energy is provided by the interheater. The temperature profile of the
+base case indicates that there is an excess amount of steam unutilised
+in the stripper. This steam is lost from the stripper top. This excess
+
+===== PDF PAGE 18 =====
+Energy 320 (2025) 134973
+18
+S.H.B. Vinjarapu et al.
+Fig. 21. Stripper temperature profiles comparing base case and interheater configura-
+tions at (a) Low Strinttotal ∼190 kJ/kgtotal. (b) High Strinttotal ∼240 kJ/kgtotal.
+steam has resulted in higher temperatures in the stripper compared to
+the base case, even at heights where the interheater is implemented.
+This explains why the profiles are reversed compared to Fig. 21(a).
+Even though it appears that the temperature profile is negatively
+impacted by replacing reboiling with interheating, closer inspection of
+aspects such as the SRD, CO2 stripped, and steam lost prove otherwise
+(Table 5). When compared to the base case, the SRD is reduced by
+12.2% from 3.95 GJ/tonne CO2 to 3.47 GJ/tonne CO2 for SIIH = 7%.
+Furthermore, the CO2 stripped is not negatively impacted. This shows
+that the steam in the base case is not utilised for desorbing CO2, causing
+high parasitic loss and SRD. However, with SIIH = 7%, the steam
+loss is reduced while ensuring an optimal stripper temperature profile
+(no pinch regions). Therefore, displacing a fraction of reboiling with
+interheating reduces steam generated and lost from the stripper top
+while maintaining the desired temperature profile, capture efficiencies,
+and SRD.
+4.2.4. Energy lost in condenser vs gained by IH
+The reboiler present at the bottom of the stripper boils the solvent
+to form steam, which moves up the column. The energy available in
+the steam is used for sensible heating of the solvent and desorption
+Fig. 22. Influence of interheating on the condenser duty at various Strinttotal and SIreb
+values.
+of CO2. The unused steam exits the stripper top with the stripped
+CO2 and passes through the condenser. The steam is condensed in the
+condenser and is added to the solvent to maintain the water balance.
+The temperature of the steam-CO2 mixture exiting the stripper top is
+dictated by the hot rich inlet temperature. The condenser duty (Fig. 22)
+indicates a parasitic energy loss in the stripper.
+From Fig. 22, it can be seen that the condenser duty increases with
+Strinttotal. As Strinttotal increases, the extent of reboiling also increases,
+leading to higher steam production and, therefore, a higher condenser
+duty. However, at first glance, the impact of SIreb on the condenser duty
+is unclear. Upon closer inspection, it can be observed that the condenser
+duty slightly decreases as the extent of interheating increases. At an
+Strinttotal in the range of 180 to 190 kJ/kgtotal, the condenser duty
+reduces from 3.9 kW to 3.3 kW as the SIreb decreases from 100%
+to 70%. Similarly at Strinttotal of 210 kJ/kgtotal, the condenser duty
+reduces from 5.1 kW to 4.7 kW as the SIreb changes from 100% to 90%.
+The reduced condenser duty is a consequence of the lowered reboiling
+of the solvent. It also indicates that interheating the solvent does not
+contribute to additional parasitic steam loss from the stripper.
+The energy lost as condenser duty could be used as a source of heat
+integration in the capture plant. As detailed in a previous work [10],
+bypassing a fraction of the cold rich solvent exiting the absorber
+bottom from the main HE and feeding it to the stripper top helps in
+reducing the saturation temperature of the exiting steam-CO2 mixture.
+Therefore, the condenser duty can be reduced, and the temperature
+profile in the stripper can be improved. However, it was also noted that
+the lean cooling duty increases by implementing the split flow config-
+uration [10]. Another way of reducing the condenser duty could be
+through a heat pump installation where the energy from the condenser
+is displaced to the middle of the stripper through an interheater.
+Alternatively, split flow configuration and interheating could be
+implemented in conjugation. The heat source for interheating could
+then be obtained from alternative sources such as the hot flue gas or
+the reboiler condensate. Implementing a split flow configuration will
+aid in reducing the parasitic steam loss from the stripper top, and
+interheating the stripper middle will help compensate for the heat loss
+from the stripper and improve the temperature profile. A combination
+of these two configurations could further reduce the SRD of the system
+compared to what was experimentally demonstrated for the two cases
+individually. Liu and Chen [43] simulated this combination of split flow
+configuration with an interheated stripper. A split fraction of 11% of
+the cold rich solvent was bypassed through the main HE and fed to
+the stripper top to recover heat from the overhead steam. A stream
+
+===== PDF PAGE 19 =====
+Energy 320 (2025) 134973
+19
+S.H.B. Vinjarapu et al.
+Fig. 23. PFD of the stripper, interheater, and main HE sections for (a) integration within the pilot using the hot lean solvent for interheating (shown by yellow dotted lines) (b)
+no integration within the pilot.
+of the semi-lean solvent was interheated by hot lean solvent exiting
+the stripper. This integrated configuration was shown to reduce the
+SRD from 3.53 GJ/tonne CO2 (base case) to 2.83 GJ/tonne CO2. In
+comparison, the split flow configuration alone reduced the SRD to
+2.91 GJ/tonne CO2 and interheating alone reduced it to 3.02 GJ/tonne
+CO2. Therefore, it is beneficial to integrate the interheating and split
+feed configurations.
+A takeaway from this section is that the condenser duty decreases
+when interheating replaces reboiling. There is potential for decreasing
+it much more by combining interheating and split flow configurations.
+4.3. Use of hot lean solvent for interheating
+Sections 4.1 and 4.2 discuss using a heat pump installation to
+provide energy for interheater implementation. As previously men-
+tioned, the hot lean solvent exiting the stripper could also be used for
+interheating the stripper middle before it is sent for energy recovery
+in the main HE. Figs. 23(a) and 23(b) show the PFDs where hot lean
+solvent is used for interheating and the current experimental setup
+respectively with the stream tags.
+As the hot lean solvent is first used for interheating, followed by
+energy recovery in the main HE, the energy in the stripper is displaced
+from the stripper top to the stripper middle (Fig. 23(a)). The experimen-
+tal data can be used to simulate this scenario (heat integration with hot
+lean solvent). This section will discuss the potential outcomes of such
+an implementation. This discussion is a partial simulation study as it
+has not been experimentally implemented in this study.
+If the hot lean solvent is utilised for interheating the middle of the
+stripper (Fig. 23(a)), the temperature of the lean solvent available in the
+main HE would be lower than the observed 117 oC. The temperature
+of the lean solvent exiting the interheater and entering the main HE
+could be predicted (𝑇ℎ𝑙 ,int, pr ed) based on the fraction of the reboiler duty
+utilised for interheating. The experimentally observed and predicted
+hot lean temperatures are presented in Fig. 24.
+Fig. 24 shows the experimentally observed hot lean temperatures
+entering the main HE when the interheater replaces a fraction of the
+total duty (represented as ℎ𝑙 , 𝑒𝑥𝑝in Fig. 23(b)). The experimental
+values are between 116 oC and 118 oC due to the experimental setup
+
+===== PDF PAGE 20 =====
+Energy 320 (2025) 134973
+20
+S.H.B. Vinjarapu et al.
+Fig. 24. Influence of replacing reboiling with interheating on the hot lean solvent temperature available to the main HE. The experimental results have no heat integration. The
+predicted values depict heat integration.
+(explained with Fig. 20). The temperatures of the hot lean solvent
+entering the main HE for the integrated case can be predicted based
+on energy balance calculations. If the hot lean solvent is used for
+interheating, the temperature available on the hot side in the main
+HE would be lower, based on the magnitude of duty displaced. The
+predicted values in Fig. 24 show that the hot lean temperature entering
+the main HE would decrease with decreasing SIreb. Using 30% of the
+reboiler duty for the interheater can result in temperatures around
+102 oC on the main HE hot side. The hot lean temperature to the main
+HE for the integrated case is predicted as follows:
+𝑇ℎ𝑙 ,int, pr ed = 𝑇ℎ𝑙 ,exp −
+𝑅𝐷IH
+𝑚lean ⋅𝐶𝑝,lean,𝑇ℎ𝑙 ,𝑒𝑥𝑝
+(24)
+Where Thl,int,pred [oC] is the predicted temperature of the hot lean sol-
+vent that would exit the interheater and enter the main HE, Thl,exp is the
+hot lean temperature exiting the bottom of the flash vessel and entering
+the interheater (experimental value). Thl,int,pred is calculated based on
+the amount of duty extracted for interheating the solvent at the stripper
+middle. From Fig. 24 it can be observed that the experimental and
+predicted values of the hot lean temperature inlet to the main HE are
+very different.
+In the experiments, reducing the reboiler duty does not exactly
+simulate extracting duty from the hot lean solvent exiting the reboiler.
+This is due to the dependence of the hot lean temperature on the
+steam pressure and not the reboiler duty (Fig. 20). However, if the
+interheater utilised the lean solvent exiting the stripper bottom, the hot
+lean solvent inlet to the main HE would be at lower temperatures than
+experimentally observed. As the temperature of the hot lean solvent to
+the main HE reduces, the duty available to be exchanged also decreases,
+consequently reducing the temperature of the hot rich solvent fed to
+the stripper. Assuming that the temperature of the warm lean solvent
+remains unchanged, the duty available in the main HE and the exiting
+temperature of the hot rich solvent can be predicted, as presented in
+Fig. 25.
+Fig. 25 shows the experimental main HE duty (Qmain HE determined
+using Equation 4.2.2) and the hot rich temperatures obtained at the
+outlet to the main HE. Additionally, the predicted values of both
+these parameters for using hot lean solvent exiting the reboiler for
+interheating the stripper are depicted (QmainHE,int,pred and Thr,int,pred).
+QmainHE,int,pred and Thr,int,pred are determined as follows:
+𝑄main HE, int, pr ed [k W]
+= 𝑚lean ⋅(𝐶𝑝,lean,𝑇ℎ𝑙 ,int, pr ed ⋅𝑇ℎ𝑙 ,int, pr ed −𝐶𝑝,lean,𝑇𝑤𝑙 ,exp ⋅𝑇𝑤𝑙 ,exp)
+(25)
+𝑇ℎ𝑟,int, pr ed [𝑜C] =
+𝑄main HE, int, pr ed∕𝑚r ich + 𝐶𝑝,r ich,𝑇𝑐 𝑟,exp ⋅𝑇𝑐 𝑟,exp
+𝐶𝑝,r ich, 𝑇ℎ𝑟,exp
+(26)
+QmainHE,int,pred [kW] is the predicted duty in the main HE for the
+integrated case, Thr,int,pred [oC] and Thl,int,pred [oC] are the predicted hot
+rich and hot lean temperatures, and Cp,lean,T [kJ/kg K] and Cp,rich,T
+[kJ/kg K] are the specific heat capacities of the lean and rich streams at
+temperature T. The stream tags can be found in Figs. 23(a) and 23(b).
+From Fig. 25, it can be observed that the predicted duties available
+from the hot lean solvent at the main HE decrease as the value of SIreb
+decreases. This decrease in the available duty aligns with the theoret-
+ical expectation. As the amount of duty redirected to the interheater
+increases, the duty available to the main HE decreases. Consequently,
+the hot-rich temperature decreases as the main HE duty decreases.
+Redirecting a fraction of duty from the main HE to the interheater is
+advantageous in the case where the decrease in the temperature of the
+hot rich solvent does not negatively impact the temperature profile in
+the stripper. Furthermore, a lower hot rich temperature to the stripper
+will result in a lower overhead steam loss, leading to lower parasitic
+losses. Therefore, the integration of hot lean solvent for interheating
+could be advantageous.
+4.4. Comparison of base case, interheating, and split flow configurations
+Pilot-scale investigation of split flow configuration was also con-
+ducted at the WtE facility [10]. In the split flow configuration, a
+fraction of the rich solvent exiting the absorber bottom is bypassed
+from the main HE and fed directly to the stripper top (dotted line in
+Fig. 26). Split flow configuration reduces the temperature of the CO2-
+steam mixture exiting the stripper top and, therefore, the condenser
+duty. It has also been shown to reduce the SRD and improve the stripper
+temperature profile [10]. It could, therefore, be interesting to compare
+the pilot performance for the base case, split flow, and interheater
+configurations. One steady state for each of the configurations is con-
+sidered for comparison. The steady states are chosen such that most
+operating parameters are the same, except for the configuration change.
+The essential operating parameters for the steady states selected are
+presented in Table 6.
+The steady states selected are such that the Strinttotal ∼200 kJ/kgtotal
+for the three configurations. For base case and split flow cases, Strintreb
+= Strinttotal, implying the energy in the stripper is solely from the
+reboiler, whereas, for the interheating case, Strinttotal = Strintreb +
+
+===== PDF PAGE 21 =====
+Energy 320 (2025) 134973
+21
+S.H.B. Vinjarapu et al.
+Fig. 25. Influence of replacing reboiling with interheating on the main HE duty and the hot rich temperature. The predicted values depict the scenario where hot lean solvent is
+utilised for interheating.
+Fig. 26. PFD of the split flow configuration. The pink dashed line represents the split stream, which bypasses the main HE and enters the stripper above packed bed F. The
+packing bed heights presented for the stripper are accumulated heights. The individual bed heights are: C- 3.4 m, D- 3.5 m, E- 3.5 m, F- 3.5 m [10].
+StrintIH. In the interheating case, 18% of Strinttotal is derived from
+the interheater. In the split flow case, 23% of the rich solvent flow is
+bypassed from the main HE and fed to the stripper top. The influence
+of these configurations on the stripper temperature profile is shown in
+Fig. 27.
+From Fig. 27, it can be observed that the split flow and interheater
+configurations influence the stripper temperature profile distinctively.
+While split flow and interheating improve the temperature profile
+compared to the base case, their impact is visible at different packing
+heights. The split flow can significantly impact the vapour stream
+temperature that exits the stripper top (highlighted as blue in Fig. 27).
+The vapour temperature reduces from 93 oC (base case) to 62 oC (split
+flow). As the flow through the main HE on the cold side is lower due
+to the bypass, the hot rich solvent that enters the stripper is at a higher
+temperature (101 oC for split flow, 95 oC for interheating, and 93 oC for
+base case).
+Below the inlet of the hot rich solvent, interheating improves the
+temperature profile more than the split flow configuration. Interheat-
+ing, in this case, is used as a replacement for reboiling. 18% of the
+reboiler duty used in the base case is thus replaced by interheater duty.
+Despite this reduction, the temperature in the reboiler is unchanged,
+and the temperature profile in the lower half of the stripper is improved
+by displacing a fraction of the duty from the bottom to the middle of
+the stripper. Furthermore, while the split flow configuration eliminates
+the pinch at the stripper top, the interheater reduces it in the middle.
+However, a pinch region exists in the bottom packing section (3.4 m to
+6.9 m). The pinch can be eliminated by increasing SIIH (Fig. 21(a)) or
+moving the interheater section to packing height C (3.4 m).
+Comparing the two advanced configurations, it can be noted that
+the temperature profile is improved in the upper half of the stripper by
+the split flow configuration, whereas interheating improves the lower
+half. Implementing split flow and interheater configurations together
+would likely enhance the temperature profile throughout the stripper. It
+is desirable to have a low temperature at the stripper top to increase the
+value of PCO2∕PH2O and reduce the condenser duty. Fig. 28 compares
+the condenser duty, total cooling duty, and PCO2∕PH2O for the three
+configurations.
+Fig. 28 shows that the PCO2∕PH2O value for split flow configura-
+tion is significantly higher than the other cases. The determination of
+
+===== PDF PAGE 22 =====
+Energy 320 (2025) 134973
+22
+S.H.B. Vinjarapu et al.
+Table 6
+Important operating parameters of the pilot for analysing the influence of interheating at different constant total stripping intensities.
+Parameter
+Base case
+Interheating
+Split flow
+Strinttotal [kJ/kgtotal]
+201
+197
+195
+Strintreb [kJ/kgtotal]
+201
+161
+195
+StrintIH [kJ/kgtotal]
+0
+36
+0
+SIreb [%]
+100
+82
+100
+SIIH [%]
+0
+18
+0
+Split flow [%]
+0
+0
+23
+Rich solvent flow [kg/h]
+277
+265
+265
+Gas flow [kg/h]
+97
+99
+100
+CO2 Concentration [vol%, wet basis]
+12.2
+11.6
+12.4
+Gas temperature [𝑜C]
+35
+42
+39
+Stripper bottom pressure [barg]
+0.88
+0.88
+0.86
+Reboiler duty (including heat loss) [kW]
+18
+14
+17
+Reboiler duty (excluding heat loss) [kW]
+15
+12
+14
+IH duty (excluding heat loss) [kW]
+0
+2.7
+0
+Lean temperature [𝑜C]
+40
+41
+45
+Condenser duty [kW]
+4.5
+3.8
+0.9
+Total cooling duty [kW]
+7.8
+7.2
+7.6
+PCO2 ∕PH2O
+1.4
+1.4
+7.4
+𝜖[%]
+92
+76
+90
+𝛼lean [mol CO2/mol MEA]
+0.22 ± 0.03
+–
+0.21 ± 0.03
+𝛼rich [mol CO2/mol MEA]
+0.52 ± 0.03
+–
+0.54 ± 0.03
+SRD [GJ/tonne CO2]
+3.76 ± 0.04
+3.55 ± 0.02
+3.49 ± 0.09
+CO2 captured [kg/h]
+14.8 ± 0.2
+12 ± 0.1
+14.9 ± 0.4
+Fig. 27. Comparison of temperature profile developed in the stripper for the base
+case, interheater, and split flow configurations. In the interheater case, 18% of the
+total energy comes from the interherater at the middle (shown in red). In the split
+flow case, 23% of the rich solvent is bypassed from the main HE and fed directly to
+the stripper top (shown in blue). The hot rich inlet is the same for all three cases
+(shown in yellow).
+PCO2∕PH2O has been previously shown in Eq. (19). A high PCO2∕PH2O is
+advantageous as it shows a low steam loss from the stripper. PCO2∕PH2O
+is dependent on the temperature of the vapour stream exiting the
+stripper top. This temperature depends on the liquid temperature fed
+to the stripper. As the cold split flow entering the stripper top is
+around 40 oC, the vapour stream exits at 62 oC, thus resulting in a
+high PCO2∕PH2O value. In the base case and interheater configurations,
+the rich solvent enters at temperatures > 100 oC, causing the vapour
+stream to leave at 90 to 100 oC, resulting in a low PCO2∕PH2O. PCO2∕PH2O
+consequently impacts the condenser duty as shown in Fig. 28. Low
+condenser duty leads to low parasitic losses from the stripper.
+While replacing reboiling with interhetaing reduced the condenser
+duty by 17%, split flow configuration lowered it by 80%. Even though
+the reduction in the condenser duty with split flow is significant, it was
+shown that the total cooling duty (condenser duty + lean cooler duty)
+of the system would be similar to the base case due to increasing lean
+cooler duty [10]. If the total cooling duty of the system is considered,
+Fig. 28. Comparison of the base case, interheating, and split flow configurations
+regarding condenser duty, total cooling duty (condenser duty + lean cooler duty), and
+pCO2 ∕pH2O.
+interheater configuration is slightly advantageous, as shown in Fig. 28.
+SRD and capture efficiency (𝜖) for the three cases are presented in
+Figs. 29 and 30 respectively. Fig. 29 shows that the SRD of the split
+flow configuration is the lowest and the base case is the highest. Split
+flow configuration reduced the SRD by 7.2%, whereas the interheater
+configuration reduced it by 5.6% from the base case. Additionally, split
+flow and base case configurations achieve 𝜖close to 90%. However, 𝜖of
+78% is obtained for the interheating configuration. This is potentially
+due to higher lean loadings of the solvent as lower steam from the
+reboiler is available. Therefore, in terms of SRD and 𝜖, split flow
+configuration is advantageous.
+For optimal performance, operating a capture plant with a combi-
+nation of split flow and interheater (using hot lean solvent for inter-
+heating) configurations could result in an ideal stripper temperature
+profile, lower SRD, lower total cooling duties, and desired 𝜖. The PFD
+of such a configuration is shown in Fig. 31. Utilising hot lean solvent for
+interheating displaces energy recovery from the main HE to the stripper
+middle, consequently reducing the lean cooling duty and improving the
+
+===== PDF PAGE 23 =====
+Energy 320 (2025) 134973
+23
+S.H.B. Vinjarapu et al.
+Fig. 29. Comparison of the base case, interheating, and split flow configurations
+regarding the SRD.
+Fig. 30. Comparison of the base case, interheating, and split flow configurations
+regarding the capture efficiency.
+stripper temperature profile in the stripper middle. Splitting a fraction
+of the cold rich solvent will reduce the condenser duty and improve the
+stripper temperature profile in the upper half.
+5. Conclusion
+The current work discusses the optimisation of a CO2 capture pilot
+plant by implementing interheating in the stripper. The experiments
+were conducted at a WtE facility, utilising 30 wt% MEA as the solvent.
+This work aims at bridging the knowledge gap existing due to the lack
+of experimental studies on pilot scale demonstration of stripper inter-
+heating, which has been shown as a promising advanced configuration
+by several simulation studies.
+The experiments were done by withdrawing a stream of semi-lean
+solvent from the stripper middle, heating it, and feeding it to the
+stripper at the same height. The energy to the interheater was provided
+by a steam generator with an adjustable duty, which the operator gave
+as input. The reboiler and interheater duties were varied to analyse
+the pilot’s performance regarding SRD, capture efficiency, stripper
+temperature profile, and condenser duty. The results were analysed as
+simulations of different scenarios where interheating was considered
+an addition or replacement to reboiling at the stripper bottom. Even
+though an additional duty was spent on interheating in the current
+work, it has been considered a simulation of energy obtained through
+heat integration with the WtE facility, heat pumps, or hot lean solvent.
+Adding interheating to reboiling improved the pilot’s performance
+in terms of SRD and 𝜖. The SRD was reduced in the range of 2% to
+11% by adding interheating to the base cases. Additionally, the capture
+efficiency was improved, possibly due to better cyclic capacity of the
+solvent. The CO2 stripped was also enhanced by adding interheating.
+The condenser duty is impacted by the addition of interheating depend-
+ing on the value of Strintreb. At Strintreb < 210 kJ/kgtotal, the condenser
+duty is increased by at least 2% when interheating is added to the base
+case. At Strintreb in the range of 210 to 240 kJ/kgtotal, the condenser
+duty was similar for both configurations.
+Replacing reboiling with interheating was also depicted to optimise
+the pilot’s performance, depending on the operation parameters. Re-
+placing 10% of reboiling with interheating reduced the SRD by at least
+7%. Additionally, the capture efficiency is not significantly impacted.
+Further replacement of 28% reboiling with interheating can reduce
+SRD to as low as 2.73 GJ/tonne CO2 with a capture efficiency of 80%.
+Operating with the right reboiling and interheating could potentially
+result in a capture efficiency of 90% and SRD of 2.25 GJ/tonne CO2.
+Replacing reboiling with interheating was also shown to improve the
+stripper temperature profile at low and high Strinttotal values. The
+condenser duty can be reduced by replacing reboiling at high Strinttotal
+(∼240 kJ/kgtotal).
+Stripper interheating in this work has thus been shown to reduce
+the SRD while maintaining desirable capture efficiencies. Integration
+within the pilot could be even more advantageous. Using a hot lean
+solvent as the heat source for interheating displaces a fraction of
+the energy recovery from the main HE and moves it to the strip-
+per middle. Consequently, the hot rich solvent entering the stripper
+would be at temperatures lower than 100oC depending on the extent
+of energy recovery displacement. Reducing the hot rich temperature
+will consequently lower the condenser duty while interheating the
+stripper middle will ensure high temperatures in the lower two-thirds
+of the stripper. Furthermore, a combination of split flow configuration
+with interheating using hot lean solvent could optimise the pilot’s
+performance in terms of SRD, capture efficiency, and total cooling duty.
+Application of stripper interheating requires an additional heat
+exchanger, contributing to the CAPEX costs. Therefore, the data from
+the pilot could be utilised to conduct a cost–benefit analysis before
+implementing the configuration at a full-scale plant. Furthermore, the
+PID design of the interheater section could be improved to obtain
+a steady state operation easily without significant disruptions to the
+process. Additionally, the influence of stripper interheating on solvent
+degradation needs to be evaluated.
+There is a considerable knowledge gap in the experimental demon-
+stration of advanced configurations, such as stripper interheating,
+which have been shown to reduce energy consumption in simulation
+studies. These simulation studies, however, lack experimental data for
+the configuration to validate their results. Therefore, this work seeks to
+close the knowledge gap and provide an in-depth experimental under-
+standing of the configuration. Based on this pilot scale work, simulation
+models developed for 30 wt% MEA can be validated, especially for
+the interheating configuration. These experiments are also valuable in
+developing new models, FEED studies and Techno-economic analysis.
+With the growing implementation of full-scale CO2 capture in several
+industries worldwide, pilot-scale studies are extremely valuable sources
+of theoretical and operational knowledge.
+CRediT authorship contribution statement
+Sai Hema Bhavya Vinjarapu: Writing – review & editing, Writing
+– original draft, Visualization, Validation, Resources, Methodology,
+Investigation, Formal analysis, Data curation, Conceptualization. Randi
+Neerup: Writing – review & editing, Resources, Methodology. Anders
+
+===== PDF PAGE 24 =====
+Energy 320 (2025) 134973
+24
+S.H.B. Vinjarapu et al.
+Fig. 31. PFD of a possible combination of split flow and interheater configurations for optimal performance of the capture plant. The pink dashed line shows the split flow of the
+rich solvent bypassing the main HE and entering the stripper at the top packing bed F. The red section shows the withdrawal and feed of semi-lean solvent from packed section D.
+The yellow dotted lines show the use of hot lean solvent for energy recovery first in the interheater, followed by the main HE. The packing bed heights presented for the stripper
+are accumulated heights. The individual bed heights are: C- 3.4 m, D- 3.5 m, E- 3.5 m, F- 3.5 m.
+Hellerup Larsen: Resources, Methodology. Sebastian Nis Bay Villad-
+sen: Project administration. Søren Jensen: Resources, Project admin-
+istration, Methodology, Conceptualization. Jakob Lindkvist Karlsson:
+Writing – review & editing, Investigation. Jannik Kappel: Resources,
+Project administration. Henrik Lassen: Resources, Project administra-
+tion. Peter Blinksbjerg: Resources, Project administration. Nicolas
+von Solms: Project administration. Philip Loldrup Fosbøl: Writing
+– review & editing, Supervision, Resources, Project administration,
+Investigation, Funding acquisition, Conceptualization.
+Declaration of Generative AI and AI-assisted technologies in the
+writing process
+During the preparation of this work, the author(s) used ChatGPT
+and Grammarly in order to improve language and readability. After
+using this tool/service, the author(s) reviewed and edited the content as
+needed and take(s) full responsibility for the content of the publication.
+Funding sources
+The financial support from the Net Zero Energy Carbon Capture
+at ARC: Pilot scale development and demonstration of carbon cap-
+ture from waste-to-energy plants project (the Danish 318 Government
+through the EUDP agency no. 64020-1025). The funding source had
+no involvement in the study design; in the collection, analysis and
+interpretation of data; in the report’s writing; and in the decision to
+submit the article for publication.
+Declaration of competing interest
+The authors declare that they have no known competing finan-
+cial interests or personal relationships that could have appeared to
+influence the work reported in this paper.
+Acknowledgements
+The financial support from the Net Zero Energy Carbon Capture
+at ARC: Pilot scale development and demonstration of carbon cap-
+ture from waste-to-energy plants project (the Danish 318 Govern-
+ment through the EUDP agency no. 64020-1025) and the Technical
+University of Denmark (DTU).
+Appendix A. Supplementary data
+Supplementary material related to this article can be found online
+at https://doi.org/10.1016/j.energy.2025.134973.
+Data availability
+The data will be published in Data in Brief.
+References
+[1] Abu-Zahra MR, Schneiders LH, Niederer JP, Feron PH, Versteeg GF. CO2 capture
+from power plants. Part I. A parametric study of the technical performance
+based on monoethanolamine. Int J Greenh Gas Control 2007;1(1):37–46. http:
+//dx.doi.org/10.1016/S1750-5836(06)00007-7.
+[2] Aaron D, Tsouris C. Separation of CO2 from flue gas: A review. Sep Sci Technol
+2005;40(1–3):321–48. http://dx.doi.org/10.1081/SS-200042244.
+[3] Rao AB, Rubin ES. A technical, economic, and environmental assessment
+of amine-based CO2 capture technology for power plant greenhouse gas
+control. Environ Sci Technol 2002;36(20):4467–75. http://dx.doi.org/10.1021/
+es0158861.
+[4] Steeneveldt R, Berger B, Torp TA. CO2 capture and storage: Closing the knowing-
+doing gap. Chem Eng Res Des 2006;84(9 A):739–63. http://dx.doi.org/10.1205/
+cherd05049.
+[5] Vinjarapu SHB, Løge IA, Neerup R, Larsen AH, Rasmussen VE, Jørsboe JK, et al.
+Learnings from up-scaling CO2 capture: Challenges and experiences with pilot
+work. Chem Eng Sci 2024;300. http://dx.doi.org/10.1016/j.ces.2024.120576.
+[6] Aroonwilas A, Veawab A. Integration of CO2 capture unit using single- and
+blended-amines into supercritical coal-fired power plants: Implications for emis-
+sion and energy management. Int J Greenh Gas Control 2007;1(2):143–50.
+http://dx.doi.org/10.1016/S1750-5836(07)00011-4.
+
+===== PDF PAGE 25 =====
+Energy 320 (2025) 134973
+25
+S.H.B. Vinjarapu et al.
+[7] Knudsen JN, Jensen JN, Vilhelmsen PJ, Biede O. Experience with CO2 capture
+from coal flue gas in pilot-scale: Testing of different amine solvents. Energy
+Procedia 2009;1(1):783–90. http://dx.doi.org/10.1016/j.egypro.2009.01.104.
+[8] Tatarczuk A, Tańczyk M, Wie¸cław-Solny L, Zdeb J. Pilot plant results of amine-
+based carbon capture with heat integrated stripper. Appl Energy 2024;367.
+http://dx.doi.org/10.1016/j.apenergy.2024.123416.
+[9] Le Moullec Y, Neveux T, Al Azki A, Chikukwa A, Hoff KA. Process modifications
+for solvent-based post-combustion CO2 capture. Int J Greenh Gas Control
+2014;31:96–112. http://dx.doi.org/10.1016/j.ijggc.2014.09.024.
+[10] Vinjarapu SHB, Neerup R, Larsen AH, Villadsen SNB, von Solms N, Jensen S,
+et al. Pilot-scale CO2 capture demonstration of heat integration through split
+flow configuration using 30 wt % MEA at a Waste-to-Energy facility. Sep Purif
+Technol 2024;345:127311. http://dx.doi.org/10.1016/j.seppur.2024.127311.
+[11] Iijima M, Kamijo T, Yonekawa T, Mimura T, Yagi Y. Apparatus and method for
+recovering CO2. EP1736231. European Patent Office; 2005.
+[12] Kamijo T, Iijima M, Mimua T, Yagi Y. Apparatus and method for CO2 recovery.
+EP1695756. 2006, European Patent Specification.
+[13] Van Wagener DH, Rochelle GT. Stripper configurations for CO2 capture by
+aqueous monoethanolamine and piperazine. Energy Procedia 2011;4:1323–30.
+http://dx.doi.org/10.1016/j.egypro.2011.01.190.
+[14] Jovanovic S, Krishnamurthy R. Waste heat utilization for energy efficient carbon
+capture. US9157369. 2015, United States Patent.
+[15] De Miguel Mercader F, Magneschi G, Sanchez Fernandez E, Stienstra GJ,
+Goetheer EL. Integration between a demo size post-combustion CO2 capture
+and full size power plant. An integral approach on energy penalty for different
+process options. Int J Greenh Gas Control 2012;11:102–13. http://dx.doi.org/10.
+1016/j.ijggc.2012.09.016.
+[16] Iijima M, Mimura T, Yagi Y. System and method for recovering CO2.
+US2007/0053817. 2007, United States Patent Application Publication.
+[17] Frailie PT, Madan T, Sherman BJ, Rochelle GT. Energy performance of advanced
+stripper configurations. Energy Procedia 2013;37:1696–705. http://dx.doi.org/
+10.1016/j.egypro.2013.06.045.
+[18] Cousins A, Wardhaugh LT, Feron PH. A survey of process flow sheet modifica-
+tions for energy efficient CO2 capture from flue gases using chemical absorption.
+Int J Greenh Gas Control 2011;5(4):605–19. http://dx.doi.org/10.1016/j.ijggc.
+2011.01.002.
+[19] Li K, Cousins A, Yu H, Feron P, Tade M, Luo W, et al. Systematic study of
+aqueous monoethanolamine-based CO2 capture process: Model development and
+process improvement. Energy Sci Eng 2016;4(1):23–39. http://dx.doi.org/10.
+1002/ese3.101.
+[20] Zhao B, Liu F, Cui Z, Liu C, Yue H, Tang S, et al. Enhancing the energetic
+efficiency of MDEA/PZ-based CO2 capture technology for a 650 MW power
+plant: Process improvement. Appl Energy 2017;185:362–75. http://dx.doi.org/
+10.1016/j.apenergy.2016.11.009.
+[21] Liu J. Investigation into an energy-saving mechanism for advanced stripper
+configurations in post-combustion carbon capture. J Taiwan Inst Chem Eng
+2020;108:43–54. http://dx.doi.org/10.1016/j.jtice.2019.12.012.
+[22] Ayittey FK, Obek CA, Saptoro A, Perumal K, Wong MK. Process modifications
+for a hot potassium carbonate-based CO2 capture system: a comparative study.
+Greenh Gases: Sci Technol 2020;10(1):130–46. http://dx.doi.org/10.1002/ghg.
+1953.
+[23] Li K, Yu H, Feron P, Tade M, Wardhaugh L. Technical and energy performance
+of an advanced, aqueous ammonia-based CO2 capture technology for a 500
+MW coal-fired power station. Environ Sci Technol 2015;49(16):10243–52. http:
+//dx.doi.org/10.1021/acs.est.5b02258.
+[24] Li K, Yu H, Feron P, Wardhaugh L, Tade M. Techno-economic assessment of
+stripping modifications in an ammonia-based post-combustion capture process.
+Int J Greenh Gas Control 2016;53:319–27. http://dx.doi.org/10.1016/j.ijggc.
+2016.08.016.
+[25] Li K, Leigh W, Feron P, Yu H, Tade M. Systematic study of aqueous mo-
+noethanolamine (MEA)-based CO2 capture process: Techno-economic assessment
+of the MEA process and its improvements. Appl Energy 2016;165:648–59. http:
+//dx.doi.org/10.1016/j.apenergy.2015.12.109.
+[26] Van Wagener DH. stripper modeling for CO2 removal using monoethanolamine
+and piperazine solvents committee [Ph.D. thesis], Austin: The University of Texas
+at Austin; 2011.
+[27] Rost M, Schneider R, Schramm H. Method and device for separating carbon
+dioxide from the waste gas of a fossil fuel power plant. WO2009/118274. 2009.
+[28] Oyenekan BA, Rochelle GT. Alternative stripper configurations for CO2 capture
+by aqueous amines. AIChE J 2007;53(12):3144–54. http://dx.doi.org/10.1002/
+aic.11316.
+[29] Muhammad HA, Sultan H, Lee B, Imran M, Baek IH, Baik YJ, et al. Energy
+minimization of carbon capture and storage by means of a novel process
+configuration. Energy Convers Manage 2020;215. http://dx.doi.org/10.1016/j.
+enconman.2020.112871.
+[30] Karimi M, Hillestad M, Svendsen HF. Positive and negative effects on energy
+consumption by interheating of stripper in CO2 capture plant. Energy Procedia
+2012;23:15–22. http://dx.doi.org/10.1016/j.egypro.2012.06.066.
+[31] Stoffregen T, Rigby S, Jovanovic S, Krishnamurthy KR. Pilot-scale demonstration
+of an advanced aqueous amine-based post-combustion capture technology for
+CO2 capture from power plant flue gases. Energy procedia 2014;63:1456–69.
+http://dx.doi.org/10.1016/j.egypro.2014.11.155.
+[32] Iijima M, Nagayasu T, Kamijyo T, Nakatani S. MHI’s Energy Efficient Flue Gas
+CO 2 Capture Technology and Large Scale CCS Demonstration Test at Coal-fired
+Power Plants in USA. Misubishi Heavy Ind Tech Rev 2011;48(1).
+[33] Krótki A, Wie¸cław Solny L, Stec M, Spietz T, Wilk A, Chwoła T, et al.
+Experimental results of advanced technological modifications for a CO2 capture
+process using amine scrubbing. Int J Greenh Gas Control 2020;96:1–11. http:
+//dx.doi.org/10.1016/j.ijggc.2020.103014.
+[34] Tatarczuk A, Szega M, Zuwała J. Thermodynamic analysis of a post-combustion
+carbon dioxide capture process in a pilot plant equipped with a heat inte-
+grated stripper. Energy 2023;278:1–16. http://dx.doi.org/10.1016/j.energy.2023.
+127907.
+[35] Leites IL, Sama DA, Lior N. The theory and practice of energy saving in the
+chemical industry: some methods for reducing thermodynamic irreversibility
+in chemical technology processes. Energy 2003;28:55–97. http://dx.doi.org/10.
+1016/S0360-5442(02)00107-X.
+[36] Oyenekan BA, Rochelle GT. Energy performance of stripper configurations for
+CO2 capture by aqueous amines. Ind Eng Chem Res 2006;45(8):2457–64. http:
+//dx.doi.org/10.1021/ie050548k.
+[37] Wie¸cław-Solny L, Krótki A. Technological modifications in pilot research on CO2
+capture process. CHEMIK 2014;68(10):884–92.
+[38] Vinjarapu SHB, Neerup R, Larsen AH, Jørsboe JK, Villadsen SNB, Jensen S,
+et al. Results from pilot-scale CO2 capture testing using 30 wt% MEA at a
+Waste-to-Energy facility: Optimisation through parametric analysis. Appl Energy
+2024;355:1–41. http://dx.doi.org/10.1016/j.apenergy.2023.122193.
+[39] Water, vol. 15, (no. 4). 2024, URL: https://webbook.nist.gov/cgi/cbook.cgi?ID=
+C7732185&Units=SI.
+[40] Gubkov AN, Fermor NA, Smirnov NI. Vapor Pressure of Mono-Poly Systems. Zh
+Prikl Khim (Leningrad) 1964;15(4):2204–10.
+[41] Perry RH, Green DW, Maloney JO. Perry’s chemical engineers’ handbook.
+Seventh ed.. McGraw-Hill; 1984, p. 2–150.
+[42] Thomsen K, Rasmussen P, Gani R. Correlation and prediction of thermal prop-
+erties and phase behaviour for a class of aqueous electrolyte systems. Chem Eng
+Sci 1996;51(14):3675–83. http://dx.doi.org/10.1016/0009-2509(95)00418-1.
+[43] Liu J, Chen D-S. Advance stripper configuration for energy-saving designs
+using standard monoethanolamine absorbent for post-combustion carbon cap-
+ture. MATEC Web Conf 2021;333:16002. http://dx.doi.org/10.1051/matecconf/
+202133316002.

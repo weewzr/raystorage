@@ -1,0 +1,286 @@
+pages 68 DOE/ID-Number D:20231009220827Z
+
+=========== RPT PDF p2 ===========
+ 
+ 
+ 
+ 
+ 
+DISCLAIMER 
+This information was prepared as an account of work sponsored by an 
+agency of the U.S. Government. Neither the U.S. Government nor any 
+agency thereof, nor any of their employees, makes any warranty, expressed 
+or implied, or assumes any legal liability or responsibility for the accuracy, 
+completeness, or usefulness, of any information, apparatus, product, or 
+process disclosed, or represents that its use would not infringe privately 
+owned rights. References herein to any specific commercial product, 
+process, or service by trade name, trade mark, manufacturer, or otherwise, 
+does not necessarily constitute or imply its endorsement, recommendation, 
+or favoring by the U.S. Government or any agency thereof. The views and 
+opinions of authors expressed herein do not necessarily state or reflect 
+those of the U.S. Government or any agency thereof. 
+
+
+=========== RPT PDF p5 ===========
+ 
+ 
+iii
+ 
+EXECUTIVE SUMMARY 
+A comprehensive review of existing literature on advanced reactor cost 
+estimations was conducted in the form of a meta-study with over 30 references 
+evaluated. Datapoints were aggregated, escalated to 2019 values, then analyzed 
+with equal weighting to identify projected nuclear cost ranges that can be further 
+refined in future work. A summary of these results is provided in Table 1. The 
+ranges consist of low/medium/high estimates (based on quartiles) for capital and 
+operating costs that can be adjusted with care using various correction factors 
+(based on learning, numbers of plants per site, etc.). Reference breakdowns (in 
+costs, based on a code of account structure) are provided for the main four types 
+of advanced reactors. It is important to emphasize that the goal of the study is not 
+to infer exact cost projections for nuclear energy, but rather to provide useful 
+ranges of where costs may lie. These can be leveraged as inputs to models 
+optimizing energy portfolios.  
+Table 1. Summary table with identified values for advanced nuclear cost estimates (excludes microreactors). The values are for a 
+build between a first and Nth of a kind (BOAK). All estimates are in 2019 USD. 
+Variable 
+Low 
+Medium 
+High 
+BOAK Overnight Capital Cost (OCC) 
+$4,000 /kWe 
+$6,000 /kWe 
+$7,000 /kWe 
+Operating Expenses (OPEX) 
+$15 /MWh 
+$25 /MWh 
+$35 /MWh 
+ 
+First-of-a-kind Premium Multiplier 
+1.3 
+1.6 
+2.1 
+Learning Rate 
+5% 
+10% 
+15% 
+Multi-unit OCC Exponent 
+0.8 
+0.825 
+0.850 
+Multi-Unit OPEX Multiplier 
+0.5 
+0.624 
+0.7 
+ 
+ 
+PWR 
+SFR 
+HTGR 
+MSR 
+Overnight Costs 
+10 
+Preconstruction Costs 
+2.35% 
+5.30% 
+1.19% 
+2.74% 
+20 
+Direct Costs 
+39.65% 
+49.55% 
+40.25% 
+39.41% 
+   21 
+Structures  
+10.33% 
+11.03% 
+5.66% 
+9.59% 
+   22 
+Reactor Equipment  
+12.50% 
+23.95% 
+14.79% 
+14.51% 
+   23 
+Energy Conversion System 
+8.76% 
+3.88% 
+9.13% 
+8.16% 
+   24 
+Electrical Equipment 
+3.92% 
+5.56% 
+8.11% 
+4.55% 
+   25 
+Heat Rejection System 
+1.85% 
+3.31% 
+2.56% 
+1.16% 
+   26 
+Miscellaneous Equipment 
+2.29% 
+1.81% 
+0.00% 
+1.46% 
+30 
+Indirect Costs 
+44.16% 
+34.33% 
+44.83% 
+43.90% 
+40 
+Owner Costs 
+12.57% 
+9.77% 
+12.76% 
+12.50% 
+50 
+Supplementary Costs 
+1.28% 
+1.05% 
+0.96% 
+1.45% 
+Annualized Costs 
+70 
+Operating Staff Costs 
+95.98% 
+58.14% 
+55.62% 
+98.18% 
+80 
+Annualized Fuel Costs 
+4.02% 
+41.86% 
+44.38% 
+1.82% 
+
+
+=========== RPT PDF p6 ===========
+ 
+ 
+iv
+ 
+ 
+ 
+ 
+ 
+ 
+ACKNOWLEDGEMENTS 
+This manuscript was authored at Idaho National Laboratory by Battelle 
+Energy Alliance LLC under contract no. DE-AC07-05ID14517 with the U.S. 
+Department of Energy (DOE). This work was prepared for the U.S. DOE Office 
+of Nuclear Energy (DOE-NE) via funding by the Integrated Energy Systems 
+(IES) campaign.  
+The authors would like to acknowledge Andrew Foss and Brent Dixon for 
+their support with reviewing and improving the document. They provided 
+invaluable insights into the evaluation. The authors also thank Kelsey Gaston for 
+her diligent editorial review of the document.   
+ 
+ 
+
+
+=========== RPT PDF p7 ===========
+ 
+ 
+v
+ 
+ 
+ 
+ 
+Page intentionally left blank 
+
+
+=========== RPT PDF p47 ===========
+ 
+ 
+32
+• 
+An uncertainty quantification is of interest. 
+• 
+The study wants to then consider potential cost reductions from learning after 10 units are 
+deployed. 
+Based on these assumptions, the starting point for the analysis would be to extract the OCC/OPEX 
+values from Table 5. In a stepwise fashion the costs for the first unit can be determined: 
+1. Since a sensitivity analysis is required, the full range of OCC costs will be used: [$4,000–
+$7,000]/kWe. 
+2. OPEX costs will range between [$15–$35]/MWh. 
+3. Since no electricity conversion is needed at the plant, the contributions of those costs can be 
+subtracted from the range (calculation below). The resulting range narrows to [$3,640–
+$6,370]/kWe. 
+𝑂𝐶𝐶𝑛𝑜 𝑡𝑢𝑟𝑏𝑖𝑛𝑒= 𝑂𝐶𝐶× (1 −𝑡𝑢𝑟𝑏𝑖𝑛𝑒%) = [4,000 −7,000] × (1 −0.09) 
+4. Since the application is for no-heat it is more helpful to express costs in terms of kWt. Assuming 
+a thermal efficiency of 40%, the resulting overnight capital range becomes: [$1,456–
+$2,548]/kWt. Similarly, the operating costs can be converted to [$6–$14]/MWt-h 
+𝑂𝐶𝐶𝑡= 𝑂𝐶𝐶𝑒× 𝜂= [$3,640– $6,370]/kWe × 0.4 
+5. Next a FOAK premium multiplier will be applied here. Again, since a sensitivity analysis is 
+needed here, the low and high values will be applied for each use case. The resulting OCC range 
+expands to [$1,892–$5,350]/kWt. 
+𝐹𝑂𝐴𝐾= 𝑂𝐶𝐶× 𝑃𝑟𝑒𝑚𝑖𝑢𝑚=: [$1,456– $2,548] × [1.3 −2.1] 
+ 
+FOAK Cost 
+ Normalized OCC: [$2,000–$5,500]/kWt 
+Operating: [$6–$14]/MWt-h 
+ 
+ 
+Note again that it is recommended to round the values so as to not infer a higher precision than the 
+original numbers leveraged for this evaluation. Some of the higher precision numbers are still shown here 
+to help provide a user with a reference calculation to verify against. 
+Finally, the impact of learning needs to be assessed. Here, the mean learning rate value of 10% is 
+applied to both ends of the values estimated (using the high learning rate with the low estimate produces 
+unjustifiably low-cost estimates). The calculation is conducted as follows: 
+10𝑂𝐴𝐾ℎ𝑖𝑔ℎ= 𝐹𝑂𝐴𝐾ℎ𝑖𝑔ℎ× (1 −𝐿𝑅)log2 𝑁= 5,350 × (1 −0.1)log2(10) 
+10𝑂𝐴𝐾𝑙𝑜𝑤= 𝐹𝑂𝐴𝐾𝑙𝑜𝑤× (1 −𝐿𝑅)log2 𝑁= 1,892 × (1 −0.1)log2(10) 
+ 
+The resulting 10th of a kind (10-OAK) values are shown below. OPEX are assumed to be constant 
+across all units. 
+10-OAK Cost 
+ Normalized OCC: [$1,500–$4,000]/kWt 
+Operating: [$6–$14]/MWt-h 
+ 
+
+[p5] ...uclear cost estimates (excludes microreactors). The values are for a build between a first and Nth of a kind (BOAK). All estimates are in 2019 USD. Variable Low Medium High BOAK Overnight Capital Cost (OCC) $4,000 /kWe $6,000 /kWe $7,000 /kWe O...
+[p5] ...for a build between a first and Nth of a kind (BOAK). All estimates are in 2019 USD. Variable Low Medium High BOAK Overnight Capital Cost (OCC) $4,000 /kWe $6,000 /kWe $7,000 /kWe Operating Expenses (OPEX) $15 /MWh $25 /MWh $35 /MWh First-of-a-...
+[p5] ...56% 1.16% 26 Miscellaneous Equipment 2.29% 1.81% 0.00% 1.46% 30 Indirect Costs 44.16% 34.33% 44.83% 43.90% 40 Owner Costs 12.57% 9.77% 12.76% 12.50% 50 Supplementary Costs 1.28% 1.05% 0.96% 1.45% Annualized Costs 70 Operating Staff Costs 95.98% 58.14...
+[p10] ...uclear cost estimates (excludes microreactors). The values are for a build between a first and Nth of a kind (BOAK). All estimates are in 2019 USD. ...................................................................................................
+[p10] .............................................................. 8 Table 4. Advanced reactor LCOE distribution for BOAK observed in the literature review of cost estimates. Values were rounded up/down to avoid inferring more confidence in the estima...
+[p11] .................................................................................. 22 Table 10. Ratio of FOAK to BOAK cost estimates in the literature reviewed. .......................................... 24 Table 11. Identified range of BOAK to FO...
+[p11] ...mates in the literature reviewed. .......................................... 24 Table 11. Identified range of BOAK to FOAK premiums for cost adjustment........................................... 25 Table 12. Identified learning rate range. .......
+[p11] ...assumptions in a user’s model. ........................................... 28 Table 15. Summary of identified BOAK cost estimation values and correction factors for large reactors and SMRs...........................................................
+[p13] ...MS AHTR Advanced High-Temperature Reactor ATB Annual Technology Baseline APEA Aspen Process Economic Analyzer BOAK Between of a first and Nth kind BOP Balance of plant CANES Center for Advanced Nuclear Energy Systems COA Code of Account DOE Dep...
+[p13] ...gy Systems COA Code of Account DOE Department of Energy DMSR Denatured Molten Salt Reactor D&D Deactivation & Decommissioning EEDB Energy economic data base EMWG Economic Modeling Working Group FOAK First-of-a-kind GDP Gross Domestic Product GHG Greenhous...
+[p20] ... [22] NGNP — 4 2400MWth/1068MWe 5,600$2018/kWe — — [22] HC-HTGR FOAK 4 920MWe 4,550$2018/kWe — — [22] HC-HTGR 10-OAK 4 920MWe 3,000$2018/kWe — — [23] MHTGR- SC FOAK 4 1800MWth/693MWe 3,153$1992/kWe — — [23] MHTGR- SC NOAK 4 1800MWth/693MWe 2,347$...
+[p29] ...s, but rather a combination of both. As a result, a new term is coined here: Between first and Nth of a Kind (BOAK). This essentially represents the expected cost for early deployment of advanced reactors beyond the first demonstration. It is a...
+[p29] ... is a helpful ‘in-between’ for higher-level cost evaluations. Table 4. Advanced reactor LCOE distribution for BOAK observed in the literature review of cost estimates. Values were rounded up/down to avoid inferring more confidence in the estima...
+[p30] ...s are being extended beyond this point [41]), and a capacity factor 92% [42]. 4. The values quoted are for a ‘BOAK’ estimates. This represents a reactor between the first and Nth of a kind. Table 5. Identified low, medium, and high estimates fo...
+[p33] ...malized cost of around ~7,800$2020/kWe and ~$11,600/kWe respectively, which is above the identified range for BOAK reactors in this study. This is expected since these reactors are FOAK demonstrations, and their estimates includes design, licen...
+[p37] ... 22 54 Insurance 0.18% 0.15% 0.16% 0.21% 55 Initial fuel core load (capitalized) 0.00% 0.00% 0.00% 0.00% 58 Decommissioning costs 0.57% 0.44% 0.34% 0.62% As highlighted previously, a mix of different references was used in several instances to populate ...
+[p39] ...quantitative adjustments. FOAK Premium The identified values for the Tier 2 estimates in Section 2.6 were for BOAK reactors. FOAK demonstrations are likely to incur substantially higher cost of deployment. Several of the references in the liter...
+[p39] ...erature surveyed in this study provided cost estimates for both FOAK and NOAK reactors. The ratios of FOAK to BOAK were identified and provided in Table 10. The first column indicates the reactor type and the references for FOAK costs. The seco...
+[p39] ...irst column indicates the reactor type and the references for FOAK costs. The second column shows the FOAK to BOAK ratios. These values were obtained by escalating all FOAK costs to the reference 2019 USD. Then each FOAK estimate was manually c...
+[p39] ...ll FOAK costs to the reference 2019 USD. Then each FOAK estimate was manually correlated with a corresponding BOAK quartile (flagged in this report as low, medium, high) from Table 5. The BOAK quartile that most closely aligned between the FOAK...
+[p39] ...correlated with a corresponding BOAK quartile (flagged in this report as low, medium, high) from Table 5. The BOAK quartile that most closely aligned between the FOAK and NOAK value for a given reactor type was then used as the ratioed against ...
+[p39] ...alue for a given reactor type was then used as the ratioed against the FOAK value. Table 10. Ratio of FOAK to BOAK cost estimates in the literature reviewed. Reactor FOAK to BOAK Ratio NuScale iPWR [5] 1.5 [6] 2.2 [8] PWR 12 [17] [20] 1.2 [17] ...
+[p39] ...st the FOAK value. Table 10. Ratio of FOAK to BOAK cost estimates in the literature reviewed. Reactor FOAK to BOAK Ratio NuScale iPWR [5] 1.5 [6] 2.2 [8] PWR 12 [17] [20] 1.2 [17] 1.6 [20] AP1000 [17] [18] 1.2 [17] 1.4 [18] NGNP [21] 3.8 (350MW...
+[p40] ... 25 Table 11. Identified range of BOAK to FOAK premiums for cost adjustment. Low Medium High BOAK to FOAK Premium 1.3 1.6 2.1 When adjusting costs to obtain FOAK estima...
+[p40] ... 25 Table 11. Identified range of BOAK to FOAK premiums for cost adjustment. Low Medium High BOAK to FOAK Premium 1.3 1.6 2.1 When adjusting costs to obtain FOAK estimates, it is important to be aware of potential correlations ...
+[p40] ... choose from. With this in mind, it is not necessarily recommended that one assign high FOAK premiums to high BOAK costs as this could produce an overly conservative estimate. Pairs of FOAK premiums with BOAK costs should be carefully considere...
+[p40] ...remiums to high BOAK costs as this could produce an overly conservative estimate. Pairs of FOAK premiums with BOAK costs should be carefully considered to produce realistic FOAK costs. In general, the medium value is recommended across the cost...
+[p40] ...idered to produce realistic FOAK costs. In general, the medium value is recommended across the cost range for BOAK estimates and deviation from this should be deliberate. Learning Rates While a FOAK demonstration would increase cost estimates f...
+[p43] ...er requires a single estimate (without account for sensitivities). Assumes a conservative cost estimate for a BOAK reactor. Step 1 • Select CAPEX/OPEX values based on low/med/max recommendations and reactor type Step 2 • Leverage ‘Tier 3’ estim...
+[p44] ...0%) and uncertainties for deployment are low (e.g., established technology). Unlikely to be applicable to low BOAK values. FOAK reactor without assuming optimistic nor pessimistic assumptions for reactor deployment. Pessimistic cost escalations...
+[p44] ...FOAK demonstration (e.g., similar to the current experience with AP- 1000). Unlikely to be applicable to high BOAK values. Learning Rate* Assumes minimal learning is achieved as more reactors are deployed. This is particularly suitable for reac...
+[p44] ...ndardized, very site- dependent, and predominantly stick-built at the site. Unlikely to be applicable to high BOAK values. Note: a low value here would lead to higher end costs. Recommended as a nominal value if the user does not want to make a...
+[p44] ...r and have a high fraction of activities conducted within a factory setting. Unlikely to be applicable to low BOAK values. Note: a high value here would lead to lower end costs. Multi-unit Factors* Suitable if the reactors are not expected to p...
+[p45] ... 30 Table 15. Summary of identified BOAK cost estimation values and correction factors for large reactors and SMRs. Variable Low Medium High OCC $4,000 /kWe $6,000 /kWe $...
+[p45] ...56% 1.16% 26 Miscellaneous Equipment 2.29% 1.81% 0.00% 1.46% 30 Indirect Costs 44.16% 34.33% 44.83% 43.90% 40 Owner Costs 12.57% 9.77% 12.76% 12.50% 50 Supplementary Costs 1.28% 1.05% 0.96% 1.45% Annualized Costs 70 Operating Staff Costs 95.98% 58.14...
+[p46] ... is assumed to occur after the FOAK demonstration of the reactor. The starting point for this is Table 5. The BOAK medium estimate can be directly leveraged to estimate the resulting capital and yearly operating expenses for the hypothetical re...
+[p47] ...0 × (1 −0.1)log2(10) 10𝑂𝐴𝐾𝑙𝑜𝑤= 𝐹𝑂𝐴𝐾𝑙𝑜𝑤× (1 −𝐿𝑅)log2 𝑁= 1,892 × (1 −0.1)log2(10) The resulting 10th of a kind (10-OAK) values are shown below. OPEX are assumed to be constant across all units. 10-OAK Cost Normalized OCC: [$1,500–$4,000]/kWt Operat...
+[p47] ...e resulting 10th of a kind (10-OAK) values are shown below. OPEX are assumed to be constant across all units. 10-OAK Cost Normalized OCC: [$1,500–$4,000]/kWt Operating: [$6–$14]/MWt-h ...
+[p53] ...umptions regarding a given use case (e.g., optimistic construction timeline). The estimates are for a generic BOAK reactor deployment (between a first and Nth of a kind). However, several cost adjustments were also provided in order to further ...
+[p67] ...ital is changed from 9.16% to 10% following EMWG. Construction period is lengthen to 5 years, increasing IDC. Decommissioning is changed to EMWG standards, decreasing D&D sinking fund contribution. Shropshire also modified ANL (2004) [30] update dollars f...
+[p67] ... implicitly 9.44% to 10% following EMWG. The implicit building period is lengthen to 5 years, increasing IDC. Decommissioning is changed to EMWG standards. Increased preconstruction costs and contingency (16.7% to 20%). Ganda et al. and Buongiorno et al. ...
+hits 41

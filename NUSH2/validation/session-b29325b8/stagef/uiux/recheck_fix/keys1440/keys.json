@@ -1,0 +1,102 @@
+[
+ [
+  "tab_reaches_start",
+  true,
+  "10 Tab presses from the top of the page; path ['a', 'a', 'a'] ... ['a', '#pfd-select', '#tour-start']"
+ ],
+ [
+  "start_focus_ring",
+  true,
+  "focus-visible True, outline solid 2px rgb(106, 43, 209)"
+ ],
+ [
+  "enter_starts",
+  true,
+  "active True, playing True, focus #tour-title, title ring [True, 'solid', '2px', 'rgb(106, 43, 209)', 42, 66]"
+ ],
+ [
+  "arrows_step",
+  true,
+  "ArrowRight, ArrowRight, ArrowLeft gave steps 2, 3, 2; focus #tour-title"
+ ],
+ [
+  "space_toggles",
+  true,
+  "playing True, after Space False, after Space True; scrollY 369"
+ ],
+ [
+  "bar_reachable_by_shift_tab",
+  true,
+  "Tab from the title goes to ['button[prev]', 'button[next]', 'body']; Shift+Tab from the title reaches button[exit] after 51 presses, through 30 streams and 20 units"
+ ],
+ [
+  "bar_button_focus_ring",
+  true,
+  "button[exit]: focus-visible True, outline solid 2px rgb(106, 43, 209), top 63 bottom 101"
+ ],
+ [
+  "next_by_enter_and_space",
+  true,
+  "focus button[next]; step 2 -> Enter 3 -> Space 4; playing True; focus after button[next]"
+ ],
+ [
+  "play_button_by_keys",
+  true,
+  "focus button[play]; playing True -> Space False -> Enter True"
+ ],
+ [
+  "previous_by_enter",
+  true,
+  "focus button[prev]; step 4 -> 3"
+ ],
+ [
+  "arrow_on_bar_button",
+  true,
+  "ArrowRight with focus on button[prev]: step 3 -> 4"
+ ],
+ [
+  "arrow_on_unit_moves_unit",
+  true,
+  "ArrowRight on g[unit=htgr] moved focus to g[unit=circ_primary]; tour step 4 -> 4"
+ ],
+ [
+  "enter_on_unit_selects",
+  true,
+  "panel circ_primary for circ_primary; tour active True, playing False"
+ ],
+ [
+  "space_on_unit_not_tour",
+  true,
+  "Space on a unit: playing False -> False"
+ ],
+ [
+  "escape_order_keyboard",
+  true,
+  "focus g[stream=P1], tip by focus [True, False, 'P1']; Escape: tip [False, False, 'P1'], tour active True; Escape again: tour active False, focus #tour-start"
+ ],
+ [
+  "pinned_tip_escape_keyboard",
+  true,
+  "pinned tip [True, True, 'P1'], focus in tip button; Escape: focus g[stream=P1], active True; Escape: active False, focus #tour-start"
+ ],
+ [
+  "exit_by_keyboard",
+  true,
+  "active False, focus #tour-start"
+ ],
+ [
+  "escape_from_picker",
+  true,
+  "active False, focus #tour-start"
+ ],
+ [
+  "live_region_once_per_step",
+  true,
+  "15 live-region updates over the run: ['Step 1 of 13. Fission heat in the reacto', 'Step 2 of 13. Primary helium loop. Hot p', 'Step 3 of 13. Secondary helium loop to t', 'Step 2 of 13. Primary helium loop. Hot p', 'Step 3 of 13. Secondary helium loop to t', 'Step 4 of 13. Natural gas and steam feed', 'Step 3 of 13. Secondary helium loop to t', 'Step 4 of 13. Natural gas and steam feed', 'The process tour is closed.', 'Step 1 of 13. Fission heat in the reacto', 'The process tour is closed.', 'Step 1 of 13. Fission heat in the reacto']"
+ ],
+ [
+  "no_errors_or_bad_requests",
+  true,
+  "{\"errors\": [], \"network\": [], \"hosts\": [\"http://127.0.0.1:54434\"], \"requests\": 22, \"workers\": [\"worker\"], \"server_log_4xx\": []}"
+ ]
+]

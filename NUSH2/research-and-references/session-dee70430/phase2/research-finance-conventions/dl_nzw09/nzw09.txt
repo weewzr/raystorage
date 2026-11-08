@@ -1,0 +1,1630 @@
+                                                                                                                                                                                 INL/RPT-23-74378
+
+Nuclear Energy Cost Estimates
+for Net Zero World Initiative
+
+Levi M. Larsen1, Abdalla Abou-Jaoude1, Nahuel Guaita1, Nicolas Stauff2
+
+1 Idaho National Laboratory, 2Argonne National Laboratory
+Nuclear Energy Cost Estimates
+for Net Zero World Initiative
+
+Levi M. Larsen1, Abdalla Abou-Jaoude1, Nahuel Guaita1, Nicolas Stauff2
+
+1 Idaho National Laboratory, 2Argonne National Laboratory
+
+Suggested Citation: Larsen, Levi M., Abdalla Abou-Jaoude, Nahuel Guaita, and Nicolas Stauff, 2024.
+Nuclear Energy Cost Estimates for Net Zero World Initiative. Idaho National Laboratory. INL/RPT-23-74378.
+                                 DISCLAIMER
+
+This information was prepared as an account of work sponsored by an
+agency of the U.S. Government. Neither the U.S. Government nor any
+agency thereof, nor any of their employees, makes any warranty, expressed
+or implied, or assumes any legal liability or responsibility for the accuracy,
+completeness, or usefulness, of any information, apparatus, product, or
+process disclosed, or represents that its use would not infringe privately
+owned rights. References herein to any specific commercial product,
+process, or service by trade name, trade mark, manufacturer, or otherwise,
+does not necessarily constitute or imply its endorsement, recommendation,
+or favoring by the U.S. Government or any agency thereof. The views and
+opinions of authors expressed herein do not necessarily state or reflect
+those of the U.S. Government or any agency thereof.
+Net Zero World Initiative                                               INL/RPT-23-74378
+
+Nuclear Energy Cost Estimates for Net Zero
+                    World Initiative
+
+           Levi M. Larsen1, Abdalla Abou-Jaoude1, Nahuel Guaita1, Nicolas Stauff2
+
+                                           1 Idaho National Laboratory
+                                         2 Argonne National Laboratory
+
+                                1
+
+This report is available at no cost from the Net Zero World Initiative
+Net Zero World Initiative                                               INL/RPT-23-74378
+
+                                2
+
+This report is available at no cost from the Net Zero World Initiative
+Net Zero World Initiative                                               INL/RPT-23-74378
+
+Acknowledgements
+
+This paper was authored by Battelle Energy Alliance LLC, operator of Idaho National
+Laboratory, under contract no. DE-AC07-05ID14517 with the DOE. It was also co-authored by
+UChicago Argonne, LLC, operator of Argonne National Laboratory (Argonne). Argonne, a DOE
+Office of Science laboratory, is operated under contract no. DE-AC02-06CH11357. The funding
+for this work was provided by the Net Zero World Initiative.
+
+The authors would like to acknowledge Ed Hoffman for providing a content review of the report
+and Kelsey Gaston for technical editing.
+
+                                3
+
+This report is available at no cost from the Net Zero World Initiative
+Net Zero World Initiative                                               INL/RPT-23-74378
+
+                           EXECUTIVE SUMMARY
+
+This report provides recommended parameters for incorporating nuclear energy systems into
+decarbonization modeling scenarios. The values are primarily intended for the Net Zero World
+(NZW) Initiative but are expected to prove useful to other related efforts. Both costs and
+operational metrics are provided in the study; they are summarized in Table ES-1. Several cost
+factors, namely overnight capital costs (OCC) and operational costs are taken to be country
+specific. OCC is defined as the value of building the reactor in one night considering all costs
+prior to the start of operations including fuel for the initial core load. The value assumes the
+build is neither a first nor a `Nth' of a kind, but somewhere in between. All costs are escalated to
+2022 USD values.
+
+  Table ES-1. Summary of Nuclear Energy Cost and Operational Parameters. All costs are in 2022
+                                                                   USD.
+
+         Parameter         Optimistic               Base                Conservative
+                                                                         See Table 9
+       OCC [$/kWe]                Capital Costs                          See Table 7
+
+ Operations [$/kWe-yr]     See Table 9           See Table 9                 $9.50
+                                                                             $7.50
+     Capital [$/MWh]       Fixed Operating Costs
+   Fuel reload [$/MWh]                                                       $1,250
+ Spent fuel fee [$/MWh]    See Table 7           See Table 7
+                                                                               5%
+Decommissioning costs      Variable Operating Costs                            8.0
+           [$/kWe]                                                            80%
+                           $3.25                    $6.25                      60
+      FOAK premium
+     Learning rate [%]     $6.00                    $6.75                   $1,500
+                                                                              $38
+Construction time [years]                           $1.00                    $13.5
+    Capacity factor [%]
+                                 Retirement Costs
+ Reactor lifetime [years]
+      Maneuverability      $750                     $1,000
+
+   HTSE OCC [$/kWe]             Adjustment Factors
+     HTSE fixed O&M
+           [$/MWh]                                   1.5
+
+   HTSE variable O&M       15%                      10%
+           [$/MWh]
+                           Construction & Operational Parameters
+ H2 Output [Kg/kWe-yr]
+      District Heating     4.5                      5.5
+
+                           95%                      90%
+
+                           100                      80
+
+                                                 See Table 12
+
+                           Non-Grid Energy Costs and Parameters
+
+                           $900                     $1,100
+
+                           $35                      $35
+
+                           $5.5                     $7.0
+
+                                                       196
+                                                 See Table 14
+
+                                4
+
+This report is available at no cost from the Net Zero World Initiative
+Net Zero World Initiative                                               INL/RPT-23-74378
+
+Taking the United States as a reference, these values were re-normalized for the nine additional
+countries. The new OCC values for NZW countries were found to range between $3,500­
+$6,500/kWe. Operating and maintenance costs (O&M) were separated between in fixed and
+variable costs. Fixed operation and maintenance costs were between $4 - $43/kWe per year (the
+large range shown is driven by labor cost differences). Variable operating costs for capital and
+fuel were between $9.25/MWh - $16.5/MWh. Recommended decommissioning costs ranges
+were between $750/kWe and $1,250/kWe. Finally, it is important to note that the learning rate is
+a percent reduction for each new unit built and not for each year.
+
+                                5
+
+This report is available at no cost from the Net Zero World Initiative
+Net Zero World Initiative                                               INL/RPT-23-74378
+
+                                  TABLE OF CONTENTS
+
+EXECUTIVE SUMMARY ............................................................................................................................... 4
+LIST OF ACRONYMS ................................................................................................................................... 8
+1. INTRODUCTION ..................................................................................................................................... 9
+2. Methodology .......................................................................................................................................... 9
+
+    2.1. Overnight Cost and Operation and Maintenance Cost Assumptions.............................................9
+    2.2. Country-Specific Cost Adjustments............................................................................................. 12
+    2.3. Cost Escalation Methodology ...................................................................................................... 14
+    2.4. Non-Cost Parameterization Methodology ................................................................................... 15
+3. Reference Data on Nuclear Costs ..................................................................................................... 15
+    3.1. Between of a kind (BOAK) Overnight Capital Costs .................................................................. 15
+
+           3.1.1. Adjustment of Overnight Capital Costs in the US to the country of interest ................. 15
+           3.1.2. Country-Specific Nuclear Overnight Capital Costs........................................................16
+           3.1.3. Comparison Against Observed Costs ............................................................................. 18
+    3.2. Operating and Maintenance Costs ............................................................................................... 19
+           3.2.1. Adjustment of Operating and Maintenance Costs in the US to the country of interest..19
+           3.2.2. Country-Specific Nuclear O&M Costs ........................................................................... 20
+           3.2.3. Comparison Against Observed Operating Costs ............................................................ 22
+    3.3. Retirement (Decommissioning Costs) ......................................................................................... 23
+    3.4. Adjustment Factors ...................................................................................................................... 24
+4. Reference Data on Nuclear Constuction and Operation.................................................................26
+    4.1. Construction Time........................................................................................................................ 26
+    4.2. Capacity Factor ............................................................................................................................ 27
+    4.3. Reactor Lifetime .......................................................................................................................... 28
+    4.4. Nuclear Plant Load-Following Capability ................................................................................... 28
+5. Non-Grid Nuclear Energy Applications............................................................................................. 29
+    5.1. Hydrogen Production ................................................................................................................... 29
+    5.2. Nuclear Power Plant Performance for District Heating...............................................................30
+6. Limitations and Future Work..............................................................................................................32
+7. References ........................................................................................................................................... 33
+8. Appendix ................................................................................................................................................ 1
+    8.1. Appendix A - Cost of Capital ........................................................................................................ 1
+    8.2. Appendix B ­ Labor Productivity Differences .............................................................................. 1
+
+                                6
+
+This report is available at no cost from the Net Zero World Initiative
+Net Zero World Initiative                                               INL/RPT-23-74378
+
+                                           FIGURES
+
+Figure 1. Cost Comparison: Europe/North America and ROW Costs. Taken from [3]. ............................. 12
+Figure 2. Country-specific nuclear overnight cost ranges, shown as 2022 USD values. ............................ 17
+Figure 3. Estimated China nuclear overnight costs compared to actuals. ................................................... 18
+Figure 4 Estimated United Arab Emirates nuclear overnight costs compared to actuals............................19
+Figure 5. Country-specific nuclear operating cost ranges. .......................................................................... 21
+Figure 6. Estimated China nuclear O&M compared to MIT 2018 reported................................................ 23
+Figure 7. U.S. Decommissioning cost ranges..............................................................................................24
+Figure 8. Global nuclear reactor construction time distribution from breaking ground to first criticality. . 26
+Figure 9. Global nuclear capacity factor distribution, site specific reporting.............................................. 27
+Figure 10. Available process heat for a PWR and impact on plant electrical output [28]. ......................... 31
+
+                                            TABLES
+
+Table ES-1. Summary of Nuclear Energy Cost and Operational Parameters. All costs are in 2022 USD. .. 4
+Table 1. Recommended estimated nuclear cost ranges for advanced reactors in the United States. Values
+
+               escalated to 2022 USD. Taken from [5] and [6]. .................................................................... 10
+Table 2. NEI report US fixed (operations) and variable (capital and fuel) nuclear O&M cost breakout....14
+Table 3. Capital cost adjustment factors by category, normalized to United States costs........................... 16
+Table 4. Country-specific nuclear overnight cost ranges, shown as 2022 USD values. ............................. 17
+Table 5. O&M cost adjustment factors by category, normalized to United States costs............................. 20
+Table 6. Country-specific nuclear variable O&M cost ranges (USD/MWh). ............................................. 21
+Table 7. Country-specific nuclear fixed O&M cost ranges (USD/kWe-year). ...........................................22
+Table 8. Decommissioning cost ranges. ...................................................................................................... 24
+Table 9. First-of-a-kind capitals cost adjustment factor ranges and learn rate capital cost reduction ranges.
+
+                ................................................................................................................................................ 25
+Table 10. Global nuclear reactor construction time statistics, breaking ground to first criticality..............27
+Table 11. Global nuclear capacity factor statistics, site specific reporting.................................................. 28
+Table 12. Maneuverability and other performance metrics for nuclear. ..................................................... 28
+Table 13. High-temperature steam electrolysis key production variables by plant size. ............................ 30
+Table 14. Maximum process heat available for each temperature line, in a PWR and impact on plant
+
+               electrical output [28]. .............................................................................................................. 31
+Table A-1. Country-specific weighted average cost of capital by ownership type [29­31]. ........................ 1
+
+                                7
+
+This report is available at no cost from the Net Zero World Initiative
+Net Zero World Initiative                                                        INL/RPT-23-74378
+
+         LIST OF ACRONYMS
+
+OCC      Overnight Capital Cost
+CPI      Consumer Price Index
+DOE      Department of Energy
+EEDB     Energy Economic Data Base
+EPR      European Pressurized Reactor
+ETI      Energy Technology Institute
+FOAK     First-of-a-kind
+HTSE     High-temperature Steam Electrolysis
+IAEA     International Atomic Energy Agency
+ILOSTAT  International Labor Organization Statistics
+INL      Idaho National Laboratory
+ISIC     International Standard Industrial Classification
+KEPCO    Korea Electric Power Corporation
+LFR      Lead-cooled fast reactor
+MIT      Massachusetts Institute of Technology
+MITEI    MIT Energy Initiative
+NEI      Nuclear Energy Institute
+NOAK     Nth-of-a kind
+NPP      Nuclear Power Plant
+NRC      Nuclear Regulatory Commission
+NREL     National Renewable Energy Laboratory
+NZW      Net Zero World
+O&M      Operation & Maintenance
+PRIS     Power Reactor Information System
+PWR      Pressurized Water Reactor
+ROW      Rest of World
+UAE      United Arab Emirates
+WACC     Weighted Average Cost of Capital
+
+                                         8
+
+         This report is available at no cost from the Net Zero World Initiative
+Net Zero World Initiative  INL/RPT-23-74378
+
+1. INTRODUCTION
+
+The Net Zero World Initiative aims to accelerate decarbonization of global energy system by
+enabling partner countries to harness the power and technical expertise of US and international
+industry, think tanks, and universities. Participant countries include Chile, Indonesia, Egypt,
+Nigeria, Argentina, and Ukraine. One of the key technical pillars of the initiative is an energy
+system-wide (ESW) decarbonization and investment analysis of climate-neutral pathways. These
+require key technology inputs (for variable renewable, battery storage, nuclear energy, etc.) to be
+used in the employed ESW models.
+
+This report focuses on providing the basis for cost and operation specifications for nuclear
+energy. Due to the lack of nuclear energy adoption in certain participant states, modeling costs
+and operational inputs of nuclear reactors can prove difficult to quantify. Additionally, even in
+regions where nuclear has been deployed, data is limited, and exact estimates can be difficult to
+obtain. Effective modeling requires an understanding of costs associated with building,
+operating, and decommissioning the reactor. Beyond cost, capacity expansion models also must
+account for operational parameters such as construction time, reactor lifetime, and expected
+capacity factor.
+
+ESW modeling performed under NZW will also account for the use of nuclear energy in non-
+grid energy applications. This will include the use of nuclear energy for applications such as
+district heating and hydrogen production. The inclusion of these two additional applications
+warrants the need for additional cost and operation data.
+
+This report aims to provide ranges of ESW inputs for cost and performance for nuclear energy
+with corresponding justification for each of these variables. A combination of literature review
+and data processing is conducted on nuclear cost, operational parameters, and non-grid
+application factors. Where applicable, country-specific data is provided by leveraging a cost
+adjustment methodology that considers country-specific differences in larger cost areas such as
+labor and materials. This report also provides a range of potential outcomes for each variable in
+the form of optimistic, expected, and conservative values, as summarized in Table ES-1. All cost
+estimates in this report are provided in 2022 USD.
+
+2. METHODOLOGY
+
+2.1. Overnight Cost and Operation and Maintenance Cost
+        Assumptions
+
+Nuclear cost estimation is an inherently challenging task. Even in countries where multiple
+reactors have been built, cost estimation can be relative imprecise. This is partly because nuclear
+costs depend on a myriad of factors from regulatory process, commodity inputs, contractor
+experience, and construction technologies. In the United States various efforts have attempted to
+produce cost range targets [1­4, 9]. One of the more recent efforts was undertaken by researchers
+at the Idaho National Laboratory (INL) [5]. This study consisted of a comprehensive literature
+survey coupled with specific recommendations for a reactor build `between a first- and Nth-of-a-
+kind' (BOAK). Because grid modelers can safely assume that a first of a kind demonstration has
+already occurred elsewhere, BOAK values are directly applicable as they would correspond to
+near-term follow-on units (not the ultimate `Nth' cost after dozens of units are built). The
+
+                                                          9
+
+                                  This report is available at no cost from the Net Zero World Initiative
+Net Zero World Initiative                         INL/RPT-23-74378
+
+recommended BOAK values will be used as the foundation of this paper for overnight nuclear
+costs. Operational cost estimates rely on recent Nuclear Energy Institute (NEI) estimates for the
+existing US nuclear fleet [6]. Table 1 provides the estimated nuclear cost ranges for both
+overnight costs (OCC) and operation and maintenance (O&M) costs from said reports. Note that
+values from the original reports have been escalated (and rounded) to reflect 2022 USD values.
+
+Table 1. Recommended estimated nuclear cost ranges for advanced reactors in the United States.
+                                Values escalated to 2022 USD. Taken from [5] and [6].
+
+         Large Reactors       Optimistic  Base    Conservative
+and Small-Modular Reactors      $5,250    $8,000      $9,250
+                                  $29                   $45
+BOAK Overnight Capital Costs                $34
+            (USD/kWe)
+
+             Total O&M
+            (USD/MWh)
+
+It is important to note that [5] recommends the range above irrespective of the reactor type or
+size (excluding microreactors) and is intended to represent costs of baseload reactors in
+commercial electricity markets including reactors with hydrogen production capacity. Reactors
+(especially microreactors) deployed specifically for other applications would need to be
+considered separately as higher costs are expected and likely acceptable for those types of
+applications. In essence, the compiled data from the study did not reflect statistically significant
+differences in normalized costs between reactor types (water, sodium, gas, or salt cooled) nor
+between the sizes of the reactors (MW or GW range) and if there were, the lower cost
+alternatives would expect to be deployed in commercial markets. As a result of this uncertainty,
+the recommendation for the costs is assumed to be reactor agnostic at this time. Additionally,
+these values consider single nuclear power plant (NPP) unit sites and do not account for multi-
+unit adjustments where costs may be lower because multiple reactors are sited together and reap
+OCC and O&M cost synergies. Discussion of NPP siting strategy is typically beyond the scope
+of ESW models. Lastly, as previously highlighted, these overnight costs are for a non-first-of-a-
+kind reactor, referred to in [5] as `BOAK'. They assume a demonstration has already been built
+somewhere in the globe and correspond to the expected price for near-term following units. The
+costs are also distinct from a NOAK estimate which assumes a long-term plateauing of costs
+after dozens of units have been built (in that sense the BOAK costs may still observe cost
+reductions from the effects of learning). The O&M costs on the other hand are all based on
+existing data for the light-water reactor fleet in the United States. This is assumed to be
+representative of future builds regardless of reactor type.
+
+The high-level methodology used in the modeling behind this report allows for leveraging
+United States nuclear cost ranges and adjusting them on a country-by-country basis to provide
+local cost estimates for each NZW participant. To do so for OCC, values from Table 1 were
+escalated to 2022, and OCC was divided into three primary cost categories--labor, materials,
+and equipment--and country-specific adjustment factors were defined for each category. Said
+adjustment factors were then used to produce new cost ranges for each country.
+
+For operational costs, the same approach was used where values from Table 1 were first
+escalated to 2022, and operational costs were divided in to three primary cost categories. These
+
+                                                         10
+
+                                  This report is available at no cost from the Net Zero World Initiative
+Net Zero World Initiative                                               INL/RPT-23-74378
+
+categories included fuel, capital, and labor, and country-specific adjustment factors were defined.
+Again, the results produced a new, country-specific cost range. It should be noted that all values
+discussed throughout this paper are given in USD and not in country-specific currencies.
+
+To validate the results, the method was benchmarked against both overnight and operational
+costs in China and compared against observed costs. This is then repeated for United Arab
+Emirates to further validate the approach for OCC estimates.
+
+The cost adjustment approach used for a given OCC level (split between optimistic, base, and
+conservative) is represented in more detail in Equation 1 below.
+
+                                   = ( +  + )
+
+                                                       Equation 1. OCC adjustment equation.
+
+Where,
+
+    · X represents a given country
+    · OCC represents total nuclear overnight costs, represented in USD/kWe
+    ·  represents the percentage of labor costs of total OCC
+    ·  represents the percentage of material costs of total OCC
+    ·  represents the percentage of equipment cost of total OCC
+    ·  +  +  = 1
+
+    · LF represents the labor adjustment factor for a given country
+    · MF represents the material adjustment factor for a given country
+    · EF represents the equipment adjustment factor for a given country
+
+The same method was used to adjust O&M costs and is shown in Equation 2 below.
+                                  & = &( +  + )
+
+                                                Equation 2. Operational cost adjustment equation.
+
+Where,
+
+    · X represents a given country
+    · O&M represents nuclear operational costs, represented in USD/MWh
+    ·  represents the percentage of labor costs of total O&M
+    ·  represents the percentage of capital costs of total O&M
+    ·  represents the percentage of fuel cost of total O&M
+    ·  +  +  = 1
+
+    · LF represents the labor adjustment factor for a given country
+    · CF represents the capital adjustment factor for a given country
+    · FF represents the fuel adjustment factor for a given country.
+
+For both OCC and O&M costs, this process was repeated for optimistic, base, and conservative
+costs in order to produce an expected range for each country.
+
+                                11
+
+This report is available at no cost from the Net Zero World Initiative
+Net Zero World Initiative  INL/RPT-23-74378
+
+2.2. Country-Specific Cost Adjustments
+
+To make country-specific adjustments, several key assumptions were made to determine which
+costs will vary on a country basis. The primary assumptions for OCC adjustments being that
+labor and material costs vary, but equipment costs remain constant across all countries. In
+essence, it is assumed that labor and material are predominantly locally sourced, while
+equipment is externally provided (hence not country-specific). This assumption is supported by
+the comparative analysis produced by The Energy Technology Institute (ETI) Nuclear Cost
+Drivers Project [3], which compares the EU/US light-water reactor genre (conventional in
+Europe and North America) and the Rest of World (ROW). In Figure 1 the proportions of
+different components of cost from the research can be observed.
+
+          Figure 1. Cost Comparison: Europe/North America and ROW Costs. Taken from [3].
+
+In their report, equipment is almost identical in both regions (shown in a brownish color), and the
+primary sources of variation are due to labor direct construction, financing during construction,
+materials, and indirect services (which is predominantly labor-based) costs. For O&M cost
+adjustments similar type of assumption is made. It was assumed that fixed costs change by
+country, but that variable costs (which are split into capital and fuel costs later in this report) do
+not.
+
+To make accurate adjustments to both OCC and O&M, costs needed to be split into the
+respective categories described previously. To determine correct percentages of labor, material,
+and equipment, costs included in OCC data from the Energy Economic Data Base (EEDB) was
+leveraged [7]. The data, which is representative of a generic pressurized water reactor (PWR),
+points to a total cost split of labor at 28.71%, material at 12.57% and equipment at 58.72%. The
+adjustment methodology used in this report breaks material into the two primary categories of
+steel and concrete with given weights of 24% and 76% of total material cost using rough
+approximations from the Massachusetts Institute of Technology (MIT) study [9].
+
+                                                         12
+
+                                  This report is available at no cost from the Net Zero World Initiative
+Net Zero World Initiative  INL/RPT-23-74378
+
+Literature around the percentages of overnight costs for nuclear reactors is relatively
+inconsistent. The four sources considered for OCC breakout were from MIT, ETI, NREL, and
+EEDB [3­10]. MIT, ETI, and NREL weighted labor costs more significantly than was observed
+in EEDB--in some instances more than double the value EEDB reported. Subsequently, these
+same sources also appeared to weight equipment costs at half the value of EEDB. A possible
+explanation for this variation could be how select sources differentiate between, overnight capital
+costs and total cost. The labor portion in the other references range from 47­61% of total costs. It
+is often unclear how this is estimated, and a detailed breakdown is not always provided. On the
+other hand, EEDB data (and the updated numbers provided by Stewart & Shirvan in [32]) clearly
+delineate their methodology and provide detailed breakdowns. EEDB differentiates between
+median case and better experience basis for a PWR. Total on-site labor cost as a proportion of
+total base cost ranges between 25.9%­27.57% in 1987 USD. Based on these numbers, [32]
+escalated the cost to 2018 USD and reached a proportion of labor cost on total base cost of
+27.8%. Costs have been prepared for the EEDB as "overnight" base construction costs, which
+are the sum of the direct and indirect costs given in constant (not adjusted by inflation) dollars.
+Direct costs are the costs of commodities, equipment, and their installation labor. Indirect costs
+are the costs of construction services, engineering, construction management, field supervision
+and testing. Contingency, owners, and inflation related costs are not included [7]. The EEDB-
+based proportion was selected due to this higher level of transparency provided for the estimate.
+
+With the OCC cost factor proportions established, the next step is to generate country-specific
+weights. For labor-based cost adjustments, earnings of employees by economic activity from the
+International Labor Organization Statistics (ILOSTAT) data set was used--specifically, data
+from the manufacturing, energy, and construction sectors. The monthly earnings relate to the
+gross remuneration in cash and in kind paid to employees, at regular intervals, for time worked
+or work done together with remuneration for time not worked, such as annual vacation, other
+type of paid leave, or holidays. Earnings exclude employers' contributions in respect of their
+employees paid to social security, pension schemes, the benefits received by employees under
+these schemes, severance, and termination pay [11].
+
+According to the methodology described by ILOSTAT, the time series are harmonized. The data
+reported as weekly, monthly, and yearly was converted to hourly using data on average weekly
+hours when available. The data was converted to US dollars as the common currency, using
+exchange rates or using purchasing power parity rates for private consumption expenditures.
+This methodology allows for international comparisons by taking account of the differences in
+relative prices between countries. Data disaggregated by economic activity are provided
+according to the latest version of the International Standard Industrial Classification (ISIC) of all
+economic activities available for that year [11].
+
+As MIT points out in [9], this approach is relatively limited. Ideally, all construction tasks would
+be broken down within their respective labor categories and multipliers would be sought for each
+specific bracket. However, due to the unavailability of data (both in the breakdown of labor tasks
+for nuclear construction and country-specific ratios), this was considered outside of the current
+scope. However, the approach outlined above was still deemed to be representative of potential
+cost variations across countries. Since an energy construction-specific ratio of average labor rates
+is expected to be relatively representative for nuclear energy and incorporate, to some extent, the
+impact of productivity. This is discussed further in Appendix B ­ Labor Productivity
+Differences.
+
+                                                         13
+
+                                  This report is available at no cost from the Net Zero World Initiative
+Net Zero World Initiative                                               INL/RPT-23-74378
+
+Finally, the ratio of material costs against the United States was considered. It was assumed that
+the material cost category of overnight costs was divided into two sub-categories, steel and
+concrete. It was also assumed that concrete costs correspond to 24% of total material costs and
+steel to 76% [9]. The cost of both concrete and steel was then adjusted on a country basis by
+identifying the export price of concrete and steel commodities (Using 2021 USD estimates which
+were then escalated to 2022 values) [12].
+
+To project and adjust the O&M costs on a country basis NEI estimates for US costs were used,
+which breaks operational costs into three categories (fuel, capital, and operations) and provides
+low, medium, and high projections for each category [6]. Table 2 shows the reported cost ranges
+from NEI broken out into categories. Note that these are the same costs shown in Table 1 except
+in this instance, they are broken out further and represented in fixed (USD/kWe) and variable
+(USD/MWh) amounts depending on the cost category. Note that the fixed operating costs were
+adjusted from the normalized NEI values to ensure they do not account for the impact of capacity
+factors.
+
+      Table 2. NEI report US fixed (operations) and variable (capital and fuel) nuclear O&M cost
+                                                                breakout.
+
+United States O&M  Optimistic  Base                                     Conservative
+                       $154    $179                                           $223
+      Operations      $3.25    $6.25                                         $9.50
+    [USD/kWe-yr]      $6.00    $6.75                                         $7.50
+
+        Capital
+     [USD/MWh]
+
+          Fuel
+     [USD/MWh]
+
+Here another assumption is made that some costs will remain consistent across countries while
+others will not. It was assumed that fuel and capital costs would not change and therefore be
+static across countries, but that operations costs (which are almost entirely labor driven) would
+vary from country to country. Subsequently, to adjust labor costs for O&M the same labor
+adjustment factor was leveraged that was used to adjust the labor portion of OCC.
+
+2.3. Cost Escalation Methodology
+
+The cost escalation method used in this research matches that in [5]. While that study reported
+costs in 2019 USD, the indices used were extended into 2022 to further adjusted costs. The
+method uses the United States' new industrial building construction cost index [13]. It was
+applied to adjust overnight costs from 2019 USD values to 2022 USD values and operational
+costs from 2021 USD values to 2022 USD values.
+
+For validation of the methodology, the results obtained in this report were compared against
+recent international builds from China and United Arab Emirates. Baseline costs from builds in
+both countries required escalation to adequately compare the proposed method and actual
+outcomes for said builds. In this instance an alternative escalation method was leveraged which
+adjusted costs by country-specific consumer price index (CPI) plus an additional amount. The
+additional amount, which varied by case, was defined by measuring the gap between the United
+States CPI and the new industrial building construction cost index in year the foreign build took
+
+                                14
+
+This report is available at no cost from the Net Zero World Initiative
+Net Zero World Initiative  INL/RPT-23-74378
+
+place. This gap was assumed to be constant over time and applied to the CPI in target year.
+Equation 3 below shows how this might be applied.
+
+                                 = 2 022 + ( - )
+
+                                  Equation 3. Escalation equation for cost adjustment to 2022 USD values.
+
+Where,
+
+    · Escalation represents the escalation factor used to adjust prices from a given year to 2022
+         USD values
+
+    · X represents a given country
+    · t represents the base year from which the costs need to be adjusted to 2022 values
+    · CPI represents the consumer price index
+    · IBC represents the industrial building construction cost index (note this is an index
+
+         exclusive to the US).
+
+It is worth reiterating here that all costs shown in this report are shown in 2022 USD values and
+have been escalated where necessary using the above methods unless otherwise indicated.
+
+2.4. Non-Cost Parameterization Methodology
+
+Beyond costs, this report also provides guidance on other expected operational parameters. These
+additional parameters include, construction time, reactor lifetime, capacity factor, load-following
+capability, and retirement costs. For each of the construction and operational parameter
+recommendations, a combination of US-centric data and global data were leveraged. Where
+enough data was available, it was evaluated in detail to show trends in distribution. First, second,
+and third quartiles were highlighted as the basis for the expected range of values for a given
+parameter. It should be noted that while this method is an effective means of producing
+statistically sound ranges, in some instances observed commercial values may be more tightly
+grouped than is reported by the quartile method. For select categories, expected performance
+ranges are discussed and recommendations made based on existing research and operational
+experience.
+
+Given the NZW focus on leveraging nuclear for more than just electricity production, two non-
+electrical applications are briefly outlined in this research. Recommendations for modeling
+values were provided. The two applications discussed are nuclear-powered hydrogen production
+and district heating. In both instances, performance of said systems is discussed including input
+requirements. In the case of nuclear-powered hydrogen production, a range of costs is presented
+from existing research.
+
+3. REFERENCE DATA ON NUCLEAR COSTS
+
+3.1. Between of a kind (BOAK) Overnight Capital Costs
+
+3.1.1. Adjustment of Overnight Capital Costs in the US to the country of interest
+
+The overnight capital cost was disaggregated on labor, material concrete, material steel, and
+equipment with the United States taken as the reference point. In the first step, export prices for
+concrete and steel of NZW countries were taken from Reference [12]. In a second step, the prices
+
+                                                         15
+
+                                  This report is available at no cost from the Net Zero World Initiative
+Net Zero World Initiative                                                              INL/RPT-23-74378
+
+were normalized to the United States' costs. The results are shown in Table 3. Argentina has the
+lowest normalized steel cost but the highest normalized concrete cost amongst the countries
+selected. Indonesia has the lowest concrete cost and Egypt the highest steel cost.
+
+The labor costs by country were taken from the International Labor Organization and were
+escalated to 2022 prices only when data from previous years was available. All the labor costs
+were then normalized to the United States' costs. It is important to note that Nigeria, India, and
+Egypt have the lowest normalized labor cost and the highest labor normalized labor corresponds
+to Chile, South Africa, and Argentina.
+
+Finally, equipment costs are assumed to be near identical to the United States' costs. As a result,
+their country-specific multipliers are all set to 1.0.
+
+       Table 3. Capital cost adjustment factors by category, normalized to United States costs.
+
+      Country  Labor       Material  Material                                          Equipment
+United States   1.00       Concrete    Steel                                               1.00
+Chile           0.28                   1.00                                                1.00
+Indonesia       0.04          1.00     0.52                                                1.00
+Egypt           0.07          0.63     0.43                                                1.00
+Nigeria         0.03          0.29     0.57                                                1.00
+Argentina       0.18          0.59     0.50                                                1.00
+Thailand        0.11          0.57     0.33                                                1.00
+India           0.05          0.78     0.44                                                1.00
+Ukraine         0.12          0.36     0.51                                                1.00
+South Africa    0.19          0.30     0.43                                                1.00
+                              0.30     0.48
+                              0.59
+
+3.1.2. Country-Specific Nuclear Overnight Capital Costs
+
+The results of the overnight cost modeling are shown in Figure 2. Generally, all NZW countries
+will likely incur relatively similar nuclear costs with small amounts of variation. Differences
+between labor and material costs appear to cancel each other out. The base costs for most
+countries appear close to the optimistic level for the United States. This highlights the particular
+
+                                               16
+
+               This report is available at no cost from the Net Zero World Initiative
+Net Zero World Initiative                                                                                       INL/RPT-23-74378
+
+Nuclear Overnight Costs (2022 USD/KWe)impact of labor rates on nuclear costs.
+                                 Optimistic Base Conservative
+
+       $11,000
+       $10,000
+
+         $9,000
+         $8,000
+         $7,000
+         $6,000
+         $5,000
+         $4,000
+         $3,000
+         $2,000
+         $1,000
+
+              $0
+
+                                        Figure 2. Country-specific nuclear overnight cost ranges, shown as 2022 USD values.
+
+Corresponding values from Figure 2 are shown in Table 4. In both Figure 2 and Table 4 all
+nuclear OCC outputs from the model were rounded to the nearest multiple of 250. These
+estimates are recommended to be used in the modeling activities for NZW.
+
+          Table 4. Country-specific nuclear overnight cost ranges, shown as 2022 USD values.
+
+          Country                       Optimistic  Base                                                        Conservative
+United States                             $5,250    $8,000                                                          $9,250
+Chile                                     $3,750    $5,750                                                          $6,500
+Indonesia                                 $3,500    $5,250                                                          $6,000
+Egypt                                     $3,500    $5,250                                                          $6,250
+Nigeria                                   $3,500    $5,250                                                          $6,250
+Argentina                                 $3,500    $5,500                                                          $6,250
+Thailand                                  $3,500    $5,250                                                          $6,250
+India                                     $3,500    $5,250                                                          $6,000
+Ukraine                                   $3,500    $5,250                                                          $6,250
+South Africa                              $3,750    $5,500                                                          $6,500
+
+                                                                        17
+
+                                        This report is available at no cost from the Net Zero World Initiative
+Net Zero World Initiative                                                                        INL/RPT-23-74378
+
+3.1.3. Comparison Against Observed Costs
+
+To validate the cost adjustment approach, the same methodology was followed and applied to
+China and the United Arab Emirates, where actual costs for nuclear builds were available. In
+China these two builds were the Sanmen and Taishan reactors. The Sanmen 1 and 2 builds were
+AP1000 PWR reactors developed by Westinghouse Electric Company that came on line one
+after during 2018. Combined the two Sanmen reactors have a nameplate capacity of 2,314 MWe.
+The Taishan 1 and 2 builds were Generation III European Pressurized Reactors (ERP) developed
+by Framatome that came online in 2018 and 2019. Combined the two Taishan reactors have a
+nameplate capacity of 3,320 MWe. In the United Arab Emirates (UAE) the build used for
+comparison was the Barakah reactor. The plant consists of 4 units, only 3 of which have been
+completed with a nameplate capacity of 5,380 (once all 4 reactors have entered commercial
+service). The Barakah builds are APR-1400 PWR reactors developed by the Korea Electric
+Power Corporation (KEPCO) and units 1, 2 and 3 entered commercial operation in the years
+2020, 2021, and 2022 respectively.
+
+Figure 3 shows the projected nuclear overnight cost ranges in China and Figure 4 for United
+Arab Emirates. Each uses local labor and material multipliers as highlighted in Section 2.2. The
+builds are then baselined against these ranges. The solid black and dashed black lines show the
+actual costs incurred for reactors. United States cost ranges were included for reference as well.
+
+                                  Optimistic           Base         Conservative
+                                  Sanmen 1,2           Taishan 1,2
+
+                         $10,000
+
+Nuclear Overnight Costs  $8,000
+   (2022 USD/KWe)
+                         $6,000
+
+                         $4,000
+
+                         $2,000
+
+                         $0                                         United States
+                                                China
+
+                         Figure 3. Estimated China nuclear overnight costs compared to actuals.
+
+                                                         18
+
+                         This report is available at no cost from the Net Zero World Initiative
+Net Zero World Initiative                                                                        INL/RPT-23-74378
+
+                                  Optimistic  Base    Conservative  Barakah
+
+                         $10,000
+
+Nuclear Overnight Costs  $8,000
+   (2022 USD/KWe)
+                         $6,000
+
+                         $4,000
+
+                         $2,000
+
+                         $0                                         United States
+                                                 UAE
+
+Figure 4 Estimated United Arab Emirates nuclear overnight costs compared to actuals.
+
+The figures above show that the cost adjustment method produces a range that captures actual
+nuclear costs from recent builds. In the case of builds in China, the cost range produces a more
+conservative estimate. The observed costs land near the lower end of the cost range; this suggests
+the estimates using this method may be more conservative (meaning the method produces higher
+cost estimates than might be observed). This is despite the fact that both countries experienced
+cost overruns and delays [14,16]. In the case of the build in the UAE the observed data falls
+much closer to the base case of the model. The Barakah plant did have some minor cost overruns
+but was considered to be close to the estimated cost range. Given the observed cost was just
+below the base costs point, this suggests the method produces semi-conservative estimates.
+Overall, these benchmark exercises show the relative suitability of the high-level methodology
+despite its limitations. The country-specific nuclear overnight cost ranges produced using this
+methodology may in fact err more on the conservative side.
+
+3.2. Operating and Maintenance Costs
+
+3.2.1. Adjustment of Operating and Maintenance Costs in the US to the country
+           of interest
+
+For the adjustment of O&M costs in each country, it is assumed that the operating costs are
+mainly driven by labor related expenses. Given this, the fuel and capital expenditures are
+assumed to be the same as US costs and are set to 1.0. The variable that is specific to each
+country is "operations," which represent the average monthly earning (from the sectors energy,
+manufacturing, and construction) per worker for each country normalized by the average
+monthly earning per worker in the United States. In Table 5, the lowest operations costs
+correspond to Nigeria, Indonesia, and India, while the highest costs (excluding the United States)
+are in Chile, Argentina, and South Africa.
+
+                                                         19
+
+                         This report is available at no cost from the Net Zero World Initiative
+Net Zero World Initiative                                                                  INL/RPT-23-74378
+
+Table 5. O&M cost adjustment factors by category, normalized to United States costs.
+
+          Country  Operations  Fuel                                                        Capital
+United States           1.00   1.00                                                          1.00
+Chile                   0.28   1.00                                                          1.00
+Indonesia               0.04   1.00                                                          1.00
+Egypt                   0.07   1.00                                                          1.00
+Nigeria                 0.03   1.00                                                          1.00
+Argentina               0.18   1.00                                                          1.00
+Thailand                0.11   1.00                                                          1.00
+India                   0.05   1.00                                                          1.00
+Ukraine                 0.12   1.00                                                          1.00
+South Africa            0.19   1.00                                                          1.00
+
+3.2.2. Country-Specific Nuclear O&M Costs
+
+The results of the operational cost modeling are shown in Figure 5. The plot aggregates all the
+various O&M costs into one total for each country represented in USD/MWh. Note that values
+are rounded to the nearest multiple of 0.25. These results also show that NZW countries tend to
+cluster around the same range with limited variance between each country. For O&M expenses,
+even low United States operational costs are above the highest projected estimate of all NZW
+countries. Again, this showcases the significant impact of the cost of labor (the only cost factor
+that is country-specific here) on overall operating costs.
+
+                                                   20
+
+                   This report is available at no cost from the Net Zero World Initiative
+Net Zero World Initiative                                                                                               INL/RPT-23-74378
+
+                                                Optimistic Base Conservative
+
+Total Nuclear O&M Costs (2022 USD/MWh)  $50.00
+                                        $45.00
+                                        $40.00
+                                        $35.00
+                                        $30.00
+                                        $25.00
+                                        $20.00
+                                        $15.00
+                                        $10.00
+
+                                         $5.00
+                                         $0.00
+
+                                                Figure 5. Country-specific nuclear operating cost ranges.
+
+Values from Figure 5 are also divided into fixed (on a USD/kWe basis, while also removing the
+impacts of capacity factor from the normalized NEI values) and variable (on a USD/MWh basis)
+portions in Table 6 and Table 7. Recall from Section 2.2 that fixed O&M consisted of labor
+driven operation costs and subsequently vary from country to country, but that variable O&M
+consisted of capital and fuel costs which were considered to be constant irrespective of location
+and therefore are shown as identical across all countries. Also note that the decision to use O&M
+costs from NEI was predicated upon the data being recently reported O&M costs from existing
+US reactors [6]. The values are close to but do not line up exactly with reported O&M costs from
+other references such as the Cost Basis Report [1] and the 2018 MIT study [9]. However, the
+NEI values were preferred as they are the most recent and consist of real, observed reactor O&M
+costs in the US.
+
+                  Table 6. Country-specific nuclear variable O&M cost ranges (USD/MWh).
+
+          Country                               Optimistic  Base                                                        Conservative
+United States                                      $9.25    $13.00                                                          $17.00
+Chile                                              $9.25    $13.00                                                          $17.00
+Indonesia                                          $9.25    $13.00                                                          $17.00
+Egypt                                              $9.25    $13.00                                                          $17.00
+Nigeria                                            $9.25    $13.00                                                          $17.00
+
+                                                                                21
+
+                                                This report is available at no cost from the Net Zero World Initiative
+Net Zero World Initiative                                                                  INL/RPT-23-74378
+
+          Country  Optimistic  Base                                                        Conservative
+Argentina             $9.25    $13.00                                                          $17.00
+Thailand              $9.25    $13.00                                                          $17.00
+India                 $9.25    $13.00                                                          $17.00
+Ukraine               $9.25    $13.00                                                          $17.00
+South Africa          $9.25    $13.00                                                          $17.00
+
+Table 7. Country-specific nuclear fixed O&M cost ranges (USD/kWe-year).
+
+          Country  Optimistic  Base                                                        Conservative
+United States          $154    $179                                                              $223
+Chile                  $28      $35                                                              $43
+Indonesia               $4                                                                        $6
+Egypt                   $6      $6                                                                $8
+Nigeria                 $4      $6                                                                $6
+Argentina              $18      $4                                                               $24
+Thailand               $14      $20                                                              $22
+India                   $6      $18                                                               $8
+Ukraine                $14      $6                                                               $22
+South Africa           $24      $16                                                              $37
+                                $28
+
+An additional factor to consider outside of standard operational costs is the spent fuel tax. For the
+case of the United States, in 1982 the country enacted a spent fuel tax on nuclear utilities of 1.0
+mil per kilowatt-hour, which translates into $0.001/kWh or $1.00/MWh as shown in Table ES-1
+[22]. Given the low relative size of this value, a flat amount of $1.00/MWh is assumed across the
+scenarios.
+
+3.2.3. Comparison Against Observed Operating Costs
+
+To validate the cost adjustment approach for O&M, the methodology was compared against the
+case of reported O&M costs in China. Local country-specific labor adjustments were applied as
+done above, and Figure 6 shows the projected total nuclear O&M ranges in China. The solid
+black lines show the values for China O&M costs, taken from the MIT 2018 report [9]. The
+United States total O&M cost ranges from the NEI report are included for reference as well.
+
+                                                   22
+
+                   This report is available at no cost from the Net Zero World Initiative
+Net Zero World Initiative                                                                                INL/RPT-23-74378
+
+                                 Optimistic  Base   Conservative  China
+
+                         $60.00
+
+Total Nuclear O&M Costs  $50.00
+   (2022 USD/MWh)
+                         $40.00
+
+                         $30.00
+
+                         $20.00
+
+                         $10.00
+
+                         $0.00
+
+                                             China                United States
+
+                         Figure 6. Estimated China nuclear O&M compared to MIT 2018 reported.
+
+The figure above shows that the cost adjustment method produces a range that captures reported
+actual nuclear O&M. In this instance, the projected range for O&M in China indicates that
+observed costs are close to the base costs from the methodology. Generally, this helps to validate
+that the approach used produces accurate estimates that can be used in modeling efforts.
+
+However, it should be noted that only when the total O&M costs are aggregated to a single USD
+per MWh are they consistent with those found in the MIT report. When the data is disaggregated
+between fixed O&M and variable O&M, the breakout values deviate from those in MIT. This
+may be due to differences in operational costs between 2018 (when the MIT study was
+conducted) and 2021 (date of the reported NEI costs used in this study). Additionally, the
+categorization of what is considered fixed versus variable between the NEI data and MIT data
+could be different. This could produce values that aggregated to similar totals but differ when
+broken out. It is also possible that the methodology used in this report is overestimating the cost
+reductions in labor rates (producing a fixed cost value that is lower than MIT reports) but
+underestimating the change in variable costs (capital and fuel) (producing a variable cost value
+that is higher than observed by MIT). This combination of over and under estimation may have
+resulted in an error cancelation when aggregated to a single USD per MWh value. Further work
+is needed to identify the exact cause of the discrepancies in the disaggregated costs [23].
+
+3.3. Retirement (Decommissioning Costs)
+
+Retirement costs, also referred to as decommissioning costs, are incurred at the end of a reactor's
+lifetime. In the United States, these costs are often placed into a trust that is formed during the
+construction of the plant and collected over the lifetime of the plant [19]. Costs are incurred by
+the utility at the end of the reactor lifetime when decommissioning is carried out. Alternatively,
+the trust can be sold to a third party that performs the decommissioning using the accrued funds.
+It is important to note that the time at which these costs are incurred can change the impact in
+present dollar terms. Discount factors must be applied to decommissioning costs to produce
+
+                                                                 23
+
+                                 This report is available at no cost from the Net Zero World Initiative
+Net Zero World Initiative                                        INL/RPT-23-74378
+
+accurate estimates when modeling. To better understand the range of costs that could be
+incurred, retirement costs of United States reactors were collected from the Nuclear Regulatory
+Commission (NRC) and a United States utility [20]. Costs were escalated to 2022 USD values
+using the overnight cost escalation methodology discussed in the previous sections.
+
+                    Figure 7. U.S. Decommissioning cost ranges.
+
+Figure 7 shows the distribution of historical United States nuclear reactor decommissioning costs
+[21]. The distribution is right-tailed with a small number of reactors showing substantial
+decommissioning cost overruns. Nevertheless, Table 8 shows that data is grouped between $750
+to $1,250 2022 USD per kWe with a median decommissioning cost of $1,000 per kWe. Again, it
+is important to note that these costs should not be conflated with OCC and are typically
+accounted for at the end of a project, as an annual fee accumulated throughout operations, or as a
+smaller initial downpayment that earns interest up till the point of retiremenent.
+
+                    Table 8. Decommissioning cost ranges.
+
+                    US Decommissioning Costs [2022 USD/kWe]
+
+Low ­ 1st Quartile  Medium ­ 2nd Quartile                        High ­ 3rd Quartile
+
+$750                       $1,000                                $1,250
+
+3.4. Adjustment Factors
+
+Adjustment factors for first-of-a-kind (FOAK) builds and the impact of learning rates on
+subsequent builds were also based on recommendations from [5]. Recall that estimates for OCC
+numbers are not considered to be FOAK demonstrations nor nth-of-a kind (NOAK). To adjust
+numbers downward for NOAK builds or upwards for FOAK builds, the adjustment factors
+
+                                                         24
+
+                                  This report is available at no cost from the Net Zero World Initiative
+Net Zero World Initiative                                                                  INL/RPT-23-74378
+
+shown in Table 9 should be used. For countries without existing nuclear programs the FOAK
+adjustment factors would not include the cost for starting a nuclear program in that country. In
+these instances, models would only represent FOAK OCCs and additional costs would need to
+be accounted for to represent the formation of a national nuclear program to accompany the
+adoption of the technology. Only a single value is recommended from FOAK premium. This is
+because typically conservative FOAK adjustment factors are likely correlated with optimistic
+BOAK costs and vice versa. For simplicity, and to provide a more consistent analysis, a single
+reference premium multiplier is recommended for any of the three scenarios.
+
+Table 9. First-of-a-kind capitals cost adjustment factor ranges and learn rate capital cost reduction
+                                                                 ranges.
+
+          Country  Optimistic  Base                                                        Conservative
+FOAK premium           15%      1.5                                                               5%
+Learning rate [%]              10%
+
+For additional context, the recommended value in Table 9 was obtained from reference [5] by
+estimating the median value of FOAK-to-BOAK ratios across different reactor cost estimates.
+The learning rate in this instance is defined as a percentage reduction in cost when a doubling in
+number of deployments is achieved. For example, a learning rate of 5% implies that the cost of
+the second plant will be 95% that of the FOAK, and the 4th plant will be 90.25% (95% of 95%)
+and so on. Mathematically this can be expressed as shown in Equation 4.
+
+                                         = (1 - )2
+
+                                                 Equation 4. Learning rate adjustment equation.
+
+Where,
+
+    · Cost represents the learning rate adjusted cost of the nth reactor
+    · n represents the number of reactor deployments
+    · FOAK represents the OCC costs of the FOAK deployment
+    · LR represents the desired learning rate from Table 9.
+
+In the case of calculating FOAK build costs, the value shown in Table 9 is used as a direct
+multiplier. Meaning, the OCC cost should just be multiplied by the FOAK premium to get an
+expected FOAK cost. Again, a mathematical representation is shown in Equation 5.
+
+                                              =  × 
+
+                                                   Equation 5. FOAK cost adjustment equation.
+
+Where,
+    · FOAK represents First-of-a-kind OCC
+    · BOAK represents a given OCC value from Table 4
+    · FP represents FOAK premiums Table 9.
+
+                                                   25
+
+                   This report is available at no cost from the Net Zero World Initiative
+Net Zero World Initiative  INL/RPT-23-74378
+
+4. REFERENCE DATA ON NUCLEAR CONSTUCTION AND
+      OPERATION
+
+While considering construction and operational parameters within this section one should recall
+that for construction time and capacity factor the methodology leverages the use of quartiles
+from observed data to produce a suggested range of values for modeling. This approach was also
+leveraged for estimating decommissioning cost ranges. It should be noted that while this method
+is an effective mean of producing statistically sound ranges, in some instances, observed
+commercial values may be more tightly grouped. This differentiation likely stems from the use
+of globally data overtime where differences in parameters may produce minor skewing. Where
+this may be a factor in the reported ranges it is discussed with more detail.
+
+4.1. Construction Time
+
+Time to complete a nuclear reactor can vary based on several factors. This includes regulatory
+approval timelines, issues with material sourcing, project management issues, etc. To better
+understand the expected range data from the International Atomic Energy Agency (IAEA)
+Power Reactor Information System (PRIS) database was leveraged [17]. Table 4 shows the
+distribution of construction time, in years, of all nuclear reactors built in the world. Construction
+time in this instance is defined as construction start - breaking ground, to first criticality. Note
+that this time excludes the time needed to obtain regulatory approval for siting the reactor at a
+given location.
+
+Global median construction time for all nuclear reactor builds, from breaking ground to first
+criticality is 5.5 years. High, medium, and low estimates for construction times can be found in
+Table 10.
+
+Figure 8. Global nuclear reactor construction time distribution from breaking ground to first
+                                                          criticality.
+
+                                                     26
+
+                            This report is available at no cost from the Net Zero World Initiative
+Net Zero World Initiative                                      INL/RPT-23-74378
+
+Figure 8 shows that global construction time data is right skewed with a long right tail. This
+behavior is expected given that some projects that experience long delays will push the
+distribution right. However, Table 10 shows that the middle 50% of projects from the PRIS
+dataset needed between 4.5 years and 8.0 years in total construction time. The median
+construction time reported was 5.5 years. Note that this value could be sensitive to several
+factors including reactor type, reactor size, country of build, and construction firm executing on
+the build.
+
+  Table 10. Global nuclear reactor construction time statistics, breaking ground to first criticality.
+
+                    Global Construction Times [Years]: Breaking Ground to First Criticality
+
+                    Low ­ 1st Quartile  Medium ­ 2nd Quartile  High ­ 3rd Quartile
+
+                    4.5                 5.5                    8.0
+
+Number of Reactors4.2. Capacity Factor
+
+Capacity factor is an important aspect of nuclear modeling that can have a substantial impact on
+total energy production. As nuclear power plants are able to operate for a larger percent of the
+year, the more value is drawn from the asset. Capacity factors vary around the globe with the
+highest coming from United States reactors. PRIS data was leveraged again to understand the
+distribution of capacity factors across the globe [17].
+
+         80
+         70
+         60
+         50
+         40
+         30
+         20
+         10
+
+           0
+
+                                                          Capcity Factor
+
+                Figure 9. Global nuclear capacity factor distribution, site specific reporting.
+
+Figure 9 shows that nuclear capacity factors are grouped around 80%­100% with a long -left tail.
+Reactors with a 0% capacity factor were removed from the dataset (as they were assumed to be
+non-operational) but some reactors in the dataset still showed extremely low-capacity factors. It
+is likely that some of the low-capacity data points are from test reactors or reactors with low
+utilization due to abnormal operational circumstances. In commercial applications operators are
+incentivized to keep capacity has high as possible to maximize profitability. Despite the presence
+
+                                                         27
+
+                                  This report is available at no cost from the Net Zero World Initiative
+Net Zero World Initiative                                               INL/RPT-23-74378
+
+of outliers in the dataset, Table 11 indicates that the first and third quartiles are 80% and 95%
+with a global median capacity factor of 90%. A lower end capacity factor of 80% is considered
+very unlikely for normal commercial operation (the data my be skewed by non-commercial or
+non-traditional operations). On the other hand, the upper bound of 95% may be considered
+overoptimistic, but the range obtained is essentially a function of the methodology. Note that this
+data group reports site specific data and not reactor specific data (i.e., reactor site with four
+reactors counts as a single data point instead of four).
+
+                  Table 11. Global nuclear capacity factor statistics, site specific reporting.
+
+Low ­ 1st Quartile     Global Nuclear Capacity Factors                  High ­ 3rd Quartile
+         80%                  Medium ­ 2nd Quartile                               95%
+                                           90%
+
+4.3. Reactor Lifetime
+
+The average age of American reactors approaches 40 years, and there are no technical limits to
+these units operating beyond that point. To date, 20 reactors in the United States are planning or
+intending to operate up to 80 years [8]. Though nuclear plants are originally intended to operate
+safely for 40 years, experts agree that older reactors could last another 50 years [15]. The lifetime
+of a reactor is assumed to be at least 60 years according to Dominion Energy research [18]. This
+is taken to correspond to the "conservative" case. The base case recommendation is 80 years, and
+the optimistic is taken to be 100 years [18].
+
+4.4. Nuclear Plant Load-Following Capability
+
+Nuclear power plants were designed for load-following operation, and the nuclear industry in
+various countries accrued decades of experience successfully ramping up/down operations of
+their nuclear fleet. Below is a summary of European's utilities requirements for nuclear power
+plant maneuvering capabilities: where "conservative" refer to minimum requirements, and
+"optimistic" refer to capability currently achieved by some NPP concepts [25].
+
+                     Table 12. Maneuverability and other performance metrics for nuclear.
+
+Load-following operation available during cycle              Min                   Max
+length                                                                            100%
+Ramp rate of load-following operation                        90%               5%Pr/min
+
+Daily maneuverability                                    3%Pr/min                No limit
+                                                    2 daily cycles/day
+Lower range of power operation                      5 cycles per week            20%Pr
+Primary frequency control (available at all time)  200 cycles per year          +/- 5%Pr
+Secondary frequency control                                             +/- 10%Pr with ramps
+                                                           50%Pr              of 5%Pr/min
+                                                          +/- 2%Pr
+
+                                                         (optional)
+
+                                28
+
+This report is available at no cost from the Net Zero World Initiative
+Net Zero World Initiative                                                                                 INL/RPT-23-74378
+
+Additional features include the possibility of nuclear plants participating in emergency load
+variation with ramp rate of 20%Pr/min down to minimum load of the unit, and grid restauration
+with ramp-up of 10%Pr/mina.
+
+It should be noted that many recent designs (including the AP1000) are certified to comply with
+these requirements. Similar utility requirements were defined in the United States [26].
+
+Added costs to load-following operation are not included here since those are expected to be
+mostly accounted for by the reduced reactor utilization while still incurring fixed operating costs.
+Reduced fuel utilization and maintenance costs due to load-following operations can be
+estimated via variable O&M costs [27].
+
+These maneuvering capabilities are based on large advanced light-water reactors technologies,
+while some advanced SMRs may provide improved maneuvering performance. For instance, the
+TerraPower Natrium, Westinghouse LFR, and Moltex concepts are designed to couple with
+thermal energy storage (several hours of storage are being considered), which enables ramping
+up/down the plant electrical output without varying nuclear plant output.
+
+5. NON-GRID NUCLEAR ENERGY APPLICATIONS
+
+5.1. Hydrogen Production
+
+For non-grid applications, nuclear-powered hydrogen production has gained increased global
+interest. Specifically, high-temperature steam electrolysis (HTSE) is being considered as a prime
+candidate for nuclear-based hydrogen production. To better understand the cost and technical
+implications of coupling HTSE plants with nuclear reactors, a range of expected costs and
+parameters were produced using existing research from [24]. Table 13 shows technical and cost
+requirements for HTSE plants ranging from systems with a 10 MWe to 500 MWe requirement.
+
+HTSE processes require both heat and electricity from a nuclear plant to produce hydrogen. For
+example, an HTSE plant with a 500 MWe requirement will need an even larger power output
+from a nuclear plant to account for the thermal energy, powering of HTSE components (e.g.,
+pumps, heaters), and losses in the system. To account for the power and heat requirement from
+the nuclear power plant, the additional MWth requirements were re-converted back to MWe
+(assuming a 33% thermal efficiency) to produce the total power and heat requirements in MWe.
+In this example, a 500MWe HTSE plant would require an equivalent 569 MWe nuclear power
+plant to fulfill all heat and power requirements. Table 13 provides key inputs such as power and
+heat requirements, capital expenditures, fixed and variable operation and maintenance costs, and
+hydrogen output. Estimates are shown in $/MWh and $/kWe units. Note that these cost numbers
+are MWh and kWe of the total power required which accounts for the cost of both heat and
+electricity and accounts for losses during the generation and transfer process of heat and
+electricity from the NPP to the HTSE plant.
+
+a %Pr/Min is defined as the measure of change per minute in percent of power rated.
+
+                                                         29
+
+                                  This report is available at no cost from the Net Zero World Initiative
+Net Zero World Initiative                                               INL/RPT-23-74378
+
+Table 13. High-temperature steam electrolysis key production variables by plant size.
+
+        HTSE Plant Size [MWe]  10 MWe   20 MWe   100 MWe                500 MWe
+Nuclear Power and Heat             12       23      115                    569
+Requirement [MWe]                                                          $900
+OCC [USD/kWe]                   $1,900   $1,500   $1,100                   $35
+                                  $38      $38      $35                    $5.5
+Fixed O&M [USD/MWh]             $18.5    $13.5      $7.0                   196
+Variable O&M [USD/MWh]            196      196      196
+
+Hydrogen Output [Kg/kWe-Year]
+
+Modeling nuclear-powered hydrogen production should account for differences in scale. It is
+worth noting that across all HTSE plant sizes, the output is identical, but the systems benefit
+from economies of scale in both OCC and O&M categories (most notable in OCC where a
+reduction in USD/kWe of more than 50% is observed). This range in values was then used to
+infer recommended optimistic/base/conservative values for hydrogen production costs.
+
+5.2. Nuclear Power Plant Performance for District Heating
+
+Steam from light-water reactors can also be extracted for district heating at various temperatures.
+This can range from ~43°C at the waste heat level (past the turbine) to ~273°C of high-
+temperature steam (prior to the turbine). The following estimates are based on AP1000 balance
+of plant model, as documented in [28]. Figure 10 and Table 14. indicate the quantity of process
+heat that can be extracted (as a fraction of the total thermal power of the plant) at various
+temperatures, along with the associated reduction on the plant electrical output. Depending on
+the district heat temperature requirements, one can easily estimate how much thermal power is
+available and the penalty on electricity production.
+
+For instance, considering a 1,000 MWe plant with 35% thermal efficiency, a thermal output of
+2845 MWth is generated. Around 77% of this heat (2,190 MWth) can be extracted at 167°C,
+resulting in reduction of electrical power to 562 MWe. All the waste heat (around 1845 MWth)
+can be extracted at 43°C, without penalty to the electrical power.
+
+                                30
+
+This report is available at no cost from the Net Zero World Initiative
+Net Zero World Initiative                                                                        INL/RPT-23-74378
+
+                                           PWR
+
+Plant Electrical Output  120%       273 C  258 C  241 C
+                         100%       231 C  207 C  167 C
+                                    128 C  96 C   76 C
+                          80%
+                          60%       20%    40%    60%               80%                          100%
+                          40%
+                          20%
+
+                            0%
+                                0%
+
+                                    Max. available heat at extracted temperature
+
+Figure 10. Available process heat for a PWR and impact on plant electrical output [28].
+
+Table 14. Maximum process heat available for each temperature line, in a PWR and impact on
+                                               plant electrical output [28].
+
+Temperature                                 Max. available heat at  Resulting electrical power
+      [oC]                                  extracted temperature   [% Plant electrical power]
+       43                                  [% Plant thermal power]
+       76                                                                        100.0%
+       96                                             64.8%                       84.5%
+      128                                             66.7%                       76.1%
+      167                                             69.8%                       62.9%
+      207                                             74.5%                       56.2%
+      231                                             76.9%                       36.8%
+      241                                             85.1%                       29.6%
+      258                                             87.7%                       26.6%
+      273                                             88.8%                       42.3%
+                                                      81.9%                       18.5%
+                                                      91.7%
+
+                                                         31
+
+                         This report is available at no cost from the Net Zero World Initiative
+Net Zero World Initiative                                               INL/RPT-23-74378
+
+6. LIMITATIONS AND FUTURE WORK
+
+The modeling recommendations provided in this report are not without weaknesses and can be
+improved further as part of future work. Several key aspects to consider further are highlighted
+below:
+
+1. More representative costs for nuclear overnight costs. An alternative approach could be to
+      focus on observed costs throughout the world and provide a baseline for the NZW
+      participating countries.
+
+2. A more granular and robust methodology for accounting for local cost multipliers. In an
+      ideal case, all labor-based expenses would be broken into hours spent, type of laborer, and
+      rates. These would then be adjusted on a country-by-country basis, accounting for changes
+      in rates and productivity. Furthermore, a more detailed methodology may be able to
+      account for non-local labor factions that should be held constant across all nations.
+
+3. Additional work is also needed to improve the methodology for O&M cost estimation
+      across countries. Notably the discrepancy between variable and fixed costs should be
+      investigated further to improve accuracy when costs are disaggregated from a total O&M
+      cost number to fixed and variable costs.
+
+4. The impact of cost reductions at multi-unit sites (both on OCC and O&M) could be
+      investigated in further details if models can capture these nuances.
+
+In addition to improvements of the methodology highlighted above, the study could be expanded
+to account for additional considerations. For instance, microreactors are expected to be of
+interest to remote communities. Microreactor costs are expected to vary substantially from those
+observed for the larger reactors emphasized in this study. In addition to hydrogen, synthetic fuels
+(both ammonia or carbon based) could be considered as part of the model. Similarly, thermal
+energy storage (and other forms of storage) could be considered when accounting for
+maneuverability of reactors and load -following. Coupling a nuclear reactor to CO2 direct air
+capture systems could be of particular interest as well when exploring aggressive net zero
+targets. Lastly, siting constraints are also important considerations for large scale deployment of
+nuclear technology.
+
+                                32
+
+This report is available at no cost from the Net Zero World Initiative
+Net Zero World Initiative                                               INL/RPT-23-74378
+
+7. REFERENCES
+
+1. B. Dixon, F. Ganda, K. Williams, E. Hoffman and J. K. Hansen, "Advanced Fuel Cycle
+      Cost Basis­2017 Edition," Idaho National Laboratory, Idaho Falls, ID, 2017.
+
+2. Stein, A., J. Messinger, S. Wang, J. Lloyd, J. McBride, and R. Franovich. (2022).
+      "Advancing Nuclear Energy: Evaluating Deployment, Investment, and Impact in
+      America's Clean Energy Future." Breakthrough Institute.
+      https://thebreakthrough.imgix.net/Advancing-Nuclear-Energy_v3-compressed.pdf.
+
+3. Gogan, K., Ingersoll, E., Foss, A., & Herter, J. (2018). "The ETI Nuclear Cost Drivers
+      Project: Summary Report." Energy Technologies institute, CleanTech Catalyst Ltd; Lucid
+      Strategy, Inc.
+      https://www.lucidcatalyst.com/_files/ugd/2fed7a_0bf1b6be925b4f729ffcd13a8410d6bc.pdf
+
+4. Abou-Jaoude, A., Y. Arafat, A. Foss, and B. Dixon. (2021). "An Economics-by-Design
+      Approach Applied to a Heat Pipe Microreactor Concept." INL/EXT-21-63067-Rev000,
+      Idaho National Laboratory, Idaho Falls, ID. https://doi.org/10.2172/1811894.
+
+5. Abou-Jaoude, A., L. Lin, C. Bolisetti, E. Worsham, L. Larsen, and A. Epiney. (2023).
+      "Literature Review of Advanced Reactor Cost Estimates." INL/RPT-23-72972 Idaho
+      National Laboratory, Idaho Falls. /198646 https://doi.org/10.21726.
+
+6. NEI. (2022). "Nuclear Costs In Context." Nuclear Energy Institute, Washington, DC.
+      https://www.nei.org/resources/reports-briefs/nuclear-costs-in-context.
+
+7. U.S. DOE. (1987). "Phase 9 update (1987) report for the Energy Economic Data Base
+      Program EEDB-IX." UDOE/NE-0091, U.S. Department of Energy Office of Program
+      Support Plans and Evaluation, Washington, DC. https://doi.org/10.2172/7227212.
+
+8. DOE-NE (2020). "What's the Lifespan for a Nuclear Reactor? Much Longer Than You
+      Might Think." https://www.energy.gov/ne/articles/whats-lifespan-nuclear-reactor-much-
+      longer-you-might-think
+
+9. Buongiorno, J., J. Parsons, M. Corradini, and D. Petti. (2018). "The future of nuclear
+      energy in a carbon-constrained world." MIT Energy Initiative (MITEI).
+      https://energy.mit.edu/wp-content/uploads/2018/09/The-Future-of-Nuclear-Energy-in-a-
+      Carbon-Constrained-World.pdf.
+
+10. NREL. (2012). "Cost and Performance Data for Power Generation Technologies." Report
+      prepared for the U.S. National Renewable Energy Laboratory, Black & Veatch.
+      https://refman.energytransitionmodel.com/publications/1921.
+
+11. ILOSTAT. (2023). Wage and Working Time Statistics (COND database). International
+      Labor Organization. [Accessed July 17]. https://ilostat.ilo.org/resources/concepts-and-
+      definitions/description-wages-and-working-time-statistics/.
+
+12. Index Box. (2021). "Country Specific Steel and Cement Costs." Indexbox Market
+      Intelligence Platform. https://www.indexbox.io/.
+
+13. U.S. Bureau of Labor Statistics. (2023). "Producer Price Index by Commodity:
+      Construction (Partial): New Industrial Building Construction [WPU801104]." [retrieved
+
+                                33
+
+This report is available at no cost from the Net Zero World Initiative
+Net Zero World Initiative                                               INL/RPT-23-74378
+
+      July 11, 2023], Federal Reserve Bank (FRED) of St. Louis.
+      https://fred.stlouisfed.org/series/WPU801104.
+
+14. S&P Global Market Intelligence. (2018). "Chinese nuke marks 1st successful startup of
+      AP1000 reactor." https://www.spglobal.com/marketintelligence/en/news-
+      insights/trending/au_fzdmxtshbhvkktxk8la2.
+
+15. Voosen, Paul. (2009). "How Long Can a Nuclear Reactor Last?." Scientific American.
+      https://www.scientificamerican.com/article/nuclear-power-plant-aging-reactor-
+      replacement-
+      /#:~:text=Increasingly%20dependable%20and%20emitting%20few,industry%20executives
+      %2C%20regulators%20and%20scientists.
+
+16. Ng. E. (2018). "CGN Power's latest project delay deals another blow to China's nuclear
+      energy ambition." South China Morning Post.
+      https://www.scmp.com/business/companies/article/2126529/cgn-powers-latest-project-
+      delay-deals-another-blow-chinas-nuclear.
+
+17. IAEA. (2023). IAEA Power Reactor Information System (PRIS). World Nuclear
+      Association, International Atomic Energy Agency. https://pris.iaea.org/PRIS/Home.aspx.
+
+18. Dominion Energy, Inc., Bechtel Power Corporation, TLG INC and MPR Associates.
+      (2004). Study of Construction Technologies and Schedules, O&M Staffing and Cost,
+      Decommissioning Costs and Funding Requirements for Advanced Reactor Designs.
+      https://www.nrc.gov/docs/ML1018/ML101820632.pdf
+
+19. US Energy Information Administration. Decommissioning nuclear reactors is a long-term
+      and costly process. 2017.
+      https://www.eia.gov/todayinenergy/detail.php?id=33792#:~:text=In%20both%20cases%2C
+      %20operators%20currently,plant%20operator%20creates%20during%20construction
+
+20. Callan Institute. 2019 Nuclear Decommissioning Funding Study. Callan Institute.
+      https://decommissioningcollaborative.org/wp-content/uploads/2020/07/Callan-2019-NDT-
+      Study.pdf.
+
+21. Dominion (2004). "Study of Construction Technologies and Schedules, O&M Staffing and
+      Cost, Decommissioning Costs and Funding Requirements for Advanced Reactor Designs,
+      Volume 1." Dominion Energy Inc., Bechtel Power Corporation, TLG, Inc. and MPR
+      Associates. https://www.nrc.gov/docs/ML1018/ML101820632.pdf.
+
+22. Cornell (1983). "42 U.S. Code § 10222 - Nuclear Waste Fund" Cornell Law School, Legal
+      Information Institute. https://www.law.cornell.edu/uscode/text/42/10222
+
+23. Dujardin, T. (2005). "Projected costs of generating electricity 2005 update." Organization
+      for Economic Co-Operation and Development. https://www.oecd-
+      nea.org/jcms/pl_14002/projected-costs-of-generating-electricity-2005-
+      update?details=trueEscalated.
+
+24. Knighton, L. T., A. Shigrekar, H. Bryan, C. Otani, D. Wendt, P. Talbot, and R. Boardman.
+      (2023). "Market Opportunities and Analysis of Nuclear Coupled HTSE Hydrogen
+      Production." INL/RPT-23-72743, Idaho National Laboratory, Idaho Falls, ID.
+
+                                34
+
+This report is available at no cost from the Net Zero World Initiative
+Net Zero World Initiative                                               INL/RPT-23-74378
+
+25. NEA. (2011). "Technical and Economic aspects of load-following with nuclear power
+      plants." Nuclear Energy Agency, ." Organisation for Economic Co-Operation and
+      Development (OECD), Paris, France. https://www.oecd-
+      nea.org/upload/docs/application/pdf/2021-
+      12/technical_and_economic_aspects_of_load_following_with_nuclear_power_plants.pdf.
+
+26. EPRI, (1999). "Advanced Light Water Reactor Utility Requirements Document."
+      Technical Report TR-016780-V2R8, Electric Power Research Institute, vol. 2, Chapter 1,
+      Rev. 8, pp. 3292. https://www.epri.com/research/products/TR-016780-V2R8.
+
+27. Persson, J. K. Andgren, H. Henriksson, J. Loberg, C. Malm, L. Pettersson, J.Sandström,
+      and T. Sigfrids. (2012). "Additional Costs for Load-following Nuclear Power Plants." ID:
+      Elforsk rapport 12:71, Energiforsk.
+      https://energiforskmedia.blob.core.windows.net/media/21094/additional-costs-for-load-
+      following-nuclear-power-plants-elforskrapport-12-71.pdf.
+
+28. Stauff, N., W. N. Mann, A. Moisseytsev, V. Durvasulu, H. Mantripragada, and T. Fout.
+      (2023). "Assessment of nuclear energy to support negative emission technologies."
+      ANL/NSE-23/33.
+      https://fuelcycleoptions.inl.gov/SiteAssets/SitePages/Home/Nuclear_to_support_NET_fina
+      l.pdf
+
+29. Finbox. (2023). Weighted Average Cost of Capital (WACC) database.
+      https://finbox.com/NYSE:POR/explorer/wacc/.
+
+30. CBrates. (2023). Worldwide Central Bank Rates database. https://www.cbrates.com/.
+
+31. Gurufocus. (2023). TotalEnergies Marketing database.
+      https://www.gurufocus.com/term/wacc/NSA:TOTL/WACC-/Total-Nigeria-PLC.
+
+32. Stewart, W. R., & Shirvan, K. (2022). "Capital cost estimation for advanced nuclear power
+      plants." Renewable and Sustainable Energy Reviews, 155, 111880.
+      https://www.sciencedirect.com/science/article/pii/S1364032121011473
+
+                                35
+
+This report is available at no cost from the Net Zero World Initiative
+Net Zero World Initiative
+
+8. APPENDIX
+
+8.1. Appendix A - Cost of Capital
+
+While not a primary focus of this report some research was done into the expected cost of capital
+for nuclear projects and how this may vary between NZW countries. The cost of capital was
+taken considering the ownership class (public or private) of the energy companies/utilities in
+each country. When the ownership is public, data from the short-term interest rate from each
+central bank was taken from [29]. For those countries with private utilities the data was taken
+from [31­31].
+
+Between countries it is necessary to take into account inflation and exchange rate variations to
+explain the different rates. They are not independent from the weighted average cost of capital
+(WACC). Also, it is vital to note that the WACC is expressed in the currency of each country.
+So, a higher WACC does not mean a higher internal rate of return in dollars. When the WACC is
+transformed from the country currency to dollars using the exchange rate, it will result in a lower
+WACC in dollars closer to the United States and the difference will be the risk premium.
+
+The interest rate from the central bank (in this case for Ukraine) is the nominal short-term
+interest rate not adjusted by inflation and controlled by the central bank authority representing
+the opportunity cost of the economy (i.e., it is the minimum rate that another investment should
+pay if they want to be competitive against the central bank by putting money in the bank instead
+of in any investment). The short-term rate is the only variable the central bank controls (as is the
+case in most countries in the world). Furthermore, the concatenation of the short-term interest
+rate will be the long-term rate. In summary, the short-term rate can be used for long-term
+modeling and recovery and post-recovery investments. In the long run, it is assumed that the
+variables tend to return to their steady state (long term equilibrium) position and furthermore,
+there should not be a difference between the interest rate of the central bank and any other
+interest rate of the economy.
+
+       Table A-1. Country-specific weighted average cost of capital by ownership type [29­31].
+
+                  Country      Owner           WACC
+United States              Public/Private   [5%;10.8%]
+Chile
+Indonesia                      Private        11.30%
+Egypt                           Public         5.75%
+Nigeria                         Public        18.25%
+Argentina                      Private         8.88%
+Thailand                        Public          91%
+India                           Public
+Ukraine                    Public/Private        2%
+South Africa                    Public     [4.54%;6.5%]
+                                Public
+                                                25%
+                                               8.25%
+
+                                         A-1
+
+This report is available at no cost from the Net Zero World Initiative at [insert URL here].
+Net Zero World Initiative
+
+8.2. Appendix B ­ Labor Productivity Differences
+
+As discussed in the main body, one limitation of the high-level translation of costs from the
+United States to NZW participants was that this did not account for granularity in the wages, and
+hour spent in construction. While changes in productivity will also have an impact on labor costs
+(countries with less productive construction labor will require more hours incurring more cost to
+complete the project) this is not entirely captured by the high-level cost estimation used here.
+However, productivity changes are partly captured in the index selected to normalize
+energy-specific construction between countries. Starting from the assumption that the price of a
+given good is the sum of the inputs used directly and indirectly in its production. The cost of
+commodities in each country (steel, cement, etc.) results from the capital productivity level in
+each industry, the cost of inputs for production plus the cost of workers' hours (wages). If
+cement is cheaper in country A, this would also indicate that the capital could be more
+productive, but it could also be because the wage paid there is lower, or the minimum wage is
+lower, or some other production input is cheaper, etc. In this sense, it becomes relevant to
+understand what could happen to the workers' wages.
+It is possible to write the wage in one country as a function of four variables as follows:
+
+  = ( ,   ,   ,  )
+Furthermore, it is not easy to differentiate and measure the effect of each of these variables on
+the final cost of a commodity. Based on the minimum wage, bargaining power and worker skills
+are relatively fixed in the short and medium run. For instance, governments are not changing
+minimum wage from year-to-year, they are not enacting laws giving more bargaining power to
+workers, and workers are not obtaining new qualification each year. It can be assumed that the
+change in cost year-to-year is due to productivity changes or because costs of a critical input
+used in the production process went down (for example, as a result of subsidized electricity or
+the use of strategic oil reserves that decrease oil price).
+Differentiating the effects of variables on cost levels is only important when working with time
+series rather than a specific point in time. Higher productivity should be reflected in the lower
+production costs and lower market prices of the corresponding prices of inputs or final goods.
+Even when the hours worked are not considered, as this study is using monetary values (physical
+quantity times a price) and not only physical quantities, but the effect of productivity is also
+implicitly included. For instance, higher productivity (from labor and capital) relates to lower
+production costs of the commodities used directly and indirectly in the reactor's construction
+project. Furthermore, higher productivity could be reflected in lower monetary values. If a
+productivity effect is added, it will essentially be counted twice because the prices already reflect
+the productivity effect.
+
+                                                        B-1
+
+                    This report is available at no cost from the Net Zero World Initiative at [insert URL here].
+This paper was authored at Idaho National Laboratory by Battelle
+Energy Alliance LLC under contract no. DE-AC07-05ID14517 with
+the US Department of Energy.
+
+INL/RPT-23-74378 · January 2024
+

@@ -1,0 +1,116 @@
+[M2_share_on_interest] exit=101 compile_error=False failed=22
+     eq_s_1_eligible_capital_is_the_flagged_sum_and_b_contains_a
+     eq_s_1_worked_numbers_of_the_derivation_follow_from_its_membership
+     eq_s_2_private_capital_never_rises_with_the_share_and_the_grant_stays_within_eligible
+     eq_s_3c_the_ledger_form_at_close_and_its_limits
+     eq_s_3d_idle_cash_earning_the_rate_gives_the_lowest_break_even_share
+     eq_s_4b_a_progressive_grant_scales_the_ledger_reactor_value
+     eq_s_5a_interest_is_charged_on_the_private_balance_and_the_saving_is_reported
+     eq_s_6a_derivation_tables_for_definition_b_follow_from_its_membership
+     eq_s_6a_ledger_cost_follows_the_closed_form_for_each_timing
+     eq_s_6b_dcf_cost_follows_the_closed_form_for_each_timing
+     eq_s_7a_progressive_cost_is_affine_and_the_cost_at_close_bends
+     eq_s_7b_break_even_for_a_progressive_grant
+     ... 10 more
+[M3_drop_eligibility_flag] exit=101 compile_error=False failed=23
+     eq_s_1_eligible_capital_is_the_flagged_sum_and_b_contains_a
+     eq_s_1_worked_numbers_of_the_derivation_follow_from_its_membership
+     eq_s_2_private_capital_never_rises_with_the_share_and_the_grant_stays_within_eligible
+     eq_s_3c_the_ledger_form_at_close_and_its_limits
+     eq_s_3d_idle_cash_earning_the_rate_gives_the_lowest_break_even_share
+     eq_s_4a_a_progressive_grant_scales_every_private_payment
+     eq_s_4b_a_progressive_grant_scales_the_ledger_reactor_value
+     eq_s_5a_interest_is_charged_on_the_private_balance_and_the_saving_is_reported
+     eq_s_6a_derivation_tables_for_definition_b_follow_from_its_membership
+     eq_s_6a_ledger_cost_follows_the_closed_form_for_each_timing
+     eq_s_6b_dcf_cost_follows_the_closed_form_for_each_timing
+     eq_s_7a_progressive_cost_is_affine_and_the_cost_at_close_bends
+     ... 11 more
+[M4_wrong_crf] exit=101 compile_error=False failed=7
+     eq_s_5b_the_net_cost_is_the_gross_cost_less_the_grant_and_the_interest_it_saves
+     eq_s_6a_ledger_cost_follows_the_closed_form_for_each_timing
+     eq_s_7d_the_exact_route_and_the_bisection_agree_and_the_orderings_hold
+     eq_s_8_the_committed_table_matches_the_engine
+     eq_s_9b_limiting_cases_at_zero_and_full_share
+     eq_s_9c_the_gap_between_the_methods_equals_the_prediction_and_stays_below_the_limit
+     eq_s_9c_the_grant_effect_by_four_routes_that_share_no_code_with_the_engine
+[M5_relax_strict_l5] exit=101 compile_error=False failed=1
+     eq_s_7e_cases_of_the_break_even_share_and_the_strict_target_flag
+[M5b_relax_strict_dcf] exit=0 compile_error=False failed=0
+[M6_at_close_treated_progressive_in_dcf] exit=101 compile_error=False failed=9
+     eq_s_5a_interest_is_charged_on_the_private_balance_and_the_saving_is_reported
+     eq_s_6a_derivation_tables_for_definition_b_follow_from_its_membership
+     eq_s_6b_dcf_cost_follows_the_closed_form_for_each_timing
+     eq_s_7d_the_exact_route_and_the_bisection_agree_and_the_orderings_hold
+     eq_s_8_reported_quantities_are_consistent
+     eq_s_8_the_committed_table_matches_the_engine
+     eq_s_9a_the_cost_falls_strictly_with_the_share_and_bends_one_way
+     eq_s_9c_the_gap_between_the_methods_equals_the_prediction_and_stays_below_the_limit
+     eq_s_9c_the_grant_effect_by_four_routes_that_share_no_code_with_the_engine
+[M7_close_window_not_shortened] exit=101 compile_error=False failed=15
+     eq_s_3c_the_ledger_form_at_close_and_its_limits
+     eq_s_5a_interest_is_charged_on_the_private_balance_and_the_saving_is_reported
+     eq_s_5b_the_net_cost_is_the_gross_cost_less_the_grant_and_the_interest_it_saves
+     eq_s_6a_derivation_tables_for_definition_b_follow_from_its_membership
+     eq_s_6a_ledger_cost_follows_the_closed_form_for_each_timing
+     eq_s_7a_progressive_cost_is_affine_and_the_cost_at_close_bends
+     eq_s_7c_break_even_at_close_in_both_regimes_of_the_ledger
+     eq_s_7d_the_exact_route_and_the_bisection_agree_and_the_orderings_hold
+     eq_s_7e_every_scenario_passes_just_above_its_break_even_and_fails_just_below
+     eq_s_8_reported_quantities_are_consistent
+     eq_s_8_the_committed_table_matches_the_engine
+     eq_s_9a_the_cost_falls_strictly_with_the_share_and_bends_one_way
+     ... 3 more
+[M8_idc_effect_doubled_progressive] exit=101 compile_error=False failed=13
+     eq_s_4b_a_progressive_grant_scales_the_ledger_reactor_value
+     eq_s_5a_interest_is_charged_on_the_private_balance_and_the_saving_is_reported
+     eq_s_6a_derivation_tables_for_definition_b_follow_from_its_membership
+     eq_s_6a_ledger_cost_follows_the_closed_form_for_each_timing
+     eq_s_7a_progressive_cost_is_affine_and_the_cost_at_close_bends
+     eq_s_7b_break_even_for_a_progressive_grant
+     eq_s_7d_the_exact_route_and_the_bisection_agree_and_the_orderings_hold
+     eq_s_7e_cases_of_the_break_even_share_and_the_strict_target_flag
+     eq_s_8_reported_quantities_are_consistent
+     eq_s_8_the_committed_table_matches_the_engine
+     eq_s_9b_limiting_cases_at_zero_and_full_share
+     eq_s_9c_the_gap_between_the_methods_equals_the_prediction_and_stays_below_the_limit
+     ... 1 more
+[M9_zero_share_not_skipped_ledger] exit=101 compile_error=False failed=4
+     eq_s_7e_a_break_even_set_is_a_pure_function_of_its_inputs
+     eq_s_8_a_grant_leaves_the_rx_mult_lever_alone
+     eq_s_9b_a_zero_share_changes_nothing_bit_for_bit
+     eq_s_9c_gap_terms_still_sum_to_the_gap_with_a_grant
+[M10_at_close_excess_double_counted] exit=101 compile_error=False failed=9
+     eq_s_2_private_capital_never_rises_with_the_share_and_the_grant_stays_within_eligible
+     eq_s_6a_derivation_tables_for_definition_b_follow_from_its_membership
+     eq_s_6b_dcf_cost_follows_the_closed_form_for_each_timing
+     eq_s_7d_the_exact_route_and_the_bisection_agree_and_the_orderings_hold
+     eq_s_8_reported_quantities_are_consistent
+     eq_s_8_the_committed_table_matches_the_engine
+     eq_s_9b_limiting_cases_at_zero_and_full_share
+     eq_s_9c_the_gap_between_the_methods_equals_the_prediction_and_stays_below_the_limit
+     eq_s_9c_the_grant_effect_by_four_routes_that_share_no_code_with_the_engine
+[M11_round_down_share] exit=101 compile_error=False failed=2
+     eq_s_7e_cases_of_the_break_even_share_and_the_strict_target_flag
+     eq_s_7e_every_scenario_passes_just_above_its_break_even_and_fails_just_below
+[M12_wrong_sign_idc_effect] exit=101 compile_error=False failed=16
+     eq_s_4b_a_progressive_grant_scales_the_ledger_reactor_value
+     eq_s_5b_the_net_cost_is_the_gross_cost_less_the_grant_and_the_interest_it_saves
+     eq_s_6a_derivation_tables_for_definition_b_follow_from_its_membership
+     eq_s_6a_ledger_cost_follows_the_closed_form_for_each_timing
+     eq_s_7a_progressive_cost_is_affine_and_the_cost_at_close_bends
+     eq_s_7b_break_even_for_a_progressive_grant
+     eq_s_7c_break_even_at_close_in_both_regimes_of_the_ledger
+     eq_s_7d_the_exact_route_and_the_bisection_agree_and_the_orderings_hold
+     eq_s_7e_cases_of_the_break_even_share_and_the_strict_target_flag
+     eq_s_7e_every_scenario_passes_just_above_its_break_even_and_fails_just_below
+     eq_s_8_reported_quantities_are_consistent
+     eq_s_8_the_committed_table_matches_the_engine
+     ... 4 more
+[M13_replacement_units_eligible] exit=101 compile_error=False failed=6
+     eq_s_6b_dcf_cost_follows_the_closed_form_for_each_timing
+     eq_s_7d_the_exact_route_and_the_bisection_agree_and_the_orderings_hold
+     eq_s_8_the_committed_table_matches_the_engine
+     eq_s_9b_limiting_cases_at_zero_and_full_share
+     eq_s_9c_the_gap_between_the_methods_equals_the_prediction_and_stays_below_the_limit
+     eq_s_9c_the_grant_effect_by_four_routes_that_share_no_code_with_the_engine

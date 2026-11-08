@@ -1,0 +1,5 @@
+id,section,tier,title,latex,variables,assumptions,source,tag,engine_fn,test_id,validation
+L.34,L,R,Discounted cash flow,"Discounted cash flow: $\mathrm{NPV}_x=\sum_j\sum_yc_{j,x}(y)(1+i)^{-y}$, 25 y items replaced with a straight-line credit at the horizon","S$",Real flows at 8%; costs from the Method 1 set,"[P] IEAGHG17 Table 3 PDF p17, Table 4 PDF p18; NZW09 Table ES-1 PDF p7; [C]",[C] [P],plant::dcf::dcf,eq_l_34,"ID. Unit tests in plant::dcf, and recomputed independently"
+L.35,L,R,Levelised cost of hydrogen,"LCOH: $LCOH_x=\mathrm{NPV}_x/\mathrm{NPV}(M_{H_2})$","S$/kg",Same hydrogen on both plants,[C],[C],plant::dcf::dcf,eq_l_35,"ID, recomputed independently"
+L.36,L,R,Levelised abatement cost,"LAC: $LAC=(\mathrm{NPV}_{NUS}-\mathrm{NPV}_{SMR})/\mathrm{NPV}(\mathcal A)$","S$/t",Tonnes discounted at the same rate as cost,[C],[C],plant::dcf::dcf,eq_l_36,"ID, recomputed independently"
+L.37,L,R,Gap test between the methods,"Gap test: $g=(LAC-AC_{L5})/AC_{L5}$, $|g|\le0.10$, with the difference closed by named terms","1",Same inputs in both methods,[C],[C],plant::dcf::dcf,eq_l_37,"ID. A difference over 10% is explained by a named term"

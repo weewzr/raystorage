@@ -1,0 +1,1635 @@
+Lawrence Berkeley National Laboratory
+
+LBL Publications
+
+Title
+IPCC, 2022: Annex II: Definitions, Units and Conventions
+
+Permalink
+https://escholarship.org/uc/item/8782c4z8
+
+Authors
+Al Khourdajie, Alaa
+van Diemen, Renee
+Lamb, William F
+et al.
+
+Publication Date
+2022-04-01
+
+Copyright Information
+This work is made available under the terms of a Creative Commons Attribution-
+NonCommercial License, available at https://creativecommons.org/licenses/by-nc/4.0/
+
+Peer reviewed
+
+eScholarship.org  Powered by the California Digital Library
+                                            University of California
+SPAMII Annex II: Definitions,
+                    Units and Conventions
+
+                                                        Coordinating Lead Author:
+                                                           Alaa Al Khourdajie (United Kingdom/Syria)
+                                                        Lead Authors:
+                                                           Renée van Diemen (the Netherlands/United Kingdom), William F. Lamb (Germany/United
+                                                           Kingdom), Minal Pathak (India), Andy Reisinger (New Zealand), Stéphane de la Rue du Can
+                                                           (the United States of America), Jim Skea (United Kingdom), Raphael Slade (United Kingdom),
+                                                           Shreya Some (India), Linda Steg (the Netherlands)
+
+                                                                      This chapter should be cited as:
+                                                                      IPCC, 2022: Annex II: Definitions, Units and Conventions [Al Khourdajie, A., R. van Diemen, W.F. Lamb, M. Pathak,
+                                                                      A. Reisinger, S. de la Rue du Can, J. Skea, R. Slade, S. Some, L. Steg (eds)]. In IPCC, 2022: Climate Change 2022: Mitigation
+                                                                      of Climate Change. Contribution of Working Group III to the Sixth Assessment Report of the Intergovernmental Panel on
+                                                                      Climate Change [P.R. Shukla, J. Skea, R. Slade, A. Al Khourdajie, R. van Diemen, D. McCollum, M. Pathak, S. Some, P. Vyas,
+                                                                      R. Fradera, M. Belkacemi, A. Hasija, G. Lisboa, S. Luz, J. Malley, (eds.)]. Cambridge University Press, Cambridge, UK and
+                                                                      New York, NY, USA. doi: 10.1017/9781009157926.021.
+
+                                                                                                                                                          1821
+     Annex II                                                           Definitions, Units and Conventions
+
+     Table of Contents
+
+     Part I: Definitions and Units  1823
+
+             A.II.1 Classification Schemes for
+                      Countries and Areas 1823 
+
+             A.II.2 Standard Units and Unit Conversions  1824
+
+     Part II: Conventions  1826
+
+           A.II.3 Levelised Cost Metrics1826
+
+           A.II.4 Growth Rates  1827
+
+AII        A.II.5 Trends Calculations Between Years
+
+           and Over Decades  1828
+
+           A.II.6 Primary Energy Accounting  1828
+
+           A.II.7 The Concept of Risk  1828
+
+           A.II.8 GHG Emission Metrics  1830
+
+     Part III: Emissions Datasets  1831
+             A.II.9 Historical Data  1831
+             A.II.10 Indirect Emissions  1836
+
+     Part IV: Assessment Methods  1837
+
+             A.II.11 Methodology Adopted for Assessing the
+                      Feasibility of Mitigation Response Options  1837
+
+             A.II.12 Methodology Adopted for Assessing
+                      Synergies and Trade-offs Between
+                      Mitigation Options and the SDGs  1838
+
+     References 1839 
+
+     1822
+Definitions, Units and Conventions                                                                                              Annex II
+
+This annex on Definitions, Units and Conventions provides background in Eastern Europe which are not members of the European Union
+
+information on material used in the Working Group III contribution are allocated to Eastern Europe and West-Central Asia (EEA). In AR5,
+
+to the Intergovernmental Panel on Climate Change (IPCC) Sixth these formed part of the Economies in Transition group. The remainder
+
+Assessment Report (AR6 WGIII). The material presented in this annex of Western Asia (non-Annex I) is allocated to the Middle East.
+
+documents metrics and common datasets that are typically used
+
+across multiple chapters of the report. In a few instances there are Following the practice of the UN Statistics Division, we note that the
+
+no updates to what was adopted by WGIII during the production of designations employed and the presentation of material in this report
+
+the Fifth Assessment Report (AR5), in which case this annex refers to do not imply the expression of any opinion by the United Nations, the
+
+Annex II of AR5 (Krey et al. 2014).                                            IPCC or the authors of this report concerning the legal status of any
+
+                                                                               country, territory, city or area or of its authorities, or concerning the
+
+The annex comprises four parts: Part I introduces standards, metrics delimitation of its frontiers or boundaries. The term `country' as used
+
+and common definitions adopted in the report; Part II presents in this material also refers, as appropriate, to territories or areas.
+
+methods to derive or calculate certain quantities and identities used
+
+in the report; Part III provides more detailed background information A.II.1.1 Low Level of Regional Groupings
+
+about common data sources; and Part IV presents integrative                                                                                               AII
+
+methodologies used in the assessment. While this structure may help Africa: Algeria, Angola, Benin, Botswana, Burkina Faso, Burundi,
+
+readers to navigate through the annex, it is not possible in all cases to Côte d'Ivoire, Cabo Verde, Cameroon, the Central African Republic,
+
+unambiguously assign a certain topic to one of these parts, naturally Chad, the Comoros, the Congo, the Democratic Republic of the Congo,
+
+leading to some overlap between the parts.                                     Djibouti, Egypt, Equatorial Guinea, Eritrea, Eswatini, Ethiopia, Gabon,
+
+                                                                               the Gambia, Ghana, Guinea, Guinea-Bissau, Kenya, Lesotho, Liberia,
+
+                                                                               Libya, Madagascar, Malawi, Mali, Mauritania, Mauritius, Morocco,
+
+Part I: Definitions and Units                                                  Mozambique, Namibia, the Niger, Nigeria, Rwanda, São Tomé and
+
+                                                                               Príncipe, Senegal, Seychelles, Sierra Leone, Somalia, South Africa, the
+
+A.II.1 Classification Schemes for Countries and Areas South Sudan, the Sudan, Togo, Tunisia, Uganda, the United Republic
+
+                                                                               of Tanzania, Zambia, Zimbabwe.
+
+In this report, two different levels of classification are used as a standard
+
+to present the results of analysis. The basis for the classification is the Middle East: Bahrain, Islamic Republic of Iran, Iraq, Israel, Jordan,
+
+UN Statistics Division Standard Country or Area Codes for Statistical Use, Kuwait, Lebanon, Oman, Qatar, Saudi Arabia, the State of Palestine,
+
+also known as the M49 Standard (UNSD 1999).This covers geographical the Syrian Arab Republic, the United Arab Emirates, Yemen.
+
+regions and, at the time of the literature cut-off date, identified
+
+developed regions, developing regions and least developed countries. Latin America and Caribbean: Antigua and Barbuda, Argentina,
+
+                                                                               the Bahamas, Barbados, Belize, Plurinational State of Bolivia, Brazil,
+
+The high-level classification has six categories (Table 1): one covering Chile, Colombia, Costa Rica, Cuba, Dominica, the Dominican Republic,
+
+North America, Europe, and Australia, Japan and New Zealand, Ecuador, El Salvador, Grenada, Guatemala, Guyana, Haiti, Honduras,
+
+labelled `developed countries', and five covering other countries, Jamaica, Mexico, Nicaragua, Panama, Paraguay, Peru, Saint Kitts
+
+all classified as developing using the M49 standard at the cut- and Nevis, Saint Lucia, Saint Vincent and the Grenadines, Suriname,
+
+off date. The high-level classification is an expansion of the RC5 Trinidad and Tobago, Uruguay, Bolivarian Republic of Venezuela.
+
+(Regional Categorisation 5) adopted in AR5 WGIII, with Africa and
+
+the Middle East now identified separately. The low-level classification North America: Canada, the United States of America.
+
+(ten categories) divides developed countries into three geographical
+
+regions, and Asia and Pacific into three sub-regions.                          Eastern Asia: China, the Republic of Korea, the Democratic People's
+
+                                                                               Republic of Korea, Mongolia.
+
+The high- and low-level classification schemes reflect schemes used
+
+in many global models and statistical sources. Where the report Southern Asia: Afghanistan, Bangladesh, Bhutan, India, Maldives,
+
+synthesises data, only these standard classification schemes have been Nepal, Pakistan, Sri Lanka.
+
+used. On occasions, the underlying literature may deviate from the
+
+standard classification scheme and direct citations may unavoidably South-East Asia and Pacific: Brunei Darussalam, Cambodia,
+
+refer to alternative classifications. This is dealt with on a case-by-case Cook Islands, Fiji, Indonesia, Kiribati, the Lao People's Democratic
+
+basis and does not imply any endorsement of the scheme used in the Republic, Malaysia, the Marshall Islands, Federated States of
+
+underlying literature by the IPCC or the authors of this report.               Micronesia, Myanmar, Nauru, Niue, Palau, Papua New Guinea, the
+
+                                                                               Philippines, Samoa, Singapore, Solomon Islands, Thailand, Timor-Leste,
+
+The detailed allocation of countries and areas to the low-level Tonga, Tuvalu, Vanuatu, Viet Nam.
+
+classification is shown in Section 1.1. Following AR5, the classification
+
+scheme deviates from the UN regional classification with the result Europe: Albania, Andorra, Austria, Belgium, Bosnia and Herzegovina,
+
+that Annex I, Annex II and non-Annex I countries as defined under Bulgaria, Croatia, Cyprus, Czechia, Denmark, Estonia, Finland, France,
+
+the UN Framework Convention on Climate Change (UNFCCC) are Germany, Greece, Hungary, Iceland, Ireland, Italy, Latvia, Liechtenstein,
+
+distinguished. Some Annex I countries in Western Asia and countries Lithuania, Luxembourg, Malta, Monaco, Montenegro, the Netherlands,
+
+                                                                                                                                    1823
+     Annex II                                                                                                               Definitions, Units and Conventions
+
+     North Macedonia, Norway, Poland, Portugal, Romania, San Marino,                  Table 3 | Special names and symbols for certain SI-derived units.
+     Serbia, Slovakia, Slovenia, Spain, Sweden, Switzerland, Turkey, the
+     United Kingdom of Great Britain and Northern Ireland.                                Physical quantity              Unit         Symbol             Definition
+                                                                                      Force                            Newton         N             kg m s2
+     Australia, Japan, and New Zealand                                                Pressure                         Pascal         Pa            kg m­1 s­2 (= N m­2)
+                                                                                      Energy                           Joule          J             kg m2 s­2
+     Eastern Europe and West-Central Asia: Armenia, Azerbaijan,                       Power                            Watt           W             kg m2 s­3 (= J s­1)
+     Belarus, Georgia, Kazakhstan, Kyrgyzstan, the Republic of Moldova,               Frequency                        Hertz          Hz            s­1 (cycles per second)
+     the Russian Federation, Tajikistan, Turkmenistan, Ukraine, Uzbekistan.           Ionizing radiation dose          sievert        Sv            J kg­1
+
+     International Shipping and Aviation                                              Table 4 | Non-SI standard units.
+
+     A.II.1.2 High, Low Levels of Regional Groupings                                  Monetary units                                    Unit                Symbol
+
+AII  Table 1 | Classification schemes for countries and areas.                        Currency (market exchange rate, MER)     Constant US Dollar 2015  USD2015
+                                                                                                                               Constant International   Int$2015
+                                          WGIII AR6                                   Currency (purchasing power parity, PPP)  Dollar 2015
+                                                                                                                                                           Symbol
+                   High Level (6)                         Low Level (10)                        Emission- and                           Unit            t
+                                                                                            climate-related units                                       tCO2
+                                                  North America                       Emissions                                Metric tonnes            tCO2-eq
+                                                                                      CO2 emissions                            Metric tonnes CO2        USD2015 t­1
+     Developed Countries (DEV)                    Europe                                                                       Metric tonnes
+                                                                                      CO2-equivalent emissions1                CO2-equivalent           Ppm
+                                                  Australia, Japan and New Zealand                                             Constant US dollar 2015
+                                                                                      Abatement costs and emissions            per metric tonne         ppb
+     Eastern Europe and West-Central Asia (EEA) Eastern Europe and West-Central Asia  prices/taxes                             Parts per million (106)
+                                                                                      CO2 concentration or mixing ratio                                 ppb
+     Latin America and Caribbean (LAM)            Latin America and Caribbean         (mol mol­1)                              Parts per billion (109)  W/m2
+                                                                                      CH4 concentration or mixing ratio
+     Africa (AFR)                                 Africa                              (nmol mol­1)                             Parts per billion (109)
+                                                                                      N2O concentration or mixing ratio
+     Middle East (ME)                             Middle East                         (nmol mol­1)                             Watts per square meter
+                                                                                      Radiative forcing
+                                                  Eastern Asia
+
+     Asia and Pacific (APC)                       Southern Asia
+
+                                                  South-East Asia and Pacific
+
+     International Shipping and Aviation
+
+     A.II.2 Standard Units and Unit Conversions                                             Energy-related units                        Unit               Symbol
+                                                                                      Energy                                   Joule                    J
+
+     The following sections introduce standard units and unit conversions             Electricity and heat generation          Watt hours               Wh
+     used throughout this report.                                                     Power (peak capacity)                                             W (Wth, We)
+                                                                                                                               Watt (Watt thermal,
+                                                                                                                               Watt electric)
+
+     A.II.2.1 Standard Units                                                          Capacity factor                          Percent                  %
+
+                                                                                      Technical and economic lifetime          Years                    yr
+
+     Standard units of measurements include Système International (SI)                Specific energy investment costs         US dollar 2015 per kW    USD2015/kW
+     units, SI-derived units, and other non-SI units as well the standard             Energy costs (e.g., LCOE) and prices     (peak capacity)
+     prefixes for basic physical units.                                               Passenger-distance                                                USD2015/GJ and
+                                                                                                                               Constant US dollar 2015  USct2015/kWh
+     Table 2 | Système International (SI) units.                                                                               per GJ or US cents 2015  pkm
+                                                                                                                               per kWh
+
+                                                                                                                               Passenger-kilometre
+
+           Physical quantity                      Unit                 Symbol         Payload-distance2                        Tonne-kilometre          tkm
+     Length                               metre                  m                           Land-related units                         Unit               Symbol
+     Mass                                 kilogram               kg
+                                                                                      Area                                     Hectare                  ha
+
+     Time                                 second                 s                    Note that all monetary and monetary-related units are expressed in constant US
+                                                                                      Dollar 2015 (USD2015) or constant International Dollar 2015 (Int$2015).
+     Thermodynamic temperature            kelvin                 K
+
+     Amount of substance                  mole                   mol
+
+     1 A measure of aggregate greenhouse gas (GHG) emissions. This report uses the GHG metric Global Warming Potential with a time horizon of 100 years (GWP100);
+          for details see Section 8.
+
+     2 The is a unit of measure of freight transport which represents the transport of one tonne of goods (including packaging and tare weights of intermodal transport units)
+          by a given transport mode (road, rail, air, sea, inland waterways, pipeline etc.) over a distance of one kilometre. The tonne measure here is not the same unit of measure
+          as metric tonnes earlier in the third row of Table 4.
+
+     1824
+Definitions, Units and Conventions                                                                                                       Annex II
+
+Table 5 | Prefixes for basic physical units.                                                                                         Symbol
+                                                                                                                            d
+        Multiple                       Prefix                   Symbol              Fraction                  Prefix        c
+1E+21                                                  Z                    1E-01                                           m
+1E+18                          zeta                    E                    1E-02                      deci                 
+1E+15                          exa                     P                    1E-03                      centi                n
+1E+12                          peta                    T                    1E-06                      milli                p
+1E+09                          tera                    G                    1E-09                      micro                f
+1E+06                          giga                    M                    1E-12                      nano                 a
+1E+03                          mega                    k                    1E-15                      pico                 z
+1E+02                          kilo                    h                    1E-18                      femto
+1E+01                          hecto                   da                   1E-21                      atto
+                               deca                                                                    zepto
+
+A.II.2.2 Physical Units Conversion                                                                                                                 AII
+
+Table 6 | Conversion table for common mass units (IPCC 2001).
+
+           To:                                          kg               t                         lt                   st            lb
+                                                                               Multiply by:
+       From:                                   1               1.00E-03                                       1.10E-03      2.20E+00
+                                               1.00E+03        1                          9.84E-04            1.10E+00      2.20E+03
+Kilogram            kg                         1.02E+03        1.02E+00                   9.84E-01            1.12E+00      2.24E+03
+                                               9.07E+02        9.07E-01                   1                   1             2.00E+03
+Tonne               t                          4.54E-01        4.54E-04                  8.93E-01             5.00E-04      1
+                                                                                         4.46E-04
+Long ton            lt
+
+Short Ton           st
+
+Pound               lb
+
+Table 7 | Conversion table for common volumetric units (IPCC 2001).
+
+            To:                                gal US            gal UK              bbl               ft3             l            m3
+           From:
+US gallon                                                   8.33E-01           Multiply by:                   3.79E+00      3.80E-03
+UK/imperial gallon                                          1                                                 4.55E+00      4.50E-03
+Barrel                         gal US  1                    3.50E+01        2.38E-02          1.34E-01        1.59E+02      1.59E-01
+Cubic foot                     gal UK  1.20E+00             6.23E+00                                          2.83E+01      2.83E-02
+Litre                          bbl     4.20E+01             2.20E-01        2.86E-02          1.61E-01        1             1.00E-03
+Cubic metre                    Ft3     7.48E+00             2.20E+02                                          1.00E+03      1
+                               L       2.64E-01                             1                 5.62E+00
+                               M3      2.64E+02
+                                                                            1.78E-01          1
+
+                                                                            6.30E-03          3.53E-02
+
+                                                                            6.29E+00          3.53E+01
+
+Table 8 | Conversion table for common energy units (NAS 2007; IEA 2019).
+
+            To:                                TJ                  Gcal        Mtoe                    Mtce         MBtu          GWh
+           From:
+Tera joule                             1                    2.39E+02           Multiply by:                   9.48E+02      2.78E-01
+Giga calorie                           4.19E-03             1                                                 3.97E+00      1.16E-03
+Mega tonne oil equivalent      TJ      4.19E+04             1.0E+08         2.39E-05          3.41E-05        3.97E+07      1.16E+04
+Mega tonne coal equivalent     Gcal    2.93E+04             7.0E+06                                           2.78E+07      8.14E+03
+Million british thermal units  Mtoe    1.06E-03             2.52E-01        1.0E-06           1.43E-07        1             2.93E-04
+Giga watt hours                Mtce    3.60E+00             8.60E+02                                          3.41E+03      1
+                               MBtu                                         1                 1.43E+00
+                               GWh
+                                                                            7.00E-01          1
+
+                                                                            2.52E-08          3.60E-08
+
+                                                                            8.60E-05          1.23E-4
+
+In addition to the above physical units, datasets often report carbon       Where aggregate greenhouse gas emissions are reported, this report
+                                                                            uses the Global Warming Potential with a time horizon of 100 years
+emissions in either units of carbon (C) or carbon dioxide (CO2). In this    (GWP100); for details see Section 8.
+report we report carbon dioxide (CO2) emissions where possible,
+using the conversion factor (44/12) to convert from units of C into
+
+CO2. Finally, we note that the conversion from GJ to kWh is as
+follows: 1 GJ = ~277.78 kWh.
+
+                                                                                                                                          1825
+     Annex II                                                                                      Definitions, Units and Conventions
+
+     A.II.2.3 Monetary Unit Conversion                                       Part II: Conventions
+
+     To achieve comparability across cost und price information from A.II.3 Levelised Cost Metrics
+
+     different regions, where possible monetary quantities reported in the
+
+     AR6 WGIII have been expressed in constant US Dollar 2015 (USD2015) Across this report, a number of different metrics to characterise cost
+
+     or constant International Dollar 2015 (Int$2015), as suitable.          of climate change mitigation are employed. To facilitate a meaningful
+
+                                                                             economic comparison across diverse options at the technology level,
+
+     To facilitate a consistent monetary unit conversion process, a simple the metric of `levelised costs' is used throughout several chapters of
+
+     and transparent procedure to convert different monetary units from this report in various forms. The most used metrics are the levelised
+
+     the literature to USD2015 is established and described below.           cost of energy (LCOE), the levelised cost of conserved energy (LCCE),
+
+                                                                             and the levelised cost of conserved carbon (LCCC). These metrics are
+
+     In order to convert from year X local currency unit (LCUx) to 2015 used throughout the AR6 WGIII to provide a benchmark for comparing
+
+     US Dollars (USD2015) two steps are needed:                              different technologies or practices of achieving the respective output.
+
+                                                                             Each comes with a set of context-specific caveats that need to be
+
+AII  1. Inflating or deflating from year X to 2015, and                      taken into account for correct interpretation. Various literature
+
+     2. Converting from LCU to USD.                                          sources caution against drawing too strong conclusions from these
+
+                                                                             metrics. Annex II in AR5, namely Section A.II.3.1, includes a detailed
+
+     In practice, the order of applying these two steps will lead to different discussion on interpretations and caveats. Below is an introduction to
+
+     results. In this report, the conversion route adopted is LCUx  each of these metrics and how they are derived.
+     LCU2015  USD2015, i.e., national or regional deflators are used
+
+     to measure country- or region-specific inflation between year X and A.II.3.1 Levelised Cost of Energy
+
+     2015 in local currency, then current (2015) exchange rates are used
+
+     to convert to USD2015. The reason for adopting this route is when The levelised cost of energy (LCOE) can be defined as the unique
+
+     the economy's GDP deflator is used to convert to a common base break-even cost-price where discounted revenues (price x quantities)
+
+     year, that is, 2015, it captures the changes in prices of all goods are equal to the discounted net expenses (Moomaw et al. 2011),
+
+     and services that the economy produces. To convert from LCU2015 which is expressed as follows:
+
+     to USD2015, the official 2015 exchange rates are used. Note that         !                 ""  $%&"   =        !   "-./01/1"
+     exchange rates often fluctuate significantly in the short term.                             (1 + *)"                (1 + *)"
+                                                                             !                                     !
+     In order to be consistent with the choice of the World Bank databases
+                                                                             "#$                                   "#$                                                      (1)
+
+     as the primary source for gross domestic product (GDP) and other
+
+     financial data throughout the report, deflators and exchange rates where Et is the energy delivered in year t (might vary from year to
+
+     from the World Bank Development Indicators are used.3                   year), expenses cover all (net) expenses in the year t, i is the discount
+
+                                                                             rate and n the lifetime of the project.
+
+     To summarise, the following procedure has been adopted to convert
+
+     monetary quantities reported in LCUx to USD2015:                        solving for LCOE:
+
+     1. Use the country-/region-specific deflator and multiply with the                                    "!#$    $'()*+)+"                                                (2)
+         deflator value to convert from LCUx to LCU2015. In case national/                      !"#$ =              (1 + /)"
+         regional data are reported in non-LCU units (e.g., USDx or Eurox),                                             $"
+         which is often the case in multi-national or global studies,                                        !"#$   (1 + /)"
+         apply the corresponding currency deflator to convert to 2015
+         currency (i.e., the US deflator and the Eurozone deflator in the    The lifetime expenses comprise investment costs I, operation and
+         examples above).                                                    maintenance cost O&M (including waste management costs), fuel
+                                                                             costs F, carbon costs C, and decommissioning costs D. In this case,
+         Example of converting GDP from LCU2010 prices to LCU2015 prices:    levelised cost can be determined by (IEA 2010):
+
+     GDP2015 (in LCU2015 prices) = GDP2010 (in LCU2010 prices)                          "!#$    '" + #&*" + +" + "" + ,"
+                                                                             !"#$ =                        (1 + /)"
+                                                                                                             $" 
+               *  "#$!"#" %&' ()*+,-./                                                          "!#$       (1 + /)"                                                         (3)
+                  "#$!"#$ %&' ()*+,-./
+
+     2. Use the appropriate 2015 exchange rate to convert from
+         LCU2015 to USD2015.
+
+     3 For instance, the data for GDP deflators for all countries can be downloaded following this link: https://data.worldbank.org/indicator/NY.GDP.DEFL.ZS?locations=US.
+
+     1826
+      Definitions, Units and Conventions                                                                                                                                                                            Annex II
+
+      Assuming energy E provided annually is constant during the lifetime to the usage of the baseline technology; and CRF is the capital
+
+      of the project, one can rewrite (3) as follows:                                           recovery factor depending on the discount rate and the lifetime of
+
+      !"#$            =  !"#  ·  &'( (*+,-.+/- 012-34-4)        =  6337+.8 (*+,-.+/- 012-34-4)  the measure in years as defined above. It should be stressed once
+                                          $                                       $             more that this equation is only valid if O&M and E are constant
+                                                                                                over the project lifetime. As LCCE are designed to be compared with
+
+                                                                                           (4) complementary levelised cost of energy supply, they do not include
+
+      where           !"#     =  1  -    %   %)!"    is    the  capital  recovery  factor  and  the annual fuel cost difference. Any additional monetary benefits that
+                                       (1 -                                                     are associated with the energy-saving measure must be taken into
+                                                                                                account as part of the O&M difference.
+      NPV the net present value of all lifetime expenditures (Suerkemper
+
+      et al. 2012).
+
+                                                                                                A.II.3.3 Levelised Cost of Conserved Carbon
+
+      For the simplified case, where the annual costs are also assumed
+
+      constant over time, this can be further simplified to (O&M costs and The levelised cost of conserved carbon can be used for comparing
+
+      fuel costs F constants):                                                                  mitigation costs per unit of avoided carbon emissions and
+
+                                                                                                comparing these specific emission reduction costs for different                                                                 AII
+
+                                    !"#$     =  !"#  ·   & + (&* + #                            options. This concept can be applied to other pollutants.
+                                                           $
+                                                                                           (5)
+
+                                                                                                The conceptual formula for LCCC is similar to Equation (6) above,
+
+      Where I is the upfront investment, O&M are the annual operation with C is the annual reduction in carbon emissions, which can be
+
+      and maintenance costs, F are the annual fuel costs, and E is the expressed as follows:
+
+      annual energy provision. The investment I should be interpreted                                                                                                  "$%.  '()(+!,-./,0.      234.56.6)       8559,/:(+!,-./,0.     234.
+                                                                                                                                                                                         +"                                       +"
+      as the sum of all capital expenditures needed to make the                                                                                       !"""          =                                      =
+      investment fully operational discounted to t = 0. These might
+
+      idnisccluoduentdeidscdoeucnotmedmriestsrioofnitinpgaycmosetsntastdtuhreinegndth!o"ef"pt"rhoe=jelci"fte$lti%ifme. t'ei.m(We)h(ae+nr!de,-+."/,0.  234.56.6)  =  8559,/:(+!,-./,0.     234.56.6)
+                                                                                                                                                                                      +"
+                                                                                                                                                                                                                         (8)
+
+      applicable, annual O&M costs have to take into account revenues for
+
+      by-products and existing carbon costs must be added or treated as In the case of assumed annually constant O&M costs over the
+
+      part of the annual fuel costs.                                                            lifetime, one can rewrite (8) as follows:
+
+      A.II.3.2 Levelised Cost of Conserved Energy                                                                                                     !"""          =  "$%   ·  ()  + (+&-      -  (/
+                                                                                                                                                                                     ("
+                                                                                                                                                                                                                         (9)
+
+      The levelised cost of conserved energy (LCCE) annualises the
+
+      investment and operation and maintenance cost differences between where I is the difference in investment costs of a mitigation
+
+      a baseline technology and the energy-efficient alternative and divides measure (e.g., in USD) as compared to a baseline investment; O&M
+
+      this quantity by the annual energy savings.                                               is the difference in annual operation and maintenance costs (e.g., in
+
+                                                                                                USD) and B denotes the annual benefits, all compared to a baseline
+
+      The conceptual formula for LCCE is essentially the same as Equation for which the option is not implemented. Note that annual benefits
+
+      (4) above, with E measuring in this context the amount of energy include reduced expenditures for fuels, if the investment project
+
+      saved annually (Suerkemper et al. 2012):                                                  reduces emissions via a reduction in fuel use. As such LCCC depend
+
+                                             ()*(,!-./0-1/         #34/56/6)                    on energy prices. An important characteristic of this equation is that
+                                       "%&.              ,#                        8559-0:(,!-./L0C-1CC/ #ca3n4/b5e6c/o6m)e negative if
+                         !""#       =                                         =                    ,t#wo terms in the numerator.                                                B   is  bigger  than  the  sum  of  the  other
+
+"%&.  ()*(,!-./0-1/   #34/56/6)     =  8559-0:(,!-./0-1/         #34/56/6)
+                  ,#                                     ,#
+                                                                                           (6)
+
+                                                                                                A.II.4 Growth Rates
+
+      In the case of assumed annually constant O&M costs over the project
+
+      lifetime, one can rewrite (6) as follows:                                                 A.II.4.1 Emissions Growth Rates
+
+                                    !""#     =  "%&     ·  )* +  ),&.                           In order to ensure consistency throughout the reported growth rates
+                                                             )#                                 for emissions in AR6 WGIII, this section establishes the convention for
+                                                                                           (7)  calculating these rates.
+
+      where I is the difference in investment costs of an energy saving                         The annual growth rate of emissions in percent per year for adjacent
+      measure (e.g., in USD) as compared to a baseline investment; O&M                          years is given by:
+      is the difference in annual operation and maintenance costs of an
+      energy saving measure (e.g., in USD) as compared to the baseline                                                                                           !  =  #$!!(&"  - 1) - $!!(&")*      100
+      in which the energy-saving measure is not implemented; E is the                                                                                                           $!! (&" )
+      annual energy conserved by the measure (e.g., in kWh) as compared                                                                                                                                                  (10)
+
+                                                                                                                                                                                                                         1827
+     Annex II                                                                 Definitions, Units and Conventions
+
+     where EFF stands for fossil fuel CO2 emissions, but can also be applied In order to undertake a timeseries calculation over a decade, the
+
+     to other pollutants.                                                     10-year period should be defined as follows: from 1st of January
+
+                                                                              2001 to 31st of December 2010, that is 2001­2010.
+
+     When relevant a leap-year adjustment is required in order to
+
+     ensure valid interpretation of annual growth rates in the case
+
+     of adjacent years. A leap-year affects adjacent years growth rate by     A.II.6 Primary Energy Accounting
+     approximately 0.3% yr­1 !3615& which causes growth rates to go up        Primary energy accounting methods are used to report primary
+     approximately 0.3% if the first year is a leap year, and down 0.3%
+
+     if the second year is a leap year (Friedlingstein et al. 2019).          energy from non-combustible energy sources, in other words, nuclear
+
+                                                                              energy and all renewable energy sources except biomass. Annex II of
+
+     The relative growth rate of EFF over time periods of greater than one AR5, namely Section A.II.4, includes a detailed discussion of the three
+
+     year is derived as follows.                                              main methods dominant in the literature. The method adopted in AR6
+
+                                                                              is the direct equivalent method which counts one unit of secondary
+
+     Starting from:                                                           energy provided from non-combustible sources as one unit of
+
+AII                        !!!(# + %) = !!!(#)  (1 + *)"                      primary energy, that is, 1 kWh of electricity or heat is accounted for
+                                                                      (11) as 1 kWh = 3.6 MJ of primary energy. This method is mostly used
+
+                                                                              in the long-term scenarios literature, including multiple IPCC reports
+
+     solving for r:                                                           (IPCC 1995, Morita et al. 2001, Fisher et al. 2007, Fischedick et al.
+
+                           ! = #$!$!!(!&(+&)()*"/$ - 1                        2011), because it deals with fundamental transitions of energy
+                                                                              systems that rely to a large extent on low-carbon, non-combustible
+                                                                      (12) energy sources.
+
+     A.II.4.2 Economic Growth Rates                                           A.II.7 The Concept of Risk
+
+     A number of different methods exist for calculating economic growth      The concept of risk is a key aspect of how the IPCC assesses and
+     rates (e.g., GDP), all of which lead to slightly different numerical     communicates to decision-makers the potential adverse impacts of,
+     results. If not stated otherwise, the annual growth rates shown in the   and response options to, climate change. For the AR6 cycle, the definition
+     report are derived using the Log Difference Regression technique or      of risk was revised (see below). Authors and IPCC Bureau members
+     Geometric Average techniques which can be shown to be equivalent.        from all three Working Groups produced a Guidance (Reisinger et al.
+                                                                              2020) for authors on the concept of risk in order to ensure a consistent
+     The Log Difference Regression growth rate rLD is calculated as follows:  and transparent application across Working Groups.
+
+               !!" = ## - 1 with  !  =  $  1  1   !     ()*"                  This section summarises this Guidance briefly with a focus on issues
+                                           -                                  related to WGIII, in other words, with focus on mitigation.
+                                                 &
+                                                                              A.II.7.1 The Definition of Risk
+                                                 "#$                  (13)
+                                                                              Definition (see Annex I: Glossary):
+     The Geometric Average growth rate rGEO is calculated as shown below:
+                                                                              Risk is the potential for adverse consequences for human or ecological
+                                        %                                     systems, recognising the diversity of values and objectives associated
+                           !!"# = #$$%$%$&% - 1                               with such systems. In the context of climate change, risks can arise
+                                                                      (14)    from potential impacts of climate change as well as human responses
+                                                                              to climate change. Relevant adverse consequences include those on
+     Other methods that are used to calculate annual growth rates include     lives, livelihoods, health and well-being, economic, social and cultural
+     the Ordinary Least Square technique and the Average Annual Growth        assets and investments, infrastructure, services (including ecosystem
+     Rate technique.                                                          services), ecosystems and species.
+
+     A.II.5 Trends Calculations Between Years                                 · In the context of climate change impacts, risks result from dynamic
+                 and Over Decades                                                 interactions between climate-related hazards with the exposure
+                                                                                  and vulnerability of the affected human or ecological system
+     In order to compare or contrast trends between two different years,          to the hazards. Hazards, exposure and vulnerability may each
+     for instance comparing 2000 and 2010 cumulative CO2 emissions, the           be subject to uncertainty in terms of magnitude and likelihood
+     year 2000 runs from 1st of January to 31st of December and similarly         of occurrence, and each may change over time and space due to
+     the year 2010 runs from 1st of January to 31st of December.                  socio-economic changes and human decision-making (see also
+                                                                                  risk management, adaptation, mitigation).
+
+     1828
+Definitions, Units and Conventions                                                                                   Annex II
+
+· In the context of climate change responses, risks result from assumed to remain constant. Such assumptions are important for
+
+the potential for such responses not achieving the intended analytical robustness and are stated where relevant.
+
+objective(s), or from potential trade-offs with, or negative side-
+
+effects on, other societal objectives, such as the Sustainable Risk in the Investment and Finance Literature
+
+Development Goals. Risks can arise for example from uncertainty
+
+in implementation, effectiveness or outcomes of climate policy, The investment and finance literature and practitioner community
+
+climate-related investments, technology development or adoption, broadly distinguish between `physical risk' and `transition risk'. The
+
+and system transitions.                                                      term `physical risk' generally refers to risks arising from climate
+
+                                                                             change impacts and climate-related hazards, while the term
+
+                                                                             `transition risk' typically refers to risks associated with the transition
+
+A.II.7.2 The Definition of Risk Management                                   to a low carbon economy. These two types of risk may interact and
+
+                                                                             create cascading or compounding risks.
+
+Plans, actions, strategies or policies to reduce the likelihood and/
+
+or magnitude of adverse potential consequences, based on assessed or Physical Risk
+
+perceived risks (see also risk assessment, risk perception, risk transfer).                                                                              AII
+
+                                                                             In much of the business and financial literature, the term `physical
+
+A.II.7.3 The Uses of the Term Risk and Risk Management                       risk' relates to those derived from the hazard × exposure ×
+
+                                                                             vulnerability framework. Physical risks arise from the potential for
+
+In this report, with the aim of improving the ability of decision-makers climate change impacts on the financial value of assets such as
+
+to understand and manage risk, the term is used when considering industrial plants or real estate, risks to facilities and infrastructure,
+
+the potential for adverse outcomes and the uncertainty relating to impact on operations, water and raw material availability and supply
+
+these outcomes.                                                              chain disruptions. Physical risks have direct financial consequences
+
+                                                                             for organisations where those risks are realised, as well as up-front
+
+The term risk is not used as a simple substitute for probability or insurance and investment related costs and downstream effects for
+
+chance, to describe physical hazards, or as generic term for `anything users of relevant goods and services.
+
+bad that may happen in future'. While the probability of an adverse
+
+outcome does not necessarily have to be quantified, it needs to be Transition Risk
+
+characterised in some way to allow a risk assessment to inform
+
+responses via risk management.                                               Transition risks typically refer to risks associated with transition
+
+                                                                             to a low carbon economy, which can entail extensive policy, legal,
+
+In the AR6, risk refers to the potential for adverse consequences technology, and market changes to address mitigation and adaptation
+
+only. The term hazard is used where climatic events or trends has requirements related to climate change. Depending on the nature,
+
+an identified potential for having adverse consequences to specific speed, and focus of these changes, transition risks may pose varying
+
+elements of an affected system. The contribution of Working Group I levels of financial and reputational risk to organisations. Transition
+
+to the AR6 uses the more general term `climatic impact driver' risks, if realised, can result in stranded assets, loss of markets, reduced
+
+where a specific change in climate could have positive or negative returns on investment, and financial penalties, as well as adverse
+
+consequences, and where a given climatic change may therefore act outcomes for governance and reputation.
+
+as a driver of risk or of an opportunity.
+
+                                                                             A key issue is the stranding of assets that may not provide the
+
+A.II.7.4 Examples of Application in the Context of Mitigation expected financial returns and may end up as large financial liabilities.
+
+Food Security                                                                Examples of types of transition risk relating to business, finance
+                                                                             and investments:
+Climate-related risk to food security arises from multiple drivers that
+include both climate change impacts, responses to climate change             · Risk related to an asset losing its value: the potential for loss of
+and other stressors.                                                             investment in infrastructure.
+
+In the context of responses to climate change, drivers of risk include       · Risk related to losing some or all of the principal of an investment
+the demand for land from climate change responses (both adaptation               (or invested capital).
+and mitigation), the role of markets (e.g., price spikes related to
+biofuel demand in other countries), governance (how are conflicts            · Solvency risk: the risk from reduction in credit ratings due to
+about access to land and water resolved) and human behaviour more                potential adverse consequences of climate change or climate policy.
+generally (e.g., trade barriers, dietary preferences).                           This includes liquidity risk or the risk of not being able to access
+                                                                                 funds. Another example is suffering a downgraded credit rating.
+Given the multitude of drivers, the risk to food security depends on
+assumptions about what drivers of risk are changing and which are            · Risk of lower-than-expected return on investment.
+                                                                             · Liability risk: lack of response to climate change creates risk of
+
+                                                                                 liability for failure to accurately assess risk of climate change to
+                                                                                 infrastructure and people.
+
+                                                                                                                     1829
+     Annex II                                                                     Definitions, Units and Conventions
+
+     · Technology risk: reliance on a particular technology to achieve            to account for future nationally determined contributions (NDCs) in
+         an outcome creates the potential for adverse consequences if the         accordance with this approach. Parties may also report supplemental
+         technology fails to be developed or deployed.                            information on aggregate emissions and removals, expressed as
+                                                                                  CO2-eq, using other GHG emission metrics assessed by the IPCC
+     · Policy risk: changes in policy or regulations in response to climate       (4/CMA.1 and 18/CMA.1: UNFCCC 2019).
+         change could result in the loss of value of some assets.
+                                                                                  Scientific reasons for the use of GWP100 as default GHG emission
+     · Market risk: changes in relative prices from increased prices of CO2       metric in WGIII are that GWP100 approximates the relative
+         for instance, could reduce financial returns and hence increase          damages caused by the two most important anthropogenic GHGs
+         risks to investors.                                                      CO2 and CH4 for social discount rates around 3%. In addition,
+                                                                                  for pathways that limit warming to 2°C (>67%) or lower, using
+     · Residual risk: in parts of the financial literature, this concept refers   GWP100 to inform cost-effective abatement choices between gases
+         to adverse consequences that cannot be quantified in probabilistic       would achieve these long-term temperature goals at close to least
+         terms. Note that this is different from how the term `residual risk' is
+         generally used in IPCC, especially Working Group II, where it means
+         the risk remaining after adaptation and risk reduction efforts.
+
+                                                                                  global cost within a few percent (high confidence) (see Cross-
+
+AII  A.II.8 GHG Emission Metrics                                                  Chapter Box 2 in Chapter 2).
+
+     Comprehensive mitigation policy relies on consideration of all               However, all emission metrics have limitations and uncertainties,
+     anthropogenic forcing agents, which differ widely in their atmospheric       given that they simplify the complexity of the physical climate
+     lifetimes and impacts on the climate system. GHG emission metrics4           system and its response to past and future GHG emissions. The most
+     provide simplified information about the effect that emissions               suitable metric for any given climate policy application, depends on
+     of different GHGs have on global temperature or other aspects                judgements about the specific context, policy objectives and the way
+     of climate, usually expressed relative to the effect of emitting CO2.        in which a metric would be used.
+     An assessment of different GHG emission metrics from a mitigation
+     perspective is provided in Cross-Chapter Box 2 and Chapter 2                 Wherever emissions, removals and mitigation potentials are
+     Supplementary Material, building on the assessment of GHG emission           expressed as CO2-eq in this report, efforts have been made to
+     metrics from a physical science perspective in AR6 WGI (Forster et al.,      recalculate those values consistently in terms of GWP100 values from
+     2021, Section 7.6).                                                          AR6 WGI. However, in some cases it was not possible or feasible to
+                                                                                  disentangle conclusions from the existing literature into individual
+     The WGIII contribution to the AR6 reports aggregate emissions and            gases and then re-aggregate those emissions using updated GWP100
+     removals using updated values for the Global Warming Potential               values. The existing literature assessed by WGIII uses a range of
+     with a time horizon of 100 years (GWP100) from AR6 WGI unless                GWP100 values from previous IPCC reports; for CH4, these values
+     stated otherwise. These updated GWP100 values reflect updated                vary between 21 (based on the IPCC Second Assessment Report)
+     scientific understanding of the response of the climate system to            to 28 or even 34 (based on the IPCC Fifth Assessment Report and
+     emissions of different gases, and include a methodological update            depending on whether the study included or excluded climate-carbon
+     to incorporate climate-carbon cycle feedbacks associated with the            cycle feedbacks). Consistent application of any metric is challenging
+     emission of non-CO2 gases (Forster et al. 2021). For the second-most         as individual GHG emission species are not always provided in the
+     important anthropogenic greenhouse gas, methane, the updated                 literature assessed by WGIII. Where a full recalculation of CO2-eq
+     GWP100 value of 27 is similar but slightly lower than the value of 28        emissions or mitigation potentials into GWP100 AR6 values was not
+     reported in the AR5 without climate-carbon cycle feedbacks. A full           possible or feasible, and especially if non-CO2 emissions constitute
+     set of GWP100 values used in this report, based on the assessment            only a minor fraction of total emissions or abatement, individual
+     of WGI (Forster et al. 2021, Section 7.6 and Table 7.SM.7), is provided      chapters note this inconsistency and provide an indication of the
+     in Table 9.                                                                  potential magnitude of inconsistency.
+
+     GWP100 was chosen in the WGIII contribution to the AR6 as the default        To further reduce ambiguity regarding actual climate outcomes over
+     GHG emissions metric for both procedural and scientific reasons.             time from any given set of emissions, the WGIII contribution to the
+                                                                                  AR6 reports emissions and mitigation options for individual gases
+     Procedural reasons are to provide continuity with the use of GWP100          where possible based on the available literature, and reports CO2-eq
+     in past IPCC reports and the dominant use of GWP100 in the literature        emissions where this is judged to be policy relevant by author teams
+     assessed by WGIII, and to match decisions made by Governments as             in addition to, not instead of individual gases.
+     part of the Paris Agreement Rulebook. Parties to the Paris Agreement
+     decided to report aggregated emissions and removals (expressed
+     as CO2-eq) based on the Global Warming Potential with a time
+     horizon of 100 years (GWP100), using values from IPCC AR5 or
+     from a subsequent IPCC report as agreed upon by the CMA,5 and
+
+     4 Emission metrics also exist for aerosols, but these are not commonly used in climate policy. This assessment focuses on GHG emission metrics only.
+     5 The CMA is the Conference of the Parties serving as the meeting of the Parties to the Paris Agreement.
+
+     1830
+Definitions, Units and Conventions                                                                                       Annex II
+
+Table 9 | GWP100 values and atmospheric lifetimes for a range of GHGs,  Our primary data source is the Emissions Database for Global
+based on AR6 WGI (Forster et al. 2021).                                 Atmospheric Research (EDGAR) (Crippa et al. 2021, Minx et al. 2021).
+                                                                        This dataset provides annual CO2, CH4, N2O and F-gas emissions on
+                 Gas                 AR6 ­ GWP100  Lifetime             a country and emissions source level for the time span 1970 to 2019.
+CO2                                            1       N/A              The fossil fuel combustion component of EDGAR is closely linked to
+CH4 (biogenic)                                        11.8              and sourced from International Energy Agency (IEA 2021) energy
+CH4 (fossil ­ combustion)6                   27.0     11.8              and emissions estimates. Section 2.2.1 in Chapter 2 of this report
+CH4 (fossil ­ fugitive and process)          27.0     11.8              describes the differences between and coverage of different global
+N2O                                          29.8      109              emissions datasets.
+HFC-32                                        273      5.4
+                                              770
+
+HFC-143a                              5807           51                 In addition to EDGAR, land-use CO2 emissions are sourced as the
+CF4                                   7379         50,000               mean of three bookkeeping models, in a convention established by
+C2F6                                 12,410        10,000
+C3F8                                  9289          2600                the Global Carbon Project (Friedlingstein et al. 2020) and consistent
+C4F10                                10,022         2600
+C5F12                                 9218          4100                with the Working Group I approach. The bookkeeping models are
+C6F14                                 8617          3100
+                                                                        BLUE (Bookkeeping of Land Use Emissions), Hansis et al. (2015),                                AII
+
+                                                                        Houghton and Nassikas (2017) and OSCAR (Gasser et al. 2020).
+
+C7F16                                 8409         3000                 Global total greenhouse gas emissions reported throughout AR6
+c-C4F8                               13,902
+HFC-125                               3744         3000                 are the sum of EDGAR and land-use CO2 emissions. Significant
+HFC-134a                              1526
+HFC-152a                                           30                   uncertainties are associated with each gas and emissions source.
+                                      164
+                                                   14                   These uncertainties are comprehensively treated in Section 2.2.1 of
+
+                                                   1.6                  Chapter 2.
+
+HFC-227ea                             3602         36
+HFC-23                               14,590
+                                                   228                  A.II.9.1 Mapping of Emission Sources to Sectors
+
+HFC-236fa                             8689         213
+HFC-245fa                             962
+HFC-365mfc                            913          7.9                  The list below shows how emission sources in EDGAR are mapped to
+HFC-43-10-mee                         1599
+SF6                                  25,184        8.9                  sectors throughout the AR6 WGIII. This defines unambiguous system
+NF3                                  17,423
+                                                   17                   boundaries for the sectors as represented in Chapters 6, 7 and 9­11
+
+                                                   3200                 in the report and enables a discussion and representation of emission
+
+                                                   569                  sources without double-counting.
+
+Part III: Emissions Datasets                                            Emission sources follows the definitions by the IPCC Task Force on
+                                                                        National Greenhouse Gas Inventories (TFI) (IPCC 2019). EDGARv6
+In this section we report on the historical emissions data used in      identifies each source as either `Fossil' or `Bio'. The `Bio' label
+the report (Section 9), the sectoral mapping on emissions sources       indicates the biomass component of fuel combustion, while `Fossil'
+(Section 9.1), the methane emissions sources (Section 9.2), and         is the default label for all other emissions sources (including, for
+indirect emissions (Section 10).                                        example, agricultural GHG emissions).
+
+A.II.9 Historical Data
+
+Historic emissions data for countries, regions and sectors are
+presented throughout the report, but especially in Chapters 2,
+6­7, 9­11, the Technical Summary and Summary for Policymakers.
+To ensure consistency and transparency we use the same emissions
+data across these chapters, with a single methodology, division
+of emissions sources, and following the classification scheme
+of countries and areas in Section 1 above.
+
+6 The biogenic CH4 GWP100 value applies here, given Tier 1 IPCC CO2 emissions factors which are based on total carbon content. The associated emissions are estimated
+     on the bases of complete (100%) oxidation to CO2 of carbon contained in combusted mass.
+
+                                                                                                                                                  1831
+     Annex II                                                                                                                                     Definitions, Units and Conventions
+
+     Table 10 | Mapping emission sources to sectors.
+
+     Chapter title Subsector title                        EDGAR code                                                          IPCC 2019                                             Gases
+
+     AFOLU           Biomass burning       4F1 (bio), 4F2 (bio), 4F3 (bio), 4F4 (bio), 4F5 (bio)              3.C.1.b (bio)                                               CH4, N2O
+     AFOLU           (CO2, CH4)                                                                                                                                           CH4
+                                                                                                              3.A.1.a.i (fossil), 3.A.1.a.ii (fossil),
+                     Enteric fermentation  4A1-d (fossil), 4A1-n (fossil), 4A2 (fossil), 4A3 (fossil),        3.A.1.b (fossil), 3.A.1.c (fossil), 3.A.1.d (fossil),
+                                                                                                              3.A.1.e (fossil), 3.A.1.f (fossil), 3.A.1.g (fossil),
+                     (CH4)                 4A4 (fossil), 4A5 (fossil), 4A6 (fossil), 4A7 (fossil),            3.A.1.h (fossil)
+
+                                           4A8 (fossil)
+
+     AFOLU           Managed soils and     4D12 (fossil), 4D13 (fossil), 4D14 (fossil), 4D15 (fossil),        3.C.4 (fossil), 3.C.5 (fossil), 3.C.6 (fossil),             N2O, CO2
+                     pasture (CO2, N2O)    4D2 (fossil), 4D3a (fossil), 4D3b (fossil), 4D4a (fossil),         3.C.3 (fossil), 3.C.2 (fossil)
+                                           4D4b (fossil)
+
+     AFOLU           Manure                4B1-d (fossil), 4B1-n (fossil), 4B2 (fossil), 4B3 (fossil),        3.A.2.a.i (fossil), 3.A.2.a.ii (fossil), 3.A.2.b (fossil),  CH4, N2O
+                     management            4B4 (fossil), 4B5 (fossil), 4B6 (fossil), 4B7 (fossil),            3.A.2.c (fossil), 3.A.2.i (fossil), 3.A.2.d (fossil),
+                     (N2O, CH4)            4B8 (fossil), 4B9 (fossil)                                         3.A.2.e (fossil), 3.A.2.f (fossil), 3.A.2.g (fossil),
+                                                                                                              3.A.2.h (fossil)
+
+AII  AFOLU           Rice cultivation      4C (fossil)                                                        3.C.7 (fossil)                                              CH4
+                     (CH4)
+
+     AFOLU           Synthetic fertiliser  4D11 (fossil)                                                      3.C.4 (fossil)                                              N2O
+                     application (N2O)
+
+     Buildings       Non-CO2               2F3 (fossil), 2F4 (fossil), 2F9a (fossil), 2F9c (fossil)           2.F.3 (fossil), 2.F.4 (fossil), 2.G.2.c (fossil)            c-C4F8, C4F10, CF4, HFC-125,
+                     (all buildings)                                                                                                                                      HFC-227ea, HFC-23, HFC-236fa,
+                                                                                                                                                                          HFC-134a, HFC-152a
+
+     Buildings       Non-residential       1A4a (bio), 1A4a (fossil)                                          1.A.4.a (bio), 1.A.4.a (fossil)                             CH4, N2O, CO2
+     Buildings       Residential           1A4b (bio), 1A4b (fossil)                                          1.A.4.b (bio), 1.A.4.b (fossil)                             CH4, N2O, CO2
+                     Coal mining           1B1a1 (fossil), 1B1a1r (fossil), 1B1a2 (fossil),
+     Energy systems  fugitive emissions    1B1a3 (fossil), 1B1b2 (fossil), 1B1b4 (fossil)                     1.B.1.a (fossil), 1.B.1.c (fossil)                          CO2, CH4
+
+     Energy systems  Electricity and heat  1A1a1 (bio), 1A1a1 (fossil), 1A1a2 (bio), 1A1a2 (fossil),          1.A.1.a.i (bio), 1.A.1.a.i (fossil), 1.A.1.a.ii (bio),      CO2, CH4, N2O
+                                           1A1a3 (bio), 1A1a3 (fossil), 1A1a4 (bio), 1A1a4 (fossil),          1.A.1.a.ii (fossil), 1.A.1.a.iii (bio),
+                                           1A1a5 (bio), 1A1a5 (fossil), 1A1a6 (bio), 1A1a6 (fossil),          1.A.1.a.iii (fossil)
+                                           1A1a7 (bio), 1A1a7 (fossil)
+
+     Energy systems  Oil and gas           1B2a1 (bio), 1B2a1 (fossil), 1B2a2 (fossil),                       1.B.2.a.iii.2 (bio), 1.B.2.a.iii.2 (fossil),                CO2, CH4, N2O
+                     fugitive emissions    1B2a3-l (fossil), 1B2a4-l (fossil), 1B2a4-t (fossil),              1.B.2.a.iii.3 (fossil), 1.B.2.a.iii.4 (fossil),
+                                           1B2a5(e) (fossil), 1B2b1 (fossil), 1B2b3 (fossil),                 1.B.2.b.iii.2 (fossil), 1.B.2.b.iii.4 (fossil),
+                                           1B2b4 (fossil), 1B2b5 (fossil), 1B2c (fossil)                      1.B.2.b.iii.5 (fossil), 1.B.2.b.iii.3 (fossil),
+                                                                                                              1.B.2.b.ii (fossil), 1.B.2.a.ii (fossil)
+
+                           Other (energy   1A1c3 (bio), 1A1c3 (fossil), 1A1c4 (bio), 1A1c5 (bio),             1.A.1.c.ii (bio), 1.A.1.c.ii (fossil), 1.A.1.c.i (bio),     CO2, CH4, N2O, SF6
+     Energy systems                        1A1c5 (fossil), 1A4c1 (bio), 1A4c1 (fossil), 1A4d (bio),           1.A.1.c.i (fossil), 1.A.4.c.i (bio), 1.A.4.c.i (fossil),
+                                           1A4d (fossil), 1B1b3 (bio), 2F8b (fossil), 7A1 (fossil),           1.A.5.a (bio), 1.A.5.a (fossil), 1.B.1.c (bio),
+                           systems)        7A2 (fossil), 7B1 (fossil), 7C1 (fossil)                           2.G.1.b (fossil), 5.B (fossil), 5.A (fossil)
+
+     Energy systems  Petroleum refining    1A1b (bio), 1A1b (fossil)                                          1.A.1.b (bio), 1.A.1.b (fossil)                             CO2, CH4, N2O
+     Industry        Cement                                                                                                                                               CO2
+                                           2A1 (fossil)                                                       2.A.1 (fossil)
+     Industry        Chemicals                                                                                                                                            CH4, N2O, CO2, c-C4F8, C2F6,
+                                           1A2c (bio), 1A2c (fossil), 2A2 (fossil), 2A3 (fossil),             1.A.2.c (bio), 1.A.2.c (fossil), 2.A.2 (fossil),            C3F8, C4F10, C5F12, C6F14, CF4,
+                                           2A4a (fossil), 2A4b (fossil), 2A7a (fossil), 2B1g (fossil),        2.A.4.d (fossil), 2.A.4.b (fossil), 2.A.3 (fossil),         HFC-125, HFC-134a, HFC-143a,
+                                           2B1s (fossil), 2B2 (fossil), 2B3 (fossil), 2B4a (fossil),          2.B.1 (fossil), 2.B.2 (fossil), 2.B.3 (fossil),             HFC-152a, HFC-227ea, HFC-32,
+                                           2B4b (fossil), 2B5a (fossil), 2B5b (fossil), 2B5d (fossil),        2.B.5 (fossil), 2.B.8.f (fossil), 2.B.8.b (fossil),         HFC-365mfc, NF3, SF6, HFC-23
+                                           2B5e (fossil), 2B5f (fossil), 2B5g (fossil), 2B5g2 (fossil),       2.B.8.c (fossil), 2.B.8.a (fossil), 2.B.4 (fossil),
+                                           2B5h1 (fossil), 2E (fossil), 2E1 (fossil), 3A (fossil),            2.B.6 (fossil), 2.B.9.b (fossil), 2.D.3 (fossil),
+                                           3B (fossil), 3C (fossil), 3D (fossil), 3D1 (fossil), 3D3 (fossil)  2.G.3.a (fossil), 2.G.3.b (fossil)
+
+     Industry        Metals                1A1c1 (fossil), 1A1c2 (fossil), 1A2a (bio), 1A2a (fossil),         1.A.1.c.i (fossil), 1.A.1.c.ii (fossil), 1.A.2.a (bio),     CO2, CH4, N2O, C2F6, CF4, SF6
+                                           1A2b (bio), 1A2b (fossil), 1B1b1 (fossil), 2C1a (fossil),          1.A.2.a (fossil), 1.A.2.b (bio), 1.A.2.b (fossil),
+                                           2C1b (fossil), 2C1d (fossil), 2C2 (fossil), 2C3a (fossil),         1.B.1.c (fossil), 2.C.1 (fossil), 2.C.2 (fossil),
+                                           2C3b (fossil), 2C4a (fossil), 2C4b (fossil), 2C5lp (fossil),       2.C.3 (fossil), 2.C.4 (fossil), 2.C.5 (fossil),
+                                           2C5mp (fossil), 2C5zp (fossil)                                     2.C.6 (fossil)
+
+     Industry        Other (industry)      1A2d (bio), 1A2d (fossil), 1A2e (bio), 1A2e (fossil),              1.A.2.d (bio), 1.A.2.d (fossil), 1.A.2.e (bio),             CH4, N2O, CO2, HFC-125,
+                                           1A2f (bio), 1A2f (fossil), 1A2f1 (fossil), 1A2f2 (fossil),         1.A.2.e (fossil), 1.A.2.f (bio), 1.A.2.f (fossil),          HFC-134a, HFC-143a, HFC-152a,
+                                           1A5b1 (fossil), 2F1a (fossil), 2F1b (fossil), 2F1c (fossil),       1.A.2.k (fossil), 1.A.2.i (fossil), 1.A.5.b.iii (fossil),   HFC-227ea, HFC-236fa,
+                                           2F1d (fossil), 2F1e (fossil), 2F1f (fossil), 2F2a (fossil),        2.F.1.a (fossil), NA (fossil), 2.F.5 (fossil),              HFC-245fa, HFC-32, HFC-365mfc,
+                                           2F2b (fossil), 2F5 (fossil), 2F6 (fossil), 2F7a (fossil),          2.E.1 (fossil), 2.E.2 (fossil), 2.E.3 (fossil),             C3F8, C6F14, CF4, HFC-43-10-mee,
+                                           2F7b (fossil), 2F7c (fossil), 2F8a (fossil), 2F9 (fossil),         2.G.1.a (fossil), 2.G.2.c (fossil), 2.G.2.b (fossil),       HFC-134, HFC-143, HFC-23,
+                                           2F9d (fossil), 2F9e (fossil), 2F9f (fossil), 2G1 (fossil),         2.G.2.a (fossil), 2.D.1 (fossil), 5.A (fossil)              HFC-41, c-C4F8, C2F6, NF3, SF6,
+                                           7B2 (fossil), 7C2 (fossil)                                                                                                     HCFC-141b, HCFC-142b, C4F10
+
+     Industry        Waste                 6A1 (fossil), 6B1 (fossil), 6B2 (fossil), 6C (fossil),             4.A.1 (fossil), 4.D.2 (fossil), 4.D.1 (fossil),             CH4, N2O, CO2
+                                           6Ca (bio), 6Cb1 (fossil), 6Cb2 (fossil), 6D (fossil)               4.C.1 (fossil), 4.C.2 (bio), 4.C.2 (fossil),
+                                                                                                              4.B (fossil)
+
+     1832
+Definitions, Units and Conventions                                                                                                                                           Annex II
+
+Chapter title     Subsector title                       EDGAR code                                            IPCC 2019                                              Gases
+Transport        Domestic Aviation  1A3a (fossil)                                            1.A.3.a.ii (fossil)                                        CO2, CH4, N2O
+Transport        Inland Shipping    1A3d (bio), 1A3d (fossil)                                1.A.3.d.ii (bio), 1.A.3.d.ii (fossil)                      CH4, N2O, CO2
+Transport        International
+                 Aviation           1C1 (fossil)                                             1.A.3.a.i (fossil)                                         CO2, CH4, N2O
+Transport        International
+                 Shipping           1C2 (bio), 1C2 (fossil)                                  1.A.3.d.i (bio), 1.A.3.d.i (fossil)                        CH4, N2O, CO2
+Transport
+Transport        Other (transport)  1A3e (bio), 1A3e (fossil), 1A4c2 (fossil), 1A4c3 (bio),  1.A.3.e.i (bio), 1.A.3.e.i (fossil), 1.A.4.c.ii (fossil),  CH4, N2O, CO2
+Transport                           1A4c3 (fossil)                                           1.A.4.c.iii (bio), 1.A.4.c.iii (fossil)
+                 Rail               1A3c (bio), 1A3c (fossil)                                1.A.3.c (bio), 1.A.3.c (fossil)                            CH4, N2O, CO2
+                 Road               1A3b (bio), 1A3b (fossil)                                1.A.3.b_RES (bio), 1.A.3.b_RES (fossil)                    CH4, N2O, CO2
+
+A.II.9.2 Methane Emissions Sources                                                           value because CO2 converted from methane in the atmosphere is not
+                                                                                             estimated anywhere else.
+
+In order to identify emission trends and mitigation opportunities                                                                                                                      AII
+
+by sector WGIII allocates each emission source to a sector and For fossil methane (combustion), despite it being fossil, the correct
+
+subsequently a subsector (check Section 9 above). These trends GWP100 value is always the low one, for the dataset reported here.
+
+and mitigation opportunities are, in most cases and whenever possible, This is due to the fact that the emissions data provider EDGAR
+
+reported in the native unit of gases as well as in CO2-eq using IPCC                         (Section 9) considers a complete oxidation to CO2 of all the carbon
+AR6 GWP100 values (Section 8). In the case of methane (CH4), it has                          contained in the fossil fuel upon combustion, which is then reflected
+two different GWP100 values according to its source. The relevant
+                                                                                             in the CO2 emissions factors for the different sources based on the
+sources of methane are: biogenic methane, fossil methane (source:                            carbon content of fuels. In other words, IPCC (IPCC 2019) methods
+
+combustion) and fossil methane (source: fugitive and process).                               and defaults (Tier 1 IPCC CO2 emissions factors) have been used
+                                                                                             where the associated CO2 emissions are estimated on the basis of
+The majority of biogenic methane emissions result from the AFOLU                             complete (100%) oxidation to CO2 of carbon contained in combusted
+sector due to livestock and other agricultural practices, but also                           mass, which includes not only CO2 directly released to the atmosphere
+from the energy systems, building, transport and industry (waste)                            but also CO2 generated in the atmosphere from the carbon released
+sectors. Meanwhile, fossil methane (combustion) emissions result                             as methane and converted to CO2 only subsequently.
+from electricity and heat generation in the energy systems sector
+
+as well as various combustion activities in all other sectors. Finally, There are two exceptions applied to the above categorisation, both
+
+fossil methane (fugitive and process) is emitted from the extraction belong to the industry sector, sector codes 6Cb1 (Waste incineration ­
+
+and transportation of fossil fuels (fugitive methane), in addition to uncontrolled municipal solid waste (MSW) burning) and 6D (other
+
+some activities in the industry sector (fugitive and process methane). waste). Uncontrolled MSW burning (6Cb1) includes both biogenic
+
+See Table 12 below for a comprehensive list.                                                 and fossil material, with incomplete oxidation for this source even
+
+                                                                                             when the IPCC Tier 1 default emission/oxidation factor is used. The
+
+There are two GWP100 values assigned to methane depending GWP100 value adopted for this source is the low one, given that
+
+on its source: a GWP100 value of 27 for biogenic methane and the fossil-origin methane component is unlikely to be very large.
+
+fossil methane (combustion), and a higher GWP100 value of 29.8 The `other waste' (6D) source may also include both biogenic and
+
+for fossil methane (fugitive and process), see Table 11 below. The fossil methane. However, it is unclear what type of waste handling
+
+difference between these two GWP100 values arises from treatment                             is included here. Furthermore, the associated CO2 emissions are not
+of the effect of methane conversion into CO2 during its chemical                             estimated. Therefore, the high GWP100 value is used.
+decay in the atmosphere. The higher GWP100 value takes account of
+
+the warming caused by CO2 that methane decays into, which adds In total, the estimation of EDGAR methane emissions in 2019
+to the warming caused by methane itself, while the lower GWP100 using a GWP100 value of 27 across all related sources results in
+
+value does not.                                                                              10.2 GtCO2-eq, compared to 10.6 GtCO2-eq using the higher GWP100
+                                                                                             value as described. This is primarily driven by the readjustment of
+
+In the case of biogenic methane, the correct GWP100 value is always methane emissions from hard coal mining, gas production, and
+
+the low value irrespective of the specific source. This is because venting and flaring (sectors 1B1a1, 1B2b1 and 1B2c).
+
+all CO2 originated from biomass is either already estimated and                              Table 11 | Summary of methane GWP100 values in AR6 depending on type
+reported as CO2 emissions from AFOLU sector, or in the case of short-                        and source.
+rotation biomass, the original removal of CO2 from the atmosphere is
+not reported and hence neither does the release of CO2 back into the                                         CH4                                        GWP100 value
+atmosphere need to be reported.
+
+                                                                                             CH4 (biogenic)                                                            27
+
+For fossil methane, the correct GWP100 value depends on the source, CH4 (fossil ­ combustion)                                                                          27
+
+in other words, combustion source vs fugitive and process sources.                                                                                                     29.8
+Fossil methane (fugitive and process) should use the higher GWP100 CH4 (fossil ­ fugitive and process)
+
+                                                                                                                                                                             1833
+     Annex II                                                                       Definitions, Units and Conventions
+
+     Table 12 | Methane sources and types.
+
+     Sector code                          Description                       Sector            Subsector               CH4 type
+                                                                  Energy systems    Electricity and heat    CH4 Biogenic
+     1A1a1        Public Electricity Generation (biomass)         Energy systems    Electricity and heat    CH4 Fossil (Combustion)
+                                                                  Energy systems    Electricity and heat    CH4 Biogenic
+     1A1a1        Public Electricity Generation                   Energy systems    Electricity and heat    CH4 Fossil (Combustion)
+                                                                  Energy systems    Electricity and heat    CH4 Biogenic
+     1A1a2        Public Combined Heat and Power gen. (biom.)     Energy systems    Electricity and heat    CH4 Fossil (Combustion)
+                                                                  Energy systems    Electricity and heat    CH4 Biogenic
+     1A1a2        Public Combined Heat and Power gen.             Energy systems    Electricity and heat    CH4 Fossil (Combustion)
+                                                                  Energy systems    Electricity and heat    CH4 Biogenic
+     1A1a3        Public Heat Plants (biomass)                    Energy systems    Electricity and heat    CH4 Fossil (Combustion)
+                                                                  Energy systems    Electricity and heat    CH4 Biogenic
+     1A1a3        Public Heat Plants                              Energy systems    Electricity and heat    CH4 Fossil (Combustion)
+                                                                  Energy systems    Electricity and heat    CH4 Biogenic
+     1A1a4        Public Electricity Gen. (own use) (biom.)       Energy systems    Electricity and heat    CH4 Fossil (Combustion)
+                                                                  Energy systems    Petroleum refining      CH4 Biogenic
+     1A1a4        Public Electricity Generation (own use)         Energy systems    Petroleum refining      CH4 Fossil (Combustion)
+                                                                  Industry          Metals                  CH4 Fossil (Combustion)
+     1A1a5        Electricity Generation (autoproducers) (biom.)  Industry          Metals                  CH4 Fossil (Combustion)
+                                                                  Energy systems    Other (energy systems)  CH4 Biogenic
+     1A1a5        Electricity Generation (autoproducers)          Energy systems    Other (energy systems)  CH4 Fossil (Combustion)
+                                                                  Energy systems    Other (energy systems)  CH4 Biogenic
+     1A1a6        Combined Heat and Power gen. (autopr.) (biom.)  Energy systems    Other (energy systems)  CH4 Biogenic
+                  Combined Heat and Power gen. (autoprod.)        Energy systems    Other (energy systems)  CH4 Fossil (Combustion)
+AII  1A1a6                                                        Industry          Metals                  CH4 Biogenic
+                                                                  Industry          Metals                  CH4 Fossil (Combustion)
+     1A1a7        Heat Plants (autoproducers) (biomass)           Industry          Metals                  CH4 Biogenic
+                                                                  Industry          Metals                  CH4 Fossil (Combustion)
+     1A1a7        Heat Plants (autoproducers)                     Industry          Chemicals               CH4 Biogenic
+                                                                  Industry          Chemicals               CH4 Fossil (Combustion)
+     1A1b         Refineries (biomass)                            Industry          Other (industry)        CH4 Biogenic
+                                                                  Industry          Other (industry)        CH4 Fossil (Combustion)
+     1A1b         Refineries                                      Industry          Other (industry)        CH4 Biogenic
+                                                                  Industry          Other (industry)        CH4 Fossil (Combustion)
+     1A1c1        Fuel combustion coke ovens                      Industry          Other (industry)        CH4 Biogenic
+                                                                  Industry          Other (industry)        CH4 Fossil (Combustion)
+     1A1c2        Blast furnaces (pig iron prod.)                 Industry          Other (industry)        CH4 Fossil (Combustion)
+                                                                  Industry          Other (industry)        CH4 Fossil (Combustion)
+     1A1c3        Gas works (biom.)                               Transport         Domestic Aviation       CH4 Fossil (Combustion)
+                                                                  Transport         Road                    CH4 Biogenic
+     1A1c3        Gas works                                       Transport         Road                    CH4 Fossil (Combustion)
+                                                                  Transport         Rail                    CH4 Biogenic
+     1A1c4        Fuel comb. charcoal production (biom.)          Transport         Rail                    CH4 Fossil (Combustion)
+                                                                  Transport         Inland Shipping         CH4 Biogenic
+     1A1c5        Other transf. sector (BKB, etc.) (biom.)        Transport         Inland Shipping         CH4 Fossil (Combustion)
+                                                                  Transport         Other (transport)       CH4 Biogenic
+     1A1c5        Other transformation sector (BKB, etc.)         Transport         Other (transport)       CH4 Fossil (Combustion)
+                                                                  Buildings         Non-residential         CH4 Biogenic
+     1A2a         Iron and steel (biomass)                        Buildings         Non-residential         CH4 Fossil (Combustion)
+                                                                  Buildings         Residential             CH4 Biogenic
+     1A2a         Iron and steel                                  Buildings         Residential             CH4 Fossil (Combustion)
+
+     1A2b         Non-ferrous metals (biomass)
+
+     1A2b         Non-ferrous metals
+
+     1A2c         Chemicals (biomass)
+
+     1A2c         Chemicals
+
+     1A2d         Pulp and paper (biomass)
+
+     1A2d         Pulp and paper
+
+     1A2e         Food and tobacco (biomass)
+
+     1A2e         Food and tobacco
+
+     1A2f         Other industries (stationary) (biom.)
+
+     1A2f         Other industries (stationary) (fos.)
+
+     1A2f1        Off-road machinery: construction (diesel)
+
+     1A2f2        Off-road machinery: mining (diesel)
+
+     1A3a         Domestic air transport
+
+     1A3b         Road transport (incl. evap.) (biom.)
+
+     1A3b         Road transport (incl. evap.) (foss.)
+
+     1A3c         Non-road transport (rail, etc.) (biom.)
+
+     1A3c         Non-road transport (rail, etc.) (fos.)
+
+     1A3d         Inland shipping (biom.)
+
+     1A3d         Inland shipping (fos.)
+
+     1A3e         Non-road transport (biom.)
+
+     1A3e         Non-road transport (fos.)
+
+     1A4a         Commercial and public services (biom.)
+
+     1A4a         Commercial and public services (fos.)
+
+     1A4b         Residential (biom.)
+
+     1A4b         Residential (fos.)
+
+     1834
+Definitions, Units and Conventions                                                                                                       Annex II
+
+Sector code                       Description                             Sector             Subsector            CH4 type
+1A4c1        Agriculture and forestry (biom.)                   Energy systems
+1A4c1        Agriculture and forestry (fos.)                    Energy systems    Other (energy systems)          CH4 Biogenic
+1A4c2        Off-road machinery: agric./for. (diesel)           Transport
+1A4c3        Fishing (biom.)                                    Transport         Other (energy systems)          CH4 Fossil (Combustion)
+1A4c3        Fishing (fos.)                                     Transport
+1A4d         Non-specified other (biom.)                        Energy systems    Other (transport)               CH4 Fossil (Combustion)
+1A4d         Non-specified other (fos.)                         Energy systems
+1A5b1        Off-road machinery: mining (diesel)                Industry          Other (transport)               CH4 Biogenic
+1B1a1        Hard coal mining (gross)                           Energy systems
+1B1a1r       Methane recovery from coal mining                  Energy systems    Other (transport)               CH4 Fossil (Combustion)
+1B1a2        Abandoned mines                                    Energy systems
+1B1a3        Brown coal mining                                  Energy systems    Other (energy systems)          CH4 Biogenic
+1B1b1        Fuel transformation coke ovens                     Industry
+1B1b3        Fuel transformation charcoal production            Energy systems    Other (energy systems)          CH4 Fossil (Combustion)
+1B2a1        Oil production (biom.)                             Energy systems
+1B2a1        Oil production                                     Energy systems    Other (industry)                CH4 Fossil (Combustion)
+1B2a2        Oil transmission                                   Energy systems
+1B2a3-l      Tanker loading                                     Energy systems    Coal mining fugitive emissions  CH4 Fossil (Fugitive)
+1B2a4-l      Tanker oil transport (crude and NGL)               Energy systems
+1B2a4-t      Transport by oil trucks                            Energy systems    Coal mining fugitive emissions  CH4 Fossil (Fugitive)
+1B2a5(e)     Oil refineries (evaporation)                       Energy systems
+1B2b1        Gas production                                     Energy systems    Coal mining fugitive emissions  CH4 Fossil (Fugitive)
+1B2b3        Gas transmission                                   Energy systems
+1B2b4        Gas distribution                                   Energy systems    Coal mining fugitive emissions  CH4 Fossil (Fugitive)
+1B2c         Venting and flaring during oil and gas production  Energy systems
+1C1          International air transport                        Transport         Metals                          CH4 Fossil (Fugitive)            AII
+1C2          International marine transport (biom.)             Transport
+1C2          International marine transport (bunkers)           Transport         Other (energy systems)          CH4 Biogenic
+2B4a         Silicon carbide production                         Industry
+2B5a         Carbon black production                            Industry          Oil and gas fugitive emissions  CH4 Biogenic
+2B5b         Ethylene production                                Industry
+2B5d         Styrene production                                 Industry          Oil and gas fugitive emissions  CH4 Fossil (Fugitive)
+2B5e         Methanol production                                Industry
+2B5g         Other bulk chemicals production                    Industry          Oil and gas fugitive emissions  CH4 Fossil (Fugitive)
+2C1d         Sinter production                                  Industry
+2C2          Ferroy Alloy production                            Industry          Oil and gas fugitive emissions  CH4 Fossil (Fugitive)
+4A1-d        Dairy cattle                                       AFOLU
+4A1-n        Non-dairy cattle                                   AFOLU             Oil and gas fugitive emissions  CH4 Fossil (Fugitive)
+4A2          Buffalo                                            AFOLU
+4A3          Sheep                                              AFOLU             Oil and gas fugitive emissions  CH4 Fossil (Fugitive)
+4A4          Goats                                              AFOLU
+4A5          Camels and Lamas                                   AFOLU             Oil and gas fugitive emissions  CH4 Fossil (Fugitive)
+4A6          Horses                                             AFOLU
+4A7          Mules and asses                                    AFOLU             Oil and gas fugitive emissions  CH4 Fossil (Fugitive)
+4A8          Swine                                              AFOLU
+4B1-d        Manure Man.: Dairy Cattle (confined)               AFOLU             Oil and gas fugitive emissions  CH4 Fossil (Fugitive)
+4B1-n        Manure Man.: Non-Dairy Cattle (confined)           AFOLU
+4B2          Manure Man.: Buffalo (confined)                    AFOLU             Oil and gas fugitive emissions  CH4 Fossil (Fugitive)
+4B3          Manure Man.: Sheep (confined)                      AFOLU
+4B4          Manure Man.: Goats (confined)                      AFOLU             Oil and gas fugitive emissions  CH4 Fossil (Fugitive)
+4B5          Manure Man.: Camels and llamas (confined)          AFOLU
+                                                                                  International Aviation          CH4 Fossil (Combustion)
+
+                                                                                  International Shipping          CH4 Biogenic
+
+                                                                                  International Shipping          CH4 Fossil (Combustion)
+
+                                                                                  Chemicals                       CH4 Fossil (Process)
+
+                                                                                  Chemicals                       CH4 Fossil (Process)
+
+                                                                                  Chemicals                       CH4 Fossil (Process)
+
+                                                                                  Chemicals                       CH4 Fossil (Process)
+
+                                                                                  Chemicals                       CH4 Fossil (Process)
+
+                                                                                  Chemicals                       CH4 Fossil (Process)
+
+                                                                                  Metals                          CH4 Fossil (Process)
+
+                                                                                  Metals                          CH4 Fossil (Process)
+
+                                                                                  Enteric Fermentation (CH4)      CH4 Biogenic
+
+                                                                                  Enteric Fermentation (CH4)      CH4 Biogenic
+
+                                                                                  Enteric Fermentation (CH4)      CH4 Biogenic
+
+                                                                                  Enteric Fermentation (CH4)      CH4 Biogenic
+
+                                                                                  Enteric Fermentation (CH4)      CH4 Biogenic
+
+                                                                                  Enteric Fermentation (CH4)      CH4 Biogenic
+
+                                                                                  Enteric Fermentation (CH4)      CH4 Biogenic
+
+                                                                                  Enteric Fermentation (CH4)      CH4 Biogenic
+
+                                                                                  Enteric Fermentation (CH4)      CH4 Biogenic
+
+                                                                                  Manure management (N2O, CH4) CH4 Biogenic
+
+                                                                                  Manure management (N2O, CH4) CH4 Biogenic
+
+                                                                                  Manure management (N2O, CH4) CH4 Biogenic
+
+                                                                                  Manure management (N2O, CH4) CH4 Biogenic
+
+                                                                                  Manure management (N2O, CH4) CH4 Biogenic
+
+                                                                                  Manure management (N2O, CH4) CH4 Biogenic
+
+                                                                                                                                           1835
+     Annex II                                                                      Definitions, Units and Conventions
+
+     Sector code                      Description                          Sector            Subsector                     CH4 type
+                                                                 AFOLU             Manure management (N2O, CH4)  CH4 Biogenic
+     4B6          Manure Man.: Horses (confined)                 AFOLU             Manure management (N2O, CH4)  CH4 Biogenic
+                                                                 AFOLU             Manure management (N2O, CH4)  CH4 Biogenic
+     4B7          Manure Man.: Mules and asses (confined)        AFOLU             Manure management (N2O, CH4)  CH4 Biogenic
+                                                                 AFOLU             Rice cultivation (CH4)        CH4 Biogenic
+     4B8          Manure Man.: Swine (confined)                  AFOLU             Biomass burning (CH4, N2O)    CH4 Biogenic
+                                                                 AFOLU             Biomass burning (CH4, N2O)    CH4 Biogenic
+     4B9          Manure Man.: Poultry (confined)                AFOLU             Biomass burning (CH4, N2O)    CH4 Biogenic
+                                                                 AFOLU             Biomass burning (CH4, N2O)    CH4 Biogenic
+     4C           Rice cultivation (CH4)                         AFOLU             Biomass burning (CH4, N2O)    CH4 Biogenic
+                                                                 Industry          Waste                         CH4 Biogenic
+     4F1          Field burning of agric. res.: cereals          Industry          Waste                         CH4 Biogenic
+                                                                 Industry          Waste                         CH4 Biogenic
+     4F2          Field burning of agric. res.: pulses           Industry          Waste                         CH4 Fossil (Combustion)
+                                                                 Industry          Waste                         CH4 Biogenic
+     4F3          Field burning of agric. res.: tuber and roots  Industry          Waste                         CH4 Fossil (Combustion)
+                                                                 Industry          Waste                         CH4 Fossil (Combustion)
+     4F4          Field burning of agric. res.: sugar cane       Industry          Waste                         CH4 Fossil (Process)
+                                                                 Energy systems    Other (energy systems)        CH4 Fossil (Combustion)
+     4F5          Field burning of agric. res.: other            Energy systems    Other (energy systems)        CH4 Fossil (Combustion)
+
+     6A1          Managed waste disposal on land
+
+     6B1          Industrial wastewater
+                  Domestic and commercial wastewater
+AII  6B2
+
+     6C           Waste incineration ­ hazardous
+
+     6Ca          Waste incineration ­ biogenic
+
+     6Cb1         Waste incineration ­ uncontrolled MSW burning
+
+     6Cb2         Waste incineration ­ other non-biogenic
+
+     6D           Other waste
+
+     7A1          Coal fires (underground)
+
+     7A2          Oil fires (Kuwait)
+
+     A.II.10 Indirect Emissions                                                indirect emissions in EDGAR using the IEA data. First, we match the
+                                                                               sectors in EDGAR and IEA. Second, for each country and emissions
+     Carbon dioxide emissions resulting from fuel combusted to produce         source available in the IEA database, we take the IEA indirect
+     electricity and heat are traditionally reported in the energy sector.     emissions value and divide it by the total IEA value for electricity and
+     An indirect emissions accounting principle allocates these emissions      heat. Third, we multiply these values through by the EDGAR value for
+     to the end-use sectors (industry, buildings, transport, and agriculture)  electricity and heat. This procedure ensures that indirect emissions,
+     where the electricity and heat are ultimately consumed. Attributing       in principle, sum to the correct total (EDGAR) value of electricity and
+     indirect emissions to consuming sectors makes it possible to assess       heat that we use elsewhere in the reporting. However, total indirect
+     the full potential impact of demand-side mitigation actions that          emissions still do not sum to the total electricity and heat sector. This
+     reduce electricity and heat consumption (de la Rue du Can et al. 2015).   is due to an incomplete allocation of electricity and heat emissions
+                                                                               in the IEA dataset, equal to 0.008 GtCO2 in 2018, or about 0.06% of
+     In order to estimate the indirect emissions of sectors and subsectors,    the total electricity and heat generation.
+     the CO2 Emissions from Fuel Combustion dataset of the International
+     Energy Agency (IEA 2020a) is used. This database reports direct and       Additionally, a couple of adjustments were made to allocate
+     indirect CO2 emissions for IEA sectors, which are related to the IPCC     emissions from IEA sector categories to IPCC categories from IPCC
+     (IPCC 2019) classification of emissions sources. The IEA adopted          Task force definition as described in IPCC (2019) Guidelines (see
+     a new methodology in 2020 that is in line with the methodology used       Section 9). These include:
+     in Annex II of the WGIII contribution to AR5 (Krey et al. 2014), namely
+     Section A.II.4. The IEA now estimates individual electricity and heat     · Other non-specified sector: the IEA energy statistics report
+     specific emission factors and allocates indirect emissions related            final energy and electricity use for three end-use sectors:
+     to electricity and heat in the sectors where these forms of energy            industry, transport, and other. The `other' category is further
+     are used respectively (IEA 2020b). In order to estimate the share of          subdivided into agriculture, fishing, commercial and public
+     energy input that results in the production of heat from the share that       services, residential, and non-specified other. The `non-specified
+     results in the production of electricity in Combined heat and Power           other' category includes energy used for agriculture, fishing,
+     plants, the IEA fixes the efficiency for heat production equal to 90%,        commercial and public services, and residential sectors that has
+     which is the typical efficiency of a heat boiler and then allocates the       not been allocated to these end-use sectors by the submitting
+     remaining inputs to electricity production (IEA 2020b).                       countries. In most cases, there is no entry in the non-specified
+                                                                                   other category, indicating that all end-use energy consumption
+     The base data for total global, regional and sectoral emissions in this       has been allocated to other end-use sectors. However, for some
+     report is the EDGAR database (see Section 9). Since there are some            countries the energy reported in the non-specified other category
+     discrepancies between the electricity and heat emissions totals in            needed to be allocated to the appropriate end-use sectors.
+     EDGAR and IEA, we make some adjustments in order to estimate                  To perform this allocation, the energy use in the non-specified
+
+     1836
+Definitions, Units and Conventions                                                                                                                                          Annex II
+
+Table 13 | Feasibility dimensions and indicators to assess the barriers and enablers of implementing mitigation options.
+
+Metric                                                                     Indicators
+
+Geophysical feasibility               ­ Physical potential: physical constraints to implementation.
+                                      ­ Geophysical resource availability (including geological storage capacity): availability of resources needed to implementation.
+                                      ­ Land use: claims on land when option would be implemented.
+
+Environmental-ecological feasibility  ­ Air pollution: increase or decrease in air pollutants, such as NH4, CH4 and fine dust.
+                                      ­ Toxic waste, mining, ecotoxicity and eutrophication.
+                                      ­ Water quantity and quality: changes in amount of water available for other uses, including groundwater.
+                                      ­ Biodiversity: changes in conserved primary forest or grassland that affect biodiversity, and management to conserve and maintain
+
+                                        land carbon stocks.
+
+Technological feasibility             ­ Simplicity: is the option technically simple to operate, maintain and integrate.
+                                      ­ Technology scalability: can the option be scaled up, quickly.
+                                      ­ Maturity and technology readiness: R&D and time needed to implement to option.
+
+Economic feasibility                  ­ Costs now, in 2030 and in the long term, including investment costs, costs in USD tCO2-eq­1, and hidden costs.
+                                      ­ Employment effects and economic growth.
+
+                                      ­ Public acceptance: extent to which the public supports the option and changes behavior accordingly.                                               AII
+
+Socio-cultural feasibility            ­ Effects on health and well-being.
+
+                                      ­ Distributional effects: equity and justice across groups, regions, and generations, including security of energy, water, food and poverty.
+
+Institutional feasibility             ­ Political acceptance: extent to which politicians and governments support the option.
+                                      ­ Institutional capacity and governance, cross-sectoral coordination: capability of institutions to implement and handle the option,
+
+                                        and to coordinate it with other sectors, stakeholder and civil society.
+                                      ­ Legal and administrative capacity: extent to which supportive legal and administrative changes can be achieved.
+
+    other category was allocated to the other end-use sectors based        that would improve the feasibility of mitigation options and pathways,
+    on the share of energy allocated to each of these sub-sectors for      by removing relevant barriers and strengthening enablers of change.
+    each region.
+· Other energy industry own use: emissions from this category in           A.II.11.1 Feasibility of mitigation response options
+    the IEA statistics corresponds to the IPCC Source/Sink categories
+    1A1b and 1A1c (see Section 9) and contains emissions from              The sectoral chapters in AR6 WGIII assess six dimensions of feasibility,
+    fuel combusted in energy transformation industries that are not        with each dimension comprising a key set of indicators that can be
+    producing heat and/or power and therefore include oil refineries,      evaluated by combining various strands of literature (see Table 13).
+    coal mining, oil and gas extraction and other energy-producing         The feasibility of systems-level changes is addressed in Chapter 3 of
+    industries. These emissions were not reallocated to the end use        this report.
+    sectors where final products are ultimately consumed due to the
+    lack of data.                                                          The sectoral chapters in this report assess to what extent the indicators
+                                                                           in Table 13 would be enablers or barriers to implementation using the
+Finally, it is also worth noting that indirect emissions only cover CO2    following scores (Nilsson et al. 2016):
+emissions and that a small portion of non-CO2 are not included in
+the IEA dataset and therefore have not been allocated to the end use       ­ The indicator has a negative impact on the feasibility of the option,
+sectors. Non-CO2 emissions from total electricity and heat generation             for example, it is associated with prohibitively high costs, levels
+represents 0.55% of all GHG emissions from that sector.                           of pollution or land use, or low public or political acceptance.
+
+Part IV: Assessment Methods                                                ± Mixed evidence: the indicator has mixed positive and negative
+                                                                                  impacts on the feasibility of the option (e.g., more land use in
+In this section we report on assessment methods adopted in the                    some regions, while lower in other regions).
+report. Section 11 describes the methodology adopted for assessing
+the feasibility of mitigation response options. Section 12 describes       + The indicator has a positive impact on the feasibility of the
+the methodology adopted for assessing synergies and trade-offs                    option, for example, it is associated with low costs, pollution,
+between mitigation options and the SDGs.                                          land use, or high public or political acceptance.
+
+A.II.11 Methodology Adopted for Assessing the                              0/NA The indicator does not affect the feasibility of the option/
+            Feasibility of Mitigation Response Options                            criterion is not applicable for the option.
+
+The feasibility assessment aims to identify barriers and enablers of       NE No evidence available to assess the impact on the feasibility of
+the deployment of mitigation options and pathways. The assessment                 the option.
+organises evidence to support decision making on actions and policies
+                                                                           LE Limited evidence available to assess the impact on the
+                                                                                  feasibility the option.
+
+                                                                                                                                                                                    1837
+     Annex II                                                                 Definitions, Units and Conventions
+
+     A.II.11.2 Assessment                                                     context-specific and therefore provides a detailed explanation in the
+                                                                              supplementary table of Chapter 17.
+     Each sectoral chapter assesses to what extent the indicators listed
+     above would be an enabler or barrier to the implementation of            For the assessment, the mitigation options were shortlisted from
+     selected mitigation options, by using the above scores. Then the total   each of the sectoral chapters. The sectoral chapters assessed the
+     number of minus and plus points were computed, relative to the           literature in terms of the impacts of each of these mitigation options
+     maximum possible number of points, per feasibility dimensions, for       on the 17 SDGs. The assessment uses three signs:
+     each option; a + counts as two plus points, a ­ as two minus points,
+     and a ± as one plus and one minus point. The resulting scores reveal     + to denote positive interaction only (synergies),
+     the extent to which each feasibility dimension enables or inhibits
+     the deployment of the relevant option, and indicates which type of       ­ to denote negative interaction only (trade-offs) and
+     additional effort would be needed to reduce or remove barriers as to
+     improve the feasibility of relevant options.                             ± to denote mixed interactions.
+
+AII  The assessment is based on the literature, which is reflected in a line In some cases, where there is gap in literature, these are left
+
+     of sight. When appropriate, it is indicated whether the feasibility blank denoting that these impacts have not been assessed in the
+
+     of an option varies across context (e.g., region), scale (e.g., small, literature included in the sectoral chapters. To support these signs,
+
+     medium, full scale), time (e.g., implementation in 2030 versus 2050) brief statements are provided followed by uncertainty qualifiers in
+
+     and warming level (e.g., 1.5°C versus 2°C).                              the supplementary table of Chapter 17. These uncertainty qualifiers
+
+                                                                              denote the confidence levels (low, medium and high).
+
+     Synergies and trade-offs may occur between the feasibility
+
+     dimensions, and between specific mitigation options. Therefore,
+
+     Chapters 3 and 4 employ a systems perspective and discuss the
+
+     feasibility of mitigation scenarios and pathways in the long term
+
+     and near to mid-term, respectively, on the basis of the feasibility
+
+     assessments in the sectoral chapters taking into account such
+
+     synergies and trade-offs. Chapter 5 (demand, services and social
+
+     aspects of mitigation), Chapter 13 (national and sub-national policies
+
+     and institutions), Chapter 14 (international cooperation), Chapter 15
+
+     (investment and finance) and Chapter 16 (innovation, technology
+
+     development and transfer) address technological, economic, socio-
+
+     cultural and institutional enabling conditions that can enhance the
+
+     feasibility of options and remove relevant barriers.
+
+     A.II.12 Methodology Adopted for Assessing Synergies
+                 and Trade-offs Between Mitigation Options
+                 and the SDGs
+
+     Adopting climate mitigation options can generate multiple positive
+     (synergies) and negative (trade-offs) interactions with sustainable
+     development. Understanding these are crucial for selecting
+     mitigation options and policy choices that maximise the synergies,
+     minimise trade-offs, and potentially offset trade-offs (Roy et al.
+     2018). Chapter 5 in the IPCC's Special Report on Global Warming
+     of 1.5°C examines the synergies and trade-offs of adaptation and
+     mitigation measures with sustainable development and UN's
+     Sustainable Development Goals (SDGs). Building on this, the sectoral
+     chapters in the WGIII contribution to the AR6 include a qualitative
+     assessment of the synergies and trade-offs between mitigation
+     options in different sectors and the SDGs based on existing literature.
+     All these assessments are collated and presented in Chapter 17
+     with a supplementary table including the details of the synergies
+     and trade-offs with a line of sight (Section 17.3.3.7, Figure 17.1
+     and Supplementary Material Table 17.1). The assessment also
+     recognises that interactions of mitigation options with the SDGs are
+
+     1838
+Definitions, Units and Conventions                                                                                              Annex II
+
+References
+
+Crippa, M. et al., 2021: EDGAR v6.0 Greenhouse Gas Emissions. European on Climate Change [Watson, R., M.C. Zinyowera, and R. Moss, (eds.)].
+
+Commission, Joint Research Centre (JRC) [Dataset] PID: http://data.europa. Cambridge University Press, Cambridge, UK, 861 pp.
+
+eu/89h/97a67d67-c62e-4826-b873-9d972c4f670b.                            IPCC, 2001: Appendix ­ IV Units, Conversion Factors, and GDP Deflators.
+
+de la Rue du Can, S., L. Price, and T. Zwickel, 2015: Understanding the full climate In: Climate Change 2001: Mitigation. Contribution of Working Group III
+
+change impact of energy consumption and mitigation at the end-use level: to the Third Assessment Report of the Intergovernmental Panel on Climate
+
+A proposed methodology for allocating indirect carbon dioxide emissions. Change [Metz, B., O. Davidson, R. Swart, and J. Pan, (eds.)]. Cambridge
+
+Appl. Energy, 159, 548­559, doi:10.1016/j.apenergy.2015.08.055.         University Press, Cambridge, UK, pp. 727­732.
+
+Fischedick, M., R. Schaeffer, A. Adedoyin, M. Akai, T. Bruckner, L. Clarke, IPCC, 2019: Refinement to the 2006 IPCC Guidelines for National Greenhouse
+
+V. Krey, I. Savolainen, S. Teske, D. Ürge-Vorsatz, R. Wright, 2011: Mitigation gas Inventories. [Buendia, E.C., S. Guendehou, B. Limmeechokchai, R. Pipatti,
+
+Potential and Costs. In: IPCC Special Report on Renewable Energy Y. Rojas, R. Sturgiss, K. Tanabe, and T. Wirth (eds.)]. Intergovernmental Panel
+
+Sources and Climate Change Mitigation [Edenhofer, O., R. Pichs-Madruga, on Climate Change (IPCC), Geneva, Switzerland.
+
+Y. Sokona, K. Seyboth, P. Matschoss, S. Kadner, T. Zwickel, P. Eickemeier, Krey V., O. Masera, G. Blanford, T. Bruckner, R. Cooke, K. Fisher-Vanden,
+
+G. Hansen, S. Schlömer, C. von Stechow, (eds.)]. Cambridge University H. Haberl, E. Hertwich, E. Kriegler, D. Mueller, S. Paltsev, L. Price, S. Schlömer,
+
+Press, Cambridge, UK and New York, NY, USA.                             D. Ürge-Vorsatz, D. van Vuuren, and T. Zwickel, 2014: Annex II: Metrics &                AII
+
+Fisher, B.S., N. Nakicenovic, K. Alfsen, J. Corfee Morlot, F. de la Chesnaye, Methodology. In: Climate Change 2014: Mitigation of Climate Change.
+
+J.-Ch. Hourcade, K. Jiang, M. Kainuma, E. La Rovere, A. Matysek, A. Rana, Contribution of Working Group III to the Fifth Assessment Report
+
+K. Riahi, R. Richels, S. Rose, D. van Vuuren, R. Warren, 2007: Issues related to of the Intergovernmental Panel on Climate Change [Edenhofer, O.,
+
+mitigation in the long-term context. In Climate Change 2007: Mitigation of R. Pichs-Madruga, Y. Sokona, E. Farahani, S. Kadner, K. Seyboth, A. Adler,
+
+Climate Change. Contribution of Working Group III to the Fourth Assessment I. Baum, S. Brunner, P. Eickemeier, B. Kriemann, J. Savolainen, S. Schlömer,
+
+Report of the Intergovernmental Panel of Climate Change [Metz, B., C. von Stechow, T. Zwickel and J.C. Minx (eds.)]. Cambridge University
+
+O.R. Davidson, P.R. Bosch, R. Dave, and L.A. Meyer, (eds.)]. Cambridge Press, Cambridge, United Kingdom and New York, NY, USA.
+
+University Press, Cambridge, UK and New York, NY, USA, 169­250.         Minx, J.C. et al., 2021: A comprehensive dataset for global, regional and
+
+Forster, P., T. Storelvmo, K. Armour, W. Collins, J.-L. Dufresne, D. Frame, D.J. Lunt, national greenhouse gas emissions by sector 1970­2019. Earth Syst. Sci.
+
+T. Mauritsen, M.D. Palmer, M. Watanabe, M. Wild, and H. Zhang, 2021: Data, 13(11), doi:10.5194/essd-2021-228.
+
+The Earth's Energy Budget, Climate Feedbacks, and Climate Sensitivity. In: Moomaw, W., P. Burgherr, G. Heath, M. Lenzen, J. Nyboer, A. Verbruggen, et al.,
+
+Climate Change 2021: The Physical Science Basis. Contribution of Working 2011: Annex II: Methodology. In: IPCC Special Report on Renewable Energy
+
+Group I to the Sixth Assessment Report of the Intergovernmental Panel on Sources and Climate Change Mitigation [Edenhofer, O., R. Pichs-Madruga,
+
+Climate Change [Masson-Delmotte, V., P. Zhai, A. Pirani, S.L. Connors, C. Péan, Y. Sokona, K. Seyboth, P. Matschoss, S. Kadner, T. Zwickel, P. Eickemeier,
+
+S. Berger, N. Caud, Y. Chen, L. Goldfarb, M.I. Gomis, M. Huang, K. Leitzell, G. Hansen, S. Schlömer, C. von Stechow (eds.)]. Cambridge University Press,
+
+E. Lonnoy, J.B.R. Matthews, T.K. Maycock, T. Waterfield, O. Yelekçi, R. Yu, and Cambridge, United Kingdom and New York, NY, USA, pp. 973­1000.
+
+B. Zhou (eds.)]. Cambridge University Press, Cambridge, United Kingdom Morita, T., J.B. Robertson, A. Adegbulugbe, J. Alcamo, 2001: Greenhouse gas
+
+and New York, NY, USA, pp. 923­1054, doi:10.1017/9781009157896.009.     emission mitigation scenarios and implications. In: Climate Change 2001:
+
+Friedlingstein, P. et al., 2019: Global Carbon Budget 2019. Earth Syst. Sci. Data, Mitigation. Contribution of Working Group III to the Third Assessment Report
+
+11(4), 1783­1838, doi:10.5194/essd-11-1783-2019.                        of the Intergovernmental Panel on Climate Change [Metz, B., O. Davidson,
+
+Friedlingstein, P. et al., 2020: Global Carbon Budget 2020. Earth Syst. Sci. R. Swart, and J. Pan, (eds.)]. Cambridge University Press, Cambridge, UK,
+
+Data, 12(4), 3269­3340, doi:10.5194/essd-12-3269-2020.                  115­166.
+
+Gasser, T. et al., 2020: Historical CO2 emissions from land use and land NAS, 2007: Coal: Research and Development to Support National Energy
+   cover change and their uncertainty. Biogeosciences, 17(15), 4075­4101, Policy. [Committee on Coal Research and Technology and National Research
+
+doi:10.5194/BG-17-4075-2020.                                            Council, (ed.)]. The National Academies Press, Washington, DC, USA.
+
+Hansis, E., S.J. Davis, and J. Pongratz, 2015: Relevance of methodological Nilsson, M., D. Griggs, and M. Visbeck, 2016: Policy: Map the interactions
+
+choices for accounting of land use change carbon fluxes. Global between Sustainable Development Goals. Nature, 534(7607), 320­322,
+
+Biogeochem. Cycles, 8(9), doi:10.1002/2014GB004997.                     doi:10.1038/534320a.
+
+Houghton, R.A. and A.A. Nassikas, 2017: Global and regional fluxes of carbon Reisinger, A., M. Howden, C. Vera, et al., 2020: The Concept of Risk in the IPCC
+
+from land use and land cover change 1850­2015. Global Biogeochem. Sixth Assessment Report: A Summary of Cross-Working Group Discussions.
+
+Cycles, 31(3), 456­472, doi:10.1002/2016GB005546.                       Intergovernmental Panel on Climate Change, Geneva, Switzerland,
+
+IEA, 2010: Projected Costs of Generating Electricity ­ 2010 Edition. 15 pp. https://www.ipcc.ch/site/assets/uploads/2021/02/Risk-guidance-
+
+International Energy Agency, Paris, France.                             FINAL_15Feb2021.pdf.
+
+IEA, 2019: World Energy Outlook 2019. International Energy Agency (IEA) Roy, J., P. Tschakert, H. Waisman, S. Abdul Halim, P. Antwi-Agyei, P. Dasgupta,
+
+and Organisation for Economic Co-operation and Development (OECD), B. Hayward, M. Kanninen, D. Liverman, C. Okereke, P.F. Pinho, K. Riahi,
+
+Paris, France, 810 pp.                                                  and A.G. Suarez Rodriguez, 2018: Sustainable Development, Poverty
+
+IEA, 2020a: CO2 Emissions from Fuel Combustion: Database Documentation  Eradication and Reducing Inequalities. In: Global Warming of 1.5°C. An
+   (2020 edition). International Energy Agency, Paris, France.          IPCC Special Report on the impacts of global warming of 1.5°C above
+
+IEA, 2020b: Emissions Factors: Database Documentation (2020 edition). pre-industrial levels and related global greenhouse gas emission
+
+International Energy Agency (IEA), Paris, France.                       pathways, in the context of strengthening the global response to the
+
+IEA, 2021: World Energy Balances. 1st ed. International Energy Agency (IEA), threat of climate change, sustainable development, and efforts to
+
+Paris, France.                                                          eradicate poverty [Masson-Delmotte, V., P. Zhai, H.-O. Pörtner, D. Roberts,
+
+IPCC, 1995: Climate Change 1995: Impacts, Adaptations and Mitigation of J. Skea, P.R. Shukla, A. Pirani, W. Moufouma-Okia, C. Péan, R. Pidcock,
+
+Climate Change: Scientific-Technical Analyses. Contribution of Working S. Connors, J.B.R. Matthews, Y. Chen, X. Zhou, M.I. Gomis, E. Lonnoy,
+
+Group II to the Second Assessment Report of the Intergovernmental Panel T. Maycock, M. Tignor, and T. Waterfield (eds.)]. Cambridge University
+
+                                                                                                                                             1839
+           Annex II                                                                            Definitions, Units and Conventions
+
+                Press, Cambridge, UK and New York, NY, USA, pp. 445­538. https://doi.
+                org/10.1017/9781009157940.007.
+             Suerkemper, F., S. Thomas, D. Osso, and P. Baudry, 2012: Cost-effectiveness
+                of energy efficiency programmes--evaluating the impacts of a regional
+                programme in France. Energy Effic., 5(1), 121­135, doi:10.1007/s12053-
+                011-9112-z.
+             UNFCCC, 2019: Report of the Conference of the Parties serving as the meeting
+                of the Parties to the Paris Agreement on the third part of its first session,
+                held in Katowice from 2 to 15 December 2018. Addendum, Part 2: Action
+                taken by the Conference of the Parties servi. Katowice, Poland.
+             UNSD, 1999: Standard Country or Area Codes for Statistical Use, Revision 4.
+                https://unstats.un.org/unsd/methodology/m49/.
+
+AII
+
+1840
+

@@ -1,0 +1,19 @@
+executed in lib unit target 228
+annotations in lib.rs 167
+annotated but no executed test of that name: 13
+(2527, 'converged_lifecycle_tests', 'converged_lifecycle_uses_verified_fresh_feed_fraction', False, '#[test]')
+(2538, 'converged_lifecycle_tests', 'converged_recycle_still_exceeds_assignment_abatement_scale_in_reference_screen', False, '#[test]')
+(2589, 'converged_reference_screen_tests', 'reference_screen_numerics_are_stable', False, '#[test]')
+(2662, 'converged_full_cost_tests', 'converged_full_cost_boundary_is_finite_and_ordered', False, '#[test]')
+(3074, 'corrected_full_cost_penalty_tests', 'recycle_penalties_tighten_economic_boundary', False, '#[test]')
+(3139, 'pressure_efficiency_surface_tests', 'higher_injection_pressure_tightens_boundary', False, '#[test]')
+(3145, 'pressure_efficiency_surface_tests', 'better_compressor_efficiency_relaxes_boundary', False, '#[test]')
+(3151, 'pressure_efficiency_surface_tests', 'sensitivity_surface_is_monotonic', False, '#[test]')
+(3184, 'pressure_surface_report_tests', 'pressure_surface_span_is_finite_and_not_zero', False, '#[test]')
+(3195, 'pressure_surface_numeric_lock', 'pressure_surface_is_secondary_scale_under_reference_costs', False, '#[test]')
+(4588, 'review2_full_recycle_tests', 'zero_purge_is_rejected_for_source_inert', False, '#[test]')
+(4592, 'review2_full_recycle_tests', 'finite_purge_solution_is_nonnegative_when_converged', False, '#[test]')
+(4602, 'review2_full_recycle_tests', 'fresh_feed_depends_on_reformer_and_psa_performance', False, '#[test]')
+non-test cfg or ignore: [(2523, '#[cfg(any())]'), (2586, '#[cfg(any())]'), (2659, '#[cfg(any())]'), (3071, '#[cfg(any())]'), (3136, '#[cfg(any())]'), (3181, '#[cfg(any())
+cfg(test) blocks 62
+Counter({'behaviour/other': 157, 'balance/validation-style': 48, 'locks/regression-style': 23})

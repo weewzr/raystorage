@@ -1,0 +1,22 @@
+check_id,target,tolerance,unit,source,locator
+H2_A_T_Y,97946,1,t/y,TEV-953 net 29000 lb/h at 85% availability,PDF p16
+H2_B_T_Y,66925,1,t/y,100000 Nm3/h at 0.08988 kg/Nm3 and 85% availability,freeze section 4.1
+SCALE_S,0.6833,0.0002,-,Mass ratio of Case B to the INL product,freeze section 4
+HE_DUTY_MW,176.9,0.05,MW,TEV-961 helium flow and temperatures with cp 5.193,Table 2 cont. PDF p18
+E_ROWS_SUM_MWE,17.3,1e-9,MWe,TEV-961 Case 6 electricity rows,Table 2 PDF p17
+SLIDE6_REACTOR_MWTH,206.0,0.05,MWth,Process heat plus electricity without purge at 39.7%,freeze section 5
+COMPLETE_REACTOR_MWTH,220.4,0.05,MWth,Process heat plus full Case 6 electricity at 39.7%,freeze section 5
+FEED_CARBON_ST_D,2077.6,0.5,st/d,TEV-961 34.0 MMSCFD at 1.05379 mol C per mol,screening report
+C_PER_MOL_NG,1.05379,1e-5,mol/mol,TEV-953 gas composition,A-5 PDF p39
+SELEXOL_INLET_ST_D,1946.5,0.5,st/d,TEV-961 1927 st/d captured at 99%,Table 2
+CARBON_CLOSURE_PCT,100.0,0.1,%,INL Case 6 carbon closure with product methane,screening report
+NINETY_PCT_SYNGAS_ST_D,1752,1,st/d,90% of syngas CO2 at INL Case 6,screening report
+GAS_SAVING_18P5_SM_Y,94.8,0.05,S$M/y,Gas saving at 18.5 MMSCFD at S$15/GJ,screening report
+GJ_PER_D_9_MMSCFD,9913.3,0.1,GJ/d,9 MMSCFD at 1044 Btu/scf,TEV-961 A-50
+CRF_25,0.09368,1e-5,1/y,Capital recovery factor at 8% and 25 y,standard result
+REACTOR_ANNUAL_N0P6_SM_Y,144.4,0.1,S$M/y,BOAK reactor capital and O&M at 210 MWth with all items on n = 0.6,screening report
+OAK10_INL_HIGH_USD_KWT,3771,2,US$/kWt,INL/RPT-23-72972 about 3770 before rounding,PDF p47
+OAK10_INL_LOW_USD_KWT,1334,2,US$/kWt,INL/RPT-23-72972 1333 before rounding,PDF p47
+HTGR_IHX_CENTRAL_MWTH,225.1,0.15,MWth,Reader sum at 7 MPa with circulators and losses,htgr_ihx.md s8
+MEA_REACTOR_MWTH,228.9,0.1,MWth,Reader sum at 70.4 t/h and SRD 3.8,mea_calc2 output
+EX4_ABOVE_130_MW,11.5,1.0,MW,Independent cooling curve against the published chain scale,inl_calcs_output

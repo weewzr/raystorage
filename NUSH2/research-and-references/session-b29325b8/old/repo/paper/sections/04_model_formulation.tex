@@ -1,0 +1,17 @@
+\section{Model formulation}\label{sec:model-formulation}
+
+Before examining individual source temperatures or recovery factors, the whole model can be read as three linked maps:
+\[
+\text{source process state}\longrightarrow
+\text{annual hydrogen and carbon flows}\longrightarrow
+\text{incremental cost per avoided tonne}.
+\]
+The first arrow uses material and energy balances plus literature-reported operating states; the second applies operating time, lifecycle factors and the annual cost ledger. The arrows are a calculation workflow, not a claim that reactor dynamics or reaction kinetics have been independently simulated.
+
+\subsection{Process model and literature inputs}
+The model is literature-anchored rather than wholly first-principles. Its chemical-process basis is INL/NGNP Case 6. INL selected an 871$^\circ$C reformer outlet, steam/carbon ratio 3.0 and 88\% PSA recovery~\cite{inltev953}; TEV-961 reports that a 925$^\circ$C HTGR outlet supplies 900$^\circ$C process heat and the full 176.8 MWth reforming duty at that target~\cite{inltev961}. The source process produces 130 MMSCFD H$_2$ from 34.0 MMSCFD natural gas with 17.3 MWe process demand, 1,927 short ton/day captured CO$_2$ and 142 short ton/day emitted CO$_2$~\cite{inltev961}. The same INL model family provides the 130-MMSCFD conventional no-capture baseline: 52.5 MMSCFD natural gas and 3,205 short ton/day emitted CO$_2$~\cite{inltev953}.
+
+
+\subsection{Model scope}
+The operative calculation combines literature-derived process/reactor parameters, declared screening assumptions, engineering balances and derived Rust outputs. Earlier fixed-scale Gate-5 and Review-5 studies remain reproducible audit evidence in the repository but are not used as the final-design result.
+

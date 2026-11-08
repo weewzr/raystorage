@@ -1,0 +1,179 @@
+=== A. Helium energy balance, 78.49 kg/s, 900->466 C
+  cp=5193.2 (5R/2M, own)        Q=176.90 MW
+  cp=5195 Petersen              Q=176.97 MW
+  cp=5190 implied               Q=176.80 MW
+  cp=5.19 kJ/kgK (final_v1_7)   Q=176.80 MW
+  cp=5200 repo                  Q=177.14 MW
+  implied cp from 176.8: 5190.1 J/kg/K
+  rounding band for implied cp: 5182 to 5198
+  178.8 MWth check: m*cp*(900-461) = 178.83 MW (cp 5190)
+  2.0 MWth excess check: m*cp*(466-461) = 2.04 MW
+  With text's 3 K instead of 5 K: 1.22 MW
+
+=== B. TEV-961 Table 2 reconstruction (cp=5190)
+  ROT 725: process 116.7; excess 55.6 (pub 55.6); reactor 172.3 (pub 172.5, err -0.12%); return-ideal diff 128 K
+  ROT 775: process 132.1; excess 36.4 (pub 36.5); reactor 168.5 (pub 168.7, err -0.11%); return-ideal diff 88 K
+  ROT 825: process 149.2; excess 22.6 (pub 22.6); reactor 171.8 (pub 171.7, err +0.08%); return-ideal diff 55 K
+  ROT 875: process 166.5; excess 10.3 (pub 10.3); reactor 176.8 (pub 176.9, err -0.04%); return-ideal diff 25 K
+  ROT 925: process 176.8; excess 2.0 (pub 2.0); reactor 178.8 (pub 178.8, err +0.02%); return-ideal diff 5 K
+
+=== C. Published reactor energy-balance closure m*cp*dT vs stated power (cp=5195)
+  HTTR 30 MW measured (T3-21) +0.81 VCS    calc 29.7  stated 30.0  err -1.0%
+  HTTR rated analysis (T3-1)               calc 29.3  stated 30.0  err -2.3%
+  HTR-10                                   calc 10.1  stated 10.0  err +0.5%
+  HTR-Modul el                             calc 199.9  stated 200.0  err -0.1%
+  HTR-Modul PH                             calc 169.9  stated 170.0  err -0.1%
+  GT-MHR                                   calc 596.8  stated 600.0  err -0.5%
+  H2-MHR                                   calc 598.5  stated 600.0  err -0.3%
+  GTHTR300C                                calc 595.5  stated 600.0  err -0.7%
+  MHR-100 SMR                              calc 212.2  stated 215.0  err -1.3%
+  SC-MHR                                   calc 349.3  stated 350.0  err -0.2%
+  SC-HTGR                                  calc 622.4  stated 625.0  err -0.4%
+  HTR-PM (web)                             calc 249.4  stated 250.0  err -0.3%
+  Xe-100 web: 71.1 kg/s is stated with 9.6% bypass; 71.1/0.904=78.7 kg/s gives 200.2 MW
+  GTHTR300C IHX: 322 kg/s * cp * (950-850) = 167.3 MW; if 950->556 = 659.1 MW (> reactor 600 MW)
+  168 MW with secondary 500->900: m = 80.8 kg/s
+
+=== D. HTTR and concept IHX performance
+  HTTR tube area: 96*pi*0.0318*22.2 = 212.9 m2 (21.5-22.9 m range 206-220)
+  HTTR design Table 2 Tochio         hot 90 cold 90 LMTD 90.0 Q 9.70 MW UA 107.7 kW/K eps 0.862 balance +0.0% NTU 6.22 U 506 W/m2K
+  HTTR LP test 30 MW T3-23 meas      hot 77 cold 135 LMTD 103.3 Q 9.41 MW UA 91.1 kW/K eps 0.867 balance +0.8% NTU 4.87 U 428 W/m2K
+  HTTR LP test 15 MW T3-23 meas      hot 48 cold 77 LMTD 61.4 Q 4.90 MW UA 79.9 kW/K eps 0.845 balance +1.3% NTU 4.27 U 375 W/m2K
+  HTTR LP analysis 30 MW T3-12       hot 67 cold 154 LMTD 104.5 Q 10.14 MW UA 97.0 kW/K eps 0.890 balance -4.4% NTU 5.18 U 455 W/m2K
+  HTTR HP-11 Fig9 readoff            hot 82 cold 155 LMTD 114.7 Q 9.75 MW UA 85.0 kW/K eps 0.883 U 399 W/m2K
+  HTTR 2004 NP-T-4.3 hot end         hot-end approach 82 K (no cold-end data)
+  HTTR-SR 950/905 Sato Fig12         hot 45 cold 241 LMTD 116.8 Q 9.89 MW UA 84.7 kW/K eps 0.944 balance +0.0% NTU 6.47 U 398 W/m2K
+  HTR-10 IHX T5-5 He/N2              hot 50 cold 117 LMTD 78.8 Q 5.00 MW UA 63.5 kW/K eps 0.880 U 415 W/m2K
+  H2-MHR S-I T19                     hot 25 cold 25 LMTD 25.0 Q 598.46 MW UA 23938.6 kW/K eps 0.935 balance +0.0% NTU 14.40
+  GTHTR300C (hot 950/900)            hot 50 cold 350 LMTD 154.2 Q 167.90 MW UA 1089.1 kW/K eps 0.889 balance -0.4% NTU 2.59
+  Tochio Fig 8/10 UA 85 kW/K -> U = 399 W/m2K on OD area
+  Tochio HP-11 hot 82 cold 155: LMTD 114.7; Q at UA 85 = 9.75 MW
+  HTTR 950/905 UA requirement vs measured 85 kW/K: see line above
+
+=== E. NUS-H2 IHX requirement
+  Q=176.8 balanced approach 25 K: UA 7.07 MW/K = 83 x HTTR(85 kW/K); NTU 17.3; A@U400 17680 m2 (7972 HTTR tubes); A@U760 9305 m2
+  Q=176.8 balanced approach 45 K: UA 3.93 MW/K = 46 x HTTR(85 kW/K); NTU 9.6; A@U400 9822 m2 (4429 HTTR tubes); A@U760 5170 m2
+  Q=176.8 balanced approach 50 K: UA 3.54 MW/K = 42 x HTTR(85 kW/K); NTU 8.7; A@U400 8840 m2 (3986 HTTR tubes); A@U760 4653 m2
+  Q=176.8 balanced approach 82 K: UA 2.16 MW/K = 25 x HTTR(85 kW/K); NTU 5.3; A@U400 5390 m2 (2430 HTTR tubes); A@U760 2837 m2
+  Q=206.0 balanced approach 25 K: UA 8.24 MW/K = 97 x HTTR(85 kW/K); NTU 20.2; A@U400 20600 m2 (9288 HTTR tubes); A@U760 10842 m2
+  Q=206.0 balanced approach 45 K: UA 4.58 MW/K = 54 x HTTR(85 kW/K); NTU 11.2; A@U400 11444 m2 (5160 HTTR tubes); A@U760 6023 m2
+  Q=206.0 balanced approach 50 K: UA 4.12 MW/K = 48 x HTTR(85 kW/K); NTU 10.1; A@U400 10300 m2 (4644 HTTR tubes); A@U760 5421 m2
+  Q=206.0 balanced approach 82 K: UA 2.51 MW/K = 30 x HTTR(85 kW/K); NTU 6.2; A@U400 6280 m2 (2832 HTTR tubes); A@U760 3306 m2
+  Q=210.0 balanced approach 25 K: UA 8.40 MW/K = 99 x HTTR(85 kW/K); NTU 20.6; A@U400 21000 m2 (9469 HTTR tubes); A@U760 11053 m2
+  Q=210.0 balanced approach 45 K: UA 4.67 MW/K = 55 x HTTR(85 kW/K); NTU 11.4; A@U400 11667 m2 (5260 HTTR tubes); A@U760 6140 m2
+  Q=210.0 balanced approach 50 K: UA 4.20 MW/K = 49 x HTTR(85 kW/K); NTU 10.3; A@U400 10500 m2 (4734 HTTR tubes); A@U760 5526 m2
+  Q=210.0 balanced approach 82 K: UA 2.56 MW/K = 30 x HTTR(85 kW/K); NTU 6.3; A@U400 6402 m2 (2887 HTTR tubes); A@U760 3370 m2
+  Effectiveness 900-466 over 925-466 = 0.946; HTTR 751-248 over 828-248 = 0.867
+  ... unbalanced primary, Q=176.8, hot end 25 K, sec 466->900
+    primary out 491: mp 78.4 kg/s (ratio 1.00), cold-end 25 K, LMTD 25.0, UA 7.07 MW/K (83 x HTTR), A@U400 17680, A@U760 9305
+    primary out 500: mp 80.1 kg/s (ratio 1.02), cold-end 34 K, LMTD 29.3, UA 6.04 MW/K (71 x HTTR), A@U400 15101, A@U760 7948
+    primary out 525: mp 85.1 kg/s (ratio 1.08), cold-end 59 K, LMTD 39.6, UA 4.47 MW/K (53 x HTTR), A@U400 11163, A@U760 5875
+    primary out 550: mp 90.8 kg/s (ratio 1.16), cold-end 84 K, LMTD 48.7, UA 3.63 MW/K (43 x HTTR), A@U400 9079, A@U760 4779
+    primary out 600: mp 104.7 kg/s (ratio 1.33), cold-end 134 K, LMTD 64.9, UA 2.72 MW/K (32 x HTTR), A@U400 6808, A@U760 3583
+  Duty ratios: 176.8/10 = 17.7; 210/10 = 21.0; 176.8/168 = 1.052
+  GTHTR300C draft A=1448 m2: LMTD(50,350)=154.2, U=762 W/m2K, UA=1.10 MW/K, NTU=2.62
+  NUS-H2 UA / GTHTR300C UA = 6.4
+
+=== F. Reactor inlet implied
+  reactor inlet 461: flow at 210 MWth 87.1 kg/s; at 178.8 MWth 74.2 kg/s
+  reactor inlet 486: flow at 210 MWth 92.1 kg/s; at 178.8 MWth 78.4 kg/s
+  reactor inlet 491: flow at 210 MWth 93.1 kg/s; at 178.8 MWth 79.3 kg/s
+
+=== G. Temperature cascade to reformer (871 C outlet target)
+  ROT 925 IHX 25 duct 0 -> He at reformer 900, pinch to 871 = 29 K
+  ROT 925 IHX 25 duct 5 -> He at reformer 895, pinch to 871 = 24 K
+  ROT 925 IHX 25 duct 25 -> He at reformer 875, pinch to 871 = 4 K
+  ROT 925 IHX 45 duct 0 -> He at reformer 880, pinch to 871 = 9 K
+  ROT 925 IHX 45 duct 5 -> He at reformer 875, pinch to 871 = 4 K
+  ROT 925 IHX 45 duct 25 -> He at reformer 855, pinch to 871 = -16 K
+  ROT 925 IHX 50 duct 0 -> He at reformer 875, pinch to 871 = 4 K
+  ROT 925 IHX 50 duct 5 -> He at reformer 870, pinch to 871 = -1 K
+  ROT 925 IHX 50 duct 25 -> He at reformer 850, pinch to 871 = -21 K
+  ROT 925 IHX 82 duct 0 -> He at reformer 843, pinch to 871 = -28 K
+  ROT 925 IHX 82 duct 5 -> He at reformer 838, pinch to 871 = -33 K
+  ROT 925 IHX 82 duct 25 -> He at reformer 818, pinch to 871 = -53 K
+  ROT 950 IHX 25 duct 0 -> He at reformer 925, pinch to 871 = 54 K
+  ROT 950 IHX 25 duct 5 -> He at reformer 920, pinch to 871 = 49 K
+  ROT 950 IHX 25 duct 25 -> He at reformer 900, pinch to 871 = 29 K
+  ROT 950 IHX 45 duct 0 -> He at reformer 905, pinch to 871 = 34 K
+  ROT 950 IHX 45 duct 5 -> He at reformer 900, pinch to 871 = 29 K
+  ROT 950 IHX 45 duct 25 -> He at reformer 880, pinch to 871 = 9 K
+  ROT 950 IHX 50 duct 0 -> He at reformer 900, pinch to 871 = 29 K
+  ROT 950 IHX 50 duct 5 -> He at reformer 895, pinch to 871 = 24 K
+  ROT 950 IHX 50 duct 25 -> He at reformer 875, pinch to 871 = 4 K
+  ROT 950 IHX 82 duct 0 -> He at reformer 868, pinch to 871 = -3 K
+  ROT 950 IHX 82 duct 5 -> He at reformer 863, pinch to 871 = -8 K
+  ROT 950 IHX 82 duct 25 -> He at reformer 843, pinch to 871 = -28 K
+  ROT for 900 at reformer: 25+0=925; 25+5=930; 25+25=950; 50+0=950; 45+25=970; 82+25=1007
+  Precedent reformer hot-end pinch: HTTR-SR 880-830=50; HTR-10 890-840=50; HTR-Modul 950-810=140; MHR-100 950-870=80; NUS-H2 900-871=29
+
+=== H. Hot-duct heat loss
+  HTTR-SR 905->880 at 2.519 kg/s: 327 kW = 3.3% of 10 MW
+  Sato loop closure: 2.519*cp*(905-149) = 9.89 MW
+  NUS-H2 duct loss same dT 25 K: 10.19 MW, dT 25.0 K
+  NUS-H2 duct loss area scaled (flow^0.5, same length): 1.83 MW, dT 4.5 K
+
+=== I. Vessel loss
+  HTTR VCS measured 0.81/30 = 2.70%; design 0.6/30 = 2.0%
+  Scaled proportional to 210: 5.67 MW; surface scaled (P^2/3): 2.96 MW
+
+=== J. Circulator work
+  HTTR-SR secondary circulator rise 133->150 C at 2.519 kg/s: 222 kW = 2.22% of 10 MW
+  loop: secondary 78.49 kg/s, T1 739 K, 5.15 MPa; primary 92.2 kg/s, T1 764 K, 5.0 MPa
+  dP 100 kPa eta 0.65: PR 1.019, secondary 3.58 MW, primary 4.48 MW, total 8.06 MW, per Q176.8 4.6%
+  dP 100 kPa eta 0.80: PR 1.019, secondary 2.91 MW, primary 3.64 MW, total 6.55 MW, per Q176.8 3.7%
+  dP 150 kPa eta 0.65: PR 1.029, secondary 5.35 MW, primary 6.70 MW, total 12.05 MW, per Q176.8 6.8%
+  dP 150 kPa eta 0.80: PR 1.029, secondary 4.35 MW, primary 5.44 MW, total 9.79 MW, per Q176.8 5.5%
+  dP 200 kPa eta 0.65: PR 1.039, secondary 7.12 MW, primary 8.90 MW, total 16.02 MW, per Q176.8 9.1%
+  dP 200 kPa eta 0.80: PR 1.039, secondary 5.78 MW, primary 7.23 MW, total 13.02 MW, per Q176.8 7.4%
+  dP 300 kPa eta 0.65: PR 1.058, secondary 10.62 MW, primary 13.28 MW, total 23.89 MW, per Q176.8 13.5%
+  dP 300 kPa eta 0.80: PR 1.058, secondary 8.63 MW, primary 10.79 MW, total 19.41 MW, per Q176.8 11.0%
+  dP 500 kPa eta 0.65: PR 1.097, secondary 17.50 MW, primary 21.88 MW, total 39.38 MW, per Q176.8 22.3%
+  dP 500 kPa eta 0.80: PR 1.097, secondary 14.22 MW, primary 17.78 MW, total 32.00 MW, per Q176.8 18.1%
+  HTTR circulator PR up to 1.065 at 4 MPa = dP 260 kPa
+  Sato-scaled 2.2% of 176.8 = 3.9 MW; with T1 739/406 = 7.1 MW
+  JAERI reformer He dP: 0.36 kgf/cm2 = 35.3 kPa; calc 0.26 = 25.5; smooth 0.104 = 10.2
+  HTTR core dP 0.12 kgf/cm2 = 11.8 kPa
+
+=== K. Reactor size sensitivity
+  base                     206.0
+  +vessel 2.96             209.0
+  +vessel 5.67             211.7
+  +vessel 2.96 duct 1.8    210.8
+  W_shaft  3, vessel 2.96, duct 1.82 -> 216.2 MWth; electric 14.9 MWe
+  W_shaft  5, vessel 2.96, duct 1.82 -> 219.8 MWth; electric 17.2 MWe
+  W_shaft  7, vessel 2.96, duct 1.82 -> 223.4 MWth; electric 19.4 MWe
+  W_shaft 10, vessel 2.96, duct 1.82 -> 228.8 MWth; electric 22.7 MWe
+  W_shaft 15, vessel 2.96, duct 1.82 -> 237.8 MWth; electric 28.3 MWe
+  with full 17.3 MWe: 220.4
+  margin 210-206.02 = 3.98 MWth, 1.9%
+  W_shaft that exhausts margin with no losses: 2.21 MW
+
+=== L. Life
+  HTTR 20 y at 60% = 105120 h; at 7446 h/y = 14.1 y
+
+=== M. Report/final power split
+  25.1*0.47=11.80; 25.1*0.397=9.96; 184.9-176.8=8.1 (4.6%); 11/0.47=23.4; 11.6/0.397=29.22
+  230 basis: 178.8+16.506/0.397=220.38
+
+=== N. Helium properties at IHX conditions (Petersen)
+  T 1173 K P 51.5 bar: rho 2.104 mu 5.172e-05 k 0.407 Pr 0.660
+  T 1198 K P 51.5 bar: rho 2.060 mu 5.249e-05 k 0.413 Pr 0.660
+  T 955 K P 51.5 bar: rho 2.580 mu 4.479e-05 k 0.352 Pr 0.660
+  T 739 K P 51.5 bar: rho 3.327 mu 3.743e-05 k 0.294 Pr 0.661
+  T 1173 K P 91.0 bar: rho 3.704 mu 5.172e-05 k 0.408 Pr 0.659
+  T 873 K P 40.0 bar: rho 2.194 mu 4.206e-05 k 0.330 Pr 0.661
+
+=== O. Tube-side screening at HTTR geometry
+  HTTR: G 71.9 Re 42381 Nu 98 h_i 1307 W/m2K, straight-tube dP 23.0 kPa
+  NUS-H2 same tube flow: G 71.9 Re 42381 Nu 98 h_i 1308 W/m2K, straight-tube dP 17.9 kPa
+  Tubes at 78.49 kg/s and HTTR tube flow: 2261
+  NTU per HTTR tube at measured U: 4.91; required 17.0 => length factor 3.5
+
+=== P. Reformer run sheet implied cp and loss (JAERI A-2-a)
+  127.6/(0.091*270) = 5.193; 114.4/(0.091*242) = 5.195 kJ/kg/K
+  Heat loss 41.5/(163.0+5.1) = 24.7%; 24.6/(140.3+5.1) = 16.9%
+
+=== Q. Emission factors
+  15.3 tC/TJ*44/12 = 56.1 kgCO2/GJ (LHV, EU ETS table); 0.0507 t/GJ HHV; 50.7/0.0507
+  14.47 kgC/MMBtu = 13.71 kgC/GJ HHV -> 50.3 kgCO2/GJ

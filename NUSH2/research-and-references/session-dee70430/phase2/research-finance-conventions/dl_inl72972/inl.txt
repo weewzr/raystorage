@@ -1,0 +1,3078 @@
+                                                                                     INL/RPT-23-72972
+                                                                                               Revision 3
+
+ Literature Review of
+ Advanced Reactor Cost
+ Estimates
+
+   Milestone M3CT-23IN1207065
+   October 2023
+
+     Abdalla Abou-Jaoude, Linyu Lin, Chandrakanth Bolisetti,
+     Elizabeth Worsham, Levi M Larsen, Aaron Epiney
+
+      Nuclear Science & Technology Directorate, Idaho National Laboratory
+
+INL is a U.S. Department of Energy National Laboratory operated by Battelle Energy Alliance, LLC
+                                       DISCLAIMER
+
+      This information was prepared as an account of work sponsored by an
+agency of the U.S. Government. Neither the U.S. Government nor any
+agency thereof, nor any of their employees, makes any warranty, expressed
+or implied, or assumes any legal liability or responsibility for the accuracy,
+completeness, or usefulness, of any information, apparatus, product, or
+process disclosed, or represents that its use would not infringe privately
+owned rights. References herein to any specific commercial product,
+process, or service by trade name, trade mark, manufacturer, or otherwise,
+does not necessarily constitute or imply its endorsement, recommendation,
+or favoring by the U.S. Government or any agency thereof. The views and
+opinions of authors expressed herein do not necessarily state or reflect
+those of the U.S. Government or any agency thereof.
+                                                                                                   INL/RPT-23-72972
+                                                                                                              Revision 3
+
+     Literature Review of Advanced Reactor Cost
+                              Estimates
+
+                            Integrated Energy Systems
+
+Abdalla Abou-Jaoude, Linyu Lin, Chandrakanth Bolisetti, Elizabeth Worsham,
+                                   Levi M Larsen, Aaron Epiney
+
+     Nuclear Science & Technology Directorate, Idaho National Laboratory
+
+                                              October 2023
+
+                             Idaho National Laboratory
+                            Integrated Energy Systems
+
+                              Idaho Falls, Idaho 83415
+
+                                http://www.ies.inl.gov
+
+                                                 Prepared for the
+                                         U.S. Department of Energy
+                                           Office of Nuclear Energy
+                                   Under DOE Idaho Operations Office
+                                       Contract DE-AC07-05ID14517
+Page intentionally left blank
+                            EXECUTIVE SUMMARY
+
+                   A comprehensive review of existing literature on advanced reactor cost
+              estimations was conducted in the form of a meta-study with over 30 references
+              evaluated. Datapoints were aggregated, escalated to 2019 values, then analyzed
+              with equal weighting to identify projected nuclear cost ranges that can be further
+              refined in future work. A summary of these results is provided in Table 1. The
+              ranges consist of low/medium/high estimates (based on quartiles) for capital and
+              operating costs that can be adjusted with care using various correction factors
+              (based on learning, numbers of plants per site, etc.). Reference breakdowns (in
+              costs, based on a code of account structure) are provided for the main four types
+              of advanced reactors. It is important to emphasize that the goal of the study is not
+              to infer exact cost projections for nuclear energy, but rather to provide useful
+              ranges of where costs may lie. These can be leveraged as inputs to models
+              optimizing energy portfolios.
+
+Table 1. Summary table with identified values for advanced nuclear cost estimates (excludes microreactors). The values are for a
+                             build between a first and Nth of a kind (BOAK). All estimates are in 2019 USD.
+
+Variable                            Low          Medium       High
+BOAK Overnight Capital Cost (OCC)   $4,000 /kWe  $6,000 /kWe  $7,000 /kWe
+Operating Expenses (OPEX)           $15 /MWh     $25 /MWh     $35 /MWh
+
+First-of-a-kind Premium Multiplier  1.3          1.6          2.1
+                                                 10%          15%
+Learning Rate                       5%           0.825        0.850
+                                                 0.624        0.7
+Multi-unit OCC Exponent             0.8
+
+Multi-Unit OPEX Multiplier          0.5
+
+                                    PWR          SFR          HTGR MSR
+
+Overnight Costs                     2.35%        5.30%
+                                    39.65%       49.55%
+10  Preconstruction Costs           10.33%       11.03%       1.19%   2.74%
+                                    12.50%       23.95%       40.25%  39.41%
+20  Direct Costs                    8.76%        3.88%        5.66%   9.59%
+                                    3.92%        5.56%        14.79%  14.51%
+21  Structures                      1.85%        3.31%        9.13%   8.16%
+                                    2.29%        1.81%        8.11%   4.55%
+22  Reactor Equipment               44.16%       34.33%       2.56%   1.16%
+                                    12.57%       9.77%        0.00%   1.46%
+23  Energy Conversion System        1.28%        1.05%        44.83%  43.90%
+                                                              12.76%  12.50%
+24  Electrical Equipment            95.98%       58.14%       0.96%   1.45%
+                                    4.02%        41.86%
+25  Heat Rejection System
+
+26  Miscellaneous Equipment
+
+30  Indirect Costs
+
+40  Owner Costs
+
+50  Supplementary Costs
+
+Annualized Costs
+
+70  Operating Staff Costs                                     55.62% 98.18%
+                                                              44.38% 1.82%
+80  Annualized Fuel Costs
+
+                                         iii
+                     ACKNOWLEDGEMENTS
+
+    This manuscript was authored at Idaho National Laboratory by Battelle
+Energy Alliance LLC under contract no. DE-AC07-05ID14517 with the U.S.
+Department of Energy (DOE). This work was prepared for the U.S. DOE Office
+of Nuclear Energy (DOE-NE) via funding by the Integrated Energy Systems
+(IES) campaign.
+
+    The authors would like to acknowledge Andrew Foss and Brent Dixon for
+their support with reviewing and improving the document. They provided
+invaluable insights into the evaluation. The authors also thank Kelsey Gaston for
+her diligent editorial review of the document.
+
+                                                iv
+Page intentionally left blank
+                v
+                                          CONTENTS
+
+EXECUTIVE SUMMARY ..........................................................................................................................iii
+ACKNOWLEDGEMENTS .......................................................................................................................... iv
+ACRONYMS ................................................................................................................................................ xi
+1. BACKGROUND ................................................................................................................................. 1
+2. SOURCES AND METHODOLOGY FOR COST ESTIMATION .................................................... 2
+
+        2.1 Overview of Methodology and Limitations.............................................................................. 2
+        2.2 Overview of Considered Literature .......................................................................................... 4
+        2.3 Cost Escalation Methodology ................................................................................................... 7
+        2.4 Evaluating Potential Data Groupings ....................................................................................... 9
+
+               Grouping Based on Reactor Type.............................................................................................9
+               Grouping Based on Reactor Size ............................................................................................ 11
+        2.5 Tier 1 Estimates: Levelized Cost of Electricity ...................................................................... 13
+        2.6 Tier 2 Estimates: Overnight Capital and Operating Costs......................................................15
+        2.7 Tier 3 Estimates: Detailed Breakdown based on Reactor Type ............................................. 18
+        2.8 Recommended Cost Adjustments ........................................................................................... 24
+               FOAK Premium ...................................................................................................................... 24
+               Learning Rates ........................................................................................................................ 25
+               Multi-unit Correction .............................................................................................................. 26
+3. DISCUSSION AND IMPROVEMENTS .......................................................................................... 27
+        3.1 User Guide on Leveraging Identified Values ......................................................................... 27
+        3.2 Example Walkthroughs for Users...........................................................................................30
+               Generic Multi-Unit Plant Evaluation ...................................................................................... 31
+               Non-Electric HTGR Plant.......................................................................................................31
+        3.3 Additional Cost Considerations .............................................................................................. 33
+               Learning .................................................................................................................................. 33
+               Modularization ........................................................................................................................ 33
+               Standardization: ...................................................................................................................... 34
+               Improved Plant Layout ........................................................................................................... 35
+        3.4 Areas of Improvement ............................................................................................................ 35
+               Additional Postprocessing of Data ......................................................................................... 35
+               Uncertainty Analysis............................................................................................................... 36
+4. CONCLUSION..................................................................................................................................38
+5. REFERENCES .................................................................................................................................. 39
+APPENDIX A..............................................................................................................................................43
+        Processing of the Cost Estimate Dataset .......................................................................................... 43
+               A.1 Overview of Some Inconsistencies in Cost Dataset ........................................................ 43
+
+                                                               vi
+               A.2. Adjusted Cost Estimates Using Escalation Methdodology ............................................ 45
+APPENDIX B .............................................................................................................................................. 48
+
+        Detailed Reactor Cost Estimates Breakdown ................................................................................... 48
+               B.1. Advanced PWR...............................................................................................................49
+               B.2. HTGR .............................................................................................................................. 50
+               B.3 SFR...................................................................................................................................51
+               B.4. MSR ................................................................................................................................ 52
+
+                                                              vii
+                                           FIGURES
+
+Figure 2: Scatter plot of overnight capital costs versus plant power rates for four major types of
+            advanced reactors. .......................................................................................................................10
+
+Figure 3: Whisker plot with associated standard deviations of total costs for all advanced reactors
+            reviewed in this report.................................................................................................................11
+
+Figure 4: Scatter plot of specific costs versus reactor power rates for three sizes of nuclear
+            reactors. .......................................................................................................................................12
+
+Figure 5: Whisker plot with associated standard deviations of total costs for three sizes of nuclear
+            reactors reviewed in this report. Note that the main outliers for the SMR groupings
+            correspond to the NGNP and NuScale FOAK estimates. ...........................................................13
+
+Figure 6: Histogram of LCOE values for Large and SMR (no microreactors). ..........................................14
+
+Figure 10: Percentage contribution of each account to total direct costs. Accounts are ranked in
+            order of highest contribution to the PWR COA. .........................................................................23
+
+Figure 11. Temporal relationship between early stage of reactor deployment activities to NOAK
+            level costs. Taken from [46]........................................................................................................25
+
+Figure 12. Illustration of the different steps to obtain nuclear reactor cost estimate for potential
+            studies. ......................................................................................................................................... 28
+
+Figure 13: An illustration of the relationship between modularization and standardization, and the
+            difference between modular and stick-built infrastructure [56]. .................................................34
+
+                                            TABLES
+
+Table 1. Summary table with identified values for advanced nuclear cost estimates (excludes
+            microreactors). The values are for a build between a first and Nth of a kind (BOAK).
+            All estimates are in 2019 USD. ................................................................................................... iii
+
+Table 2. Summary of total costs for four categories of reactor concept based on estimates from 30
+            references. Note that all costs provided here are based on the reference year (shown in
+            the dollar sign subscript). Escalated costs are provided in Appendix A. ......................................4
+
+Table 3. Cost factors leveraged for cost escalation to 2019 USD. The factors combine CBR data
+            up to 2017 and the factorized indexes for new industrial building construction passed
+            that year. ........................................................................................................................................8
+
+Table 4. Advanced reactor LCOE distribution for BOAK observed in the literature review of cost
+            estimates. Values were rounded up/down to avoid inferring more confidence in the
+            estimates than the original data. ..................................................................................................14
+
+Table 5. Identified low, medium, and high estimates for total costs for small modular and large
+            reactors cost estimates reviewed in this report. Standard deviations are also provided.
+            All values are in 2019 USD. Note that the estimated LCOE values here do not
+            necessarily line up with those estimated in Tier 1.......................................................................15
+
+Table 6. Identified low, medium, high estimates for total costs of total costs for microreactors cost
+            estimates reviewed in this report. All values are in 2019 USD...................................................15
+
+Table 7. Comparison of the identified values in this study against other meta-studies on advanced
+            reactor cost estimates. All values are escalated to 2019 USD.....................................................18
+
+                                                              viii
+Table 8. Breakdown of the percentage contribution of each account to the total OCC (in $/kWe)
+            of each reactor type. ....................................................................................................................19
+
+Table 9. Breakdown of the percentage contribution of each account to the total OPEX (in
+            $/MWh) of each reactor type.......................................................................................................22
+
+Table 10. Ratio of FOAK to BOAK cost estimates in the literature reviewed. ..........................................24
+Table 11. Identified range of BOAK to FOAK premiums for cost adjustment...........................................25
+Table 12. Identified learning rate range.......................................................................................................26
+Table 13. Multi-unit multiplier cost adjustment ranges...............................................................................27
+Table 14. Decision matrix based on potential assumptions in a user's model. ...........................................28
+Table 15. Summary of identified BOAK cost estimation values and correction factors for large
+
+            reactors and SMRs.......................................................................................................................30
+Table 16. Higher-level breakdown of percentage contributions to OCC and OPEX costs based on
+
+            reactor type..................................................................................................................................30
+
+                                                               ix
+Page intentionally left blank
+                x
+       ACRONYMS
+
+AHTR   Advanced High-Temperature Reactor
+ATB    Annual Technology Baseline
+APEA   Aspen Process Economic Analyzer
+BOAK   Between of a first and Nth kind
+BOP    Balance of plant
+CANES  Center for Advanced Nuclear Energy Systems
+COA    Code of Account
+DOE    Department of Energy
+DMSR   Denatured Molten Salt Reactor
+D&D    Deactivation & Decommissioning
+EEDB   Energy economic data base
+EMWG   Economic Modeling Working Group
+FOAK   First-of-a-kind
+GDP    Gross Domestic Product
+GHG    Greenhouse Gas
+IES    Integrated Energy Systems
+INL    Idaho National Laboratory
+LSPBR  Large-Scale Prototype Breeder Reactor
+LWR    Light Water Reactor
+MHTGR  Modular High-Temperature Gas-Cooled Reactor
+MSR    Molten Salt Reactors
+MUE    Multi-unit exponent
+NEI    Nuclear Energy Institute
+NGNP   Next Generation Nuclear Plant
+NOAK   Nth-of-a-kind
+NSRST  Non-safety-related with special treatment
+NSSS   Nuclear Steam Supply System
+OCC    Overnight Capital Cost
+O&M    Operation & Maintenance
+PRISM  Power Reactor Innovative Small Module
+RAVEN  Risk Analysis and Virtual ENvironments
+ROM    Rough order of magnitude
+
+       xi
+SA&I  Systems Analysis & Integration
+SFR   Sodium Fast Reactors
+SR    Safety-related
+UQ    Uncertainty quantification
+
+                                      xii
+Page intentionally left blank
+               xiii
+       Literature Review of Advanced Reactor Cost
+                                Estimates
+
+                                    1. BACKGROUND
+
+    Nuclear energy can provide consistent, dispatchable power to meet electricity demands while also
+supplying high-quality heat that can meet energy needs beyond the electricity sector--all without emission
+of CO2 or other greenhouse gases (GHGs). To fully assess these benefits, it is necessary to better
+characterize the potential role or roles for nuclear energy amid the growing field of variable renewable
+generation technologies.
+
+    Integrated Energy Systems (IES) are cooperatively controlled systems that dynamically apportion
+thermal and/or electrical energy to provide responsive generation to the power grid. They comprise multiple
+subsystems, which may or may not be geographically co-located, including a nuclear heat generation
+source, a turbine that converts thermal energy to electricity, at least one renewable energy source, and one
+or more industrial processes that utilize heat and/or power from the energy sources to produce a commodity-
+scale product. IES design and optimization would consider both technical performance and economic
+viability within various deployment markets.
+
+    Coupled energy generation systems (e.g., novel reactor technologies) and advanced industrial
+applications may not be commercially deployed at present, but the necessary steps toward technology
+maturation are being addressed through various federal R&D and private industry investments. The role of
+modeling and simulation within IES is to support the demonstration of new coupled integrated technologies
+along every step of technology maturation from the strategic analysis of preferred system architecture to
+preliminary design, to laboratory testing, up to full commercial testing and integration. To achieve this role,
+modeling and simulation must be able to assess the technical performance and the economic viability of
+potential IES. To do so, accurate inputs, e.g., overnight capital cost data (with well understood uncertainty),
+are crucial.
+
+    To date, IES studies have used cost functions for the various component and system sizes that are
+generated from a number of sources, including actual quotations from vendors, historical data in literature,
+and latest publicly available data obtained from the Aspen Process Economic Analyzer (APEA-V11) [1].
+Cost data (or more specifically "cost functions") development has included the creation of cost trends
+derived from APEA-V11 data as a function of varying system size. While these information sources are
+adequate for non-nuclear components, e.g., (chemical) industrial plants and heat extracting technologies
+(heat exchangers, valves, etc.), they include significant uncertainty for (advanced) nuclear. Accurate capital
+and operational cost data for advanced nuclear concepts is critical for meaningful technoeconomic analyses.
+Providing a basis for nuclear cost estimates can enable broad evaluation of deployment potential of the
+technology, as well as cost evaluation of potential non-electric products from nuclear plants. This is
+expected to be useful even beyond the scope of the IES program. Capacity expansion models would all
+benefit from more robust cost estimates for nuclear reactors. Similarly, utilities and industries considering
+options for de-carbonization of their operations, could also benefit from additional insights on potential cost
+projections for nuclear technology.
+
+    To this end, this work focuses on solidifying resources for retrieving accurate costing data for the
+advanced reactor concepts that can be used in IES models and use cases. The starting point is a detailed
+review of existing literature on advanced reactor cost evaluation, distilling important information for energy
+system evaluations. Future efforts to add to the existing literature would build on this report focusing on
+gaps and areas for potential improvement.
+
+                                                               1
+      2. SOURCES AND METHODOLOGY FOR COST ESTIMATION
+
+    This report provides a detailed overview of the existing open literature on advanced reactor costs. The
+results of this overview are encapsulated in a three-tier analysis that can be referenced for more accurate
+advanced reactor cost estimations in future research. Each of the three tiers has a corresponding level of
+fidelity:
+
+         · Tier 1 only considered estimates in the literature on levelized cost of electricity (LCOEs).
+              This level of analysis is limited however, as it does not necessarily provide a useful basis of
+              comparison against variable energy sources (or any other energy source with low capacity
+              factors) [2]. Furthermore, LCOEs have limited value beyond electricity generation.
+
+         · Tier 2 provides additional granularity and describes nuclear costs in terms of capital and
+              operating costs. This more granular breakdown is much better suited for grid-modeling (e.g.,
+              capacity expansion models) and utility-scale planning.
+
+         · Tier 3 provides the most granular breakdown of advanced reactor costs using the Code of
+              Account framework. This provides a higher-level of fidelity that can be needed for certain
+              analyses. For instance, if existing infrastructure can be leveraged and not all costs need to be
+              accounted in the cost (e.g., in the case of leverage the switchyard for a `coal-to-nuclear'
+              transition for instance [3]). Another scenario where this level of detail is needed is in the case
+              of a heat-only use case where the cost of the turbine and associated systems does not need to
+              be included.
+
+                 2.1 Overview of Methodology and Limitations
+
+    Historically, the task of producing accurate nuclear cost estimate recommendations and techniques
+has been fraught with complications. The lack of public data on advanced reactor constructions (limited
+deployment in the U.S. as of the time of writing) drives the reliance on estimates and projections rather
+than physical observations. However, leveraging estimates introduces an entire gamut of associated
+issues:
+
+    1. Inconsistencies between estimates and their corresponding methodology.
+
+    2. Potential biases in estimates (for instance due to stance on nuclear energy as a whole).
+
+    3. Incomplete data in estimates (detailed breakdowns may be hidden in some cases).
+
+    4. Data specificity and applicability across various use case (e.g., electric versus non-electric).
+
+    5. Lack of range in cost estimate from references (most provide single datapoint).
+
+    6. Sparsity of information on underlying assumptions for estimate (e.g., if first or Nth of a kind).
+
+    7. Gaps in time between the estimates (requiring escalation to adjust the baselines).
+
+    8. Variations in the level of maturity of the estimate (very detailed versus high-level)
+
+    9. Variations in the level of maturity of the design on which estimates are based (some estimates are
+         based on very mature concepts while others on early designs)
+
+    While leveraging estimates from literature has intrinsic constraints, additional challenges arise from
+processing of this data. The methodology followed in this study has several limitations; key ones are
+summarized below:
+
+                                                               2
+    1. The study assigns equal weights to all estimates in the literature. This is inherently limiting since
+         cost datasets relying on observed costs are weighed equally to those that are entirely on projected
+         estimates. Similarly older datasets are weighed equally to more recent ones. However, typically
+         the more reliable estimates leveraging observed costs are often the oldest used here. This creates a
+         significant challenge in determining how to best adjust weights for a given estimate. As a result,
+         this report elected not to opine on how estimates should be weighted and instead treats each
+         estimate the same, with equal weighting.
+
+    2. Inferring insights from the dataset compiled (even with equal weighting) is fraught with
+         challenges as well. Deductions from data aggregation techniques may be inherently swayed based
+         on the number, biases, and inconsistencies in datapoints. Here, the recommended cost ranges
+         were obtained by splitting cost data into quartiles. From a statistical standpoint the use of
+         quartiles is less susceptible to the bias produced from major outliers than relying on averages or
+         min/max values.
+
+    3. The data collected in this report contains several inconsistencies in what they do and do not
+         include as part of their estimates. Some estimates include financing costs, while others do not.
+         The same can be said for owners costs, pre-construction costs, and supplementary costs. This is
+         yet another complication of comparing nuclear costs. This study opted to compare all values
+         equally and use them to infer total overnight capital costs for a nuclear plant. While the approach
+         is imperfect, the end results were still found to agree well with other similar meta-studies
+         conducted in the literature.
+
+    Despite of these challenges and the complexity of the task, there still exists a strong need for more
+comprehensive evaluations of advanced nuclear power plants cost estimations. However, this study does
+not pretend to be the ultimate reference for nuclear reactor costs. Instead, it provides a useful survey of
+the existing literature of nuclear cost estimates and attempts to distill useful insights and trends from the
+data. This is expected to provide additional, albeit limited, confidence in the range of potential costs to be
+expected for future deployments of this technology, anchored in the existing literature on the topic. The
+aggregation of multiple references into a single document is expected to be useful as well. While several
+studies aggregate cost data for nuclear reactors, no other study was found to be as comprehensive as the
+one presented here (especially for nuclear overnight costs). As a result, this report is expected to set a
+foundation for future work. Aggregating data this extensively can help facilitates future efforts that can
+build on this study and refine identified values by post-processing estimates or adding to them.
+
+    In light of the broad ranging challenges discussed above, the meta-study presented here, will
+intentionally ignore several potential discrepancies in cost estimation between the various sources
+considered. Accounting for all these nuances will be left to future efforts. However, the study still tackles
+several of these disparities by:
+
+         · Capturing key metrics (LCOE, Overnight, etc.) to compare across estimates.
+
+         · Capturing important parameters that may or may not impact cost estimates (e.g., reactor type,
+              size, maturity)
+
+         · Quantifying the observable ranges in estimates.
+
+         · Focusing primarily on reviewed, and well-respected academic sources (which are clearly and
+              transparently listed).
+
+         · Reducing the impact of significant outliers in the data (e.g., by the use of quartiles rather than
+              minima for `low' range estimates).
+
+         · Escalating all cost estimates to the reference year of 2019 USD.
+
+                                                               3
+    To achieve this, the study provides a comprehensive list of all references considered and tabulating
+key metrics that were leveraged in the analysis. Then, these values are escalated to a common year in
+order to provide a basis for comparison. This dataset was queried in an attempt to elucidate some (not all)
+important drivers of costs for nuclear reactors. This includes potential factors such as reactor technology
+type, reactor size/power output, maturity of the technology, assumed learning from deployment, as well as
+pooling of infrastructure and resources between plants. This list of factors/biases is not exhaustive.
+However, it still provides a useful starting point to yield more accurate insights on advanced reactor costs
+and their potential drivers.
+
+                      2.2 Overview of Considered Literature
+
+    Note that cost estimates from the Advanced Reactor Demonstration Program (ARDP) were not
+included because public statements regarding overall costs do not include breakdowns of reactor costs
+against other expenses. Reference [4] highlights how one of the ARDP awardees intends to use the total
+budget for completing the design, obtaining license approval, and construction of a fuel fabrication
+facility, in addition to the reactor demonstration costs.
+
+Table 2 provides an overview of the various references considered in this study. The list is not intended to
+be comprehensive but was rather geared towards capturing a broad range of considerations (in terms of
+reactor type, size, etc.). The key values extracted from each reference were tabulated without any
+additional manipulation at this stage.
+
+    The review encompasses a wide range of advanced reactors of various sizes: large, small modular
+(SMR), and microreactors. It also considered a wide range of technology types, including Pressurized
+Water Reactors (PWRs), Sodium Fast Reactors (SFRs), High-Temperature Gas-cooled Reactors
+(HTGRs), and Molten Salt Reactors (MSRs). Reactor estimates are also categorized in terms of First-of-a-
+Kind (FOAK) and Nth-of-a-Kind (NOAK). The review collected information relating to estimated
+overnight costs, Operation & Maintenance (O&M or OPEX), and levelized costs of electricity (LCOE).
+Information on the power-level of the plant and the number of units per plant is also provided. The table
+intends to transparently lay-out the various data points extracted from the literature. It should be
+mentioned ­ as previously disclosed ­ that the dataset contains several inconsistencies in cost contributors
+that are or are not included in several instances. Some of these inconsistencies are highlighted in
+Appendix A. Despite these limitations, it was still possible to infer useful insights from the aggregated
+data. Note that cost estimates from the Advanced Reactor Demonstration Program (ARDP) were not
+included because public statements regarding overall costs do not include breakdowns of reactor costs
+against other expenses. Reference [4] highlights how one of the ARDP awardees intends to use the total
+budget for completing the design, obtaining license approval, and construction of a fuel fabrication
+facility, in addition to the reactor demonstration costs.
+
+Table 2. Summary of total costs for four categories of reactor concept based on estimates from 30 references. Note that all costs
+provided here are based on the reference year (shown in the dollar sign subscript). Escalated costs are provided in Appendix A.
+
+     Ref. Reactor       Learning Units Power       Specific costs   LCOE            OPEX
+               Concept                             5,100$2015/kWe   114$2015/MW-hr
+                                                   3,856$2018/kWe                   --
+     [5] NuScale        FOAK  12  1920MWth/570MWe  2,850$2018/kWe   --              --
+                                                   20,139$2022/kWe  --              --
+     iPWR                                          5,600$2014/kWe
+                                                                    119$2022/MW-hr  25$2014/MW-hr
+     [6] NuScale        NOAK  12  685MWe                            105$2014/MW-hr
+
+     iPWR
+
+PWR  [7] NuScale        NOAK  12  924MWe
+
+     VOYGR
+
+     [8] NuScale/U FOAK       6   462MWe
+
+     AMPS
+
+     [9] SMART          --    ----
+
+     iPWR
+
+                                              4
+      [10] NuScale  --    --  1920-2400MWth/600-  --                51-54$2019/MW-hr  --
+                              720MWe                                112$2016/MW-hr
+      SMR                                         --                [11]              --
+                              600MWe              --                101$2016/MW-hr    --
+      [13] NuScale  --    --  570MWe                                [12]              --
+                              600MWe              6,191$2019/KWe    65$2015/MW-hr
+      [14] SMR      --    --  600MWe              3,800$2020/MW-hr                    22$2020/MW-hr
+                              600MWe              2,000$2020/MW-hr  80$2017/MW-hr     15$2020/MW-hr
+      [15] SMR      --    12  870MWth/300MWe
+                                                  --                --                --
+      [16] SMR      FOAK  4
+                                                                    95$2020/MW-hr
+      [16] SMR      NOAK  4                                         44$2020/MW-hr
+                                                                    44­51$2019/MW-hr
+      [10] GEH      --    --
+
+      BWRX-300
+
+      [17] PWR-12   FOAK  1   3417MWth/1144MWe    6,345$2017/kWe    --                --
+                              3417MWth/1144MWe    3,650$2017/kWe    --                --
+      [17] PWR-12   NOAK  1   3417MWth/1144MWe    6,671$2017/kWe    --                --
+                              3415MWth/1100MWe    3,838$2017/kWe    --                --
+      [17] AP1000   FOAK  1   3415MWth/1100MWe    7,349$2022/kWe                      --
+                              3415MWth/1100MWe    6,154$2018/kWe    81$2022/MW-hr     --
+      [17] AP1000   NOAK  1   3415MWth/1100MWe    6,986$2014/kWe                      --
+                              2156 MWe            6,041$2019/KWe    --                --
+      [18] AP1000   FOAK  1   2256MWe             6,317$2019/KWe    --
+                                                                    --                25$2019/ MW-hr
+      [2] PWR       FOAK  1   --                  --
+                                                                    82$2019/ MW-hr    19-
+      [2] PWR       NOAK  1                                                           21$2023/MW-hr
+                                                                    141-221$2023/MW-
+      [15] PWR      --    2                                         hr                --
+                                                                                      --
+      [10] PWR      --    2                                         --                --
+                                                                    --
+      [19] PWR      --    --                                        --
+
+      [20] PWR12BE NOAK   1   3417MWth/1144MWe    3,054$2011/kWe
+                              3417MWth/1144Mwe    5,305$2011/kWe
+      [20] PWR12ME FOAK   1   3417MWth/1144Mwe    2,534$2011/kWe
+
+      [20] PWR      --    1
+
+      Improved
+
+      [17] NGNP     --    1   275MW               9,900$2017/kWe    --                --
+                                                  6,600$2015/kWe
+      [9] HTGR      --    --  --                  7,346$2017/kWe    128$2015/MW-hr    30$2015/MW-hr
+                                                  20,994$2009/kWe
+      [17] MIGHTR --      1   350MWth/154MWe      14,479$2009/kWe   --                --
+                              350MWth/156MWe      7,324$2009/kWe    --                --
+      [21] NGNP     FOAK  1   600MWth/267MWe      5,841$2009/kWe    --                --
+                              350MWth/154MWe      5,246$2009/kWe    --                --
+      [21] NGNP     FOAK  1   600MWth/267MWe      4,814$2017/kWe    --                --
+                              2400MWth/1000MWe    5,720$2009/kWe                      --
+      [21] NGNP     NOAK  1   1100 MW             3,585$2017/kWe    114$2009/MW-hr    --
+                              1400MWth/624MWe     4,663$2009/kWe                      --
+      [21] NGNP     NOAK  1   1400MWth/616MWe     5,600$2018/kWe    --                --
+                              2400MWth/1068MWe    4,550$2018/kWe    --                --
+      [2] NGNP      --    4   2400MWth/1068MWe    3,000$2018/kWe    --                --
+      [17] NGNP               920MWe              3,153$1992/kWe    --                --
+      [21] NGNP     --    4   920MWe                                --                --
+                              1800MWth/693MWe                       --                --
+HTGR                NOAK  4                                         --
+                                                                    --
+      [17] MIGHTR NOAK    4
+
+      [21] NGNP     NOAK  4
+
+      [22] NGNP     --    4
+
+      [22] HC-HTGR FOAK   4
+
+      [22] HC-HTGR 10-OAK 4
+
+      [23] MHTGR- FOAK    4
+
+      SC
+
+      [23] MHTGR- NOAK    4   1800MWth/693MWe 2,347$1992/kWe        50$1992/MW-hr     8$1992/MW-hr
+
+      SC
+
+      [23] MHTGR- FOAK    4   1800MWth/806MWe 3,290$1992/kWe        --                --
+
+      GT/IC
+
+                              5
+              [23] MHTGR- NOAK     4   1800MWth/806MWe 2,458$1992/kWe   48$1992/MW-hr    6$1992/MW-hr
+
+              GT/IC
+
+              [23] MHTGR- FOAK     4   1800MWth/869MWe 2,656$1992/kWe   --               --
+
+              GT/DC
+
+              [23] MHTGR- NOAK     4   1800MWth/869MWe 1,908$1992/kWe   39$1992/MW-hr    5$1992/MW-hr
+
+              GT/DC
+
+              [24] HTGR  NOAK      --  1124MWe         5,469$2017/kWe   55$2017/MW-hr    --
+
+              [2] SFR    --        4   3360MWth/1100MWe 5,632$2013/kWe  113$2013/MW-hr   --
+
+              [25] 4S Sodium --    1   30MWth          --               130-290$2009/MW- --
+
+                                                                        hr
+
+              [26] LSPB  --        1   1100MWe         4,734$2013/kWe   --               --
+
+              [27] ABR1000 --      1   380MWe          5,612$2017/kWe   --               --
+
+              [28] S-PRISM --      4   1520MWe         2,664$2005/kWe   39$2005/MW-hr    --
+
+SF R          [28] S-PRISM --      4   1520MWe         3,046$2005/kWe   60$2005/MW-hr    --
+
+              [29] S-PRISM --      2   1651MWe         1,334$1996/kW    32$1996/MW-hr    --
+
+              [28] S-PRISM --      6   1866MWe         2,073$2005/kWe   39$2005/MW-hr    --
+
+                        Mod B
+
+              [28] S-PRISM --      6   1866MWe         2,371$2005/kWe   55$2005/MW-hr    --
+
+                        Mod B
+
+              [30] S-PRISM --      6   1866MWe         1,554$2004/kWe   40$2004/MW-hr    --
+
+                        Mod B
+
+              [24] LSPB  NOAK      --  1311Mwe         4,240$2017/kWe   80$2017/MW-hr    --
+
+              [2] AHTR   --        1   3000MWth/1350MWe 5,217$2011/kWe  111$2011/MW-hr   --
+
+              [2] MSR    --        1   2275MWth/1000MWe 6,113$2011/kWe  119$2011/MW-hr   --
+
+MS R          [2] FHR    --        12  2904MWth/1330MWe 5,423$2015/kWe  135$2015/MW-hr   --
+
+              [31] DMSR  --        1   1000MW          6,53$1978/kWe    --               --
+
+              [20] AHTR  NOAK      1   3400MWth/1530MWe 3,384$2011/kWe  --               34-
+                                                                                         60$2011/MW-hr
+
+              [24] MSR   NOAK      --  190-1000MWe     3,664$2017/kWe   51$2017/MW-hr    19$2017/MW-hr
+
+              [32] Reference FOAK  1   10MWth/5MWe     10,000$2019/kWe  150$2019/MW-hr   69$2019/MW-hr
+
+              micro-
+
+              reactor
+
+              [32] Reference FOAK  1   10MWth/5MWe     15,000$2019/kWe  310$2019/MW-hr   103$2019/MW-
+                                                                                         hr
+              micro-
+
+              reactor
+
+              [32] Reference FOAK  1   10MWth/5MWe     20,000$2019/kWe  410$2019/MW-hr   137$2019/MW-
+                                                                                         hr
+              micro-
+
+              reactor
+
+Microreactor  [32] Reference NOAK  1   10MWth/5MWe     3,996$2019/kWe   80$2019/MW-hr    --
+
+              micro-
+
+              reactor
+
+              [32] Reference NOAK  1   10MWth/5MWe     8,276$2019/kWe   200$2019/MW-hr   --
+
+              micro-
+
+              reactor
+
+              [32] Reference NOAK  1   10MWth/5MWe     14,973$2019/kWe  340$2019/MW-hr   --
+
+              micro-
+
+              reactor
+
+              [33] Design A FOAK   1   5MWth/1.8MWe    65,445$2017/kWe  2174$2017/MW-hr  112$2017/MW-
+                                                                                         hr
+
+              [33] Design A' FOAK  1   8MWth/2.9MWe    19,241$2017/kWe  363$2017/MW-hr   122$2017/MW-
+                                                                                         hr
+
+              [33] Design A' NOAK  1   8MWth/2.9MWe    6,575$2017/kWe   135$2017/MW-hr   53$2017/MW-hr
+
+                                                    6
+    As shown in the summary table, specific overnight costs vary greatly between different sources and
+reactor types. Potential trends will be investigated in further detail in Section 2.4. At this stage, it is
+already apparent that the main drivers for some reactors can be attributed to the level of learning (FOAK
+and NOAK). For instance, PWRs with best and improved experiences are half the price for a FOAK
+reactor. Interestingly, costs of several smaller reactors are comparable to those of larger reactors (e.g.,
+NuScale FOAK). On the other hand, the cost estimates for HTGRs in particular, differ substantially. This
+can be attributed to FOAK overrun assumptions and lower technology maturity level relative to PWRs. In
+general, reactors with higher thermal/electrical power generations usually have lower estimates of total
+costs. However, this topic has been consistently debated in the literature. With some arguing that large
+reactors appear to experience diseconomies of scale due to the challenge of executing such complex
+projects [24] [34] [35], while others point that size in and of itself was not the leading cost of these
+escalations [36].
+
+                          2.3 Cost Escalation Methodology
+
+In order to cross-compare costs from various years, all estimates were escalated to the base year of 2019.
+This year was used as a reference to avoid the recent inflationary trends in the global economy as well as
+the adverse impact of a global pandemic. While the reference is several years from the time of publishing
+of the report, it still provides a useful basis for comparison. It is also important that some estimates in the
+literature are themselves based on older datasets that may have been escalated using different
+methodologies than the one leveraged here.
+
+    For the purposes of this study, the methodology recommended by the Advanced Fuel Cycle Cost
+Basis Report (CBR) [37] was initially leveraged. The report provides a cost factor for nuclear reactor cost
+estimation for every year between 1978 until 2017 (time of publication of this report). These are nuclear-
+specific escalation factors and are therefore deemed to be suitable for the purposes of this analysis. For
+cost estimates beyond 2017, standard production indices from the U.S. Bureau of Labor Statistic were
+used. Specifically, the "New Industrial Building Construction Cost Factor" [38] was selected as a suitable
+proxy for nuclear new build. In light of the lack of new nuclear constructions in the recent decade to
+baseline escalation factors, the industrial building construction trend was assumed to be applicable for the
+five remaining years considered in this study. Table 3 highlights the two different cost factors used for
+cost escalation and how they were combined and re-baselined to 2019. It is important to note that there
+are a range of other approaches for accounting for escalating costs. The approach used here was primarily
+selected for its simplicity.
+
+                                                               7
+Table 3. Cost factors leveraged for cost escalation to 2019 USD. The factors combine CBR data up to 2017 and the factorized
+                                    indexes for new industrial building construction passed that year.
+
+1978  Cost Basis Report Cost  New Industrial Building   New, Combined Cost Factor 2019 Base
+1979     Factor 2017 Base     Construction Cost Factor
+1980                                                                          6.60
+1981              5.95                  2017 Base                             6.22
+1982              5.61                                                        5.90
+1983              5.32                     1.16                               5.35
+1984              4.82                     1.13                               4.89
+1985              4.41                     1.16                               4.50
+1986              4.06                     1.14                               4.17
+1987              3.76                     1.11                               3.89
+1988              3.51                     1.09                               3.77
+1989               3.4                     1.05                               3.66
+1990               3.3                     1.03                               3.55
+1991               3.2                     1.03                               3.45
+1992              3.11                     1.00                               3.35
+1993              3.02                     0.95                               3.24
+1994              2.92                     0.90                               3.14
+1995              2.83                     0.88                               3.04
+1996              2.74                     0.83                               2.94
+1997              2.65                     0.68                               2.85
+1998              2.57                                                        2.83
+1999              2.55                                                        2.77
+2000               2.5                                                        2.76
+2001              2.49                                                        2.73
+2002              2.46                                                        2.71
+2003              2.44                                                        2.63
+2004              2.37                                                        2.51
+2005              2.26                                                        2.37
+2006              2.14                                                        2.19
+2007              1.97                                                        1.99
+2008              1.79                                                        1.48
+2009              1.34                                                        1.16
+2010              1.05                                                        1.21
+2011              1.09                                                        1.26
+2012              1.14                                                        1.25
+2013              1.13                                                        1.23
+2014              1.11                                                        1.18
+2015              1.06                                                        1.19
+2016              1.07                                                        1.16
+2017              1.05                                                        1.14
+2018              1.03                                                        1.13
+2019              1.02                                                        1.11
+2020              1.00                                                        1.06
+2021                                                                          1.00
+2022                                                                          0.97
+                                                                              0.92
+                                                                              0.75
+
+    Costs were then escalated based on Equation 1 below for each reference in Table 2. The new adjusted
+values are shown in Appendix A.
+
+                              2019 =  ×                                                      (1)
+
+                              8
+    Baselining the costs for the same year enables further analysis of the dataset by removing noise in the
+data created by inflation. As an example, if a reactor cost was estimated to be $2,458/kWe in 1992 (which
+may seem like a competitive cost), applying the escalation factor would result in a new value of
+$7,712/kWe in 2019 USD (which is on the higher end of the spectrum of expected costs). This highlights
+the impact of cost escalation and how it can distort conclusions in cost estimation. Because escalation is a
+relatively imperfect science, it is a notable source of potential error in the analysis shown here. However,
+as previously argued, it is still and important exercise to attempt to baseline a disparate source of various
+estimates in advanced reactor costs.
+
+    The resulting re-normalized dataset is then plotted in Figure 1. All points were escalated to 2019
+USD. The spread in the data is not as large as one would expect based on the interpretation of the raw
+data alone. The majority of data points do appear to be clustered between $2,000/kWe and $8,000/kWe.
+
+Normalized Overnight Capital Costs  $14,000
+   ($2019/kWe)                      $12,000
+                                    $10,000
+                                                    1980  1985  1990  1995 2000 2005       2010  2015  2020  2025
+                                     $8,000                              Year of Estimate
+                                     $6,000
+                                     $4,000
+                                     $2,000
+
+                                          $0
+                                              1975
+
+Figure 1. Overview of the overnight capital cost estimate range re-baselined to 2019 USD.
+
+                     2.4 Evaluating Potential Data Groupings
+
+When discussing nuclear costs, terms such as capital cost and overnight capital cost (OCC) are often used
+interchangeably without considering the differences between the two. Capital cost is a reference to fixed,
+one-time expenses, that are incurred when building facilities, purchasing equipment, and buying other
+depreciable goods. These expenses are typically in the form of construction material costs, component
+costs, labor costs, installation costs, etc. Overnight capital cost refers to the cost of the very same goods,
+but it implies that the cost is incurred as if the project was completed overnight. This means OCC ignores
+financing costs during construction. Subsequently, when this report refers to overnight capital cost it
+should be noted that interest incurred during construction is not accounted for (Note again the discussion
+from section 2.1 on this issue and the potential for some upward bias in this area). These costs were
+primarily leveraged to elucidate trends in the data. Cost estimates of the four reactor types (PWR, HTGR,
+SFR, MSR) were found to be statistically comparable as described in more detail in the following section.
+
+           Grouping Based on Reactor Type
+
+The study first set out to identify trends in OCC based on the type of reactor. Figure 2 plots the specific
+costs of different reactor types against the reactor power. A general trend towards lower costs with
+
+                                                                      9
+increasing plant power outputs can be seen. Another observable trend is the significant overlap between
+the various reactor types. At first look, there do not appear to be substantial variations in costs based on
+the type of technology. This is in-line with observations made in [2] which also concluded that it remains
+unclear if the reactor technology type would impact costs in and of itself.
+
+                                    30000
+
+Normalized Overnight Capital Costs  25000
+   ($/kWe 2019)
+                                    20000                                         PWR
+                                    15000                                         HTGR
+                                    10000                                         SFR
+                                                                                  MSR
+                                     5000
+
+                                    0
+
+                                           0  500  1000      1500     2000  2500
+
+                                                   Plant Power (MWe)
+
+Figure 2: Scatter plot of overnight capital costs versus plant power rates for four major types of advanced reactors. Note that
+                      microreactors cost estimates are excluded from this initial plot for visualization clarity.
+
+    Upon further inspection, this is confirmed in the whisker plot in Figure 3. A significant overlap is
+observed between the various reactor types. The highest PWR cost (15,196$2019/kWe) is from reference
+[8] for NuScale/UAMPS. The highest HTGR costs (18,313$2019/kWe and 26,553$2019/kWe) are from
+reference [21] for single-unit FOAK NGNP with 600 MWth and 350 MWth, respectively. There appear
+to be slightly more variations in the minima across reactor types. This could be attributed to potential
+biases of estimates. For instance, a vendor may be encouraged to project the lowest possible estimate for
+their reactor cost to position it as attractive for investments. Another reason for the deviations in minima
+is due to lack of maturity in the design at the time of an estimate. Reference [2] specifically identifies a
+track record in the nuclear industry to consistently underestimate costs early in a project, to then adjust
+these estimates upwards as the design matures. Despite the deviations in the minima, it can be seen that
+the mean values for each reactor type are all within ~30% of one another. This points to the reactor type
+not being a statistically significant cost driver (it may prove to be in reality, but there appears to be a lack
+of confidence in the literature to delineate costs between reactor types).
+
+                                                         10
+     Figure 3: Whisker plot with associated standard deviations of total costs for all advanced reactors reviewed in this report.
+
+    In summary, there does not appear to be sufficient granularity in the data to be able to draw adequate
+conclusions regarding the variability of advanced reactor costs based on their type. As such, this study
+recommends using a single reference across all advanced reactors rather than attempting to discriminate
+between reactors. This is expected in light of the lack of `real' data on advanced reactor costs (the
+literature is predominantly based on predictive estimates). As these reactors come online, differentiation
+between them might become more apparent (or consistent, thorough, cross-comparisons might be
+needed). Nevertheless, other factors (such as learning rates and the number of units per plant) are
+apparently impacting cost considerations. This will be investigated further in Section 2.8.
+
+           Grouping Based on Reactor Size
+The second step was to evaluate the sensitivity of reactor cost estimates on their size. To this end, reactors
+were grouped between: Large (> 400 MWe), SMR (50-400 MWe), and microreactor (< 50 MWe). The
+resulting scatter plot was updated in Figure 4 and plotted with a logarithmic x-axis to facilitate
+comparison within different scales (especially for microreactors). The cost estimate for microreactor
+Design A (72,610 $2019/kWe) from reference [33] is not included to better visualize clusters by reactor
+types and power levels. It is important to note that that particular design was intended for
+experimental/research application rather than commercial applications. While the datapoints are clearly
+clustered along the power-level (by design), their variability along the y-axis (normalized specific costs)
+overlaps substantially, especially for the large reactors and SMRs.
+
+                                                              11
+                                                 30000
+
+Normalized Overnight Capital Costs ($/kWe 2019)  25000
+
+                                                 20000
+
+                                                 15000                                           SMR
+                                                 10000                                           Large
+                                                                                                 Microreactor
+
+                                                 5000
+
+                                                 0
+
+                                                        1  10  100                  1000  10000
+
+                                                               Reactor Power (MWe)
+
+Figure 4: Scatter plot of specific costs versus reactor power rates for three sizes of nuclear reactors. Note that the x-axis here is
+                                     expressed in terms of reactor unit output (not total plant output).
+
+    Upon closer inspection, this conclusion is also confirmed with the whisker plot in Figure 5. While the
+microreactor cost estimates appear to have substantially different costs than the other classes, limited
+variation between large reactors and SMRs was observed. At this stage, this literature survey did not find
+a significant difference in values between large reactors and SMRs. This somewhat contradicts the
+conclusion in [6], which seems to indicate that SMR are expected to have higher mean costs than larger
+reactors, but with a narrower min/max band. This can be potentially attributed to biases or inconsistencies
+in the various references surveyed. It is expected that the construction of large reactors would hold in
+more hidden costs due to delays [39], which SMRs seek to mitigate. Since the current study weighs all
+references equally and does not attempt to revisit all of the assumptions in the literature on advanced
+reactor cost evaluation, these differences between SMR and larger reactors are not immediately apparent.
+This could be potentially improved in future work.
+
+                                                                    12
+Figure 5: Whisker plot with associated standard deviations of total costs for three sizes of nuclear reactors reviewed in this report.
+             Note that the main outliers for the SMR groupings correspond to the NGNP and NuScale FOAK estimates.
+
+         In conclusion, there appears to be no consensus in the existing literature on the impact of large
+versus SMR-scale reactors nor on their technology types. The only differentiation that is quantifiable at
+this stage is for microreactors. As such, this report will only use two groupings based on reactor types: (1)
+large reactors and SMRs, and (2) microreactors. This will inform the granularity in cost values in
+upcoming sections. However, it is important to note the noise in the data could be disentangled with
+further, deeper analysis, which is beyond the scope of the current literature review.
+
+              2.5 Tier 1 Estimates: Levelized Cost of Electricity
+
+Based on the findings in the previous sections, values will be grouped into large and small reactors on the
+one-hand and microreactors on the other. The first tier in the analysis consisted of reviewing the data on
+LCOE. Figure 6 shows a histogram of the distribution of estimates within the literature. It illustrates the
+large spread in the data on LCOE for advanced reactors and the challenge with identifying specific
+values.
+
+                                                              13
+Occurrence  10
+             9
+             8                     25-50      50-75  75-100  100-125    125-150          >150
+             7
+             6
+             5
+             4
+             3
+             2
+             1
+             0
+                        0-25
+
+                                               LCOE ($2019/MW-hr)
+
+               Figure 6: Histogram of LCOE values for Large and SMR (no microreactors).
+
+    Table 4 provides a statistical breakdown of the distribution shown above along with estimates for
+microreactors. It is important to note that this aggregate corresponds to neither FOAK nor NOAK costs,
+but rather a combination of both. As a result, a new term is coined here: Between first and Nth of a Kind
+(BOAK). This essentially represents the expected cost for early deployment of advanced reactors beyond
+the first demonstration. It is a helpful `in-between' for higher-level cost evaluations.
+
+Table 4. Advanced reactor LCOE distribution for BOAK observed in the literature review of cost estimates.
+  Values were rounded up/down to avoid inferring more confidence in the estimates than the original data.
+
+                              Min         Q1         Mean    Q2 (Med)   Q3                     Max
+                                                                                               367
+Large & SMR                   43          64         107           92   133
+($2019/MW-hr)                                                                                  410
+
+Microreactor                  150         150        285           310  403
+($2019/MW-hr)
+
+    The relatively large number of outlier data points results in a noticeable difference between the mean
+and median (Q2) of the dataset. Furthermore, several lone outliers push the min/max values further away
+than the bulk of the datapoints. As a result, for the purposes of future high-level evaluations of advanced
+reactor deployment potential it is recommended to use the Q2, or median, value as the reference point
+with the quartiles, Q1/Q3, for sensitivity evaluations. It is important to note however that LCOE estimates
+have proven to be a limited way of estimating overall system costs for generating electricity [2]. This tier
+of estimates is therefore not ideal for models that do not account for grid-level systems costs. It is
+primarily relevant for comparison against similar firm generation sources with equivalent CO2 emissions
+(e.g., firm coal fired plant with carbon capture and sequestration) or models that are able to treat these
+sources differently.
+
+                                                     14
+       2.6 Tier 2 Estimates: Overnight Capital and Operating Costs
+
+While LCOE provides useful initial guidance on potential costs for advanced reactors, a more useful
+metric is a breakdown between overnight capital and operating costs (OCC and OPEX). Identified values
+based on the literature survey are provided for larger and microreactors in Table 5 and Table 6
+respectively. Note that the estimates come with several caveats:
+
+    1. As previously explained, all datapoints in the literature were weighted equally. Hence the meta-
+         analysis does not account for dissimilarities in assumptions etc.
+
+    2. The highlighted low/medium/high values correspond to the quartiles (1st, 2nd, and 3rd) rather than
+         max/mean/min values. This is due to the high degree of variation in the data and outliers.
+
+    3. The resulting LCOE provided in Tier 2 does not line up directly with the values provided in Table
+         4. This is due to inconsistencies in the data: not all references that quoted LCOE values quoted
+         OCC and OPEX values, and vice versa. In addition, there are discrepancies in assumptions
+         between the various ways LCOE, OCC, and OPEX values are estimated. This led to differences
+         in the Tier 1 versus Tier 2 estimates. Note that the Tier 2 LCOEs were estimated assuming a
+         weighted average cost of capital of 8% (in line with utilities [40]), a reactor lifetime of 60 years
+         (conservative as several reactors are being extended beyond this point [41]), and a capacity factor
+         92% [42].
+
+    4. The values quoted are for a `BOAK' estimates. This represents a reactor between the first and
+         Nth of a kind.
+
+Table 5. Identified low, medium, and high estimates for total costs for small modular and large reactors cost estimates reviewed
+in this report. Standard deviations are also provided. All values are in 2019 USD. Note that the estimated LCOE values here do
+
+                                             not necessarily line up with those estimated in Tier 1.
+
+Large & SMR            Low          Medium          High          Sd
+
+Overnight Capital  $4,000 /kWe  $6,000 /kWe     $7,000 /kWe   $3,800 /kWe
+costs              $15 /MWh     $25 /MWh        $35 /MWh      $15 /MWh
+Operating Costs    $60 /MWh     $80 /MWh        $100 /MWh     $50 /MWh
+LCOE (estimated)
+
+Table 6. Identified low, medium, high estimates for total costs of total costs for microreactors cost estimates reviewed in this
+                                                      report. All values are in 2019 USD.
+
+Microreactor       Low          Medium          High          Sd
+
+Overnight Capital  $8,000 /kWe    $13,000 /kWe  $17,000 /kWe  $5,800 /kWe
+Costs              $70 /MWh     $100 /MWh       $135 /MWh     $30 /MWh
+Operating Costs    $150 /MWh    $250 /MWh       $300 /MWh     $90 /MWh
+LCOE (estimated)
+
+    It is important to highlight the dearth of data on microreactors. The current values are only based on
+two references in the literature and will need to be updated as more estimates are published. As such, the
+values are very approximative and care should be taken when leveraging them for microreactor-specific
+use cases. Additional cost estimation for microreactors is crucial to reach higher confidence in projected
+costs.
+
+                                15
+Noramlized Overnight Capital CostsFigure 7 helps visualize the identified values for large reactors and SMRs within the entire dataset. It
+   ($/kWe 2019)can be seen that they encapsulate the majority of datapoints. Some outliers do appear to be outside of the
+upper quartile bounds, these are predominantly associated with FOAK estimates which will be addressed
+more closely in Section 0.
+
+                   $14,000
+                   $12,000
+                   $10,000
+
+                    $8,000
+                     $6,000
+                     $4,000
+                     $2,000
+
+                          $0
+                                                                   Evenly-Spaced Dataset
+
+Figure 7. Distribution of the data points between the low/high (solid line) estimates. The medium estimate is shown in the dashed
+line.
+
+    Looking more closely, it does appear that the median (which corresponds to the `medium' value)
+skews slightly upwards. This can be attributed to the data not following a normal distribution as shown in
+Figure 8, with a significant proportion of estimates within the high data ranges. The distribution does
+display a right tailed `double hump' or bimodal distribution, each of which is likely associated with
+FOAK versus NOAK costs. The right-tailed nature of this distribution is expected, as projects commonly
+become more expensive due to significant cost overruns and delays, but a realistic limit always exists to
+how cheaply they can be built.
+
+                                                              16
+Occurrence                          16
+                                    14
+                                    12
+                                    10
+
+                                     8
+                                     6
+                                     4
+                                     2
+                                     0
+
+                                             Normalized Overnight Capital Costs ($2019/kWe)
+
+Figure 8. Distribution of the normalized overnight capital cost estimates
+
+    The evolution of the contributions of the different cost estimates is plotted in Figure 9. Looking
+backwards from the most recent datapoints (2022), the average and median appear to stabilize beyond
+2014 (towards older estimates) where the majority of dataset is captured. Overall, the median value does
+not drastically vary throughout the estimates (ranges between -50% and +10% of the median value of
+$6,000/kWe). It can be inferred from this plot that the identified values are not strongly dependent on
+decades-old data. However, it should be noted that many of the more recent datasets do rely heavily on
+more older cost estimates.
+
+                                                  Qty Data      Average Over Time        Median Over Time
+
+Noramlized Overnight Capital Costs  $7,000                                                                       12
+   ($/kWe 2019)
+                                    $6,000                                                                       10  Number of Estimates/Year
+
+                                    $5,000                                                                       8
+
+                                    $4,000
+
+                                                            11                                                   6
+
+                                    $3,000
+
+                                    $2,000                                         8                             4
+
+                                                                                         6  5  6
+
+                                    $1,000           3          312                                        3     2
+
+                                            2  1  2                                   2                       1
+
+                                        $0                                                                       0
+
+                                                                 Year of Estimate
+
+Figure 9. Contribution of the datasets (based on year) on the average and the mean overnight capital costs for large reactors and
+SMRs. Note this a progressive time-based aggregation and not a moving average graph.
+
+                                                                17
+    To place the analysis in context, the identified values for large reactors and SMRs are compared to
+other similar meta-studies in Table 7. As can be seen, the range produced from this report intersects with
+the estimates for most similar meta-study highlighted. The values presented here are not anticipated to
+challenge the conclusions and findings of these previous analyses. It does however provide a more
+transparent and systematic basis for the expected cost ranges of advanced nuclear technology.
+
+Table 7. Comparison of the identified values in this study against other meta-studies on advanced reactor cost estimates. All
+                                                      values are escalated to 2019 USD.
+
+                   OCC                    OPEX        LCOE
+
+ETI/Lucid [24]     $4,006/kWe             $22/MWh     $64/MWh
+
+MIT [2]            $4,100­6,900/kWe       $11­35/MWh  $110­120/MWh
+
+Breakthrough [35]  $3,018­$7,500/kWe      $4­23/MWh   $31­75/MWh
+
+NIA [43]           $2,030­$6,000/kWe      N/A         N/A
+
+SMR Start [16]     $1,846­$3,507/kWe      $21­28/MWh  $40­90/MWh
+
+EIA [15]           $6,191/kWe             $82/MWh     $26/MWh
+
+PNNL [10]          N/A                    N/A         $44­54/MWh
+
+This study         $4,000­$7,000/kWe      $15­35/MWh  $60­100/MWh
+
+    While the ARDP awards account for costs beyond the reactor itself, they can still provide a useful
+point of comparison against the identified range in this study. The X-energy award totals ~$2.5B [44],
+while the Natrium ARDP is expected to cost up to $4B [45]. This results in a normalized cost of around
+~7,800$2020/kWe and ~$11,600/kWe respectively, which is above the identified range for BOAK reactors
+in this study. This is expected since these reactors are FOAK demonstrations, and their estimates includes
+design, licensing, testing, fuel fabrication facility, as well as other costs. It is currently unclear if the cost
+estimates include the financing costs and owners' costs of the reactor(s). It should also be noted that the
+ARDP costs are still expected to evolve and are not finalized at this stage [4]. Because the Natrium
+reactor in particular has a variable power output, normalized cost comparisons are relatively challenging.
+Additional information on FOAK considerations to adjust the estimated values in this study is provided in
+Section 2.8.
+
+   2.7 Tier 3 Estimates: Detailed Breakdown based on Reactor Type
+
+While OCC and OPEX costs may provide sufficient levels of granularity for grid modeling, more detailed
+estimates may be needed for specific evaluations of IES, especially when reactor design modifications are
+envisaged (e.g., separating the nuclear island from the power island using thermal energy storage). To this
+end, a 3rd tier of estimate is provided in this section. It is based on the Tier 2 values for OCC and OPEX,
+to which they are normalized. This tier will provide a detailed breakdown in percentages of various
+components and subcomponents that are relevant for advanced reactors.
+
+    The majority of references outlined in Section 2.2 did not provide detailed, granular information on
+advanced reactor types. Due to the scarcity of granular data, a single reference design was selected to
+represent each reactor type:
+
+                                      18
+    - PWR: The EEDB estimate for the PWR12-BE was used as the reference for this type of reactor
+         [24]. This is often referred to as the main standard for nuclear reactor cost estimation.
+
+    - SFR: The cost breakdown dataset from both the ABR1000 [27] [20]. And the LSPBR (Large-
+         Scale Prototype Breeder Reactor) [46] was leveraged to complete the full estimate for this class
+         of reactor.
+
+    - HTGR: The cost breakdown from the NGNP project was used here. Specifically, the NOAK
+         concept with 4 units, 350 MWth power output, and a 750°C outlet temperature [21].
+
+    - MSR: The DMSR was used as the reference for this class of reactor [31].
+
+    The information for each reactor was then organized into a `Code of Accounts'. This provides a
+structured approach to capturing the various costs associated with advanced reactors. Expenses are
+grouped between `accounts' each with several `sub-accounts.' A standardized numbering structure helps
+reviewers understand the level of detail for a corresponding account. For instance, account number `10' is
+the highest level, `11' is lower, `111' is the next level, and `111.111' would be the lowest level. This
+structure ensures that all costs are captured and populated and provides a standardized means of
+comparison across various reactor types. For the purposes of this study, the Generalized Nuclear Code of
+Accounts (GN-COA), developed by the Systems Analysis & Integration (SA&I) program, was leveraged
+here [47]. It builds on previous COA in the literature but provides additional flexibility that is useful for
+this study. Namely, it defines accounts in terms of functional roles rather than specific technologies (e.g.,
+`Reactivity Control System' instead of `Control Rods'). The resulting breakdown for each reactor
+category using the GN-COA is provided in Table 8. The original breakdown in costs is provided in
+Appendix B.
+
+    Table 8. Breakdown of the percentage contribution of each account to the total OCC (in $/kWe) of each reactor type.
+
+10      Preconstruction cost                            PWR     SFR     HTGR    MSR
+                                                        2.35%   5.30%   1.19%   2.74%
+    11  Land and land rights                            0.11%   0.26%   0.06%   0.13%
+                                                        0.45%   1.01%   0.23%   0.52%
+    12  Site permits                                    1.11%   2.50%   0.56%   1.29%
+                                                        0.18%   0.40%   0.09%   0.21%
+    13  Plant licensing                                 0.18%   0.40%   0.09%   0.21%
+                                                        0.14%   0.32%   0.07%   0.17%
+    14  Plant permits                                   0.18%   0.40%   0.09%   0.21%
+                                                        39.65%  49.55%  40.25%  39.41%
+    15  Plant studies                                   10.33%  11.03%  5.66%   9.59%
+                                                        1.11%   2.67%   0.00%   0.78%
+    16  Plant reports                                   3.44%   3.06%   5.66%   3.41%
+                                                        1.28%   0.92%   0.00%   1.07%
+    17  Other preconstruction costs                     0.06%   0.01%   0.00%   0.00%
+                                                        0.89%   0.47%   0.00%   1.86%
+20      Direct costs                                    0.75%   1.45%   0.00%   0.00%
+                                                        0.44%   1.06%   0.00%   0.00%
+    21  Structures and improvements                     1.02%   0.61%   0.00%   1.00%
+                                                        0.34%   0.08%   0.00%   0.33%
+        211 Yardwork                                    0.00%   0.00%   0.00%   0.00%
+
+        212 Reactor containment building
+
+        213 Turbine room and heater bay
+
+        214 Security building and gatehouse
+
+        215 Primary auxiliary building and tunnels
+
+        216 Waste processing building
+
+        217 Fuel storage building
+
+        218A Control and diesel generator building
+
+        218B Administration Building
+
+        218C Operation and Maintenance (O&M) Center
+
+                                                    19
+    218C Turbine building                             0.00%   0.06%   0.00%   0.00%
+                                                      0.02%   0.01%   0.00%   0.02%
+    218D Fire pump housing                            0.00%   0.00%   0.00%   0.00%
+                                                      0.12%   0.14%   0.00%   0.12%
+    218E Steam Generator Storage Building             0.04%   0.00%   0.00%   0.04%
+                                                      0.00%   0.02%   0.00%   0.02%
+    218 E Emergency feed pump building                0.02%   0.20%   0.00%   0.00%
+                                                      0.40%   0.00%   0.00%   0.39%
+    218 F Manway tunnels                              0.02%   0.01%   0.00%   0.02%
+                                                      0.00%   0.00%   0.00%   0.00%
+    218 H Non-essential building                      0.03%   0.00%   0.00%   0.03%
+                                                      0.00%   0.09%   0.00%   0.00%
+    218 I Auxiliary building                          0.01%   0.00%   0.00%   0.01%
+                                                      0.00%   0.00%   0.00%   0.00%
+    218 J Steam pipe enclosures                       0.00%   0.00%   0.00%   0.00%
+                                                      0.00%   0.02%   0.00%   0.00%
+    218K Pipe tunnels                                 0.03%   0.01%   0.00%   0.03%
+                                                      0.00%   0.00%   0.00%   0.00%
+    218L Electrical tunnels                           0.31%   0.00%   0.00%   0.30%
+                                                      0.00%   0.14%   0.00%   0.00%
+    218L Technical support center                     0.00%   0.00%   0.00%   0.00%
+                                                      0.00%   0.00%   0.00%   0.00%
+    218N Maintenance Shop                             0.00%   0.00%   0.00%   0.00%
+                                                      0.00%   0.00%   0.00%   0.00%
+    218P Containment hatch and shielding              0.00%   0.00%   0.00%   0.00%
+                                                      0.00%   0.00%   0.00%   0.15%
+    218Q Foundations for outside equipment and tanks  0.00%   0.00%   0.00%   0.00%
+                                                      0.00%   0.00%   0.00%   0.00%
+    218R Balance of plant service building            12.50%  23.95%  14.79%  14.51%
+                                                      6.05%   17.07%  5.79%   7.30%
+    218R Auxiliary boiler building                    0.38%   0.25%   0.83%   0.56%
+                                                      0.69%   0.33%   0.77%   0.56%
+    218S Wastewater treatment building                0.84%   0.06%   0.77%   0.52%
+                                                      1.04%   2.38%   0.97%   0.83%
+    218T Emergency power generation building          0.14%   0.17%   2.57%   0.84%
+                                                      2.26%   0.78%   2.07%   2.57%
+    218T Ultimate heat sink structure                 0.78%   2.45%   0.74%   0.82%
+                                                      0.31%   0.46%   0.28%   0.51%
+    218T* Interim sodium storage                      8.76%   3.88%   9.13%   8.16%
+                                                      4.58%   1.72%   4.84%   3.37%
+    218V Container room for emergency air intake      1.17%   0.73%   1.21%   0.99%
+
+    218W Warehouse
+
+    218X Railroad tracks
+
+    218Y Roads and paved areas
+
+    218Z Reactor receiving and assembly building
+
+    219 Heat stack
+
+    219A Training center
+
+    219K Special material unloading facility
+
+22  Reactor equipment
+
+    220 Nuclear Steam Supply System (NSSS)
+
+    221 Reactor equipment
+
+    222 Main heat transport system
+
+    223 Safety systems
+
+    224 Radwaste processing
+
+    225 Fuel handling systems
+
+    226 Other reactor plant equipment
+
+    227 Reactor instrumentation and control
+
+    228 Reactor plant miscellaneous items
+
+23  Energy conversion system (Rankine)
+
+    231 Turbine-generator
+
+    233 Condensing systems at the turbine
+
+                                              20
+                234  Feedwater heating system (part of the turbine)  1.10%   0.59%   1.13%   1.75%
+                235  Other turbine plant equipment                   1.33%   0.46%   1.35%   1.53%
+                236  Instrumentation and control                     0.27%   0.16%   0.27%   0.17%
+                237  Turbine plant miscellaneous items               0.32%   0.21%   0.33%   0.34%
+       24            Electrical Equipment                            3.92%   5.56%   8.11%   4.55%
+                241  Switchgear                                      0.40%   0.86%   0.87%   0.46%
+                242  Station service equipment                       0.65%   1.45%   1.38%   1.11%
+                243  Switchboards                                    0.07%   0.02%   0.15%   0.09%
+                244  Protective systems equipment                    0.17%   0.14%   0.35%   0.18%
+                245  Electric structure and wiring                   1.55%   1.61%   3.14%   1.07%
+                246  Power and control wiring                        1.08%   1.48%   2.22%   1.63%
+       25            Heat rejection system                           1.85%   3.31%   2.56%   1.16%
+                251  Structures                                      0.15%   0.10%   0.21%   0.11%
+                252  Air, water, and steam service systems           1.70%   3.21%   2.35%   1.05%
+       26            Miscellaneous equipment                         2.29%   1.81%   0.00%   1.46%
+                261  Transportation and lift equipment               0.21%   0.13%   0.00%   0.24%
+                262  Heat rejection system mechanical equipment      1.63%   1.28%   0.00%   0.88%
+                263  Communications equipment                        0.24%   0.24%   0.00%   0.18%
+                264  Furnishing and fixtures                         0.10%   0.06%   0.00%   0.09%
+                255  Wastewater treatment building                   0.10%   0.09%   0.00%   0.07%
+       27            Special Materials, Including Coolant            0.00%   0.00%   0.00%   0.00%
+       28            Simulator                                       0.00%   0.00%   0.00%   0.00%
+       29            Other capitalized direct costs                  0.00%   0.00%   0.00%   0.00%
+30                   Indirect costs                                  44.16%  34.33%  44.83%  43.90%
+       31            Field indirect costs                            13.32%  10.35%  13.52%  13.24%
+       32            Construction supervision                        12.42%  9.66%   12.61%  12.35%
+       33            Commissioning and startup costs                 0.59%   0.46%   0.60%   0.58%
+       34            Demonstration test run                          0.00%   0.00%   0.00%   0.00%
+       35            Design services offsite                         15.37%  11.95%  15.60%  15.28%
+       36            PM/CM services offsite                          0.74%   0.58%   0.75%   0.74%
+       37            Design services onsite                          0.67%   0.52%   0.68%   0.66%
+       38            PM/CM Services onsite                           1.06%   0.82%   1.07%   1.05%
+40                   Owner costs                                     12.57%  9.77%   12.76%  12.50%
+       41            Staff recruitment and training                  3.14%   2.44%   3.19%   3.12%
+       42            Staff housing                                   3.14%   2.44%   3.19%   3.12%
+       43            Staff salary-related costs                      3.14%   2.44%   3.19%   3.12%
+       44            Other owner's costs                             3.14%   2.44%   3.19%   3.12%
+50                   Supplementary costs                             1.28%   1.05%   0.96%   1.45%
+       51            Shipping and transportation costs               0.18%   0.15%   0.16%   0.21%
+       52            Spare parts                                     0.18%   0.15%   0.16%   0.21%
+       53            Taxes                                           0.18%   0.15%   0.16%   0.21%
+
+                     21
+    54  Insurance                                    0.18%   0.15%   0.16%   0.21%
+                                                     0.00%   0.00%   0.00%   0.00%
+    55  Initial fuel core load (capitalized)         0.57%   0.44%   0.34%   0.62%
+
+    58  Decommissioning costs
+
+    As highlighted previously, a mix of different references was used in several instances to populate
+these cost breakdowns. For instance, the preconstruction costs are assumed to be independent of reactor
+types, and the same values are used for the PWR-12, ABR1000, and DMSR. This is because the detailed
+estimations are missing in the reference, and data in EEDB for PWR are considered main standards for
+nuclear costs. These estimates are obtained from reference [48], which assume a 2-year land acquisition
+and plant license. The preconstruction costs for NGNP are estimated based on the total preconstruction
+costs in [21] and mappings in [48]. The overnight capital costs of PWR and DMSR are collected from
+[48]. The overnight capital costs of ABR1000 are obtained by combining several datasets in reference
+[27] with reference [48]. The overnight capital costs of HTGR are obtained by combining reference [21]
+and [48].
+
+    The next step is to provide a detailed breakdown of the contribution to OPEX costs of the reactors.
+This is provided separately since the units are expressed in $/MWh instead of $/kWe. Similarly, the data
+is structured via the GN-COA framework, and percentage contributions of each account are summarized
+in Table 9. The estimates are extracted from reference [48].
+
+Table 9. Breakdown of the percentage contribution of each account to the total OPEX (in $/MWh) of each reactor type.
+
+70      Operating Staff Costs                          PWR      SFR  HTGR      MSR
+                                                     95.98%  58.14%  55.62%  98.18%
+        71 O&M staff                                 35.54%  24.61%  20.21%  30.12%
+                                                     21.77%  17.70%  12.27%  12.58%
+        Onsite O&M staff                             13.77%           7.94%  17.54%
+                                                     20.90%   6.90%  12.62%  17.68%
+        Offsite technical support                    10.34%  13.70%   6.53%   4.23%
+                                                     10.56%           6.09%  13.45%
+        72 Management staff                           9.63%   8.41%   5.55%  12.27%
+                                                      0.00%   5.29%   0.00%   0.00%
+        Onsite management staff                       0.00%   4.83%   0.00%   0.00%
+                                                     23.40%   0.00%  13.49%  29.81%
+        Other admin and general expenses              0.00%   0.00%   0.00%   0.00%
+                                                      6.52%  11.73%   3.76%   8.31%
+        73 Salary-related costs                       4.02%   0.00%  44.38%   1.82%
+                                                      0.00%   3.27%   0.00%   0.00%
+        74 Operating chemicals and lubricants         2.01%  41.86%  35.16%   0.51%
+                                                      2.01%   0.00%   9.22%   1.31%
+        75 Spare parts                                0.00%  29.46%   0.00%   0.00%
+                                                             12.40%
+        76 Utilities, supplies, and consumables               0.00%
+
+        77 Capital plant upgrades
+
+        78 Taxes and insurance
+
+80      Annualized fuel cost
+
+        81 Refueling operations
+
+        84 Nuclear fuel
+
+        86 Fuel processing charges
+
+        87 Special Nuclear Materials
+
+    The resulting distribution of the contributions of various accounts to the total OCC is plotted in
+Figure 10. They are ranked in terms of highest contribution to the PWR reference costs. The plot helps
+
+                                                 22
+identify the main cost drivers for the different reactor designs. Notably, for PWRs (PWR-12), HTGR
+(NGNP), and MSR (DMSR), Account 35: design services offsite, is the largest (15.35% for PWR-12,
+15.60% for NGNP, 15.42% for DMSR) capital cost contributor. For SFR (ABR-1000), account 220:
+nuclear steam supply system (NSSS) is the major contributor (17.07%). The variability between reactor
+types illustrates the need for this 3rd tier of detailed costs breakdown when evaluating different reactor
+technology types.
+
+ Figure 10: Percentage contribution of each account to total direct costs. Accounts are ranked in order of highest contribution to
+                                                                     the PWR COA.
+
+                                                              23
+                       2.8 Recommended Cost Adjustments
+
+    The type of reactor was not observed to conclusively drive overall cost estimates for both the OCC
+and OPEX of advanced reactors (the type does however have an impact on lower-level cost accounts
+contribution to the total cost). Several other factors, however, can substantially influence reactor costs.
+This section does not attempt to quantify the impact of all factors but chooses instead to focus on three
+specific items: (1) the premiums associated with FOAK, (2) the impact of learning rates, and (3) the
+impact of multi-unit plants. For each of these three parameters, cost adjustments are suggested here to
+enable more nuanced analyses. Additional cost contributors are discussed briefly in Section 3.3, without
+providing quantitative adjustments.
+
+           FOAK Premium
+
+The identified values for the Tier 2 estimates in Section 2.6 were for BOAK reactors. FOAK
+demonstrations are likely to incur substantially higher cost of deployment. Several of the references in the
+literature surveyed in this study provided cost estimates for both FOAK and NOAK reactors. The ratios of
+FOAK to BOAK were identified and provided in Table 10. The first column indicates the reactor type and
+the references for FOAK costs. The second column shows the FOAK to BOAK ratios. These values were
+obtained by escalating all FOAK costs to the reference 2019 USD. Then each FOAK estimate was
+manually correlated with a corresponding BOAK quartile (flagged in this report as low, medium, high)
+from Table 5. The BOAK quartile that most closely aligned between the FOAK and NOAK value for a
+given reactor type was then used as the ratioed against the FOAK value.
+
+                  Table 10. Ratio of FOAK to BOAK cost estimates in the literature reviewed.
+
+Reactor           FOAK to BOAK Ratio
+NuScale iPWR [5]  1.5 [6]
+                  2.2 [8]
+PWR 12 [17] [20]  1.2 [17]
+                  1.6 [20]
+AP1000 [17] [18]  1.2 [17]
+                  1.4 [18]
+NGNP [21]         3.8 (350MWth) [21]
+                  2.6 (600MWth) [21]
+HC-HTGR [22]      1.2 [22]
+MHTGR [23]        1.6 (SC version) [23]
+                  1.7 (GT/IC version) [23]
+                  1.4 (GT/DC version) [23]
+
+    These values show the large range of potential `premiums' associated with FOAK constructions. The
+data was split into 1st 2nd and 3rd quartiles to produce the low (1st) medium (2nd) and high (3rd) range
+
+shown in Table 11. The FOAK value can then be inferred by multiplying the identified values in Table 5
+with the range of premiums. In essence, it is recommended to assume a cost escalation of 30%­110% for
+
+FOAK-type demonstration projects.
+
+                   =  ×                                                                       (2)
+
+                  24
+Table 11. Identified range of BOAK to FOAK premiums for cost adjustment.
+
+              Low       Medium       High
+
+BOAK to FOAK       1.3          1.6                                       2.1
+    Premium
+
+    When adjusting costs to obtain FOAK estimates, it is important to be aware of potential correlations
+in the data when selecting which of the low/medium/high numbers to choose from. With this in mind, it is
+not necessarily recommended that one assign high FOAK premiums to high BOAK costs as this could
+produce an overly conservative estimate. Pairs of FOAK premiums with BOAK costs should be carefully
+considered to produce realistic FOAK costs. In general, the medium value is recommended across the
+cost range for BOAK estimates and deviation from this should be deliberate.
+
+           Learning Rates
+
+While a FOAK demonstration would increase cost estimates for nuclear reactors, learning rates are
+expected to substantially reduce costs over time. Serial construction/manufacture of advanced reactors is
+widely expected to result in better practices that lead to lower costs. A FOAK demonstration may have
+unexpected cost increases arising from factors such as development costs, incomplete designs, supply
+chain issues, or licensing/regulatory compliance challenges. As a result, FOAK costs are not fully
+reflective of the full economic benefits of a design. This would especially hold true in countries such as
+the United States where few reactors have been constructed in the recent decades.
+
+    As more reactors are built, lessons learned from those previously built are incorporated and
+uncertainties are reduced. Figure 11 illustrates the progressive evolution in costs going from the FOAK
+(and before--even at the R&D stage) to the NOAK. Non-recurring deployment costs incurred for the
+FOAK plant are also highlighted. This includes generic design and licensing costs that are not incurred
+beyond the FOAK plant.
+
+  Figure 11. Temporal relationship between early stage of reactor deployment activities to NOAK level costs. Taken from [49].
+
+    Various economic analyses have attempted to estimate the reduction in costs in nuclear power plant
+via learning [47] [50] [51] [52]. All of these studies quantify the reduction in costs from FOAK to NOAK
+
+                                                              25
+via `learning rates'. These are defined as the percentage reduction in cost when a doubling in number of
+deployments is achieved [53] [54]. For example, a learning rate of 5% implies that the cost of the second
+plant will be 95% that of the FOAK, and the 4th plant will be 90.25% (95% of 95%) and so on.
+
+Mathematically this can be expressed as:
+
+ =  × (1 - )log2                                                        (3)
+
+    Where  is the learning rate assumed for a given reactor concept. The value is typically calculated
+using experience and statistical analysis of past data. Due to the lack of data on advanced reactor power
+plant builds in the United States, researchers have inferred learning rates values based on observed
+learning in similar industries. Reference [35] provides a useful literature review of learning rates relevant
+to advanced reactors. Based on these estimates, low/medium/high learning rate values are suggested in
+Table 12.
+
+                       Table 12. Identified learning rate range.
+
+Low                                  Medium                       High
+
+Learning Rate (LR) 5%                10%                          15%
+
+Multi-unit Correction
+
+Most advanced reactors are being designed to be smaller to enable modularization and standardization.
+Building large plants with SMRs involves installing multiple reactors in the same plant with a common
+balance of plant and other shared components, depending on the design. Multi-unit LWR plants already
+exist in the United States. Multi-unit plants have lower balance of plant (BOP) costs per unit of electricity
+generated, but more significantly, they are known to have lower O&M costs. This is due to the pooling of
+infrastructure and resources between several units at the same site. For instance, a single auxiliary
+building can support several reactors instead of one. Maintenance staff can also rotate between reactors
+with outages scheduled in a staggered fashion. Therefore, when evaluating the levelized cost of advanced
+reactors and SMRs this is a key aspect that affects both overnight capital and annual costs.
+
+    Reference [21], which provides cost estimates for an HTGR in the NGNP project, was leveraged to
+estimate OCC and OPEX reductions in multi-unit plants. In that reference, the OCC was separated
+between: (1) plant without power cycle (i.e., COA 23), (2) cost of a Brayton cycle only, and (3) cost of a
+Rankine cycle only. An exponential function shown in Equation 4 below was used to evaluate the OCC of
+the four-unit plant from the OCC (irrespective of the type of thermal cycle) of the one-unit plant with the
+number of units as 4.
+
+                       =  1  ×  1    ×  ()                              (4)
+                          
+
+    The OCC is expressed as a function of the number of units in the plant, .For the plant without power
+cycle, a multi-unit exponent (MUE) of 0.827 was derived from several cost estimations. For the Brayton
+cycle and Rankine cycle costs, the exponents 0.92 and 1.0 were assumed. Therefore, the total OCC of the
+plant (which would be OCC of the plant without power cycle + OCC of a Brayton or Rankine cycle)
+would be as follows.
+
+                                   26
+4-                                                                                         (5)
+                   = 1- (  ) × 40.827 + 1- ( ) × 40.92
+
+4-                                                                                         (6)
+                   = 1- (  ) × 40.827 + 1- ( ) × 41.0
+
+    While these equations are not exponential, an exponential curve can be fitted while substituting the
+OCC in Equations 5 and 6 with the estimates in reference [21]. This results in exponents of 0.82 and 0.84
+for the Brayton cycle and Rankine cycle plants, respectively. Given these exponents, an MUE in the range
+0.8­0.85 is suggested.
+
+    On the OPEX side, substantial information can be inferred from the existing LWR fleet in the United
+States [55]. In one analysis performed by [55], single-unit LWR plants in the United States had an
+average O&M cost of $26.33/MWh, whereas the multi-unit LWR plants had an average O&M cost of
+$16.43/MWh (38% lower). Hence a simple multiplication factor is recommended to adjust operating costs
+of advanced reactors:
+
+  = 1  ×                                                                                   (7)
+
+    The resulting low/medium/high value for the multi-unit OCC exponent and OPEX
+multiplier are shown in Table 13. The OCC exponent estimates are based on data from [21],
+while the OPEX exponent range is based on data from existing LWRs [55]. These
+adjustment factors can be leveraged to provide rough corrections to nuclear power plant
+costs based on the number of units at a given site.
+
+Table 13. Multi-unit multiplier cost adjustment ranges.
+
+                               Low          Medium       High
+                                                         0.850
+Multi-unit OCC Exponent (MUE)  0.800        0.825        0.700
+
+Multi-unit OPEX Multiplier (MOM) 0.500      0.624
+
+                     3. DISCUSSION AND IMPROVEMENTS
+
+                3.1 User Guide on Leveraging Identified Values
+
+An important goal of this report is to identify useful cost values for advanced reactors. Figure 12
+illustrates the key steps in order to obtain a granular cost estimate from this report. In practice, an end-
+user may be satisfied with the results from step 1 and would not need to further manipulate the data.
+However, if needed, this section will summarize the key identified values and how they can be leveraged
+to develop a basis for a cost estimate.
+
+                                        27
+           · Select CAPEX/OPEX values based on low/med/max
+
+Step 1 recommendations and reactor type
+
+           · Leverage `Tier 3' estimates for more detailed
+
+Step 2 breakdown on reactor subsystems (if needed)
+
+           · Apply cost adjustments based on if FOAK, learning
+
+Step 3 assumed, or multi-unit plant
+
+             Leverage Resulting Nuclear Cost Estimate in Study
+
+                Figure 12. Illustration of the different steps to obtain nuclear reactor cost estimate for potential studies.
+
+    Several of the identified values in Section 2.6 are provided in ranges. Table 14 explains the basis for
+selecting between low/medium/high estimates based on a corresponding set of assumptions. The selected
+value would primarily depend on the type of analyses a user is planning to perform. A sensitivity study
+for instance, would require selecting the low/high values as a range. A simplistic capacity expansion
+model with few assumptions might only need the medium estimates for OCC/OPEX. A more detailed
+nodal model may use those same values but adjust them based on FOAK, learning, and multi-unit plant
+considerations. If a particular user is looking for bounding cases, low OCC/OPEX should be matched
+with high learning rates, and higher OCC/OPEX should be matched with lower learning rates. The
+medium value for FOAK is recommended in such bounding analysis, but separate sensitivity studies on
+FOAK costs could leverage the low/high ends. The general intent is to provide users with more
+granularity on nuclear costs based on assumptions and requirements of the considered use case. Note that
+multi-unit factors are better suited for nodal evaluations rather than capacity expansion models where
+specifics at a given location are not accounted for. Also note that the low value typically results in lower
+nuclear costs, with the exception of learning rates (low learning would result in higher costs), and vice
+versa for estimates marked as `high'.
+
+                 Table 14. Decision matrix based on potential assumptions in a user's model.
+
+                 Low                        Medium                       High
+
+Tier 2 OCC/OPEX  User is seeking an         User requires a single       Assumes a conservative
+                 aggressive nuclear         estimate (without            cost estimate for a
+                 deployment scenario or     account for sensitivities).  BOAK reactor.
+                 is assuming several units
+                 have already been
+                 deployed prior to the
+                 study.
+
+                      28
+                     Low                          Medium                     High
+
+FOAK premium*        FOAK reactor design is       FOAK reactor without       Pessimistic cost
+                     assumed to be close to       assuming optimistic nor    escalations with a FOAK
+                     complete (>90%) and          pessimistic assumptions    demonstration (e.g.,
+                     uncertainties for            for reactor deployment.    similar to the current
+                     deployment are low                                      experience with AP-
+                     (e.g., established                                      1000). Unlikely to be
+                     technology). Unlikely to                                applicable to high
+                     be applicable to low                                    BOAK values.
+                     BOAK values.
+
+Learning Rate*       Assumes minimal              Recommended as a           Assumes aggressive
+                     learning is achieved as      nominal value if the user  learning with each
+                     more reactors are            does not want to make      reactor built. This can be
+                     deployed. This is            any underlying             particularly applicable if
+                     particularly suitable for    assumptions on how         the reactor design is
+                     reactors that are non-       optimistic or pessimistic  assumed to be modular
+                     standardized, very site-     cost reductions occur.     and have a high fraction
+                     dependent, and                                          of activities conducted
+                     predominantly stick-built                               within a factory setting.
+                     at the site. Unlikely to be                             Unlikely to be applicable
+                     applicable to high                                      to low BOAK values.
+                     BOAK values. Note: a                                    Note: a high value here
+                     low value here would                                    would lead to lower end
+                     lead to higher end costs.                               costs.
+
+Multi-unit Factors*  Suitable if the reactors     User does not want to      Units pool an extensive
+                     are not expected to pool     make any assumptions       number of resources
+                     many resources and           on the number of           (e.g., single control room
+                     infrastructure.              resources or               for several reactors) and
+                                                  infrastructure pooled      infrastructure (e.g.,
+                                                  between units.             single turbine for many
+                                                                             units).
+
+* It should be noted that because this study strives to provided projected ranges for values, users of the data should be deliberate
+when picking how to match or apply values from different ranges together. For example, pairing the most conservative learning
+rates with the most conservative cost estimates may not be a realistic assumption. Furthermore, it may be possible that
+conservative cost estimates receive high learning rates because these projects have fundamentally more room for learning. It is
+critical that users carefully considering the implications of such combination of adjustment factors.
+
+    The main values expected to be useful for users are summarized in Table 15. Based on the decision
+matrix in Table 14, a user can select options that fit their use case and assumptions. Note that for heat
+applications, the MWth output would need to be back calculated based on the efficiency of a given reactor
+(typically ~30% for PWR and ~40% for HTGRs, etc.). More detailed breakdown of the percentage
+contribution of various costs to the OCC/OPEX is shown in Table 16. As previously explained, these
+values can be used for more granular assessments that are reactor specific.
+
+                          29
+Table 15. Summary of identified BOAK cost estimation values and correction factors for large reactors and SMRs.
+
+Variable                                   Low              Medium         High
+
+OCC                                        $4,000 /kWe $6,000 /kWe $7,000 /kWe
+
+OPEX                                       $15 /MWh         $25 /MWh $35 /MWh
+
+FOAK Premium                               1.3              1.6            2.1
+                                                            10%            15%
+Learning Rate                              5%               0.825          0.850
+                                                            0.624          0.7
+Multi-unit OCC Exponent                    0.8
+
+Multi-Unit OPEX Multiplier 0.5
+
+Table 16. Higher-level breakdown of percentage contributions to OCC and OPEX costs based on reactor type.
+
+                                   PWR              SFR            HTGR           MSR
+
+Overnight Costs
+
+10 Preconstruction Costs           2.35%            5.30%          1.19%          2.74%
+20 Direct Costs                    39.65%           49.55%         40.25%         39.41%
+                                   10.33%           11.03%         5.66%          9.59%
+ 21 Structures and
+         Improvements              12.50%           23.95%         14.79%         14.51%
+         Reactor Equipment
+                                   8.76%            3.88%          9.13%          8.16%
+22
+         Energy Conversion System  3.92%            5.56%          8.11%          4.55%
+
+23                                 1.85%            3.31%          2.56%          1.16%
+         Electrical Equipment
+                                   2.29%            1.81%          0.00%          1.46%
+24
+         Heat Rejection System     44.16%           34.33%         44.83%         43.90%
+                                   12.57%           9.77%          12.76%         12.50%
+25                                 1.28%            1.05%          0.96%          1.45%
+         Miscellaneous Equipment
+
+26
+30 Indirect Costs
+40 Owner Costs
+50 Supplementary Costs
+
+Annualized Costs
+
+70 Operating Staff Costs           95.98%           58.14%         55.62%         98.18%
+80 Annualized Fuel Costs           4.02%            41.86%         44.38%         1.82%
+
+                       3.2 Example Walkthroughs for Users
+
+    To illustrate how the insights of this report can be leveraged, two example use cases are provided
+here. The first considers a generic plant with a specific power level and several units considered at the
+same site. The second example is an HTGR use case generating heat-only.
+
+                                                30
+           Generic Multi-Unit Plant Evaluation
+
+    The first example considers a generic advanced reactor (unspecified) to be deployed in units. Each
+unit is assumed to provide 720 MWe (this can be in the form of one reactor or several). The purpose of
+the study is to assess the cost of the 1st, 2nd, and 3rd unit deployed. Only a medium value is needed (no
+sensitivity), and the use case is assumed to occur after the FOAK demonstration of the reactor.
+
+    The starting point for this is Table 5. The BOAK medium estimate can be directly leveraged to
+estimate the resulting capital and yearly operating expenses for the hypothetical reactor (multiplying by
+the total electric power output):
+
+                                                           Capital: $4.3B
+                                          Unit 1 Cost
+
+                                                           Operating: $160M/year
+
+    Note that values are purposefully rounded to avoid the inference of more precision than the
+underlying identified values. This practice should be applied to all manipulations of the cost inputs.
+
+    To then estimate the cost of the second and third unit, two adjustments are applied. The first is based
+on learning. Here we assume a medium learning of 10%, resulting in the second- and third-unit capital
+calculated by:
+
+                                      2 =  × (1 - 0.1)log2 2 = $3.9B
+
+ 3 =  × (1 - 0.1)log2 3 = $3.7B
+
+Then assuming a medium multi-unit exponent (0.825), the overnight cost can be adjusted using:
+
+  2  =  1  ×  $3.9B  ×  (2)0.825  =  $3.4B
+        2
+
+  3  =  1  ×  $3.7B  ×  (3)0.825  =  $3.2B
+        3
+
+Similarly, the O&M costs for units two and three can be adjusted using:
+
+                               &2 = &3 = &1 × 0.624 = $98.4M
+Therefore, the overnight and operating cost for the two new units can be expressed as:
+
+                 Capital: $3.4B
+Unit 2 Cost
+
+                 Operating: $100M/year
+
+                 Capital: $3.2B
+Unit 3 Cost
+
+                 Operating: $100M/year
+
+       Non-Electric HTGR Plant
+In this use case, the user requirements are defined as follows:
+· A gas-cooled reactor providing heat for industrial applications.
+· No electricity is generated at the plant.
+· The plant is a FOAK.
+· No specifications of the reactor are assumed.
+
+                                                          31
+    · An uncertainty quantification is of interest.
+    · The study wants to then consider potential cost reductions from learning after 10 units are
+
+         deployed.
+    Based on these assumptions, the starting point for the analysis would be to extract the OCC/OPEX
+values from Table 5. In a stepwise fashion the costs for the first unit can be determined:
+    1. Since a sensitivity analysis is required, the full range of OCC costs will be used: [$4,000­
+
+         $7,000]/kWe.
+    2. OPEX costs will range between [$15­$35]/MWh.
+    3. Since no electricity conversion is needed at the plant, the contributions of those costs can be
+
+         subtracted from the range (calculation below). The resulting range narrows to [$3,640­
+         $6,370]/kWe.
+
+                         =  × (1 - %) = [4,000 - 7,000] × (1 - 0.09)
+    4. Since the application is for no-heat it is more helpful to express costs in terms of kWt. Assuming
+
+         a thermal efficiency of 40%, the resulting overnight capital range becomes: [$1,456­
+         $2,548]/kWt. Similarly, the operating costs can be converted to [$6­$14]/MWt-h
+
+                                     =  ×  = [$3,640­ $6,370]/kWe × 0.4
+    5. Next a FOAK premium multiplier will be applied here. Again, since a sensitivity analysis is
+
+         needed here, the low and high values will be applied for each use case. The resulting OCC range
+         expands to [$1,892­$5,350]/kWt.
+
+                               =  ×  = : [$1,456­ $2,548] × [1.3 - 2.1]
+
+                                                            Normalized OCC: [$2,000­$5,500]/kWt
+                                         FOAK Cost
+
+                                                           Operating: [$6­$14]/MWt-h
+
+    Note again that it is recommended to round the values so as to not infer a higher precision than the
+original numbers leveraged for this evaluation. Some of the higher precision numbers are still shown here
+to help provide a user with a reference calculation to verify against.
+
+    Finally, the impact of learning needs to be assessed. Here, the mean learning rate value of 10% is
+applied to both ends of the values estimated (using the high learning rate with the low estimate produces
+unjustifiably low-cost estimates). The calculation is conducted as follows:
+
+                    10 =  × (1 - )log2  = 5,350 × (1 - 0.1)log2(10)
+                     10 =  × (1 - )log2  = 1,892 × (1 - 0.1)log2(10)
+
+    The resulting 10th of a kind (10-OAK) values are shown below. OPEX are assumed to be constant
+across all units.
+
+                                                            Normalized OCC: [$1,500­$4,000]/kWt
+                                       10-OAK Cost
+
+                                                           Operating: [$6­$14]/MWt-h
+
+                                                              32
+                         3.3 Additional Cost Considerations
+
+    Nuclear power plant capital costs are influenced by a variety of design parameters. In order to
+estimate the overnight capital costs of advanced reactor plants that are yet to be built, it is important to
+identify and quantify these parameters as much as possible. In most cost studies in the literature, the
+commonly considered parameters are reactor size (or power capacity) and reactor technology type. In
+these studies, plants are pooled into ranges of reactor size, for example, large reactors, SMRs, and
+microreactors. When reactor technology type is considered, reactors are generally pooled into LWRs,
+GCRs or HTGRs, SFRs, MSRs, etc. These classifications are adequate for a rough order of magnitude
+(ROM), top-down cost estimation when details of the reactor or plant design are not yet available.
+However, they do not capture the many factors that influence cost. For example, many advanced reactor
+developers are using innovative techniques and design choices with the goals of reducing cost, shortening
+construction timeline, and minimizing overall project risk. When implemented, these techniques and
+design choices can have a significant impact on cost, potentially a larger impact than just choosing a
+certain reactor technology. Some of these techniques are described below with examples. However, this
+list is not exhaustive (and the techniques are not mutually exclusive), and other approaches are also being
+currently pursued for cost reduction of advanced reactor power plants.
+
+           Learning
+
+    In the review presented in this report, as well as across the literature, overnight capital costs are
+typically presented as FOAK or NOAK costs. The primary difference between the FOAK and NOAK
+costs is the degree of learning. As more and more plants or plant components are built on site or in a
+factory, the experience gained increases efficiency and quality, and reduces risk of cost and schedule
+overruns. The impact of learning on cost is quantified using learning rate, which is defined as the
+percentage reduction in unit cost for every doubling of cumulative production. That is, with a learning
+rate of 10% or 0.10, the second plant will be 10% cheaper than the 1st plant, the 4th plant will be 10%
+cheaper than the 2nd, and so on (assuming that the plants are built consecutively without a significant
+delay between their construction).
+
+    Typically, learning rates are positive (negative learning rates have been observed in the United States
+due to regulatory changes in the 1980s following the incident at Three Mile Island [36] due to increased
+requirements), and as more plants are built, the cost decreases. Learning rates are calculated from
+historical cost data and can be applied for any COA, if supported by the data. Although the estimated
+FOAK costs of advanced reactors and SMRs might be high, since they are being designed to be modular
+and supported by offsite factory fabrication, they are expected to have good learning rates and therefore,
+make a faster transition from FOAK to NOAK costs.
+
+           Modularization
+
+    Modularization refers to converting the design into an assembly of smaller components that can be
+fabricated in a factory and assembled on site (Figure 13). Recent cost and schedule overruns in nuclear
+construction projects (for example in VC Summer and Vogtle), have driven the nuclear industry to move
+away from large, stick-built nuclear power plants and towards smaller and more modular reactors that are
+expected to minimize onsite labor and take advantage of factory manufacturing. This direction is further
+justified considering that the efficiency of the construction sector in the United States has fallen in the last
+few decades, whereas the efficiency of the manufacturing sector has gone up [56]. A plant of the same
+size and technology will likely have a smaller NOAK overnight capital cost when the design is modular,
+and the modules are factory fabricated. Modularization is, therefore, a primary cost reduction strategy of
+most reactor vendors that are currently in the process of developing their designs. It can be also
+implemented in various parts of the nuclear power plant.
+
+    NuScale, for example, has developed a reactor module that includes most of the NSSS components of
+a PWR. The NuScale VOYGR plant with a capacity of 984 MWe, has 12 such modules, which will be
+
+                                                              33
+manufactured in a factory and installed on the site. However, historically, larger reactors have been
+predominantly stick-built and assembled on site. Another candidate for modularity in a nuclear power
+plant is the containment building--traditionally, these buildings are built by pouring concrete on site.
+However, modular concrete technologies such as precast concrete (which has been used in the non-
+nuclear industry for decades) or Steel BricksTM [57] that are being deployed in the BWRX-300 plant, can
+lead to significant cost reduction for the same reactor size and technology type.
+
+           Standardization:
+    Mignacca and Locatelli (2021) [58] define standardization as using "nearly identical stick-built
+infrastructures from a consistent set of stakeholders in the project delivery chain" (Figure 13). While
+standardization of nuclear power plants across the industry has brought success in a lot of places, this has
+eluded the nuclear industry of the United States thus far [59]. While it is unrealistic to standardize all
+plants across the United States, standardization can be accompanied with modularization. To enable
+efficient, mass factory fabrication, the modules need to be first standardized. Additionally, standardization
+can result in ease of licensing, ease of construction, quality control, and better learning, all of which
+contribute to lower NOAK costs.
+
+  Figure 13: An illustration of the relationship between modularization and standardization, and the difference between modular
+                                                          and stick-built infrastructure [58].
+
+    One approach for increasing standardization in a plant is seismic isolation [60]. Seismic isolation is
+an earthquake protection technology that involves using seismic protective devices under the plant (or a
+component of the plant) to essentially shield it from incoming earthquakes. Seismic isolation promotes
+plant standardization by enabling the use of the same design (with different seismic isolators) at different
+sites with differing earthquake hazards.
+
+    For example, a certified plant designed for the seismic hazard in New York may also be sited in
+Alaska (where the earthquake hazard is much larger) without any design changes, but with seismic
+isolators that are designed to protect the plant from the Alaskan seismic hazard. This can potentially
+reduce the re-design costs, seismic strengthening and re-qualification costs, and re-certification costs that
+could have been incurred at the Alaskan site. A few advanced reactor vendors are currently considering
+seismic isolation, including Kairos Power, whose 35 MWth Hermes test reactor will be seismically
+isolated, and Advanced Reactor Concepts, LLC, who are working on a 100 MWe seismically isolated
+SFR.
+
+                                                              34
+    Another approach to increasing standardization is through the "open architecture" concept, which
+strives for standardization of plant components across different reactor technologies and developers.
+Implementation of this concept would require reactor developers to share and "open" their designs across
+the industry so that cross compatibility of components would be improved. Using similar components in
+various plant designs would have various benefits including simplifying the supply chain, transferring
+learning across different reactor technologies, increasing factory fabrication, simplifying construction, etc.
+
+           Improved Plant Layout
+
+    Cost reductions can also be achieved through innovative design decisions in the plant layout. For
+example, the cost of construction inside a plant boundary can be several times larger (anecdotally up to
+five times larger) than the construction outside a plant boundary, due to additional regulations involved in
+nuclear construction. To minimize the amount of construction involved inside the plant boundary,
+TerraPower and GE Hitachi, in their Natrium (345 MWe SFR) design, separate the plant into a nuclear
+island that contains all nuclear safety-related (SR) and non-safety-related with special treatment (NSRST)
+components, and an energy island that contains thermal energy storage and electricity production
+components [61]. This enables the separation of construction activities in the nuclear island and energy
+island (including contracting with separate EPCs), which is potentially much cheaper than a similarly
+sized SFR constructed with the traditional approach of including all components inside the plant
+boundary.
+
+    Another example of cost reduction through an innovative plant layout is the Boston Atomics' HC-
+HTGR. In a traditional HTGR (such as in NGNP), the reactor vessel and steam generator are constructed
+vertically inside the reactor building. Although they have a high degree of passive safety, HTGRs are
+criticized for their low power density and large building sizes that drive construction costsa. The HC-
+HTGR remedies these issues by mounting the reactor vessel and steam generator horizontally. By doing
+so, they estimate a total overnight capital cost reduction of 20% including a 42% reduction in civil
+structure costs, and 38% reduction in indirect costs [22].
+
+                               3.4 Areas of Improvement
+
+           Additional Postprocessing of Data
+
+Future efforts could attempt to address many of the limitations highlighted previously. Some suggested
+improvements are summarized below:
+
+    1. Weighing of estimates: since weighing studies is an inherently subjective task, a panel could be
+         conferred to attribute different weights depending on pre-defined metrics (e.g., age of estimates,
+         type of analysis, observed vs. projected costs). This could then be used to provide a stronger basis
+         for the data aggregation conducted in the study.
+
+    2. Re-baselining of estimates: since not all estimates included the same cost contributors. These
+         could be inferred from typical breakdowns for reactor types and used as multiplier for each
+         dataset to account for the missing data (e.g., owners' costs) or subtract localized costs (e.g.,
+         financing costs).
+
+    3. More robust escalation: because the impact of escalating costs was found to be a substantial
+         driver in estimates, a more detailed approach may be warranted. Comparative evaluation may
+
+a For example, Stewart et al. (2021) estimate that the reactor building power density of the 220 MWe HTR-PM (twin pack of 110
+      MWe reactors in one building) recently built by the China National Nuclear Corporation is six times smaller (2 kWe/m3)
+      than of the 1117 MWe Westinghouse AP1000 plant (12 kWe/m3). The reactor pressure vessel power density of the HTR-
+      PM reactor us 150 kWe/ton compared to 315 kWe/ton for APR1000.
+
+                                                              35
+         provide additional confidence in the best approach for cost escalation or alternatively be
+         leveraged as a basis for a range.
+
+    4. Identifying overlap in the data: several of the cost estimates build or rely on each other. Namely
+         the Energy Economic Data Base (EEDB) program from the 1980s [62]. Identifying these
+         dependencies may lead to lower weights assigned to estimates that rely heavily on previous
+         datasets or their removal from the dataset entirely to avoid `double-counting'. Additionally, these
+         cost estimates may need to be `de-escalated' and then `re-escalated' following a consistent
+         methodology.
+
+    5. A statistical (or econometric) model could be developed to mathematically infer some of the
+         conclusions from the evaluation, namely that plant size and reactor type appear to have limited
+         impact on costs. This would support the visually-inferred conclusions from whisker plots in the
+         report.
+
+In general, generating more robust cost estimates for advanced reactors in a systematic, standardized
+fashion would be an ideal method to tackling the challenge of projecting advanced reactor deployment
+costs. Modern estimates would be more representative of likely cost ranges for these estimates. This
+would be preferable to relying on decade-old references and mathematically inflating the costs to current
+levels--as was performed in this study. Detailed bottom-up estimates following the code of accounts
+structure can also be critical in identifying nuances between different types of reactors (which is another
+limitation of the current study).
+
+           Uncertainty Analysis
+
+During the analysis, large variances in cost estimates from different literatures were observed. These
+differences introduce uncertainties to the economic estimates and the resulting recommendations. To
+characterize such uncertainties and better understand the major contributors, a systematic uncertainty
+quantification (UQ) would be needed. The scope of this would need to include a review of assumptions,
+inputs, and data sources on the final estimations in each reference. UQ can also help economic analysts
+and decision-makers understand the robustness of economic models and corresponding forecasts. There
+are several potential methods for economic model UQ. The sensitivity analysis varies the input
+parameters of the economic model one at a time or in combination and observing the resulting changes in
+the model's output. This approach can help identify the most important parameters and sources of
+uncertainty, and directly inform the development of robust economic models and decision-making that are
+resilient to different scenarios. The Monte Carlo simulation starts from building probabilistic distributions
+for different sources of uncertainty. Next, a large number of random samples for each input are drawn,
+and the economic model is run multiple times with each sample to generate a distribution of output
+values. This approach can provide a comprehensive view of the uncertainty associated with the model's
+outputs. For efficiency, samples are only drawn from important inputs based on the sensitivity analysis
+results. In addition to the probabilistic approach, interval analysis starts from representing the uncertainty
+of input parameters as intervals or ranges of values rather than a well-characterized distribution, which
+assumes precise probabilities for each possible value. The uncertainty of each input parameter can be
+better quantified through the economic model. Interval analysis can also provide a more conservative
+estimate of uncertainty, by accounting for the full range of possible values for each parameter. Compared
+to the Monte Carlo approach, interval analysis can be useful for situations where the available data is
+uncertain or incomplete, or where there is a high degree of variability in the data.
+
+    RAVEN (Risk Analysis and Virtual ENvironments) is an open-source software tool developed by the
+Idaho National Laboratory for UQ and risk analysis [63]. RAVEN contains various libraries for both the
+sensitivity analysis and Monte Carlo UQ of economic models, providing a comprehensive and flexible
+platform for performing probabilistic and non-probabilistic analyses of complex systems. For
+probabilistic or non-probabilistic approaches, the UQ for an economic model should first dive into each
+reference and identify model assumptions, model inputs, and parameters for the final estimates. The
+
+                                                              36
+objective is to find major sources of uncertainty and specify the probability distributions or intervals for
+the model parameters of the economic model. RAVEN provides a wide range of distribution types,
+including normal, lognormal, uniform, and beta distributions, as well as the ability to define custom
+distributions.
+
+    Next, the uncertainty propagation is performed by generating a large number of random samples of
+the input parameters from their specified probability distributions or ranges and running the economic
+model multiple times to generate a distribution of output values. RAVEN can also be used to perform
+sensitivity analysis of the economic model, which involves varying the input parameters one at a time or
+in combination and observing the resulting changes in the model's output. This can help identify the most
+important parameters and sources of uncertainty in the model. Finally, the results of the UQ analysis can
+be interpreted and visualized using RAVEN's built-in tools, including histograms, scatterplots, and
+probability density functions. This can help provide insights into the uncertainty and variability in the
+economic model and inform decision-making.
+
+                                                              37
+                                     4. CONCLUSION
+
+A detailed review of over 30 references in the advanced reactor cost estimation was performed in this
+report. The study compiled cost data in the literature and scaled costs to a common base year. While the
+data contained some inconsistencies, the estimates were still useful in elucidating trends in reactor costs.
+Identified cost ranges were evaluated from the dataset.
+
+    A key finding from this report is that there does not exist sufficient consensus in the cost estimation
+literature to adequately distinguish between reactor types. In other words, the report could not identify
+clear cost variations between water, sodium, gas, or salt cooled reactors. Similarly, estimates for large
+reactors and SMRs overlapped substantially. As such, a single value is recommended for large or small
+modular reactors, irrespective of their coolant type. The only exception is for microreactors. Here, a
+separate estimate is recommended. However, this is based on only two datasets and should be revisited as
+the technology matures and more cost evaluations for this class of reactors is conducted.
+
+    The OCC and OPEX identified values were provided within a low/medium/high range. This would
+correspond to underlying assumptions regarding a given use case (e.g., optimistic construction timeline).
+The estimates are for a generic BOAK reactor deployment (between a first and Nth of a kind). However,
+several cost adjustments were also provided in order to further refine the evaluation. This included FOAK
+premium multipliers, learning rates, and multi-unit correction factors (savings due to the pooling of
+infrastructure and resources between plants).
+
+    Lastly, a detailed breakdown of the contribution of subcomponents to different reactors was provided
+in percentage values. This allows a user to identify (and subtract as needed) the contribution of, for
+example, turbine costs, to the total overnight costs for a given system. These breakdowns were obtained
+from detailed bottom-up estimates for reference reactor types (water, sodium, gas, and salt-based). The
+intent is to provide an end-user with additional flexibility to refine nuclear cost estimates.
+
+                                                              38
+                                    5. REFERENCES
+
+[1] AspenTech, "Aspen Process Economic Analyzer," [Online]. Available:
+     https://www.aspentech.com/en/products/pages/aspen-process-economic-analyzer. [Accessed 12
+     October 2022].
+
+[2] J. Buongiorno, J. Parsons, D. Petti and J. Parsons, "The future of nuclear energy in a carbon-
+     constrained world," MIT, Cambridge, MA, 2019.
+
+[3] J. Hansen, W. Jenson, A. M. Wrobel, N. Stauff, K. Biegel, T. K. Kim, R. Belles and F. Omitaomu,
+     "Investigating Benefits and Challenges of Converting Retiring Coal Plants into Nuclear Plants,"
+     Idaho National Laboratory, INL/RPT-22-67964-Rev000 , Idaho Falls, 2022.
+
+[4] X-Energy, "X-Energy Investor Presentation," X-Energy, LLC, 2023. [Online]. Available: https://x-
+     energy.com/investors. [Accessed 27 Feburary 2023].
+
+[5] S. Short and B. Schmitt, "Deployability of Small Modular Nuclear Reactors for Alberta
+     Applications--Phase II," Pacific Northwest National Laboratory, Richland, WA, 2018.
+
+[6] W. Stewart and K. Shirvan, "Capital cost estimation for advanced nuclear power plants,"
+     Renewable and Sustainable Energy Reviews, p. 111880, 2021.
+
+[7] World Nuclear News, "NuScale announces SMR power uprate," World Nuclear News, 11
+     November 2020. [Online]. Available: https://www.world-nuclear-news.org/Articles/NuScale-
+     announces-SMR-power-
+     uprate#:%7E:text=The%20increase%20in%20generating%20capacity,about%20USD2850%2C%2
+     0the%20company%20said. [Accessed 1 Feburary 2023].
+
+[8] D. Schlissel, "Eye-popping new cost estimates released for NuScale small modular reactor,"
+     Institute for Energy Economics and Financial Analysis, 11 January 2023. [Online]. Available:
+     https://ieefa.org/resources/eye-popping-new-cost-estimates-released-nuscale-small-modular-
+     reactor#:~:text=NuScale%20and%20the%20Utah%20Associated,(SMR)%20have%20risen%20dra
+     matically.&text=As%20recently%20as%20mid%2D2021,MWh%2C%20a%2053%25%20increase.
+     . [Accessed 24 May 2023].
+
+[9] A. Foss, H. Bryan and P. Jeremiah, "Cost Assessment of Small and Micro Nuclear Reactors for Oil
+     Sands Applications (INL/LTD-21-01565)," Idaho National Laboratory, Idaho Falls, ID, 2021.
+
+[10] M. Weimar, A. Zbib, D. Todd, J. Buongiorno and K. Shirvan, "Techno-economic Assessment for
+     Generation III+ Small Modular Reactor Deployments in the Pacific Northwest," Pacific Northwest
+     National Laboratory, Richland, Washington, 2021.
+
+[11] J. Surina, NuScale Power Plant Economics (Presentation), NuFab, Northwestern University:
+     NuScale Power LLC, 2016.
+
+[12] J. Surina and M. McGough, The NuScale Value Proposition (Presentation), NuScale Power LLC,
+     2015.
+
+[13] Energy Strategies, "Analyzing the Cost of Small Modular Reactors and Alternative Power
+     Portfolios," Energy Strategies, Salt Lake City, UT, 2019.
+
+[14] S. Kirshenberg, H. Jackler, J. Eun, B. Oakley and W. Goldenberg, "Small Modular Reactors,
+     Adding to Resilience at Federal Facilities," Allegheny Science & Technology Corporation,
+     Bridgeport, WV, 2017.
+
+[15] U.S. Energy Information Administration, "Capital Cost and Performance Characteristic Estimates
+     for Utility Scale Electric Power Generating Technologies," U.S. Energy Information
+     Administration, 2020.
+
+                                                              39
+[16] SMR Start, "The Economics of Small Modular Reactors," SMR Start, 2021.
+[17] W. Stewart, K. Shirvan, E. Velez and R. Wiser, "Pathways to Cost-effective Advanced Nuclear
+
+     Technology," in Applied Energy Symposium MIT A+B, Cambridge, MA, 2020.
+[18] National Renewable Energy Laboratory, "Electricity Annual Technology Baseline (ATB) Data
+
+     Download," 19 Feburary 2023. [Online]. Available: https://atb.nrel.gov/electricity/2022/data.
+
+[19] LAZARD, "Lazard's Levelized Cost of Energy Analysis - Version 16.0," LAZARD, April 2023.
+     [Online]. Available: https://www.lazard.com/research-insights/2023-levelized-cost-of-energyplus/.
+     [Accessed 18 April 2023].
+
+[20] D. Holcomb, F. Peretz and A. Qualls, "Advanced high temperature reactor systems and economic
+     analysis," Argonne National Laboratory, 2011.
+
+[21] A. Gandrik, B. Wallace, M. Patterson and P. Mills, "Assessment of high temperature gas cooled
+     reactor capital and operating costs (TEV-1196)," Idaho National Laboratory, Idaho Falls, ID, 2012.
+
+[22] W. Stewart, E. Velez, R. Wiser and K. Shirvan, "Economic solution for low carbon process heat: A
+     horizontal, compact high temperature gas reactor," Applied Energy, p. 117650, 2021.
+
+[23] Department of Energy, "Modular High Temparature Gas-Cooled Reactor Commercialization and
+     Generation Cost Estimates (https://doi.org/10.2172/10198837)," Department of Energy, 1993.
+
+[24] CleanTech Catalyst Ltd; Lucid Strategy, Inc., "The ETI Nuclear Cost Drivers Project: Summary
+     Report," Energy Technologies institute, 2018.
+
+[25] V. Kuznetsov and A. Lokhov, "Current status, technical feasibility and economics of small nuclear
+     reactors," Nuclear energy agency of the Organisation of economic cooperation and development,
+     Paris, France, 2011.
+
+[26] F. Ganda, "Economic Evaluation of Promising Options (No. FCRD-FCO-2015-000013)," Argonne
+     National Laboratory, Argonne, IL, 2015.
+
+[27] F. Ganda, T. Taiwo and T. Kim, "Report on the Update of Fuel Cycle Cost Algorithms (No. NTRD-
+     FCO-2018-000439)," Argonne National Laboratory, Argonne, IL, 2018.
+
+[28] D. Shropshire, "Advanced fuel cycle economic tools algorithms, and methodologies (No. INL/EXT-
+     09-15483)," Idaho National Laboratory, Idaho Falls, ID, 2009.
+
+[29] C. E. Boardman, "Economic assessment of S-PRISM including development and generating costs,"
+     ICONE, 2000.
+
+[30] E. A. Hoffman, R. N. Hill and P. J. Finck, "Estimated Cost for Low Conversion Ratio Burners,"
+     Argonne National Laboratory, Lemont, IL, 2004.
+
+[31] J. Engel, H. Bauman, J. Dearing, W. Grimes, H. McCoy and W. Rhoades, "Conceptual design
+     characteristics of a denatured molten-salt reactor with once-through fueling (No. ORNL/TM-
+     7207)," Oak Ridge National Laboratory, Knoxville, TN, 1980.
+
+[32] M. Nichol and H. Desai, "Cost competitiveness of micro-reactors for remote markets," Nuclear
+     Energy Institute (NEI), Washington, DC, 2019.
+
+[33] A. Abou-Jaoude, Y. Arafat, A. Foss and B. Dixon, "An Economics-by-Design Approach Applied to
+     a Heat Pipe Microreactor Concept (No. INL/EXT-21-63067-Rev000)," Idaho National Lab.(INL),
+     Idaho Falls, ID, 2021.
+
+[34] Energy Innovation Reform Project, "What will advanced nuclear power plants cost? A Standardized
+     Cost Analysis of Advanced Nuclear Technologies in Commercial Development," Energy
+     Innovation Reform Project, 2017.
+
+[35] Breakthrough Institute, "Advancing Nuclear Energy: Evaluating Deployment, Investment, and
+     Impact in America's Clean Energy Future," Breakthrough Institute, 2022.
+
+[36] J. Lovering, A. Yip and T. Nordhau, "Historical construction costs of global nuclear power
+     reactors," Energy Policy, vol. 91, pp. 371-382, 2016.
+
+                                                              40
+[37] B. Dixon, F. Ganda, K. Williams, E. Hoffman and J. K. Hansen, "Advanced Fuel Cycle Cost Basis­
+     2017 Edition," Idaho National Laboratory, Idaho Falls, ID, 2017.
+
+[38] Federal Reserve Bank of St. Louis, "Producer Price Index by Commodity: Construction (Partial):
+     New Industrial Building Construction," Federal Reserve Bank of St. Louis, 11 May 2023. [Online].
+     Available: https://fred.stlouisfed.org/series/WPU801104#0. [Accessed 24 May 2023].
+
+[39] ANS Nuclear Cafe, "Vogtle project update: Cost likely to top $30 billion," American Nuclear
+     Society, 9 May 2022. [Online]. Available: https://www.ans.org/news/article-3949/vogtle-project-
+     update-cost-likely-to-top-30-billion/. [Accessed 1 May 2023].
+
+[40] National Association of Regulatory Utility Commissioners (NARUC), "COST OF CAPITAL AND
+     CAPITAL MARKETS A PRIMER FOR UTILITY REGULATORS," United States Agency for
+     International Development (USAID), 2019.
+
+[41] U.S. Nuclear Regulatory Commission, "Status of Initial License Renewal Applications and Industry
+     Initiatives," [Online]. Available:
+     https://www.nrc.gov/reactors/operating/licensing/renewal/applications.html. [Accessed April 2023].
+
+[42] Energy Information Agency, "Electric Power Monthly," [Online]. Available:
+     https://www.eia.gov/electricity/monthly/epm_table_grapher.php?t=epmt_6_07_b. [Accessed April
+     2023].
+
+[43] J. Greenwald, C. Mokoena, M. Chupka and M. Luke, "Modeling Advanced Nuclear Energy
+     Technologies," Nuclear Innovation Alliance (NIA), 2023.
+
+[44] X-energy, "X-energy ARDP," [Online]. Available: https://x-energy.com/ardp. [Accessed 6 October
+     2023].
+
+[45] S&P Global, "Bill Gates-backed TerraPower tabs Wyoming site for $4B 'next wave' nuclear plant,"
+     16 November 2021. [Online]. Available: https://www.spglobal.com/marketintelligence/en/news-
+     insights/latest-news-headlines/bill-gates-backed-terrapower-tabs-wyoming-site-for-4b-next-wave-
+     nuclear-plant-67676344.
+
+[46] U.S. Department of Energy, "Phase VIII update (1986) report for the Energy Economic Data Base
+     Program EEDB-VIII (No. DOE/NE--0079)," U.S. Department of Energy, 1986.
+
+[47] A. Abou-Jaoude, C. Bolisetti and A. Foss, "Expansion of Cost Algorithm and Technoeconomic
+     Assessment Capabilities," Idaho National Laboratory, Idaho Falls, INL/RPT-22-67852, 2022.
+
+[48] E. Ingersoll, K. Gogan, J. Herter and A. Foss, "Cost & Performance Requirements for Flexible
+     Advanced Nuclear Plants in Future US Power Markets," LucidCatalyst LLC, Cambridge, MA ,
+     2020.
+
+[49] Generation IV International Forum (GIF), "Cost Estimating Guidelines for Generation IV Nuclear
+     Energy Systems," Economic Modeling Working Group. https://www.gen-
+     4.org/gif/jcms/c_40408/cost-estimating-guidelines-for-generation-iv-nuclear-energy-systems, 2007.
+
+[50] P. Sabharwall, S. Bragg-Sitton, L. Boldon and S. Blumsack, "Nuclear renewable energy integration:
+     an economic case study," The Electricity Journal, vol. 28, no. 8, pp. 85-95, 2015.
+
+[51] T. Harrison, "Development of the Mathematics of Learning Curve Models for Evaluating Small
+     Modular Reactor Economics (No. ORNL/TM-2014/28)," Oak Ridge National Laboratory, Oak
+     Ridge, TN, 2014.
+
+[52] K. Shirvan and J. Hardwick, "Overnight capital cost of the next AP1000 (MIT-ANP-TR-193),"
+     Center for Advanced Nuclear Energy Systems (CANES), Boston, MA, 2022.
+
+[53] T. P. Wright, "Factors Affecting the Cost of Airplanes," Journal of the Aeronautical Sciences, vol.
+     3, no. 4, pp. 122-128, 1936.
+
+[54] G. Mislick and D. Nussbaum, Cost Estimation: Methods and Tools, New York: Wiley, 2015.
+[55] NEI, "Nuclear Costs in Context," Nuclear Energy Institute, 2022.
+
+                                                              41
+[56] F. Barbosa, J. Woetzel, J. Mischke, M. Ribeirinho, M. Sridhar, M. Parsons, N. Bertram and S.
+     Brown, "Reinventing construction: a route to higher productivity," McKinsey Global Institute,
+     2021.
+
+[57] A. Larson, "Innovative `Steel Bricks' Design Expected to Reduce Time, Cost of SMR
+     Construction," POWER, 22 April 2021. [Online]. Available:
+     https://www.powermag.com/innovative-steel-bricks-design-expected-to-reduce-time-cost-of-smr-
+     construction/. [Accessed 1 May 2023].
+
+[58] B. Mignacca and G. Locatelli, "Modular circular economy in energy infrastructure projects:
+     Enabling factors and barriers," Journal of Management in Engineering, vol. 37, no. 5, p. 04021053,
+     2021.
+
+[59] P. David and G. Rothwell, "Measuring standardization: An application to the American and French
+     nuclear power industries," European Journal of Political Economy, vol. 12, no. 2, pp. 291-308,
+     1996.
+
+[60] S. Parsi, K. Lal, B. Kosbab, E. Ingersoll, K. Shirvan and A. Whittaker, "Seismic isolation: A
+     pathway to standardized advanced nuclear reactors," uclear Engineering And Design, vol. 387, p.
+     111445, 2022.
+
+[61] Terra Power, "Energy Island Decoupling Strategy (NATD-LIC-STDY-0001) White Paper," U.S.
+     Nuclear Regulatory Commission, Bellevue, WA, 2022.
+
+[62] United Engineers & Constructors Inc., "technical reference book for the energy economic data base
+     program (EEDB)," U.S. Department of Energy, Washington, D.C., 1986.
+
+[63] C. Rabiti, A. Alfonsi, J. Joshua Cogliati, D. Mandelli, R. Kinoshita, S. Sonat Sen, C. Wang, P.
+     Talbot and D. Maljovec, "RAVEN User Manual," Idaho National Laboratory, INL/EXT-15-34123
+     Revision 7, Idaho Falls, 2019.
+
+[64] Board of Governors of the Federal Reserve System (US), "Industrial Production: Utilities: Nuclear
+     Electric Power Generation (NAICS = 221113) [IPN221113S]," FRED, Federal Reserve Bank of St.
+     Louis, [Online]. Available: https://fred.stlouisfed.org/series/IPN221113S. [Accessed 19 January
+     2023].
+
+[65] L. Demick and D. Vandel, "Next generation nuclear plant pre-conceptual design report (No.
+     INL/EXT-07-12967)," Idaho National Laboratory, Idahl Falls, ID, 2007.
+
+[66] C. Boardman, "Economic assessment of S-PRISM including development and generating costs," in
+     ICONE, 2001.
+
+                                                              42
+                                       APPENDIX A
+
+                         Processing of the Cost Estimate Dataset
+
+           A.1 Overview of Some Inconsistencies in Cost Dataset
+
+As disclosed in Section 2.1, the various cost estimate references contained inconsistencies among
+themselves. Namely as it relates to financing costs, owners' costs, and pre-construction costs. To
+showcase this issue, Table 17 provides an overview of which reference accounts for financing costs.
+Despite these limitations the analysis did not attempt to re-baseline estimates in the literature.
+
+Table 17. Overview of which dataset includes financing costs for nuclear reactors.
+
+      Reactor Concept Units Power                Specific costs                     Includes Financing Costs?
+                                                                                                   No
+      [5] NuScale iPWR   12  1920MWth/570MWe 5,100$2015/kWe                                        No
+                                                                                                   No
+      [6] NuScale iPWR   12  685MWe              3,856$2018/kWe                                   Yes
+                                                                                                   No
+      [7] NuScale VOYGR 12   924MWe              2,850$2018/kWe
+                                                                                                  Yes
+      [8] NuScale/UAMPS 6    462MWe              20,139$2022/kWe
+                                                                                                Unclear
+      [9] SMART iPWR     --  --                  5,600$2014/kWe
+                                                                                              Uncertain
+      [10] NuScale SMR   --  1920-2400MWth/600- --                                                 No
+                                                                                                   No
+                             720MWe                                                                No
+                                                                                                   No
+      [13] NuScale       --  600MWe              --                                               Yes
+                                                                                                   No
+      [14] SMR           --  570MWe              --                                                No
+                                                                                                   No
+      [15] SMR           12  600MWe              6,191$2019/KWe                                    No
+                                                                                                   No
+      [16] SMR           4   600MWe              3,800$2020/MW-hr                                  No
+                                                                                                   No
+      [16] SMR           4   600MWe              2,000$2020/MW-hr                                  No
+                             870MWth/300MWe                                                       Yes
+PWR   [10] GEH BWRX-300 --                       --                                               Yes
+                                                                                                   No
+      [17] PWR-12        1   3417MWth/1144MWe 6,345$2017/kWe                                       No
+                                                                                                   No
+      [17] PWR-12        1   3417MWth/1144MWe 3,650$2017/kWe                                       No
+                                                                                                   No
+      [17] AP1000        1   3417MWth/1144MWe 6,671$2017/kWe                                       No
+                                                                                                   No
+      [17] AP1000        1   3415MWth/1100MWe 3,838$2017/kWe                                       No
+      [18] AP1000
+      [2] PWR            1   3415MWth/1100MWe 7,349$2022/kWe
+      [2] PWR
+      [15] PWR           1   3415MWth/1100MWe 6,154$2018/kWe
+      [10] PWR
+      [19] PWR           1   3415MWth/1100MWe 6,986$2014/kWe
+
+                         2   2156 MWe            6,041$2019/KWe
+
+                         2   2256MWe             6,317$2019/KWe
+
+                         ----                    --
+
+      [20] PWR12BE       1   3417MWth/1144MWe 3,054$2011/kWe
+
+      [20] PWR12ME       1   3417MWth/1144Mwe 5,305$2011/kWe
+
+      [20] PWR Improved  1   3417MWth/1144Mwe 2,534$2011/kWe
+
+      [17] NGNP          1   275MW               9,900$2017/kWe
+
+      [9] HTGR           ----                    6,600$2015/kWe
+
+HTGR  [17] MIGHTR        1   350MWth/154MWe      7,346$2017/kWe
+      [21] NGNP
+      [21] NGNP          1   350MWth/156MWe      20,994$2009/kWe
+      [21] NGNP
+                         1   600MWth/267MWe      14,479$2009/kWe
+
+                         1   350MWth/154MWe      7,324$2009/kWe
+
+                                             43
+              [21] NGNP       1        600MWth/267MWe      5,841$2009/kWe   No
+
+              [2] NGNP        4        2400MWth/1000MWe 5,246$2009/kWe      No
+
+              [17] NGNP       4        1100 MW             4,814$2017/kWe   No
+
+              [21] NGNP       4        1400MWth/624MWe 5,720$2009/kWe       No
+
+              [17] MIGHTR     4        1400MWth/616MWe 3,585$2017/kWe       No
+
+              [21] NGNP       4        2400MWth/1068MWe 4,663$2009/kWe      No
+
+              [22] NGNP       4        2400MWth/1068MWe 5,600$2018/kWe      No
+
+              [22] HC-HTGR    4        920MWe              4,550$2018/kWe   No
+
+              [22] HC-HTGR    4        920MWe              3,000$2018/kWe   No
+
+              [23] MHTGR-SC   4        1800MWth/693MWe 3,153$1992/kWe       No
+
+              [23] MHTGR-SC   4        1800MWth/693MWe 2,347$1992/kWe       No
+
+              [23] MHTGR-GT/IC 4       1800MWth/806MWe 3,290$1992/kWe       No
+
+              [23] MHTGR-GT/IC 4       1800MWth/806MWe 2,458$1992/kWe       No
+
+              [23] MHTGR-GT/DC 4       1800MWth/869MWe 2,656$1992/kWe       No
+
+              [23] MHTGR-GT/DC 4       1800MWth/869MWe 1,908$1992/kWe       No
+
+              [24] HTGR       --       1124MWe             5,469$2017/kWe   No
+
+              [2] SFR         4        3360MWth/1100MWe 5,632$2013/kWe      No
+
+              [25] 4S Sodium  1        30MWth              --               No
+
+              [26] LSPB       1        1100MWe             4,734$2013/kWe   No
+
+              [27] ABR1000    1        380MWe              5,612$2017/kWe   No
+
+SF R          [28] S-PRISM    4        1520MWe             2,664$2005/kWe   Yes
+
+              [28] S-PRISM    4        1520MWe             3,046$2005/kWe   Yes
+
+              [29] S-PRISM    2        1651MWe             1,334$1996/kW    Yes
+
+              [28] S-PRISM Mod B 6     1866MWe             2,073$2005/kWe   Yes
+
+              [28] S-PRISM Mod B 6     1866MWe             2,371$2005/kWe   Yes
+
+              [30] S-PRISM Mod B 6     1866MWe             1,554$2004/kWe   No
+
+              [24] LSPB       --       1311Mwe             4,240$2017/kWe   No
+
+              [2] AHTR        1        3000MWth/1350MWe 5,217$2011/kWe      No
+
+              [2] MSR         1        2275MWth/1000MWe 6,113$2011/kWe      No
+
+MS R          [2] FHR         12       2904MWth/1330MWe 5,423$2015/kWe      No
+
+              [31] DMSR       1        1000MW              6,53$1978/kWe    No
+
+              [20] AHTR       1        3400MWth/1530MWe 3,384$2011/kWe      No
+
+              [24] MSR        --       190-1000MWe         3,664$2017/kWe   No
+
+              [32] Reference micro- 1  10MWth/5MWe         10,000$2019/kWe  No
+                        reactor
+
+              [32] Reference micro- 1  10MWth/5MWe         15,000$2019/kWe  No
+                        reactor
+
+              [32] Reference micro- 1  10MWth/5MWe         20,000$2019/kWe  No
+                        reactor
+Microreactor
+              [32] Reference micro- 1  10MWth/5MWe         3,996$2019/kWe   No
+                        reactor
+
+              [32] Reference micro- 1  10MWth/5MWe         8,276$2019/kWe   No
+                        reactor
+
+              [32] Reference micro- 1  10MWth/5MWe         14,973$2019/kWe  No
+                        reactor
+
+              [33] Design A   1        5MWth/1.8MWe        65,445$2017/kWe  Yes
+
+              [33] Design A'  1        8MWth/2.9MWe        19,241$2017/kWe  Yes
+
+              [33] Design A'  1        8MWth/2.9MWe        6,575$2017/kWe   Yes
+
+                                                       44
+           A.2. Adjusted Cost Estimates Using Escalation Methdodology
+
+    The values in Note that cost estimates from the Advanced Reactor Demonstration Program (ARDP)
+were not included because public statements regarding overall costs do not include breakdowns of reactor
+costs against other expenses. Reference [4] highlights how one of the ARDP awardees intends to use the
+total budget for completing the design, obtaining license approval, and construction of a fuel fabrication
+facility, in addition to the reactor demonstration costs.
+
+Table 2 are re-baselined to 2019 USD in the table below using the methodology outlined in Section 2.3.
+These values were subsequently used in the study to derive trends and identify ranges in cost estimates.
+
+Table 18. Overview of escalated costs (2019$) for each reference used in the study.
+
+                                     Original Year Value                                            Escalated Value
+
+     Reactor         Specific costs  LCOE                 OPEX                       Specific costs LCOE             OPEX
+     Concept
+
+     [5] NuScale     5100$2015/kW    114$2015/MW-hr       --                         5941$2019/kW   133$2019/MW-     --
+               iPWR
+                                                                                                    hr
+
+     [6] NuScale     3856$2018/kW    --                   --                         4085$2019/kW   --               --
+
+     iPWR
+
+     [7] NuScale     2850$2018/kW    --                   --                         3019$2019/kW   --               --
+
+     iPWR
+
+     [9] SMART       5600$2015/kWe   105$2015/MW-hr       25$2015/MW-hr              6400$2019/kWe  123$2019/MW-     30$2019/
+               iPWR                                                                                 hr               MW-hr
+
+     [10] NuScale    --              51-54$2019/MW-hr --                             --             51-              --
+
+     SMR                             112$2016/MW-hr                                                 54$2019/MW-hr
+
+                                     [11]                                                           127$2019/MW-
+
+                                     101$2016/MW-hr                                                 hr [11]
+
+                                     [12]                                                           115$2019/MW-
+
+                                                                                                    hr [12]
+
+     [13] NuScale    --              65$2015/MW-hr        --                         --             75$2019/MW-hr --
+
+     [14] SMR        --              80$/MW-hr            --                         --             89$2019/MW-hr --
+
+     [15] SMR        6191$2019/KWe   --                   --                         6191$2019/KWe --                --
+
+PWR  [16] SMR        3800$2020/MW-hr 95$2020/MW-hr        22$2020/MW-hr              3690$2019/MW-  93$2019/MW-hr    22$2019/
+                                                                                     hr                              MW-hr
+
+     [16] SMR        2000$2020/MW-hr 44$2020/MW-hr        15$2020/MW-hr              1942$2019/MW-  43$2019/MW-hr    15$2019/
+                                                                                     hr                              MW-hr
+
+     [10] GEH        --              44­51$2019/MW-hr --                             --             44­              --
+
+     BWRX-300                                                                                       51$2019/MW-hr
+
+     [17] PWR-12     6345$2017/kWe   --                   --                         7392$2019/kWe --                --
+
+     [17] PWR-12     3650$2017/kWe   --                   --                         4253$2019/kWe --                --
+
+     [17] AP1000     6671$2017/kWe   --                   --                         7402$2019/kWe --                --
+
+     [17] AP1000     3838$2017/kWe   --                   --                         4259$2019/kWe --                --
+
+     [18] AP1000     7349$2022/kWe   81$2022/MW-hr        --                         5546$2019/kWe 62$2019/MW-hr --
+
+     [2] PWR         6154$2018/kWe   --                   --                         6518$2019/kWe --                --
+
+     [2] PWR         6986$2014/kWe   --                   --                         8138$2019/kWe --                --
+
+     [15] PWR        6041$2019/KWe   --                   --                         6041$2019/KWe --                --
+
+     [10] PWR        6317$2019/KWe   82$2019/ MW-hr       25$2019/ MW-hr             6317$2019/KWe  82$2019/ MW-hr   25$2019/
+                                                                                                                     MW-hr
+
+                                                     45
+      [19] PWR            --              141-221$2023/MW- 19-              --              107-           15-
+                                                                                            167$2019/MW-   16$2019/
+                                          hr                 21$2023/MW-hr  3762$2019/kWe   hr             MW-hr
+                                                                            6535$2019/kWe
+      [20] PWR12BE 3054$2011/kWe          --                 --             3122$2019/kWe   --             --
+
+      [20] PWR12ME 5305$2011/kWe          --                 --                             --             --
+
+      [20] PWR            2534$2011/kWe   --                 --                             --             --
+                Improved
+
+      [17] NGNP           9900$2017/kWe   --                 --             10984$2019/kWe  --             --
+                                                                            7543$2019/kWe
+      [9] HTGR            6600$2015/kWe   128$2015/MW-hr     30$2015/MW-hr                  147$2019/MW-   35$2019/
+                                                                            8151$2019/kWe   hr             MW-hr
+      [17] MIGHTR         7346$2017/kWe   --                 --             26554$2019/kWe
+      [21] NGNP           20994$2009/kWe  --                 --             18314$2019/kWe  --             --
+      [21] NGNP           14479$2009/kWe  --                 --             9264$2019/kWe   --             --
+      [21] NGNP           7324$2009/kWe   --                 --             7389$2019/kWe   --             --
+      [21] NGNP           5841$2009/kWe   --                 --             6636$2019/kWe   --             --
+      [2] NGNP            5246$2009/kWe                      --                             --             --
+                                          114$2009/MW-hr                    5342$2019/kWe                  --
+      [17] NGNP           4814$2017/kWe                      --             7236$2019/kWe   145$2019/MW-
+                                          --                 --             3978$2019/kWe   hr             --
+      [21] NGNP           5720$2009/kWe   --                 --             5899$2019/kWe                  --
+                                          --                 --             5932$2019/kWe   --             --
+      [17] MIGHTR 3585$2017/kWe           --                 --             4820$2019/kWe   --             --
+                                          --                 --             3178$2019/kWe   --             --
+HTGR  [21] NGNP           4663$2009/kWe   --                 --             9900$2019/kWe   --             --
+                                          --                 --                             --             --
+      [22] NGNP           5600$2018/kWe   --                                                --             --
+                                                                                            --
+      [22] HC-HTGR 4550$2018/kWe                                                            --
+
+      [22] HC-HTGR 3000$2018/kWe
+
+      [23] MHTGR-         3153$1992/kWe
+                SC
+
+      [23] MHTGR-         2347$1992/kWe   50$1992/MW-hr      8$1992/MW-hr   7370$2019/kWe   157$2019/MW-   26$2019/
+                SC                                                          10331$2019/kWe  hr             MW-hr
+                                          --                 --
+      [23] MHTGR-         3290$1992/kWe
+                GT/IC
+
+      [23] MHTGR-         2458$1992/kWe   48$1992/MW-hr      6$1992/MW-hr   7718$2019/kWe   151$2019/MW-   19$2019/
+                GT/IC                                                       8340$2019/kWe   hr             MW-hr
+                                          --                 --
+      [23] MHTGR-         2656$1992/kWe
+                GT/DC
+
+      [23] MHTGR-         1908$1992/kWe   39$1992/MW-hr      5$1992/MW-hr   5991$2019/kWe   123$2019/MW-   16$2019/
+                GT/DC     5469$2017/kWe                                     6068$2019/kWe   hr             MW-hr
+                                                                            6687$2019/kWe   62$2019/MW-hr
+      [24] HTGR                           55$2017/MW-hr      --                             135$2019/MW-
+                                                                            5620$2019/kWe   hr
+      [2] SFR             5632$2013/kWe   113$2013/MW-hr     --             6228$2019/kWe   165-
+                                                                            5291$2019/kWe   367$2019/MW-
+      [25] 4S Sodium --                   130-290$2009/MW- --               6050$2019/kWe   hr
+                                                                            2650$2019/kWe
+                                          hr                                4117$2019/kWe   79$2019/MW-hr
+                                                                                            120$2019/MW-
+      [26] LSPB           4734$2013/kWe   --                 --                             hr
+      [27] ABR1000        5612$2017/kWe                                                     65$2019/MW-hr
+SF R  [28] S-PRISM        2664$2005/kWe   --                 --                             79$2019/MW-hr
+      [28] S-PRISM        3046$2005/kWe
+                                          39$2005/MW-hr      --
+      [29] S-PRISM        1334$1996/kW
+      [28] S-PRISM        2073$2005/kWe   60$2005/MW-hr      --
+
+                Mod B     2371$2005/kWe   32$1996/MW-hr      --
+      [28] S-PRISM
+                                          39$2005/MW-hr      --
+                Mod B
+                                          55$2005/MW-hr      --             4709$2019/kWe   111$2019/MW-
+                                                                                            hr
+
+                                                         46
+              [30] S-PRISM       1554$2004/kWe   40$2004/MW-hr    --             3097$2019/kWe 89$2019/MW-hr
+                        Mod B    4240$2017/kWe   80$2017/MW-hr
+MS R                             5217$2011/kWe   111$2011/MW-hr   --             4705$2019/kWe   89$2019/MW-hr
+              [24] LSPB          6113$2011/kWe   119$2011/MW-hr   --             6425$2019/kWe
+              [2] AHTR           5423$2015/kWe   135$2015/MW-hr                                  137$2019/MW-
+                                 653$1978/kWe                     --             7529$2019/kWe   hr
+              [2] MSR            3384$2011/kWe   --
+                                                 --               --             6198$2019/kWe   147$2019/MW-
+              [2] FHR                                                            4311$2019/kWe   hr
+                                                 51$2017/MW-hr    --             4168$2019/kWe
+              [31] DMSR                          150$2019/MW-hr                                  155$2019/MW-
+              [20] AHTR                                           34-                            hr
+                                                 310$2019/MW-hr   60$2011/MW-hr
+              [24] MSR           3664$2017/kWe                                   4066$2019/kWe 57$2019/MW-hr    42-
+                                 10000$2019/kWe  410$2019/MW-hr   19$2017/MW-hr                                 74$2019/
+              [32] Reference     15000$2019/kWe                                  10000$2019/kWe 150$2019/MW-    MW-hr
+                        micro-   20000$2019/kWe  80$2019/MW-hr    69$2019/MW-hr                         hr
+                        reactor  3996$2019/kWe                                                                  22$2019/
+                                 8276$2019/kWe                                                                  MW-hr
+              [32] Reference     14973$2019/kWe
+                        micro-   65445$2017/kWe                                                                 69$2019/
+                        reactor  19241$2017/kWe                                                                 MW-hr
+                                 6575$2017/kWe
+              [32] Reference                                      103$2019/MW-   15000$2019/kWe 310$2019/MW-    103$2019/
+                        micro-                                    hr                                    hr      MW-hr
+                        reactor
+                                                                  137$2019/MW-   20000$2019/kWe 410$2019/MW-    137$2019/
+              [32] Reference                                      hr                                    hr      MW-hr
+                        micro-
+Microreactor            reactor                                   --             3996$2019/kWe 80$2019/MW-hr --
+
+              [32] Reference                     200$2019/MW-hr   --             8276$2019/kWe 200$2019/MW-     --
+                        micro-
+                        reactor                                                                  hr
+
+              [32] Reference                     340$2019/MW-hr   --             14973$2019/kWe 340$2019/MW-    --
+                        micro-
+                        reactor                                                                  hr
+
+              [33] Design A                      2174$2017/MW-hr  112$2017/MW-   72611$2019/kWe  2413$2019/MW-  125$2019/
+                                                 363$2017/MW-hr   hr             21348$2019/kWe  hr             MW-hr
+              [33] Design A'                     135$2017/MW-hr                  7295$2019/kWe
+                                                                  122$2017/MW-                   403$2019/MW-   136$2019/
+              [33] Design A'                                      hr                             hr             MW-hr
+
+                                                                  53$2017/MW-hr                  150$2019/MW-   59$2019/
+                                                                                                 hr             MW-hr
+
+                                                 47
+                                            APPENDIX B
+
+                      Detailed Reactor Cost Estimates Breakdown
+
+    @This section highlights some of the more detailed estimates for reactor costs that were leveraged in
+Section 2.7. Additional background on the second level COAs is provided:
+
+         · 21 Structure and improvement: This account includes the onsite surface buildings and
+              structures and subsurface foundations and tunnels, that house and support all equipment,
+              components, piping, ducting, and wiring. Also included in this account are site
+              improvements, such as excavation, grading, roadways and railroads. In particular,
+              substructure and superstructure details, architectural features and treatment of floors, walls,
+              roofs, doors and glazing may be found in this account. The sub-accounts also include
+              equipment and piping for the heating, ventilating and air conditioning systems, piping for the
+              roof, floor and sanitary drains, and equipment for the lighting and service power (120 volt ac)
+              systems for that structure. Nuclear power plants have two basic classes of onsite structures.
+              Certain structures support and protect SR equipment and assist in the prevention of
+              significant release of radioactivity to the environment.
+
+         · 22 Reactor plant equipment: This account includes the equipment that liberates thermal
+              energy from a fuel and uses the resulting heat to generate steam. For each reactor or boiler,
+              support equipment is included to control the plant output, store an inventory of fuel, pretreat
+              the fuel before actual burning (in the case of fossil power plants) and store and treat the
+              residue or waste products. For a nuclear power plant, this equipment includes the reactor
+              safety systems, the fuel storage systems, and the radioactive waste handling systems. The
+              account includes the interconnecting piping systems, structural supports for equipment, and
+              the necessary instrumentation and control systems.
+
+         · 23 Turbine plant equipment: The turbine plant includes the power conversion system
+              equipment that produces electric power from the steam generated by the reactor. All of the
+              EEDB technical models use a conventional steam-turbine-generator unit. This account
+              includes the turbine-generator unit, the condenser, the systems to purify and return the
+              condensate to the reactor (condensate and feedwater systems) and the elevated turbine-
+              generator pedestal. The account also includes the main vapor piping system, auxiliary support
+              systems, interconnecting piping systems, structural supports for equipment, and the necessary
+              instrumentation and control systems.
+
+         · 24 Electric plant equipment: The electric plant includes the systems and equipment required
+              to deliver the generated electric power to the utility's step-up transformer and offsite
+              transmission system, provide auxiliary electric power for all power plant equipment and
+              auxiliaries, and provide standby power for safety systems for nuclear power. The major sub-
+              accounts are those for the cable and raceways for all power, control and instrumentation
+              systems. This account also includes structural supports for equipment, the generator control
+              system equipment and the plant grounding, lightning protection, freeze protection and
+              cathodic protection equipment. For nuclear power plants, the most critical electric systems
+              are designated "Class 1E." These are systems that are essential to the prevention of significant
+              release of radioactivity to the environment.
+
+         · 25 Miscellaneous plant equipment subtotal: This account contains the auxiliary mechanical
+              and electric equipment required for normal power plant start-up, O&M. This includes the
+              transportation and lift equipment (cranes), equipment in the air, water and steam service
+
+                                                              48
+    system, the auxiliary boiler, the fire detection and protection systems, the communication
+    system, the non-radioactive wastewater treatment system, various plant monitoring systems,
+    and miscellaneous furnishings and fixtures. The account also includes the necessary
+    interconnecting piping systems and structural supports for equipment.
+
+· 26 Main condenser heat rejection system: This account includes the equipment and
+    associated structures that dispose of the heat rejected by the power plant and provide make-up
+    water to the power plant. The systems are designed to dissipate the "excess" heat and provide
+    the make-up water in such a way that harmful effects to the environment are minimized. The
+    current power plants described by the EEDB technical data models use a closed, circulating
+    water cooling system with wet natural draft cooling towers to dissipate the waste heat. The
+    largest source of waste heat, usually accounting for 90 percent of the total, is the main steam-
+    turbine condenser. The account also includes structures, equipment, and interconnecting
+    piping systems for obtaining and pretreating the plant make-up water.
+
+    Table 19: Summary of two-digits code of account and their descriptions
+
+Code of Account (COA) Descriptions
+
+21                            Structure and improvement
+
+22                            Reactor plant equipment
+
+23                            Turbine plant equipment
+
+24                            Electric plant equipment
+
+25                            Miscellaneous plant equipment
+
+26                            Main Condenser Heat Rejection System
+
+30                            Total indirect cost
+
+           B.1. Advanced PWR
+
+    This section compares two types of PWR: Large reactors, including PWR 12 and AP1000, and small
+modular reactors, including NuScale iPWR. PWR 12 is a single-unit 1144 MWe PWR described in
+EEDB [62]. All number are escalated to 2019 based on the cost factors discussed in table 3 [64]. The
+median of estimates from literature is listed. Two-digit costs from reference [17] are not included in the
+following table.
+
+21 Structure and improvement  Median       Range of capital costs           Ref
+22 Reactor plant equipment    ($2019)      ($2019/kWe)
+                              594          555­897                          [17], [2],
+                                                                            [20]
+                              859          736­1097                         [17], [2] ,
+                                                                            [20]
+
+                                       49
+23 Turbine plant equipment        620        480­610      [17], [2] ,
+                                             184­353      [20]
+24 Electric plant equipment       230        130­210
+                                             110­168      [17], [2] ,
+25 Miscellaneous plant equipment  134        1,051­3,967  [20]
+
+26 Main Condenser Heat Rejection  142                     [17], [2] ,
+System                            1,576                   [20]
+
+30 Total indirect cost                                    [17], [2],
+                                                          [20]
+
+                                                          [2], [15]
+                                                          [20]
+
+All references with cost estimates for 2-digit accounts report similar costs for each account. Holcomb et
+al. [20] suggested that the Gen IV cost of accounts for indirect costs differs significantly from the EEDB
+accounts. In their work, the EEDB 91, 92, and 93 are mapped into the Gen IV accounts. Account 31
+contains data from EEDB account 921. Account 32 consists of EEDB accounts 922 and 923. No EEDB
+data appears to map into account 33. Account 34 contains data from EEDB account 933, and account 35
+contains EEDB data from account 932. Account 36, field indirect costs, has data from EEDB accounts
+911, 912, 913, 924, and 931. Account 37 contains EEDB account 934. There is no data for account 38
+demonstration run. This study recommends using estimates from EEDB database as reference.
+
+           B.2. HTGR
+
+    This section compares four types of HTGR: next generation nuclear plant (NGNP), modular
+integrated gas high-temperature reactor (MIGHTR), Modular High-Temperature Gas-Cooled Reactor
+(MHTGR), and horizontal compact HTGR (HC-HTGR). NGNP is a pre-conceptual design with
+integration of high-temperature reactor technology with advanced hydrogen, electricity, and process heat
+production capabilities [65]. MIGHTR is proposed by Stewart et al. [17] with reactor core and steam
+generator horizontal and axially aligned. This novel layout allows for a much smaller confinement
+building without the need for overhead cranes during construction. MIGHTR is later extended to HC-
+HTGR by Stewart et al. [22] The horizontal layout reduces the HTGR costs and makes it economically
+competitive with AP1000 or a traditional four-loop PWR. However, the new layout could cause thermal
+stratification of helium coolant, overheating core internals and causing asymmetric thermal expansion,
+while more heats in the traditional HTGR can be carried from the cavity to the tank through natural
+circulation because of the RCCS comprises long vertical water panels in the cavity, connected to a water
+storage tank. MHTGR is designed based on generic gas-cooled reactor experience by combining any
+number of 350 MWth reactor modules in parallel with a selected number of turbine plants in a variety of
+arrangements. Basic features of HTGR of ceramic fuel, helium coolant, and graphite are sized and
+configured to provide a low power density core with passive safety features such that no operator action
+or external source of power is needed for the plant to meet criteria. Along with the reference steam cycle,
+detailed cost estimates of two MHTGR gas turbine concepts with direct and indirect helium gas cycles are
+investigated in reference [23].
+
+                                         50
+21 Structure and improvement      Median       Range of capital costs  Ref
+                                  ($2019)      ($2019/kWe)
+                                               419­3,268               [17], [2], [22]
+                                  722                                  [23]
+                                               1,288­3,891             [17], [2], [22]
+22 Reactor plant equipment        1,851                                [23]
+                                               557­1,730               [17], [2], [22]
+23 Turbine plant equipment        889                                  [23]
+                                               212­1,225               [17], [22] [23]
+24 Electric plant equipment       277          106­1,251               [17], [2], [22]
+                                                                       [23]
+25 Miscellaneous plant equipment 182           96­289                  [17], [22] [23]
+
+26 Main Condenser Heat Rejection  132          1,745                   [2]
+System                            1,745
+
+30 Total indirect cost
+
+    We observed that HTGRs with higher power outputs generally have lower costs than those with lower
+outputs. The HC-HTGR (MIGHTR) results in lower costs (20% less) than NGNP. More specifically, the
+civil structure costs are reduced by 42% and indirect costs by 38%. For total specific costs, Stewart et al.,
+Buongiorno et al., and Gandrik et al. presented similar values for NOAK NGNP (+/-20%). The total
+specific costs were much higher (>50%) for single units than four units. FOAK units presented much
+higher (>50%) costs than NOAK units. Although with similar total costs, Buongiorno et al. presented
+much lower total direct costs (4809 $2009/kWe) than Stewart et al. (2456 $2014/kWe). Such differences
+could be caused by the differences in structural and improvement costs (Buongiorno et al. 331 $2009/kWe
+vs. Stewart et al. 1436 $2014/kWe); Turbine plant equipment (Buongiorno et al. 478 $2009/kWe vs. Stewart
+et al. 809 $2014/kWe); no electrical plant equipment and condensing heat rejection costs in Buongiorno et
+al. Other factors like different technology maturation levels, IDC, and contingency costs could also result
+in different total costs. This study recommends using estimates from Gandrik et al. with 4 units 350
+MWth and 750 C reactor outlet temperatures as the reference.
+
+           B.3 SFR
+
+    This section compares three SFR designs: 1100 MWe reference SFR from EEDB 1988 based on the
+EMWG code of account; advanced burner reactor (ABR-1000); PRISM and related variations, including
+Super PRISM and PRISM Mod B. Details of reference SFR design from EEDB are currently unknown.
+ABR1000 is a 1000MWth/380MWe pooled type sodium cooled fast reactor. Compared to PRISM,
+PRISM Mod B achieves a 0.8 conversion ratio. The S-PRISM contains 4 units, while each unit generates
+413 MWe. The PRISM Mod B has 6 units, and each unit produces 311 MWe. The DMSR has 1 unit.
+
+                                  Median       Range of capital costs  Ref
+
+                                  ($2019)      ($2019/kWe)
+
+                                           51
+21 Structure and improvement      396        281­796     [2], [26],
+                                  1,187      958­1,751   [28]
+22 Reactor plant equipment        386        281­568
+                                  187        119­402     [2], [26],
+23 Turbine plant equipment        129        42­562      [28]
+                                  1,000      0­562
+24 Electric plant equipment                  344­ 2,630  [2], [26],
+25 Miscellaneous plant equipment                         [28]
+
+26 Main Condenser Heat Rejection                         [26], [28]
+System
+30 Total indirect cost                                   [2], [26],
+                                                         [28]
+
+                                                         [2], [28]
+
+                                                         [2], [26],
+                                                         [28]
+
+    Shropshire [28] presented much lower costs (>50%) than Ganda et al. and Buongiorno et al. [2] Such
+major differences could result from completely different reactor designs, where Shropshire et al. estimates
+were based on PRISM SFR designs, while Ganda et al. and Buongiorno et al. were based on EEDB
+reference 1100 SFR.
+
+    Shropshire modified GE estimation [66], including updating dollars from 1996 to 2005 using U.S.
+Gross Domestic Product (GDP) deflator. Capacity factor is decreased from 93% to 86% to account for
+more frequent refueling in recycle mode. Cost of capital is changed from 9.16% to 10% following
+EMWG. Construction period is lengthen to 5 years, increasing IDC. Decommissioning is changed to
+EMWG standards, decreasing D&D sinking fund contribution. Shropshire also modified ANL (2004)
+[30] update dollars from 1994 to 2005 using U.S. GDP deflator. Cost of capital is changed from implicitly
+9.44% to 10% following EMWG. The implicit building period is lengthen to 5 years, increasing IDC.
+Decommissioning is changed to EMWG standards. Increased preconstruction costs and contingency
+(16.7% to 20%).
+
+    Ganda et al. and Buongiorno et al. made similar costs (+/-20%). Some obvious differences include
+that Buongiorno et al. presented higher costs for miscellaneous plant equipment (473$2014) and
+condensing heat rejection (473$2014) than a combined 209$2013. Buongiorno et al. presented $0 costs for
+electrical plant equipment, while Ganda et al. showed 157$2013.
+
+    In summary, more design information is needed to determine the reasonable costs for each account.
+This study recommends using estimates for ABR1000 from Ganda et al. [27].
+
+           B.4. MSR
+
+This section discusses capital costs of two MSR designs from three references, including the single-unit
+AHTR 3400 MWth/1350 Mwe based on 1100 Mwe PWR using ANL escalation basis for PWR
+1100MWe [20] and Single-unit denatured MSR (DMSR) 1000 MWe with once-through fueling [31].
+
+                                         52
+21 Structure and improvement      Capital costs  Range of capital costs  Ref
+                                  ($2019)        ($2019/kWe)
+                                                 508­819                 [2], [20],
+                                  683            886­1189                [31]
+                                                 470­661
+22 Reactor plant equipment        1,040          190­357                 [2], [20],
+                                                 113­196                 [31]
+23 Turbine plant equipment        537            76­140
+                                                 1,070­2,056             [2], [20],
+24 Electric plant equipment       270                                    [31]
+
+25 Miscellaneous plant equipment 127                                     [2], [20],
+                                                                         [31]
+26 Main Condenser Heat Rejection  109
+System                            1,699                                  [2], [20],
+                                                                         [31]
+30 Total indirect cost
+                                                                         [2], [20],
+                                                                         [31]
+
+                                                                         [2], [20],
+                                                                         [31]
+
+For AHTR 3400, Buongiorno et al. and Holcomb et al. made similar (+/-20%) direct and indirect cost
+estimates. However, Buongiorno et al. considered the contingency and IDC rates and resulted in 5217
+$2011/kWe, comparing to the 3384 $2011/kWe by Holcomb et al. as shown in Table 1. For DMSR,
+Buongiorno et al. made higher estimates (>50%) than Engel et al. For example, the miscellaneous costs
+by Buongiorno are 159 $2014/kWe (escalated to 195 $2019/kWe) by Buongiorno et al. comparing to 17
+$1980/kWe (escalated to 112 $2019/kWe) by Engel et al. This study recommends using AHTR costs from
+Holcomb et al. [20] as reference.
+
+                                         53
+

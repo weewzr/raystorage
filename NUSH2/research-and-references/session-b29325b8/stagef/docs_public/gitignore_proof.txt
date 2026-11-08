@@ -1,0 +1,47 @@
+== git check-ignore -v --non-matching
+.gitignore:64:!/report/NUSH2_Final_Report.pdf	report/NUSH2_Final_Report.pdf
+.gitignore:65:!/report/NUSH2_Final_Report.docx	report/NUSH2_Final_Report.docx
+.gitignore:66:!/presentation/NUSH2_Final_Presentation.pptx	presentation/NUSH2_Final_Presentation.pptx
+.gitignore:67:!/presentation/NUSH2_Final_Presentation.pdf	presentation/NUSH2_Final_Presentation.pdf
+.gitignore:62:/report/*	report/_build/build_report.py
+.gitignore:62:/report/*	report/_build/refs.csv
+.gitignore:63:/presentation/*	presentation/build_deck.py
+.gitignore:63:/presentation/*	presentation/build_speaker_docs.py
+.gitignore:63:/presentation/*	presentation/NUSH2_Speaker_Script.docx
+.gitignore:63:/presentation/*	presentation/NUSH2_QA_Prep.docx
+.gitignore:63:/presentation/*	presentation/inputs/qa_backup_source.pptx
+.gitignore:63:/presentation/*	presentation/figures/build_figures.py
+.gitignore:63:/presentation/*	presentation/ppt_run.ps1
+.gitignore:63:/presentation/*	presentation/render_deck.py
+.gitignore:63:/presentation/*	presentation/deck_storyboard.md
+.gitignore:63:/presentation/*	presentation/media
+::	math/NUSH2_First_Principles_Derivations.pdf
+::	docs/figures/NUSH2_process_flow.svg
+::	references/README.md
+exit 0
+== git status --porcelain --ignored -- paths
+?? docs/figures/NUSH2_process_flow.svg
+?? presentation/NUSH2_Final_Presentation.pdf
+?? presentation/NUSH2_Final_Presentation.pptx
+?? references/README.md
+?? report/NUSH2_Final_Report.docx
+?? report/NUSH2_Final_Report.pdf
+!! presentation/NUSH2_QA_Prep.docx
+!! presentation/NUSH2_Speaker_Script.docx
+!! presentation/build_deck.py
+!! presentation/build_speaker_docs.py
+!! presentation/deck_storyboard.md
+!! presentation/figures/
+!! presentation/inputs/
+!! presentation/media/
+!! presentation/ppt_run.ps1
+!! presentation/render_deck.py
+!! report/_build/
+== git status --porcelain --ignored --untracked-files=all report presentation (counts)
+    274 !!
+      4 ??
+== untracked not ignored under report/ presentation/
+presentation/NUSH2_Final_Presentation.pdf
+presentation/NUSH2_Final_Presentation.pptx
+report/NUSH2_Final_Report.docx
+report/NUSH2_Final_Report.pdf

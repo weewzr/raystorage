@@ -1,0 +1,241 @@
+1-s2.0-S0360319917332548-main.pdf
+HTGR_SMR_MEA_CCS_Research_Local\03_SMR_Reactor\Hoseinzade_Adams_2017_SMR_Dynamic_Model_Integrated_Model.pdf
+=====
+--- PDF p.1 ---
+Modeling and simulation of an integrated steam
+reforming and nuclear heat system
+Leila Hoseinzade, Thomas A. Adams II*
+Department of Chemical Engineering, McMaster University, 1280 Main St W, Hamilton, Ontario, L8S 4L7, Canada
+a r t i c l e i n f o
+Article history:
+Received 25 May 2017
+Received in revised form
+25 July 2017
+Accepted 4 August 2017
+Available online 1 September 2017
+Keywords:
+Dynamic modeling
+Steam methane reforming
+Syngas
+Integrated systems
+Nuclear heat
+a b s t r a c t
+In this study, a dynamic and two-dimensional model for a steam methane reforming
+process integrated with nuclear heat production is developed. The model is based on ﬁrst
+principles and considers the conservation of mass, momentum and energy within the
+system. The model is multi-scale, considering both bulk gas effects as well as spatial dif-
+ferences within the catalyst particles. Very few model parameters need to be ﬁt based on
+the design speciﬁcations reported in the literature. The resulting model ﬁts the reported
+design conditions of two separate pilot-scale studies (ranging from 0.4 to 10 MW heat
+transfer duty). A sensitivity analysis indicated that disturbances in the helium feed con-
+ditions signiﬁcantly affect the system, but the overall system performance only changes
+slightly even for the large changes in the value of the most uncertain parameters.
+© 2017 Hydrogen Energy Publications LLC. Published by Elsevier Ltd. All rights reserved.
+Introduction
+Syngas is an important feedstock for the production of elec-
+tricity and various chemicals such as methanol, ammonia,
+dimethyl ether, and Fischer-Tropsch liquids. The steam
+methane reforming (SMR) process is a common method of
+producing syngas [1]. The SMR reaction is endothermic and
+requires high temperatures in order to achieve high conver-
+sions of methane [2]. Conventionally, the required heat for the
+reforming process is provided by combustion (typically using
+natural gas) in a furnace, through the auto-thermal reforming
+process, or through partial oxidation. However, there has been
+research into using alternative sources of providing the
+required high-temperature heat that could reduce the total
+greenhouse gas emissions (GHG) of the process [3], such as
+nuclear energy. For example, a study by Khojasteh-Salkuyeh
+and Adams [4] examined the concept from a systems
+perspective for the production of Fischer-Tropsch liquids, in
+which helium gas was heated in a nuclear reactor to about
+1200
+C and then used to provide heat for natural gas
+reforming to produce syngas. It was determined that using
+nuclear heat reduces direct fossil fuel consumption for the
+process as a whole by about 22%, leading to carbon efﬁciencies
+of up to 72%. A follow up study examining similar ideas for
+methanol and dimethyl ether production found similar ad-
+vantages [5].
+Other studies have investigated a similar
+approach for using nuclear-heat-driven SMR reactions with
+hydrogen as the ﬁnal product. Several studies were carried out
+in Germany and Japan on the integrated HTGR/SMR systems
+[2,3,6,7]. In these studies, it has been demonstrated that nu-
+clear energy is a safe, abundant and economically viable
+alternative to produce liquid fuels which can signiﬁcantly
+decrease GHG emissions. In each of these cases, the key
+* Corresponding author.
+E-mail address: tadams@mcmaster.ca (T.A. Adams).
+Available online at www.sciencedirect.com
+ScienceDirect
+journal homepage: www.elsevier.com/locate/he
+i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 4 2 ( 2 0 1 7 ) 2 5 0 4 8 e2 5 0 6 2
+http://dx.doi.org/10.1016/j.ijhydene.2017.08.031
+0360-3199/© 2017 Hydrogen Energy Publications LLC. Published by Elsevier Ltd. All rights reserved.
+
+--- PDF p.2 ---
+component of the system is the high temperature gas-cooled
+reactor (HTGR), in which a hot gas (usually helium above
+800 C) provides the heat necessary to drive the endothermic
+SMR reaction.
+The ﬁrst pilot plant of an integrated SMR/HTGR was tested
+in 1972 in Germany [6]. This facility was called EVA-I (meaning
+“single splitting tube”) and used a 1 MW electric heater to heat
+helium at 4 MPa up to 950 C in order to mimic the conditions
+of high-temperature helium in an actual nuclear facility. This
+pilot used a single tube-and-shell type conﬁguration. The
+helium entered the shell, delivering heat through the wall of a
+single tube. The tube was ﬁlled with SMR catalyst in which
+natural gas and steam would be fed for the reforming reaction
+countercurrent to the helium. A second, helical inner tube was
+embedded inside of the main tube, such that the products of
+the SMR reaction would enter the inner tube, and reverse
+course to proceed in the co-current to the helium. The inner
+tube did not contain catalyst, and instead served strictly to
+provide additional heat to the catalyst zone and increase the
+total amount of heat transfer and thereby the methane
+conversion.
+The original design concept used a “direct cycle” in which
+the helium coolant leaving the nuclear reactor directly
+entered the integrated SMR/HTGR. This is desirable from an
+efﬁciency point of view because the helium could be obtained
+at temperatures as high as 1200 C, leading to high methane
+conversions in the SMR. However, later studies by the Japan
+Atomic Energy Research Institute (JAERI) showed that it is
+necessary to consider an intermediate heat exchanger (IHX)
+and use indirect cycle. In an indirect cycle, high temperature
+helium leaving the nuclear reactor does not enter the SMR/
+HTGR directly but instead heats a second helium stream in the
+IHX before returning to the nuclear reactor. The second heli-
+um stream enters the SMR/HTGR instead, which signiﬁcantly
+enhances that safety and reliability of the process, but with
+the downside that the second helium stream enters at a lower
+temperature,
+making
+it
+more
+difﬁcult
+to
+achieve
+high
+methane conversion.
+Both EVA I and its advanced version EVA II were built,
+tested, and achieved their design objectives. The results from
+these studies were used to inform the design of a commercial
+scale version called the HTR-Module, with the intent of using
+an HTR-Module pebble bed nuclear reactor integrated with
+SMR, but this has not yet been constructed to the best of our
+knowledge [2,7]. Later, another test facility with different
+design was constructed and tested by JAERI to establish a
+design for a larger scale integrated SMR/HTGR with 10 MW
+thermal output [2]. Therefore, the feasibility and satisfactory
+operability of the integrated SMR/HTGR system has been
+proven at the pilot scale.
+However, many key questions must be answered before
+the concept can be implemented at the commercial scale. The
+ﬁrst set of questions concerns unknowns surrounding the
+dynamic behaviour of the SMR/HTRG during transient condi-
+tions such as when experiencing disturbances, when starting
+up or shutting down the system, or when transitioning be-
+tween operating modes. Understanding the dynamics of the
+system is critical for creating an effective control system,
+which is of the highest priority for nuclear-based energy sys-
+tems. The second set of question concerns the unknown
+optimal design of the SMR/HTRG itself at commercial scale
+and the larger energy conversion system in which it is used.
+This information is critical for creating a design that is safe,
+reliable, and commercially viable.
+Therefore, in order to answer either set of questions, a
+rigorous model is needed because many factors need to be
+considered for safety purposes, such as the avoidance of hot
+spots in the steel or catalysts, the non-linear effects of diffu-
+sions in complex mixtures which may have unexpected con-
+tributions during transients, and the avoidance of excessive
+thermal gradients during transients to avoid thermal stress on
+the steel tubes and shell. Due to the high temperatures
+involved, it is not possible to measure many of these effects
+directly by experiment, and therefore a sufﬁciently detailed
+model is needed. Although one prior work has examined the
+control system of an SMR/HTRG system [8], the study was
+limited to examining the controllability of the pressure dif-
+ference between the shell and the tube sides and the
+controllability of the other balance of plant equipment not
+relevant to the present study. In addition, the model used for
+the study was not provided in the open literature, which was
+based on a simpliﬁed model using transfer functions identi-
+ﬁed by experiment. As such, the model does not have pre-
+dictive or generalized capability to be used in other designs.
+Ghouse and Adams [9] presented a rigorous model of a large-
+scale SMR process. They developed a two-dimensional het-
+erogeneous model that accounts for the inter- and intra-
+particle mass and heat transfer with detailed diffusional
+correlations.
+Therefore, this work focuses on the development of a dy-
+namic model for the integrated steam reforming and nuclear
+heat system shown in Fig. 1. In this system, hot helium from
+an intermediate heat exchanger ﬂows into the shell side and
+transfers heat through the wall to the tube. In the tube side,
+process gas ﬂows through the catalyst particles, receives heat
+from the hot gas in the shell, and converts to syngas. Then, hot
+syngas passes through an inner tube to transfer heat to the
+catalytic region. The model of the system is based on ﬁrst
+principles and well-known correlations for heat and mass
+transfer coefﬁcients, diffusion, and reaction kinetics. The
+model is an extension of the previous study by Ghouse and
+Adams [9] to the integrated HTGR/SMR system. The resulting
+model is a set of non-linear partial differential and algebraic
+equations which is solved using the ﬁnite difference method.
+The validity of the model is tested using available pilot plant
+data and only a few of the model parameters need to be ﬁtted
+within small regions of uncertainty. The dynamic trajectories
+and steady state conditions of the key variables of the system
+are analyzed and the effects of disturbances on the system
+behaviour are investigated. Finally, a sensitivity analysis on
+the model parameters is conducted to demonstrate the
+impact of parameter changes on system performance.
+Model development
+The proposed dynamic, heterogeneous model of integrated
+nuclear heat and SMR is described in this section. As shown in
+Fig. 2, the model includes seven sub-models: (1) refractory
+lining of the shell, (2) gas phase in the shell side, (3) outer tube
+i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 4 2 ( 2 0 1 7 ) 2 5 0 4 8 e2 5 0 6 2
+25049
+
+--- PDF p.3 ---
+wall of the steam reforming tubes, (4) gas phase in the tubes,
+(5) catalyst particles which are packed inside the tubes, (6)
+inner tube wall and (7) gas phase in the inner tubes. It should
+be noted that the nuclear reactor has not been modelled in
+this work.
+Refractory lining
+In this model, it is assumed that the refractory layer, which is
+used as lining to protect the shell from high temperatures, is
+composed of a single material. In practice, the refractory layer
+may be a complex layout of several different types of
+refractory brick such as ﬁreclay brick, insulating brick and a
+castable layer [10], but the overall system performance varies
+very little with the type and amount of brick. Therefore, for
+simplicity, this model considers a single layer consisting of the
+average properties of the actual refractory lining layers in the
+energy balance equation as follows:
+vTrfct
+vt
+¼
+Krfct
+rrfctCprfct
+ 
+v2Trfct
+vz2
+þ v2Trfct
+vr2
+!
+(1)
+where Trfct is the refractory temperature, Krfct is the refractory
+thermal conductivity (1.8 w/m K), rrfct is the refractory density
+(2645 kg/m3), Cprfct is the speciﬁc heat capacity of the refractory
+Fig. 1 e Schematic of integrated SMR/HTGR system with key variables of the model.
+Fig. 2 e Integrated SMR/HTGR sub-models.
+i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 4 2 ( 2 0 1 7 ) 2 5 0 4 8 e2 5 0 6 2
+25050
+

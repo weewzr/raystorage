@@ -1,0 +1,28 @@
+PASS  Register  (0 problems)
+PASS  Card fields  (0 problems)
+PASS  Frame  (0 problems)
+PASS  Macros  (0 problems)
+PASS  Sources  (0 problems)
+PASS  Banned text  (0 problems)
+PASS  Style  (0 problems)
+PASS  Paths  (0 problems)
+PASS  Verification wording  (0 problems)
+PASS  Engine links, pass 2  (0 problems)
+      counts: linked 265, tag_unnamed 0, untagged_found 0, untagged_missing 0, not_implemented 27, theory 4, none 3
+FAIL  Test links, pass 2  (180 problems)
+      A.1 has no engine test named eq_x_nn
+      A.4 has no engine test named eq_x_nn
+      A.7 has no engine test named eq_x_nn
+      A.11 has no engine test named eq_x_nn
+      A.12 has no engine test named eq_x_nn
+      A.13 has no engine test named eq_x_nn
+      B.3 has no engine test named eq_x_nn
+      B.4 has no engine test named eq_x_nn
+      and 172 more
+      counts: passed 101, failed 0, not_in_log 0, no_test 180, benchmark_none 18
+      Of the 299 cards, 265 are linked to the engine: a doc line names the card on an engine item and the implementation line names that item. Of the rest, 27 are stated as not implemented, 4 are theory and 3 are listed only. Of the 281 cards with a benchmark code other than NONE, 101 have an engine test named for them that passed in the recorded run and 180 have none.
+PASS  Build log  (0 problems)
+PASS  Labels  (0 problems)
+Card count in scope: 299 of 299
+Tiers: {'E': 53, 'F': 26, 'O': 96, 'R': 123, 'X': 1}
+NONE rows: 18

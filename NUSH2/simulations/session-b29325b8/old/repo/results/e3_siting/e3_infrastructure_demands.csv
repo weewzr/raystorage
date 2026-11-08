@@ -1,0 +1,12 @@
+item,value,unit,classification
+reactor_installed_thermal,600.000,MWth,E2B architecture
+two_train_useful_process_heat,353.600,MWth,E2B architecture
+full_power_residual_capacity,246.400,MWth,NOT cooling duty
+natural_gas,68.000,MMSCFD,source-scaled operating flow
+natural_gas_annual,21.097,Bscf/y,derived at 85% availability
+hydrogen,260.000,MMSCFD,source-scaled operating flow
+hydrogen_annual,195892.072,t/y,derived at 85% availability
+captured_CO2_operating,3496.290,t/day,source-scaled
+captured_CO2_annual,1084723.969,t/y,derived at 85% availability
+emitted_CO2_annual,79932.955,t/y,derived at 85% availability
+lifecycle_abatement,1834277.800,tCO2e/y,E2B scaling basis

@@ -1,0 +1,44 @@
+ 
+36 
+3.3.1.  Density and viscosity in the Phoenix model 
+3.3.1.1. Density calculation in the Phoenix model 
+Density in the Phoenix model uses a FORTRAN subroutine that calculates the 
+molar volume of the solution using the total molar fraction of MEA, CO2 and water: 
+ 
+!!"# ! !!"#
+!
+!!"# ! !!!!
+!
+!!!! ! !!!!
+!
+!!!! ! !!"#
+!
+!!!!
+!
+!! 
+(3.16) 
+Where: V is the molar volume in mL/mol 
+ 
+xT
+i  is the total mol fraction of i 
+V* is the volume associated with the interaction between water and MEA. 
+It is equal to -1.8218 mL/mol. 
+The molar volume of CO2 (VCO2) is a dissolved volume equal to 0.04747 
+mL/mol 
+VMEA is the MEA molar volume calculated as follows: 
+ 
+!!"# !
+!"!"#
+!!! ! !" ! ! 
+(3.17) 
+MWMEA is the molecular weight of MEA (61.09 g/mol) 
+a = -5.35162 x 10-7 
+b = -4.51417x10-4 
+c = 1.19451 
+Figures 3.4 – 3.6 compare model results for 4m, 7m, and 10m MEA against 
+experimental data by Amundsen et al. (2009).  Results show an adequate fit at the 
+compared loadings and amine concentrations, however the fit is less accurate with 
+increased MEA concentration. 
+ 
+ 
+ 

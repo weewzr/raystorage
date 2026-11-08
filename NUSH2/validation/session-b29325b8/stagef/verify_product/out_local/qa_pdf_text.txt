@@ -1,0 +1,291 @@
+===== page 1
+NUS-H2  1 
+NUS-H2 Q&A preparation 
+Nuclear-Upgraded Steam Methane Reforming with Carbon Capture for Low-Carbon 
+Hydrogen in Singapore 
+Short answers to the questions the brief lists, with the line to give if pressed and the slides to open. 
+Every figure is read from the model results or the published inputs when this sheet is built. 
+Status of the numbers: reduced-order balances anchored on INL cases. 360 of 650 checks are 
+independent of the source data. 325 pass and 32 fail, and the failures stay recorded as failed. 
+Sensitivities move one input at a time, and corner runs carry no probability. 
+Numbers to have ready 
+Item 
+Central value 
+Hydrogen 
+100,000 Nm3 h−1, 66,925 t y−1 at 85% availability 
+Reactor 
+210 MWth rated, 178.5 MWth needed, 31.5 MWth spare 
+Process heat 
+120.8 MWth at 900 °C secondary helium 
+Natural gas 
+23.2 MMSCFD against 35.9 MMSCFD for unabated steam methane reforming 
+Net abatement 
+0.578 MtCO2e y−1, 93.8% cut; target met 
+Capture 
+90% per pass, 90.4% of plant carbon 
+To atmosphere 
+38,309 tCO2 y−1, 0.57 kg CO2 kg−1 H2 
+Full cost, BOAK 
+S$189.7/tCO2e at 25 y, S$165.6/tCO2e at 60 y 
+Full cost, FOAK 
+S$277.9/tCO2e at 25 y, S$241.7/tCO2e at 60 y 
+Cost target 
+0 of 8 central cases reach S$100/tCO2e; target missed at the base 
+Cost headline 
+S$96/tCO2e for a 10th‑of‑a‑kind plant over 60 y with gas at S$20.7/GJ: L5 
+S$95.6/tCO2e, DCF S$95.9/tCO2e; central gas S$15/GJ 
+Co-funding 
+S$483.0M (65.0%) at 25 y and S$416.0M (56.0%) at 60 y bring BOAK to 
+S$96/tCO2e on L5 
+Hydrogen cost 
+S$5.26/kg at BOAK against S$3.62/kg unabated, 25 y 
+Reactor capital 
+S$743M at BOAK, S$1,188M at FOAK 
+ 
+Q&A slides at the back of the deck 
+Each answers one question directly, so open it when that question comes up. 
+Slide 
+Question on the slide 
+57 
+What are some of the notable light-water small modular reactor designs? 
+58 
+What are High-Temperature Gas-Cooled Reactors? 
+59 
+What are TRISO particles? 
+60 
+How does pebble-bed HTGR (e.g., HTR-PM) work? 
+61 
+What is the prospect of HTGRs? 
+62 
+How would the enhanced safety of small modular reactors affect siting? 
+63 
+How can nuclear contribute beyond electricity? 
+64 
+How can process heat be used in the industry? 
+65 
+Can HTGRs be used for industry? 
+66 
+Will small modular reactors be too costly (per kWh) to be used? 
+67 
+How are spent fuels managed? 
+
+===== page 2
+NUS-H2  2 
+68 
+Are the wastes from small modular reactors harder to manage? 
+69 
+What are some key takeaways? 
+70 
+What about Nuclear Fusion? 
+71 
+If an accident happens, where to run? 
+72 
+Can government co-funding lower the abatement cost further? 
+ 
+Questions 
+Q1. Why 210 MWth? 
+210 MWth is the rating we hold. The process needs 178.5 MWth, so 31.5 MWth is margin that 
+earns no revenue. 
+The rating comes from the original project basis and is kept with Case B as the headline (decision D03). 
+The sizing walk starts from a first sum of 206.0 MWth at INL Case A scale, which is 140.8 MWth at our 
+100,000 Nm3 h−1. Counting every real load, from the restored purge load to MEA’s reboiler gap, brings 
+the need to 178.5 MWth, within a range of 155.8 to 214.1 MWth. 
+We keep the rating because the need is uncertain. On Ahn and Lee’s heat basis the margin falls to 
+6.5 MWth, and at the adverse corner the plant is 4.1 MWth short. The spare capacity is paid for: full cost 
+is S$189.7/tCO2e charged at 210 MWth against S$161.2/tCO2e sized to need, at BOAK over 25 y. 
+INL’s Case A cannot be the design at this rating. With MEA and recycle it needs 260.7 MWth, 50.7 MWth 
+above the rating, so it stays a reference. 
+If pressed: The reboiler gap rests on an SRD of 3.8 GJ t−1 with no syngas measurement behind it. 
+Across 3.4 to 4.2 GJ t−1 the need moves from 174.1 to 182.9 MWth. 
+Show: Slides 14, 15 and 16. 
+Q2. Why HTGR instead of a PWR? 
+Reforming needs heat near 871 °C, and of the reactor types we compared only a high-
+temperature gas-cooled reactor reaches that band. 
+On the process temperature chart, light-water reactors stop far short of the reforming band, which is 
+why we use a gas-cooled reactor in place of a PWR. A helium-cooled HTGR with a 925 °C outlet gives 
+secondary helium at 900 °C, and 925 °C is INL’s only case that removes the fired stage. INL’s yield 
+optimum is 875 °C, with a fired stage kept. 
+TRISO coatings are the first barrier to fission product release, provided fuel stays below about 1,600 °C, 
+which leaves headroom above the outlet temperature. 
+If pressed: Only test reactors of 46 MW or less have run this hot. Commercial HTR-PM, and Xe-100 as 
+our analogue, run near 750 °C, so our 925 °C reactor is generic and unproven at scale. 
+Show: Slides 12, 13 and 35. 
+Q3. Why MEA instead of Selexol? 
+MEA is our design basis (decision D25). The evidence is mixed, and our own sensitivity 
+favours Selexol slightly. 
+
+===== page 3
+NUS-H2  3 
+IEAGHG 2022-07 calls MEA the preferred chemical solvent, while IEAGHG 2017-02 favours aMDEA on 
+shifted syngas, and INL’s reference plant uses Selexol. We run 30 wt% MEA as the reference and carry 
+Selexol and aMDEA as sensitivities. 
+In our model Selexol abates 0.589 Mt y−1 at a full cost of S$176.3/tCO2e, against 0.578 Mt y−1 at 
+S$189.7/tCO2e for MEA, at BOAK over 25 y. It also leaves 44.1 MWth spare against 31.5 MWth. aMDEA 
+sits close to Selexol, at 0.589 Mt y−1 and S$187.8/tCO2e. Selexol would also keep the recycle INL actually 
+modelled, which removes our largest process risk. 
+If pressed: Say plainly that our numbers do not show MEA ahead. MEA stays the basis by design 
+decision D25, and a switch to Selexol or aMDEA remains open. 
+Show: Slides 10 and 31. 
+Q4. How is MEA regeneration powered? 
+By steam, taken in a fixed order, with reactor steam covering only the last gap. 
+The reboiler needs 51.0 MW at an SRD of 3.8 GJ t−1. It draws first on the steam freed by removing 
+Selexol, 12.7 MW, then on diverted export steam, 16.8 MW, then on recovered syngas heat, 8.4 MW. 
+Reactor steam covers the remaining 13.1 MW, and that gap is the last step of the sizing walk. 
+Diverting export steam is a real cost: lost steam export adds S$15.2M/y at L5. Electricity for the MEA 
+pumps and fans comes from the site power block, inside the 12.3 MWe of process loads. 
+If pressed: SRD has no syngas measurement behind it. Across 3.4 to 4.2 GJ t−1 the reactor need moves 
+from 174.1 to 182.9 MWth, and cost barely moves because the reactor is charged at its rating. 
+Show: Slide 15; backup 52. 
+Q5. Is the system thermally self-sufficient? 
+Yes on the central balance: the reactor covers every heat and power load with 31.5 MWth to 
+spare. 
+The reactor needs 178.5 MWth against a 210 MWth rating. Unmet thermal duty is 0.0 MW and unmet 
+electrical load is 0.0 MWe. A small power block supplies the 19.8 MWe site load, 12.3 MWe of it for 
+process loads and the rest for helium circulators, so grid import at rated size is 0 MWe. 
+If pressed: The margin is thin. It falls to 6.5 MWth on Ahn and Lee’s heat basis, and the adverse corner 
+leaves the plant 4.1 MWth short. Ship liquefaction load for CO2 is unmodelled. The balance also rests on 
+the IHX delivering 900 °C, which no measured unit has done. Outside the 85% availability hours there is 
+no hydrogen unless backup firing is added, a sensitivity whose furnace capital is unpriced. 
+Show: Slides 13, 15, 16 and 20. 
+Q6. Why exclude PSA tail gas? 
+We no longer exclude it. The PSA stays outside the boundary as an unsimulated block, and 
+its reject now returns across the boundary to be recycled (decision D04). 
+A recycle compressor feeds the reject to a cryogenic unit. Its methane-rich cut returns to the reformer 
+feed and its hydrogen goes back towards the PSA, while the nitrogen-rich cut is burned and vented. 
+That stack is the plant’s only residual source: 38,309 tCO2 y−1, or 0.57 kg CO2 kg−1 H2. The PSA purge 
+load is restored in the power balance. 
+
+===== page 4
+NUS-H2  4 
+Recycle is why NUS-H2 takes 23.2 MMSCFD of gas against 35.9 MMSCFD for a same-size unabated 
+steam methane reforming plant. 
+If pressed: INL modelled recycle with Selexol, never with MEA. If it fails to transfer, gas rises to 
+30.4 MMSCFD and abatement falls to 0.467 Mt y−1. Full cost then rises to S$283.1/tCO2e. INL also never 
+modelled the larger CO2 slip that MEA sends through the cryogenic unit, which stays an open risk. 
+Show: Slides 6, 9, 28 and 31. 
+Q7. What are the safety barriers? 
+TRISO fuel coatings come first, inside the reactor’s own barriers, and the IHX is the boundary 
+to the chemical plant. 
+TRISO coatings are the first barrier to fission product release, provided fuel stays below about 1,600 °C. 
+HTTR counts four barriers: coatings, pressure vessel, containment and reactor building. Tritium is the 
+known exception, since it can leave cracked coatings and also forms in graphite. 
+The IHX tubes separate the nuclear island from the process helium loop. Secondary helium is held 
+slightly above primary pressure, so a leak runs towards the reactor, and purification with monitoring 
+manages tritium permeation. Isolation needs a high-temperature emergency shutoff valve, which our 
+figure omits. 
+The emergency planning zone follows source term and dose, so only a design-specific safety case can 
+size it, and we claim no distance. That case must also cover process hazards beside the reactor, such as 
+fire and toxic release. 
+If pressed: A thermal buffer for a reformer trip is still open in our design. 
+Show: Slides 18, 19 and 21. 
+Q8. Why Singapore? 
+Singapore runs on imported gas and plans for hydrogen, so low-carbon hydrogen made here 
+meets a national need. 
+Natural gas made up 94% of the electricity fuel mix in 2024, and the national hydrogen strategy sees 
+low-carbon hydrogen supplying up to 50% of power needs by 2050. Hydrogen is already made at 
+industrial scale on Jurong Island, and SOXAL’s plant sets our size of 100,000 Nm3 h−1, used for size only. 
+Singapore is also building the capability to decide on nuclear energy: the IAEA INIR Phase 1 assessment 
+is tentatively set for 2027 and covers 19 areas. 
+If pressed: Singapore has made no decision on nuclear energy. CO2 has to be stored abroad under the 
+Singapore-Indonesia arrangement, and the accounting across the border is unresolved. For scale only, 
+our abatement equals 1.2 to 1.3% of Singapore’s 2035 target level. 
+Show: Slides 1, 2 and 22. 
+Q9. Why Western Island? 
+It is the team’s proposal, with no official approval: new land planned for energy and 
+industry, linked to Jurong Island. 
+
+===== page 5
+NUS-H2  5 
+The new western island from the 2026 National Day Rally is planned for future energy and industry use 
+among others, with a planned link to Jurong Island, where gas supply and hydrogen users already sit. 
+Our plant is a new build there, compared with a same-size unabated steam methane reforming plant. 
+If pressed: The government page does not mention nuclear. Reclamation runs over coming decades, so 
+the land may not exist at our milestone dates, and every link to the island is unpriced. 
+Show: Slides 24 and 25. 
+Q10. How realistic is the 2050 roadmap? 
+Possible on paper. Every date is illustrative, and each gate opens only if the stage before it 
+delivers. 
+The roadmap has four gated stages: national readiness from 2027, reactor and process-heat 
+qualification from 2030, project development and an investment decision from 2035, then construction 
+from 2039 towards potential operation by 2050. The construction window leans on the 11 years HTR-
+PM took from construction start to commercial operation. 
+If pressed: The weakest links are the IHX and the land. The highest measured IHX secondary 
+temperature in our sources is 859 °C on a 10 MW unit, against the 900 °C we need, and reclamation has 
+no published date. The first plant would also be first of a kind, at a full cost of S$277.9/tCO2e over 25 y. 
+Show: Slides 22, 25 and 20. 
+Q11. Does the project satisfy the emissions target? 
+Yes. Net abatement is 0.578 MtCO2e y−1 against a target of more than 0.250 Mt y−1, 2.3 
+times the target. 
+This counts direct emissions to atmosphere against a same-size unabated steam methane reforming 
+plant on INL’s 9.21 kg CO2 kg−1 H2 baseline, a 93.8% cut. The plant captures 90.4% of its carbon at 90% 
+per pass, and 218,274 tCO2 y−1 never forms. With the storage chain burden charged the result is 
+0.569 Mt y−1. Cho’s and IEAGHG’s baselines give 0.587 and 0.564 Mt y−1. 
+Every stress case with working capture stays above the target: 0.442 Mt y−1 at 65% availability, and 
+0.467 Mt y−1 if recycle fails. 
+If pressed: With capture offline only 0.218 Mt y−1 remains, which misses the target, so capture has to 
+work. Abatement is counted at the Singapore stack while the CO2 is stored abroad. 
+Show: Slides 28, 29, 30 and 31. 
+Q12. Does the project satisfy the cost target? 
+At central inputs, no: 0 of 8 central cases reach S$100/tCO2e. A 10th‑of‑a‑kind plant over 
+60 y meets it at S$96/tCO2e when gas costs S$20.7/GJ. 
+The full cost by the annual ledger is S$189.7/tCO2e at BOAK over 25 y and S$165.6/tCO2e over 60 y. A 
+first of a kind costs S$277.9/tCO2e and S$241.7/tCO2e. The discounted cash flow agrees within 0.2%, at 
+S$190.1/tCO2e for BOAK over 25 y. Hydrogen costs S$5.26/kg against S$3.62/kg unabated. 
+No single lever closes the gap. Gas would have to reach S$30.7/GJ, about 2.0 times our central price. 
+Reactor capital would have to fall to US$824/kWt, under INL’s low of US$1,456/kWt. Transport and 
+storage would have to go negative. 
+
+===== page 6
+NUS-H2  6 
+Three conditions together cross the target, and each is an engine run. A 10th‑of‑a‑kind reactor on INL’s 
+learning route takes BOAK over 25 y from S$189.7/tCO2e to S$146.3/tCO2e. A 60 y life takes it to 
+S$128.2/tCO2e. Gas at S$20.7/GJ then gives S$95.6/tCO2e on the ledger and S$95.9/tCO2e by cash flow, 
+under the target at the S$96/tCO2e point. The engine solves that gas price at S$20.63/GJ on the ledger 
+and S$20.68/GJ by cash flow, and the slide prints the larger, rounded up. Higher gas lowers the 
+abatement cost because NUS-H2 burns less gas than the unabated plant. 
+If pressed: The S$96/tCO2e case is a set of conditions on the base, and the base stays the reference: 
+S$189.7/tCO2e on the ledger and S$190.1/tCO2e by cash flow. Do not quote the named step L3 as the 
+answer either. L3, at S$137.7/tCO2e, leaves out real costs of this plant such as construction interest and 
+lost steam export, and it still misses. 
+Show: Slides 37, 38, 39, 40, 41 and 42. 
+Q13. Could public co-funding bring the cost down? 
+Yes, at a price to the public budget. Co-funding S$483.0M, 65.0% of the S$742.8M reactor 
+capital, brings BOAK over 25 y to S$96/tCO2e on the ledger. 
+The cash flow needs S$483.6M, 65.1%. Over 60 y the ledger needs S$416.0M, 56.0%, and the cash flow 
+S$417.1M, 56.2%. These are engine solves on the BOAK case at n = 1.0 with 210 MWth charged. 
+If pressed: Co-funding moves cost to the public budget. The total resource cost stays the same, so it is 
+a policy choice and leaves the engineering result unchanged. 
+Show: Slide 41; Q&A slide 72. 
+Q14. Which assumptions dominate uncertainty? 
+Recycle transfer to MEA and the reactor cost treatment move the result most. The IHX 
+temperature decides whether the design works at all. 
+• 
+Recycle transfer to MEA. Without it abatement is 0.467 Mt y−1 and full cost S$283.1/tCO2e, against 
+0.578 Mt y−1 and S$189.7/tCO2e. 
+• 
+Reactor size law. At BOAK over 25 y, full cost is S$189.7/tCO2e at n = 1.0, S$277.7/tCO2e at n = 0.6 
+and S$368.7/tCO2e at n = 0.31. 
+• 
+Build maturity. A first of a kind carries a 1.6 times premium on reactor capital, which gives 
+S$277.9/tCO2e against S$189.7/tCO2e. INL’s low and high reactor capital give S$141.7/tCO2e and 
+S$213.8/tCO2e. 
+• 
+Availability. 85% has no measured HTGR record behind it. At 65% abatement falls to 0.442 Mt y−1 
+and full cost rises to S$253.0/tCO2e. 
+• 
+Gas price. S$10/GJ gives S$218.3/tCO2e and S$20/GJ gives S$161.2/tCO2e. On Ahn and Lee’s lower 
+gas saving, full cost is S$242.0/tCO2e. 
+• 
+Capture capital basis. Our capture capital follows IEAGHG’s aMDEA plant; an MEA flue gas basis 
+gives S$220.5/tCO2e. 
+• 
+IHX approach. At the IAEA’s typical 50 K approach the reformer pinch falls from 29 K to 4 K, which 
+puts the no-furnace claim at risk. 
+• 
+SRD moves the spare margin, from 35.9 to 27.1 MWth, and leaves cost almost unchanged. 
+If pressed: Each case moves one input at a time. Corner runs carry no probability, so a range here is no 
+confidence interval. 
+
+===== page 7
+NUS-H2  7 
+Show: Slides 30, 31 and 36; backup 54. 

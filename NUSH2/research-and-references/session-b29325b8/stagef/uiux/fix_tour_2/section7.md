@@ -1,0 +1,35 @@
+Only checks that ran are listed, all on the frontend this revision commits. The wasm module was built from the unchanged engine and the site from this branch into a scratch folder, both stamped with the parent revision effa85a, then served on 127.0.0.1 and driven in headless Chrome. Checks of earlier rounds that were not run again on this revision are left out.
+
+| Check | Result |
+|---|---|
+| `scripts/build_wasm.py` with a scratch `CARGO_TARGET_DIR` | finished, 1,067,548 bytes, with the same SHA-256 as the module of the previous round |
+| `scripts/check_wasm.py` | PASS, 0 imports |
+| `scripts/build_site.py` | built, 32 files, about 3.55 MB |
+| `scripts/selftest.py --expect-commit` at 1440 by 900 | PASS: 31 checks passed and `pfd_streams_bound` skipped, as it does on the main branch, because the live reply carries no stream table; 0 browser errors, 0 requests to another host |
+| The same at 375 by 812 with phone emulation | PASS, same checks |
+| The same with `--reduced-motion`, at 1440 by 900 and at 375 by 812 with phone emulation | PASS, same checks, with the tour checks run on the still tour |
+| `tour_steps_bound` | every unit, stream, label key, text key and reply path the 13 steps name resolves, over 16 scenario branches (each reject route with zero and non-zero values, on a feasible and an infeasible plant) |
+| `tour_plays` | starts from its button with focus on the step title in view, visits all 13 steps in order with dashes moving on every step that has flows, exits by its Exit button with focus back on the start button, no error |
+| `tour_numbers_live` | 100 caption numbers over 13 steps at the default inputs, each equal to its reply field |
+| `tour_text_rules` | the prose of all 13 steps passes the visible text rules, with no placeholder left, no bare SMR, no em dash and no number joined to its unit |
+| `tour_keyboard` | ArrowRight and ArrowLeft step, Space pauses and resumes, Escape closes an open stream tip first and then the tour, focus returns to the start button, every control in the bar and the card is a button |
+| `tour_reduced_motion` | 13 still steps add no running animation and the tour does not advance by itself, with Play hidden |
+| `tour_autoplay` | at a fast test pace the tour runs to the last step and stops; dwell 7 to 8 s a step, 97 s in all |
+| `tour_follows_controls` | at a 100 MWth rating: step 1 shows the engine's infeasibility reason and the new rating, steps 2 and 3 read their heat at the need, step 12 prints 0.00 MWe generated against 19.78 MWe of import and demand, and step 13 says the abatement is above the target but not counted as met; at Case A: step 12 prints 6.83 MWe generated and 22.10 MWe imported against 28.94 MWe of demand, with the same abatement verdict; 51 numbers equal to the reply |
+| `tour_focus_kept`, new | in each of the four runs, 36 step changes, by the card's own buttons to step 13 and back and then by the bar's Next to step 13; the button used kept focus on every step and lay whole, with its focus ring, inside the window and inside the scrolling side column |
+| `tour_closing_lines`, new | for each reject route the closing step lights exactly the lines that steps 1 to 12 move, and its dashes run on those lines only: recycled, 30 lines and none dark; exported, 24 lines with S03, S14, S15, S16, S21 and R1 dark; burned on site, 25 lines with P4 (a branch of 0.0 MWth), S03, S15, S21 and R1 dark; Selexol, 25 lines with L3 to L6 and C1 dark |
+| Planted faults: the self test at 1440 by 900 and at 375 by 812 with phone emulation, on a copy of the built site carrying the `tour.js` and `tour.css` of effa85a | FAIL as intended, the other 29 checks passing. `tour_focus_kept` caught the card's Next out of view at step 11 (888 to 926 px in a side column shown to 892 px; 880 to 918 px in an 812 px window on the phone), and `tour_closing_lines` caught the Selexol close moving L3 to L6 and C1 and the close with the reject burned moving P4 |
+| Card's Next after Enter from step 10, real key events, at 8 window sizes from 375 by 667 to 1920 by 1080 | focus stayed on it and it showed whole (38 of 38 px) at steps 11, 12 and 13 at every size; at 1440 by 900 step 11 puts it at 846 to 884 px. Before the change it showed 0 to 4 px at step 11 at 7 of the 8 sizes |
+| Every step from the keyboard, real key events, at 13 window sizes from 375 by 667 to 2560 by 1440 (phone emulation at the phone and tablet sizes), with and without reduced motion | 60 step changes a size. The card's buttons stepped to step 13 and back by Enter and to step 13 again by ArrowRight; the bar's Next then stepped back by ArrowLeft and forward by Enter. Focus stayed on the button used and the button showed whole with its ring on all 60 at all 13 sizes in both modes. On short windows the card head sits above the window on some steps (36 of 60 at 812 by 375), since the focused button comes first |
+| Card and focus after Start at the same 13 sizes, with and without reduced motion | 13 of 13 each time: the card head is at or below the top of the window with the focused element fully in view, and after one ArrowRight from the title the card head is still in view |
+| A full keyboard tour at 1440 by 900 and at 375 by 812 with phone emulation, each with and without reduced motion: Tab to Start, Enter, steps 1 to 7 by ArrowRight, steps 7 to 13 by the card's Next | all 13 steps visited with the focused element in view on each (the card's Next at step 11 at 846 to 884 px and at 766 to 804 px), Enter on the disabled last Next stays put, Escape returns focus to the start button, no browser error; under reduced motion no animation or dash appears on any step, and the tour is still on step 1 after 9 s |
+| Keyboard run with real key events at 1440 by 900 | 20 of 20 checks passed, among them Enter and Space on the bar's Next, which each press it |
+| Space on the card's Next while the tour plays | moves to step 2 and the tour keeps playing, which the key line now states: Space pauses or plays except on a button or a link, where it keeps its usual action |
+| A unit chosen on the drawing by Enter or by mouse while the tour plays | the tour pauses, and the unit's panel is still open 10.2 s and 10.1 s later |
+| A stream tip pinned with Enter, or a unit chosen from the unit list, while the tour plays | the tour pauses; the tip is still pinned after 10.1 s, and the chosen panel is still open after 9.6 s |
+| Tab from the step title at 1440 by 900 and at 375 by 812 | reaches the card's Previous and then its Next |
+| Side column scrolled to 700 px, then ArrowRight with focus on the title | the side column returns to its top and the card sits in view at 8 px |
+| `scripts/check_site.py --site <site> --repo .` | PASS: site 32 files, 0 hits; repository 219 files, 0 hits |
+| `scripts/check_site.py --site <site> --repo . --prove` | PASS: site proof 34 plants, 34 caught; repository proof 11 plants, 11 caught |
+| `scripts/check_clean.py` | 221 files scanned, 0 hits |
+| The pre-push scan kept outside the repository, on the tree with code only | 222 files, 0 hits |

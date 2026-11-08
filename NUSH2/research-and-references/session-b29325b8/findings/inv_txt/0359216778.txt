@@ -1,0 +1,399 @@
+1-s2.0-S1750583612002435-main.pdf
+HTGR_SMR_MEA_CCS_Research_Local\06_MEA_Absorber\Sonderby_2013_MEA_Absorber_Experimental_Data_Mass_Transfer.pdf
+=====
+--- PDF p.1 ---
+International Journal of Greenhouse Gas Control 12 (2013) 181–192
+Contents lists available at SciVerse ScienceDirect
+International Journal of Greenhouse Gas Control
+journal homepage: www.elsevier.com/locate/ijggc
+A new pilot absorber for CO2 capture from ﬂue gases: Measuring and modelling
+capture with MEA solution
+Tim L. Sønderby a, Kim B. Carlsen a, Philip L. Fosbøl a, Lars G. Kiørboe b, Nicolas von Solms a,∗
+a Department of Chemical and Biochemical Engineering, Center for Energy Resources Engineering (CERE), Technical University of Denmark, DK-2800 Lyngby, Denmark
+b Department of Chemical and Biochemical Engineering, Combustion and Harmful Emission Control (CHEC), Technical University of Denmark, DK-2800 Lyngby, Denmark
+a r t i c l e
+i n f o
+Article history:
+Received 16 June 2012
+Received in revised form
+30 September 2012
+Accepted 6 October 2012
+Available online 20 December 2012
+Keywords:
+CO2 capture
+Carbon dioxide recovery
+Pilot plant
+Simulation
+CO2 absorber
+MEA
+a b s t r a c t
+A pilot absorber column for CO2 recovery from ﬂue gases was constructed and tested with aqueous 30 wt%
+monoethanolamine (MEA), a primary amine, as capture solvent. The pilot plant data were compared with
+a mathematical rate based packed-column model. The simulation results compared well with the pilot
+plant data.
+The packed height of the column can be varied from 1.6 to 8.2 m by means of ﬁve different liquid inlets.
+The column has an inner diameter of 100 mm and is packed with structured Mellapak 250Y packing.
+Counter-current ﬂow is used.
+The pilot plant performance was investigated by changing three parameters: the absorption height,
+liquid ﬂow rate, and the loading of lean MEA. This was done using a synthetic ﬂue gas consisting of 10%
+CO2 with a ﬂow rate of approximately 33 m3/h at ambient temperature and atmospheric pressure. 23
+runs were performed.
+It was observed that while CO2 recovery increases with an increase in ﬂow rate of absorbent and
+absorption height, it decreases as the lean CO2-loading of the absorbent increases. In addition it has
+been possible to obtain temperature bulges in the bottom part of the absorber by the applied operation
+conditions. Bulges are observed at liquid ﬂows around 4.2 L/min and below. The results showed that is
+was possible to achieve 80% recovery with 3.3 m absorption height and a liquid ﬂow of 2.1 L/min. The
+simulations show good agreement with the experimental values, although slight deviations arise as the
+CO2-loading increases and the temperature bulge becomes more distinct.
+© 2012 Elsevier Ltd. All rights reserved.
+1. Introduction
+Carbon dioxide is emitted from large sources of fossil fuel com-
+bustion, particularly power plants. It is one of the key man-made
+greenhouse gases that must be minimized in order to avoid cata-
+strophic climate change. The capturing of trillions tons of CO2 is a
+daunting task, but is a challenge that has to be overcome success-
+fully if disaster is to be averted (Schrag, 2007).
+The process for post combustion capture consists of four stages
+as sketched in Fig. 1. First, CO2 is removed from the ﬂue gas by
+absorption in a packed absorber column. Then ‘rich’ solvent con-
+taining CO2 is led to a desorber column and heated in a reboiler to
+release the CO2. Next, CO2 is compressed and transported to a geo-
+logical storage site or injected into an oil and gas reservoir. Finally
+the regenerated ‘lean’ solvent is recycled to the absorber.
+The supply of heat for solvent regeneration is by far the most
+expensive aspect of the post combustion capture process. The cost
+∗Corresponding author.
+E-mail address: nvs@kt.dtu.dk (N. von Solms).
+of solvents, electricity, energy for pumps, and cooling are also high
+but to a lesser extent (Rao and Rubin, 2002).
+A number of studies have been carried out in order to inves-
+tigate CO2 capture in pilot plants using MEA. Most of these have
+appeared since 2006, with the exception of a few earlier studies. The
+older work conducted at University of Regina in Canada is described
+by Tontiwachwuthikul et al. (1992), Aroonwilas et al. (1999), and
+Aboundheir (2002) and more recently by Idem et al. (2006, 2009).
+There is a growing activity on post combustion capture in Norway
+evidence by the MEA related studies of Tobiesen et al. (2007) and
+Hessen (2010). Work has been performed at University of Kaiser-
+slautern (Notz et al., 2007) as well as several studies at University
+of Texas, Austin (Dugas, 2006; Kvamsdal and Rochelle, 2008). A
+number of larger industrial funded consortium projects have also
+appeared (Hessen, 2010; Dugas et al., 2009; Lee et al., 2008).
+While some studies have been performed concerning the mech-
+anisms of CO2 capture from ﬂue gases using solvents, there is
+limited pilot plant data for such systems, where enough informa-
+tion has been reported to enable model development. Here we
+report the construction and validation of a new pilot-scale facility,
+which we hope will contribute to research in CO2 capture, as this
+1750-5836/$ – see front matter © 2012 Elsevier Ltd. All rights reserved.
+http://dx.doi.org/10.1016/j.ijggc.2012.10.010
+
+--- PDF p.2 ---
+182
+T.L. Sønderby et al. / International Journal of Greenhouse Gas Control 12 (2013) 181–192
+Nomenclature
+a
+speciﬁc wetted area for mass transfer, m2/m3
+Ac
+cross sectional area of the column, m2
+cp,i
+molar heat capacity of component in the gas phase,
+J/(mol K)
+cp,G
+molar heat capacity of the gas, J/(mol K)
+cp,L
+molar heat capacity of the liquid, J/(mol K)
+E
+enhancement factor
+E∞
+enhancement factor for instantaneous reaction
+FSE
+factor for surface enhancement
+G
+molar gas ﬂow, mol/s
+HCO2
+Henry’s law constant for CO2, J/(s K m2)
+h
+heat transfer coefﬁcient in gas, J/(s K m2)
+HH2O
+heat of condensation of H2O, J/mol
+HCO2
+heat of condensation of CO2, J/mol CO2
+KG,i
+overall gas side mass-transfer coefﬁcient of compo-
+nent i, mol/(m s Pa)
+kG,i
+gas side mass-transfer coefﬁcient of component i,
+m/s
+kL,i
+liquid side mass-transfer coefﬁcient of component
+i, m/s
+L
+molar liquid ﬂow, mol/s
+M
+Ha2, Ha is the Hatta number
+Ni
+molar ﬂux of component i, mol/(m2 s)
+pi
+partial pressure of component i in the bulk gas
+phase, Pa
+p∗
+i
+partial pressure of i component in gas phase if it
+were in equilibrium with the liquid phase, Pa
+q
+heat ﬂux, J/(m2 s)
+TL
+temperature of liquid phase, K
+TG
+temperature of gas phase, K
+xi
+mole fraction of component i in the liquid phase,
+mol/mol
+XCO2
+mole fraction of CO2 in reacted and unreacted form,
+mol/mol
+yi
+mole fraction in gas phase of component i, mol/mol
+z
+absorption height, m
+Nomenclature for PI diagram
+Ci1
+CO2-transmitter, measuring inlet ﬂow, mol/mol
+Ci2
+CO2-transmitter, measuring outlet ﬂow, mol/mol
+TI1–T10 temperature in column, ◦C
+TI43
+temperature in the liquid inlet, ◦C
+FI
+ﬂowmeter, L/min
+PI
+pressure measurement, mbar g
+important area moves increasingly to pilot and even demonstration
+scale.
+A vast number of both structured and random (dumped) packing
+types are available from commercial suppliers. Different packing
+types have been used in the above-mentioned works. Structured
+packing was considered in Hessen (2010), including 250Y Mellapak,
+whereas dumped packing was used by Lee et al. (2008), Dugas et al.
+(2009), Kvamsdal and Rochelle (2008), and Tontiwachwuthikul
+et al. (1992). Here the Koch-Glitsch IMTP 25, 40, 50 and ceramic
+Berl saddles, 12.7 mm, were used. Some studies included the same
+pilot facility but with different packing material. Aboundheir (2002)
+tested the A4 structured packing and the two dumped packings,
+IMTP 15 and Pall Ring-16mm. Dugas (2006) tested the structured
+Flexipac 1Y and IMTP 40 dumped packing. Finally Aroonwilas
+et al. (1999) tested the Gempak 4A structured and IMTP dumped
+packings. Both packings were tested in three different sizes. They
+found that the structured packings performed better than dumped
+Fig. 1. A simple illustration of a CO2 capture plant.
+packings, because of the greater surface area per unit volume.
+However there are some disadvantages, as the structured pack-
+ings require excellent initial distribution to obtain the full beneﬁt.
+Finally the cost of structured packings is also higher than dumped
+packings (Wilson, 2004).
+While packing suppliers should have a comprehensive under-
+standing of the performance of their packing, far from all packings
+have received a thorough and independent comparison in the open
+literature. An interesting study could be performed across research
+laboratories where different pilot plants independently compared
+the same packings. On the other hand, having validated our pilot
+plant here for a given packing and a “standard” solvent (MEA) we
+have conﬁdence that the same plant could be used to evaluate both
+different packings and different capture solvents.
+Previous pilot scale studies (Tontiwachwuthikul et al., 1992;
+Aroonwilas et al., 1999; Aboundheir, 2002; Idem et al., 2006, 2009;
+Tobiesen et al., 2007; Hessen, 2010; Notz et al., 2007; Dugas,
+2006; Kvamsdal and Rochelle, 2008; Dugas et al., 2009; Lee et al.,
+2008) cover a range of operation conditions. Three input vari-
+ables are interesting from a process point of view. These are the
+solvent CO2 loading, solvent concentrations, and ﬂue gas com-
+position. The lean loading covered is 0–0.35 and rich loading is
+0.33–0.49 molCO2/molMEA. The concentration of MEA in the MEA-
+H2O solvent varies from 18 to 54 wt%. Most of the experiments are
+carried out using 30 wt% MEA concentration. The CO2 concentra-
+tion in the ﬂue gas coming into the bottom of the absorber is in the
+range of 4–20 vol%.
+Several analytical methods have been used in the determination
+of liquid CO2 content for loading evaluation. Of the studies above,
+CO2 content was mainly found by a barium chloride method very
+similar to the one outlined in Appendix A of this work. It is cheap but
+time consuming. Other methods are the Total Organic Carbon (TOC)
+analysis, used by Dugas (2006) and gas chromatography–mass
+spectrometry (GC–MS) used by Idem et al. (2009). The beneﬁt of
+this last method is that it is on-line and unmanned measurements
+can be performed. This method was not pursued because of the high
+cost involved. A titration method described by Horwitz (2006) may
+also be used. We chose to proceed with the Barium Chloride method
+since we had prior experience with it.
+The absorber temperature proﬁle (temperature along the length
+of the column) can be measured by means of appropriately placed
+temperature probes. The reaction between CO2 and the solvent
+is exothermic, resulting in a steep temperature increase at cer-
+tain conditions. An observations by Kvamsdal and Rochelle (2008)
+was that the location of the temperature bulge can move from the
+bottom to the top of the column. The temperature bulge is quan-
+tiﬁed by its magnitude and location in the column and is seen as
+a convex curve on the temperature proﬁle. At a critical liquid to
+gas (L/G)-ratio the temperature bulge will be in the middle of the
+
+--- PDF p.3 ---
+T.L. Sønderby et al. / International Journal of Greenhouse Gas Control 12 (2013) 181–192
+183
+column, where the rich loading can be maximized while main-
+taining a reasonable CO2 removal. This phenomenon should be
+analysed more closely and there is a need to determine effect on
+capture effectiveness.
+The aim of this work is to report results for a new pilot-scale
+(10 m high, 10 cm internal diameter) absorber. Results are reported
+for Mellapak 250Y structured packing and MEA solution as cap-
+ture solvent. In addition to reporting this new data, which can be
+used for model development and testing (here it is tested against
+an existing published model (Gabrielsen et al., 2006; Faramarzi
+et al., 2009)), a secondary aim is to validate the plant for a given
+packing and solvent in order to proceed to other packings and sol-
+vents with greater conﬁdence. The following operation conditions
+were covered: A lean loading of 0.11–0.30 and a rich loading of
+0.15–0.39 molCO2/molMEA. A 30 wt% aqueous MEA solution and a
+synthetic ﬂue gas composition of 9.2–10.9 vol% CO2. A modiﬁed and
+optimized barium chloride method was developed for the analysis
+of the liquid phase for the determination of the total dissolved CO2
+(see Appendix A). The plant was ﬁtted with two storage tanks with
+a volume of 1 m3 each. Therefore it was possible to run a series of
+experiments with the same lean loading and MEA concentration.
+The basis of the different operation conditions are consequently
+very similar and therefore comparable. The results of the various
+experimental runs contain detailed information about the loading
+and temperature proﬁles throughout the column. Additionally the
+CO2 concentration in the gas phase was measured at both the gas
+inlet and outlet of the column.
+The data were also modelled using a previously developed
+rate-based model (Gabrielsen et al., 2006; Faramarzi, 2010). While
+further development of the model was not undertaken as part of
+this work, the production of new pilot-plant data did provide fur-
+ther validation of the model, as usable pilot plant data are not
+plentiful.
+2. Modelling CO2 absorption
+The experimental pilot runs performed in this work were mod-
+elled using a rate based column model originally developed by
+Gabrielsen et al. (2006, 2007) and Gabrielsen (2009) and fur-
+ther modiﬁed by Faramarzi et al. (2009, 2010) and Faramarzi
+(2010). The main purpose of this work was the experimental
+validation of the pilot scale absorber. More detail on the model
+can be found in previous work (Gabrielsen et al., 2006, 2007;
+Gabrielsen, 2009; Faramarzi et al., 2009, 2010; Faramarzi, 2010)
+and only the basic elements are presented here. Previous works
+have presented models for mass transfer coefﬁcient, mass trans-
+fer area, hydraulics and physical properties. A comprehensive
+comparison of the various components that make up a com-
+plete rate-based model is considered beyond the scope of this
+work. The model is mass transfer based and accounts for trans-
+port properties, thermodynamics, phase equilibrium and reaction
+kinetics. The thermodynamic model used is extended UNIQUAC
+(Faramarzi, 2010). Extended UNIQUAC is used here to model
+the thermodynamic properties required in the full rate-based
+model, because it is the model where we have most experience
+(Gabrielsen et al., 2006, 2007; Gabrielsen, 2009; Faramarzi et al.,
+2009; Faramarzi, 2010). Any thermodynamic model for electrolytes
+which is at a reasonable level of development (for example e-
+NRTL) could have been used, although it was not the purpose of
+this work to develop and present comparisons of thermodynamic
+models.
+The model is built up around eight differential equations
+describing the mass and energy balances of the gas and liquid, to
+which a number of equations are related in order to account for the
+dependency of different parameters on temperature, concentra-
+tion, pressure, etc. In the development of the model some general
+assumptions were made in order to simplify the system sufﬁciently
+for modelling:
+1 The reaction rate is fast enough so that all the reaction will occur
+in the liquid ﬁlm while the CO2 concentration in the bulk phase
+is assumed to be in equilibrium.
+2 Liquid side heat transfer resistance is small compared to the gas
+phase, thus the interface temperature is the same as the bulk
+temperature.
+3 The liquid side mass-transfer resistance for the volatile solvent
+is negligible.
+4 The interfacial surface area is the same for heat and mass transfer.
+5 The system is adiabatic.
+The following equations are used in the description of the basic
+behaviour of mass and energy:
+dG
+dz = −(NCO2 + NH2O)aAc
+(1)
+dyCO2
+dz
+=
+NCO2aAc(yCO2 −1) + NH2OyCO2aAc
+G
+(2)
+dyH2O
+dz
+=
+NH2OaAc(yH2O −1) + NCO2yH2OaAc
+G
+(3)
+dL
+dz = −NH2OaAc
+(4)
+dXCO2
+dz
+=
+(NH2OXCO2 −NCO2)aAc
+L
+(5)
+XH2O
+dz
+=
+NH2O(XH2O −1)aAc
+L
+(6)
+dTG
+dz
+= −qaAc
+Gcp,G
+(7)
+dTL
+dz
+=
+(NCO2cp,CO2 + NH2Ocp,H2O)aAc(TL −TG)
+Lcp,L
+−qaAc
+Lcp,L
++
+(NCO2HCO2 + NH2OHH2O)aAc
+Lcp,L
+(8)
+G and L describe the total ﬂow in moles per minute in respec-
+tively the gas and liquid phase while yi is the mole fraction of
+component i in the gas phase. Xi denotes the mole fraction in the
+liquid phase based on a CO2 free environment, and thus the liquid
+L is also on a CO2 free basis. T is the temperature in kelvin and a
+is the wetted area in the column and Ac is the cross sectional area
+of the column. z is the position in the column while cp,i is the heat
+capacity of component i. The ﬂuxes, N, are given in terms of mass
+transfer coefﬁcients and driving forces of partial pressures, and for
+CO2 can be written as:
+NCO2 = KG,CO2(pCO2 −p∗
+CO2)
+(9)
+1
+KG,CO2
+=
+1
+kG,CO2
++
+HCO2
+EkL,CO2
+(10)
+where the mass-transfer coefﬁcient kG,CO2 of Rocha et al. (1996) is
+used.
+The heat ﬂux between the gas and the liquid phase can be
+expressed as:
+q = h(TG −TL)
+(11)
+Eqs. (1)–(3) represent the mass balances of the gas phase. Eqs.
+(4)–(6) describe the mass balance of the liquid phase. Finally, Eqs.
+(7) and (8) are the energy balances used in order to calculate the
+temperatures of the phases.
+

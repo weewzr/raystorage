@@ -1,0 +1,47 @@
+== full_1440.log (23 lines)
+    [1440x900] at the last step: step 13, Next aria-disabled ['true', 'true'], ended False, playing False
+    [1440x900] Enter on a disabled Next: step 13, focus button[next]
+    [1440x900] Escape: active False, focus #tour-start in view True, live 'The process tour is closed.', running 0
+    [1440x900] errors [], network [], hosts ['http://127.0.0.1:56072']
+== full_1440_rm.log (23 lines)
+    [1440x900_rm] at the last step: step 13, Next aria-disabled ['true', 'true'], ended False, playing False
+    [1440x900_rm] Enter on a disabled Next: step 13, focus button[next]
+    [1440x900_rm] Escape: active False, focus #tour-start in view True, live 'The process tour is closed.', running 0
+    [1440x900_rm] errors [], network [], hosts ['http://127.0.0.1:65531']
+== full_375.log (23 lines)
+    [375x812_m] at the last step: step 13, Next aria-disabled ['true', 'true'], ended False, playing False
+    [375x812_m] Enter on a disabled Next: step 13, focus button[next]
+    [375x812_m] Escape: active False, focus #tour-start in view True, live 'The process tour is closed.', running 0
+    [375x812_m] errors [], network [], hosts ['http://127.0.0.1:57097']
+== full_375_rm.log (23 lines)
+    [375x812_m_rm] at the last step: step 13, Next aria-disabled ['true', 'true'], ended False, playing False
+    [375x812_m_rm] Enter on a disabled Next: step 13, focus button[next]
+    [375x812_m_rm] Escape: active False, focus #tour-start in view True, live 'The process tour is closed.', running 0
+    [375x812_m_rm] errors [], network [], hosts ['http://127.0.0.1:61248']
+== kbselect.log (3 lines)
+    keyboard: absorber chosen at step 1, playing False, panel absorber; 10.2 s later step 1, panel absorber, focus g[unit=absorber]
+    mouse: absorber chosen at step 1, playing False, panel absorber; 10.0 s later step 1, panel absorber, focus g[unit=absorber]
+    []
+== keys.log (21 lines)
+    PASS escape_from_picker: active False, focus #tour-start
+    PASS live_region_once_per_step: 15 live-region updates over the run: ['Step 1 of 13. Fission heat in the reacto', 'Step 2 of 13. Primary helium loop. Hot p', 'Step 3 of 13. Secondary helium loop to t', 'Step 2 of 13. Primary helium loop. Hot p', 'Step 3 of 13. Secondary helium loop to t', 'Step 4 of 13. Natural gas and steam feed', 'Step 3 of 13. Secondary helium loop to t', 'Step 4 of 13. Natural
+    PASS no_errors_or_bad_requests: {"errors": [], "network": [], "hosts": ["http://127.0.0.1:51152"], "requests": 22, "workers": ["worker"], "server_log_4xx": []}
+    20 of 20 checks passed
+== misc.log (3 lines)
+    keyboard-pinned tip: playing before False, step 1 -> 1 after 10.1 s; tip [True, True, 'P1']; focus button; lit streams []
+    side scrolled to 700, focus #tour-title, ArrowRight to step 2: settled after 1.0 s; side scrollTop 0, page scrollY 369; card 8..769, card head 9..77 shown 8..892 in a 900 px viewport -> head in view
+    []
+== spacecard.log (3 lines)
+    focus card next: before Space step 1 playing True; after Space step 2 playing True
+    key line: With focus off the drawing, the Left and Right arrow keys change the step, and Space pauses or plays except on a button or a link, where it keeps its usual action. Escape leaves the tour.
+    errors []
+== tab_1440.log (11 lines)
+        :a @122..167 tabindex=null
+        :a @122..167 tabindex=null
+    unit list choice while playing: playing True -> False; 9.7 s later step 1 -> 1, panel stripper
+    errors []
+== tab_375.log (11 lines)
+        :a @170..211 tabindex=null
+        :a @170..211 tabindex=null
+    unit list choice while playing: playing True -> False; 9.8 s later step 1 -> 1, panel stripper
+    errors []

@@ -1,0 +1,148 @@
+== 1 Fission heat in the reactor core
+  [scen] Scenario: PSA reject fate: Burn on site, H2 held. The drawing shows the headline plant, Case B with the reject recycled, so some drawn lines may carry nothing here.
+  [text] Inside the core of the high-temperature gas-cooled reactor (HTGR), uranium nuclei in the tristructural isotropic (TRISO) fuel particles split when they absorb a neutron, and the graphite moderator slows the new neutrons so the chain reaction carries on.
+  [text] The fission heat passes to helium flowing through the core, which leaves at 925 °C. The reactor runs at 128.3 MWth of its 210 MWth rating.
+  [figs] Reactor outlet925 °CFixed value
+  [figs] Reactor rating210 MWthInput
+  [figs] Reactor heat output128.3 MWthLive
+  [figs] Margin at the rating81.7 MWthLive
+  [notes] The design basis is a generic 925°C HTGR. No commercial reactor runs at this outlet, and Xe-100 is only a labelled analogue with a much lower outlet temperature.
+  [lit] ['htgr', None]  [moving] []
+== 2 Primary helium loop
+  [scen] Scenario: PSA reject fate: Burn on site, H2 held. The drawing shows the headline plant, Case B with the reject recycled, so some drawn lines may carry nothing here.
+  [text] Hot primary helium at 925 °C passes 130.8 MW to a separate secondary loop in the intermediate heat exchanger (IHX), so the reactor coolant never enters the chemical plant.
+  [text] The circulator sends the cooled helium back to the core.
+  [figs] IHX duty130.8 MWLive
+  [figs] Primary helium flow at the need56.9 kg/sLive
+  [figs] Primary circulator2.85 MWeLive
+  [figs] IHX approach25 KInput
+  [notes] A branch of the hot helium also runs to the power block, which step 12 follows.
+  [notes] Input outside its evidence range: IHX approach at 25 K lies outside the evidence range 50 to 82 K, and the cross rules cap the control at 50 K.
+  [media] Primary helium
+  [lit] ['htgr', 'circ_primary', 'ihx']  [moving] ['P1', 'P2', 'P3']
+== 3 Secondary helium loop to the reformer
+  [scen] Scenario: PSA reject fate: Burn on site, H2 held. The drawing shows the headline plant, Case B with the reject recycled, so some drawn lines may carry nothing here.
+  [text] The secondary helium leaves the IHX at 900 °C, heats the reformer and its feed preheat, and returns at 466 °C. It brings 130.8 MWth of process heat that a conventional reformer would raise by burning natural gas.
+  [text] A second circulator on the return leg draws 3.74 MWe; the drawing does not show it.
+  [figs] Helium supply900 °CFixed value
+  [figs] Helium return466 °CFixed value
+  [figs] Process heat, with feed preheat130.8 MWthLive
+  [figs] Secondary helium flow58.1 kg/sLive
+  [notes] The helium connections on the reformer are drawn schematically. In the engine's tube model the hot helium enters at the process gas outlet end and flows against the process gas.
+  [notes] Input outside its evidence range: Helium supply temperature is fixed at 900 C. Highest measured secondary helium temperature is 859 C, HTTR 2004 high-temperature run (IAEA NP-T-4.3 printed p.14).
+  [media] Secondary helium
+  [lit] ['ihx', 'smr']  [moving] ['H1', 'H2']
+== 4 Natural gas and steam feed the reformer
+  [scen] Scenario: PSA reject fate: Burn on site, H2 held. The drawing shows the headline plant, Case B with the reject recycled, so some drawn lines may carry nothing here.
+  [text] Natural gas at 23.2 MMSCFD and process steam enter the reformer. In the catalyst tubes methane and steam react to hydrogen and carbon monoxide, taking up the helium's heat.
+  [text] The engine sets the exit at 871 °C, the equilibrium assumption of the Idaho National Laboratory (INL) study. With helium supplied at 900 °C, the engine's tube model found no tube count in its search range that reaches it on the assumed tube, so the exit stays an assumption.
+  [eq] Reaction, for illustrationCH₄ + H₂O ⇌ CO + 3 H₂
+  [figs] Natural gas feed23.2 MMSCFDLive
+  [figs] Reformer exit, INL assumption871 °CFixed value
+  [figs] Helium supply900 °CFixed value
+  [media] Natural gas
+  [media] Steam and condensate
+  [lit] ['smr']  [moving] ['S01', 'S02']
+== 5 Water-gas shift
+  [scen] Scenario: PSA reject fate: Burn on site, H2 held. The drawing shows the headline plant, Case B with the reject recycled, so some drawn lines may carry nothing here.
+  [text] The syngas raises steam as it leaves the reformer and enters the high-temperature shift bed at 335 °C.
+  [text] Over the shift catalyst, carbon monoxide and steam form more hydrogen and carbon dioxide.
+  [eq] Reaction, for illustrationCO + H₂O ⇌ CO₂ + H₂
+  [figs] High-temperature shift inlet335 °CFixed value
+  [figs] Low-temperature shift inlet191 °CFixed value
+  [figs] Shift heat releasen/aLive
+  [notes] Shift heat release: n/a, the shift heat release comes from the live Level 3 flowsheet, and the Level 3 flowsheet covers the recycle and INL Selexol scenarios only, and the COMB_H scenario is neither.
+  [notes] The drawing shows the two beds, and the coolers between them, as one vessel.
+  [media] Syngas
+  [lit] ['wgs']  [moving] ['S05']
+== 6 Cooling and condensate
+  [scen] Scenario: PSA reject fate: Burn on site, H2 held. The drawing shows the headline plant, Case B with the reject recycled, so some drawn lines may carry nothing here.
+  [text] The shifted gas is cooled in steps, and 8.4 MW of its heat is hot enough to help drive the reboiler of the monoethanolamine (MEA) capture plant in step 10.
+  [text] In the separator at 40 °C the condensed water drains out before the gas goes on to the absorber.
+  [figs] Syngas heat to the reboiler8.4 MWLive
+  [figs] Separator temperature40 °CFixed value
+  [figs] Condensaten/aLive
+  [notes] Condensate: n/a, the condensate comes from the live Level 3 flowsheet, and the Level 3 flowsheet covers the recycle and INL Selexol scenarios only, and the COMB_H scenario is neither.
+  [notes] The engine models six exchangers where the drawing shows one cooler.
+  [media] Syngas
+  [media] Steam and condensate
+  [lit] ['syngas_cooler', 'separator']  [moving] ['S09', 'S09B', 'S11', 'S10']
+== 7 CO₂ capture in the MEA absorber
+  [scen] Scenario: PSA reject fate: Burn on site, H2 held. The drawing shows the headline plant, Case B with the reject recycled, so some drawn lines may carry nothing here.
+  [text] In the packed absorber the gas rises against falling 30 wt% aqueous monoethanolamine (MEA) at 26.8 bar.
+  [text] The amine takes up 90.0% of the CO₂ in one pass and leaves at the bottom as rich solvent; the hydrogen-rich gas leaves at the top.
+  [eq] Reaction, for illustrationCO₂ + 2 RNH₂ ⇌ RNHCOO⁻ + RNH₃⁺
+  [figs] Capture per pass90.0%Live
+  [figs] CO₂ captured1,137 kmol/hLive
+  [figs] Lean solvent926 t/hLive
+  [figs] Absorber pressure26.8 barInput
+  [media] Syngas
+  [media] MEA solvent
+  [lit] ['absorber']  [moving] ['S11', 'S17', 'S18']
+== 8 Hydrogen product from the external PSA
+  [scen] Scenario: PSA reject fate: Burn on site, H2 held. The drawing shows the headline plant, Case B with the reject recycled, so some drawn lines may carry nothing here.
+  [text] The hydrogen-rich gas, with 10,214 kg/h of hydrogen, crosses the dashed boundary to pressure swing adsorption (PSA), an external block the engine does not simulate.
+  [text] At an assumed 88.0% recovery it delivers 8,988 kg/h of purified hydrogen, 66,925 t/y at 85.0% availability.
+  [figs] H₂ into the PSA10,214 kg/hLive
+  [figs] Purified H₂8,988 kg/hLive
+  [figs] Purified H₂ per year66,925 t/yLive
+  [figs] PSA recovery, assumed88.0%Fixed value
+  [notes] The two PSA beds are drawn schematically, since the block is external and has no model.
+  [media] H₂-rich gas and H₂
+  [lit] ['psa']  [moving] ['S12', 'S13']
+== 9 PSA reject burned on site
+  [scen] Scenario: PSA reject fate: Burn on site, H2 held. The drawing shows the headline plant, Case B with the reject recycled, so some drawn lines may carry nothing here.
+  [text] In this scenario the PSA reject, holding 1,226 kg/h of hydrogen, crosses back into the boundary and is burned on site, which gives the reboiler 20.8 MW; the drawn cryogenic unit and recycle carry nothing.
+  [text] The flue gas leaves by the stack, and the engine counts 149,008 t/y of CO₂ to the atmosphere.
+  [figs] Carbon in the reject455 kmol/hLive
+  [figs] Carbon recycled to the reformer0 kmol/hLive
+  [figs] Carbon burned455 kmol/hLive
+  [figs] CO₂ to the atmosphere149,008 t/yLive
+  [notes] The burner is not drawn. Here the reject goes to it in place of the recycle compressor and the cryogenic unit, and the stack stands for its flue gas.
+  [media] PSA reject and recycle
+  [media] N₂-rich stack gas
+  [lit] ['psa']  [moving] ['S14', 'S16']
+== 10 Stripper and reboiler heat
+  [scen] Scenario: PSA reject fate: Burn on site, H2 held. The drawing shows the headline plant, Case B with the reject recycled, so some drawn lines may carry nothing here.
+  [text] Rich solvent is warmed in the rich/lean exchanger and stripped at 2.0 bar by reboiler steam, which drives the CO₂ out; the lean solvent is cooled and pumped back to the absorber.
+  [text] The reboiler needs 52.8 MW, met in a fixed order: freed Selexol steam 12.7 MW, export steam 10.9 MW, syngas heat 8.4 MW, tail gas burned on site 20.8 MW, and reactor steam 0.0 MW last.
+  [figs] Reboiler duty52.8 MWLive
+  [figs] Specific reboiler duty3.8 GJ/tInput
+  [figs] Reactor steam to the reboiler0.0 MWLive
+  [figs] Stripper pressure2.0 barInput
+  [notes] No line on the drawing brings heat into the reboiler; the order comes from the engine's energy balance.
+  [media] MEA solvent
+  [lit] ['lean_pump', 'lean_cooler', 'rich_lean_hx', 'stripper', 'reboiler']  [moving] ['S17', 'L3', 'L4', 'S18', 'L5', 'L6']
+== 11 CO₂ compression, ship and offshore storage
+  [scen] Scenario: PSA reject fate: Burn on site, H2 held. The drawing shows the headline plant, Case B with the reject recycled, so some drawn lines may carry nothing here.
+  [text] The condenser returns water from the stripper overhead as reflux, and the CO₂ is compressed to INL's pipeline condition using 4.40 MWe. The model does not include conditioning the CO₂ for the ship; the pipeline compression load stands in for it.
+  [text] Then 372,465 t/y of CO₂ leaves by ship for storage offshore abroad, which the model treats as a tariff of 60 S$/t with no simulation.
+  [figs] CO₂ shipped to storage372,465 t/yLive
+  [figs] Compression4.40 MWeLive
+  [figs] Transport and storage tariff60 S$/tInput
+  [figs] Transport and storage charge22.3 S$M/yLive
+  [notes] How offshore storage abroad counts as abatement is unresolved.
+  [media] Captured CO₂
+  [lit] ['condenser', 'co2_compressor', 'co2_storage']  [moving] ['C1', 'S19', 'S20']
+== 12 Power block and site electricity
+  [scen] Scenario: PSA reject fate: Burn on site, H2 held. The drawing shows the headline plant, Case B with the reject recycled, so some drawn lines may carry nothing here.
+  [text] In this scenario electricity from the reject burned on site takes the place of the power block, so the helium branch carries 0.0 MWth and the turbine makes 0.00 MWe.
+  [text] The helium circulators draw 6.59 MWe of the 15.08 MWe site demand, and the grid supplies 0.00 MWe.
+  [figs] Helium branch to the power block0.0 MWthLive
+  [figs] Electricity generated0.00 MWeLive
+  [figs] Site electricity demand15.08 MWeLive
+  [figs] Grid import0.00 MWeLive
+  [notes] Whether INL's power conversion efficiency is already net of primary circulation is unverified, so this load may be counted twice.
+  [lit] ['htgr', 'circ_primary', 'power']  [moving] []
+== 13 The plant from end to end
+  [scen] Scenario: PSA reject fate: Burn on site, H2 held. The drawing shows the headline plant, Case B with the reject recycled, so some drawn lines may carry nothing here.
+  [text] End to end, the plant makes 66,925 t/y of purified hydrogen and sends 372,465 t/y of CO₂ to storage.
+  [text] Against the 616,361 t/y an unabated reformer would emit on INL's baseline, its residual of 149,008 t/y leaves a net abatement of 467,353 t/y. Part of that is the CO₂ stored; the rest is never formed, because reactor heat replaces the reformer's fuel gas.
+  [text] The abatement target of 250,000 t/y is met at these inputs. On Cho's and IEAGHG's baselines the net abatement is 476,738 t/y and 453,046 t/y.
+  [figs] Purified H₂66,925 t/yLive
+  [figs] CO₂ to storage372,465 t/yLive
+  [figs] CO₂ to the atmosphere149,008 t/yLive
+  [figs] Net abatement467,353 t/yLive
+  [status] Cost target: Not met at these inputs: L5 283.1 S$/t and DCF 283.5 S$/t against the 100 S$/t target at the selected stage, life, exponent and size charged.
+  [notes] The plant sits on the proposed Western Island site, a proposal of this study with no official approval.
+  [lit] []  [moving] []

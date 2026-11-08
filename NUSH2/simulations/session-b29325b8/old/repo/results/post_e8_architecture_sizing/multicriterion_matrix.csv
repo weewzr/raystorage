@@ -1,0 +1,18 @@
+criterion,benchmark_1x_case6,preferred_2x_case6,sensitivity_3x_smaller,sensitivity_1x_custom_large
+heat_and_branch_utilization,"176.8 MWth; 47.8% branch","353.6 MWth; 95.6% branch","353.6 MWth; 95.6% branch by linear split","353.6 MWth; 95.6% branch by scale-up"
+H2_output_t_y,97946,195892,195892_if_linear,195892_if_linear
+lifecycle_abatement_t_y,917139,1834278,1834278_if_linear,1834278_if_linear
+FOAK_economics,"345.90/t FAIL","137.74/t FAIL",UNRESOLVED,UNRESOLVED
+BOAK_economics,UNRESOLVED_in_E2B,"74.14/t projected PASS",UNRESOLVED,UNRESOLVED
+mature_economics,"156.11/t FAIL","42.84/t projected PASS","49.07/t only if 3 represented loops and all other linear terms hold","36.61/t only if 1 represented loop and all other linear terms hold"
+BOP_integration,"1 represented loop","2 represented loops","unknown; 3-loop sensitivity only","unknown; 1-loop sensitivity only"
+partial_outage,"single train = total process outage","one train can in principle leave 50% process capacity; joint availability not quantified","could offer finer granularity in principle; no reliability data","single custom train = total process outage"
+maintainability_modularity,"source-scale train precedent","identical-train replication; strongest modular evidence","smaller equipment not source-validated","custom scale-up not source-validated"
+IHX_secondary_loop,"176.8 MWth exceeds ~170 MWth reference IHX by ~4%; qualification required","two 176.8 MWth interfaces/loops represented; qualification required","three ~117.9 MWth duties fit below 170 MWth reference numerically but no complete smaller-train/interface design","one 353.6 MWth interface would greatly exceed ~170 MWth reference unless multiple exchangers/manifolds used"
+interface_isolation_complexity,1_process_interface,2_process_interfaces,likely_3_or_more_but_design_unresolved,one_train_interface_but_heat-exchanger_topology_unresolved
+chemical_inventory_congestion,"one source train inventory","two source-scale train inventories","three smaller inventories may reduce per-train consequence but increase interfaces/congestion; unresolved","one larger inventory may worsen single-event consequence; unresolved"
+Singapore_footprint,"lower chemical footprint qualitatively; reactor dominates unknown total","larger than one train; E3 parcel still unresolved","more trains may increase spacing/BOP; no footprint model","could consolidate trains but larger equipment/spacing unknown"
+cooling_utilities,"one-train process utilities","two-train E3 scales quantified","same aggregate only under linear assumption; distribution unresolved","same aggregate only under linear assumption; equipment utility scaling unresolved"
+licensing_safety_complexity,"lowest chemical train count but poor economics","two repeated source-based trains; E4/E5 basis already structured","more interfaces/isolation branches and scenarios; no quantified benefit","larger custom equipment/inventory and non-reference IHX topology"
+EPZ,"UNKNOWN/SITE-SPECIFIC","UNKNOWN/SITE-SPECIFIC","UNKNOWN/SITE-SPECIFIC","UNKNOWN/SITE-SPECIFIC"
+evidence_maturity,HIGH_for_process_basis,HIGHEST_for_current_preferred,LOW_bounded_sensitivity,LOW_bounded_sensitivity

@@ -1,0 +1,67 @@
+run_id,stream_id,stream_name,from_unit,to_unit,crosses_boundary,t_c,p_bar,total_kg_h,total_kmol_h,h2,co,co2,ch4,c2plus,n2,h2o,mea,carbon_kmol_h,class,rigour,source,status
+A_INL_SEL,H2_PRODUCT,Purified H2 after external PSA,PSA,PRODUCT,true,,,13154.178730,6531.753022,6525.278652,,,6.474370,,,,,6.474370,calculated,external_boundary,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+A_INL_SEL,CO2_TO_STORAGE,Compressed CO2 to storage,CO2_COMPRESSOR,STORAGE,false,,,72839.374749,1655.082988,,,1655.082988,,,,,,1655.082988,calculated,reduced_order,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+A_INL_SEL,N2_RICH_CUT,Burned nitrogen-rich cut,CRYO,STACK,true,,,,,,,,,,,,,122.821844,calculated,reduced_order,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+A_INL_SEL,NG_FEED,Fresh natural gas,BATTERY_LIMIT,REFORMER,true,,,,1693.296769,,,,,,,,,1784.379202,calculated,fixed_assumption,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+A_INL_SEL,PSA_FEED,H2-rich gas leaving capture,CAPTURE,PSA,true,,,,,7415.089378,,,,,,,,502.079590,calculated,external_boundary,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+A_INL_SEL,PSA_REJECT_RETURN,PSA reject returning across the boundary,PSA,CRYO,true,,,,,889.810725,,,,,,,,495.605220,calculated,external_boundary,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+A_INL_SEL,RECYCLE_TO_REFORMER,Recycled methane-rich gas,CRYO,REFORMER,true,,,,,,,,,,,,,372.783376,calculated,reduced_order,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+A_INL_SEL,TAIL_GAS_EXPORT,Tail gas leaving the boundary,PSA,OFFSITE,true,,,,,,,,,,,,,0.000000,calculated,external_boundary,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+A_INL_SEL,CLOSURE_CARBON,Carbon residual,,,false,,,,,,,,,,,,,-0.000000,calculated,rigorous,"element closure, full species at Level 3",anchored_port
+A_INL_SEL,CLOSURE_H,Hydrogen residual,,,false,,,,,,,,,,,,,,calculated,rigorous,"element closure, full species at Level 3",not_run
+A_INL_SEL,CLOSURE_MASS,Mass residual,,,false,,,,,,,,,,,,,,calculated,rigorous,"element closure, full species at Level 3",not_run
+A_REC_F,H2_PRODUCT,Purified H2 after external PSA,PSA,PRODUCT,true,,,13154.178730,6531.753022,6525.278652,,,6.474370,,,,,6.474370,calculated,external_boundary,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+A_REC_F,CO2_TO_STORAGE,Compressed CO2 to storage,CO2_COMPRESSOR,STORAGE,false,,,70714.986856,1606.811867,,,1606.811867,,,,,,1606.811867,calculated,reduced_order,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+A_REC_F,N2_RICH_CUT,Burned nitrogen-rich cut,CRYO,STACK,true,,,,,,,,,,,,,171.092965,calculated,reduced_order,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+A_REC_F,NG_FEED,Fresh natural gas,BATTERY_LIMIT,REFORMER,true,,,,1693.296769,,,,,,,,,1784.379202,calculated,fixed_assumption,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+A_REC_F,PSA_FEED,H2-rich gas leaving capture,CAPTURE,PSA,true,,,,,7415.089378,,,,,,,,696.861061,calculated,external_boundary,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+A_REC_F,PSA_REJECT_RETURN,PSA reject returning across the boundary,PSA,CRYO,true,,,,,889.810725,,,,,,,,690.386691,calculated,external_boundary,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+A_REC_F,RECYCLE_TO_REFORMER,Recycled methane-rich gas,CRYO,REFORMER,true,,,,,,,,,,,,,519.293725,calculated,reduced_order,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+A_REC_F,TAIL_GAS_EXPORT,Tail gas leaving the boundary,PSA,OFFSITE,true,,,,,,,,,,,,,0.000000,calculated,external_boundary,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+A_REC_F,CLOSURE_CARBON,Carbon residual,,,false,,,,,,,,,,,,,0.000000,calculated,rigorous,"element closure, full species at Level 3",anchored_port
+A_REC_F,CLOSURE_H,Hydrogen residual,,,false,,,,,,,,,,,,,,calculated,rigorous,"element closure, full species at Level 3",not_run
+A_REC_F,CLOSURE_MASS,Mass residual,,,false,,,,,,,,,,,,,,calculated,rigorous,"element closure, full species at Level 3",not_run
+B_COMB_H,H2_PRODUCT,Purified H2 after external PSA,PSA,PRODUCT,true,,,8988.000000,4463.022540,4458.598726,,,4.423814,,,,,4.423814,calculated,external_boundary,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+B_COMB_H,CO2_TO_STORAGE,Compressed CO2 to storage,CO2_COMPRESSOR,STORAGE,false,,,50022.141617,1136.621448,,,1136.621448,,,,,,1136.621448,calculated,reduced_order,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+B_COMB_H,N2_RICH_CUT,Burned nitrogen-rich cut,CRYO,STACK,true,,,,,,,,,,,,,454.714728,calculated,reduced_order,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+B_COMB_H,NG_FEED,Fresh natural gas,BATTERY_LIMIT,REFORMER,true,,,,1514.305497,,,,,,,,,1595.759990,calculated,fixed_assumption,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+B_COMB_H,PSA_FEED,H2-rich gas leaving capture,CAPTURE,PSA,true,,,,,5066.589461,,,,,,,,459.138542,calculated,external_boundary,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+B_COMB_H,PSA_REJECT_RETURN,PSA reject returning across the boundary,PSA,CRYO,true,,,,,607.990735,,,,,,,,454.714728,calculated,external_boundary,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+B_COMB_H,RECYCLE_TO_REFORMER,Recycled methane-rich gas,CRYO,REFORMER,true,,,,,,,,,,,,,0.000000,calculated,reduced_order,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+B_COMB_H,TAIL_GAS_EXPORT,Tail gas leaving the boundary,PSA,OFFSITE,true,,,,,,,,,,,,,0.000000,calculated,external_boundary,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+B_COMB_H,CLOSURE_CARBON,Carbon residual,,,false,,,,,,,,,,,,,-0.000000,calculated,rigorous,"element closure, full species at Level 3",anchored_port
+B_COMB_H,CLOSURE_H,Hydrogen residual,,,false,,,,,,,,,,,,,,calculated,rigorous,"element closure, full species at Level 3",not_run
+B_COMB_H,CLOSURE_MASS,Mass residual,,,false,,,,,,,,,,,,,,calculated,rigorous,"element closure, full species at Level 3",not_run
+B_EXPORT,H2_PRODUCT,Purified H2 after external PSA,PSA,PRODUCT,true,,,8988.000000,4463.022540,4458.598726,,,4.423814,,,,,4.423814,calculated,external_boundary,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+B_EXPORT,CO2_TO_STORAGE,Compressed CO2 to storage,CO2_COMPRESSOR,STORAGE,false,,,50022.141617,1136.621448,,,1136.621448,,,,,,1136.621448,calculated,reduced_order,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+B_EXPORT,N2_RICH_CUT,Burned nitrogen-rich cut,CRYO,STACK,true,,,,,,,,,,,,,0.000000,calculated,reduced_order,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+B_EXPORT,NG_FEED,Fresh natural gas,BATTERY_LIMIT,REFORMER,true,,,,1514.305497,,,,,,,,,1595.759990,calculated,fixed_assumption,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+B_EXPORT,PSA_FEED,H2-rich gas leaving capture,CAPTURE,PSA,true,,,,,5066.589461,,,,,,,,459.138542,calculated,external_boundary,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+B_EXPORT,PSA_REJECT_RETURN,PSA reject returning across the boundary,PSA,CRYO,true,,,,,607.990735,,,,,,,,454.714728,calculated,external_boundary,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+B_EXPORT,RECYCLE_TO_REFORMER,Recycled methane-rich gas,CRYO,REFORMER,true,,,,,,,,,,,,,0.000000,calculated,reduced_order,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+B_EXPORT,TAIL_GAS_EXPORT,Tail gas leaving the boundary,PSA,OFFSITE,true,,,,,,,,,,,,,454.714728,calculated,external_boundary,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+B_EXPORT,CLOSURE_CARBON,Carbon residual,,,false,,,,,,,,,,,,,-0.000000,calculated,rigorous,"element closure, full species at Level 3",anchored_port
+B_EXPORT,CLOSURE_H,Hydrogen residual,,,false,,,,,,,,,,,,,,calculated,rigorous,"element closure, full species at Level 3",not_run
+B_EXPORT,CLOSURE_MASS,Mass residual,,,false,,,,,,,,,,,,,,calculated,rigorous,"element closure, full species at Level 3",not_run
+B_REC_F,H2_PRODUCT,Purified H2 after external PSA,PSA,PRODUCT,true,,,8988.000000,4463.022540,4458.598726,,,4.423814,,,,,4.423814,calculated,external_boundary,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+B_REC_F,CO2_TO_STORAGE,Compressed CO2 to storage,CO2_COMPRESSOR,STORAGE,false,,,48318.204801,1097.903971,,,1097.903971,,,,,,1097.903971,calculated,reduced_order,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+B_REC_F,N2_RICH_CUT,Burned nitrogen-rich cut,CRYO,STACK,true,,,,,,,,,,,,,116.904567,calculated,reduced_order,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+B_REC_F,NG_FEED,Fresh natural gas,BATTERY_LIMIT,REFORMER,true,,,,1156.997458,,,,,,,,,1219.232352,calculated,fixed_assumption,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+B_REC_F,PSA_FEED,H2-rich gas leaving capture,CAPTURE,PSA,true,,,,,5066.589461,,,,,,,,476.151901,calculated,external_boundary,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+B_REC_F,PSA_REJECT_RETURN,PSA reject returning across the boundary,PSA,CRYO,true,,,,,607.990735,,,,,,,,471.728087,calculated,external_boundary,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+B_REC_F,RECYCLE_TO_REFORMER,Recycled methane-rich gas,CRYO,REFORMER,true,,,,,,,,,,,,,354.823520,calculated,reduced_order,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+B_REC_F,TAIL_GAS_EXPORT,Tail gas leaving the boundary,PSA,OFFSITE,true,,,,,,,,,,,,,0.000000,calculated,external_boundary,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+B_REC_F,CLOSURE_CARBON,Carbon residual,,,false,,,,,,,,,,,,,0.000000,calculated,rigorous,"element closure, full species at Level 3",anchored_port
+B_REC_F,CLOSURE_H,Hydrogen residual,,,false,,,,,,,,,,,,,,calculated,rigorous,"element closure, full species at Level 3",not_run
+B_REC_F,CLOSURE_MASS,Mass residual,,,false,,,,,,,,,,,,,,calculated,rigorous,"element closure, full species at Level 3",not_run
+B_REC_FIX,H2_PRODUCT,Purified H2 after external PSA,PSA,PRODUCT,true,,,8988.000000,4463.022540,4458.598726,,,4.423814,,,,,4.423814,calculated,external_boundary,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+B_REC_FIX,CO2_TO_STORAGE,Compressed CO2 to storage,CO2_COMPRESSOR,STORAGE,false,,,49769.758621,1130.886709,,,1130.886709,,,,,,1130.886709,calculated,reduced_order,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+B_REC_FIX,N2_RICH_CUT,Burned nitrogen-rich cut,CRYO,STACK,true,,,,,,,,,,,,,83.921829,calculated,reduced_order,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+B_REC_FIX,NG_FEED,Fresh natural gas,BATTERY_LIMIT,REFORMER,true,,,,1156.997458,,,,,,,,,1219.232352,calculated,fixed_assumption,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+B_REC_FIX,PSA_FEED,H2-rich gas leaving capture,CAPTURE,PSA,true,,,,,5066.589461,,,,,,,,490.456243,calculated,external_boundary,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+B_REC_FIX,PSA_REJECT_RETURN,PSA reject returning across the boundary,PSA,CRYO,true,,,,,607.990735,,,,,,,,486.032429,calculated,external_boundary,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+B_REC_FIX,RECYCLE_TO_REFORMER,Recycled methane-rich gas,CRYO,REFORMER,true,,,,,,,,,,,,,402.110600,calculated,reduced_order,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+B_REC_FIX,TAIL_GAS_EXPORT,Tail gas leaving the boundary,PSA,OFFSITE,true,,,,,,,,,,,,,0.000000,calculated,external_boundary,"engine anchored port, carbon ledger J.8 to J.11",anchored_port
+B_REC_FIX,CLOSURE_CARBON,Carbon residual,,,false,,,,,,,,,,,,,-0.000000,calculated,rigorous,"element closure, full species at Level 3",anchored_port
+B_REC_FIX,CLOSURE_H,Hydrogen residual,,,false,,,,,,,,,,,,,,calculated,rigorous,"element closure, full species at Level 3",not_run
+B_REC_FIX,CLOSURE_MASS,Mass residual,,,false,,,,,,,,,,,,,,calculated,rigorous,"element closure, full species at Level 3",not_run

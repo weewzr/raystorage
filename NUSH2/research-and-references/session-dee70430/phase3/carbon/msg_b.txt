@@ -1,0 +1,58 @@
+Compute the CO2 abatement from the plant's own carbon balance
+
+The default carbon basis is now the plant's own stream ledger. The Level 3
+flowsheet is solved on the hydrogen target, with the cryogenic carbon recovery
+and hydrogen return as flagged registry design inputs (decision D8), and the
+captured CO2, the stack, the condensate CO2, the product methane and the gas
+rate are read from its streams (equations N.1 to N.5). The unabated reference
+is the IEAGHG 2017-02 Case 1 intensity times the annual hydrogen (decision D2);
+INL, Cho and a plant-built floor are comparison rows. Net abatement subtracts
+transport and storage emissions built from physical inputs (decision D7c), and
+the cost per tonne divides by that net figure (decision D9). Closure carries the
+streams the flowsheet does not model as unknown, so the whole-account verdict
+stays undetermined while the verdict on the modelled streams is closed.
+
+The anchored functions keep their code. Model::plant_balance returns the same
+balance with the carbon lines replaced by the ledger when CARBON_BASIS is 1, and
+the consumers that divide by abatement now use it. The legacy basis stays
+selectable (CARBON_BASIS 0, nush2 --basis legacy, the carbon_basis control of the
+wasm reply) and is bit-identical: a Rust test and both workflows compare its
+export with the snapshot of main 8750b09.
+
+Default headline (Case B, central IEAGHG reference), as the engine prints it:
+captured 363,277 t/y, stack 30,778 t/y, condensate CO2 1,731 t/y, direct
+abatement 569,545 t/y, transport and storage 11,778 t/y, net abatement 557,767 t/y
+(8.334 kg/kg), reduction 94.6 percent, intensity 0.4858 kg/kg, gas 23.10 MMSCFD.
+The legacy basis gives 359,777, 38,309, 578,052 t/y and 23.23 MMSCFD.
+
+Tables of results/ that change, and why:
+- Integrated_Energy_Balance.csv: unchanged, by test.
+- Emissions_Ledger.csv: 252 rows become 456. 204 rows of a new independent_carbon
+  view (annual quantities, transport and storage by source, direct and net
+  abatement against each reference, reduction, intensity, closure, the N.9.2
+  split). 216 existing rows change because the carbon lines come from the ledger.
+- Final_Design_Basis.csv: 15 input rows for the new registry entries, 7 result
+  rows, and 84 changed results (carbon, gas, abatement and the cost rows).
+- Integrated_Mass_Balance.csv: 63 rows, the carbon lines of the fixed anchored
+  runs and the flowsheet runs at the 1e-12 level through the registry inputs.
+- Economic_Ledger.csv: abatement_t_y and everything per tonne in all 1,880 changed
+  rows, and the gas, capture and transport tariff lines through the plant's
+  captured CO2 and gas rate.
+- Sensitivity_Results.csv: denominators in 641 rows, 214 rows of new sweeps over
+  the cryogenic inputs, the condensate vent, the central reference and the
+  shipping distance, and 44 rows whose solved test value moved.
+- Subsidy_Scenarios.csv: all 352 rows, because the abatement and the capture
+  capital come from the new basis.
+- Validation_Results.csv: 18 rows added (the independent basis against the copied
+  INL values, the cryogenic inputs, the reference gas, the closure and the
+  transport and storage cross-checks), the registry entry count of
+  PARAMS_COMPLETE, and no change of any existing pass or fail: 32 literature
+  benchmarks stay failed.
+
+Tests: m11_carbon.rs checks every N equation by id and the properties of the
+basis, basis_flag.rs checks the command line flag, and the tests that compared
+the exporter or the cost sweeps with the legacy balance now use the plant basis.
+The co-funding tests keep their literal anchors on the legacy basis and read the
+committed tables on the default basis.
+
+Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>

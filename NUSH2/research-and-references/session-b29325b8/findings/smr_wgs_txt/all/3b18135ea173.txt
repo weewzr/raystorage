@@ -1,0 +1,1328 @@
+
+
+=== PDF page 1 of 14 ===
+Full Length Article
+An improved open-access steady state model for flue gas CO2 capture 
+with monoethanolamine
+Ryan Cownden *
+, Mathieu Lucquiaud
+School of Mechanical, Aerospace and Civil Engineering, University of Sheffield, Sheffield, S1 3JD, United Kingdom
+A R T I C L E I N F O
+Keywords:
+Carbon capture
+Process model
+Monoethanolamine
+CO2 capture
+Absorption
+Regeneration
+A B S T R A C T
+The U.S. Department of Energy’s Carbon Capture Simulation Initiative (CCSI) developed a “gold-standard” 
+steady state CO2 capture process model in 2018 for aqueous monoethanolamine (MEA) solvent. The CCSI model 
+is publicly available and has been widely used for CO2 capture studies. However, there are underreported issues 
+with the model which impair its accuracy for some conditions. Here, we show how these limitations affect the 
+accuracy of model predictions compared to large-scale pilot data and present results from an improved MEA-CO2 
+capture model which utilises a new combination of mass transfer and thermodynamic/chemistry models. The 
+new process model more closely predicts CO2 capture rate across the wide range of process conditions and 
+equipment scale investigated in this study. The root mean square deviation between predicted capture rate and 
+measured data is reduced to 2.1 pp (percentage points) versus 5.3 pp using the CCSI model for 23 test cases from 
+3 different facilities. The accuracy improvements are particularly substantial (up to 8 pp) for emission sources 
+with low CO2 concentration, such as combined cycle gas turbines, and for absorber designs where mass transfer is 
+not constrained by equilibrium. The Aspen Plus source file for the new process model is provided for other re­
+searchers to use and build upon.
+1. Introduction
+Achieving the Paris Agreement climate stabilisation objectives re­
+quires urgent and ambitious reductions in anthropogenic greenhouse 
+gas (GHG) emissions which are primarily caused by the production and 
+consumption of fossil fuels and industrial processes (Dhakal et al., 
+2022). Deployment of CO2 capture and storage is expected to play a 
+substantial role in mitigating GHG emissions, particularly flue gas from 
+large, point-source emitters such as fossil fuel power generation, steel 
+production, and cement plants (Riahi et al., 2022).
+Regenerative absorption processes using amine solvents have been 
+widely deployed to remove CO2 from process streams in industrial ap­
+plications such as natural gas processing and ammonia synthesis since 
+1930 (Mokhatab et al., 2019; Treese, 2015). They have also been 
+employed since 1978 for post-combustion CO2 capture for merchant CO2 
+supply (e.g., 2–117 ktCO2/y facilities in the food industry) (Chapel et al., 
+1999; Herzog, 1999; Fluor, 2004) and more recently at pilot facilities for 
+CO2 capture technology development – e.g., Technology Centre Mon­
+gstad (TCM) in Norway (c. 74 ktCO2/y for continuous operation) (de 
+Koeijer et al., 2011) and the National Carbon Capture Center (NCCC) in 
+USA (c. 3 ktCO2/y) (Morton et al., 2013) – and industrial-scale power 
+plants for GHG emissions abatement – e.g., Boundary Dam power station 
+in Canada (c. 1 MtCO2/y) (Clarke et al., 2022) and the Petra Nova 
+project in USA (c. 1.6 MtCO2/y) (PETRA NOVA, 2020).
+Amine solvents are synthesised from ammonia by replacing one or 
+more hydrogen atoms with hydrocarbon functional groups. Amines are 
+attractive for CO2 capture applications because they can be relatively 
+stable, have low vapour pressure, and achieve very low residual CO2 
+partial pressure in the outlet gas stream (Mokhatab et al., 2019). 
+Aqueous solutions of monoethanolamine (MEA) are commonly used 
+open-source solvents for CO2 absorption, but many other open-source 
+and proprietary amine solvent blends have been used with a range of 
+characteristics. Amines typically absorb CO2 from flue gas at low tem­
+perature (c. 40–70 ◦C) and near atmospheric pressure in an absorption 
+contactor and release the CO2 at high temperature (c. 100–130 ◦C) and 
+moderate pressure (c. 1–3 barg) in a regenerator (also known as strip­
+per/desorber) before recirculation to the absorber.
+Detailed and accurate process models are crucial to facilitate 
+Abbreviations: CCSI, Carbon Capture Simulation Initiative; NCCC, National Carbon Capture Center; TCM, Technology Centre Mongstad.
+* Corresponding author.
+E-mail address: ryan.cownden@cownden.ca (R. Cownden). 
+Contents lists available at ScienceDirect
+Carbon Capture Science & Technology
+journal homepage: www.elsevier.com/locate/ccst
+https://doi.org/10.1016/j.ccst.2026.100625
+Received 19 March 2026; Received in revised form 8 May 2026; Accepted 10 May 2026  
+19 (2026) 100625 
+Available online 13 May 2026 
+2772-6568/© 2026 The Authors. Published by Elsevier Ltd on behalf of Institution of Chemical Engineers (IChemE). This is an open access article under the CC BY 
+license ( http://creativecommons.org/licenses/by/4.0/ ). 
+
+
+=== PDF page 2 of 14 ===
+deployment of CO2 capture technology and establish related govern­
+ment policies/regulations because they are the foundation for facility 
+design and techno-economic assessments. Rate-based process models 
+are considered more deterministic and accurate than empirical equi­
+librium stage models for regenerative amine solvent absorption pro­
+cesses (Thompson and Tsouris, 2021). Prior studies that developed and 
+validated amine absorption rate-based process models (e.g., Amir­
+khosrow et al. (2020) and Luo and Wang (2017)) have typically vali­
+dated their predictions using data from laboratory-scale equipment that 
+is several orders of magnitude smaller than equipment relevant for 
+industrial-scale applications. Further, these laboratory tests used col­
+umns substantially shorter than typical industrial designs and focused 
+on a relatively narrow range of column liquid fluxes that is not repre­
+sentative of all CO2 capture applications. The mass transfer and column 
+hydraulic models commonly used in process simulations are based on a 
+variety of empirical relationships that deviate substantially based on 
+fluid thermodynamic properties, packing parameters, and superficial 
+velocities.
+To help address the diversity in modelling methodologies, the U.S. 
+Department of Energy’s Carbon Capture Simulation Initiative (CCSI) 
+developed and published a steady state CO2 capture process model for 
+aqueous MEA solvent (Soares Chinen et al., 2018). The CCSI model was 
+developed in Aspen Plus by regressing parameters for mass transfer, 
+column hydraulics, and reaction kinetics to minimise the differences 
+between the process model predictions and a relatively small sample of 
+reported laboratory-scale CO2 absorber and wetted wall column data. 
+Regression with a small sample could result in overfitting and erroneous 
+predictions for conditions outside of the range of the regression data. 
+Performance predicted by the CCSI model was also compared with pilot 
+plant data from NCCC (Morgan et al., 2018), but the data was limited to 
+flue gas from coal fired power generation which constrained the range of 
+operating conditions. The Aspen Plus source file for the CCSI model was 
+subsequently distributed as a standard model for post-combustion CO2 
+capture and has been widely used for other published studies (e.g., Du 
+et al. (2021); Michailos and Gibbins (2022); Mullen and Lucquiaud 
+(2024); de Joannis et al. (2025)).
+The CCSI model uses a variation of the Tsai correlation (Tsai et al., 
+2011) to determine interfacial area for mass transfer (Soares Chinen 
+et al., 2018); this correlation is normally a function of the Weber number 
+and Froude number. However, the dependence of interfacial area on the 
+Froude number was omitted in the CCSI parameter regression and model 
+validation (Morgan, 2024). This reduces the absolute value of the 
+interfacial area calculated by the CCSI model and increases the relative 
+dependence on liquid flux compared to the original Tsai correlation 
+which could adversely affect the accuracy of its predictions, particularly 
+outside of the range of liquid fluxes used in the regression (10–35 
+m3/m2-h).
+Furthermore, the CCSI model uses a simplified chemistry model 
+based on two reactions which does not include all ionic species (excludes 
+H3O+, OH−, and CO3
+2−) (Soares Chinen et al., 2018). The simplified re­
+action scheme combined with the thermodynamic parameters used in 
+the CCSI model provide reasonable predictions of equilibrium CO2 sol­
+ubility in aqueous MEA for many combinations of solvent CO2 loading 
+and temperature. However, as demonstrated in this study, there are 
+some conditions relevant for CO2 capture systems where this is not the 
+case (e.g., high solvent CO2 loading and 120 ◦C, a typical regenerator 
+reboiler temperature).
+The CCSI model is also based on a specific type of structured packing 
+(Mellapak 250Y/252Y), whereas a wide range of packing is anticipated 
+for different flue gas CO2 capture applications. Furthermore, the CCSI 
+model relies on parameters for kinetic, mass transfer, and hydraulic 
+calculations that were regressed based on a limited set of experimental 
+data (one wetted wall column study and one laboratory-scale packed 
+bed absorber) (Soares Chinen et al., 2018).
+This study presents an alternative rate-based steady state process 
+model for flue gas CO2 capture with aqueous MEA that was created to 
+address these issues using broadly applicable mass transfer correlations 
+developed at the University of Texas (Song et al., 2018). These mass 
+transfer correlations are based on an extensive dataset generated with 
+39 different random and structured packings, including the data utilized 
+in the original Tsai effective area correlation, and account for the effect 
+of viscosity on the liquid mass transfer coefficient. The new process 
+model incorporates a rigorous chemistry model which considers 
+water/CO2 
+ionic speciation, was validated against published 
+vapour-liquid equilibrium data for CO2−MEA-water, and includes ki­
+netic limitations in the absorber. The new model was validated over a 
+wider range of geometries/conditions than the CCSI model using four 
+datasets from three different facilities – 0.1–80 tCO2/d and 4–11 %mol 
+inlet gas CO2 concentration.
+2. Methods
+2.1. Thermodynamic property model
+The new rate-based CO2 capture process model was developed in 
+Aspen Plus using the ELECNRTL property method which combines the 
+electrolyte non-random two liquid thermodynamic property model for 
+the liquid phase and the Redlich-Kwong equation-of-state property 
+model for the vapour phase (ASPEN TECHNOLOGY INC., 2019). This 
+property method combination has been used to model MEA absorption 
+of CO2 in previous studies (Amirkhosrow et al., 2020), including the 
+CCSI model (Soares Chinen et al., 2018). Henry’s law is used to deter­
+mine vapour-liquid equilibrium fugacity for CO2, nitrogen, and oxygen. 
+The property method is configured with the options, parameters, and 
+databases as described in the Supplementary Material.
+Model results for absorber/regenerator CO2 profiles are provided as 
+partial pressure for the vapour phase (vapour phase CO2 mole fraction 
+times total pressure) and fugacity for the liquid phase (fL
+CO2) which is 
+calculated in Aspen Plus according to eqn. (1). 
+fL
+CO2 = γCO2xCO2ϕ∗,v
+CO2
+(
+T, p∗,l
+CO2
+)
+p∗,l
+CO2θ∗,l
+CO2
+(1) 
+Where γCO2is the CO2 activity coefficient, xCO2is the liquid phase CO2 
+mole fraction, ϕ∗,v
+CO2
+(
+T, p∗,l
+CO2
+)
+is the fugacity coefficient of CO2 at the 
+system temperature and vapour pressure, p∗,l
+CO2 is the liquid phase vapour 
+pressure of CO2 at the system temperature, and θ∗,l
+CO2 is the Poynting 
+correction factor (near unity for conditions of interest for typical PCC 
+plant applications).
+2.2. Equilibrium chemistry
+The chemical equilibrium reactions determine the electrolytic and 
+molecular species present in the MEA solvent and limit the extent of the 
+kinetically controlled reactions within the absorber unit operation. The 
+reaction mechanism between absorbed CO2 and aqueous MEA and the 
+ionic speciation of CO2/water are modelled using Eqs. (2)–(6)
+(Amirkhosrow et al., 2020). 
+2H2O⇄H3O+ + OH−
+(2) 
+CO2 + 2H2O⇄H3O+ + HCO−
+3
+(3) 
+HCO−
+3 + H2O⇄H3O+ + CO2−
+3
+(4) 
+MEAH+ + H2O⇄H3O+ + MEA
+(5) 
+MEACOO−+ H2O⇄HCO−
+3 + MEA
+(6) 
+Equilibrium constants for each equilibrium reaction (Keq) are unitless 
+based on liquid phase activity (mole gamma basis) and are determined 
+from the temperature of the liquid phase (TL) according to eqn. (7)
+where the constant parameters A, B, C, D are given in Table 1. 
+R. Cownden and M. Lucquiaud                                                                                                                                                                                                              
+Carbon Capture Science & Technology 19 (2026) 100625 
+2 
+
+
+=== PDF page 3 of 14 ===
+Keq = exp
+(
+A + B
+TL
++ C ln(TL) + D TL
+)
+(7) 
+Equilibrium constant parameters for the dissociation of water and 
+CO2 reactions 2–4 are from the widely used Edwards et al. (1978) study. 
+Equilibrium constant parameters for reactions 5–6 were regressed in this 
+study together with the binary interaction parameters in Supplementary 
+Table S1 using the Aspen Plus parameter regression tool and CO2 solu­
+bility measurements for 15–45 %wt MEA, 40–120 ◦C, and CO2 loading 
+0.05–0.50 molCO2/molMEA reported in Aronu et al. (2011). Data from 
+Ma'mun et al. (2005) for 30 %wt MEA, 120 ◦C, and CO2 loading 
+0.15–0.30 molCO2/molMEA was included in the regression dataset due to 
+the lack of data in Aronu et al. for this range of solvent loading, which 
+Table 1 
+Equilibrium constant equation parameters used in this work. Equilibrium 
+constant parameters for reactions 2–4 are from Edwards et al. (1978). Equilib­
+rium constant parameters for reactions 5–6 were determined in this study using 
+the Aspen Plus parameter regression tool and CO2 solubility measurements re­
+ported in Aronu et al. (2011) and Ma'mun et al. (2005).
+reaction
+A
+B
+C
+D
+2
+132.899
+−13,445.9
+−22.4773
+0
+3
+231.465
+−12,092.1
+−36.7816
+0
+4
+216.05
+−12,431.7
+−35.4819
+0
+5
+−12.4751
+−5780.9
+0
+0.0145966
+6
+−10.1504
+−270.194
+0
+0.0074803
+Fig. 1. Model predicted equilibrium vapour phase CO2 partial pressure compared to published measurements for 30 %wt MEA. Comparison of equilibrium 
+vapour phase CO2 partial pressure versus CO2 loading (molCO2/molMEA) predicted by the model used in this study (solid red line) and the CCSI model (dotted black 
+line) with measurements published by Aronu et al. (2011) (solid blue circles), Jou et al. (1995) (solid orange diamonds), Hilliard (2008) (open green squares), Shen 
+and Li (1992) (blue stars), Lee et al. (1976) corrected for the CO2 loading measurement error described in Jou et al. (1995) (red crosses), Xu and Rochelle (2011)
+(solid green squares), Dugas and Rochelle (2009) (solid brown triangles), Ma'mun et al. (2005) (green x’s), and Tong (2012) (open purple triangles) for 30 %wt 
+aqueous MEA at 40 ◦C (a), 60 ◦C (b), 80 ◦C (c), 100 ◦C (d) and 120 ◦C (e).
+R. Cownden and M. Lucquiaud                                                                                                                                                                                                              
+Carbon Capture Science & Technology 19 (2026) 100625 
+3 
+
+
+=== PDF page 4 of 14 ===
+corresponds to typical operating conditions for regenerator reboilers in 
+flue gas capture applications using MEA solvent (refer to Supplementary 
+Material for additional details). The Aronu et al. dataset has a more 
+comprehensive range of conditions than other available CO2 solubility 
+datasets and fitting the predicted vapour phase CO2 partial pressure to 
+this dataset was found to reduce the deviation between CO2 capture rate 
+predicted by the full process model and available pilot plant data. Pre­
+vious studies have used a variety of equilibrium constant parameters for 
+the dissociation of protonated MEA reaction 4 and carbamate reversion 
+to bicarbonate reaction 5. We found that including the equilibrium 
+constant parameters for these two reactions in the regression analysis 
+reduced deviations between the model predicted vapour phase CO2 
+partial pressure and the dataset.
+The equilibrium vapour phase CO2 partial pressure predicted by the 
+new model shows good agreement with published measurements and 
+provides similar results as the CCSI model with some notable exceptions 
+where the model in this study more closely aligns with the published 
+data (Fig. 1 for 30 %wt MEA and Supplementary Figures S1 and S2 for 
+15/45 %wt MEA). For example, at 120 ◦C and 30/45 %wt MEA, the CCSI 
+model predicts equilibrium vapour phase CO2 partial pressure substan­
+tially higher than the range of published data for CO2 loading greater 
+than 0.40 – up to 73 % higher than Aronu et al. (2011). The new model 
+developed in this study predicts 5–14 % higher CO2 partial pressure for 
+30 %wt MEA at 40 ◦C over the full range of CO2 loading from 0.05 to 
+0.50. Over the ranges of 40–120 ◦C, 15–45 %wt MEA, and 0.05–0.50 
+solvent CO2 loading, the model developed in this study more closely 
+aligns with the Aronu et al. (2011) data (refer to Supplementary 
+Table S3 for a detailed comparison between vapour phase CO2 partial 
+pressures predicted by the two models and reported data). The ionic 
+species distribution predicted by the model developed in this study 
+shows good agreement with measurements reported in B¨ottinger et al. 
+(2008) – root-mean square deviation (RMSD) of 12 % over 20–80 ◦C for 
+30 %wt MEA. The vapour-liquid equilibrium of the MEA-water binary 
+system shows good agreement with measurements reported in Belabbaci 
+et al. (2009) – RMSD of 7 % between measured and predicted MEA 
+vapour fraction over 20–90 ◦C for 31.4 %wt (5 M) MEA. Heat of CO2 
+absorption, an important factor in estimating regenerator energy re­
+quirements, shows good agreement with reported data at 120 ◦C, a 
+typical regenerator operating temperature for MEA (Supplementary 
+Figure S3).
+2.3. Kinetically controlled reactions
+The absorber is modelled assuming that the proton exchange re­
+actions (Eqs. (2), (4), and (5)) follow equilibrium while the overall re­
+actions between MEA and CO2 and between CO2 and hydroxide ions 
+(Eqs. (8) and (9)) are kinetically limited (Amirkhosrow et al., 2020). The 
+forward kinetic rate constants (Eqs. (10) and (11)) are based on Hikita 
+et al. (1977) and Pinsent et al. (1956) respectively from the MEA-based 
+flue gas CO2 capture template available in Aspen Plus (ASPEN TECH­
+NOLOGY INC., 2014; Zhang and Chen, 2013). The reverse kinetic rate 
+constants (Eqs. (12) and (13)) were regressed over a temperature range 
+of 20–80 ◦C following the methodologies described in Zhang et al. 
+(2009) and Amirkhosrow et al. (2020) to ensure accurate approach to 
+equilibrium over the range of typical absorber bed temperatures. Kinetic 
+rate constants for the absorber use a mole gamma basis with an exponent 
+of zero for water. Similar to the CCSI model, the regenerator in this study 
+is modelled assuming chemical equilibrium (Soares Chinen et al., 2018). 
+Model runs completed in this study comparing predicted regenerator 
+performance with equilibrium reactions and kinetic reactions produced 
+nearly identical results. 
+MEA + CO2 + H2O⇌MEACOO−+ H3O+
+(8) 
+CO2 + OH−⇌HCO−
+3
+(9) 
+k+8, abs = 3.02E14 exp
+(−4.12643E7
+R TL
+)
+(10) 
+k+9, abs = 1.33E17 exp
+(−5.54709E7
+R TL
+)
+(11) 
+k−8,abs = 8.49E19 exp
+(−4.778E7
+R TL
+)
+(12) 
+k−9,abs = 2.526E16 exp
+(−1.050E8
+R TL
+)
+(13) 
+Where ‘+’ and ‘-’ refer to the forward/reverse direction respectively 
+for the reactions in Eqs. (8) and (9), R is the ideal gas constant (8314.46 
+J/kmol-K), and TL has units of K.
+2.4. Mass transfer and liquid holdup
+Mass transfer in the Aspen Plus rate-based framework is based on the 
+two-film theory (ASPEN TECHNOLOGY INC., 2019). Mass transfer co­
+efficients, interfacial area, and liquid holdup in the columns are 
+modelled with user transport subroutines created for this study based on 
+correlations developed by Tsai (2010) and Song et al. (2018). The mass 
+transfer and liquid holdup correlations are based on the original re­
+gressions to retain broad validity. The liquid and gas film mass transfer 
+coefficients for each species s (kL,s and kG,s) are calculated based on Eqs. 
+(14) and (15) (Song et al., 2018). 
+kL,s = 0.12u0.565
+L
+(ρL
+μL
+)0.4D0.5
+L,s g0.167
+A0.065
+p
+(1.8
+Z
+)0.54
+(14) 
+kG,s = 0.28u0.62
+G
+(ρG
+μG
+)0.12
+D0.5
+G,sA0.38
+p
+(sin2β)0.65
+(15) 
+Where Ap is the specific surface area of the packing per unit volume 
+(m2/m3), ρL is the liquid density (kg/m3), uL is superficial liquid velocity 
+(m/s), g is the acceleration of gravity (9.8067 m/s2), μL is the liquid 
+viscosity (Pa-s), DL,s is the diffusivity of species s in the liquid phase (m2/ 
+s), Z is the height of packing elements between liquid redistribution (m), 
+β is the packing corrugation angle, uG is the gas superficial velocity (m/ 
+s), ρG is the gas density (kg/m3), μG is the gas viscosity (Pa-s), and DG,s is 
+the diffusivity of species s in the gas phase (m2/s).
+The effective interfacial area (Ae) of the packing is determined from 
+eqn. (16) (Song et al., 2018). 
+Ae = 1.16ηAp
+[
+ρLuLg0.5
+σA1.5
+p
+]0.138
+(16) 
+Where the packing correction factor (η) is 1.0 for structured stainless 
+steel packing in the pre-loading zone (<400 Pa/m pressure drop) and 
+1.15 in the loading zone (≥400 Pa/m pressure drop) (Song et al., 2018) 
+and σ is the liquid surface tension (N/m).
+Liquid holdup volume (VL) in each stage is calculated using eqn. (17)
+(Tsai, 2010). 
+VL = 6.94ACz
+[
+uL
+ApS2g0.667
+(μL
+ρL
+)0.333]0.573
+(17) 
+Where AC is the packing cross sectional area (m2), z is the stage 
+height (m), and S is the packing channel side length (m). This liquid 
+holdup correlation is applicable for structured packing but could be 
+replaced with a suitable correlation for random packing to extend the 
+methodology.
+The Chilton-Colburn analogy is assumed to estimate heat transfer 
+coefficients based on the mass transfer coefficients.
+The liquid film is discretized with reactions (10 points with geo­
+metric discretization ratio of 2 based on results of Amirkhosrow et al. 
+R. Cownden and M. Lucquiaud                                                                                                                                                                                                              
+Carbon Capture Science & Technology 19 (2026) 100625 
+4 
+
+
+=== PDF page 5 of 14 ===
+(2020)) and the gas film is included. A countercurrent flow model is 
+used for the absorber (to improve temperature predictions near inlet­
+s/outlets) and a mixed flow model is used for the regenerator (to 
+improve model stability). A VPlug flow model can also be used for the 
+absorber, if necessary, to improve model stability with similar (slightly 
+lower) results for CO2 capture rate prediction.
+2.5. Pilot plant data
+This study utilises four datasets of post-combustion CO2 capture with 
+aqueous MEA solvent from three different test facilities covering a wide 
+range of scale, process conditions, and column dimensions to validate 
+the process model (Table 2): laboratory-scale data from the University of 
+Stuttgart (Notz et al., 2012), the NCCC pilot plant (Morgan et al., 2018), 
+and TCM (Faramarzi et al., 2017; Bui et al., 2020). A selection of 12 of 47 
+points in the Stuttgart dataset was used to provide a range of liquid flow 
+rates and CO2 capture rates. Raw data (Uhrig, 2025) from five stable 
+operating conditions in the NCCC pilot plant testing described in Morgan 
+et al. (2018) were used in this study. Additional information on the data 
+used is available in the Supplementary Material.
+A key difference between these datasets is the height of the columns 
+which are substantially taller in the large-scale pilot plants compared to 
+the Stuttgart laboratory-scale plant. Taller columns more closely 
+approach equilibrium leading to higher capture rates in the absorber and 
+lower specific reboiler duty in the regenerator and can exhibit operating 
+characteristics that are not present in shorter columns which are typi­
+cally controlled by mass transfer rate limitations. The CO2 capture rate 
+was calculated as the average of the four different methods described in 
+the Supplementary Material. The Stuttgart and NCCC datasets have 
+relatively low rich solvent CO2 loading and high absorber liquid flux 
+compared to TCM. Equilibrium CO2 fugacity increases considerably at 
+CO2 loading greater than 0.40 (Fig. 1) which can contribute to a mass 
+transfer pinch in the absorber, while liquid flux affects the packing 
+effective mass transfer area (Tsai et al., 2011). Temperature measure­
+ments reported for the TCM pilot plant are more thorough and robust 
+than the other facilities because each reported value is an average of 4 
+measurements at that elevation distributed across the column. NCCC 
+reports temperature measurements at a single location which is more 
+susceptible to the effects of flow maldistribution within the packing. The 
+Stuttgart pilot reported liquid temperatures at the redistribution points 
+within the column which provides an average liquid temperature but at 
+fewer locations than the TCM plant.
+Each datapoint was modelled using closed-loop process simulations 
+with the rich solvent outlet from the absorber used as input to the 
+regenerator and the lean solvent input to the absorber adjusted to match 
+the lean solvent loading returning from the regenerator. Closed-loop 
+simulations were used to replicate how process models are used in the 
+design of CO2 capture plants with a priori knowledge to establish vessel 
+geometry and operating parameters. The following reported measure­
+ments were taken as fixed inputs to the process model: 
+• absorber gas inlet flow, temperature, pressure, and composition
+• absorber gas outlet pressure
+• absorber liquid inlet flow, temperature, and MEA fraction
+• regenerator rich solvent and condenser reflux inlet temperature
+• regenerator pressure and heat input
+The CO2 capture rate in the absorber, lean solvent CO2 loading, and 
+temperature profiles in the absorber and regenerator columns predicted 
+by the new process model and the CCSI model were compared with 
+reported measurements. All CO2 capture rates in this study refer to 
+gross-CO2 capture in the absorber (i.e., including CO2 associated with 
+ambient air used for combustion of fuel). Lean and rich solvent CO2 
+loadings were chosen as degrees of freedom to close the loop in the 
+process model because these measurements typically have higher un­
+certainty compared with other reported measurements (Morgan et al., 
+2018). The lean-rich cross heat exchanger was modelled for each data­
+point to provide an additional check on the mass-energy balance of the 
+reported data.
+Heat loss from the regenerator is a much higher proportion of heat 
+input for the University of Stuttgart laboratory-scale equipment 
+compared to the larger pilot plants. Regenerator heat loss (distributed 
+along vessel height) was adjusted in the process model for each Stuttgart 
+datapoint to match the predicted excess regenerator reflux condensate 
+draw-off with the reported measurement. Heat loss was neglected for the 
+other datasets from the larger pilot plants (and no heat loss estimates are 
+reported with data from these plants).
+3. Results and discussion
+3.1. University of Stuttgart pilot data
+The CO2 capture rate predicted by the new process model more 
+closely aligns with measured data from the University of Stuttgart re­
+ported in Notz et al. (2012) than the CCSI model – RMSD of 2.8 pp v. 6.8 
+pp (Fig. 2). The lean solvent CO2 loading predicted by the two models 
+are similar (RMSD of 0.015 v. 0.017 molCO2/molMEA); however, because 
+of the substantial difference in predicted CO2 capture, the rich solvent 
+CO2 loading predicted by the new model is closer to the reported data 
+(RMSD of 0.016 v. 0.034 molCO2/molMEA). Case “Exp 17″ in the data 
+from the University of Stuttgart is the only case used in this study which 
+was operating in the loading zone (569 Pa/m); all other cases were in the 
+pre-loading zone.
+Heat loss from the regenerator materially affects the energy balance 
+of the Stuttgart pilot plant and the predicted lean solvent CO2 loading 
+from the regenerator. The average regenerator heat loss calculated by 
+the new process model is 1.04 kW and 1.56 kW for the CCSI model (v. 
+average regenerator heat input of 11.6 kW). There is substantial vari­
+ability between cases for both models (0.66–1.55 kW for the new model, 
+1.00–2.16 kW for CCSI), which is inconsistent with the relatively stable 
+operating temperature profile in the regenerator column between cases. 
+Table 2 
+Summary of CO2 capture plant data used in this study. Range of key process 
+parameters and column geometry for the data used to validate the process model 
+in this study from the University of Stuttgart (Notz et al., 2012), NCCC (Uhrig, 
+2025), and TCM (Faramarzi et al., 2017; Bui et al., 2020).
+Stuttgart
+NCCC
+TCM
+captured CO2 (tCO2/d)
+0.11–0.16
+5.1–9.7
+49–80
+absorber liquid flux (m3/ 
+m2-h)
+6.1–20
+9.7–26
+3.9–7.8
+absorber gas F-factor 
+(Pa0.5)
+1.6–2.1
+1.1–2.3
+1.3–2.7
+inlet gas CO2 ( %mol)
+5.2–10.9
+9.0–11
+3.6–4.1
+MEA mass fraction (CO2- 
+free)
+0.29–0.34
+0.27–0.31
+0.28–0.31
+lean solvent CO2 loading 
+(mol/mol)
+0.10–0.27
+0.08–0.24
+0.14–0.20
+rich solvent CO2 loading 
+(mol/mol)
+0.30–0.42
+0.38–0.46
+0.48–0.53
+CO2 capture rate
+75–91 %
+94–99 %
+86–97 %
+regenerator reboiler duty 
+(kW)
+6.8–17.5
+416–436
+2426–3323
+absorber packing 
+dimensions (m)
+0.125×4.2
+0.64×6.0–12.1
+3.5 × 2 × 24
+absorber packing
+Mellapak 
+250Y
+Mellapak 252Y
+Flexipac 2X
+absorber model stages
+70
+90
+92
+regenerator packing 
+dimensions (m)
+0.125×2.52
+0.59×12.1
+1.3 × 9.6
+regenerator packing
+Mellapak 
+250Y
+Mellapak 252Y
+Flexipac 2X / 
+Flexipac 2Y
+regenerator model stages
+71
+71
+60
+number of data points 
+used
+12
+5
+6
+R. Cownden and M. Lucquiaud                                                                                                                                                                                                              
+Carbon Capture Science & Technology 19 (2026) 100625 
+5 
+
+
+=== PDF page 6 of 14 ===
+Heat losses calculated by both models exceed the calculated values in 
+Notz et al. (2012) – 0.48–1.11 kW with an average of 0.84 kW.
+The largest deviations between CO2 capture rate predicted by the 
+CCSI model and the measured data are correlated with cases with higher 
+rich solvent CO2 loading (Fig. 3). There does not appear to be a corre­
+lation between absorber liquid flux and deviations between model 
+predicted CO2 capture rates and reported measurements; however, 
+increasing absolute magnitude of deviations between the new process 
+model and reported measurements at liquid flux less than 12 m3/m2-h 
+may be indicative of increasing instrumentation error and/or flow 
+maldistribution at reduced liquid flow rates.
+The absorber temperature profiles predicted by the new process 
+model are closer to the reported data than the CCSI model for the 
+operating conditions in Notz et al. (2012) (Fig. 4) – overall RMSD for the 
+12 test conditions of 0.9 ◦C versus 1.8 ◦C for the CCSI model. The new 
+process model and the CCSI model both predict regenerator temperature 
+profiles very similar to the data reported in Notz et al. (2012) – overall 
+RMSD over the 12 test conditions of 0.9/0.8 ◦C respectively (Fig. 5). The 
+reported accuracy of the temperature measurements in Notz et al. 
+(2012) is 0.1 ◦C.
+3.2. NCCC pilot data
+The new process model and the CCSI model both accurately predict 
+CO2 capture rates and lean solvent CO2 loadings for the NCCC operating 
+conditions (Fig. 6) – RMSD of 1.1 pp and 0.007 molCO2/molMEA 
+respectively for the new model versus 1.4 pp and 0.005 molCO2/molMEA 
+for the CCSI model. The differences in RMSDs for CO2 capture rate and 
+lean solvent CO2 loading between the two models for the NCCC cases are 
+not significant relative to expected measurement uncertainties in the 
+reported data.
+The new process model more accurately predicts the absorber tem­
+perature profiles for the NCCC data than the CCSI model with a RMSD of 
+4.0 ◦C v. 8.0 ◦C (Fig. 7). The new model provides a considerably more 
+accurate prediction of absorber temperature profile for case NCCC-3 and 
+more accurately predicts the temperature rise near the bottom of the 
+absorber for 3 of the other 4 cases. The two models predict similar 
+regenerator temperature profiles which closely align with the reported 
+data – RMSDs of 1.3 ◦C for both models (Fig. 8). Both models consis­
+tently overpredict the regenerator temperature profile by approximately 
+2 ◦C in case NCCC-5. Differences between the regenerator temperature 
+profiles predicted by the model are not significant relative to expected 
+measurement uncertainties in the reported data.
+3.3. TCM pilot data
+The CO2 capture rate and lean solvent CO2 loading predicted by the 
+new process model more closely align with the measured data from TCM 
+reported in Faramarzi et al. (2017) and Bui et al. (2020) (Fig. 9) – RMSD 
+of 1.0 pp and 0.011 molCO2/molMEA for the new model respectively 
+Fig. 2. Model results compared with reported data from University of Stuttgart. Absolute difference between the CO2 capture rate (panel a) and lean solvent 
+CO2 loading (panel b) predicted by the process model developed in this study (light blue circles) and the CCSI model (purple squares) and measured data reported for 
+the University of Stuttgart laboratory facility based on the process conditions reported in Notz et al. (2012).
+Fig. 3. Analysis of CO2 capture rate deviation for University of Stuttgart data. Absolute difference between CO2 capture rate reported for the University of 
+Stuttgart laboratory facility and the CO2 capture rate predicted by the process model developed in this study (light blue circles) and the CCSI model (purple squares) 
+versus measured rich solvent CO2 loading (molCO2/molMEA) (panel a) and measured absorber liquid flux (m3/m2-h) (panel b). Based on the process conditions 
+reported in Notz et al. (2012).
+R. Cownden and M. Lucquiaud                                                                                                                                                                                                              
+Carbon Capture Science & Technology 19 (2026) 100625 
+6 
+
+
+=== PDF page 7 of 14 ===
+versus 3.3 pp and 0.024 molCO2/molMEA for the CCSI model. In partic­
+ular, the CCSI model overpredicted CO2 capture rate by 2.5–4.9 pp for 
+datapoints with high rich solvent CO2 loading (>0.485 molCO2/molMEA 
+as predicted by the models). Two factors contributing to the higher 
+capture rate predicted by the CCSI model in these four cases are (1) 
+lower equilibrium CO2 fugacity at high CO2 loading (>0.40 molCO2/­
+molMEA) and the absorber temperature in the TCM process conditions (c. 
+40–60 ◦C), and (2) lower lean solvent CO2 loading exiting the regener­
+ator despite similar or higher rich solvent CO2 loading leaving the 
+absorber. Despite the increased dependence of interfacial area on liquid 
+flux in the CCSI model due to the omission of the Froude number in the 
+liquid mass transfer coefficient correlation, the relative reduction in the 
+Aspen Plus liquid phase “overall binary mass transfer coefficients” 
+(product of interfacial area, mass transfer coefficient, and molar density) 
+calculated by the CCSI model at lower liquid flux was smaller than the 
+new process model because of higher sensitivity of the mass transfer 
+coefficient to liquid flux in the correlation used in the new model.
+The new process model more accurately predicts the temperature 
+profile in the absorber (Fig. 10) for the TCM operating conditions re­
+ported in Faramarzi et al. (2017) and Bui et al. (2020) than the CCSI 
+model – overall RMSD over the six test conditions of 1.3 ◦C in this study 
+versus 3.4 ◦C for the CCSI model. The new process model predicts a 
+regenerator temperature profile very similar to the CCSI model for the 5 
+test points in Bui et al. (2020) but is closer to the data reported in Far­
+amarzi et al. (2017) resulting in a slight improvement in overall RMSD 
+over the six test conditions of 2.0 ◦C versus 2.2 ◦C (Fig. 11).
+3.4. Summary of pilot plant comparisons
+The new process model provides similar or improved predictions of 
+CO2 capture rate and lean solvent CO2 loading for all the datasets 
+assessed (Table 3). The overall RMSD for CO2 capture rate for all 23 
+datapoints is 2.1 pp for the new model compared to 5.3 pp for the CCSI 
+model. The overall RMSD for lean solvent CO2 loading is similar for the 
+new model and CCSI model (0.014 and 0.017 molCO2/molMEA respec­
+tively). Absorber temperature profiles predicted by the new model more 
+closely align with the data reported for the Stuttgart, NCCC, and TCM 
+pilot plants while the regenerator temperature profiles predicted by the 
+two models are similar.
+3.4.1. University of Stuttgart
+The mass transfer and chemistry parameters in the CCSI model were 
+regressed using wetted wall column data (Dugas, 2009) and 
+laboratory-scale absorber data (Tobiesen et al., 2007). The Tobiesen 
+et al. (2007) data included 20 points over a liquid flux range of 10–31 
+m3/m2-h and many points with rich solvent loading lower than the 
+range anticipated for economically viable CO2 capture plants (12 of 20 
+points <0.35 molCO2/molMEA, only 2 of 20 points >0.44 molCO2/­
+molMEA). Similar to the University of Stuttgart pilot plant, Tobiesen et al. 
+used a shorter absorber column (4.4 m) than commercial-scale absorbers 
+and achieved low CO2 capture rates (all 20 points <86 %, 19 of 20 points 
+<81 %). Interphase CO2 mass transfer rates under these conditions are 
+not strongly affected by bulk liquid equilibrium/kinetic limitations. 
+Within that range of liquid flux and low rich solvent loading, the CCSI 
+model and the new process model produce similar results that generally 
+align with reported measurements. Outside of those ranges some 
+important deviations develop under certain operating conditions.
+For rich solvent CO2 loading >0.35 molCO2/molMEA, the CCSI model 
+underpredicted CO2 capture rate by 7–11 pp while the new model 
+aligned with the reported data within −3/+5 pp. The CCSI model 
+Fig. 4. Model predicted absorber temperature profiles compared with reported data from University of Stuttgart. Liquid temperature profile in the absorber 
+predicted by the process model developed in this study (solid light blue lines) and the CCSI model (dashed purple lines) compared with measured data (dark blue 
+circles) reported in Notz et al. (2012). Figure panel labels refer to case numbers in Notz et al. (2012).
+R. Cownden and M. Lucquiaud                                                                                                                                                                                                              
+Carbon Capture Science & Technology 19 (2026) 100625 
+7 
+
+
+=== PDF page 8 of 14 ===
+predicted lower mass transfer due to calculated interfacial area (c. 
+20–30 % lower, correlation omitting Froude number dependence) and 
+liquid mass transfer coefficients (c. 80–90 % lower) substantially lower 
+than the new model. The CCSI model uses the Billet and Schultes cor­
+relation for mass transfer coefficients with the CL/CG constants and bi­
+nary diffusion coefficients regressed to fit the Dugas (2009) and 
+Tobiesen et al. (2007) data (Soares Chinen et al., 2018). The CCSI model 
+predicts lower concentration of unreacted MEA at the interface than the 
+new model leading to higher solvent CO2 fugacity (Fig. 12). The limi­
+tation to interphase CO2 transfer in the CCSI model in these cases is the 
+concentration gradient between the bulk liquid and the interface. Re­
+action kinetics are strongly dependent on MEA concentration in the CCSI 
+model which amplifies the effect on CO2 mass transfer for cases with 
+higher solvent CO2 loading (e.g., 0.39 molCO2/molMEA in EXP36 v. 0.30 
+molCO2/molMEA in EXP41). Furthermore, cases with higher capture rate 
+(e.g., 91 % in EXP41) have lower CO2 flux near the top of the absorber 
+due to depletion of vapour phase CO2 which mitigates the effect of 
+differences in the mass transfer coefficients. Bulk liquid CO2 fugacity 
+away from the vapour-liquid interface remains low with the Stuttgart 
+operating conditions.
+Fig. 5. Model predicted regenerator temperature profiles compared with reported data from University of Stuttgart. Liquid temperature profile in the 
+regenerator predicted by the process model developed in this study (solid light blue lines) and the CCSI model (dashed purple lines) compared with measured data 
+(dark blue circles) reported in Notz et al. (2012). Figure panel labels refer to case numbers in Notz et al. (2012).
+Fig. 6. Model results compared with reported data from NCCC. Absolute difference between the CO2 capture rate (panel a) and lean solvent CO2 loading (panel 
+b) predicted by the process model developed in this study (light blue circles) and the CCSI model (purple squares) and measured data reported for the NCCC pilot 
+facility (Uhrig, 2025).
+R. Cownden and M. Lucquiaud                                                                                                                                                                                                              
+Carbon Capture Science & Technology 19 (2026) 100625 
+8 
+
+
+=== PDF page 9 of 14 ===
+Fig. 7. Model predicted absorber temperature profiles compared with reported data from NCCC. Interface temperature profile in the absorber predicted by the 
+process model developed in this study (solid light blue lines) and the CCSI model (dashed purple lines) compared with measured data (dark blue circles) reported for 
+the NCCC pilot facility (Uhrig, 2025).
+Fig. 8. Model predicted regenerator temperature profiles compared with reported data from NCCC. Interface temperature profile in the regenerator predicted 
+by the process model developed in this study (solid light blue lines) and the CCSI model (dashed purple lines) compared with measured data (dark blue circles) 
+reported for the NCCC pilot facility (Uhrig, 2025).
+Fig. 9. Model results compared with reported data from TCM. Absolute difference between the CO2 capture rate (panel a) and lean solvent CO2 loading (panel b) 
+predicted by the process model developed in this study (light blue circles) and the CCSI model (purple squares) and measured data reported for the TCM pilot facility 
+based on the process conditions reported in Faramarzi et al. (2017) and Bui et al. (2020).
+R. Cownden and M. Lucquiaud                                                                                                                                                                                                              
+Carbon Capture Science & Technology 19 (2026) 100625 
+9 
+
+
+=== PDF page 10 of 14 ===
+3.4.2. NCCC
+The binary mass transfer coefficients calculated by the new model for 
+the NCCC pilot plant data were higher than the CCSI model by a factor of 
+approximately 3–4. Yet the overall capture rate predictions were similar 
+in most cases because interphase CO2 mass transfer was constrained by 
+the vapour phase CO2 approaching the bulk solvent equilibrium CO2 
+fugacity at the top of the absorber (Fig. 13).
+For the NCCC-3 and NCCC-5 cases, the CCSI model predicted a CO2 
+capture rate c. 3 pp lower than the new model. In both cases this was due 
+to lower concentration of unreacted MEA at the interface leading to 
+increased solvent CO2 fugacity for the reasons discussed in Section 3.4.1. 
+While the capture rate and absorber temperature profile predicted by 
+the new model more closely aligned with the reported data for the 
+NCCC-3 case, the CCSI model results more closely matched the reported 
+data for the NCCC-5 case. This divergence indicates that other factors 
+such as flow distribution may be contributing to the reported results 
+(case NCCC-5 had considerably lower solvent flow rate than any of the 
+other NCCC cases).
+Case NCCC-5 had the lowest lean solvent loading (0.075 molCO2/ 
+molMEA) in the validation dataset. Both models predicted lean loading 
+consistent with reported data (within c. 0.01 molCO2/molMEA deviation) 
+but overpredicted the temperature profile through the entire regener­
+ator. This test point has substantially lower solvent flow rate than the 
+other four cases (3390 kg/h v. 7081–9370 kg/h rich solvent) which may 
+have contributed to flow maldistribution in the regenerator. Nonethe­
+less, there is very little published vapour-liquid equilibrium data avail­
+able at typical regenerator temperatures (100–120 ◦C) and solvent CO2 
+loading less than 0.15 molCO2/molMEA to validate chemistry models for 
+MEA-CO2-water – 3 measurements each at 100/120 ◦C and 30 %wt 
+MEA, 1 measurement each at 100/120 ◦C and 15 %wt MEA, and 1 
+Fig. 10. Model predicted absorber temperature profiles compared with reported data from TCM. Interface temperature profile in the absorber predicted by the 
+process model developed in this study (solid light blue lines) and the CCSI model (dashed purple lines) compared with measured data (dark blue circles) reported for 
+the TCM pilot facility in Faramarzi et al. (2017) (panel a) and test cases ICL_7 (b), ICL_9 (c), ICL_11 (d), ICL_12 (e), and ICL_13 (f) in Bui et al. (2020).
+Fig. 11. Model predicted regenerator temperature profiles compared with reported data from TCM. Interface temperature profile in the regenerator predicted 
+by the process model developed in this study (solid light blue lines) and the CCSI model (dashed purple lines) compared with measured data (dark blue circles) 
+reported for the TCM pilot facility in Faramarzi et al. (2017) (panel a) and test cases ICL_7 (b), ICL_9 (c), ICL_11 (d), ICL_12 (e), and ICL_13 (f) in Bui et al. (2020).
+Table 3 
+Summary of RMSDs between model predicted values and reported mea­
+surements. RMSDs for CO2 capture rate, lean solvent CO2 loading, and 
+absorber/regenerator temperature profiles predicted by the process model 
+developed in this study and the CCSI process model compared to measurements 
+reported for the Stuttgart laboratory pilot (Notz et al., 2012), the NCCC pilot 
+plant (Morgan et al., 2018), and the TCM pilot plant (Faramarzi et al., 2017; Bui 
+et al., 2020).
+dataset/model
+CO2 
+capture 
+rate (pp)
+lean CO2 
+loading 
+(molCO2/ 
+molMEA)
+absorber 
+temperature 
+profile (◦C)
+regenerator 
+temperature 
+profile (◦C)
+Stuttgart
+​
+​
+​
+​
+new model
+2.8
+0.017
+0.9
+0.9
+CCSI
+6.8
+0.015
+1.8
+0.8
+NCCC
+​
+​
+​
+​
+new model
+1.1
+0.007
+4.0
+1.3
+CCSI
+1.4
+0.005
+8.0
+1.3
+TCM
+​
+​
+​
+​
+new model
+1.0
+0.011
+1.3
+2.0
+CCSI
+3.3
+0.024
+3.4
+2.2
+R. Cownden and M. Lucquiaud                                                                                                                                                                                                              
+Carbon Capture Science & Technology 19 (2026) 100625 
+10 
+
+
+=== PDF page 11 of 14 ===
+measurement at 120 ◦C and 45 %wt MEA. This gap in published equi­
+librium data is notable because recent studies have advocated operating 
+post-combustion CO2 absorbers with lean solvent loading <0.15 
+molCO2/molMEA to reduce the energy penalty associated with achieving 
+a high CO2 capture rate (Michailos and Gibbins, 2022; Mullen and 
+Lucquiaud, 2024). The cases in the validation dataset with lean solvent 
+loading closest to NCCC-5 were EXP16 and EXP40 from the University of 
+Stuttgart (0.10 and 0.11 molCO2/molMEA respectively). The regenerator 
+temperature profiles predicted by both models for these cases closely 
+aligned with the reported data.
+3.4.3. TCM
+Lower lean solvent loading calculated by the CCSI regenerator model 
+compared to the new process model accounts for approximately half of 
+the CO2 capture overprediction by the CCSI model for the TCM cases. 
+The rich solvent MEA is nearly depleted based on reaction stoichiom­
+etry. Capture rate in this condition is approximately a linear function of 
+predicted lean solvent loading.
+However, the CCSI model also predicts faster reaction kinetics in the 
+absorber than the new model which reduces the predicted solvent CO2 
+fugacity and leads to higher predicted mass transfer. Fig. 14a provides 
+the profile of solvent CO2 fugacity and vapour CO2 partial pressure 
+predicted in the absorber for Case ICL_11 in Bui et al. (2020). The 
+equilibrium solvent CO2 fugacity downstream of the absorber in the two 
+models is very similar (c. 1.5 kPa). However, the new process model 
+predicts slower MEA-CO2 reaction kinetics leading to solvent CO2 
+fugacity considerably higher than equilibrium within the packing and a 
+mass transfer pinch near the bottom of the absorber. This result contrasts 
+with the Stuttgart data where bulk liquid CO2 fugacity remained low due 
+to higher temperature in the absorber packing and smaller increase in 
+solvent CO2 loading in the short absorber column. Faster kinetics also 
+explain the higher deviations in temperature profile in the lower portion 
+of the absorber for the CCSI model compared to reported TCM mea­
+surements because the increased rate of CO2 absorption near the bottom 
+of the column increases the temperature profile in that part of the tower. 
+This reaction kinetics effect is not apparent in the NCCC data because the 
+substantially higher inlet gas CO2 concentration – 9.0–11.0 %mol v. 
+3.6–4.1 %mol in the TCM data – reduces the significance of deviations in 
+the predicted solvent CO2 fugacity to the mass transfer calculations. 
+Higher inlet gas CO2 concentration also leads to higher absorber bed 
+temperature than the TCM cases which increases the reaction rates such 
+that they do not materially constrain interphase CO2 transfer.
+The CCSI model predicts slightly more CO2 flashing off prior to the 
+regenerator inlet and more rapid approach between liquid and vapour 
+CO2 fugacity than the new model. This causes lower predicted outlet 
+lean solvent loading with the regenerator heat input fixed based on the 
+reported data (Fig. 14b). The CCSI model uses the same mass transfer 
+model parameters in the regenerator that were regressed based on MEA- 
+Fig. 12. Model predicted absorber composition profiles for stuttgart cases. Profiles of liquid MEA mole fraction at the interface (solid lines, RHS), solvent CO2 
+fugacity at the interface (dashed lines, LHS), and bulk solvent CO2 fugacity (dotted lines, LHS) in the absorber predicted by the process model developed in this study 
+(light blue lines) and the CCSI model (purple lines) for stuttgart test cases EXP36 and EXP41 in Notz et al. (2012). Liquid/gas flow rates and inlet gas CO2 con­
+centration are similar in the two cases, but EXP36 has higher rich solvent CO2 loading than EXP41 (0.39 v. 0.30 molCO2/molMEA) and lower CO2 capture (76 % v. 
+91 %).
+Fig. 13. Model predicted absorber CO2 profiles for NCCC cases. Vapour CO2 partial pressure (solid lines) and bulk liquid CO2 fugacity (dashed lines) profiles in 
+the absorber predicted by the process model developed in this study (light blue lines) and the CCSI model (purple lines) for the NCCC-3 (left panel) and NCCC-5 (right 
+panel) conditions.
+R. Cownden and M. Lucquiaud                                                                                                                                                                                                              
+Carbon Capture Science & Technology 19 (2026) 100625 
+11 
+
+
+=== PDF page 12 of 14 ===
+CO2 absorber data.
+3.5. Other mass transfer and chemistry models
+Numerous different permutations of mass transfer and chemistry 
+models were investigated during development of the new process model. 
+The effect of different chemistry models on the predicted CO2 capture 
+rate and column temperature profiles was found to be more important 
+for the larger pilot plant conditions than the laboratory-scale data due to 
+closer approach to equilibrium and/or kinetic limitations. This was 
+particularly the case for test cases with high rich solvent CO2 loading. 
+Published CO2 solubility data for aqueous MEA exhibits a substantial 
+range (e.g., c. ±30 % at 40 ◦C and 30 %wt. MEA); however we found 
+that mass transfer pinches demonstrated in large-scale pilot plants could 
+best be predicted by models approximating the data published in Aronu 
+et al. (2011) which also resulted in CO2 fugacity predictions similar to 
+the CCSI model for many, but not all, conditions. Similar to Amir­
+khosrow et al. (2020) and Zhang et al. (2009), we found that it was 
+possible to create process models based on the Bravo-Rocha-Fair mass 
+transfer correlations (Bravo et al., 1985) (e.g., with the CCS template 
+model provided in the Aspen Plus example library) which reasonably 
+matched laboratory-scale absorber data and that these correlations more 
+closely aligned with the reported data than other standard correlations 
+available in Aspen Plus (e.g., Billet and Schultes (1999)); however, the 
+results from these models aligned poorly with the large-scale pilot data 
+used in this study when those models were scaled up.
+4. Conclusion
+Accurate models for regenerative amine absorption processes are 
+important to support development and deployment of CO2 capture and 
+storage as a key technology to mitigate GHG emissions. The widely used 
+CCSI model for MEA-based CO2 capture was developed by matching 
+performance from laboratory-scale equipment which can lead to bias 
+and inaccuracy in model predictions due to process conditions and ge­
+ometry which deviate from industrial-scale equipment. An improved 
+flue gas CO2 capture process model for aqueous MEA has been devel­
+oped and validated against pilot plant data from three different facilities 
+covering a wide range of compositions (3.6–11 %mol inlet gas CO2 
+concentration and 0.08–0.27 molCO2/molMEA lean solvent loading), 
+liquid fluxes (3.9–26 m3/m2-h), CO2 capture rates (75–99 %), and ge­
+ometries, including column heights that are representative of commer­
+cial equipment (up to 24 m in the absorber and 12 m in the regenerator). 
+The new process model includes regressed thermodynamic and chem­
+istry parameters which improve the prediction of CO2 partial pressure 
+for 15–45 %wt MEA and 40–120 ◦C compared to the incumbent 
+standard model for aqueous MEA absorption of CO2 (CCSI).
+The new model more closely aligns with pilot plant data than the 
+CCSI model – overall RMSD for CO2 capture rate of 2.1 pp for the new 
+model compared to 5.3 pp for the CCSI model. The mass transfer and 
+kinetic correlations which were regressed for the CCSI model based on a 
+limited set of wetted wall column and laboratory-scale absorber data 
+result in predictions which substantially deviate from reported data for 
+some conditions. The new model particularly improves the accuracy of 
+predictions for cases involving high rich solvent loading (>0.40 molCO2/ 
+molMEA) combined with low vapour CO2 partial pressure and industrial 
+height columns where equilibrium and kinetic limitations to mass 
+transfer become more significant. The new process model substantially 
+improves the accuracy of predicted performance for applications with 
+low absorber operating temperature (<50 ◦C) where reaction kinetics 
+can be an important limitation and short absorber columns where 
+interface mass flux limits CO2 transfer. The new model is also more 
+versatile with respect to packing type than the CCSI model because it is 
+not constrained by a parameter regression based on a small dataset and a 
+single structured packing.
+These improvements are of particular significance for modelling and 
+optimising process designs for high CO2 capture from industrial scale 
+combined cycle gas turbines which typically have flue gas CO2 con­
+centration comparable to the TCM test case conditions. Small differences 
+in predicted capture rate could result in substantial differences in 
+absorber height required to achieve a high CO2 capture design 
+requirement because of the reduced mass transfer driving force available 
+as the flue gas CO2 depletes. Accurately predicting absorber size is 
+critical for PCC technoeconomic analyses because the absorber accounts 
+for approximately 43 % of the capital cost for a typical MEA-based flue 
+gas CO2 capture plant (Barlow et al., 2025). The improved accuracy in 
+predicting interphase CO2 transfer at low temperature with the new 
+model will be crucial for determining optimal absorber design temper­
+atures and assessing the performance of intercooling.
+Furthermore, emerging regulations for CO2 capture plants will 
+require project proponents to ensure that their plant designs achieve 
+high CO2 capture rates. Compliance with the Canadian Clean Electricity 
+Regulation and UK permitting requirements for PCC plants requires >95 
+% CO2 capture from combined cycle gas turbines (Government of Can­
+ada, 2024; UK Environment Agency, 2024). Accurate PCC process 
+models will improve confidence in predicted capture rates and mitigate 
+the risk of PCC plants failing to meet regulatory requirements.
+A copy of the Aspen Plus source file is included with the Supple­
+mentary Material to facilitate use and improvement of this model by 
+other researchers.
+Fig. 14. Model predicted absorber and regenerator CO2 profiles for TCM case. Vapour CO2 partial pressure (solid lines) and bulk liquid CO2 fugacity (dashed 
+lines) profiles in the absorber (panel a) and regenerator (panel b) predicted by the process model developed in this study (light blue lines) and the CCSI model (purple 
+lines) for the ICL_11 test conditions in Bui et al. (2020).
+R. Cownden and M. Lucquiaud                                                                                                                                                                                                              
+Carbon Capture Science & Technology 19 (2026) 100625 
+12 
+
+
+=== PDF page 13 of 14 ===
+Data availability
+A copy of the Aspen Plus model that was developed in this research 
+and was used to generate the results is included in the Supplementary 
+Material (Version 11 and 14). The Supplementary Material also provides 
+detailed information on the pilot plant data used for the model valida­
+tion and source references.
+Supplementary material: Aspen Plus source file. Detailed informa­
+tion on Aspen Plus model configuration, extended model CO2 fugacity 
+predictions, and pilot plant data used in the analysis.
+Declaration of competing interest
+The authors declare that they have no known competing financial 
+interests or personal relationships that could have appeared to influence 
+the work reported in this paper.
+CRediT authorship contribution statement
+Ryan Cownden: Writing – review & editing, Writing – original draft, 
+Visualization, Validation, Methodology, Investigation, Formal analysis, 
+Data curation, Conceptualization. Mathieu Lucquiaud: Writing – re­
+view 
+& 
+editing, 
+Supervision, 
+Resources, 
+Methodology, 
+Conceptualization.
+Declaration of interests
+The authors declare that they have no known competing financial 
+interests or personal relationships that could have appeared to influence 
+the work reported in this paper.
+Acknowledgements
+The authors would like to acknowledge funding from the University 
+of Sheffield and the Natural Sciences and Engineering Research Council 
+of Canada (NSERC), [funding reference number 566581109] which 
+supported this research. The authors would also like to acknowledge 
+funding from the University of Sheffield Institutional Open Access Fund 
+which supported publication of this article. The authors are grateful for 
+the cooperation of Tony Wu and Laura Uhrig from the Southern Com­
+pany which provided data from the National Carbon Capture Center 
+(supported by the US Department of Energy under Award Number DE- 
+FE0022596) that was used in this study for model validation.
+For the purpose of open access, the authors have applied a Creative 
+Commons Attribution (CC BY 4.0) license to any Author Accepted 
+Manuscript version arising. The process model is provided in good faith 
+but without any warranty or guarantee. Any use of it by third parties is 
+undertaken entirely at their own discretion and risk.
+Supplementary materials
+Supplementary material associated with this article can be found, in 
+the online version, at doi:10.1016/j.ccst.2026.100625.
+References
+Amirkhosrow, M., P´erez-Calvo, J.-F., Gazzani, M., Mazzotti, M., Nemati Lay, E., 2020. 
+Rigorous rate-based model for CO2 capture via monoethanolamine-based solutions: 
+effect of kinetic models, mass transfer, and holdup correlations on prediction 
+accuracy. Sep. Sci. Technol. 56, 1491–1509. https://doi.org/10.1080/ 
+01496395.2020.1784943.
+Aronu, U.E., Gondal, S., Hessen, E.T., Haug-Warberg, T., Hartono, A., Hoff, K.A., 
+Svendsen, H.F., 2011. Solubility of CO2 in 15, 30, 45 and 60 mass% MEA from 40 to 
+120 ◦C and model representation using the extended UNIQUAC framework. Chem. 
+Eng. Sci. 66, 6393–6406. https://doi.org/10.1016/j.ces.2011.08.042.
+ASPEN TECHNOLOGY INC., 2014. Rate-based model of the CO2 capture process by MEA 
+using aspen plus. Aspen Technology Inc, Bedford, USA. 
+ASPEN TECHNOLOGY INC., 2019. Aspen hysys, version 11 [Computer program]. Aspen 
+Technology Inc., Bedford, USA. 
+B¨ottinger, W., Maiwald, M., Hasse, H., 2008. Online NMR spectroscopic study of species 
+distribution in MEA-H2O-CO2 and DEA-H2O-CO2. Fluid. Phase Equilib. 263, 
+131–143. https://doi.org/10.1016/j.fluid.2007.09.017.
+Barlow, H., Shahi, S., Kearns, D., 2025. Advancements in CCS technologies and costs. 
+Global CCS Institute Melbourne, Australia. Available: https://www.globalccsinstitu 
+te.com/wp-content/uploads/2025/08/Advancements-in-CCS-Technologies-and-Co 
+sts-Report-2.pdf (Accessed 24 March 2026).
+Belabbaci, A., Razzouk, A., Mokbel, I., Jose, J., Negadi, L., 2009. Isothermal 
+vapor−liquid equilibria of (Monoethanolamine + water) and (4-Methylmorpholine  
++ water) binary systems at several temperatures. J. Chem. Eng. Data 54, 2312–2316. 
+https://doi.org/10.1021/je800530u.
+Billet, R., Schultes, M., 1999. Prediction of mass transfer columns with dumped and 
+arranged packings. Chem. Eng. Res. Des. 77, 498–504. https://doi.org/10.1205/ 
+026387699526520.
+Bravo, J.L., Rocha, J.A., Fair, J.R., 1985. Mass transfer in gauze packings. Hydrocarb. 
+Process. 64, 91–95.
+Bui, M., Flø, N.E., De Cazenove, T., Mac Dowell, N., 2020. Demonstrating flexible 
+operation of the technology centre mongstad (TCM) CO2 capture plant. Int. J. 
+Greenh. Gas Con. 93. https://doi.org/10.1016/j.ijggc.2019.102879.
+Chapel, D.G., Mariz, C.L., Ernest, J., 1999. Recovery of CO2 from flue gases: commercial 
+trends. In: Canadian society of chemical engineers annual meeting, pp. 1–16. 
+Saskatoon, Canada. 
+Clarke, L., Wei, Y.-M., Navarro, A.D.L.V., Garg, A., Hahmann, A.N., Khennas, S., 
+Azevedo, I.M.L., L¨oschel, A., Singh, A.K., Steg, L., Strbac, G., Wada, K., 2022. Energy 
+systems. In: Shukla, P.R., Skea, J., Slade, R., Al Khourdajie, A., van Diemen, R., 
+McCollum, D., Pathak, M., Some, S., Vyas, P., Fradera, R., Belkacemi, M., Hasija, A., 
+Lisboa, G., Luz, S., Malley, J. (Eds.), IPCC, 2022: climate change 2022: mitigation of 
+climate change. contribution of working group iii to the sixth assessment report of 
+the intergovernmental panel on climate change. Cambridge University Press. 
+Cambridge, UK and New York, USA. doi:10.1017/9781009157926.008.
+De Joannis, P., Castel, C., Kanniche, M., Favre, E., Authier, O., 2025. Direct air capture by 
+monoethanolamine absorption with heat pump enhancements. Ind. Eng. Chem. Res. 
+64, 2208–2225. https://doi.org/10.1021/acs.iecr.4c02033.
+De Koeijer, G., Enge, Y., Sanden, K., Graff, O.F., Falk-Pedersen, O., Amundsen, T., 
+Overå, S., 2011. CO2 Technology centre Mongstad–design, functionality and 
+emissions of the amine plant. Energy Proced 4, 1207–1213. https://doi.org/ 
+10.1016/j.egypro.2011.01.175.
+Dhakal, S., Minx, J.C., Toth, F.L., Abdel-Aziz, A., Meza, M.J.F., Hubacek, K., Jonckheere, 
+I.G.C., Kim, Y.-G., Nemet, G.F., Pachauri, S., Tan, X.C., Wiedmann, T., 2022. 
+Emissions trends and drivers. In: Shukla, P.R., Skea, J., Slade, R., Al Khourdajie, A., 
+van Diemen, R., McCollum, D., Pathak, M., Some, S., Vyas, P., Fradera, R., 
+Belkacemi, M., Hasija, A., Lisboa, G., Luz, S., Malley, J. (Eds.), IPCC, 2022: climate 
+change 2022: mitigation of climate change. contribution of working group iii to the 
+sixth assessment report of the intergovernmental panel on climate change. 
+Cambridge University Press. Cambridge, UK and New York, USA. doi:10.1017/9781 
+009157926.004.
+Du, Y., Gao, T., Rochelle, G.T., Bhown, A.S., 2021. Zero- and negative-emissions fossil- 
+fired power plants using CO2 capture by conventional aqueous amines. Int. J. 
+Greenh. Gas Con. 111. https://doi.org/10.1016/j.ijggc.2021.103473.
+Dugas, R., Rochelle, G., 2009. Absorption and desorption rates of carbon dioxide with 
+monoethanolamine and piperazine. Energy Proced. 1, 1163–1169. https://doi.org/ 
+10.1016/j.egypro.2009.01.153.
+Dugas, R., 2009. Carbon dioxide absorption, desorption, and diffusion in aqueous 
+piperazine and monoethanolamine. PhD thesis. University of Texas at Austin.
+Edwards, T.J., Maurer, G., Newman, J., Prausnitz, J.M., 1978. Vapor-liquid equilibria in 
+multicomponent aqueous solutions of volatile weak electrolytes. AIChE J. 24, 
+966–976. https://doi.org/10.1002/aic.690240605.
+Faramarzi, L., Thimsen, D., Hume, S., Maxon, A., Watson, G., Pedersen, S., Gjernes, E., 
+Fostås, B.F., Lombardo, G., Cents, T., Morken, A.K., Shah, M.I., De Cazenove, T., 
+Hamborg, E.S., 2017. Results from MEA testing at the CO2 technology centre 
+mongstad: verification of baseline results in 2015. Energy Proced. 114, 1128–1145. 
+https://doi.org/10.1016/j.egypro.2017.03.1271.
+Fluor, 2004. Improvement in power generation with post-combustion capture of CO2. 
+International Energy Agency Grenhouse Gas R&D Programme Report number PH4/ 
+33. IEAGHG, Cheltenham, UK. 
+Government of Canada, 2024. Clean electricity regulations (SOR/2024-263). Available: 
+https://laws-lois.justice.gc.ca/eng/regulations/SOR-2024-263/index.html
+(Accessed 13 March 2026).
+Herzog, H., 1999. An introduction to CO2 separation and capture technologies. MIT 
+Energy Laboratory. Available. https://sequestration.mit.edu/pdf/introduction_to_ca 
+pture.pdf (Accessed 11 July 2025). 
+Hikita, H., Asai, S., Ishikawa, H., Honda, M., 1977. The kinetics of reactions of carbon 
+dioxide with monoethanolamine, diethanolamine and triethanolamine by a rapid 
+mixing method. Chem. Eng. J. 13, 7–12. https://doi.org/10.1016/0300-9467(77) 
+80002-6.
+Hilliard, M., 2008. A predictive thermodynamic model for an aqueous blend of potassium 
+carbonate, piperazine, and monoethanolamine for carbon dioxide capture from flue 
+gas. PhD thesis. The University of Texas at Austin.
+Jou, F.Y., Mather, A.E., Otto, F.D., 1995. The solubility of CO2 in a 30 mass percent 
+monoethanolamine solution. Can. J. Chem. Eng. 73, 140–147. https://doi.org/ 
+10.1002/cjce.5450730116.
+Lee, J.I., Otto, F.D., Mather, A.E., 1976. Equilibrium between carbon dioxide and 
+aqueous monoethanolamine solutions. J. Appl. Chem. Biotechnol. 26, 541–549. 
+https://doi.org/10.1002/jctb.5020260177.
+R. Cownden and M. Lucquiaud                                                                                                                                                                                                              
+Carbon Capture Science & Technology 19 (2026) 100625 
+13 
+
+
+=== PDF page 14 of 14 ===
+Luo, X., Wang, M., 2017. Improving prediction accuracy of a rate-based model of an 
+MEA-based carbon capture process for large-scale commercial deployment. 
+Engineering 3, 232–243. https://doi.org/10.1016/j.Eng.2017.02.001.
+Ma'mun, S., Nilsen, R., Svendsen, H.F., Juliussen, O., 2005. Solubility of carbon dioxide 
+in 30 mass % monoethanolamine and 50 mass % methyldiethanolamine solutions. 
+J. Chem. Eng. Data 50, 630–634. https://doi.org/10.1021/je0496490.
+Michailos, S., Gibbins, J., 2022. A modelling study of post-combustion capture plant 
+process conditions to facilitate 95–99% CO2 capture levels from gas turbine flue 
+gases. Front. Energy Res. 10. https://doi.org/10.3389/fenrg.2022.866838.
+Mokhatab, S., Poe, W.A., Mak, J.Y., 2019. Chapter 7 - Natural gas treating’. in Handbook 
+of natural gas transmission and processing. Gulf Professional Publishing, Waltham, 
+Mass. doi:10.1016/B978-0-12-815817-3.00007-1.
+Morgan, J.C., Soares Chinen, A., Omell, B., Bhattacharyya, D., Tong, C., Miller, D.C., 
+Buschle, B., Lucquiaud, M., 2018. Development of a rigorous modeling framework 
+for solvent-based CO2 capture. Part 2: steady-state validation and uncertainty 
+quantification with pilot plant data. Ind. Eng. Chem. Res. 57, 10464–10481. https:// 
+doi.org/10.1021/acs.iecr.8b01472.
+Morgan, J., 2024. RE: query about interfacial area in CCSI. Email to Stavros Michailos, 17 
+June.
+Morton, F., Laird, R., Northington, J., 2013. The national carbon capture center: cost- 
+effective test bed for carbon capture R&D. Energy. Proced. 37, 525–539. https://doi. 
+org/10.1016/j.egypro.2013.05.139.
+Mullen, D., Lucquiaud, M., 2024. On the cost of zero carbon electricity: a techno- 
+economic analysis of combined cycle gas turbines with post-combustion CO2 
+capture. Energy Rep. 11, 5104–5124. https://doi.org/10.1016/j.egyr.2024.04.067.
+Notz, R., Mangalapally, H.P., Hasse, H., 2012. Post combustion CO2 capture by reactive 
+absorption: pilot plant description and results of systematic studies with MEA. Int. J. 
+Greenh. Gas. Con. 6, 84–112. https://doi.org/10.1016/j.ijggc.2011.11.004.
+PETRA NOVA, 2020. W.A. Parish post-combustion CO2 capture and sequestration 
+demonstration project. Report DOE-PNPH-03311. Final Scientific/Technical Report. 
+Petra Nova Parish Holdings LLC. National Technology Laboratory, Morgantown and 
+Pittsburgh, USA. https://doiorg/10.2172/1608572
+Pinsent, B.R.W., Pearson, L., Roughton, F.J.W., 1956. The kinetics of combination of 
+carbon dioxide with hydroxide ions. Trans. Faraday Soc. 52, 1512–1520. https://doi. 
+org/10.1039/tf9565201512.
+Riahi, K., Schaeffer, R., Arango, J., Calvin, K., Guivarch, C., Hasegawa, T., Jiang, K., 
+Kriegler, E., Matthews, R., Peters, G.P., Rao, A., Robertson, S., Sebbit, A.M., 
+Steinberger, J., Tavoni, M., Van Vuuren, D.P., 2022. Mitigation pathways compatible 
+with long-term goals. In: Shukla, P.R., Skea, J., Slade, R., Al Khourdajie, A., van 
+Diemen, R., McCollum, D., Pathak, M., Some, S., Vyas, P., Fradera, R., Belkacemi, M., 
+Hasija, A., Lisboa, G., Luz, S., Malley, J. (Eds.), IPCC, 2022: climate change 2022: 
+mitigation of climate change. contribution of working group III to the sixth 
+assessment report of the intergovernmental panel on climate change. Cambridge 
+University Press. Cambridge, UK and New York, USA. doi:10.1017/97810091 
+57926.005.
+Shen, K.P., Li, M.H., 1992. Solubility of carbon dioxide in aqueous mixtures of 
+monoethanolamine with methyldiethanolamine. J. Chem. Eng. Data 37, 96–100. 
+https://doi.org/10.1021/je00005a025.
+Soares Chinen, A., Morgan, J.C., Omell, B., Bhattacharyya, D., Tong, C., Miller, D.C., 
+2018. Development of a rigorous modeling framework for solvent-based CO2 
+capture. 1. Hydraulic and mass transfer models and their uncertainty quantification. 
+Ind. Eng. Chem. Res. 57, 10448–10463. https://doi.org/10.1021/acs.iecr.8b01471.
+Song, D., Seibert, A.F., Rochelle, G.T., 2018. Mass transfer parameters for packings: effect 
+of viscosity. Ind. Eng. Chem. Res. 57, 718–729. https://doi.org/10.1021/acs. 
+iecr.7b04396.
+Thompson, J.A., Tsouris, C., 2021. Rate-based absorption modeling for postcombustion 
+CO2 capture with additively manufactured structured packing. Ind. Eng. Chem. Res. 
+60, 14845–14855. https://doi.org/10.1021/acs.iecr.1c02756.
+Tobiesen, F.A., Svendsen, H.F., Juliussen, O., 2007. Experimental validation of a rigorous 
+absorber model for CO2 postcombustion capture. AIChE J. 53, 846–865. https://doi. 
+org/10.1002/aic.11133.
+Tong, D., 2012. Development of advanced amine systems with accurate vapour-liquid 
+equilibrium measurement. PhD thesis. Imperial College London.
+Treese, S.A., 2015. Hydrogen production and management for petroleum processing. 
+Handbook of petroleum processing, 2nd ed. Springer International Publishing, 
+Cham, Switzerland. https://doi.org/10.1007/978-3-319-05545-9. 
+Tsai, R.E., Seibert, A.F., Eldridge, R.B., Rochelle, G.T., 2011. A dimensionless model for 
+predicting the mass-transfer area of structured packing. AIChE J. 57, 1173–1184. 
+https://doi.org/10.1002/aic.12345.
+Tsai, R., 2010. Mass transfer area of structured packing. PhD thesis. University of Texas 
+at Austin.
+Uhrig, L. 2025. RE: PSTU with storage. Email to Jon Gibbins, 25 September.
+UK ENVIRONMENT AGENCY, 2024. Guidance. Post-combustion carbon dioxide capture: 
+emerging techniques. Environment Agency, Rotherham, UK. Available: https:// 
+www.gov.uk/guidance/post-combustion-carbon-dioxide-capture-best-available-te 
+chniques-bat (Accessed 28 June 2024).
+Xu, Q., Rochelle, G., 2011. Total pressure and CO2 solubility at high temperature in 
+aqueous amines. Energy Proced. 4, 117–124. https://doi.org/10.1016/j. 
+egypro.2011.01.031.
+Zhang, Y., Chen, C.-C., 2013. Modeling CO2 absorption and desorption by aqueous 
+monoethanolamine solution with aspen rate-based model. Energy Proced. 37, 
+1584–1596. https://doi.org/10.1016/j.egypro.2013.06.034.
+Zhang, Y., Chen, H., Chen, C.-C., Plaza, J.M., Dugas, R., Rochelle, G.T., 2009. Rate-based 
+process modeling study of CO2 capture with aqueous monoethanolamine solution. 
+Ind. Eng. Chem. Res. 48, 9233–9246. https://doi.org/10.1021/ie900068k.
+R. Cownden and M. Lucquiaud                                                                                                                                                                                                              
+Carbon Capture Science & Technology 19 (2026) 100625 
+14 

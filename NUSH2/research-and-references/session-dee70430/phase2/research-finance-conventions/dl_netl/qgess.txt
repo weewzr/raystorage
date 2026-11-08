@@ -1,0 +1,1470 @@
+QUALITY GUIDELINES
+FOR ENERGY SYSTEM STUDIES
+
+Cost Estimation Methodology for
+NETL Assessments of Power Plant
+Performance
+
+                                          February 2021
+
+                                                                                                NETL-PUB-22580
+Quality Guidelines for Energy System Studies  February 2021
+
+Cost Estimation Methodology for NETL Assessments of Power Plant Performance                           2019
+
+Guidelines for Energy System Studies
+
+                                Disclaimer
+
+This report was prepared as an account of work sponsored by an agency of the United States
+Government. Neither the United States Government nor any agency thereof, nor any of their
+employees, makes any warranty, express or implied, or assumes any legal liability or
+responsibility for the accuracy, completeness, or usefulness of any information, apparatus,
+product, or process disclosed, or represents that its use would not infringe privately owned rights.
+Reference therein to any specific commercial product, process, or service by trade name,
+trademark, manufacturer, or otherwise does not necessarily constitute or imply its endorsement,
+recommendation, or favoring by the United States Government or any agency thereof. The
+views and opinions of authors expressed therein do not necessarily state or reflect those of the
+United States Government or any agency thereof.
+
+All images in this report were created by NETL, unless otherwise noted.
+
+Errata
+This report is a re-issue of the 2019 study (published on September 2019), revised as
+follows:
+1) Exhibit B-2: for TASC/TOC factors, updated the Commercial IOU value for the 3-year
+construction period vs. Revision 4 TASC/TOC from 1.092 to 1.093.
+2) Exhibit B-3: for Capital Component factors, updated the Commercial IOU value for the 3-
+year construction period vs. Revision 4 FCR from 0.0721 to 0.0707.
+3) Exhibit B-3: for Capital Component factors, updated the Commercial IOU value for the 3-
+year construction period vs. Revision 4 FCR*TASC/TOC from 0.0788 to 0.0773.
+4) Exhibit B-3: for Capital Component factors, updated the Commercial IOU value for the 3-
+year construction period vs. % decrease from 25%-29% to 26%-30%.
+5) Exhibit B-3: for Capital Component factors, updated the Commercial IOU value for the 5-
+year construction period vs. Revision 4 FCR from 0.0729 to 0.0707.
+6) Exhibit B-3: for Capital Component factors, updated the Commercial IOU value for the 5-
+year construction period vs. Revision 4 FCR*TASC/TOC from 0.0841 to 0.0817.
+7) Exhibit B-3: for Capital Component factors, updated the Commercial IOU value for the 5-
+year construction period vs. % decrease from 27%-32% to 29%-34%.
+
+National Energy Technology Laboratory         Systems Engineering and Analysis Directorate
+
+                                                                                             2
+Quality Guidelines for Energy System Studies  February 2021
+
+Cost Estimation Methodology for NETL Assessments of Power Plant Performance                     2019
+
+Guidelines for Energy System Studies
+
+     Quality Guidelines for Energy Systems Studies
+Cost Estimation Methodology for NETL Assessments of
+
+                   Power Plant Performance
+
+                                       September 6, 2019
+
+                                           Prepared by:
+
+                                         Joel Theis
+                                         Economist
+
+Systems Engineering & Analysis (SEA) Directorate, Energy Markets Analysis Team
+
+National Energy Technology Laboratory
+              www.netl.doe.gov
+
+National Energy Technology Laboratory         Systems Engineering and Analysis Directorate
+
+                                                                                             3
+Quality Guidelines for Energy System Studies  February 2021
+
+Cost Estimation Methodology for NETL Assessments of Power Plant Performance                     2019
+
+Guidelines for Energy System Studies
+
+                                Acknowledgments
+
+The author wishes to acknowledge the excellent guidance, contributions, and cooperation of the
+NETL staff, particularly:
+
+                                  Kristin Gerdes, R&IC, Acting Director
+                                   Peter Balash, SEA, Senior Economist
+                  Travis Shultz, SEA, Energy Process Analysis Team, Team Leader
+
+National Energy Technology Laboratory         Systems Engineering and Analysis Directorate
+
+                                                                                             4
+Quality Guidelines for Energy System Studies  February 2021
+
+Cost Estimation Methodology for NETL Assessments of Power Plant Performance                                                                      2019
+
+Guidelines for Energy System Studies
+
+                                Table of Contents
+
+1 Introduction ..............................................................................................................................9
+2 Capital Costs ............................................................................................................................9
+2.1 Levels of Capital Costs ............................................................................................................9
+2.2 Cost Estimate Classification ..................................................................................................10
+2.3 Contracting Strategy and EPC Contractor Services...............................................................11
+2.4 Estimation of Capital Cost Contingencies .............................................................................11
+2.5 Estimation of Owner's Costs .................................................................................................12
+2.6 Other Costs.............................................................................................................................14
+3 Economic Assumptions for COE and LCOE.........................................................................15
+3.1 Global Economic Assumptions..............................................................................................15
+3.2 Finance Structures..................................................................................................................16
+3.3 Calculating COE ....................................................................................................................17
+3.4 Estimating COE and LCOE Using Formulas ........................................................................18
+3.4.1 Calculating the COE ....................................................................................................19
+3.4.2 Estimating TASC from TOC .......................................................................................20
+3.5 Estimating LCOE...................................................................................................................23
+4 References ..............................................................................................................................26
+Appendix A: The Power System Financial Model for Grid Technologies....................................28
+Appendix B: Changes in Methodology Used in the Bituminous Baseline Reports from Revision
+
+      3 to Revision 4 .......................................................................................................................29
+Appendix C: Revision Control.......................................................................................................31
+
+National Energy Technology Laboratory         Systems Engineering and Analysis Directorate
+
+                                                                                             5
+Quality Guidelines for Energy System Studies  February 2021
+
+Cost Estimation Methodology for NETL Assessments of Power Plant Performance                                                                2019
+
+Guidelines for Energy System Studies
+
+                                  List of Exhibits
+
+Exhibit 2-1. Capital cost levels and their elements....................................................................... 10
+Exhibit 2-2. Features of an AACE Class 4 and Class 5 cost estimates ........................................ 11
+Exhibit 2-3. AACE guidelines for process contingency ............................................................... 12
+Exhibit 2-4. Estimated amounts for owner's costs ....................................................................... 13
+Exhibit 3-1. Global economic assumptions .................................................................................. 15
+Exhibit 3-2. Nominal and real rates financial structure for investor-owned utility ...................... 16
+Exhibit 3-3. Returns on equity using various methods ................................................................. 17
+Exhibit 3-4. Capital expenditure periods and COE for generic coal and NGCC plants ............... 18
+Exhibit 3-5. Fixed charge rate for COE equation ......................................................................... 19
+Exhibit 3-6. Capital recovery factors ............................................................................................ 19
+Exhibit 3-7. TASC/TOC factors, nominal and real ...................................................................... 21
+Exhibit 3-8. Three-year TASC, nominal detail calculations......................................................... 21
+Exhibit 3-9. Five-year TASC, nominal detail calculations........................................................... 21
+Exhibit 3-10. Three-year TASC, real detail calculations.............................................................. 22
+Exhibit 3-11. Five-year TASC, real detail calculations ................................................................ 22
+Exhibit 3-12. LCOE compared to COE escalated with construction costs................................... 23
+Exhibit B-1. Changes in global economic assumptions ............................................................... 29
+Exhibit B-2. Changes in TASC/TOC factors................................................................................ 30
+Exhibit B-3. Changes in capital component factors...................................................................... 30
+Exhibit C-1. Revision table........................................................................................................... 31
+
+National Energy Technology Laboratory         Systems Engineering and Analysis Directorate
+
+                                                                                             6
+Quality Guidelines for Energy System Studies           February 2021
+
+Cost Estimation Methodology for NETL Assessments of Power Plant Performance                     2019
+
+Guidelines for Energy System Studies
+
+        Acronyms and Abbreviations
+
+AACE    Association for the Advancement       IRR      Internal rate of return
+          of Cost Engineering                 LCC      Levelized capital cost
+AFUDC                                         LCOE     Levelized cost of electricity
+        Allowance for funds used during       LFP      Levelized annual fuel expenses
+AOM       construction                        LOM      Levelized O&M costs
+ATWACC                                        MWh      Megawatt hour
+        Annual O&M expenses                   NETL     National Energy Technology
+BEC     After-tax weighted average cost of
+CAPM                                          NGCC       Laboratory
+CCF       capital                             O&M      Natural gas combined cycle
+CCS     Bare erected cost                     PC       Operation and maintenance
+CO2     Capital Asset Pricing Model           Pn       Pulverized coal
+COE     Capital charge factor                 PSFM-GT  Fuel price in year n
+CRF     Carbon capture and storage                     Power systems financial model for
+DOE     Carbon dioxide                        q
+EEI     Cost of electricity                              grid technologies
+EPC     Capital recovery factor               QGESS    Subscript designating nominal
+        Department of Energy
+EPCC    Edison Electric Institute             r          value
+        Engineering, procurement, and         ROE      Quality Guidelines for Energy
+EPCM                                          SEA
+          construction                        T&S        System Studies
+EPRI    Engineering, procurement, and                  Subscript designating real value
+ETR                                           TAG®     Return on equity
+FCR       construction cost                            Systems Engineering & Analysis
+FEED    Engineering, procurement, and         TASC     CO2 transport and storage
+GDP                                           TCM      Technical Assessment Guide
+IDC       construction management             TOC      Total as-spent capital
+IGCC    Electric Power Research Institute     TPC      Total cost management
+        Effective tax rate                    WACC     Total overnight cost
+IOU     Fixed charge rate                     $/kW     Total plant cost
+        Front-End Engineering Design          $/MWh    Weighted average cost of capital
+        Gross domestic product                         Dollars per kilowatt
+        Interest during construction                   Dollars per megawatt hour
+        Integrated gasification combined
+
+          cycle
+        Investor-owned utility
+
+National Energy Technology Laboratory         Systems Engineering and Analysis Directorate
+
+                                                                                             7
+Quality Guidelines for Energy System Studies  February 2021
+
+Cost Estimation Methodology for NETL Assessments of Power Plant Performance                     2019
+
+Guidelines for Energy System Studies
+
+This page intentionally left blank.
+
+National Energy Technology Laboratory         Systems Engineering and Analysis Directorate
+
+                                                                                             8
+Quality Guidelines for Energy System Studies  February 2021
+
+Cost Estimation Methodology for NETL Assessments of Power Plant Performance                              2019
+
+Guidelines for Energy System Studies
+
+1 Introduction
+
+This paper summarizes the methodology employed by the National Energy Technology
+Laboratory (NETL) in calculating power plant costs in its techno-economic studies, such as the
+Cost and Performance Baseline for Fossil Energy Systems series of reports. It also outlines the
+approach used to calculate the cost of electricity by which NETL evaluates electric power plants.
+These metrics and a clear understanding of the methodology used are essential in allowing
+different power plant technologies to be compared on a similar basis. These guidelines are
+tailored for power producing plants, although they can be applied to a variety of different
+revenue generating plants (e.g., coal to liquids, syngas generation, hydrogen).
+
+2 Capital Costs
+
+2.1 Levels of Capital Costs
+
+As illustrated by Exhibit 2-1, there are five levels of capital costs to consider in constructing a
+power plant. The levels are defined as the following:
+
+Bare Erected Cost (BEC) comprises the cost of process equipment, on-site facilities and
+infrastructure that support the plant (e.g., shops, offices, labs, road), and the direct and indirect
+labor required for its construction and/or installation. Equipment cost estimates are frequently
+developed for each plant or plant component using in-house database and conceptual estimating
+models for specific technologies and may differ from values generated by other software
+packages such as Aspentech's Aspen Economic Analyzer.
+
+Engineering, Procurement, and Construction Cost (EPCC) comprises the BEC plus the cost of
+services provided by the EPC contractor. The EPC services include detailed design, contractor
+permitting (i.e., those permits that individual contractors must obtain to perform their scopes of
+work, as opposed to project permitting, which is not included here), and project/construction
+management costs.
+
+Total Plant Cost (TPC) comprises the EPCC cost plus project and process contingencies.
+
+Total Overnight Capital (TOC) comprises the TPC plus all other "overnight" costs, including
+owner's costs. TOC is an overnight cost, expressed in base-year dollars and as such does not
+include escalation during construction or construction financing costs.
+
+Total As-Spent Capital (TASC) comprises the sum of all capital expenditures as they are
+incurred during the capital expenditure period for construction including their escalation. TASC
+also includes interest during construction, comprised of interest on debt and a return on equity
+(ROE). TASC is expressed in mixed, current-year dollars over the capital expenditure period.
+
+BEC, EPCC, TPC, and TOC are overnight costs and are expressed in base-year dollars. The
+base year is the year in which all technology costs are expressed for the comparison of
+technologies from a standard starting point. TASC is expressed in mixed, current-year dollars
+over the entire capital expenditure period, which is assumed in most NETL studies to last five
+years for coal plants and three years for natural gas plants.
+
+If one wants to portray all plants in real dollars, the base year typically is used for the real dollar
+year. Since real dollars exclude inflation, the LCOE is calculated by adding the real levelized
+
+National Energy Technology Laboratory         Systems Engineering and Analysis Directorate
+
+                                                                                             9
+Quality Guidelines for Energy System Studies         February 2021
+
+Cost Estimation Methodology for NETL Assessments of Power Plant Performance                        2019
+
+Guidelines for Energy System Studies
+
+capital costs to the operation and maintenance (O&M) costs expressed in real levelized $/MWh
+plus the fuel costs expressed in real levelized $/MWh. The formulas for these calculations are in
+Section 3 of this paper.
+
+                                   Exhibit 2-1. Capital cost levels and their elements
+
+process equipment                                                 Bare Erected Cost
+
+supporting facilities BEC  EPCC                            Engineering, Procurement
+
+ direct and indirect                                            and Construction Cost
+                                                                    Total Plant Cost
+labor                                  TPC
+                                                                 Total Overnight Cost
+EPC contractor services                                          Total As-Spent Cost
+
+process contingency                           TOC    TASC
+
+project contingency                                         BEC, EPCC, TPC and TOC are
+                                                                 all "overnight" costs
+                   pre-production costs
+                       inventory capital                  expressed in base-year dollars.
+                          financing costs
+                                                            TASC is expressed in mixed-
+                    other owner's costs                     year current dollars, spread
+                                                            over the capital expenditure
+       escalation during capital expenditure period
+interest on debt during capital expenditure period                       period.
+
+2.2 Cost Estimate Classification
+
+Recommended Practice 18R-97 of the Association for the Advancement of Cost Engineering
+International (AACE) describes a Cost Estimate Classification System as applied in engineering,
+procurement, and construction (EPC) for the process industries. [1] Most engineering-economic
+studies completed by NETL feature cost estimates intended for the purpose of a "Feasibility
+Study" (AACE Class 4) or "Concept Screening" (AACE Class 5), commensurate with the
+maturity of the technologies under evaluation, recent commercial experience, nature of available
+cost data, and other factors. Exhibit 2-2 describes the characteristics of AACE Class 4 and Class
+5 cost estimates. Each NETL study typically specifies the accuracy range of its cost estimates.
+For example, recent NETL studies [2] characterize PC and NGCC case estimates as falling
+within AACE Class 4. Given recent experience with NGCC plants, the NGCC uncertainty range
+(-15 percent/+25 percent) is slightly smaller than PC (-15 percent /+30 percent). Integrated
+gasification combined cycle (IGCC) estimates are presented within Class 5, with a larger
+uncertainty range (+25 percent /+50 percent), consistent with the above considerations for this
+classification.
+
+National Energy Technology Laboratory         Systems Engineering and Analysis Directorate
+
+                                                                                            10
+Quality Guidelines for Energy System Studies                                     February 2021
+
+Cost Estimation Methodology for NETL Assessments of Power Plant Performance                        2019
+
+Guidelines for Energy System Studies
+
+            Exhibit 2-2. Features of an AACE Class 4 and Class 5 cost estimates
+
+ Project    Typical Engineering Completed                                     Expected Accuracy
+Definition
+
+1 to 15%    · Plant capacity, block schematics, indicated layout, process         Class 4
+                flow diagrams for main process                                -15% to +30%
+
+            · Systems and preliminary engineered process and utility
+
+            · Equipment lists
+
+0 to 2%     · Cost estimates (i.e., feasibility study) based on the level of      Class 5
+                engineering design performed                                  -25% to +50%
+
+            · This range is deemed reflective of recent commercial power
+                IGCC experience
+
+2.3 Contracting Strategy and EPC Contractor Services
+
+The cost estimates are based on an engineering, procurement and construction management
+(EPCM) contracting strategy utilizing multiple subcontracts. This approach provides the owner
+with greater control of the project, while minimizing, if not eliminating most of the risk
+premiums typically included in an EPC contract price. In a traditional lump sum EPC contract,
+the contractor assumes all risk for performance, schedule, and cost. However, as a result of
+current market conditions, EPC contractors appear more reluctant to assume that overall level of
+risk. Rather, the current trend appears to be a modified EPC approach where much of the risk
+remains with the owner. Where contractors are willing to accept the risk in EPC type lump-sum
+arrangements, it is reflected in the project cost. In today's market, contractor premiums for
+accepting these risks, particularly performance risk, can be substantial and increase the overall
+project costs dramatically.
+
+The EPCM approach used as the basis for the estimates is anticipated to be the most cost-
+effective approach for the owner. While the owner retains the risks, the risks become reduced
+with time, as there is better scope definition at the time of contract award(s).
+
+The EPCM contractor services are estimated at 15 to 20 percent of BEC, depending on the
+technology considered. These costs consist of all home office engineering and procurement
+services as well as field construction management costs. Site staffing generally includes a
+construction manager, a resident engineer, a scheduler, and personnel for project controls,
+document control, materials management, site safety, and field inspection.
+
+2.4 Estimation of Capital Cost Contingencies
+
+Process and project contingencies are included in estimates to account for anticipated but
+unspecified costs due to a lack of complete project definition and engineering. Contingencies are
+added because experience has shown that such costs are likely, and expected, to be incurred even
+though they cannot be explicitly determined at the time the estimate is prepared.
+
+Capital cost contingencies do not cover uncertainties or risks associated with:
+
+    · Scope changes
+    · Changes in labor availability or productivity
+    · Delays in equipment deliveries
+
+National Energy Technology Laboratory         Systems Engineering and Analysis Directorate
+
+                                                                                            11
+Quality Guidelines for Energy System Studies                                     February 2021
+
+Cost Estimation Methodology for NETL Assessments of Power Plant Performance                          2019
+
+Guidelines for Energy System Studies
+
+    · Changes in regulatory requirements
+    · Unexpected cost escalation
+    · Performance of the plant after startup (e.g., availability, efficiency)
+
+Process Contingency
+
+Process contingency is intended to compensate for uncertainty in cost estimates caused by
+performance uncertainties associated with the development status of a technology. Process
+contingencies are applied to each plant section based on its current technology status. Process
+contingency is typically not applied to costs that are set equal to a research goal or programmatic
+target since these values are generally intended to reflect the total cost.
+
+As shown in Exhibit 2-3, AACE 16R-90 provides guidelines for estimating process contingency.
+[3]
+
+Exhibit 2-3. AACE guidelines for process contingency
+
+            Technology Status                        Process Contingency
+                                              (% of Associated Process Capital)
+     New concept with limited data
+     Concept with bench-scale data                              40+
+                                                               30-70
+           Small pilot plant data                              20-35
+Full-sized modules have been operated                          5-20
+                                                               0-10
+      Process is used commercially
+
+Project Contingency
+
+AACE 16R-90 states that project contingency for a "budget-type" estimate (AACE Class 4 or 5)
+should be 15 percent to 30 percent of the sum of BEC, EPC fees, and process contingency. [3]
+
+2.5 Estimation of Owner's Costs
+
+With some exceptions, the estimation of owner's costs method follows guidelines in Sections
+12.4.7 to 12.4.12 of "Conducting Technical and Economic Evaluations ­ As Applied for the
+Process and Utility Industries," AACE 16R-90. [3] The Electric Power Research Institute's
+(EPRI) "Technical Assessment Guide (TAG®) ­ Power Generation and Storage Technology
+Options" also has guidelines for estimating owner's costs. [4] EPRI and AACE guidelines are
+very similar. Because the owner's costs could be assumed to be as high as 20 percent of the
+TPC, which includes contingency costs, failure to understand what could be included can lead to
+an unwarranted cost estimate. Exhibit 2-4 provides some of the items that can be included in
+owner's costs.
+
+National Energy Technology Laboratory         Systems Engineering and Analysis Directorate
+
+                                                                                            12
+Quality Guidelines for Energy System Studies                      February 2021
+
+Cost Estimation Methodology for NETL Assessments of Power Plant Performance                                                          2019
+
+Guidelines for Energy System Studies
+
+                Exhibit 2-4. Estimated amounts for owner's costs
+
+Owner's Cost                                                                Estimate Basis
+    Prepaid
+   Royalties    Any technology royalties are assumed to be included in the associated equipment cost, and thus are not included
+                as an owner's cost.
+Preproduction
+  (Start-Up)       · 6 months operating labor
+     Costs         · 1 month maintenance materials at full capacity
+                   · 1 month non-fuel consumables at full capacity
+   Working         · 1 month waste disposal
+    Capital        · 25% of one month's fuel cost at full capacity
+   Inventory       · 2% of TPC
+    Capital     Compared to AACE 16R-90, this includes additional costs for operating labor (6 months versus 1 month) to cover
+                the cost of training the plant operators, including their participation in startup, and involving them occasionally
+      Land      during the design and construction.
+Financing Cost  AACE 16R-90 [3] and EPRI TAG® [4] differ on the amount of fuel cost to include; this estimate follows EPRI.
+
+Other Owner's   Although inventory capital (see below) is accounted for, no additional costs are included for working capital.
+     Costs
+                   · 0.5% of TPC for spare parts
+                   · 60-day supply (at full capacity) of fuel. Not applicable for natural gas
+                   · 60-day supply (at full capacity) of non-fuel consumables (e.g., chemicals and catalysts) that are stored on
+
+                        site. Does not include catalysts and adsorbents that are batch replacements such as water gas shift,
+                        carbonyl sulfide, and selective catalytic reduction catalysts and activated carbon
+                AACE 16R-90 [3] does not include an inventory cost for fuel, but EPRI TAG® [4] does.
+
+                   · $3,000/acre (300 acres for IGCC and PC, 100 acres for NGCC)
+                   · Note: This land cost is based on a site in a rural location
+
+                   · 2.7% of TPC
+                This financing cost (not included by AACE 16R-90 [3]) covers the cost of securing financing, including fees and
+                closing costs but not including interest during construction (or AFUDC). The "rule of thumb" estimate (2.7% of
+                TPC) is based on a 2019 professional communication with Black & Veatch.
+
+                   · 15% of TPC
+                This additional lumped cost is not included by AACE 16R-90 [3] or EPRI TAG® [4].
+                The "rule of thumb" estimate (15% of TPC) is based on a 2019 professional communication with Black & Veatch.
+                The lumped cost includes
+
+                     o Preliminary feasibility studies, including a Front-End Engineering Design (FEED) study
+                     o Economic development (costs for incentivizing local collaboration and support)
+                     o Construction and/or improvement of roads and/or railroad spurs outside of site boundary
+                     o Legal fees
+                     o Permitting costs
+                     o Owner's engineering (staff paid by owner to give third-party advice and to help the owner
+
+                           oversee/evaluate the work of the EPC contractor and other contractors)
+                     o Owner's contingency (sometimes called "management reserve"--these are funds to cover costs
+
+                           relating to delayed startup, fluctuations in equipment costs, unplanned labor incentives in excess of a
+                           five-day/ten-hour-per-day work week. Owner's contingency is not a part of project contingency)
+                This lumped cost does not include
+                     o EPC risk premiums (costs estimates are based on an EPCM approach utilizing multiple subcontracts, in
+                           which the owner assumes project risks for performance, schedule, and cost)
+                     o Transmission interconnection: the cost of interconnecting with power transmission infrastructure
+                           beyond the plant busbar
+                     o Taxes on capital costs: all capital costs are assumed to be exempt from state and local taxes
+                     o Unusual site improvements: normal costs associated with improvements to the plant site are included
+                           in the BEC, assuming that the site is level and requires no environmental remediation. Unusual costs
+                           associated with the following design parameters are excluded: flood plain considerations, existing
+                           soil/site conditions, water discharges and reuse, rainfall/snowfall criteria, seismic design,
+                           buildings/enclosures, fire protection, local code height requirements, noise regulations
+
+National Energy Technology Laboratory         Systems Engineering and Analysis Directorate
+
+                                                                                            13
+Quality Guidelines for Energy System Studies  February 2021
+
+Cost Estimation Methodology for NETL Assessments of Power Plant Performance                           2019
+
+Guidelines for Energy System Studies
+
+2.6 Other Costs
+
+When estimating the COE or LCOE for a power plant, it might not be feasible to identify every
+single item because of the uncertainty of what will be required and changes in the construction as
+the plant is built. There are some items outside the fence of the plant; the plant boundary limit is
+defined as the total plant facility within the "fence line" including coal receiving and water
+supply system, but terminating at the high voltage side of the main power transformers. The only
+cost outside of this fence line that is accounted for is the cost of CO2 transport and storage
+(T&S). For plants using with carbon capture and storage (CCS), the T&S costs are reported
+separately from the plant capital and O&M costs.
+
+Some typical examples of items outside the fence line include
+
+    · New access roads and railroad tracks
+    · Upgrades to existing roads to accommodate increased traffic
+    · Makeup water pipe outside the "fence line"
+    · Landfill for on-site waste (slag) disposal
+    · Natural gas line for backup fuel provisions
+    · Plant switchyard
+    · Electrical transmission lines and substation
+
+All estimates are based on a reasonably standard plant. No unusual or extraordinary process
+equipment is included such as
+
+    · Excessive water treatment equipment
+    · Air-cooled condensers
+    · Automated coal reclamation
+
+Other items that are not addressed in the cost estimates are
+
+    · Piles or caissons
+    · Rock removal
+    · Excessive dewatering
+    · Expansive soil considerations
+    · Excessive seismic considerations
+    · Extreme temperature considerations
+    · Hazardous or contaminated soils
+    · Demolition or relocation of existing structures
+    · Leasing of offsite land for parking or laydown
+    · Busing of craft to site
+    · Costs of offsite storage
+
+To the extent that these items are needed at specific sites, they should be explicitly included
+within the capital cost structure, rather than as part of the contingency costs.
+
+National Energy Technology Laboratory         Systems Engineering and Analysis Directorate
+
+                                                                                            14
+Quality Guidelines for Energy System Studies                                                 February 2021
+
+Cost Estimation Methodology for NETL Assessments of Power Plant Performance                                      2019
+
+Guidelines for Energy System Studies
+
+3 Economic Assumptions for COE and LCOE
+
+3.1 Global Economic Assumptions
+
+Global economic assumptions for NETL's cost analyses are listed in Exhibit 3-1. Deviations may
+be explicitly justified on a case-by-case basis.
+
+                    Exhibit 3-1. Global economic assumptions
+
+Parameter                                                            Value
+
+                                              TAXES
+
+Income Tax Rates                              21% federal, 6% state (Effective tax rate [ETR} 25.74%)
+
+Capital Depreciation                                 20 years, 150% declining balance
+
+Investment Tax Credit                                                0%
+
+Tax Holiday                                                          0 years
+
+                            CONTRACTING AND FINANCING TERMS
+
+Contracting Strategy                          Engineering Procurement Construction Management (owner
+                                               assumes project risks for performance, schedule, and cost)
+
+Type of Debt Financing                        Non-recourse (collateral that secures debt is limited to the real
+                                                                       assets of the project)
+
+Repayment Term of Debt                        Equal to operational period in formula method
+
+Grace Period on Debt Repayment                                       0 years
+
+Debt Reserve Fund                                                    None
+
+                                              ANALYSIS TIME PERIODS
+
+Capital Expenditure Period                           Natural gas plants: 3 years
+                                                         Coal plants: 5 years
+
+Operational Period                                                   30 years
+
+Economic Analysis Period                      33 or 35 years (capital expenditure period plus operational
+                                                                             period)
+
+                                      TREATMENT OF CAPITAL COSTS
+
+Capital Cost Escalation During Capital               0% real (3% nominal [5])
+           Expenditure Period
+
+Distribution of Total Overnight Capital over        3-year period: 10%, 60%, 30%
+the Capital Expenditure (before escalation)   5-year period: 10%, 30%, 25%, 20%, 15%
+
+Working Capital                                      Zero for all parameters
+
+% of Total Overnight Capital that is          100% (actual amounts are likely lower, and do not influence
+             Depreciated                                              results significantly)
+
+                 ESCALATION OF OPERATING COSTS AND REVENUES
+
+Escalation of COE (revenue), O&M Costs               0% real (3% nominal [5])
+
+Fuel Costs                                    See Quality Guidelines for Energy Systems Studies Fuel Prices for
+                                                             Selected Feedstocks in NETL Studies [6]
+
+National Energy Technology Laboratory                Systems Engineering and Analysis Directorate
+
+                                                                                                   15
+Quality Guidelines for Energy System Studies                                                                            February 2021
+
+Cost Estimation Methodology for NETL Assessments of Power Plant Performance                                                        2019
+
+Guidelines for Energy System Studies
+
+3.2 Finance Structures
+
+When a new project is being financed and constructed, a finance structure is developed specific
+to the market conditions and the ownership risks. The cost analyses performed by NETL are for
+both near-term construction of commercial technologies, with 2023 as the on-line year, as well as
+for advanced technologies, which are typically assumed to be commercial 15 years or more into
+the future. For the purpose of comparing technologies in the NETL Baseline study [2], the same
+finance structure will be applied to all scenarios, and only real dollars are used. When these
+technologies are evaluated in various cash flow analyses, nominal dollars will be used. All
+technologies are considered to be commercial ready ­ there are neither applicable tax subsidies
+nor risks associated with first-of-a-kind construction or immature design.
+
+Statistics on the returns earned by well-established companies, whether in an unregulated or
+regulated market, suggest that there is little difference in ROEs.1 Therefore, the structure chosen
+for developing the financing for major power projects is that of a large, financially-stable,
+investor-owned utility (IOU) or merchant plant. Any other type of builder is assumed to have a
+higher cost financial structure, and therefore would be non-competitive.
+
+Exhibit 3-2 shows the finance structure that would apply to all types of power plants on a
+nominal basis and also in real terms for nth-of-a-kind level of market penetration.
+
+Exhibit 3-2. Nominal and real rates financial structure for investor-owned utility
+
+Type of   % of Total  Current Dollar Cost              Weighted Average   After-Tax Weighted
+Security                                                 Cost of Capital    Average Cost of
+                                                                                 Capital
+  Debt
+ Equity                                       Nominal
+
+  Debt    55%                          5%              2.75%                                                     2.04%
+ Equity
+          45%                          10%             4.50%                                                     4.50%
+
+          Total                                        7.25%                                                     6.54%
+
+          Real (based on 2.01% average real GDP deflator, 1990-2018 [7])
+
+          55%                          2.94%           1.61%                                                     1.20%
+
+          45%                          7.84%           3.53%                                                     3.53%
+
+          Total                                        5.14%                                                     4.73%
+
+Formulas for the weighted average cost of capital (WACC) and after-tax weighted average cost
+of capital (ATWACC) are
+
+ = %   %    + %   %                                                                                              Equation 1
+
+ = %   %    + %   %     (1 -   )
+                                                                                                                       Equation 2
+
+1 Based on an internal market study by NETL based on Edison Electric Institute Rate Case summary, Q4 2017. [10]
+
+National Energy Technology Laboratory                  Systems Engineering and Analysis Directorate
+
+                                                                                                                        16
+Quality Guidelines for Energy System Studies                                       February 2021
+
+Cost Estimation Methodology for NETL Assessments of Power Plant Performance                                                                          2019
+
+Guidelines for Energy System Studies
+
+The justification for the cost of equity is shown in Exhibit 3-3, which shows the results of
+NETL's Capital Asset Pricing Model (CAPM) analysis and total ROEs based on stock market
+prices of companies that own 25 percent of all generation. These companies also represent 36
+percent of companies that are publicly owned.
+
+                Exhibit 3-3. Returns on equity using various methods
+
+                             1990-2018 Annual Data Results                         2014 to
+                                                                                    2017
+
+          Annual CAPM        Annual Stock  2018    Yield +    Yield +     Yield +     Net
+                             Price-Based   Yield  Price ROE   Levered   Unlevered   Income
+          Levered Unlevered                                  Total ROE  Total ROE  Total ROE
+                                  ROE      3.3%      9.2%      10.2%
+          ROE   ROE                        3.2%      9.8%
+                                                                9.8%
+Average 6.9%    5.8%         5.9%          3.4%      9.9%               9.1%       10.3%
+                                                                9.7%
+Capacity  6.6%  5.7%         6.6%                                       9.0%       8.5%
+Weighted
+
+ Market   6.2%  5.7%         6.5%                                       9.1%       9.4%
+Weighted
+
+The levered and unlevered ROEs in Exhibit 3-3 are from NETL's CAPM2 study for the power
+companies using annual stock prices from 1990-2018. The CAPM study also includes using the
+long-term T-Bill rate as the risk-free rate, and the S&P 500 index was used as the market index
+for calculating the market risk premium. The levered ROE includes the effect of the company
+debt level, whereas the unlevered ROE removes debt from the return resulting in a lower return.
+This indicates that having debt at the levels of the companies sampled, averaging 55 percent, has
+a small influence on the total return.
+
+Note in Exhibit 3-3 that the weighted "Annual CAPM Levered ROE" is very close to the
+weighted "Annual Stock Price-Based ROE," which somewhat validates the CAPM match to
+market results.
+
+A "Net Income Total ROE" calculation was also completed using the 2014-2017 income
+statements for the companies (far right column), calculating a return using funds available to
+equity. Adding the recent annual yield for dividends to shareholders to the "Annual Stock Price-
+Based ROE" gives a total return on equity.
+
+Based on these results, the levered ROE would be appropriate to use when added to the annual
+yield because they both include the companies with debt. The capacity and market weighted
+returns of 9.8 percent and 9.7 percent, respectively, along with the straight average "Yield +
+Levered Total ROE" at 10.2 percent, support using 10 percent as a reasonable ROE for a large
+company building a coal or natural gas plant.
+
+3.3 Calculating COE
+
+The first-year COE is the revenue received by the generator per net megawatt-hour during the
+power plant's first year of operation. The COE can be escalated to show it as an increasing
+
+2 Capital asset pricing model. ROE = risk-free rate + company beta x the market risk premium (market return minus risk-free rate). See Investopedia
+website for discussion on CAPM. Data obtained from yahoo finance statistics.
+
+National Energy Technology Laboratory             Systems Engineering and Analysis Directorate
+
+                                                                                   17
+Quality Guidelines for Energy System Studies  February 2021
+
+Cost Estimation Methodology for NETL Assessments of Power Plant Performance                         2019
+
+Guidelines for Energy System Studies
+
+amount as shown in Exhibit 3-4 for PC and NGCC power plants. The COE increases because the
+O&M costs and fuel costs increase each year at an assumed constant escalation rate, while
+financed capital costs stay constant.
+
+           Exhibit 3-4. Capital expenditure periods and COE for generic coal and NGCC plants
+
+As shown in the left side of Exhibit 3-4, the capital expenditure period is assumed to start in
+2018 for the 5-year capital expenditure needed for coal plant construction, and in 2020 for the 3-
+year capital expenditure period needed for a NGCC. All capital costs included in this analysis,
+including project development and construction costs, are assumed to be incurred during the
+capital expenditure period. This analysis assumes that the plants begin operating in 2023 to
+represent a typical analysis made for a year when generation capacity is needed.
+
+In addition to the capital expenditure period, the economic analysis considers thirty years of
+operation for both coal and natural gas plants.
+
+3.4 Estimating COE and LCOE Using Formulas
+
+The following simplified equation can be used to estimate COE as a function of TASC, fixed
+O&M, variable O&M, fuel costs, capacity factor, and net output. The equation requires the
+application of fixed charge rates (FCR) listed in Exhibit 3-5, which is based on the capital
+recovery factors (CRF) listed in Exhibit 3-6. These FCRs and CRFs are valid only for scenarios
+
+National Energy Technology Laboratory         Systems Engineering and Analysis Directorate
+
+                                                                                            18
+Quality Guidelines for Energy System Studies                              February 2021
+
+Cost Estimation Methodology for NETL Assessments of Power Plant Performance                          2019
+
+Guidelines for Energy System Studies
+
+that adhere to the global economic assumptions listed in Exhibit 3-1 and utilize the stated finance
+structure listed in Exhibit 3-2 and the stated capital expenditure period. The formulas for
+calculating FCR and CRF values based on other assumptions are shown below in Equation 9
+through and Equation 11. The formulas for calculating the FCR values include an adjustment to
+the CRF value to account for depreciation.
+
+                  Exhibit 3-5. Fixed charge rate for COE equation
+
+                  Finance Structure              IOU - 30 Years
+              Capital Recovery Periods
+                                                 Three Years Five Years
+                     FCR Nominal
+                        FCR Real                 0.0886       0.0886
+
+                                                 0.0707       0.0707
+
+                     Exhibit 3-6. Capital recovery factors
+
+                  Finance Structure              IOU - 30 Years
+
+              Capital Recovery Periods           Three Years  Five Years
+
+                     CRF Nominal                 0.0769       0.0769
+                       CRF Real                  0.0630       0.0630
+
+3.4.1 Calculating the COE
+
+All factors in the COE equation are expressed in dollars for the on-line year, which is 2023 for
+the current NETL Baseline Study. [2] For LCOE comparisons, the base year is the year that a
+comparison of technologies begins, and the year in which dollars are based. For a comparison of
+coal and NGCCs, all costs would begin escalation from 2018. Since the real escalation rate is
+assumed to be 0 percent, all real dollar amounts stay the same as in the base year, 2018. Using
+Equation 4 below for COE, note that the TASC is for the on-line year, and O&M and fuel costs
+would typically be expressed in on-line year costs to be consistent.
+
+                     +                        +        
+                                                  
+                                                                          Equation 3
+           =                                              
+
+                        
+
+                          
+
+                  =  ()() +  + ()()                                       Equation 4
+                                     ()()
+
+where:     revenue required to be received by the generator ($/MWh, equivalent to
+  COE =    mills/kWh) during the power plant's first year of operation in order to satisfy the
+           finance structure assumptions
+  FCR =
+           fixed charge rate taken from Exhibit 3-5 and based on CRF values from
+           Exhibit 3-6 (discussed in Section 3.5 below) that matches the finance structure
+
+National Energy Technology Laboratory            Systems Engineering and Analysis Directorate
+
+                                                                                               19
+Quality Guidelines for Energy System Studies  February 2021
+
+Cost Estimation Methodology for NETL Assessments of Power Plant Performance                         2019
+
+Guidelines for Energy System Studies
+
+TASC =   and capital expenditure period. The interest rate used in the formula must by
+OCFIX =  necessity be the ATWACC
+OCVAR =
+         total as spent capital (see TOC discussion below), expressed in on-line year cost
+CF =
+         the sum of all first-year-of-operation fixed annual operating costs
+MWH =
+         the sum of all first-year-of-operation variable annual operating costs at 100
+         percent capacity factor, including fuel and other feedstock costs and (offset by)
+         any byproduct revenues
+
+         plant capacity factor, assumed to be constant (or levelized) over the operational
+         period; expressed as a fraction of the total electricity that would be generated if
+         the plant operated at full load without interruption
+
+         annual net megawatt-hours of electricity generated at 100 percent capacity factor
+
+Total Overnight Capital - The TOC may include any "overnight" capital expense incurred during
+the capital expenditure period, except for escalation and interest during construction. (When
+using the simplified COE equation, both escalation during construction and interest during
+construction are excluded from nominal costs.) Both depreciable and non-depreciable capital
+should be included in the TOC, even though the CRF was computed without a depreciation
+factor. For typical tax rates and depreciation schedules, this simplification introduces a
+negligible amount of error into the capital portion of the COE. If this simplification is not
+acceptable, a full discounted cash flow analysis tool (such as the NETL Power Systems Financial
+Model for Grid Technologies [PSFM-GT] [8]) should be used to calculate the COE instead of
+the simplified COE equation.
+
+The CRF values for different capital expenditure periods are the same because both assume the
+operational period is equal to the term for debt and equity combined in the ATWACC used. A
+cash flow approach could use a 20- or 30-year debt term. A coal plant would be more likely to
+have a 30-year term; a combined-cycle and a combustion turbine would be more likely to have
+20-year debt terms, but market conditions and owner financial conditions would influence the
+terms. The Federal Reserve of St. Louis reports seasoned long-term bond rates that are an
+average of all bonds with 20- or 30-year terms, indicating that bonds are still being issued with
+30-year terms to reduce the annual revenue requirements (or LCOE). The difference between
+20- and 30-year bonds is less than 0.25 points in the last ten years.
+
+3.4.2 Estimating TASC from TOC
+
+For scenarios that adhere to the global economic assumptions listed in Exhibit 3-1 and utilize the
+finance structure listed in Exhibit 3-2, the multipliers shown in Exhibit 3-7 can be used to
+translate TOC to TASC to account for the impact of both escalation and cost of capital during
+construction. The nominal TOC is expressed in base-year dollars and the corresponding nominal
+TASC is expressed in mixed-year, current or real dollars over the entire capital expenditure
+period. Exhibit 3-8 and Exhibit 3-9 illustrate the calculations for nominal TASC, and
+Exhibit 3-11 and Exhibit 3-11 illustrate real dollar calculations. Note that the real dollar TASC
+only includes the pre-tax WACC with no inflation. The nominal TASC includes a pre-tax
+WACC, also. The pre-tax WACC is used in calculating the TASC because no revenue is
+involved in the construction phase. The CRF includes an ATWACC appropriately to address the
+
+National Energy Technology Laboratory         Systems Engineering and Analysis Directorate
+
+                                                                                            20
+Quality Guidelines for Energy System Studies                               February 2021
+
+Cost Estimation Methodology for NETL Assessments of Power Plant Performance                     2019
+
+Guidelines for Energy System Studies
+
+actual cost of repaying the interest on debt accrued during construction and included in the
+TASC factor. The formulas for calculating the TASC/TOC factors shown in Equation 5,
+Equation 6, and Equation 7.
+
+              Exhibit 3-7. TASC/TOC factors, nominal and real
+
+                Finance Structure             BBB+ 3 or higher Company
+           Capital Expenditure Period
+                                              Three Years  Five Years
+                  TASC/TOC nominal
+                   TASC/TOC real              1.242        1.289
+
+                                              1.093        1.154
+
+           Exhibit 3-8. Three-year TASC, nominal detail calculations
+
+                                 3-Year Capital Expenditure
+           Funds received Jan. 1 rolled into TASC Recovered over 30 years
+
+Cost Year  Escalated Cost Cost of Funding     WACC         Escalation         Capital
+                                                                           Expenditure
+   2018    -                           -      -                0%
+   2019                                                                         0%
+   2020    -                           -      -                3%               0%
+   2021                                                                         10%
+   2022    0.10609         0.00769            0.0725           3%               60%
+   2023                                                                         30%
+TASC/TOC   0.65564         0.05523            0.0725           3%
+
+           0.33765         0.07970            0.0725           3%
+
+           1.09938         0.14262
+
+                    1.242
+
+           Exhibit 3-9. Five-year TASC, nominal detail calculations
+
+                                 5-Year Capital Expenditure
+           Funds received Jan. 1 rolled into TASC Recovered over 30 years
+
+Cost Year  Escalated Cost Cost of Funding     WACC         Escalation         Capital
+                                                                           Expenditure
+   2018    0.10000         0.00725            0.0725           3%
+   2019                                                                         10%
+   2020    0.30900         0.02965            0.0725           3%               30%
+   2021                                                                         25%
+   2022    0.26523         0.04888            0.0725           3%               20%
+   2023                                                                         15%
+TASC/TOC   0.21855         0.06473            0.0725           3%
+
+           0.16883         0.07697            0.0725           3%
+
+           1.06160         0.22748
+
+                    1.289
+
+3 Standard & Poor's rating levels.            Systems Engineering and Analysis Directorate
+
+National Energy Technology Laboratory                                                       21
+Quality Guidelines for Energy System Studies                                    February 2021
+
+Cost Estimation Methodology for NETL Assessments of Power Plant Performance                      2019
+
+Guidelines for Energy System Studies
+
+                Exhibit 3-10. Three-year TASC, real detail calculations
+
+                                      3-Year Capital Expenditure
+                Funds received Jan. 1 rolled into TASC Recovered over 30 years
+
+Cost Year       Escalated Cost Cost of Funding            WACC    Escalation       Capital
+                                                                                Expenditure
+   2018         -                      -                  -       0%
+   2019                                                                              0%
+   2020         -                      -                  -       0%                 0%
+   2021                                                                              10%
+   2022         0.10         0.00514                      0.0514  0%                 60%
+   2023                                                                              30%
+TASC/TOC        0.60         0.03599                      0.0514  0%
+
+                0.30         0.05141                      0.0514  0%
+
+                1.0          0.09254
+
+                      1.093
+
+                 Exhibit 3-11. Five-year TASC, real detail calculations
+                                      5-Year Capital Expenditure
+
+                Funds received Jan. 1 rolled into TASC Recovered over 30 years
+
+Cost Year       Escalated Cost Cost of Funding            WACC    Escalation       Capital
+                                                                                Expenditure
+   2018         0.10         0.00514                      0.0514  0%
+   2019                                                                              10%
+   2020         0.30         0.02056                      0.0514  0%                 30%
+   2021                                                                              25%
+   2022         0.25         0.03342                      0.0514  0%                 20%
+   2023                                                                              15%
+TASC/TOC        0.20         0.04370                      0.0514  0%
+
+                0.15         0.05141                      0.0514  0%
+
+                1.00         0.15423
+
+                      1.154
+
+        where:                                                                  Equation 5
+                 =  +                                                           Equation 6
+                                                                                Equation 7
+                                             
+
+                 = [( 1 + )(-1)  %]
+
+                                           =1
+                                                        
+
+                   =    ( -  + 1)  ( 1 + )(-1)  %
+
+                                                      =1
+
+where:
+
+        n = the year of capital expenditure
+
+        y = total number of years of capital expenditure
+
+        i = assumed escalation rate for capital during the expenditure period (nominal or real)
+
+        %Capitaln = percent of TOC expenditure for year n
+
+National Energy Technology Laboratory           Systems Engineering and Analysis Directorate
+
+                                                                                22
+Quality Guidelines for Energy System Studies  February 2021
+
+Cost Estimation Methodology for NETL Assessments of Power Plant Performance                        2019
+
+Guidelines for Energy System Studies
+
+         WACC = weighted average cost of capital (nominal or real) from Equation 1
+
+Given these factors, the LCOEs can be calculated without the use of a cash flow model, which
+would result in a more complete estimation, although the formulaic calculations presented here
+provide reasonable estimates for research and development comparisons. When technologies go
+to markets, a detailed cash flow estimate is needed for owners to determine their resource
+choices, and models like the PSFM-GT developed by NETL can be used to compare resources
+over different time horizons in cash flow analyses. [8] A summary of the PSFM-GT is provided
+in Appendix A.
+
+3.5 Estimating LCOE
+
+To illustrate how an LCOE is related to a COE, solutions are shown in Exhibit 3-12 for a generic
+PC power plant and a generic NGCC power plant. The LCOE is the amount of revenue required
+per net megawatt-hour during the power plant's operational life to meet all capital and
+operational costs. The LCOE is primarily for the comparison of technologies on a $/MWh basis
+needed in the power market, or price, to support the construction and operation of power plants
+under assumed operational conditions and costs. Since there are many factors that can vary for
+different generation technologies, such as fuel prices, O&M, and capital construction costs,
+naturally it is convenient to combine all of these costs into a levelized cost rather than try to
+judge which technology is lower cost by comparing the cost components separately.
+
+                   Exhibit 3-12. LCOE compared to COE escalated with construction costs
+
+National Energy Technology Laboratory         Systems Engineering and Analysis Directorate
+
+                                                                                            23
+Quality Guidelines for Energy System Studies                                                             February 2021
+
+Cost Estimation Methodology for NETL Assessments of Power Plant Performance                                               2019
+
+Guidelines for Energy System Studies
+
+The LCOE has always been a "first-cut" type of screening tool, and can be calculated by using
+either real or nominal dollar formulas as described below:
+
+1) Calculate the levelized capital cost (LCC) using the fixed charge rate and capital recovery
+    factor (CRF) formulas as follows for a nominal (q) approach: [9, 10]
+
+          =                                                                                               Equation 8
+                                                                                                          Equation 9
+where:                =  (1                -                                                             Equation 10
+   and                       - )              (1 - )
+   and:                                                                                                  Equation 11
+                   =    (1 + )
+                           (1 + ) - 1
+
+                   =                   (1  +     
+                                               )
+                             
+
+                             =1
+
+         where:
+
+         TASC = total as spent costs, as defined in Section 2.1
+
+         FCR = Fixed charge rate
+
+         CRF = Capital recovery factor
+
+         ETR = effective tax rate
+
+         ATWACCq, = nominal after tax weighted average cost of capital (from Equation 2)
+
+         Dq = Present value of tax depreciation expense
+
+         dn = the tax depreciation fraction in year n [11]
+
+               Note: The values used to generate the tables in this QGESS are based on 2016 IRS Publication 946
+               Table A-14. 150% Declining Balance Method Half-Year Convention
+
+         z = number of years of depreciation, (21 for 20-year, 150% declining balance)
+
+Real values can be substituted into the components with the subscript q to convert formulas for
+real results.
+
+    2) Calculate levelized annual O&M expenses (AOM)4 per MWh using the following
+         formula:
+
+           =       (1 + )                       1-    [(1 +(1+))]                                        Equation 12
+                     (1 + ) - 1                        - 
+
+where:
+y = number of operating years, (typically 30 years for coal and natural gas plants)
+i = assumed annual escalation rate for O&M (nominal or real)
+ATWACC, = after tax weighted average cost of capital (nominal or real) from Equation 2
+
+4 Fixed O&M is also put on a $/MWh basis and added to the variable O&M, the same as (OCFix +OCVar)/MWh.
+
+National Energy Technology Laboratory                 Systems Engineering and Analysis Directorate
+
+                                                                                                                      24
+Quality Guidelines for Energy System Studies                                                February 2021
+
+Cost Estimation Methodology for NETL Assessments of Power Plant Performance                               2019
+
+Guidelines for Energy System Studies
+
+        This formula can also be expressed as the CRF times the net present value of the average
+        compound inflation factors using the ATWACC as the discount rate. See fuel prices
+        below, which can use a forecast of annual fuel prices to calculate a levelized fuel price as
+        opposed to using an average annual escalation rate as above. Thus, the right side of the
+        formula has interchangeable escalation rate and fuel price levelization approaches.
+
+        The real dollar approach simply applies the real levelization factor times the base year
+        O&M costs per MWh. For the assumptions listed in Exhibit 3-1 where real escalation is
+        specified as zero, the levelized value equals the annual value, LOMreal = AOM.
+
+        The nominal levelization factor for O&M using a 3 percent annual escalation over 30
+        years is 1.384, LOMnominal = 1.384 * AOM.
+
+3) Calculate levelized annual fuel (LFP) expenses per MWh using the price forecast for fuel
+    costs as shown below [6]. The levelized real value to use for several coal types and
+    natural gas are in NETL's Quality Guidelines for Energy System Studies (QGESS)
+    update for fuels [6], and these levelized costs are for a 2023-2052 (30 years) operating
+    period, calculated as follows:
+
+                 =                       (1 + )         Equation 13
+
+                                          (1 + ) - 1
+
+        where:                              
+                                          )
+                   =               (1  +                Equation 14
+
+                      =1
+
+where:
+
+        n = the year of operation
+
+        y = number of operating years (typically 30 years for coal and natural gas plants)
+
+        Pn = price of fuel in year n (nominal or real)
+
+        ATWACC, = weighted average cost of capital (nominal or real) from Equation 2
+
+Applying these to the base year cost component on a MWh basis will provide the $/MWh cost
+from the following LCOE formula, or, 2018 dollar levelized prices from the QGESS fuel update
+can be used. The real or nominal LCOE can be obtained from the following formula:
+
+                 =  +  +                                Equation 15
+
+National Energy Technology Laboratory                   Systems Engineering and Analysis Directorate
+
+                                                                                                      25
+Quality Guidelines for Energy System Studies  February 2021
+
+Cost Estimation Methodology for NETL Assessments of Power Plant Performance                       2019
+
+Guidelines for Energy System Studies
+
+4 References
+
+[1] Association for the Advancement of Cost Engineering (AACE) International, "Cost
+          Estimate Classification System ­ As Applied in Engineering, Procurement, and
+          Construction for the Process Industries; AACE International Recommended Practice
+          No. 18R-97," AACE International, Morgantown, WV, 2005, Rev. March 1, 2016.
+
+[2] National Energy Technology Laboratory, "Cost and Performance Baseline for Fossil
+          Energy Plants Volume 1: Bituminous Coal and Natural Gas to Electricity Revision 4,"
+          Department of Energy, Pittsburgh, PA, 2019 (pending).
+
+[3] Association for the Advancement of Cost Engineering (AACE) International, "Conducting
+          Technical and Economic Evaluations ­ as Applied for the Process and Utility Industries
+          TCM Framework: 3.2 ­ Asset Planning, 3.3 ­ Investment Decision Making, AACE
+          International Recommended Practice No. 16R-90," AACE International, Morgantown,
+          WV, 1991.
+
+[4] Electric Power Research Institute (EPRI), "Technical Assessment Guide (TAG®) ­ Power
+          Generation and Storage Technology Options, EPRI Product ID No. 1017465," EPRI,
+          Palo Alto, CA, 2009.
+
+[5] Whitman, Requardt & Associates, LLP, "The Handy-Whitman Index of Public Utility
+          Construction Costs, 1912 to January 1 2018," Whitman, Requardt and Associates,
+          Baltimore, MD, 2018.
+
+[6] National Energy Technology Laboratory (NETL), "Quality Guidelines for Energy Systems
+          Studies: Fuel Prices for Selected Feedstocks," Department of Energy, Pittsburgh, Pa,
+          2019 (pending).
+
+[7] U.S. Bureau of Economic Analysis, "Real Gross Domestic Product [GDPC1]," FRED,
+          Federal Reserve Bank of St Lewis, [Online]. Available:
+          https://fred.stlouisfed.org/series/GDPC1/. [Accessed 6 March 2018].
+
+[8] National Energy Technology Laboratory, "Power Systems Financial Model-Grid
+          Technologies,Version 1.0," Department of Energy, Pittsburgh, PA, 2019 (pending).
+
+[9] Grant, Ireson, and Leavenworth, Principles of Engineering Economy, Seventh Edition,
+          Hoboken, NJ: John Wiley & Sons, 1982.
+
+[10] W. R. Meier, "A Standard Method for Economic Analysis of Inertial Confinement Fusion
+          Power Plants," The Seventh Topical Meeting on the Technology of Fusion Energy,
+          Reno, Nevada, 1986.
+
+[11] Internal Revenue Service, "Publication 946 How to Depreciate Property," Department of
+          the Treasury, Washington, D.C., 2016.
+
+[12] Edison Electric Institute (EEI), "EEI Q4 2017 Financial Update," Edison Electric Institute,
+          Washington, D.C., February 2018.
+
+National Energy Technology Laboratory         Systems Engineering and Analysis Directorate
+
+                                                                                            26
+Quality Guidelines for Energy System Studies  February 2021
+
+Cost Estimation Methodology for NETL Assessments of Power Plant Performance                     2019
+
+Guidelines for Energy System Studies
+
+National Energy Technology Laboratory         Systems Engineering and Analysis Directorate
+
+                                                                                            27
+Quality Guidelines for Energy System Studies  February 2021
+
+Cost Estimation Methodology for NETL Assessments of Power Plant Performance                         2019
+
+Guidelines for Energy System Studies
+
+Appendix A: The Power System Financial Model for Grid
+Technologies
+
+The Power System Financial Model for Grid Technologies (PSFM-GT) was designed to model
+cash flows for up to 15 technologies with full income and cash flow tables at once. [8] It
+includes the capability of calculating levelized cost of electricity (LCOE) in several different
+ways: nominal, real dollars, formulaic, and goal-seeking. These are included to address different
+preferences for approach and one's desire to cross-check methods. There are potential short-
+comings of each approach depending on the technology cash flow structure and variability due to
+subsidies and applicable tax laws, depreciation, etc.
+
+For instance, the formula method requires that each item to be included in the LCOE should have
+a price over the same number of years. This makes it difficult for a 20-year debt term to be
+included when a technology has a different length life. Depreciation isn't typically included in a
+formula approach.
+
+The PSFM-GT can be useful in comparing several technology types including those that may be
+on the other side of the consumer meter such as rooftop solar, batteries, and electric vehicles.
+Renewable generation can also be compared over 40- to 60-year periods if desired, enabling
+repeated installations to be compared to long-lived generation such as nuclear or coal. Market
+pricing inputs are also available to input revenue sources flowing back to a technology so an
+internal rate of return (IRR) can be calculated if one wanted to investigate market conditions or
+opportunities for a technology. A link to the PSFM-GT is planned for publication on the NETL
+website on the Energy Analysis page in 2019.
+
+National Energy Technology Laboratory         Systems Engineering and Analysis Directorate
+
+                                                                                            28
+Quality Guidelines for Energy System Studies                                           February 2021
+
+Cost Estimation Methodology for NETL Assessments of Power Plant Performance                                2019
+
+Guidelines for Energy System Studies
+
+Appendix B: Changes in Methodology Used in the Bituminous
+Baseline Reports from Revision 3 to Revision 4
+
+For revision 3 of the Bituminous Baseline report, the base-year cost of electricity (COE) values
+were calculated as those that generated an internal rate of return (IRR) equal to the specified
+return on equity (ROE) based on typical economic assumptions for power plant projects. For
+revision 4 of the Bituminous Baseline report, the base-year real levelized cost of electricity
+(LCOE) values are calculated using the after-tax weighted average cost of capital (ATWACC)
+based on typical economic assumptions for power plant projects. Because real escalation on the
+COE components is assumed to be zero (i.e., inflation equals nominal escalation), the real LCOE
+values equal the base-year COE values. While many assumptions remained the same between
+revision 3 and 4, those that changed are listed in Exhibit B-1.
+
+            Exhibit B-1. Changes in global economic assumptions
+
+Parameter                              Revision 3 Value              Revision 4 Value
+
+Basis of Method                        Project Financing,        Discount Rate based on ATWACC =
+                                       IRR = ROE = 12%                         4.72% real
+
+Income Tax Rates                       34% Federal, 6% State         21% Federal, 6% State
+                                           (Effective 38%)             (Effective 25.74%)
+
+                                CONTRACTING AND FINANCING TERMS
+
+Debt/Equity Split               Commercial IOU = 50/50 TASC      Commercial IOU = 55/45 TOC
+                                 High Risk IOU = 45/55 TASC
+
+Debt Term                              15 year                             30 years
+                                                                 (Equals operating period)
+
+Debt Interest Rate              Commercial IOU = 4.5% nominal    Commercial IOU = 2.94% real
+                                 High Risk IOU = 5.5%, nominal
+
+Return on Equity                       12%, nominal                  7.84% real
+
+                                TREATMENT OF CAPITAL COSTS
+
+Capital Cost Escalation During         3.6% nominal                  0% real
+ Capital Expenditure Period
+
+Interest During Construction    100% Debt financed with annual   Annual charge included in TASC
+                                     accrual included in TASC             without accrual
+
+ROE during construction                Not included              Annual charge included in TASC
+                                                                          without accrual
+
+                         ESCALATION OF OPERATING COSTS AND REVENUES
+
+Escalation of COE (revenue),           3% nominal                    0% real
+          O&M Costs
+
+Fuel Costs                             3% nominal                   Levelized real value
+                                                                 from QGESS on Fuel Price
+
+National Energy Technology Laboratory                    Systems Engineering and Analysis Directorate
+
+                                                                                                       29
+Quality Guidelines for Energy System Studies                                        February 2021
+
+Cost Estimation Methodology for NETL Assessments of Power Plant Performance                           2019
+
+Guidelines for Energy System Studies
+
+The changes to the treatment of capital costs listed in Exhibit B-1 resulted in new total as-spent
+capital (TASC)/total overnight cost (TOC) factors listed in Exhibit B-2. The difference is
+predominantly due to the inclusion of the ROE during the construction period and the removal of
+the capitalization of all interest during construction as debt, including the additional accrual of
+interest on that interest.
+
+                            Exhibit B-2. Changes in TASC/TOC factors
+
+         Parameter           Revision 3 TASC/TOC     Revision 4 TASC/TOC            % Increase
+                                                    Commercial IOU = 1.093          1.3%-1.6%
+3-year construction period  Commercial IOU = 1.075  Commercial IOU = 1.154          1.2%-1.8%
+     (natural gas cases)     High Risk IOU = 1.078
+
+5-year construction period  Commercial IOU = 1.134
+         (coal cases)        High Risk IOU = 1.140
+
+The changes in the financial assumptions listed in Exhibit B-1 as well as switching the basis of
+the methodology from a project-focused calculation where the IRR was assumed to match the
+12 percent ROE to a corporate-focused calculation using the ATWACC as the discount rate
+resulted in new calculations for the capital component of the COE. The revision 3 values were
+based on multiplying the TOC by capital charge factors (CCF) which were calculated in a
+detailed cash flow model for specific assumptions. The revision 4 values are based on
+multiplying the TASC by fixed charge rate (FCR) which are calculated using the formula method
+described in this document. The impact of the change is estimated by comparing the CCF values
+with FCR*TASC/TOC values listed in Exhibit B-3. The difference in values is predominantly
+due to the simplification of the calculations, which are based on real escalation equaling zero, the
+real ROE of 7.3 percent, and the debt terms equaling the operation life.
+
+                            Exhibit B-3. Changes in capital component factors
+
+         Parameter                  Revision 3       Revision 4       Revision 4    % decrease
+                                        CCF              FCR       FCR*TASC/TOC      26%-30%
+3-year construction period                                                           29%-34%
+     (natural gas cases)    Commercial IOU = 0.105  Commercial    Commercial IOU =
+                             High Risk IOU = 0.111  IOU = 0.0707        0.0773
+5-year construction period
+         (coal cases)       Commercial IOU = 0.116  Commercial    Commercial IOU =
+                             High Risk IOU = 0.124  IOU = 0.0707        0.0817
+
+National Energy Technology Laboratory               Systems Engineering and Analysis Directorate
+
+                                                                                                  30
+Quality Guidelines for Energy System Studies  February 2021
+
+Cost Estimation Methodology for NETL Assessments of Power Plant Performance                        2019
+
+Guidelines for Energy System Studies
+
+Appendix C: Revision Control
+
+                 Exhibit C-1. Revision table
+
+Revision Number   Revision Date                                Description of Change
+          0         April 2011
+          1                            Initial publication
+          2       February 2014
+                     May 2015          Front matter added and document reformatted
+          3
+                 September 2019        Updated to reflect minor changes and 2011 dollar year
+
+                                       Simplified calculations to specify values and formulas for
+                                       calculating real LCOE based on FCR instead of COE based on
+                                       CCFs (see Appendix B)
+
+National Energy Technology Laboratory         Systems Engineering and Analysis Directorate
+
+                                                                                            31
+

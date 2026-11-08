@@ -1,0 +1,48 @@
+== burnbranch.log (5 lines)
+    {'tail': 'export', 'step12_moved': ['P1', 'P4'], 'text': 'A branch of the hot primary helium carries 56.6\xa0MWth to the power block. The steam for the reboiler first does back-pressure work in the turbine and then gives the reboiler 20.8\xa0MW; the rest of the br'}
+    {'tail': 'burn_on_site', 'step12_moved': [], 'text': 'In this scenario electricity from the reject burned on site takes the place of the power block, so the helium branch carries 0.0\xa0MWth and the turbine makes 0.00\xa0MWe.The helium circulators draw 6.59\xa0MW'}
+    {'tail': 'inl_selexol', 'step12_moved': ['P1', 'P4'], 'text': 'A branch of the hot primary helium carries 47.8\xa0MWth to the power block, whose turbine makes 18.96\xa0MWe at 39.7% efficiency.The helium circulators draw 7.14\xa0MWe of the 18.96\xa0MWe site demand, and the gr'}
+    errors []
+== closecheck.log (10 lines)
+    case_a_burn (burn_on_site 210 case_a): closing step 13, lit 25, union of steps 1-12 25, dash paths 25 on 25 lines, running dash animations 50; dark ['P4', 'S03', 'S21', 'R1', 'S15']; lit not moved before []; moved before not lit []; dashes off lit [] -> ok
+    selexol_r100 (inl_selexol 100 case_b): closing step 13, lit 25, union of steps 1-12 25, dash paths 25 on 25 lines, running dash animations 50; dark ['L3', 'L4', 'L5', 'L6', 'C1']; lit not moved before []; moved before not lit []; dashes off lit [] -> ok
+    errors []
+    8 of 8 input sets ok
+== closing.log (5 lines)
+    {'tail': 'export', 'dark': ['S03', 'S21', 'S14', 'R1', 'S15', 'S16'], 'lit': 24, 'flows': 24}
+    {'tail': 'burn_on_site', 'dark': ['P4', 'S03', 'S21', 'R1', 'S15'], 'lit': 25, 'flows': 25}
+    {'tail': 'inl_selexol', 'dark': ['L3', 'L4', 'L5', 'L6', 'C1'], 'lit': 25, 'flows': 25}
+    errors []
+== numcheck.log (2 lines)
+    1155 caption numbers; 0 without a path; 0 raw not equal to the reply; 0 shown text not equal to the rounded reply
+    10 shown as n/a with no value in the reply: ['units.separator.results.condensate.value', 'units.wgs.results.wgs_heat_release.value']
+== steps_auto_1440.log (16 lines)
+    step 13: state 13 at 89.5s, units [], move [], flows 30 {'running': 30, 'finished': 30}, card [1035, 8, 1394, 928], kicker [1050, 21, 1379, 40], title [1050, 42, 1379, 66], docW 1425/1425, lit off/part 0/0 of 30
+    end: {'ready': False, 'active': True, 'step': 12, 'id': 'closing', 'playing': False, 'ended': True, 'still': False, 'steps': 13, 'flows': 1} at 97.6 s; play Replay
+    after exit: False focus #tour-start classes left 0
+    problems {"errors": [], "network": [], "hosts": ["http://127.0.0.1:65031"], "requests": 22, "workers": ["worker"], "server_log_4xx": []}
+== steps_auto_375.log (16 lines)
+    step 13: state 13 at 89.6s, units [], move [], flows 30 {'running': 30, 'finished': 30}, card [16, 627, 359, 1547], kicker [31, 640, 344, 659], title [31, 661, 344, 684], docW 375/375, lit off/part 21/22 of 30
+    end: {'ready': False, 'active': True, 'step': 12, 'id': 'closing', 'playing': False, 'ended': True, 'still': False, 'steps': 13, 'flows': 1} at 97.6 s; play Replay
+    after exit: False focus #tour-start classes left 0
+    problems {"errors": [], "network": [], "hosts": ["http://127.0.0.1:62060"], "requests": 22, "workers": ["worker"], "server_log_4xx": []}
+== steps_next_1440.log (15 lines)
+    step 12: state 12 at 34.8s, units ['htgr', 'circ_primary', 'power'], move ['P1', 'P4'], flows 2 {'running': 2, 'finished': 2}, card [1035, 8, 1394, 821], kicker [1050, 21, 1379, 40], title [1050, 42, 1379, 66], docW 1425/1425, lit off/part 0/0 of 5
+    step 13: state 13 at 37.8s, units [], move [], flows 30 {'running': 30, 'finished': 30}, card [1035, 8, 1394, 928], kicker [1050, 21, 1379, 40], title [1050, 42, 1379, 66], docW 1425/1425, lit off/part 0/0 of 30
+    after exit: False focus #tour-start classes left 0
+    problems {"errors": [], "network": [], "hosts": ["http://127.0.0.1:58778"], "requests": 22, "workers": ["worker"], "server_log_4xx": []}
+== steps_next_375.log (15 lines)
+    step 12: state 12 at 33.8s, units ['htgr', 'circ_primary', 'power'], move ['P1', 'P4'], flows 2 {'running': 2, 'finished': 2}, card [16, 627, 359, 1439], kicker [31, 640, 344, 659], title [31, 661, 344, 684], docW 375/375, lit off/part 0/0 of 5
+    step 13: state 13 at 37.1s, units [], move [], flows 30 {'running': 30, 'finished': 30}, card [16, 627, 359, 1547], kicker [31, 640, 344, 659], title [31, 661, 344, 684], docW 375/375, lit off/part 21/22 of 30
+    after exit: False focus #tour-start classes left 0
+    problems {"errors": [], "network": [], "hosts": ["http://127.0.0.1:58023"], "requests": 22, "workers": ["worker"], "server_log_4xx": []}
+== walk.log (8 lines)
+    burn ok {'rating_mwth': 210, 'basis': 'case_b', 'tail_gas': 'burn_on_site'} 13 steps
+    selexol ok {'rating_mwth': 210, 'basis': 'case_b', 'tail_gas': 'inl_selexol'} 13 steps
+    case_a_burn ok {'rating_mwth': 210, 'basis': 'case_a', 'tail_gas': 'burn_on_site'} 13 steps
+    errors 0
+== walk2.log (6 lines)
+    selexol_r100 ok {'rating_mwth': 100, 'basis': 'case_b', 'tail_gas': 'inl_selexol'} 13 steps
+    r150 ok {'rating_mwth': 150, 'basis': 'case_b', 'tail_gas': 'recycle'} 13 steps
+    r170 ok {'rating_mwth': 170, 'basis': 'case_b', 'tail_gas': 'recycle'} 13 steps
+    errors 0

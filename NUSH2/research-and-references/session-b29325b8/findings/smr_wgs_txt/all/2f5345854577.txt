@@ -1,0 +1,1174 @@
+
+
+=== PDF page 1 of 26 ===
+The INL is a U.S. Department of Energy National Laboratory 
+operated by Battelle Energy Alliance 
+INL/EXT-06-11109
+Evaluation Of Next 
+Generation Nuclear 
+Power Plant (NGNP) 
+Intermediate Heat 
+Exchanger (IHX) 
+Operation Conditions 
+E. A. Harvego 
+April 2006 
+
+
+=== PDF page 2 of 26 ===
+
+
+=== PDF page 3 of 26 ===
+INL/EXT-06-11109
+ EVALUATION OF NEXT GENERATION NUCLEAR 
+POWER PLANT (NGNP) INTERMEDIATE HEAT 
+EXCHANGER (IHX) OPERATING CONDITIONS 
+E. A. Harvego 
+April 2006 
+Idaho National Laboratory 
+Idaho Falls, Idaho 83415 
+Prepared for the 
+U.S. Department of Energy 
+Assistant Secretary for Nuclear Energy 
+Under DOE Idaho Operations Office 
+Contract DE-AC07-05ID14517
+
+
+=== PDF page 4 of 26 ===
+ii
+
+
+=== PDF page 5 of 26 ===
+iii
+ABSTRACT
+This report summarizes results of a preliminary evaluation to determine the operating conditions 
+for the Next Generation Nuclear Plant (NGNP) Intermediate Heat Exchanger (IHX) that will 
+transfer heat from the reactor primary system to the demonstration hydrogen production plant(s).  
+The Department of Energy is currently investigating two primary options for the production of 
+hydrogen using a high temperature reactor as the power source.  These options are the High 
+Temperature Electrolysis (HTE) and Sulfur-Iodine (SI) thermochemical hydrogen production 
+processes.  However, since the SI process relies entirely on process heat from the reactor, while 
+the HTE process relies primarily on electrical energy with only a small amount of process heat 
+required, the design of the IHX is dictated by the SI process heat requirements. Therefore, the 
+IHX operating conditions were defined assuming 50 MWt is available for the production of 
+hydrogen using the SI process. 
+Three configurations for the intermediate loop were evaluated, including configurations for both 
+direct and indirect power conversion systems.  The HYSYS process analysis software was used 
+to perform sensitivity studies to determine the influence of reactor outlet temperatures, 
+intermediate loop working fluids (helium and molten salt), intermediate loop pressures, and 
+intermediate loop piping lengths on NGNP performance and IHX operating conditions.  The 
+evaluation of NGNP performance included assessments of overall electric power conversion 
+efficiency and estimated hydrogen production efficiency. Based on these evaluations, 
+recommended IHX operating conditions are defined. 
+
+
+=== PDF page 6 of 26 ===
+iv
+TABLE OF CONTENTS 
+ABSTRACT...................................................................................................................................iii 
+TABLE OF CONTENTS............................................................................................................... iv 
+TABLES ......................................................................................................................................... v 
+FIGURES........................................................................................................................................ v 
+1.
+INTRODUCTION .................................................................................................................. 1 
+2.
+PLANT DESIGN CONFIGURATIONS................................................................................ 1 
+3.
+IHX DESIGN CONSIDERATIONS...................................................................................... 4 
+4.
+ANALYSIS METHOD........................................................................................................... 4 
+5.
+ANALYSIS RESULTS .......................................................................................................... 5 
+5.1 
+Configuration 1 (direct electrical cycle and a parallel IHX)........................................... 6 
+5.2
+Configuration 2 (direct electrical cycle, parallel IHX, and SHX) ................................ 12 
+5.3
+Configuration 3 (indirect electrical cycle and a parallel SHX)..................................... 13 
+6.
+CONCLUSIONS................................................................................................................... 16 
+7.
+REFERENCES ..................................................................................................................... 19 
+
+
+=== PDF page 7 of 26 ===
+v
+TABLES 
+Table 1.  HYSYS results for Configuration 1 with reactor outlet temperatures of 850 °C, 900 °C 
+and 950 °C. ..................................................................................................................................... 7 
+Table 2.  System conditions as a function of reactor outlet temperature for Configuration 1........ 8 
+Table 3.  HYSYS results for Configuration 1 with variable intermediate loop heat losses. .......... 8 
+Table 4.  HYSYS results for Configuration 1 with variable intermediate loop pressures............ 10 
+Table 5.  HYSYS calculated system conditions for variable intermediate loop pressure and 
+working fluid................................................................................................................................. 11 
+Table 6.  HYSYS results for Configuration 2 with variable reactor outlet temperature. ............. 13 
+Table 7.  HYSYS results for Configuration 3 with variable reactor outlet temperature. ............. 14 
+Table 8.  System conditions for Configuration 3 with variable reactor outlet temperature.......... 15 
+Table 9.  Recommended IHX thermal-hydraulic conditions for Configuration 1........................ 17 
+Table 10.  Recommended thermal-hydraulic conditions for Configuration 3.............................. 18 
+FIGURES
+Figure 1.  Configuration 1 (direct electrical cycle and a parallel IHX).......................................... 2 
+Figure 2.  Configuration 2 (direct electrical cycle, parallel IHX, and SHX).................................. 3 
+Figure 3.  Configuration 3 (indirect electrical cycle and a parallel SHX)...................................... 3 
+Figure 4.  HYSYS model of Configuration 1 (direct electical cycle and a parallel IHX).............. 6 
+Figure 5.  HYSYS model of Configuration 1 with Flinak as intermediate loop working fluid.... 11 
+Figure 6.  HYSYS model of Configuration 2 (direct electrical cycle, parallel IHX, and SHX). . 12 
+Figure 7.  HYSYS model of Configuration 3 (indirect electrical cycle and a parallel SHX)....... 14 
+
+
+=== PDF page 8 of 26 ===
+1
+1. INTRODUCTION 
+This report summarizes results of a preliminary evaluation to determine the operating conditions 
+for the Next Generation Nuclear Plant (NGNP) Intermediate Heat Exchanger (IHX) that will 
+transfer heat from the reactor primary system to the demonstration hydrogen production plant(s).  
+The Department of Energy is currently investigating two primary options for the production of 
+hydrogen using a high temperature reactor as the power source.  These options are the High 
+Temperature Electrolysis (HTE) and Sulfur-Iodine (SI) thermochemical production processes.  
+However, since the SI process relies entirely on process heat from the reactor, while the HTE 
+process relies primarily on electrical energy with only a small amount of process heat required, 
+the design of the IHX is dictated by the SI process heat requirements. Therefore, the IHX 
+operating conditions are defined assuming 50 MWt is available for the production of hydrogen 
+using the SI process.  This heat is delivered to the hydrogen production process through an 
+intermediate heat transport loop and possibly a tertiary loop to provide adequate separation 
+between the reactor primary system and the hydrogen production process.  This separation is 
+needed to minimize the potential for tritium migration between the reactor primary system and 
+hydrogen production process, and to ensure that accident or upset conditions in the hydrogen 
+production facility do not propagate to or impact the operation of the NGNP reactor. 
+Depending on the NGNP design (either a direct or indirect power conversion cycle), the IHX 
+will be required to provide heat for hydrogen production or for both hydrogen production and 
+power conversion.  Therefore, several different plant configurations, which included both direct 
+and indirect power conversion cycles, were evaluated and three configurations were selected for 
+further assessments. 
+The following section defines the basis for the plant configurations selected for further analyses 
+leading to the definition of IHX operating conditions. 
+2. PLANT DESIGN CONFIGURATIONS 
+Several different potential plant design configurations for the NGNP with either direct or indirect 
+power conversion cycles and integrated IHX designs were proposed and evaluated by Davis et 
+al., 2005.  These configurations included IHX designs in parallel or series with the NGNP power 
+conversion system.  In the serial designs, the total primary system flow from the reactor outlet 
+passes through the IHX where approximately 50 MWt is transferred to the intermediate loop to 
+drive the hydrogen production process.  In these designs, heat is extracted from the primary fluid 
+at the highest possible temperature (the reactor outlet temperature) for delivery to the hydrogen 
+production process, while the power conversion system receives a slightly lower temperature 
+fluid.  In the parallel designs, the flow from the reactor outlet is split, with a small fraction of the 
+flow (approximately 10 %) going to the IHX to drive the hydrogen production process, while the 
+majority of the flow is delivered to the power conversion system for electrical power production. 
+
+
+=== PDF page 9 of 26 ===
+In these designs, both the hydrogen production process and the power conversion system receive 
+the highest possible temperature fluid.  
+The three design configurations recommended by Davis et al. are shown in Figures 1, 2 and 3 
+below.  The nomenclature used to define the heat exchangers in these figures is: 
+x
+IHX – The first heat exchanger downstream of the NGNP 
+x
+PHX – The heat exchanger that connects the intermediate heat transport loop to 
+the hydrogen production plant (in reality this could be multiple heat exchangers) 
+x
+SHX – The heat exchanger that, if present, is located between the IHX and the 
+PHX, and is referred to as the secondary heat exchanger (SHX). 
+The basis for the selection of these three configurations is explained in some detail in Davis et 
+al., 2005.  In brief, the direct cycle parallel IHX configuration shown in Figure 1 produces the 
+smallest heat exchanger design and highest overall electrical power production efficiency for the 
+NGNP.  The direct cycle configuration in Figure 2 resembles that in Figure 1, but includes a 
+tertiary loop for added separation between the NGNP and the hydrogen production process.  
+While this configuration also results in a small IHX design, the added separation comes at the 
+expense of lower hydrogen production efficiencies.   Finally, although the indirect electric power 
+conversion cycle shown in Figure 3 requires the largest IHX design (since it must transfer the 
+full 600 MW of reactor thermal power to the power conversion system and hydrogen production 
+process), the added separation between the NGNP reactor and hydrogen production plant 
+provided by this design may be an added operational benefit. 
+Generator
+Turbine
+Recuperator
+IHX
+PHX
+Nuclear Reactor
+Precooler
+Compressor
+Gas
+Mixer
+Compressor
+Figure 1.  Configuration 1 (direct electrical cycle and a parallel IHX) 
+2
+
+
+=== PDF page 10 of 26 ===
+Generator
+Turbine
+Recuperator
+IHX
+PHX
+Nuclear Reactor
+Precooler
+Compressor
+Gas
+Mixer
+Compressor
+SHX
+Figure 2.  Configuration 2 (direct electrical cycle, parallel IHX, and SHX). 
+Generator
+Turbine
+Recuperator
+IHX
+PHX
+Nuclear Reactor
+Precooler
+Compressor
+SHX
+Compressor
+Compressor
+Mixer
+Figure 3.  Configuration 3 (indirect electrical cycle and a parallel SHX). 
+3
+
+
+=== PDF page 11 of 26 ===
+4
+3. IHX DESIGN CONSIDERATIONS 
+The IHX design will be influenced by a number of interrelated considerations including (1) the 
+required separation distance between the NGNP and the hydrogen production plant, (2) the heat 
+losses from the intermediate loop piping to the surrounding environment, (3) the operating 
+pressure and working fluid (helium or molten salt) in the intermediate loop, and (4) the desired 
+efficiency of the hydrogen production process. 
+The required separation distance between the NGNP reactor and hydrogen production plant will 
+affect the intermediate loop piping sizes since the allowable pressure drop will determine the 
+diameter of the hot and cold leg pipes.  The separation distance also influences piping heat losses 
+to the environment (which were evaluated by Lillo, et al., 2005) and the intermediate loop 
+pumping requirements.  Depending on the intermediate loop working fluid (helium or molten 
+salt), the intermediate loop pumping power requirements will have some influence on the overall 
+NGNP cycle efficiency, but given the smaller fluid flow rates in the intermediate loop compared 
+to the primary system, this affect is expected to be small. 
+The operating pressure of the intermediate loop will probably represent the biggest challenge 
+since the design of the intermediate loop piping and the design of the IHX present conflicting 
+requirements.  In previous analyses, Davis et al., 2005 recommended a maximum intermediate 
+loop fluid pressure of 2 MPa to ensure reasonable intermediate loop pipe wall thicknesses.  In 
+contrast, Lillo et al., 2005 recommended a minimum intermediate loop fluid pressure of 3 MPa, 
+based on analyses they performed for a Printed Circuit Heat Exchanger (PCHE) design for the 
+IHX.  Given the information available at the time on the SI process, the conclusions of both 
+reports are valid.  However, as discussed later, changes to the SI process being considered by 
+General Atomics (General Atomics, 2006) may make a higher pressure intermediate loop design 
+more attractive. 
+The following sections describe the evaluation of IHX design conditions for the three selected 
+intermediate loop configurations defined in Section 2.  Section 4 describes the methodology used 
+in performing design sensitivity studies.  Section 5 summarizes the results of these sensitivity 
+analyses, and Section 6 presents the conclusions of this work. 
+4. ANALYSIS METHOD 
+The HYSYS process modeling software (Aspen Technology, 2005) was used to perform 
+analyses to define operating conditions for the IHX.  Information used to model the intermediate 
+and tertiary loops for the different designs was obtained from Davis et al., 2005, Lillo et al., 
+2005, Brown et al., 2003, and discussions with General Atomics (General Atomics, 2006).  The 
+intermediate loop heat losses used in these evaluations were obtained from Lillo, et al., and the 
+assumed system and component pressure drops are based on the recommendations of Davis et 
+al., 2005.  For their analyses, Davis et al. assumed a pressure drop of 50 kPa for all heat 
+exchanger components.  Davis, et al. also assumed a pressure drop of 50 kPa in each leg of the 
+intermediate and/or tertiary loop hot and cold leg pipes.  These values seem reasonable since, for 
+the General Atomics Modular Helium Reactor (MHR) plant design, pressure drops across the 
+
+
+=== PDF page 12 of 26 ===
+core and other major components are in the range of 30 kPa to 70 kPa, and appear to be 
+acceptable from a system performance point of view. 
+Depending on the fluid conditions in the intermediate and tertiary loops, the desired pressure 
+drop (in this case 50 kPa) will determine the required hot and cold leg pipe diameters.  By 
+defining an acceptable pressure drop in the hot and cold legs of the intermediate and/or tertiary 
+loops, the primary effect on system performance is the required pumping power to circulate the 
+intermediate and/or tertiary loop working fluids.  This pumping power is in turn affected by the 
+choice of working fluid (helium or molten salt) and fluid conditions (temperature and pressure).
+However, since only 50 MW of thermal power will be used to produce hydrogen in the NGNP, 
+the intermediate and tertiary loop flow rates and pumping requirements are expected to be small 
+in comparison to the NGNP primary system flow rates and pumping requirements.  As a result, 
+the intermediate and tertiary loop pumping requirements should not have a significant affect on 
+overall NGNP plant performance.  This would not be the case, however, for a large commercial 
+plant used entirely for hydrogen production since the heat transferred to the hydrogen production 
+process and the resulting intermediate and tertiary loop flow rates and pumping requirements 
+would be much larger, and therefore, would have a larger impact on overall system performance. 
+5. ANALYSIS RESULTS 
+HYSYS analyses were performed for each of the three configurations shown above.  For these 
+calculations, the reactor power was assumed to be 600 MWt, which could apply to either the 
+prismatic or pebble bed Very High Temperature Reactor (VHTR) designs.  The core ¨T in all of 
+the calculations discussed below was assumed to be 360 °C, since that is currently the core ¨T
+defined by General Atomics for their prismatic core design. Although the core ¨T for the pebble 
+bed and other prismatic core designs may be higher, 360 °C was used in these calculations 
+because it produces the highest primary system flow rates for sizing the IHX designs.  For 
+evaluation of system performance, gas turbine and compressor power requirements were 
+calculated by HYSYS assuming adiabatic efficiencies of 90 %. 
+Each of the calculations also assumed an IHX effectiveness of 0.95. This heat exchanger 
+effectiveness represents the actual heat duty divided by the maximum possible heat duty of a 
+heat exchanger, and is defined as: 
+)
+T
+(T
+)
+c
+m
+(
+)
+T
+(T
+)
+c
+m
+(
+İ
+in
+c
+in
+h
+min
+p
+out
+h
+in
+h
+h
+p
+
+
+ 
+
+
+, 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+(1) 
+where m is the mass flow rate, 
+is the specific heat capacity at constant pressure, and T is the 
+fluid temperature at the inlet and outlet of the hot and cold sides of the heat exchanger. 
+p
+c
+The design of the IHX has not been decided, but could be either a printed circuit or 
+countercurrent tube and shell design.  However, regardless of the heat exchanger design selected, 
+a heat exchanger effectiveness of 0.95 should provide reasonable heat transfer without imposing 
+excessively large or costly heat exchanger design requirements. 
+5
+
+
+=== PDF page 13 of 26 ===
+Finally, for those cases involving helium as the intermediate loop working fluid, it was decided 
+to maintain the same flow rate per unit power in the intermediate loop as in the primary loop.  
+Based on discussions with General Atomics (General Atomics, 2006), this approach should 
+ensure adequate temperature helium is available for the SI heat addition processes downstream 
+of the Sulfur Iodine decomposition heat exchanger.  Therefore, for 50 MW of heat transferred to 
+the SI process, the required intermediate loop flow rate (Mint. loop) is: 
+Mint. loop = 320 kg/s x (50 MW/600 MW) = 26.7 kg/s (helium) 
+ 
+ 
+(2) 
+5.1 
+Configuration 1 (direct electrical cycle and a parallel IHX) 
+The HYSYS model for Configuration 1 is shown in Figure 4.  The portion of the model on the 
+right represents a direct helium recuperated brayton cycle with intercooling between high and 
+low pressure compressors.  After leaving the reactor (top) the flow from the reactor is split with 
+about 10% of the flow passing through the IHX where its heat is transferred to the intermediate 
+loop. The flow is then compressed and returned to the primary loop flow at the reactor inlet. 
+As shown in Figure 4, the intermediate loop connects to the secondary side of the IHX.  It 
+consists of a hot and cold leg, an intermediate loop compressor, and one or more process heat 
+exchangers.  These process heat exchangers provide the heat to drive the SI thermochemical 
+hydrogen production process. 
+Figure 4.  HYSYS model of Configuration 1 (direct electical cycle and a parallel IHX) 
+The HYSYS model in Figure 4 represents the base case with a reactor outlet temperature of 900 
+°C.  The intermediate loop fluid in this case was assumed to be helium at a pressure of 2 MPa.  
+Heat losses for this calculation were based on the results of Lillo et al., assuming a 90-m 
+separation distance between the reactor system and the hydrogen production plant.  The total of 
+the intermediate loop piping heat losses for this configuration was calculated by Lillo, et al., to 
+be 0.26 MWt, and is distribution with approximately 54 % lost from the hot leg and 46 % lost 
+from the cold leg. 
+6
+
+
+=== PDF page 14 of 26 ===
+To determine the affect of reactor outlet temperatures on IHX operating conditions, additional 
+HYSYS calculations were also performed for reactor outlet temperatures of 850 oC and 950 °C.
+The results of the evaluation of the different reactor outlet temperatures are summarized in Table 
+1. In the table, the hot side of the IHX is the reactor side and the cold side of the IHX is the 
+intermediate loop side. 
+Table 1.  HYSYS results for Configuration 1 with reactor outlet temperatures of 850 °C, 900 °C and 950 °C. 
+Reactor outlet temperature, °C 
+850
+900
+(Base Case) 
+950
+Hot side IHX inlet press., MPa 
+7.0
+7.0
+7.0
+Hot side IHX Outlet Press., MPa 
+6.95
+6.95
+6.95
+Hot side mass flow, kg/s 
+26.67
+26.67
+26.67
+Hot side inlet temp., °C 
+850
+900
+950
+Hot side outlet temp., °C 
+523
+575
+628
+Cold side inlet press., MPa 
+1.95
+1.95
+1.95
+Cold side outlet press., MPa 
+1.90
+1.90
+1.90
+Cold side mass flow, kg/s 
+26.67
+26.67
+26.67
+Cold side inlet temp., °C 
+505
+558
+611
+Cold side outlet temp., °C 
+833
+883
+933
+The reactor outlet temperature primarily influences the overall electric power conversion cycle 
+efficiency and the peak intermediate loop temperature at which heat is delivered to the hydrogen 
+production process.  The peak temperature at which heat is delivered to the hydrogen production 
+process in turn determines the hydrogen production plant efficiency.  Table 2 summarizes these 
+results for the different reactor outlet temperatures.  
+ The electric power conversion efficiency, ȘPCU shown in Table 2 is calculated as:
+H2
+th
+CIR
+S
+C
+T
+2
+PCU
+Q
+Q
+W
+W
+W
+W
+power
+process
+H
+-
+power
+ermal
+Reactor th
+output
+power
+Electric
+
+6
+
+
+6
+
+6
+ 
+ 
+K
+, 
+ (3) 
+where
+W
+6
+T is the total turbine workload, 6 WC is the total compressor workload, WS is the 
+plant stationary load (neglected for these analyses), Ȉ WCIR is the circulator workload in the 
+primary, intermediate, and, if present, tertiary loops, Qth is the reactor thermal power, and QH2 is 
+the power supplied through the PHX to the hydrogen generating plant. 
+The peak helium temperature at which heat is delivered to the hydrogen production process was 
+calculated by HYSYS.  The hydrogen production efficiency was estimated based on information 
+from Brown, et al., 2003 giving hydrogen production efficiency as a function of the maximum 
+temperature of the sulfur iodine decomposition process.  Based on a review of ASPEN process 
+flow sheets contained in Brown, et al., the minimum approach temperature between the helium 
+in the intermediate loop and the sulfuric acid decomposition temperature appears to be between 
+20 °C and 25 °C.  Therefore, 25 °C was subtracted from the peak helium delivery temperature to 
+the process heat exchanger to estimate the hydrogen production efficiencies. 
+7
+
+
+=== PDF page 15 of 26 ===
+8
+Table 2.  System conditions as a function of reactor outlet temperature for Configuration 1. 
+Reactor Outlet 
+Temperature, °C 
+850
+900
+950
+Electric Power 
+Conversion
+Efficiency, % 
+44.3
+47.7
+51.4
+Helium temp. to 
+Process HX, °C 
+832
+882
+932
+H2 Prod. Efficiency 
+(estimated), % 
+38
+46
+50
+As expected, all three parameters in Table 3 increase with increased reactor outlet temperature.  
+Assuming a minimum hydrogen production efficiency of 40 % would be desirable for 
+demonstrating hydrogen production processes in the NGNP, the results in Table 2 (last row), 
+indicate that it is probably not feasible to achieve the desired hydrogen produce rates at a reactor 
+outlet temperature of 850 °C.   
+Since heat losses from the intermediate loop piping can also affect hydrogen production rates, 
+heat loss sensitivity calculations were performed for the base case conditions in Table 1 with a 
+reactor outlet temperature of 900 °C.  The heat losses were based on results from Lillo et al., 
+2005 assuming separate hot and cold leg pipes and an intermediate loop helium pressure of 2 
+MPa.  The affect of these heat loss sensitivity calculations on IHX operating conditions are 
+summarized in Table 3.  The total intermediate loop piping heat loss for Case 1 (base case) was 
+0.26 MW assuming 90 meter hot and cold leg pipe lengths.  The total heat loss for Case 2 was 
+1.82 MW assuming 500 meter pipe lengths.  For both cases, the distribution of the total heat 
+losses was apportioned with 54 % allocated to the hot leg and 46 % allocated to the cold leg.
+Table 3.  HYSYS results for Configuration 1 with variable intermediate loop heat losses. 
+Case 1
+90-m pipe 
+lengths
+Case 2 
+500-m pipe 
+lengths
+IHX duty, MW 
+45.0
+46.6
+Hot side IHX Inlet Press., MPa 
+7.0
+7.0
+Hot side IHX Outlet Press., MPa 
+6.95
+6.95
+Hot side mass flow, kg/s 
+26.67
+26.67
+Hot side inlet temp., °C 
+900
+900
+Hot side outlet temp., °C 
+575
+564
+Cold side inlet press., MPa 
+1.95
+1.95
+Cold side outlet press., MPa 
+1.90
+1.90
+Cold side mass flow, kg/s 
+26.67
+26.67
+Cold side inlet temp., °C 
+558
+546
+Cold side outlet temp., °C 
+883
+882
+Temperature to Process HX, °C 
+882
+875
+H2 Prod. Efficiency (est.), % 
+46
+45
+
+
+=== PDF page 16 of 26 ===
+9
+The results of Table 3 show that the intermediate loop heat losses have a relatively small  impact 
+on the IHX heat duty (first row) and the estimated efficiency of the hydrogen production process 
+(last row).  For Case 1 (90-m separation distance) and Case 2 (500-m separation distance) the 
+IHX heat duty is less than the 50 MWt transferred to the hydrogen production process because of 
+the heat of compression added to the intermediate loop helium by the intermediate loop 
+compressor.  As the intermediate loop heat losses increase, the required IHX duty in turn 
+increases.
+Based on the results of Table 3, for an intermediate loop operating pressure of 2.0 MPa, heat 
+losses from the intermediate loop are not expected to be a major concern, and in any event, will 
+not exceed the heat of compression added to the intermediate loop fluid by the intermediate loop 
+compressor.  In fact, the heat of compression added to the intermediate loop helium at 2 MPa is 
+about 3 times the maximum pipe heat losses calculated by Lillo, et al. for a 500-m separation 
+distance between the reactor system and the hydrogen production plant.
+Sensitivity calculations were also performed to evaluate the impact of the intermediate loop 
+operating pressure on system performance.  Since the pipe diameters for the intermediate loop 
+will change to maintain the desired pressure loss (in this case 50 kPa in each leg), the primary 
+impact of the change in intermediate loop pressure will be on the required intermediate loop 
+pumping power (and the associated compression heating of the helium in the intermediate loop), 
+which will be reduced with increased intermediate loop helium pressure.  A decrease in 
+intermediate loop pumping power will also increase the overall cycle efficiency since less 
+electric power will be required to drive the intermediate loop compressor. 
+The selection of an appropriate intermediate loop pressure is critical because a low intermediate 
+loop pressure will produce a high differential pressure between the primary and intermediate 
+loop sides of the IHX, and a high intermediate loop pressure results in a large differential 
+pressure across the intermediate loop pipe walls.  In addition, a high intermediate loop pressure 
+also results in a large differential pressure across the process heat exchange equipment if the SI 
+process operating pressure is low.  To reduce the pressure differential between the helium 
+intermediate loop and the process side of the SI process heat exchange equipment, General 
+Atomics (General Atomics, 2006) has increased the SI process pressure from 0.07 MPa (baseline 
+design) to 7.0 MPa.  General Atomics’ initial evaluations indicate that the increased process 
+operating pressure will not significantly reduce overall hydrogen production efficiencies.  When 
+operating at a 7.0 MPa process pressure (equal to the pressure of the primary system), the 
+intermediate loop in the General Atomics design is operated at 7.1 MPa.  This intermediate loop 
+operating pressure would significantly reduce the pressure across the IHX and ensure that for a 
+leak or small break in the IHX, the flow direction is from the intermediate loop to the primary 
+system.  This flow direction minimizes the potential for contamination from the primary side 
+spreading to the intermediate loop and/or hydrogen production processes.  To evaluate the 
+impact of a higher pressure intermediate loop, a calculation was performed for an intermediate 
+loop pressure of 7.1 MPa, with a reactor outlet temperature of 900 °C.  For this high pressure 
+case, a total intermediate loop heat loss of 0.22 MW was assumed with 54 % of the total heat 
+loss allocated to the intermediate loop hot leg and 46 % allocated to the intermediate loop cold 
+leg (Lillo, et al., 2005).  The results of this high pressure calculation are compared in Table 4 
+with the results of the earlier base case calculation at 2 MPa.
+
+
+=== PDF page 17 of 26 ===
+10
+Table 4.  HYSYS results for Configuration 1 with variable intermediate loop pressures. 
+Intermediate Loop Press = 
+2 MPa (base case) 
+Intermediate Loop Press = 
+7.1 MPa 
+IHX duty, MW 
+45.0
+48.8
+Hot side IHX Inlet Press., MPa 
+7.0
+7.0
+Hot side IHX Outlet Press., 
+MPa
+6.95
+6.95
+Hot side mass flow, kg/s 
+26.67
+26.67
+Hot side inlet temp., °C 
+900
+900
+Hot side outlet temp., °C 
+575
+548
+Cold side inlet press., MPa 
+1.95
+7.05
+Cold side outlet press., MPa 
+1.90
+7.0
+Cold side mass flow, kg/s 
+26.67
+26.67
+Cold side inlet temp., °C 
+558
+529
+Cold side outlet temp., °C 
+883
+882
+Helium temperature to process 
+HX, °C 
+882
+881
+H2 Prod. Efficiency (est.), % 
+46
+46
+The results summarized in Table 4 indicate that the primary difference in system operating 
+conditions for an intermediate loop operating pressures of 7.1 MPa and 2.0 MPa is the result of 
+the lower intermediate loop pumping requirements at the higher intermediate loop fluid pressure.  
+With less heat of compression added to the intermediate loop fluid at high pressure, the 
+intermediate loop IHX (cold) inlet temperature is lower, as is the IHX primary side (hot) outlet 
+temperature.  Because of the reduced heat of compression added to the intermediate loop fluid in 
+the high pressure case, the IHX duty (row 2) is increased.  However, the helium temperatures to 
+the process heat exchanger (second to last row) are nearly the same, and there is no difference in 
+the estimated hydrogen production efficiencies (last row).  Although the above results do not 
+show significant differences in overall hydrogen production efficiencies with changes in 
+intermediate loop pressure, the obvious advantage of operating the intermediate loop at 7.1 MPa, 
+is the low pressure differential between the primary and intermediate loop sides of the IHX and 
+the resulting lower induced stresses.
+Because of its higher density and lower pumping requirements at low fluid pressures, a molten 
+salt (Flinak) was also evaluated as the potential working fluid in the intermediate loop, and 
+compared with the results above.  The operating pressure of the molten salt was assumed to be 
+2.0 MPa, and a total heat loss of 0.13 MW, corresponding to a separation distance of 90 meters 
+(Lillo, et al., 2005), was used. 
+Figure 5 shows the HYSYS model for Configuration 1 with Flinak as the intermediate loop 
+working fluid.  Since Flinak is a liquid at these temperatures, the intermediate loop compressor is 
+replaced with a pump operating at 75 % adiabatic efficiency. 
+
+
+=== PDF page 18 of 26 ===
+Figure 5.  HYSYS model of Configuration 1 with Flinak as intermediate loop working fluid. 
+The overall affect of the different working fluids and pressures on IHX heat duty, pumping 
+power requirements and overall NGNP cycle efficiency are summarized in Table 5. 
+Table 5.  HYSYS calculated system conditions for variable intermediate loop pressure and working fluid. 
+Working fluid 
+Helium 
+Helium 
+Flinak
+Intermediate loop 
+pressure, MPa 
+2.0
+7.1
+2.0
+Int. loop 
+compressor/pump 
+power, kW 
+5257
+1417
+11.31
+IHX heat duty, MW 
+45
+48.8
+50.1
+Overall electric 
+power efficiency, % 
+47.7
+48.4
+49.0
+Table 5 show a significant decrease in intermediate loop pumping power when Flinak is used as 
+the working fluid (row 3).  The lower pumping power also results in a small increase in the IHX 
+heat duty (second to last row) since less heat in the form of pump work is added to the Flinak, 
+and therefore, more heat must be transferred from the primary system fluid across the IHX to the 
+intermediate loop fluid.  Although the relative differences in pumping requirements for the three 
+cases in Table 5 appear large, these pumping losses are small compared to other losses in the 
+system (because of the low fluid flow rates in the intermediate loop).  Therefore, the overall 
+affect of different fluids or different operating pressures on overall NGNP electric power 
+production efficiency is small.  These results indicate that the overall system performance will 
+not be significantly influenced by the choice of intermediate loop pressure or working fluid.  As 
+noted earlier, a higher intermediate loop pressure will reduce the pressure difference and 
+resulting stresses across the IHX, which is a critical design consideration for the IHX, 
+particularly for reactor outlet temperatures approaching 950 °C.  The opposing design 
+11
+
+
+=== PDF page 19 of 26 ===
+consideration is that the intermediate loop piping thicknesses would have to be increased to 
+accommodate the higher intermediate loop design pressure. 
+5.2 
+Configuration 2 (direct electrical cycle, parallel IHX, and SHX)
+Configuration 2 is similar to Configuration 1 but includes a tertiary loop for added separation 
+between the NGNP reactor and the hydrogen production plant.  Figure 6 shows the HYSYS 
+model used for this configuration. 
+Figure 6.  HYSYS model of Configuration 2 (direct electrical cycle, parallel IHX, and SHX). 
+For this model, the intermediate loop was assumed to be hydrogen at high pressure (7.1 MPa).
+The tertiary loop was assumed to provide the separation distance between the reactor and the 
+hydrogen plant.  Therefore, the high pressure intermediate loop was assumed to be short enough 
+that piping heat losses and pressure drops could be ignored.  In this case, the tertiary loop 
+working fluid was assumed to be molten salt (Flinak) to minimize the hot and cold leg pipe 
+diameters and the pumping requirements for this loop.  Since the addition of the tertiary loop will 
+not significantly affect the IHX operating conditions calculated for Configuration 1, previous 
+sensitivity calculations were not repeated.  However, because of the additional temperature drop 
+between the reactor outlet and the process heat exchanger, calculations were performed at reactor 
+outlet temperatures of 900 °C and 950 °C to determine the impact of the tertiary loop on the 
+estimated hydrogen production efficienciesa.  For these calculations the tertiary loop (Flinak) 
+12
+a The HYSYS calculation at a reactor outlet temperature of 850 °C is not reported because the molten salt 
+temperature at the IHX inlet dropped below the freezing temperature of Flinak. 
+
+
+=== PDF page 20 of 26 ===
+13
+was operated at 2 MPa.  The total heat losses for the tertiary loop were again assumed to be 0.13 
+MPa (Lillo, et al.).  The results of these analyses are summarized in Table 6. 
+Table 6.  HYSYS results for Configuration 2 with variable reactor outlet temperature. 
+Reactor Outlet 
+Temperature, °C 
+900
+950
+IHX duty, MW 
+49.3
+49.4
+Hot side IHX Inlet Press., 
+MPa
+7.0
+7.0
+Hot side IHX Outlet Press., 
+MPa
+6.95
+6.95
+Hot side mass flow, kg/s 
+26.67
+26.67
+Hot side inlet temp., °C 
+900
+953
+Hot side outlet temp., °C 
+543
+593
+Cold side inlet press., MPa 
+7.1
+7.1
+Cold side outlet press., MPa 
+7.05
+7.05
+Cold side mass flow, kg/s 
+26.67
+26.67
+Cold side inlet temp., °C 
+524
+575
+Cold side outlet temp., °C 
+881
+931
+Temperature to Process HX, 
+°C
+861
+911
+H2 Prod. Efficiency (est.), 
+%
+43
+49
+Cycle Efficiency, % 
+48.8
+52.6
+As observed in Table 6, the added separation provided by Configuration 2 comes at the expense 
+of a larger temperature drop and lower hydrogen production efficiencies (second to last row of 
+Table 6) when compared to the Configuration 1 efficiencies in Table 2 (last row).  These results 
+indicate that the reactor outlet temperature for Configuration 2 will have to be increased by 
+approximately 20 °C to achieve the equivalent hydrogen production efficiencies of Configuration 
+1.  Therefore, the tradeoff is between the safety related advantages associated with the added 
+separation provided by Configuration 2 and the materials and performance issues associated with 
+operating at higher reactor outlet temperatures to achieve acceptable hydrogen production 
+efficiencies. 
+5.3 
+Configuration 3 (indirect electrical cycle and a parallel SHX) 
+Configuration 3 represents an indirect electrical cycle with a parallel SHX.  In this case all of the 
+heat from the primary system is transferred through the IHX to the secondary loop where the 
+flow is split between the power conversion system and the hydrogen production system. The 
+HYSYS model for this configuration is shown in Figure 7. 
+
+
+=== PDF page 21 of 26 ===
+Figure 7.  HYSYS model of Configuration 3 (indirect electrical cycle and a parallel SHX). 
+Since detailed design information was not available for the indirect power conversion cycle, a 
+simple recuperated brayton cycle with a single compressor and no intercooling was assumed.  
+The working fluid for the power conversion system was assumed to be a gas mixture consisting 
+of 80% nitrogen and 20% helium.  This gas mixture was chosen to allow the use of more 
+conventional turbine designs.  The gas mixture to the turbine inlet was assumed to be at 6.95 
+MPa.    The tertiary loop working fluid in this case was helium at a pressure of 7.1 MPa at the 
+tertiary loop compressor outlet. 
+Results of calculations performed for this design at reactor outlet temperatures of 850 °C, 
+900 °C and 950 °C are shown in Table 7. 
+Table 7.  HYSYS results for Configuration 3 with variable reactor outlet temperature. 
+Reactor outlet temperature, °C 
+850
+900
+950
+IHX heat duty, MWt 
+610
+610
+611
+Primary (hot) side IHX Inlet Press., 
+MPa
+7.0
+7.0
+7.0
+Primary side IHX Outlet Press., MPa 
+6.95
+6.95
+6.95
+Primary (hot) side mass flow, kg/s 
+321
+321
+321
+Primary side inlet temp., °C 
+850
+900
+950
+Primary side outlet temp., °C 
+484
+534
+584
+Secondary side (cold) inlet press., 
+MPa
+7.0
+7.0
+7.0
+Secondary side outlet press., MPa 
+6.95
+6.95
+6.95
+Secondary (cold) side mass flow, kg/s 
+1216
+1,216
+1,216
+Secondary side inlet temp., °C 
+443
+494
+546
+Secondary side outlet temp., °C 
+830
+880
+930
+14
+
+
+=== PDF page 22 of 26 ===
+15
+The design of the IHX for this configuration is much larger than the other configurations because 
+all of the primary system heat is transferred across the IHX.  The IHX heat duties (row 2) exceed 
+the reactor thermal power because the heat of compression from the primary side compressor is 
+also removed from the primary side through the IHX.  In addition, the lower heat capacity of the 
+power conversion system gas mixture requires about 4 times as much flow to transfer the 
+equivalent amount of heat as the helium on the primary side. 
+As discussed earlier, the reactor outlet temperature primarily influences the overall electric 
+power conversion cycle efficiency and the peak intermediate loop temperature at which heat is 
+delivered to the hydrogen production process.  The peak temperature at which heat is delivered 
+to the hydrogen production process in turn determines the hydrogen production plant efficiency.
+Table 8 summarizes these results for the different reactor outlet temperatures.  As in the previous 
+results, the electric power conversion efficiency and the peak helium temperature at which heat 
+is delivered to the hydrogen production process were calculated using HYSYS.  The hydrogen 
+production efficiency was estimated by subtracting 25 °C from the peak helium delivery 
+temperature to the process heat exchanger. 
+Table 8.  System conditions for Configuration 3 with variable reactor outlet temperature. 
+Reactor outlet 
+temperature, °C 
+850
+900
+950
+Electric Power 
+Conversion
+Efficiency, % 
+31.9
+34.7
+37.6
+Temperature to 
+Process HX, °C 
+791
+842
+895
+H2 Prod. Efficiency 
+(est.), % 
+30
+40
+47
+The calculated power conversion efficiencies (row 2) for the indirect cycle are not directly 
+comparable with the direct power conversion cycle results shown earlier because no attempt to 
+optimize this indirect power conversion cycle was made.  However, because of the higher 
+pumping requirements, the overall efficiencies of the indirect cycle are expected to be less than 
+for the direct cycle. 
+Results from this evaluation indicate that the indirect power conversion cycle shown in Figure 3 
+will provide lower temperature heat to the SI process and therefore result in lower hydrogen 
+production efficiencies than predicted for the direct cycle configuration shown in Figure 1.  The 
+added separation between the primary system and the hydrogen production process provided by 
+Configuration 3, however, may have some additional safety and operational advantages 
+compared to Configuration 1. 
+
+
+=== PDF page 23 of 26 ===
+16
+6. CONCLUSIONS 
+There are several possible options for the design of the IHX for the NGNP.  Based on sensitivity 
+results presented in this report, the following conclusions were drawn. 
+x
+Reactor outlet temperatures below 900 °C will probably not be adequate for 
+demonstrating high efficiency hydrogen production in the NGNP. 
+x
+The direct cycle shown in Configuration 1 offers higher overall cycle and hydrogen 
+production efficiencies than does the indirect cycle in Configuration 3. 
+x
+There is a hydrogen production penalty associated with using a tertiary loop 
+(Configuration 2), which can only be justified by demonstrated significant safety 
+advantages.
+x
+Intermediate loop heat losses for the NGNP appear to be manageable, and in most cases 
+should be less than the heat of compression added to the working fluid by the 
+intermediate loop compressor. 
+x
+The design of the IHX and process heat exchangers, including selection of materials will 
+be considerably simplified if the intermediate loop is operated at high pressure (7.1 MPa).
+The operation of the intermediate loop at high pressure assumes that the thermochemical 
+process loop can also be operated at high pressure (7 MPa) without significant reductions 
+in hydrogen production efficiencies. 
+x
+If operation of the NGNP intermediate loop at low pressures (2 MPa) is required, helium 
+is probably the preferred working fluid since there is not a substantial difference in 
+overall system performance using helium as opposed to a molten salt.  (This may not be 
+the case for a commercial plant using all of its power for the production of hydrogen, 
+since intermediate loop pumping requirements will be more significant.)  
+Based on the above considerations, it is recommended that the design of the IHX be further 
+evaluated for two different configurations, the direct cycle (Configuration 1) and the indirect 
+cycle (Configuration 3). 
+Table 9 below defines recommended design parameters for the IHX for Configuration 1 at 
+intermediate loop pressures of 2.0 MPa and 7.1 MPa, and at reactor outlet temperatures of 900 
+°C and 950 °C.  The IHX conditions in Table 9 were taken from earlier calculations presented in 
+this report, but for added margin assumed a 20 % increase in fluid flow rates and heat delivered 
+to the hydrogen production process (50 to 60 MWt).  This results in a 20 % margin in the heat 
+duty of the IHX for these conditions. 
+
+
+=== PDF page 24 of 26 ===
+17
+Table 9.  Recommended IHX thermal-hydraulic conditions for Configuration 1. 
+Configuration 1 React outlet = 
+900 °C 
+Int loop press = 
+2.0 MPa 
+Reactor outlet = 
+900 °C
+Int loop press = 
+7.1 MPa 
+Reactor outlet = 
+950 °C 
+Int loop press = 
+2.0 MPa 
+Reactor outlet = 
+950 °C 
+Int loop press = 
+7.1 MPa 
+Heat Duty, 
+MWt 
+54.0
+58.6
+53.6
+60.5
+Overall UA, 
+MW/°C 
+3.14
+3.15
+3.15
+3.15
+LMTD, °C
+17.2
+18.6
+17.0
+19.2
+Hot side IHX 
+Inlet Press., 
+MPa
+7.0
+7.0
+7.0
+7.0
+Hot side IHX 
+Outlet Press., 
+MPa
+6.95
+6.95
+6.95
+6.95
+Hot side mass 
+flow, kg/s 
+32.0
+32.0
+32.0
+32.0
+Hot side inlet 
+temp., °C 
+900
+900
+950
+950
+Hot side outlet 
+temp., °C 
+575
+547
+628
+586
+Cold side inlet 
+press., MPa 
+1.95
+7.05
+1.95
+7.05
+Cold side outlet 
+press., MPa 
+1.90
+7.0
+1.90
+7.0
+Cold side mass 
+flow, kg/s 
+32.0
+32.0
+32.0
+32.0
+Cold side inlet 
+temp., °C 
+558
+528
+611
+566
+Cold side outlet 
+temp., °C 
+883
+881
+933
+931
+Table 10 defines the recommended design parameters for Configuration 3 assuming the power 
+conversion unit working fluid is a gas mixture of 80 % nitrogen and 20 % helium.  For this 
+configuration, the tertiary loop working fluid was assumed to be helium at a pressure of 7.1 MPa.  
+However, molten salt could also be considered for use in the tertiary loop if desired.  For added 
+design margin, the results in Table 10 assume an increase of 5 % in reactor power and primary 
+system mass flow rate (ie., to 630 MWt and 336 kg/s, respectively).  In addition, the heat 
+delivered to the hydrogen production process was assumed to increase from 50 to 60 MWt. This 
+results in approximately a 5 % margin in the heat exchanger heat duty for the conditions shown 
+in Table 10. 
+
+
+=== PDF page 25 of 26 ===
+18
+Table 10.  Recommended thermal-hydraulic conditions for Configuration 3. 
+Configuration 3 
+React outlet = 900 °C 
+React outlet = 950 °C 
+Heat Duty, MWt 
+640.8
+641.5
+Overall UA, MW/°C 
+23.74
+24.55
+LMTD, °C 
+27.0
+26.1
+Hot side IHX Inlet Press., 
+MPa
+7.0
+7.0
+Hot side IHX Outlet Press., 
+MPa
+6.95
+6.95
+Hot side mass flow, kg/s 
+336
+336
+Hot side inlet temp., °C 
+900
+950
+Hot side outlet temp., °C 
+533
+582
+Cold side inlet press., MPa 
+7.0
+7.0
+Cold side outlet press., MPa 
+6.95
+6.95
+Cold side mass flow, kg/s 
+1,277
+1,277
+Cold side inlet temp., °C 
+495
+546
+Cold side outlet temp., °C 
+880
+930
+
+
+=== PDF page 26 of 26 ===
+19
+7. REFERENCES 
+Davis, C. B., Oh, C. H., Barner, R. B., Sherman, S. R., and Wilson, D. F., “Thermal-Hydraulic 
+Analyses of Heat Transfer Fluid Requirements and Characteristics for Coupling A Hydrogen 
+Production Plant to a High-Temperature Nuclear Reactor”, INL/EXT-05-00453. June 2005. 
+Lillo, T. M., Williamson, R. L., Reed, T. R., Davis, C. B., and Ginosar, D. M., “Engineering 
+Analysis of Intermediate Loop and Process Heat Exchanger Requirements to Include 
+Configuration Analysis and Material Needs”, INL/EXT-05-00690, September 2005. 
+General Atomics, Telephone conversations with General Atomics personnel, March 2006. 
+Aspen Technology, 2005, “HYSYS Process Version 2.2.2”, www.aspentech.com.
+Brown, L. C., Besenbruch, G. E., Lentsch, R. D., Schultz, K. R., Funk, J. F., Pickard, P. S., 
+Marshall, A. C., and Showalter, S. K., “High Efficiency Generation of Hydrogen Fuels using 
+Nuclear Power”, GA-A24285, Rev. 1, December 2003. 

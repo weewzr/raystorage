@@ -1,0 +1,10 @@
+# Wet product gas compositions in mol%. Printed conversion in %.
+# TE1236: IAEA-TECDOC-1236, Tables 2.1 and 2.2, printed p7 (PDF p13). The first four rows are Table 2.2. The last is Table 2.1 at 20 bar, which prints no temperature: its shift quotient implies the same temperature as the 800 C column.
+# INL: TEV-953 Calculator Block Summary, A-40 (PDF p74). Outlet 1600 F and 439 psia from stream SG-2 at the same 361400 lb/h, A-45 (PDF p79). S/C 3.00 from A-42 (PDF p76). INL prints no conversion on this line.
+source,t_c,p_bar,conversion,ch4,h2,co,co2,h2o,n2
+TE1236,800,41.9,66.1,5.38,37.35,4.53,5.98,46.76,0
+TE1236,825,41.9,72.0,4.36,39.45,5.36,5.89,44.95,0
+TE1236,850,41.9,77.6,3.42,41.31,6.17,5.74,43.36,0
+TE1236,860,41.9,79.8,3.08,41.97,6.48,5.68,42.79,0
+TE1236,800,20,81.3,2.83,43.06,6.10,6.23,41.77,0
+INL,871.11,30.27,0,3.5,47.8,9.2,5.3,34.1,0.2

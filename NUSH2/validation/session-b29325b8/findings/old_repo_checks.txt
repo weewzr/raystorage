@@ -1,0 +1,53 @@
+== Elemental carbon check at plant boundary (own calculation) ==
+mol% sum 100.00000000000001 C/mol 1.05379 MW 17.18
+Conv no CC         NG 52.5 MMSCFD -> feed C as CO2   3209.7 ton/d; reported  3205; residual     4.7 ton/d =  0.15%; captured/feedC   0.0%
+Conv CC            NG 49.2 MMSCFD -> feed C as CO2   3008.0 ton/d; reported  2998; residual    10.0 ton/d =  0.33%; captured/feedC  71.2%
+725C ROT CC        NG 43.5 MMSCFD -> feed C as CO2   2659.5 ton/d; reported  2648; residual    11.5 ton/d =  0.43%; captured/feedC  79.8%
+775                NG 40.8 MMSCFD -> feed C as CO2   2494.4 ton/d; reported  2479; residual    15.4 ton/d =  0.62%; captured/feedC  83.2%
+825                NG 37.7 MMSCFD -> feed C as CO2   2304.9 ton/d; reported  2291; residual    13.9 ton/d =  0.60%; captured/feedC  87.8%
+875                NG 34.5 MMSCFD -> feed C as CO2   2109.3 ton/d; reported  2096; residual    13.3 ton/d =  0.63%; captured/feedC  93.4%
+925C ROT Case 6    NG 34.0 MMSCFD -> feed C as CO2   2078.7 ton/d; reported  2069; residual     9.7 ton/d =  0.47%; captured/feedC  92.7%
+
+== TEV-961 Table 2 Case 6 power rows ==
+17.299999999999997 {'NGref': 1.2, 'Syngas': 2.1, 'Steam': 0.3, 'CO2comp': 6.4, 'Purge': 5.7, 'CT': 0.1, 'Water': 1.5}
+17.3-5.7 = 11.6 ; 11.6/0.397 = 29.22 ; 176.8+29.2 = 206.02
+With purge recovery kept: 17.3/0.397 = 43.58 -> total 220.4 MWth
+Old Nishihara source split 88 MWe / 230 MWth = 0.3826
+
+== Capacity basis ==
+hours 7446.0 INL H2 t/y 97946.0 deck H2 66927 ratio 0.6833 inverse 1.4635
+176.8 at deck H2 pro rata: 120.8 MWth; 34 MMSCFD pro rata 23.23 ; 52.5 pro rata 35.87
+130 MMSCFD in Nm3/h, old E2 using IEAGHG 0.08994 kg/Nm3: 146255.0
+
+== Deck arithmetic ==
+baseline 625767 furnace 35% 219019 process 65% 406749 residual 10% 40675 net 585093 pct 93.5
+80% capture 544418 70% avail 481841
+no-CCS avoided 219019
+CCS cost 29.29792 USD M; SGD@1.30 38.09
+dQ GJ/d 9913.3 annual S$M full 130MMSCFD basis 46.13 scaled to deck H2 31.52
+If 925C NG (34.0) used, scaled: 64.8 S$M/y
+CRF 25 0.0937 annual S$M at US$420M x1.30: 51.1
+CRF 40 0.0839 annual S$M at US$420M x1.30: 45.8
+CRF 60 0.0808 annual S$M at US$420M x1.30: 44.1
+Budget remaining after CCS and gas credit 51.92 minus CAPEX 0.77
+Implied deck AC with CAPEX only:  98.7 S$/t; on 0.544 Mt: 106.1
+FOAK US$672M annual S$M 81.8 AC CAPEX only 151.1
+Units to bridge 1.6x at 10%: 22.0
+US$9200/kWe x 80 MWe = 736.0 US$M; $5250 x 80 MWe = 420.0
+Abatement share of 45-50 Mt: 1.17 1.3
+
+== Old repo per-train lifecycle ledger reconstructed ==
+base 902060 emit 39966 cap 542362 upstream 72704 nuc 3649 aux 450 ts 13559 net 917139
+indirect sum nuc+aux+ts 17659
+direct intensity kg/kg: 9.21 candidate direct: 0.408 deck residual: 0.608
+
+== Illustrative cooling flows with the old E3 formula (own calculation) ==
+Old 246.4 MWth envelope 246.4 MW: 8K flow m3/s 7.531 5K 12.05
+Old 600 MWth envelope 600 MW: 8K flow m3/s 18.339 5K 29.342
+210 MWth full reactor envelope 210 MW: 8K flow m3/s 6.418 5K 10.27
+210-176.8 residual 33.2 MW: 8K flow m3/s 1.015 5K 1.624
+29.2 power cycle input minus 11.6 MWe = 17.6 reject 17.6 MW: 8K flow m3/s 0.538 5K 0.861
+
+== Old E2B with 600 MWth vs 210 MWth utilisation ==
+176.8/210 0.842 206/210 0.981 176.8/600 0.295 353.6/600 0.589
+HTR-Modul 170 vs 176.8 short by 6.8 MWth; XE-100 200 MWth vs 206 short by 6.0 MWth

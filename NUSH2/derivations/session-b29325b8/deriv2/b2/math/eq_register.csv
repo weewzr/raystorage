@@ -1,0 +1,296 @@
+id,section,tier,title,latex,variables,assumptions,source,tag,engine_fn,test_id,validation
+A.1,A,R,General balance,"General balance: $\frac{d}{dt}\int_V\rho\psi\,dV+\oint_S\rho\psi\,\mathbf u\cdot\mathbf n\,dS=-\oint_S\mathbf j_\psi\cdot\mathbf n\,dS+\int_V\dot s_\psi\,dV$","$\rho$ kg/m3, $\psi$ per kg, $\mathbf u$ m/s, $\mathbf j_\psi$ flux, $\dot s_\psi$ source",Continuum,"[T] Bird, Stewart, Lightfoot 2002, ch 3, 11, 19",[T],theory,eq_a_01,"ID, reduction shown in card"
+A.2,A,R,Total mass,"Total mass: $dM/dt=\sum_{in}\dot m-\sum_{out}\dot m$, SS gives $\sum_{in}\dot m=\sum_{out}\dot m$","$M$ kg, $\dot m$ kg/s",None,[T] as A.1,[T],plant::flowsheet::check_mass,eq_a_02,"ID. PUB: TEV-961 A-56 PDF p80, 223,172 = 58,787 + 164,385 lb/h exact"
+A.3,A,R,Component,"Component: $dn_i/dt=\sum_{in}F_i-\sum_{out}F_i+\int_VR_i\,dV$","$n_i$ mol, $F_i$ mol/s, $R_i$ mol/m3/s",Well defined CV,[T] as A.1,[T],plant::flowsheet::check_species,eq_a_03,ID
+A.4,A,R,Source term,Source term: $R_i=\sum_j\nu_{ij}r_j$; catalytic form $R_i=\rho_B\sum_j\nu_{ij}\eta_j^{cat}r_j$,"$\nu_{ij}$ 1, $r_j$ mol/kg cat/s, $\rho_B$ kg/m3",Reactions independent of CV,[T] Fogler; XF2 PDF p3 [P],[P] [T],units::xf::rates; units::wgs::rate,eq_a_04,ID
+A.5,A,R,Elements,"Elements: $\sum_ia_{ki}(F_{i,out}-F_{i,in})=0$, requires $\mathbf a\boldsymbol\nu=0$",$a_{ki}$ atoms per molecule,No nuclear change,[T],[T],plant::flowsheet::check_elements,eq_a_05,ID. PUB: carbon closure 99.4 to 99.9% across 8 INL cases
+A.6,A,R,Independent reactions,"Independent reactions: $N_r=N_s-\mathrm{rank}(\mathbf a)$. Reformer $5-3=2$, so $K_3=K_1K_2$. MEA $9-4=5$ with charge as a row",counts,Closed species set,"[T]. Note Aronu PDF p4 prints ""four"" and lists five",[T],plant::flowsheet::reaction_rank,eq_a_06,ID
+A.7,A,R,First law,First law: $dE/dt=\dot Q-\dot W_{sh}+\sum_{in}\dot m(h+u^2/2+gz)-\sum_{out}\dot m(h+u^2/2+gz)$,"$\dot Q$, $\dot W_s$ W, $h$ J/kg",None,[T],[T],theory,eq_a_07,ID
+A.8,A,R,Enthalpy balance,Enthalpy balance: $\sum_{out}F_ih_i-\sum_{in}F_ih_i=\dot Q-\dot W_{sh}$,$h_i$ J/mol,"SS, NKE",[T],[T],plant::flowsheet::check_energy,eq_a_08,"ID, tolerance A.15"
+A.9,A,E,Species enthalpy,"Species enthalpy: $h_i(T)=\Delta_fh_i^\circ+\int_{T_{ref}}^Tc_{p,i}dT$, Shomate $c_{p,i}=A+Bt+Ct^2+Dt^3+E_S/t^2$, $t=T/1000$","$c_p$ J/mol/K, $T$ K",IG mixture,"Form [P] HA Eq 28, 29 PDF p6. Coefficients [M6]",[M6] [P],props::shomate::h_i; props::shomate::cp_i,eq_a_09,"PUB against JANAF tables at 700 and 1144 K, 0.2%"
+A.10,A,R,Hess,Hess: $\Delta_rh_j(T)=\sum_i\nu_{ij}h_i(T)$,J/mol,As A.9,[T]; values XF1 Table 7 PDF p8 [P],[P] [T],props::shomate::dh_rxn,eq_a_10,"PUB: 206.1, -41.15, 164.9 at 298 K, 224.0, -37.3, 187.5 at 948 K, 2.5 kJ/mol. Shomate gives 225.1, -35.3, 189.8 [C]; report the gap"
+A.11,A,R,"Momentum, channel","Momentum, channel: $dp/dz=-\rho u\,du/dz-(f_D/D)\rho u^2/2-\rho g\sin\theta$","$p$ Pa, $f_D$ 1, $D$ m","1D, SS",[T],[T],props::transport::dp_dz,eq_a_11,ID
+A.12,A,E,"Packed bed, Ergun","Packed bed, Ergun: $-dp/dz=\frac{G}{\rho D_p}\frac{1-\varepsilon_b}{\varepsilon_b^3}\left[\frac{150(1-\varepsilon_b)\mu}{D_p}+1.75G\right]$","$G$ kg/m2/s, $D_p$ m, $\mu$ Pa s",Frictional dominance,[P] HA Eq 26 PDF p5; XF2 Eq 10d PDF p4. Trap T16,[P],units::smr_tube::ergun; units::wgs::ergun,eq_a_12,EXP in D.26
+A.13,A,R,Plug-flow reduction,"Plug-flow reduction: $dF_i/dz=A_cR_i$; $\sum_iF_ic_{p,i}\,dT/dz=\dot q'+A_c\sum_j(-\Delta_rh_j)r_j$","$A_c$ m2, $\dot q'$ W/m","SS, PF, NKE",[T],[T],numerics::ode::ode_rhs,eq_a_13,ID
+A.14,A,R,Gas closure,"Gas closure: $p_i=y_ip$, $c=p/(ZRT)$","$y_i$ 1, $Z$ 1, $R=8.314462$ J/mol/K","$Z=1$ for syngas, B.1 for helium",[T],[T],props::mixture::conc,eq_a_14,ID
+A.15,A,F,Residuals,"Residuals: $\epsilon_m$, $\epsilon_k$, $\epsilon_E$ relative to inlet flow. Limit $10^{-8}$ per unit, $10^{-6}$ flowsheet",1,None,[A],[A],vv::harness::closure,eq_a_15,ID on every run
+B.1,B,E,Helium density,Helium density: $\rho=48.14(P/T)/(1+0.4446P/T^{1.2})$,"$\rho$ kg/m3, $P$ bar, $T$ K","1 to 100 bar, up to about 1800 K","[P] Petersen Eq 3-19, printed p6, [M5]",[M5] [P],props::helium::rho,eq_b_01,"PUB: $Z=1.0063$ against 1.00643 at 925 C, 7 MPa"
+B.2,B,E,Helium heat capacities,"$c_p=5195$, $c_v=3117$ J/kg/K, $\kappa=1.6667$",J/kg/K,CP,"[P] Petersen Eq 4-4 to 4-6, printed p6. $5R/2M=5193.2$ [C]. INL implied 5190",[C] [P],props::helium::cp,eq_b_02,ID; JAERI implied 5.193 to 5.195 kJ/kg/K
+B.3,B,E,Viscosity,Viscosity: $\mu=3.674\times10^{-7}T^{0.7}$,"Pa s, K",As B.1,"[P] Petersen Eq 6-1, printed p6",[P],props::helium::mu,eq_b_03,PUB: 5.17e-5 Pa s at 900 C
+B.4,B,E,Conductivity,Conductivity: $k=2.682\times10^{-3}(1+1.123\times10^{-3}P)T^{0.71(1-2\times10^{-4}P)}$,W/m/K,As B.1,"[P] Petersen Eq 7-1, printed p7",[P],props::helium::k,eq_b_04,"PUB: 0.407 W/m/K at 900 C, 51.5 bar; Pr 0.66"
+B.5,B,O,Reactor balance,Reactor balance: $\dot Q_R-\dot Q_{ves}=\dot m_pc_p(T_{ROT}-T_{RI})$,"W, kg/s, K","SS, CP, no core model",[T],[T],units::htgr::core_balance,eq_b_05,"PUB: 13 designs within 1.5%, HTTR within 6%"
+B.6,B,O,Circulator rise,"Circulator rise: $T_{RI}=T_{h,out}+\dot W_p/(\dot m_pc_p)$",K,Shaft work enters gas,[T],[T],units::circulator::rise,eq_b_06,"PUB: Sato Fig 12, 133 to 150 C, 0.222 MW [C]"
+B.7,B,R,Primary,"Primary: $\dot Q_p=\dot m_pc_p(T_{ROT}-T_{h,out})$, $T_{h,out}\ge T_{s,ret}+\Delta T_{app}$","W, K","SS, CP",[T],[T],units::ihx::hot_side,eq_b_07,ID
+B.8,B,R,Secondary,"Secondary: $\dot Q_s=\dot m_sc_p(T_{s,sup}-T_{s,ret})$","W, K","SS, CP","[P] TEV-961 Table 2 cont. PDF p18: 78.49 kg/s, 900 to 466 C",[P],units::ihx::cold_side,eq_b_08,PUB: five ROT cases within 0.12% at 5190; 176.8 MW
+B.9,B,R,Flow need,"Flow need: $\dot m_s=\dot Q_{proc}/(c_p\Delta T_s)$, $\dot m_p=\dot Q_R/[c_p(T_{ROT}-T_{s,ret}-\Delta T_{app})]$",kg/s,"As B.7, B.8",[C],[C],units::circulator::flows,eq_b_09,GOLD: 53.6 and 79.4 kg/s
+B.10,B,R,Compression,"Compression: $\dot W=\dot mc_pT_1[(1+\Delta p/p)^{(\kappa-1)/\kappa}-1]/\eta_{is}$, exponent 0.4","W, Pa, K, 1","IG, adiabatic",[T] form. $\eta_{is}=0.75$ [P] INL-21537 Table 2 PDF p16,[P] [T],units::circulator::shaft,eq_b_10,GOLD: 3.13 and 3.58 MW. PUB: reproduces the project central estimate 225.1 MWth. No measured shaft power [M13]
+B.11,B,F,Budget,"Budget: 7.0 MPa, $\Delta p_s=200$ kPa, $\Delta p_p=150$ kPa. Low, high and 5.15 MPa sets",Pa,Project budget,"[A], from INL-11109 PDF p11 to 12 and JAERI. Sensitivity 414 kPa from TEV-961 A-55, A-19 labels",[A],units::circulator::budget,eq_b_11,NONE. Adds up to 9.6 MWth at Case A
+B.12,B,F,Electric draw,"Electric draw: $E_{circ}=(\dot W_s+\dot W_p)/\eta_m$, $\eta_m=0.90$",W,Motor outside gas,[A],[A],units::circulator::electric,eq_b_12,GOLD: 7.46 MWe
+B.13,B,E,Vessel loss,Vessel loss: $\dot Q_{ves}=0.81(\dot Q_R/30)^{2/3}$ MW; high case $0.027\dot Q_R$,MW,Area scaling [A],"[P] T1382 Table 3-21 PDF p164, 0.81 MW at 30 MW",[P],units::htgr::vessel_loss,eq_b_13,GOLD: 2.67 MW. EXP anchor is one test point
+B.14,B,E,Duct loss,"Duct loss: $\dot Q_{duct}=0.45(\dot m_s/78.49)^{1/2}$ MW at 90 m, 3.12 MW at 500 m",MW,Loss follows pipe diameter,"[P] INL-11109 Table 3 PDF p15, scaled [C]",[C] [P],units::circulator::duct_loss,eq_b_14,"Differs from screening, see Section M"
+B.15,B,E,IHX loss,"IHX loss: $\dot Q_{ihx}=f_{ihx}(\dot Q_{proc}+\dot Q_{rec})$, $f_{ihx}=0.008$, range 0 to 0.0458",MW,Residual treated as loss,[C] from T1382 Table 3-23 PDF p168. High end has no source,[C],units::ihx::loss,eq_b_15,GOLD: 0.97 MW
+B.16,B,O,Available heat,Available heat: $\dot Q_{av}=\dot Q_R+\dot W_s+\dot W_p-\dot Q_{ves}-\dot Q_{ihx}-\dot Q_{duct}$,MW,Shaft work returns to helium,[C],[C],units::htgr::available_heat,eq_b_16,ID
+B.17,B,E,Efficiency,Efficiency: $\eta_{pc}=0.397$; alternative $0.475=0.66(1-T_c/T_h)$,1,"Rankine, excess heat",[P] TEV-961 PDF p18 note 3 [M2]; INL-21537 Table 4 PDF p20,[M2] [P],units::htgr::eta_pc,eq_b_17,NONE. Net status of 39.7% unresolved
+B.18,B,O,Power branch,Power branch: $E=\eta_{pc}\dot Q_{pc}$,W,Fixed efficiency,[T],[T],units::htgr::power,eq_b_18,ID
+B.19,B,O,Extraction,"Extraction: $w=\min(E,r_w\dot Q_{gap})$, $\dot Q_{br}=\dot Q_{gap}+w+(E-w)/\eta_{pc}$","MW, $r_w$ MWe/MWth",Back-pressure co-generation,"[C] form project calculation. $r_w=0.169$ from IEAGHG17 Case 1A, 0.30 high [A]",[A] [C],plant::heatrec::extraction,eq_b_19,GOLD: 60.13 MWth
+B.20,B,O,Allocation,Allocation: $\dot Q_R=\dot Q_{proc}+\dot Q_{rec}+\dot Q_{ihx}+\dot Q_{duct}+\dot Q_{ves}+\dot Q_{br}-\dot W_s-\dot W_p$,MW,First law on nuclear island,[C] screening model,[C],plant::utility::reactor_required,eq_b_20,GOLD: 179.04 MWth
+B.21,B,F,Margin,Margin: $\dot Q_{spare}=\dot Q_{rated}-\dot Q_R$. No revenue credited,MW,Project decision,[C],[C],plant::utility::margin,eq_b_21,GOLD: 31.0 MWth
+B.22,B,E,INL inlet fit,INL inlet fit: $T_{RI}=0.8205T_{ROT}-242.68$ (C),C,Used as a check only,[P] INL-21537 Table 2 PDF p16,[P],units::htgr::rit_check,eq_b_22,PUB: 516.3 C. Report gap to $491+$ rise
+B.23,B,R,INL excess heat,"INL excess heat: $\dot Q_{ex}=\dot m_sc_p(T_{s,ret}-T_{s,ideal})$",W,As B.8,"[P] TEV-961 Table 2 cont. Use the table, see Section M",[P],units::htgr::inl_excess,eq_b_23,"PUB: 2.0 MWt, 178.8 MWt"
+C.1,C,R,Hot side,"Hot side: $\dot Q_h=\dot m_pc_p(T_{h,in}-T_{h,out})$","W, kg/s, K","SS, CP",[T],[T],units::ihx::hot_side,eq_c_01,PUB: HTTR sets close within 1.3%
+C.2,C,R,Cold side,"Cold side: $\dot Q_c=\dot m_sc_p(T_{c,out}-T_{c,in})$","W, kg/s, K","SS, CP",[T],[T],units::ihx::cold_side,eq_c_02,PUB: HTTR sets close within 1.3%
+C.3,C,R,Closure,Closure: $\dot Q_h=\dot Q_c+\dot Q_{ihx}$,W,B.15,[T],[T],units::ihx::closure,eq_c_03,ID
+C.4,C,R,Network,"Network: $\frac1{UA}=\frac1{h_{fi}A_i}+\frac{R_{f,i}}{A_i}+\frac{\ln(d_o/d_i)}{2\pi k_wLN_t}+\frac{R_{f,o}}{A_o}+\frac1{h_{fo}A_o}$","$UA$ W/K, $h$ W/m2/K, $R_f$ m2K/W",Radial conduction,[T],[T],units::ihx::ua_network,eq_c_04,ID
+C.5,C,R,Overall coefficient,Overall coefficient: $U_o=(UA)/A_o$,W/m2/K,Outer area basis,[T],[T],units::ihx::u_outer,eq_c_05,"EXP: HTTR 428 W/m2/K at 30 MW, 375 at 15 MW, area 212.9 m2 [C]"
+C.6,C,E,Nusselt,"Nusselt: tube side Tochio Eq 8, shell side Eq 5 and 6 with $C_0$",1,Helical HTTR geometry,[P] Tochio PDF p7. $C_0$ not printed [M15],[M15] [P],units::ihx::nu_tochio (disabled),eq_c_06,NONE. Design uses the UA anchor C.14
+C.7,C,R,LMTD,"LMTD: $\Delta T_{lm}=(\Delta T_1-\Delta T_2)/\ln(\Delta T_1/\Delta T_2)$, derived from $d\dot Q=U\Delta T\,dA$",K,"Counterflow, constant $U$",[T] Incropera,[T],units::ihx::lmtd,eq_c_07,ID. PUB: HTTR 103.3 K
+C.8,C,R,Balanced limit,Balanced limit: $\Delta T_{lm}\to\Delta T$ as $\Delta T_1\to\Delta T_2$,K,Equal capacity rates,[T],[T],units::ihx::lmtd,eq_c_08,ID
+C.9,C,R,Effectiveness,"Effectiveness: $\varepsilon_{HX}=\dot Q/[C_{min}(T_{h,in}-T_{c,in})]$","1, $C$ W/K",None stated,[T],[T],units::ihx::effectiveness,eq_c_09,"PUB: 0.867 HTTR, 0.946 NUS-H2 balanced"
+C.10,C,R,Number of transfer units,"$NTU=UA/C_{min}$, $C^*=C_{min}/C_{max}$",1,None stated,[T],[T],units::ihx::ntu,eq_c_10,PUB: 4.9 HTTR; 17.3 at 25 K balanced
+C.11,C,R,Counterflow,Counterflow: $\varepsilon_{HX}=\frac{1-e^{-NTU(1-C^*)}}{1-C^*e^{-NTU(1-C^*)}}$,1,Constant $U$,[T],[T],units::ihx::eps_ntu,eq_c_11,"EXP: HTTR 30 MW, 828, 248 C, 4.1, 3.6 kg/s, UA 91 kW/K gives 751, 383 C within 5 K; 15 MW set; HTTR-SR 905 C; INL IHX within 2 K"
+C.12,C,R,Balanced,Balanced: $\varepsilon_{HX}=NTU/(1+NTU)$,1,$C^*=1$,[T],[T],units::ihx::eps_ntu,eq_c_12,ID
+C.13,C,R,Area,Area: $A=\dot Q/(U\Delta T_{lm})$,m2,None stated,[T],[T],units::ihx::area,eq_c_13,"PUB [C]: Case B balanced 25 K UA 4.83 MW/K, 12,080 m2 at 400 W/m2/K"
+C.14,C,E,Module anchor,"Module anchor: $UA_{mod}=UA/N_{mod}$, HTTR measured 85 kW/K",W/K,2 to 4 modules; ratio to HTTR reported,"[P] Tochio Figs 8, 10 PDF p7 to 8",[P],units::ihx::modules,eq_c_14,"EXP. Case B needs 57 times HTTR, so no single unit is claimed"
+C.15,C,O,Unbalanced option,"Unbalanced option: choose $T_{h,out}$, get $\dot m_p$, cold end, LMTD, UA",K,25 K hot end fixed,[C],[C],units::ihx::flow_imbalance,eq_c_15,"PUB: Case A table, 600 C gives 104.7 kg/s, 2.72 MW/K"
+C.16,C,E,Tube friction,"Tube friction: $\Delta p=f_D(L/D)\rho u^2/2$, $f_D=0.3164Re^{-1/4}$",Pa,"Straight tube, smooth",[P] Sato Eq 10 PDF p4. Trap T15. Measured IHX drop absent [M14],[M14] [P],units::ihx::dp_tube,eq_c_16,"PUB budget: HTR-10 15 and 70 kPa, TE1236 Table 5-5 PDF p89; INL 50 kPa assumed"
+C.17,C,F,Cascade,"Cascade: $T_{s,sup}=T_{ROT}-\Delta T_{app}-\Delta T_{duct}$",K,"25 K, duct 0 K",[P] TEV-961 printed p.10; INL-21537 Table 2,[P],units::ihx::cascade,eq_c_17,PUB: table
+C.18,C,F,Constraints,"Constraints: $T_{s,sup}-T_{ref,out}\ge10$ K, tube $\le955$ C, tube $\Delta p\le0.3$ MPa","K, Pa",HTTR limits apply by analogy,[P] INL-21537 Table 2 PDF p16; Tochio Table 2,[P],units::ihx::check_limits,eq_c_18,ID. Report: 50 K approach leaves a 4 K pinch
+C.19,C,F,Pressure sign,Pressure sign: $p_s\ge p_p+0.1$ MPa in HTTR. Project sign left to the safety case,Pa,Open item,[P] T1382 printed p.8,[P],units::ihx::check_limits,eq_c_19,NONE
+D.1,D,R,Reaction I,"Reaction I: $\mathrm{CH_4+H_2O\rightleftharpoons CO+3H_2}$, $+206.1$ kJ/mol",J/mol,None stated,"[P] XF1 Table 2 PDF p3, Table 7 PDF p8. Trap T8",[P],units::smr_eq::STOICH,eq_d_01,"ID, A.5"
+D.2,D,R,"Reaction II, shift","Reaction II, shift: $\mathrm{CO+H_2O\rightleftharpoons CO_2+H_2}$, $-41.15$ kJ/mol",J/mol,None stated,"[P] XF1 Table 2 PDF p3, Table 7 PDF p8. Trap T8",[P],units::smr_eq::STOICH,eq_d_02,ID
+D.3,D,R,Reaction III,"Reaction III: $\mathrm{CH_4+2H_2O\rightleftharpoons CO_2+4H_2}$, $+164.9$ kJ/mol, equal to I + II",J/mol,None stated,"[P] XF1 Table 2 PDF p3, Table 7 PDF p8. Trap T8",[P],units::smr_eq::STOICH,eq_d_03,ID
+D.4,D,O,Heavier gas,Heavier gas: $\mathrm{C_nH_m+nH_2O\to nCO+(n+m/2)H_2}$ taken to completion at tube inlet,mol,Rapid conversion,"[A], support TE1236 PDF p70, ethane gone by 4 m. NG composition TEV-953 A-5 PDF p39",[A],units::smr_eq::lump_heavies,eq_d_04,PUB: 1.05379 mol C per mol NG
+D.5,D,F,Feed ratio,"Feed ratio: $S/C=F_{H_2O}/F_C$, 3.0",1,Case 6 value not stated,[P] TEV-953 PDF p18; Case 6 [M1],[M1] [P],units::smr_eq::feed,eq_d_05,ID
+D.6,D,R,Mole table from extents,"Extents, per mole CH4 fed: CH4 $1-x_1$; CO $x_1-x_2$; CO2 $\xi_{CO_2}+x_2$; H2 $\xi_{H_2}+3x_1+x_2$; H2O $S_C-x_1-x_2$; total $\Sigma_0+2x_1$",1,"$x_1$, $x_2$ extents of I and II",[T]; XF2 PDF p3,[T],units::smr_eq::mole_table,eq_d_06,"ID, A.5"
+D.7,D,E,Equilibrium constant of reaction I,$K_1(T)=1.198\times10^{13}\exp(-26830/T)$,bar2,IG,"[P] Zhang21 Table 1 PDF p5, converted from MPa2 [C]. Traps T5, T6, T7 [M3]",[C] [M3] [P],props::equilibrium::k_eq,eq_d_07,"PUB: within 3.3 to 5.3% of NIST-based $K_1$, 680 to 1144 K, project calculation"
+D.8,D,E,Equilibrium constant of reaction II,$K_2(T)=1.767\times10^{-2}\exp(4400/T)$,1,IG,[P] Zhang21 Table 1. Trap T4,[P],props::equilibrium::k_eq,eq_d_08,PUB: within 3.6% on the same range
+D.9,D,R,Equilibrium constant of reaction III,$K_3=K_1K_2$,bar2,A.6,[P] HA Eqs 51 to 53 PDF p7,[P],props::equilibrium::k_eq,eq_d_09,ID
+D.10,D,R,Quotients,"Quotients: $Q_1=p_{H_2}^3p_{CO}/(p_{CH_4}p_{H_2O})$, $Q_2=p_{H_2}p_{CO_2}/(p_{CO}p_{H_2O})$, $Q_3=Q_1Q_2$","bar2, 1","IG, standard state 1 bar",[T],[T],props::equilibrium::quotient,eq_d_10,ID
+D.11,D,R,Equilibrium,"Equilibrium: solve $Q_1(x)=K_1(T)$, $Q_2(x)=K_2(T)$ at exit $T$, $p$",1,"Isobaric, IG",[T]; INL Gibbs result TEV-953 PDF p18,[T],units::smr_eq::equilibrium,eq_d_11,"PUB: TE1236 Tables 2.1, 2.2 PDF p13: 66.1, 79.8, 81.3% within 0.5 points. TEV-953 A-40 PDF p74 raw syngas within 0.5 mol%"
+D.12,D,R,Consistency,Consistency: $d\ln K/d(1/T)=-\Delta_rh/R$,K,Constant $\Delta_rh$ over fit,[T],[T],props::equilibrium::k_eq,eq_d_12,PUB: slopes give 223.1 and 36.6 kJ/mol against 224.0 and 37.3 at 948 K
+D.13,D,E,Rates,"Rates: $k_i=A(k_i)\exp(-E_{a,i}/RT)$; $A=4.225\times10^{15}$, $1.955\times10^{6}$, $1.020\times10^{15}$; $E_a=240.1$, $67.13$, $243.9$ kJ/mol",XF units,"Reference activity. Fit range 773 to 848 K, 3 to 15 bar","[P] XF1 Tables 5, 6 PDF p7, image verified. Traps T3, T9, T10",[P],units::xf::k_rate,eq_d_13,ID: Table 5 and Table 6 agree within 1.4%
+D.14,D,E,Adsorption,"Adsorption: $K_j=A_j\exp(-\Delta H_j/RT)$; $K_{CO}$ 8.23e-5, $-70.65$; $K_{H_2}$ 6.12e-9, $-82.90$; $K_{CH_4}$ 6.65e-4, $-38.28$; $K_{H_2O}$ 1.77e5, $+88.68$ kJ/mol",1/bar; $K_{H_2O}$ 1,"Traps T1, T2, T11",[P] XF1 Table 6 PDF p7,[P],units::xf::k_ads,eq_d_14,ID
+D.15,D,E,Adsorption denominator,$DEN=1+K_{CO}p_{CO}+K_{H_2}p_{H_2}+K_{CH_4}p_{CH_4}+K_{H_2O}p_{H_2O}/p_{H_2}$,1,Partial pressures bar,[P] XF1 Eq 3 PDF p5,[P],units::xf::den,eq_d_15,"ID: DEN2 = 82.7 at 1000 K, 30 bar, y .15, .45, .25, .03"
+D.16,D,E,Rate of reaction I,$r_1=(k_1/p_{H_2}^{2.5})(p_{CH_4}p_{H_2O}-p_{H_2}^3p_{CO}/K_1)/DEN^2$,kmol/kg cat/h,"Diverges at $p_{H_2}\to0$, feed must hold H2",[P] XF1 Eq 3 PDF p5,[P],units::xf::rates,eq_d_16,ID: zero at equilibrium
+D.17,D,E,Rate of reaction II,$r_2=(k_2/p_{H_2})(p_{CO}p_{H_2O}-p_{H_2}p_{CO_2}/K_2)/DEN^2$,kmol/kg cat/h,None stated,[P] XF1 Eq 3 PDF p5,[P],units::xf::rates,eq_d_17,ID
+D.18,D,E,Rate of reaction III,$r_3=(k_3/p_{H_2}^{3.5})(p_{CH_4}p_{H_2O}^2-p_{H_2}^4p_{CO_2}/K_3)/DEN^2$,kmol/kg cat/h,None stated,[P] XF1 Eq 3 PDF p5,[P],units::xf::rates,eq_d_18,ID
+D.19,D,R,Species,"Species: $r_{CO}=r_1-r_2$, $r_{CO_2}=r_2+r_3$, $r_{CH_4}=r_1+r_3$",kmol/kg cat/h,None stated,[P] XF1 Eq 4 PDF p5,[P],units::xf::rates,eq_d_19,ID
+D.20,D,O,Effectiveness,"Effectiveness: $\eta_j^{cat}=\int\rho_sr_j\,dV/(\rho_sr_j^sV_p)$",1,XF values do not transfer,[P] XF2 Eq 7 and Eq 9 PDF p3; Fig 6 PDF p5 by eye. [M16],[M16] [P],units::xf::eta_cat,eq_d_20,NONE at helium service
+D.21,D,O,Lumped activity,"Lumped activity: $\eta_1^{cat}=\eta_2^{cat}=\eta_3^{cat}=a_{cat}$, fitted on JAERI A-2 only",1,One parameter. Fit disclosed,[C],[C],units::smr_tube::fit_activity,eq_d_21,"EXP hold-outs A-3, A-4 are the only independent check"
+D.22,D,O,Methane continuity,Continuity: $dx_{CH_4}/dz=(\Omega\rho_B/F^0_{CH_4})(\eta_1r_1+\eta_3r_3)$,"1/m, $\Omega$ m2","SS, 1D, PF",[P] XF2 Eq 10a PDF p3 to 4,[P],units::smr_tube::rhs,eq_d_22,"EXP: X 0.555, 0.567, 0.525 for A-2, A-3, A-4"
+D.23,D,O,Carbon dioxide continuity,Continuity: $dx_{CO_2}/dz=(\Omega\rho_B/F^0_{CH_4})(\eta_2r_2+\eta_3r_3)$,"1/m, $\Omega$ m2",as above,[P] XF2 Eq 10b,[P],units::smr_tube::rhs,eq_d_23,"EXP: dry GC, JAERI A-2 to A-5"
+D.24,D,R,Partial pressures,Partial pressures from D.6: $p_i=py_i$,bar,IG,[T],[T],units::smr_eq::mole_table,eq_d_24,ID
+D.25,D,O,Energy,"Energy: $c_p\rho_gu_s\,dT/dz=\rho_B\sum_j(-\Delta_rh_j)\eta_jr_j+(4U/d_i)(T_w-T)$",W/m3,1D pseudo-homogeneous in the gas,"[P] XF2 Eq 10c PDF p4, sign read from image",[P],units::smr_tube::rhs,eq_d_25,"EXP: JAERI stations 1 to 5, elevations not verified"
+D.26,D,E,Momentum,Momentum: A.12,Pa/m,Void and bed density [A],[P] HA Eq 26; XF2 Eq 10d,[P],units::smr_tube::ergun,eq_d_26,"EXP: Yin Table 2 PDF p5, process 0.121 MPa"
+D.27,D,O,Wall,Wall: $1/U=1/h_{fi}+R_f+t_w/k_w+(A_i/A_o)/h_{fo}$,W/m2/K,Thin wall,[T]; fouling 0.000172 m2K/W [P] JAERI Table 3.3,[P] [T],units::smr_tube::u_wall,eq_d_27,"EXP: 142.0 calc, 150.9 measured, JAERI Table 3.3 PDF p28"
+D.28,D,O,Helium side,"Helium side: $\dot m_{He}c_p\,dT_{He}/dz=\pm\pi d_iN_tU(T_{He}-T)$",W/m,Counterflow,[T]; HA Eq 7 PDF p4,[T],units::smr_tube::rhs_he,eq_d_28,EXP: JAERI He profile; Sato 632.4 vs 634.5 C
+D.29,D,E,Finned annulus,Finned annulus: $Nu=0.039Re^{0.87}Pr^{0.4}(S_f/D_e)^{0.4}(H_f/D_e)^{-0.19}$,1,Knudsen fit,[P] JAERI A-1 PDF p93; Sato Eq 9,[P],units::smr_tube::nu_fin,eq_d_29,EXP: about 2325 W/m2/K
+D.30,D,E,Plain annulus,Plain annulus: $Nu=0.205Re^{0.603}Pr^{0.33}$,1,Includes radiation,"[P] TE1236 PDF p68, EVA-I",[P],units::smr_tube::nu_plain,eq_d_30,EXP range of EVA only
+D.31,D,E,Process side,Process side: $h_w=0.4(k_g/D_p)(2.58Re^{1/3}Pr^{1/3}+0.094Re^{0.8}Pr^{0.4})$,W/m2/K,Mixture properties [M22],[P] HA Eq 31 PDF p6,[P],units::smr_tube::h_process,eq_d_31,EXP: about 540 W/m2/K
+D.32,D,E,Radiation,"Radiation: $q=\sigma\varepsilon_{r,a}\varepsilon_{r,b}\pi d_o(T_a^4-T_b^4)/A_{sh}$",W/m3,Grey,[P] HA Eq 9 PDF p4,[P],units::smr_tube::radiation,eq_d_32,"PUB: 5.2% of shell heat, HA PDF p11"
+D.33,D,R,Performance,"Performance: $X_{CH_4}=x_1$ at exit; $Y_{H_2}=F_{H_2,out}/F_{CH_4,in}$",1,None stated,[T],[T],units::smr_eq::performance,eq_d_33,"PUB: 78.1% INL Gibbs, TEV-953 PDF p18; 80.3% mine at 871 C, 30.3 bar, S/C 3, pure CH4"
+D.34,D,O,Tube duty,Tube duty: $\dot Q_{tube}=\sum F_ih_i\rvert_{out}-\sum F_ih_i\rvert_{in}$,W,Check on the INL heat basis,"[C]. Case 5 split 404.2 of 568.4 MMBtu/h, A-55 PDF p79",[C],units::smr_eq::duty_check,eq_d_34,"PUB: scoped 156.5 and 167.1 MW against 176.8, project calculation. Print the gap. Do not tune"
+D.35,D,O,Tube count,"Tube count: $N_t=\dot Q_{tube}/(\pi d_oL\,q'')$, $q''=40$ to 60 kW/m2",1,Flux from HTGR studies,[P] TE1236 PDF p9; HA Table 6 PDF p11,[P],units::smr_tube::tube_count,eq_d_35,"PUB: 72.9 MW, 199 tubes, 14 m"
+D.36,D,F,Hot end,"Hot end: $\Delta T_{hot}=T_{s,sup}-T_{ref,out}=29$ K. Sensitivity 825 C, 800 C",K,"INL Gibbs result, no tube model","[P] TEV-961 PDF p14, p18. Measured 102 to 125 K, JAERI Table 3.3, design 100 K",[P],units::smr_eq::sensitivity_exit,eq_d_36,"PUB: X 80.3, 70.2, 64.3% at 871, 825, 800 C. Do not call 58 to 64% expected performance"
+E.1,E,R,CO conversion,"CO conversion: $X_{CO}=(F_{CO,in}-F_{CO,out})/F_{CO,in}$",1,None stated,[T],[T],units::wgs::conversion,eq_e_01,PUB: 68% IEAGHG17 HTS
+E.2,E,R,Species,"Species: $F_i=F_{i,in}+\nu_i\xi$ with $\nu$ for D.2",mol/s,None stated,[T],[T],units::wgs::species,eq_e_02,ID
+E.3,E,R,Constraint,Constraint: $Q_2(T_{out})\le K_2(T_{out})$,1,IG,D.8,see source,units::wgs::eq_limit,eq_e_03,ID
+E.4,E,O,Approach,"Approach: $Q_2(T_{out})=K_2(T_{out}+\Delta T_{eq})$, $\Delta T_{eq}=10$ K",K,Same on both beds,[C] from TEV-961 A-53 PDF p77; IEAGHG17 PDF p44.,[C],units::wgs::approach,eq_e_04,"PUB: Q/K 0.92 HTS, 0.81 LTS, 0.90 IEAGHG"
+E.5,E,R,Adiabatic bed,Adiabatic bed: $\sum F_ih_i\rvert_{out}=\sum F_ih_i\rvert_{in}$,W,AD,[T]; INL duty 0,[T],units::wgs::adiabatic,eq_e_05,"PUB: HTS 335 to 407 C, LTS 191 to 213 C, Case 5"
+E.6,E,R,Heat release,Heat release: $\dot Q_{WGS}=\xi(-\Delta_rh_2)$,W,None stated,[T],[T],units::wgs::heat_release,eq_e_06,ID. Reported term of brief s5
+E.7,E,E,HTS rate,"HTS rate: $dp_{CO}/dt=-k(p_{CO}-p_{CO,eq})$","Pa/s, 1/s",Pseudo first order,[P] Chinchen PDF p6,[P],units::wgs::hts_rate,eq_e_07,EXP: Table 1 PDF p6
+E.8,E,E,Integrated,Integrated: $k=S_v\ln[1/(1-C/C_e)]$,1/s,"Steam ratio 1.0 in source, S/DG 0.50 here",[P] Chinchen PDF p6 to 7,[P],units::wgs::hts_volume,eq_e_08,ID
+E.9,E,E,"interpolate Table 1, 310","$k(T)$: interpolate Table 1, 310 to 450 C, 16 to 31 bar",1/s,"Pore diffusion above 350 to 370 C, true $E=121.8$ kJ/mol",[P] Chinchen Table 1,[P],units::wgs::hts_k,eq_e_09,PUB: Table 1
+E.10,E,O,Catalyst volume,Catalyst volume: $V_{cat}=(\dot V/k)\ln[1/(1-C/C_e)]$,m3,Low confidence,[C]: 90 to 180 m3 Case 5,[C],units::wgs::hts_volume,eq_e_10,PUB check only
+E.11,E,O,Profile,"Profile: $\sum F_ic_{p,i}\,dT/d\xi=-\Delta_rh_2$",K per mol/s,AD,[T],[T],units::wgs::profile,eq_e_11,PUB: E.5 end points
+E.12,E,F,Drop,"Drop: fixed 17 psi across each bed, Ergun as check",Pa,INL Case 5 labels,"[P] TEV-961 A-55, A-56",[P],units::wgs::dp,eq_e_12,ID
+E.13,E,F,Steam ratio,Steam ratio: $S/DG=F_{H_2O}/\sum_{dry}F_i$,1,"INL 0.50 and 0.37, minimum 0.4 and 0.3",[P] TEV-953 PDF p18 to 19; TEV-961 PDF p77,[P],units::wgs::check_window,eq_e_13,"PUB: 0.50, 0.368 [C]"
+E.14,E,F,Window,Window: HTS inlet $\ge$ 600 F; LTS inlet $\ge$ 375 F and 27 F above dew,K,None stated,[P] TEV-953 PDF p18 to 19,[P],units::wgs::check_window,eq_e_14,ID
+E.15,E,O,LTS model,LTS model: E.4 only. No rate law [M4],K,Equilibrium approach,INL operating points,see source,units::wgs::lts,eq_e_15,"PUB: 0.33 mol% CO dry, 213 C"
+E.16,E,E,"Listed, not used","Listed, not used: Kraussler power law, Table 3 orders",mol/g/s,"Ambient, biomass gas","[P] Kraussler Tables 1, 3 PDF p2, p8",[P],none,eq_e_16,Card states why it does not extrapolate to 28 bar
+F.1,F,R,Sensible,Sensible: $\dot Q=\sum_iF_i[h_i(T_1)-h_i(T_2)]$,W,No phase change above dew,[T],[T],units::cooler::sensible,eq_f_01,"PUB: HPS-GEN1 69.3, EX1 19.5, EX2 7.1 MW, TEV-961 A-55 to A-56"
+F.2,F,R,Train,"Train: sum over HPS-GEN1, EX1, EX2, EX3, EX4, KO-DRM-1",W,Case 5 proxy [M1],[P] TEV-961 PDF p79 to 80,[P],units::cooler::train,eq_f_02,"PUB: within 15% for EX3, EX4 on first pass. Report misfit"
+F.3,F,R,Dew point,Dew point: $y_{H_2O}p=p_{sat}(T_{dp})$,"K, Pa","Raoult, $\gamma=1$",[T],[T],units::cooler::dew_point,eq_f_03,"PUB: about 164 C, printed 331 F dew, TEV-961 A-53"
+F.4,F,E,Saturation,Saturation: IAPWS-IF97 via seuif97,Pa,Screening Antoine not carried,[M9],[M9],props::steam::psat,eq_f_04,PUB: IF97 verification table
+F.5,F,R,Water VLE,"Water VLE: $y_wp=x_w\gamma_wp_{sat}(T)$, $x_w\approx1$",1,Dilute gases,[T],[T],units::flash::k_water,eq_f_05,"PUB: 0.24 mol% at 35 C, 25.8 bar, IEAGHG17 stream 7. amine_spec 5.63 kPa"
+F.6,F,E,Dissolved gas,"Dissolved gas: $x_{CO_2}=y_{CO_2}p/H_{CO_2}$, Aronu Eq 17",Pa,Unit label not seen,[P] Aronu Eq 17 PDF p4 [M8],[M8] [P],units::flash::k_gas,eq_f_06,PUB: 288 kg/h CO2 at Case 5 [C]
+F.7,F,R,Flash,Flash: $\sum_iz_i(K_i-1)/[1+V(K_i-1)]=0$,1,Rachford-Rice,[T],[T],units::flash::flash,eq_f_07,ID
+F.8,F,R,Mass,"Mass: $F=V+L$, $Fz_i=Vy_i+Lx_i$",mol/s,None stated,[T],[T],units::flash::flash,eq_f_08,"PUB: 349,724 = 223,172 + 126,553 lb/h"
+F.9,F,R,Energy,Energy: $\dot Q=Vh_V+Lh_L-Fh_F$,W,None stated,[T],[T],units::flash::flash,eq_f_09,PUB: KO-DRM-1 5.8 MW
+F.10,F,R,Condensate split,Condensate split: $L=L_{ret}+L_{treat}$,kg/s,Zero vent,"[P] TEV-961 A-54, A-59 PDF p78, p83: 12,945 and 113,607 lb/h",[P],units::flash::condensate,eq_f_10,"PUB: 57.4 t/h, 4.36 t/t H2. Route to BFW, IEAGHG17 PDF p37 to 38; chemistry missing"
+F.11,F,O,Heat above,"Heat above $T_{min}$: $\dot Q(T_{min})=\int_{T_{min}}^{149\,C}\dot C\,dT+\dot m_{cond}\Delta h_{vap}$",W,Case 5 proxy,[C] screening model,[C],units::cooler::heat_above,eq_f_11,"GOLD: 11.5 to 11.8 MW at 130 C before $s$ and 1,927/1,970"
+F.12,F,O,"CO2 lost in condensate, kept","CO2 lost in condensate, kept outside the ledger",kg/s,About 0.4% of CO2,[C],[C],units::flash::co2_loss,eq_f_12,Disclosed term
+F.13,F,R,Absorber feed,"Absorber feed: dry composition after KO, $y_{CO_2}$, $y_{CO}$, $y_{CH_4}$, $y_{H_2}$",1,None stated,"[P] Case 5 17.7, 0.33, 4.8, 76.3 dry",[P],units::cooler::absorber_feed,eq_f_13,PUB: within 0.5 mol%
+G.1,G,R,Reactions,Reactions: $\mathrm{2H_2O\rightleftharpoons H_3O^++OH^-}$; $\mathrm{2H_2O+CO_2\rightleftharpoons H_3O^++HCO_3^-}$; $\mathrm{H_2O+HCO_3^-\rightleftharpoons H_3O^++CO_3^{2-}}$; $\mathrm{H_2O+MEAH^+\rightleftharpoons H_3O^++MEA}$; $\mathrm{H_2O+MEACOO^-\rightleftharpoons MEA+HCO_3^-}$,9 species,Carbamate explicit,[P] Aronu Eqs 4 to 8 PDF p3,[P],mea::SPECIES,eq_g_01,"ID, A.6"
+G.2,G,E,or,$\ln K$ or $\ln H=C_1+C_2/T+C_3\ln T+C_4T$,"$K$ 1, mole fraction; $H$ Pa","$K_{MEA}$ rated 0 to 50 C, used to 120 C","[P] Aronu Eq 16, Table 2 PDF p4",[P],mea::ln_k,eq_g_02,"PUB: pKa 9.50 against 9.51, Versteeg Table 10"
+G.3,G,R,Chemical potential,Chemical potential: $\mu_i=\mu_i^\circ(T)+RT\ln(\gamma_ix_i)$,J/mol,None stated,[T],[T],theory,eq_g_03,ID
+G.4,G,R,Equation,$RT\ln K_j=-\sum_i\nu_{ij}\mu_i^\circ$,J/mol,None stated,[P] Aronu Eq 12 PDF p4,[P],theory,eq_g_04,ID
+G.5,G,R,Equilibrium,Equilibrium: $\ln K_j=\sum_i\nu_{ij}\ln(\gamma_ix_i)$,1,None stated,[T],[T],mea::residuals,eq_g_05,ID: residual below 1e-9
+G.6,G,R,Standard states,Standard states: H2O and MEA pure; solutes $\gamma_i^*=\gamma_i/\gamma_i^\infty$ in water,1,None stated,[P] Aronu Eq 11 PDF p4,[P],mea::ln_gamma,eq_g_06,ID
+G.7,G,O,Hidden convention,"Hidden convention: $\ln K_{MEA,eff}=\ln K_{MEA}+\ln\gamma_{MEA}^\infty$",1,Not stated by Aronu,[C]upport: Cownden Table 1; Zhang Table 8 NRTL $-1.320$ vs $-1.279$,[C],mea::ln_k,eq_g_07,"PUB: without it AARD 58.8%, with it 0.11% at 30 mass%"
+G.8,G,R,MEA balance,MEA balance: $n_{MEA}+n_{MEAH^+}+n_{MEACOO^-}=n^0$,mol,None stated,[T],[T],mea::balances,eq_g_08,ID
+G.9,G,R,Carbon,Carbon: $n_{CO_2}+n_{HCO_3^-}+n_{CO_3^{2-}}+n_{MEACOO^-}=\alpha n^0$,mol,None stated,[T],[T],mea::balances,eq_g_09,ID
+G.10,G,R,Hydrogen element balance over all,Hydrogen element balance over all nine species,mol,"MEA C2H7NO, carbamate C3H6NO3",[T],[T],mea::balances,eq_g_10,ID
+G.11,G,R,Electroneutrality,Electroneutrality: $n_{H_3O^+}+n_{MEAH^+}=n_{OH^-}+n_{HCO_3^-}+2n_{CO_3^{2-}}+n_{MEACOO^-}$,mol,None stated,[T],[T],mea::balances,eq_g_11,ID
+G.12,G,R,Loading,Loading: $\alpha=$ total CO2 / total MEA,mol/mol,None stated,[T],[T],mea::loading,eq_g_12,ID
+G.13,G,R,Equation,$\ln\gamma_i=\ln\gamma_i^C+\ln\gamma_i^R+\ln\gamma_i^{DH}$,1,None stated,[P] Aronu Eq 13 PDF p4. Term expressions [M7],[M7] [P],mea::ln_gamma,eq_g_13,PUB: 104 model points
+G.14,G,R,Combinatorial,"Combinatorial: $\ln\gamma_i^C=\ln(\phi_i/x_i)+1-\phi_i/x_i-(z/2)q_i[\ln(\phi_i/\theta_i)+1-\phi_i/\theta_i]$, $z=10$",1,"$r$, $q$ Table 7",[M7]; [P] Aronu Table 7 PDF p7,[M7] [P],mea::ln_gamma_c,eq_g_14,PUB: 104 model points
+G.15,G,R,Residual,"Residual: $\ln\gamma_i^R=q_i[1-\ln\sum_k\theta_k\psi_{ki}-\sum_k\theta_k\psi_{ik}/\sum_l\theta_l\psi_{lk}]$, $\psi_{ki}=\exp[-(u_{ki}-u_{ii})/T]$",1,None stated,[M7],[M7],mea::ln_gamma_r,eq_g_15,PUB: 104 model points
+G.16,G,E,Equation,$u_{ki}=u^0_{ki}+u^T_{ki}(T-298.15)$,K,"Tables 8, 9, signs from image","[P] Aronu Eqs 14, 15, PDF p4, p7",[P],mea::u_matrix,eq_g_16,PUB: 104 model points
+G.17,G,R,Debye-Hueckel,"Debye-Hueckel: $\ln\gamma_i^{DH}=-z_i^2A\sqrt I/(1+b\sqrt I)$, water term $(2/3)M_wAI^{3/2}\sigma(b\sqrt I)$, $b=1.5$, $A(T)=1.131+1.335\times10^{-3}t+1.164\times10^{-5}t^2$","kg/mol, $t$ C",Molality on water,"[M7], general knowledge, supported by G.13 test",[M7],mea::ln_gamma_dh,eq_g_17,PUB: 104 model points
+G.18,G,R,Ionic strength,Ionic strength: $I=\tfrac12\sum_im_iz_i^2$,mol/kg,None stated,[T],[T],mea::ionic,eq_g_18,ID
+G.19,G,R,CO2 VLE,CO2 VLE: $\varphi_{CO_2}y_{CO_2}p=\gamma^*_{CO_2}x_{CO_2}H\exp[v^\infty(p-p_s)/RT]$,"Pa, $v^\infty$ m3/mol",$v^\infty=3.5\times10^{-5}$ [A],[P] Aronu Eq 10 PDF p3 to 4,[P],mea::pco2,eq_g_19,"PUB: 104 points, AARD 0.20%, each within 1.5%"
+G.20,G,R,H2O and MEA VLE,H2O and MEA VLE: $\varphi_iy_ip=\gamma_ix_ip_i^s\varphi_i^s\exp[v_i(p-p_i^s)/RT]$,Pa,"DIPPR not local, IF97 for water; MEA two points only",[P] Aronu Eq 11; Dugas p125,[P],mea::p_water; mea::p_mea,eq_g_20,EXP: Aronu total pressure AARD quoted 11.7%
+G.21,G,R,Vapour,Vapour: SRK fugacity,1,"H2 $k_{ij}$ absent, taken 0",[P] Aronu PDF p3; constants [T],[P] [T],props::mixture::srk_phi,eq_g_21,ID. Used only for model-column comparison
+G.22,G,E,Henry in water,Henry in water: $H_w=2.82\times10^6\exp(-2044/T)$,Pa m3/mol,Second hand,[P] Aronu Eq 17 PDF p4 [M8],[M8] [P],mea::henry_w,eq_g_22,PUB: Table 2 form
+G.23,G,E,N2O analogy,"N2O analogy: $H_{app}=H_{N_2O}H_{w,CO_2}/H_{w,N_2O}$",Pa m3/mol,Basis warning,"[P] Aronu Eqs 18, 19 PDF p4",[P],mea::henry_app,eq_g_23,"EXP: Hartono Table 11, n=15, AARD 3.4%"
+G.24,G,O,Heat of absorption,Heat of absorption: $\Delta h_{abs}=-R(\partial\ln p^*_{CO_2}/\partial(1/T))_x$,J/mol,Aronu warns accuracy,[C]able,[C],mea::dh_abs,eq_g_24,NONE numeric. Figures only: Zhang Figs 12 to 14
+G.25,G,F,Solvent heat capacity,"Solvent heat capacity: $c_{p,s}=3.6$ kJ/kg/K",J/kg/K,[M21],[A]; Plaza Fig 3.13 axis 3.2 to 3.8,[A],mea::cp_solv,eq_g_25,NONE
+G.26,G,E,Density (Weiland),"Density (Weiland): $V=\sum_ix_iV_i+x_Mx_WV^*$, $V_M=61.08/(aT^2+bT+c)$, $V_{CO_2}=0.04747$ mL/mol",m3/mol,Hartono Eqs 3 to 5 stay a benchmark,"[P] Plaza Eq 3.16, 3.17",[P],mea::rho,eq_g_26,"EXP: Hartono Table 3 PDF p3, AARD 0.51%"
+G.27,G,E,Viscosity (Weiland),Viscosity (Weiland): $\mu=\mu_w\exp\{(21.186\Omega+2373)[\alpha(0.01015\Omega+0.0093T-2.2589)+1]\Omega/T^2\}$,Pa s,Loading to 0.50,[P] Dugas Eq 5.16; Khan Eq 7,[P],mea::mu,eq_g_27,"EXP: Hartono Table 7 PDF p5, AARD 1.4%"
+G.28,G,E,Diffusivity,"Diffusivity: $D_w=2.35\times10^{-6}\exp(-2119/T)$, $D_l=D_w(\mu_w/\mu)^{0.8}$",m2/s,None stated,"[P] Khan Eqs 6a, 6b PDF p3",[P],mea::diff_co2,eq_g_28,"PUB: Dugas Tables 4.2, B.1"
+G.29,G,O,Free MEA,Free MEA: $n_{MEA}/n^0$ from G.5 to G.11,1,Kinetic limit near equilibrium loading,[C],[C],mea::free_mea,eq_g_29,"PUB: 0.4% at 40 C, equilibrium loading"
+G.30,G,E,Comparator,Comparator: Dugas Eq 5.26,Pa,Fails above about 0.45,[P] Dugas p136,[P],mea::xu_check,eq_g_30,"EXP: ratio 0.45 at 0.496, 40 C"
+G.31,G,O,Plant point,"Plant point: $\alpha^*(p_{CO_2},T)$, 0.741 at 378 kPa, 40 C",mol/mol,Extrapolates 30 mass% data,[C],[C],mea::alpha_eq,eq_g_31,"EXP read-off: Jou about 0.74, Wong about 0.63. Prints both"
+G.32,G,F,Guards,"Guards: $T$ 313 to 393 K, $\alpha\le0.50$ in columns, $p_{CO_2}\le10$ bar",mol/mol,[M11],s6,see source,mea::check_range,eq_g_32,ID
+G.33,G,O,"Table for column calls, bilinear","Table $p^*(T,\alpha)$ for column calls, bilinear in $\ln p$",Pa,Grid error below 1%,[C],[C],mea::pstar_table,eq_g_33,ID against G.19
+H.1,H,O,Gas film,Gas film: $N_{CO_2}=k_G(p_{CO_2}-p_i)$,"mol/m2/s, Pa",Two-film,[P] Khan PDF p2,[P],units::absorber::flux,eq_h_01,ID
+H.2,H,O,Liquid film,Liquid film: $N_{CO_2}=Ek_L^\circ(p_i-p^*)/H$,"m/s, Pa m3/mol",Bulk in equilibrium,[P] Sonderby assumption 1 PDF p3,[P],units::absorber::flux,eq_h_02,ID
+H.3,H,R,Interface,Interface: $p_i=HC_i$,Pa,Henry,[T],[T],units::absorber::flux,eq_h_03,ID
+H.4,H,O,Overall,"Overall: $N_{CO_2}=K_G(p_{CO_2}-p^*)$, $1/K_G=1/k_G+H/(Ek_L^\circ)$",Pa,None stated,"[P] Sonderby Eqs 9, 10 PDF p3",[P],units::absorber::k_overall,eq_h_04,EXP: Sonderby runs
+H.5,H,E,Equation,$\log_{10}k_2=10.99-2152/T$,m3/kmol/s,Do not mix with Plaza or Dugas sets,[P] Khan Eq 2,[P],units::absorber::k2,eq_h_05,"PUB: Versteeg Table 10, Part5b Table 1"
+H.6,H,O,Equation,"$M=D_lk_2C_B/(k_L^\circ)^2$, $E_1=\sqrt M/\tanh\sqrt M$",1,$C_B$ free MEA,[P] Khan Eq 4,[P],units::absorber::enhancement,eq_h_06,ID
+H.7,H,O,Equation,$E_\infty=1+C_BD_B/(bD_lC_i)$,1,$b=2$,[P] Khan Eq 4,[P],units::absorber::enhancement,eq_h_07,PUB: about 11 at 4.74 bar
+H.8,H,O,Wellek,Wellek: $E=1+1/[(1/(E_\infty-1))^{1.35}+(1/(E_1-1))^{1.35}]^{1/1.35}$,1,Within 3% of van Krevelen fit,[P] Khan Eq 4,[P],units::absorber::enhancement,eq_h_08,EXP: Khan Table 1 runs
+H.9,H,E,Equation,$H=10^{5.3-0.035C_{MEA}-1140/T}$,"Unit not stated, assumed atm L/mol",Benchmark only against G.23,[P] Khan Eq 8 PDF p4,[P],units::absorber::henry_khan,eq_h_09,EXP: Hartono Table 11
+H.10,H,E,Equation,"$k_L=2(D_LC_EU_L/\pi S)^{1/2}$, $C_E=0.9$",m/s,$S$ for packing [M17],[P] Isa Table 4 Eq 10 PDF p6,[P],units::absorber::kl_rocha,eq_h_10,EXP via H.4
+H.11,H,E,Equation,$k_G=0.054(D_G/S)[(U_L+U_G)\rho_GS/\mu_G]^{0.8}(\mu_G/D_G\rho_G)^{0.33}$,m/s,$D_G$ [M20],[P] Isa Table 4 Eq 11,[P],units::absorber::kg_rocha,eq_h_11,EXP via H.4
+H.12,H,E,"Area, central","Area, central: Billet and Schultes $a_e/a=C_h(U_L\rho_L/a\mu_L)^{0.25}(U_L^2a/g)^{0.1}\times0.85$, $Re_L\ge5$, $C_h=0.554$",1,Stated to 30 bar. Needs no surface tension,[P] Isa Table 5 PDF p6,[P],units::absorber::area_bs,eq_h_12,EXP: Isa Table 8
+H.13,H,E,"Area, alternatives","Area, alternatives: Rocha with $F_{SE}=0.25$ or 0.35, Wang, Gualito",1,Surface tension [M19],[P] Isa Table 5; Sonderby PDF p4,[P],units::absorber::area_alt,eq_h_13,Sensitivity only
+H.14,H,O,Gas,Gas: $dG/dz=-(N_{CO_2}+N_{H_2O})aA_c$,mol/s/m,"IN for H2, CH4, CO. Variable $G$, since Khan's constant flow fails at 18 mol% CO2",[P] Sonderby Eq 1,[P],units::absorber::rhs,eq_h_14,EXP
+H.15,H,O,Equation,$dy_{CO_2}/dz=[N_{CO_2}aA_c(y_{CO_2}-1)+N_{H_2O}y_{CO_2}aA_c]/G$,1/m,None stated,[P] Sonderby Eq 2,[P],units::absorber::rhs,eq_h_15,EXP: Sonderby Tables 3 to 6
+H.16,H,O,Equation,$dy_{H_2O}/dz=[N_{H_2O}aA_c(y_{H_2O}-1)+N_{CO_2}y_{H_2O}aA_c]/G$,1/m,None stated,[P] Sonderby Eq 3,[P],units::absorber::rhs,eq_h_16,EXP: Sonderby Tables 3 to 6
+H.17,H,O,Equation,$dL/dz=-N_{H_2O}aA_c$,mol/s/m,CO2-free basis,[P] Sonderby Eq 4,[P],units::absorber::rhs,eq_h_17,EXP: Sonderby Tables 3 to 6
+H.18,H,O,;,$dX_{CO_2}/dz=(N_{H_2O}X_{CO_2}-N_{CO_2})aA_c/L$; $dX_{H_2O}/dz=N_{H_2O}(X_{H_2O}-1)aA_c/L$,1/m,None stated,"[P] Sonderby Eqs 5, 6",[P],units::absorber::rhs,eq_h_18,EXP: Sonderby Tables 3 to 6
+H.19,H,O,Equation,"$dT_G/dz=-qaA_c/(Gc_{p,G})$",K/m,None stated,[P] Sonderby Eq 7 PDF p3,[P],units::absorber::rhs,eq_h_19,"EXP: profiles, Sonderby"
+H.20,H,O,"terms in , and","$dT_L/dz$: terms in $q$, $N_{CO_2}H_{CO_2}+N_{H_2O}H_{H_2O}$ and $(N_{CO_2}c_{p,CO_2}+N_{H_2O}c_{p,H_2O})(T_L-T_G)$, all over $Lc_{p,L}$",K/m,Signs from image,[P] Sonderby Eq 8,[P],units::absorber::rhs,eq_h_20,EXP: temperature bulge
+H.21,H,O,Heat flux,"Heat flux: $q=h(T_G-T_L)$, $h=k_Gc_G\,c_{p,G}(Sc/Pr)^{2/3}$",W/m2,Chilton-Colburn,[P] Sonderby Eq 11; [T] analogy,[P] [T],units::absorber::heat_flux,eq_h_21,ID
+H.22,H,O,Water flux,"Water flux: $N_{H_2O}=k_{G,H_2O}(p_{H_2O}-p^*_{H_2O})$",mol/m2/s,Liquid resistance small,[P] Sonderby assumption 3 PDF p3,[P],units::absorber::flux,eq_h_22,ID
+H.23,H,F,Drop,"Drop: $\Delta p/Z=(\Delta p/Z)_{ref}(F/F_{ref})^2$, $F=u_G\sqrt{\rho_G}$",Pa/m,Scaling from Sonderby Table 5,"[M18] [A]; INL drop 0 psi, TEV-961 A-53",[A] [M18],units::absorber::dp,eq_h_23,NONE at pressure
+H.24,H,O,Grid,"Grid: $N$ finite volumes, upwind in each phase",m,$N=50$ and 100 compared,[T]; Khan s2.5 used forward differences,[T],units::absorber::grid,eq_h_24,ID: capture change below 0.2%
+H.25,H,O,Boundary,"Boundary: gas in at bottom, liquid in at top",m,Two-point problem,[P] Sonderby PDF p4,[P],units::absorber::bc,eq_h_25,ID
+H.26,H,O,Solve,"Solve: damped Newton on the banded system, $\lVert res\rVert_\infty<10^{-8}$",m,Start from isothermal guess,[T],[T],numerics::ode::banded_newton,eq_h_26,"ID, repeat run identical"
+H.27,H,R,Per-pass,Per-pass: $\eta_{pp}=(y_{in}n_{in}-y_{out}n_{out})/(y_{in}n_{in})$,1,None stated,[P] Vinj24 Eq 20; Kwak Eq 2,[P],units::absorber::capture,eq_h_27,EXP: Salvinder 85.0 at 10.5 bar; Tan 95% at 5 bar pCO2
+H.28,H,R,Solvent,Solvent: $\dot m_{solv}=\dot n_{CO_2}M_{MEA}/[w(\alpha_{rich}-\alpha_{lean})]$,kg/s,$\alpha_{rich}\le0.50$,[C],[C],units::absorber::solvent_rate,eq_h_28,"GOLD: 894 t/h; PUB DICE 1,400 t/h at 70.2 t/h CO2"
+H.29,H,O,"Diameter from liquid load, 40","Diameter from liquid load, 40 to 100 m3/m2/h",m,L/G 12 to 15 kg/kg,[C],[C],units::absorber::diameter,eq_h_29,PUB: 4 to 6.5 m at Case A
+H.30,H,F,Co-absorption,"Co-absorption: zero central. Reference: aMDEA 0.056% H2, 0.137% CH4",1,[M10],[C] from IEAGHG17 streams,[C],units::absorber::coabsorb,eq_h_30,Disclosed term
+H.31,H,E,"Listed, not used","Listed, not used: Isa index $f$, Eq 42",1,"Fitted to 20 wt%, CH4 carrier","[P] Isa Eq 42, Table 10",[P],none,eq_h_31,Card states why
+I.1,I,R,CO2 balance,CO2 balance: $\dot n_{CO_2}=\dot n_{MEA}(\alpha_{rich}-\alpha_{lean})$,mol/s,SS,[T],[T],units::stripper::co2_balance,eq_i_01,ID
+I.2,I,O,Desorption driving force,Desorption driving force: H.4 with sign reversed,mol/m2/s,Equilibrium limited,[T],[T],units::stripper::desorb,eq_i_02,"Scoped, see I.3"
+I.3,I,O,Equilibrium stage,"Equilibrium stage: $y_{CO_2}p=p^*(T,\alpha)$ on each of $N$ stages",Pa,"Fast reaction at 120 C. Kinetics Plaza Eqs 3.46, 3.47 quoted, unused",[P] Plaza p98; Cownden p11,[P],units::stripper::stages,eq_i_03,EXP: Morgan K14 to K16 lean loading
+I.4,I,O,Rich-end pinch,Rich-end pinch: $n_{H_2O}/n_{CO_2}=(p-p^*_{CO_2})/p^*_{CO_2}$ at top,mol/mol,Vapour leaves near equilibrium with feed,[C],[C],units::stripper::steam_ratio,eq_i_04,PUB: DICE 0.905
+I.5,I,R,Lean-end,Lean-end: $T_{reb}$ solves $p^*_{CO_2}+p^*_{H_2O}+p^*_{MEA}=p_{strip}$ at $\alpha_{lean}$,K,2.0 bar,[D] amine_spec 121.9 C,see source,units::stripper::t_reboiler,eq_i_05,"PUB: DICE 123.2 C, Vinj24 117 to 119.8 C"
+I.6,I,R,Reboiler,Reboiler: $\dot Q_{reb}=\sum_{out}\dot nh-\sum_{in}\dot nh$,W,SS,[T],[T],units::stripper::reboiler,eq_i_06,ID
+I.7,I,R,Condenser,Condenser: $\dot Q_{cond}=\dot Q_{H_2O}+\dot Q_{steam}+\dot Q_{CO_2}$,W,None stated,[P] Vinj24 Eq 24 PDF p13,[P],units::stripper::condenser,eq_i_07,PUB: DICE 64.4 MMBtu/h
+I.8,I,R,Reflux,Reflux: condensate returned equals water in overhead at $T_{cond}$ less vent water,mol/s,Vent saturated,[P] Vinj24 Eq 23 PDF p12,[P],units::stripper::reflux,eq_i_08,ID
+I.9,I,R,Circulation,Circulation: H.28,kg/s,None stated,[P] Vinj24 Eq 23 PDF p12,[P],units::absorber::solvent_rate,eq_i_09,GOLD
+I.10,I,R,Rich-lean exchanger,"Rich-lean exchanger: $\dot m_rc_p(T_{r,out}-T_{r,in})=\dot m_lc_p(T_{l,in}-T_{l,out})$, approach 10 K","W, K",Equal $c_p$,[C]; DICE 9.7 K,[C],units::regen::rich_lean,eq_i_10,"PUB: DICE T rich, T lean"
+I.11,I,R,Steam,Steam: $\dot m_{st}=\dot Q_{reb}/\Delta h_{cond}$,kg/s,IF97,[T],[T],units::regen::steam,eq_i_11,PUB: DICE 263.3 klb/h
+I.12,I,R,SRD,SRD: $SRD=\dot Q_{reb}/\dot m_{CO_2}$,J/kg,None stated,[P] Vinj24 Eq 19 PDF p11,[P],units::regen::srd,eq_i_12,"EXP: Vinj24 Table D.19, median 3.75 in 88 to 92% window"
+I.13,I,O,Split,Split: $SRD=q_{des}+q_{sens}+q_{strip}$,J/kg,$q_{des}=\Delta h_{abs}/M_{CO_2}$,[C],[C],units::regen::srd_split,eq_i_13,"PUB: DICE 1.9, 0.73, 0.97 sum near 3.64; syngas 3.4 to 3.95"
+I.14,I,F,Carried,"Carried: 3.8, range 3.4 to 4.2",GJ/t,[M12],[A],[A],units::regen::srd_input,eq_i_14,NONE on syngas
+I.15,I,R,Stripping intensity,Stripping intensity: $RD\cdot3600/\dot m_{rich}$,kJ/kg,None stated,"[P] Vinj24 Eq 16, 17 PDF p11",[P],units::regen::intensity,eq_i_15,EXP: 200 to 210 kJ/kg optimum
+I.16,I,R,Reboiler area,Reboiler area: $RD=UA_r\Delta T_{LMTD}$,W,None stated,[P] Vinj24 Eq 22 PDF p11,[P],units::regen::reboiler_area,eq_i_16,ID
+I.17,I,F,Source temperature,"Source temperature: $T_{source}\ge T_{reb}+\Delta T_{min}$, steam near 145 to 153 C",K,None stated,[P] DICE PDF p192; TEV-961 PDF p81,[P],plant::heatrec::check_grade,eq_i_17,PUB: syngas above 130 C only
+I.18,I,F,"Listed, not carried","Listed, not carried: interheat, total heat unchanged, 3.77 GJ/t",GJ/t,None stated,[C] Vinj Energy Table 4,[C],none,eq_i_18,Card states why
+J.1,J,F,Scale,"Scale: $s=\dot m_{H_2,B}/\dot m_{H_2,A}=8988/13154$",1,"Mass ratio against INL product, 0.79 mass% CH4. By volume 0.6891",[P] TEV-953 PDF p16; [C],[C] [P],plant::flowsheet::scale,eq_j_01,GOLD: 0.68328
+J.2,J,R,kg/Nm3,"$\dot m=\rho_N\dot V_N$, $\rho_N=0.08988$ kg/Nm3",kg/h,"100,000 Nm3/h",[P] Air Liquide releases via,[P],plant::flowsheet::h2_rate,eq_j_02,"GOLD: 8,988 kg/h"
+J.3,J,R,Annual,"Annual: $M_{H_2}=\dot mt_h$, $t_h=8760f_{av}$",t/y,No output outside availability hours (project decision),[C],[C],plant::flowsheet::annual,eq_j_03,"GOLD: 66,925 t/y."
+J.4,J,R,Gas,Gas: 1 MMSCFD = $10^6/(379.49\cdot24)$ lbmol/h,mol/s,"60 F, 14.696 psia",[P] TEV-961 Table 2 note 1,[P],plant::flowsheet::mmscfd,eq_j_04,GOLD: 23.23 MMSCFD
+J.5,J,R,Feed carbon,"Feed carbon: $F_C=1.05379\,\dot n_{NG}$",mol/s,None stated,[C] TEV-953 A-5,[C],plant::flowsheet::feed_carbon,eq_j_05,"PUB: 2,077.6 st/d CO2 equivalent"
+J.6,J,O,Split,"Split: $\phi_c=F_{CO_2,abs}/T_C=0.775$, range 0.76 to 0.79",1,Case 5 reconstruction,[C],[C],plant::flowsheet::phi,eq_j_06,GOLD
+J.7,J,O,INL fraction,"INL fraction: $T_6=F_{cap,6}/(\eta_{Sel}\phi_c)$, $G_6=T_6-F_{cap,6}-P$, $f_r=(T_6-F_C)/G_6$",1,$\eta_{Sel}=0.99$,"[P] TEV-961 Table 2, A-53",[P],plant::flowsheet::recycle_fraction,eq_j_07,GOLD: 0.752
+J.8,J,O,Tube carbon,"Tube carbon: $T_C=(F_C-f_rP)/[1-f_r(1-\eta_{pp}\phi_c)]$, from $T_C=F_C+f_rG$",mol/s,"Slip passes the cryogenic unit, unmodelled by INL",[C] screening model,[C],plant::flowsheet::tube_carbon,eq_j_08,"GOLD: 1,574.1 kmol C/h"
+J.9,J,O,Captured,Captured: $C=\eta_{pp}\phi_cT_C$,mol/s,None stated,[C],[C],plant::flowsheet::captured,eq_j_09,"GOLD: 1,097.9 kmol/h"
+J.10,J,O,Tail gas,Tail gas: $G=T_C-C-P$; recycled $f_rG$; burned $(1-f_r)G$,mol/s,N2-rich cut burned,"[P] route TEV-961 A-16, A-18 PDF p40, p42",[P],plant::flowsheet::tail_gas,eq_j_10,"GOLD: 471.7, 354.8, 116.9"
+J.11,J,R,Closure,Closure: $F_C=C+(1-f_r)G+P$,mol/s,$P$ 0.1 mol% CH4 in product,[P] TEV-953 A-40,[P],vv::harness::carbon_closure,eq_j_11,ID below 0.01 kmol/h
+J.12,J,X,"PSA block, unsimulated","PSA block, unsimulated: $F_{H_2,prod}=\xi_{PSA}F_{H_2,in}$, $\xi_{PSA}=0.88$; reject crosses the boundary (project decision)",mol/s,"Specified recovery, purity 99.9%","[P] TEV-953 PDF p19, p21; TEV-961 A-53",[P],plant::flowsheet::psa_boundary,eq_j_12,NONE. Never call the product simulated
+J.13,J,R,Stream ledger,"Stream ledger: reformer syngas, H2-rich gas after MEA, product after PSA, recovery, annual H2, each a separate row",mol/s,Brief section 6,[C],[C],plant::flowsheet::h2_ledger,eq_j_13,ID
+J.14,J,O,Process heat,"Process heat: $\dot Q_{proc}=176.8\,s$",MW,"Includes preheat, 29% in Case 5",[P] TEV-961 Table 2 PDF p17,[P],plant::utility::q_proc,eq_j_14,GOLD: 120.8. Alternative 143.4 Ahn Table 6 printed beside it
+J.15,J,O,Slip heat,"Slip heat: $\dot Q_{rec}=\Delta F_{slip}c_{p,CO_2}\Delta T$, 50 J/mol/K, 571 K",W,"Sensible only, RWGS excluded",[A],[A],plant::utility::q_slip,eq_j_15,GOLD: 0.88 MW
+J.16,J,R,Reboiler,Reboiler: $\dot Q_{reb}=\dot m_{CO_2}SRD$,W,None stated,I.12,see source,units::regen::q_reb,eq_j_16,GOLD: 51.0 MW
+J.17,J,O,Stack,"Stack: freed Selexol $\dot Q_{Sel}$, export $\dot Q_{exp}$, syngas above 130 C, in that order",MW,Rest row order. Section 8 item 2,[P] A-56 PDF p80; Table 2 PDF p17; [C] EX4,[C] [P],plant::heatrec::stack,eq_j_17,"GOLD: 12.73, 16.76, 7.69"
+J.18,J,O,Gap,"Gap: $\dot Q_{gap}=\max(0,\dot Q_{reb}-\dot Q_{stack})$. Unmet thermal demand if the reactor cannot cover it",MW,None stated,[C],[C],plant::heatrec::gap,eq_j_18,GOLD: 13.82
+J.19,J,O,Rows,"Rows: reforming, PSA, steam, cooling, water scaled from Table 2. Selexol row removed",MW,"PSA 17.3 kW, A-56",[P] TEV-961 Table 2 PDF p17,[P],plant::utility::e_rows,eq_j_19,"GOLD: 0.82, 0.012, 0.20, 0.068, 1.02"
+J.20,J,O,Lean pump,Lean pump: $E=\dot m_{solv}(p_{abs}-p_{strip})/(\rho\eta_{pump}\eta_m)$,W,"0.75, 0.90, no letdown recovery",[A],[A],plant::utility::e_pump,eq_j_20,GOLD: 0.87 MWe
+J.21,J,O,Fans,"Fans: $E=k_{cool}\dot Q_{reb}$, 0.015",MW,No published ratio,[A]; DICE PDF p18 order check,[A],plant::utility::e_fans,eq_j_21,GOLD: 0.77 MWe
+J.22,J,O,Compression,"Compression: $E=6.4\,C/C_6$ MWe to 2,015 psia",MW,Pipeline pressure kept for a ship route [M28],"[P] TEV-961 Table 2, A-53",[P],plant::utility::e_co2,eq_j_22,"GOLD: 4.25 MWe. DICE 26% higher, open risk"
+J.23,J,O,Recycle row,"Recycle row: $E_{pur}=5.7\,s(1+\Delta F_{slip}/1473)$",MW,Restored (project decision). Split unpublished [M30],[P] Table 2; [A] slip term,[A] [P],plant::utility::e_purge,eq_j_23,"GOLD: 4.32 MWe, 3.89 without slip"
+J.24,J,R,Total,Total: $E_{tot}=E_{proc}+E_{circ}$,MW,None stated,[C],[C],plant::utility::e_total,eq_j_24,GOLD: 12.33 + 7.46 = 19.79
+J.25,J,O,Primary flow depends on,"Primary flow depends on $\dot Q_R$, so B.9, B.10, B.13 and B.20 are coupled",MW,None stated,[C],[C],plant::utility::reactor_required,eq_j_25,ID
+J.26,J,O,Fixed point,Fixed point: iterate B.20 to $10^{-9}$ MW,MW,Converges in under 200 steps,[C] screening model,[C],numerics::ode::fixed_point,eq_j_26,GOLD: 179.04 MWth. Case A 261.5
+J.27,J,O,Minimum capacity with corners,Minimum capacity with corners,MW,"Best, low, central, high sets",[C],[C],plant::utility::min_reactor,eq_j_27,"GOLD: 155.8, 163.0, 179.0, 214.9"
+J.28,J,O,Heat basis sensitivity,Heat basis sensitivity: replace J.14 by 143.4 MWth,MW,"Ahn S/C 2.7, 875 C, MDEA differ",[P] Ahn Table 6 PDF p6,[P],plant::utility::ahn_basis,eq_j_28,"PUB: about 201.6 MWth, . 204.0 if helium flow scales too"
+J.29,J,O,Fixed rating,"Fixed rating: $E_{imp}=E_{nuc}-\max(0,\dot Q_{rated}-\dot Q_{heat})\eta_{pc}$. Unmet electrical demand",MW,Heat first,[C],[C],plant::utility::import,eq_j_29,GOLD: 0 at Case B. Case A 22.5 MWe
+J.30,J,F,Pinch,"Pinch: stack grades against I.17, hot water loop excluded",K,93 C loop too cold,[P] TEV-961 PDF p81,[P],plant::heatrec::check_grade,eq_j_30,ID
+J.31,J,O,Cooling,Cooling: $\dot Q_{cool}=\dot Q_{KO}+\dot Q_{HW}+\dot Q_{lean}+\dot Q_{cond}+(1-\eta_{pc})\dot Q_{pc}$,MW,Case 5 proxy,[C],[C],plant::utility::cooling,eq_j_31,"PUB: 5.8, 21.7 MW before scale"
+J.32,J,O,Thermal efficiency,Thermal efficiency: $\eta_{th}=\dot m_{H_2}LHV_{H_2}/(\dot n_{NG}LHV_{NG}+\dot Q_R)$,1,HHV to LHV 0.90,[P] ratio GHG Protocol p46; [C],[C] [P],plant::utility::eta_th,eq_j_32,"About 0.67 [C], HHV 1,044 Btu/scf"
+J.33,J,R,Capture,Capture: print $\eta_{pp}$ and $\eta_{pl}=C/F_C$ together,1,Project decision,[C],[C],plant::emissions::capture_pair,eq_j_33,"GOLD: 0.90, 0.9005"
+J.34,J,R,Yield,"Yield: $\dot m_{H_2}/\dot m_{NG}$, and scf H2 per scf NG",1,None stated,[C],[C],plant::utility::yield,eq_j_34,"PUB: 3.82 scf/scf, 2.21 kg NG/kg H2"
+J.35,J,O,Walk,"Walk: 206.0, then purge, losses, circulators, MEA swap, reboiler gap",MW,"Case A order, repeated at Case B",[C],[C],plant::utility::walk,eq_j_35,"GOLD: 206.0, 220.4, 225.3, 242.4, 242.8, 261.5"
+J.36,J,O,Comparison,"Comparison: rated 210 MWth against feasible 179.0 MWth, cost effect L.26",MW,Brief section 5,[C],[C],plant::utility::rating_compare,eq_j_36,GOLD
+K.1,K,R,Baseline,"Baseline: $e_{base}=\dot E_{base,A}/\dot m_{H_2,A}$ from 3,205 st/d",kg/kg,Short tons,[P] TEV-953 Table 2 PDF p30,[P],plant::emissions::e_base,eq_k_01,GOLD: 9.21
+K.2,K,F,Bounds,"Bounds: 9.35 Cho, 9.00 IEAGHG",kg/kg,Cho abstract only [M25],[P] IEAGHG17 Table 2 PDF p16,[P],plant::emissions::bounds,eq_k_02,PUB
+K.3,K,R,Annual,Annual: $E_{base}=e_{base}M_{H_2}$,t/y,Same H2,[C],[C],plant::emissions::annual_base,eq_k_03,"GOLD: 616,361"
+K.4,K,R,Furnace CO2,Furnace CO2: fired feed plus reject carbon times $M_{CO_2}$,t/y,Conventional plant,[P] TEV-953 PDF p41: 15.14% NG fired,[P],plant::emissions::furnace,eq_k_04,"PUB: IEAGHG 44.3% flue, 14.2% fuel share"
+K.5,K,R,Process minimum,Process minimum: $e_{st}=M_{CO_2}/(4M_{H_2})=5.46$,kg/kg,Reaction III complete,[T],[T],plant::emissions::stoich,eq_k_05,ID
+K.6,K,R,Carbon bound,Carbon bound: $e_{feed}=F_CM_{CO_2}/\dot m_{H_2}=5.97$,kg/kg,None stated,[C],[C],plant::emissions::feed_bound,eq_k_06,GOLD. The 6.08 process figure exceeds it by 1.8%
+K.7,K,R,Captured,Captured: $E_{cap}=CM_{CO_2}t_h$,t/y,None stated,[C],[C],plant::emissions::captured,eq_k_07,"GOLD: 359,777"
+K.8,K,R,Residual,Residual: $E_{atm}=(1-f_r)GM_{CO_2}t_h$,t/y,N2-rich cut burned,[C],[C],plant::emissions::residual,eq_k_08,"GOLD: 38,309"
+K.9,K,O,Electricity,"Electricity: $E_{el}=E_{imp}t_hEF_{grid}$, 0.402 t/MWh",t/y,Zero central. [M27],[C],[C],plant::emissions::electricity,eq_k_09,GOLD: 0
+K.10,K,R,Hours,Hours: $t_h=8760f_{av}$,h/y,None stated,[C],[C],plant::emissions::hours,eq_k_10,ID
+K.11,K,R,Net abatement,Net abatement: $\mathcal A=E_{base}-E_{atm}$,t/y,"Direct, atmosphere",[C],[C],plant::emissions::abatement,eq_k_11,"GOLD: 578,052."
+K.12,K,R,Bounds,Bounds: replace K.1 by K.2,t/y,None stated,[C],[C],plant::emissions::abatement,eq_k_12,GOLD [C]: 0.587 and 0.564 Mt/y
+K.13,K,R,Intensity,Intensity: $CI=E_{atm}/M_{H_2}$,kg/kg,None stated,[C],[C],plant::emissions::intensity,eq_k_13,"GOLD [C]: 0.572 kg/kg, 93.8% below baseline"
+K.14,K,R,Pair,Pair: K.11 printed with $\eta_{pp}$ and $\eta_{pl}$,kg/kg,Project decision,[C],[C],plant::emissions::capture_pair,eq_k_14,ID
+K.15,K,O,Capture sensitivity,Capture sensitivity: $\mathcal A(\eta_{pp})$ through J.8,t/y,0.85 to 0.95,[C],[C],plant::emissions::sens_capture,eq_k_15,"GOLD: 0.571, 0.584 Mt/y"
+K.16,K,R,Availability,Availability: $\mathcal A\propto f_{av}$,t/y,Baseline scales too,[C],[C],plant::emissions::sens_avail,eq_k_16,"GOLD [C]: 0.442, 0.510, 0.578, 0.612 at 0.65, 0.75, 0.85, 0.90"
+K.17,K,O,Tail-gas fates,"Tail-gas fates: recycle, burn on site, export, each with atmosphere view. Exclusion by boundary never removes carbon",t/y,None stated,[C],[C],plant::emissions::fate_table,eq_k_17,"GOLD: B 0.578, 0.467, 0.467"
+K.18,K,O,System view,"System view: $\mathcal A_{sys}=\mathcal A-E_{lost\,steam}+E_{base\,power}$",t/y,"Boiler 90%, 56.1 kg/GJ LHV",[C]; [P] GHG Protocol Table 14,[C] [P],plant::emissions::system,eq_k_18,GOLD: 0.528
+K.19,K,O,Lifecycle,"Lifecycle: add upstream gas 11.5 kg/GJ, less nuclear 5.5 kg/MWh, less T&S 2.5%",t/y,"Sensitivity only (project decision), factors via final_v1_7",[C],[C],plant::emissions::lifecycle,eq_k_19,GOLD: 0.616
+K.20,K,O,Backup firing,Backup firing: extra H2 in $(1-f_{av})$ hours at $e_{bk}=e_{site}+\dot Q_{proc}EF/(\eta_{bk}\dot m_{H_2})$,t/y,Sensitivity only (project decision). $\eta_{bk}=0.85$ [A],[M29]. Need stated by NPT43 PDF p23,[M29],plant::emissions::backup,eq_k_20,NONE
+K.21,K,O,Comparator,"Comparator: SMR plus CCS, new-build, same H2, one labelled row",t/y,"Project decision. INL conventional with capture 2,143 and 855 st/d",[P] TEV-953 Table 2 PDF p30,[P],plant::emissions::comparator,eq_k_21,PUB: 71.5% capture
+K.22,K,R,Target test,Target test: $\mathcal A>0.25$ Mt/y,t/y,Statement s1,[P] TEV-953 Table 2 PDF p30,[P],plant::emissions::target,eq_k_22,"ID: every mass-balanced case passes, lowest 0.357"
+L.1,L,R,from an annuity sum,"$CRF=i/[1-(1+i)^{-t_\ell}]$, from an annuity sum",1/y,End-year payments,[T],[T],plant::economics::crf,eq_l_01,"PUB: 0.09368, 0.08386, 0.08080"
+L.2,L,R,Annualised capital,"Annualised capital: $C_{ann}=C\,CRF$",S$/y,None stated,[T],[T],plant::economics::annualise,eq_l_02,ID
+L.3,L,R,Sinking fund,Sinking fund: $SFF=i/[(1+i)^{t_\ell}-1]$,1/y,None stated,[T],[T],plant::economics::sff,eq_l_03,GOLD: 0.01368 at 25 y
+L.4,L,R,IDC,IDC: $f_{IDC}=[(1+i)^{t_c}-1]/(it_c)$,1,"Uniform spend, 5.5 y",[P] NZW09 PDF p7; [C],[C] [P],plant::economics::idc,eq_l_04,GOLD: 1.198
+L.5,L,R,OCC,OCC: $c_{kWt}=c_{kWe}(1-0.09)\cdot0.40$,US$2019/kWt,Turbine share removed,"[P] INLCOST PDF p47; 6,000 central",[P],plant::economics::occ_kwt,eq_l_05,"PUB: 1,456, 2,184, 2,548"
+L.6,L,O,Reactor,Reactor: $C_R=c_{kWt}\dot Q_{ref}F_{19}m_{stage}(\dot Q_{rated}/\dot Q_{ref})^{n_s}$,S$,"$\dot Q_{ref}=600$ MWth [A], no effect at $n_s=1$","[P] INLCOST PDF p27, p45, p47; Project decision",[P],plant::economics::reactor_capex,eq_l_06,"GOLD: S$742.8M, 1,130.4M, 1,531.5M at 210 MWth"
+L.7,L,O,Stage,"Stage: BOAK 1.0, FOAK 1.6 (1.3 to 2.1)",1,BOAK sits between first and Nth,"[P] INLCOST Table 1 PDF p5, Table 11 PDF p40",[P],plant::economics::stage,eq_l_07,PUB
+L.8,L,O,"Learning, route p46","Learning, route p46: $m=0.9^{\log_210}=0.7047$ from BOAK",1,Printed as a route,[P] INLCOST PDF p46,[P],plant::economics::learn_boak,eq_l_08,"PUB: US$1,539/kWt"
+L.9,L,O,"Learning, route p47","Learning, route p47: $m=1.6\cdot0.7047=1.128$ from FOAK",1,Stage order is an artefact of this route,[P] INLCOST PDF p47,[P],plant::economics::learn_foak,eq_l_09,"PUB: US$2,462/kWt; 3,771 and 1,334"
+L.10,L,E,Size exponent,Size exponent: 1.0; 0.6 [A]; $0.31=1+\ln(26553/18313)/\ln(350/600)$ [C],1,Equal prominence (project decision). 0.31 is a weak adverse bound,"[P] INLCOST PDF p25, p39",[P],plant::economics::size,eq_l_10,GOLD: 0.3107
+L.11,L,O,Reactor O&M,Reactor O&M: $C_{OM}=c_{OM}F_{19}t_h[f_{fuel}\dot Q+(1-f_{fuel})\dot Q_{ref}(\dot Q/\dot Q_{ref})^{n_s}]$,S$/y,"10 US$2019/MWth-h, fuel 44.38%","[P] INLCOST PDF p37, p47",[P],plant::economics::reactor_om,eq_l_11,GOLD: S$25.3M/y at 210 MWth
+L.12,L,O,Capture capital,"Capture capital: $C_{cap}=K_{cap}\dot m_{CO_2}$, $K=2.04$ S$M per t/h (1.74 to 5.09)",S$,"aMDEA-based central, MEA flue high","[C] IEAGHG17 Tables 2, 3",[C],plant::economics::capture_capex,eq_l_12,GOLD: S$9.25M/y on CRF 25
+L.13,L,F,Capture fixed O&M,"Capture fixed O&M: $0.027C_{cap}$, 6% high",S$/y,None stated,[A]; [P] Ahn Table 3,[A] [P],plant::economics::capture_fom,eq_l_13,GOLD: S$2.67M/y
+L.14,L,F,Variable O&M,Variable O&M: MEA make-up unpriced central; reference chemicals EUR 0.1M/y,S$/y,Priced as a disclosed sensitivity only,[P] IEAGHG17 via,[P],plant::economics::vom,eq_l_14,Adds about S$0.4/t [C]
+L.15,L,F,T&S,"T&S: $C_{TS}=p_{TS}E_{cap}$, 60 (23.2 to 112)",S$/y,"Project decision. Energy in the balance, no US$60/t all-in capture","[A]; [P] IEAGHG17, ERIA Fig 2.13 via",[A] [P],plant::economics::ts,eq_l_15,GOLD: S$21.59M/y
+L.16,L,R,Gas saving,"Gas saving: $C_{gas}=-(52.5s-34.0s)\,HHV\,d\,p_{gas}$",S$/y,"Same H2, 310.25 d/y","[P] TEV-953, TEV-961 Table 2; A-50 HHV",[P],plant::economics::gas,eq_l_16,GOLD: S$-64.80M/y
+L.17,L,O,Electricity,"Electricity: self-supplied, $C_{el}=E_{imp}t_hp_{el}$ only when importing",S$/y,S$0.20/kWh [M27],[A],[A],plant::economics::electricity,eq_l_17,GOLD: 0 at Case B
+L.18,L,E,IHX,IHX: duty over 170 MW times S$ anchor on CRF 25,S$/y,[M23] proxy,[P via old repo],see source,plant::economics::ihx,eq_l_18,GOLD: S$8.36M/y
+L.19,L,E,Licensing,Licensing: US$50M (0 to 137.5) on $CRF$,S$/y,"[M23] proxy, overlaps INL OCC 0.79%",[P] NRC blog summary; INLCOST PDF p34,[P],plant::economics::licence,eq_l_19,GOLD: S$6.12M/y
+L.20,L,E,Decommissioning,"Decommissioning: $1000(0.40\dot Q)FX\,SFF$",S$/y,LWR history,[P] NZW09 PDF p7,[P],plant::economics::decom,eq_l_20,GOLD: S$1.50M/y
+L.21,L,O,IDC term,IDC term: $C_R(f_{IDC}-1)CRF$,S$/y,L4,[C],[C],plant::economics::idc_term,eq_l_21,GOLD: S$13.75M/y
+L.22,L,O,Power island,Power island: US$540/kWe on $E_{tot}$,S$/y,L4,[C],[C],plant::economics::power_island,eq_l_22,GOLD: S$1.62M/y
+L.23,L,E,Recycle train,"Recycle train: S$71.5M at Case A, scaled by $s$",S$/y,No published cost [M31],[C],[C],plant::economics::recycle_train,eq_l_23,GOLD: S$5.89M/y
+L.24,L,O,Lost steam and baseline power,"Lost steam and baseline power, L5",S$/y,"189.2 MMBtu/h, 6.3 MWe baseline",[P] TEV-953 Table 2,[P],plant::economics::system_terms,eq_l_24,"GOLD: S$15.23M/y, S$-6.41M/y"
+L.25,L,R,Incremental cost,Incremental cost: $\Delta C=\sum$ ladder rung L0 to L5,S$/y,Rung set in screening model,[C],[C],plant::economics::ladder,eq_l_25,GOLD: S$79.6M/y at L3
+L.26,L,R,Equation,$AC=\Delta C/\mathcal A$,S$/t,None stated,[C],[C],plant::economics::abatement_cost,eq_l_26,GOLD: 137.7 and 117.2 at 210 MWth; 113.1 and 95.5 at 179.0 MWth; FOAK 209.9 and 179.5
+L.27,L,R,Table,"Table: $n_s$ at 1.0, 0.6, 0.31 side by side, BOAK and FOAK, 25 y and 60 y",S$/t,Project decision,[C],[C],plant::economics::size_table,eq_l_27,"GOLD: 137.7, 213.2, 291.4 at 25 y BOAK"
+L.28,L,O,Levelised abatement cost,Levelised abatement cost: $LAC=\mathrm{NPV}(\Delta C)/\mathrm{NPV}(\mathcal A)$,S$/t,Tonnes discounted at the same rate as cost,[C],[C],plant::dcf::lac,eq_l_28,Compared with L5. A difference over 10% is explained by a named term
+L.29,L,O,Sensitivity,"Sensitivity: one-at-a-time over gas, T&S, $n_s$, stage, capital, availability",S$/t,None stated,[C],[C],plant::economics::sens,eq_l_29,"GOLD pattern of, rerun on Case B"
+L.30,L,O,Discount sweep,"Discount sweep: 5, 8, 10% through L.1, L.3, L.4",S$/t,None stated,[C],[C],plant::economics::sens_rate,eq_l_30,"ID, monotonic in capital terms"
+L.31,L,O,Levers to S$100/t: solve for,Levers to S$100/t: solve for single input,various,Stated per lever,[C],[C],plant::economics::levers,eq_l_31,ID. Rerun on Case B
+L.32,L,O,Comparator,"Comparator: SMR plus CCS row, same ladder",S$/t,Project decision,[C]; harmonisation with old repo E2 to be stated,[C],plant::economics::comparator,eq_l_32,PUB check: S$97.02/t lifecycle basis
+L.33,L,F,Guards,Guards: no double count of capture energy; FX 1.6195 and 2.322 factors; carbon tax printed apart,S$/t,GDP deflator understates nuclear escalation,[C],[C],plant::economics::fx; plant::economics::guards,eq_l_33,GOLD

@@ -1,0 +1,22 @@
+wrote C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/stagef/uiux/verify_engine_site_parity/results_regen\Final_Design_Basis.csv (103542 bytes)
+wrote C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/stagef/uiux/verify_engine_site_parity/results_regen\Integrated_Mass_Balance.csv (73105 bytes)
+wrote C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/stagef/uiux/verify_engine_site_parity/results_regen\Integrated_Energy_Balance.csv (77922 bytes)
+wrote C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/stagef/uiux/verify_engine_site_parity/results_regen\Emissions_Ledger.csv (39028 bytes)
+wrote C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/stagef/uiux/verify_engine_site_parity/results_regen\Economic_Ledger.csv (449159 bytes)
+wrote C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/stagef/uiux/verify_engine_site_parity/results_regen\Sensitivity_Results.csv (185463 bytes)
+wrote C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/stagef/uiux/verify_engine_site_parity/results_regen\Validation_Results.csv (255515 bytes)
+validation rows 650: pass 325, fail 32, reported 251, not_run 42
+
+real	7m23.295s
+user	0m0.015s
+sys	0m0.031s
+export exit 0
+Economic_Ledger.csv: agrees, 40656 cells compared, 0 unequal as text but within tolerance
+Emissions_Ledger.csv: agrees, 3276 cells compared, 0 unequal as text but within tolerance
+Final_Design_Basis.csv: agrees, 8347 cells compared, 0 unequal as text but within tolerance
+Integrated_Energy_Balance.csv: agrees, 6600 cells compared, 0 unequal as text but within tolerance
+Integrated_Mass_Balance.csv: agrees, 7448 cells compared, 85 unequal as text but within tolerance
+Sensitivity_Results.csv: agrees, 10512 cells compared, 2 unequal as text but within tolerance
+Validation_Results.csv: agrees, 9750 cells compared, 23 unequal as text but within tolerance
+PASS
+compare exit 0

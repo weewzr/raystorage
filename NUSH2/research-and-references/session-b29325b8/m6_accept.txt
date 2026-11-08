@@ -1,0 +1,223 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.07s
+     Running tests\m6_acceptance.rs (C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/cargo/m6_columns\debug\deps\m6_acceptance-7106b8046e19757b.exe)
+
+running 16 tests
+KH-1-T22 | lit 100.0000 | sim NaN % | tol 2.0000 | not_run | not_run: Khan prints no specific area or critical surface tension for these random packings (Table 1 and Section 3, PDF p5) and no local source holds them, so Onda's Eqs 5a to 5c cannot run (derivation note M17)
+KH-1-T13 | lit 100.0000 | sim NaN % | tol 2.0000 | not_run | not_run: Khan prints no specific area or critical surface tension for these random packings (Table 1 and Section 3, PDF p5) and no local source holds them, so Onda's Eqs 5a to 5c cannot run (derivation note M17)
+KH-1-T15 | lit 100.0000 | sim NaN % | tol 2.0000 | not_run | not_run: Khan prints no specific area or critical surface tension for these random packings (Table 1 and Section 3, PDF p5) and no local source holds them, so Onda's Eqs 5a to 5c cannot run (derivation note M17)
+KH-1-T19 | lit 100.0000 | sim NaN % | tol 2.0000 | not_run | not_run: Khan prints no specific area or critical surface tension for these random packings (Table 1 and Section 3, PDF p5) and no local source holds them, so Onda's Eqs 5a to 5c cannot run (derivation note M17)
+KH-2-I06 | lit 99.9200 | sim NaN % | tol 2.0000 | not_run | not_run: Khan prints no specific area or critical surface tension for these random packings (Table 1 and Section 3, PDF p5) and no local source holds them, so Onda's Eqs 5a to 5c cannot run (derivation note M17)
+test absorber_khan_table1 ... ok
+closure Closure { element_rel: [1.4304030612461011e-16, 1.1687407320729973e-16, 2.99096731191829e-16, 0.0], energy_rel: 1.572730407487348e-16 }, path Newton, steps 5
+test absorber_closes ... ok
+SA-1 | lit 85.0000 | sim 72.1184 % | tol 5.0000 | fail | Gas flow read at 0 C and 1 atm (actual flow at 10.5 bar cannot close the CO2 balance); lean solvent taken as fresh, since the pilot runs once through; gas film omitted, no local CH4 diffusivity; Flexipac 1Y geometry per `packing`; rich loading 0.235
+test absorber_salvinder_85pct ... ok
+ABS-CASEB-SPEC | lit 1.0000 | sim 1.0000 1 = meets | tol 0.0000 | pass | capture 0.9000 at 15.24 m, rich loading 0.5000
+ABS-CASEB-HEIGHT | lit - | sim 15.2355 m | tol - | reported | reported
+ABS-CASEB-DIAMETER | lit - | sim 5.3271 m | tol - | reported | reported; H.29
+ABS-CASEB-LOAD | lit - | sim 40.0000 m3/m2/h | tol - | reported | assumed, the low end of H.29
+ABS-CASEB-RICH | lit - | sim 0.5000 mol/mol | tol - | reported | reported
+test absorber_case_b_spec ... ok
+test column_gate_fails_on_any_gated_miss ... ok
+SO-R3-CAP | lit 100.0000 | sim 93.6529 % | tol - | reported | Mellapak 250Y geometry is not local, RSP-250 stands in; gas film omitted, no local N2 diffusivity; gas flow from the printed L/G; inlet gas at TI31, saturated with water; lean solvent at TI43; probe TIk read at 0.82(k-1) m; solved by Newton in 4 steps
+SO-R3-TI1 | lit 23.5000 | sim 36.1805 C | tol - | reported | reported
+SO-R3-TI2 | lit 23.8000 | sim 35.8732 C | tol - | reported | reported
+SO-R3-TI3 | lit 24.0000 | sim 33.3906 C | tol - | reported | reported
+SO-R3-TI4 | lit 24.2000 | sim 31.1279 C | tol - | reported | reported
+SO-R3-TI5 | lit 24.6000 | sim 29.1444 C | tol - | reported | reported
+SO-R3-TI6 | lit 25.8000 | sim 27.4700 C | tol - | reported | reported
+SO-R3-TI7 | lit 27.0000 | sim 26.1125 C | tol - | reported | reported
+SO-R3-TI8 | lit 29.1000 | sim 25.0537 C | tol - | reported | reported
+SO-R3-TI9 | lit 30.3000 | sim 24.2553 C | tol - | reported | reported
+SO-R3-TI10 | lit 38.4000 | sim 23.6681 C | tol - | reported | reported
+SO-R3-T-RMS | lit 0.0000 | sim 8.5843 K | tol - | reported | reported; the matrix freezes no limit for these profiles
+SO-R3-V1 | lit 0.1130 | sim 0.1126 mol/mol | tol - | reported | reported
+SO-R3-V2 | lit 0.1150 | sim 0.1153 mol/mol | tol - | reported | reported
+SO-R3-V3 | lit 0.1170 | sim 0.1195 mol/mol | tol - | reported | reported
+SO-R3-V4 | lit 0.1200 | sim 0.1251 mol/mol | tol - | reported | reported
+SO-R3-V5 | lit 0.1270 | sim 0.1325 mol/mol | tol - | reported | reported
+SO-R3-V6 | lit 0.1320 | sim 0.1420 mol/mol | tol - | reported | reported
+SO-R3-V7 | lit 0.1410 | sim 0.1536 mol/mol | tol - | reported | reported
+SO-R3-V8 | lit 0.1590 | sim 0.1672 mol/mol | tol - | reported | reported
+SO-R3-V9 | lit 0.2150 | sim 0.1824 mol/mol | tol - | reported | reported
+SO-R3-V10 | lit 0.2140 | sim 0.1988 mol/mol | tol - | reported | reported
+test absorber_sonderby_profiles ... ok
+capture 0.89455 on 40 slices, 0.89930 on 80
+
+thread 'eq_h_24_grid_doubling_moves_capture_little' (40384) panicked at engine\units\tests\m6_acceptance.rs:211:5:
+assertion failed: (a.capture - b.capture).abs() < 0.002
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test eq_h_24_grid_doubling_moves_capture_little ... FAILED
+test eq_h_26_repeat_run_is_identical ... ok
+SRD 3.601 GJ/t, lean back 0.250000
+test eq_i_03_stripper_closes_and_modes_agree ... ok
+test eq_h_27_capture_counts_absorber_inlet_co2 ... ok
+DICE-SRD | lit 3.6377 | sim 5.2932 GJ/t | tol 0.3638 | fail | E-104 duty over CO2 of streams 21 and 22; 12 equilibrium stages, Murphree 1, no heat loss, solvent cp 3.6 kJ/kg/K
+DICE-TREB | lit 123.2222 | sim 122.2087 C | tol - | reported | reported
+DICE-TTOP | lit 96.5556 | sim 111.7370 C | tol - | reported | reported
+DICE-RATIO | lit 0.9045 | sim 2.5048 mol/mol | tol - | reported | reported
+DICE-QCOND | lit 18.7565 | sim 52.3619 MW | tol - | reported | reported
+test stripper_dice ... ok
+KW-SRD | lit 3.9200 | sim 4.9771 GJ/t | tol 0.3920 | fail | Solvent from L/G 3.7 kg/Sm3 at 350 Sm3/h as lean solution; gauge pressure on 1 atm; condenser at 40 C assumed; 12 equilibrium stages, Murphree 1, no heat loss, solvent cp 3.6 kJ/kg/K; the pilot duty includes its heat loss
+KW-TREB | lit 113.8000 | sim 114.5182 C | tol - | reported | reported
+KW-SRD-90C | lit 3.9200 | sim 4.9823 GJ/t | tol - | reported | Solvent from L/G 3.7 kg/Sm3 at 350 Sm3/h as lean solution; gauge pressure on 1 atm; condenser at 40 C assumed; 12 equilibrium stages, Murphree 1, no heat loss, solvent cp 3.6 kJ/kg/K; the pilot duty includes its heat loss
+KW-SRD-95C | lit 3.9200 | sim 4.9722 GJ/t | tol - | reported | Solvent from L/G 3.7 kg/Sm3 at 350 Sm3/h as lean solution; gauge pressure on 1 atm; condenser at 40 C assumed; 12 equilibrium stages, Murphree 1, no heat loss, solvent cp 3.6 kJ/kg/K; the pilot duty includes its heat loss
+test stripper_kwak ... ok
+ColumnTerms {
+    t02_capture: 0.9000012938346919,
+    t02_height_m: Some(
+        15.235518001163113,
+    ),
+    t02_rich_loading: 0.5000003593985259,
+    absorber_diameter_m: 5.32705737294322,
+    t02_height_high_load_m: Some(
+        15.925000079195168,
+    ),
+    t06_srd_gj_t: Some(
+        3.649725344047815,
+    ),
+    t06_approved_gj_t: 3.8,
+    t07_lean_pump_mwe: Some(
+        0.9091874442776171,
+    ),
+    t08_cooling_mwe: Some(
+        0.688893852148295,
+    ),
+    evidence_t07_t08: NotRun,
+    feed_co2_kmol_h: 1219.2164424209225,
+    lean_solvent_t_h: 941.9288277046899,
+    reboiler_mw: Some(
+        48.95905154363509,
+    ),
+    condenser_mw: Some(
+        12.795598124174536,
+    ),
+    lean_cooler_mw: Some(
+        33.1306586857118,
+    ),
+    reboiler_t_c: Some(
+        120.98892803975679,
+    ),
+    split_gj_t: Some(
+        SrdSplit {
+            q_des: 1.8615206054169289,
+            q_sens: 0.905659328803067,
+            q_strip: 0.8825454098278187,
+        },
+    ),
+    findings: [],
+    failures: [],
+}
+test case_b_terms_are_reported ... ok
+MO-K14-TOUT | lit 119.3500 | sim 118.5556 C | tol 1.4000 | pass | Rich MEA weight fraction read on the nominal CO2-free basis of Morgan Eq 1 (PDF p5); condenser at 40 C assumed; 12 equilibrium stages, Murphree 1, no heat loss, solvent cp 3.6 kJ/kg/K
+MO-K14-LEAN | lit 0.2240 | sim 0.2530 mol/mol | tol - | reported | reported; Rich MEA weight fraction read on the nominal CO2-free basis of Morgan Eq 1 (PDF p5); condenser at 40 C assumed; 12 equilibrium stages, Murphree 1, no heat loss, solvent cp 3.6 kJ/kg/K
+MO-K15-TOUT | lit 119.3200 | sim 118.2872 C | tol 1.4000 | pass | Rich MEA weight fraction read on the nominal CO2-free basis of Morgan Eq 1 (PDF p5); condenser at 40 C assumed; 12 equilibrium stages, Murphree 1, no heat loss, solvent cp 3.6 kJ/kg/K
+MO-K15-LEAN | lit 0.2240 | sim 0.2566 mol/mol | tol - | reported | reported; Rich MEA weight fraction read on the nominal CO2-free basis of Morgan Eq 1 (PDF p5); condenser at 40 C assumed; 12 equilibrium stages, Murphree 1, no heat loss, solvent cp 3.6 kJ/kg/K
+MO-K16-TOUT | lit 122.9400 | sim 121.3038 C | tol 1.4000 | fail | Rich MEA weight fraction read on the nominal CO2-free basis of Morgan Eq 1 (PDF p5); condenser at 40 C assumed; 12 equilibrium stages, Murphree 1, no heat loss, solvent cp 3.6 kJ/kg/K
+MO-K16-LEAN | lit 0.1240 | sim 0.1392 mol/mol | tol - | reported | reported; Rich MEA weight fraction read on the nominal CO2-free basis of Morgan Eq 1 (PDF p5); condenser at 40 C assumed; 12 equilibrium stages, Murphree 1, no heat loss, solvent cp 3.6 kJ/kg/K
+test stripper_morgan ... ok
+TAN-P0.1 | lit 76.0000 | sim 19.7538 % | tol - | reported | 100 slpm read at 0 C and 1 atm; the 50% balance taken as CH4; gas at the 35 C solvent temperature (unprinted); fresh solvent; gas film omitted, no local CH4 diffusivity; rich loading 0.134
+TAN-P1 | lit 95.0000 | sim 25.8568 % | tol - | reported | 100 slpm read at 0 C and 1 atm; the 50% balance taken as CH4; gas at the 35 C solvent temperature (unprinted); fresh solvent; gas film omitted, no local CH4 diffusivity; rich loading 0.176
+TAN-P5 | lit 100.0000 | sim 47.6080 % | tol - | reported | 100 slpm read at 0 C and 1 atm; the 50% balance taken as CH4; gas at the 35 C solvent temperature (unprinted); fresh solvent; gas film omitted, no local CH4 diffusivity; rich loading 0.324
+TAN-TREND | lit 1.0000 | sim 1.0000 1 = rising | tol 0.0000 | pass | Plan section 12 trend on 76, 95, 100%; simulated 19.8, 25.9, 47.6%
+test absorber_tan_trend ... ok
+VI-SRD-SS1 | lit 5.6323 | sim 4.3698 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS2 | lit 4.6246 | sim 4.2875 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS3 | lit 5.2139 | sim 4.1658 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS4 | lit 3.7302 | sim 4.0785 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS5 | lit 3.9648 | sim 3.5407 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS6 | lit 3.6312 | sim 3.5690 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS7 | lit 3.4549 | sim 3.5318 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS8 | lit 4.9612 | sim 5.4286 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS9 | lit 3.7336 | sim 3.6579 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS10 | lit 4.2165 | sim 3.7555 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS11 | lit 4.2334 | sim 3.9268 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS12 | lit 4.3956 | sim 3.7613 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS13 | lit 4.1465 | sim 3.7903 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS14 | lit 3.9349 | sim 3.8091 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS15 | lit 4.2474 | sim 3.7876 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS16 | lit 3.7092 | sim 3.6833 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS17 | lit 3.7211 | sim 3.6626 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS18 | lit 3.7323 | sim 3.7020 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS19 | lit 3.8954 | sim 3.7684 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS20 | lit 3.9032 | sim 3.8105 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS21 | lit 4.0952 | sim 3.8767 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS22 | lit 4.0117 | sim 3.8590 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS23 | lit 4.1988 | sim 3.8691 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS24 | lit 3.6640 | sim 3.6818 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS25 | lit 3.6750 | sim 4.2174 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS26 | lit 3.5930 | sim 3.7497 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS27 | lit 3.8225 | sim 3.8396 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS28 | lit 3.9875 | sim 3.8704 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS29 | lit 3.9488 | sim 4.3161 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS30 | lit 3.6820 | sim 4.0332 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS31 | lit 3.9956 | sim 3.8967 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS32 | lit 4.2245 | sim 3.9793 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS33 | lit 4.1879 | sim 3.9679 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS34 | lit 4.3227 | sim 4.0429 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS35 | lit 4.1314 | sim 3.9519 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS36 | lit 4.2541 | sim 4.0141 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS37 | lit 4.2211 | sim 4.0172 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS38 | lit 4.0991 | sim 3.9509 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS39 | lit 4.2465 | sim 4.1876 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS40 | lit 4.2065 | sim 4.5959 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS41 | lit 4.8181 | sim 5.0213 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS42 | lit 3.7747 | sim 3.7381 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS43 | lit 4.0048 | sim 3.9840 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS44 | lit 3.9492 | sim 3.8512 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS45 | lit 3.8256 | sim 3.6732 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS46 | lit 3.6578 | sim 3.7119 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS47 | lit 3.6892 | sim 3.7577 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS48 | lit 3.7647 | sim 3.7831 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS49 | lit 3.8042 | sim 3.8641 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS50 | lit 3.9707 | sim 3.6493 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS51 | lit 3.5041 | sim 3.6510 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS52 | lit 3.5330 | sim 3.6988 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS53 | lit 3.5757 | sim 3.6640 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS54 | lit 3.7038 | sim 3.6449 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS55 | lit 4.1695 | sim 4.0210 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS56 | lit 3.5433 | sim 3.7032 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS57 | lit 3.4617 | sim 3.6197 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS58 | lit 3.5106 | sim 3.6663 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS59 | lit 3.4616 | sim 3.6496 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS60 | lit 3.4799 | sim 3.6048 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS61 | lit 3.4944 | sim 3.5619 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS62 | lit 3.5934 | sim 3.5806 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS63 | lit 3.8693 | sim 3.7329 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS64 | lit 4.0130 | sim 3.8504 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS65 | lit 3.9424 | sim 3.6781 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS66 | lit 4.2877 | sim 3.9491 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS67 | lit 4.1047 | sim 3.8568 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS68 | lit 3.9497 | sim 3.7970 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS69 | lit 3.8534 | sim 3.7144 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS70 | lit 3.7613 | sim 3.5844 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS71 | lit 3.4915 | sim 3.6077 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS72 | lit 3.5507 | sim 3.6383 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS73 | lit 3.5821 | sim 3.6869 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS74 | lit 3.7260 | sim 3.8224 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS75 | lit 3.6713 | sim 3.7486 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS76 | lit 4.0216 | sim 3.7039 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS77 | lit 3.8083 | sim 3.6918 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS78 | lit 4.0066 | sim 3.7120 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS79 | lit 3.7990 | sim 3.5447 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS80 | lit 5.0169 | sim 4.0708 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS81 | lit 4.8281 | sim 3.9527 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS82 | lit 4.8367 | sim 3.9845 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS83 | lit 4.8247 | sim 3.9315 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS84 | lit 4.8599 | sim 3.8236 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-SRD-SS85 | lit 4.0574 | sim 3.6754 GJ/t | tol - | reported | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-1 | lit 0.0000 | sim 3.4375 % | tol 10.0000 | pass | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-2 | lit 0.0000 | sim 4.3443 % | tol 15.0000 | pass | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-3-SS1 | lit 0.1600 | sim 0.1487 mol/mol | tol 0.0300 | pass | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-3-SS2 | lit 0.2300 | sim 0.1596 mol/mol | tol 0.0300 | fail | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+VI-3-SS3 | lit 0.2500 | sim 0.1968 mol/mol | tol 0.0300 | fail | Inputs from Tables D.12, D.17 and D.19; rich MEA wt% read on the CO2-free basis; gauge pressure on 1 atm; condenser at 40 C assumed; the D.19 SRD is net of pilot heat loss and the model has none
+test stripper_vinjarapu ... ok
+
+failures:
+
+failures:
+    eq_h_24_grid_doubling_moves_capture_little
+
+test result: FAILED. 15 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 51.12s
+
+error: test failed, to rerun pass `-p nush2_units --test m6_acceptance`

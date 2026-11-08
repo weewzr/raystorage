@@ -1,0 +1,26 @@
+site commit 9c13c49a13c164712be409a377e4c0a013dcb183, run local, viewport 375x812 mobile, verdict pass after 9.5 s, page time 9012 ms
+first full solve 33 ms against the 500 ms plan budget: within; registry request to first result 654 ms
+PASS wasm_empty_imports: 1067548 bytes, 0 imports, ABI 1
+PASS registry_loads: 22 parameters, 32 KPIs, 20 units, engine 0.1.0
+PASS commit_matches_build: engine 9c13c49a13c164712be409a377e4c0a013dcb183, build.json 9c13c49a13c164712be409a377e4c0a013dcb183, page stamp 9c13c49a13c164712be409a377e4c0a013dcb183, run local
+PASS parameter_ranges: 14 number parameters
+PASS default_solve_ok: ok in 20 ms, budget 3000 ms
+PASS headline_parity: 91 values against data/reference.json, relative 0.000001, floor 0.000001
+PASS null_kpis_listed: 0 null KPI(s)
+PASS closure_finite: carbon closure 2.1938006966593093e-13 kmol/h
+PASS hard_limit_rejected: rating_mwth = 351: rejected, violation names rating_mwth
+PASS controls_move_kpis: 22 controls, 30 probes
+PASS case_a_parity: ok, 21 KPIs against the case_a_mea cells, relative 0.000001
+PASS mature_scenario_parity: ok; inputs stage 10OAK_P46, life 60 y, n 1.0, gas 20.7 S$/GJ; cost_s_per_t live 95.6 against MATURE_60Y_L5 95.6 (relative 2.9e-9); cost_lac_dcf_s_per_t live 95.9 against MATURE_60Y_DCF 95.9 (relative 3.0e-10)
+PASS panels_seven_sections: 20 panels, every section filled
+PASS stream_tags_engine_ids: 18 engine stream tags, 12 lines with no row (P1, P4, P2, P3, H1, H2, L3, L4, L5, L6, C1, R1); crossing S01, S02, S10, S12, S21, S14, S16
+PASS stream_link_scrolls: row S12 marked, top 378 px of 812, focused true
+PASS target_verdicts_agree: default: feasible true, strip cost false, table false; rating 100 MWth: feasible false, strip cost false, table false; 10OAK_P46 with gas at 25 S$/GJ: feasible true, strip cost true, table false; Case A: feasible false, strip cost false, table false
+PASS scenario_control: MATURE_60Y tile 95.6 against 95.6, radio true; then ihx_approach_k at 50: radio none, tile names MATURE_60Y false; base tile 189.7 against 189.7, radio true
+PASS pfd_units_bound: 20 PFD units, 20 engine units
+SKIP pfd_streams_bound: streams are null in this solve, listed in engine_fields_missing: the live reply carries the anchored balance; the stream table of the Level 3 flowsheet is precomputed in results/Integrated_Mass_Balance.csv
+PASS charts_have_marks: 16 charts
+PASS visible_text_rules: 95009 characters checked
+PASS no_console_error: 0 error(s) caught by this test, page shell verdict pass
+browser: 0 error(s), 0 other console or log line(s), 28 request(s), 0 to another host, 0 network problem(s); 1 worker session(s) watched, 1 worker request(s)
+PASS

@@ -1,0 +1,1594 @@
+
+
+=== PDF page 1 of 15 ===
+Journal of Nuclear Science and Technology
+ISSN: 0022-3131 (Print) 1881-1248 (Online) Journal homepage: www.tandfonline.com/journals/tnst20
+Thermodynamic analysis and optimization for
+steam methane reforming hydrogen production
+system using high temperature gas-cooled
+reactor pebble-bed module
+Yongle Zhang, Guang Hu, Huang Zhang, Qianfeng Liu & Junbo Zhou
+To cite this article: Yongle Zhang, Guang Hu, Huang Zhang, Qianfeng Liu & Junbo Zhou (2021)
+Thermodynamic analysis and optimization for steam methane reforming hydrogen production
+system using high temperature gas-cooled reactor pebble-bed module, Journal of Nuclear
+Science and Technology, 58:12, 1359-1372, DOI: 10.1080/00223131.2021.1951863
+To link to this article:  https://doi.org/10.1080/00223131.2021.1951863
+View supplementary material 
+Published online: 30 Aug 2021.
+Submit your article to this journal 
+Article views: 2166
+View related articles 
+View Crossmark data
+Citing articles: 8 View citing articles 
+Full Terms & Conditions of access and use can be found at
+https://www.tandfonline.com/action/journalInformation?journalCode=tnst20
+
+
+=== PDF page 2 of 15 ===
+ARTICLE
+Thermodynamic analysis and optimization for steam methane reforming 
+hydrogen production system using high temperature gas-cooled reactor 
+pebble-bed module
+Yongle Zhanga, Guang Hub, Huang Zhangc, Qianfeng Liud and Junbo Zhoua
+aCollege of Mechanical and Electrical Engineering, Beijing University of Chemical Technology, Beijing, China; bInstitute of Thermal Energy 
+Technology and Safety, National Research Center of Helmholtz Association, Karlsruhe Institute of Technology, Germany; cDepartment of 
+Energy, Environmental and Chemical Engineering, Washington University in Saint Louis, MO, United States; dInstitute of Nuclear and New 
+Energy Technology, Key Laboratory of Advanced Reactor Engineering and Safety, Tsinghua University, Beijing, China
+ABSTRACT
+Thermodynamic analysis and optimization for the steam methane reforming (SMR) hydrogen 
+production system using the high temperature gas-cooled reactor pebble-bed module power 
+plant (HTR-PM) are investigated in this work. Based on the thermodynamic-equilibrium model, 
+parameters of thermal efficiency (η), hydrogen production (YH2/methane), methane conversion 
+rate (X1) and carbon monoxide conversion rate (X2) are calculated under the specified tem­
+perature (T), pressure (P) and water-to-carbon ratio (S). The influence of S, T, P on η, YH2/methane, 
+X1 and X2 is then analyzed. It considers a wide range of operating conditions (T = 400–1200°C; 
+P = 2–7 MPa and S = 2–10). The results show that the influence of on the system performance is 
+significant. When T > 950°C, η and YH2/methane increases slowly (4 < S ≤ 6) or reduces (S > 6). For 
+the operating conditions of HTR-PM (P = 7 MPa; S = 6 and T = 950°C), the maximum value of η is 
+63.44% and the maximum YH2/methane is 3.3 mol. At last, system optimized parameters are 
+illustrated.
+ARTICLE HISTORY 
+Received 24 February 2021  
+Accepted 21 June 2021 
+KEYWORDS 
+System thermal efficiency; 
+Steam methane reforming; 
+HTR-PM; Nuclear hydrogen 
+production
+1. Introduction
+1.1 Nuclear hydrogen production
+The main sources of hydrogen are from fossil fuels and 
+water. Wind energy, solar energy, and nuclear energy 
+are usually considered as the most promising candi­
+dates to provide heat for hydrogen production [1]. 
+Since the nuclear energy does not generate any green­
+house gases and limited by geographical factors [2], 
+over the last decades, various hydrogen production 
+methods using nuclear energy as heat source have 
+been studied and reported.
+Among all the hydrogen production methods, ther­
+mochemical cycle (I-S cycle [3–7], Cu-Cl [8–13], Mg- 
+Cl [14–17] and Co-Cl [18]), Hybrid Sulfur Cycle (HyS 
+cycle) [19–22], high-temperature steam electrolysis 
+(HTSE) [23–27] and steam methane reforming 
+(SMR) [28–31] have attractive prospects. However, 
+the thermochemical cycle, such as the HyS cycle and 
+HTSE, is either new technology or not particularly 
+efficient at hydrogen production [17,22,30,31]. In 
+addition, SMR has been extensively applied in various 
+industries and accumulated much practical engineer­
+ing experience [32–35]. Approximately 96% of the 
+hydrogen produced today are extracted from the 
+reforming of fossil fuel feedstocks, with SMR 
+accounting for 49% [36]. And some studies [37,38] 
+reported that the cost of hydrogen production via 
+SMR reduces 255 $/ton H2 and decreases 8.8 kg CO2 
+/GJ primary energy (natural gas fuel energy), when the 
+heat is provided from the nuclear reactors instead of 
+the combustion of the methane input. Thus, SMR 
+using nuclear reactor as the heat source can produce 
+hydrogen from the fully clean energy [39,40].
+1.2 Thermodynamic analysis of hydrogen 
+production via SMR
+Many studies [41–45] about the thermodynamic ana­
+lysis of SMR process under different operating condi­
+tions have been reported. Tabrizi et al. [46] performed 
+a thermodynamic analysis of SMR by combining the 
+method of Gibbs free energy minimization (GFEM) 
+and statistical modeling under the conditions of the 
+water-to-carbon ratio S = 0.5–3, pressure P = 0.1–5 
+MPa and reforming temperature T = 600–1200 K. 
+Results showed that the temperature plays a crucial 
+role in the parameters of methane conversion rate, 
+selectivity of gas (H2, CO) and H2/CO ratio. Adiya 
+et al. [47,48] studied four ways of SMR (conversional 
+steam reforming (C-SR), sorption enhanced steam 
+reforming (SE-SR), chemical looping steam reforming 
+CONTACT Huang Zhang 
+huangzhang@wustl.edu 
+Department of Energy, Environmental and Chemical Engineering, Washington University in 
+Saint Louis, MO 63130, United States; Qianfeng Liu
+liuqianfeng@tsinghua.edu.cn 
+Institute of Nuclear and New Energy Technology, Key Laboratory 
+of Advanced Reactor Engineering and Safety, Tsinghua University, Beijing 100084, China
+Supplemental data for this article can be accessed here
+JOURNAL OF NUCLEAR SCIENCE AND TECHNOLOGY 
+2021, VOL. 58, NO. 12, 1359–1372 
+https://doi.org/10.1080/00223131.2021.1951863
+© 2021 Atomic Energy Society of Japan. All rights reserved.
+
+
+=== PDF page 3 of 15 ===
+(CL-SR) and sorption enhanced chemical looping 
+steam reforming (SE-CLSR) under the conditions of 
+P = 1 bar, S = 3 and T = 600–750°C. Results showed 
+that the optimal operation values of P and S for the 
+four hydrogen production methods are atmosphere 
+pressure and 3, respectively. The optimal temperature 
+range for C-SR is 1000–1010 K. Wang et al. [49] 
+investigated the steam reforming of methane (SRM) 
+and dry methane reforming (DRM) by the combina­
+tion of thermodynamics and regression analysis, and 
+utilized the method of GFEM to clarify the effects of 
+temperature, pressure, and feedstock ratio. Results 
+showed that the increasing of temperature and feed 
+composition are favorable for the reaction.
+In 
+addition, 
+Pashchenko 
+[50] 
+performed 
+a thermodynamic equilibrium analysis of SMR based 
+on the method of GFEM in a wide range of operational 
+conditions (T = 800–1400 K; S = 1–4; P = 10–20 bar). 
+Results show that the increasing of water to carbon 
+ratio and temperature have noteworthy influence on 
+the methane conversion rate and hydrogen yield when 
+T < 1200 K. Carapellucci and Giordano [51] developed 
+a thermodynamic equilibrium model and investigated 
+the effects of operating conditions on the perfor­
+mances of three reforming processes: steam methane 
+reforming, dry methane reforming and autothermal 
+methane reforming. It shows that the temperature 
+corresponding to the maximum value of H2 produc­
+tion reduces from 1100°C (S = 2, P = 3 MPa) to 
+approximately 650°C (S = 5, P = 0.1 MPa) in the case 
+of SMR. Meanwhile, the hydrogen production 
+increases to 3.5 mol/mol CH4.
+Since the working pressure P is 7 MPa in the hydro­
+gen production system with the High-Temperature 
+Gas-Cooled Reactor Pebble-Bed Module power plant 
+(HTR-PM), the range of the operating parameters 
+(S < 5, P < 3 MPa) investigated in these studies are 
+still not enough wide, which cannot be used to evalu­
+ate the performances of the SMR hydrogen production 
+system using HTR-PM.
+1.3 Nuclear hydrogen production using high 
+temperature gas cooled reactor
+Among the Generation IV nuclear reactors, the high- 
+temperature gas cooled reactor (HTGR) including the 
+HTR-PM reactor is considered as a favorable heat 
+source for hydrogen production via SMR due to its 
+high output temperature (750–950°C) [52–54]. Some 
+studies [55–58] about the hydrogen production system 
+of SMR using HTGR have been performed. The first 
+integrated system of the nuclear hydrogen production 
+via SMR was experimentally investigated in the ‘EVA 
+I and EVA II (Einzelrohr Versuchs Anlage)’ project at 
+the Nuclear Research Centre Julich [59–61]. The 
+hydrogen production system of SMR connected to 
+the HTTR (a HTGR with thermal output of 30 MW), 
+was carried out to investigate the system performances 
+of nuclear SMR at Japan Atomic Energy Research 
+Institute (JAERI) [62–64]. Later, Yin et al. [65,66] 
+investigated the thermodynamic analysis of the hydro­
+gen production performance using the 10 MW High 
+Temperature Gas-cooled Test Reactor (HTR-10). The 
+simulation results show that the system performances 
+(e.g. hydrogen production rate, thermal efficiency, 
+etc.) are remarkably influenced by the inlet helium 
+temperature. Chikazawa et al. [67] designed and eval­
+uated a hydrogen production plant of steam methane 
+reforming with Sodium Cooled Rapid Reactor 
+(SCRP). And its economic potential is roughly per­
+formed. Wang et al. [39,68] investigated the thermo­
+dynamic performances of a coupling system that 
+hydrogen 
+production 
+of 
+steam-reforming 
+for 
+methane, 
+ethanol 
+or 
+methanol 
+using 
+high- 
+temperature helium for heating the feed gases. The 
+results showed that the reforming temperature playing 
+a vital role in the process. And thermal efficiency of the 
+coupling system for methane, ethanol and methanol 
+was 
+61%, 
+58.58% 
+and 
+89.17%, 
+respectively. 
+Khorasanov et al. [69] investigated the feasibility of 
+the nuclear hydrogen production system using BN- 
+600 commercial fast reactor (sodium-cooled fast reac­
+tor) as heat source in Russia. And its prospects are 
+impressive. Ghouse et al. [70] developed and validated 
+a rigorous model for the integrated steam reforming 
+and nuclear heat system based on first principles. 
+Based on the Ghouse’s work, Hoseinzade et al. 
+[30,31] developed a dynamic and two-dimensional 
+model to design a hydrogen production system via 
+SMR 
+using 
+HTR-Module 
+pebble 
+bed 
+reactor 
+(60 MW) as heat source. In the past decades, some 
+references [28,71] describing the integrated system of 
+the SMR using nuclear reactor as the heat source have 
+been reported. However, research with the HTR-PM 
+(2x250 MWe) [29,72,73] reactor as the heat source to 
+provide heat for SMR process has not been reported. 
+Meanwhile, the operational parameters of the conver­
+sional SMR that have been reported are not suitable to 
+evaluate the performances of the SMR hydrogen pro­
+duction system using HTR-PM. Therefore, there is 
+a need to carry out the thermodynamic analysis and 
+optimization for the SMR hydrogen production sys­
+tem using HTR-PM.
+1.4 Scope of this paper
+In this paper, Section 2 describes the mathematical 
+model to analyze the thermodynamic behavior of the 
+SMR hydrogen production system using HTR-PM. In 
+Section 3, firstly, comprehensive analysis on the ther­
+modynamic performances of SMR using HTR-PM are 
+investigated. Then, theoretical models are developed 
+to investigate the thermal efficiency (η), hydrogen 
+production (YH2/methane), methane conversion rate 
+1360
+Y. ZHANG ET AL.
+
+
+=== PDF page 4 of 15 ===
+(X1) and carbon monoxide conversion rate (X2), etc. 
+In addition, operation parameters for producing 
+hydrogen using HTR-PM are obtained by optimiza­
+tion analysis. Section 4 comes to the meaningful 
+conclusions.
+2. Overview of system and model
+2.1 SMR hydrogen production system using 
+HTR-PM
+SMR hydrogen production system using HTR-PM is 
+developed to utilize the nuclear heat fully and achieve 
+effective thermal efficiency (η) and hydrogen produc­
+tion (YH2/methane). The schematic flow diagram of the 
+HTR-PM hydrogen production is described in 
+Figure 1. Further, a mathematical model to analyze 
+the thermodynamic behavior of this hydrogen pro­
+duction system is introduced.
+Figure 1 shows the process flow chart of SMR 
+hydrogen production system using HTR-PM, which 
+can supply high-temperature heat of 2x250MWe with 
+the temperature of T0 to the intermediate heat exchan­
+ger (IHX) in the primary helium gas loop. Then IHX 
+transfers the nuclear heat with T1 to the secondary 
+helium gas loop that is composed of a helium gas loop, 
+a methane feed line and a steam feed line to heat the 
+steam reformer (SR) and steam generator (ST), in 
+which pressure is regarded as P0 (7 MPa). High- 
+temperature helium from IHX first flows to the refor­
+mer where the catalytic conversion of methane and 
+water vapor generation occurs. During the heat trans­
+fer process, the temperature of the inlet helium drops 
+from T1 to T2 (750–950°C) due to the loss of heat 
+along the pipeline. ST is designed not only to fully 
+utilize the residual heat of helium from the reforming 
+reactor to supply steam for hydrogen production, but 
+also to mitigate the thermal disturbance of the reactor 
+and the fluctuation caused by changes of the second­
+ary helium gas temperature and system pressure 
+(7 MPa).
+2.2 Reaction equilibrium model
+There are two major chemical reactions considered in 
+the reaction tube of the steam reformer: endothermic 
+reaction of methane steam reforming, and exothermic 
+reaction of water gas shift.
+The steam reforming reaction: 
+CH4 þ H2O ¼ CO þ 3H2
+ΔH1 ¼ þ205:8KJ=mol
+(1) 
+The water gas shift reaction: 
+CO þ H2O ¼ CO2 þ H2
+ΔH2 ¼   41:2KJ=mol
+(2) 
+The overall chemical reaction is shown as below: 
+CH4 þ 2H2O ¼ CO2 þ 4H2
+ΔH3 ¼ þ164:6KJ=mol
+(3) 
+The overall chemical reaction suggests that the steam 
+methane reforming reaction is a process of endother­
+mic and volume-increasing. Consequently, high- 
+temperature and low-pressure are more beneficial to 
+the process. The energy required to run the steam 
+reforming process is provided by the HTR-PM that 
+provides the outlet helium whose temperature is lim­
+ited in a range of 750–950°C. Two thermodynamic 
+models, the complete and equilibrium reaction 
+model [65], are introduced in this work. However, 
+since the complete reaction model particularly 
+Figure 1. Schematic flow diagram of the HTR-PM hydrogen production.                                       
+JOURNAL OF NUCLEAR SCIENCE AND TECHNOLOGY
+1361
+
+
+=== PDF page 5 of 15 ===
+considering the recovery of the latent heat is an ideal 
+model, the equilibrium reaction model is used more 
+frequently in the next sections. The development of 
+equilibrium reaction model is shown as follow:
+The flow diagram for substance flows in the SMR 
+hydrogen production system using HTR-PM is shown 
+in Figure 2. We assumed that the input feed is 
+a mixture of methane and water. Steam reforming 
+reaction and water gas shift reaction are only consid­
+ered. The input heat is a sum of methane and Qin, and 
+Qin is the heat of helium gas from the intermediate 
+heat exchanger (IHX).
+Methane conversion rate and carbon monoxide 
+conversion rate [24] are determined as follow:
+Methane conversion rate: 
+X1 ¼
+Poutlet
+CO
+þ Poutlet
+CO2
+Poutlet
+CO
+þ Poutlet
+CO2 þ Poutlet
+CH4
+ 100%;
+(4) 
+Carbon monoxide conversion rate: 
+X2 ¼
+Poutlet
+CO2
+Poutlet
+CO
+þ Poutlet
+CO2
+ 100%;
+(5) 
+where Pout
+i 
+is the partial pressure of species i at the out 
+of steam reformer. Only reaction (1) and reaction (2) 
+are taken into account as the model and the pressure 
+difference is neglected. The equilibrium constants of 
+both reaction (1) and reaction (2) are expressed as 
+below: 
+KP1 ¼
+Poutlet
+CO
+
+Poutlet
+H2
+
+3
+Poutlet
+CH4  Poutlet
+H2O
+ 100%;
+(6) 
+KP2 ¼ poutlet
+CO2  Poutlet
+H2
+Poutlet
+CO
+ Poutlet
+H2O
+ 100%;
+(7) 
+where KP1, KP2 are reaction equilibrium constants, 
+which are listed in Table 1 [74].
+The inlet gas composition of methane and water is 
+defined as below: 
+S ¼ Finlet
+steam
+Finlet
+methane
+;
+(8) 
+where Finlet
+steam and Finlet
+methane are the inlet molar flow rate 
+of water and methane, respectively.
+Based on the thermodynamic-equilibrium theory 
+and the reactions (1) – (2), and for the sake of simpli­
+city, the initial methane gas is 1. The equilibrium gas 
+composition can be obtained, which are shown in 
+Table 2.
+Then, based on the Table 2, the global reaction 
+balance equation can be obtained: 
+CH4 þ SH2O lð Þ ¼ 3X1 þ X1X2
+ð
+ÞH2 þ X1   X1X2
+ð
+Þ
+CO þ X1X2CO2 þ S   X1   X1X2
+ð
+ÞH2O g
+ð Þþ
+1   X1
+ð
+ÞCH4
+;
+(9) 
+According to the global reaction balance equation, the 
+hydrogen production (YH2=methane) is calculated by the 
+following equation:
+Hydrogen production: 
+YH2=methane ¼ 3X1 þ X1X2
+ð
+ÞFinlet
+methane;
+(10) 
+where Finlet
+methaneis the molar flow rate of methane.
+According to the Dalton’s law of partial pressure 
+and substituting equilibrium constants (Table 1) into 
+Eqs. (6) and (7), the functional relationship between S, 
+T, P and X1, X2 can be deduced from the expressions of 
+Eqs. (4) – (7), which are shown as follow: 
+X4
+1 1   X2
+ð
+Þ 3 þ X2
+ð
+Þ3
+S   X1   X1X2
+ð
+Þ 1   X1
+ð
+Þ 2X1 þ S þ 1
+ð
+Þ2 P2
+  1:198  1023exp   26830
+T
+
+
+¼ 0;
+(11) 
+X1X2 3 þ X2
+ð
+Þ
+S   X1   X1X2
+ð
+Þ 1   X1
+ð
+Þ   1:176  10  2
+exp   4400
+T
+
+
+¼ 0;
+(12) 
+Eqs. (11) and (12) are nonlinear equations. X1 and X2 
+are solved by MATLAB 2016b software under the 
+specified S, T, P.
+Hydrogen is the targeting product. Based on the 
+Figure 2, the thermal efficiency is defined as fol­
+low [75]: 
+Figure 2. The flow diagram for substance flows in the HTR-PM 
+hydrogen production system.
+Table 1. Reaction equilibrium constants.
+Reaction
+Equilibrium Constants
+Unit
+Steam reforming
+1:198  1011exp   26830=T
+ð
+Þ
+MPa
+ð
+Þ2
+Water gas shift
+1:767  10  2exp 4400=T
+ð
+Þ
+MPa
+ð
+Þ0
+Table 2. Initial and equilibrium gas composition.
+Initial gas 
+composition
+generation Consumption
+equilibrium gas 
+composition
+CH4
+1
+0
+X1
+1   X1
+H2O
+S
+0
+X1 þ X1X2
+S   X1   X1X2
+CO
+0
+X1
+X1X2
+X1   X1X2
+CO2
+0
+X1X2
+0
+X1X2
+H2
+0
+3X1 þ X2
+0
+3X1 þ X2
+1362
+Y. ZHANG ET AL.
+
+
+=== PDF page 6 of 15 ===
+η ¼
+nH2HVH2
+HVCH4 þ Qin
+;
+(13) 
+where HVi is the lower heating value per mole of 
+species i (i=CH4, H2). Qin is the heat added to the 
+system, which is provided by HTR-PM reactor. nH2 
+is the number of moles of hydrogen produced from 
+one mole of methane. According to Eq. (9), nH2 is 
+given as follow: 
+nH2 ¼ 3X1 þ X1X2;
+(14) 
+The combustion reaction of hydrogen is given as 
+follow: 
+H2 þ 1
+2 O2 ¼ H2O g
+ð Þ;
+(15) 
+And the lower heating value of hydrogen at standard 
+state is defined as follow: 
+HVH2 ¼ hf
+H2O g
+ð Þ;
+(16) 
+where hf
+i is the formation enthalpy per mole of species 
+i at the standard state. hf
+H2 and hf
+O2 are equal to zero at 
+the standard state.
+Similarly, a lower heating value of methane at stan­
+dard state is defined as follow: 
+HVCH4 ¼ hf
+CO2 þ 2hf
+H2O g
+ð Þ   hf
+CH4;
+(17) 
+Qin is the enthalpy change for the generalized reform­
+ing step, which is defined as follow: 
+Qin ¼   ΔHR;
+(18) 
+ΔHR ¼ X1X2hf
+CO2 þ X1   X1X2
+ð
+Þhf
+COþ
+S   X1   X1X2
+ð
+Þhf
+H2O g
+ð Þ   Shf
+H2O lð Þ   X1hf
+CH4
+; (19) 
+Substituting Eq. (14) and Eqs. (16)-(19) into Eq. (13), 
+and the thermal efficiency for equilibrium reaction 
+model at standard state can be expressed as follow: 
+η ¼ X1 þ X1X2
+ð
+Þhf
+H2O g
+ð Þ=½ X1X2   X1
+ð
+Þhf
+CO g
+ð Þþ
+1   X1X2
+ð
+Þhf
+CO2 g
+ð Þ þ 2 þ X1 þ X1X2   S
+ð
+Þhf
+H2O g
+ð Þ 1   X1
+ð
+Þhf
+CH4 g
+ð Þ þ Shf
+H2O lð Þ
+;
+(20) 
+where hf
+i is the formation enthalpy of per mole of 
+species i at the standard state. By substituting Eqs. 
+(11) and (12) into the Eq. (20), the thermal efficiency 
+is obtained.
+3. Results and discussion
+In this section, the influence of reforming temperature 
+(T), water-to-carbon ratio (S) and pressure (P) on 
+methane conversion rate (X1) and carbon monoxide 
+conversion rate (X2) are investigated according to the 
+two reactions of steam-reforming and water gas shift 
+as given in Section 2. X1 and X2 also affect the thermal 
+efficiency (η). Thus, the influence of X1 and X2 on η are 
+also discussed. Further, the variations of thermal effi­
+ciency and hydrogen production (YH2/methane) with S, 
+T and P are analyzed.
+3.1 Analysis of methane and carbon monoxide 
+rate conversions
+Figure 3. shows the methane conversion rate (X1) 
+versus the reforming temperature (T) in the equili­
+brium reaction model (Eqs. (11)-(12)) for the pressure 
+(P) of 7 MPa at different water-to-carbon ratios (S). X1 
+increases rapidly with the increasing T since reaction 
+(1) is a strong endothermic reaction. When S > 2, the 
+maximum value of X1 is 99.72% in a temperature 
+range of 700–1000°C. In addition, it can be seen 
+from Figure 3 that increasing S can promote X1 
+when P and T are kept the same. This is because that 
+increasing S leads reaction (1) forward to the positive 
+direction. This relationship that X1 increases with S at 
+both the same pressure and temperature, which can be 
+seen in Figure 4.
+Figure 4 illustrates that methane conversion rate 
+(X1) versus steam-to-carbon ratio (S) for the tem­
+perature (T) of 850°C at different pressures (P) by 
+the equilibrium reaction model. In general, X1 gra­
+dually increases with S. When S = 10 and P = 7 MPa, 
+X1 reaches 92.1%. Besides, according to the simula­
+tion results from Figures 3 and 4, the increment of X1 
+decreases as S increases. When S < 6, the increase of 
+S by one can increase X1 by 6%-12% for the pressure 
+of 7 MPa as well as the temperature in a range of 
+700–950°C. When S > 6, increasing S by 1 only 
+increases X1 by 1%-3%. When T > 950°C and S > 6, 
+there is little impact to increase S on X1. Thus, 
+increasing the vapor content of feed gases can appro­
+priately improve X1 when T and S are within 
+Figure 3. Methane conversion rate (X1) versus reforming tem­
+perature (T) for the pressure (P) of 7 MPa at different water-to- 
+carbon ratios (S) by the equilibrium reaction model.
+JOURNAL OF NUCLEAR SCIENCE AND TECHNOLOGY
+1363
+
+
+=== PDF page 7 of 15 ===
+a certain range for the SMR hydrogen production 
+system using HTR-PM. Further, X1 decreases with 
+the increasing of P at the same S and T. This is 
+because that the steam reforming reaction is 
+a volume-increasing process as shown in reaction 
+(1). However, P has little impact on X1 according to 
+Figure 4 and Figure 1s (supplementary materials). In 
+addition, as shown in Figure 4 and Figure 1s, when 
+P > 3 MPa, increasing P by 1 MPa decreases X1 only 
+by 1%-3% for S = 6 as well as in a temperature range 
+of 700–950°C. Therefore, the influence of P on X1 can 
+be neglected for the SMR hydrogen production sys­
+tem using HTR-PM.
+To verify the developed model, the results (solid 
+line) are compared to the results (dash line) from 
+Pashchenko’s work [50]. All results are shown in 
+Figures 2S and 3S, which indicate that the calculated 
+results by our model are in excellent agreement with 
+Pashchenko’s results.
+Figure 5 presents the carbon-monoxide conversion 
+rate (X2) versus reforming temperature (T) at different 
+water-to-carbon ratios (S) for the pressure (P) of 7 
+MPa. As can be seen from this figure, X2 is about 
+100% when T < 500°C. The variations of both T and 
+S have no impact on X2. When T > 500°C, X2 decreases 
+dramatically as P is 7 MPa. The relationship that the 
+increase of T reduces X2 is opposite to the relationship 
+of X1 and T (Figure 3). The first reason is that high 
+temperature (T > 500°C) accelerates the reactive rate 
+of reaction (1), and the second reason is that the water 
+gas shift reaction (reaction (2)) is an exothermic pro­
+cess. The increase of T inhibits the conversion of CO 
+into CO2. However, when the temperature is more 
+than 800°C, X2 can be promoted by increasing S. 
+Namely, the effect of S on X2 becomes obvious when 
+T increases at a certain pressure. Consequently, the 
+effect of S should be considered for the SMR hydrogen 
+production system using HTR-PM when T > 700°C.
+Figure 6 illustrates that the carbon-monoxide con­
+version rate (X2) gradually increases with the increase 
+of water-to-carbon ratio (S) at different pressures (P) 
+when the reforming temperature (T) is at 850°C. 
+However, the process of water gas shift has an unfa­
+vorable tendency of X2 as T increases. Hence, X2 
+cannot be obtained as 100% in the current SMR 
+hydrogen production system using HTR-PM. In addi­
+tion, P does not affect X2 because of the process of 
+equal-volume, which can be seen from Eq. (2). 
+Actually, X2 increases slightly with the increase of 
+P (Figure 6), which is also contrary to the results as 
+observed in Figure 4. The reason is that the reactions 
+(1)-(2) is a successive process and the slightly reduc­
+tion of hydrogen production promotes X2 as 
+P increases. However, the increment of X2 is so small 
+that cannot compensate for the decrease of X1 caused 
+by the increasing of P. Therefore, SMR hydrogen 
+production system using HTR-PM should be operated 
+at high temperature and low pressure.
+3.2 Thermal efficiency analysis of steam methane 
+reforming
+As can be seen from Eq. (11), the thermal efficiency (η) 
+is related to the methane conversion rate (X1) and the 
+carbon-monoxide conversion rate (X2). Figure 7 
+demonstrates the calculated results of η for the water- 
+to-carbon ratio (S) of 4 and the pressure (P) of 7 MPa 
+as well as the formation enthalpy at the standard state. 
+Figure 7(a) shows that η is strongly dependent on X1, 
+and a linear increasing relationship is found between η 
+and X1. However, η is independent on X2, as shown in 
+Figure 7(b). Only when X1 > 0.4, the influence of X2 on 
+η is slightly obvious as X1 increases. Additionally, 
+Figure 4. Methane conversion rate (X1) versus water-to-carbon 
+ratio (S) for the reforming temperature (T) of 850°C at different 
+pressures (P) by the equilibrium reaction model.
+Figure 5. Carbon monoxide conversion rate (X2) versus reform­
+ing temperature (T) for the pressure (P) of 7 MPa by the 
+equilibrium reaction model.
+1364
+Y. ZHANG ET AL.
+
+
+=== PDF page 8 of 15 ===
+a three-dimensional graphic of η versus X1 and X2 is 
+presented in Figure 7(c). As can be seen from this 
+figure, the improvement of X1 is one of the major 
+ways to improve η for the SMR hydrogen production 
+system using HTR-PM. In addition, it can be seen 
+from Eqs. (11) and (12) that X1 is also affected by S, 
+T and P. Hence, the thermal efficiency and the hydro­
+gen production (YH2/methane) are also investigated for 
+different S, T, P in the following part.
+Figure 8 presents the variation of thermal efficiency 
+(η) with reforming temperature (T) for the pressure 
+(P) of 7 MPa by the equilibrium reaction model. As 
+can be seen from this figure, η significantly increases 
+with T. However, η increases slowly (2 < S ≤ 6) or 
+reduces gradually (S > 6) when T > 900°C. The rela­
+tionship between η and T is consistent to that between 
+X1 and T as shown in Figure 3. The reason is that high 
+reforming temperature enhances X1. And enhancing 
+X1 could further increase η (Figure 7(a)). It is noted 
+that η begins to decrease slightly if T keeps increasing, 
+which is due to the water gas shift reaction is an 
+exothermic process and its reverse reaction rate 
+increases as T grows up. The η reduces by 0.5%-1% 
+as T increases every 100°C for the range that S > 6 and 
+T > 1000°C. When T = 1150°C, P = 7 MPa and S = 4, 
+the thermal efficiency can reach the maximum value of 
+66.3% theoretically. However, the reforming tempera­
+ture (reaction (1)) is restricted in a range of 700–950°C 
+as the limitation of the helium outlet temperature of 
+HTR-PM reactor. When T = 950°C and S = 6, the 
+maximum value of η for the SMR hydrogen produc­
+tion system using HTR-PM could only be 63.44% in 
+reality. Figure 8 also shows the temperature that is 
+corresponding to the maximum of η is reduced by 
+adding water vapor into the feed gas. For example, 
+Figure 6. Carbon-monoxide conversion rate (X2) obtained by 
+the equilibrium reaction model versus water-to-carbon ratio 
+(S) for the reforming temperature (T) of 850 °C at different 
+pressures (P).
+Figure 7. Calculated system thermal efficiency (η) of the 
+hydrogen production system of HTR-PM when the water-to- 
+carbon ratio (S) is 4 and the pressure (P) is 7 MPa. (a) system 
+thermal efficiency (η) versus methane conversion rate (X1) at 
+different carbon-monoxide conversion rates (X2); (b) system 
+thermal efficiency (η) versus carbon-monoxide conversion rate 
+(X2) at different methane conversion rates (X1); (c) system 
+thermal efficiency (η) versus methane conversion rate (X1) 
+and carbon-monoxide conversion rate (X2).
+JOURNAL OF NUCLEAR SCIENCE AND TECHNOLOGY
+1365
+
+
+=== PDF page 9 of 15 ===
+when S = 4, the corresponding temperature of η is 
+1150°C. And the temperature changes to 1000°C when 
+S increases to 6. Thus, T is the major factor to affect η. 
+In a summary, when T < 950°C and S ≤ 6, η can be 
+enhanced by increasing T. And the temperature cor­
+responding to the maximum value of η can be 
+decreased by increasing S.
+Figure 9 describes the variation of thermal effi­
+ciency (η) with water-to-carbon ratio (S) for the pres­
+sure (P) of 7 MPa at different reforming temperatures 
+(T). In the complete reaction model, η monotonically 
+decreases with S. However, in the equilibrium reaction 
+model, a non-linear relationship exists between η and 
+S. η increases gradually with the increase of S, then it 
+begins to reduce slightly. The reason that η increases 
+firstly with S is that the steam content in the feed gas 
+cannot satisfy the requirements for steam methane 
+reforming reaction when S is low (S < 8, T < 900°C), 
+which results in a large amount of unreacted methane 
+in the product gas. As shown in Figure 10, the molar 
+fraction of methane at the reformer outlet decreases 
+deeply with the increase of S. Then, the methane con­
+version rate (X1) reaches to its maximum value as 
+S increases. The molar fraction of methane decreases 
+slowly. The molar volume fraction of methane is less 
+than 0.61% when S > 10. This variation trend between 
+the molar fraction of methane and S is consistent to 
+that between X1 and S (Figure 4). When η increases 
+toward its maximum value, η exhibits a downward 
+trend as S grows up. This is because that a significant 
+amount of the unused steam takes the reaction heat 
+out of the reformer and such heat cannot be recovered 
+[65]. After η reaches its maximum value, η begins to 
+decrease as T grows up. And the decreasing range of η 
+becomes larger if T keeps increasing. As can be seen 
+from this figure, the increase of S by one can reduce η 
+by 0.5% after η reaches the maximum value of 63.44% 
+for the temperature of 950°C. The increase of S by one 
+can reduce η by 1% after η increases to the maximum 
+value of 64.78% for T = 1000°C. In addition, the 
+relationship curves between η and S are plotted in 
+Figure 4s in the supplementary material, which 
+demonstrates the variation of η with S for T = 850°C 
+as well as in different water-to-carbon ratios. The same 
+conclusion also can be drawn from the Figure 4s. In 
+a summary, S is another factor to affect η. However, its 
+effect on η is less than T. Otherwise, the influence of 
+S on η is complex. Only S within a certain temperature 
+range can have a positive impact on η.
+Figure 11 illustrates the relationship between the 
+thermal efficiency (η) with pressure (P) for the reform­
+ing temperature (T) of 850°C at different water-to- 
+carbon ratios (S) by the equilibrium reaction model. 
+When S < 6, η decreases gradually with the increase of 
+P. When S ≥ 6, the increase of P by one reduces η by 1– 
+Figure 8. Variation of system thermal efficiency (η) with 
+reforming temperature (t) at different water-to-carbon ratios 
+(s) for the pressure (p) of 7MPa in equilibrium reaction model.
+Figure 9. Variation of system thermal efficiency (η) versus 
+water-to-carbon ratio (S) at different temperatures (T) for the 
+pressure (P) of 7 MPa by the equilibrium reaction model.
+Figure 10. Mole fraction (yi) of equilibrium composition with 
+water-to-carbon ratio (<italic>S</italic>) for the reforming 
+temperature (T) of 850 °C and pressure (P) of 7 MPa.
+1366
+Y. ZHANG ET AL.
+
+
+=== PDF page 10 of 15 ===
+2%. And the reduction of η is not obvious as 
+P increases, which can be attributed to the enhance­
+ment of both X1 and X2 which make up for the adverse 
+effect of P on η. In a summary, when S is high (S ≥ 6), 
+P does not show obviously impact on η. Thus, in this 
+situation, the effect of P on η can be neglected to 
+analyze the performances of hydrogen production of 
+HTR-PM.
+3.3 Hydrogen production analysis
+Hydrogen is the ultimate product gas needed to be 
+collected after the reforming process. Therefore, 
+hydrogen production (YH2/methane) is another critical 
+parameter to evaluate the performances of the SMR 
+hydrogen production system using HTR-PM. When 
+X1 and X2 are equal to 1, the maximum of YH2/methane 
+is four times as much as the inlet mole flow rate of 
+methane (Finlet
+methane) according to Eq. (10). Nevertheless, 
+due to X1 and X2 show an opposite tendency as the 
+temperature increases (Figures 3 and 5), X1 and X2 
+cannot simultaneously be equal to one. Figure 12 
+shows the YH2/methane versus the reforming tempera­
+ture (T) for the pressure (P) of 7 MPa at different 
+water-to-carbon ratios (S) using the equilibrium reac­
+tion model. As can be seen from this figure, there is 
+a nonlinear relationship between YH2/methane and T. 
+When T > 950°C, YH2/methane increases slowly 
+(4 < S ≤ 6) or reduces (S > 6). When T = 1000°C and 
+S = 6, X1 is 96.83% (that is close to 100%) and 
+YH2/methane increases to the maximum value of 
+3.33 mol. The reason is that the positive reaction rate 
+of reaction (1) is enhanced as temperature increases 
+and a large amount of methane is converted into 
+hydrogen. If T keeps increasing, YH2/methane decreases 
+slightly due to the reverse reaction rate of the water gas 
+shift (reaction (2)) is strengthened. In addition, 
+T corresponding to the maximum 
+value of 
+YH2/methane is reduced by adding steam into the feed 
+gas. For example, when S = 4, the temperature corre­
+sponding to the maximum value of YH2/methane is 
+1150°C. And the temperature changes to 1050°C 
+when S increases to 6. Thus, the decrease of T can 
+appropriately improve the maximum value of 
+YH2/methane when S increases in the SMR hydrogen 
+production system using HTR-PM.
+Figure 13 presents the hydrogen production 
+(YH2/methane) versus water-to-carbon ratio (S) for the 
+temperature (T) of 850°C at different pressures by the 
+equilibrium reaction model. YH2/methane increases gra­
+dually with the increase of S, which is due to the 
+forward reaction extent is enhanced as S increases. 
+And methane could react fully with the water. In 
+addition, the increase of S can always increase 
+YH2/methane rather than η. η increases initially with 
+Figure 11. Variation of system thermal efficiency (η) with 
+pressure (P) at different water-to-carbon ratios (S) for the 
+temperature (T) of 850 °C in equilibrium reaction model.
+Figure 12. Hydrogen production (YH2/methane) versus the 
+reforming temperature (T) at different water-to-carbon ratios 
+(S) for the pressure (P) of 7 MPa by the equilibrium reaction 
+model.
+Figure 13. Hydrogen production (YH2/methane) versus water-to- 
+carbon ratio (S) for the temperature (T) of 850 °C at different 
+pressures (P) in equilibrium reaction model.
+JOURNAL OF NUCLEAR SCIENCE AND TECHNOLOGY
+1367
+
+
+=== PDF page 11 of 15 ===
+S and then reduces slightly. Thus, the synergistic influ­
+ence of S on both YH2/methane and η should be taken 
+account into the design of the SMR hydrogen produc­
+tion system using HTR-PM. When T = 950°C and 
+S = 6, YH2/methane and η reach to 3.3 mol and 63.44%, 
+respectively. It should be noted that an increase of 
+P leads to a decrease of YH2/methane when T and S are 
+kept the same. However, the reduction of YH2/methane 
+caused by the increasing pressure is minor. When 
+S < 6, YH2/methane decreases by 0.1 mol as P increases 
+every 1 MPa. When S ≥ 6, YH2/methane only decreases 
+by 0.05 mol as P increases every 1 MPa. Thus, the 
+effect of P on YH2/methane can be neglected for the SMR 
+hydrogen production system using HTR-PM.
+3.4 The optimum parameters of HTR-PM 
+hydrogen production
+Finally, the performance parameters including the 
+thermal 
+efficiency 
+(η), 
+hydrogen 
+production 
+(YH2/methane), methane conversion rate (X1) and car­
+bon monoxide conversion rate (X2) are calculated 
+using the equilibrium reaction model for the SMR 
+hydrogen 
+production 
+system 
+using 
+HTR-PM. 
+Because the operating pressure (7 MPa) and the inlet 
+helium temperature (950°C) are different from the 
+data in reported references [39,60–66], the optimum 
+parameters in the SMR hydrogen production system 
+using HTR-PM are also different. Table 3 shows opti­
+mized parameters for η, YH2/methane, X1, and X2.
+3.5 Comparison between HTR-PM and other 
+reactors
+Table 4 shows the performance parameters of 
+other hydrogen production system in comparison 
+to SMR combined with HTR-PM. The parameters 
+include thermal efficiency (η), methane conversion 
+rate (X1) and carbon monoxide conversion rate 
+(X2). The first line refers to HTTR that is the 
+mock-up test facility with a full-scale reformer 
+tube designed in 1997 by JAERI. The design para­
+meters of the reforming temperature (T), pressure 
+(P), and the carbon-to-ratio (S) are 756°C, 4.2 
+MPa, 3.5 [64]. The second line refers to HTR-10 
+that had been analyzed in the work of [65], where 
+T = 840°C, P = 3.2 MPa and S = 3–6. The last line 
+shows the present study for HTR-PM, which sets 
+the operation conditions as T = 850°C, P = 7 MPa 
+and S = 6–8. This table provides a reference to 
+design the hydrogen production system using dif­
+ferent nuclear reactors.
+4. Conclusions
+In this work, a thermodynamic analysis of methane 
+steam reforming using HTR-PM as the heat source has 
+been performed. The main conclusions are given as 
+below:
+Foremost, the temperature T is the most impor­
+tant factor that affects the hydrogen production 
+performance. Namely, the thermal efficiency η, 
+hydrogen production YH2/methane, methane conver­
+sion rate X1 are highly related to T. Then, the 
+influence of water-to-carbon ratio S on both η and 
+YH2/methane is small when the temperature is lower 
+than 500°C. And the influence of S on both η and 
+YH2/methane become obvious if the temperature is 
+larger than 500°C.
+Meanwhile, η and YH2/methane increases slowly 
+(4 < S ≤ 6) or decreases (S > 6) with T > 950°C. X1 
+increases rapidly to its maximum value with the 
+increase of T. It is close to 100% (96.83%) when 
+T = 1000°C and S = 6. The effect of T on X2 is also 
+obvious, while an opposite trend is observed for car­
+bon monoxide conversion rate (X2). In addition, 
+YH2/methane increases as S increases. In terms of the 
+operation parameters (P = 7 MPa, S = 6 and 
+T = 950°C) for the SMR hydrogen production system 
+using HTR-PM, the maximum value of YH2/methane is 
+3.3 mol.
+Furthermore, the calculated results show that η 
+rapidly increases toward its maximum value with the 
+increasing of S and then decreases. In this situation, η 
+reaches its maximum value of 63.44% regarding to the 
+maximum YH2/methane of 3.3 mol. P does not have 
+a significant impact on the system behavior (η, 
+YH2/methane, X1) when S is relatively high. Specifically, 
+Table 3. Optimized results of HTR-PM hydrogen production.
+Parameters
+Value
+Range of HTR-PM operation parameters
+Reforming temperature (°C)
+700–950
+Reforming Pressure (MPa)
+7
+Water-carbon molar ratio
+6–8
+Calculation results
+X1 (%)
+46.35–96.86
+X2 (%)
+47.77–82.50
+η (%)
+37.41–63.44
+YH2/methane (mol)
+1.77–3.43
+Table 4. Theoretical or experimental data of different hydrogen production systems using nuclear energy.
+Heat source
+X1ð%Þ
+X2ð%Þ
+ηð%Þ
+Experimental data
+HTTR
+54.8
+62.5
+30
+Theoretical data
+HTR-10
+72.52–90.63
+42.20–56.6
+56.02–63.43
+HTR-PM
+79.4–87.23
+59.58–64.68
+56.99–58.71
+1368
+Y. ZHANG ET AL.
+
+
+=== PDF page 12 of 15 ===
+when S ≥ 6, the effect of P on both η and YH2/methane 
+can be neglected for the SMR hydrogen production 
+system using HTR-PM.
+In general, thermal efficiency η, hydrogen produc­
+tion YH2/methane, methane conversion rate X1 and car­
+bon-monoxide conversion rate X2 are firstly studied to 
+analyze the system performances of hydrogen pro­
+duction using HTR-PM. A wide range of critical 
+variables, such as water-to-carbon ratio (S=2–10), 
+the reforming temperature (T ¼ 400–1200°C) and 
+pressure (P ¼ 2–7 MPa), are discussed and analyzed 
+by solving nonlinear equations in MATLAB 2016b 
+software. Hydrogen production performances of dif­
+ferent reactors are compared. Optimum parameters 
+are illustrated. This work provides a realistic refer­
+ence for the SMR hydrogen production system using 
+HTR-PM.
+Nomenclature
+HTR-PM
+The high temperature gas-cooled reactor peb­
+ble-bed module
+JAERI 
+The Japan atomic energy research institute
+HTTR 
+The high temperature engineering test reactor
+HTGR 
+The high temperature gas cooled reactor
+HTR-10 
+The high temperature gas-cooled test reactor 
+of 10 MW
+HTTR/SMR The high temperature test reactor integrated 
+with steam methane reforming
+INET 
+The institute of nuclear and new energy 
+technology
+NFE 
+the project nuclear long-distance energy
+SR 
+The steam reformer
+ST 
+The steam generator
+I-S cycle 
+The iodine-sulfur thermal chemical cycle
+HyS cycle 
+The hybrid-sulfur thermal chemical cycle
+EVAI 
+The einzelrohr versuchs anlage
+HTSE 
+high temperature steam electrolysis
+SMR 
+steam methane reforming
+η 
+The thermal efficiency, %
+X1 
+The methane conversion rate, %
+X2 
+The carbon monoxide conversion rate, %
+YH2/methane 
+The hydrogen production rate of one molar 
+methane, mol
+T 
+The reforming temperature, °C
+P 
+The pressure, MPa
+S 
+The water-to-carbon ratio
+yi 
+The mole fraction of i species
+T0 
+The outlet helium temperature of reactor, °C
+T1
+The outlet helium temperature of intermedi­
+ate heat exchanger, °C
+T2
+The inlet process gas temperature at the cat­
+alyst bed, °C
+P0 
+The hydrogen production system pressure, 
+MPa
+Pout
+i 
+The partial pressure of i species, MPa
+Kp1, Kp2 
+The reaction equilibrium constants
+Finlet
+methane 
+The methane molar flow rate of reformer 
+inlet, mol
+Finlet
+steam 
+The steam molar flow rate of reformer inlet, 
+mol
+Highlights
+●The HTR-PM, a large commercial nuclear power plant 
+demonstration reactor (2x250 MWe), is used to provide 
+heat for hydrogen production of steam methane reform­
+ing. And its hydrogen production system performances 
+are analyzed.
+●A mathematical model to analyze the thermodynamic 
+performance of the steam-reforming hydrogen produc­
+tion system using HTR-PM is proposed.
+●System parameters related to hydrogen production effi­
+ciency are simulated by solving the thermodynamic equi­
+librium reaction model.
+●The effects of the operation variables such as the reform­
+ing temperature, water-to-carbon ratio and the pressure 
+on the system performance are analyzed.
+●Operation parameters of the HTR-PM to achieve a high 
+hydrogen production rate are optimized.
+Disclosure statement
+No potential conflict of interest was reported by the 
+author(s).
+Funding
+This work was supported by the Sichuan Science and 
+Technology Project [2020YFSY0031].
+References
+[1] Pareek A, Dom R, Gupta J, et al. Insights into renew­
+able hydrogen energy: recent advances and prospects. 
+Mater Sci Technol. 2020;3:319–327.
+[2] Vo DH, Vo AT, Ho CM, et al. The role of renewable 
+energy, alternative and nuclear energy in mitigating 
+carbon emissions in the CPTPP countries. Renew 
+Energ. 2020 Dec;161:278–292.
+[3] Kang KS, Kim CH, Kim JW, et al. Hydrogen produc­
+tion by SI process, with electrodialysis stack 
+embedded 
+in 
+HI 
+decomposition 
+section. 
+Int J Hydrogen Energy. 2016;41(8):4560–4569.
+[4] Kasahara S, Iwatsuki J, Takegami H, et al. Current 
+R&D status of thermochemical water splitting iodine- 
+sulfur process in Japan atomic energy agency. 
+Int J Hydrogen Energy. 2017;42(19):13477–13485.
+[5] Noguchi H, Takegami H, Kamiji Y, et al. R&D status of 
+hydrogen production test using IS process test facility 
+made of industrial structural material in JAEA. 
+Int J Hydrogen Energy. 2018;44(25):12583–12592.
+[6] Zhang P, Wang L, Chen SZ, et al. Progress of nuclear 
+hydrogen production through the iodine–sulfur pro­
+cess in China. Renew Sust Energ Rev. 2018;81 
+(pt.2):1802–1812.
+[7] Park J, Nam K, Heo S. et al. Design and optimization 
+of pilot-scale bunsen process in sulfur-iodine (SI) 
+Cycle for hydrogen production. Korean J Chem Eng. 
+2020;58(2):235–247.
+[8] Al-Zareer M, Dincer I, Rosen MA. Performance ana­
+lysis of a supercritical watercooled nuclear reactor 
+integrated with a com-bined cycle, a CuCl thermo­
+chemical cycle and a hydrogen compression system. 
+Appl Energy. 2017 Jun;195:646-658.
+JOURNAL OF NUCLEAR SCIENCE AND TECHNOLOGY
+1369
+
+
+=== PDF page 13 of 15 ===
+[9] Wu W, Chen HY, Hwang JJ. Energy analysis of a class 
+of copper–chlorine (Cu–Cl) thermochemical cycles. 
+Int J Hydrogen Energy. 2017;42(25):15990–16002.
+[10] Khalid F, Dincer I, Rosen MA. Thermodynamic via­
+bility of a new three step high temperature cu-cl cycle 
+for hydrogen production. Int J Hydrogen Energy. 
+2018;43(41):18783–18789.
+[11] Al-Zareer M, Dincer I, Rosen MA. Assessment and 
+analysis of hydrogen and electricity production from 
+a Generation IV lead-cooled nuclear reactor inte­
+grated with a copper-chlorine thermochemical cycle. 
+Int J Energy Res. 2018;42(1):91–103.
+[12] Al-Zareer M, Dincer I, Rosen MA. Development and 
+assessment of a novel integrated nuclear plant for 
+electricity and hydrogen production. Energ Convers 
+Manage. 2017 Feb 134:221–234.
+[13] Li H, Stolberg L, Vega A, et al. Canadian advances 
+in the copper–chlorine thermochemical cycle for 
+clean hydrogen production: a focus on electroly­
+sis. 
+Int 
+J 
+Hydrogen 
+Energy. 
+2020;45 
+(58):33037–33046.
+[14] Ozcan H, Dincer I. Exergoeconomic optimization of a 
+new four-step magnesium-chlorine cycle[J]. Int J 
+Hydrogen Energy. 2017;42(4):2435–2445.
+[15] Farsi 
+A, 
+Zamfirescu 
+C, 
+Dincer 
+I, 
+et 
+al. 
+Thermodynamic assessment of a lab-scale experi­
+mental copper-chlorine cycle for sustainable hydro­
+gen production. Int J Hydrogen Energy. 2019;44 
+(33):17595–17610.
+[16] Oo 
+A, 
+Idb 
+A. 
+Assessing 
+the 
+potential 
+of 
+thermo-chemical water splitting cycles: a bridge 
+towards clean and sustainable hydrogen generation. 
+Fuel. 2021;286(Part 2):119325.
+[17] Mehrpooya M, Habibi R. A review on hydrogen pro­
+duction 
+thermochemical 
+water-splitting 
+cycles. 
+J Clean Prod. 2020;275(28):123836.
+[18] Canavesio C, Nassini D, Nassini HE, et al. Study on 
+an original cobalt-chlorine thermochemical cycle for 
+nuclear hydrogen production. Int J Hydrogen Energy. 
+2019;45(49):26090–26103. .
+[19] Gorensek MB. Hybrid sulfur cycle flowsheets for 
+hydrogen 
+production 
+using 
+high-temperature 
+gas-cooled reactors. Int J Hydrogen Energy. 2011;36 
+(20):12725–12741.
+[20] Ozcan H, El-Emam R, Dincer I. Comparative assess­
+ment of nuclear based hybrid sulfur cycle and high 
+temperature steam electrolysis systems using HEEP. 
+In: Dincer I, Midilli A, Kucuk H, editors. Progress in 
+sustainable energy technologies: generating renew­
+able energy. Vol. 2014. Berlin (Germany): Springer, 
+Cham; 2014. p. 165–180.
+[21] Gorensek MB. Inventor; Savannah Nuclear solutions, 
+LLC, Aiken, assignee. Hybrid sulfur cycle operation 
+for high-temperature gas-cooled reactors. United 
+States patent US. 2015 Feb 17;8(956):526 B2.
+[22] Dincer I, Safari F. A review and comparative evaluation 
+of thermochemical water splitting cycles for hydrogen 
+production. Energ Convers Manage. 2020 Feb 
+205:112182.
+[23] Zhang WQ, Yu B, Xu JM. Efficiency evaluation of 
+high-temperature steam electrolytic systems coupled 
+with different nuclear reactors. Int J Hydrogen 
+Energy. 2012 Sep;37(17):12060–12068.
+[24] Giraldi MR, Francois JL, Martin-Del-Campo C. Life 
+cycle assessment of hydrogen production from a high 
+temperature electrolysis process coupled to a high 
+temperature gas nuclear reactor. Int J Hydrogen 
+Energy. 2015;40(10):4019–4033.
+[25] Ee A, Hzb C. Comprehensive review on the 
+techno-economics of sustainable large-scale clean 
+hydrogen 
+production. 
+J 
+Clean 
+Prod. 
+2019 
+May;220:593–609.
+[26] Rodriguez DG, Alberto B, Hernandez CG, et al. 
+Hydrogen production methods efficiency coupled to 
+an advanced high-temperature accelerator driven 
+system. Int J Hydrog Energy. 2019;44(3):1392–1408.
+[27] Rodríguez DG, Lima F, Lira C, et al. Analysis of the 
+viability of the 2x250 MWth HTR-PM projects for the 
+hydrogen production by the high temperature electro­
+lysis and the Cu-Cl cycle. Int J Exergy. 2021;34(2):225.
+[28] Mozdzierz M, Brus G, Kimijima S, et al. Numerical 
+analysis of helium-heated methane/steam reformer. 
+J Phys Conf Ser. 2016 Sep;745:032–081.
+[29] Saa B, Hma C. Generation-IV reactors and nuclear 
+hydrogen production. Int J Hydrogen Energy. 2021 
+May;1–13. DOI:10.1016/j.ijhydene.2020.12.182
+[30] Hoseinzade L, Adams TA. Modeling and simulation 
+of an integrated steam reforming and nuclear heat 
+system. Int J Hydrogen Energy. 2017 Sep;42 
+(39):25048–25062.
+[31] Hoseinzade L, Adams TA. Techno-economic and 
+environmental analyses of a novel, sustainable pro­
+cess for production of liquid fuels using helium heat 
+transfer. Appl Energy. 2019;236(FEB.15):850–866.
+[32] Herce C, Cortés C, Stendardo S. Computationally 
+efficient CFD model for scale-up of bubbling fluidized 
+bed reactors applied to sorption-enhanced steam 
+methane reforming. Fuel Process Technol. 2017 
+Dec;167:747–761.
+[33] Tran A, Aguirre A, Durand H, et al. CFD modeling of 
+an industrial-scale steam methane reforming furnace. 
+Chem Eng Sci. 2017 Nov;171:576–598.
+[34] Engel S, Liesche G, Kai S, et al. Optimal tube bundle 
+arrangements in side-fired methane steam reforming 
+furnaces. Front Energy Res. 2020 Oct;8:583346.
+[35] Pashchenko D, Makarov I. Carbon deposition in 
+steam methane reforming over a Ni-based catalyst: 
+experimental and thermodynamic analysis. Energy. 
+2021;222(16):119993.
+[36] Guerra OJ, Eichman J, Kurtz J, et al. Cost competi­
+tiveness of electrolytic hydrogen. Joule. 2019;3 
+(10):2425–2443.
+[37] Ewan B, Allen R. A figure of merit assessment of the 
+routes to hydrogen. Int J Hydrogen Energy. 2005;30 
+(8):809–819.
+[38] Parkinson B, Balcombe P, J F S, et al. Levelized cost of 
+CO2 mitigation from hydrogen production routes. 
+Energy Environ Sci. 2019;12(1):19–40.
+[39] Wang F, Zhou J, Wen Q Transport mechanism of 
+methane steam reforming on fixed bed catalyst heated 
+by high temperature helium for hydrogen production: 
+a CFD investigation. Proceedings of the 2017 25th 
+International Conference on Nuclear Engineering; 
+2017 Jul 2–6; Shanghai, China.
+[40] Salehi AA, Ghannadi-Maragheh M, Torab-Mostaedi 
+M, et al. An overview of sustainable energy develop­
+ment by using cogeneration technology and opportu­
+nity for improving process. Int J Energy Res. 
+2021;5:11423–11439. https://doi.org/10.1002/er.5742 .
+[41] Lin Z, Li L, Fan J. A modified process for overcoming 
+the drawbacks of conventional steam methane 
+reforming for hydrogen production: thermodynamic 
+1370
+Y. ZHANG ET AL.
+
+
+=== PDF page 14 of 15 ===
+investigation. 
+Chem 
+Eng 
+Res 
+Des. 
+2015 
+Dec;104:792–806.
+[42] Zhu L, Fan J. Thermodynamic analysis of H2 produc­
+tion from CaO sorption-enhanced methane steam 
+reforming thermally coupled with chemical looping 
+combustion as a novel technology. Int J Energy Res. 
+2015;39(3):356–369.
+[43] Jang WJ, Jeong DW, Shim JO, et al. Combined steam 
+and carbon dioxide reforming of methane and side 
+reactions: thermodynamic equilibrium analysis and 
+experimental 
+application. 
+Appl 
+Energy. 
+2016 
+Jul;173:80–91.
+[44] Pashchenko D. First law energy analysis of thermo­
+chemical waste-heat recuperation by steam methane 
+reforming. Energy 2017 Jan;143:478–487.
+[45] Yan Y, Thanganadar D, Clough PT, et al. Process 
+simulations of blue hydrogen production by 
+upgraded sorption enhanced steam methane reform­
+ing (SE-SMR) processes. Energ Convers Manage. 
+2020 Oct;222:113144.
+[46] Tabrizi FF, Mousavi S, Atashi H. Thermodynamic 
+analysis of steam reforming of methane with statisti­
+cal approaches. Energ Convers Manage. 2015 Oct 
+103:1065–1077.
+[47] Adiya Z, Dupont V, Mahmud T. Chemical equili­
+brium analysis of hydrogen production from shale 
+gas using sorption enhanced chemical looping steam 
+reforming. 
+Fuel 
+Process 
+Technol. 
+2017 
+May;159:128–144.
+[48] Adiya ZISG, Dupont V, Mahmud T. Steam reforming 
+of shale gas in a packed bed reactor with and without 
+chemical looping using nickel-based oxygen carrier. 
+Int J Hydrogen Energy. 2018;43(14):6904–6917.
+[49] Wang F, Jing L, Cheng Z, et al. Combination of 
+thermodynamic analysis and regression analysis for 
+steam and dry methane reforming. Int J Hydrogen 
+Energy. 2019;44(30):15795–15810.
+[50] Pashchenko D. Thermodynamic equilibrium analysis 
+of steam methane reforming based on a conjugate 
+solution of material balance and law action mass 
+equations 
+with 
+the 
+detailed 
+energy 
+balance. 
+Int J Energy Res. 2020;44(1):438–447.
+[51] Carapellucci R, Giordano L. Steam, dry and autother­
+mal methane reforming for hydrogen production: 
+a thermodynamic equilibrium analysis. J Power 
+Sources. 2020 Sep;469:228391.
+[52] Jianu OA, Naterer G, Rosen MA. 19 - Hydrogen 
+cogeneration with Generation IV nuclear power 
+plants. In: Pioro IL, editor. Handbook of generation 
+IV nuclear reactors. Cambridge (UK): Woodhead 
+Publishing; 2016. p. 637–659.
+[53] Khan SU. Using next generation nuclear power reac­
+tors for development of a techno-economic model for 
+hydrogen production. Int J Energy Res. 2019;43 
+(13):6827–6839.
+[54] Huning AJ, Chandrasekaran S, Garimella S. A review 
+of recent advances in HTGR CFD and thermal fluid 
+analysis. Nucl Eng Des. 2021;373(23–24):111013.
+[55] Linder M. 14-Using thermochemical reactions in 
+thermal energy storage systems. In: Cabeza LF, editor. 
+Advances in thermal energy storage systems: methods 
+and applications. Cambridge (UK): Woodhead 
+Publishing; 2015. p. 357–374.
+[56] Yuan X, Fan Z, Liu L, invetors; Jiang Su Province 
+Metallurgical Design, assignee. Nuclear reaction system 
+useful for producing sponge iron by heat supply system 
+comprises a nuclear reaction system comprising a first air 
+inlet and first air outlet, and reforming system is provided 
+with a pre-heater and reformer. China patent 
+CN107419048-A, 2017 Dec 01.
+[57] El-Emam RS, Khamis I. Advances in nuclear hydro­
+gen production: results from an IAEA international 
+collaborative research project. Int J Hydrogen Energy. 
+2018;44(35):19080–19088.
+[58] Revankar ST. Chapter four - nuclear hydrogen produc­
+tion. In: Bindra H, Revankar S, editors. Storage and 
+hybridization of nuclear energy: techno-economic 
+integration of 
+renewable and nuclear energy. 
+New York (US): Academic Press; 2019. p. 49–117.
+[59] Fedders H, Harth R, HÖHlein B. Experiments for 
+combining 
+nuclear 
+heat 
+with 
+the 
+methane 
+steam-reforming process. Nucl Eng Des. 1975 
+Oct;34(1):119–127.
+[60] Fedders H, Holein B. Operating a pilot plant circuit 
+for energy transport with hydrogen-rich gas. 
+Int J Hydrogen Energy. 1982 Dec;7(10):793–800.
+[61] Singh J, Niessen HF, Harth R, et al. The nuclear heated 
+steam reformer-Design and semitechnical operating 
+experiences. Nucl Eng Des. 1984 Apr;78(2):179–194.
+[62] Hada K, Nishihara T, Shibata T, et al. Proceedings of 
+the 3rd JAERI symposium on HTGR technologies; 
+1996 Feb 15–16; Oarai, Japan.
+[63] Inagaki Y, Hayashi K, Kato M, et al. Performance test 
+results of mock-up test facility with full-scale reac­
+tion tube for HTTR hydrogen production system. 
+Oarai-Oaria 
+(Japan): 
+Japan 
+Atomic 
+Energy 
+Research Institute; 2003. (JAERI-TECH; no. 2003– 
+034). [in Japanese].
+[64] Ohashi H, Inaba Y, Nishihara T, et al. Performance 
+test results of mock-up test facility of HTTR hydrogen 
+production system. J Nucl Sci Technol. 2004 Mar;41 
+(3):385–392.
+[65] Yin HQ, Jiang SY, Zhang YJ, et al. Thermodynamic 
+analysis of thermal efficiency of HTR-10 hydrogen 
+production system. J Nucl Sci Technol. 2006 Oct;43 
+(10):1188–1193.
+[66] Yin HQ, Jiang SY, Zhang YJ, et al. Modeling of the 
+helium-heated steam reformer for HTR-10. J Nucl Sci 
+Technol. 2007 Jul;44(7):977–984. .
+[67] Chikazawa Y, Konomura M, Uchida S, et al. 
+A feasibility study of a steam methane reforming 
+hydrogen production plant with a sodium-cooled 
+fast 
+reactor. 
+Nucl 
+Technol. 
+2005 
+Apr;152 
+(3):266–272. .
+[68] Wang F, Cao Y, Zhou J. Thermodynamic analysis of 
+high-temperature helium heated fuel reforming for 
+hydrogen production[J]. Int J Energ Res. 2015;39 
+(3):418–432.
+[69] Khorasanov GL, Kolesov VV, Korobeynikov VV. 
+Concerning hydrogen production based on nuclear 
+technologies. Nucl Eng Technol. 2015 Oct;1(2):126–129.
+[70] Ghouse JH, Adams TA. A multi-scale dynamic 
+two-dimensional heterogeneous model for catalytic 
+steam methane reforming reactors. Int J Hydrogen 
+Energy. 2013 Aug;38(24):9984–9999.
+[71] Acr A, Asal U. Investigation of the hydrogen produc­
+tion of a laser FUSION driver thorium breeder using 
+various coolants. Int J Hydrogen Energy. 2020;46 
+(10):7087–7098.
+[72] Yan XL, Hino R. Nuclear hydrogen production hand­
+book. London (UK): CRC press, London; 2016.
+[73] Zhou YP, Hao PF, Li F, et al. Experiment study on 
+thermal mixing performance of HTR-PM reactor 
+outlet. Nucl Eng Des. 2016 Sep;306:186–191.
+JOURNAL OF NUCLEAR SCIENCE AND TECHNOLOGY
+1371
+
+
+=== PDF page 15 of 15 ===
+[74] Hou K, Hughes R. The kinetics of methane steam 
+reforming over a Ni/α-Al2O catalyst. Chem Eng J. 
+2001 Mar;82(1–3):311–328.
+[75] Lutz AE, Bradshaw RW, Keller JO, et al. Thermodynamic 
+analysis of hydrogen production by steam reforming. 
+Int J Hydrogen Energy. 2003;28(2):159–167.
+1372
+Y. ZHANG ET AL.

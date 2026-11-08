@@ -1,0 +1,7175 @@
+{
+ "balances": {
+  "carbon": [
+   {
+    "class": "calculated",
+    "id": "feed_c",
+    "label": "Feed carbon",
+    "src": "nush2_plant anchored port",
+    "unit": "kmol/h",
+    "value": 1219.2323517679354
+   },
+   {
+    "class": "calculated",
+    "id": "tube_c",
+    "label": "Tube carbon",
+    "src": "nush2_plant anchored port",
+    "unit": "kmol/h",
+    "value": 1574.055872047207
+   },
+   {
+    "class": "calculated",
+    "id": "co2_abs",
+    "label": "CO2 to the absorber",
+    "src": "nush2_plant anchored port",
+    "unit": "kmol/h",
+    "value": 1219.8933008365855
+   },
+   {
+    "class": "calculated",
+    "id": "captured",
+    "label": "Captured",
+    "src": "nush2_plant anchored port",
+    "unit": "kmol/h",
+    "value": 1097.9039707529269
+   },
+   {
+    "class": "calculated",
+    "id": "slip",
+    "label": "Absorber slip",
+    "src": "nush2_plant anchored port",
+    "unit": "kmol/h",
+    "value": 121.98933008365854
+   },
+   {
+    "class": "calculated",
+    "id": "tailgas_c",
+    "label": "Tail gas carbon",
+    "src": "nush2_plant anchored port",
+    "unit": "kmol/h",
+    "value": 471.72808748245825
+   },
+   {
+    "class": "calculated",
+    "id": "recycled_c",
+    "label": "Recycled carbon",
+    "src": "nush2_plant anchored port",
+    "unit": "kmol/h",
+    "value": 354.8235202792718
+   },
+   {
+    "class": "calculated",
+    "id": "burned_c",
+    "label": "Burned carbon",
+    "src": "nush2_plant anchored port",
+    "unit": "kmol/h",
+    "value": 116.90456720318645
+   },
+   {
+    "class": "calculated",
+    "id": "product_c",
+    "label": "Carbon in product",
+    "src": "nush2_plant anchored port",
+    "unit": "kmol/h",
+    "value": 4.423813811821855
+   },
+   {
+    "class": "calculated",
+    "id": "baseline_t_y",
+    "label": "Unabated SMR baseline",
+    "src": "nush2_plant anchored port",
+    "unit": "t/y",
+    "value": 616360.6231034483
+   },
+   {
+    "class": "calculated",
+    "id": "captured_t_y",
+    "label": "Captured and stored",
+    "src": "nush2_plant anchored port",
+    "unit": "t/y",
+    "value": 359777.3529471361
+   },
+   {
+    "class": "calculated",
+    "id": "atm_t_y",
+    "label": "Residual to atmosphere",
+    "src": "nush2_plant anchored port",
+    "unit": "t/y",
+    "value": 38309.01140374701
+   },
+   {
+    "class": "calculated",
+    "id": "abatement_t_y",
+    "label": "Net abatement",
+    "src": "nush2_plant anchored port",
+    "unit": "t/y",
+    "value": 578051.6116997013
+   }
+  ],
+  "closure": {
+   "basis": "Residual of the anchored carbon balance at INL scale",
+   "carbon_kmol_h": 2.1938006966593093e-13
+  },
+  "energy": [
+   {
+    "class": "calculated",
+    "id": "htgr_heat_need",
+    "label": "Reactor heat at the need, the heat the process asks of the reactor",
+    "src": "nush2_plant anchored port",
+    "unit": "MWth",
+    "value": 178.78991540213576
+   },
+   {
+    "class": "calculated",
+    "id": "htgr_heat_output",
+    "label": "Reactor heat output, at the need or at the rating when the rating is lower",
+    "src": "nush2_plant anchored port",
+    "unit": "MWth",
+    "value": 178.78991540213576
+   },
+   {
+    "class": "calculated",
+    "id": "unmet_reactor_heat",
+    "label": "Reactor heat the rating cannot supply, the need less the rating",
+    "src": "nush2_plant anchored port",
+    "unit": "MWth",
+    "value": 0
+   },
+   {
+    "class": "calculated",
+    "id": "ihx_duty",
+    "label": "IHX duty, process heat with slip heat",
+    "src": "nush2_plant anchored port",
+    "unit": "MW",
+    "value": 121.68092711214051
+   },
+   {
+    "class": "calculated",
+    "id": "ihx_loss",
+    "label": "IHX loss",
+    "src": "nush2_plant anchored port",
+    "unit": "MW",
+    "value": 0.9734474168971241
+   },
+   {
+    "class": "calculated",
+    "id": "duct_loss",
+    "label": "Duct loss",
+    "src": "nush2_plant anchored port",
+    "unit": "MW",
+    "value": 0.30747643642515715
+   },
+   {
+    "class": "calculated",
+    "id": "vessel_loss",
+    "label": "Vessel loss",
+    "src": "nush2_plant anchored port",
+    "unit": "MW",
+    "value": 2.662560766763706
+   },
+   {
+    "class": "calculated",
+    "id": "smr_process_heat",
+    "label": "SMR process heat, includes preheat",
+    "src": "nush2_plant anchored port",
+    "unit": "MW",
+    "value": 120.8040754665951
+   },
+   {
+    "class": "calculated",
+    "id": "recycle_slip_heat",
+    "label": "Recycle slip heat",
+    "src": "nush2_plant anchored port",
+    "unit": "MW",
+    "value": 0.8768516455454203
+   },
+   {
+    "class": "calculated",
+    "id": "wgs_heat_release",
+    "label": "Shift heat release",
+    "src": "live Level 3 flowsheet FS_B_REC_F, HTS and LTS beds at their inlet temperature",
+    "unit": "MW",
+    "value": 8.07156959529081
+   },
+   {
+    "class": "calculated",
+    "id": "syngas_recovery_ex4",
+    "label": "Reboiler heat from syngas above 130 C",
+    "src": "nush2_plant anchored port",
+    "unit": "MW",
+    "value": 8.386714704173942
+   },
+   {
+    "class": "calculated",
+    "id": "syngas_recovery_selexol",
+    "label": "Reboiler heat from freed Selexol steam",
+    "src": "nush2_plant anchored port",
+    "unit": "MW",
+    "value": 12.732131619587392
+   },
+   {
+    "class": "calculated",
+    "id": "syngas_recovery_export",
+    "label": "Reboiler heat from export steam",
+    "src": "nush2_plant anchored port",
+    "unit": "MW",
+    "value": 16.760915337688285
+   },
+   {
+    "class": "calculated",
+    "id": "mea_regeneration",
+    "label": "MEA regeneration duty",
+    "src": "nush2_plant anchored port",
+    "unit": "MW",
+    "value": 51.002549512009324
+   },
+   {
+    "class": "calculated",
+    "id": "available_steam",
+    "label": "Recovered heat stack before the reboiler draw",
+    "src": "nush2_plant anchored port",
+    "unit": "MW",
+    "value": 37.87976166144962
+   },
+   {
+    "class": "calculated",
+    "id": "tail_gas_to_reboiler",
+    "label": "Reboiler heat from tail gas burned on site",
+    "src": "nush2_plant anchored port",
+    "unit": "MW",
+    "value": 0
+   },
+   {
+    "class": "calculated",
+    "id": "reactor_steam_to_reboiler",
+    "label": "Reboiler heat from reactor steam, last",
+    "src": "nush2_plant anchored port",
+    "unit": "MW",
+    "value": 13.122787850559705
+   },
+   {
+    "class": "calculated",
+    "id": "electricity_generation",
+    "label": "Nuclear electricity generation at the reactor output",
+    "src": "nush2_plant anchored port",
+    "unit": "MWe",
+    "value": 19.897197051826026
+   },
+   {
+    "class": "calculated",
+    "id": "helium_circulation",
+    "label": "Helium circulation demand",
+    "src": "nush2_plant anchored port",
+    "unit": "MWe",
+    "value": 7.452938510618386
+   },
+   {
+    "class": "calculated",
+    "id": "process_electricity",
+    "label": "Process electricity, pumps and compressors included",
+    "src": "nush2_plant anchored port",
+    "unit": "MWe",
+    "value": 12.44425854120764
+   },
+   {
+    "class": "calculated",
+    "id": "cooling_utilities",
+    "label": "Cooling water electricity",
+    "src": "nush2_plant anchored port",
+    "unit": "MWe",
+    "value": 0.06832809698336827
+   },
+   {
+    "class": "calculated",
+    "id": "mea_cooling",
+    "label": "MEA cooling electricity",
+    "src": "nush2_plant anchored port",
+    "unit": "MWe",
+    "value": 0.7650382426801399
+   },
+   {
+    "class": "calculated",
+    "id": "unmet_thermal",
+    "label": "Heat duty above the rated reactor",
+    "src": "nush2_plant anchored port",
+    "unit": "MWth",
+    "value": 0
+   },
+   {
+    "class": "calculated",
+    "id": "unmet_electrical",
+    "label": "Grid import at the reactor output, the electricity the power branch cannot make",
+    "src": "nush2_plant anchored port",
+    "unit": "MWe",
+    "value": 0
+   }
+  ],
+  "mass": null,
+  "power": [
+   {
+    "class": "calculated",
+    "id": "reforming",
+    "label": "Reforming",
+    "src": "nush2_plant anchored port",
+    "unit": "MWe",
+    "value": 0.819937163800419
+   },
+   {
+    "class": "calculated",
+    "id": "purification",
+    "label": "Purification",
+    "src": "nush2_plant anchored port",
+    "unit": "MWe",
+    "value": 0.011820760778122708
+   },
+   {
+    "class": "calculated",
+    "id": "steam",
+    "label": "Steam system",
+    "src": "nush2_plant anchored port",
+    "unit": "MWe",
+    "value": 0.20498429095010476
+   },
+   {
+    "class": "calculated",
+    "id": "co2comp",
+    "label": "CO2 compression",
+    "src": "nush2_plant anchored port",
+    "unit": "MWe",
+    "value": 4.245458061527139
+   },
+   {
+    "class": "calculated",
+    "id": "purge",
+    "label": "Purge recovery",
+    "src": "nush2_plant anchored port",
+    "unit": "MWe",
+    "value": 4.322554564353807
+   },
+   {
+    "class": "calculated",
+    "id": "cooling",
+    "label": "Cooling water",
+    "src": "nush2_plant anchored port",
+    "unit": "MWe",
+    "value": 0.06832809698336827
+   },
+   {
+    "class": "calculated",
+    "id": "water",
+    "label": "Water treatment",
+    "src": "nush2_plant anchored port",
+    "unit": "MWe",
+    "value": 1.0249214547505239
+   },
+   {
+    "class": "calculated",
+    "id": "mea_pump",
+    "label": "Lean pump",
+    "src": "nush2_plant anchored port",
+    "unit": "MWe",
+    "value": 0.9812159053840152
+   },
+   {
+    "class": "calculated",
+    "id": "mea_cooling",
+    "label": "MEA cooling",
+    "src": "nush2_plant anchored port",
+    "unit": "MWe",
+    "value": 0.7650382426801399
+   },
+   {
+    "class": "calculated",
+    "id": "e_proc",
+    "label": "Process electricity",
+    "src": "nush2_plant anchored port",
+    "unit": "MWe",
+    "value": 12.44425854120764
+   },
+   {
+    "class": "calculated",
+    "id": "e_circ",
+    "label": "Circulators",
+    "src": "nush2_plant anchored port",
+    "unit": "MWe",
+    "value": 7.452938510618386
+   },
+   {
+    "class": "calculated",
+    "id": "e_total",
+    "label": "Auxiliary electricity",
+    "src": "nush2_plant anchored port",
+    "unit": "MWe",
+    "value": 19.897197051826026
+   },
+   {
+    "class": "calculated",
+    "id": "e_nuc",
+    "label": "Nuclear electricity generation at the need",
+    "src": "nush2_plant anchored port",
+    "unit": "MWe",
+    "value": 19.897197051826026
+   },
+   {
+    "class": "calculated",
+    "id": "import_at_rated",
+    "label": "Grid import if the reactor is held at its rating, a card J.29 memo item that reads high below the need when back-pressure work feeds a reboiler gap",
+    "src": "nush2_plant anchored port",
+    "unit": "MWe",
+    "value": 0
+   }
+  ]
+ },
+ "cost": {
+  "abatement_t_y": 578051.6116997013,
+  "grid": [
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L0",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 138.46363498798485,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L1",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 182.2719614201851,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L2",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 196.73535005876428,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L3",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 209.91887445894554,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L4",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 262.6935996428472,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L5",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 277.95755435705246,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L0",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 238.970535375979,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L1",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 295.49443838231065,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L2",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 309.95782702088985,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L3",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 323.1413514210711,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L4",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 395.78230004883875,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L5",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 411.04625476304403,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L0",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 342.9881563475671,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L1",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 412.67179285893474,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L2",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 427.13518149751394,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L3",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 440.31870589769517,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L4",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 533.5198080307816,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L5",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 548.7837627449868,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L0",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 118.27734111908912,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L1",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 162.08566755128942,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L2",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 176.54905618986857,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L3",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 186.75887520017343,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L4",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 235.0706705112564,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L5",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 250.33462522546165,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L0",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 208.2499580101006,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L1",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 264.77386101643225,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L2",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 279.23724965501145,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L3",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 289.4470686653163,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L4",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 355.54287785093015,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L5",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 370.80683256513544,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L0",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 301.3653314368296,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L1",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 371.0489679481973,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L2",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 385.51235658677643,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L3",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 395.7221755970813,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L4",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 480.2231968369254,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L5",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 495.48715155113064,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L0",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 111.98167618729492,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L1",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 155.7900026194952,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L2",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 170.25339125807437,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L3",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 179.53577639358662,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L4",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 226.45568118351468,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L5",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 241.71963589771997,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L0",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 198.66887973674577,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L1",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 255.19278274307743,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L2",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 269.65617138165663,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L3",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 278.9385565171689,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L4",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 342.99307941579553,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L5",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 358.2570341300008,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L0",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 288.38407985817736,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L1",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 358.06771636954505,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L2",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 372.53110500812414,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L3",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 381.81349014363644,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L4",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 463.60114584253023,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L5",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 478.86510055673557,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L0",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 66.24010071777353,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L1",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 110.04842714997382,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L2",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 124.51181578855297,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L3",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 137.6953401887342,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L4",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 174.50237111887603,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L5",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 189.7663258330813,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L0",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 129.05691346026984,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L1",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 185.58081646660153,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L2",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 200.04420510518065,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L3",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 213.2277295053619,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L4",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 262.45115008792,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L5",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 277.71510480212527,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L0",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 194.06792656751244,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L1",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 263.7515630788801,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L2",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 278.21495171745926,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L3",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 291.3984761176405,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L4",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 353.4719926410227,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L5",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 368.735947355228,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L0",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 53.623667049713696,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L1",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 97.43199348191399,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L2",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 111.89538212049315,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L3",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 122.10520113079801,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L4",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 156.1229008904281,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L5",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 171.3868556046334,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L0",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 109.8565526065958,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L1",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 166.38045561292745,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L2",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 180.8438442515066,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L3",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 191.05366326181147,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L4",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 236.1863716930234,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L5",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 251.4503264072287,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L0",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 168.0536609983015,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L1",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 237.73729750966913,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L2",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 252.20068614824828,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L3",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 262.4105051585532,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L4",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 319.046471123659,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L5",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 334.3104258378643,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L0",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 49.68887646734231,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L1",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 93.49720289954259,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L2",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 107.96059153812178,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L3",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 117.24297667363403,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L4",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 150.39074485754236,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L5",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 165.65469957174764,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L0",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 103.86837868574906,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L1",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 160.3922816920807,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L2",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 174.85567033065988,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L3",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 184.13805546617215,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L4",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 227.99495996801707,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L5",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 243.25891468222235,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L0",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 159.9403787616438,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L1",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 229.62401527301142,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L2",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 244.0874039115906,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L3",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 253.36978904710284,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L4",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 308.3099015491147,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L5",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 323.57385626332,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L0",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 30.692646090360107,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L1",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 74.5009725225604,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L2",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 88.96436116113956,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L3",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 102.1478855613208,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L4",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 131.09583160001543,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L5",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 146.3597863142207,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L0",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 74.95890333845215,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L1",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 131.4828063447838,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L2",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 145.94619498336297,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L3",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 159.12971938354423,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L4",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 196.82734682838532,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L5",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 212.09130154259063,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L0",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 120.77138736181644,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L1",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 190.45502387318408,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L2",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 204.91841251176322,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L3",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 218.10193691194448,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L4",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 264.8548734013715,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L5",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 280.1188281155768,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L0",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 21.801996057013135,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L1",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 65.61032248921342,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L2",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 80.07371112779259,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L3",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 90.28353013809746,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L4",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 117.2658678348002,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L5",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 132.52982254900547,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L0",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 61.42863849854341,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L1",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 117.95254150487504,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L2",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 132.4159301434542,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L3",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 142.6257491537591,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L4",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 177.4407006315516,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L5",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 192.70465534575692,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L0",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 102.43944529835298,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L1",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 172.12308180972062,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L2",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 186.5864704482998,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L3",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 196.79628945860466,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L4",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 239.71744905099507,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L5",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 254.98140376520033,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L0",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 19.029196156282296,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L1",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 62.837522588482585,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L2",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 77.30091122706175,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L3",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 86.58329636257402,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L4",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 112.95260367397215,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L5",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 128.21655838817745,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L0",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 57.20884389812121,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L1",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 113.73274690445285,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L2",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 128.19613554303203,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L3",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 137.47852067854427,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L4",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 171.39442837379102,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L5",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 186.6583830879963,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L0",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 96.72211226385957,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L1",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 166.4057487752272,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L2",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 180.86913741380636,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L3",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 190.15152254931863,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L4",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 231.8776344725426,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L5",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 247.14158918674792,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L0",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 81.58770758412344,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L1",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 125.39603401632372,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L2",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 139.8594226549029,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L3",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 153.04294705508414,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L4",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 193.24313641267022,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L5",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 208.50709112687554,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L0",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 152.41371918107072,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L1",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 208.93762218740235,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L2",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 223.40101082598153,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L3",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 236.58453522616279,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L4",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 290.7842148335833,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L5",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 306.0481695477886,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L0",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 225.7136936184536,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L1",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 295.3973301298212,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L2",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 309.8607187684003,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L3",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 323.0442431685816,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L4",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 391.73241724733964,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L5",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 406.9963719615449,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L0",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 67.36266753076828,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L1",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 111.17099396296857,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L2",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 125.63438260154773,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L3",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 135.84420161185258,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L4",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 172.89941762225166,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L5",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 188.16337233645697,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L0",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 130.76529543721668,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L1",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 187.28919844354834,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L2",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 201.75258708212752,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L3",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 211.96240609243236,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L4",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 261.5498041525752,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L5",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 276.8137588667805,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L0",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 196.3825863169121,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L1",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 266.06622282827976,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L2",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 280.5296114668589,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L3",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 290.7394304771638,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L4",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 353.2967615206632,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L5",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 368.5607162348685,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L0",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 62.92618768959895,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L1",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 106.73451412179924,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L2",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 121.19790276037838,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L3",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 130.48028789589065,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L4",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 166.55465528980244,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L5",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 181.81861000400772,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L0",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 124.01362407654118,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L1",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 180.53752708287283,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L2",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 195.000915721452,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L3",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 204.28330085696425,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L4",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 252.43222886503375,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L5",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 267.696183579239,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L0",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 187.2348534617226,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L1",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 256.91848997309023,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L2",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 271.3818786116694,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L3",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 280.6642637471817,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L4",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 341.3095185200148,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "rating",
+    "charged_mwth": 210,
+    "level": "L5",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 356.5734732342201,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L0",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 109.84010972411127,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L1",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 147.13766675612194,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L2",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 161.6010553947011,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L3",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 174.39861733161803,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L4",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 221.5156081067568,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L5",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 236.77956282096207,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L0",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 211.9979431004306,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L1",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 262.2199436077582,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L2",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 276.6833322463374,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L3",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 289.4808941832543,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L4",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 356.79043230151683,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L5",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 372.0543870157221,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L0",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 323.6241202590318,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L1",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 387.9684466749126,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L2",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 402.4318353134918,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L3",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 415.22939725040874,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L4",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 504.6029983241163,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L5",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 519.8669530383215,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L0",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 92.65389175695647,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L1",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 129.95144878896713,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L2",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 144.41483742754627,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L3",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 154.51573754708582,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L4",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 197.76279433309605,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L5",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 213.02674904730137,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L0",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 184.10440479935545,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L1",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 234.32640530668306,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L2",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 248.78979394526223,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L3",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 258.8906940648018,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L4",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 320.2138861126005,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L5",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 335.4778408268058,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L0",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 284.03086988511683,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L1",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 348.37519630099763,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L2",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 362.83858493957683,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L3",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 372.93948505911635,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L4",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 454.0141715385009,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L5",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 469.2781262527062,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L0",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 87.29388508764369,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L1",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 124.59144211965432,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L2",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 139.0548307582335,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L3",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 148.31470085280495,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L4",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 190.35480960457224,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L5",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 205.6187643187775,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L0",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 175.405018371799,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L1",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 225.6270188791266,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L2",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 240.09040751770576,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L3",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 249.35027761227724,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L4",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 308.8064588422321,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L5",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 324.0704135564374,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L0",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 271.6825983532687,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L1",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 336.0269247691495,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L2",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 350.4903134077287,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L3",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 359.75018350230016,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L4",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 438.236619462656,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L5",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 453.50057417686133,
+    "stage": "FOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L0",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 48.35039742785252,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L1",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 85.64795445986319,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L2",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 100.11134309844236,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L3",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 112.9089050353593,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L4",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 146.1798519600243,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L5",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 161.44380667422962,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L0",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 112.19904328805208,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L1",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 162.4210437953797,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L2",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 176.88443243395884,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L3",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 189.68199437087577,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L4",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 235.57328338499315,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L5",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 250.8372380991984,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L0",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 181.96540401217786,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L1",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 246.30973042805866,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L2",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 260.77311906663783,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L3",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 273.5706810035548,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L4",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 333.2520093648253,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L5",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 348.51596407903065,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L0",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 37.609011198380756,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L1",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 74.9065682303914,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L2",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 89.36995686897058,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L3",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 99.47085698851015,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L4",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 130.32309516996986,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L5",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 145.58704988417512,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L0",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 94.76558184988012,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L1",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 144.9875823572077,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L2",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 159.4509709957869,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L3",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 169.55187111532643,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L4",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 211.70169383540394,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L5",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 226.96564854960923,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L0",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 157.219622528481,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L1",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 221.56394894436184,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L2",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 236.02733758294102,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L3",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 246.12823770248056,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L4",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 300.62274444229917,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L5",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 315.88669915650445,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L0",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 34.259007030060275,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L1",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 71.55656406207093,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L2",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 86.01995270065011,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L3",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 95.27982279522155,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L4",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 125.37771845527936,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L5",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 140.64167316948465,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L0",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 89.32846533265734,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L1",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 139.55046583998495,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L2",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 154.0138544785641,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L3",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 163.27372457313555,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L4",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 204.25666553206065,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L5",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 219.52062024626593,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L0",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 149.50195282107595,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L1",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 213.84627923695678,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L2",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 228.30966787553595,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L3",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 237.5695379701074,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L4",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 290.4463881355331,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L5",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 305.7103428497383,
+    "stage": "BOAK"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L0",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 18.085985972631086,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L1",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 55.383543004641744,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L2",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 69.84693164322091,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L3",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 82.64449358013786,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L4",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 109.10060347810122,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L5",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 124.3645581923065,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L0",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 63.07936368785965,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L1",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 113.30136419518723,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L2",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 127.7647528337664,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L3",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 140.56231477068332,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L4",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 175.9118289198414,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L5",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 191.1757836340467,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L0",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 112.24288434811854,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L1",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 176.58721076399934,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L2",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 191.0505994025785,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L3",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 203.84816133949548,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L4",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 248.91535141889742,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L5",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 264.1793061331027,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L0",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 10.516659461525855,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L1",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 47.81421649353651,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L2",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 62.27760513211569,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L3",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 72.37850525165526,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L4",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 97.13018000303079,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L5",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 112.39413471723607,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L0",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 50.79421175074553,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L1",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 101.01621225807312,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L2",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 115.47960089665229,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L3",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 125.58050101619183,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L4",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 158.2934485802868,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L5",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 173.55740329449208,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L0",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 94.8048278607135,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L1",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 159.14915427659432,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L2",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 173.6125429151735,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L3",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 183.71344303471304,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L4",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 225.1255419025256,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L5",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 240.3894966167309,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L0",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 8.15595155829387,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L1",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 45.45350859030452,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L2",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 59.91689722888369,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L3",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 69.17676732345512,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L4",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 93.39686591475976,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L5",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 108.66082062896506,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L0",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 46.962740717252444,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L1",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 97.18474122458004,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L2",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 111.6481298631592,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L3",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 120.90799995773064,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L4",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 152.79865988954762,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L5",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 168.06261460375288,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L0",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 89.36627824782173,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L1",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 153.71060466370253,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L2",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 168.1739933022817,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L3",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 177.43386339685313,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L4",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 217.70601900847592,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L5",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 232.9699737226812,
+    "stage": "10OAK_P46"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L0",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 61.41705139575702,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L1",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 98.71460842776767,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L2",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 113.17799706634683,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L3",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 125.97555900326377,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L4",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 162.1888105356799,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L5",
+    "life_y": 25,
+    "n": 1,
+    "s_per_t": 177.45276524988515,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L0",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 133.40645574012268,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L1",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 183.6284562474503,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L2",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 198.09184488602946,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L3",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 210.88940682294637,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L4",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 261.3321051572741,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L5",
+    "life_y": 25,
+    "n": 0.6,
+    "s_per_t": 276.5960598714794,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L0",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 212.068088796537,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L1",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 276.41241521241784,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L2",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 290.875803850997,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L3",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 303.67336578791395,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L4",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 369.66434561063187,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L5",
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "s_per_t": 384.92830032483715,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L0",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 49.30612897798862,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L1",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 86.60368600999928,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L2",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 101.06707464857845,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L3",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 111.16797476811803,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L4",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 144.65413006599363,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L5",
+    "life_y": 40,
+    "n": 1,
+    "s_per_t": 159.9180847801989,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L0",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 113.75021264074013,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L1",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 163.97221314806774,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L2",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 178.4356017866469,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L3",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 188.53650190618646,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L4",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 234.76069370441314,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L5",
+    "life_y": 40,
+    "n": 0.6,
+    "s_per_t": 250.0246484186184,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L0",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 184.16719841668888,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L1",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 248.51152483256968,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L2",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 262.97491347114885,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L3",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 273.0758135906884,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L4",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 333.21864747486325,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L5",
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "s_per_t": 348.48260218906853,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L0",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 45.52899633281746,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L1",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 82.8265533648281,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L2",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 97.28994200340728,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L3",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 106.54981209797872,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L4",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 139.18544553974087,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L5",
+    "life_y": 60,
+    "n": 1,
+    "s_per_t": 154.44940025394615,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L0",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 107.61985898715118,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L1",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 157.84185949447877,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L2",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 172.30524813305794,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L3",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 181.5651182276294,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L4",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 226.47364981421126,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L5",
+    "life_y": 60,
+    "n": 0.6,
+    "s_per_t": 241.73760452841654,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L0",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 175.46551903606203,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L1",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 239.80984545194283,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L2",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 254.273234090522,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L3",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 263.53310418509346,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L4",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 321.8520288593647,
+    "stage": "10OAK_P47"
+   },
+   {
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "level": "L5",
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "s_per_t": 337.11598357356996,
+    "stage": "10OAK_P47"
+   }
+  ],
+  "headline": [
+   {
+    "ac_l3": 209.91887445894554,
+    "ac_l5": 277.95755435705246,
+    "charged": "rating",
+    "charged_mwth": 210,
+    "dcf_gap_rel": 0.001780542879777857,
+    "lac_dcf": 278.4524697013434,
+    "lcoh_nush2": 6.023208113538004,
+    "lcoh_smr": 3.6181166606457342,
+    "life_y": 25,
+    "n": 1,
+    "stage": "FOAK"
+   },
+   {
+    "ac_l3": 323.1413514210711,
+    "ac_l5": 411.04625476304403,
+    "charged": "rating",
+    "charged_mwth": 210,
+    "dcf_gap_rel": 0.0018323692945673227,
+    "lac_dcf": 411.79944329891873,
+    "lcoh_nush2": 7.174972602510079,
+    "lcoh_smr": 3.6181166606457342,
+    "life_y": 25,
+    "n": 0.6,
+    "stage": "FOAK"
+   },
+   {
+    "ac_l3": 440.31870589769517,
+    "ac_l5": 548.7837627449868,
+    "charged": "rating",
+    "charged_mwth": 210,
+    "dcf_gap_rel": 0.0018595361537906917,
+    "lac_dcf": 549.8042459924244,
+    "lcoh_nush2": 8.366968391853344,
+    "lcoh_smr": 3.6181166606457342,
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "stage": "FOAK"
+   },
+   {
+    "ac_l3": 186.75887520017343,
+    "ac_l5": 250.33462522546165,
+    "charged": "rating",
+    "charged_mwth": 210,
+    "dcf_gap_rel": 0.0032140127670019242,
+    "lac_dcf": 251.13920390695893,
+    "lcoh_nush2": 5.794117791513139,
+    "lcoh_smr": 3.624940576275526,
+    "life_y": 40,
+    "n": 1,
+    "stage": "FOAK"
+   },
+   {
+    "ac_l3": 289.4470686653163,
+    "ac_l5": 370.80683256513544,
+    "charged": "rating",
+    "charged_mwth": 210,
+    "dcf_gap_rel": 0.002793319243107316,
+    "lac_dcf": 371.8426144260153,
+    "lcoh_nush2": 6.83667540030611,
+    "lcoh_smr": 3.624940576275526,
+    "life_y": 40,
+    "n": 0.6,
+    "stage": "FOAK"
+   },
+   {
+    "ac_l3": 395.7221755970813,
+    "ac_l5": 495.48715155113064,
+    "charged": "rating",
+    "charged_mwth": 210,
+    "dcf_gap_rel": 0.0025733482630256542,
+    "lac_dcf": 496.76221255192627,
+    "lcoh_nush2": 7.915649697332847,
+    "lcoh_smr": 3.624940576275526,
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "stage": "FOAK"
+   },
+   {
+    "ac_l3": 179.53577639358662,
+    "ac_l5": 241.71963589771997,
+    "charged": "rating",
+    "charged_mwth": 210,
+    "dcf_gap_rel": 0.0020389460935538845,
+    "lac_dcf": 242.2124892050689,
+    "lcoh_nush2": 5.71143624050675,
+    "lcoh_smr": 3.619362184939262,
+    "life_y": 60,
+    "n": 1,
+    "stage": "FOAK"
+   },
+   {
+    "ac_l3": 278.9385565171689,
+    "ac_l5": 358.2570341300008,
+    "charged": "rating",
+    "charged_mwth": 210,
+    "dcf_gap_rel": 0.0019974874795600883,
+    "lac_dcf": 358.9726480701398,
+    "lcoh_nush2": 6.719934604431913,
+    "lcoh_smr": 3.619362184939262,
+    "life_y": 60,
+    "n": 0.6,
+    "stage": "FOAK"
+   },
+   {
+    "ac_l3": 381.81349014363644,
+    "ac_l5": 478.86510055673557,
+    "charged": "rating",
+    "charged_mwth": 210,
+    "dcf_gap_rel": 0.0019758291698168773,
+    "lac_dcf": 479.81125619082286,
+    "lcoh_nush2": 7.763659962235953,
+    "lcoh_smr": 3.619362184939262,
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "stage": "FOAK"
+   },
+   {
+    "ac_l3": 137.6953401887342,
+    "ac_l5": 189.7663258330813,
+    "charged": "rating",
+    "charged_mwth": 210,
+    "dcf_gap_rel": 0.0016300156986438885,
+    "lac_dcf": 190.0756479232632,
+    "lcoh_nush2": 5.259866567599406,
+    "lcoh_smr": 3.6181166606457342,
+    "life_y": 25,
+    "n": 1,
+    "stage": "BOAK"
+   },
+   {
+    "ac_l3": 213.2277295053619,
+    "ac_l5": 277.71510480212527,
+    "charged": "rating",
+    "charged_mwth": 210,
+    "dcf_gap_rel": 0.0016950566489969839,
+    "lac_dcf": 278.185847637047,
+    "lcoh_nush2": 6.0209052054378205,
+    "lcoh_smr": 3.6181166606457342,
+    "life_y": 25,
+    "n": 0.6,
+    "stage": "BOAK"
+   },
+   {
+    "ac_l3": 291.3984761176405,
+    "ac_l5": 368.735947355228,
+    "charged": "rating",
+    "charged_mwth": 210,
+    "dcf_gap_rel": 0.0017296985396272606,
+    "lac_dcf": 369.3737493848764,
+    "lcoh_nush2": 6.808527033091614,
+    "lcoh_smr": 3.6181166606457342,
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "stage": "BOAK"
+   },
+   {
+    "ac_l3": 122.10520113079801,
+    "ac_l5": 171.3868556046334,
+    "charged": "rating",
+    "charged_mwth": 210,
+    "dcf_gap_rel": 0.0037251266487808563,
+    "lac_dcf": 172.025293347697,
+    "lcoh_nush2": 5.110783252246718,
+    "lcoh_smr": 3.624940576275526,
+    "life_y": 40,
+    "n": 1,
+    "stage": "BOAK"
+   },
+   {
+    "ac_l3": 191.05366326181147,
+    "ac_l5": 251.4503264072287,
+    "charged": "rating",
+    "charged_mwth": 210,
+    "dcf_gap_rel": 0.0031136954219331625,
+    "lac_dcf": 252.23326613740647,
+    "lcoh_nush2": 5.803567589973191,
+    "lcoh_smr": 3.624940576275526,
+    "life_y": 40,
+    "n": 0.6,
+    "stage": "BOAK"
+   },
+   {
+    "ac_l3": 262.4105051585532,
+    "ac_l5": 334.3104258378643,
+    "charged": "rating",
+    "charged_mwth": 210,
+    "dcf_gap_rel": 0.002789291390742753,
+    "lac_dcf": 335.24291503048937,
+    "lcoh_nush2": 6.520550984929157,
+    "lcoh_smr": 3.624940576275526,
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "stage": "BOAK"
+   },
+   {
+    "ac_l3": 117.24297667363403,
+    "ac_l5": 165.65469957174764,
+    "charged": "rating",
+    "charged_mwth": 210,
+    "dcf_gap_rel": 0.0020088722077428534,
+    "lac_dcf": 165.98747869379932,
+    "lcoh_nush2": 5.053054142212172,
+    "lcoh_smr": 3.619362184939262,
+    "life_y": 60,
+    "n": 1,
+    "stage": "BOAK"
+   },
+   {
+    "ac_l3": 184.13805546617215,
+    "ac_l5": 243.25891468222235,
+    "charged": "rating",
+    "charged_mwth": 210,
+    "dcf_gap_rel": 0.00194033800636681,
+    "lac_dcf": 243.7309191997678,
+    "lcoh_nush2": 5.724551451896265,
+    "lcoh_smr": 3.619362184939262,
+    "life_y": 60,
+    "n": 0.6,
+    "stage": "BOAK"
+   },
+   {
+    "ac_l3": 253.36978904710284,
+    "ac_l5": 323.57385626332,
+    "charged": "rating",
+    "charged_mwth": 210,
+    "dcf_gap_rel": 0.0019040261267643966,
+    "lac_dcf": 324.1899493395833,
+    "lcoh_nush2": 6.419504259838044,
+    "lcoh_smr": 3.619362184939262,
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "stage": "BOAK"
+   },
+   {
+    "ac_l3": 102.1478855613208,
+    "ac_l5": 146.3597863142207,
+    "charged": "rating",
+    "charged_mwth": 210,
+    "dcf_gap_rel": 0.001489313327728656,
+    "lac_dcf": 146.577761894622,
+    "lcoh_nush2": 4.884160099567091,
+    "lcoh_smr": 3.6181166606457342,
+    "life_y": 25,
+    "n": 1,
+    "stage": "10OAK_P46"
+   },
+   {
+    "ac_l3": 159.12971938354423,
+    "ac_l5": 212.09130154259063,
+    "charged": "rating",
+    "charged_mwth": 210,
+    "dcf_gap_rel": 0.001564075696410705,
+    "lac_dcf": 212.4230283927535,
+    "lcoh_nush2": 5.452888715398455,
+    "lcoh_smr": 3.6181166606457342,
+    "life_y": 25,
+    "n": 0.6,
+    "stage": "10OAK_P46"
+   },
+   {
+    "ac_l3": 218.10193691194448,
+    "ac_l5": 280.1188281155768,
+    "charged": "rating",
+    "charged_mwth": 210,
+    "dcf_gap_rel": 0.0016045028864056618,
+    "lac_dcf": 280.5682795838248,
+    "lcoh_nush2": 6.041483104130686,
+    "lcoh_smr": 3.6181166606457342,
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "stage": "10OAK_P46"
+   },
+   {
+    "ac_l3": 90.28353013809746,
+    "ac_l5": 132.52982254900547,
+    "charged": "rating",
+    "charged_mwth": 210,
+    "dcf_gap_rel": 0.0042003029309361705,
+    "lac_dcf": 133.0864879510945,
+    "lcoh_nush2": 4.774455159536137,
+    "lcoh_smr": 3.624940576275526,
+    "life_y": 40,
+    "n": 1,
+    "stage": "10OAK_P46"
+   },
+   {
+    "ac_l3": 142.6257491537591,
+    "ac_l5": 192.70465534575692,
+    "charged": "rating",
+    "charged_mwth": 210,
+    "dcf_gap_rel": 0.003417116334620132,
+    "lac_dcf": 193.36314957129625,
+    "lcoh_nush2": 5.295085785750788,
+    "lcoh_smr": 3.624940576275526,
+    "life_y": 40,
+    "n": 0.6,
+    "stage": "10OAK_P46"
+   },
+   {
+    "ac_l3": 196.79628945860466,
+    "ac_l5": 254.98140376520033,
+    "charged": "rating",
+    "charged_mwth": 210,
+    "dcf_gap_rel": 0.002995826100480925,
+    "lac_dcf": 255.74528370973738,
+    "lcoh_nush2": 5.833902115124578,
+    "lcoh_smr": 3.624940576275526,
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "stage": "10OAK_P46"
+   },
+   {
+    "ac_l3": 86.58329636257402,
+    "ac_l5": 128.21655838817745,
+    "charged": "rating",
+    "charged_mwth": 210,
+    "dcf_gap_rel": 0.0019809668795765355,
+    "lac_dcf": 128.47055114375772,
+    "lcoh_nush2": 4.729007306189628,
+    "lcoh_smr": 3.619362184939262,
+    "life_y": 60,
+    "n": 1,
+    "stage": "10OAK_P46"
+   },
+   {
+    "ac_l3": 137.47852067854427,
+    "ac_l5": 186.6583830879963,
+    "charged": "rating",
+    "charged_mwth": 210,
+    "dcf_gap_rel": 0.0018863510020189983,
+    "lac_dcf": 187.0104863159696,
+    "lcoh_nush2": 5.2346372181331775,
+    "lcoh_smr": 3.619362184939262,
+    "life_y": 60,
+    "n": 0.6,
+    "stage": "10OAK_P46"
+   },
+   {
+    "ac_l3": 190.15152254931863,
+    "ac_l5": 247.14158918674792,
+    "charged": "rating",
+    "charged_mwth": 210,
+    "dcf_gap_rel": 0.0018355498759472738,
+    "lac_dcf": 247.59522990012107,
+    "lcoh_nush2": 5.7579288561143285,
+    "lcoh_smr": 3.619362184939262,
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "stage": "10OAK_P46"
+   },
+   {
+    "ac_l3": 153.04294705508414,
+    "ac_l5": 208.50709112687554,
+    "charged": "rating",
+    "charged_mwth": 210,
+    "dcf_gap_rel": 0.0016726573986396837,
+    "lac_dcf": 208.85585205551774,
+    "lcoh_nush2": 5.422077764686302,
+    "lcoh_smr": 3.6181166606457342,
+    "life_y": 25,
+    "n": 1,
+    "stage": "10OAK_P47"
+   },
+   {
+    "ac_l3": 236.58453522616279,
+    "ac_l5": 306.0481695477886,
+    "charged": "rating",
+    "charged_mwth": 210,
+    "dcf_gap_rel": 0.0017342464784052694,
+    "lac_dcf": 306.5789325080492,
+    "lcoh_nush2": 6.266146218447095,
+    "lcoh_smr": 3.6181166606457342,
+    "life_y": 25,
+    "n": 0.6,
+    "stage": "10OAK_P47"
+   },
+   {
+    "ac_l3": 323.0442431685816,
+    "ac_l5": 406.9963719615449,
+    "charged": "rating",
+    "charged_mwth": 210,
+    "dcf_gap_rel": 0.0017669011291942655,
+    "lac_dcf": 407.71549431074175,
+    "lcoh_nush2": 7.139698105515861,
+    "lcoh_smr": 3.6181166606457342,
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "stage": "10OAK_P47"
+   },
+   {
+    "ac_l3": 135.84420161185258,
+    "ac_l5": 188.16337233645697,
+    "charged": "rating",
+    "charged_mwth": 210,
+    "dcf_gap_rel": 0.0035806274492860583,
+    "lac_dcf": 188.83711527239512,
+    "lcoh_nush2": 5.255992843176209,
+    "lcoh_smr": 3.624940576275526,
+    "life_y": 40,
+    "n": 1,
+    "stage": "10OAK_P47"
+   },
+   {
+    "ac_l3": 211.96240609243236,
+    "ac_l5": 276.8137588667805,
+    "charged": "rating",
+    "charged_mwth": 210,
+    "dcf_gap_rel": 0.0030224980755414956,
+    "lac_dcf": 277.65042792023877,
+    "lcoh_nush2": 6.023104513550261,
+    "lcoh_smr": 3.624940576275526,
+    "life_y": 40,
+    "n": 0.6,
+    "stage": "10OAK_P47"
+   },
+   {
+    "ac_l3": 290.7394304771638,
+    "ac_l5": 368.5607162348685,
+    "charged": "rating",
+    "charged_mwth": 210,
+    "dcf_gap_rel": 0.002727599984405389,
+    "lac_dcf": 369.56600243872316,
+    "lcoh_nush2": 6.817011505645519,
+    "lcoh_smr": 3.624940576275526,
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "stage": "10OAK_P47"
+   },
+   {
+    "ac_l3": 130.48028789589065,
+    "ac_l5": 181.81861000400772,
+    "charged": "rating",
+    "charged_mwth": 210,
+    "dcf_gap_rel": 0.002017368414523191,
+    "lac_dcf": 182.18540512500232,
+    "lcoh_nush2": 5.192961302870679,
+    "lcoh_smr": 3.619362184939262,
+    "life_y": 60,
+    "n": 1,
+    "stage": "10OAK_P47"
+   },
+   {
+    "ac_l3": 204.28330085696425,
+    "ac_l5": 267.696183579239,
+    "charged": "rating",
+    "charged_mwth": 210,
+    "dcf_gap_rel": 0.0019565907508305906,
+    "lac_dcf": 268.2199554560628,
+    "lcoh_nush2": 5.936071830410975,
+    "lcoh_smr": 3.619362184939262,
+    "life_y": 60,
+    "n": 0.6,
+    "stage": "10OAK_P47"
+   },
+   {
+    "ac_l3": 280.6642637471817,
+    "ac_l5": 356.5734732342201,
+    "charged": "rating",
+    "charged_mwth": 210,
+    "dcf_gap_rel": 0.0019245173995672078,
+    "lac_dcf": 357.25970508768347,
+    "lcoh_nush2": 6.705139316278009,
+    "lcoh_smr": 3.619362184939262,
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "stage": "10OAK_P47"
+   },
+   {
+    "ac_l3": 174.39861733161803,
+    "ac_l5": 236.77956282096207,
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "dcf_gap_rel": 0.001779550957757009,
+    "lac_dcf": 237.2009241187574,
+    "lcoh_nush2": 5.666904074268085,
+    "lcoh_smr": 3.6181166606457342,
+    "life_y": 25,
+    "n": 1,
+    "stage": "FOAK"
+   },
+   {
+    "ac_l3": 289.4808941832543,
+    "ac_l5": 372.0543870157221,
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "dcf_gap_rel": 0.001838110033800939,
+    "lac_dcf": 372.73826391761537,
+    "lcoh_nush2": 6.837587522856712,
+    "lcoh_smr": 3.6181166606457342,
+    "life_y": 25,
+    "n": 0.6,
+    "stage": "FOAK"
+   },
+   {
+    "ac_l3": 415.22939725040874,
+    "ac_l5": 519.8669530383215,
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "dcf_gap_rel": 0.0018672534593107473,
+    "lac_dcf": 520.8376764047637,
+    "lcoh_nush2": 8.116773990598388,
+    "lcoh_smr": 3.6181166606457342,
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "stage": "FOAK"
+   },
+   {
+    "ac_l3": 154.51573754708582,
+    "ac_l5": 213.02674904730137,
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "dcf_gap_rel": 0.003467799004340732,
+    "lac_dcf": 213.76548299554554,
+    "lcoh_nush2": 5.471307881357806,
+    "lcoh_smr": 3.624940576275526,
+    "life_y": 40,
+    "n": 1,
+    "stage": "FOAK"
+   },
+   {
+    "ac_l3": 258.8906940648018,
+    "ac_l5": 335.4778408268058,
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "dcf_gap_rel": 0.0029025311595297218,
+    "lac_dcf": 336.45157571313734,
+    "lcoh_nush2": 6.5309906103359685,
+    "lcoh_smr": 3.624940576275526,
+    "life_y": 40,
+    "n": 0.6,
+    "stage": "FOAK"
+   },
+   {
+    "ac_l3": 372.93948505911635,
+    "ac_l5": 469.2781262527062,
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "dcf_gap_rel": 0.0026221476368915365,
+    "lac_dcf": 470.50864278250464,
+    "lcoh_nush2": 7.688888425191607,
+    "lcoh_smr": 3.624940576275526,
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "stage": "FOAK"
+   },
+   {
+    "ac_l3": 148.31470085280495,
+    "ac_l5": 205.6187643187775,
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "dcf_gap_rel": 0.0020883937428142485,
+    "lac_dcf": 206.04817725958603,
+    "lcoh_nush2": 5.399072418942875,
+    "lcoh_smr": 3.619362184939262,
+    "life_y": 60,
+    "n": 1,
+    "stage": "FOAK"
+   },
+   {
+    "ac_l3": 249.35027761227724,
+    "ac_l5": 324.0704135564374,
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "dcf_gap_rel": 0.0020237350496697957,
+    "lac_dcf": 324.72624621091256,
+    "lcoh_nush2": 6.42413644364604,
+    "lcoh_smr": 3.619362184939262,
+    "life_y": 60,
+    "n": 0.6,
+    "stage": "FOAK"
+   },
+   {
+    "ac_l3": 359.75018350230016,
+    "ac_l5": 453.50057417686133,
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "dcf_gap_rel": 0.0019917014160244708,
+    "lac_dcf": 454.4038119126173,
+    "lcoh_nush2": 7.54420697214795,
+    "lcoh_smr": 3.619362184939262,
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "stage": "FOAK"
+   },
+   {
+    "ac_l3": 112.9089050353593,
+    "ac_l5": 161.44380667422962,
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "dcf_gap_rel": 0.0016312227551311359,
+    "lac_dcf": 161.70715748535162,
+    "lcoh_nush2": 5.014837985317997,
+    "lcoh_smr": 3.6181166606457342,
+    "life_y": 25,
+    "n": 1,
+    "stage": "BOAK"
+   },
+   {
+    "ac_l3": 189.68199437087577,
+    "ac_l5": 250.8372380991984,
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "dcf_gap_rel": 0.0017039856877802606,
+    "lac_dcf": 251.26466116288177,
+    "lcoh_nush2": 5.788377494118973,
+    "lcoh_smr": 3.6181166606457342,
+    "life_y": 25,
+    "n": 0.6,
+    "stage": "BOAK"
+   },
+   {
+    "ac_l3": 273.5706810035548,
+    "ac_l5": 348.51596407903065,
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "dcf_gap_rel": 0.0017408158206739946,
+    "lac_dcf": 349.1226661830569,
+    "lcoh_nush2": 6.633611338600751,
+    "lcoh_smr": 3.6181166606457342,
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "stage": "BOAK"
+   },
+   {
+    "ac_l3": 99.47085698851015,
+    "ac_l5": 145.58704988417512,
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "dcf_gap_rel": 0.004102595562279924,
+    "lac_dcf": 146.18433466895536,
+    "lcoh_nush2": 4.887585846529889,
+    "lcoh_smr": 3.624940576275526,
+    "life_y": 40,
+    "n": 1,
+    "stage": "BOAK"
+   },
+   {
+    "ac_l3": 169.55187111532643,
+    "ac_l5": 226.96564854960923,
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "dcf_gap_rel": 0.0032787356846312866,
+    "lac_dcf": 227.70980892069431,
+    "lcoh_nush2": 5.591749905574327,
+    "lcoh_smr": 3.624940576275526,
+    "life_y": 40,
+    "n": 0.6,
+    "stage": "BOAK"
+   },
+   {
+    "ac_l3": 246.12823770248056,
+    "ac_l5": 315.88669915650445,
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "dcf_gap_rel": 0.00286383979024007,
+    "lac_dcf": 316.79134805475644,
+    "lcoh_nush2": 6.361178342002333,
+    "lcoh_smr": 3.624940576275526,
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "stage": "BOAK"
+   },
+   {
+    "ac_l3": 95.27982279522155,
+    "ac_l5": 140.64167316948465,
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "dcf_gap_rel": 0.002084225012103264,
+    "lac_dcf": 140.93480206244854,
+    "lcoh_nush2": 4.836665404476207,
+    "lcoh_smr": 3.619362184939262,
+    "life_y": 60,
+    "n": 1,
+    "stage": "BOAK"
+   },
+   {
+    "ac_l3": 163.27372457313555,
+    "ac_l5": 219.52062024626593,
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "dcf_gap_rel": 0.0019799562041956285,
+    "lac_dcf": 219.9552614602714,
+    "lcoh_nush2": 5.519192773348768,
+    "lcoh_smr": 3.619362184939262,
+    "life_y": 60,
+    "n": 0.6,
+    "stage": "BOAK"
+   },
+   {
+    "ac_l3": 237.5695379701074,
+    "ac_l5": 305.7103428497383,
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "dcf_gap_rel": 0.001927541555556343,
+    "lac_dcf": 306.29961223954456,
+    "lcoh_nush2": 6.264979155805695,
+    "lcoh_smr": 3.619362184939262,
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "stage": "BOAK"
+   },
+   {
+    "ac_l3": 82.64449358013786,
+    "ac_l5": 124.3645581923065,
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "dcf_gap_rel": 0.001492227143525238,
+    "lac_dcf": 124.55013836173359,
+    "lcoh_nush2": 4.693899804360154,
+    "lcoh_smr": 3.6181166606457342,
+    "life_y": 25,
+    "n": 1,
+    "stage": "10OAK_P46"
+   },
+   {
+    "ac_l3": 140.56231477068332,
+    "ac_l5": 191.1757836340467,
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "dcf_gap_rel": 0.0015755129616217087,
+    "lac_dcf": 191.47698355911032,
+    "lcoh_nush2": 5.271970394022724,
+    "lcoh_smr": 3.6181166606457342,
+    "life_y": 25,
+    "n": 0.6,
+    "stage": "10OAK_P46"
+   },
+   {
+    "ac_l3": 203.84816133949548,
+    "ac_l5": 264.1793061331027,
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "dcf_gap_rel": 0.0016183543237332316,
+    "lac_dcf": 264.6068418554241,
+    "lcoh_nush2": 5.903618579180978,
+    "lcoh_smr": 3.6181166606457342,
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "stage": "10OAK_P46"
+   },
+   {
+    "ac_l3": 72.37850525165526,
+    "ac_l5": 112.39413471723607,
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "dcf_gap_rel": 0.004694777049640931,
+    "lac_dcf": 112.9218001214208,
+    "lcoh_nush2": 4.600285692117133,
+    "lcoh_smr": 3.624940576275526,
+    "life_y": 40,
+    "n": 1,
+    "stage": "10OAK_P46"
+   },
+   {
+    "ac_l3": 125.58050101619183,
+    "ac_l5": 173.55740329449208,
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "dcf_gap_rel": 0.0036366462198550364,
+    "lac_dcf": 174.18857016911085,
+    "lcoh_nush2": 5.129468231406727,
+    "lcoh_smr": 3.624940576275526,
+    "life_y": 40,
+    "n": 0.6,
+    "stage": "10OAK_P46"
+   },
+   {
+    "ac_l3": 183.71344303471304,
+    "ac_l5": 240.3894966167309,
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "dcf_gap_rel": 0.0030960638142353107,
+    "lac_dcf": 241.1337578385282,
+    "lcoh_nush2": 5.707697251421083,
+    "lcoh_smr": 3.624940576275526,
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "stage": "10OAK_P46"
+   },
+   {
+    "ac_l3": 69.17676732345512,
+    "ac_l5": 108.66082062896506,
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "dcf_gap_rel": 0.002080342405599323,
+    "lac_dcf": 108.88687234194671,
+    "lcoh_nush2": 4.559856217126057,
+    "lcoh_smr": 3.619362184939262,
+    "life_y": 60,
+    "n": 1,
+    "stage": "10OAK_P46"
+   },
+   {
+    "ac_l3": 120.90799995773064,
+    "ac_l5": 168.06261460375288,
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "dcf_gap_rel": 0.0019384070350594816,
+    "lac_dcf": 168.38838835823128,
+    "lcoh_nush2": 5.073791639420529,
+    "lcoh_smr": 3.619362184939262,
+    "life_y": 60,
+    "n": 0.6,
+    "stage": "10OAK_P46"
+   },
+   {
+    "ac_l3": 177.43386339685313,
+    "ac_l5": 232.9699737226812,
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "dcf_gap_rel": 0.0018660704430540286,
+    "lac_dcf": 233.40471210476417,
+    "lcoh_nush2": 5.635360386535536,
+    "lcoh_smr": 3.619362184939262,
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "stage": "10OAK_P46"
+   },
+   {
+    "ac_l3": 125.97555900326377,
+    "ac_l5": 177.45276524988515,
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "dcf_gap_rel": 0.0016732806088723062,
+    "lac_dcf": 177.74969352096855,
+    "lcoh_nush2": 5.153402984735535,
+    "lcoh_smr": 3.6181166606457342,
+    "life_y": 25,
+    "n": 1,
+    "stage": "10OAK_P47"
+   },
+   {
+    "ac_l3": 210.88940682294637,
+    "ac_l5": 276.5960598714794,
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "dcf_gap_rel": 0.0017423237349282496,
+    "lac_dcf": 277.0779797515811,
+    "lcoh_nush2": 6.0113361627027135,
+    "lcoh_smr": 3.6181166606457342,
+    "life_y": 25,
+    "n": 0.6,
+    "stage": "10OAK_P47"
+   },
+   {
+    "ac_l3": 303.67336578791395,
+    "ac_l5": 384.92830032483715,
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "dcf_gap_rel": 0.0017771027880693702,
+    "lac_dcf": 385.6123574805512,
+    "lcoh_nush2": 6.948785575526751,
+    "lcoh_smr": 3.6181166606457342,
+    "life_y": 25,
+    "n": 0.31069766688467315,
+    "stage": "10OAK_P47"
+   },
+   {
+    "ac_l3": 111.16797476811803,
+    "ac_l5": 159.9180847801989,
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "dcf_gap_rel": 0.003922901779079121,
+    "lac_dcf": 160.54542771949008,
+    "lcoh_nush2": 5.011627634297395,
+    "lcoh_smr": 3.624940576275526,
+    "life_y": 40,
+    "n": 1,
+    "stage": "10OAK_P47"
+   },
+   {
+    "ac_l3": 188.53650190618646,
+    "ac_l5": 250.0246484186184,
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "dcf_gap_rel": 0.0031714684812122825,
+    "lac_dcf": 250.81759371060423,
+    "lcoh_nush2": 5.791339931667812,
+    "lcoh_smr": 3.624940576275526,
+    "life_y": 40,
+    "n": 0.6,
+    "stage": "10OAK_P47"
+   },
+   {
+    "ac_l3": 273.0758135906884,
+    "ac_l5": 348.48260218906853,
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "dcf_gap_rel": 0.0027946768112765163,
+    "lac_dcf": 349.4564984365396,
+    "lcoh_nush2": 6.643318680261607,
+    "lcoh_smr": 3.624940576275526,
+    "life_y": 40,
+    "n": 0.31069766688467315,
+    "stage": "10OAK_P47"
+   },
+   {
+    "ac_l3": 106.54981209797872,
+    "ac_l5": 154.44940025394615,
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "dcf_gap_rel": 0.0020854043609584154,
+    "lac_dcf": 154.77148970678314,
+    "lcoh_nush2": 4.9561777191826355,
+    "lcoh_smr": 3.619362184939262,
+    "life_y": 60,
+    "n": 1,
+    "stage": "10OAK_P47"
+   },
+   {
+    "ac_l3": 181.5651182276294,
+    "ac_l5": 241.73760452841654,
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "dcf_gap_rel": 0.001992427782062787,
+    "lac_dcf": 242.21924924764826,
+    "lcoh_nush2": 5.711494629360856,
+    "lcoh_smr": 3.619362184939262,
+    "life_y": 60,
+    "n": 0.6,
+    "stage": "10OAK_P47"
+   },
+   {
+    "ac_l3": 263.53310418509346,
+    "ac_l5": 337.11598357356996,
+    "charged": "required",
+    "charged_mwth": 178.78991540213576,
+    "dcf_gap_rel": 0.0019458825904521712,
+    "lac_dcf": 337.77197169696893,
+    "lcoh_nush2": 6.536816941315698,
+    "lcoh_smr": 3.619362184939262,
+    "life_y": 60,
+    "n": 0.31069766688467315,
+    "stage": "10OAK_P47"
+   }
+  ],
+  "ladder": [
+   {
+    "level": "L0",
+    "s_m_y": 38.29019697905952,
+    "s_per_t": 66.24010071777353
+   },
+   {
+    "level": "L1",
+    "s_m_y": 63.613670679059524,
+    "s_per_t": 110.04842714997382
+   },
+   {
+    "level": "L2",
+    "s_m_y": 71.97425579222936,
+    "s_per_t": 124.51181578855297
+   },
+   {
+    "level": "L3",
+    "s_m_y": 79.59501331963646,
+    "s_per_t": 137.6953401887342
+   },
+   {
+    "level": "L4",
+    "s_m_y": 100.8713768706857,
+    "s_per_t": 174.50237111887603
+   },
+   {
+    "level": "L5",
+    "s_m_y": 109.69473049414331,
+    "s_per_t": 189.7663258330813
+   }
+  ],
+  "ledger": [
+   {
+    "id": "GAS",
+    "label": "Gas saved against the unabated SMR",
+    "level": "L0",
+    "unit": "S$M/y",
+    "value": -64.79627672107264
+   },
+   {
+    "id": "REACTOR_CAP",
+    "label": "Reactor capital",
+    "level": "L0",
+    "unit": "S$M/y",
+    "value": 69.58155064590716
+   },
+   {
+    "id": "CAPTURE_CAP",
+    "label": "Capture capital",
+    "level": "L0",
+    "unit": "S$M/y",
+    "value": 9.251751662079204
+   },
+   {
+    "id": "CAPTURE_FOM",
+    "label": "Capture fixed O&M",
+    "level": "L0",
+    "unit": "S$M/y",
+    "value": 2.666530215317644
+   },
+   {
+    "id": "CAPTURE_ALLIN",
+    "label": "Capture all-in charge",
+    "level": "L0",
+    "unit": "S$M/y",
+    "value": 0
+   },
+   {
+    "id": "TS",
+    "label": "CO2 transport and storage",
+    "level": "L0",
+    "unit": "S$M/y",
+    "value": 21.586641176828163
+   },
+   {
+    "id": "REACTOR_OM",
+    "label": "Reactor O&M and fuel",
+    "level": "L1",
+    "unit": "S$M/y",
+    "value": 25.3234737
+   },
+   {
+    "id": "IHX",
+    "label": "IHX and secondary loop",
+    "level": "L2",
+    "unit": "S$M/y",
+    "value": 8.360585113169838
+   },
+   {
+    "id": "LICENCE",
+    "label": "Extra licensing",
+    "level": "L3",
+    "unit": "S$M/y",
+    "value": 6.119566241569817
+   },
+   {
+    "id": "DECOM",
+    "label": "Decommissioning",
+    "level": "L3",
+    "unit": "S$M/y",
+    "value": 1.5011912858372918
+   },
+   {
+    "id": "IDC",
+    "label": "Interest during construction on the reactor",
+    "level": "L4",
+    "unit": "S$M/y",
+    "value": 13.753509732824233
+   },
+   {
+    "id": "POWER_ISLAND",
+    "label": "Power island add-back",
+    "level": "L4",
+    "unit": "S$M/y",
+    "value": 1.6300759313656519
+   },
+   {
+    "id": "RECYCLE_TRAIN",
+    "label": "Recycle and cryogenic train",
+    "level": "L4",
+    "unit": "S$M/y",
+    "value": 5.892777886859342
+   },
+   {
+    "id": "LOST_STEAM",
+    "label": "Lost steam export",
+    "level": "L5",
+    "unit": "S$M/y",
+    "value": 15.233868351198439
+   },
+   {
+    "id": "BASE_POWER",
+    "label": "Baseline purchased power avoided",
+    "level": "L5",
+    "unit": "S$M/y",
+    "value": -6.410514727740817
+   },
+   {
+    "id": "EXPORT_REVENUE",
+    "label": "Export revenue",
+    "level": "L5",
+    "unit": "S$M/y",
+    "value": 0
+   }
+  ],
+  "selected": {
+   "ac_l3": 137.6953401887342,
+   "ac_l5": 189.7663258330813,
+   "charged_mwth": 210,
+   "dcf": {
+    "gap_abs": 0.3093220901818938,
+    "gap_rel": 0.0016300156986438885,
+    "l5": 189.7663258330813,
+    "lac": 190.0756479232632,
+    "lcoh_nush2": 5.259866567599406,
+    "lcoh_smr": 3.6181166606457342
+   },
+   "life_y": 25,
+   "n": 1,
+   "stage": "BOAK"
+  }
+ },
+ "engine": {
+  "commit": "local",
+  "preset": "headline",
+  "tier": "fast",
+  "version": "0.1.0"
+ },
+ "engine_fields_missing": [
+  {
+   "field": "streams",
+   "reason": "the live reply carries the anchored balance; the stream table of the Level 3 flowsheet is precomputed in results/Integrated_Mass_Balance.csv"
+  },
+  {
+   "field": "profiles.smr",
+   "reason": "the reformer tube model runs only at a fixed Case B design point that reads no live input, and on the assumed tube it does not reach the 871 C exit of this solve's balance (rows TUBE_EXIT_C_N199 and TUBE_SHORTFALL_871C_K_N199 of results/Final_Design_Basis.csv), so its axial profile would describe a different reformer"
+  },
+  {
+   "field": "profiles.absorber",
+   "reason": "the absorber profile comes from the M6 column model, and the M6 column model runs only at its design point, Case B recycle at 0.3 kg/kg MEA, lean loading 0.25, rich cap 0.5, 0.9 capture per pass, absorber 26.8 bar and stripper 2 bar; this solve moves away from it through P_ABSORBER"
+  },
+  {
+   "field": "profiles.stripper",
+   "reason": "the stripper profile comes from the M6 column model, and the M6 column model runs only at its design point, Case B recycle at 0.3 kg/kg MEA, lean loading 0.25, rich cap 0.5, 0.9 capture per pass, absorber 26.8 bar and stripper 2 bar; this solve moves away from it through P_ABSORBER"
+  },
+  {
+   "field": "units.lean_cooler.results.duty",
+   "reason": "the M6 column model runs only at its design point, Case B recycle at 0.3 kg/kg MEA, lean loading 0.25, rich cap 0.5, 0.9 capture per pass, absorber 26.8 bar and stripper 2 bar; this solve moves away from it through P_ABSORBER"
+  },
+  {
+   "field": "units.rich_lean_hx.results.duty",
+   "reason": "the M6 column model runs only at its design point, Case B recycle at 0.3 kg/kg MEA, lean loading 0.25, rich cap 0.5, 0.9 capture per pass, absorber 26.8 bar and stripper 2 bar; this solve moves away from it through P_ABSORBER"
+  },
+  {
+   "field": "units.condenser.results.duty",
+   "reason": "the M6 column model runs only at its design point, Case B recycle at 0.3 kg/kg MEA, lean loading 0.25, rich cap 0.5, 0.9 capture per pass, absorber 26.8 bar and stripper 2 bar; this solve moves away from it through P_ABSORBER"
+  },
+  {
+   "field": "balances.mass",
+   "reason": "the live reply takes the shift heat, the condensate and the train profiles from the Level 3 flowsheet; its species balance is precomputed in results/Integrated_Mass_Balance.csv"
+  }
+ ],
+ "feasibility": {
+  "deficit_mwth": 0,
+  "feasible": true,
+  "rating_mwth": 210,
+  "reason": "Feasible: the 210.0 MWth rating covers the 178.8 MWth the process needs, with 31.2 MWth to spare",
+  "required_mwth": 178.78991540213576,
+  "surplus_mwth": 31.21008459786424,
+  "unmet_heat_mwth": 0
+ },
+ "flags": [
+  {
+   "max": 50,
+   "min": 50,
+   "param": "ihx_approach_k",
+   "state": "outside_model_range",
+   "text": "IHX approach at 25 K lies outside the evidence range 50 to 82 K, and the cross rules cap the control at 50 K",
+   "value": 25
+  },
+  {
+   "max": 26.8,
+   "min": 21,
+   "param": "p_abs_bar",
+   "state": "outside_model_range",
+   "text": "Absorber pressure at 30 bar lies outside the evidence range 21 to 26.8 bar",
+   "value": 30
+  },
+  {
+   "max": 859,
+   "min": null,
+   "param": "T_HE_SUPPLY",
+   "state": "outside_model_range",
+   "text": "Helium supply temperature is fixed at 900 C. Highest measured secondary helium temperature is 859 C, HTTR 2004 high-temperature run (IAEA NP-T-4.3 printed p.14)",
+   "value": 900
+  }
+ ],
+ "inputs": {
+  "availability": 0.85,
+  "basis": "case_b",
+  "capture_fom": 0.027,
+  "capture_target": 0.9,
+  "charged": "rating",
+  "discount": 0.08,
+  "eta_power": 0.397,
+  "gas_s_gj": 15,
+  "heat_basis": "inl_scaled",
+  "ihx_approach_k": 25,
+  "lean_loading": 0.25,
+  "life_y": "25",
+  "n": "1.0",
+  "occ_level": "central",
+  "p_abs_bar": 30,
+  "p_strip_bar": 2,
+  "rating_mwth": 210,
+  "srd": 3.8,
+  "stage": "BOAK",
+  "tail_gas": "recycle",
+  "ts_s_t": 60,
+  "w_mea": 30
+ },
+ "kpi": {
+  "abatement_cho_t_y": 587436.447396253,
+  "abatement_ieaghg_t_y": 563744.9434194685,
+  "abatement_lifecycle_t_y": 615827.4959502094,
+  "abatement_system_t_y": 527631.5600430357,
+  "abatement_t_y": 578051.6116997013,
+  "capture_per_pass": 0.9,
+  "capture_plant": 0.9037670846470378,
+  "co2_atm_t_y": 38309.01140374701,
+  "co2_captured_t_y": 359777.3529471361,
+  "cost_l3_s_per_t": 137.6953401887342,
+  "cost_lac_dcf_s_per_t": 190.0756479232632,
+  "cost_s_per_t": 189.7663258330813,
+  "e_aux_mwe": 19.897197051826026,
+  "h2_product_t_y": 66924.648,
+  "h2_rich_kg_h": 10213.636363636364,
+  "h2_rich_kmol_h": 5066.58946149392,
+  "lcoh_nush2_s_per_kg": 5.259866567599406,
+  "lcoh_smr_s_per_kg": 3.6181166606457342,
+  "ng_mmscfd": 23.231552974345206,
+  "q_process_mwth": 120.8040754665951,
+  "q_reboiler_mw": 51.002549512009324,
+  "rating_mwth": 210,
+  "reactor_charged_mwth": 210,
+  "reactor_required_mwth": 178.78991540213576,
+  "reboiler_gap_mw": 13.122787850559705,
+  "solvent_t_h": 894.1329937811836,
+  "surplus_ahn_mwth": 6.2466580893905075,
+  "surplus_mwth": 31.21008459786424,
+  "target_abatement_t_y": 250000,
+  "target_cost_s_per_t": 100,
+  "unmet_heat_mwth": 0,
+  "unmet_power_mwe": 0
+ },
+ "kpi_class": {
+  "abatement_cho_t_y": "calculated",
+  "abatement_ieaghg_t_y": "calculated",
+  "abatement_lifecycle_t_y": "calculated",
+  "abatement_system_t_y": "calculated",
+  "abatement_t_y": "calculated",
+  "capture_per_pass": "assumed",
+  "capture_plant": "calculated",
+  "co2_atm_t_y": "calculated",
+  "co2_captured_t_y": "calculated",
+  "cost_l3_s_per_t": "calculated",
+  "cost_lac_dcf_s_per_t": "calculated",
+  "cost_s_per_t": "calculated",
+  "e_aux_mwe": "calculated",
+  "h2_product_t_y": "calculated",
+  "h2_rich_kg_h": "calculated",
+  "h2_rich_kmol_h": "calculated",
+  "lcoh_nush2_s_per_kg": "calculated",
+  "lcoh_smr_s_per_kg": "calculated",
+  "ng_mmscfd": "calculated",
+  "q_process_mwth": "calculated",
+  "q_reboiler_mw": "calculated",
+  "rating_mwth": "user_decision",
+  "reactor_charged_mwth": "calculated",
+  "reactor_required_mwth": "calculated",
+  "reboiler_gap_mw": "calculated",
+  "solvent_t_h": "calculated",
+  "surplus_ahn_mwth": "calculated",
+  "surplus_mwth": "calculated",
+  "target_abatement_t_y": "user_decision",
+  "target_cost_s_per_t": "user_decision",
+  "unmet_heat_mwth": "calculated",
+  "unmet_power_mwe": "calculated"
+ },
+ "messages": [
+  {
+   "code": "engine_flag",
+   "level": "info",
+   "text": "status=gated_T05",
+   "unit": "plant"
+  },
+  {
+   "code": "engine_flag",
+   "level": "info",
+   "text": "Headline preset uses the model of T05; anchored for want of a passed gate: T04 gate failed, T07 gate failed, T08 gate failed",
+   "unit": "plant"
+  },
+  {
+   "code": "anchored_terms",
+   "level": "info",
+   "text": "Terms on their anchored values in this preset: T01, T02, T03, T04, T06, T07, T08, T09, T10, T11, T12, T13",
+   "unit": "plant"
+  },
+  {
+   "code": "no_streams",
+   "level": "info",
+   "text": "The live reply returns no stream table; the Level 3 flowsheet streams are precomputed from results/Integrated_Mass_Balance.csv",
+   "unit": "plant"
+  }
+ ],
+ "profiles": {
+  "absorber": null,
+  "smr": null,
+  "stripper": null,
+  "train_P": {
+   "class": "calculated",
+   "points": [
+    {
+     "name": "Mixed reformer feed",
+     "stream": "S04",
+     "value": 30.68166865
+    },
+    {
+     "name": "Raw syngas, reformer outlet",
+     "stream": "S05",
+     "value": 30.26798323
+    },
+    {
+     "name": "HTS inlet",
+     "stream": "S06",
+     "value": 30.061140519999995
+    },
+    {
+     "name": "HTS outlet",
+     "stream": "S07",
+     "value": 28.889031829999997
+    },
+    {
+     "name": "WGS-EX1 outlet",
+     "stream": "S07A",
+     "value": 28.68218912
+    },
+    {
+     "name": "LTS inlet",
+     "stream": "S08",
+     "value": 28.475346409999997
+    },
+    {
+     "name": "LTS outlet",
+     "stream": "S09",
+     "value": 27.30323772
+    },
+    {
+     "name": "WGS-EX3 outlet",
+     "stream": "S09A",
+     "value": 27.09639501
+    },
+    {
+     "name": "WGS-EX4 outlet",
+     "stream": "S09B",
+     "value": 26.8895523
+    },
+    {
+     "name": "KO-DRM-1 outlet",
+     "stream": "S09C",
+     "value": 26.820604729999996
+    },
+    {
+     "name": "Absorber feed",
+     "stream": "S11",
+     "value": 26.820604729999996
+    },
+    {
+     "name": "H2-rich gas after capture (PSA_FEED)",
+     "stream": "S12",
+     "value": 26.820604729999996
+    },
+    {
+     "name": "Purified H2 after external PSA (H2_PRODUCT)",
+     "stream": "S13",
+     "value": 25.924286319999997
+    }
+   ],
+   "run": "FS_B_REC_F",
+   "src": "live Level 3 flowsheet FS_B_REC_F, streams in process order",
+   "unit": "bar"
+  },
+  "train_T": {
+   "class": "calculated",
+   "points": [
+    {
+     "name": "Mixed reformer feed",
+     "stream": "S04",
+     "value": 537.7777777777777
+    },
+    {
+     "name": "Raw syngas, reformer outlet",
+     "stream": "S05",
+     "value": 871.0000000000001
+    },
+    {
+     "name": "HTS inlet",
+     "stream": "S06",
+     "value": 335
+    },
+    {
+     "name": "HTS outlet",
+     "stream": "S07",
+     "value": 412.0157161795282
+    },
+    {
+     "name": "WGS-EX1 outlet",
+     "stream": "S07A",
+     "value": 248.8888888888889
+    },
+    {
+     "name": "LTS inlet",
+     "stream": "S08",
+     "value": 190.55555555555554
+    },
+    {
+     "name": "LTS outlet",
+     "stream": "S09",
+     "value": 216.1560634593268
+    },
+    {
+     "name": "WGS-EX3 outlet",
+     "stream": "S09A",
+     "value": 148.8888888888889
+    },
+    {
+     "name": "WGS-EX4 outlet",
+     "stream": "S09B",
+     "value": 70
+    },
+    {
+     "name": "KO-DRM-1 outlet",
+     "stream": "S09C",
+     "value": 40
+    },
+    {
+     "name": "Absorber feed",
+     "stream": "S11",
+     "value": 40
+    },
+    {
+     "name": "H2-rich gas after capture (PSA_FEED)",
+     "stream": "S12",
+     "value": 40
+    },
+    {
+     "name": "Purified H2 after external PSA (H2_PRODUCT)",
+     "stream": "S13",
+     "value": 55
+    }
+   ],
+   "run": "FS_B_REC_F",
+   "src": "live Level 3 flowsheet FS_B_REC_F, streams in process order",
+   "unit": "C"
+  }
+ },
+ "schema": 1,
+ "status": "ok",
+ "streams": null,
+ "targets": {
+  "abatement": {
+   "at_or_above_target": true,
+   "feasible": true,
+   "met": true,
+   "target": 250000,
+   "unit": "t/y",
+   "value": 578051.6116997013
+  },
+  "cost": {
+   "at_or_below_target": false,
+   "basis": "L5 ledger and DCF levelised cost at the selected stage, life, exponent and size charged; met only when the plant is feasible at the rating and both sit at or below the target",
+   "cases": [
+    {
+     "ac_l5": 189.7663258330813,
+     "at_or_below_target": false,
+     "charged": "rating",
+     "charged_mwth": 210,
+     "feasible": true,
+     "lac_dcf": 190.0756479232632,
+     "life_y": 25,
+     "met": false,
+     "n": 1,
+     "selected": true,
+     "stage": "BOAK",
+     "table": true
+    },
+    {
+     "ac_l5": 277.71510480212527,
+     "at_or_below_target": false,
+     "charged": "rating",
+     "charged_mwth": 210,
+     "feasible": true,
+     "lac_dcf": 278.185847637047,
+     "life_y": 25,
+     "met": false,
+     "n": 0.6,
+     "selected": false,
+     "stage": "BOAK",
+     "table": true
+    },
+    {
+     "ac_l5": 368.735947355228,
+     "at_or_below_target": false,
+     "charged": "rating",
+     "charged_mwth": 210,
+     "feasible": true,
+     "lac_dcf": 369.3737493848764,
+     "life_y": 25,
+     "met": false,
+     "n": 0.31069766688467315,
+     "selected": false,
+     "stage": "BOAK",
+     "table": true
+    },
+    {
+     "ac_l5": 165.65469957174764,
+     "at_or_below_target": false,
+     "charged": "rating",
+     "charged_mwth": 210,
+     "feasible": true,
+     "lac_dcf": 165.98747869379932,
+     "life_y": 60,
+     "met": false,
+     "n": 1,
+     "selected": false,
+     "stage": "BOAK",
+     "table": true
+    },
+    {
+     "ac_l5": 243.25891468222235,
+     "at_or_below_target": false,
+     "charged": "rating",
+     "charged_mwth": 210,
+     "feasible": true,
+     "lac_dcf": 243.7309191997678,
+     "life_y": 60,
+     "met": false,
+     "n": 0.6,
+     "selected": false,
+     "stage": "BOAK",
+     "table": true
+    },
+    {
+     "ac_l5": 323.57385626332,
+     "at_or_below_target": false,
+     "charged": "rating",
+     "charged_mwth": 210,
+     "feasible": true,
+     "lac_dcf": 324.1899493395833,
+     "life_y": 60,
+     "met": false,
+     "n": 0.31069766688467315,
+     "selected": false,
+     "stage": "BOAK",
+     "table": true
+    },
+    {
+     "ac_l5": 277.95755435705246,
+     "at_or_below_target": false,
+     "charged": "rating",
+     "charged_mwth": 210,
+     "feasible": true,
+     "lac_dcf": 278.4524697013434,
+     "life_y": 25,
+     "met": false,
+     "n": 1,
+     "selected": false,
+     "stage": "FOAK",
+     "table": true
+    },
+    {
+     "ac_l5": 411.04625476304403,
+     "at_or_below_target": false,
+     "charged": "rating",
+     "charged_mwth": 210,
+     "feasible": true,
+     "lac_dcf": 411.79944329891873,
+     "life_y": 25,
+     "met": false,
+     "n": 0.6,
+     "selected": false,
+     "stage": "FOAK",
+     "table": true
+    },
+    {
+     "ac_l5": 548.7837627449868,
+     "at_or_below_target": false,
+     "charged": "rating",
+     "charged_mwth": 210,
+     "feasible": true,
+     "lac_dcf": 549.8042459924244,
+     "life_y": 25,
+     "met": false,
+     "n": 0.31069766688467315,
+     "selected": false,
+     "stage": "FOAK",
+     "table": true
+    },
+    {
+     "ac_l5": 241.71963589771997,
+     "at_or_below_target": false,
+     "charged": "rating",
+     "charged_mwth": 210,
+     "feasible": true,
+     "lac_dcf": 242.2124892050689,
+     "life_y": 60,
+     "met": false,
+     "n": 1,
+     "selected": false,
+     "stage": "FOAK",
+     "table": true
+    },
+    {
+     "ac_l5": 358.2570341300008,
+     "at_or_below_target": false,
+     "charged": "rating",
+     "charged_mwth": 210,
+     "feasible": true,
+     "lac_dcf": 358.9726480701398,
+     "life_y": 60,
+     "met": false,
+     "n": 0.6,
+     "selected": false,
+     "stage": "FOAK",
+     "table": true
+    },
+    {
+     "ac_l5": 478.86510055673557,
+     "at_or_below_target": false,
+     "charged": "rating",
+     "charged_mwth": 210,
+     "feasible": true,
+     "lac_dcf": 479.81125619082286,
+     "life_y": 60,
+     "met": false,
+     "n": 0.31069766688467315,
+     "selected": false,
+     "stage": "FOAK",
+     "table": true
+    }
+   ],
+   "feasible": true,
+   "met": false,
+   "reason": "Not met at these inputs: L5 189.8 S$/t and DCF 190.1 S$/t against the 100 S$/t target at the selected stage, life, exponent and size charged",
+   "target": 100,
+   "unit": "S$/t",
+   "value_l5": 189.7663258330813,
+   "value_lac_dcf": 190.0756479232632
+  }
+ },
+ "units": {
+  "absorber": {
+   "basis": "rigour of engine registry entry ETA_MEA",
+   "conditions": [
+    {
+     "class": "published",
+     "id": "P_ABSORBER",
+     "label": "Pressure",
+     "src": "TEV-961 A-53 (PDF p77), 389 psia, Case 5; PDF p77, A-53",
+     "unit": "bar",
+     "value": 30
+    },
+    {
+     "class": "assumed",
+     "id": "ETA_MEA",
+     "label": "Capture per pass",
+     "src": "Author design value of the MEA train, 90% per pass on absorber-inlet CO2 (decision D25); the CAPTURE sweep runs 80 to 95%; D25",
+     "unit": "-",
+     "value": 0.9
+    },
+    {
+     "class": "assumed",
+     "id": "W_MEA",
+     "label": "MEA strength",
+     "src": "Project solvent; whole source",
+     "unit": "kg/kg",
+     "value": 0.3
+    },
+    {
+     "class": "assumed",
+     "id": "LOADING_LEAN",
+     "label": "Lean loading",
+     "src": "Author design value of the MEA train (decision D25); Guo et al. 2018 Table 2, not verified; Table 2",
+     "unit": "mol/mol",
+     "value": 0.25
+    },
+    {
+     "class": "assumed",
+     "id": "LOADING_RICH",
+     "label": "Rich loading cap",
+     "src": "Author design cap (decision D28); no kinetic, density or viscosity data for MEA above a loading of 0.50 were found; D28",
+     "unit": "mol/mol",
+     "value": 0.5
+    }
+   ],
+   "driver": "ETA_MEA",
+   "gate": "M6",
+   "inputs": [
+    {
+     "class": "calculated",
+     "id": "co2_abs",
+     "label": "CO2 entering",
+     "src": "nush2_plant anchored port",
+     "unit": "kmol/h",
+     "value": 1219.8933008365855
+    }
+   ],
+   "label": "MEA absorber",
+   "outputs": [],
+   "results": [
+    {
+     "class": "calculated",
+     "id": "cap",
+     "label": "CO2 captured",
+     "src": "nush2_plant anchored port",
+     "unit": "kmol/h",
+     "value": 1097.9039707529269
+    },
+    {
+     "class": "calculated",
+     "id": "slip",
+     "label": "CO2 slip",
+     "src": "nush2_plant anchored port",
+     "unit": "kmol/h",
+     "value": 121.98933008365854
+    },
+    {
+     "class": "calculated",
+     "id": "solvent",
+     "label": "Lean solvent rate",
+     "src": "nush2_plant anchored port",
+     "unit": "t/h",
+     "value": 894.1329937811836
+    }
+   ],
+   "status": "fixed_assumption",
+   "term": "T02",
+   "used": "anchored"
+  },
+  "circ_primary": {
+   "basis": "balance computed by the anchored port, tagged reduced order by the engine exporter",
+   "conditions": [
+    {
+     "class": "assumed",
+     "id": "CIRC_CENTRAL_P_MPA",
+     "label": "Helium pressure",
+     "src": "Author budget, central case at 7.0 MPa, from the loop drops of INL/EXT-06-11109 PDF p11 to p12 (50 kPa per heat exchanger and per pipe leg) and the JAERI-Tech 2005-031 reformer mock-up, App. A-6 PDF p116; INL/EXT-11-21537 Table 2 gives circulator efficiency 0.75; Table 2; PDF p11 to p12",
+     "unit": "MPa",
+     "value": 7
+    },
+    {
+     "class": "assumed",
+     "id": "CIRC_CENTRAL_DP_PRIM_KPA",
+     "label": "Primary loop pressure drop",
+     "src": "Author budget, central case at 7.0 MPa, from the loop drops of INL/EXT-06-11109 PDF p11 to p12 (50 kPa per heat exchanger and per pipe leg) and the JAERI-Tech 2005-031 reformer mock-up, App. A-6 PDF p116; INL/EXT-11-21537 Table 2 gives circulator efficiency 0.75; Table 2; PDF p11 to p12",
+     "unit": "kPa",
+     "value": 150
+    },
+    {
+     "class": "assumed",
+     "id": "CIRC_CENTRAL_DP_SEC_KPA",
+     "label": "Secondary loop pressure drop",
+     "src": "Author budget, central case at 7.0 MPa, from the loop drops of INL/EXT-06-11109 PDF p11 to p12 (50 kPa per heat exchanger and per pipe leg) and the JAERI-Tech 2005-031 reformer mock-up, App. A-6 PDF p116; INL/EXT-11-21537 Table 2 gives circulator efficiency 0.75; Table 2; PDF p11 to p12",
+     "unit": "kPa",
+     "value": 200
+    },
+    {
+     "class": "assumed",
+     "id": "CIRC_CENTRAL_ETA",
+     "label": "Isentropic efficiency",
+     "src": "Author budget, central case at 7.0 MPa, from the loop drops of INL/EXT-06-11109 PDF p11 to p12 (50 kPa per heat exchanger and per pipe leg) and the JAERI-Tech 2005-031 reformer mock-up, App. A-6 PDF p116; INL/EXT-11-21537 Table 2 gives circulator efficiency 0.75; Table 2; PDF p11 to p12",
+     "unit": "-",
+     "value": 0.75
+    },
+    {
+     "class": "assumed",
+     "id": "ETA_MOTOR",
+     "label": "Motor efficiency",
+     "src": "Author assumption for pump and circulator motors, not verified; author assumption",
+     "unit": "-",
+     "value": 0.9
+    },
+    {
+     "class": "calculated",
+     "id": "T_CIRC_PRIM_K",
+     "label": "Primary circulator inlet",
+     "src": "Primary circulator inlet at the primary return, 491 C: the 466 C secondary return of TEV-961 Table 2 cont. (PDF p18) plus INL's 25 K approach (TEV-961 printed p.10); Table 2 cont., PDF p18; printed p.10",
+     "unit": "K",
+     "value": 764
+    },
+    {
+     "class": "calculated",
+     "id": "T_CIRC_SEC_K",
+     "label": "Secondary circulator inlet",
+     "src": "Secondary circulator inlet at the secondary helium return, 466 C, TEV-961 Table 2 cont. doc p17 (PDF p18); Table 2 cont., PDF p18",
+     "unit": "K",
+     "value": 739
+    }
+   ],
+   "driver": null,
+   "gate": "none",
+   "inputs": [
+    {
+     "class": "calculated",
+     "id": "he_prim",
+     "label": "Primary helium flow at need",
+     "src": "nush2_plant anchored port",
+     "unit": "kg/s",
+     "value": 79.29900489310252
+    },
+    {
+     "class": "calculated",
+     "id": "he_sec",
+     "label": "Secondary helium flow",
+     "src": "nush2_plant anchored port",
+     "unit": "kg/s",
+     "value": 54.01999982484111
+    }
+   ],
+   "label": "Helium circulators",
+   "outputs": [],
+   "results": [
+    {
+     "class": "calculated",
+     "id": "w_p",
+     "label": "Primary shaft work",
+     "src": "nush2_plant anchored port",
+     "unit": "MW",
+     "value": 3.5741219064187972
+    },
+    {
+     "class": "calculated",
+     "id": "w_s",
+     "label": "Secondary shaft work",
+     "src": "nush2_plant anchored port",
+     "unit": "MW",
+     "value": 3.133522753137751
+    },
+    {
+     "class": "calculated",
+     "id": "e_prim",
+     "label": "Primary circulator electricity",
+     "src": "nush2_plant anchored port",
+     "unit": "MWe",
+     "value": 3.9712465626875524
+    },
+    {
+     "class": "calculated",
+     "id": "e_sec",
+     "label": "Secondary circulator electricity",
+     "src": "nush2_plant anchored port",
+     "unit": "MWe",
+     "value": 3.4816919479308344
+    },
+    {
+     "class": "calculated",
+     "id": "e_circ",
+     "label": "Circulator electricity",
+     "src": "nush2_plant anchored port",
+     "unit": "MWe",
+     "value": 7.452938510618386
+    }
+   ],
+   "status": "reduced_order",
+   "term": "T11",
+   "used": "anchored"
+  },
+  "co2_compressor": {
+   "basis": "rigour of engine registry entry E_CO2COMP",
+   "conditions": [
+    {
+     "class": "published",
+     "id": "E_CO2COMP",
+     "label": "INL compression electricity, Case 6",
+     "src": "TEV-961 Table 2, 30 psia to 2,015 psia; Table 2",
+     "unit": "MWe",
+     "value": 6.4
+    },
+    {
+     "class": "published",
+     "id": "CO2_CAPTURED_C6",
+     "label": "INL captured CO2, Case 6",
+     "src": "TEV-961 Table 2 doc p16 (PDF p17). INL's ton is the short ton: the Case 5 and Case 2 CO2 mass flows of TEV-961 A-50 and A-51 give the published tons per day only in short tons; Table 2, PDF p17, doc p16, A-50, A-51",
+     "unit": "st/d",
+     "value": 1927
+    }
+   ],
+   "driver": "E_CO2COMP",
+   "gate": "M7",
+   "inputs": [],
+   "label": "CO2 compressor",
+   "outputs": [],
+   "results": [
+    {
+     "class": "calculated",
+     "id": "e_co2",
+     "label": "Compression electricity",
+     "src": "nush2_plant anchored port",
+     "unit": "MWe",
+     "value": 4.245458061527139
+    },
+    {
+     "class": "calculated",
+     "id": "captured",
+     "label": "CO2 compressed",
+     "src": "nush2_plant anchored port",
+     "unit": "t/y",
+     "value": 359777.3529471361
+    }
+   ],
+   "status": "fixed_assumption",
+   "term": "T09",
+   "used": "anchored"
+  },
+  "co2_storage": {
+   "basis": "rigour of engine registry entry TS_CENTRAL",
+   "conditions": [
+    {
+     "class": "assumed",
+     "id": "TS_CENTRAL",
+     "label": "Transport and storage tariff",
+     "src": "Author central tariff (decision D10); ERIA and GCCSI 2024 Fig. 2.13 (report PDF p121) puts transport in a Singapore CCS network at about US$43/t, S$56/t, with storage extra; Fig. 2.13, PDF p121",
+     "unit": "S$/tCO2",
+     "value": 60
+    },
+    {
+     "class": "assumed",
+     "id": "TS_BURDEN",
+     "label": "Ship fuel burden per tonne stored",
+     "src": "Author assumption for the ship transport and storage burden, not verified; author assumption",
+     "unit": "t/t",
+     "value": 0.025
+    }
+   ],
+   "driver": "TS_CENTRAL",
+   "inputs": [
+    {
+     "class": "calculated",
+     "id": "captured",
+     "label": "CO2 shipped to storage",
+     "src": "nush2_plant anchored port",
+     "unit": "t/y",
+     "value": 359777.3529471361
+    }
+   ],
+   "label": "CO2 storage, ship offshore",
+   "outputs": [],
+   "results": [
+    {
+     "class": "calculated",
+     "id": "stored",
+     "label": "CO2 delivered to storage",
+     "src": "nush2_plant anchored port",
+     "unit": "t/y",
+     "value": 359777.3529471361
+    },
+    {
+     "class": "calculated",
+     "id": "ts_cost",
+     "label": "Transport and storage charge, ledger line TS",
+     "src": "nush2_plant anchored port",
+     "unit": "S$M/y",
+     "value": 21.586641176828163
+    }
+   ],
+   "status": "fixed_assumption",
+   "term": null
+  },
+  "condenser": {
+   "basis": "rigour of engine registry entry SRD_CENTRAL",
+   "conditions": [
+    {
+     "class": "assumed",
+     "id": "P_STRIPPER",
+     "label": "Pressure, stripper top",
+     "src": "Author design value of the MEA train (decision D25), not verified against a syngas plant; D25",
+     "unit": "bar",
+     "value": 2
+    }
+   ],
+   "driver": "SRD_CENTRAL",
+   "inputs": [],
+   "label": "Overhead condenser",
+   "outputs": [],
+   "results": [
+    {
+     "class": null,
+     "id": "duty",
+     "label": "Condenser duty",
+     "src": "the M6 column model runs only at its design point, Case B recycle at 0.3 kg/kg MEA, lean loading 0.25, rich cap 0.5, 0.9 capture per pass, absorber 26.8 bar and stripper 2 bar; this solve moves away from it through P_ABSORBER",
+     "unit": "MW",
+     "value": null
+    }
+   ],
+   "status": "fixed_assumption",
+   "term": null
+  },
+  "cryogenic": {
+   "basis": "rigour of engine registry entry PHI_RECYCLE",
+   "conditions": [
+    {
+     "class": "calculated",
+     "id": "PHI_RECYCLE",
+     "label": "Carbon split after shift",
+     "src": "CO2/(CO2+CH4+CO) after the shift, 3754/(3754+1020+70) lbmol/h, reconstructed from TEV-961 Case 5 stream tables, A-53 to A-56 (PDF p77 to p80); A-53 to A-56, PDF p77 to p80",
+     "unit": "-",
+     "value": 0.775
+    }
+   ],
+   "driver": "PHI_RECYCLE",
+   "gate": "M7",
+   "inputs": [
+    {
+     "class": "calculated",
+     "id": "tailgas_c",
+     "label": "Tail gas carbon",
+     "src": "nush2_plant anchored port",
+     "unit": "kmol/h",
+     "value": 471.72808748245825
+    }
+   ],
+   "label": "Cryogenic unit",
+   "outputs": [],
+   "results": [
+    {
+     "class": "calculated",
+     "id": "recycled_c",
+     "label": "Carbon recycled to the reformer",
+     "src": "nush2_plant anchored port",
+     "unit": "kmol/h",
+     "value": 354.8235202792718
+    },
+    {
+     "class": "calculated",
+     "id": "burned_c",
+     "label": "Carbon in the burned cut",
+     "src": "nush2_plant anchored port",
+     "unit": "kmol/h",
+     "value": 116.90456720318645
+    },
+    {
+     "class": "calculated",
+     "id": "recycled_t_y",
+     "label": "Recycled carbon as CO2",
+     "src": "nush2_plant anchored port",
+     "unit": "t/y",
+     "value": 116273.80015933016
+    }
+   ],
+   "status": "reduced_order",
+   "term": "T04",
+   "used": "anchored"
+  },
+  "htgr": {
+   "basis": "balance computed by the anchored port, tagged reduced order by the engine exporter",
+   "conditions": [
+    {
+     "class": "published",
+     "id": "T_HE_SUPPLY",
+     "label": "Helium supply",
+     "src": "TEV-961 Table 2 cont.; Table 2 cont.",
+     "unit": "C",
+     "value": 900
+    },
+    {
+     "class": "published",
+     "id": "T_HE_RETURN",
+     "label": "Helium return",
+     "src": "TEV-961 Table 2 cont.; Table 2 cont.",
+     "unit": "C",
+     "value": 466
+    },
+    {
+     "class": "published",
+     "id": "ROT",
+     "label": "Reactor outlet",
+     "src": "TEV-961 Table 2; Table 2",
+     "unit": "C",
+     "value": 925
+    }
+   ],
+   "driver": null,
+   "inputs": [],
+   "label": "HTGR and helium loop",
+   "outputs": [],
+   "results": [
+    {
+     "class": "user_decision",
+     "id": "rating",
+     "label": "Rating",
+     "src": "REACTOR_RATED_MWTH",
+     "unit": "MWth",
+     "value": 210
+    },
+    {
+     "class": "calculated",
+     "id": "required",
+     "label": "Heat the process needs",
+     "src": "nush2_plant anchored port",
+     "unit": "MWth",
+     "value": 178.78991540213576
+    },
+    {
+     "class": "calculated",
+     "id": "margin",
+     "label": "Surplus at rating",
+     "src": "nush2_plant anchored port",
+     "unit": "MWth",
+     "value": 31.21008459786424
+    },
+    {
+     "class": "calculated",
+     "id": "e_circ",
+     "label": "Circulator electricity",
+     "src": "nush2_plant anchored port",
+     "unit": "MWe",
+     "value": 7.452938510618386
+    },
+    {
+     "class": "calculated",
+     "id": "he_prim",
+     "label": "Primary helium flow at need",
+     "src": "nush2_plant anchored port",
+     "unit": "kg/s",
+     "value": 79.29900489310252
+    }
+   ],
+   "status": "reduced_order",
+   "term": null
+  },
+  "ihx": {
+   "basis": "rigour of engine registry entry LOSS_CENTRAL_IHX",
+   "conditions": [
+    {
+     "class": "calculated",
+     "id": "IHX_APPROACH_K",
+     "label": "Approach",
+     "src": "Primary return 491 C against the secondary return of 466 C, TEV-961 Table 2 cont. doc p17 (PDF p18), the 25 K approach INL assumes (TEV-961 printed p.10); Table 2 cont., PDF p18; printed p.10",
+     "unit": "K",
+     "value": 25
+    }
+   ],
+   "driver": "LOSS_CENTRAL_IHX",
+   "gate": "none",
+   "inputs": [],
+   "label": "Intermediate heat exchanger",
+   "outputs": [],
+   "results": [
+    {
+     "class": "calculated",
+     "id": "q_ihx",
+     "label": "IHX loss",
+     "src": "nush2_plant anchored port",
+     "unit": "MW",
+     "value": 0.9734474168971241
+    },
+    {
+     "class": "calculated",
+     "id": "q_duct",
+     "label": "Duct loss",
+     "src": "nush2_plant anchored port",
+     "unit": "MW",
+     "value": 0.30747643642515715
+    },
+    {
+     "class": "calculated",
+     "id": "q_vessel",
+     "label": "Vessel loss",
+     "src": "nush2_plant anchored port",
+     "unit": "MW",
+     "value": 2.662560766763706
+    }
+   ],
+   "status": "fixed_assumption",
+   "term": "T12",
+   "used": "anchored"
+  },
+  "lean_cooler": {
+   "basis": "rigour of engine registry entry K_COOLING",
+   "conditions": [
+    {
+     "class": "assumed",
+     "id": "K_COOLING",
+     "label": "Cooling electricity per MW rejected",
+     "src": "Pumps and fans per MWth rejected. Same order as DICE circ. pumps plus fans 3.4 MWe (PDF p18); no direct published ratio; PDF p18",
+     "unit": "MWe/MWth",
+     "value": 0.015
+    }
+   ],
+   "driver": "K_COOLING",
+   "gate": "M6",
+   "inputs": [
+    {
+     "class": "calculated",
+     "id": "q_reb",
+     "label": "Reboiler duty the cooling load scales on",
+     "src": "nush2_plant anchored port",
+     "unit": "MW",
+     "value": 51.002549512009324
+    }
+   ],
+   "label": "Lean amine cooler",
+   "outputs": [],
+   "results": [
+    {
+     "class": "calculated",
+     "id": "e_cool",
+     "label": "MEA cooling electricity",
+     "src": "nush2_plant anchored port",
+     "unit": "MWe",
+     "value": 0.7650382426801399
+    },
+    {
+     "class": null,
+     "id": "duty",
+     "label": "Lean cooler duty",
+     "src": "the M6 column model runs only at its design point, Case B recycle at 0.3 kg/kg MEA, lean loading 0.25, rich cap 0.5, 0.9 capture per pass, absorber 26.8 bar and stripper 2 bar; this solve moves away from it through P_ABSORBER",
+     "unit": "MW",
+     "value": null
+    }
+   ],
+   "status": "fixed_assumption",
+   "term": "T08",
+   "used": "anchored"
+  },
+  "lean_pump": {
+   "basis": "balance computed by the anchored port, tagged reduced order by the engine exporter",
+   "conditions": [
+    {
+     "class": "assumed",
+     "id": "P_STRIPPER",
+     "label": "Suction, stripper pressure",
+     "src": "Author design value of the MEA train (decision D25), not verified against a syngas plant; D25",
+     "unit": "bar",
+     "value": 2
+    },
+    {
+     "class": "published",
+     "id": "P_ABSORBER",
+     "label": "Discharge, absorber pressure",
+     "src": "TEV-961 A-53 (PDF p77), 389 psia, Case 5; PDF p77, A-53",
+     "unit": "bar",
+     "value": 30
+    },
+    {
+     "class": "assumed",
+     "id": "RHO_SOLVENT",
+     "label": "Solvent density",
+     "src": "Between Hartono Table 3 values at loading 0.25 and 0.50, about 1,050-1,105; Table 3",
+     "unit": "kg/m3",
+     "value": 1050
+    },
+    {
+     "class": "assumed",
+     "id": "ETA_PUMP",
+     "label": "Pump efficiency",
+     "src": "Typical centrifugal; no letdown recovery credited; whole source",
+     "unit": "-",
+     "value": 0.75
+    },
+    {
+     "class": "assumed",
+     "id": "ETA_MOTOR",
+     "label": "Motor efficiency",
+     "src": "Author assumption for pump and circulator motors, not verified; author assumption",
+     "unit": "-",
+     "value": 0.9
+    }
+   ],
+   "driver": null,
+   "gate": "M6",
+   "inputs": [
+    {
+     "class": "calculated",
+     "id": "solvent",
+     "label": "Lean solvent rate",
+     "src": "nush2_plant anchored port",
+     "unit": "t/h",
+     "value": 894.1329937811836
+    }
+   ],
+   "label": "Lean amine pump",
+   "outputs": [],
+   "results": [
+    {
+     "class": "calculated",
+     "id": "e_pump",
+     "label": "Lean pump electricity",
+     "src": "nush2_plant anchored port",
+     "unit": "MWe",
+     "value": 0.9812159053840152
+    }
+   ],
+   "status": "reduced_order",
+   "term": "T07",
+   "used": "anchored"
+  },
+  "power": {
+   "basis": "rigour of engine registry entry ETA_POWER",
+   "conditions": [
+    {
+     "class": "published",
+     "id": "ETA_POWER",
+     "label": "Power conversion efficiency",
+     "src": "TEV-961 Table 2 cont. note 3, interpolated from TEV-981 (primary not held locally); Table 2 cont.",
+     "unit": "-",
+     "value": 0.397
+    },
+    {
+     "class": "calculated",
+     "id": "R_WORK_CENTRAL",
+     "label": "Back-pressure work ratio",
+     "src": "IEAGHG 2017-02 Case 1A back-pressure work per unit of condensing heat (PDF p68, p75 to p76), the author's calculation; PDF p68, p75 to p76",
+     "unit": "MWe/MWth",
+     "value": 0.169
+    }
+   ],
+   "driver": "ETA_POWER",
+   "inputs": [
+    {
+     "class": "calculated",
+     "id": "branch",
+     "label": "Reactor heat to the power and steam branch",
+     "src": "nush2_plant anchored port",
+     "unit": "MWth",
+     "value": 59.87314833000313
+    }
+   ],
+   "label": "Power and steam block",
+   "outputs": [
+    {
+     "class": "calculated",
+     "id": "e_nuc",
+     "label": "Electricity generated",
+     "src": "nush2_plant anchored port",
+     "unit": "MWe",
+     "value": 19.897197051826026
+    }
+   ],
+   "results": [
+    {
+     "class": "calculated",
+     "id": "gap",
+     "label": "Reactor steam to the reboiler",
+     "src": "nush2_plant anchored port",
+     "unit": "MW",
+     "value": 13.122787850559705
+    },
+    {
+     "class": "calculated",
+     "id": "e_total",
+     "label": "Site electricity demand",
+     "src": "nush2_plant anchored port",
+     "unit": "MWe",
+     "value": 19.897197051826026
+    },
+    {
+     "class": "calculated",
+     "id": "import_at_rated",
+     "label": "Grid import if the reactor is held at its rating, a card J.29 memo item that reads high below the need when back-pressure work feeds a reboiler gap",
+     "src": "nush2_plant anchored port",
+     "unit": "MWe",
+     "value": 0
+    }
+   ],
+   "status": "fixed_assumption",
+   "term": null
+  },
+  "psa": {
+   "basis": "rigour of engine registry entry PSA_H2_RECOVERY",
+   "conditions": [
+    {
+     "class": "published",
+     "id": "PSA_H2_RECOVERY",
+     "label": "H2 recovery, assumed",
+     "src": "TEV-953 doc p18, doc p20; TEV-961 A-53; doc p18, doc p20, A-53",
+     "unit": "-",
+     "value": 0.88
+    }
+   ],
+   "driver": "PSA_H2_RECOVERY",
+   "inputs": [
+    {
+     "class": "calculated",
+     "id": "h2_feed",
+     "label": "H2 in feed",
+     "src": "nush2_plant anchored port",
+     "unit": "kg/h",
+     "value": 10213.636363636364
+    }
+   ],
+   "label": "PSA, external block",
+   "outputs": [],
+   "results": [
+    {
+     "class": "calculated",
+     "id": "h2_product",
+     "label": "H2 product",
+     "src": "nush2_plant anchored port",
+     "unit": "kg/h",
+     "value": 8988
+    },
+    {
+     "class": "calculated",
+     "id": "h2_reject",
+     "label": "H2 in reject",
+     "src": "nush2_plant anchored port",
+     "unit": "kg/h",
+     "value": 1225.636363636364
+    }
+   ],
+   "status": "external",
+   "term": null
+  },
+  "reboiler": {
+   "basis": "rigour of engine registry entry SRD_CENTRAL",
+   "conditions": [
+    {
+     "class": "calculated",
+     "id": "srd",
+     "label": "Specific reboiler duty",
+     "src": "nush2_plant anchored port",
+     "unit": "GJ/t",
+     "value": 3.8
+    }
+   ],
+   "driver": "SRD_CENTRAL",
+   "gate": "M6",
+   "inputs": [
+    {
+     "class": "calculated",
+     "id": "cap_t_h",
+     "label": "CO2 captured",
+     "src": "nush2_plant anchored port",
+     "unit": "t/h",
+     "value": 48.31820480085094
+    }
+   ],
+   "label": "Reboiler",
+   "outputs": [],
+   "results": [
+    {
+     "class": "calculated",
+     "id": "q_reb",
+     "label": "Reboiler duty",
+     "src": "nush2_plant anchored port",
+     "unit": "MW",
+     "value": 51.002549512009324
+    },
+    {
+     "class": "calculated",
+     "id": "selexol",
+     "label": "Freed Selexol steam",
+     "src": "nush2_plant anchored port",
+     "unit": "MW",
+     "value": 12.732131619587392
+    },
+    {
+     "class": "calculated",
+     "id": "export",
+     "label": "Export steam to the reboiler",
+     "src": "nush2_plant anchored port",
+     "unit": "MW",
+     "value": 16.760915337688285
+    },
+    {
+     "class": "calculated",
+     "id": "ex4",
+     "label": "Syngas above 130 C to the reboiler",
+     "src": "nush2_plant anchored port",
+     "unit": "MW",
+     "value": 8.386714704173942
+    },
+    {
+     "class": "calculated",
+     "id": "avail",
+     "label": "Recovered heat available",
+     "src": "nush2_plant anchored port",
+     "unit": "MW",
+     "value": 37.87976166144962
+    },
+    {
+     "class": "calculated",
+     "id": "gap",
+     "label": "Reactor steam to the reboiler",
+     "src": "nush2_plant anchored port",
+     "unit": "MW",
+     "value": 13.122787850559705
+    }
+   ],
+   "status": "fixed_assumption",
+   "term": "T06",
+   "used": "anchored"
+  },
+  "recycle_compressor": {
+   "basis": "rigour of engine registry entry E_PURGE",
+   "conditions": [
+    {
+     "class": "published",
+     "id": "E_PURGE",
+     "label": "INL purge recovery electricity, Case 6",
+     "src": "TEV-961 Table 2, Purge Recovery; Table 2",
+     "unit": "MWe",
+     "value": 5.7
+    },
+    {
+     "class": "calculated",
+     "id": "PSA_REJECT_KMOL_H",
+     "label": "INL reject flow, Case 5",
+     "src": "TEV-961 Case 5 PSA reject molar flow reconstructed from TEV-961 Case 5 stream tables, A-53 to A-56 (PDF p77 to p80); it raises the purge load with the CO2 slip; A-53 to A-56, PDF p77 to p80",
+     "unit": "kmol/h",
+     "value": 1473
+    }
+   ],
+   "driver": "E_PURGE",
+   "inputs": [
+    {
+     "class": "calculated",
+     "id": "tailgas_c",
+     "label": "PSA reject carbon",
+     "src": "nush2_plant anchored port",
+     "unit": "kmol/h",
+     "value": 471.72808748245825
+    }
+   ],
+   "label": "Recycle compressor",
+   "outputs": [],
+   "results": [
+    {
+     "class": "calculated",
+     "id": "e_purge",
+     "label": "Recycle and nitrogen removal electricity",
+     "src": "nush2_plant anchored port",
+     "unit": "MWe",
+     "value": 4.322554564353807
+    }
+   ],
+   "status": "fixed_assumption",
+   "term": null
+  },
+  "rich_lean_hx": {
+   "basis": "rigour of engine registry entry SRD_CENTRAL",
+   "conditions": [
+    {
+     "class": "assumed",
+     "id": "LOADING_RICH",
+     "label": "Rich loading cap",
+     "src": "Author design cap (decision D28); no kinetic, density or viscosity data for MEA above a loading of 0.50 were found; D28",
+     "unit": "mol/mol",
+     "value": 0.5
+    },
+    {
+     "class": "assumed",
+     "id": "LOADING_LEAN",
+     "label": "Lean loading",
+     "src": "Author design value of the MEA train (decision D25); Guo et al. 2018 Table 2, not verified; Table 2",
+     "unit": "mol/mol",
+     "value": 0.25
+    }
+   ],
+   "driver": "SRD_CENTRAL",
+   "inputs": [
+    {
+     "class": "calculated",
+     "id": "solvent",
+     "label": "Lean solvent rate",
+     "src": "nush2_plant anchored port",
+     "unit": "t/h",
+     "value": 894.1329937811836
+    }
+   ],
+   "label": "Rich and lean amine exchanger",
+   "outputs": [],
+   "results": [
+    {
+     "class": null,
+     "id": "duty",
+     "label": "Exchanger duty",
+     "src": "the M6 column model runs only at its design point, Case B recycle at 0.3 kg/kg MEA, lean loading 0.25, rich cap 0.5, 0.9 capture per pass, absorber 26.8 bar and stripper 2 bar; this solve moves away from it through P_ABSORBER",
+     "unit": "MW",
+     "value": null
+    }
+   ],
+   "status": "fixed_assumption",
+   "term": null
+  },
+  "separator": {
+   "basis": "rigour of engine registry entry SYNGAS_CHAIN_C5_KO_DRM_1_MMBTU_H",
+   "conditions": [
+    {
+     "class": "published",
+     "id": "SYNGAS_CHAIN_C5_KO_DRM_1_T_OUT_C",
+     "label": "Separator temperature, INL Case 5",
+     "src": "TEV-961 A-55 to A-59 (PDF pp79-83), Case 5 used as proxy; Case 6 sheets not local; PDF pp79-83, A-55, A-59",
+     "unit": "C",
+     "value": 40
+    },
+    {
+     "class": "published",
+     "id": "P_ABSORBER",
+     "label": "Pressure, taken as the absorber pressure",
+     "src": "TEV-961 A-53 (PDF p77), 389 psia, Case 5; PDF p77, A-53",
+     "unit": "bar",
+     "value": 30
+    },
+    {
+     "class": "published",
+     "id": "SYNGAS_CHAIN_C5_KO_DRM_1_MMBTU_H",
+     "label": "Knock-out drum duty, INL Case 5, unscaled",
+     "src": "TEV-961 A-55 to A-59 (PDF pp79-83), Case 5 used as proxy; Case 6 sheets not local; PDF pp79-83, A-55, A-59",
+     "unit": "MMBtu/h",
+     "value": 19.7
+    }
+   ],
+   "driver": "SYNGAS_CHAIN_C5_KO_DRM_1_MMBTU_H",
+   "inputs": [],
+   "label": "Condensate separator",
+   "outputs": [],
+   "results": [
+    {
+     "class": "calculated",
+     "id": "condensate",
+     "label": "Condensate flow",
+     "src": "live Level 3 flowsheet FS_B_REC_F, stream S10 from the flash",
+     "unit": "t/h",
+     "value": 39.63380811993401
+    }
+   ],
+   "status": "fixed_assumption",
+   "term": null
+  },
+  "smr": {
+   "basis": "rigour of engine registry entry Q_PROCESS",
+   "conditions": [
+    {
+     "class": "published",
+     "id": "SYNGAS_CHAIN_C5_HPS_GEN1_T_IN_C",
+     "label": "Reformer outlet, INL equilibrium assumption",
+     "src": "TEV-961 A-55 to A-59 (PDF pp79-83), Case 5 used as proxy; Case 6 sheets not local; PDF pp79-83, A-55, A-59",
+     "unit": "C",
+     "value": 871
+    },
+    {
+     "class": "published",
+     "id": "T_HE_SUPPLY",
+     "label": "Helium supply",
+     "src": "TEV-961 Table 2 cont.; Table 2 cont.",
+     "unit": "C",
+     "value": 900
+    },
+    {
+     "class": "published",
+     "id": "T_HE_RETURN",
+     "label": "Helium return",
+     "src": "TEV-961 Table 2 cont.; Table 2 cont.",
+     "unit": "C",
+     "value": 466
+    }
+   ],
+   "driver": "Q_PROCESS",
+   "gate": "M4",
+   "inputs": [
+    {
+     "class": "calculated",
+     "id": "ng",
+     "label": "Natural gas feed",
+     "src": "nush2_plant anchored port",
+     "unit": "MMSCFD",
+     "value": 23.231552974345206
+    }
+   ],
+   "label": "Helium-heated steam methane reformer",
+   "outputs": [],
+   "results": [
+    {
+     "class": "calculated",
+     "id": "q_proc",
+     "label": "Process heat, includes preheat",
+     "src": "nush2_plant anchored port",
+     "unit": "MW",
+     "value": 120.8040754665951
+    },
+    {
+     "class": "calculated",
+     "id": "q_recyc",
+     "label": "Recycle slip heat",
+     "src": "nush2_plant anchored port",
+     "unit": "MW",
+     "value": 0.8768516455454203
+    }
+   ],
+   "status": "reduced_order",
+   "term": "T03",
+   "used": "anchored"
+  },
+  "stripper": {
+   "basis": "rigour of engine registry entry SRD_CENTRAL",
+   "conditions": [
+    {
+     "class": "assumed",
+     "id": "P_STRIPPER",
+     "label": "Pressure",
+     "src": "Author design value of the MEA train (decision D25), not verified against a syngas plant; D25",
+     "unit": "bar",
+     "value": 2
+    },
+    {
+     "class": "assumed",
+     "id": "LOADING_LEAN",
+     "label": "Lean loading",
+     "src": "Author design value of the MEA train (decision D25); Guo et al. 2018 Table 2, not verified; Table 2",
+     "unit": "mol/mol",
+     "value": 0.25
+    },
+    {
+     "class": "calculated",
+     "id": "srd",
+     "label": "Specific reboiler duty",
+     "src": "nush2_plant anchored port",
+     "unit": "GJ/t",
+     "value": 3.8
+    }
+   ],
+   "driver": "SRD_CENTRAL",
+   "gate": "M6",
+   "inputs": [
+    {
+     "class": "calculated",
+     "id": "solvent",
+     "label": "Rich solvent, at the lean rate",
+     "src": "nush2_plant anchored port",
+     "unit": "t/h",
+     "value": 894.1329937811836
+    }
+   ],
+   "label": "MEA stripper",
+   "outputs": [],
+   "results": [
+    {
+     "class": "calculated",
+     "id": "cap",
+     "label": "CO2 released",
+     "src": "nush2_plant anchored port",
+     "unit": "kmol/h",
+     "value": 1097.9039707529269
+    },
+    {
+     "class": "calculated",
+     "id": "q_reb",
+     "label": "Reboiler duty",
+     "src": "nush2_plant anchored port",
+     "unit": "MW",
+     "value": 51.002549512009324
+    }
+   ],
+   "status": "fixed_assumption",
+   "term": "T06",
+   "used": "anchored"
+  },
+  "syngas_cooler": {
+   "basis": "rigour of engine registry entry Q_EX4_ABOVE_130C",
+   "conditions": [
+    {
+     "class": "published",
+     "id": "SYNGAS_CHAIN_C5_HPS_GEN1_T_IN_C",
+     "label": "Syngas inlet, INL Case 5",
+     "src": "TEV-961 A-55 to A-59 (PDF pp79-83), Case 5 used as proxy; Case 6 sheets not local; PDF pp79-83, A-55, A-59",
+     "unit": "C",
+     "value": 871
+    },
+    {
+     "class": "published",
+     "id": "SYNGAS_CHAIN_C5_WGS_EX4_T_OUT_C",
+     "label": "Last exchanger outlet, INL Case 5",
+     "src": "TEV-961 A-55 to A-59 (PDF pp79-83), Case 5 used as proxy; Case 6 sheets not local; PDF pp79-83, A-55, A-59",
+     "unit": "C",
+     "value": 70
+    }
+   ],
+   "driver": "Q_EX4_ABOVE_130C",
+   "gate": "M4",
+   "inputs": [],
+   "label": "Syngas cooler and heat recovery",
+   "outputs": [],
+   "results": [
+    {
+     "class": "calculated",
+     "id": "ex4",
+     "label": "Syngas above 130 C to the reboiler",
+     "src": "nush2_plant anchored port",
+     "unit": "MW",
+     "value": 8.386714704173942
+    },
+    {
+     "class": "calculated",
+     "id": "selexol",
+     "label": "Freed Selexol steam",
+     "src": "nush2_plant anchored port",
+     "unit": "MW",
+     "value": 12.732131619587392
+    },
+    {
+     "class": "calculated",
+     "id": "export",
+     "label": "Export steam to the reboiler",
+     "src": "nush2_plant anchored port",
+     "unit": "MW",
+     "value": 16.760915337688285
+    }
+   ],
+   "status": "fixed_assumption",
+   "term": "T05",
+   "used": "modelled"
+  },
+  "wgs": {
+   "basis": "rigour of engine registry entry PHI_RECYCLE",
+   "conditions": [
+    {
+     "class": "calculated",
+     "id": "PHI_RECYCLE",
+     "label": "Carbon split after shift",
+     "src": "CO2/(CO2+CH4+CO) after the shift, 3754/(3754+1020+70) lbmol/h, reconstructed from TEV-961 Case 5 stream tables, A-53 to A-56 (PDF p77 to p80); A-53 to A-56, PDF p77 to p80",
+     "unit": "-",
+     "value": 0.775
+    },
+    {
+     "class": "published",
+     "id": "SYNGAS_CHAIN_C5_HPS_GEN1_T_OUT_C",
+     "label": "High-temperature shift inlet, INL Case 5",
+     "src": "TEV-961 A-55 to A-59 (PDF pp79-83), Case 5 used as proxy; Case 6 sheets not local; PDF pp79-83, A-55, A-59",
+     "unit": "C",
+     "value": 335
+    },
+    {
+     "class": "published",
+     "id": "SYNGAS_CHAIN_C5_WGS_EX2_T_OUT_C",
+     "label": "Low-temperature shift inlet, INL Case 5",
+     "src": "TEV-961 A-55 to A-59 (PDF pp79-83), Case 5 used as proxy; Case 6 sheets not local; PDF pp79-83, A-55, A-59",
+     "unit": "C",
+     "value": 191
+    }
+   ],
+   "driver": "PHI_RECYCLE",
+   "gate": "M4",
+   "inputs": [],
+   "label": "Water gas shift",
+   "outputs": [],
+   "results": [
+    {
+     "class": "calculated",
+     "id": "tube_c",
+     "label": "Tube carbon",
+     "src": "nush2_plant anchored port",
+     "unit": "kmol/h",
+     "value": 1574.055872047207
+    },
+    {
+     "class": "calculated",
+     "id": "wgs_heat_release",
+     "label": "Shift heat release",
+     "src": "live Level 3 flowsheet FS_B_REC_F, HTS and LTS beds at their inlet temperature",
+     "unit": "MW",
+     "value": 8.07156959529081
+    }
+   ],
+   "status": "reduced_order",
+   "term": "T01",
+   "used": "anchored"
+  }
+ },
+ "violations": []
+}

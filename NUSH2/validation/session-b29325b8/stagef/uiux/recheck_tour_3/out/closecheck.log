@@ -1,0 +1,11 @@
+recycle (recycle 210 case_b): closing step 13, lit 30, union of steps 1-12 30, dash paths 30 on 30 lines, running dash animations 60; dark []; lit not moved before []; moved before not lit []; dashes off lit [] -> ok
+export (export 210 case_b): closing step 13, lit 24, union of steps 1-12 24, dash paths 24 on 24 lines, running dash animations 48; dark ['S03', 'S21', 'S14', 'R1', 'S15', 'S16']; lit not moved before []; moved before not lit []; dashes off lit [] -> ok
+burn_on_site (burn_on_site 210 case_b): closing step 13, lit 25, union of steps 1-12 25, dash paths 25 on 25 lines, running dash animations 50; dark ['P4', 'S03', 'S21', 'R1', 'S15']; lit not moved before []; moved before not lit []; dashes off lit [] -> ok
+inl_selexol (inl_selexol 210 case_b): closing step 13, lit 25, union of steps 1-12 25, dash paths 25 on 25 lines, running dash animations 50; dark ['L3', 'L4', 'L5', 'L6', 'C1']; lit not moved before []; moved before not lit []; dashes off lit [] -> ok
+rating100 (recycle 100 case_b): closing step 13, lit 30, union of steps 1-12 30, dash paths 30 on 30 lines, running dash animations 60; dark []; lit not moved before []; moved before not lit []; dashes off lit [] -> ok
+case_a (recycle 210 case_a): closing step 13, lit 30, union of steps 1-12 30, dash paths 30 on 30 lines, running dash animations 60; dark []; lit not moved before []; moved before not lit []; dashes off lit [] -> ok
+case_a_burn (burn_on_site 210 case_a): closing step 13, lit 25, union of steps 1-12 25, dash paths 25 on 25 lines, running dash animations 50; dark ['P4', 'S03', 'S21', 'R1', 'S15']; lit not moved before []; moved before not lit []; dashes off lit [] -> ok
+selexol_r100 (inl_selexol 100 case_b): closing step 13, lit 25, union of steps 1-12 25, dash paths 25 on 25 lines, running dash animations 50; dark ['L3', 'L4', 'L5', 'L6', 'C1']; lit not moved before []; moved before not lit []; dashes off lit [] -> ok
+errors []
+8 of 8 input sets ok
+exit 0

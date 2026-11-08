@@ -1,0 +1,1748 @@
+=== s1
+Switch on a light tonight
+THE PROBLEM
+94%
+Natural gas in Singapore’s electricity fuel mix, 2024.
+Source: EMA, Our Energy Story; EMA, Singapore Energy Statistics 2025
+NUS-H2
+1
+
+=== s2
+Hydrogen could carry up to half
+THE PROBLEM
+Up to
+50%
+Low-carbon hydrogen, a possible share of power needs 
+by 2050.
+Source: METI, Hydrogen
+NUS-H2
+2
+
+=== s3
+Today’s hydrogen carries a carbon 
+bill
+THE PROBLEM
+9.21
+kg CO2 per kg H2
+Direct emissions of an unabated steam methane 
+reformer, INL basis.
+Source: INL TEV-953 Table 2, PDF p30. Status: reduced-order balances anchored on INL cases.
+NUS-H2
+3
+
+=== s4
+NUS-H2
+PROJECT
+Nuclear-Upgraded Steam Methane 
+Reforming with Carbon Capture for 
+Low-Carbon Hydrogen in Singapore.
+Wee Zhern Ray
+NUS-H2
+4
+
+=== s5
+Two targets, one straight 
+answer
+Net abatement
+met
+Result 0.578 Mt CO2e/y, target above 0.250
+Abatement cost
+missed
+Result S$165.6 to S$277.9/t, target under S$100
+SCOPE AND LIMITS
+0.250
+Mt CO2e/y net abatement S$100/t
+abatement cost
+Abatement target: met. Cost target: missed.
+Source: Project statement. Status: reduced-order balances anchored on INL cases.
+NUS-H2
+5
+
+=== s6
+One plant at real industrial 
+scale
+SCOPE AND LIMITS
+100,000
+Nm³/h of purified hydrogen
+66,925 t H2/y at 85% availability. PSA reject returns 
+across the boundary.
+Source: Air Liquide 2008; Air Liquide 2011; Decisions D04, D05. Status: reduced-order balances 
+anchored on INL cases.
+NUS-H2
+6
+
+=== s7
+A reformer heated by helium
+PROPOSED SOLUTION
+210 MWth
+Reactor rating
+Generic HTGR, helium-heated steam methane reforming, MEA capture, ship offshore storage.
+Source: INL TEV-961 Table 2; Decisions D06, D23
+NUS-H2
+7
+
+=== s8
+Helium heat replaces the 
+furnace
+PROPOSED SOLUTION
+120.8
+MWth at 900 °C
+Covers reforming and preheat. Helium returns at 
+466 °C.
+Source: INL TEV-961 printed p12 to p13, p21, PDF p14. Status: reduced-order balances anchored on 
+INL cases.
+NUS-H2
+8
+
+=== s9
+Less gas for the same hydrogen
+PROPOSED SOLUTION
+23.2
+MMSCFD, NUS-H2
+35.9
+MMSCFD, unabated steam 
+methane reforming
+Gas saving from published flows
+INL basis
+35.2%
+Ahn and Lee
+18.8%
+12.6 MMSCFD saved. Depends on recycle transferring 
+from Selexol to MEA.
+Source: INL TEV-953 Table 2, PDF p30; Ahn and Lee 2026; Decision D33. Status: reduced-order balances anchored on INL cases.
+NUS-H2
+9
+
+=== s10
+Capture, counted two ways
+PROPOSED SOLUTION
+90%
+per pass
+90.4%
+of plant carbon
+30 wt% MEA. 0.360 Mt CO2/y to storage. Per-pass 
+value is a project assumption.
+Source: Decisions D07, D25; IEAGHG 2022-07 PDF p44. Status: reduced-order balances anchored on 
+INL cases.
+NUS-H2
+10
+
+=== s11
+In INL’s own words
+“
+Increasing the HTGR ROT 
+significantly reduces natural 
+gas consumption
+R. Wood, INL TEV-961, 2010, Executive Summary
+PROPOSED SOLUTION
+30.9%
+less gas than INL’s conventional plant with capture, at 
+925 °C
+INL has not reviewed NUS-H2.
+Source: INL TEV-961 Executive Summary, PDF p5
+NUS-H2
+11
+
+=== s12
+Why nuclear: the temperature fits
+WHY NUCLEAR
+Reformer outlet 871 °C
+925 °C
+reactor outlet
+Reformer outlet 871 °C. Only test 
+reactors have run this hot.
+Source: Mears 2010; Nelson et al. 2011 PDF p9, p21; IAEA 
+NP-T-4.3 printed p23; JAEA, HTTR; WNN 2023
+NUS-H2
+12
+
+=== s13
+Heat and power from one 
+reactor
+Site electrical load, MWe
+12.33
+7.45
+Process loads
+Helium circulators
+WHY NUCLEAR
+19.8
+MWe site load, grid import 0
+Process loads 12.33 MWe. Helium circulators add 7.45 
+MWe.
+Source: Nuclear-Power.com; Decision D24; Integrated_Energy_Balance.csv. Status: reduced-order 
+balances anchored on INL cases.
+NUS-H2
+13
+
+=== s14
+INL reference: Case A
+HTGR-
+integrated 
+steam 
+methane 
+reforming
+925 °C reactor 
+outlet
+900 °C helium 
+supply
+Natural gas
+34.0 MMSCFD
+Nuclear heat
+176.8 MWth
+Nuclear electricity
+17.3 MWe
+Water
+743 gpm
+Hydrogen
+130 MMSCFD
+Steam
+83.7 MMBtu/h
+CO2 captured
+1,927 st/d
+CO2 emitted
+142 st/d
+Case A, INL reference (Wood, 2010)
+BASIS AND SIZING
+130
+MMSCFD hydrogen, INL reference
+INL reference. Separate from the proposed 210 MWth 
+design.
+Source: INL TEV-961 Table 2; Decision D03. Status: reduced-order balances anchored on INL cases.
+NUS-H2
+14
+
+=== s15
+The walk to 178.5 MWth
+Reactor need, MWth
+First sum, Case A scale
+206.0
+Scaled to Case B
+140.8
+Purge load restored
+150.6
+Losses
+154.3
+Circulators
+165.9
+Selexol swapped for 
+MEA
+166.2
+Reboiler gap
+179.0
+Syngas heat, gated 
+model
+178.5
+210 MWth rating
+BASIS AND SIZING
+178.5
+MWth needed, range 155.8 to 214.1
+SRD of 3.8 GJ/t is an assumption with no syngas 
+measurement.
+Source: Design decisions section 5; Decisions D24, D26; Validation_Results.csv sizing walk rows. 
+Status: reduced-order balances anchored on INL cases.
+NUS-H2
+15
+
+=== s16
+A margin that earns nothing
+BASIS AND SIZING
+31.5
+MWth spare, no revenue
+6.5 MWth on Ahn and Lee’s heat basis. 4.1 MWth 
+short at the adverse corner.
+Source: Decisions D03, X6, X7; Ahn and Lee 2026 Table 6. Status: reduced-order balances anchored 
+on INL cases.
+NUS-H2
+16
+
+=== s17
+Integration removes 
+equipment
+Condensing power plant removed. A small power block stays 
+for site loads.
+BENEFITS OF INTEGRATION
+218,274
+t CO2/y never formed
+The fired furnace goes. So does the large condensing 
+power plant.
+Source: INL TEV-961; Decision X12; Emissions_Ledger.csv. Status: reduced-order balances anchored 
+on INL cases.
+NUS-H2
+17
+
+=== s18
+TRISO: the first barrier
+Outer pyrolytic 
+carbon
+Silicon carbide
+Inner pyrolytic 
+carbon
+Porous carbon 
+buffer
+Fuel kernel
+RISKS: SAFETY
+1,600 °C
+fuel limit
+TRISO coatings are the first barrier to fission product 
+release, provided fuel stays below about 1,600 °C.
+Source: IAEA-TECDOC-1236 printed p14, p24, p54, p104; INL, TRISO fuel qualification
+NUS-H2
+18
+
+=== s19
+The IHX: the boundary we 
+must isolate
+RISKS: SAFETY
+First boundary
+Secondary helium held slightly above primary 
+pressure. Isolation valves are required and the figure 
+omits them.
+Source: IAEA NP-T-4.3 printed p11, p33; IAEA-TECDOC-1382 printed p4; IAEA-TECDOC-1236 printed 
+p54 to p55, p59; Tochio and Nakagawa 2011 PDF p9; Sato et al. 2006 PDF p11
+NUS-H2
+19
+
+=== s20
+900 °C helium is still unproven
+RISKS: SAFETY
+859 °C
+measured
+900 °C
+needed
+25 K approach is INL’s assumption. At 50 K the 
+reformer pinch falls to 4 K.
+Source: IAEA NP-T-4.3 printed p14; Tochio and Nakagawa 2011 PDF p4, p8; INL TEV-961 printed 
+p10; Sato et al. 2006 PDF p1. Status: reduced-order balances anchored on INL cases.
+NUS-H2
+20
+
+=== s21
+Emergency zone: set by a safety case
+RISKS: SAFETY
+Schematic of the method in the Xe-100 application, with no values. The Q&A backup slides 
+show the plotted target in rem.
+No 
+distance 
+claimed
+A low-power TRISO HTGR may 
+justify a smaller EPZ, subject to a 
+design-specific safety case.
+Source: IAEA NP-T-4.3 printed p18, p32 to p35; SingStat; Long Mott 
+application, Xe-100 EPZ report
+NUS-H2
+21
+
+=== s22
+Singapore is building 
+capability
+May 2026
+Singapore announces the IAEA INIR review
+26 October 2026
+METI and EMA launch manpower schemes
+2027
+INIR Phase 1 assessment, tentative date
+RISKS: REGULATION
+2027
+INIR Phase 1 assessment, tentative date, 19 areas
+Singapore has made no decision on nuclear energy.
+Source: METI, 19 May 2026; EMA and METI, 26 October 2026; Singapore Energy Lecture 2026 para 
+50
+NUS-H2
+22
+
+=== s23
+Acceptance has to be earned
+NOW
+SNRSI public lectures
+Open to anyone, including students
+BEFORE ANY SITE
+Public understanding
+Needed ahead of any site decision
+RISKS: COMMUNITY
+Public understanding 
+comes before any 
+site decision.
+SNRSI public lectures are open to anyone, including 
+students.
+Source: SNRSI Lectures; The Straits Times, 18 May 2026; IAEA NG-G-5.1
+NUS-H2
+23
+
+=== s24
+Proposed site: Western Island
+IMPLEMENTATION LOCATION
+The author's proposal. No 
+official approval.
+Links to the island are unpriced. Land may not exist at 
+the milestone dates.
+Source: gov.sg NDR 2026; BritCham Singapore 2026; Decisions D05, X15
+NUS-H2
+24
+
+=== s25
+2027 to 2050, every date illustrative
+IMPLEMENTATION ROADMAP
+2050
+Potential operation, illustrative
+Illustrative dates.
+Source: World Nuclear Association, HTR-PM; METI, 19 May 2026; Singapore Energy Lecture 2026
+NUS-H2
+25
+
+=== s26
+Where we draw the line
+EMISSIONS BOUNDARY
+Inside: reactor to ship offshore storage. Outside: PSA, upstream gas, construction.
+Source: Decisions D06, X10; METI, 13 June 2025
+NUS-H2
+26
+
+=== s27
+Same hydrogen, two plants
+A = Ebase − Eatm
+Net abatement equals baseline emissions 
+less emissions to atmosphere
+0.578 = 0.616 − 0.038 Mt CO2e/y
+EMISSIONS METHOD
+616,361
+t CO2/y baseline
+9.21 kg/kg on INL’s basis, bounded by 8.996 and 9.35.
+Source: INL TEV-953 Table 2, PDF p30; Cho et al. 2022; IEAGHG 2017-02 Table 2; Decisions D05, D07. 
+Status: reduced-order balances anchored on INL cases.
+NUS-H2
+27
+
+=== s28
+What still reaches the air
+Where the baseline carbon goes, t CO2/y
+359,777
+To storage
+218,274
+Never formed
+To air
+38,309
+EMISSIONS RESULT
+38,309
+t CO2/y to atmosphere
+0.57 kg CO2 per kg H2. 359,777 t/y goes to storage.
+Source: Emissions_Ledger.csv; Decision D04. Status: reduced-order balances anchored on INL cases.
+NUS-H2
+28
+
+=== s29
+Net abatement clears the 
+target
+Mt CO2e/y
+Unabated steam 
+methane 
+reforming
+0.616
+NUS-H2 to 
+atmosphere
+0.038
+Net abatement
+0.578
+Target 0.250
+EMISSIONS RESULT
+0.578
+Mt CO2e/y, 93.8% below unabated steam methane 
+reforming
+0.569 Mt/y with the storage chain burden charged. 
+Target 0.250 Mt/y: met.
+Source: Emissions_Ledger.csv; NCCS 2035 NDC; Decisions X9, X14. Status: reduced-order balances 
+anchored on INL cases.
+NUS-H2
+29
+
+=== s30
+Stress tests hold above target
+Net abatement, Mt/y
+Central
+0.578
+Cho baseline
+0.587
+IEAGHG baseline
+0.564
+80% per-pass capture
+0.564
+65% availability
+0.442
+Lifecycle burdens
+0.566
+Lifecycle, saved upstream 
+gas
+0.616
+Lost steam export counted
+0.528
+Target 0.250
+SENSITIVITY
+0.442
+Mt/y at 65% availability
+One input at a time. Corner runs carry no probability.
+Source: Sensitivity_Results.csv; Emissions_Ledger.csv; IAEA NP-T-4.3 printed p38. Status: reduced-
+order balances anchored on INL cases.
+NUS-H2
+30
+
+=== s31
+The assumption that matters most
+SENSITIVITY
+0.467
+Mt/y if recycle fails
+Central
+0.578
+Recycle fails
+0.467
+Capture offline
+0.218
+Target 0.250 Mt/y
+Gas rises to 30.4 MMSCFD. With capture offline, only 0.218 
+Mt/y remains.
+Source: Decision X20; Sensitivity_Results.csv tail gas rows. Status: reduced-order balances anchored on INL cases.
+NUS-H2
+31
+
+=== s32
+What the market compares us 
+with
+S$/t CO2e on one scale
+Carbon tax, 2026 
+to 2027
+S$45
+Stated view by 
+2030
+S$50 to S$80
+NUS-H2, BOAK, 
+25 y
+S$189.7
+Target S$100
+ECONOMICS
+S$45/t
+carbon tax, 2026 to 2027
+A stated view of S$50 to S$80/t by 2030. No offtake is 
+contracted.
+Source: NCCS Carbon Tax; Air Liquide and Aster 2025. Status: reduced-order balances anchored on 
+INL cases.
+NUS-H2
+32
+
+=== s33
+Cost, rebuilt two ways
+AC, abatement cost
+Annual ledger
+Each cost difference against unabated steam 
+methane reforming, levels L0 to L5
+Discounted cash flow
+Both plants, year by year, at equal hydrogen output
+ECONOMICS METHOD
+0.47%
+largest gap between the methods, over all 72 points
+0.2% on the headline grid. Equal hydrogen output, 
+8% real discount rate. Shared inputs, so agreement 
+tests the arithmetic.
+Source: Decision D08; Economic_Ledger.csv. Status: reduced-order balances anchored on INL cases.
+NUS-H2
+33
+
+=== s34
+The inputs that drive cost
+COST ASSUMPTIONS
+S$15/GJ
+Gas, the largest credit
+Input
+Low
+Central
+High Unit
+Gas
+10
+15
+20 S$/GJ
+Transport and storage
+23.2
+60
+112 S$/t
+Reactor capital
+1,456
+2,184
+2,548 US$/kWt
+Source: INL/RPT-23-72972 PDF p47; IEAGHG 2017-02 Tables 2, 3; IMF via FRED, PNGASJPUSDM; ERIA 2024; METI PQ, 8 April 2025; Decision D10, X18, X19
+NUS-H2
+34
+
+=== s35
+Reactor capital: first plant 
+against later plants
+Analogue only
+S$743M
+BOAK
+S$1,188M
+FOAK
+REACTOR COST
+S$743M
+BOAK
+S$1,188M FOAK
+Generic HTGR. Xe-100 is an analogue only, with no 
+vendor quotation.
+Source: INL/RPT-23-72972 Table 1, PDF p5, p47; X-energy; Decisions D09, D23, X4. Status: reduced-
+order balances anchored on INL cases.
+NUS-H2
+35
+
+=== s36
+The scale law moves everything
+REACTOR COST
+S$189.7
+n = 1.0, INL recipe
+S$277.7
+n = 0.6, project assumption
+S$368.7
+n = 0.31, ratio of two FOAK 
+estimates
+per tonne at BOAK, 25 y
+Source: INL/RPT-23-72972 PDF p25, p27, p39, p45; 
+Decisions D09, X5. Status: reduced-order balances 
+anchored on INL cases.
+NUS-H2
+36
+
+=== s37
+Hydrogen cost, both plants
+Unabated steam methane reforming
+NUS-H2 BOAK
+NUS-H2 FOAK
+3.62
+5.26
+6.02
+25 y
+3.62
+5.05
+5.71
+60 y
+Levelised cost of hydrogen, S$/kg
+HYDROGEN COST
+S$3.62/kg
+unabated 
+steam methane 
+reforming
+S$5.26/kg
+NUS-H2, BOAK, 
+25 y
+FOAK S$6.02/kg. At 60 y: BOAK S$5.05/kg, FOAK 
+S$5.71/kg.
+Source: Economic_Ledger.csv cash flow rows; IEAGHG 2017-02 Tables 3, 4, PDF p17, p18. Status: 
+reduced-order balances anchored on INL cases.
+NUS-H2
+37
+
+=== s38
+Every real cost is on the ladder
+ABATEMENT COST
+S$189.7/t
+Rebuilt full cost
+BOAK, 25 y, n = 1.0, 210 MWth 
+charged. Named step L3: S$137.7/t.
+Source: Economic_Ledger.csv; Decision D08. Status: reduced-order 
+balances anchored on INL cases.
+NUS-H2
+38
+
+=== s39
+Levelised abatement cost: 
+target missed
+Levelised abatement cost, discounted cash flow, S$/t
+BOAK, 25 y
+S$190.1
+Ledger S$189.7
+BOAK, 60 y
+S$166.0
+Ledger S$165.6
+FOAK, 25 y
+S$278.4
+Ledger S$277.9
+FOAK, 60 y
+S$242.2
+Ledger S$241.7
+ABATEMENT COST
+0 of 8
+central cases reach S$100/t
+Source: Economic_Ledger.csv; Decisions D08, X4. Status: reduced-order balances anchored on INL 
+cases.
+NUS-H2
+39
+
+=== s40
+What S$100/t would take
+ABATEMENT COST
+US$824/kWt
+Needed, against INL’s low of US$1,456/kWt
+Lever
+Needed at 25 y
+Needed at 60 y Tested range
+Gas, S$/GJ
+30.7
+26.5 To 20
+Reactor, US$/kWt
+824
+1,031 From 1,456
+T&S, S$/t
+−84.2
+−45.5 From 23.2
+Sized to need, S$/t reached
+161.2
+140.4 Still above target
+Source: Report section 4.7. Status: reduced-order balances anchored on INL cases.
+NUS-H2
+40
+
+=== s41
+S$96/t: S$100/t target met for a 10th-of-a-kind plant over 60 
+years with gas at S$20.7/GJ
+ABATEMENT COST
+MATURE_60Y: 10th-of-a-kind on INL’s BOAK learning route, 60 y, gas 
+at S$20.7/GJ
+S$95.6/t
+Annual ledger, L5
+S$95.9/t
+Discounted cash flow
+S$20.7/GJ
+Gas price that meets the target
+S$15/GJ
+Central gas price
+Higher gas prices lower the abatement cost, because NUS-H2 burns less gas than 
+an unabated steam methane reforming plant of the same output. S$20.7/GJ lies 
+above the S$10 to S$20/GJ range tested. At S$20/GJ the scenario gives S$99.6/t 
+on L5 and S$99.9/t by DCF.
+Base full cost
+BOAK, 25 y, n = 1.0, 210 MWth charged
+S$189.7/t
+Annual ledger, L5
+S$190.1/t
+Discounted cash flow
+S$100/t target missed at the base
+Source: Sensitivity_Results.csv MATURE_60Y rows; Economic_Ledger.csv; INL/RPT-23-72972 PDF p46. Status: reduced-order balances anchored on INL cases.
+NUS-H2
+41
+
+=== s42
+How the cost steps down to the target
+ABATEMENT COST
+Base
+S$189.7/t
+DCF S$190.1/t
+After the three steps
+S$95.6/t
+DCF S$95.9/t
+The reactor steps cut S$43.4/t for a 
+10th-of-a-kind unit and S$18.1/t for a 
+60 year life. Gas at S$20.7/GJ then cuts 
+S$32.6/t.
+Source: Sensitivity_Results.csv STEPDOWN rows; INL/RPT-23-72972 
+PDF p46. Status: reduced-order balances anchored on INL cases.
+NUS-H2
+42
+
+=== s43
+Overall feasibility
+OVERALL FEASIBILITY
+Carbon
+0.578 Mt/y
+Abatement met
+On this boundary, with 
+working capture and 
+recycle
+Cost
+S$165.6 to S$277.9/t
+Cost missed
+At central inputs. Met 
+at S$96/t for a 
+10th-of-a-kind plant 
+over 60 y with gas at 
+S$20.7/GJ, above the 
+tested range
+Technology
+IHX
+Unqualified
+No IHX built at this 
+duty
+Site and policy
+Open
+No decision
+Land and a national 
+decision do not yet 
+exist
+Source: Report sections 4 and 5. Status: reduced-order balances anchored on INL cases.
+NUS-H2
+43
+
+=== s44
+What this model has yet to 
+show
+Still to close
+Recycle transfer to MEA
+Ship liquefaction load
+Capture capital basis
+SRD on syngas
+HTGR availability
+Site links
+Backup firing capital
+Offshore accounting
+LIMITS OF THE MODEL
+360 of 650
+checks are independent of the source data
+325 pass (92 on independent data), 32 fail, 251 
+reported without a limit, 42 not run.
+Source: Validation_Results.csv; Design decisions sections 4 and 9. Status: reduced-order balances 
+anchored on INL cases.
+NUS-H2
+44
+
+=== s45
+The author
+AUTHOR
+Wee Zhern Ray
+NUS-H2
+45
+
+=== s46
+NUS-H2 in one slide
+CONCLUSION
+What
+210 MWth
+Helium-heated steam 
+methane reforming 
+with MEA capture
+Carbon
+0.578 Mt/y
+Target met
+93.8% cut against 
+same-size unabated 
+steam methane 
+reforming
+Cost
+S$189.7/t
+Base: target missed
+BOAK, 25 y. Target met 
+at S$96/t for a 
+10th-of-a-kind plant 
+over 60 y with gas at 
+S$20.7/GJ, above the 
+tested range
+Next
+2050
+IHX qualification and a 
+design-specific safety 
+case, on an illustrative 
+path
+NUS-H2
+46
+
+=== s47
+Reference Frame: variables
+BACKUP
+Symbol
+Definition
+Units
+Central
+ṁH₂
+Annual hydrogen
+t/y
+66,925
+a
+Availability
+%
+85
+TROT
+Reactor outlet
+°C
+925
+THe
+Secondary helium supply
+°C
+900
+Rrated
+Reactor rating
+MWth
+210
+Rneed
+Reactor needed
+MWth
+178.5
+Qproc
+Process heat
+MWth
+120.8
+Esite
+Site electrical load
+MWe
+19.8
+ebase
+Baseline intensity
+kg CO2/kg H2
+9.21
+Symbol
+Definition
+Units
+Central
+Ebase
+Baseline emissions
+t/y
+616,361
+Eatm
+Emissions to atmosphere
+t/y
+38,309
+A
+Net abatement
+Mt/y
+0.578
+ηpass
+Per-pass capture
+%
+90
+ηplant
+Plant capture
+%
+90.4
+qreb
+Specific reboiler duty
+GJ/t
+3.8
+r
+Real discount rate
+%
+8
+n
+Reactor size exponent
+none
+1.0
+L
+Learning rate per doubling
+%
+10
+Source: Final_Design_Basis.csv. Status: reduced-order balances anchored on INL cases.
+NUS-H2
+47
+
+=== s48
+Reference Frame: equations
+BACKUP
+(1)
+A = Ebase − Eatm
+(2)
+Ebase = ebase ṁH₂
+(3)
+ηplant = mcap / (mcap + Eatm)
+(4)
+Rneed = QIHX + Qloss + Qpower − Wshaft
+(5)
+Q = ṁcp ΔT
+(6)
+CRF = r / (1 − (1 + r)−N)
+(7)
+AC = ΔC / A
+(8)
+LCOHx = NPV(cx) / NPV(mH₂)
+(9)
+LAC = NPV(Δc) / NPV(A)
+(10) C(S) = Cref (S / Sref)n
+(11) CN = C1 (1 − L)log₂ N
+Ranges: SRD 3.4 to 4.2 GJ/t, life 25 to 60 y, 1.3 to 2.1 FOAK premium. CRF at 25 y is 0.0937 and at 60 y is 0.0808.
+Source: Project derivations; INL/RPT-23-72972 PDF p46, p47. Status: reduced-order balances anchored on INL cases.
+NUS-H2
+48
+
+=== s49
+Steam methane reforming plus CCS comparator
+BACKUP
+S$203.0/t
+IEAGHG Case 3 at matched T&S
+Item
+NUS-H2
+IEAGHG Case 3
+Capture route
+MEA on shifted syngas
+MEA on flue gas
+Overall capture
+90.4%
+90.0%
+Baseline, kg/kg
+9.21
+8.996
+Abatement, Mt/y
+0.578
+0.536
+Cost as published, S$/t
+not applicable
+162.1
+Cost at T&S S$60/t, S$/t
+BOAK 189.7, FOAK 277.9
+203.0
+Indicative. Gas price and availability differ from this ledger.
+Source: IEAGHG 2017-02 Tables 2 to 5; Decisions D11, X17. Status: reduced-order balances anchored on INL cases.
+NUS-H2
+49
+
+=== s50
+Cost ladder at 60 y
+BACKUP
+S$165.6/t
+Rebuilt full cost
+BOAK, 60 y, n = 1.0, 210 MWth 
+charged.
+Source: Economic_Ledger.csv. Status: reduced-order balances 
+anchored on INL cases.
+NUS-H2
+50
+
+=== s51
+Cost ladder, every level
+BACKUP
+S$57.8M/y
+Ceiling at the cost target
+S$/t
+BOAK 25 y
+BOAK 60 y
+FOAK 25 y
+FOAK 60 y
+L0 gas, capital, capture, T&S
+66.2
+49.7
+138.5
+112.0
+L1 reactor O&M and fuel
+110.0
+93.5
+182.3
+155.8
+L2 IHX and loop
+124.5
+108.0
+196.7
+170.3
+L3 licensing, decommissioning
+137.7
+117.2
+209.9
+179.5
+L4 interest, power island, recycle train
+174.5
+150.4
+262.7
+226.4
+L5 lost steam, avoided grid power
+189.7
+165.6
+277.9
+241.7
+DCF levelised abatement cost
+190.1
+166.0
+278.4
+242.2
+Source: Economic_Ledger.csv. Status: reduced-order balances anchored on INL cases.
+NUS-H2
+51
+
+=== s52
+Assumptions: plant
+BACKUP
+Item
+Value
+Status
+Reactor outlet, IHX approach
+925 °C, 25 K
+INL assumption, 50 K tested
+Secondary helium
+900 °C out, 466 °C back
+INL
+Reformer outlet
+871 °C
+INL equilibrium assumption
+Power conversion
+39.7%
+INL, 47.5% tested
+MEA
+30 wt%, rich 0.50, lean 0.25
+Project assumption
+Absorber, stripper
+26.8 bar, 2 bar
+INL, amine specification
+SRD
+3.8 GJ/t, 3.4 to 4.2
+Assumed from flue gas pilots
+Availability
+85%
+Assumed, no measured HTGR record
+Source: Final_Design_Basis.csv; INL TEV-961; Decisions D26 to D33
+NUS-H2
+52
+
+=== s53
+Assumptions: cost
+BACKUP
+Input
+Low
+Central
+High Unit
+Reactor overnight capital
+1,456
+2,184
+2,548 US$2019/kWt
+FOAK premium
+1.3
+1.6
+2.1 × BOAK
+Reactor O&M and fuel
+6
+10
+14 US$2019/MWth-h
+Gas
+10
+15
+20 S$/GJ
+T&S
+23.2
+60
+112 S$/t
+Extra licensing
+0
+50
+137.5 US$M
+Decommissioning
+750
+1,000
+1,250 US$2022/kWe
+Discount 8%. FX S$1.3065/US$. Construction 5.5 y.
+Source: INL/RPT-23-72972 Table 1; IEAGHG 2017-02; FRED, AEXSIUS; IMF via FRED, PNGASJPUSDM; ERIA 2024; Decision D10
+NUS-H2
+53
+
+=== s54
+Cost sensitivities
+BACKUP
+Change
+Full cost, S$/t Change
+Full cost, S$/t
+T&S S$23.2
+166.8 T&S S$112
+222.1
+Gas S$10/GJ
+218.3 Gas S$20/GJ
+161.2
+Availability 65%
+253.0 Availability 90%
+178.3
+Reactor capital low
+141.7 Reactor capital high
+213.8
+Gas saving on Ahn and Lee, carbon 
+held
+242.0 Capture capital on MEA flue gas
+220.5
+Sized to need
+161.2 No recycle
+283.1
+Source: Sensitivity_Results.csv; Report section 4.5. Status: reduced-order balances anchored on INL cases.
+NUS-H2
+54
+
+=== s55
+References: Singapore and policy
+BACKUP
+Energy Market Authority of Singapore. Our Energy Story: Gas. Link
+Energy Market Authority of Singapore. Singapore Energy Statistics 2025, Chapter 2: Energy 
+Transformation. Link
+Ministry of Energy, Trade and Industry, Singapore. Hydrogen. Link
+World Nuclear Association. Shidaowan HTR-PM 1, Nuclear Reactor Database (construction 
+start 9 December 2012, commercial operation 5 December 2023). Link
+Singapore Department of Statistics. Environment: latest news and data (total land area, 
+744.3 km² as at December 2025). Link
+Ministry of Energy, Trade and Industry, Singapore. Singapore to undertake IAEA review by 
+international experts to assess its ability to make informed decision on nuclear energy 
+deployment. 19 May 2026. Link
+NUS Singapore Nuclear Research and Safety Institute. SNRSI Lectures (public lectures open 
+to anyone, including students). Link
+Shabana Begum. First CEO of NUS nuclear institute lays out plans to help energy transition. 
+The Straits Times, 18 May 2026, p. A3. Link
+International Atomic Energy Agency. Stakeholder Engagement in Nuclear Programmes. IAEA 
+Nuclear Energy Series No. NG-G-5.1, 2021. Link
+Ministry of Energy, Trade and Industry, Singapore. Singapore and Indonesia sign 
+memoranda of understanding on cross-border electricity trade, carbon capture and storage, 
+and sustainable industrial zone. 13 June 2025. Link
+Energy Market Authority and Ministry of Energy, Trade and Industry, Singapore. Launch of 
+manpower development schemes. Media release, 26 October 2026. Link
+Ministry of Energy, Trade and Industry, Singapore. Singapore Energy Lecture 2026 by the 
+Minister. 26 October 2026. Link
+Government of Singapore. National Day Rally 2026: Future Ready. Link
+British Chamber of Commerce Singapore. Government will do studies on rich marine 
+biodiversity before Western Island reclamation. 25 August 2026. Link
+National Climate Change Secretariat, Singapore. Carbon Tax. Link
+National Climate Change Secretariat, Singapore. Singapore submits 2035 Nationally 
+Determined Contribution. 10 February 2025. Link
+Air Liquide. SOXAL develops key hydrogen business in Singapore. Press release, 15 January 
+2008. Link
+Air Liquide. Further investment in Singapore. Press release, 30 November 2011. Link
+Air Liquide and Aster. Air Liquide and Aster sign MOU to collaborate on low-carbon 
+hydrogen production in Singapore. Joint release, 24 November 2025. Link
+Ministry of Energy, Trade and Industry, Singapore. Written reply to PQ on projected cost per 
+tonne of carbon dioxide abated through carbon capture and storage in Singapore. 8 April 
+2025. Link
+NUS-H2
+55
+
+=== s56
+References: engineering and cost
+BACKUP
+IEAGHG. Techno-Economic Evaluation of [Steam Methane Reforming] Based Standalone 
+(Merchant) Hydrogen Plant with CCS. Report 2017-02, 2017. Link
+D. Mears. Module 2b: HTGR Motivations and Applications. NRC HTGR Technology Course, 
+Technology Insights for Idaho National Laboratory, 24 to 27 May 2010 (slide: Process 
+Application Temperatures).
+Idaho National Laboratory. Sensitivity of Hydrogen Production via Steam Methane 
+Reforming to High Temperature Gas-Cooled Reactor Outlet Temperature Process Analysis. 
+Technical Report TEV-961 Rev. 0, 2010.
+Idaho National Laboratory. HTGR-Integrated Hydrogen Production via Steam Methane 
+Reforming Process Analysis. Technical Report TEV-953 Rev. 0, 2010.
+Japan Atomic Energy Agency. Testing and Research Using HTTR, 2026. Link
+Long Mott Energy, LLC. Long Mott Generating Station Construction Permit Application, Part 
+VI, Supplemental Information, including the X-energy Xe-100 plume exposure pathway EPZ 
+technical report (Doc. ID 010810 Rev. 3, preliminary). NRC ADAMS ML25090A066, 2025. 
+Link
+H.H. Cho, V. Strezov and T.J. Evans. Environmental impact assessment of hydrogen 
+production via steam methane reforming based on emissions data. Energy Reports 8 (2022) 
+13585-13595. Link
+S. Ahn and C.-J. Lee. Comparative techno-economic and environmental assessment of 
+HTGR-integrated hydrogen production via helium-heated and electrified steam methane 
+reforming. International Journal of Hydrogen Energy 247 (2026) 155890.
+A. Abou-Jaoude, L. Lin, C. Bolisetti, E. Worsham, L.M. Larsen and A. Epiney. Literature Review 
+of Advanced Reactor Cost Estimates. Idaho National Laboratory, INL/RPT-23-72972 Rev. 3, 
+October 2023. Link
+International Atomic Energy Agency. Industrial Applications of Nuclear Energy. IAEA Nuclear 
+Energy Series No. NP-T-4.3, Vienna, 2017.
+IEAGHG. Low-Carbon Hydrogen from Natural Gas: Global Roadmap. Report 2022-07, 2022.
+World Nuclear News. Chinese HTR-PM demo begins commercial operation. December 
+2023. Link
+X-energy. Xe-100 reactor page. Link
+Economic Research Institute for ASEAN and East Asia. Comprehensive CCUS Research 
+Report, 2024 (Fig. 2.13). Link
+Federal Reserve Bank of St. Louis (FRED). Singapore Dollars to U.S. Dollar Spot Exchange 
+Rate, annual average (AEXSIUS). Link
+International Monetary Fund. Global price of LNG, Asia (PNGASJPUSDM), US dollars per 
+million BTU, monthly, via FRED, Federal Reserve Bank of St. Louis. Link
+International Atomic Energy Agency. Design and evaluation of heat utilization systems for 
+the high temperature engineering test reactor. IAEA-TECDOC-1236, Vienna, August 2001.
+International Atomic Energy Agency. Evaluation of high temperature gas cooled reactor 
+performance: Benchmark analysis related to initial testing of the HTTR and HTR-10. IAEA-
+TECDOC-1382, Vienna, November 2003.
+D. Tochio and S. Nakagawa. Thermal Performance of Intermediate Heat Exchanger during 
+High-Temperature Continuous Operation in HTTR. Journal of Nuclear Science and 
+Technology 48:11 (2011) 1361-1368. Link
+H. Sato, H. Ohashi, Y. Inaba, T. Nishihara, K. Hayashi and Y. Inagaki. Evaluation of Hydrogen 
+Production System Coupling with HTTR Using Dynamic Analysis Code. Transactions of the 
+Atomic Energy Society of Japan 5:4 (2006) 292-304.
+L.O. Nelson, A. Gandrik, M. McKellar, M. Patterson, E. Robertson and R. Wood. Optimum 
+Reactor Outlet Temperatures for High Temperature Gas-Cooled Reactors Integrated with 
+Industrial Processes. INL/EXT-11-21537, Idaho National Laboratory, 2011. Link
+Idaho National Laboratory. TRISO fuel qualification. Link
+Nuclear-Power.com. Nuclear fission. Link
+OUTRAM PARK, open-source nuclear simulation suite, credited as a reference. Link
+NUS-H2
+56
+
+=== s57
+What are some of the notable light-water small modular reactor designs?
+ACP100 (CNNC)
+ACP100 (China, 125 MWe)
+•
+Construction began in July 2021 at Changjiang 
+NPP in Hainan province.
+•
+Completed cold functional tests in 2025 and 
+expected to be in commercial ops in 2026 or 
+early 2027.
+Akademik Lomonosov docked
+KLT-40S (Russia, 2 x 35 MWe)
+•
+Towed and reached final destination in Sep 
+2019.
+•
+Connected to the grid in Dec. 2019, 
+commercial operation at the end of May 
+2020.
+•
+Expected to be one-of-a-kind.
+NuScale reactor modules
+NuScale (USA, 12 x 77 MWe)
+•
+Received Standard Design Approval issued by 
+U.S.NRC in Sept. 2020.
+•
+NRC agreed that the small modular reactor 
+does not need backup power and may have a 
+smaller emergency planning zone.
+•
+UAMPS will build its first plant at Idaho 
+National Lab.
+BWRX-300 Reactor (Installation of 
+basemat)
+BWRX-300 (USA-Japan, 300 MWe)
+•
+BWR developed by GE Vernova Hitachi 
+Nuclear Energy (GVH).
+•
+First unit construction started at Darlington, 
+Canada in 2026.
+•
+Also strong interest in Poland, US, etc.
+Q&A
+
+=== s58
+What are High-Temperature Gas-Cooled Reactors?
+□High temperature gas-cooled reactors (HTGRs) are advanced 
+reactors that used helium, an inert gas, instead of water as coolant.
+□Allows higher temperature (~750°C – 1000°C)
+□higher efficiency in electricity production
+□allows other applications, e.g., hydrogen production, 
+petrochemical processing, etc.
+□Uses TRISO fuel – a vastly improved fuel – in spherical balls or 
+prismatic blocks
+□The fuel is embedded into 100,000s of billiard ball-sized “pebbles” or 
+prismatic blocks of graphite.
+□Nuclear-grade graphite is used as neutron moderator (reduce speed 
+of neutrons), structural materials as well as reflector of neutrons.
+~10,000 coated particles embedded in graphite 
+sphere
+Fuel Sphere
+Dia 60 mm
+TRISO Coated Particle: Dia 0.92 mm
+Fuel Kernel: Dia 0.5 mm, ~0.0007 g of UO₂
+Silicon carbide barrier coating: withstand up to 
+1,600°C
+Fuel spheres form a graphite 
+pebble bed in reactor vessel
+Q&A
+
+=== s59
+What are TRISO particles?
+□Each TRISO particle consists of a kernel of uranium dioxide 
+(UO₂) fuel (sometimes UC or UCO), which has been coated 
+with four layers:
+□porous buffer layer made of carbon
+□dense inner layer of pyrolytic carbon (IPyC)
+□ceramic layer of silicon carbide (SiC)
+□dense outer layer of pyrolytic carbon (OPyC)
+□Designed not to crack from thermal or mechanical stresses at 
+temperatures up to 1600°C, and therefore can contain the 
+radioactive fission products during all conceivable “accident” 
+situations.
+60 mm
+5 mm fuel-free zone
+Spherical fuel pebbles
+TRISO particle (0.8 – 1.0 mm)
+~12 mm
+Cylindrical fuel compacts
+Prismatic graphite blocks
+Q&A
+
+=== s60
+How does pebble-bed HTGR (e.g., HTR-PM) work?
+Fuel element charge inlet
+Graphite reflector
+Reactor core
+Helium 
+circulator
+Steam 
+generator
+Fuel element discharge outlet
+□During normal operation, helium carries heat produced in the core to 
+the steam generator through the hot gas duct.
+□Pebbles move downwards due to gravity. They are discharged at the 
+bottom of the reactor vessel, tested and either returned to the core 
+from the top, or sent to the spent fuel canister (continuous refueling).
+□Considered to be “inherently safe” due to:
+□Strong negative feedback to change of temperature – fission stop 
+if there is a sudden large increase in temperature.
+□Graphite reflectors have excellent heat transfer properties that 
+enable the core to cool down to a stable and safe end-state 
+without any operator action.
+□TRISO fuel’s ability to retain fission products below 1600°C which 
+will not be reached in any situation.
+□Experimentally tested in reactors by shutting down helium flow to 
+demonstrate the inherent safety – “walkaway safe”.
+Q&A
+
+=== s61
+What is the prospect of HTGRs?
+HTR-PM (China, 2 x 105 MWe)
+• Criticality were achieved at the two reactors on 12 Sep and 10 Nov 
+2021
+• Loss-of-cooling tests successfully conducted at near full power in 
+Aug 2023
+• Commercial operations in Dec 2023
+• HTR-PM600 [6 modules] with 2 HPR1000 reactors commenced 
+construction in 2026
+Xe-100 (USA, 80 MWe each)
+•
+Awarded US$80 million (initial) in US DOE 
+Advanced Reactor Demonstration Project 
+in Oct 2020 [up to US$1.2b federal cost-
+shared funding]
+•
+Plan to deploy, with utility partner Energy 
+Northwest, to deliver the commercial scale 
+Xe-100 (960 MWe) by 2030
+•
+Submitted CPA (with Dow) for 320 MWe 
+plant at Seadrift, Texas.
+In our region:
+□Indonesia earlier initiated the process to construct an Experimental Power Reactor (RDE, 10 MWt / 3 MWe) in Serpong and also worked on a 
+40 MWt / 15 MWe PeLUIt-40 Reactor with Tsinghua University through their joint lab on HTGR technology.
+□US firm Valar Atomics plans to build a micro high temperature gas reactor (100-kW, prismatic design) with the Philippine Nuclear Research 
+Institute as a “proof of concept.”
+
+=== s62
+How would the enhanced safety of small modular reactors affect siting?
+□Conventional large reactors requires a large “emergency planning zone (EPZ)” of around 15 – 30 km to ensure that population around the 
+plant can be protected or evacuated in the unlikely event of a severe accident with large release of radioactive materials.
+□For small modular reactors (including HTGR-type), due to the (1) 
+smaller core radionuclide inventories and (2) efficient passive or 
+“inherent” safety systems, EPZ are expected to be substantially smaller.
+□Small modular reactor vendors target to reduce to hundreds of metres 
+or within plant site boundary – anyone outside EPZ will not be 
+subjected to dose above regulatory dose limits.
+□This could allow small modular reactors to be located closer to 
+population centres, or to co-locate with industrial facilities or possibly 
+replace current coal plants.
+0.001
+0.01
+0.1
+1
+10
+100
+1000
+102
+100
+10-2
+10-4
+10-6
+10 CFR 20
+EPA PAG
+10 CFR 50.34
+QHO
+LMP F-C Target
+Event Sequence Frequency [1/plant-year]
+30-day Total Effective Dose Equivalent (TEDE) at 400 m [rem]
+Example of EPZ determination [slightly modified from the Preliminary Safety Analysis Report 
+(PSAR) submitted to US NRC for the construction of 4 x 80 MWe XE-100 at Long Mott Generating 
+Station, Texas].
+Q&A
+
+=== s63
+How can nuclear contribute beyond electricity?
+□From the CO₂ emission profile of Singapore in 2023, industry contributed to 64.3% of the 55.5 MtCO₂e.
+□Using heat directly from nuclear power reactors for the industry could potentially accelerate the decarbonization process.
+□Steam from the secondary circuit after 
+passing through the turbine in Haiyang 
+NPP, China, have been used to heat the 
+homes of 400,000 residents around 
+Haiyang.
+□Nuclear power has also been used in 
+desalination projects, e.g., 14,000 m³ of 
+potable water per day in
+Power
+Industry
+Transport
+Emissions: 55.5 MtCO2e
+PRIMARY EMISSIONS
+Power 38.7%
+Industry 47.3%
+Transport 11.7%
+Buildings 0.8%
+Household 0.4%
+Waste and Water 0.6%
+Others 0.6%
+SECONDARY EMISSIONS
+Industry 17.0%
+Transport 2.2%
+Buildings 12.4%
+Household 6.1%
+Waste and Water 0.7%
+Others 0.2%
+Primary emissions refer to direct emissions from the sector’s owned or 
+controlled sources. Secondary emissions refer to the sector’s share of 
+Power sector’s emissions based on its share of electricity consumption. 
+Outer ring: Power sector emissions allocated by electricity use.
+Emission profile of Singapore in 2023
+
+=== s64
+How can process heat be used in the industry?
+□Higher temperature heat is needed for many 
+other industrial processes.
+□HTGRs are more suited for these process 
+due to the higher temperature that it can 
+produce.
+□Molten Salt Reactors (with output 
+temperature of 500 - 800°C) could also be 
+used for industrial heat when they are 
+commercialized.
+0
+100
+200
+300
+400
+500
+600
+700
+800
+900
+1000
+Process Temperature °C
+HTSE and Thermo-Chemical Hydrogen Production
+Coal Gasification
+800-1000°C
+Steam Reforming of Natural Gas
+Biomass Hydrothermal Gasification
+500-900°C
+Cogeneration of Electricity and Steam
+350-800°C
+Oil Shale and Oil Sand Processing
+300-600°C
+Petroleum Refining
+250-550°C
+Ethanol Concentration
+Seawater Desalination
+District Heating
+80-200°C
+LWRs
+HTGRs
+Q&A
+
+=== s65
+Can HTGRs be used for industry?
+Rendering of the Xuwei nuclear site, Jiangsu 
+https://www.youtube.com/watch?v=GSk3CKOZrC0
+□China State Council approved construction for HTR-
+PM600 with 2 HPR-1000 (1000 MWe PWRs) at Xuwei, 
+Jiangsu in China in 2024.
+□Construction of first HPR1000 in Jan 2026 and for 
+HTR600 expected in Sep 2026.
+□Demineralised water is heated by the primary steam of 
+the HPR-1000s to produce saturated steam.
+□The primary steam of the HTGR will then be used to 
+heat the saturated steam for the second time to be used 
+in the petrochemical plant (about 10 km away).
+□Xuwei site is expected to contain 2 x HTR-PM600 
+coupled to 4 x HPR1000 and constructed in 2 phases.
+Q&A
+
+=== s66
+Will small modular reactors be too costly (per kWh) to be used?
+There are only a couple of real FOAK small modular reactors and no NOAK small modular reactors at this time to give a good real world 
+comparison of the cost (say LCOE) of small modular reactors vs large conventional reactors. Following are points for consideration:
+□All first-of-a-kind (FOAK) reactors are very costly due to the development cost, new supply chain, regulatory cost, etc. Cost is 
+expected to fall significantly for the Nth-of-a-kind (NOAK) reactor as seen in various past examples in most countries.
+□Further cost savings could come from manufacturing (in a factory) vs construction (at the site) due to the modular nature of small 
+modular reactors.
+□Additional cost to use conventional large reactors, e.g., grid improvement, will have to be taken into account in comparison, or for 
+isolated communities that are not connected to grid.
+□Small modular reactors built for special purpose, e.g., high temperature heat for petrochemical industry or thermochemical 
+hydrogen production, may also be more cost effective.
+□Cost of the nuclear island is usually a small part (typically < 20% in US) of the total cost of a nuclear power construction which 
+includes the balance of plant (turbine, electrical yards, EPC costs, etc.).
+□With expected shorter construction time and flexibility in deployment for small modular reactors, financing could be significantly 
+easier with lower cost.
+Q&A
+
+=== s67
+How are spent fuels managed?
+□Spent nuclear fuels are extremely radioactive, with atoms having lifetimes ranging from very short (much less than a second), to intermediate 
+(decades) to very long (billions of years).
+□Must be cooled initially, and then stored safely for a very long time.
+Spent fuels are first cooled in spent fuel pools 
+within the power plant.
+After sufficiently cooled in SFP, the spent fuels 
+are transferred to dry casks usually still within 
+the plant.
+Deep Geological Repository provides long-term storage 
+(may be retrievable) for spent fuel. Alternative: deep bore-
+holes (up to 5 km) with the lower portion sealed off.
+1 Surface facilities
+2 Main shaft complex
+3 Placement rooms
+4 Ventilation exhaust shaft
+Depth ~500 m
+Q&A
+
+=== s68
+Are the wastes from small modular reactors harder to manage?
+□Nuclear waste light-water small modular reactors, such as NuScale small modular reactor or BWRX-300 will not 
+be too different from conventional PWRs or BWRs. Volume for some wastes, such as low-level wastes could be 
+higher due to higher level of radiation because of the smaller core.
+□Wastes from non light-water small modular reactors will require different methods of treatment. HTGR spent 
+fuel is an interesting example.
+□It has a larger volume if not treated, requiring more storage space (-)
+□Would be harder to be reprocessed, i.e., remove the long-lived radionuclides like uranium and plutonium (?)
+□It does not need to be put into a spent fuel pool after taken out of the core and can be stored as it is during 
+intermediate stage (air cooled is sufficient) or for final disposal (++)
+Q&A
+
+=== s69
+What are some key takeaways?
+□Gen III / III+ Reactors based on large pressurised water reactors (PWR) will continue to be the main reactors to 
+be connected to grid in the next decade that will help in reducing CO2.
+□FOAK Small Modular Reactors using PWR technologies with passive safety features are starting to be deployed 
+and will very likely be commercialised in early 2030.
+□High Temperature Gas-cooled Reactor (HTGR) technologies has been deployed and their inherently safety has 
+been demonstrated (to a certain extent). They have great potential for supplying quality high temperature heat 
+to relevant industries and a new plant is currently under construction in China and one planned in US for this 
+purpose.
+□Hybrid systems combining nuclear and renewables are considered by many to be most likely to achieve net 
+zero emission by 2050.
+Q&A
+
+=== s70
+What about Nuclear Fusion?
+Generation I
+Big Rock Point, GE BWR
+Early prototypes
+• Calder Hall (GCR)
+• Douglas Point (PHWR/CANDU)
+• Dresden-1 (BWR)
+• Fermi-1 (SFR)
+• Kola 1-2 (PWR/VVER)
+• Peach Bottom 1 (HTGR)
+• Shippingport (PWR)
+Generation II
+Diablo Canyon, Westinghouse PWR
+Large-scale power stations
+• Bruce (PHWR/CANDU)
+• Calvert Cliffs (PWR)
+• Flamanville 1-2 (PWR)
+• Fukushima II 1-4 (BWR)
+• Grand Gulf (BWR)
+• Kalinin (PWR/VVER)
+• Kursk 1-4 (LWGR/RBMK)
+• Palo Verde (PWR)
+Generation III / III+
+Kashiwazaki, GE ABWR  |  Olkiluoto 3, AREVA PWR
+Evolutionary designs
+• ABWR (GE-Hitachi; Toshiba 
+BWR)
+• ACR 1000 (AECL CANDU 
+PHWR)
+• AP1000 (Westinghouse-
+Toshiba PWR)
+• APR-1400 (KHNP PWR)
+• APWR (Mitsubishi PWR)
+• Atmea-1 (Areva NP-Mitsubishi 
+PWR)
+• CANDU 6 (AECL PHWR)
+• EPR (AREVA NP PWR)
+• ESBWR (GE-Hitachi BWR)
+• Small Modular Reactors
+– B&W mPower PWR
+– CNEA CAREM PWR
+– India DAE AHWR
+– KAERI SMART PWR
+– NuScale PWR
+– OKBM KLT-40S PWR
+• VVER-1200 (Gidropress PWR)
+Generation IV
+Safe
+Secure
+Sustainable
+Competitive
+Versatile
+Arriving ~2030
+Innovative designs
+• GFR gas-cooled fast reactor
+• LFR lead-cooled fast reactor
+• MSR molten salt reactor
+• SFR sodium-cooled fast reactor
+• SCWR supercritical water-
+cooled reactor
+• VHTR very high temperature 
+reactor
+Fusion Reactors
+Arriving ~2060?
+Ultimate Energy Source
+• ITER / DEMO (Tokamak)
+• EAST / CFETR (Tokamak)
+• NIF (Inertial Confinement 
+Fusion)
+• CFS (Tokamak, HTS)
+• TAE (FRC, aneutronic)
+• GF (Magnetized Target Fusion, 
+piston)
+• Hyperjet (MTF, plasma jets)
+1950
+1970
+1990
+2010
+2030
+2050 ?
+2070
+2090
+Q&A
+
+=== s71
+If an accident happens, where to run?
+Singapore
+International Boundary
+Major Road
+Minor Road
+Built up Areas
+□Selected technology should have:
+□Very low frequency (say 1 in 1,000,000 
+reactor-years of operation) of any 
+significant accident that could affect the 
+public.
+□Even in the event of such an accident, the 
+release will be low enough so that there is 
+no evacuation or
+□There are mitigation measures to ensure 
+no evacuation.
+□That is Low frequency and Very Low 
+Consequences!
+□Answer: “No need to run”
+Q&A
+
+=== s72
+Can government co-funding lower the abatement cost further?
+Q&A
+189.7
+96.0
+165.6
+96.0
+0
+25
+50
+75
+100
+125
+150
+175
+200
+BOAK, 25 y, no co-funding
+BOAK, 25 y, 65.0% co-
+funded
+BOAK, 60 y, no co-funding
+BOAK, 60 y, 56.0% co-
+funded
+Abatement cost (S$/tCO₂e)
+Abatement cost, annual ledger (L5)
+S$100/tCO₂e threshold
+• Co-funding S$483.0M, 65.0% of the S$742.8M 
+reactor capital, brings BOAK over 25 years to 
+S$96/tCO₂e on the annual ledger. The cash flow 
+needs S$483.6M, 65.1%.
+• Over 60 years, S$416.0M, 56.0%, is enough on the 
+ledger. The cash flow needs S$417.1M, 56.2%.
+• Without co-funding, BOAK costs S$189.7 and 
+S$165.6/tCO₂e on the ledger, and S$190.1 and 
+S$166.0/tCO₂e by cash flow (n = 1.0, 210 MWth 
+charged).
+• Co-funding moves cost to the public budget. The 
+total resource cost stays the same.
+Government support can reduce early deployment risk, while technological maturity and industrial offtake determine long-term 
+commercial viability.

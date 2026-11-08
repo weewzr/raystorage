@@ -1,0 +1,39 @@
+diff --git a/docs/UI_UX_ASSESSMENT.md b/docs/UI_UX_ASSESSMENT.md
+index d7addea..f1a22f6 100644
+--- a/docs/UI_UX_ASSESSMENT.md
++++ b/docs/UI_UX_ASSESSMENT.md
+@@ -139,7 +139,9 @@ Every stream moves at one fixed screen speed, and the card says the speed carrie
+ ### 5.5 Controls and accessibility
+ 
+ - Every control is a real button reachable by keyboard. Previous and Next use `aria-disabled` at the ends, so focus never lands on a disabled element.
+-- Starting the tour brings the tour near the top of the window: the top of the layout when the card is in the side column, the bar when the card sits under the drawing. Focus then goes to the step title when it is fully in view, or else to the first control of the bar. On each later step change the side column returns to its top, and the page scrolls up when the card's head is above the window. When the reader steps with a button of the card or the bar, by mouse or by key, that button keeps focus and stays whole in view with its focus ring: the page scrolls up to the card head only as far as the button allows, and when a longer card pushes the button out of the side column or the window, they scroll just far enough to show it again. Exit, or Escape, closes the tour and returns focus to the start button. Escape closes an open stream tooltip first.
++- Starting the tour brings the tour near the top of the window: the top of the layout when the card is in the side column, the bar when the card sits under the drawing. Focus then goes to the step title when it is fully in view, or else to the first control of the bar. Exit, or Escape, closes the tour and returns focus to the start button. Escape closes an open stream tooltip first.
++- An automatic step, while the tour plays, scrolls neither the page nor the side column, wherever the reader has scrolled and wherever focus sits: it only redraws the step and announces it. When the card changes height above the part of the page the reader is looking at, the browser's own scroll anchoring may move the scroll position by that change so the view holds still; the tour itself calls no scroll on an automatic step.
++- A step the reader asks for, by a button of the card or the bar or by an arrow key, keeps the control they used whole in view with its focus ring, by the smallest scroll, and also brings the card head into view when the head and that control fit in the window together. When they do not fit, the control wins. With an arrow key the control is the focused element of the card or the bar; with focus elsewhere only the card head counts. Replay after the last step counts as such a step. The side column scrolls first when it holds the card, and then the page. The button used keeps focus.
+ - With focus off the drawing and off any form control, Left and Right arrows change the step; on the drawing or in a form control the arrows keep their own work. Space pauses or plays in the same places, except on a button or a link, which keeps its usual Space and Enter, so Space on the card's Previous or Next presses that button. The card's own Previous and Next buttons follow the step title in the tab order, and a line under them names these keys in the same terms.
+ - Each step is announced once through a visually hidden `aria-live` region; the unit panel's own live region is silenced while the tour runs.
+ - Pause stops every moving part, the dashes and the inset animations included.
+@@ -155,7 +157,7 @@ Every stream moves at one fixed screen speed, and the card says the speed carrie
+ | `frontend/index.html` | Start button, control bar, caption card with its Previous and Next buttons and key line, and live region; `data-tour` keys on the core outline, the boundary, the stack and the labels the steps light. |
+ | `frontend/pfd.js` | Loads the tour apart from the drawing so a fault there leaves the PFD working, passes it the drawing hooks, re-renders the open step on each reply; unit focus scrolling respects reduced motion. |
+ | `frontend/panels.js` | Exports the existing reply path resolver. |
+-| `frontend/selftest.js` | Ten tour checks (section 7). |
++| `frontend/selftest.js` | Twelve tour checks (section 7). |
+ | `scripts/selftest.py` | `--reduced-motion` emulates the media feature, so the whole self test can run against the still tour. |
+ | `.github/workflows/site.yml` | Runs the browser self test a second time with `--reduced-motion`. |
+ 
+diff --git a/frontend/tour.css b/frontend/tour.css
+index 091169f..98e0a40 100644
+--- a/frontend/tour.css
++++ b/frontend/tour.css
+@@ -66,8 +66,8 @@
+   font-weight: 600;
+   cursor: pointer;
+   white-space: nowrap;
+-  /* The room tour.js keeps around a focused button when it scrolls it back
+-     into view, so the focus ring shows too. */
++  /* Room around a button the browser scrolls into view when it takes focus,
++     so the focus ring shows too; tour.js keeps the same room (RING_PX). */
+   scroll-margin: 8px;
+ }
+ .tour-btn:hover { border-color: var(--accent); }

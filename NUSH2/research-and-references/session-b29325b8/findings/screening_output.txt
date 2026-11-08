@@ -1,0 +1,360 @@
+REPRODUCTION CHECKS
+  PASS  H2 t/y Case A: 97,946.0148 vs 97,946.0000 (tol 1)
+  PASS  H2 t/y Case B (deck prints 66,927): 66,924.6480 vs 66,925.0000 (tol 1)
+  PASS  Scale factor s: 0.6833 vs 0.6833 (tol 0.0002)
+  PASS  He duty 78.49 x 5.193 x 434: 176.8978 vs 176.9000 (tol 0.05)
+  PASS  Sum of Case 6 electricity rows: 17.3000 vs 17.3000 (tol 1e-09)
+  PASS  Slide 6 reactor: 206.0191 vs 206.0000 (tol 0.05)
+  PASS  Complete Case 6 reactor: 220.3768 vs 220.4000 (tol 0.05)
+  PASS  Feed carbon, st/d CO2: 2,077.5386 vs 2,077.6000 (tol 0.5)
+  PASS  NG C 1.05379: 1.0538 vs 1.0538 (tol 1e-05)
+  PASS  Selexol inlet CO2 st/d: 1,946.4646 vs 1,946.5000 (tol 0.5)
+  PASS  Carbon closure with product CH4, %: 100.0000 vs 100.0000 (tol 0.1)
+  PASS  90% of syngas CO2, st/d: 1,751.8182 vs 1,752.0000 (tol 1)
+  PASS  Gas saving at 18.5 MMSCFD, S$M/y: 94.8311 vs 94.8000 (tol 0.05)
+  PASS  Deck 9,913.34 GJ/d: 9,913.3048 vs 9,913.3000 (tol 0.1)
+  PASS  CRF 25: 0.0937 vs 0.0937 (tol 1e-05)
+  PASS  v1_7 BOAK reactor at 210 MWth, all scaled n=0.6: 144.4315 vs 144.4000 (tol 0.1)
+  PASS  Deck ledger S$/t, unrounded (audit 98.8 uses rounded S$51.2M): 98.6858 vs 98.7000 (tol 0.1)
+  PASS  10-OAK INL high, US$/kWt (PDF p47: about 3,770, rounded 4,000): 3,770.6448 vs 3,771.0000 (tol 2)
+  PASS  10-OAK INL low, US$/kWt (PDF p47: 1,333 rounded 1,500): 1,333.8335 vs 1,334.0000 (tol 2)
+  PASS  htgr_ihx central reactor: 225.0938 vs 225.1000 (tol 0.15)
+  PASS  mea_calc2 reactor: 228.8618 vs 228.9000 (tol 0.1)
+  PASS  EX4 above 130 C, MW (inl 11.5, published chain scale): 11.7925 vs 11.5000 (tol 1.0)
+
+DERIVED CONSTANTS
+  s=0.68328  F_C6=1784.4 kmol C/h  P_C=6.47  phi_NR=0.7914  base INL=9.210 kg/kg  LF10=0.7047
+  n_NGNP=0.311  COMP_K=4.153 EUR M/MW  recycle capex S$M {'low': 0.0, 'central': 71.46441432637513, 'high': 307.479015625357}  IHX_S=124.7  IHX low=13.7
+  CAPT_K {'low': 1.7373642489270387, 'central': 2.043957939914163, 'high': 5.093952773613193}  ALLIN=97.2 S$/t  IDC x1.198  IHX high life 14.1 y
+
+CARBON BALANCE, Case A, kmol C/h, and t/y at 85%
+  INL_SEL  NG  34.0 H2  130.0 F  1784.4 T  2157.2 CO2abs  1671.8 cap  1655.1 slip   16.7 unconv  485.4 G  495.6 R  372.8 burn  122.8 exp    0.0 P  6.47 resid -0.00
+  REC_F    NG  34.0 H2  130.0 F  1784.4 T  2303.7 CO2abs  1785.3 cap  1606.8 slip  178.5 unconv  518.3 G  690.4 R  519.3 burn  171.1 exp    0.0 P  6.47 resid +0.00
+  REC_FIX  NG  34.0 H2  130.0 F  1784.4 T  2372.9 CO2abs  1839.0 cap  1655.1 slip  183.9 unconv  533.9 G  711.3 R  588.5 burn  122.8 exp    0.0 P  6.47 resid -0.00
+  COMB_H   NG  44.5 H2  130.0 F  2335.4 T  2335.4 CO2abs  1848.3 cap  1663.5 slip  184.8 unconv  487.1 G  665.5 R    0.0 burn  665.5 exp    0.0 P  6.47 resid -0.00
+  COMB_N   NG  34.0 H2   99.3 F  1784.4 T  1784.4 CO2abs  1412.2 cap  1271.0 slip  141.2 unconv  372.2 G  508.5 R    0.0 burn  508.5 exp    0.0 P  4.95 resid +0.00
+  EXPORT   NG  44.5 H2  130.0 F  2335.4 T  2335.4 CO2abs  1848.3 cap  1663.5 slip  184.8 unconv  487.1 G  665.5 R    0.0 burn    0.0 exp  665.5 P  6.47 resid -0.00
+  DECK     NG  34.0 H2  130.0 F  1784.4 T  1784.4 CO2abs  1817.3 cap  1635.5 slip  181.7 unconv    0.0 G  181.7 R    0.0 burn  181.7 exp    0.0 P  6.47 resid -39.37
+
+EMISSIONS AND ABATEMENT, t/y
+  A INL_SEL  base   902,060 captured   542,362 site   40,248 atm   40,248 A_site   861,812 A_atm   861,812 plant capture 0.931
+  A REC_F    base   902,060 captured   526,544 site   56,066 atm   56,066 A_site   845,994 A_atm   845,994 plant capture 0.904
+  A REC_FIX  base   902,060 captured   542,362 site   40,248 atm   40,248 A_site   861,812 A_atm   861,812 plant capture 0.931
+  A COMB_H   base   902,060 captured   545,112 site  218,077 atm  218,077 A_site   683,984 A_atm   683,984 plant capture 0.714
+  A COMB_N   base   689,215 captured   416,490 site  166,620 atm  166,620 A_site   522,594 A_atm   522,594 plant capture 0.714
+  A EXPORT   base   902,060 captured   545,112 site        0 atm  218,077 A_site   902,060 A_atm   683,984 plant capture 0.714
+  A DECK     base   902,060 captured   535,961 site   59,551 atm   59,551 A_site   842,509 A_atm   842,509 plant capture 0.900
+  B INL_SEL  base   616,361 captured   370,586 site   27,501 atm   27,501 A_site   588,860 A_atm   588,860 plant capture 0.931
+  B REC_F    base   616,361 captured   359,777 site   38,309 atm   38,309 A_site   578,052 A_atm   578,052 plant capture 0.904
+  B REC_FIX  base   616,361 captured   370,586 site   27,501 atm   27,501 A_site   588,860 A_atm   588,860 plant capture 0.931
+  B COMB_H   base   616,361 captured   372,465 site  149,008 atm  149,008 A_site   467,353 A_atm   467,353 plant capture 0.714
+  B COMB_N   base   470,927 captured   284,580 site  113,849 atm  113,849 A_site   357,079 A_atm   357,079 plant capture 0.714
+  B EXPORT   base   616,361 captured   372,465 site        0 atm  149,008 A_site   616,361 A_atm   467,353 plant capture 0.714
+  B DECK     base   616,361 captured   366,212 site   40,690 atm   40,690 A_site   575,670 A_atm   575,670 plant capture 0.900
+
+BASELINE CONSISTENCY
+  conv: 9.2098
+  c6_total: 5.9454
+  htgr_nocc: 7.7960
+  stoich: 5.4579
+  ieaghg: 8.9960
+  cho: 9.3500
+  deck_proc: 6.0800
+  feed_c6: 5.9699
+  feed_44p5: 7.8136
+  red_c6: 0.3544
+  red_norecycle: 0.1535
+  fired_share: 0.1514
+  ieaghg_stream_flue: 0.4429
+  ieaghg_fuel: 0.1417
+
+HEAT AND POWER BALANCE, central (SRD 3.8, circ central, loss central, extraction r=0.169)
+  A INL_SEL  Qproc  176.8+ 0.0 Qreb   0.0 stack  54.4 gap   0.0 TGheat    0.0 gapTG   0.0 Eproc 17.30 Ecirc 10.44 Etot 27.74 Etg  0.00 Wsh  9.40 branch   69.9 loss  5.1 R  242.4 exp kept  83.7 TGsurplus   0.0
+  A REC_F    Qproc  176.8+ 1.3 Qreb  74.6 stack  54.4 gap  20.2 TGheat    0.0 gapTG  20.2 Eproc 18.05 Ecirc 10.90 Etot 28.95 Etg  0.00 Wsh  9.81 branch   88.0 loss  5.3 R  261.5 exp kept   0.0 TGsurplus   0.0
+  A REC_FIX  Qproc  176.8+ 1.3 Qreb  76.9 stack  54.4 gap  22.5 TGheat    0.0 gapTG  22.5 Eproc 18.33 Ecirc 10.96 Etot 29.29 Etg  0.00 Wsh  9.87 branch   90.5 loss  5.3 R  264.1 exp kept   0.0 TGsurplus   0.0
+  A COMB_H   Qproc  191.4+ 0.0 Qreb  77.3 stack  45.8 gap  31.5 TGheat  139.2 gapTG   0.0 Eproc 12.42 Ecirc  9.64 Etot 22.06 Etg 22.06 Wsh  8.68 branch    0.0 loss  4.7 R  187.5 exp kept   0.0 TGsurplus  34.2
+  A COMB_N   Qproc  146.2+ 0.0 Qreb  59.0 stack  45.8 gap  13.2 TGheat  106.4 gapTG   0.0 Eproc  9.87 Ecirc  7.37 Etot 17.24 Etg 17.24 Wsh  6.64 branch    0.0 loss  3.9 R  143.5 exp kept   0.0 TGsurplus  35.7
+  A EXPORT   Qproc  191.4+ 0.0 Qreb  77.3 stack  45.8 gap  31.5 TGheat    0.0 gapTG  31.5 Eproc 12.42 Ecirc 11.48 Etot 23.90 Etg  0.00 Wsh 10.33 branch   83.6 loss  5.5 R  270.2 exp kept   0.0 TGsurplus   0.0
+  B INL_SEL  Qproc  120.8+ 0.0 Qreb   0.0 stack  37.2 gap   0.0 TGheat    0.0 gapTG   0.0 Eproc 11.82 Ecirc  7.14 Etot 18.96 Etg  0.00 Wsh  6.43 branch   47.8 loss  3.8 R  165.9 exp kept  57.2 TGsurplus   0.0
+  B REC_F    Qproc  120.8+ 0.9 Qreb  51.0 stack  37.2 gap  13.8 TGheat    0.0 gapTG  13.8 Eproc 12.33 Ecirc  7.46 Etot 19.79 Etg  0.00 Wsh  6.71 branch   60.1 loss  3.9 R  179.0 exp kept   0.0 TGsurplus   0.0
+  B REC_FIX  Qproc  120.8+ 0.9 Qreb  52.5 stack  37.2 gap  15.4 TGheat    0.0 gapTG  15.4 Eproc 12.52 Ecirc  7.50 Etot 20.02 Etg  0.00 Wsh  6.75 branch   61.8 loss  4.0 R  180.8 exp kept   0.0 TGsurplus   0.0
+  B COMB_H   Qproc  130.8+ 0.0 Qreb  52.8 stack  31.3 gap  21.5 TGheat   95.1 gapTG   0.0 Eproc  8.49 Ecirc  6.59 Etot 15.08 Etg 15.08 Wsh  5.93 branch    0.0 loss  3.5 R  128.3 exp kept   0.0 TGsurplus  23.4
+  B COMB_N   Qproc   99.9+ 0.0 Qreb  40.3 stack  31.3 gap   9.1 TGheat   72.7 gapTG   0.0 Eproc  6.75 Ecirc  5.04 Etot 11.79 Etg 11.79 Wsh  4.54 branch    0.0 loss  2.9 R   98.3 exp kept   0.0 TGsurplus  24.4
+  B EXPORT   Qproc  130.8+ 0.0 Qreb  52.8 stack  31.3 gap  21.5 TGheat    0.0 gapTG  21.5 Eproc  8.49 Ecirc  7.85 Etot 16.34 Etg  0.00 Wsh  7.07 branch   57.1 loss  4.1 R  184.9 exp kept   0.0 TGsurplus   0.0
+
+ELECTRICITY ROWS Case A (MWe)
+  INL_SEL  reforming=1.20 purification=2.10 steam=0.30 co2comp=6.40 purge=5.70 cooling=0.10 water=1.50 mea_pump=0.00 mea_cooling=0.00 | sec circ 5.06 prim circ 5.38 total 27.74
+  REC_F    reforming=1.20 purification=0.02 steam=0.30 co2comp=6.21 purge=6.33 cooling=0.10 water=1.50 mea_pump=1.27 mea_cooling=1.12 | sec circ 5.10 prim circ 5.81 total 28.95
+  REC_FIX  reforming=1.20 purification=0.02 steam=0.30 co2comp=6.40 purge=6.35 cooling=0.10 water=1.50 mea_pump=1.31 mea_cooling=1.15 | sec circ 5.10 prim circ 5.87 total 29.29
+  COMB_H   reforming=1.57 purification=0.02 steam=0.32 co2comp=6.43 purge=0.00 cooling=0.10 water=1.50 mea_pump=1.32 mea_cooling=1.16 | sec circ 5.48 prim circ 4.16 total 22.06
+  COMB_N   reforming=1.20 purification=0.02 steam=0.25 co2comp=4.91 purge=0.00 cooling=0.10 water=1.50 mea_pump=1.01 mea_cooling=0.89 | sec circ 4.18 prim circ 3.19 total 17.24
+  EXPORT   reforming=1.57 purification=0.02 steam=0.32 co2comp=6.43 purge=0.00 cooling=0.10 water=1.50 mea_pump=1.32 mea_cooling=1.16 | sec circ 5.48 prim circ 6.00 total 23.90
+
+REACTOR MATRIX R MWth by SRD and circulator case (loss central)
+  A INL_SEL  low:225/237/242/265 central:225/237/242/265 high:225/237/242/265
+  A REC_F    low:238/249/255/278 central:244/255/262/285 high:250/262/268/291
+  A REC_FIX  low:240/251/257/280 central:246/258/264/287 high:253/264/271/294
+  A COMB_H   low:196/190/187/177 central:196/190/187/180 high:196/190/187/187
+  A COMB_N   low:150/146/144/136 central:150/146/144/136 high:150/146/144/136
+  A EXPORT   low:245/257/264/288 central:251/264/270/295 high:258/270/277/301
+  B INL_SEL  low:154/162/166/181 central:154/162/166/181 high:154/162/166/181
+  B REC_F    low:163/170/175/190 central:167/175/179/195 high:171/179/183/199
+  B REC_FIX  low:164/172/176/192 central:169/177/181/197 high:173/181/185/201
+  B COMB_H   low:134/130/128/121 central:134/130/128/123 high:134/130/128/128
+  B COMB_N   low:103/100/98/93 central:103/100/98/93 high:103/100/98/93
+  B EXPORT   low:168/176/180/197 central:172/181/185/202 high:176/185/189/206
+
+MINIMUM FEASIBLE REACTOR
+  A INL_SEL  best  224.8 low  235.1 central  242.4 high  279.1 | vs 210: central surplus  -32.4
+  A REC_F    best  227.6 low  238.1 central  261.5 high  314.5 | vs 210: central surplus  -51.5
+  A REC_FIX  best  228.2 low  238.9 central  264.1 high  318.1 | vs 210: central surplus  -54.1
+  A COMB_H   best  188.8 low  188.8 central  187.5 high  200.7 | vs 210: central surplus  +22.5
+  A COMB_N   best  144.5 low  144.5 central  143.5 high  146.2 | vs 210: central surplus  +66.5
+  A EXPORT   best  234.3 low  241.6 central  270.2 high  328.6 | vs 210: central surplus  -60.2
+  B INL_SEL  best  153.9 low  160.9 central  165.9 high  190.7 | vs 210: central surplus  +44.1
+  B REC_F    best  155.8 low  163.0 central  179.0 high  214.9 | vs 210: central surplus  +31.0
+  B REC_FIX  best  156.2 low  163.5 central  180.8 high  217.3 | vs 210: central surplus  +29.2
+  B COMB_H   best  129.2 low  129.2 central  128.3 high  137.2 | vs 210: central surplus  +81.7
+  B COMB_N   best   99.0 low   99.0 central   98.3 high   99.9 | vs 210: central surplus +111.7
+  B EXPORT   best  160.4 low  165.4 central  184.9 high  224.6 | vs 210: central surplus  +25.1
+
+DECK 206.0 WALK, Case A
+  Slide 6: 176.8 + 11.6/0.397: 206.0
+  Add 5.7 MWe purge: 220.4
+  INL_SEL no circ no loss (check): 220.4
+  Add vessel, IHX, duct losses: 225.3
+  Add helium circulators (central): 242.4
+  Swap Selexol for MEA with zero reboiler heat: 242.8
+  Add MEA reboiler gap at 3.8 GJ/t: 261.5
+
+FIXED 210 MWth, what is missing (Case A central)
+  INL_SEL: heat-first load 172.5 MWth, nuclear electricity needed 27.7, import needed 12.9 MWe, cost S$19.2M/y, grid CO2 38,513 t/y
+  REC_F: heat-first load 193.8 MWth, nuclear electricity needed 29.0, import needed 22.5 MWe, cost S$33.5M/y, grid CO2 67,421 t/y
+  COMB_H: heat-first load 187.5 MWth, nuclear electricity needed 0.0, import needed -8.9 MWe, cost S$0.0M/y, grid CO2 0 t/y
+  EXPORT: heat-first load 218.0 MWth, nuclear electricity needed 23.9, import needed 23.9 MWe, cost S$35.6M/y, grid CO2 71,536 t/y
+
+CASE B HEAT VS 210 MWth
+  INL_SEL: R 165.9, utilisation of 210 MWth 0.790
+  REC_F: R 179.0, utilisation of 210 MWth 0.853
+  REC_FIX: R 180.8, utilisation of 210 MWth 0.861
+  COMB_H: R 128.3, utilisation of 210 MWth 0.611
+  COMB_N: R 98.3, utilisation of 210 MWth 0.468
+  EXPORT: R 184.9, utilisation of 210 MWth 0.881
+
+ECONOMIC LADDER, central, BOAK, 25 y, n=0.6, bottom-up capture (S$/tCO2e on A_atm)
+  A REC_F: 88.7 | 134.1 | 148.6 | 158.0 | 199.2 | 214.5 | A 0.846 | gas -94.8, reactor_capital 120.8, capture_capital 13.5, capture_fom 3.9, capture_allin 0.0, ts 31.6, reactor_om 38.4, ihx 12.2, licence 6.1, decom 1.9, idc 23.9, power_island 2.4, recycle_train 8.6, lost_steam 22.3, baseline_power -9.4, export_revenue -0.0
+  A REC_FIX: 89.5 | 134.5 | 148.7 | 158.0 | 198.6 | 213.6 | A 0.862 | gas -94.8, reactor_capital 121.5, capture_capital 13.9, capture_fom 4.0, capture_allin 0.0, ts 32.5, reactor_om 38.7, ihx 12.2, licence 6.1, decom 1.9, idc 24.0, power_island 2.4, recycle_train 8.6, lost_steam 22.3, baseline_power -9.4, export_revenue -0.0
+  A COMB_H: 158.9 | 202.8 | 222.1 | 233.0 | 264.2 | 263.0 | A 0.684 | gas -41.0, reactor_capital 98.9, capture_capital 14.0, capture_fom 4.0, capture_allin 0.0, ts 32.7, reactor_om 30.1, ihx 13.2, licence 6.1, decom 1.3, idc 19.6, power_island 1.8, recycle_train 0.0, lost_steam 8.5, baseline_power -9.4, export_revenue -0.0
+  A EXPORT: 194.3 | 251.9 | 271.2 | 282.9 | 321.4 | 340.3 | A 0.684 | gas -41.0, reactor_capital 123.2, capture_capital 14.0, capture_fom 4.0, capture_allin 0.0, ts 32.7, reactor_om 39.4, ihx 13.2, licence 6.1, decom 1.9, idc 24.3, power_island 2.0, recycle_train 0.0, lost_steam 22.3, baseline_power -9.4, export_revenue -0.0
+  B REC_F: 112.3 | 162.6 | 177.1 | 189.9 | 235.8 | 251.0 | A 0.578 | gas -64.8, reactor_capital 96.2, capture_capital 9.3, capture_fom 2.7, capture_allin 0.0, ts 21.6, reactor_om 29.1, ihx 8.4, licence 6.1, decom 1.3, idc 19.0, power_island 1.6, recycle_train 5.9, lost_steam 15.2, baseline_power -6.4, export_revenue -0.0
+  B REC_FIX: 112.9 | 162.6 | 176.8 | 189.4 | 234.7 | 249.7 | A 0.589 | gas -64.8, reactor_capital 96.8, capture_capital 9.5, capture_fom 2.7, capture_allin 0.0, ts 22.2, reactor_om 29.3, ihx 8.4, licence 6.1, decom 1.3, idc 19.1, power_island 1.6, recycle_train 5.9, lost_steam 15.2, baseline_power -6.4, export_revenue -0.0
+  B COMB_H: 182.9 | 231.7 | 250.9 | 266.0 | 302.0 | 300.8 | A 0.467 | gas -28.0, reactor_capital 78.8, capture_capital 9.6, capture_fom 2.8, capture_allin 0.0, ts 22.3, reactor_om 22.8, ihx 9.0, licence 6.1, decom 0.9, idc 15.6, power_island 1.2, recycle_train 0.0, lost_steam 5.8, baseline_power -6.4, export_revenue -0.0
+  B EXPORT: 224.2 | 287.9 | 307.1 | 323.0 | 367.4 | 386.3 | A 0.467 | gas -28.0, reactor_capital 98.1, capture_capital 9.6, capture_fom 2.8, capture_allin 0.0, ts 22.3, reactor_om 29.8, ihx 9.0, licence 6.1, decom 1.3, idc 19.4, power_island 1.3, recycle_train 0.0, lost_steam 15.2, baseline_power -6.4, export_revenue -0.0
+
+STAGE AND LIFE TABLE (Case A/B, REC_F and COMB_H, L0, L3, L4, L5, n=0.6 and n=1)
+  wrote 58320 grid rows
+
+HEADLINE TABLE L3, central
+  A REC_F    n=team   FOAK: 244/217/209  10-OAK INL: 176/157/151  BOAK: 158/141/135  10-OAK v1_7: 116/103/99
+  A REC_F    n=linear FOAK: 171/151/145  10-OAK INL: 123/108/104  BOAK: 109/96/92  10-OAK v1_7: 79/69/66
+  A REC_F    n=NGNP   FOAK: 314/281/271  10-OAK INL: 228/204/197  BOAK: 205/183/177  10-OAK v1_7: 151/135/130
+  A REC_FIX  n=team   FOAK: 243/217/209  10-OAK INL: 176/157/151  BOAK: 158/141/136  10-OAK v1_7: 116/104/100
+  A REC_FIX  n=linear FOAK: 171/152/146  10-OAK INL: 123/109/105  BOAK: 111/98/94  10-OAK v1_7: 81/71/68
+  A REC_FIX  n=NGNP   FOAK: 311/278/268  10-OAK INL: 226/203/195  BOAK: 203/182/176  10-OAK v1_7: 151/135/130
+  A COMB_H   n=team   FOAK: 320/293/285  10-OAK INL: 251/232/226  BOAK: 233/215/210  10-OAK v1_7: 190/177/173
+  A COMB_H   n=linear FOAK: 223/205/200  10-OAK INL: 180/167/163  BOAK: 168/156/153  10-OAK v1_7: 141/132/130
+  A COMB_H   n=NGNP   FOAK: 424/388/376  10-OAK INL: 328/302/294  BOAK: 303/279/272  10-OAK v1_7: 243/225/220
+  A EXPORT   n=team   FOAK: 391/358/347  10-OAK INL: 306/282/274  BOAK: 283/261/254  10-OAK v1_7: 230/213/208
+  A EXPORT   n=linear FOAK: 302/277/270  10-OAK INL: 240/222/216  BOAK: 224/207/202  10-OAK v1_7: 185/172/169
+  A EXPORT   n=NGNP   FOAK: 475/434/421  10-OAK INL: 368/338/329  BOAK: 339/312/304  10-OAK v1_7: 272/252/246
+  B REC_F    n=team   FOAK: 290/259/250  10-OAK INL: 211/189/182  BOAK: 190/170/163  10-OAK v1_7: 141/126/121
+  B REC_F    n=linear FOAK: 175/155/149  10-OAK INL: 126/111/107  BOAK: 113/100/95  10-OAK v1_7: 83/73/69
+  B REC_F    n=NGNP   FOAK: 415/373/360  10-OAK INL: 304/273/264  BOAK: 274/246/238  10-OAK v1_7: 204/184/178
+  B REC_FIX  n=team   FOAK: 288/258/248  10-OAK INL: 210/188/181  BOAK: 189/170/163  10-OAK v1_7: 141/126/121
+  B REC_FIX  n=linear FOAK: 175/155/149  10-OAK INL: 127/112/108  BOAK: 114/101/97  10-OAK v1_7: 84/74/71
+  B REC_FIX  n=NGNP   FOAK: 411/369/356  10-OAK INL: 301/271/262  BOAK: 271/244/236  10-OAK v1_7: 203/183/177
+  B COMB_H   n=team   FOAK: 367/336/326  10-OAK INL: 288/265/258  BOAK: 266/246/239  10-OAK v1_7: 216/201/196
+  B COMB_H   n=linear FOAK: 227/209/204  10-OAK INL: 184/171/166  BOAK: 173/160/156  10-OAK v1_7: 146/136/133
+  B COMB_H   n=NGNP   FOAK: 538/491/476  10-OAK INL: 414/380/369  BOAK: 380/350/340  10-OAK v1_7: 302/280/273
+  B EXPORT   n=team   FOAK: 449/410/398  10-OAK INL: 350/322/313  BOAK: 323/298/290  10-OAK v1_7: 261/242/236
+  B EXPORT   n=linear FOAK: 307/282/274  10-OAK INL: 245/226/220  BOAK: 228/211/206  10-OAK v1_7: 190/176/172
+  B EXPORT   n=NGNP   FOAK: 602/550/533  10-OAK INL: 463/425/413  BOAK: 425/391/380  10-OAK v1_7: 338/313/305
+
+DOUBLE COUNT (Case A, REC_F, BOAK, 25 y, L3)
+  bottom_up: AC 158.0, dC 133.7, R 261.5
+  double: AC 197.9, dC 167.4, R 261.5
+  no_double: AC 179.5, dC 151.9, R 223.1
+
+LOW AND HIGH CORNERS, L3
+  A REC_F: BOAK 25y low 44 central 158 high 312; FOAK low 72 high 498
+  A COMB_H: BOAK 25y low 107 central 233 high 413; FOAK low 136 high 598
+  B REC_F: BOAK 25y low 62 central 190 high 356; FOAK low 95 high 573
+  B COMB_H: BOAK 25y low 126 central 266 high 459; FOAK low 160 high 675
+
+ONE AT A TIME, Case A, REC_F, BOAK, 25 y, n=0.6, L3, S$/t
+  Central: 158.0
+  Gas S$10/GJ: 195.4
+  Gas S$20/GJ: 120.6
+  T&S S$23.2/t: 135.1
+  T&S S$112/t: 190.4
+  n = 1.0: 109.5
+  n = 0.31 (NGNP pair): 204.6
+  SRD 3.4: 155.0
+  SRD 4.2: 161.0
+  Circulators none: 149.6
+  Circulators high: 168.6
+  eta 47.5%: 152.9
+  ZLD steam freed: 152.1
+  Export steam not diverted: 166.8
+  Gas saving at Ahn 18.8% (42.6 MMSCFD): 210.3
+  Capture capital on IEAGHG Case 3 MEA basis: 188.8
+  Capture fixed O&M 6%: 163.6
+  Reactor capital +30%: 200.8
+  Reactor capital -30%: 115.2
+  Baseline Cho 9.35 kg/kg: 155.5
+  Baseline IEAGHG 9.00 kg/kg: 162.0
+  Hold 210 MWth, import 22.5 MWe: 187.7
+
+BASELINE SENSITIVITY OF ABATEMENT, Case A and B, REC_F, t/y
+  A INL 9.21: baseline 902,060; A(REC_F) 845,994; A(COMB_H) 683,984
+  A Cho 9.35: baseline 915,795; A(REC_F) 859,729; A(COMB_H) 697,719
+  A IEAGHG 9.00: baseline 881,122; A(REC_F) 825,056; A(COMB_H) 663,045
+  B INL 9.21: baseline 616,361; A(REC_F) 578,052; A(COMB_H) 467,353
+  B Cho 9.35: baseline 625,745; A(REC_F) 587,436; A(COMB_H) 476,738
+  B IEAGHG 9.00: baseline 602,054; A(REC_F) 563,745; A(COMB_H) 453,046
+
+ABATEMENT BOUNDARIES (A_atm, system, lifecycle), t/y
+  A INL_SEL  A_atm   861,812 system adj   -32,804 lifecycle adj   +55,204
+  A REC_F    A_atm   845,994 system adj   -73,791 lifecycle adj   +55,288
+  A REC_FIX  A_atm   861,812 system adj   -73,791 lifecycle adj   +54,851
+  A COMB_H   A_atm   683,984 system adj   -16,606 lifecycle adj   +14,764
+  A COMB_N   A_atm   522,594 system adj    +3,205 lifecycle adj   +11,275
+  A EXPORT   A_atm   683,984 system adj   -73,791 lifecycle adj   +13,419
+  B INL_SEL  A_atm   588,860 system adj   -22,415 lifecycle adj   +37,714
+  B REC_F    A_atm   578,052 system adj   -50,420 lifecycle adj   +37,772
+  B REC_FIX  A_atm   588,860 system adj   -50,420 lifecycle adj   +37,473
+  B COMB_H   A_atm   467,353 system adj   -11,378 lifecycle adj   +10,084
+  B COMB_N   A_atm   357,079 system adj    +2,164 lifecycle adj    +7,701
+  B EXPORT   A_atm   467,353 system adj   -50,420 lifecycle adj    +9,164
+
+EXPORT WITH DISPLACEMENT CREDIT
+  A: LHV 163.8 MW, 4.39 PJ/y, displaced 246,345 t/y, revenue S$65.9M/y, A 930,328, dC L3 193.5, L3 AC with credit no revenue 208.0, L5 with revenue 166.9, A5 856,537, AC L5 194.8
+  B: LHV 111.9 MW, 3.00 PJ/y, displaced 168,323 t/y, revenue S$45.0M/y, A 635,676, dC L3 151.0, L3 AC with credit no revenue 237.5, L5 with revenue 135.5, A5 585,256, AC L5 231.6
+
+DECK MIX, 210 MWth cost against 100,000 Nm3/h
+  M0 deck as printed: S$546M reactor, US$80/t CCS, 43.5 gas, A 0.585: dC 57.7, A 0.585, AC 98.7
+  M1 M0 with reactor O&M, 200 MWth linear: dC 81.9, A 0.585, AC 139.9
+  M2 M1 with IHX allowance S$11.4M/y: dC 93.3, A 0.585, AC 159.4
+  M3 M0 with 34.0 MMSCFD gas (gas term consistent with slide 15): dC 24.4, A 0.585, AC 41.8
+  M4 M3 with O&M and IHX: dC 60.0, A 0.585, AC 102.5
+  M5 INL method BOAK L3, REC_F, self-consistent R=179: dC 109.8, A 0.578, AC 189.9
+  M6 INL method BOAK L3, REC_F, reactor charged at 210 MWth: dC 123.3, A 0.578, AC 213.2
+  M5 INL method BOAK L3, COMB_H, self-consistent R=128: dC 124.3, A 0.467, AC 266.0
+  M6 INL method BOAK L3, COMB_H, reactor charged at 210 MWth: dC 161.8, A 0.467, AC 346.3
+  M5 INL method FOAK L3, REC_F, self-consistent R=179: dC 167.5, A 0.578, AC 289.8
+  M6 INL method FOAK L3, REC_F, reactor charged at 210 MWth: dC 186.8, A 0.578, AC 323.1
+  M5 INL method FOAK L3, COMB_H, self-consistent R=128: dC 171.6, A 0.467, AC 367.2
+  M6 INL method FOAK L3, COMB_H, reactor charged at 210 MWth: dC 225.4, A 0.467, AC 482.2
+
+PURGE QUESTION (Case A)
+  extra gas without recycle S$53.8M/y; 5.7 MWe at S$0.20/kWh S$8.5M/y; 5.7 MWe in reactor 14.4 MWth
+  H2 lost if NG held: 30.7 MMSCFD, 23,111 t/y
+  deck process CO2 79.98 t/h vs feed carbon as CO2 78.53 t/h, ratio 1.018
+
+SYNGAS HEAT TABLE (Case 5 proxy)
+  HPS-GEN1: 69.3 MW, 871 to 335 C, HP steam, process and export
+  WGS-EX1: 19.5 MW, 407 to 249 C, HP steam
+  WGS-EX2: 7.1 MW, 249 to 191 C, LP steam
+  WGS-EX3: 19.3 MW, 213 to 149 C, LP steam
+  WGS-EX4: 34.3 MW, 149 to 70 C, 93 C hot water
+  KO-DRM-1: 5.8 MW, 70 to 40 C, cooling water
+  EX4 above 145 C: own curve 3.0 MW; after LTS (EX3+EX4 part) 22.3 MW
+  EX4 above 140 C: own curve 6.3 MW; after LTS (EX3+EX4 part) 25.6 MW
+  EX4 above 135 C: own curve 9.2 MW; after LTS (EX3+EX4 part) 28.5 MW
+  EX4 above 130 C: own curve 11.8 MW; after LTS (EX3+EX4 part) 31.0 MW
+  EX4 above 125 C: own curve 14.0 MW; after LTS (EX3+EX4 part) 33.3 MW
+
+CORNERS WITH MATCHING REACTOR SIZE, L3, 25 y, n=0.6
+  A REC_F R 245/262/314 FOAK: 68/244/543  10-OAK INL: 33/176/428  BOAK: 40/158/339  10-OAK v1_7: 13/116/284
+  A COMB_H R 189/187/201 FOAK: 137/320/616  10-OAK INL: 100/251/507  BOAK: 108/233/423  10-OAK v1_7: 79/190/371
+  B REC_F R 168/179/215 FOAK: 90/290/624  10-OAK INL: 49/211/490  BOAK: 58/190/386  10-OAK v1_7: 27/141/322
+  B COMB_H R 129/128/137 FOAK: 161/367/696  10-OAK INL: 117/287/569  BOAK: 127/266/470  10-OAK v1_7: 93/216/410
+
+CELLS BELOW S$100 (central costs, SRD central), Case A and B, bottom-up, L3
+  A INL_SEL 10-OAK INL 40 y n=linear AC 97.6
+  A INL_SEL 10-OAK INL 60 y n=linear AC 93.5
+  A INL_SEL BOAK 25 y n=linear AC 98.9
+  A INL_SEL BOAK 40 y n=linear AC 86.9
+  A INL_SEL BOAK 60 y n=linear AC 83.2
+  A INL_SEL 10-OAK v1_7 25 y n=linear AC 71.4
+  A INL_SEL 10-OAK v1_7 40 y n=team AC 96.2
+  A INL_SEL 10-OAK v1_7 40 y n=linear AC 62.3
+  A INL_SEL 10-OAK v1_7 60 y n=team AC 92.5
+  A INL_SEL 10-OAK v1_7 60 y n=linear AC 59.5
+  A REC_F BOAK 40 y n=linear AC 96.4
+  A REC_F BOAK 60 y n=linear AC 92.3
+  A REC_F 10-OAK v1_7 25 y n=linear AC 79.2
+  A REC_F 10-OAK v1_7 40 y n=linear AC 69.3
+  A REC_F 10-OAK v1_7 60 y n=team AC 98.9
+  A REC_F 10-OAK v1_7 60 y n=linear AC 66.2
+  A REC_FIX BOAK 40 y n=linear AC 97.6
+  A REC_FIX BOAK 60 y n=linear AC 93.5
+  A REC_FIX 10-OAK v1_7 25 y n=linear AC 80.6
+  A REC_FIX 10-OAK v1_7 40 y n=linear AC 70.7
+  A REC_FIX 10-OAK v1_7 60 y n=team AC 99.7
+  A REC_FIX 10-OAK v1_7 60 y n=linear AC 67.7
+  B INL_SEL 10-OAK INL 60 y n=linear AC 96.5
+  B INL_SEL BOAK 40 y n=linear AC 90.1
+  B INL_SEL BOAK 60 y n=linear AC 86.3
+  B INL_SEL 10-OAK v1_7 25 y n=linear AC 74.9
+  B INL_SEL 10-OAK v1_7 40 y n=linear AC 65.4
+  B INL_SEL 10-OAK v1_7 60 y n=linear AC 62.5
+  B REC_F BOAK 40 y n=linear AC 99.7
+  B REC_F BOAK 60 y n=linear AC 95.5
+  B REC_F 10-OAK v1_7 25 y n=linear AC 82.8
+  B REC_F 10-OAK v1_7 40 y n=linear AC 72.5
+  B REC_F 10-OAK v1_7 60 y n=linear AC 69.3
+  B REC_FIX BOAK 60 y n=linear AC 96.6
+  B REC_FIX 10-OAK v1_7 25 y n=linear AC 84.0
+  B REC_FIX 10-OAK v1_7 40 y n=linear AC 73.9
+  B REC_FIX 10-OAK v1_7 60 y n=linear AC 70.7
+
+BREAK-EVENS for S$100/t, Case A, REC_F, BOAK, 25 y, n=0.6, L3
+  dC_L3: 133.677
+  limit: 84.599
+  excess: 49.078
+  gas_price: 22.763
+  reactor_mult: 0.692
+  occ_mult: 0.594
+  occ_kwt: 1296.691
+  ts: -33.207
+
+CARBON SPLIT SENSITIVITY phi
+  phi 0.76: INL recycled 0.233 of NG C, burned 0.069; REC_F cap 1609.7, burn 168.2, A 846,930, plant capture 0.905
+  phi 0.775: INL recycled 0.209 of NG C, burned 0.069; REC_F cap 1606.8, burn 171.1, A 845,994, plant capture 0.904
+  phi 0.79: INL recycled 0.186 of NG C, burned 0.069; REC_F cap 1603.6, burn 174.3, A 844,932, plant capture 0.902
+
+PURGE VARIANTS OF REACTOR, Case A central
+  REC_F with 5.7 MWe: 261.5
+  REC_F with purge row removed (deck logic, not balanced): 244.9
+  INL_SEL with purge row removed: 227.4
+
+MOST GENEROUS FLOOR, no circulators, no losses, SRD 3.4, ZLD freed, eta 47.5%, r 0.30
+  A REC_F: 215.8
+  A EXPORT: 222.0
+  A COMB_H: 191.4
+  B REC_F: 147.5
+  B EXPORT: 151.7
+  B COMB_H: 130.8
+
+COMB_H IF PROCESS DUTY STAYS AT 176.8
+  R about 172.7
+
+CASE 5 REFERENCE, Selexol, central circulators and losses
+  no circ no loss 205.8; with W 8.5: 226.5
+
+DECK BASIS SCALED TO CASE B
+  206.0 x s = 140.8; 220.4 x s = 150.6; 176.8 x s = 120.8; 11.6 x s = 7.93; 17.3 x s = 11.82
+
+Register rows 131: published 70, assumed 36, calculated 25
+CHECK FAILURES: 0

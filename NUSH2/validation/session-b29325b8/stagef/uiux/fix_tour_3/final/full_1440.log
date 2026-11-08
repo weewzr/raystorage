@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "C:\Users\Alf\AppData\Local\Temp\claude\C--Ray-Claude-Ray-Debug-VS-Code\b29325b8-d1b9-49cd-bfe6-262261d7ffef\scratchpad\stagef\uiux\fix_tour_3\tools\fullrun.py", line 52, in <module>
+    print(f"[{tag}] Tab presses to the start button: {presses}, focus {b.active()}; start note: {note}")
+  File "C:\Users\Alf\AppData\Local\Programs\Python\Python310\lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2082' in position 129: character maps to <undefined>

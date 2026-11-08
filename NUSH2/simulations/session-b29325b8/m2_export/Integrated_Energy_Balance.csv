@@ -1,0 +1,91 @@
+run_id,term_id,term,side,kind,value_mw,low_mw,high_mw,temperature_c,class,rigour,source,equation,status
+A_INL_SEL,HTGR_HEAT,Reactor heat at the need,source,heat,242.409245,224.839212,279.114545,925.000000,calculated,reduced_order,engine anchored port,J.26,anchored_port
+A_INL_SEL,IHX_DUTY,IHX duty,sink,heat,176.800000,,,900.000000,calculated,reduced_order,engine anchored port,C.1,anchored_port
+A_INL_SEL,IHX_LOSS,IHX loss,sink,heat,1.414400,,,,calculated,reduced_order,engine anchored port,B.15,anchored_port
+A_INL_SEL,SMR_HEAT,Process heat with slip heat,sink,heat,176.800000,,,,calculated,reduced_order,engine anchored port,J.14,anchored_port
+A_INL_SEL,WGS_RELEASE,Water-gas shift heat release,source,heat,,,,,calculated,reduced_order,engine anchored port,E.6,not_run
+A_INL_SEL,SYNGAS_RECOVERY,Syngas heat above 130 C to the reboiler,source,heat,11.248985,,,130.000000,calculated,reduced_order,engine anchored port,F.2,anchored_port
+A_INL_SEL,MEA_REGEN,Reboiler duty,sink,heat,0.000000,,,,calculated,reduced_order,engine anchored port,J.16,anchored_port
+A_INL_SEL,STEAM_AVAILABLE,Heat stack for the reboiler,source,heat,54.412849,,,,calculated,reduced_order,engine anchored port,J.17,anchored_port
+A_INL_SEL,POWER_GENERATED,Electricity from reactor heat,source,electricity,27.743177,,,,calculated,reduced_order,engine anchored port,B.18,anchored_port
+A_INL_SEL,HE_CIRCULATION,Helium circulators,sink,electricity,10.443177,,,,calculated,reduced_order,engine anchored port,B.12,anchored_port
+A_INL_SEL,PUMP_COMPRESS,"Lean pump, CO2 compression, purge recovery",sink,electricity,12.100000,,,,calculated,reduced_order,engine anchored port,J.22,anchored_port
+A_INL_SEL,COOLING,Cooling towers and MEA fans,sink,electricity,0.100000,,,,calculated,reduced_order,engine anchored port,J.21,anchored_port
+A_INL_SEL,UNMET_THERMAL,Heat duty above the rated reactor,sink,heat,0.000000,,,,calculated,reduced_order,engine anchored port,J.18,anchored_port
+A_INL_SEL,UNMET_ELECTRICAL,Electricity above the rated reactor,sink,electricity,12.866470,,,,calculated,reduced_order,engine anchored port,J.29,anchored_port
+A_INL_SEL,SPARE_MARGIN,Rated reactor less the need,source,heat,-32.409245,,,,calculated,reduced_order,engine anchored port,J.36,anchored_port
+A_REC_F,HTGR_HEAT,Reactor heat at the need,source,heat,261.542468,227.551496,314.464189,925.000000,calculated,reduced_order,engine anchored port,J.26,anchored_port
+A_REC_F,IHX_DUTY,IHX duty,sink,heat,178.083296,,,900.000000,calculated,reduced_order,engine anchored port,C.1,anchored_port
+A_REC_F,IHX_LOSS,IHX loss,sink,heat,1.424666,,,,calculated,reduced_order,engine anchored port,B.15,anchored_port
+A_REC_F,SMR_HEAT,Process heat with slip heat,sink,heat,178.083296,,,,calculated,reduced_order,engine anchored port,J.14,anchored_port
+A_REC_F,WGS_RELEASE,Water-gas shift heat release,source,heat,,,,,calculated,reduced_order,engine anchored port,E.6,not_run
+A_REC_F,SYNGAS_RECOVERY,Syngas heat above 130 C to the reboiler,source,heat,11.248985,,,130.000000,calculated,reduced_order,engine anchored port,F.2,anchored_port
+A_REC_F,MEA_REGEN,Reboiler duty,sink,heat,74.643597,,,,calculated,reduced_order,engine anchored port,J.16,anchored_port
+A_REC_F,STEAM_AVAILABLE,Heat stack for the reboiler,source,heat,54.412849,,,,calculated,reduced_order,engine anchored port,J.17,anchored_port
+A_REC_F,POWER_GENERATED,Electricity from reactor heat,source,electricity,28.953267,,,,calculated,reduced_order,engine anchored port,B.18,anchored_port
+A_REC_F,HE_CIRCULATION,Helium circulators,sink,electricity,10.904879,,,,calculated,reduced_order,engine anchored port,B.12,anchored_port
+A_REC_F,PUMP_COMPRESS,"Lean pump, CO2 compression, purge recovery",sink,electricity,13.811433,,,,calculated,reduced_order,engine anchored port,J.22,anchored_port
+A_REC_F,COOLING,Cooling towers and MEA fans,sink,electricity,1.219654,,,,calculated,reduced_order,engine anchored port,J.21,anchored_port
+A_REC_F,UNMET_THERMAL,Heat duty above the rated reactor,sink,heat,0.000000,,,,calculated,reduced_order,engine anchored port,J.18,anchored_port
+A_REC_F,UNMET_ELECTRICAL,Electricity above the rated reactor,sink,electricity,22.524015,,,,calculated,reduced_order,engine anchored port,J.29,anchored_port
+A_REC_F,SPARE_MARGIN,Rated reactor less the need,source,heat,-51.542468,,,,calculated,reduced_order,engine anchored port,J.36,anchored_port
+B_COMB_H,HTGR_HEAT,Reactor heat at the need,source,heat,128.342414,129.248429,137.150781,925.000000,calculated,reduced_order,engine anchored port,J.26,anchored_port
+B_COMB_H,IHX_DUTY,IHX duty,sink,heat,130.787716,,,900.000000,calculated,reduced_order,engine anchored port,C.1,anchored_port
+B_COMB_H,IHX_LOSS,IHX loss,sink,heat,1.046302,,,,calculated,reduced_order,engine anchored port,B.15,anchored_port
+B_COMB_H,SMR_HEAT,Process heat with slip heat,sink,heat,130.787716,,,,calculated,reduced_order,engine anchored port,J.14,anchored_port
+B_COMB_H,WGS_RELEASE,Water-gas shift heat release,source,heat,,,,,calculated,reduced_order,engine anchored port,E.6,not_run
+B_COMB_H,SYNGAS_RECOVERY,Syngas heat above 130 C to the reboiler,source,heat,7.686217,,,130.000000,calculated,reduced_order,engine anchored port,F.2,anchored_port
+B_COMB_H,MEA_REGEN,Reboiler duty,sink,heat,52.801149,,,,calculated,reduced_order,engine anchored port,J.16,anchored_port
+B_COMB_H,STEAM_AVAILABLE,Heat stack for the reboiler,source,heat,31.291918,,,,calculated,reduced_order,engine anchored port,J.17,anchored_port
+B_COMB_H,POWER_GENERATED,Electricity from reactor heat,source,electricity,0.000000,,,,calculated,reduced_order,engine anchored port,B.18,anchored_port
+B_COMB_H,HE_CIRCULATION,Helium circulators,sink,electricity,6.592984,,,,calculated,reduced_order,engine anchored port,B.12,anchored_port
+B_COMB_H,PUMP_COMPRESS,"Lean pump, CO2 compression, purge recovery",sink,electricity,5.294899,,,,calculated,reduced_order,engine anchored port,J.22,anchored_port
+B_COMB_H,COOLING,Cooling towers and MEA fans,sink,electricity,0.860345,,,,calculated,reduced_order,engine anchored port,J.21,anchored_port
+B_COMB_H,UNMET_THERMAL,Heat duty above the rated reactor,sink,heat,0.000000,,,,calculated,reduced_order,engine anchored port,J.18,anchored_port
+B_COMB_H,UNMET_ELECTRICAL,Electricity above the rated reactor,sink,electricity,0.000000,,,,calculated,reduced_order,engine anchored port,J.29,anchored_port
+B_COMB_H,SPARE_MARGIN,Rated reactor less the need,source,heat,81.657586,,,,calculated,reduced_order,engine anchored port,J.36,anchored_port
+B_EXPORT,HTGR_HEAT,Reactor heat at the need,source,heat,184.939187,160.369003,224.559147,925.000000,calculated,reduced_order,engine anchored port,J.26,anchored_port
+B_EXPORT,IHX_DUTY,IHX duty,sink,heat,130.787716,,,900.000000,calculated,reduced_order,engine anchored port,C.1,anchored_port
+B_EXPORT,IHX_LOSS,IHX loss,sink,heat,1.046302,,,,calculated,reduced_order,engine anchored port,B.15,anchored_port
+B_EXPORT,SMR_HEAT,Process heat with slip heat,sink,heat,130.787716,,,,calculated,reduced_order,engine anchored port,J.14,anchored_port
+B_EXPORT,WGS_RELEASE,Water-gas shift heat release,source,heat,,,,,calculated,reduced_order,engine anchored port,E.6,not_run
+B_EXPORT,SYNGAS_RECOVERY,Syngas heat above 130 C to the reboiler,source,heat,7.686217,,,130.000000,calculated,reduced_order,engine anchored port,F.2,anchored_port
+B_EXPORT,MEA_REGEN,Reboiler duty,sink,heat,52.801149,,,,calculated,reduced_order,engine anchored port,J.16,anchored_port
+B_EXPORT,STEAM_AVAILABLE,Heat stack for the reboiler,source,heat,31.291918,,,,calculated,reduced_order,engine anchored port,J.17,anchored_port
+B_EXPORT,POWER_GENERATED,Electricity from reactor heat,source,electricity,16.337164,,,,calculated,reduced_order,engine anchored port,B.18,anchored_port
+B_EXPORT,HE_CIRCULATION,Helium circulators,sink,electricity,7.850100,,,,calculated,reduced_order,engine anchored port,B.12,anchored_port
+B_EXPORT,PUMP_COMPRESS,"Lean pump, CO2 compression, purge recovery",sink,electricity,5.294899,,,,calculated,reduced_order,engine anchored port,J.22,anchored_port
+B_EXPORT,COOLING,Cooling towers and MEA fans,sink,electricity,0.860345,,,,calculated,reduced_order,engine anchored port,J.21,anchored_port
+B_EXPORT,UNMET_THERMAL,Heat duty above the rated reactor,sink,heat,0.000000,,,,calculated,reduced_order,engine anchored port,J.18,anchored_port
+B_EXPORT,UNMET_ELECTRICAL,Electricity above the rated reactor,sink,electricity,0.000000,,,,calculated,reduced_order,engine anchored port,J.29,anchored_port
+B_EXPORT,SPARE_MARGIN,Rated reactor less the need,source,heat,25.060813,,,,calculated,reduced_order,engine anchored port,J.36,anchored_port
+B_REC_F,HTGR_HEAT,Reactor heat at the need,source,heat,179.039591,155.778893,214.867396,925.000000,calculated,reduced_order,engine anchored port,J.26,anchored_port
+B_REC_F,IHX_DUTY,IHX duty,sink,heat,121.680927,,,900.000000,calculated,reduced_order,engine anchored port,C.1,anchored_port
+B_REC_F,IHX_LOSS,IHX loss,sink,heat,0.973447,,,,calculated,reduced_order,engine anchored port,B.15,anchored_port
+B_REC_F,SMR_HEAT,Process heat with slip heat,sink,heat,121.680927,,,,calculated,reduced_order,engine anchored port,J.14,anchored_port
+B_REC_F,WGS_RELEASE,Water-gas shift heat release,source,heat,,,,,calculated,reduced_order,engine anchored port,E.6,not_run
+B_REC_F,SYNGAS_RECOVERY,Syngas heat above 130 C to the reboiler,source,heat,7.686217,,,130.000000,calculated,reduced_order,engine anchored port,F.2,anchored_port
+B_REC_F,MEA_REGEN,Reboiler duty,sink,heat,51.002550,,,,calculated,reduced_order,engine anchored port,J.16,anchored_port
+B_REC_F,STEAM_AVAILABLE,Heat stack for the reboiler,source,heat,37.179264,,,,calculated,reduced_order,engine anchored port,J.17,anchored_port
+B_REC_F,POWER_GENERATED,Electricity from reactor heat,source,electricity,19.790604,,,,calculated,reduced_order,engine anchored port,B.18,anchored_port
+B_REC_F,HE_CIRCULATION,Helium circulators,sink,electricity,7.458484,,,,calculated,reduced_order,engine anchored port,B.12,anchored_port
+B_REC_F,PUMP_COMPRESS,"Lean pump, CO2 compression, purge recovery",sink,electricity,9.437090,,,,calculated,reduced_order,engine anchored port,J.22,anchored_port
+B_REC_F,COOLING,Cooling towers and MEA fans,sink,electricity,0.833366,,,,calculated,reduced_order,engine anchored port,J.21,anchored_port
+B_REC_F,UNMET_THERMAL,Heat duty above the rated reactor,sink,heat,0.000000,,,,calculated,reduced_order,engine anchored port,J.18,anchored_port
+B_REC_F,UNMET_ELECTRICAL,Electricity above the rated reactor,sink,electricity,0.000000,,,,calculated,reduced_order,engine anchored port,J.29,anchored_port
+B_REC_F,SPARE_MARGIN,Rated reactor less the need,source,heat,30.960409,,,,calculated,reduced_order,engine anchored port,J.36,anchored_port
+B_REC_FIX,HTGR_HEAT,Reactor heat at the need,source,heat,180.769087,156.217183,217.332071,925.000000,calculated,reduced_order,engine anchored port,J.26,anchored_port
+B_REC_FIX,IHX_DUTY,IHX duty,sink,heat,121.709991,,,900.000000,calculated,reduced_order,engine anchored port,C.1,anchored_port
+B_REC_FIX,IHX_LOSS,IHX loss,sink,heat,0.973680,,,,calculated,reduced_order,engine anchored port,B.15,anchored_port
+B_REC_FIX,SMR_HEAT,Process heat with slip heat,sink,heat,121.709991,,,,calculated,reduced_order,engine anchored port,J.14,anchored_port
+B_REC_FIX,WGS_RELEASE,Water-gas shift heat release,source,heat,,,,,calculated,reduced_order,engine anchored port,E.6,not_run
+B_REC_FIX,SYNGAS_RECOVERY,Syngas heat above 130 C to the reboiler,source,heat,7.686217,,,130.000000,calculated,reduced_order,engine anchored port,F.2,anchored_port
+B_REC_FIX,MEA_REGEN,Reboiler duty,sink,heat,52.534745,,,,calculated,reduced_order,engine anchored port,J.16,anchored_port
+B_REC_FIX,STEAM_AVAILABLE,Heat stack for the reboiler,source,heat,37.179264,,,,calculated,reduced_order,engine anchored port,J.17,anchored_port
+B_REC_FIX,POWER_GENERATED,Electricity from reactor heat,source,electricity,20.020663,,,,calculated,reduced_order,engine anchored port,B.18,anchored_port
+B_REC_FIX,HE_CIRCULATION,Helium circulators,sink,electricity,7.497731,,,,calculated,reduced_order,engine anchored port,B.12,anchored_port
+B_REC_FIX,PUMP_COMPRESS,"Lean pump, CO2 compression, purge recovery",sink,electricity,9.604919,,,,calculated,reduced_order,engine anchored port,J.22,anchored_port
+B_REC_FIX,COOLING,Cooling towers and MEA fans,sink,electricity,0.856349,,,,calculated,reduced_order,engine anchored port,J.21,anchored_port
+B_REC_FIX,UNMET_THERMAL,Heat duty above the rated reactor,sink,heat,0.000000,,,,calculated,reduced_order,engine anchored port,J.18,anchored_port
+B_REC_FIX,UNMET_ELECTRICAL,Electricity above the rated reactor,sink,electricity,0.000000,,,,calculated,reduced_order,engine anchored port,J.29,anchored_port
+B_REC_FIX,SPARE_MARGIN,Rated reactor less the need,source,heat,29.230913,,,,calculated,reduced_order,engine anchored port,J.36,anchored_port

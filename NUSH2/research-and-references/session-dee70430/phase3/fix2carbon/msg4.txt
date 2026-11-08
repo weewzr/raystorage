@@ -1,0 +1,16 @@
+Regenerate the result tables for fix round 2
+
+Written by the exporter on the default (independent) basis. No existing value
+changed except the BASELINE group of Sensitivity_Results.csv.
+
+- Economic_Ledger.csv: 272 line texts (GAS, LOST_STEAM, BASE_POWER).
+- Emissions_Ledger.csv: 24 line texts (the central rows).
+- Final_Design_Basis.csv: 39 parameter texts, 2 source texts and 96 new rows
+  (FLOOR, NOSYS, SYSLINES).
+- Sensitivity_Results.csv: 30 base_value cells and 12 result and 12 delta cells
+  of the BASELINE group (INL and Cho points now follow the baseline in the cost).
+- Subsidy_Scenarios.csv: 352 source texts.
+- Validation_Results.csv: 6 new reported rows.
+- Integrated mass and energy balances: byte-identical.
+
+Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>

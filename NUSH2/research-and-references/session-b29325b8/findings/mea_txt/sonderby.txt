@@ -1,0 +1,2201 @@
+
+===== PDF PAGE 1 =====
+International Journal of Greenhouse Gas Control 12 (2013) 181–192
+Contents lists available at SciVerse ScienceDirect
+International Journal of Greenhouse Gas Control
+journal homepage: www.elsevier.com/locate/ijggc
+A new pilot absorber for CO2 capture from ﬂue gases: Measuring and modelling
+capture with MEA solution
+Tim L. Sønderby a, Kim B. Carlsen a, Philip L. Fosbøl a, Lars G. Kiørboe b, Nicolas von Solms a,∗
+a Department of Chemical and Biochemical Engineering, Center for Energy Resources Engineering (CERE), Technical University of Denmark, DK-2800 Lyngby, Denmark
+b Department of Chemical and Biochemical Engineering, Combustion and Harmful Emission Control (CHEC), Technical University of Denmark, DK-2800 Lyngby, Denmark
+a r t i c l e
+i n f o
+Article history:
+Received 16 June 2012
+Received in revised form
+30 September 2012
+Accepted 6 October 2012
+Available online 20 December 2012
+Keywords:
+CO2 capture
+Carbon dioxide recovery
+Pilot plant
+Simulation
+CO2 absorber
+MEA
+a b s t r a c t
+A pilot absorber column for CO2 recovery from ﬂue gases was constructed and tested with aqueous 30 wt%
+monoethanolamine (MEA), a primary amine, as capture solvent. The pilot plant data were compared with
+a mathematical rate based packed-column model. The simulation results compared well with the pilot
+plant data.
+The packed height of the column can be varied from 1.6 to 8.2 m by means of ﬁve different liquid inlets.
+The column has an inner diameter of 100 mm and is packed with structured Mellapak 250Y packing.
+Counter-current ﬂow is used.
+The pilot plant performance was investigated by changing three parameters: the absorption height,
+liquid ﬂow rate, and the loading of lean MEA. This was done using a synthetic ﬂue gas consisting of 10%
+CO2 with a ﬂow rate of approximately 33 m3/h at ambient temperature and atmospheric pressure. 23
+runs were performed.
+It was observed that while CO2 recovery increases with an increase in ﬂow rate of absorbent and
+absorption height, it decreases as the lean CO2-loading of the absorbent increases. In addition it has
+been possible to obtain temperature bulges in the bottom part of the absorber by the applied operation
+conditions. Bulges are observed at liquid ﬂows around 4.2 L/min and below. The results showed that is
+was possible to achieve 80% recovery with 3.3 m absorption height and a liquid ﬂow of 2.1 L/min. The
+simulations show good agreement with the experimental values, although slight deviations arise as the
+CO2-loading increases and the temperature bulge becomes more distinct.
+© 2012 Elsevier Ltd. All rights reserved.
+1. Introduction
+Carbon dioxide is emitted from large sources of fossil fuel com-
+bustion, particularly power plants. It is one of the key man-made
+greenhouse gases that must be minimized in order to avoid cata-
+strophic climate change. The capturing of trillions tons of CO2 is a
+daunting task, but is a challenge that has to be overcome success-
+fully if disaster is to be averted (Schrag, 2007).
+The process for post combustion capture consists of four stages
+as sketched in Fig. 1. First, CO2 is removed from the ﬂue gas by
+absorption in a packed absorber column. Then ‘rich’ solvent con-
+taining CO2 is led to a desorber column and heated in a reboiler to
+release the CO2. Next, CO2 is compressed and transported to a geo-
+logical storage site or injected into an oil and gas reservoir. Finally
+the regenerated ‘lean’ solvent is recycled to the absorber.
+The supply of heat for solvent regeneration is by far the most
+expensive aspect of the post combustion capture process. The cost
+∗Corresponding author.
+E-mail address: nvs@kt.dtu.dk (N. von Solms).
+of solvents, electricity, energy for pumps, and cooling are also high
+but to a lesser extent (Rao and Rubin, 2002).
+A number of studies have been carried out in order to inves-
+tigate CO2 capture in pilot plants using MEA. Most of these have
+appeared since 2006, with the exception of a few earlier studies. The
+older work conducted at University of Regina in Canada is described
+by Tontiwachwuthikul et al. (1992), Aroonwilas et al. (1999), and
+Aboundheir (2002) and more recently by Idem et al. (2006, 2009).
+There is a growing activity on post combustion capture in Norway
+evidence by the MEA related studies of Tobiesen et al. (2007) and
+Hessen (2010). Work has been performed at University of Kaiser-
+slautern (Notz et al., 2007) as well as several studies at University
+of Texas, Austin (Dugas, 2006; Kvamsdal and Rochelle, 2008). A
+number of larger industrial funded consortium projects have also
+appeared (Hessen, 2010; Dugas et al., 2009; Lee et al., 2008).
+While some studies have been performed concerning the mech-
+anisms of CO2 capture from ﬂue gases using solvents, there is
+limited pilot plant data for such systems, where enough informa-
+tion has been reported to enable model development. Here we
+report the construction and validation of a new pilot-scale facility,
+which we hope will contribute to research in CO2 capture, as this
+1750-5836/$ – see front matter © 2012 Elsevier Ltd. All rights reserved.
+http://dx.doi.org/10.1016/j.ijggc.2012.10.010
+
+===== PDF PAGE 2 =====
+182
+T.L. Sønderby et al. / International Journal of Greenhouse Gas Control 12 (2013) 181–192
+Nomenclature
+a
+speciﬁc wetted area for mass transfer, m2/m3
+Ac
+cross sectional area of the column, m2
+cp,i
+molar heat capacity of component in the gas phase,
+J/(mol K)
+cp,G
+molar heat capacity of the gas, J/(mol K)
+cp,L
+molar heat capacity of the liquid, J/(mol K)
+E
+enhancement factor
+E∞
+enhancement factor for instantaneous reaction
+FSE
+factor for surface enhancement
+G
+molar gas ﬂow, mol/s
+HCO2
+Henry’s law constant for CO2, J/(s K m2)
+h
+heat transfer coefﬁcient in gas, J/(s K m2)
+HH2O
+heat of condensation of H2O, J/mol
+HCO2
+heat of condensation of CO2, J/mol CO2
+KG,i
+overall gas side mass-transfer coefﬁcient of compo-
+nent i, mol/(m s Pa)
+kG,i
+gas side mass-transfer coefﬁcient of component i,
+m/s
+kL,i
+liquid side mass-transfer coefﬁcient of component
+i, m/s
+L
+molar liquid ﬂow, mol/s
+M
+Ha2, Ha is the Hatta number
+Ni
+molar ﬂux of component i, mol/(m2 s)
+pi
+partial pressure of component i in the bulk gas
+phase, Pa
+p∗
+i
+partial pressure of i component in gas phase if it
+were in equilibrium with the liquid phase, Pa
+q
+heat ﬂux, J/(m2 s)
+TL
+temperature of liquid phase, K
+TG
+temperature of gas phase, K
+xi
+mole fraction of component i in the liquid phase,
+mol/mol
+XCO2
+mole fraction of CO2 in reacted and unreacted form,
+mol/mol
+yi
+mole fraction in gas phase of component i, mol/mol
+z
+absorption height, m
+Nomenclature for PI diagram
+Ci1
+CO2-transmitter, measuring inlet ﬂow, mol/mol
+Ci2
+CO2-transmitter, measuring outlet ﬂow, mol/mol
+TI1–T10 temperature in column, ◦C
+TI43
+temperature in the liquid inlet, ◦C
+FI
+ﬂowmeter, L/min
+PI
+pressure measurement, mbar g
+important area moves increasingly to pilot and even demonstration
+scale.
+A vast number of both structured and random (dumped) packing
+types are available from commercial suppliers. Different packing
+types have been used in the above-mentioned works. Structured
+packing was considered in Hessen (2010), including 250Y Mellapak,
+whereas dumped packing was used by Lee et al. (2008), Dugas et al.
+(2009), Kvamsdal and Rochelle (2008), and Tontiwachwuthikul
+et al. (1992). Here the Koch-Glitsch IMTP 25, 40, 50 and ceramic
+Berl saddles, 12.7 mm, were used. Some studies included the same
+pilot facility but with different packing material. Aboundheir (2002)
+tested the A4 structured packing and the two dumped packings,
+IMTP 15 and Pall Ring-16mm. Dugas (2006) tested the structured
+Flexipac 1Y and IMTP 40 dumped packing. Finally Aroonwilas
+et al. (1999) tested the Gempak 4A structured and IMTP dumped
+packings. Both packings were tested in three different sizes. They
+found that the structured packings performed better than dumped
+Fig. 1. A simple illustration of a CO2 capture plant.
+packings, because of the greater surface area per unit volume.
+However there are some disadvantages, as the structured pack-
+ings require excellent initial distribution to obtain the full beneﬁt.
+Finally the cost of structured packings is also higher than dumped
+packings (Wilson, 2004).
+While packing suppliers should have a comprehensive under-
+standing of the performance of their packing, far from all packings
+have received a thorough and independent comparison in the open
+literature. An interesting study could be performed across research
+laboratories where different pilot plants independently compared
+the same packings. On the other hand, having validated our pilot
+plant here for a given packing and a “standard” solvent (MEA) we
+have conﬁdence that the same plant could be used to evaluate both
+different packings and different capture solvents.
+Previous pilot scale studies (Tontiwachwuthikul et al., 1992;
+Aroonwilas et al., 1999; Aboundheir, 2002; Idem et al., 2006, 2009;
+Tobiesen et al., 2007; Hessen, 2010; Notz et al., 2007; Dugas,
+2006; Kvamsdal and Rochelle, 2008; Dugas et al., 2009; Lee et al.,
+2008) cover a range of operation conditions. Three input vari-
+ables are interesting from a process point of view. These are the
+solvent CO2 loading, solvent concentrations, and ﬂue gas com-
+position. The lean loading covered is 0–0.35 and rich loading is
+0.33–0.49 molCO2/molMEA. The concentration of MEA in the MEA-
+H2O solvent varies from 18 to 54 wt%. Most of the experiments are
+carried out using 30 wt% MEA concentration. The CO2 concentra-
+tion in the ﬂue gas coming into the bottom of the absorber is in the
+range of 4–20 vol%.
+Several analytical methods have been used in the determination
+of liquid CO2 content for loading evaluation. Of the studies above,
+CO2 content was mainly found by a barium chloride method very
+similar to the one outlined in Appendix A of this work. It is cheap but
+time consuming. Other methods are the Total Organic Carbon (TOC)
+analysis, used by Dugas (2006) and gas chromatography–mass
+spectrometry (GC–MS) used by Idem et al. (2009). The beneﬁt of
+this last method is that it is on-line and unmanned measurements
+can be performed. This method was not pursued because of the high
+cost involved. A titration method described by Horwitz (2006) may
+also be used. We chose to proceed with the Barium Chloride method
+since we had prior experience with it.
+The absorber temperature proﬁle (temperature along the length
+of the column) can be measured by means of appropriately placed
+temperature probes. The reaction between CO2 and the solvent
+is exothermic, resulting in a steep temperature increase at cer-
+tain conditions. An observations by Kvamsdal and Rochelle (2008)
+was that the location of the temperature bulge can move from the
+bottom to the top of the column. The temperature bulge is quan-
+tiﬁed by its magnitude and location in the column and is seen as
+a convex curve on the temperature proﬁle. At a critical liquid to
+gas (L/G)-ratio the temperature bulge will be in the middle of the
+
+===== PDF PAGE 3 =====
+T.L. Sønderby et al. / International Journal of Greenhouse Gas Control 12 (2013) 181–192
+183
+column, where the rich loading can be maximized while main-
+taining a reasonable CO2 removal. This phenomenon should be
+analysed more closely and there is a need to determine effect on
+capture effectiveness.
+The aim of this work is to report results for a new pilot-scale
+(10 m high, 10 cm internal diameter) absorber. Results are reported
+for Mellapak 250Y structured packing and MEA solution as cap-
+ture solvent. In addition to reporting this new data, which can be
+used for model development and testing (here it is tested against
+an existing published model (Gabrielsen et al., 2006; Faramarzi
+et al., 2009)), a secondary aim is to validate the plant for a given
+packing and solvent in order to proceed to other packings and sol-
+vents with greater conﬁdence. The following operation conditions
+were covered: A lean loading of 0.11–0.30 and a rich loading of
+0.15–0.39 molCO2/molMEA. A 30 wt% aqueous MEA solution and a
+synthetic ﬂue gas composition of 9.2–10.9 vol% CO2. A modiﬁed and
+optimized barium chloride method was developed for the analysis
+of the liquid phase for the determination of the total dissolved CO2
+(see Appendix A). The plant was ﬁtted with two storage tanks with
+a volume of 1 m3 each. Therefore it was possible to run a series of
+experiments with the same lean loading and MEA concentration.
+The basis of the different operation conditions are consequently
+very similar and therefore comparable. The results of the various
+experimental runs contain detailed information about the loading
+and temperature proﬁles throughout the column. Additionally the
+CO2 concentration in the gas phase was measured at both the gas
+inlet and outlet of the column.
+The data were also modelled using a previously developed
+rate-based model (Gabrielsen et al., 2006; Faramarzi, 2010). While
+further development of the model was not undertaken as part of
+this work, the production of new pilot-plant data did provide fur-
+ther validation of the model, as usable pilot plant data are not
+plentiful.
+2. Modelling CO2 absorption
+The experimental pilot runs performed in this work were mod-
+elled using a rate based column model originally developed by
+Gabrielsen et al. (2006, 2007) and Gabrielsen (2009) and fur-
+ther modiﬁed by Faramarzi et al. (2009, 2010) and Faramarzi
+(2010). The main purpose of this work was the experimental
+validation of the pilot scale absorber. More detail on the model
+can be found in previous work (Gabrielsen et al., 2006, 2007;
+Gabrielsen, 2009; Faramarzi et al., 2009, 2010; Faramarzi, 2010)
+and only the basic elements are presented here. Previous works
+have presented models for mass transfer coefﬁcient, mass trans-
+fer area, hydraulics and physical properties. A comprehensive
+comparison of the various components that make up a com-
+plete rate-based model is considered beyond the scope of this
+work. The model is mass transfer based and accounts for trans-
+port properties, thermodynamics, phase equilibrium and reaction
+kinetics. The thermodynamic model used is extended UNIQUAC
+(Faramarzi, 2010). Extended UNIQUAC is used here to model
+the thermodynamic properties required in the full rate-based
+model, because it is the model where we have most experience
+(Gabrielsen et al., 2006, 2007; Gabrielsen, 2009; Faramarzi et al.,
+2009; Faramarzi, 2010). Any thermodynamic model for electrolytes
+which is at a reasonable level of development (for example e-
+NRTL) could have been used, although it was not the purpose of
+this work to develop and present comparisons of thermodynamic
+models.
+The model is built up around eight differential equations
+describing the mass and energy balances of the gas and liquid, to
+which a number of equations are related in order to account for the
+dependency of different parameters on temperature, concentra-
+tion, pressure, etc. In the development of the model some general
+assumptions were made in order to simplify the system sufﬁciently
+for modelling:
+1 The reaction rate is fast enough so that all the reaction will occur
+in the liquid ﬁlm while the CO2 concentration in the bulk phase
+is assumed to be in equilibrium.
+2 Liquid side heat transfer resistance is small compared to the gas
+phase, thus the interface temperature is the same as the bulk
+temperature.
+3 The liquid side mass-transfer resistance for the volatile solvent
+is negligible.
+4 The interfacial surface area is the same for heat and mass transfer.
+5 The system is adiabatic.
+The following equations are used in the description of the basic
+behaviour of mass and energy:
+dG
+dz = −(NCO2 + NH2O)aAc
+(1)
+dyCO2
+dz
+=
+NCO2aAc(yCO2 −1) + NH2OyCO2aAc
+G
+(2)
+dyH2O
+dz
+=
+NH2OaAc(yH2O −1) + NCO2yH2OaAc
+G
+(3)
+dL
+dz = −NH2OaAc
+(4)
+dXCO2
+dz
+=
+(NH2OXCO2 −NCO2)aAc
+L
+(5)
+XH2O
+dz
+=
+NH2O(XH2O −1)aAc
+L
+(6)
+dTG
+dz
+= −qaAc
+Gcp,G
+(7)
+dTL
+dz
+=
+(NCO2cp,CO2 + NH2Ocp,H2O)aAc(TL −TG)
+Lcp,L
+−qaAc
+Lcp,L
++
+(NCO2HCO2 + NH2OHH2O)aAc
+Lcp,L
+(8)
+G and L describe the total ﬂow in moles per minute in respec-
+tively the gas and liquid phase while yi is the mole fraction of
+component i in the gas phase. Xi denotes the mole fraction in the
+liquid phase based on a CO2 free environment, and thus the liquid
+L is also on a CO2 free basis. T is the temperature in kelvin and a
+is the wetted area in the column and Ac is the cross sectional area
+of the column. z is the position in the column while cp,i is the heat
+capacity of component i. The ﬂuxes, N, are given in terms of mass
+transfer coefﬁcients and driving forces of partial pressures, and for
+CO2 can be written as:
+NCO2 = KG,CO2(pCO2 −p∗
+CO2)
+(9)
+1
+KG,CO2
+=
+1
+kG,CO2
++
+HCO2
+EkL,CO2
+(10)
+where the mass-transfer coefﬁcient kG,CO2 of Rocha et al. (1996) is
+used.
+The heat ﬂux between the gas and the liquid phase can be
+expressed as:
+q = h(TG −TL)
+(11)
+Eqs. (1)–(3) represent the mass balances of the gas phase. Eqs.
+(4)–(6) describe the mass balance of the liquid phase. Finally, Eqs.
+(7) and (8) are the energy balances used in order to calculate the
+temperatures of the phases.
+
+===== PDF PAGE 4 =====
+184
+T.L. Sønderby et al. / International Journal of Greenhouse Gas Control 12 (2013) 181–192
+Table 1
+Enhancement factor according to different theories (Faramarzi et al., 2010).
+van Krevelen and Hoftijzer (1948)
+E =
+√
+M((E∞−E)/(E∞−1))
+tanh√
+M((E∞−E)/(E∞−1))
+Astarita et al. (1983)
+E =
+
+1 + nn/n−1(E∞−1)1/n−1E∞
+(1+M)n/2n−2
+
+−1
+1/n
+·
+(1+M)n/2n−2
+nn/n−1(E∞−1)1/n−1
+Pseudo-ﬁrst order (Kucka et al., 2003)
+E =
+√
+M
+The thermodynamic component of the model is used in the
+calculation of gas and liquid properties in order to estimate heat
+of CO2 absorption, heat capacities, Henry’s constants, and partial
+pressures (which are required to provide an estimate of various
+driving forces). Billet and Schultes (1999) and Rocha et al. (1993,
+1996) have provided equations for mass transfer coefﬁcients.
+In this study the correlation by Rocha et al. was used, since it gave
+better agreement between the modelling and experiments per-
+formed in this work. Correlation parameters were obtained from
+the original work of Rocha et al. The surface enhancement factor
+(FSE) was set equal to FSE = 0.25 (in Rocha et al., 1996, it is set to
+0.35). The reason for the deviation from the Rocha et al. correlation
+is that the pilot plant used in this work does not have as high a
+surface efﬁciency of an industrial sized column which has a much
+greater diameter.
+The kinetic component of the model is used in the calculation
+of the enhancement factor, E, in Eq. (10), where it describes the
+excess driving force obtained due to reaction between the solvent
+and CO2 compared to the case without reaction. An investigation of
+the enhancement factor theory was made by Faramarzi et al. (2010)
+where a discussion is given of the more advanced implicit and sim-
+ple explicit enhancement factor equations. It was concluded that all
+enhancement factors gave good results for the absorption part. In
+this work, the more advanced implicit equation derived by Kreve-
+len and Hoftijzer was used. It is a more general equation which can
+also be used in the stripper calculation. In the enhancement factor
+equation derived by Astarita et al. (1983) (see Table 1) an explicit
+expression has been derived. It involves a variable n which is a con-
+stant describing the smoothness of the transition of CO2 from gas
+phase to the liquid phase. A higher value of n gives a smoother
+transition. The square root of M is the Hatta number and E∞is
+the enhancement factor for instantaneous reaction. For the condi-
+tions of the experiments performed here, all enhancement factors
+gave reasonable agreement with experiments, although it may be
+expected that at other conditions (for example in the stripper) the
+pseudo ﬁrst order approximation may no longer be valid.
+The rate-based model is solved as a boundary value prob-
+lem (BVP) involving Eqs. (1)–(8). The boundary conditions are the
+deﬁned inlet ﬂows of ﬂue gas, liquid composition, pressure, and
+temperature. The main results are the properties of the cleaned gas
+and rich liquid. The model is thus capable of predicting more than
+just the temperature and the CO2-loading proﬁles: Compositions,
+ﬂows, transport properties, thermodynamic properties, and kinetic
+properties throughout the length of the column are also calculated.
+3. Experimental setup
+The pilot plant described in this work is shown in Fig. 2. The
+absorber column has a total height of 10.5 m and an internal diam-
+eter of 0.1 m. It is made of pyrex glass and packed with Sulzer
+Mellapak 250Y. The column consists of 10 sections each 1.0 m high.
+Redistributors are located between sections. The packing height
+for each section is 0.82 m and thus a maximum effective absorp-
+tion height of 8.2 m can be obtained. The packing diameter is
+0.084 m. Liquid can be introduced every second section, i.e. every
+two meters. This is done in order to vary the effective height of
+the packing. The untreated gas feed is introduced at the bottom of
+the column. The column operates in counter-current mode – gas
+ﬂowing upward contacts liquid ﬂowing down the column.
+Liquid samples can be taken from every section using custom-
+made sampling valves, V1–V10 in Fig. 2. These consist of special
+liquid collection rings which are machined into the section con-
+nectors. Samples can also be taken from the storage tanks T1 and
+T2.
+Pt100 temperature probes are inserted between every section.
+Additional temperature probes are placed at the inlets and outlets
+and in the recycled cleaned gas phase. Three pressure transmitters
+from Bugh & Bønsøe – the Tensto 6300 series – are placed in the
+bottom, middle, and top of the column, as indicated by PI1, PI6, and
+PI11.
+The gas phase composition is measured at the inlet and outlet of
+the column, Ci1 and Ci2 in Fig. 2. The carbon dioxide transmitters
+used are Vaisala CARBOCAP® series GMT221. These cover a range of
+0–20% CO2, with a ±2% expected accuracy of the full scale reading.
+Flow is measured manually by four calibrated rotameters FI1–FI4.
+In the top of the absorber unit there is a demister with a sub-
+sequent steam trap to ensure that no solvent is recycled with the
+gas stream. It is possible to cool down the recycle gas with heat
+exchanger HE1, although this was not used for these experiments.
+Two storage tanks each with a volume of 1000 L are located next
+to the column. Before a run commences stock solution of the desired
+composition is prepared and stored in one of the tanks. The stor-
+age tanks are large enough to collect liquid from several runs. This
+gives the possibility to perform similar experiments with the same
+concentration of MEA and lean loading of the solution. One stor-
+age tank holds the spent rich solvent while the other contains fresh
+solvent with a known loading.
+3.1. Chemicals used
+85 wt% (99.8% purity) MEA was obtained from BRENNTAG
+Nordic, Denmark. The solvent was diluted using demineralized
+water to the desired concentration of 30 wt% MEA. A synthetic ﬂue
+gas was created by nitrogen and carbon dioxide from gas cylinders
+from AGA Denmark, with purities of 99.95% and 99.8% respectively.
+For the liquid analysis of CO2 using the barium chloride method,
+0.1 M NaOH and 0.5 M HCl solution were obtained from VWR. The
+concentrations are known with an accuracy of 0.1%. The 0.5 M Bar-
+ium Chloride solution was prepared from BaCl2 · 2H2O(s) from VWR
+dissolved in water.
+4. Experimental procedure
+Before a run begins, pure nitrogen is continuously recycled in
+the column in order to minimize degradation of the solvent from
+air oxidation. The lean liquid ﬂow valve is then opened and CO2
+ﬂow adjusted in order to reach a deﬁned inlet gas concentration.
+The recycle gas ﬂow is kept constant in all experiments in the rage
+470–540 L/min. The CO2 concentration was maintained at 10%. The
+CO2 ﬂow varied from 107 to 113 g/min, depending on the over-
+all ﬂow of gas. The concentration of MEA was 30 wt% based on
+the initial batch mixed in the storage tank. The lean MEA was
+at room temperature varying between 19.5 and 23 ◦C. The atmo-
+spheric pressure in the pilot plant hall was between 1.000 and
+
+===== PDF PAGE 5 =====
+T.L. Sønderby et al. / International Journal of Greenhouse Gas Control 12 (2013) 181–192
+185
+P41
+CO2
+N2
+FI3
+FI4
+FI2
+FI1
+Ci1
+HE1
+TI31
+P32/fan
+V10
+V9
+V8
+V7
+V6
+V5
+V4
+V3
+V2
+V1
+Spent
+solvent
+T1
+Demister
+TI43
+Ci2
+TI8
+TI7
+TI6, PI6
+TI5
+TI4
+TI3
+TI2
+TI1, PI1
+TI9
+TI10
+TI11, PI11
+New
+solvent
+T2
+V0
+0m
+10m
+Fig. 2. Simpliﬁed piping and instrumentation diagram of pilot scale CO2 absorber unit.
+1.017 bar. With these parameters held relatively constant, the aim
+was to investigate the effect on the process of the liquid ﬂow
+rate, the height of absorption, and the variation of lean loading of
+CO2.
+4.1. Obtaining steady state
+Steady state was usually obtained within 5–25 min, depending
+on the operation condition and previous set point. Steady state was
+assumed to have been attained when the internal column temper-
+atures and the inlet and outlet CO2 concentrations deviated from
+their ﬁnal values by less than 4% (see Fig. 3). A process variabil-
+ity limit within 4% was felt to be an adequate representation of
+steady-state.
+4.2. Sampling
+After reaching steady state, data and liquid samples were col-
+lected within 5 min and subsequently analysed. A slight positive
+pressure is needed inside the column in order to extract samples
+from valves V1 to V10. To make sure that this can be achieved,
+0.7 g/min N2 is added to the gas stream continuously in all exper-
+iments, an amount small enough not to have any impact on the
+experiments.
+4.3. Analysis of samples
+The CO2 content in the liquid sample was determined by the
+so-called the barium chloride method (Sun et al., 2005). The CO2
+is precipitated as BaCO3, which is dissolved by adding a known
+amount of 0.5 M HCl and back titrated using 0.1 M NaOH. The
+amount of CO2 can then be determined as the difference of excess
+HCl compared to NaOH. Every sample was analysed twice and the
+experimental error was estimated to be less than ±4%. To reach
+this low deviation a great deal of optimization had to be done with
+respect to the existing procedure. The optimized analysis procedure
+can be found in Appendix A.
+
+===== PDF PAGE 6 =====
+186
+T.L. Sønderby et al. / International Journal of Greenhouse Gas Control 12 (2013) 181–192
+1
+2
+3
+4
+5
+iation from final value / %
+TI 11
+Ci 24
+TI 6
+PI 1
+Ci30
+TI1
+-1
+0
+1
+2
+3
+4
+5
+0
+1
+2
+3
+4
+Deviation from final value / %
+Time / min
+TI 11
+Ci 24
+TI 6
+PI 1
+Ci30
+TI1
+Fig. 3. Steady state values for run R5 based on percentage deviation with respect to
+the value at the end of the experiment.
+5. Results and discussion
+A total of 23 steady state experiments were carried out, num-
+bered R1–R23. The runs are divided into two main categories: runs
+R1–R20 where absorption height and L/G ratio are varied, and runs
+R21–R23 where lean liquid CO2 loading is varied. All other process
+variables were kept constant. An overview of the runs is given in
+Table 2. For runs R21–R23 both L/G ratio and absorption height
+were kept constant while lean loading was varied between 0.25
+and 0.30 mol/mol.
+The results are summarized in Tables 3–6. They depict the
+operating conditions and measured properties from the absorber
+bottom to the top. Table 3 shows ﬂows and mass balances, temper-
+ature proﬁles are shown in Table 4, pressure proﬁles in Table 5, and
+loading proﬁles in Table 6. CO2-loading proﬁles are given in Table 6
+for selected runs.
+5.1. Accuracy of the steady state mass balances
+A steady state was assumed to exist when process variables var-
+ied by less than 4%. In order to ascertain whether steady state was
+attained, CO2 balances were set up to determine if all CO2 was
+accounted for.
+The amount of CO2 into the system, nCO2,in, is calculated by
+summing all the streams that are entering the system and mul-
+tiplying by the mole fraction of CO2, yCO2,1, measured by the
+CO2-transmitter Ci1. Mole fractions of CO2 measured by CO2-
+transmitters can be found in Table 3. The streams included in the
+total inlet ﬂow (Gtotal,in) are: FI2, FI3 and FI4. Besides this contri-
+bution there is also some CO2 in the lean MEA which must be
+accounted for. The contribution for this lean loading is measured
+Table 2
+Overview of experimental runs.
+L/G
+Absorption height/m
+1.6
+3.3
+4.9
+6.6
+8.2
+4
+R20
+R17
+R11
+R6
+R1
+5.5
+R12
+R7
+R2
+8
+R18
+R13–R14, R21–R23
+R8
+R3
+11
+R15
+R9–R10
+R4
+18
+R19
+R16
+R5
+Fig. 4. CO2 absorption efﬁciency as a function of liquid ﬂow of MEA varying from
+2 to 9 L/min. The gas ﬂow and concentration are kept constant at approximately
+510 L/min and 9.8% CO2 respectively.
+in the lab (Table 6) and the number of moles CO2 into the system
+is thus calculated as:
+nCO2,in =
+
+Gtotal,in · yCO2,1 + nCO2,liquid in
+(12)
+The total amount of CO2 leaving (nCO2,out) can be calculated in a
+similar way, from the two outlet streams, FI2 and the CO2 leaving
+in the rich loading. The mole fraction in the outlet gas (yCO2,2) is
+measured by CO2-transmitter Ci2. The expression then becomes:
+nCO2,out = Gtotal,out · yCO2,2 + nCO2,liquid out
+(13)
+The deviation of the mass balance can now be calculated as the
+difference of moles CO2 between inlet and outlet streams divided
+by the total inlet of CO2 as:
+Deviation % =
+nCO2,out −nCO2,in
+nCO2,in
+(14)
+A maximum deviation of ±10% is obtained for runs R1 and
+R12, while the deviation averaged over all runs was 6.4%. Taking
+the number of measurements into account a certain deviation in
+mass balance is to be expected. This error could be minimized
+by installing ﬂow- and temperature transmitters in the ﬂue gas
+stream inlet at the bottom of the column, thereby reducing the
+number of measurements for the inlet steams. It should be noted
+that a lean loading greater than zero will generally result in greater
+errors, because of the errors inherent in the measurement of CO2
+concentration.
+5.2. Recoveries of CO2 obtained from experiments
+An overview of the efﬁciency during the experimental results
+may be obtained by plotting the percentage of recovered CO2 during
+the various runs. Fig. 4 shows the CO2 recovery against the liquid
+ﬂow at 8.2 m, 6.6 m, 4.9 m, and 3.3 m of absorption height.
+For 8.2 m and 6.6 m absorption heights there is almost 100%
+removal efﬁciency. At these conditions little effect of liquid ﬂow
+is observed, since the column is sufﬁciently high to reach almost
+complete equilibrium in the top outlet gas. The efﬁciency drops
+slightly to 98.8% at 8.2 m and 97.5% at 6.6 m at the low liquid ﬂow
+of 2.1 L/min. The CO2 recovery decreases both with decreasing col-
+umn height and with decreasing liquid ﬂow, as expected. However
+if the column is high enough, the liquid ﬂow is less crucial. Similarly
+if the liquid ﬂow is sufﬁciently high, the effect of column height is
+reduced. The reduction in CO2 recovery is most apparent at low to
+moderate column heights where the liquid ﬂow is also low. This
+
+===== PDF PAGE 7 =====
+T.L. Sønderby et al. / International Journal of Greenhouse Gas Control 12 (2013) 181–192
+187
+Table 3
+Operation conditions.
+Runs
+Column height (m)
+FI2 (L/min)
+FI3 (g/min)
+FI1 (L/min)
+Ci1 (%)
+Ci2 (%)
+L/G (mol/mol)
+Pressure external
+(mbar)
+Temp.
+surrounding (◦C)
+R1
+8.2
+519
+110.4
+2.1
+9.3
+0.1
+3.9
+1005
+22
+R2
+8.2
+523
+112.2
+3.0
+9.3
+0.1
+5.5
+1005
+22
+R3
+8.2
+509
+112.2
+4.2
+9.5
+0.0
+7.9
+1017
+23
+R4
+8.2
+507
+112.2
+6.0
+9.5
+0.0
+11.3
+1005
+22
+R5
+8.2
+466
+113.2
+8.9
+10.5
+0.0
+17.7
+1000
+21
+R6
+6.6
+522
+112.2
+2.1
+9.5
+0.2
+3.9
+1005
+22
+R7
+6.6
+524
+113.2
+3.0
+9.4
+0.2
+5.5
+1005
+22
+R8
+6.6
+511
+112.2
+4.2
+9.7
+0.1
+7.9
+1017
+23
+R9
+6.6
+508
+112.2
+6.0
+9.4
+0.0
+11.3
+1005
+22
+R10
+6.6
+490
+111.3
+6.0
+9.8
+0.2
+11.4
+1000
+21
+R11
+4.9
+516
+108.6
+2.1
+9.5
+1.0
+3.9
+1000
+21
+R12
+4.9
+542
+108.6
+3.0
+9.4
+0.9
+5.3
+1000
+21
+R13
+4.9
+526
+111.3
+4.2
+10.1
+0.8
+7.5
+1000
+21
+R14
+4.9
+522
+106.7
+4.2
+9.6
+0.7
+7.7
+1017
+23
+R15
+4.9
+501
+111.3
+6.0
+10.1
+0.7
+11.1
+1000
+21
+R16
+4.9
+468
+111.3
+9.1
+10.4
+0.1
+18.1
+1000
+21
+R17
+3.3
+513
+110.4
+2.1
+9.2
+1.6
+3.9
+1000
+21
+R18
+3.3
+523
+111.3
+4.2
+10.9
+2.1
+7.8
+1017
+23
+R19
+3.3
+486
+111.3
+9.1
+10.2
+0.4
+17.5
+1000
+21
+R20
+1.6
+498
+110.4
+9.1
+9.7
+0.8
+17.3
+1000
+21
+R21
+8.2
+503
+106.7
+4.2
+9.6
+0.4
+8.1
+1000
+21
+R22
+8.2
+502
+107.6
+4.2
+9.9
+0.6
+8.1
+1000
+21
+R23
+8.2
+499
+106.7
+4.2
+10.2
+0.9
+8.2
+1000
+21
+trend is clear in the 4.9 m column, where the recovery decreases
+from 98 to 90%. There is a slight (unexpected) drop in recovery from
+83% to 80% from run 17 to run 18 as the liquid ﬂow increases from
+2.1 to 4.2 L/min. The experimental uncertainty can be expected to
+increase at lower liquid ﬂowrates, where liquid channeling may
+occur. This may not be as big a problem for taller columns with
+regular liquid redistribution, but will be exacerbated by lower col-
+umn heights, where gas bypassing the liquid is more likely to take
+place. Theoretically the CO2 removal efﬁciency should converge to
+zero when the liquid ﬂow goes to 0 L/min, but this operating region
+is inaccessible since the ﬂowmeter Fl1 has a lower ﬂow limit of
+2.1 L/min.
+Fig. 4 shows that the liquid ﬂow has greatest inﬂuence on the
+absorption efﬁciency when the absorption height is low. When
+the experiments are run at an absorption height of 6.6 or 8.2 m,
+where the absorption efﬁciency is almost independent of absorp-
+tion height. At these column heights the recovery does increase, but
+only very slightly for a liquid ﬂow rate above 3 L/min. In the range
+of 3–6 L/min the efﬁciency is almost constant at ﬁxed columns
+heights, but for low ﬂows (2–3 L/min) and high ﬂows (6–9.1 L/min)
+the efﬁciency increases. Fig. 4 also reveals that a tall column has
+a similar effect to a high ﬂow rate. In order to reach 95% recovery
+either a tall column is needed or (for a smaller column) a higher
+liquid ﬂow. Regardless of the liquid ﬂow, our exploration of the
+height/ﬂow space reveals that a tall column (4.9 m or higher) is
+required to achieve 90% recovery. This naturally suggests operating
+at a high liquid ﬂowrate (and therefore a larger diameter column).
+This combination is expected to reduce capital and operating costs
+in a larger (demonstration or full-scale) plant.
+5.3. Experimental temperature proﬁles
+Figs. 5 and 6 show the temperature proﬁles for selected runs at
+8.2 m and 4.9 m absorption heights. The curves represent different
+Table 4
+Average temperatures in the system during steady state operation.
+Runs
+TI1 (◦C)
+TI2 (◦C)
+TI3 (◦C)
+TI4 (◦C)
+TI5 (◦C)
+TI6 (◦C)
+TI7 (◦C)
+TI8 (◦C)
+TI9 (◦C)
+TI10 (◦C)
+TI11 (◦C)
+TI31 (◦C)
+TI43 (◦C)
+R1
+20.8
+21.4
+21.3
+22.6
+23.6
+26.3
+29.5
+37.1
+47.9
+52.6
+39.2
+26.4
+20.2
+R2
+20.7
+21.0
+20.8
+21.8
+22.5
+24.2
+26.3
+29.7
+35.2
+45.7
+39.7
+26.7
+19.9
+R3
+23.5
+23.8
+24.0
+24.2
+24.6
+25.8
+27.0
+29.1
+30.3
+38.4
+35.2
+28.2
+23.2
+R4
+20.3
+20.3
+20.1
+20.5
+20.8
+21.7
+22.8
+24.2
+25.8
+30.1
+30.8
+26.9
+19.6
+R5
+20.0
+20.1
+20.0
+20.1
+20.3
+20.9
+21.4
+22.2
+23.4
+25.8
+27.8
+24.8
+19.7
+R6
+20.8
+21.7
+23.2
+25.6
+28.9
+35.0
+42.9
+49.2
+38.8
+27.3
+20.3
+R7
+20.5
+21.1
+22.0
+23.7
+25.5
+28.8
+32.9
+40.2
+37.2
+27.2
+20.0
+R8
+23.7
+24.2
+24.5
+25.8
+27.1
+29.1
+29.6
+38.2
+35.0
+28.2
+23.1
+R9
+20.1
+20.3
+20.6
+21.4
+22.4
+24.0
+25.2
+29.1
+30.2
+27.1
+19.6
+R10
+19.9
+20.2
+20.6
+21.5
+22.4
+24.0
+25.7
+30.3
+30.0
+24.2
+19.6
+R11
+20.8
+23.7
+27.0
+35.1
+50.9
+53.7
+39.1
+23.6
+19.9
+R12
+22.6
+23.0
+25.2
+28.4
+34.7
+44.1
+40.4
+26.0
+19.9
+R13
+21.9
+22.4
+23.3
+25.4
+29.8
+35.5
+35.0
+25.9
+19.8
+R14
+23.6
+25.2
+26.5
+28.6
+29.6
+38.2
+36.4
+26.7
+23.1
+R15
+21.6
+21.2
+22.1
+23.6
+25.8
+29.4
+30.6
+26.0
+19.7
+R16
+20.9
+20.5
+21.1
+21.8
+23.0
+25.3
+27.6
+25.0
+19.5
+R17
+23.2
+27.0
+39.4
+50.5
+39.9
+24.0
+19.9
+R18
+27.0
+26.9
+27.9
+37.3
+35.8
+28.5
+23.1
+R19
+21.7
+21.2
+22.4
+24.6
+26.9
+24.8
+19.4
+R20
+24.0
+22.5
+24.9
+24.5
+19.4
+R21
+24.0
+25.0
+24.8
+25.6
+26.3
+28.1
+29.6
+31.7
+34.6
+38.4
+35.8
+26.6
+24.0
+R22
+26.1
+27.4
+27.1
+28.1
+29.0
+31.1
+32.7
+34.9
+37.8
+41.2
+37.6
+27.2
+26.3
+R23
+27.9
+29.4
+29.0
+30.2
+31.3
+33.5
+35.4
+37.6
+40.7
+43.1
+39.4
+27.8
+28.1
+
+===== PDF PAGE 8 =====
+188
+T.L. Sønderby et al. / International Journal of Greenhouse Gas Control 12 (2013) 181–192
+Table 5
+Pressure proﬁle and mass balances.
+Runs
+PI1 (mbar g)
+PI6 (mbar g)
+PI11 (mbar g)
+Mass balance (%)
+R1
+13.8
+17.8
+19.6
+11.0
+R2
+4.9
+9.0
+10.3
+9.7
+R3
+10.6
+10.4
+9.5
+−2.1
+R4
+3.3
+8.1
+9.8
+1.8
+R5
+30.5
+34.4
+41.0
+−0.3
+R6
+14.0
+17.5
+17.0
+0.9
+R7
+7.4
+11.3
+10.9
+5.5
+R8
+14.3
+14.2
+13.6
+−4.4
+R9
+1.9
+6.4
+7.9
+0.5
+R10
+19.5
+24.0
+30.3
+−0.4
+R11
+9.1
+12.6
+18.1
+5.9
+R12
+22.3
+23.1
+26.3
+11.1
+R13
+39.5
+40.4
+43.6
+−2.7
+R14
+10.4
+11.4
+12.9
+−1.8
+R15
+40.3
+40.6
+43.1
+−2.1
+R16
+24.9
+28.1
+35.6
+−8.5
+R17
+17.2
+20.5
+25.4
+1.0
+R18
+10.0
+8.2
+7.0
+−4.2
+R19
+23.1
+26.0
+32.1
+1.2
+R20
+15.2
+18.7
+24.1
+3.8
+R21
+23.2
+22.1
+17.4
+−4.9
+R22
+20.3
+17.3
+11.2
+−2.6
+R23
+23.4
+17.9
+11.7
+−3.5
+runs at various L/G ratios. In Fig. 5 it can be seen for all cases that the
+temperature barely changes in the topmost part of the column. The
+reason is that nearly all CO2 is absorbed by this point so no exother-
+mic reaction between solvent and CO2 occurs. For a packed height
+of 4.9 m, shown in Fig. 6, most temperature proﬁles change all the
+way to the top, indicating that the full column height is required
+for absorption.
+By comparing Figs. 5 and 6 it can be seen that the proﬁles from
+0 m to 4.9 m in the 8.2 m column are similar to the proﬁles in the
+4.9 m column. So increasing the column height from 4.9 m to 8.3 m
+has little effect, except where liquid ﬂows are very low, for exam-
+ple in R11 (2.1 L/min) where only 89% recovery is achieved for the
+4.9 m column. It should also be noted that the temperature bulge
+increases for decreased liquid ﬂows. On the other hand this bulge
+disappears when the liquid ﬂow is high enough (above a thresh-
+old value of about 6 L/min). It can be concluded that the liquid ﬂow
+rate has a clear effect on the temperature proﬁles. It was previously
+3
+4
+5
+6
+7
+8
+9
+from bottom of column / m
+R1, 2.1 L/min
+R2, 3.0 L/min
+R3, 4.2 L/min
+R4, 6.0 L/min
+R5, 8.9 L/min
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+0,0
+20,0
+40,0
+60,0
+Height from bottom of column / m
+Temperature / oC
+R1, 2.1 L/min
+R2, 3.0 L/min
+R3, 4.2 L/min
+R4, 6.0 L/min
+R5, 8.9 L/min
+Fig. 5. Temperature proﬁles for a 8.2 m high column with a liquid ﬂow from 2.1 to
+9.1 L/min.
+determined that the temperature bulge does indeed have an effect
+on the absorption rates in the column (Dugas, 2006). The reason
+for this is that both the kinetics and the equilibrium of the absorp-
+tion reaction depend on temperature to an extent sufﬁcient for it
+to affect the absorption rate over the range of temperatures found
+in the column. In order to obtain more detailed understanding of
+the sensitivity towards height and liquid ﬂow, two cases are con-
+sidered with very different experimental conditions i.e. runs R11
+and R5 discussed below.
+5.4. Comparison of experimental and modelling temperature
+proﬁles
+Fig. 7 shows the model-predicted temperature proﬁles in the
+column for runs R5 (column height 8.2 m) and R11 (column height
+4.9 m). Run R5 is a case of high L/G ratio (17.7 mol/mol) for a tall
+Table 6
+Liquid CO2 content molCO2 /molMEA at given positions in the column.
+Runs
+V0
+Tank
+V1
+8.2 m
+V2
+7.38 m
+V3
+6.56 m
+V4
+5.74 m
+V5
+4.92 m
+V6
+4.1 m
+V7
+3.28 m
+V8
+2.46 m
+V9
+1.64 m
+V10
+0.82 m
+R1
+0.112
+0.356
+R2
+0.112
+0.286
+R3
+0.112
+0.113
+0.115
+0.117
+0.120
+0.127
+0.132
+0.141
+0.159
+0.215
+0.214
+R4
+0.112
+0.190
+R5
+0.112
+0.115
+0.117
+0.115
+0.122
+0.117
+0.118
+0.136
+0.145
+0.165
+R6
+0.112
+0.325
+R7
+0.112
+0.275
+R8
+0.112
+0.115
+0.117
+0.132
+0.131
+0.143
+0.171
+0.217
+0.211
+R9
+0.112
+0.187
+R10
+0.112
+0.151
+0.178
+0.187
+R11
+0.112
+0.125
+0.133
+0.160
+0.186
+0.264
+0.325
+R12
+0.112
+0.175
+0.254
+0.288
+R13
+0.112
+0.161
+0.207
+0.217
+R14
+0.112
+0.118
+0.124
+0.132
+0.156
+0.206
+0.212
+R15
+0.112
+0.147
+0.176
+0.184
+R16
+0.112
+0.149
+R17
+0.112
+0.172
+0.211
+0.291
+R18
+0.112
+0.125
+0.149
+0.207
+0.206
+R19
+0.112
+0.165
+R20
+0.112
+0.165
+R21
+0.254
+0.252
+0.247
+0.274
+0.297
+0.341
+0.338
+R22
+0.271
+0.281
+0.293
+0.299
+0.334
+0.364
+0.364
+R23
+0.300
+0.314
+0.323
+0.336
+0.364
+0.387
+0.387
+
+===== PDF PAGE 9 =====
+T.L. Sønderby et al. / International Journal of Greenhouse Gas Control 12 (2013) 181–192
+189
+2
+3
+4
+5
+6
+from bottom of column / m
+R11, 2.1 L/min
+R12, 3.0 L/min
+R14, 4.2 L/min
+R15, 6.0 L/min
+R16, 9.1 L/min
+0
+1
+2
+3
+4
+5
+6
+0,0
+20,0
+40,0
+60,0
+Height from bottom of column / m
+Temperature / oC
+R11, 2.1 L/min
+R12, 3.0 L/min
+R14, 4.2 L/min
+R15, 6.0 L/min
+R16, 9.1 L/min
+Fig. 6. Temperature proﬁles for a 4.9 m high column with a liquid ﬂows from 2.1 to
+9.1 L/min.
+column and run R11 is a case with a low L/G ratio (3.9 mol/mol) and
+smaller column height.
+For run R5 the temperature difference between inlet and out-
+let is low, around 8 ◦C. This is due to the high liquid ﬂow rate
+(9.1 L/min). Good agreement between the modelling and experi-
+ment is observed. A small deviation (approximately 1 ◦C) is noted
+in the temperature prediction at the bottom. Run R11 shows a
+greater deviation between the experimental values and the model
+predictions (around 5 ◦C at the bulge). However the error is not
+that signiﬁcant when it is taken into account that the temperature
+across the length of the column varies much more in this case –
+around 18 ◦C difference from top to bottom. The temperature bulge
+may be located in the bottom of the column as shown in Fig. 7 or it
+may exist as a large bulge throughout the column. An intermediate
+region where the bulge lies between runs R5 and R11 (Fig. 7) is difﬁ-
+cult to obtain. In an extremely narrow range of L/G the bulge may be
+located in the middle of the column. This range could not be found
+3
+4
+5
+6
+7
+8
+9
+from bottom of column / m
+Experimental R5
+Experimental R11
+Model R5
+Model R11
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+0,0
+10,0
+20,0
+30,0
+40,0
+50,0
+60,0
+Height from bottom of column / m
+Temperature / oC
+Experimental R5
+Experimental R11
+Model R5
+Model R11
+Fig. 7. Experimental results and modelling. R5 is absorption height of 8.2 m and a
+liquid ﬂow of 9.1 L/min, while R11 is an absorption height of 6.6 m and a liquid ﬂow
+of 2.1 L/min.
+3
+4
+5
+6
+7
+8
+9
+from bottom of column / m
+R5
+R1
+R2
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+0,0
+10,0
+20,0
+30,0
+40,0
+50,0
+Height from bottom of column / m
+Pressure / mbarg
+R5
+R1
+R2
+Fig. 8. Pressure proﬁles for 3 selected experiments. Three pressures are measured
+by gauges located at the top, middle and bottom of an 8.3 m column.
+in this study. The column is said to be “ignited” under these con-
+ditions. Quantitative agreement between model and experiment is
+difﬁcult to obtain in this case, since the “ignited” condition is very
+sensitive to process conditions. This means it is difﬁcult to predict
+ignition at the exact same process conditions as the experiment.
+The temperature proﬁles will completely change shape in this nar-
+row operating range from concave to convex. The model is better
+able to reproduce the experimental conditions at column condi-
+tions far from the ignited state. While minor deviations between
+model and experimental values may occur, in the middle section
+of the column, the model still predicts the outlet temperature with
+good accuracy.
+5.5. Pressure proﬁles
+The column pressure drop measured in this work is shown in
+Table 5. A number of factors contribute to it. First of all it is expected
+that the packing material will be a source of some pressure drop, but
+also the fan P32 in Fig. 2 will create a pressure drop due to the fact
+that it is not completely air tight. It is clear from Fig. 8 that there are
+some differences in pressure drop between experiments. Run R5
+has a higher pressure drop which is evenly distributed throughout
+the column. However for run R1 and R2 the main drop occurs in
+the top part of the column. The main reason for that is, that the fan
+causes suction in the top of the column creating a slight positive
+pressure at the bottom of the column. Much of the pressure drop
+can therefore be prevented by not recycling the inert gas. While
+some pressure drop is observed, it can reasonably be neglected as
+it is fairly constant in all the experiments. There is a very slight
+difference (maximum −30 mbar) in pressure at the bottom of the
+column from run to run. This is a result of the different gas and
+liquid ﬂow proﬁles for each run.
+5.6. Modelling CO2-loading proﬁles
+The CO2-loading proﬁles are affected by the liquid ﬂow and the
+column height. This is illustrated for R5 and R11 in Fig. 9 which
+clearly shows that there is a big difference in the way the col-
+umn performs under varying conditions. For R5 nearly all CO2 is
+absorbed in the bottom part of the column leaving the top part inef-
+fective. For R11 the change in loading has a much bigger effect (4
+times greater). Here it can be seen that the entire column is needed
+
+===== PDF PAGE 10 =====
+190
+T.L. Sønderby et al. / International Journal of Greenhouse Gas Control 12 (2013) 181–192
+3
+4
+5
+6
+7
+8
+9
+from bottom of column / m
+Experimental R5
+Experimental R11
+Model R5
+Model R11
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+0,0
+0,1
+0,2
+0,3
+0,4
+Height from bottom of column / m
+CO2 loading / mol/mol
+Experimental R5
+Experimental R11
+Model R5
+Model R11
+Fig. 9. Loading proﬁle as a function of height for R5 and R11. The liquid ﬂow is
+respectively 9.1 L/min and 2.1 L/min.
+in order to absorb all the CO2. In both cases the model is able to pre-
+dict the development of the loading proﬁles with good accuracy. In
+particular, it accurately predicts the bottom outlet concentration
+which is important for the model estimation of the rich solvent
+composition. For R11 the recovery is 90% and in R5 it is 99.9%. This
+means that in order to remove the very last 10% CO2 from the ﬂue
+gas it will require more absorption height or more liquid ﬂow. It
+will undoubtedly increase the capital cost or operation cost in a full
+scale plant.
+5.7. Modelling gas concentration proﬁles and recovery
+CO2 gas concentration proﬁles were measured at only two
+places in the pilot plant: At the inlet and at the outlet. Although only
+two experimental points are shown (inlet and outlet) the model
+predictions provide insight into how the CO2 is absorbed as the ﬂue
+gas rises in the column. A comparison between modelling results
+and experimental data is shown in Fig. 10, where a very low CO2
+3
+4
+5
+6
+7
+8
+9
+from bottom of column / m
+Experimental
+Model
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+0,0
+0,1
+0,1
+Height from bottom of column / m
+CO2 concentration in  gas phase / mol/mol
+Experimental
+Model
+Fig. 10. The gas concentration for R5 with a liquid ﬂow rate of 8.9 L/min plotted
+together with the model simulation. Gas was only sampled at the inlet and outlet
+of the column.
+85
+90
+95
+100
+model recovery/%
+75
+80
+85
+90
+95
+100
+75
+80
+85
+90
+95
+100
+model recovery/%
+experimental recovery/%
+Fig. 11. Parity plot of CO2-recovery. ±5% error lines are added to the plot.
+concentration is predicted in the gas outlet. The relative change in
+concentration is highest in the bottom part of the column from 0
+to 5 m. Similarly the driving force for transporting CO2 from the
+gas phase to the liquid phase is also greatest in this part of the col-
+umn. The model is capable of predicting the top outlet composition
+of the cleaned gas. This is an important process parameter since
+this is the gas which is sent to atmosphere. The CO2 recovery may
+be evaluated based on the calculated gas concentrations. Fig. 11 is
+a parity plot, comparing simulations and experimental recoveries
+for all runs. The difference between model predictions and experi-
+mental values is less than 5% (based on experimental values) for all
+but 3 of the runs exceed this limit – the cases of very low absorp-
+tion heights. Here the proﬁles become very sensitive towards the
+performance of the model and the CO2-recovery.
+5.8. Variation of lean loading
+In order to simulate a case of varying CO2 lean loading in
+the return line from the stripper was varied between 0.11 and
+0.30 mol/mol while all other conditions were kept constant. The
+CO2-recovery decreases from 99.8% to 92% during this process as
+shown in Fig. 12. At high lean loading a higher amount of CO2
+is present in the liquid. Consequently the solvent cannot absorb
+as much CO2 and the driving force is diminished. A decrease in
+recovery with higher loading is therefore expected.
+5.9. Sources of error during modelling
+To minimize errors all instruments were calibrated prior to each
+experimental campaign. It is believed that the manual ﬂow meters
+are the sources of most deviation. Accuracy in ﬂow measurement
+could be improved by replacing the manual instruments with dig-
+ital readouts which are also logged directly to the computer.
+Adiabatic conditions are assumed in the modelling although this
+is difﬁcult to obtain in lab experiments. This may be the cause of
+some deviations in the temperature proﬁles between the model
+and the experimental work. A rough conservative estimate of the
+amount of heat that is escaping the system may be obtained by
+neglecting ﬁlm resistance on walls and assuming the bulk temper-
+ature extends to the internal column walls and that the external
+walls are at room temperature. The column walls consist of 1.3 cm
+thick glass. This gives a maximum 0.1 ◦C drop in temperature for a
+
+===== PDF PAGE 11 =====
+T.L. Sønderby et al. / International Journal of Greenhouse Gas Control 12 (2013) 181–192
+191
+93
+94
+95
+96
+97
+98
+99
+100
+Recovery /%
+Experimental
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+0,0
+0,1
+0,2
+0,3
+0,4
+Recovery /%
+Lean load /mol/mol
+Experimental
+Fig. 12. The recovery as a function of lean loading varying from 0.11 to 0.30 mol/mol.
+30 wt% MEA solution. It is thus clear that adiabatic conditions are a
+reasonable assumption for this system.
+6. Conclusion
+Experimental data (CO2 recovery, temperature proﬁles, pres-
+sure proﬁles, CO2 loadings and CO2 gas phase concentrations) for
+a pilot plant absorber using structured packing (Mellapak 250Y)
+for capturing CO2 with 30 wt% MEA are presented and validated
+against an in-house absorber model.
+There is good agreement between the experimental values and
+model predictions with respect to temperature, CO2-loading, and
+CO2 gas phase concentration. Some deviations are observed where
+the model predicts the onset of a so-called “ignited” state. An
+ignited state was not observed experimentally.
+A temperature bulge was observed which moved upwards and
+changed size as various L/G-ratios were applied. A bulge was never
+observed in the top part of the absorber.”
+Appendix A. Analysis method for CO2 content
+• Take a 100 mL Erlenmeyer ﬂask and dispense 5 mL 0.1 M NaOH
+from the automatic dispenser.
+• Weigh the ﬂask and tare the scale.
+• Use a pipette and dispense:
+– 1 g of sample into the ﬂask if there is high load capacity.
+– 1.5 g of sample into the ﬂask if there is low load capacity.
+To determine whether the sample has a low or high loading
+capacity a test can be made by running the analysis with a sam-
+ple of 1 g and if the loading is less than 0.15 molCO2/molMEA,
+then the concentration is too low and the weight of the sample
+should be increased to 1.5 g for better precision.
+• Then dispense 25 mL 0.5 M BaCl2.
+• Place the ﬂask on the warming plate and bring it to boil. After
+boiling for 4 min cool it down again.
+• When mixture is cooled down to about room temperature, it is
+transported to the vacuum ﬁltration apparatus. The ﬁlter should
+be a 45 m cellulose nitrate ﬁlter.
+• Start vacuum pump and wet the ﬁlter with a little bit of deminer-
+alized.
+• Put the cooled solution into the ﬁlter.
+• Take four times 25 mL demineralized to get the last drop of solu-
+tion from the ﬂask and wash the ﬁlter with the water.
+• After ﬁltering, carefully take the ﬁlter with compound and place
+it again in the same Erlenmeyer ﬂask as before. Add to the ﬂask
+and ﬁlter 20 mL pure water to rinse the ﬁlter.
+• Disperse with 12 mL 0.5 M HCl from a burette. Write down the
+exact volume as it has to be used for calculating the loading. CO2
+will then bubble off.
+• Place the ﬂask on the warming plate and bring it to boil and
+cool down again to room temperature. The heating will avoid
+formation of H2CO3.
+• When the solution is at room temperature, put a magnetic stirrer
+in the ﬂask and place the ﬂask on the autotitrator.
+• Calibrate the electrode with a buffer of pH 4.0 and 7.0.
+• Titrate the solution with 0.100 M NaOH until pH 7. The pH should
+be stable for a period of time.
+• Rinse the electrode and NaOH dispenser with demineralized
+water. Carefully dry it with a tissue.
+• Place the ﬂask on a magnetic stirrer and lower the electrode and
+dispenser into the solution.
+• Start the titration program and after ending record the ﬁnal
+amount of NaOH.
+• The CO2-loading can now be calculated:
+wt% CO2 = CHCl · VHCl −CNaOH · VNaOH
+2 · msample
+MCO2 · 100
+CO2-loading = wt% CO2
+wt% MEA · MMEA
+MCO2
+References
+Aboundheir, A., 2002. Kinetics, modeling, and simulation of carbon dioxide absorp-
+tion into highly concentrated an loaded monoethanolamine solutions. Technical
+report. University of Regina, Canada.
+Aroonwilas,
+A.,
+Veawab,
+A.,
+Tontiwachwuthikul,
+P.,
+1999.
+Behavior
+of
+the
+mass-transfer coefﬁcient of structured packings in CO2
+absorbers with
+chemical
+reactions.
+Industrial
+and
+Engineering
+Chemistry
+Research
+38,
+2044–2050.
+Astarita, G., Savage, D.W., Bisio, A., 1983. Gas Treating with Chemical Solvents. John
+Wiley and Sons, New York.
+Billet, R., Schultes, M., 1999. Prediction of mass transfer columns with dumped and
+arranged packings updated summary of the calculation method of billet and
+schultes. Trans IChemE 77 (Part A).
+Dugas, R., Alix, P., Lemairea, E., Broutina, P., Rochelleb, G., 2009. Absorber model
+for CO2 capture by monoethanolamine – application to CASTOR pilots results.
+Energy Procedia 1, 103–107.
+Dugas,
+R.E.,
+2006.
+Pilot
+plant
+study
+of
+carbon
+dioxide
+capture
+by
+aque-
+ous
+monoethanolamine.
+Master’s
+Thesis.
+The
+University
+of
+Texas
+at
+Austin.
+Faramarzi, L., Kontogeorgis, G.M., Thomsen, K., Stenby, E.H., 2009. Thermody-
+namic modeling of the solubility of CO2 in aqueous alkanolamine solutions
+using the extended UNIQUAC model. Application to monoethanolamine and
+methyldiethanolamine. Energy Procedia 1, 861–867.
+Faramarzi, L., Kontogeorgis, G.M., Michelsen, M.L., Thomsen, K., Stenby, E.H., 2010.
+Absorber model for CO2 capture by monoethanolamine. Industrial and Engi-
+neering Chemistry Research 49, 3751–3759.
+Faramarzi, L., 2010. Post-combustion capture of CO2 from fossil fuelled power plants.
+Ph.D. Thesis. Technical University of Denmark (DTU), Department of Chemical
+and Biochemical Engineering.
+Gabrielsen, J., Michelsen, M.L., Stenby, E.H., Kontogeorgis, G.M., 2006. Modeling of
+CO2 absorber using an AMP solution. AIChE Journal 52, 3443–3451.
+Gabrielsen, J., Svendsen, H.F., Michelsen, M.L., Stenby, E.H., Kontogeorgis, G.M., 2007.
+Experimental validation of a rate-based model for CO2 capture using an AM
+solution. Chemical Engineering Science 62, 2397–2413.
+Gabrielsen, J., 2009. CO2 capture from coal ﬁred power plants. Ph.D. Thesis. Technical
+University of Denmark, Centre for Phase Equilibria and Separation Processes
+(IVC-SEP), Department of Chemical Engineering.
+Hessen, E.T., 2010. Thermodynamic models for CO2 absorption. Ph.D. Thesis. Nor-
+wegian University of Science and Technology.
+Horwitz, W., 2006. Ofﬁcial Methods of Analysis. AOAC, Gaithersburg, MD.
+Idem, R., Wilson, M., Tontiwachwuthikul, P., Chakma, A., Veawab, A., Aroonwilas,
+A., Gelowitz, D., 2006. Pilot plant studies of the CO2 capture performance
+of aqueous MEA and mixed MEA/MDEA solvents at the University of Regina
+CO2 capture technology development plant and the boundary dam CO2
+
+===== PDF PAGE 12 =====
+192
+T.L. Sønderby et al. / International Journal of Greenhouse Gas Control 12 (2013) 181–192
+capture demonstration plant. Industrial and Engineering Chemistry Research
+45, 2414–2420.
+Idem, R., Gelowitz, D., Tonitiwachwuthikul, P., 2009. Evaluation of the performance
+of various amine based solvents in an optimized multipurpose technology devel-
+opment pilot plant. Energy Procedia 1, 1543–1548.
+Kucka, L., Richter, J., Kenig, E.Y., Grak, A., 2003. Determination of gas–liquid reaction
+kinetics with a stirred cell reactor. Separation and Puriﬁcation Technology 31,
+163–175.
+Kvamsdal, H.M., Rochelle, G.T., 2008. Effects of temperature bulge in CO2 absorp-
+tion from ﬂue gas by aqueous monoethanolamine. Industrial and Engineering
+Chemistry Research 47, 867–875.
+Lee, S., Maken, S., Park, J., Song, H., Park, J.J., Shim, J., Kim, J., Eum, H., 2008. A study on
+the carbon dioxide recovery from 2 ton-CO2/day pilot plant at LNG based power
+plant. Fuel 87, 1734–1739.
+Notz, R., Asprion, N., Clausen, I., Hasse, H., 2007. Selection and pilot plant tests of new
+absorbents for post-combustion carbon dioxide capture. Chemical Engineering
+Research and Design 85 (4), 510–515.
+Rao, A.B., Rubin, E.S., 2002. A technical, economic, and environmental assessment of
+amine-based CO2 capture technology for power plant greenhouse gas control.
+Environmental Science & Technology 20, 4467–4475.
+Rocha, J.A., Bravo, J.L., Fair, J.R., 1993. Distillation columns containing structured
+packings: a comprehensive model for their performance. 1. Hydraulic models.
+Industrial and Engineering Chemistry Research 32, 641–651.
+Rocha, J.A., Bravo, J.L., Fair, J.R., 1996. Distillation columns containing struc-
+tured
+packings:
+a
+comprehensive
+model
+for
+their
+performance.
+2.
+Mass-transfer model. Industrial and Engineering Chemistry Research 35,
+1660–1667.
+Schrag, D.P., 2007. Preparing to capture carbon. Science 315, 812–813.
+Sun, W., Yong, C., Li, M., 2005. Kinetics of the absorption of carbon dioxide into mixed
+aqueous solutions of 2-amino-2-methyl-l-propanol and piperazine. Chemical
+Engineering Science 60, 503–516.
+Tobiesen, A., Juliussen, O., Svendsen, H.F., 2007. Experimental validation of a rigorous
+model for CO2 postcombustion capture. AIChE Journal 53, 846–865.
+Tontiwachwuthikul, P., Meisen, A., Lim, C.J., 1992. CO2 absorption by NaOH,
+monoethanolamine and 2-amino-2-methyl-1-propanol solutions in a packed
+column. Chemical Engineering Science 47, 381–390.
+van Krevelen, D.W., Hoftijzer, P.J., 1948. Kinetics of gas–liquid reactions. Part I. Gen-
+eral theory. Recueil des Travaux Chimiques des Pays-Bas 67, 563–586.
+Wilson, I.D., 2004. Gas–liquid contact area of random and structured packing. Mas-
+ter’s Thesis. The University of Texas at Austin.

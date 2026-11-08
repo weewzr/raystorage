@@ -1,0 +1,10061 @@
+
+=== PDF p.1 ===
+International
+ Journal
+ of
+ Greenhouse
+ Gas
+ Control
+ 56
+ (2017)
+ 173–186
+Contents
+ lists
+ available
+ at
+ ScienceDirect
+International
+ Journal
+ of
+ Greenhouse
+ Gas
+ Control
+j ourna
+ l
+ h
+ o
+ mepage:
+ www.elsevier.com/locate/ijggc
+Pressure
+ modiﬁcation
+ index
+ based
+ on
+ hydrodynamics
+ and
+ mass
+transfer
+ effects
+ for
+ modeling
+ of
+ CO2 removal
+ from
+ natural
+ gas
+ via
+absorption
+ at
+ high
+ pressures
+F. Isa a, H.
+ Zabiri a,∗, M.
+ Ramasamy a, L.D.
+ Tufa a, A.M.
+ Shariff a, S.F.
+ Saleh b
+a Chemical
+ Engineering
+ Department,
+ Universiti
+ Teknologi
+ PETRONAS,
+ 32610
+ Bandar
+ Seri
+ Iskandar,
+ Perak,
+ Malaysia
+b Faculty
+ of
+ Engineering,
+ Universiti
+ Malaysia
+ Sarawak
+ (UNIMAS),
+ Jalan
+ Meranti,
+ 94300
+ Kota
+ Samarahan,
+ Sarawak,
+ Malaysia
+a
+ r
+ t
+ i c l e 
+i n
+ f o
+Article
+ history:
+Received
+ 11
+ April
+ 2016
+Received
+ in
+ revised
+ form
+13
+ September
+ 2016
+Accepted
+ 16
+ November
+ 2016
+Available
+ online
+ 1
+ December
+ 2016
+Keywords:
+CO2 absorption
+MEA
+High
+ pressure
+Natural
+ gas
+Pressure
+ modiﬁcation
+ index
+a
+ b
+ s t r
+ a c t
+In this paper,
+ experimental
+ works
+ involving
+ high
+ concentration
+ CO2 removal
+ at elevated pressures
+ are
+conducted
+ using a high pressure
+ CO2 pilot plant
+ and the result
+ is used
+ to validate
+ a simulation
+ model
+based
+ on established
+ models
+ in the literature.
+ A rate based non-equilibrium
+ model
+ using 20 wt%
+ aque-
+ous
+ monoethanolamine
+ (MEA)
+ is developed
+ based on the work
+ of Pandya
+ (1983).
+ The model considers
+reaction
+ kinetics,
+ mass transfer rate and heat transfer. Since
+ the condition
+ of CO2 removal at atmospheric
+and
+ high pressure
+ are different, a pressure modiﬁcation
+ index
+ is proposed
+ and incorporated
+ in the mass
+transfer
+ ﬂux equation
+ to account for the non-idealities.
+ Comparative
+ study
+ involving
+ the modiﬁed
+ model
+with
+ index-f, original
+ rate-based
+ non-equilibrium
+ model,
+ Aspen Plus
+ equilibrium
+ and non-equilibrium
+models
+ has also been carried out for the CO2 loading
+ at the top column
+ exit of 1.505 m. It is found
+ that
+ the
+introduction
+ of the proposed
+ pressure
+ modiﬁcation
+ index together
+ with proper selection
+ of mass
+ transfer
+and
+ effective interfacial
+ area correlations
+ results
+ in an improvement
+ in the average
+ error from more than
+100%
+ to as low as 18% between
+ the estimated
+ and the pilot plant data.
+©
+ 2016 Elsevier
+ Ltd.
+ All rights
+ reserved.
+1.
+ Introduction
+In
+ Malaysia,
+ CO2 content
+ in
+ natural
+ gas
+ ﬁelds
+ varies
+ from
+ 28%
+ to
+87%,
+ and
+ over
+ 13
+ trillion
+ cubic
+ feet
+ natural
+ gas
+ reserves
+ are
+ unde-
+veloped
+ due
+ to
+ high
+ CO2 content
+ (Tan
+ et
+ al.,
+ 2012).
+ CO2 must
+ be
+removed
+ from
+ natural
+ gas
+ because
+ in
+ the
+ presence
+ of
+ water
+ this
+impurity
+ can
+ form
+ acids
+ that
+ corrode
+ pipelines
+ and
+ other
+ equip-
+ment.
+ Furthermore,
+ CO2 provides
+ no
+ heating
+ value
+ and
+ must
+ be
+removed
+ to
+ meet
+ gas
+ quality
+ speciﬁcations
+ before
+ distribution
+ to
+gas
+ users.
+ The
+ maximum
+ level
+ of
+ CO2 permitted
+ in
+ natural
+ gas
+ trans-
+mitted
+ to
+ customers
+ by
+ pipeline
+ is
+ typically
+ less
+ than
+ 3%
+ (Rufford
+et
+ al.,
+ 2012).
+ The
+ speciﬁcations
+ of
+ CO2 removal
+ from
+ natural
+ gas
+ to
+be
+ processed
+ in
+ a
+ cryogenic
+ plant
+ to
+ produce
+ LNG,
+ recover
+ liqueﬁed
+petroleum
+ gas
+ (LPG)
+ or
+ natural
+ gas
+ liquids
+ (NGL)
+ are
+ more
+ stringent
+than
+ those
+ for
+ typical
+ gas
+ pipelines.
+Natural
+ gas
+ reserves
+ have
+ high
+ ﬂowing
+ pressure
+ at
+ the
+ well
+head
+ that
+ come
+ from
+ the
+ reservoir
+ at
+ a
+ pressure
+ more
+ than
+ 200
+ bar
+(Addicks
+ et
+ al.,
+ 2002) which
+ is
+ reduced
+ to
+ within
+ 70–100
+ bar
+ for
+subsequent
+ operation
+ at
+ offshore
+ platform
+ (Tan
+ et
+ al.,
+ 2012).
+ In
+∗Corresponding
+ author.
+E-mail
+ addresses:
+ haslindazabiri@utp.edu.my, zhaslinda@yahoo.com
+ (H.
+ Zabiri).
+order
+ to
+ open
+ up
+ the
+ possibility
+ of
+ exploring
+ high
+ CO2 natural
+ gas
+reserves
+ at
+ reasonable
+ cost,
+ processing
+ the
+ natural
+ gas
+ at
+ offshore
+platform
+ becomes
+ a
+ necessity,
+ and
+ hence
+ operating
+ packed
+ col-
+umn
+ at
+ high
+ pressures
+ are
+ very
+ crucial.
+ It
+ should
+ be
+ noted
+ that
+ at
+high
+ pressures,
+ some
+ of
+ the
+ experimental
+ studies
+ used
+ sterically
+hindered
+ type
+ of
+ amines
+ such
+ as
+ 2-amino-2-methyl-1-propanol
+(AMP)
+ (Afkhamipour
+ and
+ Mofarahi,
+ 2014)
+ towards
+ improving
+ the
+absorption
+ selectivity
+ while
+ the
+ new
+ technology
+ embarks
+ on
+ using
+membrane
+ as
+ a
+ physical
+ separator
+ (Víctor
+ et
+ al.,
+ 2007).
+ Neverthe-
+less,
+ monoethanolamine
+ (MEA)
+ has
+ been
+ established
+ for
+ a
+ long
+ time
+and
+ any
+ thriving
+ effort
+ toward
+ its
+ optimum
+ usage
+ will
+ lead
+ to
+ con-
+siderable
+ improvement
+ (Godini
+ and
+ Mowla,
+ 2008).
+ It
+ is
+ widely
+ used
+due
+ to
+ its
+ high
+ reactivity
+ with
+ CO2 and
+ low
+ solvent
+ cost
+ (Tan
+ et
+ al.,
+2012;
+ Mandal
+ et
+ al.,
+ 2001;
+ Aroonwilas
+ et
+ al.,
+ 2003).
+Table
+ 1
+ shows
+ some
+ of
+ the
+ experimental
+ works
+ that
+ have
+been
+ conducted
+ at
+ high
+ pressure
+ and
+ the
+ inﬂuence
+ of
+ mass
+ trans-
+fer
+ towards
+ the
+ efﬁciency
+ of
+ CO2 removal.
+ For
+ elevated
+ pressure
+absorption
+ system,
+ water
+ was
+ formerly
+ used
+ but
+ due
+ to
+ its
+ low
+ CO2
+removal
+ efﬁciency
+ and
+ very
+ high
+ pumping
+ cost
+ (Kohl
+ and
+ Nielsen,
+1997),
+ a
+ more
+ efﬁcient
+ system
+ using
+ chemical
+ solvent
+ is
+ preferred
+and
+ the
+ most
+ popular
+ solvent
+ used
+ is
+ mono-ethanolamine
+ (MEA)
+in
+ range
+ of
+ 10–30
+ wt%
+ (Aroonwilas
+ and
+ Tontiwachwuthikul,
+ 1997).
+http://dx.doi.org/10.1016/j.ijggc.2016.11.024
+1750-5836/©
+ 2016
+ Elsevier
+ Ltd.
+ All
+ rights
+ reserved.
+
+=== PDF p.2 ===
+174
+ 
+F.
+ Isa
+ et
+ al.
+ / International
+ Journal
+ of
+ Greenhouse
+ Gas
+ Control
+ 56
+ (2017)
+ 173–186
+Nomenclature
+a
+ 
+Packing
+ speciﬁc
+ surface
+ area
+ (1/m)
+ae
+Effective
+ speciﬁc
+ interfacial
+ area
+ (1/m)
+aeBRF
+Effective
+ speciﬁc
+ interfacial
+ area
+ from
+ Bravo,
+ Rocha,
+&
+ Fair
+ (1/m)
+c 
+Concentration
+ of
+ component
+ (mol/m3)
+CE
+Correction
+ factor
+ CE =
+ 0.9
+Cp
+Heat
+ capacity
+ (J/mol
+ K)
+Ch
+Packing
+ speciﬁc
+ constant,
+ 0.554
+deq
+Channel
+ equivalent
+ diameter
+ (m)
+dh/s
+Hydraulic
+ diameter
+ of
+ column
+ (m)
+DL/G
+Diffusivity
+ of
+ phase
+ (m2/s)
+E
+ 
+Enhancement
+ factor
+FSE
+Factor
+ for
+ surface
+ enhancement
+f
+ 
+Fugacity
+ (bar)
+f 
+Fraction
+ of
+ cell
+ occupied/pressure
+ modiﬁed
+ index
+g
+ 
+Gravitational
+ acceleration
+ (m/s2)
+G
+ 
+Superﬁcial
+ mass
+ velocity
+ of
+ gas
+ (mol/m2 s)
+H
+ 
+Solubility
+ coefﬁcient/Henry’s
+ constant
+ (mol/m3 bar)
+HV/L
+Liquid/gas
+ enthalpy
+ (J/mol)
+hV/L
+j
+The
+ heat
+ transfer
+ coefﬁcient
+ in
+ liquid/vapor
+ phase
+at
+ stage
+ j
+ (kJ/m2s K)
+hL
+Liquid
+ hold
+ up
+ (m3/m3)
+i
+ 
+Number
+ of
+ components/interphase
+j
+ 
+Number
+ of
+ stages
+k’L
+Thermal
+ conductivity
+ (J/h
+ m
+ K)
+k2
+Second
+ order
+ rate
+ constant
+ (l/mol)
+kL/G
+Gas/liquid
+ mass
+ transfer
+ coefﬁcient
+ (mol/s
+ bar
+ m2)
+L
+ 
+Superﬁcial
+ mass
+ velocity
+ of
+ liquid
+ (mol/m2 s)
+Lp
+Wetted
+ perimeter
+ in
+ cross
+ sectional
+ slice
+ of
+ packing
+(m)
+Lj/Vj
+Total
+ liquid/vapor
+ leaving
+ the
+ stage
+ (kmol/s)
+N/R
+ 
+Rate
+ of
+ absorption/area
+ (kmol/m2s)
+NL
+ij
+Net
+ gain
+ of
+ component
+ i into
+ liquid
+ (kmol/s)
+NV
+ij
+Net
+ loss
+ of
+ component
+ i from
+ vapor
+ phase
+ (kmol/s)
+P
+ 
+Pressure
+ (bar)
+p 
+Partial
+ pressure
+ (bar)
+q’L/G
+Flux
+ of
+ heat
+ transfer
+ (J/s
+ m2)
+Q
+ 
+Volumetric
+ ﬂow
+ rate
+ (m3/s)
+Qj
+The
+ net
+ loss
+ of
+ energy
+ from
+ the
+ section
+ of
+ j (kJ/s)
+R
+ 
+Universal
+ gas
+ constant
+ (J/mol/K)
+S
+ 
+Side
+ dimension
+ of
+ corrugation
+ (m)
+SR
+Relative
+ stability
+ index
+t 
+Contact
+ time
+ (s)
+T 
+Temperature
+ (K)
+UL/G
+Velocity
+ of
+ phase
+ (m/s)
+Vl
+Molar
+ volume
+ of
+ a
+ liquid
+ (m3)
+w
+ 
+Mass
+ of
+ amine
+ (wt%)
+xij/yij
+Liquid/gas
+ mole
+ fraction
+ for
+ species
+ i
+ at
+ stage
+ j
+Y
+ 
+Component
+ gas/carrier
+ gas
+ (mol/mol)
+Z
+ 
+Height
+ of
+ column
+ (m)
+Dimensionless
+ number
+WeL
+Weber
+ number
+ of
+ liquid
+ phase
+FrL
+Froude
+ number
+ of
+ liquid
+ phase
+PrG/L
+Prandtl
+ number
+ of
+ gas/liquid
+ phase
+ReL/G
+Reynolds
+ number
+ for
+ liquid
+ or
+ gas
+ phase
+ScL/G
+Schmidt
+ number
+Greek
+ symbols
+ 
+Density
+ (kg/m3)
+
+ 
+CO2 loading
+ in
+ lean
+ and
+ rich
+ solvent
+ (mol
+ CO2/mol
+MEA)
+c
+Critical
+ surface
+ tension
+ of
+ packing
+ material
+ (kg/h2)
+L
+Surface
+ tension
+ of
+ liquid
+ (kg/h2)
+
+ 
+Void
+ fraction
+ of
+ packing
+εL
+j
+Net
+ gain
+ of
+ energy
+ (kJ/s)
+εV
+j
+Net
+ loss
+ of
+ energy
+ (kJ/s)
+
+ 
+Dynamic
+ viscosity
+ (kg
+ m/s)
+
+ 
+Kinematic
+ viscosity
+ (m2/s)
+
+ 
+Surface
+ tension,
+ N/m
+	
+ 
+Decay
+ rate
+ of
+ the
+ stretched
+ exponential
+ used
+
+ 
+Corrugation
+ channel
+ (degree)
+
+ 
+3.1416
+
+ 
+Absolute
+ efﬁciency
+rel
+Relative
+ efﬁciency
+
+ 
+Fugacity
+ coefﬁcient
+
+ 
+Activity
+ coefﬁcient/contact
+ angle
+
+ 
+Chemical
+ potential
+Various
+ studies
+ have
+ been
+ conducted
+ to
+ understand
+ mass
+ trans-
+fer
+ and
+ hydrodynamics
+ behavior
+ of
+ gas-liquid
+ absorption
+ systems
+at
+ elevated
+ pressures
+ (Maalej
+ et
+ al.,
+ 2003;
+ Benadda
+ et
+ al.,
+ 2000,
+1996;
+ Zhang
+ et
+ al.,
+ 2003;
+ Oyevaar
+ et
+ al.,
+ 1991).
+ An
+ experimental
+study
+ by
+ Heintz
+ et
+ al.
+ (2008)
+ reported
+ the
+ effect
+ of
+ pressures
+ in
+the
+ range
+ of
+ 6–30
+ bar
+ at
+ various
+ temperatures,
+ mixing
+ speeds
+ and
+liquid
+ heights
+ on
+ the
+ equilibrium
+ solubility,
+ hydrodynamics
+ and
+mass.
+ It
+ was
+ found
+ that
+ increasing
+ the
+ pressure
+ will
+ enhance
+ the
+liquid
+ side
+ mass
+ transfer
+ coefﬁcient
+ (kLae),
+ and
+ gas
+ liquid
+ interfacial
+area
+ (ae) appeared
+ to
+ be
+ controlling
+ this
+ behavior.
+ The
+ study
+ also
+revealed
+ that
+ increasing
+ pressure
+ results
+ in
+ the
+ formation
+ of
+ small
+gas
+ bubbles
+ with
+ large
+ gas-liquid
+ interfacial
+ area.
+ Effect
+ of
+ pressure
+on
+ kLae is
+ also
+ discussed
+ by
+ Kojima
+ et
+ al.
+ (1997). The
+ liquid
+ side
+mass
+ transfer
+ coefﬁcient
+ and
+ gas
+ liquid
+ interfacial
+ area
+ increase
+ as
+pressure
+ increases
+ and
+ become
+ more
+ signiﬁcant
+ at
+ higher
+ super-
+ﬁcial
+ gas
+ velocities.
+ The
+ ﬁndings
+ reported
+ in
+ Maalej
+ et
+ al.
+ (2003)
+and
+ Benadda
+ et
+ al.
+ (1996)
+ indicated
+ that
+ pressure
+ will
+ inﬂuence
+both
+ the
+ effective
+ interfacial
+ area
+ and
+ the
+ volumetric
+ liquid
+ side
+mass
+ transfer
+ coefﬁcient.
+ While
+ majority
+ of
+ the
+ studies
+ revealed
+ the
+independence
+ of
+ kL towards
+ pressure,
+ the
+ same
+ does
+ not
+ apply
+ for
+volumetric
+ liquid
+ side
+ mass
+ transfer
+ coefﬁcient
+ and
+ interfacial
+ area.
+The
+ inﬂuence
+ of
+ pressure
+ on
+ liquid
+ side
+ mass
+ transfer
+ coefﬁcient
+and
+ gas
+ liquid
+ interfacial
+ area
+ is
+ pronounced,
+ however
+ the
+ results
+for
+ both
+ these
+ parameters
+ are
+ sometimes
+ contradictory,
+ i.e.
+ either
+decrease
+ or
+ increase
+ with
+ pressure
+ (Maalej
+ et
+ al.,
+ 2003;
+ Benadda
+et
+ al.,
+ 1996).
+ It
+ is
+ noted
+ in
+ Maalej
+ et
+ al.
+ (2003)
+ that
+ for
+ a
+ given
+ gas
+mass
+ ﬂow
+ rate,
+ ae and
+ kLae decrease
+ with
+ high
+ pressures
+ due
+ to
+ the
+reduced
+ gas
+ superﬁcial
+ velocity
+ as
+ density
+ increases.
+ However,
+ for
+a
+ given
+ gas
+ superﬁcial
+ velocity,
+ ae and
+ kLae increase
+ with
+ pressure
+due
+ to
+ the
+ dispersion
+ enhancement
+ within
+ the
+ unit
+ caused
+ by
+ gas
+mass
+ ﬂow
+ rate
+ augmentation
+ at
+ high
+ pressure.
+Though
+ a
+ number
+ of
+ experimental
+ works
+ has
+ been
+ reported,
+ lim-
+ited
+ study
+ has
+ been
+ carried
+ out
+ for
+ modeling
+ of
+ CO2 removal
+ at
+ high
+pressures
+ based
+ on
+ hydrodynamics
+ and
+ mass
+ transfer.
+ As
+ shown
+ in
+Table
+ 2, a
+ determination
+ of
+ high-pressure
+ modiﬁcation
+ factor
+ via
+experimental
+ data
+ has
+ been
+ presented
+ in
+ Zhang
+ et
+ al.
+ (2003). They
+introduced
+ an
+ index-f
+ that
+ represents
+ the
+ inﬂuence
+ of
+ high
+ pres-
+sure
+ on
+ hydrodynamics
+ and
+ mass
+ transfer.
+ It
+ is
+ reported
+ that
+ there
+is
+ a
+ signiﬁcant
+ effect
+ of
+ high
+ pressure
+ on
+ mass
+ transfer
+ whereby
+the
+ interfacial
+ area
+ increases
+ as
+ pressure
+ increases
+ up
+ to
+ 13
+ bar.
+Using
+ an
+ absorption
+ column
+ of
+ a
+ fertilizer
+ plant
+ with
+ a
+ height
+ of
+11
+ m,
+ Zhang
+ et
+ al.
+ (2003)
+ has
+ shown
+ that
+ their
+ pressure
+ modiﬁcation
+
+=== PDF p.3 ===
+F.
+ Isa
+ et
+ al.
+ / International
+ Journal
+ of
+ Greenhouse
+ Gas
+ Control
+ 56
+ (2017)
+ 173–186
+ 
+175
+Table
+ 1
+Overview
+ on
+ experimental
+ studies
+ of
+ CO2 absorption
+ at
+ elevated
+ pressure.
+Pressure
+ (bar)
+ 
+Media
+ of
+ absorption
+ 
+Findings
+ 
+References
+1–50
+ 
+NaOH/Na2CO3-NaHCO3
+• The
+ effect
+ of
+ high
+ pressure
+ on
+ the
+mass
+ transfer
+ rate
+ and
+ interfacial
+area
+ is
+ only
+ pronounced
+ for
+operating
+ pressures
+ up
+ to
+ 20
+ bar.
+•
+ Liquid
+ mass
+ transfer
+ coefﬁcient
+ and
+effective
+ interfacial
+ area
+ decrease
+ as
+pressure
+ increases
+ to
+ 50
+ bar.
+Maalej
+ et
+ al.
+ (2003)
+2–6.25
+MDEA-Piperazine
+ (PZ)
+ 
+• Successfully
+ designed
+ the
+complexity
+ index
+ to
+ relate
+ the
+ effect
+of
+ high
+ pressure
+ to
+ the
+ rate
+ of
+ CO2
+absorption.
+Zhang
+ et
+ al.
+ (2003)
+100–200
+Water
+ &
+ MDEA
+•
+ Presented
+ a
+ new
+ data
+ for
+ high
+pressure
+ system
+ and
+ comparing
+ the
+inﬂuence
+ of
+ pressure
+ with
+ fugacity
+Addicks
+ et
+ al.
+ (2002)
+70
+ 
+Enhanced
+ Amine
+ Solvent
+(Stonvent)
+•
+ Increased
+ solubility
+ of
+ CO2 at
+ high
+pressures
+ with
+ new
+ solvents
+ but
+ the
+performance
+ is
+ slightly
+ lower
+ than
+MEA.
+Tan
+ et
+ al.
+ (2011)
+1–13
+Na2CO3-NaHCO3
+• Effective
+ interfacial
+ area
+ increases
+ as
+pressure
+ increases.
+Benadda
+ et
+ al.
+ (2000)
+6–30
+ 
+Perﬂuorinated
+ compound
+ 
+• Found
+ that
+ interfacial
+ area
+ and
+ mass
+transfer
+ coefﬁcient,
+ kLae increase
+ as
+pressure
+ increases
+ to
+ 17
+ bar.
+•
+ Increasing
+ pressure
+ results
+ in
+ the
+formation
+ of
+ bubble
+ that
+ increases
+the
+ interfacial
+ area
+ but
+ bubble
+diameter
+ is
+ decreased
+ slightly
+ as
+pressure
+ goes
+ beyond
+ 17
+ bar.
+Heintz
+ et
+ al.
+ (2008)
+Table
+ 2
+Overview
+ for
+ modeling
+ studies
+ of
+ CO2 absorption
+ at
+ elevated
+ pressure.
+Reference
+ 
+Findings
+Wang
+ et
+ al.
+ (2006)
+Design
+ correlation
+ for
+ effective
+ interfacial
+ area
+up
+ to
+ 27
+ bar
+ but
+ not
+ for
+ CO2 removal
+ system.
+Zhang
+ et
+ al.
+ (2003)
+ 
+Derived
+ pressure
+ modiﬁcation
+ index
+ based
+ on
+hydrodynamics
+ and
+ mass
+ transfer
+experimentally
+ but
+ pressure
+ range
+ is
+ very
+small
+ (2–7.6
+ bar)
+ and
+ limited
+ to
+ MDEA
+ based
+system
+Escobillana
+ et
+ al.
+ (1991)
+ 
+The
+ value
+ of
+ effective
+ interfacial
+ area
+ is
+ simply
+reduced
+ by
+ 50%
+ to
+ ﬁt
+ the
+ model
+ with
+experimental
+ data.
+Tan
+ et
+ al.
+ (2016)
+ 
+Model
+ performs
+ well
+ for
+ P
+ <
+ 30
+ bar.
+Emphasized
+ the
+ need
+ for
+ correction
+ factor
+ for
+ae for
+ P
+ >
+ 30
+ bar,
+ however
+ the
+ correction
+ value
+used
+ is
+ not
+ presented
+ and
+ discussed.
+index-f is
+ able
+ to
+ reduce
+ the
+ error
+ in
+ the
+ estimated
+ column
+ height
+from
+ 78%
+ to
+ 6.3%.
+ The
+ study
+ however
+ is
+ limited
+ to
+ a
+ small
+ pressure
+range
+ of
+ 2–7
+ bar
+ only
+ and
+ utilized
+ MDEA
+ as
+ the
+ solvent.
+ Wang
+ et
+ al.
+(2006)
+ proposed
+ a
+ new
+ effective
+ interfacial
+ area
+ for
+ high
+ pressures
+system
+ however
+ it
+ is
+ applicable
+ only
+ up
+ to
+ 27
+ bar.
+ Moreover
+ it
+ is
+ not
+speciﬁcally
+ designed
+ for
+ CO2 removal
+ process.
+ Modeling
+ using
+ rate
+based
+ non
+ equilibrium
+ approach
+ for
+ CO2 removal
+ has
+ also
+ been
+ car-
+ried
+ out
+ by
+ Escobillana
+ et
+ al.
+ (1991)
+ and
+ Tan
+ et
+ al.
+ (2016). However,
+in
+ Escobillana
+ et
+ al.
+ (1991), the
+ value
+ of
+ effective
+ interfacial
+ area,
+ae is
+ simply
+ adjusted
+ by
+ 50%
+ to
+ ﬁt
+ their
+ model
+ with
+ experimental
+data.
+ On
+ the
+ other
+ hand,
+ the
+ model
+ presented
+ in
+ Tan
+ et
+ al.
+ (2016)
+performs
+ very
+ well
+ for
+ pressure
+ up
+ to
+ 30
+ bar
+ utilizing
+ the
+ correla-
+tion
+ developed
+ by
+ Wang
+ et
+ al.
+ (2006). They
+ emphasized
+ the
+ need
+for
+ correction
+ factor
+ for
+ CO2 removal
+ at
+ pressures
+ beyond
+ 30
+ bar,
+however
+ the
+ correction
+ value
+ used
+ is
+ not
+ presented
+ and
+ discussed.
+All
+ the
+ previous
+ works
+ cited
+ so
+ far
+ signify
+ the
+ needs
+ to
+ prop-
+erly
+ account
+ for
+ the
+ high
+ pressure
+ on
+ hydrodynamics
+ and
+ mass
+transfer
+ in
+ modeling
+ the
+ absorption
+ system
+ for
+ CO2 removal.
+ The
+review
+ unfolds
+ the
+ signiﬁcance
+ of
+ the
+ inﬂuence
+ of
+ pressure
+ on
+ mass
+transfer
+ parameters,
+ namely
+ interfacial
+ area
+ and
+ mass
+ transfer
+ coef-
+ﬁcients.
+ However,
+ the
+ review
+ on
+ the
+ current
+ works
+ related
+ to
+ this
+aspect
+ revealed
+ a
+ few
+ shortcomings.
+ Though
+ various
+ experimental
+studies
+ have
+ been
+ carried
+ out
+ to
+ analyze
+ the
+ effect
+ of
+ pressure
+ on
+ the
+mass
+ transfer
+ parameters,
+ very
+ limited
+ modeling
+ works
+ have
+ been
+reported
+ that
+ accounts
+ for
+ mass
+ transfer
+ related
+ correction
+ factor.
+This
+ creates
+ a
+ bottleneck
+ for
+ performance
+ analysis
+ and
+ selection
+ of
+suitable
+ experimental
+ techniques
+ and
+ models
+ for
+ certain
+ upscale
+studies.
+ With
+ the
+ exception
+ of
+ the
+ works
+ by
+ Wang
+ et
+ al.
+ (2006)
+ and
+Gualito
+ et
+ al.
+ (1997), majority
+ of
+ interfacial
+ area
+ correlations,
+ how-
+ever,
+ are
+ developed
+ at
+ atmospheric
+ pressure,
+ and
+ this
+ may
+ lead
+ to
+substantial
+ miscalculations
+ (Oyevaar
+ et
+ al.,
+ 1991).
+ In
+ the
+ case
+ where
+pressure
+ modiﬁcation
+ index
+ is
+ introduced
+ to
+ account
+ for
+ this
+ effect
+on
+ their
+ absorption
+ kinetics
+ model,
+ the
+ study
+ is
+ either
+ limited
+ to
+medium
+ pressure
+ only,
+ limited
+ for
+ MDEA
+ based
+ system
+ alone
+ or
+ the
+interfacial
+ area
+ value
+ is
+ simply
+ adjusted
+ to
+ suit
+ their
+ data
+ without
+proper
+ justiﬁcation
+ (Tan
+ et
+ al.,
+ 2016;
+ Oyevaar
+ et
+ al.,
+ 1991;
+ Wang
+et
+ al.,
+ 2006).
+ Based
+ on
+ these
+ gaps,
+ the
+ outstanding
+ problems
+ this
+paper
+ attempt
+ to
+ address
+ are:
+a)
+ The
+ need
+ to
+ develop
+ and
+ evaluate
+ a
+ pressure
+ modiﬁcation
+ index
+to
+ account
+ for
+ the
+ non-idealities
+ introduced
+ by
+ elevated
+ pres-
+sures
+ in
+ an
+ MEA-based
+ CO2 absorption
+ system
+ experimentally.
+b)
+ The
+ need
+ to
+ develop
+ and
+ evaluate
+ a
+ rate-based
+ non-equilibrium
+model
+ based
+ on
+ the
+ pressure
+ modiﬁcation
+ index
+ that
+ can
+ reduce
+the
+ prediction
+ error.
+In
+ this
+ paper,
+ the
+ idea
+ of
+ Zhang
+ et
+ al.
+ (2003)
+ is
+ utilized
+ to
+ derive
+a
+ pressure
+ modiﬁcation
+ index
+ for
+ CO2 removal
+ from
+ natural
+ using
+
+=== PDF p.4 ===
+176
+ 
+F.
+ Isa
+ et
+ al.
+ / International
+ Journal
+ of
+ Greenhouse
+ Gas
+ Control
+ 56
+ (2017)
+ 173–186
+Fig.
+ 1.
+ UTP
+ CO2 pilot
+ plant.
+MEA
+ system
+ at
+ elevated
+ pressure
+ experimentally.
+ The
+ developed
+pressure
+ modiﬁcation
+ index
+ is
+ subsequently
+ incorporated
+ into
+ the
+standard
+ rate-based
+ non-equilibrium
+ model
+ for
+ CO2 absorption.
+The
+ result
+ of
+ the
+ simulation
+ is
+ then
+ validated
+ using
+ data
+ from
+ a
+pilot
+ plant
+ absorption
+ column.
+ This
+ paper
+ is
+ organized
+ as
+ follows.
+Section
+ 2
+ discussed
+ the
+ methodology
+ adopted
+ in
+ carrying
+ out
+ this
+work.
+ In
+ Section
+ 3, results
+ and
+ discussions
+ are
+ presented.
+ Finally,
+conclusions
+ are
+ drawn.
+2.
+ Materials
+ and
+ methods
+Fig.
+ 1
+ shows
+ the
+ high-pressure
+ CO2 absorption
+ pilot
+ plant
+ that
+is
+ located
+ in
+ Universiti
+ Teknologi
+ PETRONAS
+ (UTP).
+ Steady
+ state
+absorption
+ process
+ can
+ be
+ conducted
+ at
+ this
+ plant
+ for
+ high
+ pres-
+sures
+ up
+ to
+ 100
+ bar.
+ This
+ pilot
+ plant
+ consists
+ of
+ 2
+ types
+ of
+ columns
+which
+ are
+ structured
+ and
+ random
+ packing
+ with
+ other
+ supporting
+equipment
+ such
+ as
+ mass
+ ﬂow
+ control
+ (MFC),
+ mixer,
+ circulation
+pumps,
+ liquid
+ feed
+ pump,
+ compressor
+ and
+ infrared
+ CO2 gas
+ ana-
+lyzer.
+ The
+ pilot
+ plant
+ was
+ built
+ to
+ demonstrate
+ the
+ high
+ pressure
+condition
+ for
+ CO2 removal
+ at
+ offshore
+ platform
+ using
+ various
+ sol-
+vents
+ and
+ under
+ various
+ conditions.
+ Gases
+ entering
+ the
+ system
+ will
+be
+ heated
+ up
+ at
+ certain
+ temperature
+ and
+ the
+ ﬂow
+ is
+ controlled
+ using
+Mass
+ Flow
+ Controller
+ (MFC).
+ Back
+ pressure
+ regulator
+ is
+ installed
+in
+ order
+ to
+ control
+ the
+ pressure
+ in
+ the
+ column.
+ Solvent
+ solution
+is
+ prepared
+ in
+ the
+ solvent
+ tank
+ and
+ sent
+ to
+ the
+ top
+ of
+ the
+ column
+using
+ high
+ pressure
+ pump.
+ Once
+ the
+ pressure
+ in
+ the
+ column
+ is
+ con-
+stant,
+ the
+ process
+ is
+ started
+ by
+ setting
+ the
+ percentage
+ opening
+ of
+valve
+ for
+ high
+ pressure
+ pump
+ for
+ liquid
+ solvent
+ and
+ counter
+ cur-
+rent
+ absorption
+ process
+ take
+ place.
+ The
+ steady
+ state
+ absorption
+usually
+ achieved
+ after
+ 45
+ min
+ up
+ to
+ 1
+ h
+ depending
+ on
+ the
+ pressure
+and
+ temperature
+ of
+ the
+ experiment.
+ The
+ reading
+ of
+ CO2 percentage
+is
+ measured
+ through
+ Infrared
+ analyzer
+ that
+ is
+ installed
+ at
+ the
+ outlet
+line.
+ The
+ rich
+ solvent
+ that
+ containes
+ CO2 is
+ cooled
+ down
+ and
+ sent
+to
+ the
+ waste
+ tank.
+2.1.
+ The
+ chemistry
+ of
+ the
+ CO2-MEA
+ aqueous
+ system
+The
+ reaction
+ mechanism
+ that
+ occur
+ simultaneously
+ during
+ the
+absorption
+ are
+ (Khan
+ et
+ al.,
+ 2011):
+Bicarbonate
+ dissociation
+ : HCO−
+3 +
+ H2O
+ ↔
+ CO−2
+3
++
+ H3O+
+(1)
+Carbamate
+ formation
+ : 2RNH2 +
+ CO2 →
+ RNHCOO−+
+ RNH+
+3
+(2)
+Bicarbonate
+ 
+formation
+ : CO2 +
+ H2O
+ +
+ RNH2 →
+ HCO−
+3
++RNH+
+3
+(3)
+Table
+ 3
+The
+ inlet
+ conditions
+ of
+ CO2 removal.
+Pressure
+ (bar)
+ 
+20
+ 
+30
+ 
+40
+ 
+50
+ 
+60
+CO2 Flowrate
+ (slpm)
+ 
+24.57
+ 
+24.89
+ 
+24.87
+ 
+24.92
+ 
+24.9
+CH4 Flowrate
+ (slpm)
+24.57
+ 
+24.89
+ 
+24.87
+ 
+24.92
+ 
+24.9
+Solvent
+ Flowrate
+ (kg/min)
+ 
+1.03
+ 
+1.0
+ 
+1.03
+ 
+1.0
+ 
+1.0
+Solvent
+ Temperature
+ (◦C)
+ 
+33.8
+ 
+36
+ 
+35
+ 
+34
+ 
+33.8
+Gas
+ Temperature
+ (◦C)
+ 
+32.1
+ 
+30
+ 
+35.9
+ 
+36.7
+ 
+33
+In
+ the
+ loading
+ region
+ below
+ 0.5
+ mol
+ CO2/mol
+ MEA,
+ the
+ equilib-
+rium
+ reaction
+ of
+ CO2 with
+ aqueous
+ MEA
+ can
+ be
+ approximated
+ by
+ a
+single
+ chemical
+ reaction
+ as
+ shown
+ in
+ Eq.
+ (2), implying
+ that
+ all
+ the
+absorbed
+ CO2 reacts
+ with
+ the
+ alkanolamine
+ to
+ form
+ carbamate.
+ The
+expression
+ neglects
+ the
+ presence
+ of
+ bicarbonate
+ (HCO−
+3 ),
+ hydrox-
+ide
+ (OH−)
+ and
+ carbonate
+ ion
+ (CO2−
+3 ).
+ R
+ represents
+ the
+ element
+ of
+OHCH2CH2. The
+ forward
+ reaction
+ is
+ second
+ order
+ and
+ expressed
+as;
+r
+ =
+ k2 [CO2] [MEA]
+(4)
+2.2.
+ Solvent
+ preparation
+MEA
+ is
+ selected
+ as
+ the
+ basic
+ solvent
+ for
+ this
+ study
+ since
+it
+ is
+ generally
+ accepted
+ as
+ the
+ most
+ mature
+ and
+ documented
+technology
+ (Mandal
+ et
+ al.,
+ 2001).
+ 20
+ wt%
+ MEA
+ is
+ prepared
+ since
+the
+ typical
+ concentration
+ for
+ CO2 removal
+ is
+ within
+ 10–30
+ wt%.
+Monoethanolamine
+ (MEA)
+ (99%)
+ used
+ in
+ this
+ study
+ was
+ purchased
+from
+ Sigma
+ Aldrich.
+ Synthetics
+ natural
+ gas
+ is
+ prepared
+ by
+ mixing
+CH4 and
+ CO2 and
+ it
+ was
+ obtained
+ from
+ Air
+ Product
+ Malaysia.
+2.3.
+ Pilot
+ plant
+ experiment
+ for
+ CO2 removal
+ at
+ steady
+ state
+condition
+Fig.
+ 2
+ shows
+ the
+ schematic
+ diagram
+ of
+ the
+ experimental
+ set-up.
+The
+ absorption
+ process
+ was
+ started
+ by
+ introducing
+ the
+ gas
+ mixture
+from
+ the
+ gas
+ supply
+ system
+ to
+ the
+ bottom
+ of
+ the
+ absorption
+ column.
+CO2 and
+ methane
+ was
+ mixed
+ with
+ the
+ ratio
+ of
+ 1:1
+ to
+ emulate
+ the
+condition
+ of
+ natural
+ gas
+ content.
+ The
+ pressure
+ of
+ the
+ column
+ was
+maintained
+ at
+ the
+ desired
+ level
+ by
+ using
+ a
+ back
+ pressure
+ regulator.
+Counter-current
+ contact
+ between
+ the
+ gas
+ and
+ liquid
+ was
+ created
+ by
+pumping
+ the
+ liquid
+ solvent
+ at
+ the
+ top
+ of
+ the
+ column.
+ The
+ absorption
+process
+ was
+ operated
+ until
+ steady-state
+ condition
+ was
+ achieved.
+The
+ temperature
+ proﬁle
+ of
+ the
+ packed
+ column
+ was
+ observed
+ at
+ 5
+different
+ points
+ throughout
+ the
+ height
+ of
+ the
+ column
+ and
+ the
+ CO2
+concentration
+ was
+ recorded
+ at
+ the
+ top
+ of
+ column.
+ Table
+ 3
+ presents
+the
+ inlet
+ condition
+ of
+ CO2 absorption
+ from
+ 20
+ to
+ 60
+ bar.
+ The
+ col-
+umn was
+ operated
+ at
+ 50%–75%
+ of
+ ﬂooding
+ which
+ is
+ typical
+ for
+ gas
+absorber.
+2.4.
+ Model
+ development
+The
+ mathematical
+ model
+ is
+ based
+ on
+ Pandya
+ (1983)
+ since
+ it
+is
+ rigorous
+ and
+ based
+ on
+ widely
+ accepted
+ concepts
+ proposed
+ by
+Treybal
+ (1969)
+ for
+ adiabatic
+ gas
+ absorption
+ with
+ chemical
+ reaction.
+The
+ procedure
+ is
+ accounted
+ for
+ the
+ heats
+ of
+ absorption
+ and
+ reac-
+tion,
+ solvent
+ evaporation
+ and
+ condensation,
+ chemicals
+ reactions
+ in
+the
+ liquid
+ phase
+ as
+ well
+ as
+ heat
+ and
+ mass
+ transfer
+ resistances
+ in
+both
+ phases.
+ In
+ this
+ model,
+ ﬁve
+ components
+ are
+ considered
+ which
+are
+ CO2, CH4, H2O,
+ MEA
+ and
+ bicarbonate
+ as
+ product.
+Fig.
+ 3
+ shows
+ a
+ differential
+ element
+ of
+ an
+ absorption
+ tower.
+ The
+following
+ assumptions
+ are
+ made
+ while
+ developing
+ the
+ model;
+-
+ The
+ model
+ is
+ illustrated
+ as
+ a
+ two
+ ﬁlm
+ theory
+ with
+ a
+ few
+ assump-
+tions.
+
+=== PDF p.5 ===
+F.
+ Isa
+ et
+ al.
+ / International
+ Journal
+ of
+ Greenhouse
+ Gas
+ Control
+ 56
+ (2017)
+ 173–186
+ 
+177
+Fig.
+ 2.
+ Hydrocarbon
+ absorption
+ system
+ for
+ CO2 removal.
+Fig.
+ 3.
+ Differential
+ element
+ in
+ an
+ absorber.
+-
+ The
+ reaction
+ is
+ very
+ fast
+ and
+ thus
+ it
+ only
+ takes
+ place
+ in
+ the
+ ﬁlm
+and
+ the
+ bulk
+ of
+ the
+ liquid
+ is
+ in
+ equilibrium.
+-
+ The
+ liquid
+ ﬁlm
+ heat
+ transfer
+ resistance
+ is
+ very
+ small
+ and
+ hence
+the
+ temperature
+ of
+ the
+ liquid
+ is
+ the
+ same
+ for
+ interface
+ and
+ bulk.
+-
+ The
+ volatility
+ of
+ the
+ solvent
+ is
+ negligible.
+-
+ The
+ interfacial
+ surface
+ area
+ is
+ the
+ same
+ for
+ heat
+ and
+ mass
+ transfer
+-
+ The
+ heat
+ loss
+ to
+ the
+ surrounding
+ is
+ negligible.
+2.4.1.
+ Liquid
+ and
+ gas
+ side
+ mass
+ transfer
+ rates
+Within
+ the
+ gas
+ phase,
+ there
+ is
+ transfer
+ of
+ both
+ CO2 and
+ sol-
+vent
+ vapor.
+ The
+ mass
+ and
+ heat
+ transfer
+ per
+ unit
+ area
+ of
+ tower
+ cross
+section
+ are
+ written
+ as:
+NH2Oa.dZ
+ =
+ kG,H2O.P.
+yH2O −
+ yH2Oi
+
+.a.dZ
+ =
+ −GCH4dYH2O
+(5)
+NCO2a.dZ
+ =
+ kG,CO2.P.
+yCO2 −
+ yCO2i
+
+.a.dZ
+ =
+ −GCH4dYH2O
+(6)
+
+=== PDF p.6 ===
+178
+ 
+F.
+ Isa
+ et
+ al.
+ / International
+ Journal
+ of
+ Greenhouse
+ Gas
+ Control
+ 56
+ (2017)
+ 173–186
+Table
+ 4
+Mass
+ transfer
+ correlations.
+Reference
+ 
+Mass
+ transfer
+ correlation
+Billet
+ and
+ Schultes
+ (1999)
+kL =
+ CL12
+1⁄6
+UL
+dh
+1⁄2
+aDL
+4
+1/2
+(8)
+kG =
+ CG( −
+ hL)−1/2
+a
+dh
+1/2
+DG
+
+UG
+avG
+3/4
+VG
+DG
+1/3
+(9)
+Rocha
+ et
+ al.
+ (1996)
+kL =
+ 2.
+DLCEUL
+.S
+1/2
+(10)
+kG =
+ 0.054
+DG
+S
+
+[UL+UG].G.S
+G
+0.8
+G
+DG.G
+0.33
+(11)
+Hanley
+ et
+ al.
+ (1994)
+kG =
+DG
+RTdeq (ReG)0.8ScG1/3(12)
+kL =
+DL
+deq (ReL)0.5ScL0.5(13)
+Han
+ et
+ al.
+ (2013)
+ 
+kL =
+d
+6 ln
+1
+1−F
+
+(14)
+Onda
+ et
+ al.
+ (1968)
+kG = aDG
+RT 5.23
+
+G
+aG
+0.7
+G
+GDG
+ 1
+3 (aDp)−2.0
+(15)
+kL = 
+gL
+L
+
+0.0051
+
+L
+aL
+2/3
+L
+LDL
+1/3
+(aDp)0.4
+(16)
+Table
+ 5
+Effective
+ interfacial
+ area
+ correlations.
+Reference
+ 
+Pressure
+ (bar)
+ 
+Effective
+ interfacial
+ area
+ correlations
+Billet
+ and
+ Schultes
+ (1999)
+ 
+Up
+ to
+ 30
+ bar
+ae
+a =
+ Ch
+
+UL.L
+a.L
+0.15
+U2a
+g
+0.1
+for
+ ReL <
+ 5(17)
+ae
+a =
+ 0.85Ch ( UL.	L
+a.L )
+0.25 ( U2a
+g )
+0.1
+for
+ ReL ≥
+ 5(18)
+Rocha
+ et
+ al.
+ (1996)
+0.33–20.4
+ae
+a =
+ FSE.
+29.12.(WeL.FrL)0.15.S0.359
+Re0.2
+L
+.0.6.(1−0.93
+ cos()).sin(
+)
+0.3 (19)
+Wang
+ et
+ al.
+ (2006)
+ 
+6.9–27.6
+ae
+a =
+ ae,Rocha0.17
+L
+G
+0.16
+exp
+−0.15
+uG
+
+(20)
+de
+ Brito
+ et
+ al.
+ (1994)
+ 
+Not
+ stated
+ae
+a =
+ 0.465.Re0.3
+L (21)
+Onda
+ et
+ al.
+ (1968)
+0.03–0.07
+ bar
+ae
+a =
+ 1
+ −
+ exp[−1.45( ıc
+ıL )
+0.75(
+GL
+aVuL )
+0.1(
+GL2
+	LıLat )
+0.2
+( atGL2
+	L2g )
+−0.05
+](22)
+Gualito
+ et
+ al.
+ (1997)
+ 
+0.05–27.2
+ae
+a =
+ ae,Rocha
+
+1.2
+1+0.2e15UL⁄UG
+
+(23)
+Tsai
+ et
+ al.
+ (2011)
+ 
+Not
+ stated
+ae
+a =
+ 1.34
+
+L
+
+
+g
+1
+3 
+Q
+Lp
+ 4
+3 0.116
+(24)
+In
+ the
+ liquid
+ ﬁlm,
+ the
+ reaction
+ is
+ assumed
+ to
+ be
+ very
+ quick
+ and
+instantaneous
+ which
+ apparently
+ is
+ faster
+ than
+ physical
+ absorption.
+Thus,
+ the
+ bulk
+ concentration
+ is
+ nearly
+ the
+ same
+ as
+ equilibrium
+ con-
+centration.
+ Assuming
+ that
+ all
+ CO2 is
+ reacted
+ with
+ MEA
+ to
+ produce
+bicarbonate
+ which
+ lead
+ to
+ the
+ following
+ equation:
+NCO2a.dZ
+ =
+ kL,CO2.E.
+cCO2 −
+ cCO2,i
+
+.a.dZ
+ 
+(7)
+2.4.2.
+ Mass
+ transfer
+ and
+ effective
+ interfacial
+ area
+ correlations
+The
+ calculation
+ of
+ mass
+ transfer
+ rate
+ requires
+ detailed
+ knowl-
+edge
+ of
+ physical
+ properties
+ of
+ gas
+ and
+ liquid
+ phases
+ as
+ well
+ as
+solubility
+ and
+ diffusivities
+ of
+ gases.
+ Therefore,
+ a
+ number
+ of
+ empir-
+ical
+ and
+ semi
+ empirical
+ correlations
+ for
+ the
+ prediction
+ of
+ mass
+transfer
+ has
+ been
+ developed
+ (Wang
+ et
+ al.,
+ 2005)
+ for
+ various
+ sep-
+aration
+ processes.
+ In
+ this
+ study,
+ various
+ mass
+ transfer
+ correlations
+(as
+ shown
+ in
+ Table
+ 4)
+ and
+ effective
+ interfacial
+ correlations
+ as
+ in
+(Table
+ 5) are
+ combined
+ to
+ produce
+ the
+ most
+ reliable
+ model.
+2.4.3.
+ Enhancement
+ factor
+The
+ enhancement
+ factor
+ is
+ a
+ function
+ to
+ determine
+ mass
+ transfer
+and
+ interfacial
+ concentration
+ of
+ the
+ dissolved
+ gas
+ CO2 in
+ the
+ bulk
+of
+ the
+ liquid.
+ The
+ function
+ is
+ exclusively
+ determined
+ from
+ speciﬁc
+kinetic
+ reaction
+ occurred
+ in
+ the
+ liquid
+ ﬁlm.
+ It
+ needs
+ to
+ be
+ stressed
+out
+ that
+ if
+ E
+ cannot
+ be
+ determined
+ by
+ mathematical
+ formulation,
+ it
+needs
+ to
+ be
+ determined
+ experimentally.
+ The
+ enhancement
+ factor
+for
+ the
+ (overall)
+ second
+ order
+ irreversible
+ reaction
+ for
+ this
+ process
+is
+ listed
+ in
+ Table
+ 6.
+2.4.4.
+ Physical
+ properties
+The
+ calculation
+ of
+ mass
+ transfer
+ rate
+ requires
+ detailed
+ knowl-
+edge
+ of
+ the
+ physical
+ properties,
+ thus
+ all
+ the
+ necessary
+ physical
+ and
+chemical
+ properties
+ needed
+ are
+ listed
+ and
+ assumed
+ to
+ be
+ constant
+throughout
+ the
+ column.
+ Liquid
+ diffusivity
+ has
+ strong
+ dependence
+Table
+ 6
+Enhancement
+ correlations
+ for
+ CO2 absorption.
+Enhancement
+ 
+Correlation
+Fast
+ reaction
+ 
+E
+ =
+
+DCO2,Lk2CCH4,L
+
+ko
+L
+2
+	
+(25)
+Instantaneous
+ reaction
+ 
+E
+ =
+ 1
+ +
+
+DMEA,LCmEA
+bDCO2,LCCO2,L
+
+(26)
+on
+ liquid
+ temperature
+ and
+ physical
+ properties
+ of
+ the
+ solvent.
+ Vis-
+cosity
+ of
+ the
+ solvent
+ is
+ reported
+ empirically
+ in
+ Khan
+ et
+ al.
+ (2011)
+ in
+terms
+ of
+ the
+ mass
+ percentage
+ of
+ amine
+ in
+ present
+ solution,
+ w
+ and
+solvent
+ absolute
+ temperature
+ T
+ and
+ CO2 loading
+ (27)–(29).
+DCO2,L =
+ DCO2,water
+
+water
+L
+0.8
+(27)
+DCO2,water =
+ 2.35
+ ×
+ 10−6 −2119
+TL
+0.8
+(28)
+water
+L
+=
+ exp
+
+(21.18w +
+ 2373) [˛ (0.01015w
+ +
+ 0.0093T
+ −
+ 2.2589) +
+ 1] w
+TL
+2
+0.8
+(29)
+The
+ solubility
+ is
+ based
+ on
+ the
+ Henry’s
+ law
+ and
+ is
+ determined
+using
+ Danckwert
+ (Pandya,
+ 1983)
+ and
+ estimated
+ using
+ following
+expression;
+log
+ H
+Hw
+
+=
+ −KsI
+(30)
+H
+ is
+ solubility
+ of
+ gas
+ in
+ given
+ electrolyte
+ while
+ Hw is
+ the
+ solu-
+bility
+ of
+ gas
+ in
+ water,
+ and
+ Ks is
+ the
+ sum
+ of
+ the
+ contributions
+ due
+ to
+cation,
+ anions
+ and
+ gas.
+ Ks is
+ approximately
+ constant
+ for
+ a
+ particular
+system
+ and
+ I is
+ the
+ ionic
+ strength.
+ The
+ value
+ of
+ K,
+ for
+ CO2-MEA
+ sys-
+tem
+ is
+ estimated
+ to
+ be
+ about
+ 0.07.
+ The
+ ionic
+ strength
+ in
+ the
+ system
+
+=== PDF p.7 ===
+F.
+ Isa
+ et
+ al.
+ / International
+ Journal
+ of
+ Greenhouse
+ Gas
+ Control
+ 56
+ (2017)
+ 173–186
+ 
+179
+varies
+ from
+ 0.375
+ to
+ 1
+ g
+ mol
+ ions/l.
+ Thus
+ solubility
+ of
+ CO2 can
+ be
+approximated
+ as;
+HCO2 =
+ 0.9HW
+(31)
+logHW = 1140
+T
+−
+ 5.3
+ 
+(32)
+The
+ value
+ of
+ the
+ reaction
+ rate
+ constant
+ at
+ several
+ temperatures,
+K2 for
+ this
+ system
+ is
+ given
+ below.
+logk2 =
+ 11.069
+ −
+ 2142.34/T
+(33)
+Partial
+ pressure
+ at
+ interface
+ is
+ usually
+ determined
+ from
+ VLE
+ data
+but
+ in
+ this
+ paper,
+ the
+ correlation
+ by
+ Pandya
+ (1983)
+ is
+ used.
+ The
+ value
+of
+ pCO2i is
+ determined
+ implicitly
+ via
+ trial
+ and
+ error.
+ Assuming
+ the
+concentration
+ of
+ CO2 at
+ equilibrium
+ is
+ negligible,
+ the
+ equation
+ is
+reduced
+ to
+ (34).
+pCO2i =
+pCO2
+1
+ +
+E.k0
+LCO2
+kGCO2
+H
+(34)
+2.4.5.
+ Numerical
+ work
+Once
+ the
+ physical
+ and
+ chemical
+ properties
+ are
+ obtained,
+ various
+correlations
+ for
+ mass
+ transfer
+ and
+ effective
+ area
+ are
+ evaluated
+ and
+combined
+ to
+ give
+ the
+ most
+ reliable
+ rate
+ of
+ absorption.
+ Then
+ the
+values
+ of
+ dYCO2/dZ, dYH2O/dZ, dTG/dZ, dTL/dZ
+ are
+ computed
+ based
+ on
+Eqs.
+ (35)–(38):
+dYCO2
+dZ
+=
+−kG,CO2aeP 
+yCO2 −
+ yCO2,i
+
+G
+(35)
+dYH2O
+dZ
+=
+−kG,H2OaeP 
+yH2O −
+ yH2O,i
+
+G
+(36)
+dTG
+dZ =
+−h’Gae (TG −
+ TL)
+GCH4
+
+CP,CH4 +
+ YCO2CP,CO2 +
+ YH2OCP,H2O
+
+(37)
+dTL
+dZ =
+
+GCH4
+
+Cp,CH4 +
+ YCO2CP,CO2 +
+ YH2OCP,H2O
+ dTG
+dZ
++GCH4
+
+CP,H2O (TG −
+ T0) + 
+HH2O
+ dYH2O
+dZ
++GCH4
+
+CP,CH4 (TG −
+ T0) + 
+HH2O
+ dYCO2
+dZ
+
+/LCL
+(38)
+The
+ estimated
+ height
+ given
+ by
+ the
+ model
+ is
+ then
+ compared
+ with
+the
+ real
+ column
+ and
+ if
+ the
+ error
+ percentage
+ is
+ very
+ large,
+ the
+ cor-
+relations
+ and
+ interfacial
+ conditions
+ will
+ be
+ revised.
+ The
+ pressure
+modiﬁcation
+ index-f is
+ introduced
+ in
+ the
+ mass
+ transfer
+ ﬂux
+ of
+ CO2
+to
+ improve
+ the
+ estimation
+ and
+ in
+ the
+ next
+ section
+ the
+ determination
+of
+ index-f will
+ be
+ discussed.
+2.5.
+ Development
+ of
+ pressure
+ modiﬁcation
+ index-f
+Since
+ the
+ process
+ conditions
+ at
+ atmospheric
+ and
+ elevated
+ pres-
+sure
+ are
+ different,
+ the
+ current
+ model
+ cannot
+ be
+ used
+ directly
+ to
+represent
+ absorption
+ process
+ at
+ high
+ pressure.
+ In
+ this
+ section,
+ the
+pressure
+ modiﬁcation
+ index-f introduced
+ by
+ Zhang
+ et
+ al.
+ (2003)
+ is
+investigated,
+ and
+ used
+ as
+ a
+ basis
+ to
+ establish
+ a
+ new
+ modiﬁcation
+factor
+ that
+ will
+ suit
+ the
+ condition
+ at
+ higher
+ pressure
+ by
+ using
+ MEA
+as
+ the
+ basic
+ solvent.
+2.5.1.
+ The
+ pressure
+ modiﬁcation
+ index-f of
+ Zhang
+ et
+ al.
+ (2003)
+In
+ Zhang
+ et
+ al.
+ (2003), CO2 absorption
+ using
+ MDEA
+ aqueous
+solution
+ blended
+ with
+ piperazine
+ (PZ)
+ under
+ high
+ carbon
+ dioxide
+partial
+ pressure
+ has
+ been
+ studied
+ and
+ it
+ is
+ found
+ that
+ the
+ calcula-
+tion
+ of
+ absorption
+ rate
+ at
+ high
+ pressure
+ is
+ larger
+ than
+ at
+ atmospheric
+condition.
+ Zhang
+ et
+ al.
+ (2003)
+ has
+ studied
+ the
+ complexity
+ of
+ high
+pressure
+ on
+ the
+ surface
+ disturbance
+ and
+ lumped
+ into
+ an
+ index-f.
+The
+ experimental
+ data
+ is
+ collected
+ for
+ CO2 absorption
+ in
+ the
+ range
+ of
+2–6.25
+ bar
+ in
+ adiabatic
+ stainless
+ steel
+ packed
+ column
+ with
+ an
+ inside
+diameter
+ of
+ 20
+ mm with
+ packing
+ type
+ 4
+ mm
+ ceramic
+ Raschings
+rings.
+2.5.2.
+ Development
+ of
+ pressure
+ modiﬁcation
+ index-f for
+ MEA
+system
+To
+ precisely
+ calculate
+ the
+ amount
+ of
+ CO2 absorption
+ in
+ the
+ col-
+umn,
+ it
+ is
+ necessary
+ to
+ divide
+ the
+ whole
+ column
+ into
+ many
+ elements
+and
+ then
+ integrate
+ them.
+ Considering
+ an
+ element
+ of
+ a
+ packed
+ col-
+umn,
+ the
+ amount
+ of
+ CO2 absorption
+ can
+ be
+ represented
+ by
+ the
+change
+ of
+ conversion:
+dG
+ =
+ LC0
+MEAd˛
+ 
+(39)
+The
+ reaction
+ between
+ aqueous
+ solutions
+ of
+ MEA
+ and
+ CO2 can
+ be
+regarded
+ as
+ a
+ rapid
+ pseudo-ﬁrst-order
+ reversible
+ reaction
+ (Benadda
+et
+ al.,
+ 2000;
+ Bavbek
+ and
+ Alper,
+ 1999;
+ Zhang
+ et
+ al.,
+ 2001) and
+ the
+absorption
+ rate
+ in
+ an
+ element
+ can
+ be
+ expressed
+ as
+ follows:
+dG
+ =
+ HCO2
+
+DCO2kMEACMEA (P
+ −
+ P∗) da
+ 
+(40)
+Incorporating
+ the
+ pressure
+ modiﬁcation
+ index-f
+ (Zhang
+ et
+ al.,
+2003)
+ results
+ in,
+dG
+ =
+ fHCO2
+
+DCO2kMEACMEA (P
+ −
+ P∗) da
+ 
+(41)
+By
+ substituting
+ (41)
+ into
+ (40),
+ the
+ new
+ expression
+ for
+ the
+ mod-
+iﬁed
+ index-f proposed
+ in
+ this
+ work
+ for
+ MEA
+ system
+ can
+ be
+ deﬁned
+as,
+f =
+LCO
+MEA
+a
+˛2
+
+˛1
+d˛
+HCO2
+
+DCO2kMEACMEA (P
+ −
+ P∗)
+(42)
+The
+ step-by-step
+ procedures
+ to
+ completely
+ solve
+ these
+ equa-
+tions
+ are
+ listed
+ below.
+STEP
+ 1:
+ Physical
+ properties
+ relationship
+The
+ value
+ of
+ diffusivity,
+ DCO2 and
+ the
+ solubility,
+ HCO2 can
+ be
+calculated
+ using
+ (28)
+ and
+ (31).
+ Since
+ the
+ solvent
+ used
+ in
+ this
+ exper-
+imental
+ research
+ is
+ only
+ MEA,
+ the
+ mass
+ transfer
+ coefﬁcient
+ of
+ MEA
+is
+ calculated
+ using
+ (43)
+ (Aboudheir
+ et
+ al.,
+ 2003);
+kMEA =
+ 4.61
+ ∗
+ 109e
+
+−4412
+T
+
+(43)
+The
+ value
+ of
+ the
+ liquid
+ ﬂowrate,
+ L,
+ as
+ well
+ as
+ the
+ MEA
+ con-
+centration,
+ CMEA, are
+ assumed
+ constant
+ based
+ on
+ the
+ experimental
+conditions.
+STEP
+ 2:
+ Experimental
+ setup
+ for
+ determination
+ CO2 loading
+ in
+˛1 and
+ ˛2
+In
+ (42), ˛1 represents
+ the
+ conversion
+ of
+ rich
+ solution,
+ mol
+CO2/mol
+ amine
+ while
+ ˛2 is
+ the
+ conversion
+ in
+ lean
+ solvent.
+ The
+ val-
+ues
+ of
+ CO2 loading
+ in
+ rich
+ ˛1 and
+ lean
+ ˛2 solutions
+ are
+ obtained
+ via
+experimental
+ runs
+ conducted
+ using
+ the
+ CO2 absorption
+ pilot
+ plant
+at
+ steady
+ state
+ conditions.
+ The
+ steady-state
+ experiments
+ are
+ car-
+ried
+ out
+ for
+ pressures
+ ranging
+ from
+ 20
+ to
+ 60
+ bar.
+ The
+ mole
+ of
+ CO2 is
+calculated
+ only
+ in
+ the
+ rich
+ solution
+ loading
+ because
+ the
+ lean
+ load-
+ing
+ is
+ using
+ pure
+ aqueous
+ MEA.
+ Regeneration
+ is
+ not
+ available
+ in
+ the
+current
+ pilot
+ plant
+ set-up.
+STEP
+ 3:
+ Determination
+ of
+ effective
+ interfacial
+ area
+ using
+ cor-
+relation
+Zhang
+ et
+ al.
+ (2003)
+ experimentally
+ calculated
+ the
+ effective
+ inter-
+facial
+ area
+ based
+ on
+ their
+ type
+ of
+ column
+ and
+ conditions.
+ However,
+in
+ this
+ paper,
+ correlations
+ available
+ in
+ the
+ literature
+ are
+ used
+ since
+some
+ of
+ these
+ correlations
+ are
+ speciﬁcally
+ designed
+ for
+ high
+ pres-
+sure
+ conditions.
+ Table
+ 5
+ illustrates
+ the
+ correlations
+ of
+ effective
+interfacial
+ area
+ investigated
+ in
+ this
+ study.
+ Each
+ of
+ this
+ correlation
+ is
+tried
+ in
+ this
+ paper
+ and
+ the
+ results
+ are
+ discussed
+ in
+ the
+ next
+ section.
+
+=== PDF p.8 ===
+180
+ 
+F.
+ Isa
+ et
+ al.
+ / International
+ Journal
+ of
+ Greenhouse
+ Gas
+ Control
+ 56
+ (2017)
+ 173–186
+Fig.
+ 4.
+ The
+ CO2 concentration
+ at
+ the
+ top
+ of
+ column
+ at
+ steady
+ state
+ condition.
+Fig.
+ 5.
+ Temperature
+ proﬁle
+ over
+ the
+ column
+ height.
+STEP
+ 4:
+ Determination
+ of
+ partial
+ pressure
+ at
+ equilibrium
+interphase.
+In
+ order
+ to
+ calculate
+ the
+ driving
+ force
+ of
+ carbon
+ dioxide
+ absorp-
+tion,
+ it
+ is
+ necessary
+ to
+ determine
+ the
+ equilibrium
+ data
+ of
+ CO2 into
+MEA.
+ In
+ this
+ paper,
+ the
+ equilibrium
+ data
+ is
+ calculated
+ by
+ solving
+(34)
+ in
+ MATLAB.
+Upon
+ completion
+ of
+ steps
+ 1–4,
+ the
+ proposed
+ index-f for
+ various
+high
+ pressure
+ conditions
+ using
+ various
+ effective
+ interfacial
+ areas
+are
+ calculated.
+ The
+ index-f is
+ ﬁtted
+ into
+ the
+ mass
+ ﬂux
+ in
+ order
+ to
+tune
+ the
+ prediction
+ of
+ the
+ model
+ to
+ experimental
+ data.
+3.
+ Result
+ &
+ discussion
+3.1.
+ CO2 absorption
+ pilot-plant
+ data
+ at
+ elevated
+ pressure
+As
+ observed
+ Fig.
+ 4, the
+ CO2 concentration
+ at
+ the
+ column
+ outlet
+reduces
+ rapidly
+ in
+ the
+ ﬁrst
+ 20
+ min
+ and
+ gradually
+ achieves
+ steady
+state
+ condition
+ after
+ 30
+ min.
+ It
+ is
+ observed
+ that
+ the
+ reaction
+ reaches
+steady
+ state
+ faster
+ for
+ higher
+ pressure.
+ Higher
+ pressure
+ contributes
+to
+ greater
+ collision
+ of
+ molecules
+ and
+ mass
+ transfer
+ is
+ enhanced.
+ In
+the
+ beginning
+ of
+ the
+ experiment,
+ the
+ active
+ side
+ of
+ MEA
+ is
+ large,
+thus
+ the
+ reaction
+ occurs
+ rapidly
+ at
+ the
+ initial
+ stage.
+ Another
+ inter-
+esting
+ aspect
+ to
+ observe
+ is
+ the
+ temperature
+ variations
+ in
+ the
+ packed
+column.
+ In
+ chemical
+ absorption,
+ the
+ solubility
+ depends
+ strongly
+ on
+the
+ temperature
+ of
+ the
+ solvent.
+ The
+ competing
+ heat
+ effect
+ due
+ to
+absorption
+ and
+ reaction
+ may
+ cause
+ the
+ temperature
+ of
+ the
+ solvent
+to
+ increase
+ to
+ a
+ maximum
+ value
+ in
+ the
+ middle
+ of
+ the
+ packed
+ col-
+umn
+ (Pandya,
+ 1983).
+ As
+ observed
+ in
+ Fig.
+ 5, the
+ temperature
+ of
+ the
+column
+ increases
+ until
+ it
+ reaches
+ a
+ maximum
+ in
+ the
+ middle
+ point
+of
+ the
+ column.
+ This
+ phenomenon
+ is
+ known
+ as
+ “bulge
+ temperature”
+(Zhang
+ et
+ al.,
+ 2009) due
+ to
+ the
+ cold
+ inlet
+ gas
+ stream
+ absorbing
+ heat
+from
+ the
+ rich
+ solution
+ (Kohl
+ and
+ Nielsen,
+ 1997) and
+ the
+ same
+ trend
+can
+ be
+ observed
+ when
+ the
+ pressure
+ is
+ varied.
+ The
+ maximum
+ tem-
+perature
+ indicates
+ that
+ the
+ reaction
+ is
+ taking
+ place
+ vigorously
+ at
+this
+ point.
+ Since
+ the
+ reaction
+ of
+ CO2 and
+ MEA
+ is
+ exothermic,
+ thus
+ it
+produces
+ heat
+ that
+ leads
+ to
+ the
+ increase
+ in
+ temperature.
+3.2.
+ Simulation
+ of
+ non-equilibrium
+ rate
+ based
+ model
+ for
+ CO2
+absorption
+ column
+The
+ simulation
+ model
+ for
+ the
+ CO2 absorption
+ column
+ is
+ devel-
+oped
+ using
+ the
+ methods
+ described
+ in
+ Section
+ 2.4. Table
+ 7
+ shows
+ the
+estimated
+ height
+ of
+ the
+ column
+ using
+ various
+ combinations
+ of
+ the
+mass
+ transfer
+ and
+ effective
+ interfacial
+ area
+ correlations
+ described
+in
+ Tables
+ 4
+ and
+ 5. It
+ can
+ be
+ seen
+ from
+ Table
+ 7
+ that
+ the
+ predictions
+of
+ height
+ in
+ this
+ model
+ are
+ greatly
+ inﬂuenced
+ by
+ the
+ choice
+ of
+ mass
+transfer
+ coefﬁcient
+ correlation.
+ It
+ is
+ observed
+ that
+ the
+ mass
+ trans-
+fer
+ correlation
+ by
+ Billet
+ and
+ Schultes
+ (1999)
+ combined
+ with
+ various
+effective
+ interfacial
+ areas
+ give
+ the
+ most
+ reliable
+ result.
+ Combina-
+tion
+ of
+ mass
+ transfer
+ by
+ Billet
+ &
+ Schultes
+ with
+ the
+ interfacial
+ area
+correlation
+ of
+ Tsai
+ et
+ al.
+ (2011)
+ gives
+ the
+ minimum
+ error
+ percent-
+age
+ of
+ 38.56%
+ when
+ compared
+ with
+ the
+ actual
+ column
+ height
+ of
+1.505m.
+ As
+ reported
+ in
+ Gaspar
+ and
+ Cormos
+ (2012)
+ and
+ Billet
+ and
+Schultes
+ (1999)
+ mass
+ transfer
+ correlation
+ predicts
+ well
+ for
+ MEA
+system
+ while
+ other
+ correlations
+ such
+ as
+ of
+ Rocha
+ et
+ al.
+ (1996)
+ will
+give
+ good
+ results
+ for
+ the
+ case
+ of
+ AMP
+ and
+ MDEA
+ systems.
+ Even
+though
+ some
+ correlations
+ are
+ speciﬁcally
+ design
+ for
+ elevated
+ pres-
+sure
+ such
+ as
+ Wang
+ et
+ al.
+ (2006)
+ and
+ Gualito
+ et
+ al.
+ (1997),
+ higher
+ error
+
+=== PDF p.9 ===
+F.
+ Isa
+ et
+ al.
+ / International
+ Journal
+ of
+ Greenhouse
+ Gas
+ Control
+ 56
+ (2017)
+ 173–186
+ 
+181
+Table
+ 7
+The
+ estimation
+ error
+ in
+ height
+ for
+ packed
+ column
+ based
+ on
+ combined
+ mass
+ transfer
+ and
+ effective
+ area
+ correlations.
+Mass
+ Transfer
+ 
+ae
+20.00
+ 
+40.00
+ 
+60.00
+ 
+Error
+ (%)
+Onda
+Tsai
+ 
+669000.00
+ 
+137000.00
+ 
+69000.00
+ 
+1937.73
+Rocha
+ 
+1600000.00
+ 
+328000.00
+ 
+165000.00
+ 
+4631.66
+Wang
+ 
+1860.00
+ 
+1710.00
+ 
+57.75
+ 
+802.82
+Gualito
+ 
+3910.00
+ 
+827.79
+ 
+415.64
+ 
+113.96
+Onda
+ 
+629000.00
+ 
+129000.00
+ 
+64900.00
+ 
+1821.80
+Billet
+ 
+5220000.00
+ 
+1070000.00
+ 
+539000.00
+ 
+15130.66
+deBrito
+ 
+1090000.00
+ 
+224000.00
+ 
+112000.00
+ 
+3157.24
+Billet &
+ Schultes
+Tsai
+ 
+1.23
+ 
+0.82
+ 
+0.73
+ 
+39.0
+Rocha
+ 
+2.93
+ 
+1.96
+ 
+1.74
+ 
+47.0
+Wang
+ 
+0.02
+ 
+0.01
+ 
+0.01
+ 
+99.0
+Gualito
+ 
+0.01
+ 
+0.00
+ 
+0.00
+ 
+100.0
+Onda
+ 
+1.15
+ 
+0.77
+ 
+0.68
+ 
+42.00
+Billet
+ 
+9.58
+ 
+6.41
+ 
+5.67
+ 
+380.0
+deBrito
+ 
+3.93
+ 
+1.53
+ 
+1.20
+ 
+61.0
+Bravo
+Tsai 
+0.01
+ 
+0.00
+ 
+0.00
+ 
+100
+Rocha
+ 
+0.02
+ 
+0.01
+ 
+0.01
+ 
+99
+Wang
+ 
+0.00
+ 
+0.00
+ 
+0.00
+ 
+100
+Gualito
+ 
+0.00
+ 
+0.00
+ 
+0.00
+ 
+100
+Onda
+ 
+0.01
+ 
+0.00
+ 
+0.00
+ 
+100
+Billet
+ 
+0.08
+ 
+0.03
+ 
+0.02
+ 
+97
+deBrito
+ 
+0.02
+ 
+0.01
+ 
+0.00
+ 
+99
+Rocha
+Tsai 
+0.00
+ 
+0.00
+ 
+0.00
+ 
+100
+Rocha
+ 
+0.00
+ 
+0.00
+ 
+0.00
+ 
+100
+Wang
+ 
+0.00
+ 
+0.00
+ 
+0.00
+ 
+100
+Gualito
+ 
+0.00
+ 
+0.00
+ 
+0.00
+ 
+100
+Onda
+ 
+0.00
+ 
+0.00
+ 
+0.00
+ 
+100
+Billet
+ 
+0.00
+ 
+0.00
+ 
+0.00
+ 
+100
+deBrito
+ 
+0.00
+ 
+0.00
+ 
+0.00
+ 
+100
+Table
+ 8
+Effective
+ area
+ based
+ on
+ effective
+ interfacial
+ area
+ correlation.
+Correlations
+ 
+ae/ap (m2/m3) 
+Effective
+ area
+ (m2)
+Tsai
+ 
+0.9398
+ 
+0.023369
+Rocha
+ 
+0.3934
+ 
+0.009782
+Wang
+ 
+0.8041
+ 
+0.019995
+Gualito
+ 
+0.3934
+ 
+0.009782
+Onda
+ 
+1.00
+ 
+0.024866
+Billet
+ 
+0.1204
+ 
+0.002994
+De
+ Brito
+ 
+0.5770
+ 
+0.014348
+is
+ observed.
+ This
+ is
+ probably
+ because
+ the
+ correlation
+ is
+ developed
+using
+ different
+ process
+ conditions
+ (e.g.
+ solvent
+ used,
+ pressure
+ etc.)
+and
+ packing
+ type.
+ Some
+ of
+ the
+ combined
+ correlations
+ also
+ failed
+ to
+converge.
+Using
+ the
+ mass
+ transfer
+ correlation
+ of
+ Billet
+ and
+ Schultes
+ (1999),
+Fig.
+ 6
+ shows
+ the
+ estimated
+ column
+ height
+ using
+ several
+ effec-
+tive
+ interfacial
+ area
+ correlations.
+ Over-estimation
+ of
+ the
+ column
+height
+ can
+ be
+ observed
+ for
+ effective
+ interfacial
+ areas
+ using
+ Rocha
+et
+ al.
+ (1996)
+ and
+ Billet
+ and
+ Schultes
+ (1999).
+ On
+ the
+ other
+ hand,
+ the
+effective
+ interfacial
+ area
+ correlation
+ of
+ Onda
+ et
+ al.
+ (1968)
+ tends
+to
+ under-estimate
+ the
+ column
+ height.
+ This
+ might
+ be
+ due
+ to
+ the
+fact
+ that
+ this
+ correlation
+ is
+ designed
+ based
+ on
+ random
+ packing
+ at
+atmospheric
+ pressure
+ (Wang
+ et
+ al.,
+ 2006).
+ Similar
+ trends
+ are
+ also
+observed
+ with
+ the
+ correlation
+ of
+ Tsai
+ et
+ al.
+ (2011)
+ and
+ de
+ Brito
+ et
+ al.
+(1994). The
+ effective
+ interfacial
+ areas
+ of
+ Wang
+ et
+ al.
+ (2006)
+ and
+Gualito
+ et
+ al.
+ (1997), which
+ are
+ speciﬁcally
+ designed
+ for
+ higher
+ pres-
+sure
+ system,
+ also
+ deviate
+ tremendously
+ from
+ the
+ original
+ height.
+ As
+mentioned
+ previously,
+ this
+ is
+ probably
+ due
+ to
+ the
+ different
+ process
+conditions
+ and
+ different
+ type
+ of
+ packing
+ types
+ used.
+3.3.
+ Determination
+ of
+ pressure
+ modiﬁed
+ index-f
+Table
+ 8
+ shows
+ the
+ values
+ of
+ the
+ effective
+ area
+ calculated
+ using
+the
+ various
+ effective
+ interfacial
+ area
+ correlations
+ given
+ in
+ Table
+ 5.
+Since
+ the
+ packing
+ area
+ of
+ Flexipac
+ 1Y
+ is
+ 420
+ m2/m3and
+ the
+ height
+Table
+ 9
+Values
+ of
+ the
+ experimental
+ data
+ at
+ various
+ CO2 partial
+ pressure.
+P(bar)
+ 
+˛2
+˛1
+20
+ 
+0.056298735
+ 
+0
+30
+ 
+0.084910728
+ 
+0
+40
+ 
+0.117369331
+ 
+0
+50
+ 
+0.1588894
+ 
+0
+60
+ 
+0.19547522
+ 
+0
+of
+ the
+ column
+ is
+ 1.505
+ m
+ with
+ 0.145
+ m
+ diameter,
+ the
+ volume
+ of
+packing
+ is
+ estimated
+ to
+ be
+ approximately
+ 0.024866
+ m3. It
+ should
+be
+ noted
+ that
+ some
+ of
+ the
+ correlations
+ are
+ proposed
+ speciﬁcally
+ for
+elevated
+ pressure
+ condition.
+ However,
+ many
+ of
+ these
+ correlations
+rely
+ on
+ speciﬁc
+ packing
+ constant
+ which
+ limit
+ their
+ adaptability.
+Therefore,
+ none
+ of
+ these
+ correlations
+ can
+ give
+ the
+ exact
+ effective
+interfacial
+ area
+ of
+ this
+ column
+ and
+ the
+ value
+ differs
+ from
+ one
+ cor-
+relation
+ to
+ the
+ next.
+Eq.
+ (42)
+ is
+ solved
+ by
+ observing
+ the
+ conversion
+ of
+ CO2/mol
+ of
+amine
+ in
+ rich
+ and
+ lean
+ solutions.
+ Since
+ the
+ lean
+ solution
+ in
+ this
+experiment
+ is
+ pure
+ aqueous
+ MEA
+ solvent,
+ ˛1 is
+ taken
+ as
+ zero
+ while
+˛2 is
+ calculated
+ based
+ on
+ the
+ steady
+ state
+ experiment.
+ The
+ result
+of
+ CO2 loading
+ is
+ given
+ in
+ Table
+ 9. The
+ proposed
+ pressure
+ modiﬁ-
+cation
+ index-f
+ are
+ calculated
+ based
+ on
+ the
+ various
+ interfacial
+ area
+correlations
+ and
+ presented
+ in
+ Table
+ 10
+ and
+ Fig.
+ 7. As
+ can
+ be
+ seen,
+the
+ proposed
+ index-f reduces
+ as
+ pressure
+ increases.
+3.4.
+ Model
+ improvement
+ with
+ modiﬁcation
+ index-f
+As
+ mentioned
+ in
+ the
+ previous
+ sections,
+ the
+ pressure
+ modiﬁca-
+tion
+ index-f is
+ incorporated
+ in
+ the
+ mass
+ transfer
+ ﬂux
+ calculations.
+Based
+ on
+ the
+ results
+ in
+ the
+ Section
+ 3.2, the
+ mass
+ transfer
+ correla-
+tion
+ of
+ Billet
+ and
+ Schultes
+ (1999)
+ is
+ selected
+ to
+ be
+ used
+ in
+ the
+ model
+for
+ the
+ analysis
+ in
+ this
+ section.
+ Only
+ two
+ parameters
+ are
+ varied:
+ (1)
+the
+ effective
+ interfacial
+ area
+ correlation
+ used
+ in
+ the
+ model,
+ and
+ (2)
+the
+ effective
+ interfacial
+ area
+ correlation
+ used
+ in
+ the
+ calculation
+ of
+
+=== PDF p.10 ===
+182
+ 
+F.
+ Isa
+ et
+ al.
+ / International
+ Journal
+ of
+ Greenhouse
+ Gas
+ Control
+ 56
+ (2017)
+ 173–186
+Fig.
+ 6.
+ The
+ predicted
+ height
+ plotted
+ against
+ pressure
+ for
+ various
+ interfacial
+ area
+ correlations.
+Fig.
+ 7.
+ Pressure
+ modiﬁed
+ index-f versus
+ CO2 partial
+ pressure.
+the
+ pressure
+ modiﬁcation
+ index-f. Table
+ 11
+ summarized
+ the
+ model
+designation
+ (i.e.
+ model
+ A,
+ B
+ or
+ C
+ etc.),
+ and
+ the
+ corresponding
+ mass
+transfer
+ and
+ effective
+ interfacial
+ area
+ correlations
+ used.
+Table
+ 12
+ shows
+ the
+ error
+ percentages
+ between
+ the
+ estimated
+and
+ the
+ actual
+ column
+ heights
+ for
+ the
+ various
+ models
+ of
+ Table
+ 11
+after
+ the
+ inclusion
+ of
+ the
+ proposed
+ pressure
+ modiﬁcation
+ index-f.
+When
+ the
+ model
+ used
+ mass
+ transfer
+ and
+ effective
+ interfacial
+ area
+correlations
+ of
+ Billet
+ and
+ Schultes
+ (1999)
+ and
+ Tsai
+ et
+ al.
+ (2011)
+ (i.e.
+Model
+ A),
+ introducing
+ the
+ pressure
+ modiﬁcation
+ index-
+ f does
+ not
+affect
+ the
+ estimated
+ height
+ of
+ the
+ column.
+ Signiﬁcantly
+ large
+ errors
+are
+ observed
+ between
+ the
+ actual
+ column
+ height
+ and
+ the
+ estimated
+value,
+ ranging
+ from
+ 85%
+ to
+ 99%,
+ even
+ when
+ the
+ effective
+ interfa-
+cial
+ area
+ correlations
+ used
+ to
+ calculate
+ the
+ modiﬁcation
+ index-
+ f are
+varied.
+ When
+ the
+ effective
+ interfacial
+ area
+ of
+ the
+ model
+ is
+ changed
+to
+ Rocha
+ et
+ al.
+ (1996)
+ for
+ Model
+ B,
+ the
+ estimated
+ error
+ percent-
+Table
+ 11
+Correlations
+ used
+ in
+ the
+ model.
+Model
+ 
+Mass
+ transfer
+ correlation
+ 
+Effective
+ interfacial
+ area
+ correlation
+A
+ 
+Billet
+ &
+ Schultes
+ 
+Tsai
+B
+ 
+Billet
+ &
+ Schultes
+Rocha
+C 
+Billet
+ &
+ Schultes
+ 
+Wang
+D
+ 
+Billet
+ &
+ Schultes
+ 
+Gualito
+E
+ 
+Billet
+ &
+ Schultes
+ 
+Onda
+F
+ 
+Billet
+ &
+ Schultes
+ 
+Billet
+ &
+ Schultes
+G
+ 
+Billet
+ &
+ Schultes
+ 
+De
+ Brito
+age
+ seems
+ to
+ be
+ improved.
+ However,
+ the
+ values
+ are
+ still
+ generally
+high
+ in
+ the
+ range
+ of
+ more
+ than
+ 70%.
+ The
+ poor
+ performance
+ of
+ both
+the
+ effective
+ interfacial
+ area
+ correlations
+ of
+ Tsai
+ et
+ al.
+ (2011)
+ and
+Rocha
+ et
+ al.
+ (1996)
+ are
+ expected
+ as
+ they
+ do
+ not
+ take
+ into
+ account
+the
+ pressure
+ effect
+ and
+ gas
+ velocity
+ (Cormos
+ and
+ Gaspar,
+ 2012).
+Basically,
+ model
+ of
+ Rocha
+ et
+ al.
+ (1996)
+ was
+ developed
+ based
+ on
+ the
+work
+ of
+ Shi
+ and
+ Mersmann
+ (1985)
+ which
+ considers
+ only
+ initial
+ liq-
+uid
+ distribution,
+ surface
+ wettability,
+ void
+ fraction
+ and
+ liquid
+ hold
+up.
+Similar
+ analysis
+ can
+ be
+ clearly
+ observed
+ for
+ Models
+ C,
+ D,
+ E,
+ and
+ G,
+where
+ the
+ introduction
+ of
+ the
+ modiﬁcation
+ index-
+ f does
+ not
+ result
+in
+ any
+ reduction
+ in
+ the
+ error.
+ Even
+ though
+ Models
+ C and
+ D
+ are
+ using
+effective
+ interfacial
+ area
+ correlations
+ designed
+ for
+ higher
+ pressures
+(both
+ Wang
+ et
+ al.,
+ 2006
+ and
+ Gualito
+ et
+ al.,
+ 1997) are
+ designed
+ for
+pressures
+ up
+ to
+ 27.6
+ bar),
+ the
+ error
+ percentages
+ in
+ the
+ estimated
+column
+ height
+ are
+ still
+ high.
+ The
+ effective
+ interfacial
+ area
+ by
+ Wang
+has
+ been
+ derived
+ for
+ butane/isobutene
+ system
+ in
+ the
+ range
+ of
+ pres-
+sure
+ 7
+ bar
+ to
+ 27.6
+ bar.
+ This
+ could
+ be
+ the
+ reason
+ why
+ the
+ values
+deviate
+ too
+ much
+ for
+ this
+ CO2-MEA
+ system.
+ Gualito
+ et
+ al.
+ (1997),
+ on
+the
+ other
+ hand,
+ is
+ based
+ on
+ the
+ effective
+ interfacial
+ area
+ of
+ Rocha.
+Table
+ 10
+Modiﬁcation
+ index-f based
+ on
+ various
+ area
+ correlations.
+Pressure
+ modiﬁcation
+ index-f
+P
+ (bar)
+ 
+f[Tsai]
+f[Rocha]
+f[Wang]
+f[Gualito]
+f[Onda]
+f[Billet]
+f[deBrito]
+20
+ 
+9.92
+ 
+23.71
+ 
+11.60
+ 
+23.71
+ 
+9.33
+ 
+77.47
+ 
+16.16
+30
+ 
+5.88
+ 
+14.04
+ 
+6.87
+ 
+14.04
+ 
+5.52
+ 
+45.88
+ 
+9.57
+40
+ 
+4.24
+ 
+10.13
+ 
+4.96
+ 
+10.13
+ 
+3.99
+ 
+33.11
+ 
+6.91
+50
+ 
+3.53
+ 
+8.44
+ 
+4.13
+ 
+8.44
+ 
+3.32
+ 
+27.57
+ 
+5.75
+60
+ 
+2.92
+ 
+6.98
+ 
+3.42
+ 
+6.98
+ 
+2.75
+ 
+22.82
+ 
+4.76
+
+=== PDF p.11 ===
+F.
+ Isa
+ et
+ al.
+ / International
+ Journal
+ of
+ Greenhouse
+ Gas
+ Control
+ 56
+ (2017)
+ 173–186
+ 
+183
+Table
+ 12
+Percentage
+ error
+ between
+ actual
+ height
+ and
+ estimated
+ height.
+Model
+ 
+Pressure
+ (bar)
+ 
+Percentage
+ error
+ (%)
+f[Tsai]
+f[Rocha]
+f[Wang]
+f[Gualito]
+f[Onda]
+f[Billet]
+f[deBrito]
+Model
+ A
+20
+ 
+91.78
+ 
+96.56
+ 
+92.98
+ 
+90.35
+ 
+91.26
+ 
+98.95
+ 
+85.83
+30
+ 
+89.38
+ 
+95.55
+ 
+90.90
+ 
+95.55
+ 
+88.68
+ 
+98.64
+ 
+93.48
+40
+ 
+90.73
+ 
+96.12
+ 
+92.07
+ 
+96.12
+ 
+90.13
+ 
+98.81
+ 
+94.31
+50
+ 
+86.19
+ 
+94.22
+ 
+88.19
+ 
+94.22
+ 
+85.31
+ 
+98.23
+ 
+91.52
+60
+ 
+83.46
+ 
+93.08
+ 
+85.88
+ 
+93.08
+ 
+82.44
+ 
+97.89
+ 
+89.85
+Model B
+20
+ 
+80.73
+ 
+91.79
+ 
+83.21
+ 
+91.79
+ 
+79.13
+ 
+97.49
+ 
+87.95
+30
+ 
+49.26
+ 
+74.62
+ 
+89.37
+ 
+78.27
+ 
+89.37
+ 
+72.96
+ 
+96.74
+40
+ 
+30.27
+ 
+87.14
+ 
+73.73
+ 
+87.14
+ 
+67.35
+ 
+81.15
+ 
+94.31
+50
+ 
+66.99
+ 
+86.19
+ 
+71.79
+ 
+86.19
+ 
+64.90
+ 
+95.77
+ 
+79.73
+60
+ 
+60.49
+ 
+83.47
+ 
+66.27
+ 
+83.47
+ 
+58.05
+ 
+94.94
+ 
+75.76
+Model C
+20
+ 
+99.9
+ 
+99.96
+ 
+99.91
+ 
+99.96
+ 
+99.89
+ 
+99.99
+ 
+99.94
+30
+ 
+99.86
+ 
+99.94
+ 
+99.88
+ 
+99.94
+ 
+99.86
+ 
+99.98
+ 
+99.83
+40
+ 
+99.84
+ 
+99.93
+ 
+99.86
+ 
+99.93
+ 
+99.82
+ 
+99.97
+ 
+99.90
+50
+ 
+99.83
+ 
+99.93
+ 
+99.86
+ 
+99.93
+ 
+99.97
+ 
+99.89
+ 
+99.99
+60
+ 
+99.79
+ 
+99.91
+ 
+99.82
+ 
+99.91
+ 
+99.78
+ 
+99.97
+ 
+99.87
+Model D
+20
+ 
+99.95
+ 
+99.97
+ 
+99.96
+ 
+99.97
+ 
+99.94
+ 
+99.99
+ 
+99.96
+30
+ 
+99.93
+ 
+99.97
+ 
+99.95
+ 
+99.99
+ 
+99.93
+ 
+99.99
+ 
+99.92
+40
+ 
+99.92
+ 
+99.97
+ 
+99.93
+ 
+99.97
+ 
+99.92
+ 
+99.99
+ 
+99.95
+50
+ 
+99.91
+ 
+99.96
+ 
+99.93
+ 
+99.96
+ 
+99.91
+ 
+99.98
+ 
+99.95
+60
+ 
+99.90
+ 
+99.96
+ 
+99.91
+ 
+99.96
+ 
+99.90
+ 
+99.99
+ 
+99.94
+Model E
+20
+ 
+92.28
+ 
+96.77
+ 
+93.40
+ 
+96.77
+ 
+96.77
+ 
+99.01
+ 
+95.26
+30
+ 
+90.01
+ 
+95.82
+ 
+91.46
+ 
+95.82
+ 
+89.36
+ 
+89.36
+ 
+87.67
+40
+ 
+87.91
+ 
+94.94
+ 
+89.67
+ 
+94.94
+ 
+87.16
+ 
+98.45
+ 
+92.58
+50
+ 
+87.02
+ 
+94.57
+ 
+88.90
+ 
+94.57
+ 
+86.19
+ 
+98.34
+ 
+92.03
+60
+ 
+84.46
+ 
+93.50
+ 
+86.73
+ 
+93.50
+ 
+83.50
+ 
+83.50
+ 
+90.47
+Model F
+20
+ 
+35.85
+ 
+73.16
+ 
+45.14
+ 
+73.16
+ 
+31.79
+ 
+91.79
+ 
+60.62
+30
+ 
+17.05
+ 
+65.26
+ 
+29
+ 
+65.26
+ 
+11.64
+ 
+89.37
+ 
+0.93
+40
+ 
+0.40
+ 
+57.98
+ 
+14.18
+ 
+57.98
+ 
+6.68
+ 
+87.14
+ 
+38.40
+50
+ 
+7.87
+ 
+54.88
+ 
+7.81
+ 
+54.88
+ 
+14.68
+ 
+86.19
+ 
+33.78
+60
+ 
+29.12
+ 
+45.99
+ 
+10.25
+ 
+45.99
+ 
+37.10
+ 
+83.48
+ 
+20.79
+Model G
+20
+ 
+86.62
+ 
+94.40
+ 
+88.56
+ 
+94.40
+ 
+85.77
+ 
+98.29
+ 
+91.79
+30
+ 
+82.70
+ 
+92.75
+ 
+85.19
+ 
+92.75
+ 
+81.57
+ 
+97.78
+ 
+78.62
+40
+ 
+79.06
+ 
+91.24
+ 
+82.09
+ 
+91.24
+ 
+77.74
+ 
+97.32
+ 
+87.15
+50
+ 
+77.50
+ 
+90.59
+ 
+80.76
+ 
+90.59
+ 
+76.07
+ 
+97.12
+ 
+86.19
+60
+ 
+73.06
+ 
+88.73
+ 
+77.00
+ 
+88.73
+ 
+71.40
+ 
+96.55
+ 
+83.48
+It
+ is
+ observed
+ that
+ only
+ Model
+ F,
+ which
+ uses
+ the
+ mass
+ transfer
+correlation
+ of
+ Billet
+ &
+ Schultes
+ and
+ effective
+ interfacial
+ area
+ of
+ Billet
+and
+ Schultes
+ (1999), beneﬁted
+ signiﬁcantly
+ by
+ the
+ introduction
+ of
+the
+ pressure
+ modiﬁcation
+ index-f. The
+ error
+ percentage
+ in
+ the
+ esti-
+mated
+ column
+ height
+ is
+ signiﬁcantly
+ reduced
+ for
+ f[Tsai], f[Onda] and
+f[Wang], resulting
+ in
+ better
+ estimation
+ of
+ the
+ column
+ height.
+ Using
+pressure
+ modiﬁcation
+ index
+ of
+ f[Tsai], the
+ average
+ error
+ percentage
+in
+ the
+ column
+ estimated
+ height
+ reduces
+ to
+ as
+ low
+ as
+ 18%,
+ while
+f[Onda] gives
+ 20%,
+ and
+ f[Wang] 21%.
+3.5.
+ Effect
+ of
+ pressure
+ in
+ volumetric
+ mass
+ transfer
+ coefﬁcient
+The
+ proﬁles
+ for
+ the
+ volumetric
+ liquid
+ mass
+ transfer
+ and
+ the
+ volu-
+metric
+ gas
+ mass
+ transfer
+ are
+ presented
+ in
+ Fig.
+ 8
+ at
+ different
+ pressure
+conditions.
+ In
+ the
+ reactive
+ MEA
+ system,
+ gas
+ resistance
+ plays
+ an
+important
+ role
+ in
+ controlling
+ the
+ mass
+ transfer
+ process
+ (Aroonwilas
+et
+ al.,
+ 2003).
+ In
+ general,
+ the
+ volumetric
+ mass
+ transfer
+ coefﬁcient
+tends
+ to
+ increase
+ as
+ pressure
+ increases
+ but
+ in
+ some
+ cases,
+ the
+ values
+increase
+ slightly
+ or
+ almost
+ level
+ off
+ (Heintz
+ et
+ al.,
+ 2008).
+ Neverthe-
+less,
+ this
+ result
+ is
+ consistent
+ with
+ those
+ from
+ Tan
+ et
+ al.
+ (2016). As
+a
+ matter
+ of
+ fact,
+ the
+ increasing
+ pressure
+ will
+ reduce
+ the
+ superﬁcial
+gas
+ velocity
+ and
+ the
+ diffusivity
+ rate
+ of
+ CO2 from
+ gas
+ side
+ into
+ liquid.
+Nonetheless,
+ the
+ decrease
+ of
+ the
+ volumetric
+ mass
+ transfer
+ coeeﬁ-
+cient
+ is
+ not
+ proportionate
+ with
+ the
+ magnitude
+ of
+ pressure
+ increase
+due
+ to
+ the
+ fact
+ that
+ the
+ correlation
+ of
+ mass
+ transfer
+ coefﬁcient
+ is
+not
+ directly
+ correlated
+ with
+ pressure.
+ Instead,
+ it
+ is
+ indirectly
+ inﬂu-
+enced
+ by
+ pressure
+ condition
+ through
+ effective
+ interfacial
+ area
+ such
+as
+ gas
+ velocity,
+ gas
+ density
+ and
+ gas
+ diffusivity
+ (Tan
+ et
+ al.,
+ 2016).
+3.6.
+ Validation
+ of
+ CO2 removal
+ between
+ simulation
+ and
+experimental
+The
+ percentage
+ of
+ removal
+ of
+ CO2 has
+ been
+ calculated
+ through
+the
+ rate
+ based
+ non-equilibrium
+ model
+ from
+ MATLAB
+ and
+ Aspen
+Plus
+ software
+ and
+ the
+ result
+ is
+ validated
+ with
+ the
+ experimen-
+tal
+ data
+ as
+ shown
+ in
+ Fig.
+ 10. Five
+ data/models
+ are
+ compared:
+ (1)
+experimental
+ data,
+ (2)
+ proposed
+ model
+ with
+ index-f, (3),
+ standard
+model
+ without
+ index-f, (4)
+ Aspen
+ rate-based
+ model,
+ and
+ (5)
+ Aspen
+equilibrium-based
+ model.
+ In
+ Fig.
+ 10, the
+ percentage
+ of
+ mol
+ CO2 over
+the
+ mol
+ of
+ carrier
+ gas,
+ YCO2 at
+ the
+ top
+ of
+ the
+ column
+ is
+ presented
+ for
+the
+ ﬁve
+ data/models
+ at
+ various
+ pressures.
+Without
+ the
+ correction
+ factor,
+ the
+ standard
+ model
+ without
+index-f
+ is
+ only
+ able
+ to
+ predict
+ a
+ low
+ amount
+ of
+ CO2 removal
+ for
+pressures
+ from
+ 20
+ to
+ 50
+ bar
+ at
+ the
+ column
+ height
+ of
+ 1.505
+ m.
+ At
+ 40
+and
+ 50
+ bar,
+ the
+ error
+ percentage
+ is
+ high
+ at
+ approximately
+ 81%,
+ how-
+ever
+ it
+ signiﬁcantly
+ reduced
+ to
+ 6%
+ once
+ index-f is
+ introduced.
+ Based
+on
+ this
+ result,
+ it
+ is
+ observed
+ that
+ the
+ proposed
+ modiﬁcation
+ index-f
+is
+ necessary
+ and
+ beneﬁcial
+ to
+ enhance
+ the
+ model
+ reliability.
+For
+ comparison
+ purposes,
+ simulation
+ of
+ CO2 model
+ has
+ been
+conducted
+ through
+ Aspen
+ plus
+ simulator
+ using
+ two
+ methods
+ which
+is
+ equilibrium
+ and
+ rate
+ based
+ non-equilibrium
+ method.
+ For
+ the
+rate-based
+ non-equilibrium
+ model
+ in
+ Aspen
+ Plus,
+ similar
+ effective
+interfacial
+ area
+ and
+ mass
+ transfer
+ coefﬁcients
+ are
+ utilized
+ which
+are
+ based
+ on
+ Billet
+ and
+ Schultes
+ (1999), which
+ have
+ been
+ found
+to
+ give
+ the
+ best
+ performance
+ with
+ the
+ least
+ error.
+ However,
+ it
+ is
+important
+ to
+ note
+ that
+ Aspen
+ Plus
+ provides
+ a
+ speciﬁc
+ package
+ to
+approximate
+ the
+ VLE
+ condition
+ and
+ the
+ user
+ has
+ less
+ opportunity
+
+=== PDF p.12 ===
+184
+ 
+F.
+ Isa
+ et
+ al.
+ / International
+ Journal
+ of
+ Greenhouse
+ Gas
+ Control
+ 56
+ (2017)
+ 173–186
+Fig.
+ 8.
+ Volumetric
+ gas
+ mass
+ transfer
+ coefﬁcient
+ versus
+ pressure.
+Fig.
+ 9.
+ Volumetric
+ liquid
+ mass
+ transfer
+ coefﬁcient
+ versus
+ pressure.
+Fig.
+ 10.
+ CO2 loading
+ over
+ carrier
+ gas
+ at
+ the
+ top
+ column.
+to
+ introduce
+ any
+ adjustment
+ or
+ correction
+ to
+ improve
+ the
+ model.
+ENRTL
+ has
+ been
+ selected
+ as
+ ﬂuid
+ package
+ for
+ the
+ Aspen
+ Plus
+ since
+ it
+gives
+ the
+ most
+ reliable
+ predicted
+ result
+ compared
+ with
+ measured
+value.
+ ENRTL
+ has
+ been
+ applied
+ extensively
+ to
+ many
+ carbon
+ dioxide-
+alkanolamine-water
+ systems
+ at
+ elevated
+ pressure.
+ Since
+ Aspen
+ Plus
+is
+ only
+ a
+ simulator
+ software,
+ user
+ will
+ ﬁnd
+ difﬁculty
+ to
+ add
+ any
+modiﬁcation
+ to
+ the
+ model
+ (ErikØi,
+ 2012).
+From
+ Fig.
+ 10, it
+ is
+ observed
+ that
+ the
+ loading
+ of
+ CO2 over
+ carrier
+gas
+ deviated
+ far
+ from
+ the
+ measured
+ value
+ when
+ Aspen
+ equilibrium-
+based
+ model
+ is
+ used.
+ However,
+ the
+ performance
+ improved
+ once
+rate-based
+ non
+ equilibrium
+ model
+ is
+ selected.
+ It
+ is
+ interesting
+ to
+note
+ that
+ similar
+ results
+ can
+ be
+ observed
+ between
+ Aspen
+ Plus
+ rate
+based
+ and
+ the
+ proposed
+ model
+ with
+ index-f. It
+ should
+ be
+ noted,
+however,
+ that
+ the
+ improved
+ performance
+ given
+ by
+ Aspen
+ Plus
+ rate-
+based
+ model
+ is
+ only
+ achieved
+ after
+ random
+ adjustment
+ is
+ made
+ on
+the
+ mass
+ transfer
+ correlation
+ parameter
+ of
+ the
+ Billet
+ and
+ Schultes
+(1999)
+ correlations.
+3.7.
+ Discussions
+It
+ is
+ noted
+ that
+ the
+ combination
+ of
+ mass
+ transfer
+ and
+ effective
+interfacial
+ area
+ correlations
+ from
+ Billet
+ and
+ Schultes
+ (1999)
+ can
+result
+ in
+ severe
+ error
+ in
+ the
+ model
+ prediction
+ if
+ used
+ solely
+ without
+any
+ modiﬁcation,
+ however
+ additional
+ correction
+ will
+ produce
+ bet-
+ter
+ prediction
+ since
+ these
+ correlations
+ are
+ built
+ on
+ various
+ systems
+and
+ packing
+ types
+ (Gaspar
+ and
+ Cormos,
+ 2012;
+ Cormos
+ and
+ Gaspar,
+2012;
+ Cormos
+ and
+ Daraban,
+ 2015).
+ In
+ Section
+ 3.2
+ and
+ Table
+ 7, it
+is
+ found
+ however
+ that
+ the
+ mass
+ transfer
+ correlation
+ of
+ Billet
+ and
+Schultes
+ (1999)
+ is
+ the
+ only
+ correlation
+ that
+ is
+ able
+ to
+ provide
+ rel-
+atively
+ reasonable
+ estimation
+ error
+ when
+ compared
+ with
+ the
+ high
+
+=== PDF p.13 ===
+F.
+ Isa
+ et
+ al.
+ / International
+ Journal
+ of
+ Greenhouse
+ Gas
+ Control
+ 56
+ (2017)
+ 173–186
+ 
+185
+pressure
+ pilot
+ plant
+ data.
+ Consequently
+ the
+ correlation
+ is
+ selected
+for
+ further
+ analysis
+ using
+ the
+ pressure
+ modiﬁcation
+ index-f.
+In
+ Section
+ 3.4, validation
+ using
+ CO2 pilot
+ plant
+ data
+ has
+ shown
+signiﬁcant
+ improvement
+ after
+ the
+ introduction
+ of
+ the
+ pressure
+modiﬁcation
+ index-f,
+ where
+ the
+ average
+ estimation
+ error
+ between
+the
+ actual
+ and
+ the
+ estimated
+ column
+ height
+ improved
+ from
+ more
+than
+ 100%
+ to
+ as
+ low
+ as
+ 18%.
+ It
+ should
+ be
+ noted,
+ however,
+ that
+ the
+work
+ in
+ this
+ paper
+ only
+ considers
+ the
+ effect
+ of
+ pressure
+ on
+ the
+hydrodynamics
+ and
+ mass
+ transfer.
+ The
+ effect
+ of
+ pressure
+ on
+ solu-
+bility
+ is
+ currently
+ ignored,
+ where
+ only
+ standard
+ Henry’s
+ law
+ is
+ used.
+Henry’s
+ constant
+ of
+ CO2 has
+ a
+ direct
+ effect
+ on
+ the
+ VLE
+ of
+ the
+ MEA-
+CO2-H2O
+ system.
+ In
+ this
+ work,
+ Henry’s
+ constant
+ of
+ CO2 in
+ water
+which
+ is
+ well-established
+ has
+ been
+ used,
+ and
+ has
+ been
+ assumed
+ to
+have
+ the
+ same
+ value
+ as
+ that
+ in
+ MEA
+ (Liu
+ et
+ al.,
+ 1999).
+ This
+ obviously
+simpliﬁed
+ the
+ calculation,
+ however,
+ it
+ might
+ contributes
+ to
+ the
+ rel-
+atively
+ higher
+ ﬁnal
+ error
+ as
+ observed
+ above.
+ The
+ effect
+ of
+ pressure
+on
+ the
+ Henry’s
+ constant,
+ which
+ is
+ ignored
+ in
+ this
+ study,
+ may
+ add
+another
+ uncertainties
+ to
+ the
+ current
+ model.
+ A
+ possibility
+ is
+ to
+ cor-
+rect
+ to
+ the
+ Henry’s
+ constant
+ with
+ the
+ Poynting
+ term
+ (Zhang
+ and
+Chen,
+ 2011)
+ for
+ pressure.
+4.
+ Conclusions
+In
+ this
+ paper,
+ the
+ deviation
+ of
+ base
+ case
+ model
+ from
+ the
+ mea-
+sured
+ experimental
+ data
+ has
+ shown
+ improvement
+ by
+ ﬁtting
+ the
+experimental
+ derived
+ pressure
+ modiﬁcation
+ index-f. It
+ is
+ found
+ that
+with
+ proper
+ selection
+ of
+ mass
+ transfer
+ and
+ effective
+ interfacial
+ area
+correlations,
+ the
+ modiﬁcation
+ index
+ can
+ result
+ in
+ an
+ improvement
+in
+ the
+ average
+ error
+ from
+ more
+ than
+ 100%
+ to
+ as
+ low
+ as
+ 18%
+ in
+ the
+estimated
+ column
+ height
+ between
+ the
+ simulated
+ model
+ and
+ the
+pilot
+ plant
+ data.
+ Nevertheless,
+ this
+ correction
+ factor
+ is
+ effective
+with
+ combination
+ of
+ mass
+ transfer
+ and
+ effective
+ interfacial
+ area
+from
+ Billet
+ &
+ Schultes
+ for
+ pressure
+ range
+ of
+ 20–50
+ bar
+ only.
+ Vali-
+dation
+ using
+ UTP
+ pilot
+ plant
+ and
+ comparison
+ with
+ equilibrium
+ and
+rate-based
+ non-equilibrium
+ model
+ in
+ Aspen
+ plus
+ has
+ shown
+ satis-
+factorily
+ result
+ for
+ the
+ CO2 loading
+ at
+ top
+ of
+ the
+ column.
+ Results
+ have
+shown
+ that
+ the
+ predicted
+ CO2 loading
+ given
+ by
+ the
+ modiﬁed
+ model
+with
+ index-f which
+ is
+ 0.055
+ mol
+ CO2/mol
+ CH4 is
+ in
+ good
+ agreement
+with
+ the
+ experimental
+ data
+ of
+ 0.05
+ mol
+ CO2/mol
+ CH4 for
+ pressures
+up
+ to
+ 50
+ bar.
+ Through
+ this
+ study,
+ the
+ accurate
+ correlations
+ with
+ sup-
+port
+ from
+ correction
+ factor
+ will
+ enable
+ better
+ process
+ simulations
+towards
+ cost
+ reduction,
+ better
+ column
+ design
+ as
+ well
+ as
+ improved
+plant
+ operation.
+Acknowledgements
+The
+ authors
+ would
+ like
+ to
+ thank
+ MOHE
+ grant
+ FRGS
+ 2014/2
+0153AB-I91
+ for
+ the
+ funding
+ provided
+ for
+ this
+ work.
+ The
+ authors
+also
+ would
+ like
+ to
+ thank
+ Universiti
+ Teknologi
+ PETRONAS
+ (UTP)
+ for
+the
+ support
+ provided
+ for
+ this
+ research.
+References
+Aboudhei,
+ A.,
+ Tontiwachwuthikul,
+ P.,
+ Chakma,
+ A.,
+ Idem,
+ R.,
+ 2003.
+ Kinetics
+ of
+ the
+reactive
+ absorption
+ of
+ carbon
+ dioxide
+ in
+ high
+ CO2-loaded,
+ concentrated
+aqueous
+ monoethanolamine
+ solutions.
+ Chem.
+ Eng.
+ Sci.
+ 58
+ (23),
+ 5195–5210.
+Addicks,
+ J.,
+ Owren,
+ G.A.,
+ Fredheim,
+ A.O.,
+ Tangvik,
+ K.,
+ 2002.
+ Solubility
+ of
+ carbon
+dioxide
+ and
+ methane
+ in
+ aqueous
+ methyldiethanolamine
+ solutions.
+ J.
+ Chem.
+Eng. Data
+ 47
+ (4),
+ 855–860.
+Afkhamipour,
+ M.,
+ Mofarahi,
+ M.,
+ 2014.
+ Sensitivity
+ analysis
+ of
+ the
+ rate-based
+ CO2
+absorber
+ model
+ using
+ amine
+ solutions
+ (MEA,
+ MDEA
+ and
+ AMP)
+ in
+ packed
+columns.
+ Int.
+ J.
+ Greenh.
+ Gas
+ Control
+ 25
+ (0),
+ 9–22.
+Aroonwilas,
+ A.,
+ Tontiwachwuthikul,
+ P.,
+ 1997.
+ High-efﬁciency
+ structured
+ packing
+for
+ CO2 separation
+ using
+ 2-amino-2-methyl-1-propanol
+ (AMP).
+ Sep.
+ Purif.
+Technol.
+ 12
+ (1),
+ 67–79.
+Aroonwilas,
+ A.,
+ Chakma,
+ A.,
+ Tontiwachwuthikul,
+ P.,
+ Veawab,
+ A.,
+ 2003.
+ Mathematical
+modelling
+ of
+ mass-transfer
+ and
+ hydrodynamics
+ in
+ CO2 absorbers
+ packed
+ with
+structured
+ packings.
+ Chem.
+ Eng.
+ Sci.
+ 58
+ (17),
+ 4037–4053.
+Bavbek,
+ O.,
+ Alper,
+ E.,
+ 1999.
+ Reaction
+ mechanism
+ and
+ kinetics
+ of
+ aqueous
+ solutions
+of primary
+ and
+ secondary
+ alkanolamines
+ and
+ carbon
+ dioxide.
+ Turk.
+ J.
+ Chem.
+ 23
+(3),
+ 293–300.
+Benadda,
+ B.,
+ Otterbein,
+ M.,
+ Kafouﬁ,
+ K.,
+ Prost,
+ M.,
+ 1996.
+ Inﬂuence
+ of
+ pressure
+ on
+ the
+gas/liquid
+ interfacial
+ area
+ a
+ and
+ the
+ coefﬁcient
+ kLa
+ in
+ a
+ counter-current
+ packed
+column.
+ Chem.
+ Eng.
+ Process.
+ Process
+ Intensif.
+ 35
+ (4),
+ 247–253.
+Benadda,
+ B.,
+ Kafouﬁ,
+ K.,
+ Monkam,
+ P.,
+ Otterbein,
+ M.,
+ 2000.
+ Hydrodynamics
+ and
+ mass
+transfer
+ phenomena
+ in
+ counter-current
+ packed
+ column
+ at
+ elevated
+ pressures.
+Chem.
+ Eng.
+ Sci.
+ 55
+ (24),
+ 6251–6257.
+Billet,
+ R.,
+ Schultes,
+ M.,
+ 1999.
+ Prediction
+ of
+ mass
+ transfer
+ columns
+ with
+ dumped
+ and
+arranged
+ packings:
+ updated
+ summary
+ of
+ the
+ calculation
+ method
+ of
+ Billet
+ and
+Schultes.
+ Chem.
+ Eng.
+ Res.
+ Des.
+ 77
+ (6),
+ 498–504.
+Cormos,
+ A.-M.,
+ Daraban,
+ I.M.,
+ 2015.
+ Dynamic
+ modeling
+ and
+ validation
+ of
+amine-based
+ CO2 capture
+ plant.
+ Appl.
+ Therm.
+ Eng.
+ 74,
+ 202–209.
+Cormos,
+ A.-M.,
+ Gaspar,
+ J.,
+ 2012.
+ Assessment
+ of
+ mass
+ transfer
+ and
+ hydraulic
+ aspects
+of
+ CO2 absorption
+ in
+ packed
+ columns.
+ Int.
+ J.
+ Greenh.
+ Gas
+ Control
+ 6,
+ 201–209.
+de
+ Brito,
+ M.H.,
+ von
+ Stockar,
+ U.,
+ Bangerter,
+ A.M.,
+ Bomio,
+ P.,
+ Laso,
+ M.,
+ 1994.
+ Effective
+mass-transfer
+ area
+ in
+ a
+ pilot
+ plant
+ column
+ equipped
+ with
+ structured
+ packings
+and
+ with
+ ceramic
+ rings.
+ Ind.
+ Eng.
+ Chem.
+ Res.
+ 33
+ (3),
+ 647–656.
+ErikØi,
+ L.,
+ 2012.
+ Comparison
+ of
+ aspen
+ HYSYS
+ and
+ aspen
+ plus
+ simulation
+ of
+ CO2
+absorption
+ into
+ MEA
+ from
+ atmospheric
+ gas.
+ Energy
+ Procedia
+ 23,
+ 360–369.
+Escobillana,
+ G.P.,
+ Saez,
+ J.A.,
+ Pérez-Correa,
+ J.R.,
+ Neuburg,
+ H.J.,
+ Kershenbaum,
+ L.S.,
+1991. Behaviour
+ of
+ absorption/stripping
+ columns
+ for
+ the
+ CO2-MEA
+ system;
+modelling
+ and
+ experiments.
+ Can.
+ J.
+ Chem.
+ Eng.
+ 69
+ (4),
+ 969–977.
+Gaspar,
+ J.,
+ Cormos,
+ A.-M.,
+ 2012.
+ Dynamic
+ modeling
+ and
+ absorption
+ capacity
+assessment
+ of
+ CO2 capture
+ process.
+ Int.
+ J.
+ Greenh.
+ Gas
+ Control
+ 8,
+ 45–55.
+Godini,
+ H.R.,
+ Mowla,
+ D.,
+ 2008.
+ Selectivity
+ study
+ of
+ H2S
+ and
+ CO2 absorption
+ from
+gaseous
+ mixtures
+ by
+ MEA
+ in
+ packed
+ beds.
+ Chem.
+ Eng.
+ Res.
+ Des.
+ 86
+ (4),
+ 401–409.
+Gualito,
+ J.J.,
+ Cerino,
+ F.J.,
+ Cardenas,
+ J.C.,
+ Rocha,
+ J.A.,
+ 1997.
+ Design
+ method
+ for
+distillation
+ columns
+ ﬁlled
+ with
+ metallic:
+ ceramic,
+ or
+ plastic
+ structured
+packings.
+ Ind.
+ Eng.
+ Chem.
+ Res.
+ 36
+ (5),
+ 1747–1757.
+Han,
+ J.,
+ Eimer,
+ D.A.,
+ Melaaen,
+ M.C.,
+ 2013.
+ Liquid
+ phase
+ mass
+ transfer
+ coefﬁcient
+ of
+carbon
+ dioxide
+ absorption
+ by
+ water
+ droplet.
+ Energy
+ Procedia
+ 37,
+ 1728–1735.
+Hanley,
+ B.,
+ Dunbobbin,
+ B.,
+ Bennett,
+ D.,
+ 1994.
+ A
+ uniﬁed
+ model
+ for
+ countercurrent
+vapor/liquid
+ packed
+ columns.
+ 2.
+ Equations
+ for
+ the
+ mass-transfer
+ coefﬁcients:
+mass-transfer
+ area,
+ the
+ HETP,
+ and
+ the
+ dynamic
+ liquid
+ holdup.
+ Ind.
+ Eng.
+ Chem.
+Res. 33
+ (5),
+ 1222–1230.
+Heintz,
+ Y.J.,
+ Sehabiague,
+ L.,
+ Morsi,
+ B.I.,
+ Jones,
+ K.L.,
+ Pennline,
+ H.W.,
+ 2008.
+ Novel
+physical
+ solvents
+ for
+ selective
+ CO2 capture
+ from
+ fuel
+ gas
+ streams
+ at
+ elevated
+pressures
+ and
+ temperatures.
+ Energy
+ Fuels
+ 22
+ (6),
+ 3824–3837.
+Khan,
+ F.,
+ Krishnamoorthi,
+ V.,
+ Mahmud,
+ T.,
+ 2011.
+ Modelling
+ reactive
+ absorption
+ of
+CO2 in
+ packed
+ columns
+ for
+ post-combustion
+ carbon
+ capture
+ applications.
+Chem.
+ Eng.
+ Res.
+ Des.
+ 89
+ (9),
+ 1600–1608.
+Kohl,
+ A.L.,
+ Nielsen,
+ R.,
+ 1997.
+ Gas
+ Puriﬁcation.
+ Gulf
+ Professional
+ Publishing.
+Kojima,
+ H.,
+ Sawai,
+ J.,
+ Suzuki,
+ H.,
+ 1997.
+ Effect
+ of
+ pressure
+ on
+ volumetric
+ mass
+transfer
+ coefﬁcient
+ and
+ gas
+ holdup
+ in
+ bubble
+ column.
+ Chem.
+ Eng.
+ Sci.
+ 52
+ (21),
+4111–4116.
+Liu,
+ Y.,
+ Zhang,
+ L.,
+ Watanasiri,
+ S.,
+ 1999.
+ Representing
+ vapor-liquid
+ equilibrium
+ for
+ an
+aqueous
+ MEA-CO2 system
+ using
+ the
+ electrolyte
+ nonrandom-two-liquid
+ model.
+Ind.
+ Eng.
+ Chem.
+ Res.
+ 38
+ (5),
+ 2080–2090.
+Maalej,
+ S.,
+ Benadda,
+ B.,
+ Otterbein,
+ M.,
+ 2003.
+ Interfacial
+ area
+ and
+ volumetric
+ mass
+transfer
+ coefﬁcient
+ in
+ a
+ bubble
+ reactor
+ at
+ elevated
+ pressures.
+ Chem.
+ Eng.
+ Sci.
+ 58
+(11), 2365–2376.
+Mandal,
+ B.P.,
+ Guha,
+ M.,
+ Biswas,
+ A.K.,
+ Bandyopadhyay,
+ S.S.,
+ 2001.
+ Removal
+ of
+ carbon
+dioxide
+ by
+ absorption
+ in
+ mixed
+ amines:
+ modelling
+ of
+ absorption
+ in
+ aqueous
+MDEA/MEA
+ and
+ AMP/MEA
+ solutions.
+ Chem.
+ Eng.
+ Sci.
+ 56
+ (21–22),
+ 6217–6224.
+Onda,
+ K.,
+ Sada,
+ E.,
+ Takeuchi,
+ H.,
+ 1968.
+ Gas
+ absorption
+ with
+ chemical
+ reaction
+ in
+packed
+ columns.
+ J.
+ Chem.
+ Eng.
+ Jpn.
+ 1
+ (1),
+ 62–66.
+Oyevaar,
+ M.,
+ Bos,
+ R.,
+ Westerterp,
+ K.,
+ 1991.
+ Interfacial
+ areas
+ and
+ gas
+ hold-ups
+ in
+gas—liquid
+ contactors
+ at
+ elevated
+ pressures
+ from
+ 0.1
+ to
+ 8.0
+ MPa.
+ Chem.
+ Eng.
+Sci.
+ 46
+ (5),
+ 1217–1231.
+Pandya,
+ J.,
+ 1983.
+ Adiabatic
+ gas
+ absorption
+ and
+ stripping
+ with
+ chemical
+ reaction
+ in
+packed
+ towers.
+ Chem.
+ Eng.
+ Commun.
+ 19
+ (4–6),
+ 343–361.
+Rocha,
+ J.A.,
+ Bravo,
+ J.L.,
+ Fair,
+ J.R.,
+ 1996.
+ Distillation
+ columns
+ containing
+ structured
+packings:
+ a
+ comprehensive
+ model
+ for
+ their
+ performance.
+ 2.
+ Mass-transfer
+model.
+ Ind.
+ Eng.
+ Chem.
+ Res.
+ 35
+ (5),
+ 1660–1667.
+Rufford,
+ T.E.,
+ Smart,
+ S.,
+ Watson,
+ G.C.Y.,
+ Graham,
+ B.F.,
+ Boxall,
+ J.,
+ da
+ Costa,
+ J.C.,
+ Diniz,
+May, E.F.,
+ 2012.
+ The
+ removal
+ of
+ CO2 and
+ N2 from
+ natural
+ gas:
+ a
+ review
+ of
+conventional
+ and
+ emerging
+ process
+ technologies.
+ J.
+ Petrol.
+ Sci.
+ Eng.
+ 94,
+123–154.
+Shi,
+ M.G.,
+ Mersmann,
+ A.,
+ 1985.
+ Effective
+ interfacial
+ area
+ in
+ packed
+ columns.
+German
+ Chem.
+ Eng.
+ 8
+ (2),
+ 87–96.
+Tan,
+ L.S.,
+ Ghulam,
+ M.,
+ Lau,
+ K.K.,
+ Bustam,
+ M.A.,
+ Shariff,
+ A.M.,
+ 2011.
+ Solubility
+ and
+absorption
+ performance
+ of
+ enhanced
+ amine
+ solvent
+ (Stonvent)
+ for
+ carbon
+dioxide
+ removal.
+ Int.
+ J.
+ Chem.
+ Environ.
+ Eng.
+ 2
+ (4).
+Tan,
+ L.S.,
+ Lau,
+ K.K.,
+ Bustam,
+ M.A.,
+ Shariff,
+ A.M.,
+ 2012.
+ Removal
+ of
+ high
+ concentration
+CO2 from
+ natural
+ gas
+ at
+ elevated
+ pressure
+ via
+ absorption
+ process
+ in
+ packed
+column.
+ J.
+ Nat.
+ Gas
+ Chem.
+ 21
+ (1),
+ 7–10.
+Tan,
+ L.S.,
+ Shariff,
+ A.M.,
+ Tay,
+ W.H.,
+ Lau,
+ K.K.,
+ Halim,
+ H.N.A.,
+ 2016.
+ Integrated
+mathematical
+ modeling
+ for
+ prediction
+ of
+ rich
+ CO2 absorption
+ in
+ structured
+packed
+ column
+ at
+ elevated
+ pressure
+ conditions.
+ J.
+ Nat.
+ Gas
+ Sci.
+ Eng.
+ 28,
+737–745.
+Treybal,
+ R.E.,
+ 1969.
+ Adiabatic
+ gas
+ absorption
+ and
+ stripping
+ in
+ packed
+ towers.
+ Ind.
+Eng Chem.
+ 61
+ (7),
+ 36–41.
+
+=== PDF p.14 ===
+186
+ 
+F.
+ Isa
+ et
+ al.
+ / International
+ Journal
+ of
+ Greenhouse
+ Gas
+ Control
+ 56
+ (2017)
+ 173–186
+Tsai,
+ R.E.,
+ Seibert,
+ A.F.,
+ Eldridge,
+ R.B.,
+ Rochelle,
+ G.T.,
+ 2011.
+ A
+ dimensionless
+ model
+for
+ predicting
+ the
+ mass-transfer
+ area
+ of
+ structured
+ packing.
+ AIChE
+ J.
+ 57
+ (5),
+1173–1184.
+Víctor,
+ S.,
+ Izumi,
+ K.,
+ Rune,
+ B.,
+ Miguel,
+ M.,
+ 2007.
+ Zeolite
+ membrane
+ for
+ CO2 removal:
+operating
+ at
+ high
+ pressure.
+ J.
+ Membr.
+ Sci.
+ 292
+ (1–2),
+ 92–97.
+Wang,
+ G.,
+ Yuan,
+ X.,
+ Yu,
+ K.,
+ 2005.
+ Review
+ of
+ mass-transfer
+ correlations
+ for
+ packed
+columns.
+ Ind.
+ Eng.
+ Chem.
+ Res.
+ 44
+ (23),
+ 8715–8729.
+Wang,
+ G.,
+ Yuan,
+ X.,
+ Yu,
+ K.,
+ 2006.
+ A
+ method
+ for
+ calculating
+ effective
+ interfacial
+ area
+of structured
+ packed
+ distillation
+ columns
+ under
+ elevated
+ pressures.
+ Chem.
+ Eng.
+Process.
+ Process
+ Intensif.
+ 45
+ (8),
+ 691–697.
+Zhang,
+ Y.,
+ Chen,
+ C.-C.,
+ 2011.
+ Thermodynamic
+ modeling
+ for
+ CO2 absorption
+ in
+aqueous
+ MDEA
+ solution
+ with
+ electrolyte
+ NRTL
+ model.
+ Ind.
+ Eng.
+ Chem.
+ Res.
+ 50
+(1),
+ 163–175.
+Zhang,
+ X.,
+ Zhang,
+ C.F.,
+ Qin,
+ S.J.,
+ Zheng,
+ Z.S.,
+ 2001.
+ A
+ kinetics
+ study
+ on
+ the
+ absorption
+of
+ carbon
+ dioxide
+ into
+ a
+ mixed
+ aqueous
+ solution
+ of
+ methyldiethanolamine
+ and
+piperazine.
+ Ind.
+ Eng.
+ Chem.
+ Res.
+ 40
+ (17),
+ 3785–3791.
+Zhang,
+ X.,
+ Jun,
+ W.,
+ Zhang,
+ C.F.,
+ Yang,
+ Y.H.,
+ Xu,
+ J.J.,
+ 2003.
+ Absorption
+ rate
+ into
+ a
+MDEA
+ aqueous
+ solution
+ blended
+ with
+ piperazine
+ under
+ a
+ high
+ CO2 partial
+pressure.
+ Ind.
+ Eng.
+ Chem.
+ Res.
+ 42
+ (1),
+ 118–122.
+Zhang,
+ Y.,
+ Chen,
+ H.,
+ Chen,
+ C.C.,
+ Plaza,
+ J.M.,
+ Dugas,
+ R.,
+ Rochelle,
+ G.T.,
+ 2009.
+Rate-based
+ process
+ modeling
+ study
+ of
+ CO2 capture
+ with
+ aqueous
+monoethanolamine
+ solution.
+ Ind.
+ Eng.
+ Chem.
+ Res.
+ 48
+ (20),
+ 9233–9246.

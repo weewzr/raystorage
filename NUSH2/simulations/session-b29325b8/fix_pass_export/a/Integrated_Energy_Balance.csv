@@ -1,0 +1,441 @@
+run_id,term_id,term,side,kind,value_mw,low_mw,high_mw,temperature_c,class,rigour,source,equation,closure_group,status
+A_INL_SEL,HTGR_HEAT,Reactor heat at the need,source,heat,242.409245,224.839212,279.114545,925.000000,calculated,reduced_order,engine anchored port,J.26,reactor,anchored_port
+A_INL_SEL,MIN_REACTOR_RATING,"Minimum reactor rating, central with best and high corners",source,heat,242.409245,224.839212,279.114545,,calculated,reduced_order,engine anchored port,J.27,memo,anchored_port
+A_INL_SEL,CIRC_SHAFT_HEAT,Circulator shaft work returned to the helium,source,heat,9.398859,,,,calculated,reduced_order,engine anchored port,B.16,reactor,anchored_port
+A_INL_SEL,IHX_DUTY,IHX duty,sink,heat,176.800000,,,900.000000,calculated,reduced_order,engine anchored port,C.1,reactor,anchored_port
+A_INL_SEL,IHX_LOSS,IHX loss,sink,heat,1.414400,,,,calculated,reduced_order,engine anchored port,B.15,reactor,anchored_port
+A_INL_SEL,DUCT_LOSS,Hot duct loss,sink,heat,0.450000,,,,calculated,reduced_order,engine anchored port,B.14,reactor,anchored_port
+A_INL_SEL,VESSEL_LOSS,Reactor vessel loss,sink,heat,3.261647,,,,calculated,reduced_order,engine anchored port,B.13,reactor,anchored_port
+A_INL_SEL,POWER_BRANCH,Reactor heat to the power and steam branch,sink,heat,69.882057,,,,calculated,reduced_order,engine anchored port,B.19,reactor,anchored_port
+A_INL_SEL,BRANCH_TO_REBOILER,Power branch heat sent to the reboiler as steam,sink,heat,0.000000,,,,calculated,reduced_order,engine anchored port,B.19,part:POWER_BRANCH,anchored_port
+A_INL_SEL,BRANCH_EXTRACTION_WORK,"Back-pressure work on the reboiler steam, a part of POWER_GENERATED",source,electricity,0.000000,,,,calculated,reduced_order,engine anchored port,B.19,part:POWER_BRANCH,anchored_port
+A_INL_SEL,BRANCH_TO_TURBINE,Power branch heat to the condensing turbine,sink,heat,69.882057,,,,calculated,reduced_order,engine anchored port,B.19,part:POWER_BRANCH,anchored_port
+A_INL_SEL,SMR_HEAT,Process heat with slip heat,sink,heat,176.800000,,,,calculated,reduced_order,engine anchored port,J.14,memo,anchored_port
+A_INL_SEL,WGS_RELEASE,Water-gas shift heat release,source,heat,11.344195,,,,calculated,rigorous,"Level 3 flowsheet FS_A_INL_SEL, HTS and LTS beds at their inlet temperature",E.6,memo,level4_m8
+A_INL_SEL,SYNGAS_RECOVERY,Syngas heat above 130 C to the reboiler,source,heat,12.274182,,,130.000000,calculated,reduced_order,engine anchored port,F.2,memo,gated_T05
+A_INL_SEL,MEA_REGEN,Reboiler duty,sink,heat,0.000000,,,,calculated,reduced_order,engine anchored port,J.16,reboiler,anchored_port
+A_INL_SEL,STEAM_AVAILABLE,Heat stack for the reboiler,source,heat,55.438046,,,,calculated,reduced_order,engine anchored port,J.17,memo,gated_T05
+A_INL_SEL,REB_FROM_SELEXOL,"Reboiler heat from freed Selexol steam, first",source,heat,0.000000,,,152.777778,calculated,reduced_order,"engine heat recovery, approved order",J.17,reboiler,level4_m8
+A_INL_SEL,REB_FROM_EXPORT,"Reboiler heat from export steam, second",source,heat,0.000000,,,253.888889,calculated,reduced_order,"engine heat recovery, approved order",J.17,reboiler,level4_m8
+A_INL_SEL,REB_FROM_SYNGAS,"Reboiler heat from syngas above 130 C, third",source,heat,0.000000,,,130.000000,calculated,reduced_order,"engine heat recovery, approved order",J.17,reboiler,level4_m8
+A_INL_SEL,REB_FROM_ZLD,"Reboiler heat from ZLD steam, fourth, off by default",source,heat,0.000000,,,152.777778,calculated,reduced_order,"engine heat recovery, approved order",J.17,reboiler,level4_m8
+A_INL_SEL,REB_FROM_TAIL_GAS,Reboiler heat from tail gas burned on site,source,heat,0.000000,,,,calculated,reduced_order,"engine heat recovery, approved order",J.18,reboiler,level4_m8
+A_INL_SEL,REB_FROM_REACTOR,"Reboiler heat from reactor steam, last",source,heat,0.000000,,,,calculated,reduced_order,"engine heat recovery, approved order",J.18,reboiler,level4_m8
+A_INL_SEL,POWER_GENERATED,Electricity from reactor heat,source,electricity,27.743177,,,,calculated,reduced_order,engine anchored port,B.18,electricity,anchored_port
+A_INL_SEL,HE_CIRCULATION,Helium circulators,sink,electricity,10.443177,,,,calculated,reduced_order,engine anchored port,B.12,electricity,anchored_port
+A_INL_SEL,PUMP_COMPRESS,"Lean pump, CO2 compression, purge recovery",sink,electricity,12.100000,,,,calculated,reduced_order,engine anchored port,J.22,electricity,anchored_port
+A_INL_SEL,COOLING,Cooling towers and MEA fans,sink,electricity,0.100000,,,,calculated,reduced_order,engine anchored port,J.21,electricity,anchored_port
+A_INL_SEL,REFORMING_POWER,"Reformer train electricity, TEV-961 Table 2 row on the gas rate",sink,electricity,1.200000,,,,calculated,reduced_order,engine anchored port,J.19,electricity,anchored_port
+A_INL_SEL,PURIFICATION_POWER,"Gas purification electricity, Selexol plus PSA or the PSA alone",sink,electricity,2.100000,,,,calculated,reduced_order,engine anchored port,J.19,electricity,anchored_port
+A_INL_SEL,STEAM_SYSTEM_POWER,"Steam system electricity, TEV-961 Table 2 row",sink,electricity,0.300000,,,,calculated,reduced_order,engine anchored port,J.19,electricity,anchored_port
+A_INL_SEL,WATER_POWER,"Water treatment electricity, TEV-961 Table 2 row",sink,electricity,1.500000,,,,calculated,reduced_order,engine anchored port,J.19,electricity,anchored_port
+A_INL_SEL,TAIL_GAS_POWER,Electricity from tail gas burned on site,source,electricity,0.000000,,,,calculated,reduced_order,engine anchored port,K.17,electricity,anchored_port
+A_INL_SEL,UNMET_THERMAL,Heat duty above the rated reactor,sink,heat,0.000000,,,,calculated,reduced_order,engine anchored port,J.18,memo,anchored_port
+A_INL_SEL,UNMET_ELECTRICAL,Electricity above the rated reactor,sink,electricity,12.866470,,,,calculated,reduced_order,engine anchored port,J.29,memo,anchored_port
+A_INL_SEL,SPARE_MARGIN,Rated reactor less the need,source,heat,-32.409245,,,,calculated,reduced_order,engine anchored port,J.36,memo,anchored_port
+A_REC_F,HTGR_HEAT,Reactor heat at the need,source,heat,260.744768,227.551496,313.322786,925.000000,calculated,reduced_order,engine anchored port,J.26,reactor,gated_T05
+A_REC_F,MIN_REACTOR_RATING,"Minimum reactor rating, central with best and high corners",source,heat,260.744768,227.551496,313.322786,,calculated,reduced_order,engine anchored port,J.27,memo,gated_T05
+A_REC_F,CIRC_SHAFT_HEAT,Circulator shaft work returned to the helium,source,heat,9.798445,,,,calculated,reduced_order,engine anchored port,B.16,reactor,gated_T05
+A_REC_F,IHX_DUTY,IHX duty,sink,heat,178.083296,,,900.000000,calculated,reduced_order,engine anchored port,C.1,reactor,anchored_port
+A_REC_F,IHX_LOSS,IHX loss,sink,heat,1.424666,,,,calculated,reduced_order,engine anchored port,B.15,reactor,anchored_port
+A_REC_F,DUCT_LOSS,Hot duct loss,sink,heat,0.450000,,,,calculated,reduced_order,engine anchored port,B.14,reactor,anchored_port
+A_REC_F,VESSEL_LOSS,Reactor vessel loss,sink,heat,3.424112,,,,calculated,reduced_order,engine anchored port,B.13,reactor,gated_T05
+A_REC_F,POWER_BRANCH,Reactor heat to the power and steam branch,sink,heat,87.161139,,,,calculated,reduced_order,engine anchored port,B.19,reactor,gated_T05
+A_REC_F,BRANCH_TO_REBOILER,Power branch heat sent to the reboiler as steam,sink,heat,19.205551,,,,calculated,reduced_order,engine anchored port,B.19,part:POWER_BRANCH,gated_T05
+A_REC_F,BRANCH_EXTRACTION_WORK,"Back-pressure work on the reboiler steam, a part of POWER_GENERATED",source,electricity,3.245738,,,,calculated,reduced_order,engine anchored port,B.19,part:POWER_BRANCH,gated_T05
+A_REC_F,BRANCH_TO_TURBINE,Power branch heat to the condensing turbine,sink,heat,64.709849,,,,calculated,reduced_order,engine anchored port,B.19,part:POWER_BRANCH,gated_T05
+A_REC_F,SMR_HEAT,Process heat with slip heat,sink,heat,178.083296,,,,calculated,reduced_order,engine anchored port,J.14,memo,anchored_port
+A_REC_F,WGS_RELEASE,Water-gas shift heat release,source,heat,11.812958,,,,calculated,rigorous,"Level 3 flowsheet FS_A_REC_F, HTS and LTS beds at their inlet temperature",E.6,memo,level4_m8
+A_REC_F,SYNGAS_RECOVERY,Syngas heat above 130 C to the reboiler,source,heat,12.274182,,,130.000000,calculated,reduced_order,engine anchored port,F.2,memo,gated_T05
+A_REC_F,MEA_REGEN,Reboiler duty,sink,heat,74.643597,,,,calculated,reduced_order,engine anchored port,J.16,reboiler,anchored_port
+A_REC_F,STEAM_AVAILABLE,Heat stack for the reboiler,source,heat,55.438046,,,,calculated,reduced_order,engine anchored port,J.17,memo,gated_T05
+A_REC_F,REB_FROM_SELEXOL,"Reboiler heat from freed Selexol steam, first",source,heat,18.633816,,,152.777778,calculated,reduced_order,"engine heat recovery, approved order",J.17,reboiler,level4_m8
+A_REC_F,REB_FROM_EXPORT,"Reboiler heat from export steam, second",source,heat,24.530049,,,253.888889,calculated,reduced_order,"engine heat recovery, approved order",J.17,reboiler,level4_m8
+A_REC_F,REB_FROM_SYNGAS,"Reboiler heat from syngas above 130 C, third",source,heat,12.274182,,,130.000000,calculated,reduced_order,"engine heat recovery, approved order",J.17,reboiler,level4_m8
+A_REC_F,REB_FROM_ZLD,"Reboiler heat from ZLD steam, fourth, off by default",source,heat,0.000000,,,152.777778,calculated,reduced_order,"engine heat recovery, approved order",J.17,reboiler,level4_m8
+A_REC_F,REB_FROM_TAIL_GAS,Reboiler heat from tail gas burned on site,source,heat,0.000000,,,,calculated,reduced_order,"engine heat recovery, approved order",J.18,reboiler,level4_m8
+A_REC_F,REB_FROM_REACTOR,"Reboiler heat from reactor steam, last",source,heat,19.205551,,,,calculated,reduced_order,"engine heat recovery, approved order",J.18,reboiler,level4_m8
+A_REC_F,POWER_GENERATED,Electricity from reactor heat,source,electricity,28.935548,,,,calculated,reduced_order,engine anchored port,B.18,electricity,gated_T05
+A_REC_F,HE_CIRCULATION,Helium circulators,sink,electricity,10.887161,,,,calculated,reduced_order,engine anchored port,B.12,electricity,gated_T05
+A_REC_F,PUMP_COMPRESS,"Lean pump, CO2 compression, purge recovery",sink,electricity,13.811433,,,,calculated,reduced_order,engine anchored port,J.22,electricity,anchored_port
+A_REC_F,COOLING,Cooling towers and MEA fans,sink,electricity,1.219654,,,,calculated,reduced_order,engine anchored port,J.21,electricity,anchored_port
+A_REC_F,REFORMING_POWER,"Reformer train electricity, TEV-961 Table 2 row on the gas rate",sink,electricity,1.200000,,,,calculated,reduced_order,engine anchored port,J.19,electricity,anchored_port
+A_REC_F,PURIFICATION_POWER,"Gas purification electricity, Selexol plus PSA or the PSA alone",sink,electricity,0.017300,,,,calculated,reduced_order,engine anchored port,J.19,electricity,anchored_port
+A_REC_F,STEAM_SYSTEM_POWER,"Steam system electricity, TEV-961 Table 2 row",sink,electricity,0.300000,,,,calculated,reduced_order,engine anchored port,J.19,electricity,anchored_port
+A_REC_F,WATER_POWER,"Water treatment electricity, TEV-961 Table 2 row",sink,electricity,1.500000,,,,calculated,reduced_order,engine anchored port,J.19,electricity,anchored_port
+A_REC_F,TAIL_GAS_POWER,Electricity from tail gas burned on site,source,electricity,0.000000,,,,calculated,reduced_order,engine anchored port,K.17,electricity,anchored_port
+A_REC_F,UNMET_THERMAL,Heat duty above the rated reactor,sink,heat,0.000000,,,,calculated,reduced_order,engine anchored port,J.18,memo,anchored_port
+A_REC_F,UNMET_ELECTRICAL,Electricity above the rated reactor,sink,electricity,22.102853,,,,calculated,reduced_order,engine anchored port,J.29,memo,gated_T05
+A_REC_F,SPARE_MARGIN,Rated reactor less the need,source,heat,-50.744768,,,,calculated,reduced_order,engine anchored port,J.36,memo,gated_T05
+B_COMB_H,HTGR_HEAT,Reactor heat at the need,source,heat,128.342414,129.248429,136.561436,925.000000,calculated,reduced_order,engine anchored port,J.26,reactor,gated_T05
+B_COMB_H,MIN_REACTOR_RATING,"Minimum reactor rating, central with best and high corners",source,heat,128.342414,129.248429,136.561436,,calculated,reduced_order,engine anchored port,J.27,memo,gated_T05
+B_COMB_H,CIRC_SHAFT_HEAT,Circulator shaft work returned to the helium,source,heat,5.933685,,,,calculated,reduced_order,engine anchored port,B.16,reactor,anchored_port
+B_COMB_H,IHX_DUTY,IHX duty,sink,heat,130.787716,,,900.000000,calculated,reduced_order,engine anchored port,C.1,reactor,anchored_port
+B_COMB_H,IHX_LOSS,IHX loss,sink,heat,1.046302,,,,calculated,reduced_order,engine anchored port,B.15,reactor,anchored_port
+B_COMB_H,DUCT_LOSS,Hot duct loss,sink,heat,0.307476,,,,calculated,reduced_order,engine anchored port,B.14,reactor,anchored_port
+B_COMB_H,VESSEL_LOSS,Reactor vessel loss,sink,heat,2.134606,,,,calculated,reduced_order,engine anchored port,B.13,reactor,anchored_port
+B_COMB_H,POWER_BRANCH,Reactor heat to the power and steam branch,sink,heat,0.000000,,,,calculated,reduced_order,engine anchored port,B.19,reactor,anchored_port
+B_COMB_H,BRANCH_TO_REBOILER,Power branch heat sent to the reboiler as steam,sink,heat,0.000000,,,,calculated,reduced_order,engine anchored port,B.19,part:POWER_BRANCH,anchored_port
+B_COMB_H,BRANCH_EXTRACTION_WORK,"Back-pressure work on the reboiler steam, a part of POWER_GENERATED",source,electricity,0.000000,,,,calculated,reduced_order,engine anchored port,B.19,part:POWER_BRANCH,anchored_port
+B_COMB_H,BRANCH_TO_TURBINE,Power branch heat to the condensing turbine,sink,heat,0.000000,,,,calculated,reduced_order,engine anchored port,B.19,part:POWER_BRANCH,anchored_port
+B_COMB_H,SMR_HEAT,Process heat with slip heat,sink,heat,130.787716,,,,calculated,reduced_order,engine anchored port,J.14,memo,anchored_port
+B_COMB_H,WGS_RELEASE,Water-gas shift heat release,source,heat,,,,,calculated,reduced_order,no Level 3 flowsheet for this run,E.6,memo,not_run
+B_COMB_H,SYNGAS_RECOVERY,Syngas heat above 130 C to the reboiler,source,heat,8.386715,,,130.000000,calculated,reduced_order,engine anchored port,F.2,memo,gated_T05
+B_COMB_H,MEA_REGEN,Reboiler duty,sink,heat,52.801149,,,,calculated,reduced_order,engine anchored port,J.16,reboiler,anchored_port
+B_COMB_H,STEAM_AVAILABLE,Heat stack for the reboiler,source,heat,31.992415,,,,calculated,reduced_order,engine anchored port,J.17,memo,gated_T05
+B_COMB_H,REB_FROM_SELEXOL,"Reboiler heat from freed Selexol steam, first",source,heat,12.732132,,,152.777778,calculated,reduced_order,"engine heat recovery, approved order",J.17,reboiler,level4_m8
+B_COMB_H,REB_FROM_EXPORT,"Reboiler heat from export steam, second",source,heat,10.873569,,,253.888889,calculated,reduced_order,"engine heat recovery, approved order",J.17,reboiler,level4_m8
+B_COMB_H,REB_FROM_SYNGAS,"Reboiler heat from syngas above 130 C, third",source,heat,8.386715,,,130.000000,calculated,reduced_order,"engine heat recovery, approved order",J.17,reboiler,level4_m8
+B_COMB_H,REB_FROM_ZLD,"Reboiler heat from ZLD steam, fourth, off by default",source,heat,0.000000,,,152.777778,calculated,reduced_order,"engine heat recovery, approved order",J.17,reboiler,level4_m8
+B_COMB_H,REB_FROM_TAIL_GAS,Reboiler heat from tail gas burned on site,source,heat,20.808734,,,,calculated,reduced_order,"engine heat recovery, approved order",J.18,reboiler,level4_m8
+B_COMB_H,REB_FROM_REACTOR,"Reboiler heat from reactor steam, last",source,heat,0.000000,,,,calculated,reduced_order,"engine heat recovery, approved order",J.18,reboiler,level4_m8
+B_COMB_H,POWER_GENERATED,Electricity from reactor heat,source,electricity,0.000000,,,,calculated,reduced_order,engine anchored port,B.18,electricity,anchored_port
+B_COMB_H,HE_CIRCULATION,Helium circulators,sink,electricity,6.592984,,,,calculated,reduced_order,engine anchored port,B.12,electricity,anchored_port
+B_COMB_H,PUMP_COMPRESS,"Lean pump, CO2 compression, purge recovery",sink,electricity,5.294899,,,,calculated,reduced_order,engine anchored port,J.22,electricity,anchored_port
+B_COMB_H,COOLING,Cooling towers and MEA fans,sink,electricity,0.860345,,,,calculated,reduced_order,engine anchored port,J.21,electricity,anchored_port
+B_COMB_H,REFORMING_POWER,"Reformer train electricity, TEV-961 Table 2 row on the gas rate",sink,electricity,1.073153,,,,calculated,reduced_order,engine anchored port,J.19,electricity,anchored_port
+B_COMB_H,PURIFICATION_POWER,"Gas purification electricity, Selexol plus PSA or the PSA alone",sink,electricity,0.011821,,,,calculated,reduced_order,engine anchored port,J.19,electricity,anchored_port
+B_COMB_H,STEAM_SYSTEM_POWER,"Steam system electricity, TEV-961 Table 2 row",sink,electricity,0.221925,,,,calculated,reduced_order,engine anchored port,J.19,electricity,anchored_port
+B_COMB_H,WATER_POWER,"Water treatment electricity, TEV-961 Table 2 row",sink,electricity,1.024921,,,,calculated,reduced_order,engine anchored port,J.19,electricity,anchored_port
+B_COMB_H,TAIL_GAS_POWER,Electricity from tail gas burned on site,source,electricity,15.080048,,,,calculated,reduced_order,engine anchored port,K.17,electricity,anchored_port
+B_COMB_H,UNMET_THERMAL,Heat duty above the rated reactor,sink,heat,0.000000,,,,calculated,reduced_order,engine anchored port,J.18,memo,anchored_port
+B_COMB_H,UNMET_ELECTRICAL,Electricity above the rated reactor,sink,electricity,0.000000,,,,calculated,reduced_order,engine anchored port,J.29,memo,anchored_port
+B_COMB_H,SPARE_MARGIN,Rated reactor less the need,source,heat,81.657586,,,,calculated,reduced_order,engine anchored port,J.36,memo,anchored_port
+B_EXPORT,HTGR_HEAT,Reactor heat at the need,source,heat,184.393521,159.887750,223.779248,925.000000,calculated,reduced_order,engine anchored port,J.26,reactor,gated_T05
+B_EXPORT,MIN_REACTOR_RATING,"Minimum reactor rating, central with best and high corners",source,heat,184.393521,159.887750,223.779248,,calculated,reduced_order,engine anchored port,J.27,memo,gated_T05
+B_EXPORT,CIRC_SHAFT_HEAT,Circulator shaft work returned to the helium,source,heat,7.054182,,,,calculated,reduced_order,engine anchored port,B.16,reactor,gated_T05
+B_EXPORT,IHX_DUTY,IHX duty,sink,heat,130.787716,,,900.000000,calculated,reduced_order,engine anchored port,C.1,reactor,anchored_port
+B_EXPORT,IHX_LOSS,IHX loss,sink,heat,1.046302,,,,calculated,reduced_order,engine anchored port,B.15,reactor,anchored_port
+B_EXPORT,DUCT_LOSS,Hot duct loss,sink,heat,0.307476,,,,calculated,reduced_order,engine anchored port,B.14,reactor,anchored_port
+B_EXPORT,VESSEL_LOSS,Reactor vessel loss,sink,heat,2.717907,,,,calculated,reduced_order,engine anchored port,B.13,reactor,gated_T05
+B_EXPORT,POWER_BRANCH,Reactor heat to the power and steam branch,sink,heat,56.588302,,,,calculated,reduced_order,engine anchored port,B.19,reactor,gated_T05
+B_EXPORT,BRANCH_TO_REBOILER,Power branch heat sent to the reboiler as steam,sink,heat,20.808734,,,,calculated,reduced_order,engine anchored port,B.19,part:POWER_BRANCH,gated_T05
+B_EXPORT,BRANCH_EXTRACTION_WORK,"Back-pressure work on the reboiler steam, a part of POWER_GENERATED",source,electricity,3.516676,,,,calculated,reduced_order,engine anchored port,B.19,part:POWER_BRANCH,gated_T05
+B_EXPORT,BRANCH_TO_TURBINE,Power branch heat to the condensing turbine,sink,heat,32.262891,,,,calculated,reduced_order,engine anchored port,B.19,part:POWER_BRANCH,gated_T05
+B_EXPORT,SMR_HEAT,Process heat with slip heat,sink,heat,130.787716,,,,calculated,reduced_order,engine anchored port,J.14,memo,anchored_port
+B_EXPORT,WGS_RELEASE,Water-gas shift heat release,source,heat,,,,,calculated,reduced_order,no Level 3 flowsheet for this run,E.6,memo,not_run
+B_EXPORT,SYNGAS_RECOVERY,Syngas heat above 130 C to the reboiler,source,heat,8.386715,,,130.000000,calculated,reduced_order,engine anchored port,F.2,memo,gated_T05
+B_EXPORT,MEA_REGEN,Reboiler duty,sink,heat,52.801149,,,,calculated,reduced_order,engine anchored port,J.16,reboiler,anchored_port
+B_EXPORT,STEAM_AVAILABLE,Heat stack for the reboiler,source,heat,31.992415,,,,calculated,reduced_order,engine anchored port,J.17,memo,gated_T05
+B_EXPORT,REB_FROM_SELEXOL,"Reboiler heat from freed Selexol steam, first",source,heat,12.732132,,,152.777778,calculated,reduced_order,"engine heat recovery, approved order",J.17,reboiler,level4_m8
+B_EXPORT,REB_FROM_EXPORT,"Reboiler heat from export steam, second",source,heat,10.873569,,,253.888889,calculated,reduced_order,"engine heat recovery, approved order",J.17,reboiler,level4_m8
+B_EXPORT,REB_FROM_SYNGAS,"Reboiler heat from syngas above 130 C, third",source,heat,8.386715,,,130.000000,calculated,reduced_order,"engine heat recovery, approved order",J.17,reboiler,level4_m8
+B_EXPORT,REB_FROM_ZLD,"Reboiler heat from ZLD steam, fourth, off by default",source,heat,0.000000,,,152.777778,calculated,reduced_order,"engine heat recovery, approved order",J.17,reboiler,level4_m8
+B_EXPORT,REB_FROM_TAIL_GAS,Reboiler heat from tail gas burned on site,source,heat,0.000000,,,,calculated,reduced_order,"engine heat recovery, approved order",J.18,reboiler,level4_m8
+B_EXPORT,REB_FROM_REACTOR,"Reboiler heat from reactor steam, last",source,heat,20.808734,,,,calculated,reduced_order,"engine heat recovery, approved order",J.18,reboiler,level4_m8
+B_EXPORT,POWER_GENERATED,Electricity from reactor heat,source,electricity,16.325044,,,,calculated,reduced_order,engine anchored port,B.18,electricity,gated_T05
+B_EXPORT,HE_CIRCULATION,Helium circulators,sink,electricity,7.837980,,,,calculated,reduced_order,engine anchored port,B.12,electricity,gated_T05
+B_EXPORT,PUMP_COMPRESS,"Lean pump, CO2 compression, purge recovery",sink,electricity,5.294899,,,,calculated,reduced_order,engine anchored port,J.22,electricity,anchored_port
+B_EXPORT,COOLING,Cooling towers and MEA fans,sink,electricity,0.860345,,,,calculated,reduced_order,engine anchored port,J.21,electricity,anchored_port
+B_EXPORT,REFORMING_POWER,"Reformer train electricity, TEV-961 Table 2 row on the gas rate",sink,electricity,1.073153,,,,calculated,reduced_order,engine anchored port,J.19,electricity,anchored_port
+B_EXPORT,PURIFICATION_POWER,"Gas purification electricity, Selexol plus PSA or the PSA alone",sink,electricity,0.011821,,,,calculated,reduced_order,engine anchored port,J.19,electricity,anchored_port
+B_EXPORT,STEAM_SYSTEM_POWER,"Steam system electricity, TEV-961 Table 2 row",sink,electricity,0.221925,,,,calculated,reduced_order,engine anchored port,J.19,electricity,anchored_port
+B_EXPORT,WATER_POWER,"Water treatment electricity, TEV-961 Table 2 row",sink,electricity,1.024921,,,,calculated,reduced_order,engine anchored port,J.19,electricity,anchored_port
+B_EXPORT,TAIL_GAS_POWER,Electricity from tail gas burned on site,source,electricity,0.000000,,,,calculated,reduced_order,engine anchored port,K.17,electricity,anchored_port
+B_EXPORT,UNMET_THERMAL,Heat duty above the rated reactor,sink,heat,0.000000,,,,calculated,reduced_order,engine anchored port,J.18,memo,anchored_port
+B_EXPORT,UNMET_ELECTRICAL,Electricity above the rated reactor,sink,electricity,0.000000,,,,calculated,reduced_order,engine anchored port,J.29,memo,anchored_port
+B_EXPORT,SPARE_MARGIN,Rated reactor less the need,source,heat,25.606479,,,,calculated,reduced_order,engine anchored port,J.36,memo,gated_T05
+B_REC_F,HTGR_HEAT,Reactor heat at the need,source,heat,178.493864,155.778893,214.087497,925.000000,calculated,reduced_order,engine anchored port,J.26,reactor,gated_T05
+B_REC_F,MIN_REACTOR_RATING,"Minimum reactor rating, central with best and high corners",source,heat,178.493864,155.778893,214.087497,,calculated,reduced_order,engine anchored port,J.27,memo,gated_T05
+B_REC_F,CIRC_SHAFT_HEAT,Circulator shaft work returned to the helium,source,heat,6.701726,,,,calculated,reduced_order,engine anchored port,B.16,reactor,gated_T05
+B_REC_F,IHX_DUTY,IHX duty,sink,heat,121.680927,,,900.000000,calculated,reduced_order,engine anchored port,C.1,reactor,anchored_port
+B_REC_F,IHX_LOSS,IHX loss,sink,heat,0.973447,,,,calculated,reduced_order,engine anchored port,B.15,reactor,anchored_port
+B_REC_F,DUCT_LOSS,Hot duct loss,sink,heat,0.307476,,,,calculated,reduced_order,engine anchored port,B.14,reactor,anchored_port
+B_REC_F,VESSEL_LOSS,Reactor vessel loss,sink,heat,2.659621,,,,calculated,reduced_order,engine anchored port,B.13,reactor,gated_T05
+B_REC_F,POWER_BRANCH,Reactor heat to the power and steam branch,sink,heat,59.574119,,,,calculated,reduced_order,engine anchored port,B.19,reactor,gated_T05
+B_REC_F,BRANCH_TO_REBOILER,Power branch heat sent to the reboiler as steam,sink,heat,13.122788,,,,calculated,reduced_order,engine anchored port,B.19,part:POWER_BRANCH,gated_T05
+B_REC_F,BRANCH_EXTRACTION_WORK,"Back-pressure work on the reboiler steam, a part of POWER_GENERATED",source,electricity,2.217751,,,,calculated,reduced_order,engine anchored port,B.19,part:POWER_BRANCH,gated_T05
+B_REC_F,BRANCH_TO_TURBINE,Power branch heat to the condensing turbine,sink,heat,44.233580,,,,calculated,reduced_order,engine anchored port,B.19,part:POWER_BRANCH,gated_T05
+B_REC_F,SMR_HEAT,Process heat with slip heat,sink,heat,121.680927,,,,calculated,reduced_order,engine anchored port,J.14,memo,anchored_port
+B_REC_F,WGS_RELEASE,Water-gas shift heat release,source,heat,8.071570,,,,calculated,rigorous,"Level 3 flowsheet FS_B_REC_F, HTS and LTS beds at their inlet temperature",E.6,memo,level4_m8
+B_REC_F,SYNGAS_RECOVERY,Syngas heat above 130 C to the reboiler,source,heat,8.386715,,,130.000000,calculated,reduced_order,engine anchored port,F.2,memo,gated_T05
+B_REC_F,MEA_REGEN,Reboiler duty,sink,heat,51.002550,,,,calculated,reduced_order,engine anchored port,J.16,reboiler,anchored_port
+B_REC_F,STEAM_AVAILABLE,Heat stack for the reboiler,source,heat,37.879762,,,,calculated,reduced_order,engine anchored port,J.17,memo,gated_T05
+B_REC_F,REB_FROM_SELEXOL,"Reboiler heat from freed Selexol steam, first",source,heat,12.732132,,,152.777778,calculated,reduced_order,"engine heat recovery, approved order",J.17,reboiler,level4_m8
+B_REC_F,REB_FROM_EXPORT,"Reboiler heat from export steam, second",source,heat,16.760915,,,253.888889,calculated,reduced_order,"engine heat recovery, approved order",J.17,reboiler,level4_m8
+B_REC_F,REB_FROM_SYNGAS,"Reboiler heat from syngas above 130 C, third",source,heat,8.386715,,,130.000000,calculated,reduced_order,"engine heat recovery, approved order",J.17,reboiler,level4_m8
+B_REC_F,REB_FROM_ZLD,"Reboiler heat from ZLD steam, fourth, off by default",source,heat,0.000000,,,152.777778,calculated,reduced_order,"engine heat recovery, approved order",J.17,reboiler,level4_m8
+B_REC_F,REB_FROM_TAIL_GAS,Reboiler heat from tail gas burned on site,source,heat,0.000000,,,,calculated,reduced_order,"engine heat recovery, approved order",J.18,reboiler,level4_m8
+B_REC_F,REB_FROM_REACTOR,"Reboiler heat from reactor steam, last",source,heat,13.122788,,,,calculated,reduced_order,"engine heat recovery, approved order",J.18,reboiler,level4_m8
+B_REC_F,POWER_GENERATED,Electricity from reactor heat,source,electricity,19.778482,,,,calculated,reduced_order,engine anchored port,B.18,electricity,gated_T05
+B_REC_F,HE_CIRCULATION,Helium circulators,sink,electricity,7.446363,,,,calculated,reduced_order,engine anchored port,B.12,electricity,gated_T05
+B_REC_F,PUMP_COMPRESS,"Lean pump, CO2 compression, purge recovery",sink,electricity,9.437090,,,,calculated,reduced_order,engine anchored port,J.22,electricity,anchored_port
+B_REC_F,COOLING,Cooling towers and MEA fans,sink,electricity,0.833366,,,,calculated,reduced_order,engine anchored port,J.21,electricity,anchored_port
+B_REC_F,REFORMING_POWER,"Reformer train electricity, TEV-961 Table 2 row on the gas rate",sink,electricity,0.819937,,,,calculated,reduced_order,engine anchored port,J.19,electricity,anchored_port
+B_REC_F,PURIFICATION_POWER,"Gas purification electricity, Selexol plus PSA or the PSA alone",sink,electricity,0.011821,,,,calculated,reduced_order,engine anchored port,J.19,electricity,anchored_port
+B_REC_F,STEAM_SYSTEM_POWER,"Steam system electricity, TEV-961 Table 2 row",sink,electricity,0.204984,,,,calculated,reduced_order,engine anchored port,J.19,electricity,anchored_port
+B_REC_F,WATER_POWER,"Water treatment electricity, TEV-961 Table 2 row",sink,electricity,1.024921,,,,calculated,reduced_order,engine anchored port,J.19,electricity,anchored_port
+B_REC_F,TAIL_GAS_POWER,Electricity from tail gas burned on site,source,electricity,0.000000,,,,calculated,reduced_order,engine anchored port,K.17,electricity,anchored_port
+B_REC_F,UNMET_THERMAL,Heat duty above the rated reactor,sink,heat,0.000000,,,,calculated,reduced_order,engine anchored port,J.18,memo,anchored_port
+B_REC_F,UNMET_ELECTRICAL,Electricity above the rated reactor,sink,electricity,0.000000,,,,calculated,reduced_order,engine anchored port,J.29,memo,anchored_port
+B_REC_F,SPARE_MARGIN,Rated reactor less the need,source,heat,31.506136,,,,calculated,reduced_order,engine anchored port,J.36,memo,gated_T05
+B_REC_FIX,HTGR_HEAT,Reactor heat at the need,source,heat,180.223379,156.217183,216.552171,925.000000,calculated,reduced_order,engine anchored port,J.26,reactor,gated_T05
+B_REC_FIX,MIN_REACTOR_RATING,"Minimum reactor rating, central with best and high corners",source,heat,180.223379,156.217183,216.552171,,calculated,reduced_order,engine anchored port,J.27,memo,gated_T05
+B_REC_FIX,CIRC_SHAFT_HEAT,Circulator shaft work returned to the helium,source,heat,6.737049,,,,calculated,reduced_order,engine anchored port,B.16,reactor,gated_T05
+B_REC_FIX,IHX_DUTY,IHX duty,sink,heat,121.709991,,,900.000000,calculated,reduced_order,engine anchored port,C.1,reactor,anchored_port
+B_REC_FIX,IHX_LOSS,IHX loss,sink,heat,0.973680,,,,calculated,reduced_order,engine anchored port,B.15,reactor,anchored_port
+B_REC_FIX,DUCT_LOSS,Hot duct loss,sink,heat,0.307476,,,,calculated,reduced_order,engine anchored port,B.14,reactor,anchored_port
+B_REC_FIX,VESSEL_LOSS,Reactor vessel loss,sink,heat,2.676773,,,,calculated,reduced_order,engine anchored port,B.13,reactor,gated_T05
+B_REC_FIX,POWER_BRANCH,Reactor heat to the power and steam branch,sink,heat,61.292507,,,,calculated,reduced_order,engine anchored port,B.19,reactor,gated_T05
+B_REC_FIX,BRANCH_TO_REBOILER,Power branch heat sent to the reboiler as steam,sink,heat,14.654984,,,,calculated,reduced_order,engine anchored port,B.19,part:POWER_BRANCH,gated_T05
+B_REC_FIX,BRANCH_EXTRACTION_WORK,"Back-pressure work on the reboiler steam, a part of POWER_GENERATED",source,electricity,2.476692,,,,calculated,reduced_order,engine anchored port,B.19,part:POWER_BRANCH,gated_T05
+B_REC_FIX,BRANCH_TO_TURBINE,Power branch heat to the condensing turbine,sink,heat,44.160831,,,,calculated,reduced_order,engine anchored port,B.19,part:POWER_BRANCH,gated_T05
+B_REC_FIX,SMR_HEAT,Process heat with slip heat,sink,heat,121.709991,,,,calculated,reduced_order,engine anchored port,J.14,memo,anchored_port
+B_REC_FIX,WGS_RELEASE,Water-gas shift heat release,source,heat,,,,,calculated,reduced_order,no Level 3 flowsheet for this run,E.6,memo,not_run
+B_REC_FIX,SYNGAS_RECOVERY,Syngas heat above 130 C to the reboiler,source,heat,8.386715,,,130.000000,calculated,reduced_order,engine anchored port,F.2,memo,gated_T05
+B_REC_FIX,MEA_REGEN,Reboiler duty,sink,heat,52.534745,,,,calculated,reduced_order,engine anchored port,J.16,reboiler,anchored_port
+B_REC_FIX,STEAM_AVAILABLE,Heat stack for the reboiler,source,heat,37.879762,,,,calculated,reduced_order,engine anchored port,J.17,memo,gated_T05
+B_REC_FIX,REB_FROM_SELEXOL,"Reboiler heat from freed Selexol steam, first",source,heat,12.732132,,,152.777778,calculated,reduced_order,"engine heat recovery, approved order",J.17,reboiler,level4_m8
+B_REC_FIX,REB_FROM_EXPORT,"Reboiler heat from export steam, second",source,heat,16.760915,,,253.888889,calculated,reduced_order,"engine heat recovery, approved order",J.17,reboiler,level4_m8
+B_REC_FIX,REB_FROM_SYNGAS,"Reboiler heat from syngas above 130 C, third",source,heat,8.386715,,,130.000000,calculated,reduced_order,"engine heat recovery, approved order",J.17,reboiler,level4_m8
+B_REC_FIX,REB_FROM_ZLD,"Reboiler heat from ZLD steam, fourth, off by default",source,heat,0.000000,,,152.777778,calculated,reduced_order,"engine heat recovery, approved order",J.17,reboiler,level4_m8
+B_REC_FIX,REB_FROM_TAIL_GAS,Reboiler heat from tail gas burned on site,source,heat,0.000000,,,,calculated,reduced_order,"engine heat recovery, approved order",J.18,reboiler,level4_m8
+B_REC_FIX,REB_FROM_REACTOR,"Reboiler heat from reactor steam, last",source,heat,14.654984,,,,calculated,reduced_order,"engine heat recovery, approved order",J.18,reboiler,level4_m8
+B_REC_FIX,POWER_GENERATED,Electricity from reactor heat,source,electricity,20.008542,,,,calculated,reduced_order,engine anchored port,B.18,electricity,gated_T05
+B_REC_FIX,HE_CIRCULATION,Helium circulators,sink,electricity,7.485610,,,,calculated,reduced_order,engine anchored port,B.12,electricity,gated_T05
+B_REC_FIX,PUMP_COMPRESS,"Lean pump, CO2 compression, purge recovery",sink,electricity,9.604919,,,,calculated,reduced_order,engine anchored port,J.22,electricity,anchored_port
+B_REC_FIX,COOLING,Cooling towers and MEA fans,sink,electricity,0.856349,,,,calculated,reduced_order,engine anchored port,J.21,electricity,anchored_port
+B_REC_FIX,REFORMING_POWER,"Reformer train electricity, TEV-961 Table 2 row on the gas rate",sink,electricity,0.819937,,,,calculated,reduced_order,engine anchored port,J.19,electricity,anchored_port
+B_REC_FIX,PURIFICATION_POWER,"Gas purification electricity, Selexol plus PSA or the PSA alone",sink,electricity,0.011821,,,,calculated,reduced_order,engine anchored port,J.19,electricity,anchored_port
+B_REC_FIX,STEAM_SYSTEM_POWER,"Steam system electricity, TEV-961 Table 2 row",sink,electricity,0.204984,,,,calculated,reduced_order,engine anchored port,J.19,electricity,anchored_port
+B_REC_FIX,WATER_POWER,"Water treatment electricity, TEV-961 Table 2 row",sink,electricity,1.024921,,,,calculated,reduced_order,engine anchored port,J.19,electricity,anchored_port
+B_REC_FIX,TAIL_GAS_POWER,Electricity from tail gas burned on site,source,electricity,0.000000,,,,calculated,reduced_order,engine anchored port,K.17,electricity,anchored_port
+B_REC_FIX,UNMET_THERMAL,Heat duty above the rated reactor,sink,heat,0.000000,,,,calculated,reduced_order,engine anchored port,J.18,memo,anchored_port
+B_REC_FIX,UNMET_ELECTRICAL,Electricity above the rated reactor,sink,electricity,0.000000,,,,calculated,reduced_order,engine anchored port,J.29,memo,anchored_port
+B_REC_FIX,SPARE_MARGIN,Rated reactor less the need,source,heat,29.776621,,,,calculated,reduced_order,engine anchored port,J.36,memo,gated_T05
+B_REC_F_ANCHORED,HTGR_HEAT,Reactor heat at the need,source,heat,179.039591,155.778893,214.867396,925.000000,calculated,reduced_order,"engine anchored port, anchored preset",J.26,reactor,anchored_port
+B_REC_F_ANCHORED,MIN_REACTOR_RATING,"Minimum reactor rating, central with best and high corners",source,heat,179.039591,155.778893,214.867396,,calculated,reduced_order,"engine anchored port, anchored preset",J.27,memo,anchored_port
+B_REC_F_ANCHORED,CIRC_SHAFT_HEAT,Circulator shaft work returned to the helium,source,heat,6.712636,,,,calculated,reduced_order,"engine anchored port, anchored preset",B.16,reactor,anchored_port
+B_REC_F_ANCHORED,IHX_DUTY,IHX duty,sink,heat,121.680927,,,900.000000,calculated,reduced_order,"engine anchored port, anchored preset",C.1,reactor,anchored_port
+B_REC_F_ANCHORED,IHX_LOSS,IHX loss,sink,heat,0.973447,,,,calculated,reduced_order,"engine anchored port, anchored preset",B.15,reactor,anchored_port
+B_REC_F_ANCHORED,DUCT_LOSS,Hot duct loss,sink,heat,0.307476,,,,calculated,reduced_order,"engine anchored port, anchored preset",B.14,reactor,anchored_port
+B_REC_F_ANCHORED,VESSEL_LOSS,Reactor vessel loss,sink,heat,2.665039,,,,calculated,reduced_order,"engine anchored port, anchored preset",B.13,reactor,anchored_port
+B_REC_F_ANCHORED,POWER_BRANCH,Reactor heat to the power and steam branch,sink,heat,60.125336,,,,calculated,reduced_order,"engine anchored port, anchored preset",B.19,reactor,anchored_port
+B_REC_F_ANCHORED,BRANCH_TO_REBOILER,Power branch heat sent to the reboiler as steam,sink,heat,13.823285,,,,calculated,reduced_order,"engine anchored port, anchored preset",B.19,part:POWER_BRANCH,anchored_port
+B_REC_F_ANCHORED,BRANCH_EXTRACTION_WORK,"Back-pressure work on the reboiler steam, a part of POWER_GENERATED",source,electricity,2.336135,,,,calculated,reduced_order,"engine anchored port, anchored preset",B.19,part:POWER_BRANCH,anchored_port
+B_REC_F_ANCHORED,BRANCH_TO_TURBINE,Power branch heat to the condensing turbine,sink,heat,43.965916,,,,calculated,reduced_order,"engine anchored port, anchored preset",B.19,part:POWER_BRANCH,anchored_port
+B_REC_F_ANCHORED,SMR_HEAT,Process heat with slip heat,sink,heat,121.680927,,,,calculated,reduced_order,"engine anchored port, anchored preset",J.14,memo,anchored_port
+B_REC_F_ANCHORED,WGS_RELEASE,Water-gas shift heat release,source,heat,8.071570,,,,calculated,rigorous,"Level 3 flowsheet FS_B_REC_F, HTS and LTS beds at their inlet temperature",E.6,memo,level4_m8
+B_REC_F_ANCHORED,SYNGAS_RECOVERY,Syngas heat above 130 C to the reboiler,source,heat,7.686217,,,130.000000,calculated,reduced_order,"engine anchored port, anchored preset",F.2,memo,anchored_port
+B_REC_F_ANCHORED,MEA_REGEN,Reboiler duty,sink,heat,51.002550,,,,calculated,reduced_order,"engine anchored port, anchored preset",J.16,reboiler,anchored_port
+B_REC_F_ANCHORED,STEAM_AVAILABLE,Heat stack for the reboiler,source,heat,37.179264,,,,calculated,reduced_order,"engine anchored port, anchored preset",J.17,memo,anchored_port
+B_REC_F_ANCHORED,REB_FROM_SELEXOL,"Reboiler heat from freed Selexol steam, first",source,heat,12.732132,,,152.777778,calculated,reduced_order,"engine heat recovery, approved order",J.17,reboiler,level4_m8
+B_REC_F_ANCHORED,REB_FROM_EXPORT,"Reboiler heat from export steam, second",source,heat,16.760915,,,253.888889,calculated,reduced_order,"engine heat recovery, approved order",J.17,reboiler,level4_m8
+B_REC_F_ANCHORED,REB_FROM_SYNGAS,"Reboiler heat from syngas above 130 C, third",source,heat,7.686217,,,130.000000,calculated,reduced_order,"engine heat recovery, approved order",J.17,reboiler,level4_m8
+B_REC_F_ANCHORED,REB_FROM_ZLD,"Reboiler heat from ZLD steam, fourth, off by default",source,heat,0.000000,,,152.777778,calculated,reduced_order,"engine heat recovery, approved order",J.17,reboiler,level4_m8
+B_REC_F_ANCHORED,REB_FROM_TAIL_GAS,Reboiler heat from tail gas burned on site,source,heat,0.000000,,,,calculated,reduced_order,"engine heat recovery, approved order",J.18,reboiler,level4_m8
+B_REC_F_ANCHORED,REB_FROM_REACTOR,"Reboiler heat from reactor steam, last",source,heat,13.823285,,,,calculated,reduced_order,"engine heat recovery, approved order",J.18,reboiler,level4_m8
+B_REC_F_ANCHORED,POWER_GENERATED,Electricity from reactor heat,source,electricity,19.790604,,,,calculated,reduced_order,"engine anchored port, anchored preset",B.18,electricity,anchored_port
+B_REC_F_ANCHORED,HE_CIRCULATION,Helium circulators,sink,electricity,7.458484,,,,calculated,reduced_order,"engine anchored port, anchored preset",B.12,electricity,anchored_port
+B_REC_F_ANCHORED,PUMP_COMPRESS,"Lean pump, CO2 compression, purge recovery",sink,electricity,9.437090,,,,calculated,reduced_order,"engine anchored port, anchored preset",J.22,electricity,anchored_port
+B_REC_F_ANCHORED,COOLING,Cooling towers and MEA fans,sink,electricity,0.833366,,,,calculated,reduced_order,"engine anchored port, anchored preset",J.21,electricity,anchored_port
+B_REC_F_ANCHORED,REFORMING_POWER,"Reformer train electricity, TEV-961 Table 2 row on the gas rate",sink,electricity,0.819937,,,,calculated,reduced_order,"engine anchored port, anchored preset",J.19,electricity,anchored_port
+B_REC_F_ANCHORED,PURIFICATION_POWER,"Gas purification electricity, Selexol plus PSA or the PSA alone",sink,electricity,0.011821,,,,calculated,reduced_order,"engine anchored port, anchored preset",J.19,electricity,anchored_port
+B_REC_F_ANCHORED,STEAM_SYSTEM_POWER,"Steam system electricity, TEV-961 Table 2 row",sink,electricity,0.204984,,,,calculated,reduced_order,"engine anchored port, anchored preset",J.19,electricity,anchored_port
+B_REC_F_ANCHORED,WATER_POWER,"Water treatment electricity, TEV-961 Table 2 row",sink,electricity,1.024921,,,,calculated,reduced_order,"engine anchored port, anchored preset",J.19,electricity,anchored_port
+B_REC_F_ANCHORED,TAIL_GAS_POWER,Electricity from tail gas burned on site,source,electricity,0.000000,,,,calculated,reduced_order,"engine anchored port, anchored preset",K.17,electricity,anchored_port
+B_REC_F_ANCHORED,UNMET_THERMAL,Heat duty above the rated reactor,sink,heat,0.000000,,,,calculated,reduced_order,"engine anchored port, anchored preset",J.18,memo,anchored_port
+B_REC_F_ANCHORED,UNMET_ELECTRICAL,Electricity above the rated reactor,sink,electricity,0.000000,,,,calculated,reduced_order,"engine anchored port, anchored preset",J.29,memo,anchored_port
+B_REC_F_ANCHORED,SPARE_MARGIN,Rated reactor less the need,source,heat,30.960409,,,,calculated,reduced_order,"engine anchored port, anchored preset",J.36,memo,anchored_port
+B_REC_F_MODELLED,HTGR_HEAT,Reactor heat at the need,source,heat,178.474921,155.774092,214.060502,925.000000,calculated,reduced_order,"engine anchored port, modelled preset",J.26,reactor,gated_T01_T05
+B_REC_F_MODELLED,MIN_REACTOR_RATING,"Minimum reactor rating, central with best and high corners",source,heat,178.474921,155.774092,214.060502,,calculated,reduced_order,"engine anchored port, modelled preset",J.27,memo,gated_T01_T05
+B_REC_F_MODELLED,CIRC_SHAFT_HEAT,Circulator shaft work returned to the helium,source,heat,6.701340,,,,calculated,reduced_order,"engine anchored port, modelled preset",B.16,reactor,gated_T01_T05
+B_REC_F_MODELLED,IHX_DUTY,IHX duty,sink,heat,121.680609,,,900.000000,calculated,reduced_order,"engine anchored port, modelled preset",C.1,reactor,gated_T01_T05
+B_REC_F_MODELLED,IHX_LOSS,IHX loss,sink,heat,0.973445,,,,calculated,reduced_order,"engine anchored port, modelled preset",B.15,reactor,gated_T01_T05
+B_REC_F_MODELLED,DUCT_LOSS,Hot duct loss,sink,heat,0.307476,,,,calculated,reduced_order,"engine anchored port, modelled preset",B.14,reactor,anchored_port
+B_REC_F_MODELLED,VESSEL_LOSS,Reactor vessel loss,sink,heat,2.659433,,,,calculated,reduced_order,"engine anchored port, modelled preset",B.13,reactor,gated_T01_T05
+B_REC_F_MODELLED,POWER_BRANCH,Reactor heat to the power and steam branch,sink,heat,59.555298,,,,calculated,reduced_order,"engine anchored port, modelled preset",B.19,reactor,gated_T01_T05
+B_REC_F_MODELLED,BRANCH_TO_REBOILER,Power branch heat sent to the reboiler as steam,sink,heat,13.106006,,,,calculated,reduced_order,"engine anchored port, modelled preset",B.19,part:POWER_BRANCH,gated_T01_T05
+B_REC_F_MODELLED,BRANCH_EXTRACTION_WORK,"Back-pressure work on the reboiler steam, a part of POWER_GENERATED",source,electricity,2.214915,,,,calculated,reduced_order,"engine anchored port, modelled preset",B.19,part:POWER_BRANCH,gated_T01_T05
+B_REC_F_MODELLED,BRANCH_TO_TURBINE,Power branch heat to the condensing turbine,sink,heat,44.234376,,,,calculated,reduced_order,"engine anchored port, modelled preset",B.19,part:POWER_BRANCH,gated_T01_T05
+B_REC_F_MODELLED,SMR_HEAT,Process heat with slip heat,sink,heat,121.680609,,,,calculated,reduced_order,"engine anchored port, modelled preset",J.14,memo,gated_T01_T05
+B_REC_F_MODELLED,WGS_RELEASE,Water-gas shift heat release,source,heat,8.071570,,,,calculated,rigorous,"Level 3 flowsheet FS_B_REC_F, HTS and LTS beds at their inlet temperature",E.6,memo,level4_m8
+B_REC_F_MODELLED,SYNGAS_RECOVERY,Syngas heat above 130 C to the reboiler,source,heat,8.386715,,,130.000000,calculated,reduced_order,"engine anchored port, modelled preset",F.2,memo,gated_T01_T05
+B_REC_F_MODELLED,MEA_REGEN,Reboiler duty,sink,heat,50.985768,,,,calculated,reduced_order,"engine anchored port, modelled preset",J.16,reboiler,gated_T01_T05
+B_REC_F_MODELLED,STEAM_AVAILABLE,Heat stack for the reboiler,source,heat,37.879762,,,,calculated,reduced_order,"engine anchored port, modelled preset",J.17,memo,gated_T01_T05
+B_REC_F_MODELLED,REB_FROM_SELEXOL,"Reboiler heat from freed Selexol steam, first",source,heat,12.732132,,,152.777778,calculated,reduced_order,"engine heat recovery, approved order",J.17,reboiler,level4_m8
+B_REC_F_MODELLED,REB_FROM_EXPORT,"Reboiler heat from export steam, second",source,heat,16.760915,,,253.888889,calculated,reduced_order,"engine heat recovery, approved order",J.17,reboiler,level4_m8
+B_REC_F_MODELLED,REB_FROM_SYNGAS,"Reboiler heat from syngas above 130 C, third",source,heat,8.386715,,,130.000000,calculated,reduced_order,"engine heat recovery, approved order",J.17,reboiler,level4_m8
+B_REC_F_MODELLED,REB_FROM_ZLD,"Reboiler heat from ZLD steam, fourth, off by default",source,heat,0.000000,,,152.777778,calculated,reduced_order,"engine heat recovery, approved order",J.17,reboiler,level4_m8
+B_REC_F_MODELLED,REB_FROM_TAIL_GAS,Reboiler heat from tail gas burned on site,source,heat,0.000000,,,,calculated,reduced_order,"engine heat recovery, approved order",J.18,reboiler,level4_m8
+B_REC_F_MODELLED,REB_FROM_REACTOR,"Reboiler heat from reactor steam, last",source,heat,13.106006,,,,calculated,reduced_order,"engine heat recovery, approved order",J.18,reboiler,level4_m8
+B_REC_F_MODELLED,POWER_GENERATED,Electricity from reactor heat,source,electricity,19.775962,,,,calculated,reduced_order,"engine anchored port, modelled preset",B.18,electricity,gated_T01_T05
+B_REC_F_MODELLED,HE_CIRCULATION,Helium circulators,sink,electricity,7.445933,,,,calculated,reduced_order,"engine anchored port, modelled preset",B.12,electricity,gated_T01_T05
+B_REC_F_MODELLED,PUMP_COMPRESS,"Lean pump, CO2 compression, purge recovery",sink,electricity,9.435251,,,,calculated,reduced_order,"engine anchored port, modelled preset",J.22,electricity,gated_T01_T05
+B_REC_F_MODELLED,COOLING,Cooling towers and MEA fans,sink,electricity,0.833115,,,,calculated,reduced_order,"engine anchored port, modelled preset",J.21,electricity,gated_T01_T05
+B_REC_F_MODELLED,REFORMING_POWER,"Reformer train electricity, TEV-961 Table 2 row on the gas rate",sink,electricity,0.819937,,,,calculated,reduced_order,"engine anchored port, modelled preset",J.19,electricity,anchored_port
+B_REC_F_MODELLED,PURIFICATION_POWER,"Gas purification electricity, Selexol plus PSA or the PSA alone",sink,electricity,0.011821,,,,calculated,reduced_order,"engine anchored port, modelled preset",J.19,electricity,anchored_port
+B_REC_F_MODELLED,STEAM_SYSTEM_POWER,"Steam system electricity, TEV-961 Table 2 row",sink,electricity,0.204984,,,,calculated,reduced_order,"engine anchored port, modelled preset",J.19,electricity,anchored_port
+B_REC_F_MODELLED,WATER_POWER,"Water treatment electricity, TEV-961 Table 2 row",sink,electricity,1.024921,,,,calculated,reduced_order,"engine anchored port, modelled preset",J.19,electricity,anchored_port
+B_REC_F_MODELLED,TAIL_GAS_POWER,Electricity from tail gas burned on site,source,electricity,0.000000,,,,calculated,reduced_order,"engine anchored port, modelled preset",K.17,electricity,anchored_port
+B_REC_F_MODELLED,UNMET_THERMAL,Heat duty above the rated reactor,sink,heat,0.000000,,,,calculated,reduced_order,"engine anchored port, modelled preset",J.18,memo,anchored_port
+B_REC_F_MODELLED,UNMET_ELECTRICAL,Electricity above the rated reactor,sink,electricity,0.000000,,,,calculated,reduced_order,"engine anchored port, modelled preset",J.29,memo,anchored_port
+B_REC_F_MODELLED,SPARE_MARGIN,Rated reactor less the need,source,heat,31.525079,,,,calculated,reduced_order,"engine anchored port, modelled preset",J.36,memo,gated_T01_T05
+FS_A_INL_SEL,SMR_HEAT,Feed preheat plus reformer duty of the flowsheet,sink,heat,158.054507,,,,calculated,rigorous,"Level 3 flowsheet, reformer exit 871 C",J.14,memo,flowsheet_m7
+FS_A_INL_SEL,WGS_RELEASE,"Water-gas shift heat release, HTS and LTS",source,heat,11.344195,,,,calculated,rigorous,engine heat recovery on the flowsheet beds,E.6,memo,level4_m8
+FS_A_INL_SEL,SYNGAS_RECOVERY,Syngas heat above 130 C on the flowsheet EX3 outlet,source,heat,11.368894,,,130.000000,calculated,rigorous,engine heat recovery on the flowsheet stream S09A,F.11,memo,level4_m8
+FS_A_INL_SEL,MEA_REGEN,Reboiler duty of the capture island,sink,heat,0.000000,,,,calculated,rigorous,"Level 3 flowsheet, anchored capture island",J.16,memo,flowsheet_m7
+FS_A_INL_SEL,H_S01,"Enthalpy flow of S01 into the envelope, formation basis, signed",source,enthalpy,-34.968095,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_A_INL_SEL,H_S02,"Enthalpy flow of S02 into the envelope, formation basis, signed",source,enthalpy,-401.888702,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_A_INL_SEL,H_S14,"Enthalpy flow of S14 into the envelope, formation basis, signed",source,enthalpy,-12.042900,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_A_INL_SEL,Q_FEED_PREHEAT,"FEED-PREHEAT duty into the process, signed",source,heat,22.791973,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_A_INL_SEL,Q_SMR,"SMR-EQ duty into the process, signed",source,heat,135.262534,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_A_INL_SEL,Q_HPS-GEN1,"HPS-GEN1 duty into the process, signed",source,heat,-62.611945,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_A_INL_SEL,Q_WGS-EX1,"WGS-EX1 duty into the process, signed",source,heat,-18.055682,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_A_INL_SEL,Q_WGS-EX2,"WGS-EX2 duty into the process, signed",source,heat,-6.317131,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_A_INL_SEL,Q_WGS-EX3,"WGS-EX3 duty into the process, signed",source,heat,-20.040332,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_A_INL_SEL,Q_WGS-EX4,"WGS-EX4 duty into the process, signed",source,heat,-29.179447,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_A_INL_SEL,Q_KO-DRM-1,"KO-DRM-1 duty into the process, signed",source,heat,-5.041129,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_A_INL_SEL,Q_CAPTURE,"CAPTURE duty into the process, signed",source,heat,0.000000,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_A_INL_SEL,W_CAPTURE,"CAPTURE duty into the process, signed",source,electricity,2.100000,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_A_INL_SEL,Q_CAPTURE_COOLING,"CAPTURE duty into the process, signed, set by closure",source,heat,-2.100000,,,,calculated,fixed_assumption,"Level 3 flowsheet duty set by closure, no energy model",A.8,envelope,flowsheet_m7
+FS_A_INL_SEL,W_CO2COMP,"CO2-COMP duty into the process, signed",source,electricity,6.434796,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_A_INL_SEL,Q_CO2COMP_COOLING,"CO2-COMP duty into the process, signed, set by closure",source,heat,-5.637855,,,,calculated,fixed_assumption,"Level 3 flowsheet duty set by closure, no energy model",A.8,envelope,flowsheet_m7
+FS_A_INL_SEL,W_CRYO,"REC-CRYO duty into the process, signed",source,electricity,5.700000,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_A_INL_SEL,Q_CRYO_COOLING,"REC-CRYO duty into the process, signed, set by closure",source,heat,-5.317843,,,,calculated,fixed_assumption,"Level 3 flowsheet duty set by closure, no energy model",A.8,envelope,flowsheet_m7
+FS_A_INL_SEL,Q_N2_BURN,"N2-BURN duty into the process, signed, set by closure",source,heat,-26.047019,,,,calculated,fixed_assumption,"Level 3 flowsheet duty set by closure, no energy model",A.8,envelope,flowsheet_m7
+FS_A_INL_SEL,H_S10,"Enthalpy flow of S10 out of the envelope, formation basis, signed",sink,enthalpy,-234.366801,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_A_INL_SEL,H_S12,"Enthalpy flow of S12 out of the envelope, formation basis, signed",sink,enthalpy,-11.668991,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_A_INL_SEL,H_S16,"Enthalpy flow of S16 out of the envelope, formation basis, signed",sink,enthalpy,-30.272454,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_A_INL_SEL,H_S20,"Enthalpy flow of S20 out of the envelope, formation basis, signed",sink,enthalpy,-180.848229,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_A_INL_SEL,H_S21,"Enthalpy flow of S21 out of the envelope, formation basis, signed",sink,enthalpy,0.197698,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_A_REC_F,SMR_HEAT,Feed preheat plus reformer duty of the flowsheet,sink,heat,160.469388,,,,calculated,rigorous,"Level 3 flowsheet, reformer exit 871 C",J.14,memo,flowsheet_m7
+FS_A_REC_F,WGS_RELEASE,"Water-gas shift heat release, HTS and LTS",source,heat,11.812958,,,,calculated,rigorous,engine heat recovery on the flowsheet beds,E.6,memo,level4_m8
+FS_A_REC_F,SYNGAS_RECOVERY,Syngas heat above 130 C on the flowsheet EX3 outlet,source,heat,11.568135,,,130.000000,calculated,rigorous,engine heat recovery on the flowsheet stream S09A,F.11,memo,level4_m8
+FS_A_REC_F,MEA_REGEN,Reboiler duty of the capture island,sink,heat,75.369703,,,,calculated,rigorous,"Level 3 flowsheet, anchored capture island",J.16,memo,flowsheet_m7
+FS_A_REC_F,H_S01,"Enthalpy flow of S01 into the envelope, formation basis, signed",source,enthalpy,-34.767904,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_A_REC_F,H_S02,"Enthalpy flow of S02 into the envelope, formation basis, signed",source,enthalpy,-417.526803,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_A_REC_F,H_S14,"Enthalpy flow of S14 into the envelope, formation basis, signed",source,enthalpy,-29.035356,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_A_REC_F,Q_FEED_PREHEAT,"FEED-PREHEAT duty into the process, signed",source,heat,23.521419,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_A_REC_F,Q_SMR,"SMR-EQ duty into the process, signed",source,heat,136.947969,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_A_REC_F,Q_HPS-GEN1,"HPS-GEN1 duty into the process, signed",source,heat,-64.561872,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_A_REC_F,Q_WGS-EX1,"WGS-EX1 duty into the process, signed",source,heat,-18.752821,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_A_REC_F,Q_WGS-EX2,"WGS-EX2 duty into the process, signed",source,heat,-6.514728,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_A_REC_F,Q_WGS-EX3,"WGS-EX3 duty into the process, signed",source,heat,-22.724280,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_A_REC_F,Q_WGS-EX4,"WGS-EX4 duty into the process, signed",source,heat,-29.834723,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_A_REC_F,Q_KO-DRM-1,"KO-DRM-1 duty into the process, signed",source,heat,-5.230966,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_A_REC_F,Q_CAPTURE,"CAPTURE duty into the process, signed",source,heat,75.369703,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_A_REC_F,W_CAPTURE,"CAPTURE duty into the process, signed",source,electricity,2.414836,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_A_REC_F,Q_CAPTURE_COOLING,"CAPTURE duty into the process, signed, set by closure",source,heat,-77.784539,,,,calculated,fixed_assumption,"Level 3 flowsheet duty set by closure, no energy model",A.8,envelope,flowsheet_m7
+FS_A_REC_F,W_CO2COMP,"CO2-COMP duty into the process, signed",source,electricity,6.273783,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_A_REC_F,Q_CO2COMP_COOLING,"CO2-COMP duty into the process, signed, set by closure",source,heat,-5.496783,,,,calculated,fixed_assumption,"Level 3 flowsheet duty set by closure, no energy model",A.8,envelope,flowsheet_m7
+FS_A_REC_F,W_CRYO,"REC-CRYO duty into the process, signed",source,electricity,6.289957,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_A_REC_F,Q_CRYO_COOLING,"REC-CRYO duty into the process, signed, set by closure",source,heat,-5.793269,,,,calculated,fixed_assumption,"Level 3 flowsheet duty set by closure, no energy model",A.8,envelope,flowsheet_m7
+FS_A_REC_F,Q_N2_BURN,"N2-BURN duty into the process, signed, set by closure",source,heat,-23.800562,,,,calculated,fixed_assumption,"Level 3 flowsheet duty set by closure, no energy model",A.8,envelope,flowsheet_m7
+FS_A_REC_F,H_S10,"Enthalpy flow of S10 out of the envelope, formation basis, signed",sink,enthalpy,-253.952206,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_A_REC_F,H_S12,"Enthalpy flow of S12 out of the envelope, formation basis, signed",sink,enthalpy,-28.681266,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_A_REC_F,H_S16,"Enthalpy flow of S16 out of the envelope, formation basis, signed",sink,enthalpy,-32.248166,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_A_REC_F,H_S20,"Enthalpy flow of S20 out of the envelope, formation basis, signed",sink,enthalpy,-176.322998,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_A_REC_F,H_S21,"Enthalpy flow of S21 out of the envelope, formation basis, signed",sink,enthalpy,0.197698,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_B_INL_SEL,SMR_HEAT,Feed preheat plus reformer duty of the flowsheet,sink,heat,107.995637,,,,calculated,rigorous,"Level 3 flowsheet, reformer exit 871 C",J.14,memo,flowsheet_m7
+FS_B_INL_SEL,WGS_RELEASE,"Water-gas shift heat release, HTS and LTS",source,heat,7.751272,,,,calculated,rigorous,engine heat recovery on the flowsheet beds,E.6,memo,level4_m8
+FS_B_INL_SEL,SYNGAS_RECOVERY,Syngas heat above 130 C on the flowsheet EX3 outlet,source,heat,7.768149,,,130.000000,calculated,rigorous,engine heat recovery on the flowsheet stream S09A,F.11,memo,level4_m8
+FS_B_INL_SEL,MEA_REGEN,Reboiler duty of the capture island,sink,heat,0.000000,,,,calculated,rigorous,"Level 3 flowsheet, anchored capture island",J.16,memo,flowsheet_m7
+FS_B_INL_SEL,H_S01,"Enthalpy flow of S01 into the envelope, formation basis, signed",source,enthalpy,-23.893034,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_B_INL_SEL,H_S02,"Enthalpy flow of S02 into the envelope, formation basis, signed",source,enthalpy,-274.602902,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_B_INL_SEL,H_S14,"Enthalpy flow of S14 into the envelope, formation basis, signed",source,enthalpy,-8.228684,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_B_INL_SEL,Q_FEED_PREHEAT,"FEED-PREHEAT duty into the process, signed",source,heat,15.573321,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_INL_SEL,Q_SMR,"SMR-EQ duty into the process, signed",source,heat,92.422316,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_INL_SEL,Q_HPS-GEN1,"HPS-GEN1 duty into the process, signed",source,heat,-42.781551,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_INL_SEL,Q_WGS-EX1,"WGS-EX1 duty into the process, signed",source,heat,-12.337104,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_INL_SEL,Q_WGS-EX2,"WGS-EX2 duty into the process, signed",source,heat,-4.316376,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_INL_SEL,Q_WGS-EX3,"WGS-EX3 duty into the process, signed",source,heat,-13.693177,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_INL_SEL,Q_WGS-EX4,"WGS-EX4 duty into the process, signed",source,heat,-19.937761,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_INL_SEL,Q_KO-DRM-1,"KO-DRM-1 duty into the process, signed",source,heat,-3.444507,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_INL_SEL,Q_CAPTURE,"CAPTURE duty into the process, signed",source,heat,0.000000,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_INL_SEL,W_CAPTURE,"CAPTURE duty into the process, signed",source,electricity,1.434890,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_INL_SEL,Q_CAPTURE_COOLING,"CAPTURE duty into the process, signed, set by closure",source,heat,-1.434890,,,,calculated,fixed_assumption,"Level 3 flowsheet duty set by closure, no energy model",A.8,envelope,flowsheet_m7
+FS_B_INL_SEL,W_CO2COMP,"CO2-COMP duty into the process, signed",source,electricity,4.396774,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_INL_SEL,Q_CO2COMP_COOLING,"CO2-COMP duty into the process, signed, set by closure",source,heat,-3.852239,,,,calculated,fixed_assumption,"Level 3 flowsheet duty set by closure, no energy model",A.8,envelope,flowsheet_m7
+FS_B_INL_SEL,W_CRYO,"REC-CRYO duty into the process, signed",source,electricity,3.894702,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_INL_SEL,Q_CRYO_COOLING,"REC-CRYO duty into the process, signed, set by closure",source,heat,-3.633581,,,,calculated,fixed_assumption,"Level 3 flowsheet duty set by closure, no energy model",A.8,envelope,flowsheet_m7
+FS_B_INL_SEL,Q_N2_BURN,"N2-BURN duty into the process, signed, set by closure",source,heat,-17.797433,,,,calculated,fixed_assumption,"Level 3 flowsheet duty set by closure, no energy model",A.8,envelope,flowsheet_m7
+FS_B_INL_SEL,H_S10,"Enthalpy flow of S10 out of the envelope, formation basis, signed",sink,enthalpy,-160.138375,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_B_INL_SEL,H_S12,"Enthalpy flow of S12 out of the envelope, formation basis, signed",sink,enthalpy,-7.973199,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_B_INL_SEL,H_S16,"Enthalpy flow of S16 out of the envelope, formation basis, signed",sink,enthalpy,-20.684592,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_B_INL_SEL,H_S20,"Enthalpy flow of S20 out of the envelope, formation basis, signed",sink,enthalpy,-123.570154,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_B_INL_SEL,H_S21,"Enthalpy flow of S21 out of the envelope, formation basis, signed",sink,enthalpy,0.135083,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_B_REC_F,SMR_HEAT,Feed preheat plus reformer duty of the flowsheet,sink,heat,109.645679,,,,calculated,rigorous,"Level 3 flowsheet, reformer exit 871 C",J.14,memo,flowsheet_m7
+FS_B_REC_F,WGS_RELEASE,"Water-gas shift heat release, HTS and LTS",source,heat,8.071570,,,,calculated,rigorous,engine heat recovery on the flowsheet beds,E.6,memo,level4_m8
+FS_B_REC_F,SYNGAS_RECOVERY,Syngas heat above 130 C on the flowsheet EX3 outlet,source,heat,7.904286,,,130.000000,calculated,rigorous,engine heat recovery on the flowsheet stream S09A,F.11,memo,level4_m8
+FS_B_REC_F,MEA_REGEN,Reboiler duty of the capture island,sink,heat,51.498684,,,,calculated,rigorous,"Level 3 flowsheet, anchored capture island",J.16,memo,flowsheet_m7
+FS_B_REC_F,H_S01,"Enthalpy flow of S01 into the envelope, formation basis, signed",source,enthalpy,-23.756247,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_B_REC_F,H_S02,"Enthalpy flow of S02 into the envelope, formation basis, signed",source,enthalpy,-285.288119,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_B_REC_F,H_S14,"Enthalpy flow of S14 into the envelope, formation basis, signed",source,enthalpy,-19.839306,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_B_REC_F,Q_FEED_PREHEAT,"FEED-PREHEAT duty into the process, signed",source,heat,16.071738,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_REC_F,Q_SMR,"SMR-EQ duty into the process, signed",source,heat,93.573941,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_REC_F,Q_HPS-GEN1,"HPS-GEN1 duty into the process, signed",source,heat,-44.113899,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_REC_F,Q_WGS-EX1,"WGS-EX1 duty into the process, signed",source,heat,-12.813446,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_REC_F,Q_WGS-EX2,"WGS-EX2 duty into the process, signed",source,heat,-4.451390,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_REC_F,Q_WGS-EX3,"WGS-EX3 duty into the process, signed",source,heat,-15.527068,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_REC_F,Q_WGS-EX4,"WGS-EX4 duty into the process, signed",source,heat,-20.385498,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_REC_F,Q_KO-DRM-1,"KO-DRM-1 duty into the process, signed",source,heat,-3.574220,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_REC_F,Q_CAPTURE,"CAPTURE duty into the process, signed",source,heat,51.498684,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_REC_F,W_CAPTURE,"CAPTURE duty into the process, signed",source,electricity,1.650011,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_REC_F,Q_CAPTURE_COOLING,"CAPTURE duty into the process, signed, set by closure",source,heat,-53.148695,,,,calculated,fixed_assumption,"Level 3 flowsheet duty set by closure, no energy model",A.8,envelope,flowsheet_m7
+FS_B_REC_F,W_CO2COMP,"CO2-COMP duty into the process, signed",source,electricity,4.286756,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_REC_F,Q_CO2COMP_COOLING,"CO2-COMP duty into the process, signed, set by closure",source,heat,-3.755847,,,,calculated,fixed_assumption,"Level 3 flowsheet duty set by closure, no energy model",A.8,envelope,flowsheet_m7
+FS_B_REC_F,W_CRYO,"REC-CRYO duty into the process, signed",source,electricity,4.297808,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_REC_F,Q_CRYO_COOLING,"REC-CRYO duty into the process, signed, set by closure",source,heat,-3.958431,,,,calculated,fixed_assumption,"Level 3 flowsheet duty set by closure, no energy model",A.8,envelope,flowsheet_m7
+FS_B_REC_F,Q_N2_BURN,"N2-BURN duty into the process, signed, set by closure",source,heat,-16.262471,,,,calculated,fixed_assumption,"Level 3 flowsheet duty set by closure, no energy model",A.8,envelope,flowsheet_m7
+FS_B_REC_F,H_S10,"Enthalpy flow of S10 out of the envelope, formation basis, signed",sink,enthalpy,-173.520710,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_B_REC_F,H_S12,"Enthalpy flow of S12 out of the envelope, formation basis, signed",sink,enthalpy,-19.597364,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_B_REC_F,H_S16,"Enthalpy flow of S16 out of the envelope, formation basis, signed",sink,enthalpy,-22.034558,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_B_REC_F,H_S20,"Enthalpy flow of S20 out of the envelope, formation basis, signed",sink,enthalpy,-120.478149,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_B_REC_F,H_S21,"Enthalpy flow of S21 out of the envelope, formation basis, signed",sink,enthalpy,0.135083,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T800,SMR_HEAT,Feed preheat plus reformer duty of the flowsheet,sink,heat,110.165563,,,,calculated,rigorous,"Level 3 flowsheet, reformer exit 800 C",J.14,memo,flowsheet_m7
+FS_B_REC_F_T800,WGS_RELEASE,"Water-gas shift heat release, HTS and LTS",source,heat,6.539717,,,,calculated,rigorous,engine heat recovery on the flowsheet beds,E.6,memo,level4_m8
+FS_B_REC_F_T800,SYNGAS_RECOVERY,Syngas heat above 130 C on the flowsheet EX3 outlet,source,heat,8.717733,,,130.000000,calculated,rigorous,engine heat recovery on the flowsheet stream S09A,F.11,memo,level4_m8
+FS_B_REC_F_T800,MEA_REGEN,Reboiler duty of the capture island,sink,heat,51.547670,,,,calculated,rigorous,"Level 3 flowsheet, anchored capture island",J.16,memo,flowsheet_m7
+FS_B_REC_F_T800,H_S01,"Enthalpy flow of S01 into the envelope, formation basis, signed",source,enthalpy,-25.430059,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T800,H_S02,"Enthalpy flow of S02 into the envelope, formation basis, signed",source,enthalpy,-349.178400,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T800,H_S14,"Enthalpy flow of S14 into the envelope, formation basis, signed",source,enthalpy,-26.637076,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T800,Q_FEED_PREHEAT,"FEED-PREHEAT duty into the process, signed",source,heat,19.503495,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T800,Q_SMR,"SMR-EQ duty into the process, signed",source,heat,90.662069,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T800,Q_HPS-GEN1,"HPS-GEN1 duty into the process, signed",source,heat,-46.044035,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T800,Q_WGS-EX1,"WGS-EX1 duty into the process, signed",source,heat,-12.860717,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T800,Q_WGS-EX2,"WGS-EX2 duty into the process, signed",source,heat,-5.278292,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T800,Q_WGS-EX3,"WGS-EX3 duty into the process, signed",source,heat,-25.846069,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T800,Q_WGS-EX4,"WGS-EX4 duty into the process, signed",source,heat,-23.050469,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T800,Q_KO-DRM-1,"KO-DRM-1 duty into the process, signed",source,heat,-4.341227,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T800,Q_CAPTURE,"CAPTURE duty into the process, signed",source,heat,51.547670,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T800,W_CAPTURE,"CAPTURE duty into the process, signed",source,electricity,1.651581,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T800,Q_CAPTURE_COOLING,"CAPTURE duty into the process, signed, set by closure",source,heat,-53.199251,,,,calculated,fixed_assumption,"Level 3 flowsheet duty set by closure, no energy model",A.8,envelope,flowsheet_m7
+FS_B_REC_F_T800,W_CO2COMP,"CO2-COMP duty into the process, signed",source,electricity,4.290834,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T800,Q_CO2COMP_COOLING,"CO2-COMP duty into the process, signed, set by closure",source,heat,-3.759420,,,,calculated,fixed_assumption,"Level 3 flowsheet duty set by closure, no energy model",A.8,envelope,flowsheet_m7
+FS_B_REC_F_T800,W_CRYO,"REC-CRYO duty into the process, signed",source,electricity,4.600622,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T800,Q_CRYO_COOLING,"REC-CRYO duty into the process, signed, set by closure",source,heat,-3.959917,,,,calculated,fixed_assumption,"Level 3 flowsheet duty set by closure, no energy model",A.8,envelope,flowsheet_m7
+FS_B_REC_F_T800,Q_N2_BURN,"N2-BURN duty into the process, signed, set by closure",source,heat,-34.621180,,,,calculated,fixed_assumption,"Level 3 flowsheet duty set by closure, no energy model",A.8,envelope,flowsheet_m7
+FS_B_REC_F_T800,H_S10,"Enthalpy flow of S10 out of the envelope, formation basis, signed",sink,enthalpy,-252.921839,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T800,H_S12,"Enthalpy flow of S12 out of the envelope, formation basis, signed",sink,enthalpy,-26.446177,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T800,H_S16,"Enthalpy flow of S16 out of the envelope, formation basis, signed",sink,enthalpy,-42.124161,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T800,H_S20,"Enthalpy flow of S20 out of the envelope, formation basis, signed",sink,enthalpy,-120.592749,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T800,H_S21,"Enthalpy flow of S21 out of the envelope, formation basis, signed",sink,enthalpy,0.135083,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T825,SMR_HEAT,Feed preheat plus reformer duty of the flowsheet,sink,heat,109.649179,,,,calculated,rigorous,"Level 3 flowsheet, reformer exit 825 C",J.14,memo,flowsheet_m7
+FS_B_REC_F_T825,WGS_RELEASE,"Water-gas shift heat release, HTS and LTS",source,heat,7.141919,,,,calculated,rigorous,engine heat recovery on the flowsheet beds,E.6,memo,level4_m8
+FS_B_REC_F_T825,SYNGAS_RECOVERY,Syngas heat above 130 C on the flowsheet EX3 outlet,source,heat,8.365381,,,130.000000,calculated,rigorous,engine heat recovery on the flowsheet stream S09A,F.11,memo,level4_m8
+FS_B_REC_F_T825,MEA_REGEN,Reboiler duty of the capture island,sink,heat,51.534489,,,,calculated,rigorous,"Level 3 flowsheet, anchored capture island",J.16,memo,flowsheet_m7
+FS_B_REC_F_T825,H_S01,"Enthalpy flow of S01 into the envelope, formation basis, signed",source,enthalpy,-24.707955,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T825,H_S02,"Enthalpy flow of S02 into the envelope, formation basis, signed",source,enthalpy,-321.502814,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T825,H_S14,"Enthalpy flow of S14 into the envelope, formation basis, signed",source,enthalpy,-23.679230,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T825,Q_FEED_PREHEAT,"FEED-PREHEAT duty into the process, signed",source,heat,18.019035,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T825,Q_SMR,"SMR-EQ duty into the process, signed",source,heat,91.630145,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T825,Q_HPS-GEN1,"HPS-GEN1 duty into the process, signed",source,heat,-44.981245,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T825,Q_WGS-EX1,"WGS-EX1 duty into the process, signed",source,heat,-12.851262,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T825,Q_WGS-EX2,"WGS-EX2 duty into the process, signed",source,heat,-4.921194,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T825,Q_WGS-EX3,"WGS-EX3 duty into the process, signed",source,heat,-21.304218,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T825,Q_WGS-EX4,"WGS-EX4 duty into the process, signed",source,heat,-21.896088,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T825,Q_KO-DRM-1,"KO-DRM-1 duty into the process, signed",source,heat,-4.008964,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T825,Q_CAPTURE,"CAPTURE duty into the process, signed",source,heat,51.534489,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T825,W_CAPTURE,"CAPTURE duty into the process, signed",source,electricity,1.651158,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T825,Q_CAPTURE_COOLING,"CAPTURE duty into the process, signed, set by closure",source,heat,-53.185648,,,,calculated,fixed_assumption,"Level 3 flowsheet duty set by closure, no energy model",A.8,envelope,flowsheet_m7
+FS_B_REC_F_T825,W_CO2COMP,"CO2-COMP duty into the process, signed",source,electricity,4.289737,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T825,Q_CO2COMP_COOLING,"CO2-COMP duty into the process, signed, set by closure",source,heat,-3.758459,,,,calculated,fixed_assumption,"Level 3 flowsheet duty set by closure, no energy model",A.8,envelope,flowsheet_m7
+FS_B_REC_F_T825,W_CRYO,"REC-CRYO duty into the process, signed",source,electricity,4.469984,,,,calculated,rigorous,Level 3 flowsheet unit model,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T825,Q_CRYO_COOLING,"REC-CRYO duty into the process, signed, set by closure",source,heat,-3.959730,,,,calculated,fixed_assumption,"Level 3 flowsheet duty set by closure, no energy model",A.8,envelope,flowsheet_m7
+FS_B_REC_F_T825,Q_N2_BURN,"N2-BURN duty into the process, signed, set by closure",source,heat,-26.694989,,,,calculated,fixed_assumption,"Level 3 flowsheet duty set by closure, no energy model",A.8,envelope,flowsheet_m7
+FS_B_REC_F_T825,H_S10,"Enthalpy flow of S10 out of the envelope, formation basis, signed",sink,enthalpy,-218.519287,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T825,H_S12,"Enthalpy flow of S12 out of the envelope, formation basis, signed",sink,enthalpy,-23.466223,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T825,H_S16,"Enthalpy flow of S16 out of the envelope, formation basis, signed",sink,enthalpy,-33.444909,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T825,H_S20,"Enthalpy flow of S20 out of the envelope, formation basis, signed",sink,enthalpy,-120.561913,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7
+FS_B_REC_F_T825,H_S21,"Enthalpy flow of S21 out of the envelope, formation basis, signed",sink,enthalpy,0.135083,,,,calculated,rigorous,Level 3 flowsheet stream,A.8,envelope,flowsheet_m7

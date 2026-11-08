@@ -1,0 +1,32 @@
+Write the co-funding scenarios as an eighth results table
+
+The exporter gains Subsidy_Scenarios.csv for the headline run B_REC_F at n = 1.0
+and the rated reactor: four stages, lives of 25 y and 60 y, eligible sets A and
+B, both timings, the four shares of the registry grid for the ledger (L5) and
+the discounted cash flow, and the break-even rows for each method and for both
+together. Every row carries total, eligible, granted and private capital,
+interest during construction on the gross spend, on the private balance and the
+part the grant saves, the annual cost without and with the grant, the annual
+abatement, the cost per tonne, the strict target flag, the public outlay per
+tonne, the state-side present value and the gap between the two methods. A
+break-even share is printed rounded up in the sixth decimal and moved up a digit
+if the strict test still fails, so a printed share always passes.
+
+The seven existing tables are byte-identical. Validation_Results.csv changes in
+one cell: the conditions of EXPORT_BYTE_IDENTICAL read "Seven plant tables",
+because the exporter now builds seven tables in the plant crate.
+
+Every hard-coded list of the tables is updated: the CLI, compare_results.py,
+build_site.py, the pointer test (eight files), the README and the results list
+of the design record. build_numbers.py gains a subsidy dimension in the ledger
+key (eligible set, timing, share in percent or BE for the break-even row) and
+tokens for the new table, and checks that a share of zero reproduces the
+Economic ledger.
+
+Tests: three more in tests/m10_subsidy.rs. Two compare the committed table with
+the engine and with the Economic ledger at a zero share. One checks, for all 64
+combinations of stage, life, eligible set, timing and method, that the residual
+at the break-even share is below 1e-9 and that the cost passes just above and
+fails just below it. Workspace tests: 412 passed.
+
+Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>

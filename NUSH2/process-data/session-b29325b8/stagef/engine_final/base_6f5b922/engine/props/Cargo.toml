@@ -1,0 +1,10 @@
+[package]
+name = "nush2_props"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+nush2_numerics = { path = "../numerics" }
+seuif97.workspace = true

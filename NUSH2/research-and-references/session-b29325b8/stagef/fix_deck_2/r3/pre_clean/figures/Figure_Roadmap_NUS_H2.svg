@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 672" width="2000" height="672" font-family="DejaVu Sans, Verdana, Arial, Helvetica, sans-serif">
+<title>NUS-H2 illustrative implementation roadmap</title>
+<rect id="background" width="2000" height="672" fill="#ffffff"/>
+<g id="timeline-connectors">
+<polygon points="60,158 305.217,158 522.5,236 40,236" fill="#6b7783" opacity="0.13"/>
+<polygon points="305.217,158 713.913,158 996,236 530.5,236" fill="#8a55b8" opacity="0.13"/>
+<polygon points="713.913,158 1040.87,158 1469.5,236 1004,236" fill="#e07a26" opacity="0.13"/>
+<polygon points="1040.87,158 1940,158 1943,236 1477.5,236" fill="#2e9a6c" opacity="0.13"/>
+</g>
+<g id="label-illustrative">
+<text x="58" y="54" font-size="19" font-weight="bold" font-style="normal" fill="#4a5058" text-anchor="start">Illustrative dates</text>
+</g>
+<g id="timeline-strip">
+<rect x="60" y="142" width="245.217" height="16" fill="#6b7783"/>
+<rect x="305.217" y="142" width="408.696" height="16" fill="#8a55b8"/>
+<rect x="713.913" y="142" width="326.957" height="16" fill="#e07a26"/>
+<rect x="1040.87" y="142" width="899.13" height="16" fill="#2e9a6c"/>
+</g>
+<g id="year-labels">
+<text x="60" y="188" font-size="21" font-weight="bold" fill="#1d2329" text-anchor="start">2027</text>
+<text x="305.217" y="188" font-size="21" font-weight="bold" fill="#1d2329" text-anchor="middle">2030</text>
+<text x="713.913" y="188" font-size="21" font-weight="bold" fill="#1d2329" text-anchor="middle">2035</text>
+<text x="1040.87" y="188" font-size="21" font-weight="bold" fill="#1d2329" text-anchor="middle">2039</text>
+<text x="1940" y="188" font-size="21" font-weight="bold" fill="#1d2329" text-anchor="end">2050</text>
+</g>
+<g id="decision-gates">
+<polygon points="305.217,135 320.217,150 305.217,165 290.217,150" fill="#ffffff" stroke="#1d2329" stroke-width="3"/>
+<text x="305.217" y="120" font-size="19" font-weight="normal" fill="#4a5058" text-anchor="middle">Gate</text>
+<polygon points="713.913,135 728.913,150 713.913,165 698.913,150" fill="#ffffff" stroke="#1d2329" stroke-width="3"/>
+<text x="713.913" y="120" font-size="19" font-weight="normal" fill="#4a5058" text-anchor="middle">Gate</text>
+<polygon points="1040.87,135 1055.87,150 1040.87,165 1025.87,150" fill="#ffffff" stroke="#1d2329" stroke-width="3"/>
+<text x="1040.87" y="120" font-size="19" font-weight="normal" fill="#4a5058" text-anchor="middle">Gate</text>
+</g>
+<g id="marker-inir">
+<polygon points="58,116 82,116 70,136" fill="#2f86c8"/>
+<text x="58" y="88" font-size="19" font-weight="normal" fill="#2f86c8" text-anchor="start">IAEA INIR review (2027)</text>
+</g>
+<g id="marker-target">
+<polygon points="1940.0,131.0 1944.7,143.5 1958.1,144.1 1947.6,152.5 1951.2,165.4 1940.0,158.0 1928.8,165.4 1932.4,152.5 1921.9,144.1 1935.3,143.5" fill="#f2b705" stroke="#a87e00" stroke-width="1.5"/>
+<text x="1914" y="120" font-size="19" font-weight="normal" fill="#4a5058" text-anchor="end">Target operation</text>
+</g>
+<g id="htr-pm-reference">
+<path d="M1040.87,80 L1040.87,66 L1940,66 L1940,80" fill="none" stroke="#88929a" stroke-width="2"/>
+<text x="1490.43" y="54" font-size="19" font-weight="normal" fill="#4a5058" text-anchor="middle">About 11 years: HTR-PM construction start to commercial operation</text>
+</g>
+<g id="phase-chevrons">
+<g id="phase-1">
+<polygon points="40,236 505.5,236 539.5,297 505.5,358 40,358" fill="#6b7783"/>
+<text x="62" y="270" font-size="20" font-weight="normal" fill="#ffffff" text-anchor="start" opacity="0.9">2027 to 2030</text>
+<text x="62" y="304" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="start">National readiness</text>
+</g>
+<g id="phase-2">
+<polygon points="513.5,236 979,236 1013,297 979,358 513.5,358 547.5,297" fill="#8a55b8"/>
+<text x="569.5" y="270" font-size="20" font-weight="normal" fill="#ffffff" text-anchor="start" opacity="0.9">2030 to 2035</text>
+<text x="569.5" y="304" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="start">Reactor and process-heat</text>
+<text x="569.5" y="333" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="start">qualification</text>
+</g>
+<g id="phase-3">
+<polygon points="987,236 1452.5,236 1486.5,297 1452.5,358 987,358 1021,297" fill="#e07a26"/>
+<text x="1043" y="270" font-size="20" font-weight="normal" fill="#ffffff" text-anchor="start" opacity="0.9">2035 to 2039</text>
+<text x="1043" y="304" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="start">Project development and</text>
+<text x="1043" y="333" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="start">investment decision</text>
+</g>
+<g id="phase-4">
+<polygon points="1460.5,236 1926,236 1960,297 1926,358 1460.5,358 1494.5,297" fill="#2e9a6c"/>
+<text x="1516.5" y="270" font-size="20" font-weight="normal" fill="#ffffff" text-anchor="start" opacity="0.9">2039 to 2050</text>
+<text x="1516.5" y="304" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="start">Construction and potential</text>
+<text x="1516.5" y="333" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="start">operation</text>
+</g>
+</g>
+<g id="phase-details">
+<g id="phase-1-details">
+<rect x="40" y="382" width="465.5" height="266" rx="10" fill="#eef0f2"/>
+<rect x="40" y="382" width="6" height="266" rx="3" fill="#6b7783"/>
+<text x="62" y="420" font-size="16" font-weight="bold" fill="#6b7783" text-anchor="start" letter-spacing="1">LEAD STAKEHOLDERS</text>
+<text x="62" y="450" font-size="20" font-weight="normal" fill="#1d2329" text-anchor="start">Energy and safety agencies</text>
+<line x1="62" y1="480" x2="487.5" y2="480" stroke="#6b7783" stroke-width="1.5" opacity="0.5"/>
+<text x="62" y="510" font-size="16" font-weight="bold" fill="#6b7783" text-anchor="start" letter-spacing="1">KEY REQUIREMENT</text>
+<text x="62" y="540" font-size="20" font-weight="normal" fill="#1d2329" text-anchor="start">IAEA review, regulatory capabilities and</text>
+<text x="62" y="566" font-size="20" font-weight="normal" fill="#1d2329" text-anchor="start">initial safety studies</text>
+</g>
+<g id="phase-2-details">
+<rect x="513.5" y="382" width="465.5" height="266" rx="10" fill="#f3edf8"/>
+<rect x="513.5" y="382" width="6" height="266" rx="3" fill="#8a55b8"/>
+<text x="535.5" y="420" font-size="16" font-weight="bold" fill="#8a55b8" text-anchor="start" letter-spacing="1">LEAD STAKEHOLDERS</text>
+<text x="535.5" y="450" font-size="20" font-weight="normal" fill="#1d2329" text-anchor="start">Reactor developers and research</text>
+<text x="535.5" y="476" font-size="20" font-weight="normal" fill="#1d2329" text-anchor="start">institutes</text>
+<line x1="535.5" y1="506" x2="961" y2="506" stroke="#8a55b8" stroke-width="1.5" opacity="0.5"/>
+<text x="535.5" y="536" font-size="16" font-weight="bold" fill="#8a55b8" text-anchor="start" letter-spacing="1">KEY REQUIREMENT</text>
+<text x="535.5" y="566" font-size="20" font-weight="normal" fill="#1d2329" text-anchor="start">Overseas experience, IHX qualification</text>
+<text x="535.5" y="592" font-size="20" font-weight="normal" fill="#1d2329" text-anchor="start">and integrated engineering assessment</text>
+</g>
+<g id="phase-3-details">
+<rect x="987" y="382" width="465.5" height="266" rx="10" fill="#fdf1e6"/>
+<rect x="987" y="382" width="6" height="266" rx="3" fill="#e07a26"/>
+<text x="1009" y="420" font-size="16" font-weight="bold" fill="#e07a26" text-anchor="start" letter-spacing="1">LEAD STAKEHOLDERS</text>
+<text x="1009" y="450" font-size="20" font-weight="normal" fill="#1d2329" text-anchor="start">Investors, agencies, hydrogen buyers and</text>
+<text x="1009" y="476" font-size="20" font-weight="normal" fill="#1d2329" text-anchor="start">CO₂ storage partners</text>
+<line x1="1009" y1="506" x2="1434.5" y2="506" stroke="#e07a26" stroke-width="1.5" opacity="0.5"/>
+<text x="1009" y="536" font-size="16" font-weight="bold" fill="#e07a26" text-anchor="start" letter-spacing="1">KEY REQUIREMENT</text>
+<text x="1009" y="566" font-size="20" font-weight="normal" fill="#1d2329" text-anchor="start">Site evaluation, licensing pathway,</text>
+<text x="1009" y="592" font-size="20" font-weight="normal" fill="#1d2329" text-anchor="start">hydrogen offtake and CO₂ storage</text>
+<text x="1009" y="618" font-size="20" font-weight="normal" fill="#1d2329" text-anchor="start">arrangements</text>
+</g>
+<g id="phase-4-details">
+<rect x="1460.5" y="382" width="499.5" height="266" rx="10" fill="#e9f6f0"/>
+<rect x="1460.5" y="382" width="6" height="266" rx="3" fill="#2e9a6c"/>
+<text x="1482.5" y="420" font-size="16" font-weight="bold" fill="#2e9a6c" text-anchor="start" letter-spacing="1">LEAD STAKEHOLDERS</text>
+<text x="1482.5" y="450" font-size="20" font-weight="normal" fill="#1d2329" text-anchor="start">Operator, contractors and regulator</text>
+<line x1="1482.5" y1="480" x2="1942" y2="480" stroke="#2e9a6c" stroke-width="1.5" opacity="0.5"/>
+<text x="1482.5" y="510" font-size="16" font-weight="bold" fill="#2e9a6c" text-anchor="start" letter-spacing="1">KEY REQUIREMENT</text>
+<text x="1482.5" y="540" font-size="20" font-weight="normal" fill="#1d2329" text-anchor="start">Construction, commissioning and</text>
+<text x="1482.5" y="566" font-size="20" font-weight="normal" fill="#1d2329" text-anchor="start">performance verification</text>
+</g>
+</g>
+</svg>

@@ -1,0 +1,169 @@
+[
+ {
+  "size": "1024x768",
+  "path": "start_mouse",
+  "target": "bottom",
+  "stepped": true,
+  "steps": [
+   [
+    "primary",
+    1228
+   ]
+  ],
+  "auto": 1,
+  "calls": [
+   [
+    "scrollBy",
+    "window",
+    "[{\"top\":-1480.203125,\"behavior\":\"smooth\"}]",
+    "at obj.<computed> (<anonymous>:36:35) < at keepCard (http://127.0.0.1:60171/tour.js:977:25) < at go (http://127.0.0.1:60171/tour.js:1003:15) < at stepAnim.onfinish (http://127.0.0.1:60171/tour.js:922:7)"
+   ]
+  ],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": -2116,
+  "dside": 0,
+  "ref": {
+   "win": "span.p-label"
+  },
+  "hold": {
+   "win": [
+    1608.2,
+    "#pfd-panel",
+    4
+   ]
+  },
+  "y0": 3109,
+  "max0": 3109,
+  "max1": 2473,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "1024x768",
+  "path": "start_mouse",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:60171"
+   ],
+   "network": []
+  }
+ },
+ {
+  "size": "812x375m",
+  "path": "start_mouse",
+  "target": "bottom",
+  "stepped": true,
+  "steps": [
+   [
+    "primary",
+    1266
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [
+   [
+    "scrollIntoView",
+    "button[play]",
+    "[{\"block\":\"nearest\",\"inline\":\"nearest\",\"behavior\":\"smooth\"}]"
+   ]
+  ],
+  "dy": -3041,
+  "dside": 0,
+  "ref": {
+   "win": "li."
+  },
+  "hold": {
+   "win": [
+    2600.7,
+    "#pfd-panel",
+    4
+   ]
+  },
+  "y0": 3450,
+  "max0": 3450,
+  "max1": 2940,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "start_mouse",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:56761"
+   ],
+   "network": []
+  }
+ },
+ {
+  "size": "375x812m",
+  "path": "start_mouse",
+  "target": "bottom",
+  "stepped": true,
+  "steps": [
+   [
+    "primary",
+    1503
+   ]
+  ],
+  "auto": 1,
+  "calls": [
+   [
+    "scrollBy",
+    "window",
+    "[{\"top\":-2395,\"behavior\":\"smooth\"}]",
+    "at obj.<computed> (<anonymous>:36:35) < at keepCard (http://127.0.0.1:61261/tour.js:977:25) < at go (http://127.0.0.1:61261/tour.js:1003:15) < at stepAnim.onfinish (http://127.0.0.1:61261/tour.js:922:7)"
+   ]
+  ],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": -2667,
+  "dside": 0,
+  "ref": {
+   "win": "li."
+  },
+  "hold": {
+   "win": [
+    2448.3,
+    "#pfd-panel",
+    4
+   ]
+  },
+  "y0": 3857,
+  "max0": 3857,
+  "max1": 3585,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "375x812m",
+  "path": "start_mouse",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:61261"
+   ],
+   "network": []
+  }
+ }
+]

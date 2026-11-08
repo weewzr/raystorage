@@ -1,0 +1,478 @@
+{
+ "mea\\tests\\common\\mod.rs": {
+  "lines": [
+   17,
+   18,
+   25,
+   26
+  ],
+  "sources": [
+   "outram-park-backend\\crates\\bedok\\src\\iaea3ds.rs",
+   "outram-park-backend\\crates\\bedok\\src\\neacrpa2.rs",
+   "outram-park-backend\\crates\\bedok\\src\\neacrpd1.rs",
+   "outram-park-backend\\crates\\boon-lay\\tests\\mhtgr_stoyer_workflow.rs",
+   "outram-park-backend\\crates\\nee_soon\\examples\\htr10_dem_bed_images.rs"
+  ]
+ },
+ "plant\\tests\\m9_economics.rs": {
+  "lines": [
+   29,
+   35,
+   39,
+   305
+  ],
+  "sources": [
+   "outram-park-backend\\crates\\bedok\\src\\neacrpa2t.rs",
+   "outram-park-backend\\crates\\bedok\\src\\neacrpd1t.rs",
+   "outram-park-backend\\crates\\dhoby-ghaut\\examples\\monte_carlo_web\\lct008\\mod.rs",
+   "outram-park-backend\\crates\\dhoby-ghaut\\examples\\monte_carlo_web\\xs.rs",
+   "outram-park-backend\\crates\\dhoby-ghaut\\src\\bin\\dhoby-ghaut\\dem.rs"
+  ]
+ },
+ "units\\tests\\reaction_guards.rs": {
+  "lines": [
+   263,
+   264,
+   265
+  ],
+  "sources": [
+   "outram-park-backend\\crates\\bedok\\src\\neacrpa2t.rs",
+   "outram-park-backend\\crates\\bedok\\src\\neacrpd1t.rs",
+   "outram-park-backend\\crates\\changi\\src\\activity\\chi_over_q.rs",
+   "outram-park-backend\\crates\\dhoby-ghaut\\src\\bin\\dhoby-ghaut\\engine.rs",
+   "outram-park-backend\\crates\\dhoby-ghaut\\tests\\lesson_fission_cascades.rs"
+  ]
+ },
+ "props\\tests\\m2_acceptance.rs": {
+  "lines": [
+   21,
+   22,
+   341,
+   342
+  ],
+  "sources": [
+   "outram-park-backend\\crates\\boon-lay\\src\\triso_atops_fork\\run_file\\upstream.rs",
+   "outram-park-backend\\crates\\boon-lay\\tests\\triso_atops_code_to_code.rs",
+   "outram-park-backend\\crates\\changi\\tests\\common\\mod.rs",
+   "outram-park-backend\\crates\\changi\\tests\\flexpart_code_to_code.rs",
+   "outram-park-backend\\crates\\njoy-outram-park-fork\\tests\\depletion_chain_xml_vs_openmc.rs"
+  ]
+ },
+ "vv\\src\\props_bench.rs": {
+  "lines": [
+   39,
+   40
+  ],
+  "sources": [
+   "outram-park-backend\\crates\\boon-lay\\src\\triso_atops_fork\\run_file\\upstream.rs",
+   "outram-park-backend\\crates\\boon-lay\\tests\\triso_atops_code_to_code.rs",
+   "outram-park-backend\\crates\\changi\\tests\\common\\mod.rs",
+   "outram-park-backend\\crates\\changi\\tests\\flexpart_code_to_code.rs",
+   "outram-park-backend\\crates\\njoy-outram-park-fork\\tests\\depletion_chain_xml_vs_openmc.rs"
+  ]
+ },
+ "vv\\tests\\benchmark_rows.rs": {
+  "lines": [
+   23
+  ],
+  "sources": [
+   "outram-park-backend\\crates\\changi\\tests\\flexpart_stochastic_redist.rs"
+  ]
+ },
+ "plant\\tests\\no_internal_pointers.rs": {
+  "lines": [
+   50,
+   51,
+   81,
+   130,
+   133,
+   137
+  ],
+  "sources": [
+   "outram-park-backend\\crates\\dhoby-ghaut\\examples\\common\\htr10_beds.rs",
+   "outram-park-backend\\crates\\kovan-literature\\src\\zotero\\translators\\biblatex.rs",
+   "outram-park-backend\\crates\\kovan-literature\\src\\zotero\\translators\\mab2.rs",
+   "outram-park-backend\\crates\\kovan-literature\\src\\zotero\\translators\\marc\\record.rs",
+   "outram-park-backend\\crates\\kovan-metrics\\src\\transcript.rs"
+  ]
+ },
+ "units\\src\\bench\\columns.rs": {
+  "lines": [
+   65,
+   106,
+   107,
+   230
+  ],
+  "sources": [
+   "outram-park-backend\\crates\\dhoby-ghaut\\examples\\common\\htr10_beds.rs",
+   "outram-park-backend\\crates\\dhoby-ghaut\\examples\\monte_carlo_web\\htr10\\core\\random_bed.rs",
+   "outram-park-backend\\crates\\dhoby-ghaut\\src\\bin\\dhoby-ghaut\\mgxs_run.rs",
+   "outram-park-backend\\crates\\njoy-outram-park-fork\\src\\acer\\photon_blocks.rs",
+   "outram-park-backend\\crates\\njoy-outram-park-fork\\src\\nuclear_data\\secondary.rs"
+  ]
+ },
+ "vv\\src\\fixture.rs": {
+  "lines": [
+   97,
+   117,
+   125,
+   126
+  ],
+  "sources": [
+   "outram-park-backend\\crates\\dhoby-ghaut\\examples\\common\\htr10_beds.rs",
+   "outram-park-backend\\crates\\dhoby-ghaut\\examples\\monte_carlo_web\\htr10\\core\\random_bed.rs",
+   "outram-park-backend\\crates\\outram-blender\\tests\\hash_order_determinism.rs",
+   "outram-park-backend\\crates\\outram-mc-libs\\examples\\auto_watcher_927.rs",
+   "outram-park-backend\\crates\\outram-mc-libs\\examples\\tutorial_hst009.rs"
+  ]
+ },
+ "mea\\src\\validation.rs": {
+  "lines": [
+   104
+  ],
+  "sources": [
+   "outram-park-backend\\crates\\dhoby-ghaut\\examples\\common\\htr10_beds.rs",
+   "outram-park-backend\\crates\\dhoby-ghaut\\examples\\monte_carlo_web\\htr10\\core\\random_bed.rs"
+  ]
+ },
+ "vv\\src\\bench.rs": {
+  "lines": [
+   100,
+   101,
+   104
+  ],
+  "sources": [
+   "outram-park-backend\\crates\\dhoby-ghaut\\examples\\common\\htr10_beds.rs",
+   "outram-park-backend\\crates\\dhoby-ghaut\\examples\\monte_carlo_web\\htr10\\core\\random_bed.rs",
+   "outram-park-backend\\crates\\njoy-outram-park-fork\\tests\\acer_thermal_ifeng_vs_njoy2016.rs",
+   "outram-park-backend\\crates\\njoy-outram-park-fork\\tests\\acer_thermal_vs_njoy2016.rs"
+  ]
+ },
+ "plant\\src\\lib.rs": {
+  "lines": [
+   35,
+   44
+  ],
+  "sources": [
+   "outram-park-backend\\crates\\dhoby-ghaut\\src\\workbench\\multiphysics.rs",
+   "outram-park-backend\\crates\\dhoby-ghaut\\src\\workbench\\recipe.rs",
+   "outram-park-backend\\crates\\kovan-common\\src\\artifact\\relation.rs"
+  ]
+ },
+ "units\\src\\newton.rs": {
+  "lines": [
+   41,
+   53,
+   62,
+   88,
+   90,
+   91,
+   153,
+   154,
+   155,
+   200,
+   201,
+   202
+  ],
+  "sources": [
+   "outram-park-backend\\crates\\farrer-park\\src\\bc.rs",
+   "outram-park-backend\\crates\\farrer-park\\src\\solver.rs",
+   "outram-park-backend\\crates\\farrer-park\\src\\tensor.rs",
+   "outram-park-backend\\crates\\farrer-park\\tests\\common\\mod.rs",
+   "outram-park-backend\\crates\\outram-park-fork-dwsim-libs\\src\\columns\\linalg.rs"
+  ]
+ },
+ "units\\src\\smr_tube.rs": {
+  "lines": [
+   630,
+   631,
+   680,
+   681,
+   752,
+   753
+  ],
+  "sources": [
+   "outram-park-backend\\crates\\farrer-park\\src\\solver.rs",
+   "outram-park-backend\\crates\\farrer-park\\tests\\common\\mod.rs",
+   "outram-park-backend\\crates\\nee_soon\\src\\rod_insertion.rs"
+  ]
+ },
+ "mea\\src\\solve.rs": {
+  "lines": [
+   10,
+   51,
+   52,
+   53,
+   88,
+   89,
+   90,
+   91,
+   92,
+   93,
+   94,
+   95,
+   96,
+   97,
+   98,
+   99,
+   100,
+   102,
+   105,
+   106,
+   107,
+   109,
+   110,
+   120,
+   123,
+   124,
+   125,
+   126,
+   127,
+   128,
+   129,
+   130,
+   132,
+   133,
+   134,
+   135
+  ],
+  "sources": [
+   "outram-park-backend\\crates\\farrer-park\\src\\solver.rs",
+   "outram-park-backend\\crates\\farrer-park\\src\\tensor.rs",
+   "outram-park-backend\\crates\\farrer-park\\tests\\common\\mod.rs",
+   "outram-park-backend\\crates\\outram-park-fork-dwsim-libs\\src\\columns\\linalg.rs",
+   "outram-park-backend\\crates\\outram-park-fork-offbeat\\src\\rheology\\aster\\integration.rs"
+  ]
+ },
+ "units\\src\\solve.rs": {
+  "lines": [
+   13,
+   25,
+   26,
+   27,
+   28,
+   32,
+   33,
+   34,
+   35,
+   36,
+   37,
+   38,
+   39,
+   40,
+   58,
+   60,
+   61,
+   68,
+   69,
+   99
+  ],
+  "sources": [
+   "outram-park-backend\\crates\\farrer-park\\src\\solver.rs",
+   "outram-park-backend\\crates\\farrer-park\\src\\tensor.rs",
+   "outram-park-backend\\crates\\farrer-park\\tests\\common\\mod.rs",
+   "outram-park-backend\\crates\\outram-park-fork-dwsim-libs\\src\\thermo\\saturation.rs",
+   "outram-park-backend\\crates\\outram-park-fork-offbeat\\src\\rheology\\aster\\integration.rs"
+  ]
+ },
+ "mea\\src\\speciate.rs": {
+  "lines": [
+   204
+  ],
+  "sources": [
+   "outram-park-backend\\crates\\farrer-park\\src\\solver.rs",
+   "outram-park-backend\\crates\\farrer-park\\src\\tensor.rs",
+   "outram-park-backend\\crates\\farrer-park\\tests\\common\\mod.rs"
+  ]
+ },
+ "numerics\\src\\lib.rs": {
+  "lines": [
+   18,
+   19
+  ],
+  "sources": [
+   "outram-park-backend\\crates\\kaki-bukit\\src\\error.rs",
+   "outram-park-backend\\crates\\kaki-bukit\\src\\nuclide.rs",
+   "outram-park-backend\\crates\\kovan-literature\\src\\citeproc\\mod.rs"
+  ]
+ },
+ "vv\\src\\mea_bench.rs": {
+  "lines": [
+   85,
+   86
+  ],
+  "sources": [
+   "outram-park-backend\\crates\\kovan\\src\\advanced_git.rs",
+   "outram-park-backend\\crates\\outram-park-fork-liggghts\\examples\\bake_htr10_conus_slab.rs",
+   "outram-park-backend\\crates\\petir\\tests\\faer_dense_svd_vs_faer.rs"
+  ]
+ },
+ "vv\\tests\\concept_checks.rs": {
+  "lines": [
+   7,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   236
+  ],
+  "sources": [
+   "outram-park-backend\\crates\\kovan\\src\\artifact.rs",
+   "outram-park-backend\\crates\\kovan\\src\\site_search.rs",
+   "outram-park-backend\\crates\\kovan\\src\\zotero\\load.rs",
+   "outram-park-backend\\crates\\kovan\\tests\\local_library_compat.rs",
+   "outram-park-backend\\crates\\njoy-outram-park-fork\\src\\endf_folder.rs"
+  ]
+ },
+ "plant\\src\\terms.rs": {
+  "lines": [
+   27
+  ],
+  "sources": [
+   "outram-park-backend\\crates\\kovan-literature\\src\\zotero\\translators\\marc\\translate.rs",
+   "outram-park-backend\\crates\\kovan\\src\\corpus.rs",
+   "outram-park-backend\\crates\\outram-foam-basic-lib\\src\\compute.rs"
+  ]
+ },
+ "plant\\src\\export.rs": {
+  "lines": [
+   528
+  ],
+  "sources": [
+   "outram-park-backend\\crates\\kovan\\src\\mindmap_model.rs"
+  ]
+ },
+ "plant\\src\\anchored.rs": {
+  "lines": [
+   19,
+   22,
+   26,
+   29
+  ],
+  "sources": [
+   "outram-park-backend\\crates\\kovan-common\\src\\call_graph\\mod.rs",
+   "outram-park-backend\\crates\\kovan-common\\src\\call_graph\\upstream.rs",
+   "outram-park-backend\\crates\\kovan-common\\src\\review\\evidence\\mod.rs",
+   "outram-park-backend\\crates\\kovan-common\\src\\review\\index.rs"
+  ]
+ },
+ "plant\\src\\economics.rs": {
+  "lines": [
+   7
+  ],
+  "sources": [
+   "outram-park-backend\\crates\\kovan-common\\src\\call_graph\\upstream.rs"
+  ]
+ },
+ "plant\\tests\\live_fields.rs": {
+  "lines": [
+   15
+  ],
+  "sources": [
+   "outram-park-backend\\crates\\kovan-literature\\src\\citeproc\\formats.rs",
+   "outram-park-backend\\crates\\kovan-literature\\src\\zotero\\translators\\bibliontology\\export.rs"
+  ]
+ },
+ "wasm\\src\\tests.rs": {
+  "lines": [
+   70,
+   105
+  ],
+  "sources": [
+   "outram-park-backend\\crates\\kovan-literature\\src\\citeproc\\formats.rs",
+   "outram-park-backend\\crates\\kovan-literature\\src\\zotero\\translators\\bibliontology\\export.rs",
+   "outram-park-backend\\crates\\outram-mc-libs\\src\\depletion\\chain.rs",
+   "outram-park-backend\\crates\\outram-park-fork-pflotran\\src\\deck\\mod.rs"
+  ]
+ },
+ "plant\\tests\\m8_level4.rs": {
+  "lines": [
+   23
+  ],
+  "sources": [
+   "outram-park-backend\\crates\\kovan-literature\\src\\zotero\\framework\\xml_parse.rs"
+  ]
+ },
+ "mea\\examples\\write_104_rows.rs": {
+  "lines": [
+   4,
+   6
+  ],
+  "sources": [
+   "outram-park-backend\\crates\\nee_soon\\examples\\haiku_dogfood.rs",
+   "outram-park-backend\\crates\\njoy-outram-park-fork\\examples\\endf_to_broadened_xs.rs",
+   "outram-park-backend\\crates\\njoy-outram-park-fork\\examples\\tutorial_resonance_to_groups.rs",
+   "outram-park-backend\\crates\\outram-mc-libs\\examples\\endf_to_keff.rs",
+   "outram-park-backend\\crates\\outram-mc-libs\\examples\\tutorial_hst009.rs"
+  ]
+ },
+ "mea\\tests\\aronu_port.rs": {
+  "lines": [
+   344,
+   345,
+   346
+  ],
+  "sources": [
+   "outram-park-backend\\crates\\njoy-outram-park-fork\\src\\broadr\\mod.rs",
+   "outram-park-backend\\crates\\njoy-outram-park-fork\\tests\\thermal_ace.rs"
+  ]
+ },
+ "mea\\src\\pstar.rs": {
+  "lines": [
+   247,
+   324
+  ],
+  "sources": [
+   "outram-park-backend\\crates\\outram-blender\\src\\array_patterns.rs",
+   "outram-park-backend\\crates\\outram-foam-mesh\\src\\mesh_quality.rs"
+  ]
+ },
+ "props\\src\\shomate.rs": {
+  "lines": [
+   16,
+   17,
+   18,
+   19,
+   20,
+   21
+  ],
+  "sources": [
+   "outram-park-backend\\crates\\outram-blender\\src\\csg\\surface\\quadric.rs",
+   "outram-park-backend\\crates\\outram-foam-basic-lib\\src\\polynomial\\cubic_eqn.rs",
+   "outram-park-backend\\crates\\outram-park-fork-coolprop\\src\\openfoam_algorithms\\openfoam_source\\polynomial\\cubic_eqn.rs"
+  ]
+ },
+ "units\\src\\absorber.rs": {
+  "lines": [
+   909
+  ],
+  "sources": [
+   "outram-park-backend\\crates\\outram-blender\\src\\unstructured\\geometry.rs"
+  ]
+ },
+ "props\\src\\equilibrium.rs": {
+  "lines": [
+   195,
+   196,
+   230,
+   231
+  ],
+  "sources": [
+   "outram-park-backend\\crates\\outram-foam-appbuilder-lib\\tests\\genfoam_point_kinetics_inhour.rs",
+   "outram-park-backend\\crates\\outram-foam-appbuilder-lib\\tests\\melting_vv_cases\\main.rs",
+   "outram-park-backend\\crates\\outram-park-fork-dwsim-libs\\src\\thermo\\flash_vlle.rs"
+  ]
+ },
+ "plant\\src\\params.rs": {
+  "lines": [
+   64,
+   65
+  ],
+  "sources": [
+   "outram-park-backend\\crates\\petir\\tests\\faer_dense_svd_vs_faer.rs",
+   "outram-park-backend\\crates\\petir\\tests\\no_panic_gate.rs"
+  ]
+ }
+}

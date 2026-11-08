@@ -1,0 +1,51 @@
+\section{Governing equations and methodology}
+\subsection{Reaction equilibrium}
+The screening reformer uses ideal-gas equilibrium for steam methane reforming,
+\begin{equation}
+\mathrm{CH_4+H_2O\rightleftharpoons CO+3H_2},
+\label{eq:smr-reaction}
+\end{equation}
+and WGS,
+\begin{equation}
+\mathrm{CO+H_2O\rightleftharpoons CO_2+H_2}.
+\label{eq:wgs-reaction}
+\end{equation}
+At fixed $T,P$, reaction extents are solved from
+\begin{equation}
+\ln\left(\frac{Q_r}{K_r(T)}\right)=0,
+\label{eq:equilibrium-residual}
+\end{equation}
+subject to non-negative species inventories. Temperature-dependent standard-state properties use interval-safe NIST Shomate correlations~\cite{nistwebbook}.
+
+\subsection{Recycle and purge}
+For nonzero external nitrogen feed, steady state requires
+\begin{equation}
+\dot n_{N_2,\mathrm{purge}}=\dot n_{N_2,\mathrm{fresh}},
+\label{eq:n2-purge}
+\end{equation}
+with the full H2/H2O/CO/CO2/CH4/N2 recycle composition converged internally. An outer bracketed solve imposes the fixed H2 product target.
+
+\subsection{Energy cascade}
+Total stream enthalpy gives the reformer external duty without separately adding reaction and sensible terms:
+\begin{equation}
+Q_{\mathrm{ref}}=\dot H_{\mathrm{out}}(T_{\mathrm{ref}})
+-\dot H_{\mathrm{in}}(T_{\mathrm{in}}).
+\label{eq:reformer-duty}
+\end{equation}
+Recoverable WHB heat is credited at most once against candidate-scaled MDEA regeneration duty. The reference heat hierarchy uses a 900~$^\circ$C process hot end, 920~$^\circ$C secondary-helium hot end and 950~$^\circ$C primary outlet. The 950~$^\circ$C reactor-outlet and 170~MW IHX engineering precedent is source-anchored to the JAERI GTHTR300C concept~\cite{jaeri2004gthtr300c}; the finite 20~K process-side and 30~K IHX approaches are declared screening assumptions, not source values.
+
+\subsection{Lifecycle and economics}
+Annual avoided emissions are
+\begin{equation}
+E_{\mathrm{avoided}}=(I_{\mathrm{base}}-I_{\mathrm{cand}})
+\dot m_{H_2}t_{\mathrm{op}},
+\label{eq:annual-avoided}
+\end{equation}
+and forward abatement cost is
+\begin{equation}
+C_{\mathrm{abatement}}=
+\frac{C_{\mathrm{cand}}-C_{\mathrm{base}}}
+{E_{\mathrm{avoided}}}.
+\label{eq:abatement-cost}
+\end{equation}
+S\$100/tCO2e is used only as an evaluation threshold, never as an input to the forward cost calculation.

@@ -1,0 +1,408 @@
+\section{J. Integrated plant}\label{sec:J}
+This section joins the unit models into one plant and asks how large the reactor must be. The order of work matters: scale the INL reference first, then close the carbon balance, then the heat and electricity balances, and only then report. INL Case 5 stands in for Case 6 on every syngas duty because the Case 6 sheets are not in the library \tagM{1}, scaled by 1,927 over 1,970 where used.
+
+The reported terms map to cards as follows: reactor heat \Eq{J.26}; IHX duty and loss \Eq{C.1} and \Eq{B.15}; process heat \Eq{J.14}; shift heat \Eq{E.6}; syngas recovery \Eq{F.2}; regeneration \Eq{J.16}; steam generation \Eq{J.17}; electricity \Eq{B.18}; helium \Eq{B.12}; pumping and compression \Eq{J.20} and \Eq{J.22}; cooling \Eq{J.31}; unmet heat \Eq{J.18}; unmet electricity \Eq{J.29}. Values here are the Headline preset of the final results: the anchored port with term T05, syngas heat above 130 C, modelled, because gate M4 passed for it. Gates M6 and M7 failed, so the column and flowsheet terms stay anchored and their modelled values appear only in the drift table of the results. The comparison with the screening values (GOLD) runs on the Anchored preset, so a Headline value differs from its screening value by the T05 term alone.
+
+\begin{eqcard}{J.1}{F}{Scale}
+\Stmt{s=\frac{\dot m_{H_2,B}}{\dot m_{H_2,A}}=\frac{8988}{13154}}
+\Interp{Every extensive INL quantity is carried to the SOXAL-scale plant by this one ratio. Intensive conditions stay at their INL values.}
+\Deriv{Case B is \vHkgB{} \U{kg\ h^{-1}} by \Eq{J.2}. Case A is 29,000 \U{lb\ h^{-1}}, which is 13,154 \U{kg\ h^{-1}}, and the INL product holds 0.1 mol\% CH$_4$, or \cChMass\% by mass. On a volume basis the ratio would be \cVolScale. The mass basis is used throughout, so the choice is stated once here.}
+\Vars{\V{\dot m_{H_2,A}}{Case A hydrogen product}{\U{kg\ s^{-1}}} \V{\dot m_{H_2,B}}{Case B hydrogen product}{\U{kg\ s^{-1}}}}
+\Assume{Linear scaling of the INL flowsheet.}
+\Source{\tagP{} TEV-953 \cite{TEV953}, PDF p.~16. \tagC{} for the ratio.}
+\Impl{\fn{plant::anchored::Model::scale}}
+\Valid{GOLD}{eq_j_01}{$s=$ \vScaleB.}
+\end{eqcard}
+
+\begin{eqcard}{J.2}{R}{Hydrogen mass rate}
+\Stmt{\dot m=\rho_N\dot V_N,\qquad\rho_N=0.08988\ \mathrm{kg\ Nm^{-3}}}
+\Interp{Plant capacity is quoted in normal cubic metres, and everything downstream needs mass.}
+\Deriv{Definition of normal density. IEAGHG uses a value that is 0.07\% higher, 8.994 \U{t\ h^{-1}} at the same volume.}
+\Vars{\V{\rho_N}{hydrogen normal density}{\U{kg\ m^{-3}}} \V{\dot V_N}{normal volumetric flow, 100,000}{\U{Nm^3\ h^{-1}}}}
+\Assume{100,000 \U{Nm^3\ h^{-1}}, the SOXAL-scale train.}
+\Source{\tagP{} Air Liquide releases of 15 January 2008 and 30 November 2011 for capacity, not read at source. IEAGHG 2017-02 \cite{IEAGHG17}, Table 2, PDF p.~16, for its own density.}
+\Impl{\fn{plant::anchored::Model::case_summary}, key h2\_kg\_h}
+\Valid{GOLD}{eq_j_02}{\vHkgB{} \U{kg\ h^{-1}}.}
+\end{eqcard}
+
+\begin{eqcard}{J.3}{R}{Annual hydrogen}
+\Stmt{M_{H_2}=\dot m\,t_h,\qquad t_h=8760f_{av}}
+\Interp{Hydrogen runs only while the reactor runs, so availability sets the annual output directly.}
+\Deriv{Time integral at constant rate. No output is counted in outage hours.}
+\Vars{\V{t_h}{annual operating hours}{\U{h\ y^{-1}}}}
+\Assume{85\% availability. Backup firing stays a sensitivity, \Eq{K.20}.}
+\Source{\tagC{} This document.}
+\Impl{\fn{plant::anchored::Model::case_summary}, key h2\_t\_y}
+\Valid{GOLD}{eq_j_03}{\vMHtwoB{} \U{t\ y^{-1}} on \vHours{} \U{h\ y^{-1}}. \vValJthree}
+\end{eqcard}
+
+\begin{eqcard}{J.4}{R}{Gas unit conversion}
+\Stmt{1\ \mathrm{MMSCFD}=\frac{10^6}{379.49\cdot24}\ \mathrm{lbmol\ h^{-1}}}
+\Interp{INL reports gas in standard volume per day. The balances need moles per second.}
+\Deriv{One lbmol of ideal gas occupies 379.49 scf at 60 F and 14.696 psia, which gives \U{13.83\ mol\ s^{-1}} per MMSCFD.}
+\Vars{\V{\dot n_{NG}}{natural gas molar flow}{\U{mol\ s^{-1}}}}
+\Assume{IG at 60 F and 14.696 psia.}
+\Source{\tagP{} TEV-961 \cite{TEV961}, Table 2 note 1, PDF p.~18, for the 60 F standard. \tagC{} for the molar volume.}
+\Impl{\fn{plant::anchored::Model::case_summary}, key ng\_mmscfd}
+\Valid{GOLD}{eq_j_04}{\vNGxB{} \U{MMSCFD} at Case B, from 34.0 \U{MMSCFD} at Case A. \vValJfour}
+\end{eqcard}
+
+\begin{eqcard}{J.5}{R}{Feed carbon}
+\Stmt{F_C=\cCperMol\,\dot n_{NG}}
+\Interp{Natural gas carries slightly more than one carbon atom per molecule because of its ethane and heavier gases.}
+\Deriv{Sum of carbon number times mole fraction over the feed composition: 93.571 CH$_4$, 3.749 C$_2$, 0.920 C$_3$, 0.260 C$_4$, 0.040 C$_5$, 0.010 C$_6$ and 0.250 CO$_2$, all in mol\%.}
+\Vars{\V{F_C}{feed carbon}{\U{mol\ s^{-1}}}}
+\Assume{TEV-953 gas, unchanged for the Singapore supply.}
+\Source{\tagP{} TEV-953 \cite{TEV953}, A-5, PDF p.~39. \tagC{} for the sum.}
+\Impl{\fn{plant::flowsheet::natural_gas}}
+\Valid{PUB}{eq_j_05}{Computed here: \cCperMol{} from the composition. Case B is \cFeedC{} \U{kmol\ h^{-1}}, against 2,077.6 \U{st\ d^{-1}} of CO$_2$ equivalent printed for Case A. The Level 3 flowsheet against the anchored ledger: \vValJfive}
+\end{eqcard}
+
+\begin{eqcard}{J.6}{O}{Carbon split after shift}
+\Stmt{\phi_c=\frac{F_{CO_2,abs}}{T_C}=\vPhiC,\qquad0.76\le\phi_c\le0.79}
+\Interp{Only CO$_2$ can be captured by the solvent. This ratio says what share of the carbon leaving the shift reactors has reached that form.}
+\Deriv{Case 5 reconstruction: 3,754 \U{kmol\ h^{-1}} CO$_2$ with 1,020 CH$_4$ and 70 CO gives \vPhiC. Case 6 sheets are missing, so the range covers the proxy.}
+\Vars{\V{\phi_c}{CO$_2$ share of carbon after shift}{1} \V{F_{CO_2,abs}}{CO$_2$ at the absorber inlet}{\U{mol\ s^{-1}}} \V{T_C}{tube carbon}{\U{mol\ s^{-1}}}}
+\Assume{Case 5 proxy \tagM{1}.}
+\Source{\tagC{} Reconstruction from TEV-961 \cite{TEV961}, A-53 and A-56.}
+\Impl{\fn{plant::anchored::Model::carbon}, which takes $\phi_c$ as an argument}
+\Valid{GOLD}{eq_j_06}{$\phi_c=$ \vPhiC. The Level 3 flowsheet against the anchored ledger: \vValJsix}
+\end{eqcard}
+
+\begin{eqcard}{J.7}{O}{INL recycled fraction}
+\Stmt{T_6=\frac{F_{cap,6}}{\eta_{Sel}\phi_c},\qquad G_6=T_6-F_{cap,6}-P,\qquad f_r=\frac{T_6-F_C}{G_6}}
+\Interp{INL recycles the methane-rich cut of the tail gas. Working back from its published capture gives the share of tail-gas carbon that returns to the tubes.}
+\Deriv{Capture at Case 6 is $F_{cap,6}=\eta_{Sel}\phi_cT_6$. Carbon reaching the tail gas is what the tubes hold less capture less product slip. Carbon in the tubes exceeds fresh feed by exactly the recycle, so $T_6-F_C=f_rG_6$. At Case A, 1,927 \U{st\ d^{-1}} gives $F_{cap,6}=$ \vCapA, $T_6=$ \vTubeInlA{} and $G_6=$ \vTgInlA{} \U{kmol\ h^{-1}}.}
+\Vars{\V{T_6}{tube carbon of INL Case 6}{\U{mol\ s^{-1}}} \V{F_{cap,6}}{carbon captured in INL Case 6}{\U{mol\ s^{-1}}} \V{G_6}{tail-gas carbon of INL Case 6}{\U{mol\ s^{-1}}} \V{P}{carbon in the product}{\U{mol\ s^{-1}}} \V{\eta_{Sel}}{Selexol capture, 0.99}{1} \V{f_r}{recycled fraction of tail-gas carbon}{1}}
+\Assume{$\eta_{Sel}=0.99$.}
+\Source{\tagP{} TEV-961 \cite{TEV961}, Table 2, PDF p.~17, and A-53, PDF p.~77.}
+\Impl{\fn{plant::flowsheet::recycle_fraction}}
+\Valid{GOLD}{eq_j_07}{$f_r=$ \vFr.}
+\end{eqcard}
+
+\begin{eqcard}{J.8}{O}{Tube carbon}
+\Stmt{T_C=\frac{F_C-f_rP}{1-f_r\left(1-\eta_{pp}\phi_c\right)}}
+\Interp{MEA lets 10\% of the CO$_2$ slip, so more carbon returns through the recycle than INL sent back. The tubes then carry more carbon than INL's Selexol plant at the same feed.}
+\Deriv{Start from $T_C=F_C+f_rG$. Tail gas is $G=T_C-C-P$ and capture is $C=\eta_{pp}\phi_cT_C$, so $G=T_C(1-\eta_{pp}\phi_c)-P$. Substituting and collecting $T_C$ gives the statement.}
+\Vars{\V{G}{tail-gas carbon}{\U{mol\ s^{-1}}} \V{C}{carbon captured}{\U{mol\ s^{-1}}} \V{\eta_{pp}}{per-pass capture}{1}}
+\Assume{Slip passes the cryogenic unit with the INL split, which INL did not model.}
+\Source{\tagC{} This document.}
+\Impl{\fn{plant::anchored::Model::carbon}}
+\Valid{GOLD}{eq_j_08}{\cTubeC{} \U{kmol\ C\ h^{-1}} at Case B. The Level 3 flowsheet against the anchored ledger: \vValJeight}
+\end{eqcard}
+
+\begin{eqcard}{J.9}{O}{Captured carbon}
+\Stmt{C=\eta_{pp}\phi_cT_C}
+\Interp{Per-pass capture acts only on the CO$_2$ share of the tube carbon.}
+\Deriv{Definition of $\eta_{pp}$ on absorber inlet CO$_2$, with \Eq{J.6}.}
+\Vars{\V{C}{carbon captured}{\U{mol\ s^{-1}}}}
+\Assume{Per-pass capture 0.90.}
+\Source{\tagC{} This document.}
+\Impl{\fn{plant::anchored::Model::carbon}}
+\Valid{GOLD}{eq_j_09}{\cCapC{} \U{kmol\ h^{-1}} at Case B. The Level 3 flowsheet against the anchored ledger: \vValJnine}
+\end{eqcard}
+
+\begin{eqcard}{J.10}{O}{Tail gas}
+\Stmt{G=T_C-C-P,\qquad\dot n_{rec}=f_rG,\qquad\dot n_{burn}=\left(1-f_r\right)G}
+\Interp{Carbon that escapes capture and product ends up in the PSA reject. The cryogenic unit sends the methane-rich share back and burns the nitrogen-rich share.}
+\Deriv{Carbon balance around capture and PSA. The route of the reject through the cryogenic unit is INL's.}
+\Vars{\V{\dot n_{rec}}{recycled carbon}{\U{mol\ s^{-1}}} \V{\dot n_{burn}}{carbon burned in the nitrogen-rich cut}{\U{mol\ s^{-1}}}}
+\Assume{Nitrogen-rich cut burned on site.}
+\Source{\tagP{} Route from TEV-961 \cite{TEV961}, A-16, A-18, PDF p.~40, p.~42.}
+\Impl{\fn{plant::carbon::CarbonLedger::recycle_share}}
+\Valid{GOLD}{eq_j_10}{\vTgB, \cRecyC{} and \cBurnC{} \U{kmol\ h^{-1}} at Case B. The Level 3 flowsheet against the anchored ledger: \vValJten{} These misses are why gate M7 failed and terms T04, T09 and T13 stay anchored, \vValGateMseven}
+\end{eqcard}
+
+\begin{eqcard}{J.11}{R}{Carbon closure}
+\Stmt{F_C=C+\left(1-f_r\right)G+P}
+\Interp{Feed carbon must equal stored carbon plus stack carbon plus product carbon. The recycle is internal and cancels, so a slip anywhere in the flowsheet shows up here.}
+\Deriv{Sum \Eq{J.10} into \Eq{J.8}. The recycle cancels because it is internal.}
+\Vars{\V{P}{carbon in the product, 0.1 mol\% CH$_4$}{\U{mol\ s^{-1}}}}
+\Assume{0.1 mol\% CH$_4$ in product.}
+\Source{\tagP{} TEV-953 \cite{TEV953}, A-40, PDF p.~74.}
+\Impl{\fn{plant::carbon::close_carbon} and \fn{plant::carbon::CarbonLedger::closure}}
+\Valid{ID}{eq_j_11}{Limit 0.01 \U{kmol\ h^{-1}}. Case B: \cCapC{} + \cBurnC{} + \cProdC{} against \cFeedC. \vValJeleven}
+\end{eqcard}
+
+\begin{eqcard}{J.12}{X}{PSA block}
+\Stmt{F_{H_2,prod}=\xi_{PSA}F_{H_2,in},\qquad\xi_{PSA}=0.88}
+\Interp{The PSA is a specified split. It is an external block, outside the simulated plant, so nothing here predicts its performance.}
+\Deriv{The boundary is fixed by project decision. The PSA is not simulated, and its 88\% recovery and 99.9\% purity are INL's specified inputs. The reject returns as a stream that crosses the boundary, so its carbon stays in every balance.}
+\Vars{\V{F_{H_2,prod}}{hydrogen in the product}{\U{mol\ s^{-1}}} \V{F_{H_2,in}}{hydrogen to the PSA}{\U{mol\ s^{-1}}} \V{\xi_{PSA}}{PSA hydrogen recovery}{1}}
+\Assume{Specified recovery and purity.}
+\Source{\tagP{} TEV-953 \cite{TEV953}, PDF p.~19, p.~21. TEV-961 \cite{TEV961}, A-53, PDF p.~77.}
+\Impl{\fn{plant::flowsheet::psa_boundary}}
+\Valid{NONE}{eq_j_12}{No benchmark. The product is never to be described as simulated.}
+\end{eqcard}
+
+\begin{eqcard}{J.13}{R}{Hydrogen stream ledger}
+\Stmt{F_{H_2,in}=\frac{F_{H_2,prod}}{\xi_{PSA}},\qquad F_{H_2,rej}=\left(1-\xi_{PSA}\right)F_{H_2,in}}
+\Interp{Reformer syngas, H$_2$-rich gas after capture, product after PSA, recovery and annual hydrogen are separate rows, because they answer separate questions.}
+\Deriv{\Eq{J.12} rearranged and a hydrogen balance on the PSA.}
+\Vars{\V{F_{H_2,rej}}{hydrogen in the PSA reject}{\U{mol\ s^{-1}}}}
+\Assume{No hydrogen lost in capture \tagM{10}.}
+\Source{\tagC{} This document.}
+\Impl{\fn{plant::flowsheet::h2_ledger}}
+\Valid{ID}{eq_j_13}{Case B: \vPsaFeed{} \U{kg\ h^{-1}} to the PSA, \vHkgB{} to product, \vPsaRej{} to reject. \vValJthirteen}
+\end{eqcard}
+
+\begin{eqcard}{J.14}{O}{Process heat}
+\Stmt{\dot Q_{proc}=\vQprocA\,s}
+\Interp{The heat the helium must deliver to the process at Case B. It covers preheat as well as reforming, and preheat is about 29\% of the fired duty in Case 5.}
+\Deriv{INL's 925 C process heat demand scaled by \Eq{J.1}. The species-enthalpy duty \Eq{D.34} sits below this basis, and the ledger keeps the INL figure.}
+\Vars{\V{\dot Q_{proc}}{process heat}{\U{W}}}
+\Assume{Linear in $s$. Includes preheat.}
+\Source{\tagP{} TEV-961 \cite{TEV961}, Table 2, PDF p.~17.}
+\Impl{\fn{plant::anchored::Model::balance}}
+\Valid{GOLD}{eq_j_14}{\vQprocxB{} \U{MW}. Ahn and Lee \cite{Ahn}, Table 6, PDF p.~6, print 143.4 \U{MW_{th}} on a different flowsheet, see \Eq{J.28}. \vValJfourteen}
+\end{eqcard}
+
+\begin{eqcard}{J.15}{O}{Slip heat}
+\Stmt{\dot Q_{rec}=\Delta F_{slip}c_{p,CO_2}\Delta T}
+\Interp{CO$_2$ that MEA lets through and the recycle returns must be reheated in the reformer. INL's Selexol plant had far less of it.}
+\Deriv{Sensible heat on the extra CO$_2$ over the INL case. At Case A, $\Delta F_{slip}=$ \cDfSlip{} \U{kmol\ h^{-1}}. Reverse shift is not counted.}
+\Vars{\V{\Delta F_{slip}}{extra CO$_2$ slip over INL}{\U{mol\ s^{-1}}} \V{c_{p,CO_2}}{CO$_2$ heat capacity, 50}{\U{J\ mol^{-1}\ K^{-1}}} \V{\Delta T}{temperature rise, 571}{\U{K}}}
+\Assume{Sensible only. Reverse water-gas shift excluded.}
+\Source{\tagA{} Project values.}
+\Impl{\fn{plant::anchored::Model::balance}}
+\Valid{GOLD}{eq_j_15}{\vQrecB{} \U{MW} at Case B.}
+\end{eqcard}
+
+\begin{eqcard}{J.16}{R}{Reboiler duty}
+\Stmt{\dot Q_{reb}=\dot m_{CO_2}SRD}
+\Interp{Regeneration heat is capture rate times the specific duty.}
+\Deriv{\Eq{I.12} rearranged. \vMcotwoB{} \U{t\ h^{-1}} at \U{3.8\ GJ\ t^{-1}}, divided by 3.6, gives megawatts.}
+\Vars{\V{\dot m_{CO_2}}{CO$_2$ captured}{\U{kg\ s^{-1}}}}
+\Assume{Carried SRD of \Eq{I.14}.}
+\Source{\tagC{} From \Eq{I.12}.}
+\Impl{\fn{units::regen::q_reb} on the column model, and \fn{plant::flowsheet::AnchoredMea::reboiler_w} on the anchored solvent loop}
+\Valid{GOLD}{eq_j_16}{\vQrebB{} \U{MW} at Case B.}
+\end{eqcard}
+
+\begin{eqcard}{J.17}{O}{Heat stack for the reboiler}
+\Stmt{\dot Q_{stack}=\dot Q_{Sel}+\dot Q_{exp}+\dot Q_{syn}}
+\Interp{Three plant streams can serve the reboiler before the reactor is asked. They are spent in a fixed order: freed Selexol steam, then export steam, then syngas above 130 C.}
+\Deriv{Removing Selexol frees its LP steam, 65.0 \U{MMBtu\ h^{-1}} in Case 5. Export steam is the 83.7 \U{MMBtu\ h^{-1}} of Case 6. Syngas above 130 C gives 11.5 \U{MW} in Case 5. Case 5 duties are scaled by 1,927 over 1,970, and all three by $s$. Results match the screening order whenever the whole stack is used, which holds at all central cases.}
+\Vars{\V{\dot Q_{stack}}{plant steam credit}{\U{W}} \V{\dot Q_{Sel}}{freed Selexol steam}{\U{W}} \V{\dot Q_{exp}}{export steam}{\U{W}} \V{\dot Q_{syn}}{syngas heat above 130 C}{\U{W}}}
+\Assume{Case 5 proxy \tagM{1}. Zero-liquid-discharge steam stays with its evaporator.}
+\Source{\tagP{} TEV-961 \cite{TEV961}, A-56, PDF p.~80, and Table 2, PDF p.~17. \tagC{} for the syngas cut.}
+\Impl{\fn{plant::heatrec::allocate}}
+\Valid{GOLD}{eq_j_17}{\vStackSel, \vStackExp{} and \vStackSyn{} \U{MW}, total \vQstackB{} \U{MW} at Case B. The syngas term is T05 modelled, which the Headline uses because gate M4 passed for it; its anchored value is \vStackSynAnch{} \U{MW}.}
+\end{eqcard}
+
+\begin{eqcard}{J.18}{O}{Reboiler gap}
+\Stmt{\dot Q_{gap}=\max\left(0,\dot Q_{reb}-\dot Q_{stack}\right)}
+\Interp{Whatever the stack cannot supply falls to the reactor. It is the unmet thermal demand if the reactor cannot cover it.}
+\Deriv{Heat balance on the reboiler, with the stack spent first.}
+\Vars{\V{\dot Q_{gap}}{reboiler gap}{\U{W}}}
+\Assume{Stack fully usable at grade, \Eq{J.30}.}
+\Source{\tagC{} This document.}
+\Impl{\fn{plant::heatrec::gap}}
+\Valid{GOLD}{eq_j_18}{\vQgapxB{} \U{MW} at Case B on the Headline. The screening value differs by the T05 term, see the section opening.}
+\end{eqcard}
+
+\begin{eqcard}{J.19}{O}{Scaled electricity rows}
+\Stmt{E_i=E_{i,6}\,s}
+\Interp{Rows that do not depend on the capture step follow the plant size.}
+\Deriv{Table 2 rows at 925 C: reforming 1.2, steam 0.3, cooling 0.1, water 1.5 \U{MW_e}. The Selexol row is removed. PSA stays at 17.3 \U{kW} from Case 5.}
+\Vars{\V{E_i}{electric row $i$}{\U{W}} \V{E_{i,6}}{row $i$ in INL Case 6}{\U{W}}}
+\Assume{Linear in $s$.}
+\Source{\tagP{} TEV-961 \cite{TEV961}, Table 2, PDF p.~17, and A-56, PDF p.~80.}
+\Impl{\fn{plant::anchored::Model::balance}, with the rows held in \fn{plant::anchored::ERows}}
+\Valid{GOLD}{eq_j_19}{\vErowRef, \vErowPsa, \vErowSteam, \vErowCool{} and \vErowWater{} \U{MW_e} at Case B, for reforming, PSA, steam, cooling and water.}
+\end{eqcard}
+
+\begin{eqcard}{J.20}{O}{Lean pump}
+\Stmt{E_{pump}=\frac{\dot m_{solv}\left(p_{abs}-p_{strip}\right)}{\rho\,\eta_{pump}\eta_m}}
+\Interp{Solvent must go back up from 2 to 26.8 bar. This load is new against a flue-gas plant and has no letdown recovery here.}
+\Deriv{Hydraulic work per unit volume is the pressure rise, divided by pump and motor efficiency.}
+\Vars{\V{E_{pump}}{lean pump electricity}{\U{W}} \V{\eta_{pump}}{pump efficiency, 0.75}{1} \V{\eta_m}{motor efficiency, 0.90}{1}}
+\Assume{Solvent density 1,050 \U{kg\ m^{-3}}. No letdown turbine.}
+\Source{\tagA{} Project values.}
+\Impl{\fn{plant::flowsheet::AnchoredMea::pump_w}}
+\Valid{GOLD}{eq_j_20}{\vEpump{} \U{MW_e} at Case B.}
+\end{eqcard}
+
+\begin{eqcard}{J.21}{O}{Cooling fans}
+\Stmt{E_{fans}=k_{cool}\dot Q_{reb}}
+\Interp{Reboiler heat comes back out in the lean cooler and condenser, and moving it to the air takes electricity.}
+\Deriv{Assumed ratio of \U{0.015\ MW_e\ MW_{th}^{-1}}. DICE gives an order check, with cooling tower fans at 977 \U{kW} and circulating water pumps at 2,407 \U{kW}. No published ratio exists.}
+\Vars{\V{E_{fans}}{cooling electricity}{\U{W}} \V{k_{cool}}{electric load per unit reboiler heat}{1}}
+\Assume{Ratio assumed.}
+\Source{\tagA{} Project value. Order check on DICE \cite{DICE}, PDF p.~18.}
+\Impl{\fn{plant::flowsheet::AnchoredMea::fans_w}}
+\Valid{GOLD}{eq_j_21}{\vEfans{} \U{MW_e} at Case B.}
+\end{eqcard}
+
+\begin{eqcard}{J.22}{O}{CO$_2$ compression}
+\Stmt{E_{CO_2}=6.4\,\frac{C}{C_6}\ \mathrm{MW_e}}
+\Interp{Compression to 2,015 psia scales with the CO$_2$ handled. INL tuned the power to vendor data.}
+\Deriv{INL Case 6 row scaled on captured carbon, $C/C_6$. A ship route needs liquefaction, whose power is not in the library \tagM{28}, so the pipeline pressure is kept as a proxy and the tariff carries transport.}
+\Vars{\V{E_{CO_2}}{CO$_2$ compression electricity}{\U{W}} \V{C_6}{carbon captured in INL Case 6}{\U{mol\ s^{-1}}}}
+\Assume{Pipeline pressure kept for a ship route.}
+\Source{\tagP{} TEV-961 \cite{TEV961}, Table 2, PDF p.~17, and A-53, PDF p.~77.}
+\Impl{\fn{plant::anchored::Model::balance} for the anchored row of term T09, and \fn{plant::flowsheet::co2_compression_isothermal_w} for its modelled cross-check}
+\Valid{GOLD}{eq_j_22}{\vEcomp{} \U{MW_e} at Case B. Computed here: DICE at 7,838 \U{kW} on \cDiceTph{} \U{t\ h^{-1}} (\cite{DICE}, PDF p.~18) is \cDiceCompPct\% higher per tonne. This stays an open risk.}
+\end{eqcard}
+
+\begin{eqcard}{J.23}{O}{Recycle row}
+\Stmt{E_{pur}=5.7\,s\left(1+\frac{\Delta F_{slip}}{1473}\right)}
+\Interp{INL's Purge Recovery row runs the fuel-gas recycle and the nitrogen removal equipment. More CO$_2$ in the reject means more gas to handle, so the row grows with the slip.}
+\Deriv{Table 2 row restored by project decision, scaled by $s$, then raised in proportion to the extra flow over the Case 5 reject of 1,473 \U{kmol\ h^{-1}}. The split of the row is unpublished \tagM{30}.}
+\Vars{\V{E_{pur}}{recycle and nitrogen removal electricity}{\U{W}}}
+\Assume{Load proportional to reject flow.}
+\Source{\tagP{} TEV-961 \cite{TEV961}, Table 2, PDF p.~17. \tagA{} for the slip term.}
+\Impl{\fn{plant::anchored::Model::balance}}
+\Valid{GOLD}{eq_j_23}{\vEpurge{} \U{MW_e} at Case B, \vEpurgeNo{} without the slip term.}
+\end{eqcard}
+
+\begin{eqcard}{J.24}{R}{Total electricity}
+\Stmt{E_{tot}=E_{proc}+E_{circ}}
+\Interp{Everything the plant draws, process rows plus helium circulators.}
+\Deriv{Sum of \Eq{J.19} to \Eq{J.23} and \Eq{B.12}.}
+\Vars{\V{E_{circ}}{circulator electricity}{\U{W}}}
+\Assume{No grid import at Case B.}
+\Source{\tagC{} This document.}
+\Impl{\fn{plant::utility::e_total}}
+\Valid{GOLD}{eq_j_24}{\vEprocB{} + \vEcircB{} = \vEtotB{} \U{MW_e}.}
+\end{eqcard}
+
+\begin{eqcard}{J.25}{O}{Coupling}
+\Stmt{\dot m_p=\dot m_p\left(\dot Q_R\right),\quad\dot W_p=\dot W_p\left(\dot m_p\right),\quad\dot Q_{ves}=\dot Q_{ves}\left(\dot Q_R\right)}
+\Interp{Reactor power sets primary flow, primary flow sets circulator power, and circulator power changes the heat the reactor must supply. The balance therefore needs an iteration.}
+\Deriv{\Eq{B.9} and \Eq{B.13} depend on $\dot Q_R$. \Eq{B.10} feeds \Eq{B.20}.}
+\Vars{\V{\dot m_p}{primary helium flow}{\U{kg\ s^{-1}}} \V{\dot W_p}{primary circulator shaft power}{\U{W}}}
+\Assume{Algebraic coupling only.}
+\Source{\tagC{} This document.}
+\Impl{\fn{plant::utility::reactor_required}}
+\Valid{ID}{eq_j_25}{Structure test on the residual.}
+\end{eqcard}
+
+\begin{eqcard}{J.26}{O}{Fixed point for the reactor heat}
+\Stmt{\dot Q_R^{(k+1)}=\dot Q_{proc}+\dot Q_{rec}+\dot Q_{ihx}+\dot Q_{duct}+\dot Q_{ves}^{(k)}+\dot Q_{br}^{(k)}-\dot W_s-\dot W_p^{(k)}}
+\Interp{The required reactor rating is the number that reproduces itself through the whole balance. It is the plant's main design output.}
+\Deriv{Iterate \Eq{B.20} from 220 $s$ to a change below $10^{-9}$ \U{MW}. The loop gain is small because circulator work and vessel loss are small parts of the total, and convergence takes well under 200 steps.}
+\Vars{\V{\dot Q_{br}}{heat to the power branch and reboiler gap}{\U{W}}}
+\Assume{Converges in under 200 steps.}
+\Source{\tagC{} This document.}
+\Impl{\fn{plant::anchored::Model::balance}, which iterates with \fn{numerics::fixed_point}}
+\Valid{GOLD}{eq_j_26}{\vQRxB{} \U{MW_{th}} at Case B on the Headline and \vQRxA{} at Case A. The Anchored preset gives \vRanch{} at Case B, which is the value the screening comparison uses. \vValJtwentysix}
+\end{eqcard}
+
+\begin{eqcard}{J.27}{O}{Minimum capacity with corners}
+\Stmt{\dot Q_{R,c}=\dot Q_R\left(\text{SRD, circulator set, loss set}\right)_c}
+\Interp{The same balance run at sets of inputs that all lean one way. The corners bound the requirement and carry no probability.}
+\Deriv{Solve \Eq{J.26} at each named set.}
+\Vars{\V{\dot Q_{R,c}}{reactor heat at corner $c$}{\U{W}}}
+\Assume{Best, low, central and high sets.}
+\Source{\tagC{} This document.}
+\Impl{\fn{plant::drift::high_corner} for the high corner. The central value is the rating that \fn{plant::anchored::Model::balance} solves.}
+\Valid{GOLD}{eq_j_27}{Best \vRbest, central \vQRB, high \vRhigh{} \U{MW_{th}} at Case B. The low set, \cRlowScreen{} in the screening table, has no results row at this build. Only the high corner exceeds 210 \U{MW_{th}}.}
+\end{eqcard}
+
+\begin{eqcard}{J.28}{O}{Heat basis sensitivity}
+\Stmt{\dot Q_{proc}\to143.4\ \mathrm{MW_{th}}}
+\Interp{A recent study puts process heat well above the scaled INL figure at this H$_2$ rate. Trying it shows how much of the 31 MWth margin is at risk.}
+\Deriv{Replace \Eq{J.14} and repeat \Eq{J.26}. Ahn and Lee use S/C 2.7, 875 C and MDEA, so the value is a sensitivity on a different flowsheet.}
+\Vars{\V{\dot Q_{proc}}{alternative process heat}{\U{W}}}
+\Assume{Ahn S/C 2.7, 875 C and MDEA differ from this plant.}
+\Source{\tagP{} Ahn and Lee \cite{Ahn}, Table 1, PDF p.~4, and Table 6, PDF p.~6.}
+\Impl{\fn{plant::sens::sweeps}, sweeps HEAT\_BASIS and HEAT\_BASIS\_HE\_HELD}
+\Valid{PUB}{eq_j_28}{Sensitivity results: \vRahn{} \U{MW_{th}} with helium flow scaled, \vRahnHeld{} with helium flow held. An earlier hand estimate of about 201.6 sits below both, and that gap is not reconciled.}
+\end{eqcard}
+
+\begin{eqcard}{J.29}{O}{Fixed rating and import}
+\Stmt{E_{imp}=E_{nuc}-\max\left(0,\dot Q_{rated}-\dot Q_{heat}\right)\eta_{pc}}
+\Interp{If the rating is fixed, heat duties are served first and any electricity the leftover heat cannot make is imported. This is the unmet electrical demand.}
+\Deriv{Heat first: $\dot Q_{heat}$ is \Eq{J.26} with the power branch removed. What remains of the rating runs through $\eta_{pc}$.}
+\Vars{\V{E_{imp}}{imported electricity}{\U{W}} \V{E_{nuc}}{electricity asked of the reactor}{\U{W}} \V{\dot Q_{heat}}{heat duties at fixed rating}{\U{W}} \V{\dot Q_{rated}}{selected reactor rating}{\U{W}}}
+\Assume{Heat served first.}
+\Source{\tagC{} This document.}
+\Impl{\fn{plant::utility::import}}
+\Valid{GOLD}{eq_j_29}{\vImpB{} \U{MW_e} at Case B, \vImpA{} \U{MW_e} at Case A with MEA.}
+\end{eqcard}
+
+\begin{eqcard}{J.30}{F}{Pinch on the stack}
+\Stmt{T_{stack,j}\ge T_{source,min}\quad\forall j}
+\Interp{Each stream counted in the stack must meet the grade of \Eq{I.17}. The hot water loop is excluded because it is far too cold for a reboiler.}
+\Deriv{INL's hot water loop supplies at 200 F, which is 93 C, against a reboiler near 122 C. LP steam at 307 F qualifies.}
+\Vars{\V{T_{stack,j}}{temperature of stack stream $j$}{\U{K}} \V{T_{source,min}}{lowest usable source}{\U{K}}}
+\Assume{93 C loop too cold.}
+\Source{\tagP{} TEV-961 \cite{TEV961}, A-57, PDF p.~81, read as an image.}
+\Impl{\fn{plant::heatrec::check_grade}}
+\Valid{ID}{eq_j_30}{Rule test: no hot water row enters the stack.}
+\end{eqcard}
+
+\begin{eqcard}{J.31}{O}{Cooling duty}
+\Stmt{\dot Q_{cool}=\dot Q_{KO}+\dot Q_{HW}+\dot Q_{lean}+\dot Q_{cond}+\left(1-\eta_{pc}\right)\dot Q_{pc}}
+\Interp{All heat not sold or used ends up in the cooling water. The sum sizes the cooling system and shows what Singapore must reject to the sea.}
+\Deriv{Whole-plant energy balance. Syngas knock-out and hot water trim come from Case 5, the lean cooler and condenser from the solvent loop, and the last term from the power cycle.}
+\Vars{\V{\dot Q_{cool}}{total cooling duty}{\U{W}} \V{\dot Q_{KO}}{knock-out drum cooler}{\U{W}} \V{\dot Q_{HW}}{hot water trim cooler}{\U{W}} \V{\dot Q_{lean}}{lean solvent cooler}{\U{W}} \V{\dot Q_{pc}}{heat into the power cycle}{\U{W}}}
+\Assume{Case 5 proxy \tagM{1}.}
+\Source{\tagC{} This document, on TEV-961 \cite{TEV961}, A-55 to A-57.}
+\Impl{Not implemented in the engine at this build: the balance carries cooling as electricity rows only, \Eq{J.19} and \Eq{J.21}. Planned name \fn{plant::utility::cooling}.}
+\Valid{PUB}{eq_j_31}{Computed here for the two published rows before scale: 19.7 and 74.1 \U{MMBtu\ h^{-1}} are \cCoolKO{} and \cCoolHW{} \U{MW}. The engine carries no cooling duty, so no total is printed.}
+\end{eqcard}
+
+\begin{eqcard}{J.32}{O}{Thermal efficiency}
+\Stmt{\eta_{th}=\frac{\dot m_{H_2}LHV_{H_2}}{\dot n_{NG}LHV_{NG}+\dot Q_R}}
+\Interp{Hydrogen energy out over all energy in, counting reactor heat at par with gas.}
+\Deriv{First-law efficiency on an LHV basis. The gas HHV of 1,044 \U{Btu\ scf^{-1}} is converted with the 0.90 rule of thumb for gaseous fuels.}
+\Vars{\V{\eta_{th}}{thermal efficiency}{1} \V{LHV_{H_2}}{hydrogen lower heating value}{\U{J\ kg^{-1}}} \V{LHV_{NG}}{gas lower heating value}{\U{J\ mol^{-1}}}}
+\Assume{HHV to LHV ratio 0.90.}
+\Source{\tagP{} GHG Protocol stationary combustion guidance, PDF p.~46, for the ratio. TEV-961 \cite{TEV961}, A-50, PDF p.~74, for HHV. \tagC{} for the result.}
+\Impl{Not implemented in the engine at this build. The value in the validation line is computed in this document. Planned name \fn{plant::utility::eta_th}.}
+\Valid{PUB}{eq_j_32}{Computed here: \cEtaTh{} at the required \vQRxB{} \U{MW_{th}}. INL prints 82.5\% on an HHV basis (Table 2, PDF p.~17). Its definition was not traced here, so the two are not compared.}
+\end{eqcard}
+
+\begin{eqcard}{J.33}{R}{Capture pair}
+\Stmt{\eta_{pp}=\frac{C}{\phi_cT_C},\qquad\eta_{pl}=\frac{C}{F_C}}
+\Interp{Two different percentages that are easy to confuse. Per-pass is what the absorber does to the gas it sees. Plant capture is what the whole site does to the carbon it buys.}
+\Deriv{Definitions, printed together by project decision. The recycle returns most of the slip for another pass, so plant capture stays near the per-pass value even though only \vPhiC{} of tube carbon reaches the absorber as CO$_2$.}
+\Vars{\V{\eta_{pl}}{plant capture}{1}}
+\Assume{Direct carbon basis.}
+\Source{\tagC{} This document.}
+\Impl{\fn{plant::carbon::CarbonLedger::capture_pair}}
+\Valid{GOLD}{eq_j_33}{0.90 and \vEtaPl. The results tables hold a second form, $C/\left[C+(1-f_r)G\right]=$ \vPlantCapRes, which leaves the product carbon out of the denominator. Both are printed so the basis stays visible.}
+\end{eqcard}
+
+\begin{eqcard}{J.34}{R}{Yield}
+\Stmt{Y_m=\frac{\dot m_{NG}}{\dot m_{H_2}},\qquad Y_v=\frac{\dot V_{H_2}}{\dot V_{NG}}}
+\Interp{How much hydrogen each unit of gas buys, in both of the forms the sources use.}
+\Deriv{Ratios of \Eq{J.2} and \Eq{J.4}. The mass ratio takes the molar mass of the feed composition, \cMng{} \U{g\ mol^{-1}}.}
+\Vars{\V{Y_m}{gas mass per unit hydrogen}{\U{kg\ kg^{-1}}} \V{Y_v}{hydrogen volume per unit gas}{1} \V{\dot m_{NG}}{gas mass flow}{\U{kg\ s^{-1}}} \V{\dot V_{H_2}}{hydrogen standard volume flow}{\U{m^3\ s^{-1}}}}
+\Assume{Case 6 gas rate.}
+\Source{\tagP{} TEV-961 \cite{TEV961}, Table 2, PDF p.~17, prints 3.82. \tagC{} for the mass ratio.}
+\Impl{Not implemented in the engine at this build. The values in the validation line are computed in this document. Planned name \fn{plant::utility::yield}.}
+\Valid{PUB}{eq_j_34}{Computed here: 130 over 34.0 is \cYv{} \U{scf\ scf^{-1}}, and the mass ratio is \cYm{} \U{kg\ kg^{-1}}.}
+\end{eqcard}
+
+\begin{eqcard}{J.35}{O}{Sizing walk}
+\Stmt{\dot Q_{R,0}\ \to\ \dot Q_{R,1}\ \to\ \cdots\ \to\ \dot Q_R}
+\Interp{The walk explains why the requirement is well above the first estimate by adding one missing item at a time, so each difference has a name.}
+\Deriv{Start from process heat plus electricity over $\eta_{pc}$ without the purge row. Then restore the purge row, add losses, add circulators, swap Selexol for MEA with zero reboiler heat, and add the reboiler gap.}
+\Vars{\V{\dot Q_{R,0}}{first estimate of reactor heat}{\U{W}}}
+\Assume{Case A order, repeated at Case B.}
+\Source{\tagC{} This document.}
+\Impl{\fn{plant::anchored::Model::sizing_walk}}
+\Valid{GOLD}{eq_j_35}{Case B on the Anchored preset: \vWalkOne, \vWalkTwo, \vWalkThree, \vWalkFour, \vWalkFive, \vWalkSix{} \U{MW_{th}}. Case A: \vWalkZero, \cWalkAb, \cWalkAc, \cWalkAd, \cWalkAe, \cWalkAf{} \U{MW_{th}}, read from the design decisions table because no results row holds them. \vValJthirtyfive}
+\end{eqcard}
+
+\begin{eqcard}{J.36}{O}{Rated against required}
+\Stmt{\dot Q_{spare}=\dot Q_{rated}-\dot Q_R}
+\Interp{The reactor is rated at 210 MWth and the plant needs less. The spare heat stays as margin with no revenue, yet the capital is still charged on the full rating.}
+\Deriv{\Eq{B.21} at Case B, then the ledger of Section L at each charge.}
+\Vars{\V{\dot Q_{spare}}{rating less requirement}{\U{W}}}
+\Assume{No revenue on the spare heat.}
+\Source{\tagC{} This document.}
+\Impl{\fn{plant::utility::margin}}
+\Valid{GOLD}{eq_j_36}{\vSpareB{} \U{MW_{th}} spare. Charged at 210 and at \vQRB{} \U{MW_{th}}, BOAK, the full cost set gives \vAcFiveBT{} and \vAcFiveNeedBT{} \U{S\$\ t^{-1}} at 25 y, \vAcFiveBS{} and \vAcFiveNeedBS{} at 60 y. See \Eq{L.26}. The screening comparison runs on the Anchored preset: \vValJthirtysix}
+\end{eqcard}
+
+\subsection*{Worked example: closing Case B}
+Carbon first. \Eq{J.5} gives \cFeedC{} \U{kmol\ h^{-1}} of feed carbon. With $f_r=$ \vFr, $\eta_{pp}=0.90$ and $\phi_c=$ \vPhiC, \Eq{J.8} gives \cTubeC{} in the tubes, \Eq{J.9} gives \cCapC{} captured and \Eq{J.10} leaves \cBurnC{} in the stack. \Eq{J.11} closes with \cProdC{} in the product.
+
+Heat next. Process heat is \vQprocxB{} \U{MW}, with \vQrecB{} of slip heat. The reboiler wants \vQrebB{} \U{MW}, and the stack gives \vQstackB, so the gap is \vQgapxB. Electricity totals \vEtotB{} \U{MW_e}, of which \vEcircB{} runs the circulators. \Eq{J.26} then converges at \vQRxB{} \U{MW_{th}}, leaving \vSpareB{} \U{MW_{th}} of the 210 rating unused.
+
+\subsection*{Link to the sources}
+INL's 925 C case reaches 178.8 MWt on heat and power (TEV-961, Table 2, PDF p.~18). That figure is close to the \vQRB{} here at a smaller plant only by coincidence: this design scales down by \vScaleB{} and then adds a reboiler gap, the restored purge row, losses and circulators that INL did not carry. The walk in \Eq{J.35} shows each step.

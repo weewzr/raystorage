@@ -1,0 +1,263 @@
+/// Emission lines of one fixed run, written under `run_id`.
+fn emissions_run(c: &mut Csv, m: &Model, r: &RunDef, run_id: &str) -> Result<()> {
+    let r = *r;
+    let s = m.scale(r.case);
+    let b = balance_for(m, &r)?;
+    let e = m.emissions(&b.c, s);
+    let src = b.c.src;
+    let status = carbon_status(src);
+    let source = carbon_source(src);
+    let h2 = m.h2_a_kgh * s * b.c.h_scale * m.hours / 1000.0;
+    let per_pass = if r.scn == Scenario::InlSel {
+        m.eta_sel
+    } else {
+        m.eta_mea
+    };
+    // Plant capture: carbon stored over fresh carbon on the plant's ledger
+    // (equation N.3.2), the share of stored over stored plus emitted on the
+    // anchored one.
+    let plant = match src {
+        CarbonSrc::Plant => b.c.cap / b.c.f,
+        CarbonSrc::Anchored => e.captured / (e.captured + e.atm),
+    };
+    let sys = m.system_adjust(&b, s);
+    let lc = m.lifecycle_terms(&b, s, b.r);
+    let abatement_name = match src {
+        CarbonSrc::Plant => "Direct abatement",
+        CarbonSrc::Anchored => "Net abatement",
+    };
+    for (bid, base) in [
+        ("CHO_9p35", m.base_cho * h2),
+        ("IEAGHG_9p00", m.base_ieaghg * h2),
+        ("INL_9p21", e.baseline),
+    ] {
+        let a = base - e.atm;
+        type Line<'a> = (&'a str, &'a str, f64, &'a str);
+        let views: [(&str, Vec<Line<'_>>); 4] = [
+            (
+                "direct_atm",
+                vec![
+                    ("BASELINE", "Unabated SMR baseline", base, "K.3"),
+                    ("CAPTURED", "Captured and stored", e.captured, "K.7"),
+                    ("N2_RICH_CUT", "Residual to atmosphere", e.atm, "K.8"),
+                    ("ABATEMENT", abatement_name, a, "K.11"),
+                ],
+            ),
+            (
+                "lifecycle_burdens",
+                vec![
+                    (
+                        "NUCLEAR_LC",
+                        "Nuclear lifecycle burden",
+                        -lc.nuclear,
+                        "K.19",
+                    ),
+                    ("TS_BURDEN", "T&S burden", -lc.ts_burden, "K.19"),
+                    (
+                        "ABATEMENT",
+                        "Net abatement",
+                        a - lc.nuclear - lc.ts_burden,
+                        "K.19",
+                    ),
+                ],
+            ),
+            (
+                "lifecycle_upstream",
+                vec![
+                    (
+                        "UPSTREAM_CREDIT",
+                        "Saved upstream gas",
+                        lc.up_credit,
+                        "K.19",
+                    ),
+                    (
+                        "NUCLEAR_LC",
+                        "Nuclear lifecycle burden",
+                        -lc.nuclear,
+                        "K.19",
+                    ),
+                    ("TS_BURDEN", "T&S burden", -lc.ts_burden, "K.19"),
+                    (
+                        "ABATEMENT",
+                        "Net abatement",
+                        a + lc.up_credit - lc.nuclear - lc.ts_burden,
+                        "K.19",
+                    ),
+                ],
+            ),
+            (
+                "system",
+                vec![("ABATEMENT", "Net abatement", a + sys, "K.18")],
+            ),
+        ];
+        for (view, lines) in views {
+            for (lid, name, v, eq) in lines {
+                c.row(&[
+                    t(run_id),
+                    t(bid),
+                    t(view),
+                    t(lid),
+                    t(name),
+                    num(v),
+                    num(v / h2),
+                    num(per_pass),
+                    num(plant),
+                    t("calculated"),
+                    t(source),
+                    t(eq),
+                    t(status),
+                ]);
+            }
+        }
+    }
+    if src == CarbonSrc::Plant {
+        independent_lines(c, m, run_id, &b, per_pass, plant)?;
+    }
+    Ok(())
+}
+
+/// Lines of the independent carbon view of one run: the annual quantities of the
+/// plant's own ledger, the transport and storage emissions by source, the direct
+/// and net abatement against each reference, the reduction, the intensity and the
+/// closure of the carbon account. The decomposition of the central abatement
+/// (equation N.9.2) closes the view.
+fn independent_lines(
+    c: &mut Csv,
+    m: &Model,
+    run_id: &str,
+    b: &Balance,
+    per_pass: f64,
+    plant: f64,
+) -> Result<()> {
+    let s = b.s;
+    let ab = m.abatement(b, s)?;
+    let h2 = ab.h2_t_y;
+    let view = "independent_carbon";
+    let mut line = |bid: &str, id: &str, name: String, v: f64, per_kg: bool, eq: &str| {
+        c.row(&[
+            t(run_id),
+            t(bid),
+            t(view),
+            t(id),
+            t(&name),
+            num(v),
+            if per_kg { num(v / h2) } else { String::new() },
+            num(per_pass),
+            num(plant),
+            t("calculated"),
+            t(carbon_source(CarbonSrc::Plant)),
+            t(eq),
+            t(CARBON_STATUS),
+        ]);
+    };
+    line("PLANT", "CAPTURED", "CO2 delivered to storage".into(), ab.captured_t_y, true, "N.9.3");
+    line("PLANT", "STACK", "Stack CO2 of the burned cut".into(), ab.stack_t_y, true, "N.5.2");
+    line(
+        "PLANT",
+        "COND_VENT",
+        format!("Condensate CO2 vented, share {:.2}", m.carbon_params.cond_vent),
+        ab.cond_vented_t_y,
+        true,
+        "N.5.2",
+    );
+    line(
+        "PLANT",
+        "RESIDUAL_DIRECT",
+        "Residual direct emission, modelled streams only".into(),
+        ab.residual_direct_t_y,
+        true,
+        "N.5.2",
+    );
+    line(
+        "PLANT",
+        "TS_EMISSIONS",
+        "Transport and storage emissions".into(),
+        ab.ts_emission_t_y,
+        true,
+        "N.9.4",
+    );
+    for (id, part) in ab.ts.lines() {
+        line(
+            "PLANT",
+            id,
+            format!("{id} per tonne delivered times the stored CO2"),
+            part * ab.captured_t_y,
+            true,
+            "N.9.4",
+        );
+    }
+    line(
+        "PLANT",
+        "TS_RATIO",
+        "Transport and storage emissions per tonne delivered, t/t".into(),
+        ab.tau_ts,
+        false,
+        "N.9.4",
+    );
+    for row in &ab.rows {
+        let tag = if row.id == ab.central { " (central)" } else { "" };
+        line(row.id, "BASELINE_INDEP", format!("Unabated reference{tag}"), row.e_ref_t_y, true, "N.7.3");
+        line(row.id, "ABATEMENT_DIRECT", format!("Direct abatement{tag}"), row.a_direct, true, "N.9.1");
+        line(
+            row.id,
+            "ABATEMENT_NET",
+            format!("Net abatement after transport and storage{tag}"),
+            row.a_net,
+            true,
+            "N.9.4",
+        );
+        line(
+            row.id,
+            "REDUCTION",
+            format!("Share of the reference emission avoided{tag}"),
+            row.reduction,
+            false,
+            "N.10.2",
+        );
+    }
+    line("PLANT", "INTENSITY", "Direct CO2 per kg of hydrogen".into(), ab.intensity_kg_kg, false, "N.10.3");
+    let cl = &ab.closure;
+    let tpy = m.tpy(1.0, s);
+    if let (Some(abs), Some(rel)) = (cl.residual_modelled, cl.relative_modelled) {
+        let unknown = if cl.unknown.is_empty() {
+            "none".to_string()
+        } else {
+            cl.unknown.join(" ")
+        };
+        line(
+            "PLANT",
+            "CLOSURE_ABS",
+            format!(
+                "Carbon residual on the modelled streams, verdict {}; whole account {}; unknown streams {unknown}",
+                cl.on_modelled.label(),
+                cl.overall.label()
+            ),
+            abs * tpy,
+            false,
+            "N.10.4",
+        );
+        line(
+            "PLANT",
+            "CLOSURE_REL",
+            "Relative carbon residual on the modelled streams".into(),
+            rel,
+            false,
+            "N.10.4",
+        );
+    }
+    line("PLANT", "CLOSURE_TOL", "Closure tolerance".into(), cl.tol, false, "N.6.1");
+    if let Some(d) = ab.decomposition {
+        line("PLANT", "DECOMP_CAPTURED", "Abatement from captured CO2".into(), d.captured, true, "N.9.2");
+        line(
+            "PLANT",
+            "DECOMP_AVOIDED_GAS",
+            "Abatement from the gas not bought".into(),
+            d.avoided_gas,
+            true,
+            "N.9.2",
+        );
+        line("PLANT", "DECOMP_CONDENSATE", "Condensate term".into(), d.condensate, true, "N.9.2");
+    }
+    Ok(())
+}
+

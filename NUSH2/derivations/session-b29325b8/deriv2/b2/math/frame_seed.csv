@@ -1,0 +1,52 @@
+symbol,definition,units,case_b,case_a,class
+s,Scale on INL product mass,1,\vScaleB,\vScaleA,calculated
+\dot m_{H_2},"Hydrogen product, external PSA boundary",\U{kg\ s^{-1}},\vMdotHtwoB,\vMdotHtwoA,"calculated, published"
+M_{H_2},Annual hydrogen,\U{t\ y^{-1}},\vMHtwoB,\vMHtwoA,calculated
+f_{av},Availability,1,0.85,0.85,assumed
+t_h,Annual operating hours,\U{h\ y^{-1}},\vHours,\vHours,calculated
+\dot V_{NG},Natural gas,\U{MMSCFD},\vNGB,\vNGA,"calculated, published"
+\dot Q_{rated},Selected reactor rating,\U{MW_{th}},210,none,assumed
+\dot Q_R,Reactor heat required,\U{MW_{th}},\vQRB,\vQRA,calculated
+\dot Q_{spare},"Rating less requirement, no revenue",\U{MW_{th}},\vSpareB,\vSpareA,calculated
+T_{ROT},Reactor outlet temperature,\U{K},1198.15,1198.15,published
+"T_{s,sup}",Secondary helium supply temperature,\U{K},1173.15,1173.15,published
+"T_{s,ret}",Secondary helium return temperature,\U{K},739.15,739.15,published
+"T_{ref,out}",Reformer exit temperature,\U{K},1144.15,1144.15,published
+\dot m_s,Secondary helium flow,\U{kg\ s^{-1}},\vMsB,\vMsA,"calculated, published"
+\dot m_p,Primary helium flow,\U{kg\ s^{-1}},\vMpB,\vMpAr,calculated
+\dot Q_{proc},Process heat to secondary helium,\U{MW_{th}},\vQprocB,\vQprocA,"calculated, published"
+\dot Q_{rec},Sensible heat of recycled CO$_2$ slip,\U{MW_{th}},\vQrecB,\vQrecA,calculated
+\dot W_s,Secondary circulator shaft power,\U{MW},\vWsB,\vWsA,calculated
+\dot W_p,Primary circulator shaft power,\U{MW},\vWpB,\vWpA,calculated
+\dot Q_{ves},Vessel heat loss,\U{MW},\vQvesB,\vQvesA,calculated
+\dot Q_{ihx},IHX heat loss,\U{MW},\vQihxB,\vQihxA,calculated
+\dot Q_{duct},Duct heat loss,\U{MW},\vQductB,\vQductA,calculated
+\eta_{pc},Power conversion efficiency,1,0.397,0.397,published
+r_w,Back-pressure work ratio,\U{MW_e\ MW_{th}^{-1}},0.169,0.169,calculated
+\dot Q_{reb},Reboiler duty,\U{MW},\vQrebB,\vQrebA,calculated
+\dot Q_{stack},Plant steam credit,\U{MW},\vQstackB,\vQstackA,calculated
+\dot Q_{gap},Reboiler gap carried by the reactor,\U{MW},\vQgapB,\vQgapA,calculated
+E_{proc},Process electricity,\U{MW_e},\vEprocB,\vEprocA,calculated
+E_{tot},Total electricity,\U{MW_e},\vEtotB,\vEtotA,calculated
+\eta_{pp},Per-pass capture,1,0.90,0.90,assumed
+\eta_{pl},"Plant capture, captured over feed carbon",1,\vEtaPl,\vEtaPl,calculated
+\phi_c,CO$_2$ share of carbon after shift,1,\vPhiC,\vPhiC,calculated
+f_r,Recycled fraction of tail-gas carbon,1,\vFr,\vFr,calculated
+SRD,Specific reboiler duty,\U{GJ\ t^{-1}},3.8 (3.4 to 4.2),same,assumed
+\alpha_{rich},Rich loading,\U{mol\ mol^{-1}},0.50,0.50,assumed
+\alpha_{lean},Lean loading,\U{mol\ mol^{-1}},0.25,0.25,assumed
+\dot m_{CO_2},Captured CO$_2$,\U{t\ h^{-1}},\vMcotwoB,\vMcotwoA,calculated
+\dot m_{solv},Lean solvent,\U{t\ h^{-1}},\vMsolvB,\vMsolvA,calculated
+p_{abs},Absorber pressure,\U{Pa},26.8 bar,26.8 bar,published
+T_{abs},Absorber temperature,\U{K},313.15,313.15,published
+e_{base},Baseline intensity,\U{kg\ kg^{-1}},\vEbaseInt (9.00 to 9.35),same,"calculated, published"
+E_{base},Baseline CO$_2$,\U{t\ y^{-1}},\vEbaseB,\vEbaseA,calculated
+E_{atm},Residual CO$_2$ to atmosphere,\U{t\ y^{-1}},\vEatmB,\vEatmA,calculated
+\mathcal A,Direct abatement,\U{t\ y^{-1}},\vAbateB,\vAbateA,calculated
+i,Discount rate,1,0.08,0.08,assumed
+t_\ell,Life,\U{y},25 and 60,same,assumed
+n_s,Reactor size exponent,1,"1.0, with 0.6 and 0.31 at equal prominence",same,assumed
+c_{kWt},"Overnight capital cost, no turbine",\U{US\$_{2019}\ kWt^{-1}},"2{,}184",same,calculated from published
+p_{gas},Gas price,\U{S\$\ GJ^{-1}},15,15,published
+p_{TS},Transport and storage price,\U{S\$\ t^{-1}},60,60,assumed
+AC,"Abatement cost, L3, BOAK, $n_s=1$, $210\ \mathrm{MW_{th}}$, 25 y and 60 y",\U{S\$\ t^{-1}},"\vACTwentyFive, \vACSixty",see K and L,calculated

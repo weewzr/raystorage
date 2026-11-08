@@ -1,0 +1,16 @@
+Record the carbon fix round in the derivation and the log
+
+Derivation 01: the implementation and test lines of N.7.3, N.9.2 and N.9.5
+name the reference gas functions, the aggregate CO2e factor and the new
+tests; rule 1 of the boundary table points at the cost functions and the test
+that compares the gas line with the decomposition; open issues 2 and 6 state
+what is settled and what still waits for a source.
+
+Log: the two bullets of the first Phase 3 entry that the fix made false now
+say so, and a fix-round entry records both findings, the effect on L5, the DCF
+and the break-even shares, the changed cells of results/, the test fixture
+that moved, the tests run and the items that stay open (steam and power of
+the reference, the CO2 and CH4 split, three SymPy scripts that still read
+legacy values from results/, and the frontend wording).
+
+Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>

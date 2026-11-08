@@ -1,0 +1,20 @@
+Dependency_ID,Upstream,Downstream,Reason,Critical_path?
+D1,G1 national readiness,G9 site/licensing,"formal site evaluation needs competent framework/authority",YES
+D2,G2 technology qualification,G4 FOAK demonstration,"FOAK should test a defined/qualified interface rather than unknown hardware",YES
+D3,G4 FOAK demonstration,G5 two-train demonstration,"two-train integration builds on demonstrated process-heat coupling",YES
+D4,G5 two-train demonstration,G7 BOAK replication,"replication requires stable demonstrable architecture",YES
+D5,G7 BOAK replication,G8 mature economic gate,"mature learning must be observed across replicated builds",YES
+D6,G2 design basis,G3 integrated safety,"PRA/transients/source term require selected systems/geometry",YES
+D7,G3 safety,G9 final site layout,"nuclear/chemical separation and hazard acceptance depend on QRA/PRA",YES
+D8,G3 source term,G15 EPR/EPZ,"dose/EPR depends on source term plus site dispersion",YES
+D9,G9 candidate site,G10 final cooling,"intake/outfall/UHS and environmental analysis depend on parcel/coast",YES
+D10,G10 cooling,G16 FID/licensing,"credible normal/safety heat sink required before construction decision",YES
+D11,G11 H2 offtake,G16 FID,"commercial production scale needs demand/contracts",YES
+D12,G12 NG,G16 FID,"feedstock capacity is binding infrastructure",YES
+D13,G13 CCS,G16 FID,"abatement claim requires project-scale permanent storage chain",YES
+D14,G8 mature cost evidence,G14 finance,"bankable finance must use demonstrated/updated costs rather than model target",YES
+D15,G9 site + G3 safety,G15 environment/EPR,"environmental/radiological/EPR work is site and consequence specific",YES
+D16,G14 finance + G15 approvals,G16 FID,"FID requires finance and approvals",YES
+D17,G16 FID,G17 construction,"construction only after binding gates",YES
+D18,G17 commissioning,G18 operation,"commercial verification follows accepted commissioning",YES
+D19,G6 availability,G8 mature economics,"H2/abatement/cost depend on integrated availability",YES

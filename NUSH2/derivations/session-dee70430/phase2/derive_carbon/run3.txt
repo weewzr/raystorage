@@ -1,0 +1,262 @@
+== N.1.2 hydrogen potential Z = 2 C - O + H/2
+PASS  Z table   {'H2': 1, 'CO': 1, 'CO2': 0, 'CH4': 4, 'H2O': 0, 'N2': 0, 'C2H6': 7, 'C3H8': 10, 'C4H10': 13, 'C5H12': 16, 'O2': -2}
+PASS  Z conserved by D.1 CH4+H2O->CO+3H2
+PASS  Z conserved by D.2 CO+H2O->CO2+H2
+PASS  Z conserved by D.3 CH4+2H2O->CO2+4H2
+PASS  Z conserved by D.4 CnHm+nH2O->nCO+(n+m/2)H2
+PASS  Z conserved by CnHm+2nH2O->nCO2+(2n+m/2)H2
+PASS  Z conserved by combustion CH4+2O2->CO2+2H2O
+PASS  Z conserved by combustion H2+0.5O2->H2O
+PASS  Z conserved by combustion CO+0.5O2->CO2
+PASS  Z(C2H6) = 2n + m/2
+PASS  Z(C3H8) = 2n + m/2
+PASS  Z(C4H10) = 2n + m/2
+PASS  Z(C5H12) = 2n + m/2
+== N.1.1 feed carbon
+PASS  c_bar = 1.05379 (J.5)   1.053790
+PASS  c_bar from parameters.toml equals c_bar from flowsheet composition   1.053790
+   c_bar = 1.053790  sum y = 1.00002  Z_NG = 4.139390
+== N.2.1 / N.3 / N.4 / N.6 symbolic
+PASS  N.2.1 tube carbon closed form
+PASS  N.6.1 carbon closure identity (residual simplifies to 0)
+PASS  N.4.1 f = (T - F_C)/G
+PASS  N.3.2 plant capture ratio
+PASS  N.3.2 limit f->0: eta_pl = eta*phi*(1)
+PASS  N.2.1 limit f->0: T = F_C
+PASS  N.2.2 reference limit: eta=0, f=0 gives G = F_C(1-kappa) - P
+PASS  N.2.1 D positive for 0<=f<=1 when kappa + eta*phi > 0
+PASS  N.1.4 xi_eff = xi/(1 - r(1-xi))
+PASS  N.1.4 limit r=0: xi_eff = xi
+PASS  N.1.4 limit r=1: xi_eff = 1
+== N.1.5 gas rate from the H2 target
+PASS  N.1.5 gas rate closed form
+PASS  N.7.1 reference process feed
+PASS  N.7.1 lower bound: n_ref >= nH2/(xi Z_NG) for psi, omega >= 0
+== substitution of FS_B_REC_F values
+PASS  carbon of every listed stream equals CSV carbon column
+PASS  phi + psi + omega + kappa = 1 (carbon through reformer, shift, flash)
+PASS  S19 = S20 (100 percent transfer, no vent modelled)
+PASS  S16 CO2 equals carbon of S15 (N.5.1)
+PASS  S13 carbon is CH4 only
+PASS  S21 holds no carbon
+PASS  N.2.1 closed-form tube carbon equals flowsheet S04   1497.326806 vs 1497.326806; rel 0.00e+00
+PASS  N.2.2 reject carbon G   378.998728 vs 378.998728
+PASS  N.2.2 stack carbon (1-f)G
+PASS  N.2.2 slip CO2 (1-eta) phi T in S12
+PASS  N.6.1 residual recomputed from printed stream values is within the CSV print precision   residual 0.000e+00 kmol C/h (print precision 5e-6)
+PASS  N.6.1 exported envelope residual (full precision) is below the tolerance   5.256e-09 kmol C/h = 4.34e-12 of the feed; tolerance 1e-09
+PASS  Z conserved S04 -> S05
+PASS  Z conserved S05 -> S09
+PASS  Z of S01 + S03 equals Z of S04 (mixer; steam has Z = 0)
+PASS  N.1.3 H2 at the absorber from the Z balance   4506.247106 vs 4506.247104
+PASS  H2 passes flash and absorber unchanged (S09 = S12)
+PASS  N.1.4 xi_eff equals S13 H2 / S12 H2   0.989426
+PASS  product CH4 = pi * product H2
+PASS  N.1.5 gas rate from the H2 target equals flowsheet gas rate   1150.37368 vs 1150.37368 kmol/h; rel -5.01e-10
+PASS  H2 target 8988 kg/h = H2_B x rho_N (J.2)   8988.0000
+PASS  all feed N2 leaves in the cut (S15)
+PASS  N.4.2 f = 1 - beta n_N2 / G
+PASS  N.5.1 O2 demand = Z(S15)/2   142.697158 vs 142.697158
+PASS  N.5.1 O2 = (2C + H/2 - O)/2 from the four element balances
+   flowsheet streams at 7446 h/y: captured 363,277  stack 30,778  condensate 1,731 t/y
+PASS  N.6.1 verdict closed when every stream is known and the residual is small
+PASS  N.6.1 verdict open when the smallest modelled stream (P) is dropped   dropping P leaves 3.682e-03 of the feed
+PASS  N.6.1 verdict undetermined, never closed, when a stream is unknown
+== legacy anchored basis, B_REC_F at INL_9p21
+PASS  J.7 recycled fraction f_r = 0.7522 (register value)   0.752178
+PASS  N.4.1 recycle share read from FS_B_REC_F streams equals the input J.7 value (0.752178)   0.7521781 vs 0.7521781
+PASS  N.2.1 tear convergence: closed-form tube carbon with the J.7 input equals S04   1497.326806 vs 1497.326806; rel 4.11e-11
+PASS  legacy captured t/y equals Emissions_Ledger CAPTURED   359777.3529 vs 359777.3529
+PASS  legacy residual t/y equals Emissions_Ledger N2_RICH_CUT   38309.0114 vs 38309.0114
+PASS  legacy baseline t/y equals Emissions_Ledger BASELINE (K.3)   616360.6231 vs 616360.6231
+PASS  legacy abatement t/y equals Emissions_Ledger ABATEMENT (K.11)   578051.6117 vs 578051.6117
+PASS  legacy baseline intensity 9.20977 kg/kg (K.1)   9.209770
+PASS  N.10.1 abatement per kg H2 equals Emissions_Ledger kg_per_kg_h2   8.637350
+PASS  N.10.2 legacy plant_capture column equals C/(C+B)   0.903767
+PASS  legacy closure F_C = C + (1-f)G + P (J.11)
+PASS  legacy anchored captured kmol/h (Case B) = 1097.904   1097.903971
+PASS  legacy anchored burned kmol/h (Case B) = 116.9046   116.904567
+PASS  legacy anchored feed kmol/h (Case B) = 1219.2324   1219.232352
+PASS  N.7.3 carbon identity reproduces TEV-953 conventional 3205 st/d within 0.5 percent   3200.4 vs 3205 st/d, -0.143 %
+PASS  N.7.3 carbon identity reproduces TEV-953 HTGR no-capture 2713 st/d within 0.5 percent   2711.6 vs 2713 st/d, -0.052 %
+   legacy A = 578,051.6 t/y; captured + c_bar*dn identity gives 577,172.0 t/y (-0.152 %)
+PASS  N.9.2 identity on the legacy basis within 1 percent (gap is INL rounding of 3205 and 52.5)
+PASS  legacy TS burden = 0.025 x captured (K.19)   8994.434
+PASS  legacy saved upstream gas credit (K.19, HHV basis) reproduced   49677.145
+PASS  N.4.3 J.7 evaluated at the flowsheet phi differs strongly from 0.7522   f(0.775)=0.7522, f(0.8226)=0.6687, df/dphi=-1.392
+PASS  N.4.3 derivative formula equals the SymPy derivative   -1.391826
+== N.4.4 stack carbon against f
+PASS  N.4.4 G = (m F_C - P)/D
+PASS  N.4.4 B(f) = B0 (1-f)/(1-m f) with B0 = m F_C - P
+PASS  N.4.4 inverse f(B) = (B0 - B)/(B0 - m B)
+PASS  N.4.4 dB/df = -B0 (1-m)/(1-m f)^2
+PASS  N.4.4 B(0) = B0 and B(1) = 0
+PASS  N.4.4 B(f) at the flowsheet f equals the stack carbon of S15   93.924198 vs 93.924198
+== N.7 / N.9 symbolic
+PASS  N.9.2 A = C + cbar (n_ref - n_plant) - (1-v)(k_ref - k_pl)
+PASS  N.9.2 with v = 1 the condensate terms vanish
+PASS  N.9.2 moving v from 1 to 0 changes the plant side by exactly k_pl
+PASS  N.7.4 lost-steam term is proportional to the export difference, zero when equal
+PASS  N.7.4 two plants with the same export give no system correction
+PASS  N.9.4 tau_TS = 0 gives A_TS = A_dir
+PASS  N.9.4 legacy lumped burden 0.025 t/t: A_TS = A_dir - 0.025 A_cap
+PASS  N.9.5 setting GWP_H = 0 turns the CO2e view into the CO2 view
+PASS  N.9.5 CO2e view exceeds the CO2 view by GWP_H e_up_CH4 dG
+== N.8 / N.10
+PASS  N.8.2 t/y = ndot [kmol/h] x M [kg/kmol] x 8760 f_av [h/y] / 1000
+PASS  K.10 hours = 24 x days (days = 365 f_av)   7446.0 h/y
+PASS  N.8 unit factor: 1 kmol/h CO2 for 7446 h = 327.7 t   327.6947
+PASS  st/d to kmol/h: 1927 st/d = 1655.2 kmol/h   1655.083
+PASS  MMSCFD to kmol/h: 1 MMSCFD = 49.80 kmol/h   49.8028
+PASS  N.10: a_H2 = e_ref - ci
+PASS  N.10: reduction = 1 - E_plant/E_ref
+PASS  K.5 stoichiometric minimum 5.46 kg CO2 per kg H2   5.4579
+PASS  N.10: feed carbon intensity of FS_B_REC_F exceeds the stoichiometric minimum   5.9358 > 5.4579
+PASS  sensitivity: 1 MMSCFD of reference gas moves A_dir by 17.2 kt/y   17198.0 t/y
+PASS  N.3.2 plant capture at f = 1 stays below 1 because of K and P   0.99159
+PASS  N.7.1 reference process feed lower bound exceeds the plant gas rate   1223.99 vs 1150.37 kmol/h
+   lower bound A_dir >= 388,700 t/y (reference with no fuel and complete conversion, v = 1)
+== dimension table
+   N.1.1   c_bar = sum_j y_j a_C,j                                        ok
+   N.1.2   Z = 2 a_C - a_O + a_H/2                                        ok
+   N.1.3   H2_12 = Zdot_in - 4 CH4 - CO                                   ok
+   N.1.4   xi_eff = xi/(1 - r(1-xi))                                      ok
+   N.1.5   n_NG = nH2 [1/xi_eff + f pi (4-A)]/(Z - A c_bar)               ok
+   N.2.1   T = (F_C - f P)/D                                              ok
+   N.2.2   G = (1-kappa-eta phi) T - P                                    ok
+   N.3.1   C = eta phi T                                                  ok
+   N.3.2   eta_pl = C/F_C                                                 ok
+   N.4.1   f = R/G                                                        ok
+   N.4.2   beta = B/n_N2                                                  ok
+   N.4.4   B = (1-f)(m F_C - P)/(1 - m f)                                 ok
+   N.5.1   O2 = (2 C + H/2 - O)/2                                         ok
+   N.5.2   E_plant = M [B + v kappa T] t_h                                ok
+   N.6.1   rho = R_C/F_C                                                  ok
+   N.7.2   n_fuel = (Q_fire - Q_rej)/LHV_NG                               ok
+   N.7.3   E_ref = M [c_bar (n_proc + n_fuel) - P] t_h                    ok
+   N.7.4   E_lost = (Qexp_ref - Qexp_pl) t_h e_NG/eta_b                   ok
+   N.8.2   E [t/y] = ndot M t_h/1000                                      ok
+   N.9.1   A_dir = E_ref - E_plant                                        ok
+   N.9.4   A_TS = A_dir - tau A_cap                                       ok
+   N.9.5   A_LC = A_TS + dG (e_up_CO2 + GWP e_up_CH4) - E_nuc             ok
+   N.10.1  a_H2 = A/M_H2                                                  ok
+   N.10.2  reduction = A/E_ref                                            ok
+PASS  dimension table: every equation has equal left and right dimensions
+== key values for the derivation text
+   A_c                      0.2003234894
+   A_from_id                577171.9547
+   A_lb                     388699.8924
+   B0_t_y                   100271.9113
+   B0_val                   305.9918272
+   B_f05                    175.4638481
+   B_f05_t_y                57498.57957
+   B_f09                    39.76439105
+   B_f09_t_y                13030.58167
+   B_fs                     93.924198
+   CLOS_CSV                 5.255674e-09
+   C_fs                     1108.583987
+   D_fs                     0.8073690084
+   F_C                      1212.252276
+   G_fs                     378.998728
+   H2_kg_h                  8988
+   K_fs                     5.281029
+   P_fs                     4.463062
+   P_over_FC                0.003681628064
+   R_fs                     285.07453
+   T_fs                     1497.326806
+   T_pred                   1497.326806
+   T_pred_in                1497.326806
+   Y_inv                    0.2580123815
+   Z_NG                     4.13939
+   beta                     6.803890533
+   c_dn_legacy              663.4058385
+   cap_fs_per_kg            5.428151644
+   cap_fs_t_y               363277.1381
+   cbar                     1.05379
+   ci_fs_stack              0.4598973066
+   ci_fs_vent               0.4857557229
+   cond_fs_t_y              1730.565409
+   dBdf_t_y_per_0p01        -1144.329538
+   dBdf_val                 -349.2059558
+   dfdphi                   -1.391826323
+   dn_legacy_mmscfd         12.64069794
+   dn_min                   73.62055056
+   e_feed_fs                5.93576063
+   e_st                     5.457852154
+   eta_fs                   0.9000000004
+   eta_pl_f1                0.9915946521
+   eta_pl_fs                0.9144829083
+   f_at_fs_phi              0.6686607731
+   f_for_half               0.8811585568
+   f_fs                     0.7521780654
+   h2_t_y_fs                66924.648
+   hours                    7446
+   inl_conv_B_mmscfd        35.87225092
+   inl_htgr_B_mmscfd        30.40600316
+   kap_fs                   0.003526971519
+   leg_A_leg                578051.6117
+   leg_a_h2                 8.637350049
+   leg_atm_t_y              38309.0114
+   leg_baseline_t_y         616360.6231
+   leg_burn_l               171.0929652
+   leg_burn_l_s             116.9045672
+   leg_cap6                 1655.082988
+   leg_cap_l                1606.811867
+   leg_cap_l_s              1097.903971
+   leg_cap_t_y              359777.3529
+   leg_ci                   0.5724200657
+   leg_f6                   0.7521780655
+   leg_f_c6                 1784.379202
+   leg_f_c6_s               1219.232352
+   leg_g6                   495.60522
+   leg_g_l                  690.3866906
+   leg_g_l_s                471.7280875
+   leg_h2_t_y               66924.648
+   leg_p_c                  6.474369999
+   leg_p_c_s                4.423813812
+   leg_plant_capture        0.9037670846
+   leg_rec_l                519.2937253
+   leg_rec_l_s              354.8235203
+   leg_reduction            0.9378464328
+   leg_s_b                  0.6832809698
+   leg_t6                   2157.162578
+   leg_t_l                  2303.672927
+   leg_t_l_s                1574.055872
+   lost_steam_implied       63305.18626
+   m_val                    0.2560975924
+   nH2_fs                   4458.598726
+   n_N2                     13.804484
+   n_equiv_mmscfd           52.57485767
+   n_fs                     1150.373676
+   n_fs_mmscfd              23.09855289
+   n_min_plant              1088.625885
+   n_min_ref                1223.994227
+   n_min_ref_mmscfd         24.57679272
+   n_pred                   1150.373675
+   om_fs                    0.01423628824
+   phi_fs                   0.8226393731
+   power_t                  12885.1346
+   prod_fs_t_y              1462.521928
+   psi_fs                   0.1595973665
+   r_fs                     0.9216297646
+   ref_conv_st_d            3200.425891
+   ref_htgr_st_d            2711.593289
+   rej_lhv_mw_unused        0
+   rel_resid                4.335462266e-12
+   resid_fs                 0
+   sens_per_mmscfd          17197.99039
+   stack_fs_t_y             30778.46536
+   stack_plus_cond_t_y      32509.03077
+   sum_y                    1.00002
+   sys_delta                -50420.05166
+   t_over_fc                1.23516106
+   t_per_kmolh              327.694737
+   tol_t_y                  0.0003972486908
+   ts_burden                8994.433824
+   up_credit                49677.14549
+   xe_val                   0.9894261509
+   y_n2_cut                 0.08028870163
+   z_in_fs                  5483.441142
+   z_s15                    285.394316
+
+106 of 106 checks passed

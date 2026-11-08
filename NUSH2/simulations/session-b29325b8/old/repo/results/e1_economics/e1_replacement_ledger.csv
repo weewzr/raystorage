@@ -1,0 +1,15 @@
+cost_block,status,central_treatment,scope,double_count_control,unresolved_or_limitation
+baseline_natural_gas,RETAIN,52.5 MMSCFD x availability x S15/GJ,baseline feed/fuel,common conversion basis,gas price is screening assumption
+candidate_natural_gas,RETAIN,34 MMSCFD x availability x S15/GJ,candidate feed/fuel,explicit differential term,gas price is screening assumption
+nuclear_source_burden,REPLACE,MHR-T one 600 MWth module annualized from IAEA2075 2021 CAPEX/O&M,nuclear plant source case,replaces Nishihara heat+electricity bridge,linear one-of-four module allocation is accounting approximation
+shared_nuclear_allocation,ALTERNATIVE,thermal-share cases only,conditional shared/cogeneration accounting,not central because no validated co-product cost bearer,requires demonstrable external co-product/cost allocation
+IHX_secondary_loop,TEST_SEPARATELY,IAEA1682 USD69m anchor normalized/annualized,IHX plus secondary helium loop,not stacked on modern NPP cases due scope overlap; replaces old 10% allowance when used,underlying price year unresolved; 2012 publication-year proxy
+CCS_capture_capital,RETAIN,IEAGHG aggregate CAPEX scaling and CRF,capture plant,do not add absorber/stripper/reboiler/compressor separately,linear scaling remains screening approximation
+CO2_transport_storage,RETAIN,captured tonnes x S15/t,T&S chain,separate from capture CAPEX,no contracted Singapore cross-border tariff
+old_10pct_integration_site,REPLACE,not used in E1 central,integration/site proxy,replaced by source-specific treatment or left unresolved,site/EPC/licensing categories remain unresolved
+project_electricity_revenue,RETAIN_ZERO,S0/y,no validated project export,no credit from residual thermal capacity,off-design power output unresolved
+reformer_modification,UNRESOLVED,not quantified,helium-heated reformer modification,not hidden in generic furnace correlation,geometry/material/design absent
+secondary_helium_circulator_piping,UNRESOLVED,not quantified,project loop balance of plant,not invented,pressure drop/power/routing/material absent
+operating_labor,UNRESOLVED,not quantified,differential labor,not forced through COM formula,process-step/labor basis absent
+maintenance_overhead_insurance,UNRESOLVED,not quantified,fixed OPEX,not inferred from incomplete FCI,complete FCI/labor basis absent
+working_capital_dcf,NOT_APPLICABLE_E1,not calculated,investor profitability,abatement cost does not require DCF,revenue/tax/depreciation/schedule/finance inputs absent

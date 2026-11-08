@@ -1,0 +1,42 @@
+/* Engineering summary for window.print(). views.js fills #print-summary just
+   before printing; everything else on the page is hidden, so the browser saves
+   one document with vector tables and the PFD when it is drawn. */
+
+@page { size: A4; margin: 14mm 12mm 16mm; }
+
+@media print {
+  html, body { background: #ffffff !important; color: #000000; }
+  body { font: 10pt/1.35 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; overflow: visible; }
+  body > *:not(#print-summary) { display: none !important; }
+  .viz-tip { display: none !important; }
+
+  #print-summary { display: block !important; }
+  #print-summary h1 { font-size: 14pt; line-height: 1.25; color: #1100ab; margin: 0 0 4pt; }
+  #print-summary h2 {
+    font-size: 11pt;
+    color: #1100ab;
+    margin: 12pt 0 4pt;
+    padding-bottom: 2pt;
+    border-bottom: 0.5pt solid #b9b4cf;
+    break-after: avoid;
+  }
+  #print-summary p { margin: 0 0 4pt; }
+  #print-summary header p { color: #333333; }
+  #print-summary ul { margin: 0 0 4pt; padding-left: 14pt; }
+  #print-summary li { margin: 1pt 0; }
+
+  #print-summary table { border-collapse: collapse; width: 100%; font-size: 8.5pt; font-variant-numeric: tabular-nums; break-inside: auto; }
+  #print-summary caption { text-align: left; font-size: 8.5pt; color: #333333; padding-bottom: 2pt; }
+  #print-summary th, #print-summary td { padding: 2pt 4pt; border-bottom: 0.4pt solid #d6d3e2; text-align: left; vertical-align: top; }
+  #print-summary td.num, #print-summary th.num { text-align: right; }
+  #print-summary .cost-table td.num { font-size: 8.5pt; }
+  #print-summary tr { break-inside: avoid; }
+  #print-summary tr.group th { background: #f2f0f8; color: #1100ab; font-weight: 700; }
+  #print-summary td.sel { outline: 1pt solid #6a2bd1; outline-offset: -1pt; }
+  #print-summary .table-scroll { overflow: visible; }
+
+  #print-summary .print-pfd { break-inside: avoid; }
+  #print-summary .print-pfd svg { width: 100%; height: auto; max-height: 120mm; }
+
+  a { color: inherit; text-decoration: none; }
+}

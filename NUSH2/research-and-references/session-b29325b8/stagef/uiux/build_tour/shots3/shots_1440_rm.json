@@ -1,0 +1,156 @@
+{
+ "width": 1440,
+ "height": 900,
+ "mobile": false,
+ "reduced": true,
+ "mode": "shots",
+ "before_start": "shots_1440_rm_00_before.png",
+ "focus_after_start": "tour-title",
+ "steps": [
+  {
+   "step": 1,
+   "id": "fission",
+   "flows": 0,
+   "running": 0,
+   "running_kinds": [],
+   "title": "Fission heat in the HTGR core",
+   "card_height": 786,
+   "scroll_left": 0,
+   "shot": "shots_1440_rm_step01.png"
+  },
+  {
+   "step": 2,
+   "id": "primary",
+   "flows": 3,
+   "running": 0,
+   "running_kinds": [],
+   "title": "Primary helium loop",
+   "card_height": 612,
+   "scroll_left": 0,
+   "shot": "shots_1440_rm_step02.png"
+  },
+  {
+   "step": 3,
+   "id": "secondary",
+   "flows": 2,
+   "running": 0,
+   "running_kinds": [],
+   "title": "Secondary helium loop to the reformer",
+   "card_height": 714,
+   "scroll_left": 0,
+   "shot": "shots_1440_rm_step03.png"
+  },
+  {
+   "step": 4,
+   "id": "feed",
+   "flows": 1,
+   "running": 0,
+   "running_kinds": [],
+   "title": "Natural gas and steam feed the reformer",
+   "card_height": 693,
+   "scroll_left": 0,
+   "shot": "shots_1440_rm_step04.png"
+  },
+  {
+   "step": 5,
+   "id": "shift",
+   "flows": 1,
+   "running": 0,
+   "running_kinds": [],
+   "title": "Water-gas shift",
+   "card_height": 601,
+   "scroll_left": 0
+  },
+  {
+   "step": 6,
+   "id": "cooling",
+   "flows": 3,
+   "running": 0,
+   "running_kinds": [],
+   "title": "Cooling and condensate",
+   "card_height": 569,
+   "scroll_left": 0
+  },
+  {
+   "step": 7,
+   "id": "absorber",
+   "flows": 2,
+   "running": 0,
+   "running_kinds": [],
+   "title": "CO₂ capture in the MEA absorber",
+   "card_height": 567,
+   "scroll_left": 0,
+   "shot": "shots_1440_rm_step07.png"
+  },
+  {
+   "step": 8,
+   "id": "psa",
+   "flows": 2,
+   "running": 0,
+   "running_kinds": [],
+   "title": "Hydrogen product from the external PSA",
+   "card_height": 600,
+   "scroll_left": 0
+  },
+  {
+   "step": 9,
+   "id": "reject",
+   "flows": 4,
+   "running": 0,
+   "running_kinds": [],
+   "title": "PSA reject back to the cryogenic unit",
+   "card_height": 673,
+   "scroll_left": 0,
+   "shot": "shots_1440_rm_step09.png"
+  },
+  {
+   "step": 10,
+   "id": "stripper",
+   "flows": 5,
+   "running": 0,
+   "running_kinds": [],
+   "title": "Stripper and reboiler heat",
+   "card_height": 615,
+   "scroll_left": 0
+  },
+  {
+   "step": 11,
+   "id": "co2",
+   "flows": 3,
+   "running": 0,
+   "running_kinds": [],
+   "title": "CO₂ compression, ship and offshore storage",
+   "card_height": 831,
+   "scroll_left": 0,
+   "shot": "shots_1440_rm_step11.png"
+  },
+  {
+   "step": 12,
+   "id": "power",
+   "flows": 2,
+   "running": 0,
+   "running_kinds": [],
+   "title": "Power block and site electricity",
+   "card_height": 610,
+   "scroll_left": 0,
+   "shot": "shots_1440_rm_step12.png"
+  },
+  {
+   "step": 13,
+   "id": "closing",
+   "flows": 1,
+   "running": 0,
+   "running_kinds": [],
+   "title": "The plant from end to end",
+   "card_height": 764,
+   "scroll_left": 0,
+   "shot": "shots_1440_rm_step13.png"
+  }
+ ],
+ "after_escape": {
+  "active": false,
+  "focus": "tour-start"
+ },
+ "errors": [],
+ "notes": []
+}

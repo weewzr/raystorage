@@ -1,0 +1,571 @@
+{
+ "B.7": [
+  "units::ihx::hot_side"
+ ],
+ "B.8": [
+  "units::ihx::cold_side",
+  "props::helium::duty_w"
+ ],
+ "E.3": [
+  "units::wgs::extent_at"
+ ],
+ "E.4": [
+  "units::wgs::lts",
+  "units::wgs::hts",
+  "units::wgs::ieaghg_hts_q_over_k"
+ ],
+ "E.5": [
+  "units::wgs::t_from_h"
+ ],
+ "E.7": [
+  "units::wgs::hts_extent"
+ ],
+ "E.9": [
+  "units::wgs::k_chinchen"
+ ],
+ "E.10": [
+  "units::wgs::hts"
+ ],
+ "E.15": [
+  "units::wgs::lts"
+ ],
+ "F.1": [
+  "units::cooler::cool"
+ ],
+ "F.4": [
+  "props::steam::psat_pa"
+ ],
+ "F.6": [
+  "units::flash::split",
+  "units::flash::henry_x_pa"
+ ],
+ "F.7": [
+  "units::flash::split"
+ ],
+ "F.8": [
+  "units::flash::flash"
+ ],
+ "F.9": [
+  "units::cooler::cool"
+ ],
+ "G.1": [
+  "mea::aronu::SPECIES"
+ ],
+ "G.2": [
+  "mea::aronu::table2",
+  "mea::aronu::Thermo::new"
+ ],
+ "G.5": [
+  "mea::speciate::Problem::residual"
+ ],
+ "G.6": [
+  "mea::aronu::Thermo::ln_gamma"
+ ],
+ "G.7": [
+  "mea::aronu::Thermo::ln_k_mea_effective"
+ ],
+ "G.8": [
+  "mea::speciate::Speciation::balance_errors",
+  "mea::speciate::Problem::residual"
+ ],
+ "G.9": [
+  "mea::speciate::Speciation::balance_errors",
+  "mea::speciate::Problem::residual"
+ ],
+ "G.10": [
+  "mea::speciate::Speciation::balance_errors",
+  "mea::speciate::Problem::residual"
+ ],
+ "G.11": [
+  "mea::speciate::Speciation::balance_errors",
+  "mea::speciate::Problem::residual"
+ ],
+ "G.12": [
+  "mea::speciate::speciate"
+ ],
+ "G.13": [
+  "mea::aronu::Thermo::ln_gamma"
+ ],
+ "G.14": [
+  "mea::aronu::Thermo::ln_gamma"
+ ],
+ "G.15": [
+  "mea::aronu::Thermo::ln_gamma"
+ ],
+ "G.16": [
+  "mea::aronu::u_ij"
+ ],
+ "G.17": [
+  "mea::aronu::a_dh",
+  "mea::aronu::Thermo::ln_gamma"
+ ],
+ "G.18": [
+  "mea::aronu::Thermo::ln_gamma"
+ ],
+ "G.20": [
+  "mea::pstar::water_partial_pressure_pa"
+ ],
+ "G.22": [
+  "mea::aronu::henry_water_co2_pa_m3_mol"
+ ],
+ "G.23": [
+  "mea::pstar::henry_apparent_pa_m3_mol"
+ ],
+ "G.24": [
+  "mea::enthalpy::dh_abs_j_mol"
+ ],
+ "G.26": [
+  "mea::density::density_kg_m3"
+ ],
+ "G.27": [
+  "mea::viscosity::viscosity_pa_s"
+ ],
+ "G.28": [
+  "mea::kinetics::d_co2_solution_m2_s"
+ ],
+ "G.29": [
+  "mea::speciate::speciate"
+ ],
+ "G.31": [
+  "mea::pstar::alpha_at"
+ ],
+ "G.32": [
+  "mea::speciate::check_range"
+ ],
+ "H.26": [
+  "units::absorber::solve",
+  "units::newton::solve"
+ ],
+ "J.1": [
+  "plant::anchored::Model::scale"
+ ],
+ "J.2": [
+  "plant::anchored::Model::case_summary"
+ ],
+ "J.3": [
+  "plant::anchored::Model::case_summary"
+ ],
+ "J.4": [
+  "plant::anchored::Model::case_summary"
+ ],
+ "J.6": [
+  "plant::anchored::Model::carbon"
+ ],
+ "J.8": [
+  "plant::anchored::Model::carbon"
+ ],
+ "J.9": [
+  "plant::anchored::Model::carbon"
+ ],
+ "J.14": [
+  "plant::anchored::Model::balance"
+ ],
+ "J.15": [
+  "plant::anchored::Model::balance"
+ ],
+ "J.19": [
+  "plant::anchored::Model::balance",
+  "plant::anchored::ERows"
+ ],
+ "J.22": [
+  "plant::anchored::Model::balance",
+  "plant::flowsheet::co2_compression_isothermal_w"
+ ],
+ "J.23": [
+  "plant::anchored::Model::balance"
+ ],
+ "J.25": [
+  "plant::utility::reactor_required"
+ ],
+ "J.26": [
+  "plant::anchored::Model::balance",
+  "numerics::fixed_point"
+ ],
+ "J.28": [
+  "plant::sens::sweeps"
+ ],
+ "J.35": [
+  "plant::anchored::Model::sizing_walk"
+ ],
+ "J.36": [
+  "plant::utility::margin"
+ ],
+ "K.1": [
+  "plant::anchored::Model::case_summary"
+ ],
+ "K.2": [
+  "plant::anchored::Model::case_summary"
+ ],
+ "K.3": [
+  "plant::emissions::Model::emissions"
+ ],
+ "K.6": [
+  "plant::export::results_block"
+ ],
+ "K.7": [
+  "plant::emissions::Model::emissions"
+ ],
+ "K.10": [
+  "plant::anchored::Model::case_summary"
+ ],
+ "K.11": [
+  "plant::emissions::Model::emissions"
+ ],
+ "K.12": [
+  "plant::anchored::Model::case_summary"
+ ],
+ "K.13": [
+  "plant::anchored::Model::case_summary"
+ ],
+ "K.14": [
+  "plant::carbon::CarbonLedger::capture_pair"
+ ],
+ "K.15": [
+  "plant::sens::sweeps"
+ ],
+ "K.16": [
+  "plant::sens::sweeps"
+ ],
+ "K.17": [
+  "plant::sens::sweeps",
+  "plant::anchored::Model::carbon"
+ ],
+ "K.18": [
+  "plant::emissions::Model::system_adjust"
+ ],
+ "K.19": [
+  "plant::emissions::Model::lifecycle_terms"
+ ],
+ "K.21": [
+  "plant::comparator::Model::comparator"
+ ],
+ "K.22": [
+  "plant::export::results_block"
+ ],
+ "L.1": [
+  "plant::anchored::crf"
+ ],
+ "L.2": [
+  "plant::economics::Model::ledger"
+ ],
+ "L.3": [
+  "plant::anchored::sff"
+ ],
+ "L.4": [
+  "plant::economics::Model::idc_factor"
+ ],
+ "L.5": [
+  "plant::economics::Model::reactor_capex"
+ ],
+ "L.6": [
+  "plant::economics::Model::reactor_capex"
+ ],
+ "L.7": [
+  "plant::economics::Model::stage_mult"
+ ],
+ "L.8": [
+  "plant::economics::Model::stage_mult"
+ ],
+ "L.9": [
+  "plant::economics::Model::stage_mult"
+ ],
+ "L.10": [
+  "plant::economics::Model::reactor_capex"
+ ],
+ "L.11": [
+  "plant::economics::Model::reactor_om"
+ ],
+ "L.12": [
+  "plant::economics::Model::cost_items",
+  "plant::economics::Model::ledger"
+ ],
+ "L.13": [
+  "plant::economics::Model::cost_items",
+  "plant::economics::Model::ledger"
+ ],
+ "L.15": [
+  "plant::economics::Model::cost_items",
+  "plant::economics::Model::ledger"
+ ],
+ "L.16": [
+  "plant::economics::Model::cost_items",
+  "plant::economics::Model::ledger"
+ ],
+ "L.18": [
+  "plant::economics::Model::cost_items",
+  "plant::economics::Model::ledger"
+ ],
+ "L.19": [
+  "plant::economics::Model::ledger"
+ ],
+ "L.20": [
+  "plant::economics::Model::ledger"
+ ],
+ "L.21": [
+  "plant::economics::Model::ledger",
+  "plant::economics::Model::idc_factor"
+ ],
+ "L.22": [
+  "plant::economics::Model::ledger"
+ ],
+ "L.23": [
+  "plant::economics::Model::cost_items",
+  "plant::economics::Model::ledger"
+ ],
+ "L.24": [
+  "plant::economics::Model::ledger"
+ ],
+ "L.25": [
+  "plant::economics::Ledger::ladder"
+ ],
+ "L.26": [
+  "plant::economics::Ledger::l3",
+  "plant::economics::Ledger::l5",
+  "plant::emissions::Model::emissions"
+ ],
+ "L.27": [
+  "plant::economics::Model::ledger"
+ ],
+ "L.28": [
+  "plant::dcf::Model::dcf"
+ ],
+ "L.29": [
+  "plant::sens::sweeps"
+ ],
+ "L.30": [
+  "plant::sens::sweeps"
+ ],
+ "L.32": [
+  "plant::comparator::Model::comparator"
+ ],
+ "L.33": [
+  "plant::anchored::Model::new"
+ ],
+ "L.34": [
+  "plant::dcf::Model::dcf",
+  "plant::dcf::uniform_spend",
+  "plant::dcf::with_replacement"
+ ],
+ "L.35": [
+  "plant::dcf::Model::dcf"
+ ],
+ "L.36": [
+  "plant::dcf::Model::dcf"
+ ],
+ "L.37": [
+  "plant::dcf::Model::dcf"
+ ],
+ "L.31": [
+  "plant::sens::levers",
+  "plant::sens::mature_rows",
+  "plant::sens::stepdown_rows",
+  "plant::sens::cofunding_rows"
+ ],
+ "A.4": [
+  "units::xf::Rates::ch4",
+  "units::xf::Rates::co2",
+  "units::smr_tube::Tube::eval"
+ ],
+ "A.9": [
+  "props::shomate::Shomate::cp_j_mol_k",
+  "props::shomate::Shomate::dh_j_mol",
+  "props::species::h_j_mol"
+ ],
+ "A.10": [
+  "props::species::h_j_mol",
+  "plant::heatrec::wgs_release_w"
+ ],
+ "A.11": [
+  "units::circulator::dp_blasius"
+ ],
+ "A.12": [
+  "units::smr_tube::Tube::eval"
+ ],
+ "A.13": [
+  "units::smr_tube::Tube::residual",
+  "units::wgs::hts_extent"
+ ],
+ "A.14": [
+  "props::mixture::mole_fractions",
+  "props::mixture::density_ideal_kg_m3"
+ ],
+ "A.15": [
+  "units::gas::closure"
+ ],
+ "B.1": [
+  "props::helium::density_kg_m3",
+  "props::helium::compressibility"
+ ],
+ "B.2": [
+  "props::helium::CP_J_KG_K",
+  "props::helium::CV_J_KG_K",
+  "props::helium::GAMMA"
+ ],
+ "B.3": [
+  "props::helium::viscosity_pa_s"
+ ],
+ "B.4": [
+  "props::helium::conductivity_w_m_k"
+ ],
+ "B.11": [
+  "plant::anchored::Model::circ_set",
+  "plant::anchored::Model::circ_dp_central",
+  "plant::anchored::Model::circ_p_central_mpa"
+ ],
+ "B.13": [
+  "plant::anchored::Model::vessel_loss"
+ ],
+ "B.16": [
+  "plant::utility::reactor_required"
+ ],
+ "B.17": [
+  "plant::anchored::Model::opts"
+ ],
+ "B.18": [
+  "plant::heatrec::extraction"
+ ],
+ "B.23": [
+  "vv::gas_bench::tev961",
+  "props::helium::duty_w"
+ ],
+ "C.15": [
+  "units::ihx::size"
+ ],
+ "D.1": [
+  "props::equilibrium::Basis::amounts",
+  "units::smr_tube::Tube::flows"
+ ],
+ "D.2": [
+  "props::equilibrium::Basis::amounts",
+  "units::smr_tube::Tube::flows"
+ ],
+ "D.3": [
+  "units::xf::Kinetics::rates"
+ ],
+ "D.4": [
+  "props::equilibrium::basis",
+  "units::smr_tube::pre_convert"
+ ],
+ "D.5": [
+  "plant::flowsheet::S_TO_C",
+  "plant::flowsheet::pass"
+ ],
+ "D.6": [
+  "props::equilibrium::Basis::amounts",
+  "props::equilibrium::Basis::total"
+ ],
+ "D.7": [
+  "props::equilibrium::k1_zhang_bar2"
+ ],
+ "D.8": [
+  "props::equilibrium::k2_zhang"
+ ],
+ "D.9": [
+  "units::xf::Kinetics::rates"
+ ],
+ "D.10": [
+  "props::equilibrium::Basis::residual"
+ ],
+ "D.11": [
+  "props::equilibrium::reform",
+  "units::smr_eq::solve"
+ ],
+ "D.12": [
+  "props::equilibrium::k1_nist_bar2",
+  "props::equilibrium::k2_nist"
+ ],
+ "D.13": [
+  "units::xf::Kinetics::rates",
+  "units::xf::TABLE6"
+ ],
+ "D.14": [
+  "units::xf::Kinetics::rates",
+  "units::xf::TABLE6"
+ ],
+ "D.15": [
+  "units::xf::Kinetics::rates"
+ ],
+ "D.16": [
+  "units::xf::Kinetics::rates"
+ ],
+ "D.17": [
+  "units::xf::Kinetics::rates"
+ ],
+ "D.18": [
+  "units::xf::Kinetics::rates"
+ ],
+ "D.19": [
+  "units::xf::Rates::ch4",
+  "units::xf::Rates::co2"
+ ],
+ "D.21": [
+  "units::xf::Kinetics::with_activity",
+  "units::jaeri::fit_activity_on_a2"
+ ],
+ "D.22": [
+  "units::smr_tube::Tube::eval",
+  "units::smr_tube::Tube::residual"
+ ],
+ "D.23": [
+  "units::smr_tube::Tube::eval",
+  "units::smr_tube::Tube::residual"
+ ],
+ "D.24": [
+  "units::smr_tube::Tube::eval"
+ ],
+ "D.25": [
+  "units::smr_tube::Tube::eval",
+  "units::smr_tube::Tube::residual"
+ ],
+ "D.26": [
+  "units::smr_tube::Tube::eval"
+ ],
+ "D.27": [
+  "units::tube_ht::FinnedTube::u_outer"
+ ],
+ "D.28": [
+  "units::smr_tube::Tube::residual"
+ ],
+ "D.29": [
+  "units::tube_ht::alpha_o_knudsen"
+ ],
+ "D.33": [
+  "props::equilibrium::reform",
+  "units::smr_eq::solve"
+ ],
+ "D.34": [
+  "units::smr_eq::solve"
+ ],
+ "D.36": [
+  "units::ihx::check_limits",
+  "plant::flowsheet::T_REFORMER_OUT_C"
+ ],
+ "E.2": [
+  "units::wgs::shifted"
+ ],
+ "E.11": [
+  "units::wgs::hts_extent",
+  "units::wgs::t_from_h"
+ ],
+ "E.12": [
+  "units::case5::train"
+ ],
+ "F.2": [
+  "units::case5::train"
+ ],
+ "F.3": [
+  "units::flash::split"
+ ],
+ "F.5": [
+  "units::flash::split"
+ ],
+ "F.12": [
+  "units::flash::split"
+ ],
+ "F.13": [
+  "units::gas::Stream::dry_fraction"
+ ],
+ "G.25": [
+  "units::solvent::CP_SOLVENT_J_KG_K"
+ ]
+}

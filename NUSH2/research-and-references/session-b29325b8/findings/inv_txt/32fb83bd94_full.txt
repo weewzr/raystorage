@@ -1,0 +1,2088 @@
+
+=== PDF p.1 ===
+Modeling and simulation of an integrated steam
+reforming and nuclear heat system
+Leila Hoseinzade, Thomas A. Adams II*
+Department of Chemical Engineering, McMaster University, 1280 Main St W, Hamilton, Ontario, L8S 4L7, Canada
+a r t i c l e i n f o
+Article history:
+Received 25 May 2017
+Received in revised form
+25 July 2017
+Accepted 4 August 2017
+Available online 1 September 2017
+Keywords:
+Dynamic modeling
+Steam methane reforming
+Syngas
+Integrated systems
+Nuclear heat
+a b s t r a c t
+In this study, a dynamic and two-dimensional model for a steam methane reforming
+process integrated with nuclear heat production is developed. The model is based on ﬁrst
+principles and considers the conservation of mass, momentum and energy within the
+system. The model is multi-scale, considering both bulk gas effects as well as spatial dif-
+ferences within the catalyst particles. Very few model parameters need to be ﬁt based on
+the design speciﬁcations reported in the literature. The resulting model ﬁts the reported
+design conditions of two separate pilot-scale studies (ranging from 0.4 to 10 MW heat
+transfer duty). A sensitivity analysis indicated that disturbances in the helium feed con-
+ditions signiﬁcantly affect the system, but the overall system performance only changes
+slightly even for the large changes in the value of the most uncertain parameters.
+© 2017 Hydrogen Energy Publications LLC. Published by Elsevier Ltd. All rights reserved.
+Introduction
+Syngas is an important feedstock for the production of elec-
+tricity and various chemicals such as methanol, ammonia,
+dimethyl ether, and Fischer-Tropsch liquids. The steam
+methane reforming (SMR) process is a common method of
+producing syngas [1]. The SMR reaction is endothermic and
+requires high temperatures in order to achieve high conver-
+sions of methane [2]. Conventionally, the required heat for the
+reforming process is provided by combustion (typically using
+natural gas) in a furnace, through the auto-thermal reforming
+process, or through partial oxidation. However, there has been
+research into using alternative sources of providing the
+required high-temperature heat that could reduce the total
+greenhouse gas emissions (GHG) of the process [3], such as
+nuclear energy. For example, a study by Khojasteh-Salkuyeh
+and Adams [4] examined the concept from a systems
+perspective for the production of Fischer-Tropsch liquids, in
+which helium gas was heated in a nuclear reactor to about
+1200
+C and then used to provide heat for natural gas
+reforming to produce syngas. It was determined that using
+nuclear heat reduces direct fossil fuel consumption for the
+process as a whole by about 22%, leading to carbon efﬁciencies
+of up to 72%. A follow up study examining similar ideas for
+methanol and dimethyl ether production found similar ad-
+vantages [5].
+Other studies have investigated a similar
+approach for using nuclear-heat-driven SMR reactions with
+hydrogen as the ﬁnal product. Several studies were carried out
+in Germany and Japan on the integrated HTGR/SMR systems
+[2,3,6,7]. In these studies, it has been demonstrated that nu-
+clear energy is a safe, abundant and economically viable
+alternative to produce liquid fuels which can signiﬁcantly
+decrease GHG emissions. In each of these cases, the key
+* Corresponding author.
+E-mail address: tadams@mcmaster.ca (T.A. Adams).
+Available online at www.sciencedirect.com
+ScienceDirect
+journal homepage: www.elsevier.com/locate/he
+i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 4 2 ( 2 0 1 7 ) 2 5 0 4 8 e2 5 0 6 2
+http://dx.doi.org/10.1016/j.ijhydene.2017.08.031
+0360-3199/© 2017 Hydrogen Energy Publications LLC. Published by Elsevier Ltd. All rights reserved.
+
+=== PDF p.2 ===
+component of the system is the high temperature gas-cooled
+reactor (HTGR), in which a hot gas (usually helium above
+800 C) provides the heat necessary to drive the endothermic
+SMR reaction.
+The ﬁrst pilot plant of an integrated SMR/HTGR was tested
+in 1972 in Germany [6]. This facility was called EVA-I (meaning
+“single splitting tube”) and used a 1 MW electric heater to heat
+helium at 4 MPa up to 950 C in order to mimic the conditions
+of high-temperature helium in an actual nuclear facility. This
+pilot used a single tube-and-shell type conﬁguration. The
+helium entered the shell, delivering heat through the wall of a
+single tube. The tube was ﬁlled with SMR catalyst in which
+natural gas and steam would be fed for the reforming reaction
+countercurrent to the helium. A second, helical inner tube was
+embedded inside of the main tube, such that the products of
+the SMR reaction would enter the inner tube, and reverse
+course to proceed in the co-current to the helium. The inner
+tube did not contain catalyst, and instead served strictly to
+provide additional heat to the catalyst zone and increase the
+total amount of heat transfer and thereby the methane
+conversion.
+The original design concept used a “direct cycle” in which
+the helium coolant leaving the nuclear reactor directly
+entered the integrated SMR/HTGR. This is desirable from an
+efﬁciency point of view because the helium could be obtained
+at temperatures as high as 1200 C, leading to high methane
+conversions in the SMR. However, later studies by the Japan
+Atomic Energy Research Institute (JAERI) showed that it is
+necessary to consider an intermediate heat exchanger (IHX)
+and use indirect cycle. In an indirect cycle, high temperature
+helium leaving the nuclear reactor does not enter the SMR/
+HTGR directly but instead heats a second helium stream in the
+IHX before returning to the nuclear reactor. The second heli-
+um stream enters the SMR/HTGR instead, which signiﬁcantly
+enhances that safety and reliability of the process, but with
+the downside that the second helium stream enters at a lower
+temperature,
+making
+it
+more
+difﬁcult
+to
+achieve
+high
+methane conversion.
+Both EVA I and its advanced version EVA II were built,
+tested, and achieved their design objectives. The results from
+these studies were used to inform the design of a commercial
+scale version called the HTR-Module, with the intent of using
+an HTR-Module pebble bed nuclear reactor integrated with
+SMR, but this has not yet been constructed to the best of our
+knowledge [2,7]. Later, another test facility with different
+design was constructed and tested by JAERI to establish a
+design for a larger scale integrated SMR/HTGR with 10 MW
+thermal output [2]. Therefore, the feasibility and satisfactory
+operability of the integrated SMR/HTGR system has been
+proven at the pilot scale.
+However, many key questions must be answered before
+the concept can be implemented at the commercial scale. The
+ﬁrst set of questions concerns unknowns surrounding the
+dynamic behaviour of the SMR/HTRG during transient condi-
+tions such as when experiencing disturbances, when starting
+up or shutting down the system, or when transitioning be-
+tween operating modes. Understanding the dynamics of the
+system is critical for creating an effective control system,
+which is of the highest priority for nuclear-based energy sys-
+tems. The second set of question concerns the unknown
+optimal design of the SMR/HTRG itself at commercial scale
+and the larger energy conversion system in which it is used.
+This information is critical for creating a design that is safe,
+reliable, and commercially viable.
+Therefore, in order to answer either set of questions, a
+rigorous model is needed because many factors need to be
+considered for safety purposes, such as the avoidance of hot
+spots in the steel or catalysts, the non-linear effects of diffu-
+sions in complex mixtures which may have unexpected con-
+tributions during transients, and the avoidance of excessive
+thermal gradients during transients to avoid thermal stress on
+the steel tubes and shell. Due to the high temperatures
+involved, it is not possible to measure many of these effects
+directly by experiment, and therefore a sufﬁciently detailed
+model is needed. Although one prior work has examined the
+control system of an SMR/HTRG system [8], the study was
+limited to examining the controllability of the pressure dif-
+ference between the shell and the tube sides and the
+controllability of the other balance of plant equipment not
+relevant to the present study. In addition, the model used for
+the study was not provided in the open literature, which was
+based on a simpliﬁed model using transfer functions identi-
+ﬁed by experiment. As such, the model does not have pre-
+dictive or generalized capability to be used in other designs.
+Ghouse and Adams [9] presented a rigorous model of a large-
+scale SMR process. They developed a two-dimensional het-
+erogeneous model that accounts for the inter- and intra-
+particle mass and heat transfer with detailed diffusional
+correlations.
+Therefore, this work focuses on the development of a dy-
+namic model for the integrated steam reforming and nuclear
+heat system shown in Fig. 1. In this system, hot helium from
+an intermediate heat exchanger ﬂows into the shell side and
+transfers heat through the wall to the tube. In the tube side,
+process gas ﬂows through the catalyst particles, receives heat
+from the hot gas in the shell, and converts to syngas. Then, hot
+syngas passes through an inner tube to transfer heat to the
+catalytic region. The model of the system is based on ﬁrst
+principles and well-known correlations for heat and mass
+transfer coefﬁcients, diffusion, and reaction kinetics. The
+model is an extension of the previous study by Ghouse and
+Adams [9] to the integrated HTGR/SMR system. The resulting
+model is a set of non-linear partial differential and algebraic
+equations which is solved using the ﬁnite difference method.
+The validity of the model is tested using available pilot plant
+data and only a few of the model parameters need to be ﬁtted
+within small regions of uncertainty. The dynamic trajectories
+and steady state conditions of the key variables of the system
+are analyzed and the effects of disturbances on the system
+behaviour are investigated. Finally, a sensitivity analysis on
+the model parameters is conducted to demonstrate the
+impact of parameter changes on system performance.
+Model development
+The proposed dynamic, heterogeneous model of integrated
+nuclear heat and SMR is described in this section. As shown in
+Fig. 2, the model includes seven sub-models: (1) refractory
+lining of the shell, (2) gas phase in the shell side, (3) outer tube
+i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 4 2 ( 2 0 1 7 ) 2 5 0 4 8 e2 5 0 6 2
+25049
+
+=== PDF p.3 ===
+wall of the steam reforming tubes, (4) gas phase in the tubes,
+(5) catalyst particles which are packed inside the tubes, (6)
+inner tube wall and (7) gas phase in the inner tubes. It should
+be noted that the nuclear reactor has not been modelled in
+this work.
+Refractory lining
+In this model, it is assumed that the refractory layer, which is
+used as lining to protect the shell from high temperatures, is
+composed of a single material. In practice, the refractory layer
+may be a complex layout of several different types of
+refractory brick such as ﬁreclay brick, insulating brick and a
+castable layer [10], but the overall system performance varies
+very little with the type and amount of brick. Therefore, for
+simplicity, this model considers a single layer consisting of the
+average properties of the actual refractory lining layers in the
+energy balance equation as follows:
+vTrfct
+vt
+¼
+Krfct
+rrfctCprfct
+ 
+v2Trfct
+vz2
+þ v2Trfct
+vr2
+!
+(1)
+where Trfct is the refractory temperature, Krfct is the refractory
+thermal conductivity (1.8 w/m K), rrfct is the refractory density
+(2645 kg/m3), Cprfct is the speciﬁc heat capacity of the refractory
+Fig. 1 e Schematic of integrated SMR/HTGR system with key variables of the model.
+Fig. 2 e Integrated SMR/HTGR sub-models.
+i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 4 2 ( 2 0 1 7 ) 2 5 0 4 8 e2 5 0 6 2
+25050
+
+=== PDF p.4 ===
+(960 J/kg-K) [11], and r and z stand for the radial and axial
+positions, respectively.
+To solve Eq. (1), four boundary conditions are required.
+Two of the boundary conditions are zero heat ﬂux at the top
+and bottom of the refractory lining, due to the relatively small
+cross-sectional area [9]. These boundary conditions are given
+as follows:
+vTrfct
+vz jz¼0 ¼ vTrfct
+vz jz¼L ¼ 0
+(2)
+The other boundary condition is the equivalency of the
+conductive heat with the convective and radiative heat of the
+gas phase at the inner wall (Rin) of the refractory lining and can
+be represented as follows:
+Krfct
+vTrfct
+vr jr¼Rin ¼ hshell;rfct
+
+Tshell  Trfctjr¼Rin
+
+þ sεshellεrfct
+
+T4
+shell
+ T4
+rfctjr¼Rin
+
+(3)
+where hshell;rfct is the convective heat transfer coefﬁcient from
+the shell gas to the refractory lining inner wall given in the
+next section and Tshell is the shell gas phase temperature. s is
+the Stefan-Boltzmann constant
+
+5:67  108
+W
+m2 K4
+
+, εshell and εrfct
+are the emissivity of the gas phase and refractory, respec-
+tively. εrfct is commonly assumed to be constant in the litera-
+ture, however it changes signiﬁcantly as the temperature
+changes. Ghouse et al. [12] proposed a correlation for εrfct
+which is given as follows:
+εrfct ¼ 107T2
+rfct þ 8  105Trfct þ 0:8935
+(4)
+The last boundary condition denotes that the conductive
+heat transfer at the outer surface of the refractory is equal to
+the convective heat transfer at this surface. This boundary
+condition is given as follows:
+Krfct
+vTrfct
+vr jr¼Ro ¼ hrfct;amb
+
+Trfctjr¼Ro  Tamb
+
+(5)
+where hrfct;amb is the convective heat transfer between the re-
+fractory outer surface and the ambient and Tamb is the ambient
+temperature.
+Shell gas phase
+This sub-model contains mass and energy balances of the
+helium gas ﬂows in the shell side. The pressure drop in the
+shell is small (as 1 bar) and assumed to be constant [12]. The
+mass balance equation is given as follows:
+vrshell
+vt
+¼ vðrshellvshellÞ
+vz
+(6)
+where rshell is the molar density and vshell is the velocity of
+helium gas in the shell. The boundary condition of this
+equation is rshellðt; z ¼ 0Þ ¼ rshellinlet.
+The energy balance equation of the shell gas phase is
+presented as follows:
+vðrshellHshellÞ
+vt
+¼  vðrshellvshellHshellÞ
+vz
+ Ntube
+
+qtuberad þ qtubeconv
+
+
+
+qrfctrad þ qrfctconv
+
+(7)
+where Hshell is the helium gas molar enthalpy, Ntube is the
+number of tubes inside the shell, qtuberad and qrfctrad are the
+radiative heat duties per volume of the gas transferred from
+the helium gas to each tube wall and refractory lining,
+respectively and qtubeconv and qrfctconv are the convective heat
+transferred from gas to the each tube wall and refractory
+lining, respectively. The enthalpy of helium gas in the shell is
+deﬁned as follows:
+Hshell ¼ DHf þ
+Z
+Tshell
+Tref
+CpshelldT
+(8)
+where DHf is the heat of formation (which is equal to zero for
+helium at the reference temperature Tref ¼ 298:15 K) and Cpshell.
+is the speciﬁc heat capacity, which is essentially constant for
+helium gas in the temperature range of interest [13].
+The other terms of Eq. (7) are given as follows:
+qtuberad ¼
+sεshellεtubeðpDt;oÞ
+
+T4
+shell  T4
+wjr¼Rt;o
+
+Ashell
+(9)
+qtubeconv ¼
+hshell;wðpDt;oÞ
+
+Tshell  Twjr¼Rt;o
+
+Ashell
+(10)
+qrfctrad ¼
+sεshellεrfctðpDinÞ
+
+T4
+shell  T4
+rfctjr¼Ro
+
+Ashell
+(11)
+qrfctconv ¼ hshell;rfctðpDinÞ
+
+Tshell  Trfctjr¼Ro
+
+Ashell
+(12)
+where εtube is the tube emissivity, hshell;w is the convective heat
+transfer coefﬁcient from gas to the tubes, Dt;o is the tube outer
+diameter, Tw is the tube wall temperature and Ashell is the
+cross-sectional area of the shell. The convective heat transfer
+coefﬁcient between the shell gas phase and tube walls (hshell;w)
+is given by the correlation provided by Geankopolis [1] as
+follows:
+hshell;w ¼ Kshell
+Dt;o
+
+0:163 RetubePr1=3
+shell
+
+(13)
+where Retube ¼ Dt;ovshellrmass
+mshell
+is the Reynolds number over the tubes,
+rmass is the mass density, mshell is the dynamic viscosity of the
+gas, Prshell ¼
+Cpshell mshell
+Kshell
+is the Prandtl number of the gas and Kshell is
+the conductive heat transfer coefﬁcient of the shell gas.
+In addition, the convective heat transfer coefﬁcient be-
+tween the shell gas phase and the refractory lining (hshell;rfct) is
+given by Gneilinski as follows [10]:
+hshell;rfct ¼
+ff
+8
+
+Rerfct  1000
+
+Prshell
+1 þ 12:7
+
+ff
+8
+1
+2
+Pr
+2
+3
+shell  1
+
+(14)
+where
+ff ¼ 0:316Re1=4
+rfct
+is
+the
+friction
+factor
+[10]
+and
+Rerfct ¼ Dovshellrmass
+mshell
+is the Reynolds number of the shell gas. The
+boundary condition of Eq. (7) is. Tshellðt; z ¼ 0Þ ¼ Tshellinlet.
+Tube wall
+Tube wall temperature variations are considered in radial and
+axial axis as follows:
+i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 4 2 ( 2 0 1 7 ) 2 5 0 4 8 e2 5 0 6 2
+25051
+
+=== PDF p.5 ===
+vTw
+vt ¼
+Kw
+rwCpw
+v2Tw
+vz2 þ v2Tw
+vr2
+
+(15)
+where Kw is the wall thermal conductivity (25.5 w/m K), rw is
+the wall density (7940 kg/m3) and Cpw is the speciﬁc heat ca-
+pacity of the wall (500 J/kg K) [14]. The tube material is Incoloy
+800H and the average properties are used in Eq. (15).
+To solve Eq. (15), again four boundary conditions are
+required. One of the boundary conditions states that convec-
+tive and radiative heat in the outer layer (Rto) of the tube is
+equal to the conductive heat transferred at that layer. This
+boundary condition is given as follows:
+Kw
+vTw
+vr jr¼Rto ¼ hshell;w
+
+Tshell  Twjr¼Rto
+
+þ sεshellεw
+
+T4
+shell  T4
+wjr¼Rto
+
+(16)
+where hshell;w is the convective heat transfer coefﬁcient be-
+tween the shell gas and tube outer layer, and εw is the emis-
+sivity of the tube wall.
+In the inner layer of the tube wall, temperature is lower and
+radiative heat can be neglected, thus the boundary condition
+at this layer (Rti) can be written as:
+Kw
+vTw
+vr jr¼Rti ¼ hw
+
+Twjr¼Rti  Tgas
+
+(17)
+where hw is the convective heat transfer between the tube
+inner wall and the gas in the tube and given by Eq. (31) in
+Section Tube gas phase.
+At the top and bottom of the tube wall, heat ﬂux can be
+assumed to be zero since the cross sectional area is small.
+Thus, the boundary conditions can be stated as follows:
+vTw
+vz jz¼0 ¼ vTw
+vz jz¼L ¼ 0
+(18)
+Tube gas phase
+In the tube side, steam and natural gas are mixed and con-
+verted to the syngas on the catalyst surface based on the
+following reactions [15]:
+CH4 þ H2O#CO þ 3H2
+
+DHr;Tref ¼ 206:2 kJ
+mol
+
+(19)
+CO þ H2O#CO2 þ H2
+
+DHr;Tref ¼ 41:2 kJ
+mol
+
+(20)
+CH4 þ 2H2O#CO2 þ 4H2
+
+DHr;Tref ¼ 165 kJ
+mol
+
+(21)
+These reactions are highly endothermic and the required
+heat is provided by hot helium in the shell side. Conversion of
+these reactions are limited by equilibrium [9].
+Key assumptions of the tube gas phase model are: ideal gas
+law is used for approximations [16], radial variations in the
+reformer tubes are negligible [17,18], the conditions of one
+tube represent the other tubes as well, a pre-reformer con-
+verts Cþ
+2 hydrocarbons into methane, hydrogen or carbon
+monoxide,
+so
+heavier-than-methane
+hydrocarbons
+are
+neglected in this model, and the steam/carbon ratio is high
+enough such that carbon deposition will not happen in the
+reformer [19].
+The mass balance equation of gas phase in the tube is given
+as follows:
+vCgas;i
+vt
+¼ v
+
+Cgas;ivgas
+
+vz
+ kgas;i
+
+Cgas;i  Ccat;ijr¼Rp
+av
+ε
+
+;
+i ¼ CH4; H2O; CO; H2; CO2; N2
+(22)
+where Cgas;i is the concentration (mol/m3) of each component
+in the gas phase, vgas is the interstitial velocity of the gas, kgas;i
+is the mass transfer coefﬁcient of the component i (given in
+Eq. (24)), Ccat;ijr¼Rp is the molar concentration of the component
+i on the catalyst surface, av ¼ 6ð1  εÞ=Dp is the catalyst parti-
+cle surface area, ε is the bed porosity and Dp is the particle
+diameter. The interstitial velocity of the gas is approximated
+by Ref. [16]:
+vgas ¼ Fgas
+Atubeε
+RTgas
+Pgas
+(23)
+where Fgas is the total inlet molar ﬂow rate, Tgas is the gas phase
+temperature, Pgas is the pressure of gas, Atube ¼ p
+4 ðD2
+ti  D2
+t2;oÞ is
+the cross sectional area of the tube and Dt2;o is the inner tube
+outer diameter. Furthermore, mass transfer coefﬁcient kgas;i is
+given by Ref. [20]:
+kgas;i ¼ vgass
+ε
+Sc2=3
+gas;i
+ 
+0:765
+Re0:82
+gas
+þ 0:365
+Re0:386
+gas
+!
+(24)
+where
+Scgas;i ¼ mgas=rgasDi;mix
+is
+Schmidt
+number,
+Regas ¼ Dprgasvs=mgas is Reynolds number, vgass ¼ vgasε is the su-
+perﬁcial velocity, rgas is the mass density of process gas, and
+mgas is the dynamic viscosity of the gas mixture and Di;mix is the
+diffusivity of the component i in the mixture.
+Considering
+the
+counter-current
+conﬁguration,
+the
+boundary condition for Eq. (22) is given by:
+Cgas;iðt; z ¼ LÞ ¼ Cgas;i;inlet
+(25)
+The pressure drop is computed using the Ergun equation
+[23] as Eq. (26). Due to numerical stiffness, the dynamic term
+in the momentum balance equation is not considered [9]. It
+should be noted that, in packed bed reactors pressure drop is
+mostly due to friction, therefore the dynamic term can be
+neglected [16].
+vPgas
+vz
+¼
+G
+rgasDp
+1  ε
+ε3
+150ð1  εÞmgas
+Dp
+þ 1:75G
+
+(26)
+where
+G ¼ rgasvgass is the mass velocity. Furthermore, the
+boundary condition of Eq. (26) is given as PgasðLÞ ¼ Pinlet.
+In this study, the temperature in the tube side is low
+enough such radiative heat can be neglected. Therefore, the
+energy balance is written as:
+v
+
+rm;gasHgas
+
+vt
+¼
+v
+
+rm;gasvgasHgas
+
+vz
+þ qw þ qw2  qcat þ
+X
+6
+i¼1
+qi
+(27)
+where rm;gas is the molar density, Hgas is the enthalpy of the gas
+mixture. qw is the convective heat transferred from the tube
+wall to the gas phase (per unit volume of the gas phase), qw2 is
+the convective heat transferred from the inner tube wall to the
+gas phase, qcat is the convective heat transferred from the gas
+phase to the catalyst particles and qi is the energy of compo-
+nent i carried from the catalyst phase to the tube gas phase or
+i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 4 2 ( 2 0 1 7 ) 2 5 0 4 8 e2 5 0 6 2
+25052
+
+=== PDF p.6 ===
+vice-versa in the form of enthalpy of the mass being trans-
+ferred. The enthalpy and convective heat transfer terms are
+given as:
+Hgas ¼
+X
+6
+i¼1
+yiHi;gas
+(28)
+Hi;gas ¼ DHi;f þ
+ZTgas
+Tref
+Cp;idT; i ¼ CH4; H2O; CO; H2; CO2; N2
+(29)
+where yi is the mole fraction, DHi;f is the formation enthalpy in
+the vapour state and Cp;i is the speciﬁc heat capacity of
+component i in the gas phase.
+qw ¼
+hwðpDtiÞ
+
+Twjr¼Rti  Tgas
+
+Atubeε
+(30)
+where hw is the convective heat transfer coefﬁcient between
+the process gas and inner layer of the tube and Dti is the inner
+diameter of the tube. hw is calculated as follows [24]:
+hw ¼ 0:4 Kg
+Dp
+
+2:58Re
+1
+3gasPr
+1
+3gas þ 0:094 Re0:8
+gasPr0:4
+gas
+
+(31)
+where Kg is the thermal conductivity of the gas mixture, Prgas ¼
+Cp;mixmgas=Kgas is the Prandtl number and Cp;mix is the speciﬁc
+heat capacity of the gas mixture.
+qw2 ¼
+hw2ðpDt2;oÞ
+
+Tw2jr¼Rt2;o  Tgas
+
+Atubeε
+(32)
+where hw2 is the convective heat transfer coefﬁcient between
+the process gas and outer layer of the inner tube, Dt2;o is the
+outer diameter of the inner tube and Tw2 is the inner tube wall
+temperature.
+Convective heat transfer from the gas to the catalyst is
+deﬁned as follows:
+qcat ¼
+hcatav
+
+Tgas  Tcatjr¼Rp
+
+ε
+(33)
+where hcat is the convective heat transfer coefﬁcient between
+the gas phase and catalyst particles and Tcat is the catalyst
+temperature [25]. hcat is deﬁned as follows:
+hcat ¼ 1:37Cp;mixG
+ε
+ 
+0:765
+Re0:82
+gas
+þ 0:365
+Re0:386
+gas
+!
+Pr2=3
+gas
+(34)
+qi is computed based on the species concentration difference
+between the bulk gas and catalyst surface as follows [9]:
+if Cgas;i  Ccat;ijr¼Rp/qi ¼ 
+Hi;gaskgas;i
+
+Cgas;i  Ccat;ijr¼Rp
+
+av
+ε
+(35)
+if Cgas;i < Ccat;ijr¼Rp/qi ¼ 
+Hi;catkgas;i
+
+Cgas;i  Ccat;ijr¼Rp
+
+av
+ε
+(36)
+where Hi;gas is the component i enthalpy at Tgas as given in Eq.
+(29) and Hi;cat is the enthalpy of component i at Tcat.
+The boundary condition of Eq. (27) is given by:
+Tgasðt; z ¼ LÞ ¼ Tgas;inlet
+(37)
+Catalyst particles
+The mass balance equation in the catalyst phase is given as
+follows:
+qcat
+vCcat;i
+vt
+¼ 2
+rDei;mix
+vCcat;i
+vr
+þ v
+vr
+
+Dei;mix
+vCcat;i
+vr
+
+þ rircat;
+i ¼ CH4; H2O; CO; H2; CO2; N2
+(38)
+It is assumed that particles are a homogenous mixture of
+solid catalyst and gas in the catalyst pores, where qcat (void
+fraction of catalyst particles) represents the pores' volumetric
+fraction in the catalyst. In Eq. (38) ri is the rate of reaction of
+component i, rcat is the catalyst density and Dei;mix is the
+effective diffusivity of species i. The deﬁnition of Dei;mix can be
+found in the prior study [9]. The boundary conditions of this
+equation are as follows:
+vCcat;i
+vr jr¼0 ¼ 0
+(39)
+Dei;mix
+vCcat;i
+vr jr¼Rp ¼ kgas;i
+
+Cgas;i  Ccat;ijr¼Rp
+
+(40)
+The energy balance equation for the catalyst particles can
+be written as follows:
+"
+ð1  qcatÞrcatCpcat þ qcat
+X
+6
+i¼1
+Ccat;iCpcat;i
+#
+vTcat
+vt
+¼ Kcat
+1
+r2
+v
+vr
+
+r2vTcat
+vr
+
+þ
+X
+6
+i¼1
+Cpcat;iDei;mix
+vCcat;i
+vr
+vTcat
+vr þ rcat
+X
+6
+i¼1
+riHi;cat
+(41)
+where Cpcat is the speciﬁc heat capacity of the catalyst particle,
+Kcat is the thermal conductivity of the catalyst particle and Cpcat;i
+is the speciﬁc heat capacity of component i in the catalyst
+phase. The boundary conditions of catalyst particles are given
+as follows:
+vTcat
+vr jr¼0 ¼ 0
+(42)
+"
+Kcat
+vTcat
+vr þ
+X
+6
+i¼1
+Dei;mixHi;cat
+vCcat;i
+vr
+#
+r¼Rp
+¼hcat
+
+TgasTcatjr¼Rp
+
+ ε
+av
+X
+6
+i¼6
+Qi
+(43)
+Steam reforming kinetics
+The steam reforming reaction kinetics equation are presented
+by Xu and Froment [26] for the Ni-alumina catalyst. These
+kinetics have been widely accepted and cited for the steam
+reforming reaction. The reaction rates for Eqs. (19)e(21) are
+given by Eqs. (44)e(46), respectively.
+r1 ¼
+k1
+p2:5
+H2 DEN2
+"
+pCH4 pH2O  p3
+H2pCO
+K1
+#
+(44)
+r2 ¼
+k2
+pH2 DEN2
+
+pCO pH2O  pH2pCO2
+K2
+	
+(45)
+i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 4 2 ( 2 0 1 7 ) 2 5 0 4 8 e2 5 0 6 2
+25053
+
+=== PDF p.7 ===
+r3 ¼
+k3
+p3:5
+H2 DEN2
+"
+pCH4 p2
+H2O  p4
+H2pCO2
+K3
+#
+(46)
+DEN ¼ 1 þ KCOpCO þ KH2pH2 þ KCH4pCH4 þ KH2OpH2O
+pH2
+(47)
+where pi ¼ Ccat;iRTcat is the partial pressure of the correspond-
+ing species according to the ideal gas assumption. k1, k2 and k3
+are the reaction coefﬁcients and deﬁned by:
+k1 ¼ 9:49  1016 exp
+
+ 28879
+Tcat
+
+; kmol kPa0:5
+kg h
+(48)
+k2 ¼ 4:39  104 exp
+
+ 8074:3
+Tcat
+
+;
+kmol
+kPa kg h
+(49)
+k3 ¼ 2:29  1016 exp
+
+ 29336
+Tcat
+
+; kmol kPa0:5
+kg h
+(50)
+The equilibrium constants are deﬁned as:
+K1 ¼ 10266:76 exp
+
+ 26830
+Tcat
+þ 30:11
+
+; kPa2
+(51)
+K2 ¼ exp
+4400
+Tcat
+ 4:063
+
+(52)
+K3 ¼ K1K2
+(53)
+The adsorption constants in the DEN expression are
+deﬁned by:
+KCH4 ¼ 6:65  106 exp
+4604:28
+Tcat
+
+; kPa1
+(54)
+KH2O ¼ 1:77  103 exp
+
+ 10666:35
+Tcat
+
+(55)
+KH2 ¼ 6:12  1011 exp
+9971:13
+Tcat
+
+; kPa1
+(56)
+KCO ¼ 8:23  107 exp
+8497:71
+Tcat
+
+; kPa1
+(57)
+Based on Eqs. (19)e(21), reaction rates of the components
+can be written as:
+rCH4 ¼ ðr1 þ r3Þ
+(58)
+rH2O ¼ ðr1 þ r2 þ 2r3Þ
+(59)
+rCO ¼ r1  r2
+(60)
+rH2 ¼ 3r1 þ r2 þ 4r3
+(61)
+rCO2 ¼ r2 þ r3
+(62)
+rN2 ¼ 0
+(63)
+More details on the tube model can be found in the prior
+work [9].
+Inner tube wall
+Similar to the tube model, the inner tube wall temperature
+variations are considered in radial and axial dimensions as
+follows:
+vTw2
+vt
+¼
+Kw2
+rw2Cpw2
+v2Tw2
+vz2
+þ v2Tw2
+vr2
+
+(64)
+where Kw2 is the wall thermal conductivity (28.5 w/m K), rw2 is
+the wall density (7880 kg/m3) and Cpw2 is the speciﬁc heat ca-
+pacity of the wall (741 J/kg K) [27]. It should be noted that, the
+inner tube material is austenitic cast steel made up of alloy IN
+519.
+The boundary conditions of the inner tube wall are given as
+follows:
+Kw2
+vTw2
+vr jr¼Rt2;o ¼ hw2
+
+Tw2jr¼Rt2;o  Tgas
+
+(65)
+The boundary condition at the inner layer of the inner tube
+(Rt2;i) are:
+Kw2
+vTw2
+vr jr¼Rt2;i ¼ hinn
+
+Tw2jr¼Rt2;i  Tinn
+
+(66)
+where hinn is the convective heat transfer between the inner
+tube inner wall and the syngas.
+At the top and bottom of the inner tube wall, heat ﬂux can
+be assumed to be zero since the cross sectional area is small.
+Thus, the boundary conditions can be stated as follows:
+vTw2
+vz jz¼0 ¼ vTw2
+vz jz¼L ¼ 0
+(67)
+Inner tube gas phase
+As shown in Fig. 1, an inner tube is embedded inside the SMR
+tubes to recover heat from the hot syngas produced in the tube
+side. It has been shown that this helps increasing the heat
+transfer efﬁcacy and methane conversion as well [2].
+It should be noted that there is no reaction in the inner
+tube. Therefore, the mass balance equation can be written as:
+vCinn;i
+vt
+¼ v
+
+Cinn;ivinn
+
+vz
+(68)
+where Cinn;i is the concentration of the component i the syngas
+and vinn is the velocity of the gas in the inner tube and
+computed as follows:
+vinn ¼ Fgasð0; tÞ
+Ainn
+RTinn
+Pinn
+(69)
+where Fgasð0; tÞ is the exit molar ﬂow rate of the tube, Tinn is the
+syngas temperature, Pinn is the pressure of the syngas in the
+inner tube and Ainn is the cross-sectional area of the inner
+tube.
+The initial and boundary conditions of this equation are
+Cinn;iðt; z ¼ 0Þ ¼ Cgas;ið0; tÞ. This means that the concentration of
+the components at the inlet of the inner tube is the same as
+the tube outlet concentration.
+The energy balance equation of the inner tube gas phase is
+given by:
+i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 4 2 ( 2 0 1 7 ) 2 5 0 4 8 e2 5 0 6 2
+25054
+
+=== PDF p.8 ===
+vðrinnHinnÞ
+vt
+¼ vðrinnvinnHinnÞ
+vz
+
+1
+Ainn
+Qinn
+(70)
+where rinn ¼ P6
+i¼1Cinn;i is the molar density of the syngas in the
+inner tube, Hinn is the enthalpy of the syngas and Qinn is the
+convective heat transferred from the syngas to the inner tube
+wall.
+The enthalpy of the syngas in the inner tube, Hinn is deﬁned
+as:
+Hinn ¼
+X
+6
+i¼1
+yinn;iHinn;i
+(71)
+where yinn;i is the mole fraction of the component i in the gas
+phase and Hinn;i is the enthalpy of the component i in the gas
+phase and deﬁned in the same way as Eq. (29) at Tinn
+temperature.
+Convective heat transferred from the gas to the inner tube
+wall, Qinn is given by:
+Qinn ¼ hinn
+
+pDt2;i
+
+Tinn  Tw2jr¼Rt2;i
+
+(72)
+where hinn is the convective heat transfer between the inner
+tube gas phase and the inner tube inner wall and given by
+Dittus-Boelter equation [10] as follows:
+hinn ¼ Kinn
+Dt2;i
+
+0:0265 Re0:8
+innPr0:3
+inn
+
+(73)
+where Kinn is the thermal conductivity of the syngas (which is a
+function of temperature), Reinn is the Reynolds number of the
+gas and Prinn is the Prandtl number of the syngas in inner tube.
+The boundary condition for the energy balance equation is
+Tinnðz ¼ 0; tÞ ¼ Tgasð0; tÞ.
+Similar to the shell gas phase, the pressure drop in the
+inner tube is small and ﬁxed at 1 bar.
+The model developed in Section Model development is a
+set of partial differential and algebraic equations (PDAE)
+implemented in the gPROMS software package [28] which is
+an equation-oriented modeling and simulation environment.
+This software uses ﬁnite difference methods (FDM) to dis-
+cretize the PDEs in space. The selection and spacing of the grid
+points was chosen on a case-by-case basis based on error
+measurements and are described in later sections.
+Model validation and parameter estimation
+A survey of the literature shows that several integrated SMR/
+nuclear heat plants have been designed and tested for
+hydrogen production. As mentioned earlier, most of these
+studies were performed by Research Center Julich, SIEMENS-
+INTERATOM research groups in Germany [6,7] or by JAERI
+[2,3,29]. The designs developed in Germany usually use a he-
+lical or other complex geometry for the inner tubes, and thus
+cannot be used for validation without making signiﬁcant
+modiﬁcations to the proposed model. However, the JAERI
+design uses a straight inner tube design which can be used to
+validate the presented model with very few modiﬁcations.
+The JAERI design uses a high temperature test reactor
+(HTTR) to produce hydrogen from natural gas via the SMR
+reaction using the heat from a nuclear reactor. The safety and
+feasibility of the HTTR plant has been investigated by JAERI
+using a smaller scale test facility called the “mock-up”. The
+mock-up reactor is 1/30th of the size of the HTTR. Table 1
+shows the key design speciﬁcation of the HTTR and the
+mock-up reactors. As shown in the table, the mock-up reactor
+includes only one SMR tube inside the shell. It should be noted
+that, in both designs, an intermediate heat exchanger has
+been used between the nuclear reactor and the SMR system
+for safety and operability reasons [2], with helium gas chosen
+as the heat transfer medium in both cases. However, the
+temperature of the helium in the secondary cycle is lower
+than the primary helium cycle.
+In the HTTR design, the temperature in the shell side is
+signiﬁcantly lower than in conventional fossil-based SMR
+plants, such that radiative heat transfer is small, and the heat
+ﬂux is lower as a result. To compensate for this, the HTTR uses
+disc-type ﬁns around the outer surface of the tubes to increase
+the convective heat transfer coefﬁcient and area. As a result,
+the heat transfer coefﬁcient increases by 2.7 times and the
+heat transfer area increases by 2.3 times [3]. Therefore, in
+order to account for the effect of the ﬁns in our model, values
+of the corresponding heat transfer coefﬁcient and heat
+transfer area were scaled up by a factor of 2.7 and 2.3,
+respectively.
+The key design parameters of the mock-up and HTTR pilots
+such as number of the tubes, tube diameter, thickness, length
+and material, shell diameter, inner tube diameter, thickness
+and material, catalyst particle size, etc., are necessary for
+model validation. Table 2 shows the values of these parame-
+ters wherever they are given, however as shown in the table
+some of these parameters have not been reported in the
+literature. Therefore, these missing parameters had to be
+estimated in order to validate the model.
+The missing model parameters were estimated and their
+values are given in Table 3. The parameters were estimated
+such that the outlet temperature of the helium gas, the outlet
+temperature of the syngas, and the rate of hydrogen produc-
+tion meet the design speciﬁcations given in Table 1. Note,
+however, that for all of these missing parameters, the range of
+Table 1 e Design speciﬁcation for the High Temperature
+Test Reactor (HTTR) integrated with SMR.
+Speciﬁcation
+Mock-up facility
+HTTR facility
+Process gas conditions
+Inlet pressure
+4.3 MPa
+4.5 MPa
+Inlet temperature
+450 C
+450 C
+Natural gas feed
+43.2 kg/h
+(2.7 kmol/h)
+1296 kg/h
+(81 kmol/h)
+Outlet temperature
+600 C
+580 C
+Steam to carbon ratio (S/C)
+3.5
+3.5
+Helium gas conditions
+Inlet pressure
+4.0 MPa
+4.1 MPa
+Inlet temperature
+880 C
+880 C
+Feed rate
+327.6 kg/h
+8748 kg/h
+Outlet temperature
+650 C
+585 C
+Hydrogen product
+120 Nm3/h
+4200 Nm3/h
+Taken from Ref. [29].
+i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 4 2 ( 2 0 1 7 ) 2 5 0 4 8 e2 5 0 6 2
+25055
+
+=== PDF p.9 ===
+practical values the parameters can take is actually rather
+small, and do not actually have a strong inﬂuence on the
+reactor exit conditions. For example, the possible choices for
+the inner tube diameter and thickness are selected from a
+small subset of Japanese industrial standard sizes for alloy IN
+519 pipes at relevant temperatures and pressures [30]. The
+diameter of the inner and outer tubes are likewise constrained
+to a small range of acceptable values based on geometrical
+limitations
+and
+reasonable
+spacing
+requirements.
+The
+average catalyst particle diameter is perhaps the most inﬂu-
+ential parameter, but again, it is limited to a very small range
+of possibilities given the tight spaces available. Because the
+parameter estimates are limited to small ranges, the estima-
+tion was carried out “by hand” via a guess-and-check
+approach. There were no other model parameters that
+needed to be estimated.
+The results of the model ﬁtting via parameters estimation
+are shown in Figs. 3 and 4. Fig. 3 indicates the model pre-
+diction of the mock-up design. The model predicts that
+cooled helium exits the shell at 908 K, which compares well
+to the actual design criteria of 923 K. On the tube side, syn-
+gas leaves the inner tube at 883 K, where the design data is
+873 K. Also, the model predicts the amount of hydrogen
+produced to be 127 Nm3/h, where the given design data is
+120 Nm3/h. Fig. 4 shows the model prediction performance
+of the HTTR design; in this case, model predicts the shell
+outlet temperature as 869 K compared to the pilot of 853 K,
+and the syngas outlet temperature as 873 K, compared to the
+design data of 858 K. The model prediction of the hydrogen
+production rate is 4221 Nm3/h and the HTTR design data for
+this variable is 4200 Nm3/h. These results depict that model
+can predict the mock-up and HTTR plants' behaviour with
+high accuracy. The maximum error of the temperature
+prediction is 1.7% and the maximum error of the hydrogen
+rate production is 5.8%.
+Considering the limitations in the validation of the pro-
+posed model, the results indicate that the model parameters
+were estimated properly and can be used to analyze and
+design the integrated SMR/nuclear heat systems.
+Furthermore, choosing the number of nodes to solve the
+PDAE is a trade-off between the computational load and ac-
+curacy of the results. The ﬁnite differences method by its
+nature introduces error into the estimation of derivatives such
+that it does not conserve energy or mass. Therefore, the ac-
+curacy of the results is tested based on mass and energy
+conservations errors within the system boundaries. These
+errors are deﬁned as follows:
+Dem1 ¼ Dmshell
+(75)
+Dem2 ¼ mtube  minn
+(76)
+DeE ¼ DEshell  ðDEt þ DEr  DEinnÞ
+(77)
+where Dem1 is the overall mass balance error in the shell side
+and Dmshell is the mass ﬂow rate difference between the shell
+inlet and exit. Dem2 is the mass balance error in the tube and
+Table 2 e Key design parameters of the HTTR and out of
+pile facilities [3].
+Parameter
+Mock-up
+HTTR
+Number of tubes
+1
+30
+Catalyst type
+Ni-Alumina
+Ni-Alumina
+Tube material
+Incoloy 800 H
+Incoloy 800 H
+Tube length
+6.54 (m)
+6.54 (m)
+Tube thickness
+1 cm
+1 cm
+Tube inner diameter
+12.8 cm
+12.8 cm
+Inner tube thickness
+e
+e
+Inner tube inner diameter
+e
+e
+Catalyst particle diameter
+e
+e
+Refractory inner diameter
+16.2 cm
+e
+Inner tube material
+e
+e
+Table 3 e Estimated parameters.
+Parameter
+Mock-up
+HTTR
+Inner tube thickness
+0.165 cm
+0.165 cm
+Inner tube inner diameter
+5.72 cm
+5.72 cm
+Catalyst particle diameter
+1.2 cm
+1.2 cm
+Refractory inner diameter
+e
+0.86 m
+Inner tube material
+Alloy IN 519
+Alloy IN 519
+Fig. 3 e Model ﬁtting using mock-up facility data.
+i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 4 2 ( 2 0 1 7 ) 2 5 0 4 8 e2 5 0 6 2
+25056
+
+=== PDF p.10 ===
+inner tube side, mtube and minn are the masses in the inlet of
+the outer tube and outlet of the inner tube, respectively. DeE is
+the global energy balance error, DEshell, DEt, DEr and DEinn are
+the energy differences between the inlet and outlet of the
+shell, tube, refractory and inner tube, respectively. Results
+show that mass balances errors are as small as 108 kg/s;
+however, the energy balance error changes signiﬁcantly with
+the grid size. Table 4 shows the results of the energy balance
+error and CPU time at different grid sizes for the HTTR sys-
+tem. It can be concluded from the table that specifying axial
+nodes as 40, radial nodes as 60 and lateral nodes as 10 is the
+most efﬁcient choice for the HTTR system considering both
+energy conservation error and CPU time. The error in this
+situation is limited to about 0.25% of the total energy
+transferred.
+Results and discussion
+Although the 10 MW scale studies were useful for validation of
+the model, the purpose of this work is to present and study an
+industrial scale design for the integrated system. On such
+industrial-scale design is provided by SIEMENS-INTERATOM
+[2] to produce hydrogen via the SMR process using nuclear
+heat from a HTR-Module pebble bed reactor with 60 MW
+thermal power. The key differences between this design and
+HTTR facility is higher inlet temperatures and pressure of
+helium in the HTR-Module design. This is due to using the
+direct helium cycle in the HTR-Module design. In addition, the
+helical inner tube design in the HTR-Module rather than the
+straight one in the HTTR is the other key difference of these
+two facilities. The design speciﬁcation for this system is given
+in Table 5.
+The design parameters are also given in Table 6. Some of
+the parameters such as inner tube diameter, thickness, cata-
+lyst particle size, and the refractory diameter are not reported,
+those parameters except refractory inner diameter are ﬁxed at
+the values estimated in the previous section. It is assumed
+that a triangular arrangement of tubes with the C/D ratio
+(which
+is
+center-to-center
+distance
+of
+tubes/tube
+outer
+diameter) of 2 [12] is applied in this design. Therefore, the
+refractory inner diameter is selected based on this assump-
+tion and the correlations and guidance presented by Kern [31]
+on heat exchanger design.
+It should be noted that in the large scale design used in this
+work, the inner tubes are straight with disc-type ﬁns on the
+outer surface of inner tubes to increase the convective heat
+transfer coefﬁcient and area.
+0
+2
+4
+6
+8
+Length (m)
+800
+850
+900
+950
+1000
+1050
+1100
+1150
+1200
+1250
+Temperature (K)
+Design data
+Model prediction
+Model prediction for Tshell
+Model prediction for Tinn
+Design data for Tshell and Tinn
+0
+500
+1000
+1500
+2000
+2500
+3000
+3500
+4000
+4500
+H2 production rate (Nm3/h)
+Fig. 4 e Model ﬁtting using HTTR facility data.
+Table 4 e Energy balance error vs grid size.
+Number of nodes
+DeE (MW)
+CPU time (s)
+Axial nodes ¼ 60, Radial nodes ¼ 50,
+Lateral nodes ¼ 10
+0.0105
+809
+Axial nodes ¼ 50, Radial nodes ¼ 50,
+Lateral nodes ¼ 10
+0.0112
+635
+Axial nodes ¼ 40, Radial nodes ¼ 50,
+Lateral nodes ¼ 10
+0.0113
+436
+Axial nodes ¼ 40, Radial nodes ¼ 60,
+Lateral nodes ¼ 10
+0.0091
+463
+Axial nodes ¼ 40, Radial nodes ¼ 40,
+Lateral nodes ¼ 10
+0.0121
+362
+Axial nodes ¼ 40, Radial nodes ¼ 50,
+Lateral nodes ¼ 5
+0.0123
+394
+Table 5 e Design speciﬁcation for an industrial scale SMR/
+HTGR system [2].
+Speciﬁcation
+Large scale design
+Process gas conditions
+Inlet pressure
+5.6 MPa
+Inlet temperature
+347 C
+Feed rate
+34.8 kg/s
+Steam to carbon ratio (S/C)
+4
+Helium gas conditions
+Inlet pressure
+4.987 MPa
+Inlet temperature
+950 C
+Feed rate
+50.3 kg/s
+i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 4 2 ( 2 0 1 7 ) 2 5 0 4 8 e2 5 0 6 2
+25057
+
+=== PDF p.11 ===
+Base-case simulation results
+Based on the above operating conditions and design param-
+eters, the proposed model was used to simulate the proposed
+industrial design and analyze the key process variables as a
+function of space and time. However, because the model is
+complex and contains over 200,380 variables and equations, a
+priori initialization is very difﬁcult. Therefore, a workaround
+was used in which an initial state was given that was ﬁctional
+but consistent with the model equations, such that initiali-
+zation was possible a priori. From that ﬁctional initial point,
+the simulation was run with various changes in the inlet
+boundary conditions that allowed the simulation to arrive at a
+realistic steady state. In this case, all variables were set at time
+zero to be either pure nitrogen on the tube side or pure helium
+on the shell side at 620.15 K, with the inlet boundary condi-
+tions set to pure nitrogen in the tube side and helium in the
+shell side ﬂowing in at 620.15 K. This made it possible for
+gPROMS to successfully initialize the simulation and permit
+dynamic simulation to continue. The inlet feed was main-
+tained
+until
+steady-state
+was
+reached.
+Then,
+the
+inlet
+boundary conditions were step-changed to the feed condi-
+tions given in Table 5, and the dynamic simulation continued
+until new steady state conditions attained. Although this ﬁnal
+steady state condition is meaningful, the transition getting to
+it is not since it began from a ﬁctional initial state. This ﬁnal
+steady state condition was saved and then used as the initial
+condition to initialize future runs of the simulation. The re-
+sults are discussed next.
+The steady state performance of the integrated system is
+shown in Fig. 5 as a function of axial variations of the shell,
+outer tube, and inner tube gas phase temperatures, and
+methane conversion in the outer tube section. It has been
+shown that the helium temperature in the shell drops from
+1223 K in the inlet to 944 K in the shell exit, which results in
+72.9 MW cooling duty. In the tube side, methane and steam
+mixture enter the SMR tubes at 620 K, receive heat from the
+shell and inner tube, convert to syngas with 73% methane
+conversion, then exit the tube at 1126 K. The hot syngas pro-
+ceeds through the inner tube to recover its heat and exits at
+864 K. Methane conversion in this system is in the range of
+65%e90% which reported in the literature for SMR processes
+[12], but not as high as we would like. As mentioned in Section
+Model validation and parameter estimation, due to the low
+temperature in the shell side comparing conventional SMR
+processes, radiative heat transfer accounts for 5.2% of the
+total heat transfer in the shell and this is one of the reasons for
+low conversion. In addition, high pressure (5.6 MPa) in the
+tubes causes lower conversion. In integrated SMR/HTGR sys-
+tems, low pressure SMR cannot be applied since high pressure
+helium is required for the nuclear reactor.
+Fig. 6 shows the mole fraction proﬁles of the CO and H2 in
+the tube side at the steady state condition. The results show
+that in the reactor outlet, hydrogen mole fraction reaches to
+the 0.38 while the CO mole fraction is only 0.06. This achieves
+a H2/CO ratio of 6.3 which is signiﬁcantly high. This is due to
+the high steam to carbon ratio in the feed which is required for
+higher methane conversions. This process with the given
+operating condition in Table 5 is designed for the hydrogen
+production. However, if it is used for the Fischer-Tropsch ap-
+plications, CO and H2 required to be separated then mixed to
+obtain the proper ratio.
+Table 6 e Design parameters for the SMR/HTGR used in
+this work.
+Parameter
+Reported parameters [2]
+Number of tubes
+199
+Catalyst type
+Ni-Alumina
+Tube material
+Incoloy 617
+Tube length
+14 (m)
+Tube wall thickness
+1 (cm)
+Tube inner diameter
+12 (cm)
+Estimated parameters
+Inner tube thickness
+0.165 (cm)
+Inner tube inner diameter
+5.72 (cm)
+Catalyst particle diameter
+1.2 (cm)
+Refractory inner diameter
+2.7 (m)
+Inner tube material
+Alloy IN 519
+Fig. 5 e Temperature and conversion proﬁles at steady-
+state conditions.
+Fig. 6 e Composition proﬁles of CO and H2 at steady-state
+condition.
+i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 4 2 ( 2 0 1 7 ) 2 5 0 4 8 e2 5 0 6 2
+25058
+
+=== PDF p.12 ===
+Effect of disturbances
+In order to demonstrate the impacts of disturbances on the
+system performance, common disturbances in the process
+gas (methane/steam mixture) and helium feeds such as
+changes in the feed temperature were studied.
+The ﬁrst disturbance investigated is a step increase of 100 K
+in the tube-side gas feed temperature from base-case steady
+state conditions. Fig. 7 shows the trajectories of the shell
+temperature, inner tube temperature, and methane conver-
+sion at the shell and inner tube outlets (z ¼ 14 m). As a result
+of this change the shell outlet temperature reaches a new
+steady state of 959 K which increased 18 K from the previous
+steady state; inner tube gas outlet temperature also increases
+29 K from the previous steady state. Furthermore, cooling duty
+drops from 72.9 MW to 68.3 MW. Methane conversion in the
+inner tube outlet increases only 1.2% points from the previous
+steady state. Therefore, this disturbance does not signiﬁcantly
+affect the overall system behaviour.
+The second disturbance considered in this study, is 100 K
+increase in the helium gas inlet temperature starting from
+the base case steady-state. This can happen due to an in-
+crease in the nuclear reactor temperature or feed ﬂow rate
+ﬂuctuations
+in
+the
+primary
+helium
+cycle.
+The
+system
+response to this disturbance is given in Fig. 8. As shown in the
+ﬁgure, methane conversion signiﬁcantly increases by this
+change. It shows a 15 percentage-point increase in the con-
+version from the previous steady state condition. The shell
+and inner tube outlet temperatures increase remarkably,
+also. Shell outlet temperature increased by 45 K and inner
+tube outlet temperature grows by 37 K from the previous
+steady state. Due to the larger temperature difference be-
+tween the shell and tube, the cooling duty of the system also
+increases by 13.5 MW (18.5%).
+Sensitivity analysis
+It was noted in Section Results and discussion that some of
+the system parameters such as catalyst particle size, inner
+tube diameters, and refractory inner diameter have some
+uncertainty since they were estimated based on reported
+design
+data
+combined
+with
+engineering
+intuition.
+Even
+though the range of feasible values for these parameters is
+small, it is still important to investigate the sensitivity of the
+system to changes in those uncertain parameters. The system
+performance was analyzed for 10% and 20% changes in the
+nominal values of the catalyst particle size, inner tube di-
+ameters and refractory inner diameter. It should be noted
+that, inner tube inner and outer diameters were simulta-
+neously changed by the same magnitude due to geometric
+limitations.
+The sensitivity of the system is best demonstrated by the
+shell and inner tube exit temperatures, the methane conver-
+sion, and the cooling duty of the system, as they are the most
+important representatives of the integrated system behav-
+iour. Fig. 9 shows the percentage of change from the base case
+values by ±10% and ±20% changes in the base case values of
+the parameters which are given in Table 6.
+This ﬁgure indicates that a ±20% change in the value of the
+parameters changes the outlet temperatures of the shell and
+tube by at most ±0.7%, meaning that they are not very sensi-
+tive to changes in the uncertain parameters. Unlike the outlet
+temperatures, the methane conversion and cooling duty of
+the system change up to ±4.9% and ±2.7%, which depicts
+those variables are more sensitive to changes in those pa-
+rameters, even though the overall impact is still relatively
+small. This indicates that the model is meaningful and useful
+even considering these uncertain parameters.
+Generally, in most of the cases, the average catalyst par-
+ticle diameter is the most inﬂuential of the uncertain pa-
+rameters. The methane conversion is impacted the strongest,
+because smaller particle diameters can be packed together
+more tightly, have reduced impacts of diffusion within the
+catalyst, and increase the pressure drop, all of which lead to
+either faster reaction kinetics and/or higher equilibrium con-
+stants. However, this does not imply that smaller particle di-
+ameters are necessarily better, because the negative effects of
+pressure loss at the system level can be signiﬁcant in terms of
+both operational safety and balance-of-plant effects. The
+optimal particle diameter can only be determined at the sys-
+tems level and is a subject of future study.
+The same idea applies to the shell and tube diameters.
+While a smaller refractory inner diameter or greater tube
+diameter causes greater heat transfer from the helium gas
+(and thus increased methane conversion) when varied inde-
+pendently,
+shrinking
+the
+refractory
+inner
+diameter
+or
+increasing the tube diameter requires squeezing the tubes
+closer together, which quickly becomes impractical without
+removing some of the tubes. There is a lower bound on tube
+pitch ratio (C/D) of 1.25 for the triangular and square tube
+arrangements [32,33] to allow mechanical cleaning of the
+tubes, and for a clear line-of-sight between the hot helium gas
+(for radiative heat transfer) and the tube surface, and for
+adequate space for gas to ﬂow between the tubes without
+0
+100
+200
+300
+400
+500
+600
+700
+800
+900
+1000
+Time (s)
+850
+900
+950
+Temperature (K)
+Tshell at the exit (z=L)
+Tinn at the exit (z=L)
+0
+100
+200
+300
+400
+500
+600
+700
+800
+900
+1000
+Time (s)
+72
+73
+74
+75
+Conversion (%)
+Fig. 7 e Effect of 100 K increase in the process gas feed at
+t ¼ 0 (s) on the outlet temperatures of the shell and inner
+tube gases and methane conversion.
+i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 4 2 ( 2 0 1 7 ) 2 5 0 4 8 e2 5 0 6 2
+25059
+
+=== PDF p.13 ===
+causing a signiﬁcant pressure drop. The general conclusion
+here from an optimal design perspective is somewhat obvious
+in that the shell size and tube spacing should not be bigger
+than it needs to be.
+Conclusion
+This work presents, to the best of our knowledge, the ﬁrst
+dynamic two-dimensional model for the integrated steam
+methane reforming and nuclear heat system. Because the
+model itself is based on ﬁrst principles and commonly used
+empirical correlations of physical properties, it requires no
+general parameter ﬁtting, which makes it very general and
+suitable for a wide variety of design applications. The model
+only requires information which is either known by design, or,
+can be readily determined experimentally at the laboratory
+scale, such as kinetic rate equations, common catalyst char-
+acteristics such as density and tortuosity, and basic physical
+property
+information
+such
+as
+heat
+capacity,
+thermal
+0
+100
+200
+300
+400
+500
+600
+700
+800
+900
+1000
+Time (s)
+850
+900
+950
+1000
+Tinn at the exit (z=L)
+Tshell at the exit (z=L)
+0
+100
+200
+300
+400
+500
+600
+700
+800
+900
+1000
+Time (s)
+70
+75
+80
+85
+90
+95
+Fig. 8 e Dynamic response of the shell and inner tube outlet temperatures and methane conversion to the 100 K increase in
+the shell inlet temperature at t ¼ 0 (s).
+-20
+-10
+0
+10
+20
+Parameter range (%)
+-1
+-0.5
+0
+0.5
+1
+ Tinn change (%)
+-20
+-10
+0
+10
+20
+Parameter range (%)
+-5
+0
+5
+ CH4 conversion change (%)
+-20
+-10
+0
+10
+20
+Parameter range (%)
+-4
+-2
+0
+2
+4
+Cooling duty change (%)
+-20
+-10
+0
+10
+20
+Parameter range (%)
+-1
+-0.5
+0
+0.5
+1
+Tshell change (%)
+Refractory inner diameter
+Inner tube diameter
+Catalyst particle diameter
+Fig. 9 e Sensitivity of exit temperatures of the shell and inner tube, CH4 conversion and cooling duty of the system to some
+of the model parameters.
+i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 4 2 ( 2 0 1 7 ) 2 5 0 4 8 e2 5 0 6 2
+25060
+
+=== PDF p.14 ===
+conductivity, and density. Because the model considers
+space-time transients within the catalyst particles them-
+selves, it does not make use of effectiveness factors, and
+instead considers the transient effects of diffusion on overall
+reaction rates. The model was validated with two steady-state
+designs and predicted the output conditions of the reactors
+extremely well. Unfortunately, no experimental information
+is available on transient behaviour to use for validation of the
+transient portions of the model.
+The model is useful for many applications such as ﬁnding
+the optimal design of the SMR/HTGR device and the system in
+which it is used, and the control of the SMR/HTGR unit which
+is extremely important for safety-critical systems. In partic-
+ular, the model is useful for predicting phenomena which are
+extremely difﬁcult to measure directly, such as the internal
+temperature and composition proﬁles inside the catalyst
+particles, both in steady-state or during transients. The latter
+is of particular importance for the design and operability of
+the SMR/HTGR unit because, disturbances can lead to inverse
+responses caused by sudden shifts in reaction rates that could
+cause hot spots, cold spots, or other negative effects which are
+hard to measure can greatly impact long-term performance or
+cause safety issues.
+In future work, this model will be used to help determine
+optimal designs for the SMR/HTGR device in the context of the
+entire nuclear hydrogen production system. In addition, the
+model will be used to develop control systems to ensure
+robust, safe, and stable operation. Finally, the model will be
+expanded to include other forms of methane reforming, such
+as dry reforming (reacting methane with CO2 instead of
+stream) and mixed-reforming (having both steam reforming
+and dry reforming simultaneously) by using different cata-
+lysts and system arrangements. The incorporation of CO2 as a
+reagent has certain potential beneﬁts such as CO2 emission
+reduction in applications such as synthetic Fischer-Tropsch
+fuels or mixed alcohols synthesis.
+Acknowledgment
+Financial support from the Ontario Ministry of Innovation via
+Early Researcher Award ER13-09-213 with matching support
+from the McMaster Advanced Control Consortium is grate-
+fully acknowledged. The authors would also like to acknowl-
+edge Dr. Jaffer H. Ghouse (U.S. Department of Energy, National
+Energy Technology Laboratory) for assistance in developing
+the gPROMS code.
+Nomenclature
+Subscripts
+rfct
+refractory
+in
+Refractory inner surface
+o
+Refractory outer surface
+shell
+Shell
+conv
+convection
+rad
+radiation
+w
+Tube wall
+t; o
+Tube outer surface
+tube
+Tube
+ti
+Tube inner surface
+gas
+Mixture of gases in the tube
+cat
+Catalyst phase
+i
+Component counter
+p
+Particle
+w2
+Inner tube wall
+f
+formation
+mix
+Mixture
+t2; o
+Inner tube outer surface
+t2; i
+Inner tube inner surface
+inn
+Inner tube gas
+E
+Energy balance
+m1
+Shell side mass
+m2
+Tube side mass
+Acronyms
+SMR
+Steam methane reforming
+HTGR
+High temperature gas-cooled reactor
+HTTR
+High temperature test reactor
+GHG
+Greenhouse gases
+JAERI
+Japan Atomic Energy Research Institute
+PDAE
+Partial differential algebraic equation
+Greek letters
+r
+Density
+ε
+emissivity
+s
+Stefan-Boltzmann constant
+m
+dynamic viscosity
+ε
+Bed porosity
+p
+mathematical constant
+k
+Mass transfer coefﬁcient
+q
+Catalyst void fraction
+r e f e r e n c e s
+[1] Kvamsdal HM, Svendsen HF, Olsvik O, Hertzberg T. Dynamic
+simulation and optimization of a catalytic steam reformer.
+Chem Eng Sci 1999;54(13):2697e706.
+[2] Yan XL, Hino R, editors. Nuclear hydrogen production
+handbook. CRC Press; 2011.
+[3] Inagaki Y, Nishihara T, Takeda T, Hada K, Ogawa M,
+Shiozawa S, et al. Development programme on hydrogen
+production in HTTR. 2001. No. IAEA-TECDOCe1210.
+[4] Khojasteh Salkuyeh Y, Adams II TA. Combining coal
+gasiﬁcation, natural gas reforming, and external carbonless
+heat for efﬁcient production of gasoline and diesel with CO2
+capture and sequestration. Energy Convers Manag
+2013;74:492e504.
+[5] Khojasteh Salkuyeh Y, Adams II TA. A new power,
+methanol, and DME polygeneration process using
+integrated chemical looping systems. Energy Convers
+Manag 2014;88:411e25.
+[6] Fedders H, Harth R, H€ohlein B. Experiments for combining
+nuclear heat with the methane steam-reforming process.
+Nucl Eng Des 1975;34(1):119e27.
+[7] H€ohlein B, Niessen H, Range J, Schiebahn HJ, Vorwerk M.
+Methane from synthesis gas and operation of high-
+temperature methanation. Nucl Eng Des 1984;78(2):241e50.
+[8] Inaba Y, Ohashi H, Nishihara T, Sato H, Inagaki Y, Takeda T,
+et al. Study on control characteristics for HTTR hydrogen
+production system with mock-up test facility: system
+i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 4 2 ( 2 0 1 7 ) 2 5 0 4 8 e2 5 0 6 2
+25061
+
+=== PDF p.15 ===
+controllability test for ﬂuctuation of chemical reaction. Nucl
+Eng Des 2005;235(1):111e21.
+[9] Ghouse JH, Adams II TA. A multi-scale dynamic two-
+dimensional heterogeneous model for catalytic steam
+methane reforming reactors. Int J Hydrogen Energy
+2013;38(24):9984e99.
+[10] Monaghan RF, Ghoniem AF. A dynamic reduced order
+model for simulating entrained ﬂow gasiﬁers: part I: model
+development and description. Fuel 2012;91(1):61e80.
+[11] Bergman TL, Incropera FP. Introduction to heat transfer. John
+Wiley & Sons; 2011.
+[12] Ghouse JH, Seepersad D, Adams II TA. Modelling, simulation
+and design of an integrated radiant syngas cooler and steam
+methane reformer for use with coal gasiﬁcation. Fuel Process
+Technol 2015;138:378e89.
+[13] Perry RH, Green DW. Perry's chemical engineers' handbook.
+McGraw-Hill Professional; 1999.
+[14] The story of the “INCOLOY alloys series,” from 800, through
+800H, 800 HT. Special Metals Corporation; Sep 2004.
+Publication number: SMC-047.
+[15] Abbas SZ, Dupont V, Mahmud T. Kinetics study and
+modelling of steam methane reforming process over a NiO/
+Al2O3 catalyst in an adiabatic packed bed reactor. Int J
+Hydrogen Energy 2017;42(5):2889e903.
+[16] Adams II TA, Barton PI. A dynamic two-dimensional
+heterogeneous model for water gas shift reactors. Int J
+Hydrogen Energy 2009;34(21):8877e91.
+[17] Pantoleontos G, Kikkinides ES, Georgiadis MC. A
+heterogeneous dynamic model for the simulation and
+optimisation of the steam methane reforming reactor. Int J
+Hydrogen Energy 2012;37(21):16346e58.
+[18] Nandasana AD, Ray AK, Gupta SK. Dynamic model of an
+industrial steam reformer and its use for multiobjective
+optimization. Ind Eng Chem Res 2003;42(17):4028e42.
+[19] Dybkjær I. Tubular reforming and autothermal reforming of
+natural gasdan overview of available processes. Fuel Process
+Technol 1995;42(2e3):85e107.
+[20] Dwivedi PN, Upadhyay SN. Particle-ﬂuid mass transfer in
+ﬁxed and ﬂuidized beds. Ind Eng Chem Proc DD
+1977;16(2):157e65.
+[23] Fogler HS. Elements of chemical reaction engineering. 4th ed.
+Upper Saddle River, NJ: Prentice Hall; 2006.
+[24] Singh CP, Saraf DN. Simulation of side ﬁred steam-
+hydrocarbon reformers. Ind Eng Chem Proc Des Dev
+1979;18(1):1e7.
+[25] Satterﬁeld CN. Mass transfer in heterogeneous catalysis. 1st
+ed. Cambridge: Massachusetts Institute of Technology Press;
+1970.
+[26] Xu J, Froment GF. Methane steam reforming, methanation
+and water-gas shift I Intrinsic kinetics. AIChE J
+1989;35(1):88e96.
+[27] IN-519 cast chromiumenickeleniobium heat-resisting steel.
+INCO Databook; 1976.
+[28] gPROMS, process systems enterprise. 2015.
+[29] Inagaki Y, Nishihara T, Takeda T, Hayashi K, Inaba Y, Ohashi H.
+Research and development program on HTTR hydrogen
+production system. In: Proceedings of the international
+conference on global environment and advanced nuclear
+power plants, Kyoto, Japan; September 2003. p. 15e9.
+[30] JIS speciﬁcation for piping. Retrieved from The engineering
+toolbox, http://www.engineeringtoolbox.com/jis-pipes-
+tubes-ﬁttings-d_758.html.
+[31] Kern DQ. Process heat transfer. McGraw-Hill; 1950.
+[32] Mukherjee R. Effectively design shell-and-tube heat
+exchangers. Chem Eng Prog 1998;94(2):21e37.
+[33] Sanaye S, Hajabdollahi H. Multi-objective optimization of
+shell and tube heat exchangers. Appl Therm Eng
+2010;30(14):1937e45.
+i n t e r n a t i o n a l j o u r n a l o f h y d r o g e n e n e r g y 4 2 ( 2 0 1 7 ) 2 5 0 4 8 e2 5 0 6 2
+25062

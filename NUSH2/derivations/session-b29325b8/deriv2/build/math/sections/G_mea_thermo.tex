@@ -1,0 +1,383 @@
+\section{G. MEA thermodynamics}\label{sec:G}
+The solvent model sets how much CO$_2$ each kilogram of solvent can hold and how hard it is to release. The selected model is the extended UNIQUAC of Aronu et al., Chem.\ Eng.\ Sci.\ 66 (2011) 6393, with corrigendum 78 (2012) 246, cited below as Aronu. It carries tier R inside 15 to 60 mass\% MEA and 40 to 120 C. The e-NRTL model of Zhang et al., Fluid Phase Equilib.\ 311 (2011) 67, is left out because it needs Aspen Databank values that no local source prints, so its figures stay as read-offs for comparison.
+
+Aronu prints the parameters and the top level of the model, and leaves the activity expressions to Thomsen (1997) and Thomsen and Rasmussen (1999), which the library lacks. The expressions in \Eq{G.14}, \Eq{G.15} and \Eq{G.17} therefore come from general knowledge of that framework, recorded as \tagM{7}. Their support is indirect: with them, a prototype reproduces Aronu's published model column at 104 points. That prototype is a reading aid that ran on the printed tables. The Rust port in the \texttt{mea} crate has its own tests, which were not rerun for this document, so each benchmark below is a stated target.
+
+Symbols: $K_{x,j}$ is the mole fraction equilibrium constant, because $K_j$ names adsorption in Section D. $H_x$ is the Henry constant on a mole fraction basis, in Pa. $Z_i$ is ion charge, $z_c$ the coordination number, and $A_{DH}$, $b_{DH}$ and $\sigma_{DH}$ the Debye-H\"uckel terms. Implementation lines give the planned name first and the present code second.
+
+\begin{eqcard}{G.1}{R}{Reactions}
+\Stmt{\begin{aligned}&\ce{2H2O <=> H3O+ + OH-}\\&\ce{2H2O + CO2 <=> H3O+ + HCO3-}\\&\ce{H2O + HCO3- <=> H3O+ + CO3^{2-}}\\&\ce{H2O + MEAH+ <=> H3O+ + MEA}\\&\ce{H2O + MEACOO- <=> MEA + HCO3-}\end{aligned}}
+\Interp{CO$_2$ does not simply dissolve in the solvent. It reacts into bicarbonate and carbamate while MEA picks up protons, and that chemistry is where the capacity comes from.}
+\Deriv{Aronu Eqs 4 to 8, with RNH$_2$ written as MEA. The carbamate is explicit, so nine species follow: H$_2$O, MEA, CO$_2$, H$_3$O$^+$, MEAH$^+$, OH$^-$, HCO$_3^-$, CO$_3^{2-}$ and MEACOO$^-$. Aronu's text says four reactions while listing five. Five is right, because nine species less four conservation laws leaves five independent reactions by \Eq{A.6}.}
+\Vars{\V{\mathrm{MEA}}{monoethanolamine, C$_2$H$_7$NO}{species}}
+\Assume{Carbamate explicit.}
+\Source{\tagP{} Aronu, Eqs 4 to 8, PDF p.~3.}
+\Impl{\fn{mea::SPECIES}, present code \fn{mea::aronu::SPECIES}}
+\Valid{ID}{eq_g_01}{Element and charge balance on all five reactions by \Eq{A.6}.}
+\end{eqcard}
+
+\begin{eqcard}{G.2}{E}{Equilibrium constants}
+\Stmt{\begin{gathered}\ln K_{x,j}\ \text{or}\ \ln H_x=C_1+\frac{C_2}{T}+C_3\ln T+C_4T\\[2pt]\begin{array}{l|rrrr|c}&C_1&C_2&C_3&C_4&T\ (\mathrm{C})\\\hline\mathrm{H_2O}&132.899&-13445.90&-22.4773&0&0\text{ to }225\\\mathrm{CO_2}&231.465&-12092.10&-36.7816&0&0\text{ to }225\\\mathrm{HCO_3^-}&216.049&-12431.70&-35.4819&0&0\text{ to }225\\\mathrm{MEA}&-4.9074&-6166.12&0&-0.00098482&0\text{ to }50\\\mathrm{MEACOO^-}&2.8898&-3635.09&0&0&25\text{ to }120\\H_x&170.7126&-8477.711&-21.95743&0.005781&0\text{ to }100\end{array}\end{gathered}}
+\Interp{Each reaction has its own temperature curve. The strong fall of the MEA and carbamate constants with cooling is what makes the solvent absorb at 40 C and release at 120 C.}
+\Deriv{Aronu Eq 16 and Table 2, read from the page image, because the text layer drops minus signs. Aronu states that the constants are on a mole fraction basis, so they are dimensionless, while $H_x$ carries pascal. $K_{MEA}$ is rated for 0 to 50 C and $H_x$ for 0 to 100 C, yet both run to 120 C here. That is an extrapolation inside the Aronu regression itself.}
+\Vars{\V{K_{x,j}}{mole fraction equilibrium constant of reaction $j$}{1} \V{H_x}{Henry constant of CO$_2$, mole fraction basis}{\U{Pa}} \V{C_1,C_2,C_3,C_4}{coefficients of the fit}{1, K, 1, \U{K^{-1}}}}
+\Assume{$K_{MEA}$ rated 0 to 50 C, used to 120 C.}
+\Source{\tagP{} Aronu, Eq 16 and Table 2, PDF p.~4, read as an image.}
+\Impl{\fn{mea::ln_k}, present code \fn{mea::aronu::Thermo::new}}
+\Valid{PUB}{eq_g_02}{Target: molal pK$_a$ of 9.50 against 9.51 in Versteeg and van Swaaij, Chem.\ Eng.\ Sci.\ 43 (1988) 573, Table 10, PDF p.~12. Hand check at 298.15 K: $\ln K_{x,MEA}=-25.882$, so p$K_x=11.24$, and removing $\log_{10}(1/M_w)=1.74$ gives 9.50 \tagC.}
+\end{eqcard}
+
+\begin{eqcard}{G.3}{R}{Chemical potential}
+\Stmt{\mu_i=\mu_i^\circ\left(T\right)+RT\ln\left(\gamma_ix_i\right)}
+\Interp{Each species has a reference value, and its chemical potential moves with its activity. Everything else in this section follows from this line.}
+\Deriv{Definition of the activity coefficient. $\mu_i^\circ$ belongs to the standard state of \Eq{G.6}.}
+\Vars{\V{\mu_i}{chemical potential of $i$}{\U{J\ mol^{-1}}} \V{\mu_i^\circ}{standard chemical potential of $i$}{\U{J\ mol^{-1}}} \V{\gamma_i}{activity coefficient of $i$}{1}}
+\Assume{None.}
+\Source{\tagT{} Textbook result.}
+\Impl{Theory, no code. Parent of \Eq{G.4}.}
+\Valid{ID}{eq_g_03}{Covered by \Eq{G.5}.}
+\end{eqcard}
+
+\begin{eqcard}{G.4}{R}{Equilibrium constant from standard potentials}
+\Stmt{RT\ln K_{x,j}=-\sum_i\nu_{ij}\mu_i^\circ}
+\Interp{An equilibrium constant is a statement about standard chemical potentials. It carries no information about the mixture.}
+\Deriv{Aronu Eq 12. At equilibrium $\sum_i\nu_{ij}\mu_i=0$, and substituting \Eq{G.3} separates the standard terms from the activities.}
+\Vars{\V{\nu_{ij}}{stoichiometric coefficient of $i$ in reaction $j$}{1}}
+\Assume{None.}
+\Source{\tagP{} Aronu, Eq 12, PDF p.~4.}
+\Impl{Theory, no code. Parent of \Eq{G.5}.}
+\Valid{ID}{eq_g_04}{Covered by \Eq{G.5}.}
+\end{eqcard}
+
+\begin{eqcard}{G.5}{R}{Equilibrium condition}
+\Stmt{\ln K_{x,j}=\sum_i\nu_{ij}\ln\left(\gamma_ix_i\right)}
+\Interp{Five nonlinear equations, one per reaction. With the four balances that follow they fix all nine mole fractions.}
+\Deriv{Combine \Eq{G.3} and \Eq{G.4}. The system is solved in the logarithms of the mole fractions with a Newton method, because the species span many orders of magnitude.}
+\Vars{\V{x_i}{liquid mole fraction of $i$}{1}}
+\Assume{Liquid phase in chemical equilibrium.}
+\Source{\tagT{} Consequence of \Eq{G.4}.}
+\Impl{\fn{mea::residuals}, present code \fn{mea::speciate::speciate}}
+\Valid{ID}{eq_g_05}{Scaled residual below $10^{-9}$.}
+\end{eqcard}
+
+\begin{eqcard}{G.6}{R}{Standard states}
+\Stmt{\gamma_i\to1\text{ as }x_i\to1\ \ (\mathrm{H_2O,\ MEA}),\qquad\gamma_i^*=\frac{\gamma_i}{\gamma_i^\infty}\ \ (\text{solutes})}
+\Interp{Water and MEA are measured against the pure liquid. The seven solutes are measured against infinite dilution in water, where they behave ideally by definition.}
+\Deriv{Aronu states that the reference for water and amine is the pure component, and that CO$_2$ takes Henry's law at infinite dilution in water. The model writes $\gamma_i^\infty$ from the combinatorial and residual terms evaluated in pure water.}
+\Vars{\V{\gamma_i^*}{unsymmetric activity coefficient of $i$}{1} \V{\gamma_i^\infty}{activity coefficient of $i$ at infinite dilution in water}{1}}
+\Assume{None.}
+\Source{\tagP{} Aronu, Eq 11 and text, PDF p.~4.}
+\Impl{\fn{mea::ln_gamma}, present code \fn{mea::aronu::Thermo::ln_gamma}}
+\Valid{ID}{eq_g_06}{Limits at pure water and infinite dilution.}
+\end{eqcard}
+
+\begin{eqcard}{G.7}{O}{Hidden convention on the MEA constant}
+\Stmt{\ln K_{x,MEA,eff}=\ln K_{x,MEA}+\ln\gamma_{MEA}^\infty}
+\Interp{Aronu's MEA constant is an aqueous pK$_a$, while the paper's stated reference for MEA is the pure liquid. This one line reconciles the two, and without it the model misses the published column by about 60\%.}
+\Deriv{Table 2 takes $K_{MEA}$ from Bates and Pinching, where MEA is referred to infinite dilution in water, so its activity there is $\gamma_{MEA}^*x_{MEA}$. On the stated pure-liquid basis the activity is $\gamma_{MEA}x_{MEA}$. Then \Eq{G.6} gives the factor $\gamma_{MEA}^\infty$ on $K$. Aronu does not state this. A project calculation found it from a ratio that was independent of loading and depended on temperature. Two independent values support it: $\ln\gamma_{MEA}^\infty$ at 313.15 K is $-1.279$ from Aronu's UNIQUAC and $-1.320$ from the NRTL of Zhang et al.\ Table 8, and Cownden and Lucquiaud, Carbon Capture Sci.\ Technol.\ 19 (2026) 100625, Table 1, regressed a nearby constant on a solvent reference. $K_{MEACOO}$ stays as printed.}
+\Vars{\V{K_{x,MEA,eff}}{MEA constant on the pure liquid basis}{1}}
+\Assume{Not stated by Aronu.}
+\Source{\tagC{} Calculated here. Support from Cownden and Lucquiaud Table 1 and Zhang et al.\ Table 8.}
+\Impl{\fn{mea::ln_k}, present code \fn{mea::aronu::Thermo::ln_k_mea_effective}}
+\Valid{PUB}{eq_g_07}{Target at 30 mass\%, 17 model column points: AARD 58.8\% without this line and 0.11\% with it, prototype figures.}
+\end{eqcard}
+
+\begin{eqcard}{G.8}{R}{MEA balance}
+\Stmt{n_{MEA}+n_{MEAH^+}+n_{MEACOO^-}=n^0}
+\Interp{Every MEA molecule is free, protonated or bound as carbamate.}
+\Deriv{\Eq{A.5} on nitrogen, the only element MEA alone carries here.}
+\Vars{\V{n^0}{total MEA charged}{\U{mol}}}
+\Assume{No degradation.}
+\Source{\tagT{} Consequence of \Eq{A.5}.}
+\Impl{\fn{mea::balances}, present code \fn{mea::speciate::Speciation::balance_errors}}
+\Valid{ID}{eq_g_08}{Balance error at the solution.}
+\end{eqcard}
+
+\begin{eqcard}{G.9}{R}{Carbon balance}
+\Stmt{n_{CO_2}+n_{HCO_3^-}+n_{CO_3^{2-}}+n_{MEACOO^-}=\alpha n^0}
+\Interp{Every absorbed CO$_2$ sits in one of four forms. Their sum is the loading times the MEA present.}
+\Deriv{\Eq{A.5} on the carbon that came from CO$_2$, which excludes the two carbon atoms of the MEA backbone.}
+\Vars{\V{\alpha}{CO$_2$ loading}{\U{mol\ mol^{-1}}}}
+\Assume{None.}
+\Source{\tagT{} Consequence of \Eq{A.5}.}
+\Impl{\fn{mea::balances}, present code \fn{mea::speciate::Speciation::balance_errors}}
+\Valid{ID}{eq_g_09}{Balance error at the solution.}
+\end{eqcard}
+
+\begin{eqcard}{G.10}{R}{Hydrogen balance}
+\Stmt{\begin{aligned}&2n_{H_2O}+3n_{H_3O^+}+n_{OH^-}+n_{HCO_3^-}+7n_{MEA}+8n_{MEAH^+}+6n_{MEACOO^-}\\&\qquad=2n_{H_2O}^0+7n^0\end{aligned}}
+\Interp{Hydrogen is conserved as it moves among the nine species. This closes the system once charge is also balanced.}
+\Deriv{\Eq{A.5} on hydrogen, with MEA as C$_2$H$_7$NO, MEAH$^+$ as C$_2$H$_8$NO$^+$ and carbamate as C$_3$H$_6$NO$_3^-$. Bicarbonate holds one hydrogen, and carbonate and CO$_2$ hold none.}
+\Vars{\V{n_{H_2O}^0}{apparent water charged}{\U{mol}}}
+\Assume{MEA is C$_2$H$_7$NO and carbamate is C$_3$H$_6$NO$_3^-$.}
+\Source{\tagT{} Consequence of \Eq{A.5}.}
+\Impl{\fn{mea::balances}, present code \fn{mea::speciate::Speciation::balance_errors}}
+\Valid{ID}{eq_g_10}{Balance error at the solution.}
+\end{eqcard}
+
+\begin{eqcard}{G.11}{R}{Electroneutrality}
+\Stmt{n_{H_3O^+}+n_{MEAH^+}=n_{OH^-}+n_{HCO_3^-}+2n_{CO_3^{2-}}+n_{MEACOO^-}}
+\Interp{The liquid carries no net charge. In practice MEAH$^+$ balances carbamate and bicarbonate, and the other ions stay small.}
+\Deriv{Charge is conserved in each reaction of \Eq{G.1}, and the solvent starts neutral.}
+\Vars{\V{n_i}{moles of species $i$}{\U{mol}}}
+\Assume{None.}
+\Source{\tagT{} Textbook result.}
+\Impl{\fn{mea::balances}, present code \fn{mea::speciate::Speciation::balance_errors}}
+\Valid{ID}{eq_g_11}{Balance error at the solution.}
+\end{eqcard}
+
+\begin{eqcard}{G.12}{R}{Loading}
+\Stmt{\alpha=\frac{\text{total CO}_2}{\text{total MEA}}}
+\Interp{The usual measure of how full the solvent is. Lean solvent runs at 0.25 and rich solvent at 0.50 here.}
+\Deriv{Definition, and the right side of \Eq{G.9} over $n^0$. Total counts all bound forms, which is what a titration measures.}
+\Vars{\V{\alpha_{lean}}{lean loading}{\U{mol\ mol^{-1}}} \V{\alpha_{rich}}{rich loading}{\U{mol\ mol^{-1}}}}
+\Assume{None.}
+\Source{\tagT{} Definition.}
+\Impl{\fn{mea::loading}, present code \fn{mea::speciate::speciate}}
+\Valid{ID}{eq_g_12}{Round trip with \Eq{G.9}.}
+\end{eqcard}
+
+\begin{eqcard}{G.13}{R}{Activity coefficient}
+\Stmt{\ln\gamma_i=\ln\gamma_i^C+\ln\gamma_i^R+\ln\gamma_i^{DH}}
+\Interp{Non-ideality splits into one term for each physical cause. Size and shape give the first, short-range contact the second and long-range ion forces the last.}
+\Deriv{Aronu Eq 13 splits the excess Gibbs energy into combinatorial, residual and Debye-H\"uckel parts. Differentiating with respect to $n_i$ gives this sum. Aronu prints only that top level.}
+\Vars{\V{\gamma_i^C}{combinatorial activity coefficient}{1} \V{\gamma_i^R}{residual activity coefficient}{1} \V{\gamma_i^{DH}}{Debye-H\"uckel activity coefficient}{1}}
+\Assume{Thomsen form of extended UNIQUAC.}
+\Source{\tagP{} Aronu, Eq 13, PDF p.~4. \tagM{7}: the expressions of each term are not in the library.}
+\Impl{\fn{mea::ln_gamma}, present code \fn{mea::aronu::Thermo::ln_gamma}}
+\Valid{PUB}{eq_g_13}{Target: the 104 published model points, validation matrix row AR-1.}
+\end{eqcard}
+
+\begin{eqcard}{G.14}{R}{Combinatorial term}
+\Stmt{\begin{gathered}\ln\gamma_i^C=\ln\frac{\phi_i}{x_i}+1-\frac{\phi_i}{x_i}-\frac{z_c}{2}q_i\left[\ln\frac{\phi_i}{\theta_i}+1-\frac{\phi_i}{\theta_i}\right],\quad\phi_i=\frac{x_ir_i}{\sum_kx_kr_k},\quad\theta_i=\frac{x_iq_i}{\sum_kx_kq_k}\\[2pt]\begin{array}{r|ccccccccc}&\mathrm{H_2O}&\mathrm{MEA}&\mathrm{CO_2}&\mathrm{H_3O^+}&\mathrm{MEAH^+}&\mathrm{OH^-}&\mathrm{HCO_3^-}&\mathrm{CO_3^{2-}}&\mathrm{MEACOO^-}\\\hline r_i&0.9200&4.2800&5.7410&0.13779&1.0241&9.3973&9.1571&9.7452&1.0741\\q_i&1.4000&4.2800&6.0806&10^{-15}&2.5150&8.8171&6.3461&6.4614&0.1106\end{array}\end{gathered}}
+\Interp{This is the part of non-ideality due to size and shape alone, with no energy in it. The $r$ and $q$ values act as a molecule's volume and surface area.}
+\Deriv{Standard UNIQUAC combinatorial form, with $z_c=10$ from the Thomsen framework. Table 7 prints $r$ and $q$ for all nine species, read from the image.}
+\Vars{\V{\phi_i}{volume fraction of $i$}{1} \V{\theta_i}{surface fraction of $i$}{1} \V{r_i}{UNIQUAC volume parameter}{1} \V{q_i}{UNIQUAC surface parameter}{1} \V{z_c}{coordination number, 10}{1}}
+\Assume{$r$ and $q$ from Table 7.}
+\Source{\tagM{7}: expression from general knowledge. \tagP{} Aronu, Table 7, PDF p.~7.}
+\Impl{\fn{mea::ln_gamma_c}, present code inside \fn{mea::aronu::Thermo::ln_gamma}}
+\Valid{PUB}{eq_g_14}{Target: the 104 published model points, row AR-1.}
+\end{eqcard}
+
+\begin{eqcard}{G.15}{R}{Residual term}
+\Stmt{\ln\gamma_i^R=q_i\left[1-\ln\sum_k\theta_k\psi_{ki}-\sum_k\frac{\theta_k\psi_{ik}}{\sum_l\theta_l\psi_{lk}}\right],\qquad\psi_{ki}=\exp\left(-\frac{u_{ki}-u_{ii}}{T}\right)}
+\Interp{Short-range energy between neighbours. A large positive $u$ means two species avoid each other.}
+\Deriv{Standard UNIQUAC residual form. The expression for $\psi_{ki}$ is printed as Aronu Eq 14, and the rest is from the Thomsen framework.}
+\Vars{\V{\psi_{ki}}{interaction factor between $k$ and $i$}{1} \V{u_{ki}}{interaction energy between $k$ and $i$}{\U{K}}}
+\Assume{Published parameters used with an expression from general knowledge.}
+\Source{\tagM{7}: expression from general knowledge. $\psi_{ki}$ from Aronu, Eq 14, PDF p.~4.}
+\Impl{\fn{mea::ln_gamma_r}, present code inside \fn{mea::aronu::Thermo::ln_gamma}}
+\Valid{PUB}{eq_g_15}{Target: the 104 published model points, row AR-1.}
+\end{eqcard}
+
+\begin{eqcard}{G.16}{E}{Interaction parameters}
+\Stmt{u_{ki}=u^0_{ki}+u^T_{ki}\left(T-298.15\right),\qquad u_{ki}=u_{ik}}
+\Interp{Each pair of species has one energy that drifts linearly with temperature. The values in the two tables below are Aronu's regression.}
+\Deriv{Aronu Eq 15 with Tables 8 and 9, read from the page image because the text layer drops minus signs. The tables are symmetric, so only the lower triangle is printed. Pairs held at $10^9$ never meet in practice, so those pairs drop out of the model.}
+\Vars{\V{u^0_{ki}}{interaction energy at 298.15 K}{\U{K}} \V{u^T_{ki}}{temperature slope of the interaction energy}{1}}
+\Assume{Tables 8 and 9, signs from the image.}
+\Source{\tagP{} Aronu, Eqs 14 and 15, PDF p.~4, with Tables 8 and 9, PDF p.~7.}
+\Impl{\fn{mea::u_matrix}, present code \fn{mea::aronu::u_ij}}
+\Valid{PUB}{eq_g_16}{Target: the 104 published model points, row AR-1.}
+\begin{center}\footnotesize
+$\begin{array}{l|rrrrrrrrr}u^0_{ki}&\mathrm{H_2O}&\mathrm{MEA}&\mathrm{CO_2}&\mathrm{H_3O^+}&\mathrm{MEAH^+}&\mathrm{OH^-}&\mathrm{HCO_3^-}&\mathrm{CO_3^{2-}}&\mathrm{MEACOO^-}\\\hline\mathrm{H_2O}&0\\\mathrm{MEA}&173.9645&414.6924\\\mathrm{CO_2}&-151.4573&87.5583&40.5176\\\mathrm{H_3O^+}&10^4&10^9&10^9&0\\\mathrm{MEAH^+}&-20.7732&310.1293&30.8035&10^9&0\\\mathrm{OH^-}&600.4952&10^9&2500&10^9&10^9&1562.8810\\\mathrm{HCO_3^-}&517.0278&655.0881&597.9726&10^9&732.7007&2500&743.6159\\\mathrm{CO_3^{2-}}&361.3877&10^9&2500&10^9&10^9&1588.0250&719.159&1458.3440\\\mathrm{MEACOO^-}&2758.3852&10^9&10^9&10^9&10^9&10^9&10^9&10^9&1500\end{array}$
+
+\vspace{4pt}
+$\begin{array}{l|rrrrrrrrr}u^T_{ki}&\mathrm{H_2O}&\mathrm{MEA}&\mathrm{CO_2}&\mathrm{H_3O^+}&\mathrm{MEAH^+}&\mathrm{OH^-}&\mathrm{HCO_3^-}&\mathrm{CO_3^{2-}}&\mathrm{MEACOO^-}\\\hline\mathrm{H_2O}&0\\\mathrm{MEA}&0.8027&0.6647\\\mathrm{CO_2}&6.0908&4.6660&13.6290\\\mathrm{H_3O^+}&0&0&0&0\\\mathrm{MEAH^+}&-1.9174&0.1213&7.3541&0&0\\\mathrm{OH^-}&8.5455&0&0&0&0&5.6169\\\mathrm{HCO_3^-}&6.9504&15.2488&5.8077&0&2.8863&0&17.1148\\\mathrm{CO_3^{2-}}&3.3516&0&0&0&0&2.7496&2.6115&-1.3448\\\mathrm{MEACOO^-}&16.9192&0&0&0&0&0&0&0&0\end{array}$
+\end{center}
+\end{eqcard}
+
+\begin{eqcard}{G.17}{R}{Debye-H\"uckel term}
+\Stmt{\begin{gathered}\ln\gamma_i^{DH}=-Z_i^2\frac{A_{DH}\sqrt I}{1+b_{DH}\sqrt I},\qquad\ln\gamma_w^{DH}=\frac23M_wA_{DH}I^{3/2}\sigma_{DH}\left(b_{DH}\sqrt I\right)\\\sigma_{DH}(x)=\frac{3}{x^3}\left[1+x-\frac{1}{1+x}-2\ln\left(1+x\right)\right]\\A_{DH}=1.131+1.335\times10^{-3}t_C+1.164\times10^{-5}t_C^2,\qquad b_{DH}=1.5\end{gathered}}
+\Interp{Ions feel each other over long distances, and the effect grows with charge squared. Water takes a small correction from the same term.}
+\Deriv{Extended Debye-H\"uckel form of the Thomsen framework, with molality on water alone. Neither the expressions, nor $A_{DH}(T)$, nor $b_{DH}$ appear in any local source. They are stated from general knowledge and supported only by the test on \Eq{G.13}. Scaling $A_{DH}$ by 1.3 or setting $b_{DH}=1.0$ moves the 30 mass\% AARD to 11.0\% and 10.2\%, against 0.11\% with these values, so the published column does discriminate between them.}
+\Vars{\V{Z_i}{ion charge of $i$}{1} \V{A_{DH}}{Debye-H\"uckel constant}{\U{kg^{1/2}\ mol^{-1/2}}} \V{b_{DH}}{Debye-H\"uckel size parameter, 1.5}{\U{kg^{1/2}\ mol^{-1/2}}} \V{\sigma_{DH}}{Debye-H\"uckel water function}{1} \V{t_C}{temperature in Celsius, here only}{C} \V{\gamma_w^{DH}}{Debye-H\"uckel coefficient of water}{1}}
+\Assume{Molality on water.}
+\Source{\tagM{7}: general knowledge, supported by the test on \Eq{G.13}.}
+\Impl{\fn{mea::ln_gamma_dh}, present code \fn{mea::aronu::a_dh} and \fn{mea::aronu::Thermo::ln_gamma}}
+\Valid{PUB}{eq_g_17}{Target: the 104 published model points, row AR-1.}
+\end{eqcard}
+
+\begin{eqcard}{G.18}{R}{Ionic strength}
+\Stmt{I=\frac12\sum_im_iZ_i^2}
+\Interp{A single measure of how many ions are present, weighted by charge squared.}
+\Deriv{Definition, with molality taken on water: $m_i=x_i/(x_wM_w)$.}
+\Vars{\V{I}{ionic strength}{\U{mol\ kg^{-1}}} \V{m_i}{molality of $i$}{\U{mol\ kg^{-1}}}}
+\Assume{None.}
+\Source{\tagT{} Definition.}
+\Impl{\fn{mea::ionic}, present code inside \fn{mea::aronu::Thermo::ln_gamma}}
+\Valid{ID}{eq_g_18}{Direct evaluation on a charge-balanced mixture.}
+\end{eqcard}
+
+\begin{eqcard}{G.19}{R}{CO$_2$ vapour-liquid equilibrium}
+\Stmt{\varphi_{CO_2}y_{CO_2}p=\gamma^*_{CO_2}x_{CO_2}H_x\exp\left[\frac{v^\infty_{CO_2}\left(p-p^s_{H_2O}\right)}{RT}\right]}
+\Interp{The pressure of CO$_2$ above the solvent. It is the single most important output of this section, because it sets the driving force in both columns.}
+\Deriv{Aronu Eq 10. Equate the fugacity of CO$_2$ in each phase, with the liquid referred to Henry's law at infinite dilution in water at the saturation pressure of water. The exponential is the Poynting correction from that pressure to the system pressure. It is 1.029 at 21 bar and 40 C, which shifts loading by only 0.002 to 0.003. Below, $p^*_{CO_2}$ means this pressure at the liquid composition, with $\varphi_{CO_2}=1$ unless stated.}
+\Vars{\V{\varphi_i}{fugacity coefficient of $i$}{1} \V{v^\infty_{CO_2}}{partial molar volume of CO$_2$ at infinite dilution}{\U{m^3\ mol^{-1}}} \V{p^s_{H_2O}}{saturation pressure of water}{\U{Pa}} \V{p^*_{CO_2}}{equilibrium partial pressure of CO$_2$}{\U{Pa}}}
+\Assume{$v^\infty_{CO_2}=3.5\times10^{-5}$ \U{m^3\ mol^{-1}} \tagA, as Aronu prints no value.}
+\Source{\tagP{} Aronu, Eq 10, PDF p.~3 to p.~4.}
+\Impl{\fn{mea::pco2}, present code \fn{mea::pstar::pstar_kpa} and \fn{mea::pstar::pco2_gas_kpa}}
+\Valid{PUB}{eq_g_19}{Target: 104 model points with AARD 0.20\% and each within 1.5\%, prototype figures, matrix row AR-1. Measured data stay on rows AR-2 and AR-3.}
+\end{eqcard}
+
+\begin{eqcard}{G.20}{R}{Water and MEA vapour-liquid equilibrium}
+\Stmt{\varphi_iy_ip=\gamma_ix_ip_i^s\varphi_i^s\exp\left[\frac{v_i\left(p-p_i^s\right)}{RT}\right]}
+\Interp{Modified Raoult's law for the solvent itself. This gives the water that leaves with the treated gas and the MEA lost as vapour.}
+\Deriv{Aronu Eq 11, from the pure-liquid reference of \Eq{G.6}. Aronu takes $p_i^s$ from DIPPR, which is not local. Water uses IF97 by \Eq{F.4}. For MEA the library holds only 164 Pa at 40 C and 666 Pa at 60 C, from Dugas, so MEA vapour pressure rests on two points.}
+\Vars{\V{p_i^s}{saturation pressure of $i$}{\U{Pa}} \V{\varphi_i^s}{fugacity coefficient of saturated $i$}{1} \V{v_i}{partial molar volume of $i$}{\U{m^3\ mol^{-1}}}}
+\Assume{DIPPR not local, IF97 for water. MEA two points only.}
+\Source{\tagP{} Aronu, Eq 11, PDF p.~4. Dugas \cite{Dugas}, PDF p.~125, for the MEA points.}
+\Impl{\fn{mea::p_water}; \fn{mea::p_mea}, present code \fn{mea::pstar::water_partial_pressure_pa}}
+\Valid{EXP}{eq_g_20}{Target: Aronu total pressure AARD, quoted as 11.7\%, matrix row AR-4 at 12\%.}
+\end{eqcard}
+
+\begin{eqcard}{G.21}{R}{Vapour fugacity}
+\Stmt{\begin{gathered}Z^3-Z^2+\left(A_S-B_S-B_S^2\right)Z-A_SB_S=0\\\ln\varphi_i=\frac{b_i}{b_m}\left(Z-1\right)-\ln\left(Z-B_S\right)-\frac{A_S}{B_S}\left(\frac{2\sum_jy_ja_{ij}}{a_m}-\frac{b_i}{b_m}\right)\ln\left(1+\frac{B_S}{Z}\right)\end{gathered}}
+\Interp{A correction for non-ideal gas at pressure. In the plant it matters only slightly, and it is kept so that the published model column can be matched.}
+\Deriv{Soave-Redlich-Kwong, as Aronu states. Here $A_S=a_mp/(RT)^2$ and $B_S=b_mp/(RT)$, with van der Waals mixing and $a_{ij}=\sqrt{a_ia_j}$. Critical constants are textbook values. The code holds CO$_2$ and water only. No binary parameter for H$_2$ exists in any local source, so it would be taken as zero in a hydrogen mixture.}
+\Vars{\V{A_S}{SRK attraction group}{1} \V{B_S}{SRK volume group}{1} \V{a_m}{SRK mixture attraction}{\U{Pa\ m^6\ mol^{-2}}} \V{b_m}{SRK mixture covolume}{\U{m^3\ mol^{-1}}}}
+\Assume{H$_2$ $k_{ij}$ absent, taken as 0.}
+\Source{\tagP{} Aronu, PDF p.~3, for the choice of SRK. \tagT{} Form and constants.}
+\Impl{\fn{props::mixture::srk_phi}, present code \fn{mea::pstar::srk_phi_co2}}
+\Valid{ID}{eq_g_21}{Limit $\varphi_i\to1$ at low pressure. Used only for the model column comparison.}
+\end{eqcard}
+
+\begin{eqcard}{G.22}{E}{Henry constant in water}
+\Stmt{H^w_{CO_2}=2.82\times10^{6}\exp\left(-\frac{2044}{T}\right)}
+\Interp{How easily CO$_2$ stays in physical solution in water. A larger value means lower solubility, and it grows on heating.}
+\Deriv{Aronu Eq 17 prints the constants with no unit. Dugas Eq 5.9 prints the same constants in \U{Pa\ m^3\ mol^{-1}}. Both cite Versteeg and van Swaaij (1988) in J.\ Chem.\ Eng.\ Data 33, which the library lacks, so the values are second hand.}
+\Vars{\V{H^w_{CO_2}}{Henry constant of CO$_2$ in water}{\U{Pa\ m^3\ mol^{-1}}}}
+\Assume{Second hand.}
+\Source{\tagP{} Aronu, Eq 17, PDF p.~4. Dugas \cite{Dugas}, Eq 5.9, PDF p.~129. \tagM{8}: original not local.}
+\Impl{\fn{mea::henry_w}, present code \fn{mea::aronu::henry_water_co2_pa_m3_mol}}
+\Valid{PUB}{eq_g_22}{Target: the Table 2 form. Hand check at 298.15 K: $H_x=1.61\times10^{8}$ Pa from \Eq{G.2} against $H^w_{CO_2}c_w=1.64\times10^{8}$ Pa \tagC, within 2\%.}
+\end{eqcard}
+
+\begin{eqcard}{G.23}{E}{N$_2$O analogy}
+\Stmt{H_{app}=H_{N_2O}\frac{H^w_{CO_2}}{H^w_{N_2O}},\qquad H^w_{N_2O}=8.55\times10^{6}\exp\left(-\frac{2284}{T}\right),\qquad H_{app}=\gamma^*_{CO_2}H^w_{CO_2}}
+\Interp{CO$_2$ reacts in amine, so its physical solubility cannot be measured directly. N$_2$O has similar size and shape and does not react, so it stands in.}
+\Deriv{Aronu Eqs 18 and 19. Dugas Eq 5.10 prints the same N$_2$O constants with the unit. A basis warning applies: Eq 19 sets a mole fraction activity coefficient equal to a ratio of concentration-based constants. Total molar density is 43.4 \U{kmol\ m^{-3}} at 40 C and loading 0.5, against 55.1 for water, a factor of 1.27. So $\gamma^*_{CO_2}$ stays inside the equilibrium model and does not pass to rate calculations.}
+\Vars{\V{H_{app}}{apparent Henry constant of CO$_2$ in the solvent}{\U{Pa\ m^3\ mol^{-1}}} \V{H_{N_2O}}{Henry constant of N$_2$O in the solvent}{\U{Pa\ m^3\ mol^{-1}}} \V{H^w_{N_2O}}{Henry constant of N$_2$O in water}{\U{Pa\ m^3\ mol^{-1}}}}
+\Assume{Mixed basis in the source, as stated above.}
+\Source{\tagP{} Aronu, Eqs 18 and 19, PDF p.~4. Dugas \cite{Dugas}, Eq 5.10, PDF p.~129.}
+\Impl{\fn{mea::henry_app}, present code \fn{mea::pstar::henry_apparent_pa_m3_mol}}
+\Valid{EXP}{eq_g_23}{Target: Hartono et al., J.\ Chem.\ Eng.\ Data 59 (2014) 1808, Table 11, PDF p.~6, $n=15$, AARD 3.4\% prototype figure, against 2.7\% quoted by Aronu.}
+\end{eqcard}
+
+\begin{eqcard}{G.24}{O}{Heat of absorption}
+\Stmt{\Delta h_{abs}=-R\left(\frac{\partial\ln p^*_{CO_2}}{\partial\left(1/T\right)}\right)_{p,x}}
+\Interp{The slope of the equilibrium curve gives the heat released when CO$_2$ is absorbed. It drops above a loading of about 0.5, where absorption turns more physical.}
+\Deriv{Aronu Eq 22, the Gibbs-Helmholtz relation applied to \Eq{G.19}, which makes $\Delta h_{abs}$ a positive number for exothermic absorption. The code takes a central difference 2 K either side at fixed apparent composition. Aronu warns that this estimate is not necessarily accurate, and the calorimetric data of Kim and Svendsen exist locally only as figures. The prototype gives 84.7 and 61.5 \U{kJ\ mol^{-1}} at 40 C and loadings 0.30 and 0.50, as a reading aid only.}
+\Vars{\V{\Delta h_{abs}}{heat of absorption of CO$_2$, positive when exothermic}{\U{J\ mol^{-1}}}}
+\Assume{Aronu warns about accuracy.}
+\Source{\tagC{} Calculated here with Aronu, Eq 22, PDF p.~11.}
+\Impl{\fn{mea::dh_abs}, present code \fn{mea::enthalpy::dh_abs_j_mol}}
+\Valid{NONE}{eq_g_24}{No numeric benchmark exists. Comparison is against figures only, Figs 12 to 14 of Zhang et al.}
+\end{eqcard}
+
+\begin{eqcard}{G.25}{F}{Solvent heat capacity}
+\Stmt{c_{p,s}=3.6\ \mathrm{kJ\ kg^{-1}\ K^{-1}}}
+\Interp{A single value for solvent heat capacity, used in the column and exchanger energy balances.}
+\Deriv{No local source tabulates this quantity. Plaza Fig 3.13, for 7 m MEA at loadings 0.14, 0.36 and 0.54 from 40 to 120 C, spans an axis of 3.2 to 3.8 \U{kJ\ kg^{-1}\ K^{-1}}. Read by eye, the points run from about 3.25 at high loading and low temperature to about 3.7 at low loading and high temperature, so 3.6 sits in the upper part of that range for loaded solvent.}
+\Vars{\V{c_{p,s}}{solvent mass heat capacity}{\U{J\ kg^{-1}\ K^{-1}}}}
+\Assume{Constant.}
+\Source{\tagA{} Assumed. Range from Plaza \cite{Plaza}, Fig 3.13, PDF p.~79, by eye. \tagM{21}: no tabulated value.}
+\Impl{\fn{mea::cp_solv}}
+\Valid{NONE}{eq_g_25}{No benchmark exists.}
+\end{eqcard}
+
+\begin{eqcard}{G.26}{E}{Density}
+\Stmt{\begin{gathered}V_{sln}=x_{MEA}V_{MEA}+x_{H_2O}V_{H_2O}+x_{CO_2}V_{CO_2}+x_{MEA}x_{H_2O}V^*\\V_{MEA}=\frac{M_{MEA}}{a_\rho T^2+b_\rho T+c_\rho},\qquad\rho_{sln}=\frac{\sum_ix_iM_i}{V_{sln}}\end{gathered}}
+\Interp{Solvent density from a molar volume with one mixing correction. Dissolved CO$_2$ adds mass and almost no volume, so density rises with loading.}
+\Deriv{Weiland et al.\ as printed by Plaza Eqs 3.16 and 3.17 and by Dugas Eqs 5.17 to 5.20. Here $x_i$ are apparent mole fractions on MEA, water and CO$_2$, with $V$ in \U{mL\ mol^{-1}}, $a_\rho=-5.35162\times10^{-7}$, $b_\rho=-4.51417\times10^{-4}$, $c_\rho=1.19451$, $V^*=-1.8218$ and $V_{CO_2}=0.04747$. Both theses print $V_{CO_2}$ with this value, and reading it as 47.47 raises AARD from 0.51\% to 4.84\%. Eq 3.17 prints $M_{MEA}=61.09$ \U{g\ mol^{-1}}, while the Plaza subroutine holds 61.08, which the code uses. Water molar volume comes from IF97. Hartono's own correlation stays a benchmark, because its unloaded base cannot be rebuilt from that paper.}
+\Vars{\V{V_{sln}}{molar volume of the solution}{\U{m^3\ mol^{-1}}} \V{V_{MEA}}{molar volume of MEA}{\U{m^3\ mol^{-1}}} \V{V_{H_2O}}{molar volume of water}{\U{m^3\ mol^{-1}}} \V{V_{CO_2}}{dissolved volume of CO$_2$}{\U{m^3\ mol^{-1}}} \V{V^*}{interaction volume of MEA and water}{\U{m^3\ mol^{-1}}} \V{\rho_{sln}}{solution density}{\U{kg\ m^{-3}}} \V{a_\rho,b_\rho,c_\rho}{MEA density coefficients}{\U{g\ mL^{-1}} with $T$ in K}}
+\Assume{Apparent mole fractions. Checked from 20 to 80 C only.}
+\Source{\tagP{} Plaza \cite{Plaza}, Eq 3.16 and Eq 3.17, PDF p.~71, and subroutine, PDF p.~295. Dugas \cite{Dugas}, Eqs 5.17 to 5.20 and Table 5.2, PDF p.~133.}
+\Impl{\fn{mea::rho}, present code \fn{mea::density::density_kg_m3}}
+\Valid{EXP}{eq_g_26}{Target: Hartono et al.\ Table 3, PDF p.~3, 30 mass\%, 20 to 80 C, loading to 0.50, AARD 0.51\% prototype figure, matrix row HA-1 at 1\%.}
+\end{eqcard}
+
+\begin{eqcard}{G.27}{E}{Viscosity}
+\Stmt{\mu_{sln}=\mu_w\exp\left\{\frac{\left(21.186\,\Omega_w+2373\right)\left[\alpha\left(0.01015\,\Omega_w+0.0093\,T-2.2589\right)+1\right]\Omega_w}{T^2}\right\}}
+\Interp{MEA thickens water, and loading thickens it further. Viscosity matters because it slows diffusion, and that reduces the liquid film coefficient.}
+\Deriv{Weiland correlation. Dugas Eq 5.16 with Table 5.1, Plaza Eq 3.18 and Khan Eq 7 agree once the zero terms of Table 5.1 are dropped. $\Omega_w$ is mass percent MEA on a CO$_2$-free basis, so 30 here. Water viscosity comes from the IAPWS release.}
+\Vars{\V{\mu_{sln}}{solution viscosity}{\U{Pa\ s}} \V{\mu_w}{water viscosity}{\U{Pa\ s}} \V{\Omega_w}{MEA mass percent}{1}}
+\Assume{Loading to 0.50.}
+\Source{\tagP{} Dugas \cite{Dugas}, Eq 5.16 and Table 5.1, PDF p.~132. Khan et al., Chem.\ Eng.\ Res.\ Des.\ 89 (2011) 1600, Eq 7, PDF p.~3. Plaza \cite{Plaza}, Eq 3.18, PDF p.~73 to p.~74.}
+\Impl{\fn{mea::mu}, present code \fn{mea::viscosity::viscosity_pa_s}}
+\Valid{EXP}{eq_g_27}{Target: Hartono et al.\ Table 7, PDF p.~5, AARD 1.4\% prototype figure, matrix row HA-2 at 3\%.}
+\end{eqcard}
+
+\begin{eqcard}{G.28}{E}{Diffusivity}
+\Stmt{D_w=2.35\times10^{-6}\exp\left(-\frac{2119}{T}\right),\qquad D_l=D_w\left(\frac{\mu_w}{\mu_{sln}}\right)^{0.8}}
+\Interp{CO$_2$ diffuses more slowly in thick solvent. The exponent says the slowdown follows viscosity closely, though a little less than in direct proportion.}
+\Deriv{Khan Eqs 6a and 6b, from Versteeg and van Swaaij. Dugas Eq 5.15 prints the same water value with the unit \U{m^2\ s^{-1}}. Dugas Eq 5.14 uses an exponent of 0.72 in a different kinetic set, and these sets must not be mixed.}
+\Vars{\V{D_w}{CO$_2$ diffusivity in water}{\U{m^2\ s^{-1}}} \V{D_l}{CO$_2$ diffusivity in solution}{\U{m^2\ s^{-1}}}}
+\Assume{Exponent 0.8 goes with the Khan set.}
+\Source{\tagP{} Khan et al., Eqs 6a and 6b, PDF p.~3. Dugas \cite{Dugas}, Eq 5.15, PDF p.~132.}
+\Impl{\fn{mea::diff_co2}, present code \fn{mea::kinetics::d_co2_solution_m2_s}}
+\Valid{PUB}{eq_g_28}{Target: Dugas Tables 4.2 and B.1.}
+\end{eqcard}
+
+\begin{eqcard}{G.29}{O}{Free MEA}
+\Stmt{f_{free}=\frac{n_{MEA}}{n^0}}
+\Interp{Only free MEA reacts with CO$_2$. As the solvent fills, this fraction collapses, so the reaction slows long before thermodynamics runs out.}
+\Deriv{Read from the solution of \Eq{G.5} to \Eq{G.11} at the local temperature and loading. The prototype gives 0.4\% of total MEA at 40 C and 1.2\% at 60 C at equilibrium rich loading. That is the kinetic reason for the cap in \Eq{G.32}. Dugas Table 5.4 shows the same trend for 7 m MEA at 20 C: its calculated $k_g'$ falls from $2.5\times10^{-6}$ at loading 0.25 to $1.7\times10^{-7}$ \U{mol\ s^{-1}\ Pa^{-1}\ m^{-2}} at 0.50.}
+\Vars{\V{f_{free}}{free fraction of MEA}{1}}
+\Assume{Kinetic limit near equilibrium loading.}
+\Source{\tagC{} Calculated here. Trend from Dugas \cite{Dugas}, Table 5.4, PDF p.~192.}
+\Impl{\fn{mea::free_mea}, present code \fn{mea::speciate::speciate}}
+\Valid{PUB}{eq_g_29}{Target: 0.4\% at 40 C and equilibrium loading, prototype figure.}
+\end{eqcard}
+
+\begin{eqcard}{G.30}{E}{Empirical comparator}
+\Stmt{\ln p^*_{Xu}=44.2-\frac{116{,}000}{RT}-29.7\,\alpha+11{,}600\,\frac{\alpha}{T}+17.3\,\alpha^2}
+\Interp{A simple fit for equilibrium pressure, in Pa. It is useful as a second opinion and fails at the rich end.}
+\Deriv{Dugas Eq 5.26, from Xu in Rochelle et al., valid for MEA from 40 to 160 C, with $T$ in K and $R$ in \U{J\ mol^{-1}\ K^{-1}}. It runs low above a loading of about 0.45.}
+\Vars{\V{p^*_{Xu}}{equilibrium CO$_2$ pressure by the Xu fit}{\U{Pa}}}
+\Assume{Fails above loading about 0.45.}
+\Source{\tagP{} Dugas \cite{Dugas}, Eq 5.26, PDF p.~136.}
+\Impl{\fn{mea::xu_check}}
+\Valid{EXP}{eq_g_30}{Target: ratio to data of 0.45 at loading 0.496 and 40 C, a project calculation.}
+\end{eqcard}
+
+\begin{eqcard}{G.31}{O}{Plant point}
+\Stmt{p^*_{CO_2}\left(T,\alpha^*\right)=p_{CO_2},\qquad\alpha^*\left(378\ \mathrm{kPa},\ 40\ \mathrm{C}\right)=0.741}
+\Interp{The loading the solvent would reach at rest with the feed gas. It sits far above the 0.50 cap, so equilibrium leaves room and rate sets the limit.}
+\Deriv{Invert \Eq{G.19} for loading. Aronu's 30 mass\% data stop at 11.8 kPa and loading 0.524 at 40 C, so this point extrapolates inside the source's own regression set. The 378 kPa point comes from the project input sheet at 21 bar and 18 mol\%. The design absorber at 26.8 bar and 17.7 mol\% sees 474 kPa, which the engine will evaluate. That value has not been computed here.}
+\Vars{\V{\alpha^*}{equilibrium loading}{\U{mol\ mol^{-1}}}}
+\Assume{Extrapolates 30 mass\% data.}
+\Source{\tagC{} Calculated here with \Eq{G.19}.}
+\Impl{\fn{mea::alpha_eq}, present code \fn{mea::pstar::alpha_at}}
+\Valid{EXP}{eq_g_31}{Target read-offs from figures, both printed because they disagree: Jou, about 0.74 through Zhang et al.\ Fig 9, and Wong et al., RSC Adv.\ 6 (2016) 10816, Fig 3, about 0.63.}
+\end{eqcard}
+
+\begin{eqcard}{G.32}{F}{Range guards}
+\Stmt{313.15\ \mathrm{K}\le T\le393.15\ \mathrm{K},\qquad\alpha\le0.50\ \text{in columns},\qquad p_{CO_2}\le10\ \mathrm{bar}}
+\Interp{The range where the model is trusted. Outside it the column code must stop or flag the result.}
+\Deriv{The temperature limits are Aronu's data range. The loading cap holds because all kinetic and physical property fits in the library end near 0.50. The pressure limit comes from Wong Table 4, where the prototype moves from a mean of $+0.05$ in loading at or below 10 bar to $-0.15$ above it. The direct solver accepts a wider window, from 298.15 to 403.15 K and loading 0.001 to 1.4, so these limits belong to the column layer.}
+\Vars{\V{T}{temperature}{\U{K}}}
+\Assume{Rich loading 0.55 stays an upper case only.}
+\Source{\tagM{11}: no kinetics or properties above loading 0.50. Limits from Aronu, PDF p.~3 to p.~5.}
+\Impl{\fn{mea::check_range}, present code \fn{mea::speciate::check_range}}
+\Valid{ID}{eq_g_32}{Each guard trips on a value just outside it.}
+\end{eqcard}
+
+\begin{eqcard}{G.33}{O}{Table for column calls}
+\Stmt{\ln p^*\left(T,\alpha\right)-2\ln\alpha=\sum_{r=1}^{4}\sum_{s=1}^{4}w_r\left(T\right)w_s\left(\alpha\right)\Lambda_{rs}}
+\Interp{A column calls $p^*$ thousands of times, so the solved model is stored on a grid and read back by interpolation.}
+\Deriv{The grid holds 16 temperatures from 30 to 130 C and 40 loadings from 0.02 to 0.75, for one MEA mass fraction, each node from a direct solve. Interpolation is cubic Lagrange in each direction. At low loading $p^*$ varies as $\alpha^2$, so the table stores the smooth remainder $\ln p^*-2\ln\alpha$ and restores the term afterwards. Every node still equals a direct solve.}
+\Vars{\V{w_r}{four-point Lagrange weight}{1} \V{\Lambda_{rs}}{stored value of $\ln p^*-2\ln\alpha$}{1}}
+\Assume{Design strength of 30 mass\%. Direct solve above that strength.}
+\Source{\tagC{} Calculated here.}
+\Impl{\fn{mea::pstar_table}, present code \fn{mea::pstar::pstar_table}}
+\Valid{ID}{eq_g_33}{Against \Eq{G.19}. Grid error below 1\% is the stated target, and the crate holds a tighter 0.5\% gate at 30 mass\%.}
+\end{eqcard}
+
+\subsection*{Worked example: Case B lean and rich solvent at 40 C}
+Take 1 kg of CO$_2$-free solvent at 30 wt\% MEA: 4.912 mol MEA and 38.86 mol water. At the lean loading of 0.25 this carries 1.228 mol CO$_2$, so the apparent mole fractions are 0.1092, 0.8636 and 0.0273. At 313.15 K, \Eq{G.26} gives $V_{MEA}=61.04$ \U{mL\ mol^{-1}}, and water at 992.2 \U{kg\ m^{-3}} gives 18.16 \U{mL\ mol^{-1}}. Then $V_{sln}=22.17$ \U{mL\ mol^{-1}}, the mean molar mass is 23.43 \U{g\ mol^{-1}}, the density is 1,057 \U{kg\ m^{-3}} and the MEA concentration is 4.92 \U{kmol\ m^{-3}}. \Eq{G.27} gives $\mu_{sln}/\mu_w=3.13$. \Eq{G.28} starts from $D_w=2.71\times10^{-9}$ \U{m^2\ s^{-1}} and gives $D_l=1.09\times10^{-9}$ \U{m^2\ s^{-1}}.
+
+At the rich loading of 0.50 the same steps give 1,110 \U{kg\ m^{-3}}, $\mu_{sln}/\mu_w=3.90$ and $D_l=9.1\times10^{-10}$ \U{m^2\ s^{-1}}. Hartono Table 3 prints 1,059.8 \U{kg\ m^{-3}} at loading 0.29 and 1,098.7 at 0.50, so the Weiland form runs 1.1\% high at the rich end. These are hand figures for a loading range that \Eq{G.32} allows. The Case B plant moves \vMsolvB{} \U{t\ h^{-1}} of this solvent, on a CO$_2$-free basis, by \Eq{H.28}.
+
+\subsection*{Link to the sources}
+The prototype reproduced Aronu's model column at 104 points only after the convention of \Eq{G.7} was found, and it did so with activity expressions the library does not hold. That is strong indirect support for \tagM{7}, and a copy of Thomsen and Rasmussen remains the first item to request. Against measured data the same model gives an AARD of 21.9\% on Aronu Table 4 and 8.4\% on Dugas Table 4.4, which was outside Aronu's regression. Both figures describe the prototype. At high pressure and in hydrogen-rich gas, no local source holds equilibrium data for this solvent.

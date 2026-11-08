@@ -1,0 +1,404 @@
+\section{D. Steam methane reformer}\label{sec:D}
+The reformer is where nuclear heat becomes chemical energy. Two descriptions sit side by side here. The plant ledger uses equilibrium at the INL exit condition, \Eq{D.11} at 871 C, with the INL heat basis. The Xu and Froment tube model then tests that assumption. It runs outside its fitted range, so its cards carry tier O, and no tube-model result enters the headline ledger.
+
+\begin{eqcard}{D.1}{R}{Reaction I}
+\Stmt{\ce{CH4 + H2O <=> CO + 3H2},\qquad\Delta_rh^\circ_{298}=+206.1\ \mathrm{kJ\ mol^{-1}}}
+\Interp{Methane and steam make synthesis gas. The reaction takes in a large amount of heat and raises the number of moles, so it wants high temperature and low pressure.}
+\Deriv{Stoichiometry from Xu and Froment Part I Table 2. The heat comes from Table 7. Table 2 lists $-\Delta H$ and Table 7 lists $+\Delta H$, so the sign must be read with care. Here it is positive for an endothermic reaction.}
+\Vars{\V{\Delta_rh^\circ_{298}}{standard enthalpy of reaction at 298 K}{\U{J\ mol^{-1}}}}
+\Assume{None.}
+\Source{\tagP{} Xu and Froment Part I \cite{XF1}, Table 2, PDF p.~3, and Table 7, PDF p.~8.}
+\Impl{\fn{units::smr_eq::STOICH}}
+\Valid{ID}{eq_d_01}{Element balance by \Eq{A.5}.}
+\end{eqcard}
+
+\begin{eqcard}{D.2}{R}{Reaction II, shift}
+\Stmt{\ce{CO + H2O <=> CO2 + H2},\qquad\Delta_rh^\circ_{298}=-41.15\ \mathrm{kJ\ mol^{-1}}}
+\Interp{Carbon monoxide takes oxygen from steam and frees more hydrogen. The heat released is small, so the reaction moves mainly with temperature through its equilibrium constant.}
+\Deriv{As \Eq{D.1}. Section E applies this reaction in the shift beds.}
+\Vars{\V{\Delta_rh^\circ_{298}}{standard enthalpy of reaction at 298 K}{\U{J\ mol^{-1}}}}
+\Assume{None.}
+\Source{\tagP{} Xu and Froment Part I \cite{XF1}, Table 2, PDF p.~3, and Table 7, PDF p.~8.}
+\Impl{\fn{units::smr_eq::STOICH}}
+\Valid{ID}{eq_d_02}{Element balance by \Eq{A.5}.}
+\end{eqcard}
+
+\begin{eqcard}{D.3}{R}{Reaction III}
+\Stmt{\ce{CH4 + 2H2O <=> CO2 + 4H2},\qquad\Delta_rh^\circ_{298}=+164.9\ \mathrm{kJ\ mol^{-1}}}
+\Interp{The direct route to CO$_2$. It is the sum of the first two reactions, so it adds no thermodynamic freedom, though Xu and Froment give it its own rate.}
+\Deriv{Add \Eq{D.1} and \Eq{D.2}. The heats add to 164.95, which rounds to the printed value.}
+\Vars{\V{\Delta_rh^\circ_{298}}{standard enthalpy of reaction at 298 K}{\U{J\ mol^{-1}}}}
+\Assume{None.}
+\Source{\tagP{} Xu and Froment Part I \cite{XF1}, Table 2, PDF p.~3, and Table 7, PDF p.~8.}
+\Impl{\fn{units::smr_eq::STOICH}}
+\Valid{ID}{eq_d_03}{Sum of \Eq{D.1} and \Eq{D.2}.}
+\end{eqcard}
+
+\begin{eqcard}{D.4}{O}{Heavier gas}
+\Stmt{\mathrm{C}_n\mathrm{H}_m+n\,\mathrm{H_2O}\to n\,\mathrm{CO}+\left(n+\frac{m}{2}\right)\mathrm{H_2}}
+\Interp{Ethane and heavier gases reform much faster than methane, so they are taken to completion at the tube inlet and only methane is tracked after that.}
+\Deriv{EVA measurements quoted in TECDOC-1236 show 30 to 40\% of the ethane gone after 1 m of catalyst and all of it by 4 m. A heavier fraction therefore reaches the reaction zone only briefly. Natural gas in TEV-953 holds 93.571\% methane, 3.749\% ethane, 0.920\% propane, 0.260\% butane, 0.040\% pentane and 0.010\% hexane by mole, with 0.250\% CO$_2$. Counting carbon gives \cCperMol{} mol of carbon per mole of gas.}
+\Vars{\V{n}{carbon atoms in the hydrocarbon}{1} \V{m}{hydrogen atoms in the hydrocarbon}{1}}
+\Assume{Rapid conversion.}
+\Source{\tagA{} Support from TECDOC-1236 \cite{TE1236}, PDF p.~70. \tagP{} Composition from TEV-953 \cite{TEV953}, A-5, PDF p.~39.}
+\Impl{\fn{units::smr_eq::lump_heavies}}
+\Valid{PUB}{eq_d_04}{Computed here: \cCperMol{} mol C per mol of gas from the printed composition, equal to the screening constant.}
+\end{eqcard}
+
+\begin{eqcard}{D.5}{F}{Feed ratio}
+\Stmt{S/C=\frac{F_{H_2O}}{F_C}=3.0}
+\Interp{Excess steam keeps carbon off the catalyst and pushes conversion up. Each extra unit of steam costs heat to raise.}
+\Deriv{INL sets the steam-to-carbon ratio at 3.0 to avoid carbon formation. The Case 6 sheets are missing, so the same value is carried from the other cases and disclosed.}
+\Vars{\V{F_{H_2O}}{steam molar feed}{\U{mol\ s^{-1}}} \V{F_C}{carbon molar feed}{\U{mol\ s^{-1}}}}
+\Assume{The Case 6 value is not stated.}
+\Source{\tagP{} TEV-953 \cite{TEV953}, PDF p.~18 and p.~64. \tagM{1}: Case 6 sheets missing.}
+\Impl{\fn{units::smr_eq::feed}}
+\Valid{ID}{eq_d_05}{Round trip with the mole table of \Eq{D.6}.}
+\end{eqcard}
+
+\begin{eqcard}{D.6}{R}{Mole table from extents}
+\Stmt{\begin{aligned}n_{CH_4}&=1-x_1,&n_{CO}&=x_1-x_2,&n_{CO_2}&=\xi_{CO_2}+x_2,\\n_{H_2}&=\xi_{H_2}+3x_1+x_2,&n_{H_2O}&=S_C-x_1-x_2,&n_{tot}&=\Sigma_0+2x_1\end{aligned}}
+\Interp{Two numbers fix the whole composition once the feed is known: how far reaction I has gone and how far the shift has gone. Everything else follows from counting atoms.}
+\Deriv{Take one mole of methane fed with $S_C$ moles of steam, $\xi_{CO_2}$ of CO$_2$ and $\xi_{H_2}$ of H$_2$. Reaction I at extent $x_1$ removes $x_1$ of CH$_4$ and H$_2$O and adds $x_1$ of CO and $3x_1$ of H$_2$. Reaction II at extent $x_2$ moves $x_2$ from CO and H$_2$O to CO$_2$ and H$_2$. Reaction III needs no separate extent by \Eq{A.6}. Reaction I adds two moles per event and reaction II adds none, so the total is $\Sigma_0+2x_1$ with $\Sigma_0=1+S_C+\xi_{CO_2}+\xi_{H_2}$ plus any inert.}
+\Vars{\V{n_i}{moles of $i$ per mole of CH$_4$ fed}{1} \V{x_1}{extent of reaction I, which is total methane conversion}{1} \V{x_2}{extent of reaction II}{1} \V{\xi_{CO_2}}{CO$_2$ fed per mole of CH$_4$}{1} \V{\xi_{H_2}}{H$_2$ fed per mole of CH$_4$}{1} \V{S_C}{steam fed per mole of CH$_4$}{1} \V{\Sigma_0}{total moles fed per mole of CH$_4$}{1}}
+\Assume{$x_1$ and $x_2$ are the extents of reactions I and II.}
+\Source{\tagT{} Textbook result. The same split of conversions is in Xu and Froment Part II \cite{XF2}, PDF p.~3 and Notation.}
+\Impl{\fn{units::smr_eq::mole_table}}
+\Valid{ID}{eq_d_06}{Element balance by \Eq{A.5}.}
+\end{eqcard}
+
+\begin{eqcard}{D.7}{E}{Equilibrium constant of reaction I}
+\Stmt{K_1(T)=1.198\times10^{13}\exp\left(-\frac{26830}{T}\right)\ \mathrm{bar^2}}
+\Interp{The reforming equilibrium climbs steeply with temperature. This is why a reformer needs to run hot and why 871 C matters so much.}
+\Deriv{Zhang et al.\ Table 1 prints $1.198\times10^{11}\exp(-26830/T)$ in MPa$^2$. One MPa$^2$ is 100 bar$^2$, which gives the bar form. Neither Xu and Froment paper prints $K(T)$, and the Hou and Hughes origin is not in the library. Zhang Eq 11 prints $10^{23}$, which is the same constant in Pa$^2$. Zhang Eq 6 and 7 carry a stray $\times100\%$. Hoseinzade and Adams use an atm$^2$ basis, which differs by 2.2\%. Section M lists these.}
+\Vars{\V{K_1}{equilibrium constant of reaction I}{\U{bar^2}}}
+\Assume{IG, standard state of 1 bar.}
+\Source{\tagP{} Zhang et al.\ \cite{Zhang21}, Table 1, PDF p.~5, converted from MPa$^2$ \tagC. \tagM{3}: origin not in the library.}
+\Impl{\fn{props::equilibrium::k_eq}}
+\Valid{PUB}{eq_d_07}{Computed here against $K_1$ built from the NIST Shomate data over 680 to 1144 K: largest deviation \cKoneDevMax\%, and \cKoneDevExit\% at 1144 K.}
+\end{eqcard}
+
+\begin{eqcard}{D.8}{E}{Equilibrium constant of reaction II}
+\Stmt{K_2(T)=1.767\times10^{-2}\exp\left(\frac{4400}{T}\right)}
+\Interp{Shift weakens as temperature rises, so the reformer exit still holds carbon monoxide and downstream shift beds run cooler to finish the job.}
+\Deriv{Zhang et al.\ Table 1. Zhang Eq 12 misprints this constant as $1.176\times10^{-2}$ with a negative exponent, and Hoseinzade and Adams Eq 52 prints an exponent of $-4.063$ where $\ln(1.767\times10^{-2})=-4.036$. Table 1 is used.}
+\Vars{\V{K_2}{equilibrium constant of reaction II}{1}}
+\Assume{IG.}
+\Source{\tagP{} Zhang et al.\ \cite{Zhang21}, Table 1, PDF p.~5.}
+\Impl{\fn{props::equilibrium::k_eq}}
+\Valid{PUB}{eq_d_08}{Computed here against NIST-based $K_2$ on the same range: largest deviation \cKtwoDevMax\%, and \cKtwoDevExit\% at 1144 K.}
+\end{eqcard}
+
+\begin{eqcard}{D.9}{R}{Equilibrium constant of reaction III}
+\Stmt{K_3=K_1K_2}
+\Interp{Reaction III is reaction I followed by reaction II, so its equilibrium constant is the product.}
+\Deriv{Add the Gibbs energies of the two reactions and take exponentials. This is the consequence of \Eq{A.6}.}
+\Vars{\V{K_3}{equilibrium constant of reaction III}{\U{bar^2}}}
+\Assume{\Eq{A.6}.}
+\Source{\tagP{} Hoseinzade and Adams \cite{HA}, Eq 51 to 53, PDF p.~7.}
+\Impl{\fn{props::equilibrium::k_eq}}
+\Valid{ID}{eq_d_09}{Direct identity in the test.}
+\end{eqcard}
+
+\begin{eqcard}{D.10}{R}{Reaction quotients}
+\Stmt{Q_1=\frac{p_{H_2}^3p_{CO}}{p_{CH_4}p_{H_2O}},\qquad Q_2=\frac{p_{H_2}p_{CO_2}}{p_{CO}p_{H_2O}},\qquad Q_3=Q_1Q_2}
+\Interp{A quotient measures where the mixture stands now. Compared with $K$, it shows which way the reaction will run.}
+\Deriv{Mass action with fugacity equal to partial pressure and a 1 bar standard state. Pressure in bar makes $Q_1$ directly comparable with \Eq{D.7}.}
+\Vars{\V{Q_1}{quotient of reaction I}{\U{bar^2}} \V{Q_2}{quotient of reaction II}{1} \V{Q_3}{quotient of reaction III}{\U{bar^2}}}
+\Assume{IG, standard state 1 bar.}
+\Source{\tagT{} Textbook result.}
+\Impl{\fn{props::equilibrium::quotient}}
+\Valid{ID}{eq_d_10}{$Q_3=Q_1Q_2$ in the test.}
+\end{eqcard}
+
+\begin{eqcard}{D.11}{R}{Equilibrium}
+\Stmt{Q_1\left(x_1,x_2,p\right)=K_1(T),\qquad Q_2\left(x_1,x_2\right)=K_2(T)\qquad\text{at the exit }T,\ p}
+\Interp{Two equations and two unknowns. Solving them gives the composition the catalyst would reach given enough time, which is the upper limit of conversion at the exit condition.}
+\Deriv{Substitute \Eq{D.6} into \Eq{D.10} with $p_i=py_i$. In logarithms, $3\ln n_{H_2}+\ln n_{CO}-\ln n_{CH_4}-\ln n_{H_2O}+2\ln(p/n_{tot})=\ln K_1$ and $\ln n_{H_2}+\ln n_{CO_2}-\ln n_{CO}-\ln n_{H_2O}=\ln K_2$. Solve by damped Newton on $(x_1,x_2)$, keeping each mole number positive.}
+\Vars{\V{n_{tot}}{total moles per mole of CH$_4$ fed}{1}}
+\Assume{Isobaric, IG.}
+\Source{\tagT{} Textbook result. INL uses Gibbs minimisation, TEV-953 \cite{TEV953}, PDF p.~18.}
+\Impl{\fn{units::smr_eq::equilibrium}}
+\Valid{PUB}{eq_d_11}{Computed here against TECDOC-1236 Tables 2.1 and 2.2, PDF p.~13, at $S/C=3.98$ back-calculated from the printed gas: \cXTeA, \cXTeB{} and \cXTeC\% against printed 66.1, 79.8 and 81.3\%, within 0.5 points. Computed here against INL raw syngas, TEV-953 A-40, PDF p.~74: H$_2$ \cyH, CO \cyCO, CO$_2$ \cyCOtwo, H$_2$O \cyHO{} and CH$_4$ \cyCH{} mol\% against printed 47.8, 9.2, 5.3, 34.1 and 3.5, within 0.5 mol\%.}
+\end{eqcard}
+
+\begin{eqcard}{D.12}{R}{Thermodynamic consistency}
+\Stmt{\frac{d\ln K}{d(1/T)}=-\frac{\Delta_rh}{R}}
+\Interp{The slope of $\ln K$ against $1/T$ is the heat of reaction. An exponential fit therefore carries an implied heat, which can be checked against Hess.}
+\Deriv{From $\ln K=-\Delta_rg/RT$ and the Gibbs-Helmholtz relation. A pure exponential in $1/T$ has a constant slope, so the fit implies a constant $\Delta_rh$ across its range.}
+\Vars{\V{K}{equilibrium constant}{mixed}}
+\Assume{Constant $\Delta_rh$ across the fit.}
+\Source{\tagT{} Textbook result.}
+\Impl{\fn{props::equilibrium::k_eq}}
+\Valid{PUB}{eq_d_12}{Computed here: slopes of 26830 and 4400 K give \cSlopeOne{} and \cSlopeTwo{} \U{kJ\ mol^{-1}}, against 224.0 and 37.3 from XF1 Table 7 at 948 K.}
+\end{eqcard}
+
+\begin{eqcard}{D.13}{E}{Rate coefficients}
+\Stmt{k_i=A(k_i)\exp\left(-\frac{E_{a,i}}{RT}\right),\qquad\begin{array}{c|ccc}i&1&2&3\\\hline A(k_i)&4.225\times10^{15}&1.955\times10^{6}&1.020\times10^{15}\\E_{a,i}\ (\mathrm{kJ\ mol^{-1}})&240.1&67.13&243.9\end{array}}
+\Interp{Reforming has a high activation energy, so its rate rises fast with temperature. Shift has a low one, which is why it stays near equilibrium throughout the tube.}
+\Deriv{Xu and Froment Tables 5 and 6, read from the page image, because the text layer corrupts numbers. Fit range: 773 to 848 K and 3 to 15 bar for reforming, 573 to 673 K for reverse shift and methanation. At 1144 K this is an extrapolation of about 300 K. Tables 5 and 6 hold reference activity, an aged catalyst, and the paper multiplies all $k$ by 2.246 for fresh catalyst. Hoseinzade and Adams Eq 48 to 50 include that factor without saying so. Units follow XF: $A(k_1)$ and $A(k_3)$ in \U{kmol\ bar^{0.5}\ kg^{-1}\ h^{-1}}, and $A(k_2)$ in \U{kmol\ kg^{-1}\ h^{-1}\ bar^{-1}}. XF1 gives $R$ in kJ/kmol while $E$ is in kJ/mol, so the code holds $R$ and $E$ on the same mole basis.}
+\Vars{\V{k_i}{rate coefficient of reaction $i$}{XF units, see working} \V{A(k_i)}{pre-exponential factor of $k_i$}{XF units} \V{E_{a,i}}{activation energy of reaction $i$}{\U{J\ mol^{-1}}}}
+\Assume{Reference activity. Fit range 773 to 848 K and 3 to 15 bar.}
+\Source{\tagP{} Xu and Froment Part I \cite{XF1}, Tables 5, 6, PDF p.~7, read as an image.}
+\Impl{\fn{units::xf::k_rate}}
+\Valid{ID}{eq_d_13}{Computed here: Table 6 evaluated at the Table 5 reference temperatures, over the Table 5 values, gives ratios from \cRatioMin{} to \cRatioMax{} across all seven constants, with two reference temperatures, 648 and 823 K.}
+\end{eqcard}
+
+\begin{eqcard}{D.14}{E}{Adsorption constants}
+\Stmt{K_j=A(K_j)\exp\left(-\frac{\Delta H_j}{RT}\right),\qquad\begin{array}{c|cccc}j&CO&H_2&CH_4&H_2O\\\hline A(K_j)&8.23\times10^{-5}&6.12\times10^{-9}&6.65\times10^{-4}&1.77\times10^{5}\\\Delta H_j\ (\mathrm{kJ\ mol^{-1}})&-70.65&-82.90&-38.28&+88.68\end{array}}
+\Interp{Each adsorbed species occupies part of the nickel surface. Adsorption grows weaker as the catalyst gets hotter, except for water, whose fitted constant behaves the other way.}
+\Deriv{XF1 Tables 5 and 6. $K_{CO}$, $K_{H_2}$ and $K_{CH_4}$ are in \U{bar^{-1}} and $K_{H_2O}$ is dimensionless. The positive value for water is a dissociative constant, and the paper notes it does not obey van't Hoff. The text on the same page prints $6.13\times10^{-9}$ where Table 6 has $6.12\times10^{-9}$, and the table is used. The lower limit printed for $K_{H_2O}$ in Table 5, 0.0317, is a misprint with no effect on the model. Hoseinzade and Adams Eq 55 prints $1.77\times10^{3}$, wrongly dividing a dimensionless constant by 100, so it must not be copied.}
+\Vars{\V{K_j}{adsorption constant of species $j$}{\U{bar^{-1}}, or 1 for H$_2$O} \V{A(K_j)}{pre-exponential factor of $K_j$}{as $K_j$} \V{\Delta H_j}{adsorption enthalpy of species $j$}{\U{J\ mol^{-1}}}}
+\Assume{Reference fit. Two reference temperatures in Table 5.}
+\Source{\tagP{} Xu and Froment Part I \cite{XF1}, Table 6, PDF p.~7, with Table 5 on the same page.}
+\Impl{\fn{units::xf::k_ads}}
+\Valid{ID}{eq_d_14}{Covered by the ratio test on \Eq{D.13}.}
+\end{eqcard}
+
+\begin{eqcard}{D.15}{E}{Adsorption denominator}
+\Stmt{DEN=1+K_{CO}p_{CO}+K_{H_2}p_{H_2}+K_{CH_4}p_{CH_4}+\frac{K_{H_2O}p_{H_2O}}{p_{H_2}}}
+\Interp{DEN counts the competition for surface sites. The larger it is, the less room the reaction has. It is squared in each rate.}
+\Deriv{Langmuir-Hinshelwood form from the mechanism of Xu and Froment. The water term is a ratio to hydrogen because it describes the oxygen coverage set by the dissociation of steam.}
+\Vars{\V{DEN}{adsorption denominator}{1} \V{p_{CO}}{partial pressure of CO, in bar in this form}{\U{bar}}}
+\Assume{Partial pressures in bar.}
+\Source{\tagP{} Xu and Froment Part I \cite{XF1}, Eq 3, PDF p.~5, printed with the rate group.}
+\Impl{\fn{units::xf::den}}
+\Valid{ID}{eq_d_15}{Computed here at 1000 K and 30 bar with $y$ of 0.15, 0.45, 0.25 and 0.03 for CH$_4$, H$_2$O, H$_2$ and CO: $DEN^2=\cDenSq$.}
+\end{eqcard}
+
+\begin{eqcard}{D.16}{E}{Rate of reaction I}
+\Stmt{r_1=\frac{k_1}{p_{H_2}^{2.5}}\left(p_{CH_4}p_{H_2O}-\frac{p_{H_2}^3p_{CO}}{K_1}\right)\Big/DEN^2}
+\Interp{The bracket is the distance from equilibrium, and it closes to zero there. The denominator holds the competition for sites. The leading hydrogen term means hydrogen slows its own formation.}
+\Deriv{Mechanistic rate of Xu and Froment. Note the singularity: as $p_{H_2}\to0$ the rate diverges, so a feed needs some hydrogen or heavier hydrocarbon. INL adds hydrogen to 2 mol\% in its gas feed, TEV-953 PDF p.~18.}
+\Vars{\V{r_1}{rate of reaction I}{\U{kmol\ kg^{-1}\ h^{-1}}}}
+\Assume{Diverges as $p_{H_2}\to0$, so the feed must hold hydrogen.}
+\Source{\tagP{} Xu and Froment Part I \cite{XF1}, Eq 3, PDF p.~5.}
+\Impl{\fn{units::xf::rates}}
+\Valid{ID}{eq_d_16}{The rate is zero at the equilibrium of \Eq{D.11}.}
+\end{eqcard}
+
+\begin{eqcard}{D.17}{E}{Rate of reaction II}
+\Stmt{r_2=\frac{k_2}{p_{H_2}}\left(p_{CO}p_{H_2O}-\frac{p_{H_2}p_{CO_2}}{K_2}\right)\Big/DEN^2}
+\Interp{The same structure for shift. Its rate coefficient is large, so the reaction runs near equilibrium and can change sign along the tube.}
+\Deriv{As \Eq{D.16}. Xu and Froment find the intrinsic $r_2$ changes sign at about 4 m in their commercial tube (Part II, PDF p.~4).}
+\Vars{\V{r_2}{rate of reaction II}{\U{kmol\ kg^{-1}\ h^{-1}}} \V{p_{CO_2}}{partial pressure of CO$_2$, in bar in this form}{\U{bar}}}
+\Assume{As \Eq{D.16}.}
+\Source{\tagP{} Xu and Froment Part I \cite{XF1}, Eq 3, PDF p.~5.}
+\Impl{\fn{units::xf::rates}}
+\Valid{ID}{eq_d_17}{The rate is zero at equilibrium.}
+\end{eqcard}
+
+\begin{eqcard}{D.18}{E}{Rate of reaction III}
+\Stmt{r_3=\frac{k_3}{p_{H_2}^{3.5}}\left(p_{CH_4}p_{H_2O}^2-\frac{p_{H_2}^4p_{CO_2}}{K_3}\right)\Big/DEN^2}
+\Interp{The direct route to CO$_2$, with its own rate although \Eq{D.9} removes its thermodynamic independence.}
+\Deriv{As \Eq{D.16}, with the steeper hydrogen power of the mechanism.}
+\Vars{\V{r_3}{rate of reaction III}{\U{kmol\ kg^{-1}\ h^{-1}}} \V{p_{H_2}}{partial pressure of H$_2$, in bar in this form}{\U{bar}}}
+\Assume{As \Eq{D.16}.}
+\Source{\tagP{} Xu and Froment Part I \cite{XF1}, Eq 3, PDF p.~5.}
+\Impl{\fn{units::xf::rates}}
+\Valid{ID}{eq_d_18}{The rate is zero at equilibrium.}
+\end{eqcard}
+
+\begin{eqcard}{D.19}{R}{Species rates}
+\Stmt{r_{CO}=r_1-r_2,\qquad r_{CO_2}=r_2+r_3,\qquad r_{CH_4}=r_1+r_3}
+\Interp{Each species rate is the sum over reactions that touch it. $r_{CH_4}$ is the rate of disappearance, so it is positive for reforming.}
+\Deriv{\Eq{A.4} applied to the three reactions. Two of these rates are independent, as Xu and Froment state.}
+\Vars{\V{r_{CO}}{rate of formation of CO}{\U{kmol\ kg^{-1}\ h^{-1}}} \V{r_{CO_2}}{rate of formation of CO$_2$}{\U{kmol\ kg^{-1}\ h^{-1}}} \V{r_{CH_4}}{rate of disappearance of CH$_4$}{\U{kmol\ kg^{-1}\ h^{-1}}}}
+\Assume{None.}
+\Source{\tagP{} Xu and Froment Part I \cite{XF1}, Eq 4, PDF p.~5.}
+\Impl{\fn{units::xf::rates}}
+\Valid{ID}{eq_d_19}{Carbon balance on the three rates.}
+\end{eqcard}
+
+\begin{eqcard}{D.20}{O}{Effectiveness factor}
+\Stmt{\eta_j^{cat}=\frac{\int_{V_p}\rho_sr_j(\mathbf p)\,dV}{\rho_sr_j(\mathbf p^s)\,V_p}}
+\Interp{Reaction runs faster at the pellet surface than deep inside it, because reactants take time to diffuse in. This number is the rate the whole pellet achieves over the rate if all of it saw surface conditions.}
+\Deriv{Xu and Froment Part II Eq 7 gives the observed rate and Eq 9 gives this ratio. They publish no table, only one simulated profile for a fired tube and ring catalyst. Read by eye from Fig 6, $\eta_1$ falls from about 0.025 to 0.014 along that tube. Those values do not transfer to a helium reformer, and the plant does not use them.}
+\Vars{\V{\rho_s}{catalyst solid density}{\U{kg\ m^{-3}}} \V{\mathbf p}{partial pressures inside the pellet}{\U{bar}} \V{\mathbf p^s}{partial pressures at the pellet surface}{\U{bar}} \V{V_p}{pellet volume}{\U{m^3}}}
+\Assume{XF values do not transfer.}
+\Source{\tagP{} Xu and Froment Part II \cite{XF2}, Eq 7 and Eq 9, PDF p.~3; Fig 6, PDF p.~5, by eye. \tagM{16}: none for helium service.}
+\Impl{\fn{units::xf::eta_cat}}
+\Valid{NONE}{eq_d_20}{No benchmark exists at helium service.}
+\end{eqcard}
+
+\begin{eqcard}{D.21}{O}{Lumped activity}
+\Stmt{\eta_1^{cat}=\eta_2^{cat}=\eta_3^{cat}=a_{cat}}
+\Interp{Since no effectiveness data exist for this service, one activity number stands in for all of it. It is a fitted parameter, and the fit is stated openly.}
+\Deriv{Fit $a_{cat}$ to JAERI test A-2 alone. Hold back A-3 and A-4, and judge the model on them. Exit composition barely separates models, because the mock-up reaches equilibrium near its hot end, so the axial profile and heat balance carry the weight.}
+\Vars{\V{a_{cat}}{lumped catalyst activity}{1}}
+\Assume{One parameter. Fit disclosed.}
+\Source{\tagC{} Calculated here, on JAERI \cite{JAERI} A-2, PDF p.~99.}
+\Impl{\fn{units::smr_tube::fit_activity}}
+\Valid{EXP}{eq_d_21}{Hold-outs A-3 and A-4 are the only independent check. The fit has yet to run.}
+\end{eqcard}
+
+\begin{eqcard}{D.22}{O}{Methane continuity}
+\Stmt{\frac{dx_{CH_4}}{dz}=\frac{\Omega\rho_B}{F^0_{CH_4}}\left(\eta_1^{cat}r_1+\eta_3^{cat}r_3\right)}
+\Interp{Conversion rises along the tube at a rate set by catalyst loading, local rate and throughput.}
+\Deriv{\Eq{A.13} with $F_{CH_4}=F^0_{CH_4}(1-x_{CH_4})$ and $A_c=\Omega$ gives $dF_{CH_4}/dz=-\Omega\rho_B(\eta_1^{cat}r_1+\eta_3^{cat}r_3)$, then divide by $-F^0_{CH_4}$. XF2 Eq 10a writes one factor $\eta_{CH_4}r_{CH_4}$, and this form splits it by reaction with \Eq{D.19}.}
+\Vars{\V{x_{CH_4}}{total methane conversion}{1} \V{z}{tube coordinate}{\U{m}} \V{\Omega}{tube cross section}{\U{m^2}} \V{F^0_{CH_4}}{methane feed rate per tube}{\U{kmol\ h^{-1}}}}
+\Assume{SS, 1D, PF.}
+\Source{\tagP{} Xu and Froment Part II \cite{XF2}, Eq 10a, PDF p.~3.}
+\Impl{\fn{units::smr_tube::rhs}}
+\Valid{EXP}{eq_d_22}{Target: conversion of 0.555, 0.567 and 0.525 for JAERI A-2, A-3 and A-4, calculated from the printed gas analyses.}
+\end{eqcard}
+
+\begin{eqcard}{D.23}{O}{Carbon dioxide continuity}
+\Stmt{\frac{dx_{CO_2}}{dz}=\frac{\Omega\rho_B}{F^0_{CH_4}}\left(\eta_2^{cat}r_2+\eta_3^{cat}r_3\right)}
+\Interp{The second state variable. With $x_{CH_4}$ it fixes the composition at each point, as \Eq{D.6} requires.}
+\Deriv{\Eq{A.13} with $F_{CO_2}=F^0_{CH_4}(\xi_{CO_2}+x_{CO_2})$ and \Eq{D.19}.}
+\Vars{\V{x_{CO_2}}{conversion of methane into CO$_2$}{1}}
+\Assume{As \Eq{D.22}.}
+\Source{\tagP{} Xu and Froment Part II \cite{XF2}, Eq 10b, PDF p.~3.}
+\Impl{\fn{units::smr_tube::rhs}}
+\Valid{EXP}{eq_d_23}{Target: dry gas analyses of JAERI A-2 to A-5.}
+\end{eqcard}
+
+\begin{eqcard}{D.24}{R}{Partial pressures}
+\Stmt{p_i=p\,y_i=p\,\frac{n_i}{n_{tot}}}
+\Interp{The bridge from the mole table to the rate equations.}
+\Deriv{\Eq{A.14} with $n_i$ from \Eq{D.6}.}
+\Vars{\V{p}{total pressure}{\U{bar}, in rates}}
+\Assume{IG.}
+\Source{\tagT{} Textbook result.}
+\Impl{\fn{units::smr_eq::mole_table}}
+\Valid{ID}{eq_d_24}{Partial pressures sum to $p$.}
+\end{eqcard}
+
+\begin{eqcard}{D.25}{O}{Tube energy balance}
+\Stmt{c_p\rho_gu_s\frac{dT}{dz}=\rho_B\sum_j\left(-\Delta_rh_j\right)\eta_j^{cat}r_j+\frac{4U}{d_i}\left(T_w-T\right)}
+\Interp{Gas temperature is a contest between the heat coming through the wall and the heat the reaction swallows. Near the inlet reaction can win, and the gas may even cool.}
+\Deriv{\Eq{A.13} divided by $A_c=\pi d_i^2/4$ with $\dot q'=\pi d_iU(T_w-T)$. XF2 Eq 10c prints the wall term as $-4(U/d_{ti})(T-T_r)$, which has the same sign. The notation list of that paper leaves $T_r$ undefined and gives $T_i$ and $T_w$ for the inner and outer skin. Since their $U$ in Eq 11 includes wall conduction, it is read here as the outer skin $T_w$. In this plant $T_w$ is replaced by helium temperature through \Eq{D.27} and \Eq{D.28}.}
+\Vars{\V{\rho_g}{process gas density}{\U{kg\ m^{-3}}} \V{u_s}{superficial velocity}{\U{m\ s^{-1}}} \V{T_w}{tube wall temperature}{\U{K}}}
+\Assume{1D, pseudo-homogeneous in the gas.}
+\Source{\tagP{} Xu and Froment Part II \cite{XF2}, Eq 10c, PDF p.~4, sign read from the image.}
+\Impl{\fn{units::smr_tube::rhs}}
+\Valid{EXP}{eq_d_25}{Target: JAERI stations 1 to 5. Elevations of the stations have not been confirmed.}
+\end{eqcard}
+
+\begin{eqcard}{D.26}{E}{Tube momentum}
+\Stmt{-\frac{dp}{dz}=\frac{G}{\rho_gD_p}\,\frac{1-\varepsilon_b}{\varepsilon_b^3}\left[\frac{150(1-\varepsilon_b)\mu}{D_p}+1.75G\right]}
+\Interp{\Eq{A.12} applied to the process gas in the catalyst bed.}
+\Deriv{See \Eq{A.12}. The void fraction and bed density of the mock-up are not printed in the library, so they are assumed.}
+\Vars{\V{\varepsilon_b}{bed porosity}{1}}
+\Assume{Void and bed density assumed \tagA.}
+\Source{\tagP{} Hoseinzade and Adams \cite{HA}, Eq 26, PDF p.~5. Xu and Froment Part II \cite{XF2}, Eq 10d, PDF p.~4.}
+\Impl{\fn{units::smr_tube::ergun}}
+\Valid{EXP}{eq_d_26}{Target: process-side drop of 0.121 MPa measured on the mock-up, Yin et al.\ \cite{Yin}, Table 2, PDF p.~5, with 0.118 MPa from their model.}
+\end{eqcard}
+
+\begin{eqcard}{D.27}{O}{Wall coefficient}
+\Stmt{\frac{1}{U}=\frac{1}{h_{fi}}+R_f+\frac{t_w}{k_w}+\frac{A_i/A_o}{h_{fo}}}
+\Interp{Resistances in series again, on the inner area. On the mock-up the process side is about 70\% of the total, JAERI PDF p.~24, so helium side improvements would help little.}
+\Deriv{\Eq{C.4} per unit of inner area, with the thin wall form of the conduction term.}
+\Vars{\V{R_f}{fouling resistance}{\U{m^2\ K\ W^{-1}}} \V{t_w}{wall thickness}{\U{m}}}
+\Assume{Thin wall.}
+\Source{\tagT{} Form. \tagP{} Fouling of 0.000172 \U{m^2\ K\ W^{-1}} from JAERI \cite{JAERI}, Table 3.3, PDF p.~28.}
+\Impl{\fn{units::smr_tube::u_wall}}
+\Valid{EXP}{eq_d_27}{Target: 142.0 \U{W\ m^{-2}\ K^{-1}} calculated and 150.9 measured, JAERI Table 3.3.}
+\end{eqcard}
+
+\begin{eqcard}{D.28}{O}{Helium side}
+\Stmt{\dot m_{He}c_p\frac{dT_{He}}{dz}=\pm\pi d_iN_tU\left(T_{He}-T\right)}
+\Interp{Helium cools as it hands heat to the tubes. It runs against the process gas, so the hottest helium meets the gas leaving the catalyst.}
+\Deriv{\Eq{A.8} on a slice of the shell flow. The sign follows the chosen $z$ direction. $U$ from \Eq{D.27} is on the inner area, so the perimeter is $\pi d_i$.}
+\Vars{\V{\dot m_{He}}{helium flow on the shell side}{\U{kg\ s^{-1}}} \V{T_{He}}{helium temperature}{\U{K}}}
+\Assume{Counterflow.}
+\Source{\tagT{} Form. \tagP{} Same balance in Hoseinzade and Adams \cite{HA}, Eq 7, PDF p.~4.}
+\Impl{\fn{units::smr_tube::rhs_he}}
+\Valid{EXP}{eq_d_28}{Target: JAERI helium profile, and Sato \cite{Sato} at 632.4 C measured against 634.5 C calculated, PDF p.~9.}
+\end{eqcard}
+
+\begin{eqcard}{D.29}{E}{Finned annulus}
+\Stmt{Nu=0.039\,Re^{0.87}Pr^{0.4}\left(\frac{S_f}{D_e}\right)^{0.4}\left(\frac{H_f}{D_e}\right)^{-0.19}}
+\Interp{Fins on the tube stir the helium and raise its film coefficient well above a plain annulus.}
+\Deriv{Knudsen correlation for an annular passage with transverse fins, JAERI Appendix A-1, with $Re=D_eG_{max}/\mu$ and $D_e=D_2-D_f$. Sato Eq 9 prints the same form.}
+\Vars{\V{Nu}{Nusselt number}{1} \V{S_f}{fin spacing}{\U{m}} \V{H_f}{fin height}{\U{m}} \V{D_e}{equivalent diameter of the annulus}{\U{m}}}
+\Assume{Knudsen fit, finned geometry.}
+\Source{\tagP{} JAERI \cite{JAERI}, Appendix A-1, PDF p.~93. Sato \cite{Sato}, Eq 9, PDF p.~4.}
+\Impl{\fn{units::smr_tube::nu_fin}}
+\Valid{EXP}{eq_d_29}{Target: about 2325 \U{W\ m^{-2}\ K^{-1}}, JAERI Table 3.3.}
+\end{eqcard}
+
+\begin{eqcard}{D.30}{E}{Plain annulus}
+\Stmt{Nu=0.205\,Re^{0.603}Pr^{0.33}}
+\Interp{The EVA plant's fit for helium in a plain gap around a reformer tube, with radiation folded in.}
+\Deriv{TECDOC-1236 gives $Nu=c\,Re^mPr^n$ with $c=0.205$, $m=0.603$ and $n=0.33$, including radiation between guide tube and catalyst tube.}
+\Vars{\V{Re}{Reynolds number}{1} \V{Pr}{Prandtl number}{1}}
+\Assume{Includes radiation.}
+\Source{\tagP{} TECDOC-1236 \cite{TE1236}, PDF p.~68, EVA-I.}
+\Impl{\fn{units::smr_tube::nu_plain}}
+\Valid{EXP}{eq_d_30}{Applies only inside the EVA range.}
+\end{eqcard}
+
+\begin{eqcard}{D.31}{E}{Process side}
+\Stmt{h_w=0.4\,\frac{k_g}{D_p}\left(2.58\,Re^{1/3}Pr^{1/3}+0.094\,Re^{0.8}Pr^{0.4}\right)}
+\Interp{Heat transfer from the tube wall into a packed bed. This is the controlling resistance of the reformer.}
+\Deriv{Hoseinzade and Adams Eq 31. Mixture properties are needed, and maker values in JAERI F-2 and G-1 with Wilke mixing supply them.}
+\Vars{\V{h_w}{wall to bed film coefficient}{\U{W\ m^{-2}\ K^{-1}}} \V{k_g}{gas conductivity}{\U{W\ m^{-1}\ K^{-1}}}}
+\Assume{Mixture properties \tagM{22}.}
+\Source{\tagP{} Hoseinzade and Adams \cite{HA}, Eq 31, PDF p.~6.}
+\Impl{\fn{units::smr_tube::h_process}}
+\Valid{EXP}{eq_d_31}{Target: about 540 \U{W\ m^{-2}\ K^{-1}}, JAERI Table 3.3.}
+\end{eqcard}
+
+\begin{eqcard}{D.32}{E}{Radiation}
+\Stmt{q=\frac{\sigma\varepsilon_{r,a}\varepsilon_{r,b}\pi d_o\left(T_a^4-T_b^4\right)}{A_{sh}}}
+\Interp{Radiation counts for less here than in a fired furnace, because helium is much cooler than flue gas.}
+\Deriv{Hoseinzade and Adams Eq 9, as a heat duty per unit volume of shell gas between two grey surfaces.}
+\Vars{\V{q}{radiative heat per unit shell volume}{\U{W\ m^{-3}}} \V{\sigma}{Stefan-Boltzmann constant}{\U{W\ m^{-2}\ K^{-4}}} \V{\varepsilon_{r,a}}{emissivity of surface a}{1} \V{\varepsilon_{r,b}}{emissivity of surface b}{1} \V{T_a}{temperature of surface a}{\U{K}} \V{T_b}{temperature of surface b}{\U{K}} \V{A_{sh}}{shell cross section}{\U{m^2}}}
+\Assume{Grey surfaces.}
+\Source{\tagP{} Hoseinzade and Adams \cite{HA}, Eq 9, PDF p.~4.}
+\Impl{\fn{units::smr_tube::radiation}}
+\Valid{PUB}{eq_d_32}{Target: 5.2\% of shell heat transfer, Hoseinzade and Adams PDF p.~11.}
+\end{eqcard}
+
+\begin{eqcard}{D.33}{R}{Performance}
+\Stmt{X_{CH_4}=x_1\Big|_{exit},\qquad Y_{H_2}=\frac{F_{H_2,out}}{F_{CH_4,in}}}
+\Interp{Two figures of merit: how much methane was used, and how much hydrogen came out per mole fed.}
+\Deriv{Definitions. For pure methane, \Eq{D.6} gives $Y_{H_2}=3x_1+x_2$ before shift.}
+\Vars{\V{X_{CH_4}}{methane conversion}{1} \V{Y_{H_2}}{hydrogen yield}{1}}
+\Assume{None.}
+\Source{\tagT{} Definitions.}
+\Impl{\fn{units::smr_eq::performance}}
+\Valid{PUB}{eq_d_33}{INL prints 78.1\% from Gibbs minimisation, TEV-953 \cite{TEV953}, PDF p.~18. Computed here for pure methane at 871 C, 30.3 bar and $S/C=3$: \cXeq\%, with $Y_{H_2}=\cYield$. The INL feed is natural gas with recycle, so the two figures are not on one basis.}
+\end{eqcard}
+
+\begin{eqcard}{D.34}{O}{Tube duty}
+\Stmt{\dot Q_{tube}=\sum_{out}F_ih_i-\sum_{in}F_ih_i}
+\Interp{The heat the reformer tube must receive, read from enthalpies. This is a check on the INL heat basis.}
+\Deriv{\Eq{A.8} on the tube with no work. Sheet A-55 for INL Case 5 gives \U{404.2\ MMBtu\ h^{-1}} to the reforming reactor out of \U{568.4\ MMBtu\ h^{-1}} from helium, which is \cCaseFiveRef{} of \cCaseFive{} \U{MW}, with the remaining \cCaseFivePre{} \U{MW} in six preheaters. The labels sum to the total exactly. So process heat includes preheat, and the tube sees only part of it.}
+\Vars{\V{\dot Q_{tube}}{reformer tube duty}{\U{W}}}
+\Assume{A check on the INL heat basis. Case 5 anchors, scaled on tube carbon.}
+\Source{\tagC{} Calculated here. Case 5 split from TEV-961 \cite{TEV961}, A-55, PDF p.~79.}
+\Impl{\fn{units::smr_eq::duty_check}}
+\Valid{PUB}{eq_d_34}{Computed here on scoped Case 5 anchors at Case A, from 718 F to 1600 F: \cDutySel{} \U{MW} on the INL Selexol carbon basis and \cDutyRec{} \U{MW} on the recycle basis, against \vQprocA{} \U{MW}. The gap is printed and left in place. The ledger keeps the INL heat basis, Eq.~J.14, and the difference is listed in Section M.}
+\end{eqcard}
+
+\begin{eqcard}{D.35}{O}{Tube count}
+\Stmt{N_t=\frac{\dot Q_{tube}}{\pi d_oL\,q''},\qquad q''=40\text{ to }60\ \mathrm{kW\ m^{-2}}}
+\Interp{Divide the duty by what one tube can pass. The average flux sits below that of a fired reformer, so a helium reformer needs many tubes.}
+\Deriv{A flux of 40 to 60 \U{kW\ m^{-2}} is the average TECDOC-1236 gives for HTGR service. The geometry is that of Hoseinzade and Adams Table 6, with a 12 cm bore, a 1 cm wall and 14 m length.}
+\Vars{\V{q''}{average heat flux on outer area}{\U{W\ m^{-2}}}}
+\Assume{Flux from HTGR studies.}
+\Source{\tagP{} TECDOC-1236 \cite{TE1236}, PDF p.~9. Hoseinzade and Adams \cite{HA}, Table 6, PDF p.~11.}
+\Impl{\fn{units::smr_tube::tube_count}}
+\Valid{PUB}{eq_d_35}{Computed here: 72.9 MW over 199 tubes gives \cHaFlux{} \U{kW\ m^{-2}}, inside the range. At Case B with \vQprocB{} \U{MW}: \cTubesB{} tubes at 50 \U{kW\ m^{-2}}, and \cTubesBLow{} to \cTubesBHigh{} across the range. This uses the full process heat as an upper bound on the tube duty.}
+\end{eqcard}
+
+\begin{eqcard}{D.36}{F}{Hot end}
+\Stmt{\Delta T_{hot}=T_{s,sup}-T_{ref,out}=29\ \mathrm{K}}
+\Interp{Only 29 K separates the helium from the gas leaving the catalyst. No tube has run at this approach, and conversion depends on it.}
+\Deriv{INL's 871 C exit and 900 C supply give this number, from a Gibbs result with no tube model. The JAERI mock-up measured 102 to 125 K against a design of 100 K. The project keeps 871 C and carries sensitivities at 825 and 800 C, so the risk stays visible.}
+\Vars{\V{\Delta T_{hot}}{reformer hot-end approach}{\U{K}}}
+\Assume{INL Gibbs result, no tube model.}
+\Source{\tagP{} TEV-961 \cite{TEV961}, PDF p.~14 and p.~18. Measured values from JAERI \cite{JAERI}, Table 3.3, PDF p.~28.}
+\Impl{\fn{units::smr_eq::sensitivity_exit}}
+\Valid{PUB}{eq_d_36}{Computed here: equilibrium conversion of \cXeq, \cXEighteen{} and \cXEight\% at 871, 825 and 800 C. Those lower values test the assumption, and this document draws no forecast of plant conversion from them.}
+\end{eqcard}
+
+\subsection*{Worked example: equilibrium at the reformer exit}
+Take one mole of pure methane at 871 C (1144.15 K), 30.3 bar and $S/C=3$. \Eq{D.7} and \Eq{D.8} give $K_1=\cKone$ \U{bar^2} and $K_2=\cKtwo$. Solving \Eq{D.11} gives a methane conversion $x_1$ of \cXeq\%, with $x_2=\cXtwoEq$ and $n_{tot}=\cSigma$. The wet composition is H$_2$ \cyH, H$_2$O \cyHO, CO \cyCO, CO$_2$ \cyCOtwo{} and CH$_4$ \cyCH{} mol\%, close to the INL raw syngas printed in TEV-953. Hydrogen before shift is $3x_1+x_2=\cYield$ mol per mole of methane. Dropping the exit to 825 C takes conversion to \cXEighteen\%, and 800 C takes it to \cXEight\%, which is why the hot-end approach in \Eq{D.36} is the first risk to read in this section.
+
+\subsection*{Link to the sources}
+Xu and Froment built their rates on 3 to 15 bar and 773 to 848 K, with a catalyst crushed to remove diffusion. Applying them at 1144 K and 30 bar is an extrapolation, and the JAERI mock-up shows that exit composition cannot test it, since the rig runs near equilibrium at its hot end. The tube model therefore checks the heat path, and the plant result stands on the equilibrium of \Eq{D.11}, which reproduces TECDOC-1236 and INL within the margins stated on that card. Zhang et al.\ Table 1 is the source of $K(T)$ because the NIST data agree with it inside \cKoneDevMax\% across the range.

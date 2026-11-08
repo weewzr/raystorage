@@ -1,0 +1,117 @@
+[
+ [
+  "start_by_mouse",
+  true,
+  "active True, playing True, step 1, focus #tour-title, panel htgr (was htgr)"
+ ],
+ [
+  "auto_advance",
+  true,
+  "step 2 after 8.1 s from Start"
+ ],
+ [
+  "pause_by_mouse",
+  true,
+  "playing False, button ['Play', 'Play the tour', 'paused', False], animations before {'flows:running': 4, 'flows:finished': 2, 'bar:running': 1}, after pause {'flows:paused': 6, 'bar:paused': 1}, focus button[play]"
+ ],
+ [
+  "paused_holds",
+  true,
+  "after 9 s paused, step 2"
+ ],
+ [
+  "play_by_mouse",
+  true,
+  "playing True, button ['Pause', 'Pause the tour', 'playing', False], animations {'flows:running': 3, 'flows:finished': 3, 'bar:running': 1}"
+ ],
+ [
+  "previous_by_mouse",
+  true,
+  "step 1, inset animations {'svg:running': 1, 'card:running': 9, 'bar:running': 1}"
+ ],
+ [
+  "pause_stops_inset",
+  true,
+  "after Pause on step 1: {'card:paused': 9, 'bar:paused': 1}"
+ ],
+ [
+  "previous_disabled_at_start",
+  true,
+  "step 1 after Previous on step 1"
+ ],
+ [
+  "next_to_end",
+  true,
+  "step 13 after 13 Next presses, playing False"
+ ],
+ [
+  "previous_steps_back",
+  true,
+  "step 7 after 6 Previous presses"
+ ],
+ [
+  "hover_tip_during_tour",
+  true,
+  "hover S12: tip [True, False, 'S12']; mouse away: tip [False, False, 'S12']; playing True"
+ ],
+ [
+  "click_stream_pins_and_pauses",
+  true,
+  "tip [True, True, 'S17'], playing False, active True"
+ ],
+ [
+  "escape_closes_tip_first",
+  true,
+  "tip [False, False, 'S17'], tour active True, focus g[stream=S17]"
+ ],
+ [
+  "click_unit_during_tour",
+  true,
+  "panel wgs, aria-pressed true, active True, playing False"
+ ],
+ [
+  "panel_kept_while_paused",
+  true,
+  "after 9 s: panel wgs, step 7"
+ ],
+ [
+  "picker_during_tour",
+  true,
+  "panel stripper after picking stripper; step 7"
+ ],
+ [
+  "next_reopens_lead_panel",
+  false,
+  "step 8, panel psa"
+ ],
+ [
+  "exit_by_mouse",
+  true,
+  "active False, focus #tour-start, tour classes left 0, panel htgr, panel aria-live polite, live text 'The process tour is closed.'"
+ ],
+ [
+  "drawing_after_exit",
+  true,
+  "unit click panel absorber; hover tip [True, False, 'S20']; click tip [True, True, 'S05']; picker panel psa; Escape tip [False, False, 'S05']"
+ ],
+ [
+  "replay_by_mouse",
+  true,
+  "after the last dwell: ended True, button ['Replay', 'Replay the tour', 'paused', False]; after Replay: step 1, playing True, focus button[play]"
+ ],
+ [
+  "route_change_closes",
+  true,
+  "active False after moving to Results, focus body"
+ ],
+ [
+  "back_on_pfd",
+  true,
+  "start button shown, bar and card hidden after coming back"
+ ],
+ [
+  "no_errors_or_bad_requests",
+  true,
+  "{\"errors\": [], \"network\": [], \"hosts\": [\"http://127.0.0.1:61334\"], \"requests\": 26, \"workers\": [\"worker\"], \"server_log_4xx\": []}"
+ ]
+]

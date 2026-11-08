@@ -1,0 +1,554 @@
+\section{L. Economics}\label{sec:L}
+This section prices the plant by two independent methods that feed one result.
+
+\textbf{Method 1, annual incremental ledger.} The ladder L0 to L5 lists annual cost differences against a same-size unabated SMR, with capital annualised. \Eq{L.1} to \Eq{L.33} build it. Method 1 answers the question ``what does each item add?''
+
+\textbf{Method 2, discounted cash flow.} \Eq{L.34} to \Eq{L.37} run year-by-year real cash flows at 8\% for two plants of equal hydrogen output on a common horizon, the unabated SMR and NUS-H2. Method 2 answers the question ``what does each plant cost, and what does the difference buy?''
+
+The central ledger is Case B with recycle, $n_s=1.0$ with 0.6 and 0.31 at equal prominence, bottom-up capture and T\&S at S\$60/t. Prices are in 2025 S\$. The headline is the full cost set, which is L5 and the DCF, with the reactor charged at 210 MWth at BOAK and FOAK, at 25 y and 60 y. L3 prints beneath it as a named step. Carbon tax stays out of the headline. The S\$100/t target is tested at the end of the section, and no claim is made unless a computed central case passes.
+
+\subsection*{Method 1: annual incremental ledger}
+
+\begin{eqcard}{L.1}{R}{Capital recovery factor}
+\Stmt{CRF=\frac{i}{1-\left(1+i\right)^{-t_\ell}}}
+\Interp{The level annual payment that repays one dollar of capital over the life, with interest. It works like a mortgage payment.}
+\Deriv{A unit payment at each year end has present value $\sum_{y=1}^{t_\ell}(1+i)^{-y}=[1-(1+i)^{-t_\ell}]/i$, a geometric sum. Setting that annuity times the payment equal to the capital and solving for the payment gives the factor.}
+\Vars{\V{CRF}{capital recovery factor}{\U{y^{-1}}} \V{i}{real discount rate}{1} \V{t_\ell}{life or horizon}{\U{y}} \V{y}{year index}{\U{y}}}
+\Assume{End-year payments.}
+\Source{\tagT{} Standard annuity result.}
+\Impl{\fn{plant::anchored::crf}}
+\Valid{PUB}{eq_l_01}{Computed here at 8\%: \cCrfT, \cCrfF{} and \cCrfS{} at 25, 40 and 60 y. The results row SCREENING\_CRF\_25 records the first.}
+\end{eqcard}
+
+\begin{eqcard}{L.2}{R}{Annualised capital}
+\Stmt{C_{ann}=C\,CRF}
+\Interp{Turns a lump of capital into a yearly cost that can sit beside fuel and labour.}
+\Deriv{Definition from \Eq{L.1}.}
+\Vars{\V{C_{ann}}{annualised capital}{\U{S\$\ y^{-1}}} \V{C}{capital}{\U{S\$}}}
+\Assume{Constant real payment.}
+\Source{\tagT{} Standard annuity result.}
+\Impl{\fn{plant::economics::Model::ledger}}
+\Valid{ID}{eq_l_02}{Unit identity.}
+\end{eqcard}
+
+\begin{eqcard}{L.3}{R}{Sinking fund factor}
+\Stmt{SFF=\frac{i}{\left(1+i\right)^{t_\ell}-1}}
+\Interp{The yearly deposit that grows to one dollar at the end of the life. Long lives make it tiny, which is why decommissioning weighs so little at 8\%.}
+\Deriv{Deposits at year ends grow to $[(1+i)^{t_\ell}-1]/i$ by the horizon, a geometric sum. Inverting gives the factor. It equals $CRF\,(1+i)^{-t_\ell}$.}
+\Vars{\V{SFF}{sinking fund factor}{\U{y^{-1}}}}
+\Assume{End-year deposits at the discount rate.}
+\Source{\tagT{} Standard annuity result.}
+\Impl{\fn{plant::anchored::sff}}
+\Valid{GOLD}{eq_l_03}{Computed here: \cSffT{} at 25 y and \cSffS{} at 60 y.}
+\end{eqcard}
+
+\begin{eqcard}{L.4}{R}{Interest during construction}
+\Stmt{f_{IDC}=\frac{\left(1+i\right)^{t_c}-1}{i\,t_c}}
+\Interp{Money spent during a long build sits idle until the plant runs. This factor says how much the overnight cost grows by the first day of operation.}
+\Deriv{Equal spends at year ends reach $(C/t_c)[(1+i)^{t_c}-1]/i$ at completion, the future value of an annuity. Dividing by $C$ gives the factor. It is applied at a non-integer $t_c$ as a smooth extension, which is one source of the gap in \Eq{L.37}.}
+\Vars{\V{f_{IDC}}{interest during construction factor}{1} \V{t_c}{construction time, 5.5}{\U{y}}}
+\Assume{Uniform spend, 5.5 y base case.}
+\Source{\tagP{} Construction time from INL/RPT-23-74378 (NZW09), Table ES-1, PDF p.~7. \tagC{} for the factor.}
+\Impl{\fn{plant::economics::Model::idc_factor}}
+\Valid{GOLD}{eq_l_04}{Computed here: \cFidc{} at 8\% and 5.5 y.}
+\end{eqcard}
+
+\begin{eqcard}{L.5}{R}{Overnight capital, no turbine}
+\Stmt{c_{kWt}=c_{kWe}\left(1-0.09\right)\cdot0.40}
+\Interp{INL quotes reactors per electrical kilowatt. A heat-only plant buys no turbine, so that share comes off, and 40\% efficiency converts to thermal kilowatts.}
+\Deriv{INL's worked example for a non-electric HTGR, steps 3 and 4. It uses low and high OCC of 4,000 and 7,000 \U{US\$_{2019}\ kWe^{-1}}. The project applies the same recipe to the 6,000 medium value of Table 1.}
+\Vars{\V{c_{kWt}}{overnight capital cost, no turbine}{\U{US\$_{2019}\ kWt^{-1}}} \V{c_{kWe}}{BOAK overnight capital cost}{\U{US\$_{2019}\ kWe^{-1}}}}
+\Assume{Turbine share 9\%, efficiency 40\%.}
+\Source{\tagP{} INL/RPT-23-72972 Rev 3, PDF p.~47 and Table 1, PDF p.~5. \tagC{} for the central value.}
+\Impl{\fn{plant::economics::Model::reactor_capex}, on the overnight cost per kWt of the registry}
+\Valid{PUB}{eq_l_05}{INL prints US\$1,456 and US\$2,548 per kWt. The recipe gives US\$2,184 at the medium value.}
+\end{eqcard}
+
+\begin{eqcard}{L.6}{O}{Reactor capital}
+\Stmt{C_R=c_{kWt}\dot Q_{ref}F_{19}m_{stage}\left(\frac{\dot Q_{rated}}{\dot Q_{ref}}\right)^{n_s}}
+\Interp{Cost per kilowatt at a reference size, re-based to 2025 S\$, adjusted for build stage, then scaled to the rating. With $n_s=1$ the reference size drops out and the cost is linear in rating.}
+\Deriv{Reference cost is $c_{kWt}\dot Q_{ref}$. Scaling by a power law in size gives the bracket. INL's survey found no significant difference in specific cost between large reactors and SMRs, which is the basis for $n_s=1$ as central.}
+\Vars{\V{C_R}{reactor capital}{\U{S\$}} \V{F_{19}}{US\$2019 to S\$2025 factor, 1.6195}{\U{S\$\ US\$^{-1}}} \V{m_{stage}}{stage multiplier}{1} \V{\dot Q_{ref}}{reference size, 600}{\U{MW_{th}}} \V{n_s}{size exponent}{1}}
+\Assume{$\dot Q_{ref}=600$ MWth assumed, with no effect at $n_s=1$.}
+\Source{\tagP{} INL/RPT-23-72972 Rev 3, PDF p.~27, p.~45, p.~47. Size exponent central by project decision.}
+\Impl{\fn{plant::economics::Model::reactor_capex}}
+\Valid{GOLD}{eq_l_06}{BOAK at 210 \U{MW_{th}}: S\$\vRxB{M}, S\$\vRxBm{M} and S\$\vRxBl{M} at $n_s=1.0$, 0.6 and 0.31.}
+\end{eqcard}
+
+\begin{eqcard}{L.7}{O}{Stage multiplier}
+\Stmt{m_{stage}=1.0\ \text{(BOAK)},\qquad m_{stage}=1.6\ \text{(FOAK, 1.3 to 2.1)}}
+\Interp{INL's cost table describes a build between first and Nth of a kind. A first plant in a new country sits nearer FOAK, so both are printed.}
+\Deriv{Read directly from INL. BOAK is the base of Table 1, and FOAK is the premium range of Table 11. NZW09 gives 1.5 as a single value (Table ES-1, PDF p.~7).}
+\Vars{\V{m_{stage}}{stage multiplier}{1}}
+\Assume{BOAK sits between first and Nth of a kind.}
+\Source{\tagP{} INL/RPT-23-72972 Rev 3, Table 1, PDF p.~5, and Table 11, PDF p.~40.}
+\Impl{\fn{plant::economics::Model::stage_mult}}
+\Valid{PUB}{eq_l_07}{Published values printed.}
+\end{eqcard}
+
+\begin{eqcard}{L.8}{O}{Learning from BOAK}
+\Stmt{m_{stage}=0.9^{\log_210}=\cLearn}
+\Interp{A 10\% cost fall per doubling, carried to the tenth unit from the BOAK cost.}
+\Deriv{INL's multi-unit example applies $BOAK\times(1-0.1)^{\log_2N}$ to second and third units. Taken to $N=10$ this gives the multiplier.}
+\Vars{\V{N}{unit number, 10}{1}}
+\Assume{Printed as a route, never as a headline.}
+\Source{\tagP{} INL/RPT-23-72972 Rev 3, PDF p.~46.}
+\Impl{\fn{plant::economics::Model::stage_mult}, stage 10OAK from BOAK}
+\Valid{PUB}{eq_l_08}{Computed here: US\$\cOccPsix{} per kWt on the central OCC.}
+\end{eqcard}
+
+\begin{eqcard}{L.9}{O}{Learning from FOAK}
+\Stmt{m_{stage}=1.6\cdot\cLearn=\cLearnF}
+\Interp{The same learning, started from the FOAK cost as in INL's non-electric example. The order of the routes is an artefact: this tenth unit costs more than a BOAK plant.}
+\Deriv{INL applies $FOAK\times(1-LR)^{\log_2N}$ to its FOAK range of US\$1,892 to US\$5,350 per kWt.}
+\Vars{\V{m_{stage}}{tenth-unit multiplier from FOAK}{1}}
+\Assume{Stage order on this route is an artefact.}
+\Source{\tagP{} INL/RPT-23-72972 Rev 3, PDF p.~47.}
+\Impl{\fn{plant::economics::Model::stage_mult}, stage 10OAK from FOAK}
+\Valid{PUB}{eq_l_09}{Computed here: US\$\cOccPseven{} per kWt on the central OCC. On INL's range, \cTenHigh{} and \cTenLow, against the rounded US\$4,000 and US\$1,500 printed. The results rows SCREENING\_OAK10\_INL\_HIGH and LOW record both.}
+\end{eqcard}
+
+\begin{eqcard}{L.10}{E}{Size exponent}
+\Stmt{n_s\in\left\{1.0,\ 0.6,\ 0.31\right\},\qquad0.31=1+\frac{\ln\left(26553/18313\right)}{\ln\left(350/600\right)}}
+\Interp{How fast specific cost rises as a reactor gets smaller. The value drives the result more than any other input, so the three are printed at equal prominence.}
+\Deriv{1.0 is INL's recipe with no size penalty. 0.6 is the classic chemical-plant rule, assumed. 0.31 follows from two NGNP FOAK points: $c\propto\dot Q^{n_s-1}$ gives the fraction, with specific costs of US\$18,313 and US\$26,553 per kWe at 600 and 350 MWth. It is a weak adverse bound from single-unit FOAK estimates that lie well above the survey range.}
+\Vars{\V{n_s}{size exponent}{1}}
+\Assume{Equal prominence, by project decision. 0.31 rests on two points.}
+\Source{\tagP{} INL/RPT-23-72972 Rev 3, PDF p.~25 for the two costs. \tagA{} for 0.6.}
+\Impl{\fn{plant::economics::Model::reactor_capex}, argument $n_s$}
+\Valid{GOLD}{eq_l_10}{Computed here: \cNgnp.}
+\end{eqcard}
+
+\begin{eqcard}{L.11}{O}{Reactor O\&M}
+\Stmt{C_{OM}=c_{OM}F_{19}t_h\left[f_{fuel}\dot Q+\left(1-f_{fuel}\right)\dot Q_{ref}\left(\frac{\dot Q}{\dot Q_{ref}}\right)^{n_s}\right]}
+\Interp{Fuel scales with heat produced. Staff and the rest scale with plant size by the same exponent as capital.}
+\Deriv{INL converts OPEX of US\$15 to US\$35 per MWh to US\$6 to US\$14 per MWt-h at 40\% efficiency, so the medium US\$25 is US\$10. The HTGR fuel share is 44.38\% of OPEX.}
+\Vars{\V{C_{OM}}{reactor O\&M and fuel}{\U{S\$\ y^{-1}}} \V{c_{OM}}{O\&M rate, 10}{\U{US\$_{2019}\ MWth^{-1}\ h^{-1}}} \V{f_{fuel}}{fuel share of OPEX, 0.4438}{1} \V{\dot Q}{charged reactor heat}{\U{MW_{th}}}}
+\Assume{Charged on the rating.}
+\Source{\tagP{} INL/RPT-23-72972 Rev 3, Table 9, PDF p.~37, and PDF p.~47.}
+\Impl{\fn{plant::economics::Model::reactor_om}}
+\Valid{GOLD}{eq_l_11}{S\$\vLOmBT{M} per year at 210 \U{MW_{th}}.}
+\end{eqcard}
+
+\begin{eqcard}{L.12}{O}{Capture capital}
+\Stmt{C_{cap}=K_{cap}\dot m_{CO_2}}
+\Interp{Capital per tonne-per-hour captured, taken from a real difference between two costed plants.}
+\Deriv{IEAGHG Case 1A less the Base Case: TCR of 263.91 less 222.89 is EUR 41.02M at 46.6 \U{t\ h^{-1}}. Re-based at 2.322, that is \cKcap{} S\$M per \U{t\ h^{-1}}. The low value takes the 15\% class bound, \cKcapLow. The high value uses Case 3, MEA on flue gas, at \cKcapHigh. Case 1A uses aMDEA on syngas, so the central value is a proxy for MEA on syngas.}
+\Vars{\V{C_{cap}}{capture capital}{\U{S\$}} \V{K_{cap}}{capture capital per unit rate}{\U{S\$\ t^{-1}\ h}}}
+\Assume{aMDEA-based central, flue-gas MEA high.}
+\Source{\tagP{} IEAGHG 2017-02 \cite{IEAGHG17}, Table 2, PDF p.~16, and Table 3, PDF p.~17. \tagC{} for the ratio.}
+\Impl{\fn{plant::economics::Model::cost_items}, line CAPTURE\_CAP of \fn{plant::economics::Model::ledger}}
+\Valid{GOLD}{eq_l_12}{S\$\cCapCap{M}, or S\$\vLCapBT{M} per year on $CRF$ at 25 y.}
+\end{eqcard}
+
+\begin{eqcard}{L.13}{F}{Capture fixed O\&M}
+\Stmt{C_{FOM}=0.027\,C_{cap}}
+\Interp{Labour, maintenance and insurance for the capture plant as a share of its capital.}
+\Deriv{Central 2.7\% per year, derived from the IEAGHG cases. The high case uses 6\%, the maintenance share in Ahn and Lee.}
+\Vars{\V{C_{FOM}}{capture fixed O\&M}{\U{S\$\ y^{-1}}}}
+\Assume{2.7\% central, 6\% high.}
+\Source{\tagA{} Project value. \tagP{} Ahn and Lee \cite{Ahn}, Table 3, PDF p.~5, for 6\%.}
+\Impl{\fn{plant::economics::Model::cost_items}, line CAPTURE\_FOM of \fn{plant::economics::Model::ledger}}
+\Valid{GOLD}{eq_l_13}{S\$\vLFomBT{M} per year.}
+\end{eqcard}
+
+\begin{eqcard}{L.14}{F}{Variable O\&M}
+\Stmt{C_{VOM}=0\ \text{(central)},\qquad C_{VOM}=0.1\ \mathrm{EUR\ M\ y^{-1}}\cdot F_{14}\ \text{(sensitivity)}}
+\Interp{MEA make-up and reclaiming are real costs that the ledger leaves unpriced at the centre. The sensitivity shows they are small.}
+\Deriv{IEAGHG fixes the cost of chemicals at EUR 100,000 per year for all cases. Re-based, that is \cChemTerm{} \U{S\$\ t^{-1}} of abatement.}
+\Vars{\V{C_{VOM}}{capture variable O\&M}{\U{S\$\ y^{-1}}} \V{F_{14}}{EUR2014 to S\$2025 factor, 2.322}{\U{S\$\ EUR^{-1}}}}
+\Assume{Disclosed sensitivity only.}
+\Source{\tagP{} IEAGHG 2017-02 \cite{IEAGHG17}, PDF p.~13.}
+\Impl{Not implemented in the engine at this build: the ledger carries no variable O\&M line. Planned name \fn{plant::economics::vom}.}
+\Valid{NONE}{eq_l_14}{Computed here only. The line is not in the results.}
+\end{eqcard}
+
+\begin{eqcard}{L.15}{F}{Transport and storage}
+\Stmt{C_{TS}=p_{TS}E_{cap}}
+\Interp{Every tonne stored pays a tariff. Singapore has no store of its own, so this price is an assumption with a wide range.}
+\Deriv{Central S\$60/t, from S\$23.2/t low (IEAGHG EUR 10/t re-based) to S\$112/t high (ERIA integrated transport figure read from a chart). Capture energy stays in the heat and power balance, so no all-in capture price is added.}
+\Vars{\V{C_{TS}}{transport and storage cost}{\U{S\$\ y^{-1}}} \V{p_{TS}}{transport and storage price}{\U{S\$\ t^{-1}}}}
+\Assume{Project value. No all-in capture price on top.}
+\Source{\tagA{} Project value. \tagP{} IEAGHG 2017-02 \cite{IEAGHG17}, report basis, and ERIA 2024, Fig 2.13, as carried in the project inputs.}
+\Impl{\fn{plant::economics::Model::cost_items}, line TS of \fn{plant::economics::Model::ledger}}
+\Valid{GOLD}{eq_l_15}{S\$\vLTsBT{M} per year.}
+\end{eqcard}
+
+\begin{eqcard}{L.16}{R}{Gas saving}
+\Stmt{C_{gas}=-\left(52.5\,s-34.0\,s\right)HHV\,d\,p_{gas}}
+\Interp{The main benefit of the plant: gas no longer burned or fed. It enters the ledger as a negative cost.}
+\Deriv{The unabated SMR uses 52.5 \U{MMSCFD} at Case A and the recycle plant 34.0. Scale both, convert to energy at 1,044 \U{Btu\ scf^{-1}} and price over the operating days.}
+\Vars{\V{C_{gas}}{gas cost difference}{\U{S\$\ y^{-1}}} \V{HHV}{gas higher heating value}{\U{J\ m^{-3}}} \V{d}{operating days, 310.25}{\U{d\ y^{-1}}} \V{p_{gas}}{gas price, 15}{\U{S\$\ GJ^{-1}}}}
+\Assume{Same H$_2$. Gas priced on HHV.}
+\Source{\tagP{} TEV-953 \cite{TEV953}, Table 2, PDF p.~30. TEV-961 \cite{TEV961}, Table 2, PDF p.~17, and A-50, PDF p.~74.}
+\Impl{\fn{plant::economics::Model::cost_items}, line GAS of \fn{plant::economics::Model::ledger}}
+\Valid{GOLD}{eq_l_16}{S\$\vLGasBT{M} per year on \vNgSaved{} \U{MMSCFD} saved.}
+\end{eqcard}
+
+\begin{eqcard}{L.17}{O}{Grid electricity}
+\Stmt{C_{el}=E_{imp}t_hp_{el}}
+\Interp{The plant supplies itself at Case B, so this line is active only when the rating runs short.}
+\Deriv{Energy times price, with \Eq{J.29} for the import.}
+\Vars{\V{C_{el}}{imported electricity cost}{\U{S\$\ y^{-1}}} \V{p_{el}}{electricity price, 0.20}{\U{S\$\ kWh^{-1}}}}
+\Assume{\tagM{27}: the price was not re-checked at source.}
+\Source{\tagA{} Project value.}
+\Impl{Not implemented as a ledger line at this build: the import at the rating is \vImpB{} \U{MW_e} at Case B, so the line would be zero. Planned name \fn{plant::economics::electricity}.}
+\Valid{GOLD}{eq_l_17}{\vImpB{} \U{MW_e} imported at Case B, so the line is zero.}
+\end{eqcard}
+
+\begin{eqcard}{L.18}{E}{IHX and secondary loop}
+\Stmt{C_{ihx}=C_{a}\frac{\dot Q_{proc}+\dot Q_{rec}}{170\ \mathrm{MW}}}
+\Interp{The exchanger and secondary helium loop scale with duty from a single published loop cost.}
+\Deriv{US\$69M at about 2012 for 170 MW, escalated by 128.885 over 93.1835 and converted at 1.3065, gives $C_a=$ S\$\cIhxAnchor{M}. At Case B, $C_{ihx}=$ S\$\cIhxCap{M}, annualised at 25 y. The anchor is a generic estimate, which sets the fit range: one point.}
+\Vars{\V{C_{ihx}}{IHX and loop capital}{\U{S\$}} \V{C_{a}}{loop cost anchor}{\U{S\$}}}
+\Assume{Linear in duty. 25 y life.}
+\Source{\tagM{23}: IAEA-TECDOC-1682 Table 3.17, carried from earlier project files and not opened at source.}
+\Impl{\fn{plant::economics::Model::cost_items}, line IHX of \fn{plant::economics::Model::ledger}}
+\Valid{GOLD}{eq_l_18}{S\$\vLIhxBT{M} per year.}
+\end{eqcard}
+
+\begin{eqcard}{L.19}{E}{Licensing}
+\Stmt{C_{lic}=C_{NRC}\,FX\,CRF}
+\Interp{A first-licence country has work the INL estimate does not hold. A design certification fee stands in for it, as a proxy.}
+\Deriv{US\$50M central, 0 to 137.5. INL's OCC already holds plant licensing at 0.56\% and site permits at 0.23\%, so the line overlaps by up to 0.79\% of OCC. Setting up a regulator is not priced. The fit range is one fee.}
+\Vars{\V{C_{lic}}{annualised licensing cost}{\U{S\$\ y^{-1}}} \V{C_{NRC}}{design certification fee proxy}{\U{US\$}} \V{FX}{S\$ per US\$, 1.3065}{\U{S\$\ US\$^{-1}}}}
+\Assume{Proxy. No deflator applied.}
+\Source{\tagM{23}: NRC blog summary, carried from earlier project files. \tagP{} INL/RPT-23-72972 Rev 3, PDF p.~34, for the overlap.}
+\Impl{\fn{plant::economics::Model::ledger}, line LICENCE}
+\Valid{GOLD}{eq_l_19}{S\$\vLLicBT{M} per year at 25 y, S\$\vLLicBS{M} at 60 y.}
+\end{eqcard}
+
+\begin{eqcard}{L.20}{E}{Decommissioning}
+\Stmt{C_{dec}=c_{dec}\left(0.40\,\dot Q\right)FX\,SFF}
+\Interp{A fund built over the life pays for dismantling at the end. Discounting makes the line almost vanish at 60 y.}
+\Deriv{NZW09 gives US\$750, 1,000 and 1,250 per kWe in 2022 dollars. Applied at 0.40 \U{kWe\ kWt^{-1}}, the central total is S\$\cDecTotal{M}, then \Eq{L.3}. The data are US LWR history, which sets the fit range, and graphite and TRISO disposal are not priced.}
+\Vars{\V{C_{dec}}{decommissioning fund payment}{\U{S\$\ y^{-1}}} \V{c_{dec}}{decommissioning cost}{\U{US\$_{2022}\ kWe^{-1}}}}
+\Assume{LWR history. 3\% fund rate in the high case.}
+\Source{\tagP{} INL/RPT-23-74378 (NZW09), Table ES-1, PDF p.~7.}
+\Impl{\fn{plant::economics::Model::ledger}, line DECOM}
+\Valid{GOLD}{eq_l_20}{S\$\vLDecBT{M} per year at 25 y, S\$\vLDecBS{M} at 60 y.}
+\end{eqcard}
+
+\begin{eqcard}{L.21}{O}{IDC line}
+\Stmt{C_{IDC}=C_R\left(f_{IDC}-1\right)CRF}
+\Interp{The ledger shows interest during construction as its own rung, so the reader can see it.}
+\Deriv{The excess of \Eq{L.4} over one, annualised with \Eq{L.1} at the reactor life. Applied to the reactor only.}
+\Vars{\V{C_{IDC}}{annualised construction interest}{\U{S\$\ y^{-1}}}}
+\Assume{Rung L4.}
+\Source{\tagC{} This document.}
+\Impl{\fn{plant::economics::Model::ledger}, line IDC, with \fn{plant::economics::Model::idc_factor}}
+\Valid{GOLD}{eq_l_21}{S\$\vLIdcBT{M} per year at 25 y BOAK.}
+\end{eqcard}
+
+\begin{eqcard}{L.22}{O}{Power island}
+\Stmt{C_{pi}=c_{pi}E_{tot}F_{19}m_{stage}}
+\Interp{\Eq{L.5} took the turbine out, yet the plant does make its own electricity. This line puts back a turbine for the megawatts actually generated.}
+\Deriv{9\% of US\$6,000 per kWe gives US\$540, applied to \Eq{J.24}, annualised at the reactor life. The stage multiplier applies at the central cost level.}
+\Vars{\V{C_{pi}}{power island capital}{\U{S\$}} \V{c_{pi}}{turbine share, 540}{\U{US\$_{2019}\ kWe^{-1}}}}
+\Assume{Rung L4.}
+\Source{\tagC{} From \Eq{L.5}.}
+\Impl{\fn{plant::economics::Model::ledger}, line POWER\_ISLAND}
+\Valid{GOLD}{eq_l_22}{S\$\vLPiBT{M} per year at 25 y BOAK, on capital of S\$\cPiCap{M}.}
+\end{eqcard}
+
+\begin{eqcard}{L.23}{E}{Recycle train}
+\Stmt{C_{rec}=C_{rec,A}\,s,\qquad C_{ann,rec}=C_{rec}\left(CRF_{25}+0.027\right)}
+\Interp{Recycling tail gas needs compressors and a cryogenic unit that no INL table prices. A compression cost per megawatt stands in for them.}
+\Deriv{IEAGHG Case 1A prices CO$_2$ compression at EUR 17.0M total plant cost. Over INL's 3.32 \U{kW} per \U{st\ d^{-1}} at 46.6 \U{t\ h^{-1}}, that is a cost per MW. Applied to 5.7 MWe, with TCR over TPC of 1.3 and re-based at 2.322, this gives S\$\cRecA{M} at Case A and S\$\cRecB{M} at Case B. The fit range is one proxy, and the high case uses IEAGHG's cryogenic block.}
+\Vars{\V{C_{rec}}{recycle train capital}{\U{S\$}} \V{C_{rec,A}}{recycle train capital at Case A}{\U{S\$}} \V{C_{ann,rec}}{recycle train annual line}{\U{S\$\ y^{-1}}}}
+\Assume{No published cost \tagM{31}.}
+\Source{\tagC{} From IEAGHG 2017-02 \cite{IEAGHG17}, PDF p.~223 for the compression cost, as carried in the project inputs.}
+\Impl{\fn{plant::economics::Model::cost_items}, line RECYCLE\_TRAIN of \fn{plant::economics::Model::ledger}}
+\Valid{GOLD}{eq_l_23}{S\$\vLRecBT{M} per year.}
+\end{eqcard}
+
+\begin{eqcard}{L.24}{O}{Lost steam and baseline power}
+\Stmt{C_{st}=\left(\dot Q_{exp}^{conv}-\dot Q_{exp}^{kept}\right)t_hp_{gas},\qquad C_{pw}=-E_{conv}t_hp_{el}}
+\Interp{An unabated SMR sells export steam and buys grid power. NUS-H2 spends its steam in the reboiler and buys no power. Charging both differences is what moves L4 to L5.}
+\Deriv{189.2 \U{MMBtu\ h^{-1}} scaled by $s$ is the steam of the unabated plant. At Case B all of NUS-H2's export steam goes to the reboiler, so none is kept. Steam is valued at the gas price. The baseline plant buys 6.3 \U{MW_e} scaled by $s$.}
+\Vars{\V{C_{st}}{lost steam line}{\U{S\$\ y^{-1}}} \V{C_{pw}}{baseline power line}{\U{S\$\ y^{-1}}} \V{\dot Q_{exp}^{conv}}{export steam of the unabated SMR}{\U{W}} \V{\dot Q_{exp}^{kept}}{export steam the plant keeps}{\U{W}} \V{E_{conv}}{electricity of the unabated SMR}{\U{W}}}
+\Assume{Steam valued at gas price. Rung L5.}
+\Source{\tagP{} TEV-953 \cite{TEV953}, Table 2, PDF p.~30.}
+\Impl{\fn{plant::economics::Model::ledger}, lines LOST\_STEAM and BASE\_POWER}
+\Valid{GOLD}{eq_l_24}{S\$\vLSteamBT{M} and S\$\vLPowBT{M} per year.}
+\end{eqcard}
+
+\begin{eqcard}{L.25}{R}{Incremental cost ladder}
+\Stmt{\Delta C_{k}=\sum_{j\in L_0\cup\dots\cup L_k}C_j,\qquad k=0,\dots,5}
+\Interp{Each rung adds one group of real costs, so the reader sees exactly what moves the result.}
+\Deriv{The rungs are fixed: L0 gas, reactor capital, capture capital, capture fixed O\&M and T\&S. L1 adds reactor O\&M. L2 adds the IHX. L3 adds licensing and decommissioning. L4 adds IDC, the power island and the recycle train. L5 adds lost steam, baseline power and any export revenue.}
+\Vars{\V{\Delta C_k}{cumulative annual cost difference at rung $k$}{\U{S\$\ y^{-1}}} \V{C_j}{ledger line $j$}{\U{S\$\ y^{-1}}}}
+\Assume{Annual differences against the same-size unabated SMR.}
+\Source{\tagC{} This document.}
+\Impl{\fn{plant::economics::Ledger::ladder}}
+\Valid{GOLD}{eq_l_25}{S\$\vCostThreeBT{M} per year at L3 and S\$\vCostFiveBT{M} per year at L5, BOAK, 25 y. \vValLtwentyfive}
+\end{eqcard}
+
+\begin{eqcard}{L.26}{R}{Abatement cost}
+\Stmt{AC=\frac{\Delta C}{\mathcal A}}
+\Interp{The extra cost per tonne kept out of the air, the measure set against the S\$100/t target.}
+\Deriv{Definition, annual cost over annual tonnes.}
+\Vars{\V{AC}{abatement cost}{\U{S\$\ t^{-1}}} \V{\Delta C}{annual cost difference}{\U{S\$\ y^{-1}}}}
+\Assume{Direct abatement.}
+\Source{\tagC{} This document.}
+\Impl{\fn{plant::economics::Ledger::l3} and \fn{plant::economics::Ledger::l5}, over the abatement of \fn{plant::emissions::Model::emissions}}
+\Valid{GOLD}{eq_l_26}{L3 at 210 \U{MW_{th}}: \vACTwentyFive{} and \vACSixty{} at 25 and 60 y BOAK, \vAcThreeFT{} and \vAcThreeFS{} FOAK. L3 at \vQRB{} \U{MW_{th}}: \vAcThreeNeedBT{} and \vAcThreeNeedBS{} BOAK. L5 values are in \Eq{L.27}. The screening comparison of L3: \vValLtwentysix}
+\end{eqcard}
+
+\begin{eqcard}{L.27}{R}{Size and stage table}
+\Stmt{AC=AC\left(n_s,\text{stage},t_\ell\right)}
+\Interp{The side-by-side table of the choices that matter most, printed so that no single exponent looks like the answer.}
+\Deriv{Evaluate \Eq{L.26} over the grid in the table below, with the same abatement throughout.}
+\Vars{\V{n_s}{size exponent}{1}}
+\Assume{Equal prominence, by project decision.}
+\Source{\tagC{} This document.}
+\Impl{\fn{plant::economics::Model::ledger}, run over the grid of stages, lives and $n_s$}
+\Valid{GOLD}{eq_l_27}{The table below, read from the results.}
+\end{eqcard}
+
+\begin{center}\small
+\begin{tabular}{@{}llrrrrrr@{}}
+\toprule
+& & \multicolumn{3}{c}{L3, S\$/t} & \multicolumn{3}{c}{L5, S\$/t}\\
+Stage & Life & $n_s=1.0$ & 0.6 & 0.31 & $n_s=1.0$ & 0.6 & 0.31\\
+\midrule
+BOAK & 25 y & \vACTwentyFive & \vAcThreeBTm & \vAcThreeBTl & \vAcFiveBT & \vAcFiveBTm & \vAcFiveBTl\\
+BOAK & 60 y & \vACSixty & \vAcThreeBSm & \vAcThreeBSl & \vAcFiveBS & \vAcFiveBSm & \vAcFiveBSl\\
+FOAK & 25 y & \vAcThreeFT & \vAcThreeFTm & \vAcThreeFTl & \vAcFiveFT & \vAcFiveFTm & \vAcFiveFTl\\
+FOAK & 60 y & \vAcThreeFS & \vAcThreeFSm & \vAcThreeFSl & \vAcFiveFS & \vAcFiveFSm & \vAcFiveFSl\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{eqcard}{L.28}{O}{Levelised form of the ledger}
+\Stmt{LAC=\frac{\mathrm{NPV}\left(\Delta C\right)}{\mathrm{NPV}\left(\mathcal A\right)}}
+\Interp{Cost and tonnes are both spread over time, so both are discounted. Method 1 is the special case in which every year looks the same.}
+\Deriv{If $\Delta C$ and $\mathcal A$ are constant from year 1 to $t_\ell$, each NPV is the constant times the same annuity sum, the sum cancels, and $LAC=AC$ of \Eq{L.26}. Method 1 reaches that form by annualising capital. Method 2 keeps the true timing, and \Eq{L.36} evaluates it year by year.}
+\Vars{\V{LAC}{levelised abatement cost}{\U{S\$\ t^{-1}}} \V{\mathrm{NPV}}{net present value}{\U{S\$}}}
+\Assume{Tonnes discounted at the same rate as cost.}
+\Source{\tagC{} This document.}
+\Impl{\fn{plant::dcf::Model::dcf}}
+\Valid{ID}{eq_l_28}{Identity at constant flows. The compared values are in \Eq{L.37}.}
+\end{eqcard}
+
+\begin{eqcard}{L.29}{O}{One-at-a-time sensitivity}
+\Stmt{AC_q=AC\left(q\right),\qquad\text{other inputs central}}
+\Interp{Change one input at a time and read the effect. Gas price, T\&S and availability matter most after the reactor cost itself.}
+\Deriv{Rerun the ledger at each value of input $q$. Reactor capital moves with INL's low and high overnight cost, and capture capital runs from the low factor to IEAGHG Case 3, MEA on flue gas.}
+\Vars{\V{q}{swept input}{various}}
+\Assume{Central set otherwise. BOAK, $n_s=1.0$, 210 MWth.}
+\Source{\tagC{} This document.}
+\Impl{\fn{plant::sens::sweeps}}
+\Valid{GOLD}{eq_l_29}{The table below, read from the sensitivity results.}
+\end{eqcard}
+
+\begin{center}\small
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Change & L3, 25 y & L3, 60 y & L5, 25 y & L5, 60 y\\
+\midrule
+Central & \vACTwentyFive & \vACSixty & \vAcFiveBT & \vAcFiveBS\\
+Gas S\$10/GJ & \vSnGasLoT & \vSnGasLoS & \vSfGasLoT & \vSfGasLoS\\
+Gas S\$20/GJ & \vSnGasHiT & \vSnGasHiS & \vSfGasHiT & \vSfGasHiS\\
+T\&S S\$23.2/t & \vSnTsLoT & \vSnTsLoS & \vSfTsLoT & \vSfTsLoS\\
+T\&S S\$112/t & \vSnTsHiT & \vSnTsHiS & \vSfTsHiT & \vSfTsHiS\\
+Availability 0.70 & \vSnAvLoT & \vSnAvLoS & \vSfAvLoT & \vSfAvLoS\\
+Availability 0.90 & \vSnAvHiT & \vSnAvHiS & \vSfAvHiT & \vSfAvHiS\\
+Baseline 9.35 & \vSnChoT & \vSnChoS & \vSfChoT & \vSfChoS\\
+Baseline 9.00 & \vSnIeaT & \vSnIeaS & \vSfIeaT & \vSfIeaS\\
+Process heat 143.4 MWth & \vSnHeatT & \vSnHeatS & \vSfHeatT & \vSfHeatS\\
+Charged at \vQRB{} MWth & \vAcThreeNeedBT & \vAcThreeNeedBS & \vAcFiveNeedBT & \vAcFiveNeedBS\\
+Reactor OCC US\$\vOccLo/kWt & \vSnOccLoT & \vSnOccLoS & \vSfOccLoT & \vSfOccLoS\\
+Reactor OCC US\$\vOccHi/kWt & \vSnOccHiT & \vSnOccHiS & \vSfOccHiT & \vSfOccHiS\\
+Capture capital S\$\vKcLo{M} per t/h & \vSnKcLoT & \vSnKcLoS & \vSfKcLoT & \vSfKcLoS\\
+Capture capital S\$\vKcHi{M} per t/h & \vSnKcHiT & \vSnKcHiS & \vSfKcHiT & \vSfKcHiS\\
+No recycle, tail gas burned & \vSnCombT & \vSnCombS & \vSfCombT & \vSfCombS\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{eqcard}{L.30}{O}{Discount rate sweep}
+\Stmt{AC\left(i\right)\ \text{through}\ CRF\left(i\right),\ SFF\left(i\right),\ f_{IDC}\left(i\right)}
+\Interp{A nuclear plant is capital heavy, so the rate moves its cost more than almost anything else.}
+\Deriv{Only the capital lines depend on $i$. Rebuild them with \Eq{L.1}, \Eq{L.3} and \Eq{L.4} and keep the annual lines fixed.}
+\Vars{\V{i}{real discount rate}{1}}
+\Assume{5, 8 and 10\%.}
+\Source{\tagC{} This document.}
+\Impl{\fn{plant::sens::sweeps}, sweep DISCOUNT}
+\Valid{ID}{eq_l_30}{The engine sweep gives L5 BOAK at 5, 8 and 10\%: \vSwpFiveT, \vSwpEightT{} and \vSwpTenT{} \U{S\$\ t^{-1}} at 25 y, \vSwpFiveS, \vSwpEightS{} and \vSwpTenS{} at 60 y. Rebuilt here from the ledger lines with \Eq{L.1}, \Eq{L.3} and \Eq{L.4}: \cSwpFiveT, \cSwpEightT{} and \cSwpTenT{} at 25 y, \cSwpFiveS, \cSwpEightS{} and \cSwpTenS{} at 60 y. The sequence rises with $i$ as it should.}
+\end{eqcard}
+
+\begin{eqcard}{L.31}{O}{Levers to the target}
+\Stmt{AC\left(q^*\right)=100\ \mathrm{S\$\ t^{-1}}}
+\Interp{How far one input alone would have to move to reach the target. A lever that lands outside any credible range shows that the target cannot be met on that input alone.}
+\Deriv{The ceiling is $100\mathcal A=$ S\$\vCeiling{M} per year. The ledger is linear in gas price, T\&S and reactor OCC, so each lever solves directly from the excess over the ceiling.}
+\Vars{\V{q^*}{value of an input that meets the target}{various}}
+\Assume{One lever at a time, stated per lever.}
+\Source{\tagC{} This document.}
+\Impl{\fn{plant::sens::levers}, with the stacked runs \fn{plant::sens::mature_rows}, \fn{plant::sens::stepdown_rows} and \fn{plant::sens::cofunding_rows}}
+\Valid{ID}{eq_l_31}{The results give, at BOAK and 25 y, L5: gas S\$\vLevGasFT/GJ, OCC US\$\vLevOccFT/kWt, T\&S S\$\vLevTsFT/t. At 60 y, L5: S\$\vLevGasFS/GJ, US\$\vLevOccFS/kWt, S\$\vLevTsFS/t. At 25 y, L3: S\$\vLevGasTT/GJ, US\$\vLevOccTT/kWt, S\$\vLevTsTT/t. A negative T\&S price means that lever cannot close the gap alone. The OCC lever keeps the same stage premium and sits below INL's low value of US\$1,456 per kWt at L5. The stacked run MATURE\_60Y, 10th of a kind on INL's BOAK route over 60 y with $n_s=1.0$ and 210 MWth charged, gives S\$\vMatureCost/t on L5 and S\$\vMatureCostDcf/t on the DCF at the central gas price of S\$\vGasCentral/GJ. Gas at S\$\vMatureGas/GJ brings L5 to S\$\vMatureTarget/t, and gas at S\$\vMatureGasDcf/GJ brings the DCF there. The printed price is the larger of the two solves rounded up to S\$0.1/GJ, S\$\vMatureGasPrinted/GJ, where L5 gives S\$\vMaturePrintedFive/t and the DCF S\$\vMaturePrintedDcf/t. A higher gas price lowers this cost, because NUS-H2 burns less gas than the unabated plant. The step-down from the base, L5 with the DCF beside it in S\$/t: BOAK at 25 y, \vStepOneFive{} and \vStepOneDcf; 10th of a kind at 25 y, \vStepTwoFive{} and \vStepTwoDcf; 10th of a kind at 60 y, \vStepThreeFive{} and \vStepThreeDcf; then gas at the printed price, \vStepFourFive{} and \vStepFourDcf. Public co-funding of the S\$\vReactorCapital{M} reactor capital brings BOAK to the same target at 25 y with \vCofundShareT\% (S\$\vCofundT{M}) on L5 and \vCofundShareDcfT\% (S\$\vCofundDcfT{M}) on the DCF. At 60 y the shares are \vCofundShareS\% (S\$\vCofundS{M}) and \vCofundShareDcfS\% (S\$\vCofundDcfS{M}). These are named scenarios beside the base result.}
+\end{eqcard}
+
+\begin{eqcard}{L.32}{O}{SMR plus CCS comparator}
+\Stmt{AC_{cmp}=F_{14}CAC_{3}+\left(p_{TS}-p_{TS,3}\right)\frac{e_{cap,3}}{e_{av,3}}}
+\Interp{What a fired SMR with MEA on its flue gas costs per tonne avoided on the same tariff, one labelled row for comparison.}
+\Deriv{IEAGHG Case 3 prints a CO$_2$ avoidance cost of EUR 69.8/t with T\&S at EUR 10/t. Re-based at 2.322 that is \cCmpCac. Moving T\&S to the project tariff multiplies the change by captured over avoided CO$_2$, 0.8004 over \cCmpAvoid{} \U{kg\ Nm^{-3}}. Gas price and availability differ from this ledger, so the row is indicative. An earlier lifecycle comparator of this project sits on a different basis and is not carried.}
+\Vars{\V{AC_{cmp}}{comparator cost}{\U{S\$\ t^{-1}}} \V{CAC_{3}}{IEAGHG Case 3 avoidance cost}{\U{EUR\ t^{-1}}} \V{p_{TS,3}}{T\&S price in the IEAGHG case, 23.2}{\U{S\$\ t^{-1}}} \V{e_{cap,3}}{CO$_2$ captured per unit H$_2$}{\U{kg\ Nm^{-3}}} \V{e_{av,3}}{CO$_2$ avoided per unit H$_2$}{\U{kg\ Nm^{-3}}}}
+\Assume{One labelled comparator, by project decision.}
+\Source{\tagP{} IEAGHG 2017-02 \cite{IEAGHG17}, Table 2, PDF p.~16, and Table 5, PDF p.~18. \tagC{} for the adjustment.}
+\Impl{\fn{plant::comparator::Model::comparator}}
+\Valid{PUB}{eq_l_32}{Computed here: \cCmpCac{} as published, \cCmpT{} at S\$60/t and \cCmpHigh{} at S\$112/t, with abatement of \cCmpAbate{} \U{Mt\ y^{-1}} at 85\%.}
+\end{eqcard}
+
+\begin{eqcard}{L.33}{F}{Guards}
+\Stmt{F_{19}=1.6195,\qquad F_{14}=2.322,\qquad E_{cap\ energy}\ \text{counted once}}
+\Interp{Rules that keep the ledger honest. Capture energy is paid in heat and power, so it is never priced a second time. Every price is carried to one base year, and carbon tax stays outside the ledger.}
+\Deriv{$F_{19}$ is the GDP deflator ratio 128.885 over 103.9745 times 1.3065. $F_{14}$ is the corresponding EUR2014 factor from the project inputs. A GDP deflator understates nuclear escalation, so reactor prices err low. Bottom-up capture carries capital and fixed O\&M only. Carbon tax credits sit outside every line.}
+\Vars{\V{F_{19}}{US\$2019 to S\$2025 factor}{\U{S\$\ US\$^{-1}}}}
+\Assume{GDP deflator.}
+\Source{\tagC{} Project inputs.}
+\Impl{The factors are registry entries read by \fn{plant::anchored::Model::new}. No single guard function exists.}
+\Valid{GOLD}{eq_l_33}{Inputs read by the model. The results row PARAMS\_COMPLETE records that every input is read.}
+\end{eqcard}
+
+\subsection*{Method 2: discounted cash flow}
+Year 0 is the end of construction, and flows fall at year ends, so operation runs from year 1 to the horizon. Both plants make the same hydrogen in the same hours. The horizon is the reactor life, 25 y or 60 y. The cards below follow \fn{engine/plant/src/dcf.rs} line by line.
+
+\begin{center}\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{7.0cm}>{\raggedright\arraybackslash}p{1.9cm}>{\raggedright\arraybackslash}p{7.0cm}@{}}
+\toprule
+Line & Plant & Timing\\
+\midrule
+SMR island capital & both & Year 0, replaced every 25 y, credit at horizon\\
+SMR island fixed O\&M, water and chemicals & both & Years 1 to $t_\ell$\\
+Gas; steam credit & both, own values & Years 1 to $t_\ell$\\
+Purchased power & SMR & Years 1 to $t_\ell$\\
+Reactor capital & NUS-H2 & Uniform over 5.5 y to year 0, part year first\\
+Capture capital; IHX; recycle train & NUS-H2 & Year 0, replaced every 25 y, credit at horizon\\
+Capture fixed O\&M; T\&S; reactor O\&M; recycle fixed O\&M & NUS-H2 & Years 1 to $t_\ell$\\
+Capture all-in price; export revenue & NUS-H2 & Years 1 to $t_\ell$, zero in the central case\\
+Licence; power island & NUS-H2 & Year 0 once\\
+Decommissioning & NUS-H2 & Year $t_\ell$, paid from cash flow, no sinking fund\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\begin{eqcard}{L.34}{R}{Discounted cash flow}
+\Stmt{\begin{gathered}\mathrm{NPV}_x=\sum_{j}\sum_{y}c_{j,x}\left(y\right)\left(1+i\right)^{-y}\\c_{j}^{rep}\left(y\right)=\begin{cases}C_j&y=25m<t_\ell\\-C_j\,u/25&y=t_\ell\end{cases},\qquad u=25\left\lceil\frac{t_\ell}{25}\right\rceil-t_\ell\end{gathered}}
+\Interp{Each plant is a list of dated bills. Discounting brings every bill to year 0 and adds them. Items with a 25 y life are bought again on schedule, and the part of the last unit still unused at the horizon comes back as a straight-line credit.}
+\Deriv{The sum is the definition of present value at real rate $i$. Reactor capital spreads uniformly over $t_c$, a part year first as the earliest bucket: $C_R\cdot0.5/5.5$ at year $-5$ and $C_R/5.5$ at years $-4$ to 0. The SMR island enters at year 0 at Total Capital Requirement, because TCR already holds the island's own interest during construction, so spreading it would count that interest twice. IEAGHG's TCR is EUR 222.89M and its fixed O\&M EUR 7,545,514 per year. Raw water and chemicals with catalysts, EUR 99,365 and EUR 420,000 per year, are stated at 95\% availability and scale to 85\%. Re-based at 2.322 these are S\$\vIslCap{M}, S\$\vIslFom{M} per year and S\$\vIslVom{M} per year. Its feedstock, fuel and electricity lines are left out because the gas, steam and power lines cover them. Both plants carry the island unchanged, on the assumption that reformer differences cancel. Replacement runs at $m=0,1,\dots$ while $25m<t_\ell$, so at 60 y units are bought at years 0, 25 and 50, and 15 of the last 25 y are unused, which gives a credit of $0.6C_j$ at year 60. Nothing is bought at the horizon itself.}
+\Vars{\V{\mathrm{NPV}_x}{present cost of plant $x$}{\U{S\$}} \V{c_{j,x}}{cash flow of line $j$ on plant $x$}{\U{S\$\ y^{-1}}} \V{c_{j}^{rep}}{purchase or credit of a replaced item}{\U{S\$}} \V{C_j}{capital of item $j$}{\U{S\$}} \V{u}{unused years of the last unit at the horizon}{\U{y}} \V{m}{replacement index}{1}}
+\Assume{Real flows at 8\%. Whole-year horizon. Costs from the same set as Method 1. Replaced lines: SMR island, capture, IHX, recycle train, each on a 25 y life. At the high cost level only, the IHX life is its rated hours over the operating hours, cut to whole years.}
+\Source{\tagP{} IEAGHG 2017-02 \cite{IEAGHG17}, Table 3, PDF p.~17, and Table 4, PDF p.~18. INL/RPT-23-74378 (NZW09), Table ES-1, PDF p.~7, for 5.5 y. \tagC{} for the method.}
+\Impl{\fn{plant::dcf::Model::dcf}, with \fn{plant::dcf::uniform_spend} and \fn{plant::dcf::with_replacement}}
+\Valid{ID}{eq_l_34}{The engine unit tests cover the spend sum, the replacement schedule on both plants, and the 95\% to 85\% scaling. Computed here from the printed equations, independent of the engine: BOAK present costs of S\$\cNpvSmrT{M} and S\$\cNpvNusT{M} at 25 y, S\$\cNpvSmrS{M} and S\$\cNpvNusS{M} at 60 y.}
+\end{eqcard}
+
+\begin{eqcard}{L.35}{R}{Levelised cost of hydrogen}
+\Stmt{LCOH_x=\frac{\mathrm{NPV}_x}{\mathrm{NPV}\left(M_{H_2}\right)}=\frac{\mathrm{NPV}_x}{M_{H_2}\sum_{y=1}^{t_\ell}\left(1+i\right)^{-y}}}
+\Interp{The constant price per kilogram that would pay for the plant exactly. Kilograms are discounted like dollars, since a kilogram sold later is worth less to the plant today.}
+\Deriv{Find the price $\pi$ for which revenue has the present value of cost: $\sum_y\pi M_{H_2}(1+i)^{-y}=\mathrm{NPV}_x$. Solving gives the statement. The annuity sum is \cAnnT{} at 25 y and \cAnnS{} at 60 y.}
+\Vars{\V{LCOH_x}{levelised cost of hydrogen of plant $x$}{\U{S\$\ kg^{-1}}}}
+\Assume{Same hydrogen on both plants.}
+\Source{\tagC{} This document.}
+\Impl{\fn{plant::dcf::Model::dcf}, fields \fn{lcoh_smr} and \fn{lcoh_nush2}}
+\Valid{ID}{eq_l_35}{Results, BOAK, 25 and 60 y: SMR S\$\vLcohSmrT{} and S\$\vLcohSmrS/kg, NUS-H2 S\$\vLcohNusBT{} and S\$\vLcohNusBS/kg. FOAK NUS-H2: S\$\vLcohNusFT{} and S\$\vLcohNusFS/kg.}
+\end{eqcard}
+
+\begin{eqcard}{L.36}{R}{Levelised abatement cost}
+\Stmt{LAC=\frac{\mathrm{NPV}_{NUS}-\mathrm{NPV}_{SMR}}{\mathcal A\sum_{y=1}^{t_\ell}\left(1+i\right)^{-y}}}
+\Interp{The present cost difference between the two plants, spread over present tonnes abated. The SMR island appears on both sides and cancels, so only the new items and the gas, steam and power differences remain.}
+\Deriv{\Eq{L.28} with $\mathrm{NPV}(\Delta C)=\mathrm{NPV}_{NUS}-\mathrm{NPV}_{SMR}$ and constant annual tonnes. Dividing through by $M_{H_2}$ and the annuity gives $LAC=(LCOH_{NUS}-LCOH_{SMR})\,M_{H_2}/\mathcal A$, a useful check.}
+\Vars{\V{\mathrm{NPV}_{NUS}}{present cost of NUS-H2}{\U{S\$}} \V{\mathrm{NPV}_{SMR}}{present cost of the unabated SMR}{\U{S\$}}}
+\Assume{Tonnes discounted at the same rate as cost.}
+\Source{\tagC{} This document.}
+\Impl{\fn{plant::dcf::Model::dcf}, field \fn{lac}}
+\Valid{ID}{eq_l_36}{Results: \vLacBT{} and \vLacBS{} at BOAK, \vLacFT{} and \vLacFS{} at FOAK, 25 and 60 y. Computed here from the printed equations, independent of the engine: \cChkLacBT, \cChkLacBS, \cChkLacFT{} and \cChkLacFS, each within \cChkLacMax{} \U{S\$\ t^{-1}} of the results. The LCOH identity gives \cChkIdent{} at BOAK, 25 y.}
+\end{eqcard}
+
+\begin{eqcard}{L.37}{R}{Gap test between the methods}
+\Stmt{\begin{gathered}g=\frac{LAC-AC_{L5}}{AC_{L5}},\qquad\left|g\right|\le0.10\\LAC-AC_{L5}=\frac{C_R\left(f_s-f_{IDC}\right)CRF+\sum_{j}C_j\left(\Theta\,CRF-CRF_{25}\right)}{\mathcal A}\end{gathered}}
+\Interp{Both methods price the same items, so they must nearly agree. Any difference has to be a named timing effect. A gap above 10\% must be explained by a named term in the documentation, and it is never tuned away. The test checks the bookkeeping, and an input wrong in both methods would pass it.}
+\Deriv{Annual lines match exactly, because they enter both methods unchanged. Decommissioning matches too: $D(1+i)^{-t_\ell}$ spread by $CRF$ equals $D\,SFF$, by the note in \Eq{L.3}. Licence and power island at year 0 match by \Eq{L.1}. Two terms remain. Reactor timing: the discrete spend gives $f_s=[0.5(1+i)^{5}+\sum_{k=0}^{4}(1+i)^{k}]/5.5=$ \cFs, against the smooth \Eq{L.4}, \cFidc. Replacement: the sum over $j$ runs over capture, IHX and recycle train, with $\Theta=\sum_m(1+i)^{-25m}-(u/25)(1+i)^{-t_\ell}$, which is 1 at 25 y and \cTheta{} at 60 y. The SMR island nets out of the difference.}
+\Vars{\V{g}{relative gap between methods}{1} \V{AC_{L5}}{ledger abatement cost at L5}{\U{S\$\ t^{-1}}} \V{f_s}{spend factor of the discrete schedule}{1} \V{\Theta}{present worth of replacements per unit capital}{1} \V{CRF_{25}}{capital recovery factor at 25 y}{\U{y^{-1}}}}
+\Assume{Same inputs in both methods. Limit 10\%.}
+\Source{\tagC{} This document, limit set by the project cost method.}
+\Impl{\fn{plant::dcf::Model::dcf}, fields \fn{gap_abs}, \fn{gap_rel} and \fn{gap_terms}}
+\Valid{ID}{eq_l_37}{Results on all twelve grid rows are recorded as LAC\_DCF\_VS\_L5 in the validation results, and the largest $|g|$ is \vGapMax\%. BOAK at $n_s=1$: \vGapBT{} \U{S\$\ t^{-1}} at 25 y (\vGapPctBT\%) and \vGapBS{} at 60 y (\vGapPctBS\%). Computed here from the closed form: \cGapRxT{} at 25 y, all reactor timing. At 60 y, \cGapRxS{} reactor timing plus \cGapRepS{} replacement, total \cGapCloS. The test uses the same inputs on both sides, so it says nothing about the inputs. \vValLthirtyseven}
+\end{eqcard}
+
+\subsection*{Worked example: both methods at Case B}
+The ledger first. BOAK, $n_s=1.0$, 210 MWth charged and \vAbateB{} \U{t\ y^{-1}} abated:
+
+\begin{center}\small
+\begin{tabular}{@{}llrrrr@{}}
+\toprule
+& & \multicolumn{2}{c}{BOAK, S\$M/y} & \multicolumn{2}{c}{FOAK, S\$M/y}\\
+Rung & Line & 25 y & 60 y & 25 y & 60 y\\
+\midrule
+L0 & Gas saved & \vLGasBT & \vLGasBS & \vLGasFT & \vLGasFS\\
+L0 & Reactor capital & \vLRxBT & \vLRxBS & \vLRxFT & \vLRxFS\\
+L0 & Capture capital & \vLCapBT & \vLCapBS & \vLCapFT & \vLCapFS\\
+L0 & Capture fixed O\&M & \vLFomBT & \vLFomBS & \vLFomFT & \vLFomFS\\
+L0 & T\&S & \vLTsBT & \vLTsBS & \vLTsFT & \vLTsFS\\
+L1 & Reactor O\&M and fuel & \vLOmBT & \vLOmBS & \vLOmFT & \vLOmFS\\
+L2 & IHX and secondary loop & \vLIhxBT & \vLIhxBS & \vLIhxFT & \vLIhxFS\\
+L3 & Licensing & \vLLicBT & \vLLicBS & \vLLicFT & \vLLicFS\\
+L3 & Decommissioning & \vLDecBT & \vLDecBS & \vLDecFT & \vLDecFS\\
+& \textbf{L3, S\$/t} & \textbf{\vACTwentyFive} & \textbf{\vACSixty} & \textbf{\vAcThreeFT} & \textbf{\vAcThreeFS}\\
+L4 & IDC on reactor & \vLIdcBT & \vLIdcBS & \vLIdcFT & \vLIdcFS\\
+L4 & Power island & \vLPiBT & \vLPiBS & \vLPiFT & \vLPiFS\\
+L4 & Recycle train & \vLRecBT & \vLRecBS & \vLRecFT & \vLRecFS\\
+& L4, S\$/t & \vAcFourBT & \vAcFourBS & \vAcFourFT & \vAcFourFS\\
+L5 & Lost steam export & \vLSteamBT & \vLSteamBS & \vLSteamFT & \vLSteamFS\\
+L5 & Baseline power avoided & \vLPowBT & \vLPowBS & \vLPowFT & \vLPowFS\\
+& \textbf{L5, S\$/t} & \textbf{\vAcFiveBT} & \textbf{\vAcFiveBS} & \textbf{\vAcFiveFT} & \textbf{\vAcFiveFS}\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Then the cash flow at BOAK. The present value of each NUS-H2 group, computed here from \Eq{L.34}:
+
+\begin{center}\small
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Group, S\$M present value & 25 y & 60 y\\
+\midrule
+SMR island, capital and O\&M & \cPvIslT & \cPvIslS\\
+Gas & \cPvGasT & \cPvGasS\\
+Reactor capital at year 0 & \cPvRxT & \cPvRxS\\
+Capture capital and fixed O\&M & \cPvCapT & \cPvCapS\\
+T\&S & \cPvTsT & \cPvTsS\\
+Reactor O\&M and fuel & \cPvOmT & \cPvOmS\\
+IHX & \cPvIhxT & \cPvIhxS\\
+Licence and power island & \cPvOnceT & \cPvOnceS\\
+Decommissioning & \cPvDecT & \cPvDecS\\
+Recycle train and fixed O\&M & \cPvRecT & \cPvRecS\\
+\textbf{NUS-H2 total} & \textbf{\cNpvNusT} & \textbf{\cNpvNusS}\\
+Unabated SMR total & \cNpvSmrT & \cNpvSmrS\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Dividing the difference by \cAnnT{} times \vAbateB{} \U{t\ y^{-1}} at 25 y gives the \Eq{L.36} figure, \vLacBT{} \U{S\$\ t^{-1}}.
+
+\subsection*{Headline and target test}
+Rebuilt full cost at Case B, $n_s=1.0$, reactor charged at 210 MWth:
+
+\begin{center}\small
+\begin{tabular}{@{}llrrrrrr@{}}
+\toprule
+Stage & Life & L5, S\$/t & $LAC$, S\$/t & $g$, \% & $LCOH_{SMR}$, S\$/kg & $LCOH_{NUS}$, S\$/kg & L3, S\$/t\\
+\midrule
+BOAK & 25 y & \vAcFiveBT & \vLacBT & \vGapPctBT & \vLcohSmrT & \vLcohNusBT & \vACTwentyFive\\
+BOAK & 60 y & \vAcFiveBS & \vLacBS & \vGapPctBS & \vLcohSmrS & \vLcohNusBS & \vACSixty\\
+FOAK & 25 y & \vAcFiveFT & \vLacFT & \vGapPctFT & \vLcohSmrT & \vLcohNusFT & \vAcThreeFT\\
+FOAK & 60 y & \vAcFiveFS & \vLacFS & \vGapPctFS & \vLcohSmrS & \vLcohNusFS & \vAcThreeFS\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The results count \vTargetPass{} of \vTargetN{} central cases at or below S\$100/t, on L5 and the DCF, at BOAK and FOAK, at 25 y and 60 y. The cost target is therefore missed on this basis, and no S\$100/t claim is made. BOAK at 25 y exceeds the ceiling of S\$\vCeiling{M} per year by S\$\vExcessFT{M} per year on the full cost set, and by S\$\vExcessTT{M} per year at L3. Charging only the \vQRB{} MWth the process needs brings L3 to \vAcThreeNeedBT{} and \vAcThreeNeedBS{} at 25 and 60 y, and L5 to \vAcFiveNeedBT{} and \vAcFiveNeedBS. The abatement target is met by a wide margin, \Eq{K.22}.
+
+\subsection*{Link to the sources}
+INL's cost survey gives quartiles rather than a price for a 925 C reactor, and it warns against reading more precision into them than they hold. The result here inherits that spread: the size exponent and stage move the abatement cost by more than any plant design choice in Sections I to K. The DCF confirms that the ledger's arithmetic is sound, and what stays uncertain is the reactor price itself. Items carried on proxies, \tagM{23} and \tagM{31}, are named on their cards.

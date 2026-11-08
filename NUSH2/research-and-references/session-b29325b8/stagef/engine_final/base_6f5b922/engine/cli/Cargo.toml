@@ -1,0 +1,16 @@
+[package]
+name = "nush2_cli"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[[bin]]
+name = "nush2"
+path = "src/main.rs"
+
+[dependencies]
+nush2_numerics = { path = "../numerics" }
+nush2_plant = { path = "../plant" }
+nush2_vv = { path = "../vv" }
+serde_json.workspace = true

@@ -1,0 +1,99 @@
+FINAL_DESIGN_DECISIONS.md:5: [72972] Abbreviations: SMR means steam methane reforming throughout this file; it never stands for a small modular reactor. HTGR is a high-temperature gas-cooled reacto
+FINAL_DESIGN_DECISIONS.md:7: [953] Sources are cited by document, table and page: TEV-953 and TEV-961 are the INL technical evaluations of the HTGR-integrated SMR (TEV-961 Rev. 0, 2010, "Sensitiv
+FINAL_DESIGN_DECISIONS.md:7: [961] Sources are cited by document, table and page: TEV-953 and TEV-961 are the INL technical evaluations of the HTGR-integrated SMR (TEV-961 Rev. 0, 2010, "Sensitiv
+FINAL_DESIGN_DECISIONS.md:7: [961] Sources are cited by document, table and page: TEV-953 and TEV-961 are the INL technical evaluations of the HTGR-integrated SMR (TEV-961 Rev. 0, 2010, "Sensitiv
+FINAL_DESIGN_DECISIONS.md:7: [72972] Sources are cited by document, table and page: TEV-953 and TEV-961 are the INL technical evaluations of the HTGR-integrated SMR (TEV-961 Rev. 0, 2010, "Sensitiv
+FINAL_DESIGN_DECISIONS.md:30: [72972] **Named scenario MATURE_60Y.** The author's stacked case: tenth of a kind on INL's BOAK learning route (stage 10OAK_P46, INL/RPT-23-72972 PDF p46), 60 y, n = 1.
+FINAL_DESIGN_DECISIONS.md:52: [961] | D04 | PSA stays an unsimulated external block. Its reject returns as a stream crossing the boundary. The purge load of TEV-961 Table 2 is restored, scaled and
+FINAL_DESIGN_DECISIONS.md:52: [961] | D04 | PSA stays an unsimulated external block. Its reject returns as a stream crossing the boundary. The purge load of TEV-961 Table 2 is restored, scaled and
+FINAL_DESIGN_DECISIONS.md:52: [953] | D04 | PSA stays an unsimulated external block. Its reject returns as a stream crossing the boundary. The purge load of TEV-961 Table 2 is restored, scaled and
+FINAL_DESIGN_DECISIONS.md:55: [953] | D07 | Headline is direct emissions to atmosphere on INL's 9.21 kg/kg, with Cho 9.35 and IEAGHG 8.996 kg/kg as bounds. Per-pass and plant capture print togethe
+FINAL_DESIGN_DECISIONS.md:57: [72972] | D09 | INL recipe, n = 1.0, is central. n = 0.6 and n = 0.31 print beside it at equal prominence. Learning route is stated each time: PDF p46 from BOAK, PDF p4
+FINAL_DESIGN_DECISIONS.md:69: [961] | D21 | TEV-961 is INL's "Sensitivity of Hydrogen Production..." report | Author decision | TEV-961 title page |
+FINAL_DESIGN_DECISIONS.md:69: [961] | D21 | TEV-961 is INL's "Sensitivity of Hydrogen Production..." report | Author decision | TEV-961 title page |
+FINAL_DESIGN_DECISIONS.md:71: [961] | D23 | Reactor is a generic 925 C HTGR. Xe-100 is a labelled analogue only | Author decision | X-energy deck p13, p15, p16; TEV-961 PDF p14 |
+FINAL_DESIGN_DECISIONS.md:75: [961] | D27 | Reboiler heat order: freed Selexol steam, export steam, syngas above 130 C, then reactor steam | Author decision | TEV-961 A-57 PDF p81; `REB_FROM_` row
+FINAL_DESIGN_DECISIONS.md:76: [961] | D28 | Absorber 40 C and 26.8 bar, rich loading capped at 0.50 | Author decision | TEV-961 A-53 PDF p77 |
+FINAL_DESIGN_DECISIONS.md:77: [961] | D29 | Reformer 871 C disclosed as INL's equilibrium assumption, with 825 and 800 C run through the flowsheet | Author decision | TEV-961 PDF p14; sweep REFORM
+FINAL_DESIGN_DECISIONS.md:80: [961] | D32 | Power conversion 39.7% central, 47.5% a labelled sensitivity | Evidence | TEV-961 Table 2 note 3; INL/EXT-11-21537 PDF p19, p20 |
+FINAL_DESIGN_DECISIONS.md:80: [21537] | D32 | Power conversion 39.7% central, 47.5% a labelled sensitivity | Evidence | TEV-961 Table 2 note 3; INL/EXT-11-21537 PDF p19, p20 |
+FINAL_DESIGN_DECISIONS.md:81: [953] | D33 | HTS plus LTS as in INL. Xu-Froment Table 6 kinetics with K(T) from Zhang Table 1. 44.5 MMSCFD is the no-recycle reference | Evidence | Xu and Froment 19
+FINAL_DESIGN_DECISIONS.md:87: [1,539] | Learning from BOAK is an error | Both routes are published. US$1,539/kWt is the p46 route, US$2,462/kWt the p47 route | INL/RPT-23-72972 PDF p46, p47 |
+FINAL_DESIGN_DECISIONS.md:87: [2,462] | Learning from BOAK is an error | Both routes are published. US$1,539/kWt is the p46 route, US$2,462/kWt the p47 route | INL/RPT-23-72972 PDF p46, p47 |
+FINAL_DESIGN_DECISIONS.md:87: [72972] | Learning from BOAK is an error | Both routes are published. US$1,539/kWt is the p46 route, US$2,462/kWt the p47 route | INL/RPT-23-72972 PDF p46, p47 |
+FINAL_DESIGN_DECISIONS.md:88: [72972] | n = 0.6 is central | Now a sensitivity. n = 0.31 is the ratio of two single-unit FOAK estimates, so it carries that label | INL/RPT-23-72972 PDF p25, p27, p39
+FINAL_DESIGN_DECISIONS.md:89: [1,871] | Amine spec overstates carbon by 33% | With recycle, captured CO2 at Case A is about 1,871 st/d, which the engine's 526,544 t/y at Case A MEA reproduces | Run 
+FINAL_DESIGN_DECISIONS.md:91: [72972] | 85% has no HTGR support | The library holds assumed 90 to 92%, with no measured HTGR availability | IAEA NP-T-4.3 PDF p38; INL/RPT-23-72972 PDF p30 |
+FINAL_DESIGN_DECISIONS.md:92: [5,250] | 1.6x premium has no source | INL medium FOAK premium. Only US$5,250/kWe has no source | INL/RPT-23-72972 Table 1, Table 11 |
+FINAL_DESIGN_DECISIONS.md:92: [72972] | 1.6x premium has no source | INL medium FOAK premium. Only US$5,250/kWe has no source | INL/RPT-23-72972 Table 1, Table 11 |
+FINAL_DESIGN_DECISIONS.md:93: [961] | Table A10 gas-rate label | Cite the row as 700 C helium, TEV-961 725 C ROT, equal to TEV-953 750 C ROT | TEV-961 PDF p14 note b |
+FINAL_DESIGN_DECISIONS.md:93: [953] | Table A10 gas-rate label | Cite the row as 700 C helium, TEV-961 725 C ROT, equal to TEV-953 750 C ROT | TEV-961 PDF p14 note b |
+FINAL_DESIGN_DECISIONS.md:93: [961] | Table A10 gas-rate label | Cite the row as 700 C helium, TEV-961 725 C ROT, equal to TEV-953 750 C ROT | TEV-961 PDF p14 note b |
+FINAL_DESIGN_DECISIONS.md:94: [961] | Syngas cooling comes from a process simulator file | None exists locally. The TEV-961 Case 5 cooler duties are used, and the M4 chain reproduces them (rows T9
+FINAL_DESIGN_DECISIONS.md:94: [961] | Syngas cooling comes from a process simulator file | None exists locally. The TEV-961 Case 5 cooler duties are used, and the M4 chain reproduces them (rows T9
+FINAL_DESIGN_DECISIONS.md:98: [961] Engine values on the Headline preset. Case B is Case A extensive items x 0.6833, with the reactor resized. "A INL" is TEV-961 Case 6 as published with Selexol (
+FINAL_DESIGN_DECISIONS.md:104: [961] | Purified H2 after external PSA | 100,000 | 130 MMSCFD | 130 MMSCFD | Nm3/h | [U]; [P] TEV-961 Table 2 |
+FINAL_DESIGN_DECISIONS.md:105: [953] | H2 mass rate | 8,988 | 13,154 | 13,154 | kg/h | [C]; [P] 29,000 lb/h, TEV-953 PDF p16 |
+FINAL_DESIGN_DECISIONS.md:109: [961] | PSA H2 recovery | 88 | 88 | 88 | % | [P] external, unsimulated, TEV-961 A-53 |
+FINAL_DESIGN_DECISIONS.md:115: [953] | Unabated SMR gas | 35.9 | 52.5 | 52.5 | MMSCFD | [P] TEV-953 Table 2 |
+FINAL_DESIGN_DECISIONS.md:116: [953] | No-recycle reference gas | 30.4 | 44.5 | 44.5 | MMSCFD | [P] TEV-953 Table 2 |
+FINAL_DESIGN_DECISIONS.md:117: [961] | Natural gas HHV | 1,044 | same | same | Btu/scf | [P] TEV-961 A-50 |
+FINAL_DESIGN_DECISIONS.md:120: [0.921630] Plant-level H2 recovery exceeds 88% because the cryogenic unit returns H2 ahead of the PSA. INL publishes no value for it; the flowsheet calculates the return f
+FINAL_DESIGN_DECISIONS.md:126: [961] | Reactor outlet | 925 C | [P] TEV-961 Table 2 |
+FINAL_DESIGN_DECISIONS.md:127: [961] | Secondary helium supply, return | 900 C, 466 C | [P] TEV-961 Table 2, cont. |
+FINAL_DESIGN_DECISIONS.md:130: [961] | Reformer outlet | 871 C, 30.3 bar | [P] TEV-961 PDF p14; Case 5 pressure, A-55 |
+FINAL_DESIGN_DECISIONS.md:150: [953] | Baseline | 616,361 | 902,060 | 902,060 | t/y | [C] TEV-953 Table 2 |
+FINAL_DESIGN_DECISIONS.md:162: [961] Residual emissions come from the burned N2-rich cut, and absorber slip returns through the reformer. The cryogenic unit is INL's fixed-assumption block (TEV-961
+FINAL_DESIGN_DECISIONS.md:185: [961] INL itself quotes 178.8 MWth for Case 6 because it imports 16.5 MWe (TEV-961 Table 2, cont.). Open terms that move Case B: a secondary helium drop of 414 kPa ad
+FINAL_DESIGN_DECISIONS.md:209: [72972] | Reactor OCC, no turbine | 1,456 | 2,184 | 2,548 | US$2019/kWt | [P] low, high; [C] central, INL/RPT-23-72972 PDF p47 |
+FINAL_DESIGN_DECISIONS.md:218: [5.09] | Capture capital | 1.74 | 2.04 | 5.09 | S$M per t/h | [C] IEAGHG Case 1A aMDEA, Case 3 MEA high |
+FINAL_DESIGN_DECISIONS.md:220: [129.7] | IHX and loop capital, at 170 MW | 13.7 | 129.7 | 207.5 | S$M | [P] IAEA-TECDOC-1682 Table 3.17 and GA-A24265, carried from earlier project files and not opene
+FINAL_DESIGN_DECISIONS.md:220: [207.5] | IHX and loop capital, at 170 MW | 13.7 | 129.7 | 207.5 | S$M | [P] IAEA-TECDOC-1682 Table 3.17 and GA-A24265, carried from earlier project files and not opene
+FINAL_DESIGN_DECISIONS.md:220: [1682] | IHX and loop capital, at 170 MW | 13.7 | 129.7 | 207.5 | S$M | [P] IAEA-TECDOC-1682 Table 3.17 and GA-A24265, carried from earlier project files and not opene
+FINAL_DESIGN_DECISIONS.md:220: [3.17] | IHX and loop capital, at 170 MW | 13.7 | 129.7 | 207.5 | S$M | [P] IAEA-TECDOC-1682 Table 3.17 and GA-A24265, carried from earlier project files and not opene
+FINAL_DESIGN_DECISIONS.md:223: [307.5] | Recycle and cryo train, Case A | 0 | 71.5 | 307.5 | S$M | [C] proxy, no published cost |
+FINAL_DESIGN_DECISIONS.md:237: [242.8] | Swap Selexol for MEA, zero reboiler heat | 166.2 | 242.8 |
+FINAL_DESIGN_DECISIONS.md:311: [5.09] | Capture capital 1.74 / 5.09 S$M per t/h (Case 3 MEA high) | 186.7 / 220.5 | Capture fixed O&M 6% | 195.4 |
+FINAL_DESIGN_DECISIONS.md:319: [0.752] Abatement sensitivities, t/y: per-pass capture 80%, 85% and 95% give 564,180, 571,388 and 584,231. Availability 70% and 90% give 476,043 and 612,055. Cryogenic 
+FINAL_DESIGN_DECISIONS.md:321: [1,314] Backup firing over the 1,314 outage hours adds 11,810 t H2/y. Firing unabated emits 108,770 t/y, which matches the unabated SMR over the same hours and adds no 
+FINAL_DESIGN_DECISIONS.md:470: [8.995997] | baseline_id | enum | INL_9p21, CHO_9p35, IEAGHG_9p00 (the unrounded 8.995997 kg/kg) |
+FINAL_DESIGN_DECISIONS.md:544: [-8,995] | X9 | Storage sits inside the line, while the T&S burden sits in the lifecycle sensitivity | -8,995 t/y gives 0.569 Mt/y | 0.578 stays headline, 0.569 prints b
+FINAL_DESIGN_DECISIONS.md:564: [962,] 3. Sources not held, in order of their effect on the results: TEV-962, TEV-954, TEV-981, the TEV-961 Case 6 sheets, IAEA-TECDOC-1682, GA-A24265, Cho 2022 full t
+FINAL_DESIGN_DECISIONS.md:564: [954,] 3. Sources not held, in order of their effect on the results: TEV-962, TEV-954, TEV-981, the TEV-961 Case 6 sheets, IAEA-TECDOC-1682, GA-A24265, Cho 2022 full t
+FINAL_DESIGN_DECISIONS.md:564: [981,] 3. Sources not held, in order of their effect on the results: TEV-962, TEV-954, TEV-981, the TEV-961 Case 6 sheets, IAEA-TECDOC-1682, GA-A24265, Cho 2022 full t
+FINAL_DESIGN_DECISIONS.md:564: [961] 3. Sources not held, in order of their effect on the results: TEV-962, TEV-954, TEV-981, the TEV-961 Case 6 sheets, IAEA-TECDOC-1682, GA-A24265, Cho 2022 full t
+FINAL_DESIGN_DECISIONS.md:564: [1682,] 3. Sources not held, in order of their effect on the results: TEV-962, TEV-954, TEV-981, the TEV-961 Case 6 sheets, IAEA-TECDOC-1682, GA-A24265, Cho 2022 full t
+FINAL_DESIGN_DECISIONS.md:582: [961] | T01 | Carbon split after shift | - | 0.7750 | 0.7776 | 0.7750 (anchored) | 0.7776 (model) | M4 | passed | SMR-EQ, HTS and LTS on TEV-961 Case 5, bed sized to 
+FINAL_DESIGN_DECISIONS.md:587: [3.6461] | T06 | Specific reboiler duty | GJ/t | 3.8000 | 3.6461 | 3.8000 (anchored) | 3.8000 (anchored) | M6 | failed | equilibrium-stage stripper and regeneration trai
+FINAL_DESIGN_DECISIONS.md:603: [0.5779] | Modelled abatement against 0.578 Mt/y | Off by more than 0.012 Mt/y | 0.5779 Mt/y, -0.0001 Mt/y | No |
+FINAL_DESIGN_DECISIONS.md:604: [3.646] | Modelled SRD | Outside 3.4 to 4.2 GJ/t | 3.646 GJ/t, gate failed | No |
+FINAL_DESIGN_DECISIONS.md:613: [961] Headline flips T05 alone. Its gate is the six TEV-961 Case 5 cooler duties (T961-7), and all of them pass. The modelled 8.387 MW replaces 7.686 MW, so the react
+FINAL_DESIGN_DECISIONS.md:615: [3.646] T04, T07 and T08 are on the Headline flip list and stay anchored. T04 waits on FS_GATE_M7, which failed on the carbon lines (decision S11). T07 and T08 wait on 
+FINAL_DESIGN_DECISIONS.md:615: [3.646] T04, T07 and T08 are on the Headline flip list and stay anchored. T04 waits on FS_GATE_M7, which failed on the carbon lines (decision S11). T07 and T08 wait on 
+FINAL_DESIGN_DECISIONS.md:615: [0.6897] T04, T07 and T08 are on the Headline flip list and stay anchored. T04 waits on FS_GATE_M7, which failed on the carbon lines (decision S11). T07 and T08 wait on 
+FINAL_DESIGN_DECISIONS.md:619: [327] T03 has no complete replacing model. The Level 3 preheat plus reformer duty is 109.65 MW at Case B against the 120.8 MW basis, and the upstream preheat rests on
+FINAL_DESIGN_DECISIONS.md:621: [961] Heat recovery on real flows. The M6 reboiler sits at 121.0 C. LP steam at 307 F (152.8 C) and export steam at 489 F (253.9 C) from the INL steam system (TEV-961
+FINAL_DESIGN_DECISIONS.md:623: [5190] IHX and circulators on the Headline duty of 121.68 MW: a balanced 25 K approach needs UA 4.867 MW/K at NTU 17.36, which is 57.3 HTTR-size modules, and 12,168 m2
+FINAL_DESIGN_DECISIONS.md:635: [208,218] | 3 | Test a correction in the regime where the model uses it | `crates/outram-park-fork-dwsim-libs/verification_and_validation/sour_water_vs_upstream_dwsim.md:
+FINAL_DESIGN_DECISIONS.md:636: [393] | 4 | One definition per constant and routine, or a stated reason for the second | `docs/human-corrections-to-ai-work.md:391-393` | None named | Workspace docum
+FINAL_DESIGN_DECISIONS.md:637: [267] | 6 | Name the governing model and its class in every unit | `docs/human-corrections-to-ai-work.md:200-267` | The rigour classes of section 7.1 | Workspace docu
+FINAL_DESIGN_DECISIONS.md:642: [1123.15] | 19 | K(T) carries the heat capacity integrals | `crates/dover/src/smr.rs:270-280` | Kirchhoff relations; NIST WebBook rows of `species` | 1, AI draft | `eq_d_
+FINAL_DESIGN_DECISIONS.md:644: [447] | 21 | Hard ceilings catch gross errors cheaply | `crates/dover/tests/smr_cstr.rs:420-447` | Reaction stoichiometry | 1, AI draft | `eq_a_05_hydrogen_ceiling_an
+FINAL_DESIGN_DECISIONS.md:647: [134,146] | 25 | An integrator reaches the end of its domain | `crates/outram-park-fork-dwsim-libs/verification_and_validation/reactors_vs_upstream_dwsim.md:134,146-150` 
+FINAL_DESIGN_DECISIONS.md:649: [902] | 27 | Test helium where the plant runs, against an independent source | `crates/outram-park-fork-coolprop/src/transport.rs:902-929` | Arp, McCarty and Friend 1
+FINAL_DESIGN_DECISIONS.md:649: [929] | 27 | Test helium where the plant runs, against an independent source | `crates/outram-park-fork-coolprop/src/transport.rs:902-929` | Arp, McCarty and Friend 1
+FINAL_DESIGN_DECISIONS.md:654: [031] | 34 | Every correlation states its domain and follows a declared policy at the edge | `docs/claude-md/api-design-and-maturity.md:15-18` | Petersen 1970; JAERI-
+FINAL_DESIGN_DECISIONS.md:663: [961] | 8, 9, 15 | Each needs every printed dimension or balance of JAERI Table 3.1, Hoseinzade and Adams Table 6 and the TEV-961 sheets re-read from the page, which 
+FINAL_DESIGN_DECISIONS.md:678: [313.15] 1. Absorber vapour (item 3). The absorber divided p* by the SRK coefficient of a CO2 and water binary that holds no carrier gas. The prediction was written befo
+FINAL_DESIGN_DECISIONS.md:678: [563.4] 1. Absorber vapour (item 3). The absorber divided p* by the SRK coefficient of a CO2 and water binary that holds no carrier gas. The prediction was written befo
+FINAL_DESIGN_DECISIONS.md:678: [547.3] 1. Absorber vapour (item 3). The absorber divided p* by the SRK coefficient of a CO2 and water binary that holds no carrier gas. The prediction was written befo
+FINAL_DESIGN_DECISIONS.md:678: [14.83] 1. Absorber vapour (item 3). The absorber divided p* by the SRK coefficient of a CO2 and water binary that holds no carrier gas. The prediction was written befo
+FINAL_DESIGN_DECISIONS.md:678: [72.576313] 1. Absorber vapour (item 3). The absorber divided p* by the SRK coefficient of a CO2 and water binary that holds no carrier gas. The prediction was written befo
+FINAL_DESIGN_DECISIONS.md:678: [72.576318] 1. Absorber vapour (item 3). The absorber divided p* by the SRK coefficient of a CO2 and water binary that holds no carrier gas. The prediction was written befo
+FINAL_DESIGN_DECISIONS.md:678: [47.934] 1. Absorber vapour (item 3). The absorber divided p* by the SRK coefficient of a CO2 and water binary that holds no carrier gas. The prediction was written befo
+FINAL_DESIGN_DECISIONS.md:678: [0.689694] 1. Absorber vapour (item 3). The absorber divided p* by the SRK coefficient of a CO2 and water binary that holds no carrier gas. The prediction was written befo
+FINAL_DESIGN_DECISIONS.md:678: [0.689693] 1. Absorber vapour (item 3). The absorber divided p* by the SRK coefficient of a CO2 and water binary that holds no carrier gas. The prediction was written befo
+FINAL_DESIGN_DECISIONS.md:678: [3.646] 1. Absorber vapour (item 3). The absorber divided p* by the SRK coefficient of a CO2 and water binary that holds no carrier gas. The prediction was written befo
+FINAL_DESIGN_DECISIONS.md:682: [299] 5. Register (item 35). 193 of 299 `engine_fn` paths in `math/eq_register.csv` do not resolve to an item of that name in the named module (for example B.1 names 
+FINAL_DESIGN_DECISIONS.md:683: [1123.15] 6. Kirchhoff guard (item 19). At 1123.15 K the NIST route gives K1 = 519.3 bar^2 and Zhang 505.8 bar^2, while constant dH and dS give 41.9 bar^2.
+FINAL_DESIGN_DECISIONS.md:683: [505.8] 6. Kirchhoff guard (item 19). At 1123.15 K the NIST route gives K1 = 519.3 bar^2 and Zhang 505.8 bar^2, while constant dH and dS give 41.9 bar^2.

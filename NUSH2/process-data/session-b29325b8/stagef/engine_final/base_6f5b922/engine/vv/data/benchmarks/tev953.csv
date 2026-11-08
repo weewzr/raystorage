@@ -1,0 +1,28 @@
+source,locator,read_method,data_kind,series,quantity,value,unit,read_uncertainty,conditions
+INL TEV-953 Rev. 0 2010 HTGR-Integrated Hydrogen Production via SMR Process Analysis,Table 2 PDF p30,table,reported_model,Conv_noCC,CO2_emitted,3205,short ton/day,,case=Conv_noCC
+INL TEV-953 Rev. 0 2010 HTGR-Integrated Hydrogen Production via SMR Process Analysis,Table 2 PDF p30,table,reported_model,HTGR_CC,process_heat_demand,117,MWt,,case=HTGR_CC
+INL TEV-953 Rev. 0 2010 HTGR-Integrated Hydrogen Production via SMR Process Analysis,A-40 PDF p74,table,reported_model,htgr_cc_summary,NG_CH4,93.571,mol percent,,case=HTGR_CC
+INL TEV-953 Rev. 0 2010 HTGR-Integrated Hydrogen Production via SMR Process Analysis,A-40 PDF p74,table,reported_model,htgr_cc_summary,NG_C2H6,3.749,mol percent,,case=HTGR_CC
+INL TEV-953 Rev. 0 2010 HTGR-Integrated Hydrogen Production via SMR Process Analysis,A-40 PDF p74,table,reported_model,htgr_cc_summary,NG_C3H8,0.920,mol percent,,case=HTGR_CC
+INL TEV-953 Rev. 0 2010 HTGR-Integrated Hydrogen Production via SMR Process Analysis,A-40 PDF p74,table,reported_model,htgr_cc_summary,NG_C4H10,0.260,mol percent,,case=HTGR_CC
+INL TEV-953 Rev. 0 2010 HTGR-Integrated Hydrogen Production via SMR Process Analysis,A-40 PDF p74,table,reported_model,htgr_cc_summary,NG_C5H12,0.040,mol percent,,case=HTGR_CC
+INL TEV-953 Rev. 0 2010 HTGR-Integrated Hydrogen Production via SMR Process Analysis,A-40 PDF p74,table,reported_model,htgr_cc_summary,NG_C6H14,0.010,mol percent,,case=HTGR_CC
+INL TEV-953 Rev. 0 2010 HTGR-Integrated Hydrogen Production via SMR Process Analysis,A-40 PDF p74,table,reported_model,htgr_cc_summary,NG_N2,1.190,mol percent,,case=HTGR_CC
+INL TEV-953 Rev. 0 2010 HTGR-Integrated Hydrogen Production via SMR Process Analysis,A-40 PDF p74,table,reported_model,htgr_cc_summary,NG_O2,0.010,mol percent,,case=HTGR_CC
+INL TEV-953 Rev. 0 2010 HTGR-Integrated Hydrogen Production via SMR Process Analysis,A-40 PDF p74,table,reported_model,htgr_cc_summary,NG_CO2,0.250,mol percent,,case=HTGR_CC
+INL TEV-953 Rev. 0 2010 HTGR-Integrated Hydrogen Production via SMR Process Analysis,A-40 PDF p74,table,reported_model,htgr_cc_summary,raw_H2,47.8,mol percent,,case=HTGR_CC
+INL TEV-953 Rev. 0 2010 HTGR-Integrated Hydrogen Production via SMR Process Analysis,A-40 PDF p74,table,reported_model,htgr_cc_summary,raw_CO,9.2,mol percent,,case=HTGR_CC
+INL TEV-953 Rev. 0 2010 HTGR-Integrated Hydrogen Production via SMR Process Analysis,A-40 PDF p74,table,reported_model,htgr_cc_summary,raw_CO2,5.3,mol percent,,case=HTGR_CC
+INL TEV-953 Rev. 0 2010 HTGR-Integrated Hydrogen Production via SMR Process Analysis,A-40 PDF p74,table,reported_model,htgr_cc_summary,raw_N2,0.2,mol percent,,case=HTGR_CC
+INL TEV-953 Rev. 0 2010 HTGR-Integrated Hydrogen Production via SMR Process Analysis,A-40 PDF p74,table,reported_model,htgr_cc_summary,raw_H2O,34.1,mol percent,,case=HTGR_CC
+INL TEV-953 Rev. 0 2010 HTGR-Integrated Hydrogen Production via SMR Process Analysis,A-40 PDF p74,table,reported_model,htgr_cc_summary,raw_CH4,3.5,mol percent,,case=HTGR_CC
+INL TEV-953 Rev. 0 2010 HTGR-Integrated Hydrogen Production via SMR Process Analysis,A-40 PDF p74,table,reported_model,htgr_cc_summary,H2_mass,29000,lb/h,,case=HTGR_CC
+INL TEV-953 Rev. 0 2010 HTGR-Integrated Hydrogen Production via SMR Process Analysis,A-45 PDF p79,text,reported_model,htgr_cc_HE-1,T,1292,F,,case=HTGR_CC;stream=HE-1
+INL TEV-953 Rev. 0 2010 HTGR-Integrated Hydrogen Production via SMR Process Analysis,A-45 PDF p79,text,reported_model,htgr_cc_HE-1,mass_flow,663671,lb/h,,case=HTGR_CC;stream=HE-1
+INL TEV-953 Rev. 0 2010 HTGR-Integrated Hydrogen Production via SMR Process Analysis,A-45 PDF p79,text,reported_model,htgr_cc_HE-10,T,807,F,,case=HTGR_CC;stream=HE-10
+INL TEV-953 Rev. 0 2010 HTGR-Integrated Hydrogen Production via SMR Process Analysis,A-45 PDF p79,text,reported_model,htgr_cc_REFORM2_out,T,1600,F,,case=HTGR_CC;stream=REFORM2_out
+INL TEV-953 Rev. 0 2010 HTGR-Integrated Hydrogen Production via SMR Process Analysis,A-45 PDF p79,text,reported_model,htgr_cc_REFORM2_out,P,439,psia,,case=HTGR_CC;stream=REFORM2_out
+INL TEV-953 Rev. 0 2010 HTGR-Integrated Hydrogen Production via SMR Process Analysis,Section text PDF p18,text,reported_model,reformer_basis,reformer_T,871,C,,case=conventional
+INL TEV-953 Rev. 0 2010 HTGR-Integrated Hydrogen Production via SMR Process Analysis,Section text PDF p18,text,reported_model,reformer_basis,steam_to_carbon,3,mol/mol,,case=conventional
+INL TEV-953 Rev. 0 2010 HTGR-Integrated Hydrogen Production via SMR Process Analysis,Section text PDF p18,text,reported_model,reformer_basis,CH4_conversion_gibbs,78.1,percent,,case=conventional;method=Gibbs_minimisation
+INL TEV-953 Rev. 0 2010 HTGR-Integrated Hydrogen Production via SMR Process Analysis,A-42 PDF p76,text,reported_model,htgr_cc_reformer,steam_to_carbon_stage1,3.00,mol/mol,,case=HTGR_CC;block=NG-RFMR;stage=1

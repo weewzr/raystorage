@@ -1,0 +1,22 @@
+\section{Reproducibility}
+
+The paper is reproducible when another researcher can identify an input, run the model, inspect the generated ledger and rebuild the same manuscript. A successful build checks the calculation and document pipeline; it does not experimentally validate the reactor, chemical plant or site.
+
+From a fresh checkout, the canonical manuscript verification remains:
+\begin{verbatim}
+sh paper/build.sh
+\end{verbatim}
+The build runs the Rust test suite, regenerates canonical model artifacts and compiles \texttt{paper/main.tex}; CI rejects unresolved LaTeX citations/references.
+
+The post-screening evidence chain is reproduced/inspected by phase:
+\begin{itemize}
+\item canonical physical/lifecycle model: \texttt{model/src/} and generated final-design ledgers;
+\item E1 economics: \texttt{results/E1\_ENGINEERING\_ECONOMIC\_MODEL.md} and associated Rust economic outputs;
+\item E2 attribution: \texttt{results/E2\_INCREMENTAL\_NUCLEAR\_BENEFIT.md};
+\item E2B architecture/maturation: \texttt{model/src/e2b\_maturation.rs} and \texttt{results/e2b\_maturation/};
+\item E3 siting/cooling screens: \texttt{model/src/e3\_siting.rs} and \texttt{results/e3\_siting/};
+\item E4/E5 safety: deterministic hazard/barrier/event-tree/source-term/QRA/data-gap registers under \texttt{results/e4\_safety/} and \texttt{results/e5\_safety/}; no fake numerical risk model is generated;
+\item E6/E7 synthesis and roadmap: machine-readable claim, requirement and decision-gate CSVs under \texttt{results/e6\_synthesis/} and \texttt{results/e7\_roadmap/}.
+\end{itemize}
+
+The quantitative chain remains source/assumption $\rightarrow$ Rust/project derivation $\rightarrow$ generated result $\rightarrow$ LaTeX table/figure $\rightarrow$ PDF. The PDF is generated from LaTeX and is not independently maintained. Stage-specific E2B economics and E6/E7 classifications are project-derived screening/synthesis outputs and retain their evidence-maturity labels.

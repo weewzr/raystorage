@@ -1,0 +1,2407 @@
+HTGR_SMR_MEA_CCS_Research_Local\1-s2.0-S026387621000287X-main.pdf
+=====
+--- PDF p.1 ---
+chemical
+ engineering
+ research
+ and
+ design
+ 8 9
+ ( 2 0 1
+ 1 ) 1600–1608
+Contents
+ lists
+ available
+ at
+ ScienceDirect
+Chemical
+ Engineering
+ Research
+ and
+ Design
+j
+ ourna
+ l
+ ho
+ me
+ pa
+ ge:
+ www.elsevier.com/locate/cherd
+Modelling
+ reactive
+ absorption
+ of CO2 in packed columns
+ for
+post-combustion carbon capture applications
+F.M.
+ Khan 1, V.
+ Krishnamoorthi 2,
+ T.
+ Mahmud ∗
+Institute
+ of
+ Particle
+ Science
+ and
+ Engineering,
+ School
+ of
+ Process,
+ Environmental
+ and
+ Materials
+ Engineering,
+The
+ University
+ of
+ Leeds,
+ Leeds
+ LS2
+ 9JT,
+ UK
+a b
+ s t r a c
+ t
+A
+ rate-based
+ process
+ model
+ for
+ the
+ reactive
+ absorption
+ of
+ carbon
+ dioxide
+ (CO2)
+ from
+ a
+ gas
+ mixture
+ into
+ an
+ aqueous
+monoethanolamine
+ (MEA)
+ solution
+ in
+ a
+ packed
+ column
+ is
+ developed.
+ The
+ model
+ is
+ based
+ on
+ the
+ fast
+ second-order
+kinetics
+ for
+ the
+ CO2–MEA
+ reactions
+ and
+ takes
+ into
+ account
+ the
+ mass
+ transfer
+ resistances.
+ The
+ heat
+ effects
+ associated
+with
+ the
+ absorption
+ and
+ chemical
+ reaction
+ are
+ included
+ through
+ energy
+ balances
+ in
+ the
+ gas
+ and
+ liquid
+ phases.
+Appropriate
+ correlations
+ for
+ the
+ key
+ thermodynamic
+ and
+ transport
+ properties
+ and
+ for
+ the
+ gas–liquid
+ mass
+ transfer
+are
+ incorporated
+ into
+ the
+ model
+ to
+ ensure
+ reliable
+ predictions.
+ The
+ model
+ predictions
+ are
+ validated
+ by
+ simulating
+a
+ series
+ of
+ experiments
+ conducted
+ in
+ pilot
+ and
+ industrial
+ scale
+ absorption
+ columns
+ with
+ random
+ and
+ structured
+packings
+ reported
+ in
+ the
+ literature.
+ Comparisons
+ between
+ the
+ simulation
+ results
+ and
+ the
+ experimental
+ data
+ reveal
+good
+ quality
+ predictions
+ of
+ the
+ gas
+ phase
+ CO2 and
+ MEA
+ concentrations
+ and
+ the
+ liquid
+ temperature
+ along
+ the
+ column
+height.
+ The
+ sensitivity
+ studies
+ reveal
+ that
+ the
+ correlations
+ for
+ the
+ gas-
+ and
+ liquid-ﬁlm
+ mass
+ transfer
+ coefﬁcients
+ given
+by
+ Onda
+ et
+ al.
+ (1968)
+ provide
+ better
+ predictions
+ than
+ the
+ penetration
+ theory
+ of
+ Higbie
+ (1935)
+ and
+ the
+ correlation
+ of
+Bravo
+ et
+ al.
+ (1985).
+©
+ 2010
+ The
+ Institution
+ of
+ Chemical
+ Engineers.
+ Published
+ by
+ Elsevier
+ B.V.
+ All
+ rights
+ reserved.
+Keywords:
+ Carbon
+ capture;
+ CO2–MEA
+ absorption;
+ Reactive
+ absorption;
+ Process
+ modelling
+1.
+ 
+Introduction
+In
+ recent
+ years,
+ there
+ has
+ been
+ increasing
+ demand
+ for
+ a
+ sig-
+niﬁcant
+ reduction
+ of
+ carbon
+ dioxide
+ (CO2) emissions
+ from
+industrial
+ sources
+ to
+ alleviate
+ the
+ global
+ warming
+ problem.
+Following
+ the
+ 1997
+ Kyoto
+ Protocol,
+ the
+ European
+ Union
+ has
+set
+ a
+ target
+ of
+ 20%
+ reduction
+ of
+ CO2 emission
+ by
+ the
+ year
+2020.
+ In
+ order
+ to
+ meet
+ this
+ target,
+ a
+ signiﬁcant
+ reduction
+of
+ CO2 release
+ from
+ fossil
+ fuel
+ ﬁred
+ thermal
+ power
+ plants,
+which
+ contribute
+ approximately
+ 25%
+ to
+ the
+ total
+ global
+ emis-
+sions
+ (WRI,
+ 2007),
+ will
+ be
+ required.
+ This
+ can
+ be
+ achieved
+ by
+adopting
+ an
+ effective
+ strategy
+ for
+ carbon
+ capture
+ and
+ stor-
+age
+ (CCS)
+ such
+ as
+ the
+ pre-combustion
+ CO2 capture
+ technology
+as
+ used
+ in
+ the
+ integrated
+ gasiﬁcation
+ and
+ combined-cycle
+(IGCC)
+ plants,
+ oxyfuel
+ combustion
+ for
+ the
+ production
+ of
+sequestration-ready
+ CO2 or
+ the
+ post-combustion
+ CO2 capture
+∗Corresponding
+ author
+ at:
+ Institute
+ of
+ Particle
+ Science
+ and
+ Engineering,
+ School
+ of
+ Process,
+ Environmental
+ and
+ Materials
+ Engineering,
+The
+ University
+ of
+ Leeds,
+ Engineering
+ (Houldsworth)
+ Building,
+ Leeds
+ LS2
+ 9JT,
+ UK.
+E-mail
+ address:
+ T.Mahmud@leeds.ac.uk
+ (T.
+ Mahmud).
+Received
+ 15
+ May
+ 2010;
+ Received
+ in
+ revised
+ form
+ 14
+ September
+ 2010;
+ Accepted
+ 30
+ September
+ 2010
+1 BP
+ Exploration,
+ 1–4
+ Wellheads
+ Avenue,
+ Dyce,
+ Aberdeen,
+ AB21
+ 7PB,
+ UK.
+2 Hindustan
+ Unilever
+ Research
+ Centre,
+ 64
+ Main
+ Road,
+ Whiteﬁeld,
+ Bangalore-560066,
+ India.
+from
+ ﬂue
+ gases
+ which
+ would
+ otherwise
+ be
+ vented
+ to
+ the
+ atmo-
+sphere
+ (Wilson
+ and
+ Gerard,
+ 2007).
+ The
+ latter
+ technology
+ is
+being
+ considered
+ by
+ the
+ power
+ generation
+ industry
+ as
+ one
+ of
+the
+ potential
+ options.
+ In
+ principle,
+ CO2 can
+ be
+ removed
+ from
+a
+ gas
+ stream
+ using
+ several
+ separation
+ processes
+ including
+physical/chemical
+ absorption
+ into
+ a
+ liquid
+ solvent,
+ adsorp-
+tion
+ on
+ solids,
+ permeating
+ through
+ membranes,
+ and
+ chemical
+conversion.
+ Reactive
+ absorption
+ using
+ aqueous
+ alkanolamine
+solutions,
+ including
+ monoethanolamine
+ (MEA)
+ solutions,
+ in
+packed
+ columns
+ are
+ widely
+ used
+ for
+ the
+ separation
+ of
+ CO2 from
+process
+ gas
+ streams
+ in
+ the
+ chemical
+ and
+ petroleum
+ industries.
+This
+ is
+ a
+ well-developed
+ technology
+ and
+ is
+ currently
+ the
+ most
+preferred
+ process
+ approach
+ for
+ the
+ CO2 capture
+ from
+ power
+plant
+ ﬂue
+ gases
+ (Freund,
+ 2003;
+ Idem
+ and
+ Tontiwachwuthikul,
+2006).
+ However,
+ packed-bed
+ absorption
+ columns
+ are
+ known
+ to
+suffer
+ from
+ various
+ operational
+ problems
+ including
+ high
+ gas
+0263-8762/$
+ – see
+ front
+ matter
+ ©
+ 2010
+ The
+ Institution
+ of
+ Chemical
+ Engineers.
+ Published
+ by
+ Elsevier
+ B.V.
+ All
+ rights
+ reserved.
+doi:10.1016/j.cherd.2010.09.020
+
+--- PDF p.2 ---
+chemical
+ engineering
+ research
+ and
+ design
+ 8 9 ( 2
+ 0
+ 1 1 ) 1600–1608
+ 
+1601
+Bulk gas 
+Bulk liquid 
+pA
+pAi
+CA
+CAi
+Gas 
+film
+Liquid
+film 
+CB
+CBi
+Gas-liquid interface
+ 
+ 
+A
+Fig.
+ 1
+ – Gas–liquid
+ reaction
+ model
+ based
+ on
+ the
+ two-ﬁlm
+theory
+ of
+ mass
+ transfer
+ (actual
+ concentration
+ proﬁles
+ in
+ the
+liquid
+ phase
+ depend
+ on
+ the
+ reaction
+ regime).
+Adapted
+ from
+ Levenspiel
+ (1999).
+phase
+ pressure
+ drop,
+ liquid
+ channelling
+ and
+ ﬂooding
+ of
+ the
+packing
+ materials
+ resulting
+ in
+ a
+ poor
+ gas–liquid
+ contact.
+ These
+problems
+ are
+ prone
+ to
+ occur
+ in
+ the
+ ﬂue
+ gas
+ scrubbing
+ opera-
+tions,
+ which
+ involve
+ low
+ solvent
+ ﬂow
+ rates
+ and
+ high
+ superﬁcial
+gas
+ velocities
+ because
+ of
+ the
+ large
+ gas
+ volumes
+ (e.g.,
+ a
+ typi-
+cal
+ 400
+ MWe coal-ﬁred
+ power
+ plant
+ produces
+ approximately
+1.1
+ ×
+ 106 Nm3/h
+ of
+ ﬂue
+ gas
+ (Raynal
+ and
+ Royon-Lebeaud,
+ 2007))
+with
+ relatively
+ low
+ CO2 concentrations
+ (typically
+ 3–5%
+ for
+ nat-
+ural
+ gas
+ and
+ 10–15%
+ for
+ coal
+ combustion)
+ and
+ require
+ low
+pressure
+ drop
+ as
+ the
+ ﬂue
+ gas
+ fan
+ typically
+ operates
+ slightly
+above
+ the
+ atmospheric
+ pressure.
+ In
+ order
+ to
+ achieve
+ high
+ CO2
+capture
+ efﬁciency,
+ there
+ is
+ a
+ need
+ for
+ improved
+ design
+ of
+packed-bed
+ absorption
+ columns
+ and
+ optimisation
+ of
+ operat-
+ing
+ conditions,
+ which
+ can
+ be
+ facilitated
+ via
+ the
+ use
+ of
+ advanced
+process
+ models
+ for
+ reactive
+ absorption.
+Rigorous
+ theories
+ of
+ absorption
+ with
+ chemical
+ reactions
+and
+ 
+the
+ 
+rate
+ 
+expressions
+ 
+for
+ 
+different
+ 
+gas–liquid
+ 
+reac-
+tion
+ regimes
+ are
+ well documented
+ by
+ Astarita
+ (1967)
+ and
+Danckwerts
+ (1970),
+ which
+ can
+ be
+ used
+ as
+ a
+ basis
+ for
+ devis-
+ing
+ a
+ process
+ model
+ for
+ the
+ design
+ and
+ simulation
+ of
+ packed
+columns
+ for
+ the
+ CO2 absorption
+ processes.
+ In
+ the
+ past,
+ dif-
+ferent
+ modelling
+ approaches
+ (see
+ review
+ in
+ Kenig
+ et
+ al.,
+ 2001)
+ranging
+ from
+ a
+ relatively
+ simple
+ equilibrium
+ stage
+ model
+to
+ more
+ rigorous
+ rate-based
+ model
+ with
+ electrolyte
+ solution
+chemistry
+ have
+ been
+ used
+ for
+ various
+ gas–liquid
+ systems.
+ A
+rate-based
+ methodology
+ accounting
+ for
+ the
+ interfacial
+ mass
+transfer
+ and
+ ﬁnite
+ rate
+ chemistry
+ is
+ considered
+ as
+ an
+ appro-
+priate
+ approach
+ for
+ the
+ modelling
+ of
+ industrial
+ absorption
+columns
+ as
+ phase
+ equilibrium
+ is
+ difﬁcult
+ to
+ achieved
+ in
+such
+ systems
+ (Lawal
+ et
+ al.,
+ 2009).
+ This
+ approach
+ also
+ allows
+the
+ effects
+ of
+ column
+ hydrodynamics
+ and
+ internals
+ on
+ the
+absorption
+ process
+ to
+ be
+ included
+ via
+ the
+ correlations
+ for
+the
+ mass
+ transfer
+ coefﬁcients,
+ gas–liquid
+ interfacial
+ area
+and
+ hold-up
+ (Kenig
+ et
+ al.,
+ 2001).
+ A
+ general
+ rate-based
+ mod-
+elling
+ methodology
+ for
+ the
+ gas
+ absorption
+ with
+ chemical
+reactions
+ based
+ on
+ the
+ steady-state,
+ adiabatic
+ physical
+ absorp-
+tion
+ model
+ of
+ Treybal
+ (1969)
+ was proposed
+ by
+ Pandya
+ (1983).
+Over
+ the
+ last
+ two decades,
+ a
+ number
+ of
+ mathematical
+ mod-
+els
+ of
+ reactive
+ absorption
+ of
+ CO2 have
+ been
+ developed
+ (e.g.,
+Tontiwachwuthikul
+ et
+ al.,
+ 1992;
+ Pintola
+ et
+ al.,
+ 1993;
+ Aroonwilas
+et
+ al.,
+ 2003;
+ Freguia
+ and
+ Rochelle,
+ 2003;
+ Tobiesen
+ et
+ al.,
+ 2007;
+Lawal
+ et
+ al.,
+ 2009)
+ based
+ on
+ Pandya’s
+ (1983)
+ approach
+ for
+ the
+simulation
+ of
+ CO2 capture
+ processes
+ using
+ alkaline
+ and
+ MEA
+solutions.
+The
+ work
+ reported
+ in
+ this
+ paper
+ focuses
+ on
+ the
+ develop-
+ment
+ and
+ detail
+ validation
+ of
+ a
+ rate-based
+ process
+ model
+ for
+the
+ simulation
+ of
+ reactive
+ absorption
+ of
+ CO2 from
+ a
+ mixture
+ of
+air–CO2 into
+ aqueous
+ MEA
+ solutions
+ in
+ packed
+ columns
+ under
+adiabatic
+ conditions.
+ The
+ model
+ accounts
+ for
+ the
+ mass
+ trans-
+fer
+ resistances
+ in
+ the
+ gas
+ and
+ liquid
+ ﬁlms
+ and
+ is
+ based
+ on
+the
+ fast
+ second-order
+ kinetics
+ for
+ the
+ CO2–MEA
+ reactions
+ in
+the
+ liquid
+ ﬁlm.
+ The
+ heat
+ effects
+ associated
+ with
+ the
+ absorp-
+tion
+ and
+ chemical
+ reaction
+ are
+ taken
+ into
+ account
+ through
+energy
+ balances
+ in
+ the
+ gas
+ and
+ liquid
+ phases.
+ Appropriate
+correlations
+ for
+ the
+ key
+ thermodynamic
+ and
+ physical
+ proper-
+ties
+ and
+ for
+ the
+ mass
+ transfer
+ coefﬁcients
+ and
+ the
+ gas–liquid
+interfacial
+ area
+ are
+ incorporated
+ into
+ the
+ model
+ to
+ ensure
+reliable
+ predictions.
+ The
+ model
+ predictions
+ are
+ validated
+ by
+simulating
+ a
+ number
+ of
+ experiments
+ conducted
+ in
+ packed-
+bed
+ absorption
+ columns
+ of
+ different
+ scale
+ sizes,
+ including
+pilot-plant
+ columns
+ packed
+ with
+ structured
+ packing
+ of
+ 2.21
+ m
+height
+ (Aroonwilas
+ et
+ al.,
+ 2003)
+ and
+ ceramic
+ Berl
+ saddles
+ of
+6.6
+ m
+ height
+ (Tontiwachwuthikul
+ et
+ al.,
+ 1992)
+ and
+ an
+ industrial
+column
+ of
+ 14.1
+ m
+ packing
+ height
+ containing
+ stainless
+ steel
+ Pall
+rings
+ (Pintola
+ et
+ al.,
+ 1993).
+2.
+ 
+Reactive
+ absorption
+ model
+ formulation
+In
+ order
+ to
+ develop
+ a
+ comprehensive
+ mathematical
+ model
+ for
+the
+ absorption
+ of
+ CO2 in
+ aqueous
+ MEA
+ solutions,
+ it
+ is
+ essential
+to
+ understand
+ the
+ underlying
+ mechanism
+ of
+ the
+ absorption
+process
+ coupled
+ with
+ chemical
+ reactions.
+ This
+ encompasses
+mass
+ transfer
+ of
+ CO2 from
+ the
+ bulk
+ gas
+ to
+ the
+ MEA
+ solution,
+reactions
+ between
+ CO2 and
+ MEA
+ species
+ and
+ the
+ associated
+kinetics
+ regimes.
+The
+ transport
+ of
+ CO2 from
+ the
+ gas
+ to
+ the
+ liquid
+ phase
+ can
+ be
+modelled
+ using
+ the
+ two-ﬁlm
+ mass
+ transfer
+ theory
+ of
+ Whitman
+(1923), as
+ depicted
+ in
+ Fig.
+ 1.
+ CO2 is
+ transported
+ through
+ the
+gas-ﬁlm
+ by
+ molecular
+ diffusion,
+ absorbed
+ in
+ the
+ liquid
+ and
+then
+ diffuses
+ through
+ the
+ liquid-ﬁlm.
+ In
+ principle,
+ the
+ reaction
+between
+ a
+ dissolved
+ gas
+ and
+ a
+ solvent
+ can
+ take
+ place
+ at
+ any
+location
+ in
+ the
+ liquid
+ phase,
+ which
+ depends
+ on
+ the
+ kinetics
+regime.
+ However,
+ the
+ CO2–MEA
+ reaction
+ is
+ characterised
+ as
+ a
+fast
+ reaction
+ (Astarita,
+ 1967)
+ which
+ occurs
+ within
+ the
+ liquid-
+ﬁlm
+ only,
+ consequently
+ the
+ concentration
+ of
+ CO2 reduces
+ to
+zero
+ somewhere
+ within
+ this
+ region.
+The
+ reactive
+ absorption
+ process
+ model
+ developed
+ in
+ this
+study
+ following
+ the
+ approaches
+ used
+ in
+ the
+ earlier
+ work
+ of
+Treybal
+ (1969)
+ and
+ Pandya
+ (1983)
+ consists
+ of
+ a
+ reaction
+ model
+using
+ the
+ two-ﬁlm
+ model
+ for
+ fast
+ reaction
+ incorporated
+ into
+a
+ gas–liquid
+ contactor
+ model
+ based
+ on
+ the
+ mass
+ and
+ energy
+balances.
+ The
+ model
+ is
+ described
+ below.
+2.1.
+ 
+Chemistry
+ of
+ CO2–MEA
+ system
+The
+ mechanism
+ of
+ reaction
+ between
+ CO2 and
+ amines
+ is
+ highly
+complex
+ and
+ in
+ spite
+ of
+ being
+ studied
+ extensively
+ both
+ the-
+oretically
+ and
+ experimentally
+ (see
+ for
+ details
+ Astarita,
+ 1967;
+Danckwerts,
+ 1970),
+ it
+ is
+ not
+ well
+ understood
+ (Pintola
+ et
+ al.,
+1993).
+ The
+ reaction
+ mechanism
+ for
+ the
+ CO2–MEA
+ system
+ may
+be
+ represented
+ by
+ the
+ following
+ overall
+ reactions
+ (Astarita,
+1967):
+Carbamate
+ formation:
+CO2 +
+ 2RNH2 →
+ RNHCOO−+
+ RNH3+
+(R1)
+Bicarbonate
+ formation:
+CO2 +
+ RNH2 +
+ H2O
+ →
+ HCO3−+
+ RNH3+
+(R2)
+
+--- PDF p.3 ---
+1602
+ 
+chemical
+ engineering
+ research
+ and
+ design
+ 8 9 ( 2 0 1 1 ) 1600–1608
+Reversion
+ of
+ carbamate
+ to
+ bicarbonate:
+RNHCOO−+
+ CO2 +
+ 2H2O
+ →
+ HCO3−+
+ 2RNH3+
+(R3)
+where
+ RNH2 is
+ MEA
+ and
+ R
+ is
+ OH·CH2·CH2. Astarita
+ (1967)
+ has
+suggested
+ that
+ for
+ CO2/MEA
+ mole
+ ratio
+ less
+ than
+ 0.5,
+ the
+ rate
+ of
+bicarbonate
+ formation
+ is
+ insigniﬁcant
+ and
+ the
+ overall
+ reaction
+may be
+ expressed
+ by
+ R1,
+ which
+ is
+ considered
+ to
+ be
+ approxi-
+mately
+ irreversible.
+ The
+ overall
+ reaction
+ rate
+ is
+ second-order,
+ﬁrst-order
+ with
+ respect
+ to
+ both
+ CO2 and
+ MEA,
+ and
+ is
+ expressed
+in
+ terms
+ of
+ the
+ molar
+ concentrations
+ of
+ CO2 and
+ MEA
+ as:
+r
+ =
+ k2[CO2][RNH2]
+(1)
+Danckwerts
+ (1970)
+ has
+ suggested
+ that
+ the
+ use
+ of
+ molar
+ con-
+centrations
+ in
+ the
+ rate
+ equation
+ instead
+ of
+ thermodynamic
+activities
+ is
+ valid.
+ The
+ second-order
+ rate
+ constant,
+ k2, depends
+on
+ the
+ temperature
+ and
+ is
+ given
+ by
+ Hikita
+ et
+ al.
+ (1977):
+log(k2) =
+ 10.99
+ −2152
+T
+(2)
+2.2.
+ 
+Reaction
+ model
+The
+ overall
+ rate
+ of
+ absorption
+ of
+ CO2 in
+ an
+ aqueous
+ solution
+ of
+MEA
+ taking
+ into
+ account
+ the
+ mass
+ transfer
+ and
+ chemical
+ reac-
+tion
+ rates
+ can
+ be
+ expressed
+ based
+ on
+ the
+ two-ﬁlm
+ model
+ for
+ a
+fast
+ second-order
+ reaction
+ as
+ (Levenspiel,
+ 1999;
+ Doraiswamy,
+2001):
+rCO2 =
+pCO2
+(1/kga)
+ +
+ (HCO2/ko
+l aE)
+(3)
+where
+ a
+ is
+ the
+ gas–liquid
+ interfacial
+ area
+ per
+ unit
+ volume
+ of
+packing,
+ E
+ is
+ the
+ enhancement
+ factor,
+ HCO2 is
+ the
+ Henry’s
+ law
+constant,
+ kg and
+ ko
+l are
+ the
+ gas-
+ and
+ liquid-ﬁlm
+ physical
+ mass
+transfer
+ coefﬁcients,
+ respectively,
+ and
+ pCO2 is
+ the
+ partial
+ pres-
+sure
+ of
+ CO2 in
+ bulk
+ gas
+ phase.
+The
+ enhancement
+ factor
+ is
+ deﬁned
+ as
+ the
+ ratio
+ of
+ the
+liquid-ﬁlm
+ mass
+ transfer
+ coefﬁcient
+ for
+ chemical
+ absorption,
+kl, to
+ the
+ liquid-ﬁlm
+ mass
+ transfer
+ coefﬁcient
+ for
+ physical
+absorption,
+ ko
+l . One
+ of
+ the
+ most
+ important
+ yet
+ difﬁcult
+ aspects
+of
+ modelling
+ reactive
+ absorption
+ processes
+ is
+ the
+ determi-
+nation
+ of
+ the
+ enhancement
+ factor
+ (Tontiwachwuthikul
+ et
+ al.,
+1992),
+ which
+ requires
+ solutions
+ of
+ coupled
+ diffusion-reaction
+differential
+ equations
+ in
+ the
+ liquid
+ ﬁlm.
+ As
+ it
+ stands,
+ exact
+analytical
+ solutions
+ do
+ not
+ exist
+ for
+ second-order
+ kinetics.
+Approximate
+ solutions
+ have
+ been
+ provided
+ by
+ a
+ number
+researchers
+ (e.g.,
+ van
+ Krevelen
+ and
+ Hoftijzer,
+ 1948;
+ Wellek
+et
+ al.,
+ 1978;
+ DeCoursey,
+ 1982).
+ In
+ this
+ work,
+ following
+ previous
+studies
+ (Tontiwachwuthikul
+ et
+ al.,
+ 1992;
+ Pintola
+ et
+ al.,
+ 1993),
+the
+ explicit
+ relations
+ developed
+ by
+ Wellek
+ et
+ al.
+ (1978)
+ in
+ terms
+of
+ the
+ enhancement
+ factor
+ for
+ an
+ instantaneous
+ reaction,
+ E∞,
+and
+ Hatta
+ modulus,
+ M,
+ has
+ be
+ adopted:
+E
+ =
+ 1
+ +
+1
+[(1/(E∞−
+ 1))1.35 +
+ (1/(E1 −
+ 1))1.35]
+1/1.35
+(4)
+where
+E∞=
+ 1
+ +
+ CBlDB
+bDAlCAi
+
+, 
+E1 =
+√
+M
+tanh
+√
+M
+and
+ M2 = DAlk2CBl
+(ko
+l )2
+where
+ CAi is
+ the
+ CO2 concentration
+ at
+ the
+ gas–liquid
+ interface,
+CBl is
+ the
+ MEA
+ concentration
+ in
+ bulk
+ liquid,
+ and
+ DAl and
+ DBl
+are
+ the
+ diffusivity
+ of
+ CO2 and
+ MEA
+ in
+ liquid,
+ respectively.
+ The
+values
+ of
+ E
+ given
+ by
+ Eq.
+ (4)
+ deviate
+ by
+ less
+ than
+ 3%
+ from
+ the
+most
+ accurate
+ solution
+ of
+ van
+ Krevelen
+ and
+ Hoftijzer
+ (1948)
+(Tontiwachwuthikul
+ et
+ al.,
+ 1992).
+The
+ gas-
+ and
+ liquid-ﬁlm
+ mass
+ transfer
+ coefﬁcients
+ and
+ the
+interfacial
+ area
+ for
+ random
+ packings
+ are
+ obtained
+ from
+ the
+widely
+ used
+ correlations
+ provided
+ by
+ Onda
+ et
+ al.
+ (1968):
+kgRT
+avDAg
+=
+ C1
+
+G
+avg
+0.7
+g
+gDAg
+1/3
+(avdp)−2.0
+(5a)
+ko
+l
+ l
+lg
+1/3
+=
+ 0.0051
+
+L
+awl
+2/3
+l
+lDAl
+−0.5
+(avdp)0.4
+(5b)
+aw
+av
+= 1 −
+ exp
+
+−1.45
+ c
+l
+0.75
+L
+avl
+0.1 L2av
+l2g
+−0.05
+L2
+llav
+0.2
+(5c)
+where
+ av is
+ the
+ total
+ packing
+ surface
+ area
+ per
+ unit
+ volume
+ of
+packing,
+ aw is
+ the
+ surface
+ area
+ of
+ wetted
+ packing
+ per
+ unit
+ vol-
+ume
+ of
+ packing,
+ C1 is
+ a
+ dimensionless
+ constant
+ which
+ depends
+on
+ the
+ packing
+ size,
+ DAg is
+ the
+ gas
+ phase
+ diffusivity
+ of
+ CO2,
+ dp
+is
+ the
+ nominal
+ packing
+ size,
+ G
+ and
+ L
+ are
+ the
+ ﬂow
+ rates
+ of
+ gas
+and
+ liquid,
+ R
+ is
+ the
+ universal
+ gas
+ constant,
+ T
+ is
+ the
+ gas
+ temper-
+ature,
+ c is
+ the
+ critical
+ surface
+ tension
+ of
+ packing
+ material
+ and
+l is
+ the
+ surface
+ tension
+ of
+ liquid,
+ g and
+ l are
+ the
+ viscosity
+of
+ gas
+ and
+ liquid,
+ and
+ g and
+ l are
+ the
+ density
+ of
+ the
+ gas
+ and
+liquid.
+ The
+ surface
+ area
+ of
+ wetted
+ packing
+ per
+ unit
+ volume
+ of
+packing
+ was used
+ in
+ Eq.
+ (3). These
+ parameters
+ for
+ structured
+packing
+ can
+ be
+ estimated
+ using
+ the
+ correlations
+ given
+ by
+ Bravo
+et
+ al.
+ (1985).
+2.3.
+ 
+Physical
+ and
+ thermodynamic
+ properties
+The
+ calculation
+ of
+ absorption
+ rates
+ requires
+ data
+ for
+ the
+ phys-
+ical
+ properties
+ of
+ the
+ gas
+ and
+ liquid
+ phases,
+ as
+ well
+ as
+ the
+solubility
+ of
+ gas
+ and
+ diffusivity
+ in
+ the
+ liquid
+ phase.
+ The
+ dif-
+fusivity
+ of
+ a
+ solute
+ gas
+ in
+ a
+ liquid
+ is
+ strongly
+ dependent
+ on
+both
+ temperature
+ and
+ viscosity
+ of
+ the
+ liquid.
+ The
+ following
+semi-empirical
+ correlations
+ that
+ relate
+ CO2 diffusivity
+ to
+ both
+of
+ these
+ parameters
+ given
+ by
+ Versteeg
+ and
+ van
+ Swaaij
+ (1988)
+was used:
+DCO2,l =
+ DCO2,w
+ w
+l
+0.8
+(6a)
+DCO2,w =
+ 2.35
+ ×
+ 10−6 exp
+ −2119
+T
+
+(6b)
+where
+ DCO2,l and
+ DCO2,w are
+ the
+ diffusivity
+ of
+ CO2 in
+ the
+ solu-
+tion
+ and
+ in
+ water,
+ l and
+ w are
+ the
+ viscosity
+ of
+ the
+ solution
+and
+ water,
+ and
+ T
+ is
+ the
+ solution
+ temperature.
+ The
+ viscosity
+ratio
+ in
+ Eq.
+ (6a)
+ was
+ obtained
+ from
+ the
+ following
+ correlation
+(Weiland
+ et
+ al.,
+ 1998)
+ in
+ terms
+ of
+ the
+ weight
+ percent
+ of
+ MEA
+ in
+the
+ solution,
+ w,
+ CO2 loading,
+ ˛,
+ and
+ the
+ solution
+ temperature:
+l
+w
+=
+ exp
+ (21.186w
+ +
+ 2373)[˛(0.01015w
+ + 0.0093T
+ −
+ 2.2589)
+ + 1]w
+T2
+	
+(7)
+The
+ Henry’s
+ law
+ constant
+ was determined
+ using
+ the
+ cor-
+relation
+ proposed
+ by
+ Danckwerts
+ (1970)
+ to
+ calculate
+ the
+

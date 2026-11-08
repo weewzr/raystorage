@@ -1,0 +1,39 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,longtable,siunitx,graphicx,xcolor,xurl,hyperref}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[expansion=false]{microtype}
+\usepackage{pgfplots,pgfplotstable,tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,calc}
+\pgfplotsset{compat=1.18}
+\sisetup{detect-all}
+\title{Nuclear-Assisted Steam Methane Reforming with Carbon Capture in Singapore:\\
+A Literature-Anchored Assessment of Process Integration, Emissions and Feasibility}
+\author{Nuclear-Assisted Hydrogen Research Project}
+\date{}
+\begin{document}
+\input{sections/figures_deterministic_two_train}
+\maketitle
+\input{sections/00_abstract}
+\input{sections/00_nomenclature}
+\input{sections/01_introduction}
+\input{sections/02_background}
+\input{sections/03_system_boundary}
+\input{sections/04_model_formulation}
+\input{sections/05_heat_integration}
+\input{sections/06_hydrogen}
+\input{sections/07_carbon_ccs}
+\input{sections/08_energy_performance}
+\input{sections/09_techno_economics}
+\input{sections/10_sensitivity}
+\input{sections/11_cn4252_assessment}
+\input{sections/12_deployment_constraints}
+\input{sections/13_conclusions}
+\appendix
+\input{sections/A_reproducibility}
+\input{sections/B_traceability}
+\input{sections/C_historical_one_train_economics}
+\input{sections/D_historical_one_train_sensitivity}
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+\end{document}

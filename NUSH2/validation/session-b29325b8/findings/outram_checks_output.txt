@@ -1,0 +1,41 @@
+# Part A: helium, ideal gas against the Ortiz-Vega form EOS coefficients
+R_specific = 2077.26 J/kg/K, ideal cp0 = 2.5 R = 5193.2 J/kg/K
+| T C | p MPa | Z | cp J/kg/K | cp/cp0-1 % | rho kg/m3 | ideal-gas rho error % |
+|---|---|---|---|---|---|---|
+| 466 | 3 | 1.00498 | 5191.4 | -0.033 | 1.9442 | +0.498 |
+| 466 | 5 | 1.00830 | 5190.3 | -0.055 | 3.2297 | +0.830 |
+| 466 | 7 | 1.01160 | 5189.2 | -0.076 | 4.5068 | +1.160 |
+| 466 | 9 | 1.01490 | 5188.1 | -0.097 | 5.7756 | +1.490 |
+| 900 | 3 | 1.00283 | 5191.8 | -0.027 | 1.2276 | +0.283 |
+| 900 | 5 | 1.00471 | 5190.9 | -0.044 | 2.0421 | +0.471 |
+| 900 | 7 | 1.00660 | 5190.0 | -0.061 | 2.8536 | +0.660 |
+| 900 | 9 | 1.00847 | 5189.1 | -0.079 | 3.6621 | +0.847 |
+| 925 | 3 | 1.00276 | 5191.8 | -0.026 | 1.2020 | +0.276 |
+| 925 | 5 | 1.00459 | 5190.9 | -0.043 | 1.9998 | +0.459 |
+| 925 | 7 | 1.00643 | 5190.0 | -0.061 | 2.7946 | +0.643 |
+| 925 | 9 | 1.00826 | 5189.1 | -0.077 | 3.5865 | +0.826 |
+
+Secondary helium mass flow for the user duty 176.8 MWth, 900 C to 466 C:
+  ideal gas: m = 78.444 kg/s
+  EOS at 3 MPa: dh = 2253.2 kJ/kg, m = 78.468 kg/s, ideal-gas error -0.030 %
+  EOS at 5 MPa: dh = 2252.7 kJ/kg, m = 78.483 kg/s, ideal-gas error -0.050 %
+  EOS at 7 MPa: dh = 2252.3 kJ/kg, m = 78.498 kg/s, ideal-gas error -0.069 %
+  EOS at 9 MPa: dh = 2251.8 kJ/kg, m = 78.513 kg/s, ideal-gas error -0.088 %
+
+# Part B: SMR + WGS equilibrium, DOVER base case 1123.15 K, 20 bar, S/C 3
+dH1 = 205.9 kJ/mol, dS1 = 214.7 J/mol/K; dH2 = -41.2, dS2 = -42.0
+K1 constant dH,dS = 43.54 bar2, K2 = 0.5275
+K1 Hoseinzade eq.51 = 517.1 bar2, K2 eq.52 = 0.8646
+ratio K1 Hoseinzade / constant = 11.88; K2 ratio = 1.639
+| case | X_CH4 | WGS extent | H2 per CH4 | y_H2 wet |
+|---|---|---|---|---|
+| a fixed Q, constant dH,dS (DOVER model) | 0.529273 | 0.210958 | 1.7988 | 0.3556 |
+| b isobaric, constant dH,dS | 0.578388 | 0.216057 | 1.9512 | 0.3784 |
+| c isobaric, Hoseinzade K1,K2 | 0.842300 | 0.304419 | 2.8313 | 0.4981 |
+DOVER test note states 0.529272 at V = 2e5 m3, 20 bar, S/C = 3 (tests/smr_cstr.rs line 279).
+
+Case c at other temperatures, 20 bar, S/C 3:
+  750 C: K1 = 50.1 bar2 vs constant 5.0 (x9.9), X_CH4 = 0.6076
+  800 C: K1 = 169.9 bar2 vs constant 15.6 (x10.9), X_CH4 = 0.7333
+  850 C: K1 = 517.1 bar2 vs constant 43.5 (x11.9), X_CH4 = 0.8423
+  900 C: K1 = 1431.2 bar2 vs constant 111.4 (x12.8), X_CH4 = 0.9186

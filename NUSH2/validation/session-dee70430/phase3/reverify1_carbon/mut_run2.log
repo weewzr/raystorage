@@ -1,0 +1,45 @@
+M4a_capture_sign_flowsheet exit 101 failed 40 compile_error False
+   FAIL comb_h_export_and_comb_n_ledgers
+   FAIL eq_n_10_4_reported_residual_carries_its_tolerance_and_statuses
+   FAIL eq_n_10_intensities_and_the_reduction
+   FAIL eq_n_1_1_carbon_per_kmol_and_feed_carbon
+   FAIL eq_n_1_2_hydrogen_potential_table_and_conservation
+   FAIL eq_n_1_3_hydrogen_at_the_absorber
+   FAIL eq_n_1_4_psa_loop_with_the_hydrogen_return
+   FAIL eq_n_1_5_gas_rate_from_the_hydrogen_target
+   FAIL eq_n_2_1_tube_carbon_closed_form_for_three_tear_starts
+   FAIL eq_n_2_2_stream_vector_of_the_modelled_streams
+   FAIL eq_n_3_1_captured_co2_is_the_specified_capture_times_the_absorber_co2
+   FAIL eq_n_3_2_plant_capture_stays_below_one
+M13_ts_sign exit 101 failed 3 compile_error False
+   FAIL eq_n_9_4_net_abatement_after_transport_and_storage
+   FAIL eq_n_9_5_lifecycle_view_counts_transport_and_storage_once
+   FAIL eq_n_9_5_the_exported_lifecycle_is_the_closed_form_on_the_aggregate_factor
+M15_reference_carbon_drops_product exit 101 failed 1 compile_error False
+   FAIL eq_n_9_2_decomposition_of_the_direct_abatement
+M18_c2_atoms exit 101 failed 21 compile_error False
+   FAIL comb_h_export_and_comb_n_ledgers
+   FAIL cryogenic_defaults_equal_their_calibration
+   FAIL eq_n_10_4_reported_residual_carries_its_tolerance_and_statuses
+   FAIL eq_n_1_1_carbon_per_kmol_and_feed_carbon
+   FAIL eq_n_1_5_gas_rate_from_the_hydrogen_target
+   FAIL eq_n_2_1_tube_carbon_closed_form_for_three_tear_starts
+   FAIL eq_n_2_2_stream_vector_of_the_modelled_streams
+   FAIL eq_n_3_2_plant_capture_stays_below_one
+   FAIL eq_n_4_4_stack_carbon_curve
+   FAIL eq_n_6_1_tolerance_and_the_exported_residual
+   FAIL eq_n_6_1_verdicts_are_never_closed_while_a_stream_is_unknown
+   FAIL eq_n_6_2_the_tear_check_against_the_closed_forms
+M19_hours_in_k exit 101 failed 6 compile_error False
+   FAIL eq_n_5_2_direct_emission_is_the_stack_plus_the_vented_condensate
+   FAIL eq_n_8_2_annual_mass_of_a_carbon_flow
+   FAIL eq_n_9_1_hand_ledger_of_the_direct_abatement
+   FAIL eq_n_9_2_decomposition_of_the_direct_abatement
+   FAIL eq_n_9_3_capture_based_abatement
+   FAIL rule_1_of_n_7_the_gas_line_the_decomposition_and_the_lifecycle_read_one_gas_difference
+M10w_ts_terminal_dropped_workspace exit 101 failed 4 compile_error False
+   FAIL eq_s_8_the_committed_table_matches_the_engine
+   FAIL eq_s_9b_zero_subsidy_reproduces_the_committed_ledger_and_dcf
+   FAIL tests::case_a_kpis_match_the_case_a_mea_cells
+   FAIL tests::default_solve_matches_the_published_results
+git status clean

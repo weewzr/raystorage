@@ -1,0 +1,12 @@
+Leave the page where the reader put it while the tour plays
+
+An automatic step now redraws the step and announces it without scrolling
+the page or the side column, also after Start. A step the reader asks for
+keeps the control used in view by the smallest scroll, and brings the card
+head into view as well when the two fit in the window together.
+
+The self test gains tour_head_shown and tour_auto_stays and keeps
+tour_focus_kept. The assessment states the scroll rule and lists the checks
+that ran on this revision.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>

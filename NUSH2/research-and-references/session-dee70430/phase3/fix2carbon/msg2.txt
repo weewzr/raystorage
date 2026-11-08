@@ -1,0 +1,27 @@
+Print the cost under the plant-built floor and without the two system lines
+
+The headline abatement divides by the generic reference intensity of decision
+D2, and LOST_STEAM and BASE_POWER price INL's conventional plant. Both stay as
+they are, and the cost that each choice carries is now printed beside the
+headline.
+
+- Model::floor_reference gives the plant-built reference of N.7.1 and N.7.3
+  (no firing gas) as a cost comparison: the gas to price and the net abatement
+  to divide by. Final_Design_Basis.csv gains FLOOR_L5, FLOOR_LAC_DCF and
+  FLOOR_BREAKEVEN rows for the four stages at 25 y and 60 y, and the
+  validation table gains four reported rows.
+- CostQuery::system_lines (default true, the ladder as committed) switches the
+  two lines off in cost_items, so the ledger and the cash flow drop the same
+  lines. Final_Design_Basis.csv gains NOSYS and SYSLINES rows and the
+  validation table gains two reported rows.
+- On the independent basis the cost rows, the headline abatement rows, the
+  central rows of the emissions ledger, the GAS line, the co-funding rows say
+  generic reference intensity, the LOST_STEAM and BASE_POWER lines and their two
+  registry inputs say comparison input. The legacy export keeps its text.
+
+Tests: rule 1 of N.7 for every central baseline, the system-lines switch, the
+floor as one reference for gas and abatement, the exported rows against the
+engine, the strict break-even test under the floor, the wording of the
+exported tables and the reported validation rows.
+
+Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>

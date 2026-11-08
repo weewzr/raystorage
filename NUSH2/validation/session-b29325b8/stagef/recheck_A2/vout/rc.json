@@ -1,0 +1,106 @@
+{
+ "F19a_mature_radios": "base:false mature:true",
+ "F19a_mature_tiles": [
+  "cost_s_per_t = Abatement cost, L5 ledger, selected stage, life and exponent 95.6S$/t Scenario MATURE_60Y. Base result 189.7 S$/t",
+  "cost_lac_dcf_s_per_t = Levelised abatement cost, discounted cash flow 95.9S$/t Scenario MATURE_60Y. Base result 190.1 S$/t"
+ ],
+ "F19a_note": "mature",
+ "F05_captions": [
+  "S$ per tonne CO₂e abated, and LCOH in S$/kg, reactor charged at 210.0 MWth, gas at S$20.7/GJ"
+ ],
+ "F05_targets": "Abatement of at least 250,000 t/y: Met Cost at or below S$100/t on the L5 ledger and the DCF, at 10OAK_P46, 60 y, n = 1.0, gas at S$20.7/GJ: Met at these inputs: L5 95.6 and DCF 95.9 S$/t",
+ "F21_print_line": "Scenario MATURE_60Y is printed: tenth of a kind on INL's BOAK learning route, 60 y, n = 1.0, reactor charged at the rating, gas at S$20.7/GJ; the base result stays the reference: L5 189.7 S$/t and DCF 190.1 S$/t (BOAK, 25 y, n = 1.0, gas at the central price).",
+ "F19b_ts": "23.2",
+ "F19b_radios": "base:false mature:false",
+ "F19b_tiles": [
+  "cost_s_per_t = Abatement cost, L5 ledger, selected stage, life and exponent 72.7S$/t Base result 189.7 S$/t",
+  "cost_lac_dcf_s_per_t = Levelised abatement cost, discounted cash flow 73.0S$/t Base result 190.1 S$/t"
+ ],
+ "F19b_note": "other",
+ "F19b_targets": "Abatement of at least 250,000 t/y: Met Cost at or below S$100/t on the L5 ledger and the DCF, at 10OAK_P46, 60 y, n = 1.0, gas at S$20.7/GJ: Met at these inputs: L5 72.7 and DCF 73.0 S$/t",
+ "F19c_mature_again": [
+  "base:false mature:true",
+  [
+   "cost_s_per_t = Abatement cost, L5 ledger, selected stage, life and exponent 95.6S$/t Scenario MATURE_60Y. Base result 189.7 S$/t",
+   "cost_lac_dcf_s_per_t = Levelised abatement cost, discounted cash flow 95.9S$/t Scenario MATURE_60Y. Base result 190.1 S$/t"
+  ]
+ ],
+ "F19c_basis": "case_a",
+ "F19c_radios": "base:false mature:false",
+ "F19c_tiles": [
+  "cost_s_per_t = Abatement cost, L5 ledger, selected stage, life and exponent 51.1S$/t Base result 189.7 S$/t",
+  "cost_lac_dcf_s_per_t = Levelised abatement cost, discounted cash flow 51.3S$/t Base result 190.1 S$/t"
+ ],
+ "F19c_note": "other",
+ "F19d_radios": "base:true mature:false",
+ "F19d_tiles": [
+  "cost_s_per_t = Abatement cost, L5 ledger, selected stage, life and exponent 189.7S$/t",
+  "cost_lac_dcf_s_per_t = Levelised abatement cost, discounted cash flow 190.1S$/t"
+ ],
+ "F19d_inputs": [
+  "case_b",
+  60,
+  "BOAK",
+  15,
+  189.74950086777838,
+  190.05882295796027
+ ],
+ "F22_before": "input[name=scenario][value=base] ''",
+ "F22_after_down": [
+  "input[name=scenario][value=mature] ''",
+  "base:false mature:true"
+ ],
+ "F22_after_up": [
+  "input[name=scenario][value=base] ''",
+  "base:true mature:false"
+ ],
+ "F23_pinned": [
+  false,
+  "a 'Row S10 of the stream table in Results'"
+ ],
+ "F23_esc1": [
+  true,
+  "g[stream=S10] 'Stream S10, Process condensate, from Con'"
+ ],
+ "F20_tornado": [
+  "Capture solventSolvent Selexol176.3Solvent aMDEA187.8"
+ ],
+ "F25_status_words": {
+  "flowsheet_m7": 0,
+  "flowsheet_m8": 0,
+  "anchored_port": 0,
+  "gated": 1,
+  "level4_m8": 0,
+  "model_m6": 0
+ },
+ "F25_S12": "S12 H₂-rich gas after capture (PSA_FEED) ABS to PSA Crosses 40 26.821 4,920.07 19,620.7 external_boundary Level 3 flowsheet",
+ "F29_ladder": [
+  "Capture all-in charge\tNone at these inputs\t0.00\t",
+  "Export revenue\tNone at these inputs\t0.00\t"
+ ],
+ "F29_negzero": 0,
+ "F40_link": "THIRD_PARTY_NOTICES.txt?v=9c13c49a13c164712be409a377e4c0a013dcb183",
+ "F40_fetch": [
+  200,
+  "text/plain",
+  9016,
+  7
+ ],
+ "F28_text": [
+  "An engineering summary of three A4 pages: basis, KPIs, the cost table and ladder, energy and carbon balances, validation counts and the limitations, with the PFD when it is drawn"
+ ],
+ "F24_overflow": {
+  "labels": 97,
+  "overflow": [],
+  "scrollW": 375,
+  "innerW": 375
+ },
+ "F24_pfd_scroll": [
+  375,
+  375
+ ],
+ "dash_scroll_375": [
+  375,
+  375
+ ]
+}

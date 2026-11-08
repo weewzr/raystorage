@@ -1,0 +1,28 @@
+Match the process tour to the engine and fix its focus and keys
+
+Every tour number now comes from the live reply. The results rows and
+data/tour_rows.json are gone; the tube limit, the pipeline condition of
+the compressed CO2 and the tail gas power are stated in words.
+
+On an infeasible plant, steps 2 and 3 read the IHX duty and process heat
+at the need, and step 12 gives the branch and turbine output at the need
+with the generation at the rated output, so generation and import add up
+to the demand. Step 12 splits the branch as the engine does. Step 13 says
+when abatement above the target is not counted as met, and credits the
+recycle for part of the CO2 never formed. Scenario titles, notes and lit
+lines follow the reject route and Selexol. HTGR, TRISO, MEA and INL are
+written out at first use, and a no-break space joins each number to its
+unit.
+
+Start brings the card head into view and focuses the step title, or a bar
+control when the title would be out of view. Step changes keep the card
+head in view. Enter or Space on a unit or stream, or a choice from the
+unit list, pauses the tour. The card has its own Previous and Next and a
+line naming the keys, and the lead unit's selection ring stays off while
+the tour runs.
+
+The self test checks steps 2, 3, 12 and 13 at 100 MWth and Case A, the
+unit spacing and the focus after Start, and audits every scenario
+branch. CI also runs the self test under reduced motion.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>

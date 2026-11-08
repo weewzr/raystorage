@@ -1,0 +1,261 @@
+\section{B. HTGR thermal model}\label{sec:B}
+This section follows heat from the core to the IHX and asks how much reactor power the plant must draw. The module is reduced order. It holds no neutronics and no core flow or fuel model: the reactor appears only as a heat source with an outlet temperature, so nothing here says the core can be built or licensed at these conditions. Helium is treated with published correlations first, because every balance after them depends on $c_p$.
+
+\begin{eqcard}{B.1}{E}{Helium density}
+\Stmt{\rho=48.14\,\frac{P}{T}\left[1+0.4446\,\frac{P}{T^{1.2}}\right]^{-1}}
+\Interp{Helium is almost an ideal gas at reactor conditions. The bracket is the compressibility factor, which stays within about one percent of unity across the loop.}
+\Deriv{Petersen writes $P\cdot10^5/(2077.3\,\rho T)=Z$ (Eq 3-2, 3-3) and fits $Z=1+0.4446P/T^{1.2}$ (Eq 3-18). Since $10^5/2077.3=48.14$, the density follows (Eq 3-19). Petersen states validity from 1 to 100 bar and room temperature to about 1800 K, with a standard deviation of about 0.03\% at 1 bar and 0.3\% at 100 bar. The correlation is in bar and K, and the code converts at the function boundary.}
+\Vars{\V{P}{helium pressure in bar, in correlations only}{\U{bar}}}
+\Assume{1 to 100 bar, up to about 1800 K.}
+\Source{\tagP{} Petersen \cite{Petersen}, Eq 3-19, printed p.~6, read as an image. \tagM{5}: not in the library.}
+\Impl{\fn{props::helium::rho}}
+\Valid{PUB}{eq_b_01}{Computed here at 925 C and 7 MPa: $Z=\cZHe$ and $\rho=\cRhoHe$ \U{kg\ m^{-3}}. Target: 1.00643 from the helium equation of state in the OUTRAM reference model, which is a project run and is unpublished.}
+\end{eqcard}
+
+\begin{eqcard}{B.2}{E}{Helium heat capacities}
+\Stmt{c_p=5195\ \mathrm{J\ kg^{-1}\ K^{-1}},\quad c_v=3117\ \mathrm{J\ kg^{-1}\ K^{-1}},\quad\kappa=c_p/c_v=1.6667}
+\Interp{A monatomic gas stores heat only in translation, so its heat capacity barely moves with temperature or pressure. This is why every helium balance below can use one number.}
+\Deriv{Petersen Eq 4-4 to 4-6. The ideal value is $5R/2M=\cCpIdeal$ \U{J\ kg^{-1}\ K^{-1}}, computed here with $M=$ \U{4.002602\ g\ mol^{-1}}, so the printed 5195 sits \U{1.8\ J\ kg^{-1}\ K^{-1}} above it. Petersen gives a standard deviation of about 0.05\% at 273 K and 1 bar, 0.5\% at 100 bar, and 0.05\% at high temperature at all pressures. INL stream data imply 5190.}
+\Vars{\V{c_p}{isobaric heat capacity}{\U{J\ kg^{-1}\ K^{-1}}} \V{c_v}{isochoric heat capacity}{\U{J\ kg^{-1}\ K^{-1}}} \V{\kappa}{heat capacity ratio}{1}}
+\Assume{CP.}
+\Source{\tagP{} Petersen \cite{Petersen}, Eq 4-4 to 4-6, printed p.~6. \tagC{} Ideal value computed here.}
+\Impl{\fn{props::helium::cp}}
+\Valid{ID}{eq_b_02}{Target: the JAERI mock-up run sheet implies 5.193 to 5.195 \U{kJ\ kg^{-1}\ K^{-1}}.}
+\end{eqcard}
+
+\begin{eqcard}{B.3}{E}{Helium viscosity}
+\Stmt{\mu=3.674\times10^{-7}\,T^{0.7}}
+\Interp{Gas viscosity rises with temperature because molecules cross shear layers faster. Pressure plays no part in this form.}
+\Deriv{Petersen Eq 6-1, with a stated standard deviation of about 0.4\% at 273 K and 2.7\% at 1800 K. Viscosity enters Reynolds numbers only, and these feed the friction and film terms.}
+\Vars{\V{\mu}{gas viscosity}{\U{Pa\ s}}}
+\Assume{As \Eq{B.1}.}
+\Source{\tagP{} Petersen \cite{Petersen}, Eq 6-1, printed p.~6.}
+\Impl{\fn{props::helium::mu}}
+\Valid{PUB}{eq_b_03}{Computed here at 900 C: \cMuHe{} $\times10^{-5}$ \U{Pa\ s}, equal to the target.}
+\end{eqcard}
+
+\begin{eqcard}{B.4}{E}{Helium conductivity}
+\Stmt{k=2.682\times10^{-3}\left(1+1.123\times10^{-3}P\right)T^{0.71\left(1-2\times10^{-4}P\right)}}
+\Interp{Conductivity is high for a gas, which makes helium a good coolant, and it climbs with temperature almost as viscosity does. The Prandtl number therefore stays nearly flat.}
+\Deriv{Petersen Eq 7-1, with a stated standard deviation of about 1\% at 273 K and 6\% at 1800 K. That spread is the largest of the four helium properties, and it reaches the film coefficients directly.}
+\Vars{\V{k}{thermal conductivity}{\U{W\ m^{-1}\ K^{-1}}}}
+\Assume{As \Eq{B.1}.}
+\Source{\tagP{} Petersen \cite{Petersen}, Eq 7-1, printed p.~7.}
+\Impl{\fn{props::helium::k}}
+\Valid{PUB}{eq_b_04}{Computed here at 900 C and 51.5 bar: \cKHe{} \U{W\ m^{-1}\ K^{-1}}, and $Pr=\cPrHe$ from $c_p\mu/k$. Petersen Eq 8-1 gives \cPrPet{} at the same point.}
+\end{eqcard}
+
+\begin{eqcard}{B.5}{O}{Reactor balance}
+\Stmt{\dot Q_R-\dot Q_{ves}=\dot m_pc_p\left(T_{ROT}-T_{RI}\right)}
+\Interp{Fission heat that does not leave through the vessel wall goes into the helium. Flow times heat capacity times temperature rise must match it. This is the only reactor physics in the model.}
+\Deriv{Apply \Eq{A.8} to the core with no shaft work and a constant $c_p$. The heat term is the core power less the vessel loss. No neutronics and no core flow or fuel model enter, so the equation cannot say whether a given peak fuel temperature is acceptable.}
+\Vars{\V{T_{RI}}{reactor inlet temperature}{\U{K}}}
+\Assume{SS, CP. No core model.}
+\Source{\tagT{} Consequence of \Eq{A.8}.}
+\Impl{\fn{units::htgr::core_balance}}
+\Valid{PUB}{eq_b_05}{Target: thirteen published designs within 1.5\%, HTTR test data within 6\%. Computed here at Case B: left side \cCoreLHS{} \U{MW}, right side \cCoreRHS{} \U{MW} with the flow of \Eq{B.9}, a gap of \cCoreGap\%. The gap exists because \Eq{B.9} ignores the vessel loss and the circulator rise. A primary flow of \cMpExact{} \U{kg\ s^{-1}} closes the equation exactly.}
+\end{eqcard}
+
+\begin{eqcard}{B.6}{O}{Circulator rise}
+\Stmt{T_{RI}=T_{h,out}+\frac{\dot W_p}{\dot m_pc_p}}
+\Interp{The circulator does work on the gas, and in a closed loop that work appears as heat. So the helium enters the core a little warmer than it left the IHX.}
+\Deriv{\Eq{A.8} on the circulator with $\dot Q=0$ and shaft work into the gas gives $\dot m_pc_p(T_{RI}-T_{h,out})=\dot W_p$.}
+\Vars{\V{T_{h,out}}{hot-side helium leaving the IHX}{\U{K}}}
+\Assume{All shaft work enters the gas. Motor loss stays outside the gas.}
+\Source{\tagT{} Consequence of \Eq{A.8}.}
+\Impl{\fn{units::circulator::rise}}
+\Valid{PUB}{eq_b_06}{Target: Sato Fig 12 shows 133 to 150 C across the secondary circulator at \U{2.519\ kg\ s^{-1}}, which gives \cSatoRise{} \U{MW} computed here. Case B gives a rise of \cRise{} K and an inlet of \cTRI{} C.}
+\end{eqcard}
+
+\begin{eqcard}{B.7}{R}{Primary side}
+\Stmt{\dot Q_p=\dot m_pc_p\left(T_{ROT}-T_{h,out}\right),\qquad T_{h,out}\ge T_{s,ret}+\Delta T_{app}}
+\Interp{Primary helium gives up heat in the IHX. Its outlet cannot fall below the secondary return plus the approach, so the return temperature sets a floor on reactor inlet temperature.}
+\Deriv{\Eq{A.8} on the hot side of the IHX. The inequality is the second law at the cold end of a counterflow exchanger.}
+\Vars{\V{\dot Q_p}{heat lost by primary helium}{\U{W}} \V{\Delta T_{app}}{IHX approach temperature}{\U{K}}}
+\Assume{SS, CP.}
+\Source{\tagT{} Consequence of \Eq{A.8}.}
+\Impl{\fn{units::ihx::hot_side}}
+\Valid{ID}{eq_b_07}{Sign and limit tests.}
+\end{eqcard}
+
+\begin{eqcard}{B.8}{R}{Secondary side}
+\Stmt{\dot Q_s=\dot m_sc_p\left(T_{s,sup}-T_{s,ret}\right)}
+\Interp{Secondary helium carries the process heat. The temperature window is fixed by the reformer and its preheat train, so the flow must adjust to the duty.}
+\Deriv{\Eq{A.8} on the secondary loop between IHX outlet and return.}
+\Vars{\V{\dot Q_s}{heat carried by secondary helium}{\U{W}}}
+\Assume{SS, CP.}
+\Source{\tagP{} TEV-961 \cite{TEV961}, Table 2 continued, PDF p.~18: \vMsA{} \U{kg\ s^{-1}}, 900 to 466 C.}
+\Impl{\fn{units::ihx::cold_side}}
+\Valid{PUB}{eq_b_08}{Computed here at the INL implied $c_p$ of 5190: \cInlCheck{} \U{MW}, the Case A heat. Target: all five ROT cases of TEV-961 within 0.12\%.}
+\end{eqcard}
+
+\begin{eqcard}{B.9}{R}{Flow need}
+\Stmt{\dot m_s=\frac{\dot Q_{proc}}{c_p\left(T_{s,sup}-T_{s,ret}\right)},\qquad\dot m_p=\frac{\dot Q_R}{c_p\left(T_{ROT}-T_{s,ret}-\Delta T_{app}\right)}}
+\Interp{Rearranging \Eq{B.7} and \Eq{B.8} gives each flow. A balanced exchanger runs both streams through the same temperature span, so the primary flow exceeds the secondary only by the ratio of the heats.}
+\Deriv{Solve \Eq{B.8} for $\dot m_s$. Solve \Eq{B.7} at its limit with the whole reactor heat passing through the span. The second form is a sizing estimate, and \Eq{B.5} shows how far it sits from an exact closure.}
+\Vars{\V{\dot Q_{proc}}{process heat}{\U{W}} \V{\dot Q_R}{reactor heat}{\U{W}}}
+\Assume{As \Eq{B.7}, \Eq{B.8}.}
+\Source{\tagC{} Calculated here.}
+\Impl{\fn{units::circulator::flows}}
+\Valid{GOLD}{eq_b_09}{\vMsB{} and \vMpB{} \U{kg\ s^{-1}} at Case B.}
+\end{eqcard}
+
+\begin{eqcard}{B.10}{R}{Compression}
+\Stmt{\dot W=\frac{\dot mc_pT_1}{\eta_{is}}\left[\left(1+\frac{\Delta p}{p}\right)^{(\kappa-1)/\kappa}-1\right],\qquad\frac{\kappa-1}{\kappa}=0.4}
+\Interp{Helium is a poor gas to pump. It is light, so raising its pressure a little takes a lot of work per kilogram, and the large flow turns that into megawatts.}
+\Deriv{For an isentropic step of an ideal gas, $T_2/T_1=(p_2/p_1)^{(\kappa-1)/\kappa}$. \Eq{A.8} gives the ideal work $\dot mc_p(T_2-T_1)$, and $\eta_{is}$ scales it to the actual work. With $p_2/p_1=1+\Delta p/p$ the statement follows. For $\Delta p/p\ll1$ it reduces to $\dot m\Delta p/(\rho\eta_{is})$.}
+\Vars{\V{\dot W}{shaft power}{\U{W}} \V{T_1}{gas temperature at circulator inlet}{\U{K}} \V{\Delta p}{loop pressure drop}{\U{Pa}} \V{\eta_{is}}{isentropic efficiency, 0.75}{1}}
+\Assume{IG, adiabatic.}
+\Source{\tagT{} Form. \tagP{} $\eta_{is}=0.75$, INL-21537 \cite{INL21537}, Table 2, PDF p.~16.}
+\Impl{\fn{units::circulator::shaft}}
+\Valid{GOLD}{eq_b_10}{\vWsB{} and \vWpB{} \U{MW} at Case B. Computed here: \cShaftSpec{} \U{kJ\ kg^{-1}} on the secondary loop with \vMscB{} \U{kg\ s^{-1}}, and \cShaftSpecP{} \U{kJ\ kg^{-1}} on the primary loop with \vMpB{} \U{kg\ s^{-1}}. Target: the four budget rows of \Eq{B.11}. No measured shaft power exists, \tagM{13}.}
+\end{eqcard}
+
+\begin{eqcard}{B.11}{F}{Pressure budget}
+\Stmt{p=7.0\ \mathrm{MPa},\qquad\Delta p_s=200\ \mathrm{kPa},\qquad\Delta p_p=150\ \mathrm{kPa}}
+\Interp{Without a loop design the drops are a budget. The budget is built up from component values that others have reported.}
+\Deriv{INL-11109 assumes \U{50\ kPa} for each heat exchanger and each pipe leg, and quotes MHR components at 30 to \U{70\ kPa} (PDF p.~11 to 12). The central values are project round figures on that scale. Other sets carried: low at 7.0 MPa with 150 and 100 kPa and $\eta_{is}=0.80$; central at 5.15 MPa; high at 5.15 MPa with 300 and 200 kPa and $\eta_{is}=0.65$. INL also labels the helium at 1005 psi and 945 psi across its preheaters on sheet A-55, which is \U{414\ kPa} and gives a sensitivity of $\dot W_s=\cWsHigh$ \U{MW} from \Eq{B.10}.}
+\Vars{\V{\Delta p_s}{secondary loop pressure drop}{\U{Pa}} \V{\Delta p_p}{primary loop pressure drop}{\U{Pa}}}
+\Assume{A project budget. INL sources conflict on secondary pressure, at 9.1 and 7 MPa.}
+\Source{\tagA{} Built from INL-11109 \cite{INL11109}, PDF p.~11 to 12, and JAERI \cite{JAERI}. Sensitivity from TEV-961 \cite{TEV961}, A-55 and A-19 labels.}
+\Impl{\fn{units::circulator::budget}}
+\Valid{NONE}{eq_b_11}{No benchmark exists. The project sensitivity adds up to \U{9.6\ MW_{th}} at Case A.}
+\end{eqcard}
+
+\begin{eqcard}{B.12}{F}{Electric draw}
+\Stmt{E_{circ}=\frac{\dot W_s+\dot W_p}{\eta_m},\qquad\eta_m=0.90}
+\Interp{The motors sit outside the gas, so their loss leaves as waste heat and only the shaft work reaches the helium.}
+\Deriv{An assumed drive efficiency. The electricity is charged to the plant in \Eq{B.19}, and the shaft work returns as heat in \Eq{B.16}, so a circulator costs less than its electrical rating suggests.}
+\Vars{\V{E_{circ}}{circulator electricity}{\U{W}} \V{\eta_m}{motor and drive efficiency}{1}}
+\Assume{Motors outside the helium boundary.}
+\Source{\tagA{} Project assumption.}
+\Impl{\fn{units::circulator::electric}}
+\Valid{GOLD}{eq_b_12}{\vEcircB{} \U{MW_e} at Case B.}
+\end{eqcard}
+
+\begin{eqcard}{B.13}{E}{Vessel loss}
+\Stmt{\dot Q_{ves}=0.81\left(\frac{\dot Q_R}{30}\right)^{2/3}\ \mathrm{MW},\qquad\text{high case: }0.027\,\dot Q_R}
+\Interp{Heat leaks through the vessel surface, and surface grows more slowly than power. Scaling from the HTTR by area therefore gives a smaller fractional loss for a larger reactor.}
+\Deriv{One anchor: the HTTR vessel cooling system removed \U{0.81\ MW} at \U{30\ MW}. The exponent assumes loss follows area with a fixed vessel shape, which is a project assumption. The high case keeps the HTTR fraction, $0.81/30=0.027$, and gives \cVesHigh{} \U{MW} at Case B.}
+\Vars{\V{\dot Q_{ves}}{vessel heat loss}{\U{MW}}}
+\Assume{Area scaling \tagA.}
+\Source{\tagP{} IAEA-TECDOC-1382 \cite{T1382}, Table 3-21, PDF p.~164.}
+\Impl{\fn{units::htgr::vessel_loss}}
+\Valid{GOLD}{eq_b_13}{\vQvesB{} \U{MW} at Case B, \cVesFrac\% of $\dot Q_R$. The experimental anchor is a single test point.}
+\end{eqcard}
+
+\begin{eqcard}{B.14}{E}{Duct loss}
+\Stmt{\dot Q_{duct}=0.45\left(\frac{\dot m_s}{78.49}\right)^{1/2}\ \mathrm{MW\ at\ 90\ m},\qquad 3.12\left(\frac{\dot m_s}{78.49}\right)^{1/2}\ \mathrm{MW\ at\ 500\ m}}
+\Interp{A duct loses heat through its surface, and at fixed pressure drop its diameter grows with the square root of flow. So the loss follows the square root of flow.}
+\Deriv{INL-11109 Table 3 gives \U{0.26\ MW} for 90 m and \U{1.82\ MW} for 500 m pipes at a loop flow of \U{26.7\ kg\ s^{-1}} (PDF p.~13). Multiplying by $\sqrt{78.49/26.67}$ gives \cDuctShort{} and \cDuctLong{} \U{MW}. The INL case is at 2 MPa, and a 7.1 MPa run on PDF p.~16 used \U{0.22\ MW}, so this scaling leans high at the project pressure.}
+\Vars{\V{\dot Q_{duct}}{duct heat loss}{\U{MW}}}
+\Assume{Loss follows pipe diameter.}
+\Source{\tagP{} INL-11109 \cite{INL11109}, Table 3, PDF p.~15, scaled \tagC.}
+\Impl{\fn{units::circulator::duct_loss}}
+\Valid{GOLD}{eq_b_14}{This equation gives \cDuctRoot{} \U{MW} at Case B against \vQductB{} \U{MW} in the screening reference, which scales with $s$. The difference is listed in Section M.}
+\end{eqcard}
+
+\begin{eqcard}{B.15}{E}{IHX loss}
+\Stmt{\dot Q_{ihx}=f_{ihx}\left(\dot Q_{proc}+\dot Q_{rec}\right),\qquad f_{ihx}=0.008,\quad\text{range }0\text{ to }0.0458}
+\Interp{A small share of the heat through the exchanger never reaches the secondary side. The share comes from the gap between the two sides of a measured heat balance.}
+\Deriv{HTTR test data give $\dot Q_h=\cHttrQh$ against $\dot Q_c=\cHttrQ$ \U{MW} at 30 MW, a residual of \cIhxResHigh\%, and \cHttrQhLow{} against \cHttrQlow{} \U{MW} at 15 MW, a residual of \cIhxResLow\%. The residual is treated as a loss although instrument error may explain part of it. The value 0.0458 at the high end has no source.}
+\Vars{\V{f_{ihx}}{IHX loss fraction}{1} \V{\dot Q_{ihx}}{IHX heat loss}{\U{MW}}}
+\Assume{The measured residual is a true loss.}
+\Source{\tagC{} From IAEA-TECDOC-1382 \cite{T1382}, Table 3-23, PDF p.~168.}
+\Impl{\fn{units::ihx::loss}}
+\Valid{GOLD}{eq_b_15}{\vQihxB{} \U{MW} at Case B.}
+\end{eqcard}
+
+\begin{eqcard}{B.16}{O}{Available heat}
+\Stmt{\dot Q_{av}=\dot Q_R+\dot W_s+\dot W_p-\dot Q_{ves}-\dot Q_{ihx}-\dot Q_{duct}}
+\Interp{What the helium can deliver is the reactor heat plus the shaft work it picked up, less what leaked on the way.}
+\Deriv{\Eq{A.8} around both helium loops, with shaft work entering the gas by \Eq{B.6}.}
+\Vars{\V{\dot Q_{av}}{heat available at the process interface}{\U{MW}}}
+\Assume{Shaft work returns to the helium.}
+\Source{\tagC{} Calculated here.}
+\Impl{\fn{units::htgr::available_heat}}
+\Valid{ID}{eq_b_16}{Computed here: \cQav{} \U{MW} at Case B, which equals the three uses in \Eq{B.20}.}
+\end{eqcard}
+
+\begin{eqcard}{B.17}{E}{Conversion efficiency}
+\Stmt{\eta_{pc}=0.397,\qquad\text{alternative: }0.475=0.66\left(1-\frac{T_c}{T_h}\right)}
+\Interp{Heat that goes to power becomes electricity at about this fraction. The alternative value treats the cycle as a fixed share of Carnot.}
+\Deriv{TEV-961 Table 2 continued prints 39.7\% at 925 C ROT, with a note that it is interpolated from TEV-981. INL-21537 assumes 66\% of Carnot (PDF p.~16) and prints a net 47.5\% at 900 C (Table 4), which implies $T_c/T_h=\cCarnotRatio$ computed here. TEV-981 is missing, so the net or gross status of 39.7\% is unresolved. Taking either value changes the heat for power by a large factor, and the plant carries both.}
+\Vars{\V{\eta_{pc}}{power conversion efficiency}{1} \V{T_c}{cycle cold temperature}{\U{K}} \V{T_h}{cycle hot temperature}{\U{K}}}
+\Assume{Rankine cycle on excess heat.}
+\Source{\tagP{} TEV-961 \cite{TEV961}, PDF p.~18, note 3, \tagM{2}. INL-21537 \cite{INL21537}, Table 4, PDF p.~20.}
+\Impl{\fn{units::htgr::eta_pc}}
+\Valid{NONE}{eq_b_17}{No benchmark exists. The net status of 39.7\% is unresolved.}
+\end{eqcard}
+
+\begin{eqcard}{B.18}{O}{Power branch}
+\Stmt{E=\eta_{pc}\dot Q_{pc}}
+\Interp{A fixed efficiency turns heat into electricity with no model of the cycle behind it.}
+\Deriv{Definition of $\eta_{pc}$.}
+\Vars{\V{E}{electricity generated}{\U{W}} \V{\dot Q_{pc}}{heat into the power cycle}{\U{W}}}
+\Assume{Fixed efficiency.}
+\Source{\tagT{} Definition.}
+\Impl{\fn{units::htgr::power}}
+\Valid{ID}{eq_b_18}{Round trip with \Eq{B.19}.}
+\end{eqcard}
+
+\begin{eqcard}{B.19}{O}{Extraction}
+\Stmt{w=\min\left(E,\,r_w\dot Q_{gap}\right),\qquad\dot Q_{br}=\dot Q_{gap}+w+\frac{E-w}{\eta_{pc}}}
+\Interp{The reactor must supply the reboiler gap and the electricity from one branch of heat. Steam bound for the reboiler can first spin a turbine, so part of the electricity comes almost for free. The rest pays the full conversion penalty.}
+\Deriv{Steam carrying $\dot Q_{gap}$ to the reboiler expands through a back-pressure stage and yields $r_w\dot Q_{gap}$ of work, limited by the demand $E$. That work costs heat one for one, because the condensing heat still reaches the reboiler. The remaining electricity $E-w$ needs $(E-w)/\eta_{pc}$ of heat from \Eq{B.18}. Summing gives $\dot Q_{br}$. At Case B, $w=\cExtractW$ \U{MW}.}
+\Vars{\V{w}{work from the back-pressure stage}{\U{MW}} \V{\dot Q_{br}}{heat to the power and steam branch}{\U{MW}} \V{r_w}{work per unit of heat extracted}{\U{MW_e\ MW_{th}^{-1}}} \V{\dot Q_{gap}}{reboiler gap}{\U{MW}}}
+\Assume{Back-pressure co-generation.}
+\Source{\tagC{} Form calculated here. $r_w=0.169$ from IEAGHG 2017-02 \cite{IEAGHG17}, Case 1A. 0.30 as high case \tagA.}
+\Impl{\fn{plant::heatrec::extraction}}
+\Valid{GOLD}{eq_b_19}{\vQbrB{} \U{MW_{th}} at Case B.}
+\end{eqcard}
+
+\begin{eqcard}{B.20}{O}{Reactor allocation}
+\Stmt{\dot Q_R=\dot Q_{proc}+\dot Q_{rec}+\dot Q_{ihx}+\dot Q_{duct}+\dot Q_{ves}+\dot Q_{br}-\dot W_s-\dot W_p}
+\Interp{This is the answer to how big the reactor must be. Every use and every loss is added up, and the shaft work is taken off because it returns as heat.}
+\Deriv{Set $\dot Q_{av}$ in \Eq{B.16} equal to the sum of its uses, $\dot Q_{proc}+\dot Q_{rec}+\dot Q_{br}$, and solve for $\dot Q_R$. The electricity inside $\dot Q_{br}$ includes $E_{circ}$, so the balance is implicit through the flows and is solved by iteration.}
+\Vars{\V{\dot Q_{rec}}{slip recycle heat}{\U{MW}}}
+\Assume{First law on the nuclear island.}
+\Source{\tagC{} Calculated here, from the screening balance.}
+\Impl{\fn{plant::utility::reactor_required}}
+\Valid{GOLD}{eq_b_20}{\vQRxB{} \U{MW_{th}} at Case B and \vQRxA{} \U{MW_{th}} at Case A.}
+\end{eqcard}
+
+\begin{eqcard}{B.21}{F}{Margin}
+\Stmt{\dot Q_{spare}=\dot Q_{rated}-\dot Q_R}
+\Interp{The selected reactor is larger than the plant needs. This line shows how much larger, and no income is booked against the difference.}
+\Deriv{A project decision: Case B at \cQrated{} \U{MW_{th}}, with the margin kept idle. Its capital is charged in full in Section L.}
+\Vars{\V{\dot Q_{spare}}{unused rating}{\U{MW_{th}}}}
+\Assume{No revenue on the margin.}
+\Source{\tagC{} Calculated here.}
+\Impl{\fn{plant::utility::margin}}
+\Valid{GOLD}{eq_b_21}{\vSpareB{} \U{MW_{th}} at Case B.}
+\end{eqcard}
+
+\begin{eqcard}{B.22}{E}{INL inlet fit}
+\Stmt{T_{RI}=0.8205\,T_{ROT}-242.68\qquad\text{(both in C)}}
+\Interp{INL's rule of thumb from operating HTGRs ties inlet to outlet temperature. It is a check here, because this plant's inlet is set by the secondary return.}
+\Deriv{INL-21537 fits operating and past reactors and warns that the correlation serves that report only. In practice inlet temperature depends on more than the outlet.}
+\Vars{\V{T_{ROT}}{reactor outlet temperature}{\U{K}, or C in this fit}}
+\Assume{Used as a check only.}
+\Source{\tagP{} INL-21537 \cite{INL21537}, Table 2, PDF p.~16.}
+\Impl{\fn{units::htgr::rit_check}}
+\Valid{PUB}{eq_b_22}{Computed here at 925 C: \cRITfit{} C, against \cTRI{} C from \Eq{B.6}, a gap of \cRITgap{} K. The first sits above the 260 to 500 C range INL quotes and the second sits at its edge. Both are well above the 395 C normal limit of the HTTR vessel, TECDOC-1236 \cite{TE1236}, Table 3-3.}
+\end{eqcard}
+
+\begin{eqcard}{B.23}{R}{INL excess heat}
+\Stmt{\dot Q_{ex}=\dot m_sc_p\left(T_{s,ret}-T_{s,ideal}\right)}
+\Interp{INL asks how much hotter the helium returns than the process needs. That difference is heat the reactor could send to power instead.}
+\Deriv{\Eq{B.8} between the calculated and the ideal return. TEV-961 text quotes ``71 C'' and ``3 C'' at odds with its Table 2, so the table is used, and Section M records the conflict.}
+\Vars{\V{\dot Q_{ex}}{excess heat for power}{\U{W}} \V{T_{s,ideal}}{ideal helium return temperature, 461 C}{\U{K}}}
+\Assume{As \Eq{B.8}.}
+\Source{\tagP{} TEV-961 \cite{TEV961}, Table 2 continued, PDF p.~18.}
+\Impl{\fn{units::htgr::inl_excess}}
+\Valid{PUB}{eq_b_23}{Computed here: \cExcess{} \U{MW_t} at $c_p=5190$ against the printed 2.0, so the reactor equivalent is \cInlCheck{} plus 2.0, the printed \U{178.8\ MW_t}.}
+\end{eqcard}
+
+\subsection*{Worked example: reactor heat at Case B}
+Insert the Case B terms into \Eq{B.20}, in \U{MW}: process heat \vQprocxB, slip heat \vQrecB, IHX loss \vQihxB, duct loss \vQductB, vessel loss \vQvesB{} and the branch \vQbrB. Their sum, less the shaft works \vWsB{} and \vWpB, gives \vQRxB{} \U{MW_{th}}. The branch is the term to notice: reboiler gap and electricity together take \vQbrB{} \U{MW_{th}}, about half the process heat, because most of that electricity pays the full conversion penalty at $\eta_{pc}=0.397$. Against the \cQrated{} \U{MW_{th}} rating, \vSpareB{} \U{MW_{th}} stays idle.
+
+\subsection*{Link to the sources}
+INL reports \U{178.8\ MW_t} for its Case 6 with \U{16.5\ MW_e} imported from the grid, and the circulators and losses stay outside that figure. This section adds them and the MEA reboiler gap, and it supplies all electricity from the reactor, so the required reactor at INL's own scale rises to \vQRxA{} \U{MW_{th}}. Ahn and Lee print a higher process heat of \U{143.4\ MW_{th}} on a comparable duty, and the assumptions table keeps that case beside the central one.

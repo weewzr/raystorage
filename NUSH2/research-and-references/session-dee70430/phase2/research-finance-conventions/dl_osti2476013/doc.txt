@@ -1,0 +1,1870 @@
+Hydrogen Production Cost with
+Anion Exchange Membrane
+Electrolysis
+
+September 2024
+
+Prepared By:
+
+Strategic Analysis, Inc.
+Brian D. James (PI), Yaset M. Acevedo, Kevin R. McNamara,
+Jacob H. Prosser, Jennie M. Huya-Kouadio
+
+                                                                                                                               1
+Sponsorship and Acknowledgements
+
+This material is based upon work supported by the U.S. Department of Energy (DOE) under Award
+Number DE-EE0009629. The authors wish to thank Dr. James Vickers of DOE's Office of Energy Efficiency
+and Renewable Energy (EERE), Hydrogen and Fuel Cell Technologies Office (HFTO) for his technical and
+programmatic contributions and leadership. The authors also wish to thank the following individuals for
+their technical and programmatic contributions and oversight: Dr. Dave Peterson, Dr. Ned Stetson, and
+Dr. Sunita Satyapal.
+
+This work requires partnership with research and technical groups to review the systems analyzed. SA
+has developed a close collaboration with the National Renewable Energy Laboratory (NREL) (Genevieve
+Saur, Mark Chung, Michael Penev, and Jamie Kee) and Idaho National Laboratory (Daniel Wendt), who
+are considered team members on this project. The Hydrogen Production Technical Team (HPTT),
+composed of industry and DOE participants, also conducted a thorough evaluation of this work's
+designs, results, and conclusions. SA appreciates the assistance provided by these individuals and the
+HPTT.
+
+Throughout the entire project, SA has reached out to many professionals to obtain information on state-
+of-the-art manufacturing processes, system designs, electrolyzer efficiency, and performance/durability.
+SA strives to incorporate the best assumptions for each system analyzed to provide the most accurate
+cost results with appropriate transparency to the community. This would not be possible without the
+transfer of knowledge from leading companies in each field. The authors would like to particularly thank
+the following groups for their contributions to this 2024 report on AEM Water Electrolysis: NREL (Mark
+Ruth, Bryan Pivovar, Alex Badgett, Joe Brauch), EVOLOH (Scott Blanchet), Georgia Institute of
+Technology (Paul Kohl) and De Nora (Ed Revers, Andrew Smeltz, Chuck Schultz).
+
+Disclaimer
+
+This report was prepared as an account of work sponsored by an agency of the United States
+Government. Neither the United States Government nor any agency thereof, nor any of their
+employees, makes any warranty, express or implied, or assumes any legal liability or responsibility for
+the accuracy, completeness, or usefulness of any information, apparatus, product, or process disclosed,
+or represents that its use would not infringe privately owned rights. Reference herein to any specific
+commercial product, process, or service by trade name, trademark, manufacturer, or otherwise does
+not necessarily constitute or imply its endorsement, recommendation, or favoring by the United States
+Government or any agency thereof. The views and opinions of authors expressed herein do not
+necessarily state or reflect those of the United States Government or any agency thereof.
+
+                                                                                                                               2
+Authors Contact Information
+
+Strategic Analysis, Inc. may be contacted at:
+     Strategic Analysis, Inc.
+         4075 Wilson Blvd, Suite 200
+         Arlington VA 22203
+         (703) 527-5410
+         www.sainc.com
+
+The corresponding authors may be contacted at:
+         Brian D. James
+         Vice President, Energy Analysis Services
+         (703) 778-7114
+         BJames@sainc.com
+
+         Yaset Acevedo
+         Senior Engineer
+         (407) 719-6777
+         yacevedo@sainc.com
+
+This work is licensed under http://creativecommons.org/licenses/by/4.0/. Per the license, permission to
+use, share, or adapt contents of this report is granted as long as attribution is given to Strategic Analysis,
+Inc.
+
+                                                                                                                               3
+1 Executive Summary
+
+Rigorous stakeholder-vetted techno-economic analysis was performed to assess the cost of hydrogen
+(H2) produced using state-of-the-art Anion Exchange Membrane (AEM) electrolysis. Projected high-
+volume, untaxed and unsubsidized levelized cost of hydrogen (LCOH)1 range from 2020 $1.78 to
+$3.68/kg H2 depending on technology year, process design, and electrolyzer project scale, assuming an
+electricity price of $0.03/kWh and a capacity factor of 97% (Table 1).
+
+Table 1. Hydrogen levelized cost for AEM KOH and AEM Water electrolyzer plants for a constant
+
+                  electricity price of $0.03/kWh and a 97% capacity factor.
+
+                                 Electrolyzer Case
+
+Technology Basis  -                     Current                                 Future
+
+Nominal Year      year           2023               2023     2030                       2030
+
+Plant Scale       MTD            50                 500      50                         500
+
+Plant Design      # of Modules   4                  3                        2          3
+
+                                 Levelized Cost of Hydrogen
+
+AEM KOH           2020 $ / kg H  $2.68              $2.32    $2.03                      $1.78
+
+AEM Water         2020 $ / kg H  $3.68              $3.29    $2.08                      $1.83
+
+The total installed capital cost for an AEM electrolysis plant was estimated from bottom-up stack and
+process plant cost models. The stack cost model accounts for manufacturing equipment, equipment
+maintenance, material, tooling, cycle time, yield, labor, utilities and general overhead. The process plant
+cost model accounts for purchased equipment, installation costs, site preparation, and general overhead
+costs. For this study, the AEM electrolysis plant is assumed to be a stick-built, greenfield project
+developed by an engineering, procurement, and construction (EPC) firm with electrolysis stacks
+purchased directly from an electrolysis stack manufacturer. The price of the electrolysis stacks is based
+on a bottom-up cost assessment with business markup for the electrolysis company fabricator. Two
+stack technologies bases are considered: Current and Future. Current represents 2023 near state-of-the-
+art stack design, materials, and performance but not necessarily available commercially in that year.
+Future technology correspondingly represents stacks using 2030 projected state-of-the-art design,
+materials, and performance. Both are based on a 1 GW/year factory stack manufacturing rate. Methods
+from the Hydrogen Analysis (H2A) production model, a peer-reviewed national laboratory-developed
+discounted cash flow (DCF) model, were used to calculate the production LCOH in 2020 $/kg H2.2 The
+baseline electricity price case ($0.03/kWh) corresponds to average wholesale electricity prices currently
+possible in U.S. markets with plentiful wind.3 Similar low-cost electricity pricing is possible from solar
+
+1 Production cost only. Cost of hydrogen delivery, storage, and dispensing excluded from current assessment
+2 Hydrogen Analysis (H2A) Production Models. https://www.nrel.gov/hydrogen/h2a-production-models.html
+3 Seel, J.; Millstein, D.; Mills, A.; Bolinger, M.; Wiser, R. Plentiful Electricity Turns Wholesale Prices Negative.
+Advances in Applied Energy 2021, 4, 100073. https://doi.org/10.1016/j.adapen.2021.100073.
+
+                                                                                                                               4
+Power Purchase Agreements (PPA)4 although these prices are typically limited by renewable energy
+capacity factors.
+
+4 M. Bolinger, J. Seel, C. Warner, and D. Robson, Utility-Scale Solar, 2022 Edition: Empirical Trends in Deployment,
+Technology, Cost, Performance, PPA Pricing, and Value in the United States, (2022), p. None, 1888246,
+ark:/13030/qt7496x1pc https://www.osti.gov/servlets/purl/1888246/.
+
+                                                                                                                               5
+Table of Contents
+
+1 Executive Summary .............................................................................................................................. 4
+2 Analysis Summary ................................................................................................................................ 7
+
+   2.1 System Definition ........................................................................................................................ 7
+   2.2 AEM Operating Point Optimization ........................................................................................... 10
+   2.3 AEM Stack Design ...................................................................................................................... 14
+   2.4 AEM Balance of Plant Design.....................................................................................................16
+3 Project Capital Cost ............................................................................................................................ 19
+   3.1 AEM Stack Cost.......................................................................................................................... 19
+   3.2 AEM Balance of Plant Cost ........................................................................................................ 21
+   3.3 Uninstalled and Direct Capital Costs for AEM Electrolyzer System...........................................22
+   3.4 AEM Plant Site Preparation and Construction Overhead.......................................................... 24
+   3.5 Total Installed Capital Cost ........................................................................................................ 26
+4 Operating Cost ................................................................................................................................... 26
+   4.1 Utility Cost ................................................................................................................................. 27
+   4.2 Feedstock Cost...........................................................................................................................27
+   4.3 Maintenance Cost......................................................................................................................27
+   4.4 Labor Cost.................................................................................................................................. 28
+5 Levelized Cost of Hydrogen................................................................................................................ 29
+   5.1 LCOH Results for Base Current and Future Cases ..................................................................... 29
+   5.2 Sensitivity to Module Sizing and Plant Sizing ............................................................................ 32
+   5.3 Sensitivity to Electricity Pricing.................................................................................................. 34
+   5.4 Sensitivity to Electricity Pricing and Capacity Factor................................................................. 35
+   5.5 Sensitivity to Stack Costs ........................................................................................................... 37
+   5.6 Sensitivity to Number of Operation and Maintenance FTE's .................................................... 38
+6 Appendix A. Summary of Total Installed Capital Cost........................................................................ 39
+7 Appendix B. Sensitivity to Electricity Pricing and Capacity Factor: Additional Results ...................... 44
+   7.1 Total Installed Capital Cost ........................................................................................................ 44
+   7.2 Plant Power ............................................................................................................................... 46
+   7.3 Scaled Plant Cost ....................................................................................................................... 47
+   7.4 Current Density..........................................................................................................................48
+   7.5 Average Plant Efficiency ............................................................................................................ 49
+8 Appendix C. H2A Model Financial Parameters................................................................................... 50
+
+                                                                                                                               6
+2 Analysis Summary
+
+This Program Record documents projected LCOH for H2 production from Anion Exchange Membrane
+electrolyzers based on techno-economic analysis of current and future technology. Results for the LCOH
+represent untaxed and unsubsidized costs associated solely with H2 production and compression to 30
+bar (delivery, storage, and dispensing not included). Clean H2 production tax credits are not considered
+in this analysis.
+This study focused on centralized AEM plants with production corresponding to nominal 100 MW to 1
+GW input power. For an AEM plant, the 100 MW base case was sized to deliver 50,000 kg/day (50 MTD5)
+of H2, whereas a 1 GW plant was sized to deliver 500,000 kg/day (500 MTD). The LCOH was evaluated in
+this report for two technology cases: Current (2023) Central plant and Future (2030) Central plant H2A
+cases. The Current (2023) technology basis is associated with an AEM stack using technology that is near
+state-of-the-art stack design, materials, and performance and assumed to be manufactured at a scale of
+1 GW/year. The Future (2030) technology basis is associated with an AEM stack projected to be available
+in the lab by 2030 in terms of catalyst materials, construction, and performance. This case also assumes
+a manufacturing scale of 1 GW/year. Two competing stack and associated process designs were
+considered for the AEM plant: AEM KOH which assumes 1M KOH electrolyte electrolysis and AEM Water
+which assumes pure water electrolysis.
+
+2.1 System Definition
+
+The project cost and LCOH were modeled for two competing AEM technologies, AEM KOH and AEM
+Water. The project cost includes both the installed direct costs for the hydrogen plant and the overhead
+costs associated with developing and deploying the plant. Each hydrogen plant is assumed to be divided
+into separate and standalone H2 production modules, supported by common high voltage infrastructure
+that supports the whole plant. Each module is assumed to be a fully independent electrolysis system
+including water supply and purification, electrolysis stacks including electrical energy supply and
+conditioning, heat management, liquid electrolyte/gas separation, and H2 processing. See Figure 1 for a
+visual representation of the plant terminology and the scope of supply included within this project cost
+model.
+
+5 MTD ­ metric tonnes per day
+
+                                                                                                                               7
+         Figure 1. Plant terminology and scope of supply for modelled hydrogen production project
+For both AEM technologies, the project cost and LCOH were calculated for four total base cases: 50 MTD
+Current Central, 500 MTD Current Central, 50 MTD Future Central, and 500 MTD Future Central. The
+Current 50 MTD cases are divided into 4 separate and standalone H2 production modules (12.5
+MTD/module) while the Future 50 MTD cases are divided into 2 modules (25 MTD/module). Large-scale
+500 MTD plants are divided into 3 separate and standalone H2 production modules (167 MTD/module),
+which are based on the maximum sizing for hydrogen compressors and water purification systems
+currently commercially available. Selection of module size is meant to balance a reasonable level of
+redundancy (to improve reliability and partial operation during module repair or maintenance) and the
+desire for large module size (to lower cost). The system definition for an AEM KOH electrolysis system is
+shown in Table 2 while the system definition for AEM Water electrolysis system is shown in Table 3.
+For all cases, the plant lifetime is set for 40 years. The stack is assumed to operate at 60 °C. The plant
+output hydrogen is delivered at 99.99% purity and 30 bar, with water being the only expected impurity.
+
+                                                                                                                               8
+                  Table 2. System definition for AEM KOH.
+
+Technology Basis                -         Current Current       Future   Future
+                                                                2030     2030
+Nominal Year                    Year      2023 2023                       500
+                                                                  50     1,040
+Plant Capacity                  MTD       50       500           104
+                                                                            3
+Plant Power (BOL Rated)         MW_AC     107      1,070           2      347
+                                                                 52.1     158
+Number of Modules per Plant     #         4                  3    24       2.1
+                                                                  2.1      3.0
+Plant Power per Module (BOL Rated) MW_AC  26.8     357            3.0      1.8
+                                                                  1.8
+Number of Stacks per Module     #         112      1,499                   1.0
+                                                                  1.0
+DC Power per Stack (BOL Rated)  MW_DC     0.22     0.22                    10
+                                                                  10       1.3
+Current Density (BOL Rated)     A/cm²     0.8              0.8    1.3      31
+                                                                  31      47.8
+Cell Voltage (BOL Rated)        V         1.8              1.8   47.8     49.9
+                                                                 50.0    4.3 / 1
+    Stack Degradation Rate      mV/kh     10.0     10.0         4.3 / 1
+(at BOL Rated Current Density)
+
+Stack Lifetime                  year      4                  4
+
+Anode Pressure                  bar       1.3              1.3
+
+Cathode Pressure                bar       31               31
+
+Stack Electrical Usage (BOL Rated) kWh_DC/kg 47.8  47.8
+
+Plant Electrical Usage (BOL Rated) kWh_AC/kg 51.5  51.4
+
+KOH Concentration               wt% / M 4.3 / 1 4.3 / 1
+
+                  Table 3. System definition for AEM Water.
+
+Technology Basis                -         Current Current       Future   Future
+                                                                2030     2030
+Nominal Year                    Year      2023 2023                       500
+                                                                  50     1,036
+Plant Capacity                  MTD       50       500           104
+                                                                            3
+Plant Power (BOL Rated)         MW_AC     110      1,099           2      345
+                                                                 51.9     162
+Number of Modules per Plant     #         4                  3    25       2.1
+                                                                  2.0      2.0
+Plant Power per Module (BOL Rated) MW_AC  27.6     366            2.0      1.8
+                                                                  1.8      1.5
+Number of Stacks per Module     #         155      2,078          1.5
+                                                                            7
+DC Power per Stack (BOL Rated)  MW_DC     0.16     0.16            7       1.3
+                                                                  1.3      31
+Current Density (BOL Rated)     A/cm2     0.5              0.5    31      47.8
+                                                                 47.8     49.7
+Cell Voltage (BOL Rated)        V         1.8              1.8   49.8       -
+                                                                   -
+Stack Degradation Rate          mV/kh     48.6     48.6
+
+Stack Lifetime                  year      1                  1
+
+Anode Pressure                  bar       1.3              1.3
+
+Cathode Pressure                bar       31               31
+
+Stack Electrical Usage (BOL Rated) kWh_DC/kg 47.8  47.8
+
+Plant Electrical Usage (BOL Rated) kWh_AC/kg 52.9  52.8
+
+KOH Concentration               wt% / M   -                  -
+
+The system is modeled assuming constant H2 production (constant current), thus the energy
+consumption varies over the stack lifetime due to voltage degradation. Rated voltage and current
+
+                                                                                                                               9
+density are listed in Table 2 and Table 3 to provide a reference point for the reader to assess general
+polarization performance. Balance of plant (BOP) equipment energy demand is calculated from Aspen
+simulations of the BOP and assumed electrical rectifier and high-voltage transformer efficiencies from
+public information.6 A modest efficiency improvement is assumed for the balance of plant as the module
+size increases leading a slight reduction in the balance of plant equipment energy going from the 50
+MTD to the 500 MTD systems. Multiple sizes of modules for each case were evaluated to measure the
+impact on the cost of H2. These modules are categorized by the module input power and number of
+stacks. Conventional AEM systems operate using a 4.3 wt% KOH concentration (~1 M KOH) as
+represented by the AEM KOH cases. However, there is significant interest in pure water systems as
+represented by AEM Water cases due to enhanced process equipment durability, simplification of
+maintenance activities, and elimination of KOH water waste stream.
+
+2.2 AEM Operating Point Optimization
+
+The rated stack operating point7 on the polarization curve can differ from the cost-optimal operating
+point, due to the effect of electricity price on the LCOH. A trade-off exists between stack size and capital
+cost versus system electrical usage and total electricity cost while maintaining the same net hydrogen
+production rate. SA performed an iterative calculation to determine the cost-optimal operating point
+(i.e., operating point that achieves minimum LCOH for each AEM case).
+
+Based on the expected performance of Current and Future AEM systems, electrolysis cell polarization
+curves were postulated based on a simple first-principals electrolysis model (previously developed by
+SA) that enables a realistically-shaped curve to be fit to a specified rated operating point (cell voltage
+and current density). In this manner, full polarization curves can be generated for future systems using
+only a single hypothesized future performance point.
+
+AEM stack design is similar to Proton Exchange Membrane (PEM) stack, which informs the potential for
+future AEM stacks to achieve high polarization curve performance. Similarly to PEM, AEM stacks use a
+dry cathode with water permeating though the membrane and a cathode outlet consisting primarily of
+gaseous hydrogen. In addition, AEM uses a lower ~1M KOH concentration compared to Alkaline which
+typically uses ~7M KOH. The associated ionic conductivity is ~5x less for an AEM stack compared to an
+Alkaline stack at electrolysis temperatures of 60 to 90 .8 Therefore, the voltage losses associated with
+shunt currents will be minimized for AEM stacks.
+
+The rated operating point selected for the AEM KOH Current case is based on a composite of publicly
+available performance data for both commercial stacks and lab-scale demonstrations (1.8 V/cell at 0.8
+A/cm2). Examples of higher current densities at similar voltages, up to 3 A/cm2, have been seen in small-
+scale demonstrations, especially when Pt catalyst is included. To be conservative, this study limits the
+
+6 Current rectifier efficiency assumed to be 96% while Future rectifier efficiency assumed to be 98%. Transformer
+efficiency assumed to 99% for all cases.
+7 Operating point refers to the cell voltage and current of the electrolyzer stack.
+8 Gilliam, R.; Graydon, J.; Kirk, D.; Thorpe, S. A Review of Specific Conductivities of Potassium Hydroxide Solutions
+for Various Concentrations and Temperatures. International Journal of Hydrogen Energy 2007, 32 (3), 359­364.
+https://doi.org/10.1016/j.ijhydene.2006.10.062.
+
+                                                                                                                             10
+rated current density to 0.8 A/cm2, since this has been shown commercially and a primary advantage of
+AEM over PEM electrolysis is the minimization of precious metal catalysts. In addition, there is presently
+uncertainty about how much degradation will affect AEM performance at higher current densities.
+Commercial offerings for AEM KOH will continue to increase in current density over the next decade.
+The rated operating point selected for the AEM KOH Future case (1.8 V/cell at 3.0 A/cm2) is based on the
+assumption that AEM KOH stacks can reach the same performance achieved by Proton Exchange
+Membrane (PEM) stacks due to similarities in stack design and operation (although the PEM membrane
+conducts H+ ions and the AEM membrane conducts OH- ions). This assumption for Future case
+performance is useful from the perspective of understanding the potential of AEM technology but has
+not been validated by experimental results. Stack degradation in the Current scenarios is derived from
+publicly available AEM degradation data. Future stack degradation is assumed to match the general
+performance of Future PEM stacks. For cost estimation purposes, the stack lifetime is assumed to be 4
+years for the Current case and 10 years for the Future case.
+
+AEM Water membranes suffer from far lower performance during lab-scale tests and is reflected in the
+assumed rated polarization point for the Current case (1.8V/cell at 0.5 A/cm2). While performance is
+expected to improve over time, current experimental data suggests that AEM Water systems will always
+perform worse than their AEM KOH counterparts. This is reflected in the assumed rated polarization
+point for the Future case (1.8 V/cell at 2.0 A/cm2). In addition to lower performance, AEM Water stacks
+have significantly more rapid degradation. Commercially relevant AEM Water stack lifetimes have not
+yet been demonstrated so conservative estimates of 1 year for the Current case and 7 years for the
+Future case were selected for cost estimation.9
+
+The Current and Future polarization curves were combined with the assumed degradation rate for each
+case to establish the stack beginning of life (BOL) and end of life (EOL) polarization curves (Figure 1 for
+AEM KOH and Figure 3 for AEM Water). The degradation rate is assumed to scale linearly with current
+density. The lifetime was derived from the degradation rate and a practical nominal operating window
+of 1.8 to 2.2V/cell for the rated operating point. The Current case shows lower performance and higher
+degradation assumptions compared to the Future system. In other words, for the same current density,
+the Current case assumes a higher voltage than the Future system. The performance model assumes a
+constant current operation (constant H2 production) with varying voltage (varying efficiency) and uses
+the average voltage to determine the energy usage (kWh/kg) over the stack lifetime.
+
+For a fixed production rate, the stack operating point and stack capital cost are interdependent;
+therefore, these must be co-optimized. Results from the performance model and the AEM stack costs
+are used in the H2A LCOH model to estimate the resulting levelized cost of H2 for a range of current
+densities. Further details of levelized cost of hydrogen calculation are provided in Section 5.1. The
+optimization of this LCOH model determines the constant stack current density that results in the lowest
+
+9 Much AEM Water research is focused on improving membrane durability (at high levels of performance) and
+researchers anticipate achievement of 1+ years of durability in the short future. Consequently, we select a 1 year
+lifetime (48.6 mV/kh degradation rate) for Current technology although this is on the optimistic side of current
+capabilities.
+
+                                                                                                                             11
+H2 cost ($/kgH2). Note that the stack lifetime is assumed to be constant, regardless of the selected
+current density. Since the estimated degradation rate scales with current density, operating points at
+lower current densities may be able to have longer stack lifetimes and have additional capex savings at
+the expense of a higher average stack electrical usage. This additional layer of optimization is not
+considered in this study.
+
+Figure 4 for AEM KOH and Figure 5 for AEM Water graphically illustrate the optimal LCOH for each
+technology basis assuming an electricity price of $0.03/kWh. A summary of the optimized operating
+points is shown in Table 4. The cost optimization for AEM KOH finds that a low current density
+(~0.6A/cm2) is the cost-optimal operating point for the Current case whereas the Future case optimizes
+to a higher current density (~0.8 A/cm2). The cost optimization for AEM Water suggests the cost-optimal
+operating point is ~0.9 A/cm2 for both the Current case and the Future case. Note that these cost-
+optimized current densities are based on $0.03/kWh electricity and a specified stack cost (~$0.17/cm2
+for Current, ~$0.11/cm2 for Future, see section 3.1). If these parameters change significantly, the
+optimized current density is also expected to change.
+
+A  B
+
+Figure 2. Graphs of rated and optimized (OP) polarization (Pol) curves for AEM KOH at BOL and EOL for
+(A) Current and (B) Future technology bases. Assumes 4 year stack lifetime for Current case and 10 year
+
+                                             stack lifetime for Future case.
+
+      12
+A  B
+
+Figure 3. Graphs of rated and optimized (OP) polarization (Pol) curves for AEM Water at BOL and EOL for
+ (A) Current and (B) Future technology bases. Assumes 1 year stack lifetime for Current case and 7 year
+
+                                             stack lifetime for Future case.
+
+A  B
+
+Figure 4. Projected levelized cost of hydrogen (LCOH) across a range of operating points for AEM KOH for
+ (A) Current and (B) Future technology bases. Minimum LCOH is indicated by a vertical dashed line and
+ defines the optimized operating point assuming a constant current density during operation. Modelled
+      plant has a capacity of 50 MTD at an electricity price of $0.03/kWh and a 97% capacity factor.
+
+      13
+A                                             B
+
+ Figure 5. Projected levelized cost of hydrogen (LCOH) across a range of operating points for AEM Water
+for (A) Current and (B) Future technology bases. Minimum LCOH is indicated by a vertical dashed line and
+
+ defines the optimized operating point assuming a constant current density during operation. Modelled
+       plant has a capacity of 50 MTD at an electricity price of $0.03/kWh and 97% capacity factor.
+
+Table 4. Optimized operating point compared to rated operating point for AEM KOH and AEM Water
+
+   electrolyzers for an electricity price of $0.03/kWh and 97% capacity factor.
+
+                                     AEM KOH AEM KOH AEM Water AEM Water
+
+   Technology       -                Current     Future  Current  Future
+       Basis
+
+   Plant Scale      MTD              50          50      50                      50
+
+   Plant Design # of Modules         4           2       4                       2
+
+   Current Density  A/cm2            0.80        3.00    0.50                    2.00
+
+   (BOL Rated)
+
+   Cell Voltage     V                1.80        1.80    1.80                    1.80
+
+   (BOL Rated)
+
+   Current Density  A/cm2            0.63        0.79    0.95                    0.92
+
+   (BOL Optimized)
+
+     Cell Voltage                    1.75        1.68    2.01                    1.71
+                                  V
+
+   (BOL Optimized)
+
+2.3 AEM Stack Design
+
+An extensive literature and patent review was conducted, in addition to discussions with electrolyzer
+suppliers on current AEM cell design, performance, and potential technology advances. Current and
+Future cell designs, component material selections, and performance levels were postulated to serve as
+the basis for cost estimation. In general, AEM stack designs share many similarities with PEM stack
+designs and similar manufacturing methods were assumed. While there are commercial AEM stacks, we
+expect AEM stack design to continue to evolve as more AEM companies enter the marketplace.
+
+Figure 6 show a cross-sectional view of a single electrolysis cell for an AEM stack with annotations
+describing each component material, thickness, and manufacturing process. Both the Current and
+
+                                                                                       14
+Future cells are assumed to use a zero-gap design between the electrodes and the membrane. All stacks
+were modeled with rectangular cells with Current stacks having an active area size of 800 cm2/cell and
+Future stacks having an active area size of 3,000 cm2/cell.
+Both the AEM KOH and AEM Water stacks assume the anode (OER) catalyst is FeNiOOH and the cathode
+(HER) catalyst is Pt. Current commercial AEM stacks commonly use an iridium-free anode and are able to
+achieve acceptable performance, which is replicated in the cost model. While the cathode could use a
+PGM-free catalyst, platinum offers a significant performance improvement, leading to a significantly
+reduced levelized cost of hydrogen despite the increased stack cost due to use of Pt. We opted to
+include platinum as the cathode catalyst for both the Current and Future cases, although future research
+and development may lead to cathode catalysts without platinum group metals that achieve both long
+durability and high performance. Future cathode Pt loading is reduced (from 0.4mgPt/cm2 to
+0.1mgPt/cm2) to reflect advances in catalyst utilization and in recognition that PEM-based fuel cells can
+achieve good performance with very low HER loadings (~0.05mgPt/cm2): this offers hope for
+significantly reduced future AEM loading.
+
+   Figure 6. Cross-sectional view of a single AEM electrolysis cell for the Current and Future design with
+                                       descriptions of all modeled components.
+
+Table 5 shows a comparison between the AEM KOH stack design parameters for the Current vs. Future
+designs.
+Table 6 shows a comparison between the AEM Water stack design parameters for the Current vs. Future
+designs. The parameters were determined from various sources (in addition to internal analysis and
+estimates), including journal publications and price quotes from component material suppliers.
+
+                                                                                                                             15
+Table 5. Comparison of AEM KOH stack design parameters for the Current vs. Future designs.
+
+Parameter               Unit              AEM KOH                    AEM KOH
+                                           Current                     Future
+
+OER Catalyst            -                                FeNiOOH
+
+OER Catalyst Loading    mgcatalyst / cm2             4.8 mg/cm2
+
+OER Catalyst Cost       $/kg              ~$3 @ 500MW/yr
+
+HER Catalyst            -                                  Pt/C
+
+HER Catalyst Loading    mgcatalyst / cm2  0.47 mgPt/cm2              0.1 mgPt/cm2
+
+HER Catalyst Cost       $/kg              ~$49,191/kg @ 500MW/yr
+
+Membrane                -                 ePTFE-supported Polymeric membrane
+
+Membrane Thickness      µm                                 50
+
+Membrane Cost           $/m2              ~$40 @ 1GW/yr          ~$42 @ 1GW/yr
+
+  Stack Pressure        bar                                31 / 1.3
+(Cathode / Anode)
+
+Voltage Degradation     mV/kh             10.0 @0.8 A/cm2            1.0 @3.0A/cm2
+
+          Anode                           Sintered Porous Ni (50% porosity)
+Porous Transport Layer
+
+         Cathode                          Carbon fiber substrate with microporous layer
+Porous Transport Layer
+
+Bipolar Plate                             Etched, Nickel-Coated Stainless Steel 316
+
+Current Distributor                       Stamped, Copper Plate
+
+End Plate                                 Machined, Stainless Steel
+
+Compression System                                         Tie Rods
+
+Table 6. Comparison of AEM Water stack design parameters for the Current vs. Future designs.
+
+Parameter               Unit              AEM Water                  AEM Water
+                                            Current                     Future
+
+OER Catalyst            -                                FeNiOOH
+
+OER Catalyst Loading    mgcatalyst / cm2     4.8 mg/cm2
+  OER Catalyst Cost          $/kg         ~$3 @ 500MW/yr
+
+HER Catalyst            -                                  Pt/C
+
+HER Catalyst Loading    mgcatalyst / cm2  0.47 mgPt/cm2              0.1 mgPt/cm2
+
+HER Catalyst Cost       $/kg              ~$49,191/kg @ 500MW/yr
+
+Membrane                -                 ePTFE-supported Polymeric membrane
+
+Membrane Thickness      µm                                 50
+
+Membrane Cost           $/m2              ~$58 @ 1GW/yr          ~$46 @ 1GW/yr
+
+  Stack Pressure        bar                                31 / 1.3
+(Cathode / Anode)
+
+Voltage Degradation     mV/kh             48.6 @0.5 A/cm2            1.5 @2.0A/cm2
+
+          Anode                           Sintered Porous Ni (50% porosity)
+Porous Transport Layer
+
+         Cathode                          Carbon fiber substrate with microporous layer
+Porous Transport Layer
+
+Bipolar Plate                             Etched, Nickel-Coated Stainless Steel 316
+
+Current Distributor                       Stamped, Copper Plate
+
+End Plate                                 Machined, Stainless Steel
+
+Compression System                                         Tie Rods
+
+2.4 AEM Balance of Plant Design
+
+Process design for AEM KOH and AEM Water plants are quite similar, with the exception of KOH being
+present in specific streams within the AEM KOH system. Simplified process flow diagrams for the AEM
+
+                                                                                                                             16
+KOH and AEM Water systems are shown in Figure 7 and Figure 8, respectively. Similar to PEM stacks,
+the AEM stacks are assumed to operate in differential pressure mode where the anode is near-
+atmospheric (~1.3 bar) and the cathode is pressurized (~31 bar). The primary water loop (which includes
+the anode, the anode effluent separator / stack feed surge drum, stack feed pump, and feed air cooler)
+is assumed to be held at near-atmospheric pressure. Similar to PEM systems, to maintain water purity
+and preserve stack durability and performance, AEM Water assumes an additional circulation water
+deionizer. Pure water feeds can lead to instability of the electrode and the membrane is more
+susceptible to contaminant poisoning and subsequent performance losses.10 Because the stack cathode
+operates at an elevated pressure of ~31 bar, there is no need for an H2 gas compressor before the H2
+purification stage. The H2 purification subsystem utilizes a Temperature Swing Adsorption (TSA)
+subsystem to remove saturated water from the H2 gas stream. Two TSA adsorption beds are used to
+provide continuous water removal producing an H2 product stream with 99.99 mol% H2 purity. Water
+removed from the H2 stream is fed back into the stack feed surge drum.
+
+               Figure 7. System Diagram for Current and Future AEM KOH Electrolysis Systems.
+
+10 Miller, H. A.; Bouzek, K.; Hnat, J.; Loos, S.; Bernäcker, C. I.; Weißgärber, T.; Röntzsch, L.; Meier-Haack, J. Green
+Hydrogen from Anion Exchange Membrane Water Electrolysis: A Review of Recent Developments in Critical
+Materials and Operating Conditions. Sustainable Energy Fuels 2020, 4 (5), 2114­2133.
+https://doi.org/10.1039/C9SE01240K.
+
+                                                                                                                             17
+Figure 8. System Diagram for Current and Future AEM Water Electrolysis Systems.
+                                                                                                               18
+3 Project Capital Cost
+
+3.1 AEM Stack Cost
+
+Design for Manufacture and Assembly® (DFMA®)11 cost analysis of AEM stacks was performed at
+multiple production rates, system sizes, and stack sizes. Although the stack cost was evaluated for a
+range of production rates (MW/yr), the project cost results for the Current Central cases and Future
+Central cases were constrained to a nominal stack size of 0.25 MW for Current cases and 2 MW for
+Future cases at a manufacturing rate of 1 GW/year and 5 GW/year. The 0.25 MW stack size used for the
+Current case was inspired by commercially available AEM stack sizes available at the time of model
+development. Current innovations in the market will likely case stack sizes to increase in the near-term.
+The stack manufacturing cases used in this report for AEM KOH and AEM Water systems are shown in
+Table 7 and Table 8, respectively. Stack cost is reported in units of $/cm2 active area as this costing
+metric is independent of the stack operating point and power supply. In general, a higher cell
+manufacturing rate is associated with a lower stack cost per cell due to better manufacturing equipment
+utilization and economies of scale for material costs. Additionally, stack cost in $/kW at the BOL power
+operating point is shown to allow for comparison to other stack technologies. The stack cost in $/kW is
+highly sensitive to the operating point and a common power basis should be used when compared to
+other technologies. To understand the impact of the stack manufacturing rate, the stack cost per active
+area is shown as a function of stack manufacturing rate in Figure 9 and the stack cost normalized by
+optimized BOL input power is shown as a function of stack manufacturing rate in Figure 10. The
+manufacturing rate on the low end is limited to 100 MW/year, which is the likely lower limit of highly
+automated manufacturing methods assumed in the cost model, whereas the high end of the
+manufacturing rate is set to 5 GW/year, which is a reasonable upper limit of manufacturing rate in a
+single manufacturing facility.
+
+The uninstalled costs for the stacks as shown in Table 9 and Table 10 include a 30% manufacturer's
+markup.12 The installation costs for the stack include a bottom-up estimate for shipping and installation
+of stacks.
+
+11 Boothroyd, G., P. Dewhurst, and W. Knight. "Product Design for Manufacture and Assembly, Second Edition,"
+2002.
+12 A 30% markup for the electrolyzer manufacturer corresponds to a 23% gross margin. A gross margin between
+20% and 30% is considered reasonable for a manufacturing company in a competitive market, although the value
+can vary significantly between companies depending on their stage of development, growth rate, and target
+market. For example, among electrolyzer companies, recent gross margins are ~17% for Thyssenkrup, ~20% for
+Bloom Energy, ~55% for NEL, a negative ~90% for Plug Power, and a negative ~345% for ITM Power.
+
+                                                                                                                             19
+                                               Stack Cost per Active Area
+
+                                       $0.400
+
+Stack Cost (2020 $/cm2)                $0.350
+
+                                       $0.300
+
+                                       $0.250                              AEM Water - Current
+                                       $0.200                              AEM KOH - Current
+                                       $0.150                              AEM Water - Future
+                                       $0.100                              AEM KOH - Future
+                                       $0.050
+
+                                       $-
+                                             0 1000 2000 3000 4000 5000
+                                               Yearly Manufacturing Rate (MW/year, EOL)
+
+Figure 9. Stack cost per active area as a function of annual manufacturing rate. The manufacturing rate
+in MW/year is based on EOL power which is 0.25 MW/stack for the Current cases and 2.0 MW/stack for
+
+                                                    the Future cases.
+
+Stack Cost (2020 $/kWBOL Stack Power)                 Stack Cost Normalized by BOL Power
+
+                                       $300
+
+                                       $250
+
+                                       $200                                AEM Water - Current
+                                       $150                                AEM KOH - Current
+                                       $100                                AEM Water - Future
+                                        $50                                AEM KOH - Future
+
+                                       $-
+                                             0 1000 2000 3000 4000 5000
+                                               Yearly Manufacturing Rate (MW/year, EOL)
+
+Figure 10. Stack cost normalized by beginning of life power as a function of annual manufacturing rate.
+The manufacturing rate in MW/year is based on EOL power which is 0.25 MW for the Current cases and
+
+                                             2.0 MW for the Future cases.
+
+                                                                                                20
+The results suggest that for the Current design, AEM Water stacks are less expensive than AEM KOH
+stacks. However, this is primarily caused by the higher BOL current density selected for AEM Water
+operation (0.87 A/cm2) compared to the current density selected for AEM KOH operation (0.60 A/cm2).
+This increases the power density of the stack at the cost of a higher operating voltage and lower
+electrical efficiency.
+
+Table 7. Selected of AEM KOH Stack Design for Manufacture and Assembly® (DFMA®) Cost for Current vs.
+
+                      Future Designs.
+
+Technology Basis                    -            Current Future
+
+Nominal Year                        year         2023  2030
+
+Stack Power (BOL Rated)             MW_DC        0.22  2.1
+
+Stack Power (BOL)                   MW_DC        0.22  1.9
+
+Stack Power (EOL)                   MW_DC        0.25  2.0
+
+Nominal Stack Production Rate       GW/year      1     1
+
+(Assuming EOL Power)
+
+Cells per Stack                     cells/stack  246   489
+
+Nominal Cell Production Rate        cells/year 1,000,000 251,500
+
+Stack Cost                          2020 $/kW    $146  $76
+
+(Excludes markup and installation) (BOL)
+
+Stack Cost                          2020 $/cm2 $0.160  $0.100
+
+(Excludes markup and installation)
+
+Table 8. Selected of AEM Water Stack Design for Manufacture and Assembly® (DFMA®) Cost for Current
+
+                   vs. Future Designs.
+
+Technology Basis                    -            Current Future
+
+Nominal Year                        year         2023  2030
+
+Stack Power (BOL Rated)             MW_DC        0.16  2.0
+
+Stack Power (BOL)                   MW_DC        0.18  1.9
+
+Stack Power (EOL)                   MW_DC        0.25  1.9
+
+Nominal Stack Production Rate       GW/year      1     1
+
+(Assuming EOL Power)
+
+Cells per Stack                     cells/stack  117   401
+
+Nominal Cell Production Rate        cells/year 476,000 209,000
+
+Stack Cost                          2020 $/kW    $97   $78
+
+(Excludes markup and installation) (BOL)
+
+Stack Cost                          2020 $/cm2 $0.186  $0.122
+
+(Excludes markup and installation)
+
+3.2 AEM Balance of Plant Cost
+
+The BOP can be divided into two broad categories: the mechanical BOP and the electrical BOP. The
+mechanical BOP is composed of four primary elements: process equipment, piping, valves, and
+instrumentation including temperature, pressure, flow, and level indicators. The cost model used the
+Aspen Process Economic AnalyzerTM for preliminary cost estimates of the process equipment. Piping and
+
+                                                                                                                             21
+valve costs are derived from Aspen Capital Cost Estimator TM. Based on industry heuristics,
+instrumentation is assumed to be 20% of installed equipment costs, and would be inclusive of fire
+detection systems, hydrogen detection systems, and any early warning systems required for hydrogen
+safety. 13 14
+
+While the system diagram is similar for both AEM KOH and AEM Water, the increased durability
+assumed by AEM Water is represented by changes to certain elements of the mechanical BOP. AEM
+KOH uses duplex steel15 for the high temperature water loop piping to protect against hydrogen, oxygen,
+high temperatures, and KOH. AEM Water does not have KOH electrolyte and high temperature water
+loop components are assumed to use 316 stainless steel. Other equipment, such as pumps and tanks,
+are already assumed to be stainless steel so no changes are needed to differentiate AEM KOH and AEM
+Water. Finally, KOH specific equipment is excluded from the AEM Water case. No other elements of
+hypothetical cost improvements are modeled in the capital cost or in the operations and maintenance
+costs. The electrical BOP consists of 4 primary elements: rectifier, transformer, power substation, and
+electrical wiring. The cost model used vendor quotes for the rectifier and an estimate from a 2013
+engineering study for the high-voltage transformer.16 The electrical wiring was estimated from the 2020
+National Electrical Estimator published by Craftsman.17 The power substation and overhead power lines
+for external transmission were derived from publicly available price estimates.18 Where necessary, cost
+values in this study were adjusted to 2020$ using the Chemical Engineering Plant Cost Index (CEPCI), the
+standard index used by chemical process industries.
+
+3.3 Uninstalled and Direct Capital Costs for AEM Electrolyzer System
+
+A rigorous bill of materials was developed for 4 reference cases: (1) 50 MTD Current Central with 4
+modules (AEM KOH); (2) 50 MTD Future Central with 2 modules (AEM KOH); (3) 50 MTD Current Central
+with 4 modules (AEM Water); and (4) 50 MTD Future Central with 2 modules (AEM Water). These cases
+were selected to understand the cost impact of increasing module size and changing electrolysis
+performance. The BOP equipment costs were then extrapolated from the reference cases by
+extrapolating the process design and using conventional power-law19 based industry scaling factors. The
+uninstalled capital costs only include the cost of purchasing the equipment whereas the direct cost
+include installation of the stacks, equipment, piping, power electronics, wiring, and electrical
+
+13 Aspen Technology, Inc. Aspen Process Economic Analyzer. Version 12 (40.0.0.4267).
+14 Plant Design and Economics for Chemical Engineers, Fifth Edition, 2003
+15 Duplex steel is a family of stainless steels whose name is derived from a roughly equal mix of austenitic and
+ferritic phase metallurgical structure. It is designed for superior strength and corrosion resistance (particularly
+stress corrosion) compared to 316 stainless steel.
+16 $7.5M for 290 MW high temperature steam electrolysis (HTSE) from Krull, P. Roll, J. Varrin, Jr.R.D. "HTSE Plant
+Cost Model for the INL HTSE Optimization Study," R-6828-00-01, Revision 1, Dominion Engineering, Inc. March
+2013.
+17 Tyler, M. C. (2019). 2020 National Electrical Estimator. Craftsman Book Company.
+18 Cost of the transmission line is set at $390,000/mile. https://www.power-grid.com/td/underground-vs-
+overhead-power-line-installation-cost-comparison/
+19 Power law cost relationships for chemical plants typically take the form of {Variant Cost/Base Cost} = {Variant
+Sizing/Base Sizing}^p where p is often assumed to be 6/10th. Specific exponential factors were tailored to each
+equipment based on industry best practices and estimates based on Aspen Process Economic AnalyzerTM.
+
+                                                                                                                             22
+infrastructure. Summarized uninstalled and direct capital costs for AEM KOH and AEM Pure Water are
+shown in Table 9 and Table 10, respectively. Note that all $/kW values are scaled using BOL Rated plant
+power input.
+
+Table 9. Uninstalled and direct capital costs for AEM KOH. The cost in $ / kW is normalized by BOL Rated
+                                                       plant power. a
+
+Technology Basis                 -                                  Current Current Future Future
+
+Nominal Year                     Year                               2023  2023   2030  2030
+
+Plant Capacity                   MTD                                50    500    50    500
+
+Plant Power (BOL Rated)          MW_AC                              107   1,070  104   1,040
+
+Uninstalled Capital Costs
+
+Stack Capital Cost               2020 $k / plant $18,365 $179,825 $9,178 $89,873
+
+Mechanical BOP                   2020 $k / plant $20,146 $147,221 $7,616 $54,425
+
+Electrical BOP                   2020 $k / plant $20,498 $158,457 $15,311 $131,739
+
+Total Uninstalled Capital Costs 2020 $k / plant $59,010 $485,503 $32,106 $276,037
+
+Stack Capital Cost               2020 $ / kW                        $171  $168   $88   $86
+
+Mechanical BOP                   2020 $ / kW                        $188  $138   $73   $52
+
+Electrical BOP                   2020 $ / kW                        $191  $148   $147  $127
+
+Total Uninstalled Capital Costs  2020 $ / kW                        $550  $454   $308  $265
+
+Direct Capital Costs
+
+Stack Capital Cost               2020 $k / plant $19,904 $195,273 $9,910 $97,097
+
+Mechanical BOP                   2020 $k / plant $33,195 $202,678 $13,076 $75,298
+
+Electrical BOP                   2020 $k / plant $23,293 $168,925 $17,849 $139,461
+
+Total Direct Capital Costs       2020 $k / plant $76,393 $566,876 $40,834 $311,855
+
+Stack Capital Cost               2020 $ / kW                        $186  $182   $95   $93
+
+Mechanical BOP                   2020 $ / kW                        $310  $189   $126  $72
+
+Electrical BOP                   2020 $ / kW                        $217  $158   $171  $134
+
+Total Direct Capital Costs       2020 $ / kW                        $712  $530   $392  $300
+
+a Electrolyzer systems are assumed to be manufactured and assembled at a rate of ~1 GW/year (~500 MTD/year).
+
+These manufacturing rates have not yet been demonstrated by any AEM stack manufacturer and no GW-scale
+
+factories have been announced as of the publication of this report. Therefore, current commercially available prices
+
+are likely to be significantly higher than what is presented here.
+
+                                                                                                   23
+Table 10. Uninstalled and direct capital costs for AEM Water. The cost in $ / kW is normalized by BOL
+                                                 Rated plant power. a
+
+Technology Basis                 -            Current Current Future Future
+
+Nominal Year                     Year         2023                       2023   2030  2030
+
+Plant Capacity                   MTD          50                         500    50    500
+
+Plant Power (BOL Rated)          MW_AC        110                        1,099  104   1,036
+
+Uninstalled Capital Costs
+
+Stack Capital Cost               2020 $k / plant $14,016 $137,740 $9,584 $95,838
+
+Mechanical BOP                   2020 $k / plant $21,793 $152,244 $7,301 $47,609
+
+Electrical BOP                   2020 $k / plant $27,450 $218,292 $15,888 $136,258
+
+Total Uninstalled Capital Costs 2020 $k / plant $63,258 $508,275 $32,773 $279,705
+
+Stack Capital Cost               2020 $ / kW  $127                       $125   $92   $93
+
+Mechanical BOP                   2020 $ / kW  $198                       $138   $70   $46
+
+Electrical BOP                   2020 $ / kW  $249                       $199   $153  $132
+
+Total Uninstalled Capital Costs  2020 $ / kW  $574                       $462   $316  $270
+
+Direct Capital Costs
+
+Stack Capital Cost               2020 $k / plant $16,145 $159,153 $10,346 $103,244
+
+Mechanical BOP                   2020 $k / plant $34,551 $204,254 $12,349 $65,981
+
+Electrical BOP                   2020 $k / plant $30,501 $231,378 $18,437 $144,045
+
+Total Direct Capital Costs       2020 $k / plant $81,197 $594,785 $41,132 $313,270
+
+Stack Capital Cost               2020 $ / kW  $146                       $145   $100  $100
+
+Mechanical BOP                   2020 $ / kW  $313                       $186   $119  $64
+
+Electrical BOP                   2020 $ / kW  $277                       $210   $178  $139
+
+Total Direct Capital Costs       2020 $ / kW  $737                       $541   $397  $302
+
+a Electrolyzer systems are assumed to be manufactured and assembled at a rate of ~1 GW/year (~500 MTD/year).
+
+There are no commercial scale manufacturers of AEM Water stacks. The listed stack costs primarily show what may
+
+be possible in the future as more AEM stacks manufacturing is deployed.
+
+3.4 AEM Plant Site Preparation and Construction Overhead
+
+In addition to the direct capital cost of an AEM plant (including installed stacks and equipment), the
+construction of a greenfield electrolysis plant includes two additional cost elements: site preparation
+and construction overhead (which includes engineering and design, up-front permitting costs, and
+project contingency). The site preparation and construction overhead costs are alternatively known as
+indirect capital costs. The site preparation cost model is based on the equipment and plant site plans
+and uses labor hour, material cost, and equipment cost data from the Craftsman National Construction
+Estimator cost data books.20 The construction overhead cost model is an empirical exponential scaling
+model based on publicly available estimates for engineering and design21 (inclusive of procurement and
+construction activities), and legal and permitting expenses.22 Project contingency is budgeted as a
+constant 15% of installed capital cost regardless of project scale. Summarized plant site preparation and
+
+20 "National Construction Estimator" online cost estimating database by Craftsman Book Company. Free Software
+download available online at: http://craftsman-book.com
+21 Derived from Fraunhofer estimate of $7.5M for a 100 MW AEL facility. Marius Holst; Stefan Aschbrenner; Tom
+Smolinka; Christopher Voglstätter; Gunter Grimm. Cost Forecast for Low-Temperature Electrolysis - Technology
+Driven Bottom-Up Prognosis for PEM and Alkaline Water Electrolysis Systems. 2021.
+22 Permitting costs anchored by a $4.3M cost for a 100 MW facility derived from the most recent DOE H2A ~100
+MW SOE case. https://www.nrel.gov/hydrogen/h2a-production-models.html
+
+                                                                                                                             24
+construction overhead results are reported for AEM KOH and AEM Water in Table 11 and Table 12,
+respectively. Total site preparation and construction overhead costs (as a percentage of total direct
+capital costs) range from 40-57% for 50 MTD H2 plants and 21-25% for the 500 MTD H2 plants.
+
+In general, the construction overhead costs assumed in this cost model are best understood to be
+representative of costs after multiple repeat deployments, also known as Nth-of-a-kind (NOAK) costs.
+This is reflected in the relatively low ratio of overhead costs compared to the installed capital costs (20-
+60% of installed capital costs). As a general heuristic, based on industry commentary, we would expect a
+first-of-a-kind (FOAK) electrolyzer plant to have indirect costs that approximately match installed capital
+costs (i.e. 100% of direct capital costs). This reflects a higher FOAK cost of procurement for deployment
+of new technologies that have yet to be commoditized, higher labor costs for installation of new
+technology, additional engineering costs and procurement costs to account for unexpected design
+changes during construction, and higher project contingency due to higher uncertainty. Overhead costs
+are expected to decrease as project sizes increase, EPC companies gain experience, and hydrogen
+technologies achieve performance and cost maturity.
+
+Table 11. Site preparation and construction overhead for AEM KOH. The cost in $ / kW is normalized by
+
+                              BOL Rated plant power.
+
+Technology Basis              -                    Current Current Future Future
+
+Nominal Year                  Year                 2023  2023   2030  2030
+
+Plant Capacity                MTD                  50    500    50    500
+
+Plant Power (BOL Rated)       MW_AC                107   1,070  104   1,040
+
+Indirect Capital Costs
+
+Site Preparation              2020 $k / plant      $6,644 $14,202 $5,095 $10,864
+
+Engineering and Design        2020 $k / plant      $7,937 $14,107 $7,880 $14,007
+
+Up-Front Permitting Costs 2020 $k / plant          $4,395 $6,962 $4,369 $6,923
+
+Project Contingency           2020 $k / plant $11,459 $85,031 $6,125 $46,778
+
+Total Indirect Capital Costs 2020 $k / plant $30,435 $120,303 $23,469 $78,572
+
+Site Preparation              2020 $ / kW          $62   $13    $49   $10
+
+Engineering and Design        2020 $ / kW          $74   $13    $76   $13
+
+Up-Front Permitting Costs     2020 $ / kW          $41   $7     $42   $7
+
+Project Contingency           2020 $ / kW          $107  $79    $59   $45
+
+Total Indirect Capital Costs  2020 $ / kW          $284  $112   $225  $76
+
+Total Indirect Capital Costs  % of Direct Capital  40%   21%    57%   25%
+
+                              Cost
+
+Table 12. Site preparation and construction overhead for AEM Water. The cost in $ / kW is normalized by
+
+                              BOL Rated plant power.
+
+Technology Basis              -                    Current Current Future Future
+
+Nominal Year                  Year                 2023  2023   2030  2030
+
+Plant Capacity                MTD                  50    500    50    500
+
+Plant Power (BOL Rated)       MW_AC                110   1,097  104   1,036
+
+Indirect Capital Costs
+
+Site Preparation              2020 $k / plant      $7,429 $16,540 $5,195 $11,317
+
+Engineering and Design        2020 $k / plant      $7,992 $14,203 $7,871 $13,994
+
+Up-Front Permitting Costs 2020 $k / plant          $4,419 $7,000 $4,366 $6,917
+
+                                                                                                       25
+    Project Contingency         2020 $k / plant    $12,180  $89,218   $6,170   $46,990
+Total Indirect Capital Costs    2020 $k / plant    $32,019  $126,960  $23,601  $79,219
+
+      Site Preparation            2020 $ / kW        $67       $15      $50      $11
+  Engineering and Design          2020 $ / kW        $73       $13      $76      $14
+Up-Front Permitting Costs         2020 $ / kW        $40        $6      $42       $7
+                                  2020 $ / kW       $110       $81      $59      $45
+    Project Contingency          2020 $ / kW        $290      $115     $228      $76
+Total Indirect Capital Costs  % of Direct Capital
+                                                     39%       21%      57%      25%
+Total Indirect Capital Costs          Cost
+
+3.5 Total Installed Capital Cost
+
+The total installed capital (TIC) cost is the sum of both the direct capital costs and the indirect capital
+costs associated with building an AEM plant. This investment scales with plant size and is expected to
+decrease in the future as module sizes increase and plant efficiency improves. The total installed capital
+cost is summarized for the KOH and Pure Water Current Central and Future Central AEM technology
+cases in Figure 11. Numerical tabulation of TIC is shown in Appendix A.
+
+Figure 11. Total installed capital cost scaled by BOL Rated plant power and summarized by cost element
+    for AEM KOH and AEM Water with a plant capacity of 50 MTD and 500 MTD assuming a baseline
+                              electricity price of $0.03/kWh and 97% capacity factor.
+
+4 Operating Cost
+
+The operating costs for an AEM plant are composed of utility costs (electricity), feedstock costs (water
+and KOH solution), maintenance costs (periodic replacement of stacks, additional annual costs for all
+other maintenance activities), and operating labor costs.
+
+                                                                                                                             26
+4.1 Utility Cost
+
+The utilities for an AEM plant are primarily electricity. Previous LCOH calculations performed using the
+H2A model used default values to define these utility costs. In particular, the electricity was assumed to
+follow Annual Energy Outlook (AEO) cost projections for grid-based industrial electricity prices.23,24
+However, for this study and based on DOE guidance, a reduced price of 2020 $0.03/kWh was assumed
+to represent a nominal low-cost electricity price currently possible in specific favorable U.S. markets.
+Specifically, the baseline electricity price case ($0.03/kWh) corresponds to average wholesale electricity
+prices currently possible in U.S. markets with plentiful wind.25 Similar low-cost electricity pricing is
+possible via solar Power Purchase Agreements (PPA)26 although the extent of electricity available at
+these favorable prices is typically limited by renewable energy capacity factors. In this model, 100%
+availability was assumed to simplify the analysis. If conventional grid-based electricity was used, the cost
+of electricity would be almost two-times greater and would make the LCOH significantly higher than the
+DOE HFTO untaxed cost target of $1/kg H2. Future studies will explore the effect of availability and
+electricity price on the LCOH, along with the integration of battery intermediaries to regulate
+fluctuations in electricity supply.
+
+4.2 Feedstock Cost
+
+The feedstock for an AEM plant is assumed to be water and KOH solution.27 Water consumption is
+estimated at 3.78 gallons per kg H2 inclusive of water converted to H2 and O2 and water lost from the
+system due to purging during water purification, O2 gas venting, and as an impurity in the H2 product. No
+cooling water is assumed in the current process model. The H2A model default water price of ~2020 $
+0.00237/gal is used. Different process configurations will likely consume different amounts of water,
+thus, water consumption may differ from that reported here. However, likely alternative values for
+water consumption and price are not expected to appreciably change the LCOH. Compared to the cost
+of water, KOH material cost and solution mixing cost are not appreciable. Therefore, the cost of KOH is
+excluded from this cost model.
+
+4.3 Maintenance Cost
+
+Default H2A model values for the total unplanned replacement capital costs are used in the analysis and
+are set at 0.5% of the total direct depreciable costs per year. In addition to the annual replacement
+costs, the cost model assumes the stack must be refurbished or replaced after the specified stack
+lifetime has elapsed. Based on the DFMA® stack cost model for AEM KOH, the replacement cost per
+
+23 Annual Energy Outlook 2017, U.S. Energy Information Administration (EIA), (2017). Available at:
+https://www.eia.gov/outlooks/archive/aeo17/index.php
+24 While the DOE Annual Energy Outlook (AEO) is updated annually, the 2017 AEO estimate has been used by many
+past H2A cost analyses to provide a common utility price basis and facilitate comparisons.
+25 Seel, J.; Millstein, D.; Mills, A.; Bolinger, M.; Wiser, R. Plentiful Electricity Turns Wholesale Prices Negative.
+Advances in Applied Energy 2021, 4, 100073. https://doi.org/10.1016/j.adapen.2021.100073.
+26 M. Bolinger, J. Seel, C. Warner, and D. Robson, Utility-Scale Solar, 2022 Edition: Empirical Trends in Deployment,
+Technology, Cost, Performance, PPA Pricing, and Value in the United States, (2022), p. None, 1888246,
+ark:/13030/qt7496x1pc https://www.osti.gov/servlets/purl/1888246/.
+27 KOH solution is not technically a feedstock as it is not consumed in the H2 production process. However, it is
+classified as a feedstock for purposes of cost reporting within the H2A reporting format.
+
+                                                                                                                             27
+stack lifetime is estimated to be 60-70% of the initial stack cost.28 This represents an average
+contribution of stack replacement, refurbishment, and salvage over the plant lifetime. The stack
+replacement is assumed to occur at the stack performance EOL, which varies for each technology case.
+Maintenance cost differences between AEO KOH and AEM Water are captured implicitly by the
+0.5%/year maintenance factor being applied to each system's respective capital cost. No additional
+factors are modeled to capture any potential further maintenance cost difference between the two
+technologies.
+
+4.4 Labor Cost
+
+Labor cost includes charges for AEM plant operation, maintenance, and management. In general, the
+labor model assumes that labor increases with the number of stacks and major process equipment
+components and increases with plant size (due to increasing number of stacks). The number of AEM
+plant workers per shift is projected by an empirical labor model based on data from five major chemical
+companies.29 This empirical relationship corresponds to the staffing used within a conventional
+chemical plant as opposed to an autonomous or semi-autonomous facility. The model scales with the
+number of process steps within the AEM plant (excluding process vessels and pumps) and counts each
+stack as one process step. The associated equation is:
+
+                     = (6.29 + 0.23  ).
+
+The default H2A model assumes 2,080 hours per full-time equivalent (FTE) with 8,760 hours per year.
+While the original reference refers to only operators, this study assumes that this model is inclusive of
+operation and maintenance. Using this definition, the total number of FTE's (including operation and
+maintenance) is estimated as shown in Table 13. Note that the default H2A model assumes a 20%
+overhead cost markup on FTE labor, which is assumed to also include administrative and management
+labor.
+
+The Current AEM Water cases are estimated to have higher labor personnel compared to the Current
+AEM KOH cases due to a higher number of stacks required for the AEM Water cases. This is due to the
+lower current density operating point assumed in the AEM Water stacks. The Future cases for AEM KOH
+and AEM Water have sufficiently similar cost-optimized operating points that the estimated labor needs
+are equal for both technologies.
+
+Table 13. Number of full-time equivalents (including operation and maintenance) assumed for AEM KOH
+                                             and AEM Water electrolyzers.
+
+                  Electrolyzer Case
+
+Technology Basis  -     Current Current Future Future
+
+Nominal Year      year  2023 2023 2030 2030
+
+28 Future replacement cost may be affected by stack technology improvements during the life of the plant. Such
+technology changes are not modeled in the replacement cost estimate.
+29 Founding Principles in Chemical and Biological Engineering I.
+https://pressbooks.bccampus.ca/chbe220/chapter/cost-of-operating-labour/. Chapter 48. Cost of Operating
+Labour
+
+                                                                                                                             28
+Plant Scale   MTD           50  500            50  500
+Plant Design
+              # of Modules  4               3  2   3
+ AEM KOH
+AEM Water     Annual Full-Time Equivalents
+
+              #             26  63             20  47
+
+              #             29  73             20  47
+
+5 Levelized Cost of Hydrogen
+
+5.1 LCOH Results for Base Current and Future Cases
+
+An LCOH calculation (using the H2A model) was performed for the KOH and Pure Water Current Central
+and Future Central AEM technology cases. The H2A cases use the previously described DFMA® stack
+estimate with adjustment for OEM stack markup, and the BOP equipment lists. The operating point was
+determined from an optimization of the H2A cost as a function of BOL and EOL current density. The
+plant is assumed to operate at the H2A default capacity factor of 97% using an electricity price of
+$0.03/kWh. In other words, the plant will operate at the optimized operating point for 97% of the year.
+Additional financial parameters used within the discounted cash flow model are found in Appendix C.
+The performance and capital cost input parameters and H2A results are shown in Table 14 and Table 15
+for AEM KOH and AEM Water, respectively. All capital costs listed in these tables include markup. The
+levelized cost of hydrogen for each case is summarized in Figure 12 broken down into capital costs, fixed
+operations and maintenance (primarily labor and maintenance costs), and utilities (primarily electricity
+costs).30
+
+For the Future cases, AEM KOH has a slight advantage over AEM Water due to the increased stack
+lifetime and increased performance of AEM KOH. AEM KOH is estimated to have 0.8 kWh/kg less
+average plant electrical usage at the optimized operating point compared to AEM Water, which slightly
+lowers the net electricity cost (as part of the Utilities portion of the LCOH). In addition, AEM KOH is given
+a stack lifetime of 10 years, matching average alkaline electrolysis stack lifetime, whereas it is assumed
+that AEM Water would always have a slightly disadvantage of electrode and membrane stability and is
+given a 7 year stack lifetime. This leads to ~$0.03/kg H2 increase in stack replacement costs (as part of
+Capital Costs portion of the LCOH).
+
+30 In keeping with H2A methodology, the H2A LCOH analysis includes an 8% real (i.e. after inflation) internal rate of
+return to compensate investors for the use of their investment capital. The LCOH is reported as a production
+"cost" rather than an H2 "price" as it represents a baseline H2 value that covers all business expenses but does not
+include "extra profit" that may result from dynamic pricing in a market governed by supply and demand economic
+forces.
+
+                                                                                                                             29
+Table 14. H2A Inputs and Results for Current and Future Cases for AEM KOH Electrolysis.
+
+Technology Basis                             Current  Current  Future   Future
+                                             Central  Central  Central  Central
+
+Plant Capacity                MTD            50       500      50       500
+
+Plant Power (BOL Rated)       MW_AC          107      1,070    104      1,040
+
+Plant Electrical Usage        kWh/kg         53.8     53.8     47.2     47.2
+       (Average)
+
+Average Production Rate       kg H/day       48,500   485,000  48,500   485,000
+
+Land                          acres          7.4      11.3     3.3      7.4
+
+System Performance
+
+Current Density (BOL)         A/cm²          0.63     0.64     0.79     0.80
+
+Voltage (BOL)                 V/cell         1.75     1.76     1.68     1.69
+
+Current Density (EOL)         A/cm²          0.63     0.64     0.79     0.80
+
+Voltage (EOL)                 V/cell         2.02     2.03     1.71     1.71
+
+BOP Electrical Usage          kWh/kg         3.6      3.5      2.1      2.1
+
+Capital Cost
+
+Direct Capital Cost           2020 $k        $76,393 $566,876 $40,834 $311,855
+
+Indirect Capital Cost         2020 $k        $30,435 $120,303 $23,469   $78,572
+
+Non-Depreciable Capital Cost  2020 $k        $370     $566     $166     $372
+              (Land)
+
+Total Installed Capital Cost  2020 $k        $107,198 $687,746 $64,469 $390,799
+
+Fixed Operating Cost
+
+Total Plant Staff             H2A FTE        26       63       20       47
+
+Total Fixed Operating Cost 2020 $k / year    $7,681   $38,624  $5,010   $23,037
+
+H2A Output
+
+Capital Costs                 2020 $ / kg H  $0.58    $0.44    $0.28    $0.19
+
+Fixed O&M                     2020 $ / kg H  $0.44    $0.22    $0.29    $0.13
+
+Utilities                     2020 $ / kg H  $1.66    $1.66    $1.45    $1.45
+
+Total                         2020 $ / kg H  $2.68    $2.32    $2.03    $1.78
+
+                                                                                         30
+Table 15. H2A Inputs and Results for Current and Future Cases for AEM Water Electrolysis.
+
+Technology Basis                             Current  Current  Future   Future
+                                             Central  Central  Central  Central
+
+Plant Capacity                MTD            50       500      50       500
+
+Plant Power (BOL Rated)       MW_AC          110      1,097    104      1,036
+
+Total Electrical Usage        kWh/kg         68.8     69.1     48.0     48.0
+       (Average)
+
+Average Production Rate       kg H/day       48,500   485,000  48,500   485,000
+
+Land                          acres          8.6      13.9     3.6      8.3
+
+System Performance
+
+Current Density (BOL)         A/cm²          0.95     0.97     0.92     0.92
+
+Voltage (BOL)                 V/cell         2.01     2.01     1.71     1.71
+
+Current Density (EOL)         A/cm²          0.95     0.97     0.92     0.92
+
+Voltage (EOL)                 V/cell         2.79     2.81     1.75     1.75
+
+BOP Electrical Usage          kWh/kg         5.1      4.9      1.9      1.9
+
+Capital Cost
+
+Direct Capital Cost           2020 $k        $81,197 $594,785 $41,132 $313,270
+
+Indirect Capital Cost         2020 $k        $32,019 $126,960 $23,601   $79,219
+
+Non-Depreciable Capital Cost  2020 $k        $432     $694     $180     $413
+              (Land)
+
+Total Installed Capital Cost  2020 $k        $113,648 $722,439 $64,913 $392,902
+
+Fixed Operating Cost
+
+Total Plant Staff             H2A FTE        29       73       20       47
+
+Total Fixed Operating Cost 2020 $k / year    $8,328   $41,403  $5,028   $23,122
+
+H2A Output
+
+Capital Costs                 2020 $ / kg H  $1.08    $0.92    $0.31    $0.22
+
+Fixed O&M                     2020 $ / kg H  $0.48    $0.24    $0.29    $0.13
+
+Utilities                     2020 $ / kg H  $2.12    $2.12    $1.48    $1.48
+
+Total                         2020 $ / kg H  $3.68    $3.29    $2.08    $1.83
+
+                                                                                           31
+Figure 12. Projected levelized cost of hydrogen (LCOH) summarized by sub-component for AEM KOH and
+    AEM Water with a plant capacity of 50 MTD and 500 MTD assuming a baseline electricity price of
+                                          $0.03/kWh and 97% capacity factor.
+
+5.2 Sensitivity to Module Sizing and Plant Sizing
+
+The levelized cost of hydrogen is affected by both the plant size and the size of the independent
+modules used to build up to the plant capacity. Each case assessed in Figure 12 is associated with a plant
+size and module size as described in the System Definition (Table 2 and Table 3). As a case study to
+understand the effect of plant size and module size, the levelized cost of hydrogen was calculated for
+key increments between the baseline 50 MTD case (which assumes 4 modules for the Current
+technology basis and 2 modules for the Future technology basis) and the baseline 500 MTD case (which
+assumes 3 modules). Results are shown in Figure 13 for AEM KOH and Figure 14 for AEM Water for both
+the Current and Future technology cases. The largest cost reduction for all sequences is the transition
+between the 50 MTD, 1 module cases and the 167 MTD, 1 module cases where the module size
+increases from 50 MTD to 167 MTD. This results in economies of size benefits which reduce the capital
+cost and the associated maintenance costs. This also significantly reduces the labor cost since the same
+number of non-stack process equipment is assumed for both the 50 and 167 MTD cases. Transitioning
+from 50 MTD, 4 module cases to 50 MTD, 1 module cases also increases the module size from 12.5/25
+MTD (Current/Future) to 50 MTD and also achieves benefits from economies of size scaling. However,
+the impact is limited since the total plant capacity does not increase. Finally, transitioning from the 167
+MTD, 1 module cases to the 500 MTD, 3 module cases involves replicating the 167 MTD module 3 times
+in a single plant which offers only modest LCOH savings associated with increasing plant size, particularly
+a reduction in expected labor costs and reductions in overhead costs.
+
+                                                                                                                             32
+  Figure 13. Projected levelized cost of hydrogen (LCOH) summarized by sub-component for AEM KOH
+ transitioning from a plant capacity of 50 MTD using four 12.5 MTD modules to a plant capacity of 500
+MTD using three 167 MTD modules assuming a baseline electricity price of $0.03/kWh and 97% capacity
+
+                                                           factor.
+
+ Figure 14. Projected levelized cost of hydrogen (LCOH) summarized by sub-component for AEM Water
+ transitioning from a plant capacity of 50 MTD using four 12.5 MTD modules to a plant capacity of 500
+MTD using three 167 MTD modules assuming a baseline electricity price of $0.03/kWh and 97% capacity
+
+                                                           factor.
+                                                                                                                             33
+5.3 Sensitivity to Electricity Pricing
+
+As shown in Table 14 and Table 15 above, the largest portion of the LCOH is the electricity cost. The
+LCOH is highly sensitive to the price of electricity, regardless of the electrolyzer technology and
+timeframe. To assess the possible range of LCOH results for different low-temperature electrolysis (LTE)
+technologies, the LCOH was calculated for three different electricity prices at two different plant sizes:
+50 MTD (~100 MW plant power) and 500 MTD (~1 GW plant power). Each LCOH case used the same
+operating expenditure (OPEX) and capital expenditure (CAPEX) co-optimization as described above to
+minimize the LCOH. Figure 15 shows the range of LCOH results as compared to the base case electricity
+price of $0.03/kWh. The intermediate electricity price case ($0.03/kWh) corresponds to the base case
+and to average wholesale electricity prices currently possible in U.S. markets with plentiful wind.31 The
+high electricity price case ($0.074/kWh) corresponds to the average 2022 industrial electricity price
+estimated in the Annual Energy Outlook (AEO) 2022 published by the U.S. Energy Information
+Administration (EIA).32 The low electricity price case ($0.01/kWh) was selected to show how low the
+average electricity price must be to achieve the US DOE HFTO 2031 target goal of $1/kg H2. All cases
+assume a system capacity factor of 97%.
+
+31 Seel, J.; Millstein, D.; Mills, A.; Bolinger, M.; Wiser, R. Plentiful Electricity Turns Wholesale Prices Negative.
+Advances in Applied Energy 2021, 4, 100073. https://doi.org/10.1016/j.adapen.2021.100073.
+32 Annual Energy Outlook 2022, U.S. Energy Information Administration (EIA), (2022). Available at:
+https://www.eia.gov/outlooks/archive/aeo22/index.php
+
+                                                                                                                             34
+ Figure 15. Projected levelized cost of hydrogen (LCOH) range for AEM KOH and AEM Water with a plant
+      capacity of 50 MTD and 500 MTD at 3 different electricity prices ($0.01/kWh, $0.03/kWh, and
+                                        $0.074/kWh) and 97% capacity factor.
+
+The results in Figure 15 suggest that a favorable electricity price has a more significant impact than
+electrolysis technology or plant size, both in the Current and Future cases. Scaling up the plant size from
+50 MTD to 500 MTD leads to a significant and similar reduction in LCOH for all technologies. As the
+concept of transient electricity is explored in future studies, dynamic operating performance may lead to
+further distinguishment between LTE technologies.
+
+5.4 Sensitivity to Electricity Pricing and Capacity Factor
+
+Lower cost electricity sources such as wind and solar are associated with lower capacity factor, which
+can increase the relative cost of hydrogen produced from a renewable energy integrated electrolyzer.
+Understanding the relationship between electricity price, capacity factor, project cost, and levelized cost
+of hydrogen may provide a roadmap for unlocking lower cost hydrogen, especially in regions of high
+renewable energy penetration. To assess the possible range of LCOH results for different low-
+temperature electrolysis (LTE) technologies, the LCOH was calculated for multiple electricity prices
+($0.00/kWh to $0.10/kWh) and capacity factors (10% to 100%) for a 50 MTD plant (assuming 4 modules
+for Current technology basis and 2 modules for Future technology basis). Each LCOH case used the same
+operating expenditure (OPEX) and capital expenditure (CAPEX) co-optimization as described above to
+minimize the LCOH. Sensitivity results for LCOH are shown in Figure 16 and Figure 17 for AEM KOH and
+
+                                                                                                                             35
+AEM Water, respectively. For legibility, cases that exceed $10/kgH2 are omitted from the figures.
+Additional contour plots displaying associated total installed capital cost, plant power, scaled plant cost,
+optimized current density, and average plant electrical usage are shown in Appendix B.
+
+The LCOH results suggest that a hydrogen price target of $2/kgH2 is achievable across a wide range of
+capacity factors, as long as the net electricity price falls below $0.02/kWh. Lower capacity factors are
+associated with higher total project costs (and total electrolyzer capacity), which will be a barrier to
+feasibility in the short term. Lower hydrogen prices are only achievable with very low net electricity
+prices and high capacity factors, which will likely require a combination of high renewable energy
+penetration, dynamic electrolyzer operation, and tight integration with the grid.
+
+A  B
+
+Figure 16. Projected levelized cost of hydrogen (LCOH) range for AEM KOH with a plant capacity of 50
+   MTD for varying electricity prices and capacities for (A) Current and (B) Future technology bases.
+
+A  B
+
+Figure 17. Projected levelized cost of hydrogen (LCOH) range for AEM Water with a plant capacity of 50
+    MTD for varying electricity prices and capacities for (A) Current and (B) Future technology bases.
+
+                                                                                                                            36
+5.5 Sensitivity to Stack Costs
+
+The H2 production research community has been highly motivated to reduce stack costs in order to
+reduce the LCOH.33 In order to assess the impact of stack price on the LCOH, the LCOH was calculated for
+two alternative stack prices for two different plant sizes (50 MTD and 500 MTD). The baseline stack costs
+(100% stack price multiplier) are listed in Table 7 above. The high stack price case doubles the stack cost
+on a $/cm2 basis (200% stack price multiplier) while the low stack price case assumes half the stack cost
+on a $/cm2 basis (50% stack price multiplier). The high-price case is useful in understanding the effect of
+catalyst metals price volatility. The low-price case explores the impact of lower metal loading in addition
+to reductions in cell pricing from cost optimization efforts. Each LCOH case used the same OPEX and
+CAPEX co-optimization methodology as described above to estimate a case-specific operating point to
+minimize the LCOH. Due to this optimization, the cost impact is similar for all electrolyzer cases. Figure
+18 shows the range of LCOH results as compared to the base case stack price. The results suggest that
+reducing the stack price alone is insufficient to reach the US DOE HFTO 2031 $1/kg H2 price target.
+
+ Figure 18. Projected levelized cost of hydrogen (LCOH) range for AEM KOH and AEM Water with a plant
+   capacity of 50 MTD and 500 MTD at 2 alternative stack prices (0.5x and 2x the base case price). The
+   intermediate stack price case (100%) corresponds to the base case. The high stack price case (200%)
+
+33 Marius Holst, Stefan Aschbrenner, Tom Smolinka, Christopher Voglstätter, and Gunter Grimm, Fraunhofer
+Institute for Solar Energy Systems, (2021).
+
+                                                                                                                             37
+corresponds to double the base case cost on a $/cm2 basis. The low stack price case (50%) corresponds to
+                                       half the base case cost on a $/cm2 basis.
+
+5.6 Sensitivity to Number of Operation and Maintenance FTE's
+
+Hydrogen production via water electrolysis requires industrial-scale chemical production equipment
+along with the associated operation and maintenance labor. Grid-connected electrolyzers with constant
+hydrogen production will run in steady-state operation and may be able to operate with reduced
+oversight and maintenance. To assess the impact of labor cost on the LCOH, the LCOH was calculated for
+a reduced operation and maintenance staffing scenario for the two different plant sizes (50 MTD and
+500 MTD). The baseline labor FTE's (100% labor rate multiplier) are listed in the DOE Record. The low
+labor scenario assumed half the labor FTE's (50% labor rate multiplier). The low-price result explores the
+impact of reduced labor associated with an autonomous or semi-autonomous facility. Each LCOH case
+used the same OPEX and CAPEX co-optimization methodology as described above to estimate a case-
+specific operating point to minimize the LCOH. Figure 19 shows the range of LCOH results as compared
+to the base case labor. The results suggest that reducing the operation and maintenance FTE's will not
+significantly impact the expected LCOH, especially for larger 500 MTD plants.
+
+ Figure 19. Projected levelized cost of hydrogen (LCOH) range for AEM KOH and AEM Water with a plant
+capacity of 50 MTD and 500 MTD at 1 alternative labor (0.5x the base case labor rate). The higher labor
+
+                                      case (100%) corresponds to the base case.
+
+                                                                                                                             38
+6 Appendix A. Summary of Total Installed Capital Cost
+
+As described in Section 3.5, the total installed capital cost includes both direct costs and indirect costs
+and represents the total investment required to build an AEM plant. The total installed capital cost is
+summarized for the KOH and Pure Water Current Central and Future Central AEM technology cases in
+total cost (Table 16, Table 18) and scaled cost (Table 17 and Table 19). The percentage of total installed
+capital cost for each cost element is shown in Figure 20 for the KOH and Pure Water Current Central and
+Future Central AEM technology cases.
+
+                  Table 16. Total installed capital cost for AEM KOH.
+
+Technology Basis         -                 Current Current Future             Future
+                                                                               2030
+Nominal Year             Year              2023  2023                  2030     500
+                                                                               1,040
+Plant Capacity           MTD               50    500                   50
+                                                                             $25,720
+Plant Power (BOL Rated)  MW_AC             107   1,070                 104   $22,355
+                                                                             $23,287
+Direct Capital Costs -                                                        $3,937
+
+Mechanical BOP                                                               $96,699
+                                                                             $14,319
+Equipment                2020 $k / plant   $9,840 $43,230 $5,181             $28,442
+
+Piping                   2020 $k / plant $12,226 $59,470 $4,866              $97,097
+
+Valves                   2020 $k / plant   $9,391 $88,614 $2,348             $10,864
+                                                                             $14,007
+Instrumentation          2020 $k / plant   $1,738 $11,365 $681                $6,923
+                                                                             $46,778
+Direct Capital Costs ­
+                                                                               $372
+Electrical BOP                                                               $390,799
+
+Rectifier                2020 $k / plant $11,427 $114,810 $9,656
+
+Wiring                   2020 $k / plant   $6,758 $19,714 $3,600
+
+Infrastructure           2020 $k / plant   $5,109 $34,401 $4,593
+
+Direct Capital Costs -
+
+Stacks
+
+Stacks                   2020 $k / plant $19,904 $195,273 $9,910
+
+Indirect Capital Costs
+
+Site Preparation         2020 $k / plant   $6,644 $14,202 $5,095
+
+Engineering and Design   2020 $k / plant   $7,937 $14,107 $7,880
+
+Up-Front Permitting Costs 2020 $k / plant  $4,395 $6,962 $4,369
+
+Project Contingency      2020 $k / plant $11,459 $85,031 $6,125
+
+Land                     2020 $k / plant   $370  $566                  $166
+
+Total Installed Capital  2020 $k / plant $107,198 $687,746 $64,469
+          Costs
+
+                                                                                       39
+Table 17. Total installed capital cost scaled by BOL rated plant power for AEM KOH.
+
+Technology Basis           -            Current Current Future Future
+
+Nominal Year               Year         2023    2023   2030  2030
+
+Plant Capacity             MTD          50      500    50    500
+
+Plant Power (BOL Rated)    MW_AC        110     1,097  104   1,036
+
+Direct Capital Costs -
+
+Mechanical BOP
+
+Equipment                  2020 $ / kW  $92     $40    $50   $25
+
+Piping                     2020 $ / kW  $114    $56    $47   $21
+
+Valves                     2020 $ / kW  $88     $83    $23   $22
+
+Instrumentation            2020 $ / kW  $16     $11    $7    $4
+
+Direct Capital Costs ­
+
+Electrical BOP
+
+Rectifier                  2020 $ / kW  $107    $107   $93   $93
+
+Wiring                     2020 $ / kW  $63     $18    $35   $14
+
+Infrastructure             2020 $ / kW  $48     $32    $44   $27
+
+Direct Capital Costs -
+
+Stacks
+
+Stacks                     2020 $ / kW  $186    $182   $95   $93
+
+Indirect Capital Costs
+
+Site Preparation           2020 $ / kW  $62     $13    $49   $10
+
+Engineering and Design     2020 $ / kW  $74     $13    $76   $13
+
+Up-Front Permitting Costs  2020 $ / kW  $41     $7     $42   $7
+
+Project Contingency        2020 $ / kW  $107    $79    $59   $45
+
+Land                       2020 $ / kW  $3      $1     $2    $0
+
+Total Installed Capital    2020 $ / kW  $1,000  $643   $619  $376
+          Costs
+
+                                                                                     40
+                Table 18. Total installed capital cost for AEM Water.
+
+Technology Basis         -                 Current Current Future             Future
+                                                                               2030
+Nominal Year             Year              2023  2023                  2030     500
+                                                                               1036
+Plant Capacity           MTD               50    500                   50
+                                                                             $29,899
+Plant Power (BOL Rated)  MW_AC             110   1097                  104   $16,521
+                                                                             $14,786
+Direct Capital Costs -                                                        $4,776
+
+Mechanical BOP                                                               $99,285
+                                                                             $15,683
+Equipment                2020 $k / plant $12,297 $54,210 $5,893              $29,076
+
+Piping                   2020 $k / plant $11,496 $54,786 $4,026              $103,244
+
+Valves                   2020 $k / plant   $8,358 $79,772 $1,587             $11,317
+                                                                             $13,994
+Instrumentation          2020 $k / plant   $2,400 $15,487 $844                $6,917
+                                                                             $46,990
+Direct Capital Costs ­
+                                                                               $413
+Electrical BOP                                                               $392,902
+
+Rectifier                2020 $k / plant $15,802 $159,191 $9,929
+
+Wiring                   2020 $k / plant   $8,405 $25,620 $3,845
+
+Infrastructure           2020 $k / plant   $6,295 $46,567 $4,664
+
+Direct Capital Costs -
+
+Stacks
+
+Stacks                   2020 $k / plant $16,145 $159,153 $10,346
+
+Indirect Capital Costs
+
+Site Preparation         2020 $k / plant   $7,429 $16,540 $5,195
+
+Engineering and Design   2020 $k / plant   $7,992 $14,203 $7,871
+
+Up-Front Permitting Costs 2020 $k / plant  $4,419 $7,000 $4,366
+
+Project Contingency      2020 $k / plant $12,180 $89,218 $6,170
+
+Land                     2020 $k / plant   $432  $694                  $180
+
+Total Installed Capital  2020 $k / plant $113,648 $722,439 $64,913
+          Costs
+
+                                                                                       41
+Table 19. Total installed capital cost scaled by BOL rated plant power for AEM Water.
+
+Technology Basis           -            Current Current Future Future
+
+Nominal Year               Year         2023    2023   2030  2030
+
+Plant Capacity             MTD          50      500    50    500
+
+Plant Power (BOL Rated)    MW_AC        110     1,097  104   1,036
+
+Direct Capital Costs -
+
+Mechanical BOP
+
+Equipment                  2020 $ / kW  $112    $49    $57   $29
+
+Piping                     2020 $ / kW  $104    $50    $39   $16
+
+Valves                     2020 $ / kW  $76     $73    $15   $14
+
+Instrumentation            2020 $ / kW  $22     $14    $8    $5
+
+Direct Capital Costs ­
+
+Electrical BOP
+
+Rectifier                  2020 $ / kW  $143    $145   $96   $96
+
+Wiring                     2020 $ / kW  $76     $23    $37   $15
+
+Infrastructure             2020 $ / kW  $57     $42    $45   $28
+
+Direct Capital Costs -
+
+Stacks
+
+Stacks                     2020 $ / kW  $146    $145   $100  $100
+
+Indirect Capital Costs
+
+Site Preparation           2020 $ / kW  $67     $15    $50   $11
+
+Engineering and Design     2020 $ / kW  $73     $13    $76   $14
+
+Up-Front Permitting Costs  2020 $ / kW  $40     $6     $42   $7
+
+Project Contingency        2020 $ / kW  $110    $81    $59   $45
+
+Land                       2020 $ / kW  $4      $1     $2    $0
+
+Total Installed Capital    2020 $ / kW  $1,031  $657   $626  $379
+          Costs
+
+                                                                                       42
+Figure 20. Percentage of total installed capital cost for each cost element for AEM KOH and AEM Water
+ with a plant capacity of 50 MTD and 500 MTD assuming a baseline electricity price of $0.03/kWh and
+
+                                                  97% capacity factor.
+
+                                                                                                                            43
+7 Appendix B. Sensitivity to Electricity Pricing and Capacity Factor:
+    Additional Results
+
+As described in Section 5.4, the levelized cost of hydrogen was calculated for multiple electricity prices
+($0.00/kWh to $0.10/kWh) and capacity factors (10% to 100%) for a 50 MTD plant (assuming 4 modules
+for Current technology basis and 2 modules for Future technology basis). Additional results for each case
+are shown below.
+
+7.1 Total Installed Capital Cost
+
+Total installed capital cost for each case is shown in Figure 21 and Figure 22 for AEM KOH and AEM
+Water, respectively. Total installed capital cost is a complex mix of competing trends due to the effects
+of cost-optimization and normalization to 50 MTD. Since all of the cases are required to produce an
+average of 50 metric tonnes per day of hydrogen, a lower capacity factor electricity source would
+require a larger plant and subsequently incurs a higher total installed capital cost. Additionally, the
+higher installed capital cost results in the cost-optimized operating point to shift to a higher current
+density, which works to reduce stack count (or at least diminish the extent of overall stack count
+increase). Likewise, increasing the average electricity cost causes a shift in the cost-optimized operating
+point to a lower current density and, in turn, a corresponding increase in stacks and higher total
+installed capital cost. These trends compete against each other to create the tradeoff graphs shown
+below.
+
+A  B
+
+Figure 21. Total installed capital cost for AEM KOH with a plant capacity of 50 MTD for varying electricity
+                     prices and capacities for (A) Current and (B) Future technology bases.
+
+                                                                                                                             44
+A  B
+
+   Figure 22. Total installed capital cost for AEM Water with a plant capacity of 50 MTD for varying
+             electricity prices and capacities for (A) Current and (B) Future technology bases.
+
+                                                                                                      45
+7.2 Plant Power
+
+Plant power (BOL Rated) for each case is shown in Figure 23 and Figure 24 for AEM KOH and AEM
+Water, respectively. The graphs indicate how BOL rated plant power increases with decreasing capacity
+factor for a constant 50 MTD production rate. Likewise, the graphs indicate there is essentially no
+correlation between average electricity cost and BOL rated plant power.
+
+A  B
+
+Figure 23. Plant power (BOL Rated) for AEM KOH with a plant capacity of 50 MTD for varying electricity
+                    prices and capacities for (A) Current and (B) Future technology bases.
+
+A  B
+
+Figure 24. Plant power (BOL Rated) for AEM Water with a plant capacity of 50 MTD for varying electricity
+                     prices and capacities for (A) Current and (B) Future technology bases.
+
+                                                                                                                             46
+7.3 Scaled Plant Cost
+
+The scaled plant cost was calculated by dividing the total installed capital cost by the plant power (BOL
+Rated). Scaled plant cost for each case is shown in Figure 25 and Figure 26 for AEM KOH and AEM
+Water, respectively. Irregularities in the contours primarily stem from limitations of the plant cost model
+to smoothly transition between plant designs caused by different optimized operating points.
+
+A  B
+
+Figure 25. Scaled plant cost (2020 $ / kW, BOL Rated) for AEM KOH with a plant capacity of 50 MTD for
+         varying electricity prices and capacities for (A) Current and (B) Future technology bases.
+
+A  B
+
+Figure 26. Scaled plant cost (2020 $ / kW, BOL Rated) for AEM Water with a plant capacity of 50 MTD for
+          varying electricity prices and capacities for (A) Current and (B) Future technology bases.
+
+                                                                                                                             47
+7.4 Current Density
+
+The current density operating point (BOL Optimized) for each case is shown in Figure 27 and Figure 28
+for AEM KOH and AEM Water, respectively. For legibility, cases that exceed 3 A/cm2 are omitted from
+the figures. The graphs support the observation that both low electricity cost and low capacity factor
+drive the cost-optimized solutions to higher current density.
+
+A  B
+
+Figure 27. Current density operating point (BOL Optimized) for AEM KOH with a plant capacity of 50 MTD
+        for varying electricity prices and capacities for (A) Current and (B) Future technology bases.
+
+A  B
+
+Figure 28. Current density operating point (BOL Optimized) for AEM Water with a plant capacity of 50
+   MTD for varying electricity prices and capacities for (A) Current and (B) Future technology bases.
+
+                                                                                                                           48
+7.5 Average Plant Electrical Usage
+
+The average plant electrical usage for each case is shown in Figure 29 and Figure 30 for AEM KOH and
+AEM Water, respectively. For legibility, cases that exceed 107.5 kWh/kg H2 are omitted from the figures.
+The graphs support the observation that both low electricity cost and low capacity factor drive the cost-
+optimized solutions to higher average plant electrical usage.
+
+A  B
+
+   Figure 29. Average plant electrical usage for AEM KOH with a plant capacity of 50 MTD for varying
+              electricity prices and capacities for (A) Current and (B) Future technology bases.
+
+A  B
+
+Figure 30. Average plant electrical usage for AEM Water with a plant capacity of 50 MTD for varying
+            electricity prices and capacities for (A) Current and (B) Future technology bases.
+
+                                                                                                                          49
+8 Appendix C. H2A Model Financial Parameters
+
+The levelized cost of hydrogen analysis primarily uses the default financial parameters for the H2A
+model. In general, the financial parameters are based on near-term deployment of an electrolyzer plant.
+Table 20 shows the key assumptions used within the discounted cash flow model, which feeds into the
+levelized cost of hydrogen calculation.
+
+            Table 20. H2A Financial Parameters
+
+Parameter                                      Unit of Measure                Value
+                                                                              2020
+Reference year                                 year                           2023
+                                                                              2020
+Assumed start-up year                          year
+                                                                                1
+Basis year                                     year                             1
+                                                                                40
+Length of Construction Period                  years                            20
+                                                                             MACRS
+Start-up Time                                  years                           40%
+                                                                             3.70%
+Plant life (years)                             years                     Constant debt
+                                                                               75%
+Depreciation Schedule Length                   years                           50%
+                                                                               75%
+Depreciation Type                              -
+                                                                               10%
+% Equity Financing                             %
+                                                                               10%
+Interest rate on debt, if applicable           %
+                                                                              1.9%
+Debt period                                    -                              8.0%
+                                                                              6.0%
+% of Fixed Operating Costs During Start-up     %                             21.0%
+                                                                             25.74%
+% of Revenues During Start-up                  %
+                                                                               15%
+% of Variable Operating Costs During Start-up  %
+
+Decommissioning costs                          % of depreciable capital
+                                                      investment
+
+Salvage value                                  % of total capital
+                                                  investment
+
+Inflation rate                                 %
+
+After-tax Real IRR                             %
+
+State Taxes                                    %
+
+Federal Taxes                                  %
+
+Total Tax Rate                                 %
+
+Working Capital                                % of yearly change in
+                                                  operating costs
+
+                                                                                        50
+

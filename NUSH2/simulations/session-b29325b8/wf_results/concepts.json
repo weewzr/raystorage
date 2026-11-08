@@ -1,0 +1,56 @@
+{
+ "summary": "I wrote a read-only concept memo comparing OUTRAM PARK with NUS-H2: SP/design/outram_concepts.md (C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/design/outram_concepts.md). It has 36 numbered items. Each gives the engine/ module it bears on, the concept in my own words, the primary source where OUTRAM names one, the OUTRAM file:line (citation only, main 9af23fdb1), what NUS-H2 has now (from reading, nothing run), and an acceptance test with a tolerance or pass rule. A section-0 table records the maturity and human sign-off each OUTRAM crate claims for itself, without overstating it. The memo contains no OUTRAM code, no transcribed pseudocode and no identifiers beyond citation paths. On the user's question: citing concepts and primary-source equations is fine. Copying a function's control flow step by step is avoided because it can carry the code's expression, so the memo uses tests and equations instead. The main new finding (my own calculation, not an engine run): the absorber's SRK fugacity coefficient treats every non-CO2 mole as water vapour. At 26.8 bar that gives a liquid-like root and phi_CO2 of about 80 to 560, so plant-absorber p* may be divided by that factor. I changed nothing in REPO, built or ran nothing in OUTRAM, and made no commits.",
+ "done": [
+  "Read 10_build_order.md, USER_ANSWERS.md and findings/outram.md as instructed",
+  "Read OUTRAM docs/human-corrections-to-ai-work.md in full and turned its failure-mode classes into audit questions (items 1 to 11)",
+  "Read the OUTRAM V&V documents: root VERIFICATION_AND_VALIDATION.md, the DWSIM reactor and sour-water code-to-code records, the tampines and TUAS V&V folders, the CLAUDE.md process, calibration and V&V-record rules",
+  "Read DOVER CLAUDE.md, README, smr.rs and species.rs doc comments and the test doc comments, covering Kp against Kc, standard state, two gas constants, stiffness and iteration budgets",
+  "Read the DWSIM-port equilibrium, Gibbs and reaction-basis notes: missing /P0 (+129%), 1 atm vs 1 bar (+1.3 to +2.7% methane), constant Q (+9.6%), ideal phi (+0.32%/+1.1%)",
+  "Read the helium transport sources (TN-1334, Hands and Arp) and how OUTRAM tests them: 300/400 K only, 2%/5%",
+  "Read IF97 test practice in tampines-steam-tables: verification vectors at 1e-9/1e-8, per-code-path bar, 273.15 K boundary defect test, maximum-principle test, golden-move log",
+  "Read the TUAS layered heat-exchanger validation against Du et al. 2018 and the CIET benchmark-tolerance practice",
+  "Read the units, error-handling, range-guard, maturity and sign-off bookkeeping rules",
+  "Mapped each concept to NUS-H2 modules by reading the engine module headers, test names and the eq_register.csv names",
+  "Wrote SP/design/outram_concepts.md with 36 items, a crate status table, a list of primary sources OUTRAM names, and a priority order for the agent that applies it",
+  "Saved my SRK check script to SP/findings/scripts/srk_phi_absorber_check.py"
+ ],
+ "failed_or_skipped": [
+  "No engine test was run. Every NUS-H2 status statement in the memo comes from reading code and test names",
+  "The SRK finding (item 3) comes from my own re-evaluation of the engine's stated equations in Python. It still needs an engine test to confirm",
+  "The eq_register cross-check is an approximate name grep on the tree at f796752. HEAD moved to 950bcdf during the review (another agent's work, including an untracked engine/units/src/circulator.rs), so the counts need a rerun",
+  "OUTRAM develop (4,257 commits ahead) was not reviewed. Only main 9af23fdb1 was read",
+  "The IAPWS-IF97 release and NIST TN-1334 are not in the local inventory, so the backward-equation tolerance and the helium cross-check values were left for the applier to read from the source pages",
+  "CoolProp Python is not installed, so no helium reference values were generated"
+ ],
+ "checks_run": [
+  "git -C OUTRAM clone: git log -1 gave 9af23fdb191911c12cc307519e2400faec188b66, 2026-10-21",
+  "grep of maturity and Bookkeeping status in 7 OUTRAM crate manifests and READMEs: dover 1, both axes unchecked; dwsim-libs 2, both unchecked; coolprop 2, both unchecked; tampines-steam-tables 2 with IF97 modules at 3, both unchecked; tuas 4, V&V axis cleared 2026-07-21, UI axis unchecked; tampines 1, both unchecked; petir 2, both unchecked",
+  "python -I srk_phi_absorber_check.py (my own SRK re-evaluation): at 313.15 K and 2.68e6 Pa with the CO2+H2O binary, one real root Z=0.0248 to 0.0271 and phi_CO2 = 562.6 (y=1e-4), 484.9 (y=0.01), 80.65 (y=0.15). With H2 as partner, Z about 1.01 and phi 0.958 to 0.983. At 1e5 Pa, phi about 0.998 for both",
+  "Python name grep of math/eq_register.csv engine_fn against engine/ sources: 77 found, 222 not resolved, 7 skipped (theory/none)",
+  "grep of 'eq: X.n' doc lines in engine/: 5 files, 58 distinct cards",
+  "Python grep of eq_x_n test functions: 25 of 299 cards have a matching test name; 5 of 25 use zero-padded names",
+  "grep of gas constants in engine/: props::units::R_GAS exact (N_A k_B), mea::pstar::R_GAS 8.314462, units::xf R_KJ_MOL_K 8.314e-3",
+  "grep of library src: 18 '.max(0.0)' and 18 '.clamp(' (in-file test modules included)",
+  "python -I -c 'import CoolProp' gave ModuleNotFoundError",
+  "git status in REPO: modifications present belong to other agents (wasm, frontend, untracked circulator.rs). I made no changes",
+  "Non-ASCII character scan of the memo: none found, so no em or en dashes"
+ ],
+ "results_of_note": [
+  "SRK at absorber pressure [C, PLAUSIBLE pending an engine test]: mea::pstar::srk_phi_co2 is called from units/src/absorber.rs:517 via solvent.rs pstar_gas_pa at P_ABS_PA = 26.8e5. The binary treats the H2-rich gas as water vapour and gives phi_CO2 about 80 to 560 against 0.96 to 0.98 with H2. If confirmed, plant-absorber p* is divided by that factor, so ABS-CASEB rows and drift-table entries would move. S12 anchoring is unaffected",
+  "DOVER equilibrium [from findings/outram.md 6.1, C]: constant dH/dS puts K1 at 1123.15 K low by a factor of 11.9 against Hoseinzade and Adams eq 51-52, giving X_CH4 0.529 against 0.842. The memo turns this into a ratio guard above 5 for our NIST route",
+  "Kp/Kc factor (P0/RT)^2 at 1123.15 K and 1 bar is about 115 (mol/m3)^2. Our rate laws are on partial pressures in bar, so the identity matters only on a mixed path (item 18)",
+  "OUTRAM code-to-code costs of simplifications [D]: constant Q +9.6% X_CH4 (CSTR) and +6.0% CO (PFR); ideal phi +0.32% at 10 bar and +1.1% at 30 bar SMR extent at 900 K; fugacity basis without /P0 +129% before fix; P0 1 atm vs 1 bar +1.3 to +2.7% methane; kij=0 K_CO2 +531%; PFR segment truncation +1.9%",
+  "Helium: OUTRAM tests TN-1334 viscosity and Hands-Arp conductivity only at 300 and 400 K (2% and 5%). Our Petersen module is tested only against Petersen's own table (7e-4). Proposed independent rows at 700 to 1200 K with tolerance 2 sigma by Petersen (3.5% viscosity, 8.2% conductivity at 1173 K). Petersen cp 5195 is within 0.04% of 5/2 R/M = 5193.2 J/kg/K",
+  "Gas constant: R 8.314 vs exact differs by 5.6e-5 relative, about 2e-3 in k at E/RT near 36 (240 kJ/mol, 800 K)",
+  "Traceability: 222 of 299 register engine_fn names do not resolve by grep (for example B.1 props::helium::rho vs code density_kg_m3; G.21 props::mixture::srk_phi vs mea::pstar::srk_phi_co2; modules units::ihx, units::htgr, plant::utility, plant::heatrec, numerics::ode absent at f796752)",
+  "Already present in NUS-H2 and credited in the memo: if97_release_vectors (42 values at 1e-8), rates_vanish_at_equilibrium, smr_tube_tends_to_equilibrium, eq_a_6 reaction rank, latent_heat_298k, h2o_branch_continuity_500k, k_nist_vs_janaf_log_kf, tube_ht reruns of JAERI printed sheets, closure() per unit, EngineError with no panics on user input"
+ ],
+ "blocking_findings": [],
+ "needs_user": [
+  "Decide whether the SRK finding in item 3 is checked and fixed before the final rebuild. It would move ABS-CASEB rows and drift-table values; the S12 headline anchoring stays",
+  "If an independent helium transport check at HTGR temperatures is wanted (item 27), obtain NIST TN-1334 (Arp, McCarty and Friend 1998) or allow CoolProp Python (MIT) to be installed as reference software. Neither is local now",
+  "The IAPWS-IF97 release R7-97(2012) is not in the local library; it is needed only if a backward (p,h) call is added (item 29c)",
+  "Answer to the user's question: citing concepts and primary-source equations is fine and is credited in docs. Step-by-step transcription of OUTRAM functions is avoided because it can carry AGPL-covered expression"
+ ],
+ "commits": []
+}

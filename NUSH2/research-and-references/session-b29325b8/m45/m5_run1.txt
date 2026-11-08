@@ -1,0 +1,108 @@
+warning: constant `P_OUT_A2_PA` is never used
+  --> engine\units\src\jaeri.rs:71:7
+   |
+71 | const P_OUT_A2_PA: f64 = 4.04e6 + 101_325.0;
+   |       ^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: `nush2_units` (lib) generated 1 warning
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.04s
+     Running tests\m5_acceptance.rs (C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/cargo/m4m5\debug\deps\m5_acceptance-a63f2cf7c67e2364.exe)
+
+running 10 tests
+test exit_approach_on_a2_is_reported ... A-2 tip 750.9 C: 0.02 points below equilibrium
+ok
+test jaeri_a2_fit ... A-2: X 0.5110 against 0.5551, gap -0.0441; He out 597.9 C; return heat 18.1 kW against 25.9 kW; closure 8.9e-11
+  z m | process model/test | helium model/test | return model/test
+  -0.00 | 478 / 478 | 598 / 615 | 644 / 606
+  1.87 | 567 / 591 | 672 / 662 | 697 / 700
+  3.37 | 640 / 656 | 735 / 738 | 726 / 743
+  4.87 | 699 / 728 | 796 / 817 | 744 / 760
+  6.37 | 751 / 755 | 857 / 857 | 751 / 756
+  dry H2 64.97 against 66.6
+  dry Co 6.19 against 6.74
+  dry Co2 11.60 against 11.48
+  dry Ch4 17.02 against 14.6
+
+thread 'jaeri_a2_fit' (28528) panicked at engine\units\tests\m5_acceptance.rs:58:5:
+A-2 misses the conversion limit
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+FAILED
+test jaeri_a3_holdout ... A-3: X 0.5157 against 0.5670, gap -0.0513; He out 610.1 C; return heat 17.6 kW against 23.4 kW; closure 1.0e-10
+  z m | process model/test | helium model/test | return model/test
+  -0.00 | 492 / 492 | 610 / 625 | 650 / 621
+  1.87 | 577 / 598 | 683 / 676 | 703 / 709
+  3.37 | 649 / 669 | 742 / 745 | 732 / 745
+  4.87 | 706 / 737 | 801 / 817 | 750 / 765
+  6.37 | 757 / 760 | 860 / 860 | 757 / 761
+  dry H2 65.22 against 66.6
+  dry Co 6.53 against 7.31
+  dry Co2 11.41 against 11.34
+  dry Ch4 16.84 against 14.24
+
+thread 'jaeri_a3_holdout' (43932) panicked at engine\units\tests\m5_acceptance.rs:58:5:
+A-3 misses the conversion limit
+FAILED
+test jaeri_a4_holdout ... A-4: X 0.5088 against 0.5251, gap -0.0162; He out 617.2 C; return heat 17.1 kW against 18.2 kW; closure 8.5e-11
+  z m | process model/test | helium model/test | return model/test
+  -0.00 | 504 / 504 | 617 / 639 | 648 / 633
+  1.87 | 575 / 613 | 686 / 676 | 698 / 688
+  3.37 | 645 / 636 | 744 / 722 | 727 / 716
+  4.87 | 701 / 715 | 800 / 812 | 744 / 749
+  6.37 | 751 / 740 | 858 / 858 | 751 / 741
+  dry H2 65.01 against 65.8
+  dry Co 6.19 against 6.1
+  dry Co2 11.61 against 11.7
+  dry Ch4 17.18 against 16.1
+ok
+test jaeri_a5_holdout ... A-5: X 0.5055 against 0.5476, gap -0.0421; He out 607.7 C; return heat 16.8 kW against NaN kW; closure 8.3e-11
+  z m | process model/test | helium model/test | return model/test
+  -0.00 | 520 / 520 | 608 / NaN | 650 / NaN
+  1.87 | 577 / NaN | 675 / NaN | 699 / NaN
+  3.37 | 646 / NaN | 735 / NaN | 727 / NaN
+  4.87 | 702 / NaN | 793 / NaN | 745 / NaN
+  6.37 | 752 / NaN | 851 / 851 | 752 / NaN
+  dry H2 64.81 against 65.5
+  dry Co 6.27 against 6.89
+  dry Co2 11.50 against 11.46
+  dry Ch4 17.38 against 15.16
+
+thread 'jaeri_a5_holdout' (29536) panicked at engine\units\tests\m5_acceptance.rs:58:5:
+A-5 misses the conversion limit
+FAILED
+test jaeri_axial_shares_are_reported ... section 1: model 0.377, JAERI 0.238
+section 2: model 0.202, JAERI 0.334
+section 3: model 0.205, JAERI 0.299
+section 4: model 0.216, JAERI 0.136
+ok
+test jaeri_measured_u_sensitivity_is_reported ... A-2 measured U: X 0.5194 against 0.5551
+A-3 measured U: X 0.5309 against 0.5670
+A-4 measured U: X 0.5180 against 0.5251
+ok
+test smr_tube_tends_to_equilibrium ... long tube X 0.75196 against equilibrium 0.75196 at 1100.00 K
+ok
+test xf_guards ... ok
+test xf_table5_vs_table6 ... k1: ratio 0.9872
+k2: ratio 0.9971
+k3: ratio 0.9856
+KCO: ratio 1.0028
+KH2: ratio 1.0042
+KCH4: ratio 1.0014
+KH2O: ratio 0.9974
+ok
+
+failures:
+
+failures:
+    jaeri_a2_fit
+    jaeri_a3_holdout
+    jaeri_a5_holdout
+
+test result: FAILED. 7 passed; 3 failed; 0 ignored; 0 measured; 2 filtered out; finished in 20.39s
+
+error: test failed, to rerun pass `-p nush2_units --test m5_acceptance`
+
+real	0m20.823s
+user	0m0.015s
+sys	0m0.015s

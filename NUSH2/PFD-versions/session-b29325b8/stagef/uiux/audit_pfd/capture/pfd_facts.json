@@ -1,0 +1,583 @@
+{
+ "streams": [
+  {
+   "id": "P1",
+   "cls": "st st-ph",
+   "paths": [
+    {
+     "d": "M291,640 L330,640 L330,532 L370,532",
+     "len": 187
+    }
+   ],
+   "arrows": [
+    "#pa-u@330,589"
+   ],
+   "label": "Stream P1, Primary helium, reactor outlet to the IHX, from HTGR and helium loop to Intermediate heat exchanger"
+  },
+  {
+   "id": "P4",
+   "cls": "st st-ph",
+   "paths": [
+    {
+     "d": "M330,532 L330,364 L345,364 M445,364 L583,364",
+     "len": 321
+    }
+   ],
+   "arrows": [
+    "#pa-u@330,450",
+    "#pa-r@515,364"
+   ],
+   "label": "Stream P4, Primary helium branch through the power block, from HTGR and helium loop to Power and steam block"
+  },
+  {
+   "id": "P2",
+   "cls": "st st-ph",
+   "paths": [
+    {
+     "d": "M530,532 L583,532 L583,232 L476,232",
+     "len": 460
+    }
+   ],
+   "arrows": [
+    "#pa-u@583,424",
+    "#pa-l@529,232"
+   ],
+   "label": "Stream P2, Primary helium, IHX to the circulator, from Intermediate heat exchanger to Helium circulators"
+  },
+  {
+   "id": "P3",
+   "cls": "st st-ph",
+   "paths": [
+    {
+     "d": "M421,196 L421,175 L157,175 L157,264",
+     "len": 374
+    }
+   ],
+   "arrows": [
+    "#pa-l@289,175",
+    "#pa-d@157,223"
+   ],
+   "label": "Stream P3, Primary helium, circulator to the reactor, from Helium circulators to HTGR and helium loop"
+  },
+  {
+   "id": "H1",
+   "cls": "st st-sh",
+   "paths": [
+    {
+     "d": "M395,512 L395,470 L650,470",
+     "len": 297
+    }
+   ],
+   "arrows": [
+    "#pa-r@481,470"
+   ],
+   "label": "Stream H1, Secondary helium supply to the reformer, from Intermediate heat exchanger to Helium-heated steam methane reformer"
+  },
+  {
+   "id": "H2",
+   "cls": "st st-sh",
+   "paths": [
+    {
+     "d": "M650,760 L505,760 L505,552",
+     "len": 353
+    }
+   ],
+   "arrows": [
+    "#pa-l@584,760",
+    "#pa-u@505,664"
+   ],
+   "label": "Stream H2, Secondary helium return to the IHX, from Helium-heated steam methane reformer to Intermediate heat exchanger"
+  },
+  {
+   "id": "S01",
+   "cls": "st st-ng",
+   "paths": [
+    {
+     "d": "M700,205 L700,330",
+     "len": 125
+    }
+   ],
+   "arrows": [
+    "#pa-d@700,269"
+   ],
+   "label": "Stream S01, Fresh natural gas, from the battery limit to Helium-heated steam methane reformer"
+  },
+  {
+   "id": "S02",
+   "cls": "st st-stm",
+   "paths": [
+    {
+     "d": "M790,205 L790,330",
+     "len": 125
+    }
+   ],
+   "arrows": [
+    "#pa-d@790,269"
+   ],
+   "label": "Stream S02, Process steam, from the steam system to Helium-heated steam methane reformer"
+  },
+  {
+   "id": "S03",
+   "cls": "st st-rej",
+   "paths": [
+    {
+     "d": "M1030,153 L1030,235 L700,235",
+     "len": 412
+    }
+   ],
+   "arrows": [
+    "#pa-d@1030,196",
+    "#pa-l@925,235",
+    "#pa-l@742,235"
+   ],
+   "label": "Stream S03, Recycled methane-rich gas to the reformer feed, from Cryogenic unit to Helium-heated steam methane reformer"
+  },
+  {
+   "id": "S05",
+   "cls": "st st-syn",
+   "paths": [
+    {
+     "d": "M840,815 L900,815 L900,400 L990,400 L990,422",
+     "len": 587
+    }
+   ],
+   "arrows": [
+    "#pa-u@900,759",
+    "#pa-r@946,400"
+   ],
+   "label": "Stream S05, Raw syngas, reformer outlet, from Helium-heated steam methane reformer to Water gas shift"
+  },
+  {
+   "id": "S09",
+   "cls": "st st-syn",
+   "paths": [
+    {
+     "d": "M1035,730 L1060,730",
+     "len": 25
+    }
+   ],
+   "arrows": [],
+   "label": "Stream S09, Shift outlet to the heat recovery chain, from Water gas shift to Syngas cooler and heat recovery"
+  },
+  {
+   "id": "S09B",
+   "cls": "st st-syn",
+   "paths": [
+    {
+     "d": "M1160,730 L1195,730",
+     "len": 35
+    }
+   ],
+   "arrows": [
+    "#pa-r@1180,730"
+   ],
+   "label": "Stream S09B, Cooled syngas to the knock-out drum, from Syngas cooler and heat recovery to Condensate separator"
+  },
+  {
+   "id": "S11",
+   "cls": "st st-syn",
+   "paths": [
+    {
+     "d": "M1245,660 L1272,660 L1272,805 L1300,805",
+     "len": 200
+    }
+   ],
+   "arrows": [
+    "#pa-d@1272,741"
+   ],
+   "label": "Stream S11, Absorber feed, from Condensate separator to MEA absorber"
+  },
+  {
+   "id": "S10",
+   "cls": "st st-stm",
+   "paths": [
+    {
+     "d": "M1220,820 L1220,862",
+     "len": 42
+    }
+   ],
+   "arrows": [
+    "path:M1220,883 L1208,859 L1232,859 Z"
+   ],
+   "label": "Stream S10, Process condensate, from Condensate separator to water treatment"
+  },
+  {
+   "id": "S17",
+   "cls": "st st-mea",
+   "paths": [
+    {
+     "d": "M1345,850 L1345,872 L1490,872 L1490,656",
+     "len": 383
+    }
+   ],
+   "arrows": [
+    "#pa-r@1421,872",
+    "#pa-u@1490,774"
+   ],
+   "label": "Stream S17, Rich solvent, absorber to the stripper, from MEA absorber to Rich and lean amine exchanger"
+  },
+  {
+   "id": "L3",
+   "cls": "st st-mea",
+   "paths": [
+    {
+     "d": "M1570,624 L1570,480 L1640,480",
+     "len": 214
+    }
+   ],
+   "arrows": [
+    "#pa-u@1570,559",
+    "#pa-r@1608,480"
+   ],
+   "label": "Stream L3, Rich amine, exchanger to the stripper, from Rich and lean amine exchanger to MEA stripper"
+  },
+  {
+   "id": "L4",
+   "cls": "st st-mea",
+   "paths": [
+    {
+     "d": "M1640,790 L1615,790 L1615,640 L1590,640",
+     "len": 200
+    }
+   ],
+   "arrows": [
+    "#pa-u@1615,724"
+   ],
+   "label": "Stream L4, Lean amine, stripper to the exchanger, from MEA stripper to Rich and lean amine exchanger"
+  },
+  {
+   "id": "S18",
+   "cls": "st st-mea",
+   "paths": [
+    {
+     "d": "M1470,640 L1435,640 L1435,400 L1390,400",
+     "len": 320
+    }
+   ],
+   "arrows": [
+    "#pa-u@1435,617",
+    "#pa-u@1435,429"
+   ],
+   "label": "Stream S18, Lean solvent to the absorber through the cooler and pump, from Rich and lean amine exchanger to MEA absorber"
+  },
+  {
+   "id": "L5",
+   "cls": "st st-mea",
+   "paths": [
+    {
+     "d": "M1685,820 L1685,860",
+     "len": 40
+    }
+   ],
+   "arrows": [
+    "#pa-d@1685,842"
+   ],
+   "label": "Stream L5, Stripper bottoms to the reboiler, from MEA stripper to Reboiler"
+  },
+  {
+   "id": "L6",
+   "cls": "st st-mea",
+   "paths": [
+    {
+     "d": "M1740,882 L1762,882 L1762,770 L1730,770",
+     "len": 166
+    }
+   ],
+   "arrows": [
+    "#pa-u@1762,829"
+   ],
+   "label": "Stream L6, Reboiler vapour return, from Reboiler to MEA stripper"
+  },
+  {
+   "id": "S12",
+   "cls": "st st-h2",
+   "paths": [
+    {
+     "d": "M1345,330 L1345,150 L1480,150 L1480,270 L1700,270 L1700,226",
+     "len": 699
+    }
+   ],
+   "arrows": [
+    "#pa-u@1345,244",
+    "#pa-r@1413,150",
+    "#pa-d@1480,213",
+    "#pa-r@1546,270",
+    "#pa-u@1700,249"
+   ],
+   "label": "Stream S12, H₂-rich gas after capture, to the external PSA, from MEA absorber to PSA"
+  },
+  {
+   "id": "S21",
+   "cls": "st st-h2",
+   "paths": [
+    {
+     "d": "M1090,153 L1090,190 L1345,190",
+     "len": 292
+    }
+   ],
+   "arrows": [
+    "#pa-d@1090,172",
+    "#pa-r@1160,190"
+   ],
+   "label": "Stream S21, Cryogenic H₂ return ahead of the PSA, from Cryogenic unit to PSA"
+  },
+  {
+   "id": "S13",
+   "cls": "st st-h2",
+   "paths": [
+    {
+     "d": "M1728,160 L1744,160 M1800,160 L1846,160",
+     "len": 62
+    }
+   ],
+   "arrows": [
+    "path:M1865,160 L1841,148 L1841,172 Z"
+   ],
+   "label": "Stream S13, Purified H₂ after the external PSA, from PSA to the product"
+  },
+  {
+   "id": "C1",
+   "cls": "st st-co2",
+   "paths": [
+    {
+     "d": "M1685,390 L1685,355 L1740,355",
+     "len": 90
+    }
+   ],
+   "arrows": [
+    "#pa-r@1715,355"
+   ],
+   "label": "Stream C1, Stripper overhead vapour to the condenser, from MEA stripper to Overhead condenser"
+  },
+  {
+   "id": "S19",
+   "cls": "st st-co2",
+   "paths": [
+    {
+     "d": "M1815,355 L1840,355",
+     "len": 25
+    }
+   ],
+   "arrows": [],
+   "label": "Stream S19, CO₂ from capture to the compressor, from Overhead condenser to CO2 compressor"
+  },
+  {
+   "id": "S20",
+   "cls": "st st-co2",
+   "paths": [
+    {
+     "d": "M1910,355 L1945,355 L1945,500",
+     "len": 180
+    }
+   ],
+   "arrows": [
+    "#pa-d@1945,471"
+   ],
+   "label": "Stream S20, Compressed CO₂ to the ship and offshore storage, from CO2 compressor to CO2 storage"
+  },
+  {
+   "id": "S14",
+   "cls": "st st-rej",
+   "paths": [
+    {
+     "d": "M1700,94 L1700,74 L1400,74 L1400,120 L1315,120",
+     "len": 451
+    }
+   ],
+   "arrows": [
+    "#pa-l@1652,74",
+    "#pa-l@1510,74",
+    "#pa-d@1400,98",
+    "#pa-l@1360,120"
+   ],
+   "label": "Stream S14, PSA reject crossing back into the boundary, from PSA to Recycle compressor"
+  },
+  {
+   "id": "R1",
+   "cls": "st st-rej",
+   "paths": [
+    {
+     "d": "M1245,120 L1120,120",
+     "len": 125
+    }
+   ],
+   "arrows": [
+    "#pa-l@1185,120"
+   ],
+   "label": "Stream R1, Compressed reject to the cryogenic unit, from Recycle compressor to Cryogenic unit"
+  },
+  {
+   "id": "S15",
+   "cls": "st st-rej",
+   "paths": [
+    {
+     "d": "M1000,120 L947,120",
+     "len": 53
+    }
+   ],
+   "arrows": [
+    "#pa-l@974,120"
+   ],
+   "label": "Stream S15, Nitrogen-rich cut to the burner and stack, from Cryogenic unit to the N₂-rich burner and stack"
+  },
+  {
+   "id": "S16",
+   "cls": "st st-vent",
+   "paths": [
+    {
+     "d": "M925,68 L925,28",
+     "len": 40
+    }
+   ],
+   "arrows": [
+    "path:M925,3 L913,27 L937,27 Z"
+   ],
+   "label": "Stream S16, Stack exhaust to the atmosphere, from the N₂-rich burner and stack to the atmosphere"
+  }
+ ],
+ "units": [
+  {
+   "id": "htgr",
+   "label": "HTGR and helium loop, Reduced order",
+   "status": "reduced_order"
+  },
+  {
+   "id": "circ_primary",
+   "label": "Helium circulators, Reduced order",
+   "status": "reduced_order"
+  },
+  {
+   "id": "ihx",
+   "label": "Intermediate heat exchanger, Fixed assumption",
+   "status": "fixed_assumption"
+  },
+  {
+   "id": "power",
+   "label": "Power and steam block, Fixed assumption",
+   "status": "fixed_assumption"
+  },
+  {
+   "id": "smr",
+   "label": "Helium-heated steam methane reformer, Reduced order",
+   "status": "reduced_order"
+  },
+  {
+   "id": "wgs",
+   "label": "Water gas shift, Reduced order",
+   "status": "reduced_order"
+  },
+  {
+   "id": "syngas_cooler",
+   "label": "Syngas cooler and heat recovery, Fixed assumption",
+   "status": "fixed_assumption"
+  },
+  {
+   "id": "separator",
+   "label": "Condensate separator, Fixed assumption",
+   "status": "fixed_assumption"
+  },
+  {
+   "id": "absorber",
+   "label": "MEA absorber, Fixed assumption",
+   "status": "fixed_assumption"
+  },
+  {
+   "id": "lean_pump",
+   "label": "Lean amine pump, Reduced order",
+   "status": "reduced_order"
+  },
+  {
+   "id": "lean_cooler",
+   "label": "Lean amine cooler, Fixed assumption",
+   "status": "fixed_assumption"
+  },
+  {
+   "id": "rich_lean_hx",
+   "label": "Rich and lean amine exchanger, Fixed assumption",
+   "status": "fixed_assumption"
+  },
+  {
+   "id": "stripper",
+   "label": "MEA stripper, Fixed assumption",
+   "status": "fixed_assumption"
+  },
+  {
+   "id": "reboiler",
+   "label": "Reboiler, Fixed assumption",
+   "status": "fixed_assumption"
+  },
+  {
+   "id": "condenser",
+   "label": "Overhead condenser, Fixed assumption",
+   "status": "fixed_assumption"
+  },
+  {
+   "id": "co2_compressor",
+   "label": "CO2 compressor, Fixed assumption",
+   "status": "fixed_assumption"
+  },
+  {
+   "id": "co2_storage",
+   "label": "CO2 storage, ship offshore, Fixed assumption",
+   "status": "fixed_assumption"
+  },
+  {
+   "id": "psa",
+   "label": "PSA, external block, External",
+   "status": "external"
+  },
+  {
+   "id": "recycle_compressor",
+   "label": "Recycle compressor, Fixed assumption",
+   "status": "fixed_assumption"
+  },
+  {
+   "id": "cryogenic",
+   "label": "Cryogenic unit, Reduced order",
+   "status": "reduced_order"
+  }
+ ],
+ "binds": [
+  {
+   "path": "kpi.rating_mwth",
+   "text": "210"
+  },
+  {
+   "path": "units.power.outputs.e_nuc.value",
+   "text": "19.8"
+  },
+  {
+   "path": "kpi.q_process_mwth",
+   "text": "120.8"
+  },
+  {
+   "path": "kpi.co2_captured_t_y",
+   "text": "359,777"
+  },
+  {
+   "path": "units.htgr.conditions.ROT.value",
+   "text": "925"
+  },
+  {
+   "path": "units.htgr.conditions.T_HE_SUPPLY.value",
+   "text": "900"
+  },
+  {
+   "path": "units.htgr.conditions.T_HE_RETURN.value",
+   "text": "466"
+  },
+  {
+   "path": "units.smr.conditions.SYNGAS_CHAIN_C5_HPS_GEN1_T_IN_C.value",
+   "text": "871"
+  },
+  {
+   "path": "inputs.w_mea",
+   "text": "30"
+  },
+  {
+   "path": "kpi.h2_product_t_y",
+   "text": "66,925"
+  }
+ ],
+ "caption": "Layout follows the project's Figure 2. The dashed line holds the reformer train, the MEA plant, the recycle compressor, the cryogenic unit, the CO₂ compressor and the ship to offshore storage. The PSA sits outside it as an external block with no simulation, and its reject crosses the line on the way back. Offshore storage is a tariff with no simulation. Stream tags are the stream ids of results/Integrated_Mass_Balance.csv, and a ring marks a stream that file lists as crossing the boundary; the feed, steam and condensate cross at their open ends. Lines tagged P, H, L, C or R have no row in that file, since the flowsheet treats them as inside a unit. The reformer block holds S04, the shift block S06 to S09A, the separator S09C, and the burner air COMBUSTION_O2 is not drawn. The drawing shows one helium circulator; the engine counts the secondary circulator too, in that panel. The recycle compressor and the cryogenic unit are drawn apart and modelled as one unit."
+}

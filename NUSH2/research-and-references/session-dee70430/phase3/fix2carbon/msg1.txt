@@ -1,0 +1,16 @@
+Select the baseline of a sensitivity point through CARBON_BASELINE
+
+The BASELINE group of the sensitivity table shifted the abatement to the
+alternative intensity and left the GAS line on the central reference gas, which
+breaks rule 1 of the boundary table of N.7 and disagrees with the
+CARBON_BASELINE group. On the plant ledger a point that changes the baseline
+now selects it through CARBON_BASELINE, so the gas and the abatement follow it
+together. The base_value column prints the central intensity of the basis
+(8.995997 kg/kg) and not INL's 9.209770. The offset of the abatement stays for
+the anchored carbon, where it keeps the values committed at 8750b09.
+
+Tests: rule 1 of N.7 at every sensitivity point that changes the baseline (the
+three BASELINE points and the three CARBON_BASELINE points), and the legacy
+offsets.
+
+Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>

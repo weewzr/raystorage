@@ -1,0 +1,1542 @@
+[
+ {
+  "kicker": "Step 1 of 13",
+  "title": "Fission heat in the reactor core",
+  "units_on": [
+   "htgr"
+  ],
+  "units_ctx": [],
+  "streams_on": [],
+  "streams_move": [],
+  "streams_ctx": [],
+  "marks_on": [
+   "core"
+  ],
+  "flow_paths": 0,
+  "flow_media": [],
+  "flow_anims": {},
+  "all_running": 11,
+  "card": [
+   16,
+   627,
+   359,
+   1606
+  ],
+  "kicker_box": [
+   31,
+   640,
+   344,
+   659
+  ],
+  "title_box": [
+   31,
+   661,
+   344,
+   684
+  ],
+  "body_box": [
+   17,
+   695,
+   358,
+   1472
+  ],
+  "bar": [
+   16,
+   8,
+   359,
+   93
+  ],
+  "side": [
+   16,
+   627,
+   359,
+   3929
+  ],
+  "side_scroll": [
+   0,
+   3302,
+   3302
+  ],
+  "scroller": [
+   16,
+   101,
+   359,
+   586
+  ],
+  "scroller_left": 0,
+  "lit_off_view": 0,
+  "lit_part_view": 0,
+  "lit_count": 1,
+  "docW": 375,
+  "cliW": 375,
+  "scrollY": 571,
+  "vw": 375,
+  "vh": 812,
+  "live": "Step 1 of 13. Fission heat in the reactor core. Inside the core of the high-temperature gas-cooled reactor (HTGR), uranium nuclei in the tristructural isotropic",
+  "panel": "HTGR and helium loop\n      Generic helium-cooled reactor tha",
+  "panel_live": "off",
+  "play": [
+   false,
+   "Pause",
+   "Pause the tour"
+  ],
+  "prev_dis": "true",
+  "next_dis": "false",
+  "fill": "0%",
+  "svg_cls": "is-touring",
+  "focus": "tour-title",
+  "wide": [],
+  "step_state": {
+   "ready": false,
+   "active": true,
+   "step": 0,
+   "id": "fission",
+   "playing": true,
+   "ended": false,
+   "still": false,
+   "steps": 13,
+   "flows": 0
+  },
+  "t_step_s": 0.02
+ },
+ {
+  "kicker": "Step 2 of 13",
+  "title": "Primary helium loop",
+  "units_on": [
+   "htgr",
+   "circ_primary",
+   "ihx"
+  ],
+  "units_ctx": [],
+  "streams_on": [
+   "P1",
+   "P2",
+   "P3"
+  ],
+  "streams_move": [
+   "P1",
+   "P2",
+   "P3"
+  ],
+  "streams_ctx": [],
+  "marks_on": [
+   "ph",
+   "ph"
+  ],
+  "flow_paths": 3,
+  "flow_media": [
+   "ph"
+  ],
+  "flow_anims": {
+   "running": 3,
+   "finished": 3
+  },
+  "all_running": 4,
+  "card": [
+   16,
+   627,
+   359,
+   1387
+  ],
+  "kicker_box": [
+   31,
+   640,
+   344,
+   659
+  ],
+  "title_box": [
+   31,
+   661,
+   344,
+   684
+  ],
+  "body_box": [
+   17,
+   695,
+   358,
+   1253
+  ],
+  "bar": [
+   16,
+   8,
+   359,
+   93
+  ],
+  "side": [
+   16,
+   627,
+   359,
+   3657
+  ],
+  "side_scroll": [
+   0,
+   3030,
+   3030
+  ],
+  "scroller": [
+   16,
+   101,
+   359,
+   586
+  ],
+  "scroller_left": 0,
+  "lit_off_view": 0,
+  "lit_part_view": 0,
+  "lit_count": 6,
+  "docW": 375,
+  "cliW": 375,
+  "scrollY": 571,
+  "vw": 375,
+  "vh": 812,
+  "live": "Step 2 of 13. Primary helium loop. Hot primary helium at 925\u00a0\u00b0C passes 121.7\u00a0MW to a separate secondary loop in the intermediate heat exchanger (IHX), so the re",
+  "panel": "Intermediate heat exchanger\n      Helium to helium exchanger",
+  "panel_live": "off",
+  "play": [
+   false,
+   "Pause",
+   "Pause the tour"
+  ],
+  "prev_dis": "false",
+  "next_dis": "false",
+  "fill": "7.69231%",
+  "svg_cls": "is-touring",
+  "focus": "BUTTON",
+  "wide": [],
+  "step_state": {
+   "ready": false,
+   "active": true,
+   "step": 1,
+   "id": "primary",
+   "playing": true,
+   "ended": false,
+   "still": false,
+   "steps": 13,
+   "flows": 3
+  },
+  "t_step_s": 3.39
+ },
+ {
+  "kicker": "Step 3 of 13",
+  "title": "Secondary helium loop to the reformer",
+  "units_on": [
+   "ihx",
+   "smr"
+  ],
+  "units_ctx": [],
+  "streams_on": [
+   "H1",
+   "H2"
+  ],
+  "streams_move": [
+   "H1",
+   "H2"
+  ],
+  "streams_ctx": [],
+  "marks_on": [
+   "sh",
+   "sh",
+   "sh"
+  ],
+  "flow_paths": 2,
+  "flow_media": [
+   "sh"
+  ],
+  "flow_anims": {
+   "running": 2,
+   "finished": 2
+  },
+  "all_running": 3,
+  "card": [
+   16,
+   627,
+   359,
+   1490
+  ],
+  "kicker_box": [
+   31,
+   640,
+   344,
+   659
+  ],
+  "title_box": [
+   31,
+   661,
+   344,
+   708
+  ],
+  "body_box": [
+   17,
+   719,
+   358,
+   1356
+  ],
+  "bar": [
+   16,
+   8,
+   359,
+   93
+  ],
+  "side": [
+   16,
+   627,
+   359,
+   5510
+  ],
+  "side_scroll": [
+   0,
+   4883,
+   4883
+  ],
+  "scroller": [
+   16,
+   101,
+   359,
+   586
+  ],
+  "scroller_left": 126,
+  "lit_off_view": 0,
+  "lit_part_view": 0,
+  "lit_count": 4,
+  "docW": 375,
+  "cliW": 375,
+  "scrollY": 571,
+  "vw": 375,
+  "vh": 812,
+  "live": "Step 3 of 13. Secondary helium loop to the reformer. The secondary helium leaves the IHX at 900\u00a0\u00b0C, heats the reformer and its feed preheat, and returns at 466\u00a0",
+  "panel": "Helium-heated steam methane reformer\n      Reformer tubes he",
+  "panel_live": "off",
+  "play": [
+   false,
+   "Pause",
+   "Pause the tour"
+  ],
+  "prev_dis": "false",
+  "next_dis": "false",
+  "fill": "15.3846%",
+  "svg_cls": "is-touring",
+  "focus": "BUTTON",
+  "wide": [],
+  "step_state": {
+   "ready": false,
+   "active": true,
+   "step": 2,
+   "id": "secondary",
+   "playing": true,
+   "ended": false,
+   "still": false,
+   "steps": 13,
+   "flows": 2
+  },
+  "t_step_s": 6.61
+ },
+ {
+  "kicker": "Step 4 of 13",
+  "title": "Natural gas and steam feed the reformer",
+  "units_on": [
+   "smr"
+  ],
+  "units_ctx": [],
+  "streams_on": [
+   "S01",
+   "S02"
+  ],
+  "streams_move": [
+   "S01",
+   "S02"
+  ],
+  "streams_ctx": [],
+  "marks_on": [
+   "ng",
+   "steam"
+  ],
+  "flow_paths": 2,
+  "flow_media": [
+   "ng",
+   "stm"
+  ],
+  "flow_anims": {
+   "running": 2,
+   "finished": 2
+  },
+  "all_running": 3,
+  "card": [
+   16,
+   627,
+   359,
+   1505
+  ],
+  "kicker_box": [
+   31,
+   640,
+   344,
+   659
+  ],
+  "title_box": [
+   31,
+   661,
+   344,
+   708
+  ],
+  "body_box": [
+   17,
+   719,
+   358,
+   1370
+  ],
+  "bar": [
+   16,
+   8,
+   359,
+   93
+  ],
+  "side": [
+   16,
+   627,
+   359,
+   5525
+  ],
+  "side_scroll": [
+   0,
+   4898,
+   4898
+  ],
+  "scroller": [
+   16,
+   101,
+   359,
+   586
+  ],
+  "scroller_left": 194,
+  "lit_off_view": 0,
+  "lit_part_view": 0,
+  "lit_count": 3,
+  "docW": 375,
+  "cliW": 375,
+  "scrollY": 571,
+  "vw": 375,
+  "vh": 812,
+  "live": "Step 4 of 13. Natural gas and steam feed the reformer. Natural gas at 23.2\u00a0MMSCFD and process steam enter the reformer, joined by the methane-rich recycle of st",
+  "panel": "Helium-heated steam methane reformer\n      Reformer tubes he",
+  "panel_live": "off",
+  "play": [
+   false,
+   "Pause",
+   "Pause the tour"
+  ],
+  "prev_dis": "false",
+  "next_dis": "false",
+  "fill": "23.0769%",
+  "svg_cls": "is-touring",
+  "focus": "BUTTON",
+  "wide": [],
+  "step_state": {
+   "ready": false,
+   "active": true,
+   "step": 3,
+   "id": "feed",
+   "playing": true,
+   "ended": false,
+   "still": false,
+   "steps": 13,
+   "flows": 1
+  },
+  "t_step_s": 9.7
+ },
+ {
+  "kicker": "Step 5 of 13",
+  "title": "Water-gas shift",
+  "units_on": [
+   "wgs"
+  ],
+  "units_ctx": [
+   "smr"
+  ],
+  "streams_on": [
+   "S05"
+  ],
+  "streams_move": [
+   "S05"
+  ],
+  "streams_ctx": [],
+  "marks_on": [
+   "syn"
+  ],
+  "flow_paths": 1,
+  "flow_media": [
+   "syn"
+  ],
+  "flow_anims": {
+   "running": 1,
+   "finished": 1
+  },
+  "all_running": 2,
+  "card": [
+   16,
+   627,
+   359,
+   1388
+  ],
+  "kicker_box": [
+   31,
+   640,
+   344,
+   659
+  ],
+  "title_box": [
+   31,
+   661,
+   344,
+   684
+  ],
+  "body_box": [
+   17,
+   695,
+   358,
+   1254
+  ],
+  "bar": [
+   16,
+   8,
+   359,
+   93
+  ],
+  "side": [
+   16,
+   627,
+   359,
+   3895
+  ],
+  "side_scroll": [
+   0,
+   3268,
+   3268
+  ],
+  "scroller": [
+   16,
+   101,
+   359,
+   586
+  ],
+  "scroller_left": 285,
+  "lit_off_view": 0,
+  "lit_part_view": 0,
+  "lit_count": 2,
+  "docW": 375,
+  "cliW": 375,
+  "scrollY": 571,
+  "vw": 375,
+  "vh": 812,
+  "live": "Step 5 of 13. Water-gas shift. The syngas raises steam as it leaves the reformer and enters the high-temperature shift bed at 335\u00a0\u00b0C. Over the shift catalyst, c",
+  "panel": "Water gas shift\n      High and low temperature shift beds in",
+  "panel_live": "off",
+  "play": [
+   false,
+   "Pause",
+   "Pause the tour"
+  ],
+  "prev_dis": "false",
+  "next_dis": "false",
+  "fill": "30.7692%",
+  "svg_cls": "is-touring",
+  "focus": "BUTTON",
+  "wide": [],
+  "step_state": {
+   "ready": false,
+   "active": true,
+   "step": 4,
+   "id": "shift",
+   "playing": true,
+   "ended": false,
+   "still": false,
+   "steps": 13,
+   "flows": 1
+  },
+  "t_step_s": 13.08
+ },
+ {
+  "kicker": "Step 6 of 13",
+  "title": "Cooling and condensate",
+  "units_on": [
+   "syngas_cooler",
+   "separator"
+  ],
+  "units_ctx": [
+   "wgs",
+   "absorber"
+  ],
+  "streams_on": [
+   "S09",
+   "S09B",
+   "S11",
+   "S10"
+  ],
+  "streams_move": [
+   "S09",
+   "S09B",
+   "S11",
+   "S10"
+  ],
+  "streams_ctx": [],
+  "marks_on": [
+   "cond"
+  ],
+  "flow_paths": 4,
+  "flow_media": [
+   "syn",
+   "stm"
+  ],
+  "flow_anims": {
+   "running": 4,
+   "finished": 4
+  },
+  "all_running": 5,
+  "card": [
+   16,
+   627,
+   359,
+   1352
+  ],
+  "kicker_box": [
+   31,
+   640,
+   344,
+   659
+  ],
+  "title_box": [
+   31,
+   661,
+   344,
+   684
+  ],
+  "body_box": [
+   17,
+   695,
+   358,
+   1218
+  ],
+  "bar": [
+   16,
+   8,
+   359,
+   93
+  ],
+  "side": [
+   16,
+   627,
+   359,
+   3244
+  ],
+  "side_scroll": [
+   0,
+   2617,
+   2617
+  ],
+  "scroller": [
+   16,
+   101,
+   359,
+   586
+  ],
+  "scroller_left": 395,
+  "lit_off_view": 0,
+  "lit_part_view": 0,
+  "lit_count": 6,
+  "docW": 375,
+  "cliW": 375,
+  "scrollY": 571,
+  "vw": 375,
+  "vh": 812,
+  "live": "Step 6 of 13. Cooling and condensate. The shifted gas is cooled in steps, and 8.4\u00a0MW of its heat is hot enough to help drive the reboiler of the monoethanolamin",
+  "panel": "Condensate separator\n      Knock-out drum that removes conde",
+  "panel_live": "off",
+  "play": [
+   false,
+   "Pause",
+   "Pause the tour"
+  ],
+  "prev_dis": "false",
+  "next_dis": "false",
+  "fill": "38.4615%",
+  "svg_cls": "is-touring",
+  "focus": "BUTTON",
+  "wide": [],
+  "step_state": {
+   "ready": false,
+   "active": true,
+   "step": 5,
+   "id": "cooling",
+   "playing": true,
+   "ended": false,
+   "still": false,
+   "steps": 13,
+   "flows": 3
+  },
+  "t_step_s": 16.14
+ },
+ {
+  "kicker": "Step 7 of 13",
+  "title": "CO\u2082 capture in the MEA absorber",
+  "units_on": [
+   "absorber"
+  ],
+  "units_ctx": [
+   "separator"
+  ],
+  "streams_on": [
+   "S11",
+   "S17",
+   "S18"
+  ],
+  "streams_move": [
+   "S11",
+   "S17",
+   "S18"
+  ],
+  "streams_ctx": [],
+  "marks_on": [
+   "lean",
+   "rich",
+   "rich",
+   "rich"
+  ],
+  "flow_paths": 3,
+  "flow_media": [
+   "syn",
+   "mea"
+  ],
+  "flow_anims": {
+   "running": 3,
+   "finished": 3
+  },
+  "all_running": 4,
+  "card": [
+   16,
+   627,
+   359,
+   1327
+  ],
+  "kicker_box": [
+   31,
+   640,
+   344,
+   659
+  ],
+  "title_box": [
+   31,
+   661,
+   344,
+   684
+  ],
+  "body_box": [
+   17,
+   695,
+   358,
+   1193
+  ],
+  "bar": [
+   16,
+   8,
+   359,
+   93
+  ],
+  "side": [
+   16,
+   627,
+   359,
+   4542
+  ],
+  "side_scroll": [
+   0,
+   3915,
+   3915
+  ],
+  "scroller": [
+   16,
+   101,
+   359,
+   586
+  ],
+  "scroller_left": 493,
+  "lit_off_view": 0,
+  "lit_part_view": 0,
+  "lit_count": 4,
+  "docW": 375,
+  "cliW": 375,
+  "scrollY": 571,
+  "vw": 375,
+  "vh": 812,
+  "live": "Step 7 of 13. CO\u2082 capture in the MEA absorber. In the packed absorber the gas rises against falling 30\u00a0wt% aqueous monoethanolamine (MEA) at 26.8\u00a0bar. The amine",
+  "panel": "MEA absorber\n      Packed column where 30 wt% MEA takes CO\u2082 ",
+  "panel_live": "off",
+  "play": [
+   false,
+   "Pause",
+   "Pause the tour"
+  ],
+  "prev_dis": "false",
+  "next_dis": "false",
+  "fill": "46.1538%",
+  "svg_cls": "is-touring",
+  "focus": "BUTTON",
+  "wide": [],
+  "step_state": {
+   "ready": false,
+   "active": true,
+   "step": 6,
+   "id": "absorber",
+   "playing": true,
+   "ended": false,
+   "still": false,
+   "steps": 13,
+   "flows": 2
+  },
+  "t_step_s": 19.2
+ },
+ {
+  "kicker": "Step 8 of 13",
+  "title": "Hydrogen product from the external PSA",
+  "units_on": [
+   "psa"
+  ],
+  "units_ctx": [
+   "absorber"
+  ],
+  "streams_on": [
+   "S12",
+   "S13"
+  ],
+  "streams_move": [
+   "S12",
+   "S13"
+  ],
+  "streams_ctx": [],
+  "marks_on": [
+   "boundary",
+   "h2rich",
+   "h2rich",
+   "h2prod",
+   "h2prod"
+  ],
+  "flow_paths": 2,
+  "flow_media": [
+   "h2"
+  ],
+  "flow_anims": {
+   "running": 2,
+   "finished": 2
+  },
+  "all_running": 3,
+  "card": [
+   16,
+   627,
+   359,
+   1360
+  ],
+  "kicker_box": [
+   31,
+   640,
+   344,
+   659
+  ],
+  "title_box": [
+   31,
+   661,
+   344,
+   708
+  ],
+  "body_box": [
+   17,
+   719,
+   358,
+   1226
+  ],
+  "bar": [
+   16,
+   8,
+   359,
+   93
+  ],
+  "side": [
+   16,
+   627,
+   359,
+   2940
+  ],
+  "side_scroll": [
+   0,
+   2313,
+   2313
+  ],
+  "scroller": [
+   16,
+   101,
+   359,
+   586
+  ],
+  "scroller_left": 623,
+  "lit_off_view": 0,
+  "lit_part_view": 0,
+  "lit_count": 3,
+  "docW": 375,
+  "cliW": 375,
+  "scrollY": 571,
+  "vw": 375,
+  "vh": 812,
+  "live": "Step 8 of 13. Hydrogen product from the external PSA. The hydrogen-rich gas, with 10,214\u00a0kg/h of hydrogen, crosses the dashed boundary to pressure swing adsorpt",
+  "panel": "PSA, external block\n      Pressure swing adsorption, an exte",
+  "panel_live": "off",
+  "play": [
+   false,
+   "Pause",
+   "Pause the tour"
+  ],
+  "prev_dis": "false",
+  "next_dis": "false",
+  "fill": "53.8462%",
+  "svg_cls": "is-touring",
+  "focus": "BUTTON",
+  "wide": [],
+  "step_state": {
+   "ready": false,
+   "active": true,
+   "step": 7,
+   "id": "psa",
+   "playing": true,
+   "ended": false,
+   "still": false,
+   "steps": 13,
+   "flows": 2
+  },
+  "t_step_s": 22.25
+ },
+ {
+  "kicker": "Step 9 of 13",
+  "title": "PSA reject back to the cryogenic unit",
+  "units_on": [
+   "recycle_compressor",
+   "cryogenic"
+  ],
+  "units_ctx": [
+   "smr",
+   "psa"
+  ],
+  "streams_on": [
+   "S03",
+   "S21",
+   "S14",
+   "R1",
+   "S15",
+   "S16"
+  ],
+  "streams_move": [
+   "S03",
+   "S21",
+   "S14",
+   "R1",
+   "S15",
+   "S16"
+  ],
+  "streams_ctx": [
+   "S01",
+   "S12"
+  ],
+  "marks_on": [
+   "stack",
+   "rej",
+   "rej",
+   "recycle",
+   "recycle",
+   "h2ret"
+  ],
+  "flow_paths": 8,
+  "flow_media": [
+   "rej",
+   "h2",
+   "vent"
+  ],
+  "flow_anims": {
+   "running": 8,
+   "finished": 8
+  },
+  "all_running": 9,
+  "card": [
+   16,
+   627,
+   359,
+   1480
+  ],
+  "kicker_box": [
+   31,
+   640,
+   344,
+   659
+  ],
+  "title_box": [
+   31,
+   661,
+   344,
+   708
+  ],
+  "body_box": [
+   17,
+   719,
+   358,
+   1346
+  ],
+  "bar": [
+   16,
+   8,
+   359,
+   93
+  ],
+  "side": [
+   16,
+   627,
+   359,
+   3912
+  ],
+  "side_scroll": [
+   0,
+   3285,
+   3285
+  ],
+  "scroller": [
+   16,
+   101,
+   359,
+   586
+  ],
+  "scroller_left": 324,
+  "lit_off_view": 0,
+  "lit_part_view": 1,
+  "lit_count": 8,
+  "docW": 375,
+  "cliW": 375,
+  "scrollY": 571,
+  "vw": 375,
+  "vh": 812,
+  "live": "Step 9 of 13. PSA reject back to the cryogenic unit. The PSA reject, still holding 1,226\u00a0kg/h of hydrogen, crosses back into the boundary and is compressed for ",
+  "panel": "Cryogenic unit\n      Returns a CH\u2084-rich recycle to the refor",
+  "panel_live": "off",
+  "play": [
+   false,
+   "Pause",
+   "Pause the tour"
+  ],
+  "prev_dis": "false",
+  "next_dis": "false",
+  "fill": "61.5385%",
+  "svg_cls": "is-touring",
+  "focus": "BUTTON",
+  "wide": [],
+  "step_state": {
+   "ready": false,
+   "active": true,
+   "step": 8,
+   "id": "reject",
+   "playing": true,
+   "ended": false,
+   "still": false,
+   "steps": 13,
+   "flows": 4
+  },
+  "t_step_s": 25.27
+ },
+ {
+  "kicker": "Step 10 of 13",
+  "title": "Stripper and reboiler heat",
+  "units_on": [
+   "lean_pump",
+   "lean_cooler",
+   "rich_lean_hx",
+   "stripper",
+   "reboiler"
+  ],
+  "units_ctx": [
+   "absorber"
+  ],
+  "streams_on": [
+   "S17",
+   "L3",
+   "L4",
+   "S18",
+   "L5",
+   "L6"
+  ],
+  "streams_move": [
+   "S17",
+   "L3",
+   "L4",
+   "S18",
+   "L5",
+   "L6"
+  ],
+  "streams_ctx": [],
+  "marks_on": [
+   "rich",
+   "rich",
+   "rich"
+  ],
+  "flow_paths": 6,
+  "flow_media": [
+   "mea"
+  ],
+  "flow_anims": {
+   "running": 6,
+   "finished": 6
+  },
+  "all_running": 7,
+  "card": [
+   16,
+   627,
+   359,
+   1398
+  ],
+  "kicker_box": [
+   31,
+   640,
+   344,
+   659
+  ],
+  "title_box": [
+   31,
+   661,
+   344,
+   684
+  ],
+  "body_box": [
+   17,
+   695,
+   358,
+   1264
+  ],
+  "bar": [
+   16,
+   8,
+   359,
+   93
+  ],
+  "side": [
+   16,
+   627,
+   359,
+   3473
+  ],
+  "side_scroll": [
+   0,
+   2846,
+   2846
+  ],
+  "scroller": [
+   16,
+   101,
+   359,
+   586
+  ],
+  "scroller_left": 604,
+  "lit_off_view": 0,
+  "lit_part_view": 0,
+  "lit_count": 11,
+  "docW": 375,
+  "cliW": 375,
+  "scrollY": 571,
+  "vw": 375,
+  "vh": 812,
+  "live": "Step 10 of 13. Stripper and reboiler heat. Rich solvent is warmed in the rich/lean exchanger and stripped at 2.0\u00a0bar by reboiler steam, which drives the CO\u2082 out",
+  "panel": "Reboiler\n      Supplies stripping steam, drawing heat in a f",
+  "panel_live": "off",
+  "play": [
+   false,
+   "Pause",
+   "Pause the tour"
+  ],
+  "prev_dis": "false",
+  "next_dis": "false",
+  "fill": "69.2308%",
+  "svg_cls": "is-touring",
+  "focus": "BUTTON",
+  "wide": [],
+  "step_state": {
+   "ready": false,
+   "active": true,
+   "step": 9,
+   "id": "stripper",
+   "playing": true,
+   "ended": false,
+   "still": false,
+   "steps": 13,
+   "flows": 5
+  },
+  "t_step_s": 28.34
+ },
+ {
+  "kicker": "Step 11 of 13",
+  "title": "CO\u2082 compression, ship and offshore storage",
+  "units_on": [
+   "condenser",
+   "co2_compressor",
+   "co2_storage"
+  ],
+  "units_ctx": [
+   "stripper"
+  ],
+  "streams_on": [
+   "C1",
+   "S19",
+   "S20"
+  ],
+  "streams_move": [
+   "C1",
+   "S19",
+   "S20"
+  ],
+  "streams_ctx": [],
+  "marks_on": [
+   "co2",
+   "co2"
+  ],
+  "flow_paths": 3,
+  "flow_media": [
+   "co2"
+  ],
+  "flow_anims": {
+   "running": 3,
+   "finished": 3
+  },
+  "all_running": 6,
+  "card": [
+   16,
+   627,
+   359,
+   1624
+  ],
+  "kicker_box": [
+   31,
+   640,
+   344,
+   659
+  ],
+  "title_box": [
+   31,
+   661,
+   344,
+   708
+  ],
+  "body_box": [
+   17,
+   719,
+   358,
+   1490
+  ],
+  "bar": [
+   16,
+   8,
+   359,
+   93
+  ],
+  "side": [
+   16,
+   627,
+   359,
+   3114
+  ],
+  "side_scroll": [
+   0,
+   2487,
+   2487
+  ],
+  "scroller": [
+   16,
+   101,
+   359,
+   586
+  ],
+  "scroller_left": 659,
+  "lit_off_view": 0,
+  "lit_part_view": 0,
+  "lit_count": 6,
+  "docW": 375,
+  "cliW": 375,
+  "scrollY": 571,
+  "vw": 375,
+  "vh": 812,
+  "live": "Step 11 of 13. CO\u2082 compression, ship and offshore storage. The condenser returns water from the stripper overhead as reflux, and the CO\u2082 is compressed to INL's ",
+  "panel": "CO2 storage, ship offshore\n      Ship transport to offshore ",
+  "panel_live": "off",
+  "play": [
+   false,
+   "Pause",
+   "Pause the tour"
+  ],
+  "prev_dis": "false",
+  "next_dis": "false",
+  "fill": "76.9231%",
+  "svg_cls": "is-touring",
+  "focus": "BUTTON",
+  "wide": [],
+  "step_state": {
+   "ready": false,
+   "active": true,
+   "step": 10,
+   "id": "co2",
+   "playing": true,
+   "ended": false,
+   "still": false,
+   "steps": 13,
+   "flows": 3
+  },
+  "t_step_s": 31.46
+ },
+ {
+  "kicker": "Step 12 of 13",
+  "title": "Power block and site electricity",
+  "units_on": [
+   "htgr",
+   "circ_primary",
+   "power"
+  ],
+  "units_ctx": [],
+  "streams_on": [
+   "P1",
+   "P4"
+  ],
+  "streams_move": [
+   "P1",
+   "P4"
+  ],
+  "streams_ctx": [],
+  "marks_on": [],
+  "flow_paths": 2,
+  "flow_media": [
+   "ph"
+  ],
+  "flow_anims": {
+   "running": 2,
+   "finished": 2
+  },
+  "all_running": 3,
+  "card": [
+   16,
+   627,
+   359,
+   1439
+  ],
+  "kicker_box": [
+   31,
+   640,
+   344,
+   659
+  ],
+  "title_box": [
+   31,
+   661,
+   344,
+   684
+  ],
+  "body_box": [
+   17,
+   695,
+   358,
+   1305
+  ],
+  "bar": [
+   16,
+   8,
+   359,
+   93
+  ],
+  "side": [
+   16,
+   627,
+   359,
+   3567
+  ],
+  "side_scroll": [
+   0,
+   2940,
+   2940
+  ],
+  "scroller": [
+   16,
+   101,
+   359,
+   586
+  ],
+  "scroller_left": 0,
+  "lit_off_view": 0,
+  "lit_part_view": 0,
+  "lit_count": 5,
+  "docW": 375,
+  "cliW": 375,
+  "scrollY": 571,
+  "vw": 375,
+  "vh": 812,
+  "live": "Step 12 of 13. Power block and site electricity. A branch of the hot primary helium carries 59.6\u00a0MWth to the power block. The steam for the reboiler first does ",
+  "panel": "Power and steam block\n      Small steam plant on a primary h",
+  "panel_live": "off",
+  "play": [
+   false,
+   "Pause",
+   "Pause the tour"
+  ],
+  "prev_dis": "false",
+  "next_dis": "false",
+  "fill": "84.6154%",
+  "svg_cls": "is-touring",
+  "focus": "BUTTON",
+  "wide": [],
+  "step_state": {
+   "ready": false,
+   "active": true,
+   "step": 11,
+   "id": "power",
+   "playing": true,
+   "ended": false,
+   "still": false,
+   "steps": 13,
+   "flows": 2
+  },
+  "t_step_s": 34.48
+ },
+ {
+  "kicker": "Step 13 of 13",
+  "title": "The plant from end to end",
+  "units_on": [],
+  "units_ctx": [],
+  "streams_on": [
+   "P1",
+   "P4",
+   "P2",
+   "P3",
+   "H1",
+   "H2",
+   "S01",
+   "S02",
+   "S03",
+   "S05",
+   "S09",
+   "S09B",
+   "S11",
+   "S10",
+   "S17",
+   "L3",
+   "L4",
+   "S18",
+   "L5",
+   "L6",
+   "S12",
+   "S21",
+   "S13",
+   "C1",
+   "S19",
+   "S20",
+   "S14",
+   "R1",
+   "S15",
+   "S16"
+  ],
+  "streams_move": [],
+  "streams_ctx": [],
+  "marks_on": [],
+  "flow_paths": 30,
+  "flow_media": [
+   "ph",
+   "sh",
+   "ng",
+   "stm",
+   "rej",
+   "syn",
+   "mea",
+   "h2",
+   "co2",
+   "vent"
+  ],
+  "flow_anims": {
+   "running": 30,
+   "finished": 30
+  },
+  "all_running": 31,
+  "card": [
+   16,
+   627,
+   359,
+   1547
+  ],
+  "kicker_box": [
+   31,
+   640,
+   344,
+   659
+  ],
+  "title_box": [
+   31,
+   661,
+   344,
+   684
+  ],
+  "body_box": [
+   17,
+   695,
+   358,
+   1413
+  ],
+  "bar": [
+   16,
+   8,
+   359,
+   93
+  ],
+  "side": [
+   16,
+   627,
+   359,
+   3870
+  ],
+  "side_scroll": [
+   0,
+   3243,
+   3243
+  ],
+  "scroller": [
+   16,
+   101,
+   359,
+   586
+  ],
+  "scroller_left": 61,
+  "lit_off_view": 21,
+  "lit_part_view": 22,
+  "lit_count": 30,
+  "docW": 375,
+  "cliW": 375,
+  "scrollY": 571,
+  "vw": 375,
+  "vh": 812,
+  "live": "Step 13 of 13. The plant from end to end. End to end, the plant makes 66,925\u00a0t/y of purified hydrogen and sends 359,777\u00a0t/y of CO\u2082 to storage. Against the 616,3",
+  "panel": "HTGR and helium loop\n      Generic helium-cooled reactor tha",
+  "panel_live": "off",
+  "play": [
+   false,
+   "Pause",
+   "Pause the tour"
+  ],
+  "prev_dis": "false",
+  "next_dis": "true",
+  "fill": "92.3077%",
+  "svg_cls": "is-touring tour-all",
+  "focus": "BUTTON",
+  "wide": [],
+  "step_state": {
+   "ready": false,
+   "active": true,
+   "step": 12,
+   "id": "closing",
+   "playing": true,
+   "ended": false,
+   "still": false,
+   "steps": 13,
+   "flows": 1
+  },
+  "t_step_s": 37.61
+ }
+]

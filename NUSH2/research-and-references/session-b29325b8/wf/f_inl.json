@@ -1,0 +1,281 @@
+{
+ "key": "inl",
+ "summary": "Most design values trace to TEV-961 Case 6 (925 C ROT): 900 C and 466 C helium, 176.8 MWth, 17.3 MWe, 5.7 MWe purge recovery, 39.7%, 1,927 and 142 short ton/d. 210 MWth, 11.6 MWe, 206.0 MWth, 30 wt% MEA and 85% availability are project values, not INL's. The main finding is that 34.0 MMSCFD depends on recycling PSA reject gas, whose Aspen stream is named PURGE. INL's Cases 2 to 5 and its no-recycle case put zero-recycle gas at about 44.5 MMSCFD. Excluding the 5.7 MWe while keeping 34.0 and 130 MMSCFD is therefore not a balanced flowsheet: the exclusion avoids about S$8M/y of electricity but keeps about S$54M/y of gas savings that this equipment produces (my calculation). The 5.7 MWe is probably mostly recycle compression, inferred because the local TEV-961 PDF stops at A-59. It has no Case 6 calculator or stream sheets, and the electronic stream appendices are not local. Complete Case 6 needs 220.4 MWth at 39.7%; Case 5 needs 205.8 MWth with nothing excluded. TEV-953 and TEV-961 contain no economic data and no availability factor.",
+ "key_facts": [
+  {
+   "item": "INL design case",
+   "value": "All Case 6 published values: 925 C ROT, 900 C He supply, 466 C return, 78.49 kg/s, 176.8 MWt total process heat, 34.0 MMSCFD NG, 130 MMSCFD H2",
+   "source": "TEV-961 Table 2 doc pp16-17 (PDF pp17-18); A-1 (PDF p25) [published]"
+  },
+  {
+   "item": "Case 6 electricity by consumer",
+   "value": "Reforming 1.2, syngas purification 2.1, steam 0.3, CO2 compression 6.4, purge recovery 5.7, cooling 0.1, water 1.5; total 17.3 MWe",
+   "source": "TEV-961 Table 2 doc p16 (PDF p17) [published]"
+  },
+  {
+   "item": "INL reactor size",
+   "value": "0.30 of 600 MWt, equivalent 178.8 MWt. 210 MWth is a project selection on slide 6, not INL",
+   "source": "TEV-961 Table 2 cont. doc p17 (PDF p18); deck slide 6"
+  },
+  {
+   "item": "Reactor screening",
+   "value": "Slide 6 206.0 MWth needs the exclusion. Case 6 complete 176.8+17.3/0.397=220.4 MWth. 210 MWth yields 13.2 MWe, 4.1 MWe short",
+   "source": "My calculation from TEV-961 Table 2; inl_calcs_output.txt"
+  },
+  {
+   "item": "39.7% efficiency",
+   "value": "INL row for Case 6, interpolated from TEV-981, applied by INL only to 2.0 MWt excess heat giving 0.8 MWe",
+   "source": "TEV-961 Table 2 cont. note 3, doc p17 (PDF p18) [published]"
+  },
+  {
+   "item": "Natural gas case mapping",
+   "value": "34.0 = Case 6, all to tubes, no fresh NG fired. 52.5 = conventional no capture, 44.55 tubes and 7.95 fired (15.14%). 43.5 = HTGR 750 C ROT with capture (700 C He, TEV-961 Case 2), all to tubes, Stage 2 fired by PSA reject",
+   "source": "TEV-953 Table 2 doc p29 (PDF p30), TEV-953 A-7 (PDF p41), doc p22; TEV-961 Table 2. Splits are my calculation from published percentages"
+  },
+  {
+   "item": "What Purge means in INL",
+   "value": "PSA reject stream is tagged PURGE: 131 F, 25 psia, 26,099 lb/h Case 2, 29,786 lb/h Case 5. Term 'Purge Recovery' is never defined in text",
+   "source": "TEV-953 A-46 (PDF p80); TEV-961 A-56 (PDF p80) [published]"
+  },
+  {
+   "item": "Case 6 reject gas routing",
+   "value": "Reject passes recycle compressor to cryogenic unit, then CH4-rich gas to reformer feed, H2 to PSA feed, N2-rich gas combusted to raise steam",
+   "source": "TEV-961 A-16 (PDF p40), A-18 (PDF p42), doc pp13-14 (PDF pp14-15) [published]"
+  },
+  {
+   "item": "Recycle compressor",
+   "value": "Case 5 REC-COMP 3,943.5 kW for 23,358 lb/h, 25 to 460 psia. Reforming row falls 4.7 to 1.2 MW in Case 6 as Purge Recovery appears, so probably 4 to 5 MW of the 5.7 is compression (inferred, not verified)",
+   "source": "TEV-961 A-55 (PDF p79), Table 2; inference is mine"
+  },
+  {
+   "item": "Share of PSA reject recycled",
+   "value": "Case 2 8.6%, Case 3 30.2%, Case 4 54.0%, Case 5 78.4%, Case 6 all before cryo cut. NG falls 43.5, 40.8, 37.7, 34.5, 34.0 MMSCFD",
+   "source": "TEV-961 A-25, A-35, A-45, A-55 (PDF pp49, 59, 69, 79); percentages are my calculation"
+  },
+  {
+   "item": "NG without recycle",
+   "value": "About 44.5 MMSCFD: INL HTGR no-recycle case 44.5; fit of Cases 2 to 5 to zero recycle 44.3. So 34.0 depends on recycle",
+   "source": "TEV-953 Table 2 doc p29; TEV-953 doc p28; my fit in inl_calcs_output.txt"
+  },
+  {
+   "item": "Carbon and H2 recycled",
+   "value": "Case 5: 865 lbmol C/h (21.7% of NG carbon, S/C cross-check 854) and 3,077 lb/h H2. Case 6 estimate 23 to 26% of NG carbon; about 3,923 lb/h H2 in reject if 88% recovery holds",
+   "source": "My calculation from TEV-961 A-50, A-55, A-56; Case 6 assumes conversion 0.76 to 0.78"
+  },
+  {
+   "item": "Effect of removing recycle",
+   "value": "Hold H2 at 130: NG about 44.5 (+31%), extra S$53.8M/y at S$15/GJ, 782 short ton/d not captured at 90%. Hold NG at 34.0: H2 about 99 MMSCFD (-24%), about 74.8 kt/y. Screening only",
+   "source": "My calculation anchored on TEV-953 Table 2 and TEV-961 Case 1 tube feed"
+  },
+  {
+   "item": "Case 6 CO2",
+   "value": "1,927 captured, 142 emitted short ton/d (1,748 and 129 t/d). Plant ratio 93.1%; Selexol removal 99%, purity 99.0 to 99.1 mol%",
+   "source": "TEV-961 Table 2 doc p16; TEV-953 doc p20; TEV-961 A-53 (PDF p77); ratio is my calculation"
+  },
+  {
+   "item": "INL ton is short ton",
+   "value": "164,385 lb/h gives 1,972.6 against 1,970 reported. Carbon closes 99.4 to 99.9% across all 8 cases only on short tons",
+   "source": "TEV-961 A-50, A-51; my closure table in inl.md Section 4.5"
+  },
+  {
+   "item": "Emitted stream Case 6",
+   "value": "Inferred to be combustion of the cryogenic N2-rich cut, which is mostly carbon: N2 about 14 mol% of N2 plus carbon, a result of INL's flash model. Case 5 emits less at 126 short ton/d",
+   "source": "TEV-961 A-16, A-18, doc p21 (PDF p22), Table 2; share is my calculation"
+  },
+  {
+   "item": "Conventional SMR emissions",
+   "value": "3,205 short ton/d without capture (2,908 t/d); 855 with capture",
+   "source": "TEV-953 Table 2 doc p29; TEV-953 A-6 (PDF p40) [published]"
+  },
+  {
+   "item": "Selexol and CO2 compression",
+   "value": "Syngas purification row 2.1 MWe in Case 6 (Case 5 SEL-PWR 2,245.9 kW). CO2 product 2,015 psia, 184 F from 30 psia, 104 F. Compression is inside 17.3 MWe at 6.4 MWe",
+   "source": "TEV-961 Table 2, A-53 (PDF p77), A-56 (PDF p80) [published]"
+  },
+  {
+   "item": "Export steam and water",
+   "value": "83.7 MMBtu/h 600 psig (24.5 MWth, about 81,800 lb/h). Water 743 gpm, evaporation 354 gpm, excluding nuclear heat rejection and condensate return credit",
+   "source": "TEV-961 Table 2 doc p16 and note 2 doc p17, A-50; SI conversions are mine"
+  },
+  {
+   "item": "H2 product and PSA",
+   "value": "130 MMSCFD at 60 F is net purified H2, 29,000 lb/h, 99.9 mol%. PSA recovery 88.0%, purity 99.90%. No INL availability or annual H2. 97,946 t/y at 85% is my calculation",
+   "source": "TEV-953 doc p15 (PDF p16), doc p18; TEV-961 A-50, A-53"
+  },
+  {
+   "item": "Absorber inlet",
+   "value": "104 F (40 C), 389 psia (26.8 bar). Case 2 232,258 lb/h, 18.9% CO2. Case 5 223,172 lb/h, 17.7% CO2. Case 6 not local",
+   "source": "TEV-953 A-43 (PDF p77), A-46 (PDF p80); TEV-961 A-53, A-56 [published]"
+  },
+  {
+   "item": "Stream data",
+   "value": "T, P and mass flow exist for 7 cases. Composition only for NG, raw syngas, H2 and CO2 products. Reformer outlet 439 psia, HTS 635 F, LTS 375 F. Case 6 S/C is not stated",
+   "source": "TEV-953 PDF pp39-83; TEV-961 PDF pp29-83"
+  },
+  {
+   "item": "Selexol regeneration heat",
+   "value": "65.0 MMBtu/h (19.0 MWth), 71,874 lb/h LP steam at 75 psia, 307 F in Case 5. Syngas duties: WGS-EX1 66.7, WGS-EX2 24.2, WGS-EX3 65.7, WGS-EX4 117.1, KO 19.7 MMBtu/h",
+   "source": "TEV-961 A-53, A-56, A-57 (PDF pp77, 80, 81) [published]; 19.0 MWth and LP steam identification are my calculation"
+  },
+  {
+   "item": "MEA heat screening",
+   "value": "About 55 MWth recoverable against the team's 76 to 79 MWth, shortfall 21 to 24 MWth. Mixes Case 5 and Case 6 data",
+   "source": "amine_spec.txt line 55 [draft]; my calculation in inl.md Section 8"
+  },
+  {
+   "item": "Economics and Case 5 alternative",
+   "value": "No cost data in TEV-953 or TEV-961. Case 5 needs 205.8 MWth with nothing excluded; INL/EXT-11-21537 names 875 C as optimum ROT and says 1.5% more H2 at 925 C does not warrant it",
+   "source": "TEV-953 doc pp4, 31; TEV-961 doc pp5, 21; INL/EXT-11-21537 doc p8 (PDF p21); 205.8 is my calculation"
+  }
+ ],
+ "conflicts": [
+  {
+   "topic": "Purge recovery exclusion against 34.0 MMSCFD",
+   "detail": "Slide 3 excludes PSA tail gas and slide 6 excludes 5.7 MWe, yet slide 6 and final_v1_7 keep 34.0 MMSCFD and 130 MMSCFD, which INL reaches only through total fuel gas recycle.",
+   "resolution": "Keep the recycle in the balance with its electricity, or use a no-recycle basis of about 44.5 MMSCFD.",
+   "changes_conclusions": true
+  },
+  {
+   "topic": "Natural gas basis across slides",
+   "detail": "Slide 6 uses 34.0 (Case 6). Slide 25 labels 43.5 as HTGR-assisted, but that is the 700 C helium case with fired Stage 2. Avoided gas is 18.5 against 9.0 MMSCFD, about S$94.8M/y against S$46.1M/y.",
+   "resolution": "Use one case throughout and label it.",
+   "changes_conclusions": true
+  },
+  {
+   "topic": "Reactor rating across drafts",
+   "detail": "Slide 6, final_v1_7 and amine_spec use 210 MWth. report_latest and the 31 October draft use 230 MWth from a 220.38 MWth requirement with full 17.3 MWe.",
+   "resolution": "Follows from the purge decision; 210 fits only with the exclusion or with Case 5.",
+   "changes_conclusions": true
+  },
+  {
+   "topic": "Power conversion efficiency",
+   "detail": "Deck and 31 October draft use 39.7% from TEV-961. final_v1_7 uses 47% on 25.1 MWth. INL/EXT-11-21537 Table 4 gives 47.5% at 900 C on a 66% of Carnot basis. TEV-981 is not local.",
+   "resolution": "Use one value and state the basis; 39.7% is the TEV-961 Case 6 row.",
+   "changes_conclusions": true
+  },
+  {
+   "topic": "CO2 available to the absorber",
+   "detail": "final_v1_7 and amine_spec apply 90% to 2,069 short ton/d (1,862). INL shifted syngas holds 1,927/0.99 = 1,946, so 90% per pass is 1,752. Difference about 31,000 t/y captured; emitted 317 against 207 short ton/d.",
+   "resolution": "Use the syngas CO2 basis, or model the recycle loop explicitly.",
+   "changes_conclusions": true
+  },
+  {
+   "topic": "Whether 93.1% is plant-wide",
+   "detail": "final_v1_7 says 93.1% is not a plant-wide capture fraction. Captured plus emitted closes to 99.6% of feed carbon, so it is effectively that ratio. INL's stated 99% is across Selexol.",
+   "resolution": "Reword the sentence.",
+   "changes_conclusions": false
+  },
+  {
+   "topic": "Reformer outlet pressure",
+   "detail": "final_v1_7 Table A1 and amine_spec give 31.7 bar. That equals 460 psia, the NG and recycle compressor discharge. Reformer outlet is 439 psia = 30.3 bar (Cases 2 and 5).",
+   "resolution": "Correct to 30.3 bar and note Case 6 pressure is not local.",
+   "changes_conclusions": false
+  },
+  {
+   "topic": "Absorber feed conditions",
+   "detail": "amine_spec uses 35 C and 21 bar from Chen and Ahn 2021. INL delivers 40 C and 26.8 bar, so CO2 partial pressure is 4.7 to 5.1 bar against 3.8 bar.",
+   "resolution": "Align the MEA simulation with the flowsheet basis or justify the difference.",
+   "changes_conclusions": true
+  },
+  {
+   "topic": "Label of 176.8 MWth",
+   "detail": "31 October Table A1 calls it reformer process heat demand. It is total process heat including feed, steam and air preheat; in Case 5 the reformer is 71% of the total.",
+   "resolution": "Relabel as total process heat.",
+   "changes_conclusions": false
+  },
+  {
+   "topic": "What 11 MWe covers",
+   "detail": "final_v1_7 calls about 11 MWe the load for capture and compression. The 11.6 MWe also holds reforming, steam, cooling and water; Selexol plus CO2 compression is 8.5 MWe, and MEA loads are not in it.",
+   "resolution": "Relabel and add MEA-specific loads.",
+   "changes_conclusions": false
+  },
+  {
+   "topic": "Choice of 925 C ROT",
+   "detail": "TEV-961 favours 925 C for single-stage reforming and heat-only fit. INL/EXT-11-21537 later names 875 C optimum. Case 5 uses 34.5 MMSCFD, emits 126 against 142 short ton/d, but keeps a fired stage.",
+   "resolution": "Cite both; see the reference-case decision.",
+   "changes_conclusions": true
+  },
+  {
+   "topic": "Secondary helium pressure",
+   "detail": "Aspen labels show 1,015 psia (7.0 MPa); TEV-961 Table 1 says 9.1 MPa. INL/EXT-11-21537 uses 7 MPa.",
+   "resolution": "Use 7.0 MPa for the flowsheet and note the discrepancy.",
+   "changes_conclusions": false
+  }
+ ],
+ "decisions": [
+  {
+   "question": "How should PSA reject recycle and the 5.7 MWe be treated?",
+   "why": "This sets natural gas, H2 output, emissions and the reactor size. Excluding it while keeping 34.0 MMSCFD is inconsistent, and about S$54M/y of gas is at stake.",
+   "default": "Keep Case 6 intact: show the recycle stream crossing the boundary, count 17.3 MWe, and remove the exclusion row from slide 6.",
+   "options": [
+    "Keep recycle and 17.3 MWe with 34.0 MMSCFD",
+    "Declare no recycle: about 44.5 MMSCFD at 130 MMSCFD H2, about 782 short ton/d uncaptured at 90%",
+    "Hold 34.0 MMSCFD without recycle: about 99 MMSCFD H2"
+   ]
+  },
+  {
+   "question": "Which reference case and reactor rating should the project use?",
+   "why": "Reactor capital, process heat, and the claim of no fired stage all change. Report and deck currently disagree on 210 and 230 MWth.",
+   "default": "Stay on Case 6 with 230 MWth as in the 31 October draft, since it needs the fewest changes before 15 November. Show Case 5 as the alternative.",
+   "options": [
+    "Case 6 at 230 MWth",
+    "Case 6 at 210 MWth with 4.1 MWe import",
+    "Case 5 at 210 MWth: 875 C, 850 C He, 34.5 MMSCFD, fired Stage 2 kept"
+   ]
+  },
+  {
+   "question": "Which CO2 basis applies for 90% capture?",
+   "why": "It moves captured CO2 by about 31,000 t/y and emitted CO2 from 207 to 317 short ton/d.",
+   "default": "Apply 90% per pass to 1,946 short ton/d syngas CO2, giving 1,752 captured, unless a recycle loop is modelled.",
+   "options": [
+    "90% of syngas CO2 (1,752)",
+    "90% of 2,069 (1,862), needs justification",
+    "Model the recycle loop for overall capture"
+   ]
+  },
+  {
+   "question": "Where does MEA reboiler heat come from?",
+   "why": "Recoverable heat is about 55 MWth against 76 to 79 MWth, and the 230 MWth draft leaves only 9.6 MWth unallocated. Burning PSA reject would cover it but undoes the 34.0 MMSCFD basis.",
+   "default": "Use freed Selexol LP steam and export steam first, claim no export steam credit, and state the 21 to 24 MWth shortfall as an added load until resolved.",
+   "options": [
+    "Steam plus extra reactor allocation",
+    "Steam plus dropping or changing ZLD",
+    "Burn part of PSA reject and accept higher gas use"
+   ]
+  },
+  {
+   "question": "Which absorber feed conditions should the MEA simulation use?",
+   "why": "CO2 partial pressure differs by about 25 to 35% and affects solvent rate and reboiler duty.",
+   "default": "Use the INL flowsheet values: 40 C, 26.8 bar, about 18 mol% CO2.",
+   "options": [
+    "INL 40 C and 26.8 bar",
+    "amine_spec 35 C and 21 bar with a stated reason",
+    "INL pressure with extra cooling to 35 C"
+   ]
+  },
+  {
+   "question": "Which power conversion efficiency applies?",
+   "why": "Complete Case 6 sizing is 220.4 MWth at 39.7% and 213.2 MWth at 47.5%.",
+   "default": "Use 39.7% as central, with 47.5% as a labelled sensitivity.",
+   "options": [
+    "39.7% from TEV-961",
+    "47.5% from INL/EXT-11-21537 Table 4"
+   ]
+  }
+ ],
+ "gaps": [
+  "Not verified: Case 6 calculator and Aspen sheets (A-60 onward) are absent; the local TEV-961 PDF ends at A-59 (PDF p83). Whether the public file has them was not checked, because nothing was downloaded.",
+  "Electronic stream appendices (TEV-953 B to E, TEV-961 B to G) are not local, so no per-stream composition exists for any case.",
+  "Not verified: the breakdown of 5.7 MWe between recycle compression and cryogenic duty. The term Purge Recovery is never defined in text.",
+  "Not verified: Case 6 recycle flow, composition, cryogenic splits, H2 returned to PSA, and N2-rich gas flow.",
+  "Not verified: Case 6 reformer inlet temperature and pressure, S/C (3.0 is assumed by drafts), methane conversion, WGS conditions, and absorber CO2 fraction (my rough estimate is 17 to 19 mol%).",
+  "Not verified: Case 6 Selexol steam, exchanger duties and water breakdown. Case 5 is the closest published proxy.",
+  "TEV-981, the source of 39.7%, is not local.",
+  "INL's 17.3 MWe list has no secondary helium circulator. Labels imply a 60 psi loop drop and about 7.6 MW ideal gas work (my calculation on nominal pressure drops), and no INL value exists.",
+  "MEA pump and blower loads are not in 17.3 MWe, and IHX or loop heat losses are not in 176.8 MWth.",
+  "Unmodelled: 90% MEA gives about 10 times INL's CO2 slip, which would enter a cryogenic unit and the reformer if recycle is kept. 34.0 MMSCFD may not transfer to MEA.",
+  "INL did not evaluate the fuel gas purge option or any no-recycle 900 C case; my no-recycle rows are screening estimates, not simulations.",
+  "'Case A' is undefined in the task. The repo E2 file uses it for IEAGHG unabated SMR, so I answered for INL Case 6 and listed the complete conventional cases."
+ ],
+ "report_path": "C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/findings/inl.md"
+}

@@ -1,0 +1,743 @@
+[
+ {
+  "step": 1,
+  "id": "fission",
+  "title": [
+   661,
+   684,
+   31,
+   344
+  ],
+  "focus": "#tour-title",
+  "focus_box": [
+   661,
+   684,
+   31,
+   344
+  ],
+  "focus_in_view": true,
+  "kicker": [
+   640,
+   659,
+   31,
+   344
+  ],
+  "bar": [
+   8,
+   93,
+   16,
+   359
+  ],
+  "card": [
+   627,
+   1589,
+   16,
+   359
+  ],
+  "next": [
+   1481,
+   1519,
+   132,
+   202
+  ],
+  "vh": 812,
+  "vw": 375,
+  "sw": 375,
+  "cw": 375,
+  "live": "Step 1 of 13. Fission heat in the reactor core. Inside the core of the high-temperature gas-cooled reactor (HTGR), uranium nuclei in the tristructural isotropic (TRISO) fuel particles split when they absorb a neutron, and the graphite moderator slows the new neutrons so the chain reaction carries on. The fission heat passes to helium flowing through the core, which leaves at 925\u00a0\u00b0C. The reactor runs at 178.5\u00a0MWth of its 210\u00a0MWth rating.",
+  "keys": "With focus off the drawing, the Left and Right arrow keys change the step and Space pauses or plays. Escape leaves the tour.",
+  "play_hidden": false,
+  "flows": 0,
+  "running": 0,
+  "running_kinds": [],
+  "disabled_next": [
+   "false",
+   "false"
+  ],
+  "reducedOS": false
+ },
+ {
+  "step": 2,
+  "id": "primary",
+  "title": [
+   661,
+   684,
+   31,
+   344
+  ],
+  "focus": "#tour-title",
+  "focus_box": [
+   661,
+   684,
+   31,
+   344
+  ],
+  "focus_in_view": true,
+  "kicker": [
+   640,
+   659,
+   31,
+   344
+  ],
+  "bar": [
+   8,
+   93,
+   16,
+   359
+  ],
+  "card": [
+   627,
+   1370,
+   16,
+   359
+  ],
+  "next": [
+   1262,
+   1300,
+   132,
+   202
+  ],
+  "vh": 812,
+  "vw": 375,
+  "sw": 375,
+  "cw": 375,
+  "live": "Step 2 of 13. Primary helium loop. Hot primary helium at 925\u00a0\u00b0C passes 121.7\u00a0MW to a separate secondary loop in the intermediate heat exchanger (IHX), so the reactor coolant never enters the chemical plant. The circulator sends the cooled helium back to the core.",
+  "keys": "With focus off the drawing, the Left and Right arrow keys change the step and Space pauses or plays. Escape leaves the tour.",
+  "play_hidden": false,
+  "flows": 3,
+  "running": 0,
+  "running_kinds": [],
+  "disabled_next": [
+   "false",
+   "false"
+  ],
+  "reducedOS": false
+ },
+ {
+  "step": 3,
+  "id": "secondary",
+  "title": [
+   661,
+   708,
+   31,
+   344
+  ],
+  "focus": "#tour-title",
+  "focus_box": [
+   661,
+   708,
+   31,
+   344
+  ],
+  "focus_in_view": true,
+  "kicker": [
+   640,
+   659,
+   31,
+   344
+  ],
+  "bar": [
+   8,
+   93,
+   16,
+   359
+  ],
+  "card": [
+   627,
+   1473,
+   16,
+   359
+  ],
+  "next": [
+   1365,
+   1403,
+   132,
+   202
+  ],
+  "vh": 812,
+  "vw": 375,
+  "sw": 375,
+  "cw": 375,
+  "live": "Step 3 of 13. Secondary helium loop to the reformer. The secondary helium leaves the IHX at 900\u00a0\u00b0C, heats the reformer and its feed preheat, and returns at 466\u00a0\u00b0C. It brings 120.8\u00a0MWth of process heat that a conventional reformer would raise by burning natural gas. A second circulator on the return leg draws 3.48\u00a0MWe; the drawing does not show it.",
+  "keys": "With focus off the drawing, the Left and Right arrow keys change the step and Space pauses or plays. Escape leaves the tour.",
+  "play_hidden": false,
+  "flows": 2,
+  "running": 0,
+  "running_kinds": [],
+  "disabled_next": [
+   "false",
+   "false"
+  ],
+  "reducedOS": false
+ },
+ {
+  "step": 4,
+  "id": "feed",
+  "title": [
+   661,
+   708,
+   31,
+   344
+  ],
+  "focus": "#tour-title",
+  "focus_box": [
+   661,
+   708,
+   31,
+   344
+  ],
+  "focus_in_view": true,
+  "kicker": [
+   640,
+   659,
+   31,
+   344
+  ],
+  "bar": [
+   8,
+   93,
+   16,
+   359
+  ],
+  "card": [
+   627,
+   1487,
+   16,
+   359
+  ],
+  "next": [
+   1379,
+   1417,
+   132,
+   202
+  ],
+  "vh": 812,
+  "vw": 375,
+  "sw": 375,
+  "cw": 375,
+  "live": "Step 4 of 13. Natural gas and steam feed the reformer. Natural gas at 23.2\u00a0MMSCFD and process steam enter the reformer, joined by the methane-rich recycle of step 9. In the catalyst tubes methane and steam react to hydrogen and carbon monoxide, taking up the helium's heat. The engine sets the exit at 871\u00a0\u00b0C, the equilibrium assumption of the Idaho National Laboratory (INL) study. With helium supplied at 900\u00a0\u00b0C, the engine's tube model found no tube count in its search range that reaches it on the assumed tube, so the exit stays an assumption.",
+  "keys": "With focus off the drawing, the Left and Right arrow keys change the step and Space pauses or plays. Escape leaves the tour.",
+  "play_hidden": false,
+  "flows": 2,
+  "running": 0,
+  "running_kinds": [],
+  "disabled_next": [
+   "false",
+   "false"
+  ],
+  "reducedOS": false
+ },
+ {
+  "step": 5,
+  "id": "shift",
+  "title": [
+   661,
+   684,
+   31,
+   344
+  ],
+  "focus": "#tour-title",
+  "focus_box": [
+   661,
+   684,
+   31,
+   344
+  ],
+  "focus_in_view": true,
+  "kicker": [
+   640,
+   659,
+   31,
+   344
+  ],
+  "bar": [
+   8,
+   93,
+   16,
+   359
+  ],
+  "card": [
+   627,
+   1371,
+   16,
+   359
+  ],
+  "next": [
+   1263,
+   1301,
+   132,
+   202
+  ],
+  "vh": 812,
+  "vw": 375,
+  "sw": 375,
+  "cw": 375,
+  "live": "Step 5 of 13. Water-gas shift. The syngas raises steam as it leaves the reformer and enters the high-temperature shift bed at 335\u00a0\u00b0C. Over the shift catalyst, carbon monoxide and steam form more hydrogen and carbon dioxide, and the beds release 8.1\u00a0MW of heat.",
+  "keys": "With focus off the drawing, the Left and Right arrow keys change the step and Space pauses or plays. Escape leaves the tour.",
+  "play_hidden": false,
+  "flows": 1,
+  "running": 0,
+  "running_kinds": [],
+  "disabled_next": [
+   "false",
+   "false"
+  ],
+  "reducedOS": false
+ },
+ {
+  "step": 6,
+  "id": "cooling",
+  "title": [
+   661,
+   684,
+   31,
+   344
+  ],
+  "focus": "#tour-title",
+  "focus_box": [
+   661,
+   684,
+   31,
+   344
+  ],
+  "focus_in_view": true,
+  "kicker": [
+   640,
+   659,
+   31,
+   344
+  ],
+  "bar": [
+   8,
+   93,
+   16,
+   359
+  ],
+  "card": [
+   627,
+   1335,
+   16,
+   359
+  ],
+  "next": [
+   1227,
+   1265,
+   132,
+   202
+  ],
+  "vh": 812,
+  "vw": 375,
+  "sw": 375,
+  "cw": 375,
+  "live": "Step 6 of 13. Cooling and condensate. The shifted gas is cooled in steps, and 8.4\u00a0MW of its heat is hot enough to help drive the reboiler of the monoethanolamine (MEA) capture plant in step 10. In the separator at 40\u00a0\u00b0C, 40\u00a0t/h of water condenses out before the gas goes on to the absorber.",
+  "keys": "With focus off the drawing, the Left and Right arrow keys change the step and Space pauses or plays. Escape leaves the tour.",
+  "play_hidden": false,
+  "flows": 4,
+  "running": 0,
+  "running_kinds": [],
+  "disabled_next": [
+   "false",
+   "false"
+  ],
+  "reducedOS": false
+ },
+ {
+  "step": 7,
+  "id": "absorber",
+  "title": [
+   661,
+   684,
+   31,
+   344
+  ],
+  "focus": "#tour-title",
+  "focus_box": [
+   661,
+   684,
+   31,
+   344
+  ],
+  "focus_in_view": true,
+  "kicker": [
+   640,
+   659,
+   31,
+   344
+  ],
+  "bar": [
+   8,
+   93,
+   16,
+   359
+  ],
+  "card": [
+   627,
+   1310,
+   16,
+   359
+  ],
+  "next": [
+   1202,
+   1240,
+   132,
+   202
+  ],
+  "vh": 812,
+  "vw": 375,
+  "sw": 375,
+  "cw": 375,
+  "live": "Step 7 of 13. CO\u2082 capture in the MEA absorber. In the packed absorber the gas rises against falling 30\u00a0wt% aqueous monoethanolamine (MEA) at 26.8\u00a0bar. The amine takes up 90.0% of the CO\u2082 in one pass and leaves at the bottom as rich solvent; the hydrogen-rich gas leaves at the top.",
+  "keys": "With focus off the drawing, the Left and Right arrow keys change the step and Space pauses or plays. Escape leaves the tour.",
+  "play_hidden": false,
+  "flows": 3,
+  "running": 0,
+  "running_kinds": [],
+  "disabled_next": [
+   "false",
+   "false"
+  ],
+  "reducedOS": false
+ },
+ {
+  "step": 8,
+  "id": "psa",
+  "title": [
+   42,
+   89,
+   31,
+   344
+  ],
+  "focus": "card button[next]",
+  "focus_box": [
+   616,
+   654,
+   132,
+   202
+  ],
+  "focus_in_view": true,
+  "kicker": [
+   21,
+   40,
+   31,
+   344
+  ],
+  "bar": [
+   -611,
+   -526,
+   16,
+   359
+  ],
+  "card": [
+   8,
+   724,
+   16,
+   359
+  ],
+  "next": [
+   616,
+   654,
+   132,
+   202
+  ],
+  "vh": 812,
+  "vw": 375,
+  "sw": 375,
+  "cw": 375,
+  "live": "Step 8 of 13. Hydrogen product from the external PSA. The hydrogen-rich gas, with 10,214\u00a0kg/h of hydrogen, crosses the dashed boundary to pressure swing adsorption (PSA), an external block the engine does not simulate. At an assumed 88.0% recovery it delivers 8,988\u00a0kg/h of purified hydrogen, 66,925\u00a0t/y at 85.0% availability.",
+  "keys": "With focus off the drawing, the Left and Right arrow keys change the step and Space pauses or plays. Escape leaves the tour.",
+  "play_hidden": false,
+  "flows": 2,
+  "running": 0,
+  "running_kinds": [],
+  "disabled_next": [
+   "false",
+   "false"
+  ],
+  "reducedOS": false
+ },
+ {
+  "step": 9,
+  "id": "reject",
+  "title": [
+   42,
+   89,
+   31,
+   344
+  ],
+  "focus": "card button[next]",
+  "focus_box": [
+   736,
+   774,
+   132,
+   202
+  ],
+  "focus_in_view": true,
+  "kicker": [
+   21,
+   40,
+   31,
+   344
+  ],
+  "bar": [
+   -611,
+   -526,
+   16,
+   359
+  ],
+  "card": [
+   8,
+   844,
+   16,
+   359
+  ],
+  "next": [
+   736,
+   774,
+   132,
+   202
+  ],
+  "vh": 812,
+  "vw": 375,
+  "sw": 375,
+  "cw": 375,
+  "live": "Step 9 of 13. PSA reject back to the cryogenic unit. The PSA reject, still holding 1,226\u00a0kg/h of hydrogen, crosses back into the boundary and is compressed for the cryogenic unit. The cold separation returns hydrogen to the PSA feed and a methane-rich recycle to the reformer. The nitrogen-rich cut is burned and leaves by the stack as the plant's residual 38,309\u00a0t/y of CO\u2082.",
+  "keys": "With focus off the drawing, the Left and Right arrow keys change the step and Space pauses or plays. Escape leaves the tour.",
+  "play_hidden": false,
+  "flows": 8,
+  "running": 0,
+  "running_kinds": [],
+  "disabled_next": [
+   "false",
+   "false"
+  ],
+  "reducedOS": false
+ },
+ {
+  "step": 10,
+  "id": "stripper",
+  "title": [
+   42,
+   65,
+   31,
+   344
+  ],
+  "focus": "card button[next]",
+  "focus_box": [
+   654,
+   692,
+   132,
+   202
+  ],
+  "focus_in_view": true,
+  "kicker": [
+   21,
+   40,
+   31,
+   344
+  ],
+  "bar": [
+   -611,
+   -526,
+   16,
+   359
+  ],
+  "card": [
+   8,
+   762,
+   16,
+   359
+  ],
+  "next": [
+   654,
+   692,
+   132,
+   202
+  ],
+  "vh": 812,
+  "vw": 375,
+  "sw": 375,
+  "cw": 375,
+  "live": "Step 10 of 13. Stripper and reboiler heat. Rich solvent is warmed in the rich/lean exchanger and stripped at 2.0\u00a0bar by reboiler steam, which drives the CO\u2082 out; the lean solvent is cooled and pumped back to the absorber. The reboiler needs 51.0\u00a0MW, met in a fixed order: freed Selexol steam 12.7\u00a0MW, export steam 16.8\u00a0MW, syngas heat 8.4\u00a0MW, and reactor steam 13.1\u00a0MW last.",
+  "keys": "With focus off the drawing, the Left and Right arrow keys change the step and Space pauses or plays. Escape leaves the tour.",
+  "play_hidden": false,
+  "flows": 6,
+  "running": 0,
+  "running_kinds": [],
+  "disabled_next": [
+   "false",
+   "false"
+  ],
+  "reducedOS": false
+ },
+ {
+  "step": 11,
+  "id": "co2",
+  "title": [
+   42,
+   89,
+   31,
+   344
+  ],
+  "focus": "card button[next]",
+  "focus_box": [
+   880,
+   918,
+   132,
+   202
+  ],
+  "focus_in_view": false,
+  "kicker": [
+   21,
+   40,
+   31,
+   344
+  ],
+  "bar": [
+   -611,
+   -526,
+   16,
+   359
+  ],
+  "card": [
+   8,
+   988,
+   16,
+   359
+  ],
+  "next": [
+   880,
+   918,
+   132,
+   202
+  ],
+  "vh": 812,
+  "vw": 375,
+  "sw": 375,
+  "cw": 375,
+  "live": "Step 11 of 13. CO\u2082 compression, ship and offshore storage. The condenser returns water from the stripper overhead as reflux, and the CO\u2082 is compressed to INL's pipeline condition using 4.25\u00a0MWe. The model does not include conditioning the CO\u2082 for the ship; the pipeline compression load stands in for it. Then 359,777\u00a0t/y of CO\u2082 leaves by ship for storage offshore abroad, which the model treats as a tariff of 60\u00a0S$/t with no simulation.",
+  "keys": "With focus off the drawing, the Left and Right arrow keys change the step and Space pauses or plays. Escape leaves the tour.",
+  "play_hidden": false,
+  "flows": 3,
+  "running": 0,
+  "running_kinds": [],
+  "disabled_next": [
+   "false",
+   "false"
+  ],
+  "reducedOS": false
+ },
+ {
+  "step": 12,
+  "id": "power",
+  "title": [
+   42,
+   65,
+   31,
+   344
+  ],
+  "focus": "card button[next]",
+  "focus_box": [
+   695,
+   733,
+   132,
+   202
+  ],
+  "focus_in_view": true,
+  "kicker": [
+   21,
+   40,
+   31,
+   344
+  ],
+  "bar": [
+   -611,
+   -526,
+   16,
+   359
+  ],
+  "card": [
+   8,
+   803,
+   16,
+   359
+  ],
+  "next": [
+   695,
+   733,
+   132,
+   202
+  ],
+  "vh": 812,
+  "vw": 375,
+  "sw": 375,
+  "cw": 375,
+  "live": "Step 12 of 13. Power block and site electricity. A branch of the hot primary helium carries 59.6\u00a0MWth to the power block. The steam for the reboiler first does back-pressure work in the turbine and then gives the reboiler 13.1\u00a0MW; the rest of the branch drives the turbine at 39.7% efficiency, and the two together make 19.78\u00a0MWe. The helium circulators draw 7.45\u00a0MWe of the 19.78\u00a0MWe site demand, and the grid supplies 0.00\u00a0MWe.",
+  "keys": "With focus off the drawing, the Left and Right arrow keys change the step and Space pauses or plays. Escape leaves the tour.",
+  "play_hidden": false,
+  "flows": 2,
+  "running": 0,
+  "running_kinds": [],
+  "disabled_next": [
+   "false",
+   "false"
+  ],
+  "reducedOS": false
+ },
+ {
+  "step": 13,
+  "id": "closing",
+  "title": [
+   42,
+   65,
+   31,
+   344
+  ],
+  "focus": "card button[next]",
+  "focus_box": [
+   803,
+   841,
+   132,
+   202
+  ],
+  "focus_in_view": false,
+  "kicker": [
+   21,
+   40,
+   31,
+   344
+  ],
+  "bar": [
+   -611,
+   -526,
+   16,
+   359
+  ],
+  "card": [
+   8,
+   911,
+   16,
+   359
+  ],
+  "next": [
+   803,
+   841,
+   132,
+   202
+  ],
+  "vh": 812,
+  "vw": 375,
+  "sw": 375,
+  "cw": 375,
+  "live": "Step 13 of 13. The plant from end to end. End to end, the plant makes 66,925\u00a0t/y of purified hydrogen and sends 359,777\u00a0t/y of CO\u2082 to storage. Against the 616,361\u00a0t/y an unabated reformer would emit on INL's baseline, its residual of 38,309\u00a0t/y leaves a net abatement of 578,052\u00a0t/y. Part of that is the CO\u2082 stored; the rest is never formed, because reactor heat replaces the reformer's fuel gas and the cryogenic recycle returns methane to the feed. The abatement target of 250,000\u00a0t/y is met at these inputs. On Cho's and IEAGHG's baselines the net abatement is 587,436\u00a0t/y and 563,745\u00a0t/y.",
+  "keys": "With focus off the drawing, the Left and Right arrow keys change the step and Space pauses or plays. Escape leaves the tour.",
+  "play_hidden": false,
+  "flows": 30,
+  "running": 0,
+  "running_kinds": [],
+  "disabled_next": [
+   "true",
+   "true"
+  ],
+  "reducedOS": false
+ }
+]

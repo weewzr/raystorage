@@ -1,0 +1,596 @@
+{
+  "schema": 1,
+  "title": "Guided process tour of the Interactive PFD",
+  "label": "audit:pfd",
+  "written": "2026-11-03",
+  "basis": {
+    "worktree_branch": "feature/ui-ux at ce259b0 (origin/main), read only",
+    "drawing": "frontend/index.html, inline svg#pfd-svg, viewBox 0 0 2070 1000; units are g.unit[data-unit], streams are g.st[data-stream] holding path.cas and path.core (S16 holds path.vent)",
+    "live_reply": "solve reply at the registry defaults, captured in headless Chrome from a site built into the scratch folder (wasm built with CARGO_TARGET_DIR in the scratch cargo folder). Saved at stagef/uiux/audit_pfd/capture/reply_default.json, with the registry at capture/registry.json and ten variant replies at audit_pfd/variants/",
+    "default_inputs": {"basis": "case_b", "tail_gas": "recycle", "heat_basis": "inl_scaled", "rating_mwth": 210, "ihx_approach_k": 25, "eta_power": 0.397, "p_abs_bar": 26.8, "w_mea": 30, "lean_loading": 0.25, "capture_target": 0.9, "srd": 3.8, "p_strip_bar": 2, "availability": 0.85, "ts_s_t": 60}
+  },
+  "conventions": {
+    "path_notation": "reply paths use the data-bind convention of app.js bound() and panels.js walk(): inside an array a name that is not an index picks the entry whose id equals it, and an object with a value field yields that value. So units.htgr.conditions.ROT.value and balances.energy.ihx_duty.value both resolve. Train profile points carry a stream key and no id, so they are addressed by index, with the stream named beside it. Flags carry a param key and no id, so they are found by param in code.",
+    "token": "where given, token is a {{path|decimals}} string that panels.js fillText() already resolves, so a caption can be filled with the existing helper",
+    "sources": {
+      "reply": "the live solve reply (state.lastOk); follows the controls",
+      "registry": "the registry reply (state.registry); fixed values",
+      "streams_json": "data/streams.json, rows of run FS_B_REC_F from results/Integrated_Mass_Balance.csv; precomputed at the headline basis, does not follow the controls",
+      "results_csv": "data/csv/<file>, the shipped results CSVs; precomputed, does not follow the controls"
+    },
+    "follows_controls": {
+      "yes": "live calculation of the anchored port; moves with the controls",
+      "control": "echo of an input control",
+      "fixed": "registry constant shown by the reply; never moves",
+      "scenario_only": "live Level 3 flowsheet of the selected basis and tail_gas; null for tail_gas export, burn_on_site and recycle_fixed; did not move for p_abs_bar, w_mea, ihx_approach_k or eta_power in the variant solves",
+      "design_point_only": "M6 column model at its Case B design point; null as soon as w_mea, lean_loading, capture_target, p_abs_bar or p_strip_bar moves, or the basis or tail_gas changes",
+      "no": "precomputed results row; label it Precomputed on screen"
+    },
+    "units": "reply unit C prints as degC; unit - is a fraction and prints as a percentage through panels.js fmtValue(); K to degC is the only other conversion any step needs. Decimals follow panels.js DECIMALS.",
+    "default_value": "value at the default inputs, for testing only; never typed into the page"
+  },
+  "global_rules": [
+    "Every number on screen is read from the reply path, registry path or results row named here at render time. A null value prints n/a with the matching engine_fields_missing reason.",
+    "Moving dashes show the flow direction only. Every stream animates at one fixed screen speed, and a line under the caption says that the motion does not show flow speed.",
+    "Anything drawn to explain physics without engine data carries an on-screen Illustration tag: the fission overlay of step 1, reaction equations, the ship and store icons of step 11 and any added heat arrows.",
+    "Stream rows of data/streams.json come from the Level 3 flowsheet and the reply comes from the anchored port. Their carbon lines disagree (for example S16 carries 93.9 kmol/h of CO2 against 116.9 kmol/h of burned carbon in the reply, the failed carbon gate of the cryogenic panel), so the tour takes flows and carbon from the reply and uses stream rows only for temperature and pressure, each tagged Precomputed.",
+    "When the reply status is not_converged the tour reads state.lastOk and shows the existing Last converged result tag.",
+    "On a new reply (onResult hook) the current step re-renders its numbers without moving focus.",
+    "Scenario guard: when inputs.tail_gas is not recycle, or inputs.basis is case_a, each step uses its scenario_branches text, because the drawing shows the Case B recycle plant only.",
+    "On the site SMR means steam methane reforming only; captions say reformer where they can."
+  ],
+  "controls": {
+    "placement": "a Tour toolbar outside the svg, in the .pfd-pick row above #pfd-mount, so it stays visible at phone width while the drawing scrolls sideways",
+    "buttons": ["Start the process tour", "Previous step", "Next step", "Play or Pause (hidden under prefers-reduced-motion)", "Exit tour"],
+    "caption_region": "one div with aria-live=polite outside the scroller, holding the step title, Step n of 13, the caption, the numbers and the tags; set #pfd-panel aria-live to off while the tour runs so the panel does not announce at the same time",
+    "focus": "Start moves focus to the step title; Exit, or Escape, ends the tour and returns focus to the Start button. Escape closes an open stream tip first, because pfd.js already handles Escape on document for the tip.",
+    "keys": "the tour adds no global arrow keys; the unit arrow keys of pfd.js keep working",
+    "camera": "each step calls the existing reveal(unitId) for its first highlighted unit; reveal() uses behavior smooth today and must use auto under prefers-reduced-motion",
+    "reduced_motion": "no moving dashes, no autoplay, no smooth scroll; the highlighted lines thicken and keep their drawn arrowheads, and the user steps with the buttons",
+    "contrast": "caption text and tags at 4.5:1 or better on their background"
+  },
+  "steps": [
+    {
+      "n": 1,
+      "id": "fission",
+      "title": "Fission heat in the HTGR core",
+      "highlight": {
+        "units": ["htgr"],
+        "selectors": ["[data-unit=\"htgr\"] path[fill=\"url(#pp-core)\"]", "[data-unit=\"htgr\"] text.tv"]
+      },
+      "animate": [],
+      "dim_context": ["[data-stream=\"P3\"]", "[data-stream=\"P1\"]"],
+      "caption": [
+        "Inside the reactor core, uranium in TRISO fuel particles splits when it absorbs a neutron, and the graphite around the fuel slows the new neutrons so the chain reaction carries on.",
+        "The fission energy heats the graphite, and helium passing through the core carries that heat out at {rot} degC.",
+        "The reactor is rated at {rating} MWth and runs at the {output} MWth this plant needs, so {surplus} MWth is held as margin."
+      ],
+      "numbers": [
+        {"key": "rot", "label": "Reactor outlet", "source": "reply", "path": "units.htgr.conditions.ROT.value", "token": "{{units.htgr.conditions.ROT|0}}", "unit_in_reply": "C", "show_unit": "degC", "decimals": 0, "default_value": 925, "follows_controls": "fixed", "note": "registry fixed value ROT, published, TEV-961 Table 2"},
+        {"key": "rating", "label": "Rating", "source": "reply", "path": "kpi.rating_mwth", "token": "{{kpi.rating_mwth|0}}", "unit_in_reply": "MWth", "show_unit": "MWth", "decimals": 0, "default_value": 210, "follows_controls": "control"},
+        {"key": "output", "label": "Reactor heat output", "source": "reply", "path": "balances.energy.htgr_heat_output.value", "token": "{{balances.energy.htgr_heat_output|1}}", "unit_in_reply": "MWth", "show_unit": "MWth", "decimals": 1, "default_value": 178.4939, "follows_controls": "yes", "note": "the need, or the rating when the rating is lower"},
+        {"key": "need", "label": "Heat the process needs", "source": "reply", "path": "kpi.reactor_required_mwth", "token": "{{kpi.reactor_required_mwth|1}}", "unit_in_reply": "MWth", "show_unit": "MWth", "decimals": 1, "default_value": 178.4939, "follows_controls": "yes"},
+        {"key": "surplus", "label": "Surplus at rating", "source": "reply", "path": "kpi.surplus_mwth", "token": "{{kpi.surplus_mwth|1}}", "unit_in_reply": "MWth", "show_unit": "MWth", "decimals": 1, "default_value": 31.5061, "follows_controls": "yes", "note": "negative when the rating is below the need; then show feasibility.reason instead of sentence 3"},
+        {"key": "p_he", "label": "Helium pressure", "source": "reply", "path": "units.circ_primary.conditions.CIRC_CENTRAL_P_MPA.value", "token": "{{units.circ_primary.conditions.CIRC_CENTRAL_P_MPA|1}}", "unit_in_reply": "MPa", "show_unit": "MPa", "decimals": 1, "default_value": 7, "follows_controls": "fixed", "note": "assumed; optional"},
+        {"key": "feasibility", "label": "Feasibility", "source": "reply", "path": "feasibility.reason", "unit_in_reply": "text", "default_value": "Feasible: the 210.0 MWth rating covers the 178.5 MWth the process needs, with 31.5 MWth to spare", "follows_controls": "yes", "note": "engine text; show as is when feasibility.feasible is false"}
+      ],
+      "illustration": [
+        "Overlay inside the core outline (the pp-core path, x 102 to 208, y 380 to 600): TRISO particles in a graphite matrix, a neutron striking a uranium nucleus that splits into two fragments and releases new neutrons, and heat passing to the helium. Tag: Illustration, the engine models the reactor as a heat source and holds no fuel, neutron or core temperature data.",
+        "No numerals in the overlay: no MeV, no neutron count, no isotope mass number, since none of them is an engine value.",
+        "The flow direction of helium inside the vessel (in at the top nozzle, out at the side outlet) is the drawing's, and the engine does not model it."
+      ],
+      "notes_on_screen": ["units.json htgr limitation 1 through fillText: the basis is a generic {{units.htgr.conditions.ROT.value|0}} degC HTGR and Xe-100 is only a labelled analogue with a much lower outlet temperature."],
+      "scenario_branches": [
+        {"when": "feasibility.feasible == false", "text": "replace sentence 3 with feasibility.reason; balances.energy.unmet_reactor_heat.value gives the heat the rating cannot supply"}
+      ],
+      "drawing_gaps": [
+        "The core outline is an unnamed path inside g[data-unit=htgr]; add a data-tour=core attribute so the step can target it.",
+        "No fuel, TRISO or graphite element exists; the overlay must be added as its own aria-hidden group above the core."
+      ]
+    },
+    {
+      "n": 2,
+      "id": "primary_loop",
+      "title": "Primary helium loop: reactor, IHX and circulator",
+      "highlight": {
+        "units": ["htgr", "ihx", "circ_primary"],
+        "selectors": [".pfd-labels .t-ph"]
+      },
+      "animate": [
+        {"stream": "P1", "selector": "[data-stream=\"P1\"] path.core", "from": "htgr", "to": "ihx", "start": [291, 640], "end": [370, 532], "length_px": 187, "direction_ok": true},
+        {"stream": "P2", "selector": "[data-stream=\"P2\"] path.core", "from": "ihx", "to": "circ_primary", "start": [530, 532], "end": [476, 232], "length_px": 460, "direction_ok": true},
+        {"stream": "P3", "selector": "[data-stream=\"P3\"] path.core", "from": "circ_primary", "to": "htgr", "start": [421, 196], "end": [157, 264], "length_px": 374, "direction_ok": true}
+      ],
+      "dim_context": ["[data-stream=\"P4\"]"],
+      "caption": [
+        "Hot primary helium leaves the reactor at {rot} degC and passes {ihx_duty} MW to the secondary loop in the intermediate heat exchanger (IHX), so the reactor coolant never reaches the process side.",
+        "The circulator sends the cooled helium back to the reactor, moving {he_prim} kg/s and drawing {e_prim} MWe."
+      ],
+      "numbers": [
+        {"key": "rot", "label": "Reactor outlet", "source": "reply", "path": "units.htgr.conditions.ROT.value", "token": "{{units.htgr.conditions.ROT|0}}", "unit_in_reply": "C", "show_unit": "degC", "decimals": 0, "default_value": 925, "follows_controls": "fixed"},
+        {"key": "ihx_duty", "label": "IHX duty, process heat with slip heat", "source": "reply", "path": "balances.energy.ihx_duty.value", "token": "{{balances.energy.ihx_duty|1}}", "unit_in_reply": "MW", "show_unit": "MW", "decimals": 1, "default_value": 121.6809, "follows_controls": "yes"},
+        {"key": "he_prim", "label": "Primary helium flow at need", "source": "reply", "path": "units.circ_primary.inputs.he_prim.value", "token": "{{units.circ_primary.inputs.he_prim|1}}", "unit_in_reply": "kg/s", "show_unit": "kg/s", "decimals": 1, "default_value": 79.1677, "follows_controls": "yes"},
+        {"key": "e_prim", "label": "Primary circulator electricity", "source": "reply", "path": "units.circ_primary.results.e_prim.value", "token": "{{units.circ_primary.results.e_prim|2}}", "unit_in_reply": "MWe", "show_unit": "MWe", "decimals": 2, "default_value": 3.9647, "follows_controls": "yes"},
+        {"key": "w_p", "label": "Primary shaft work, returned to the helium as heat", "source": "reply", "path": "units.circ_primary.results.w_p.value", "token": "{{units.circ_primary.results.w_p|1}}", "unit_in_reply": "MW", "show_unit": "MW", "decimals": 1, "default_value": 3.5682, "follows_controls": "yes", "note": "optional"},
+        {"key": "approach", "label": "IHX approach", "source": "reply", "path": "units.ihx.conditions.IHX_APPROACH_K.value", "token": "{{units.ihx.conditions.IHX_APPROACH_K|0}}", "unit_in_reply": "K", "show_unit": "K", "decimals": 0, "default_value": 25, "follows_controls": "control"},
+        {"key": "dp_prim", "label": "Primary loop pressure drop", "source": "reply", "path": "units.circ_primary.conditions.CIRC_CENTRAL_DP_PRIM_KPA.value", "unit_in_reply": "kPa", "show_unit": "kPa", "decimals": 0, "default_value": 150, "follows_controls": "fixed", "note": "assumed; optional"},
+        {"key": "q_ihx", "label": "IHX loss", "source": "reply", "path": "units.ihx.results.q_ihx.value", "unit_in_reply": "MW", "show_unit": "MW", "decimals": 2, "default_value": 0.9734, "follows_controls": "yes", "note": "optional"},
+        {"key": "q_duct", "label": "Duct loss", "source": "reply", "path": "units.ihx.results.q_duct.value", "unit_in_reply": "MW", "show_unit": "MW", "decimals": 2, "default_value": 0.3075, "follows_controls": "yes", "note": "optional"},
+        {"key": "t_prim_return", "label": "Primary circulator inlet", "source": "reply", "path": "units.circ_primary.conditions.T_CIRC_PRIM_K.value", "unit_in_reply": "K", "show_unit": "degC after K to degC", "decimals": 0, "default_value": 764, "follows_controls": "fixed", "note": "DO NOT present as live: a registry constant that stayed 764 K when ihx_approach_k moved from 25 to 40 K, while the primary flow moved from 79.17 to 82.11 kg/s. Leave it out, or label it as the registry value at the default approach."}
+      ],
+      "flags_to_show": ["flags[param=ihx_approach_k].text, present at the defaults: the 25 K approach lies outside the 50 to 82 K evidence range"],
+      "illustration": [],
+      "scenario_branches": [],
+      "drawing_gaps": [
+        "No label gives the primary return temperature, and the reply has no live field for it.",
+        "P4 leaves P1 at the junction (330,532) and rejoins P2 at (583,364); dim it here and animate it in step 12."
+      ]
+    },
+    {
+      "n": 3,
+      "id": "secondary_loop",
+      "title": "Secondary helium loop to the reformer",
+      "highlight": {
+        "units": ["ihx", "smr"],
+        "selectors": [".pfd-labels .t-sh"]
+      },
+      "animate": [
+        {"stream": "H1", "selector": "[data-stream=\"H1\"] path.core", "from": "ihx", "to": "smr", "start": [395, 512], "end": [650, 470], "length_px": 297, "direction_ok": true},
+        {"stream": "H2", "selector": "[data-stream=\"H2\"] path.core", "from": "smr", "to": "ihx", "start": [650, 760], "end": [505, 552], "length_px": 353, "direction_ok": true}
+      ],
+      "dim_context": ["[data-stream=\"P1\"]", "[data-stream=\"P2\"]"],
+      "caption": [
+        "The secondary helium leaves the IHX at {t_sup} degC, heats the reformer tubes and comes back at {t_ret} degC.",
+        "It brings {q_proc} MWth of process heat into the reformer at {he_sec} kg/s, heat that a conventional reformer would raise by burning natural gas.",
+        "A secondary circulator on the return leg draws {e_sec} MWe; the drawing does not show it."
+      ],
+      "numbers": [
+        {"key": "t_sup", "label": "Helium supply", "source": "reply", "path": "units.smr.conditions.T_HE_SUPPLY.value", "token": "{{units.smr.conditions.T_HE_SUPPLY|0}}", "unit_in_reply": "C", "show_unit": "degC", "decimals": 0, "default_value": 900, "follows_controls": "fixed"},
+        {"key": "t_ret", "label": "Helium return", "source": "reply", "path": "units.smr.conditions.T_HE_RETURN.value", "token": "{{units.smr.conditions.T_HE_RETURN|0}}", "unit_in_reply": "C", "show_unit": "degC", "decimals": 0, "default_value": 466, "follows_controls": "fixed"},
+        {"key": "q_proc", "label": "Process heat, includes preheat", "source": "reply", "path": "kpi.q_process_mwth", "token": "{{kpi.q_process_mwth|1}}", "unit_in_reply": "MWth", "show_unit": "MWth", "decimals": 1, "default_value": 120.8041, "follows_controls": "yes", "note": "moves with basis, tail_gas and heat_basis"},
+        {"key": "he_sec", "label": "Secondary helium flow", "source": "reply", "path": "units.circ_primary.inputs.he_sec.value", "token": "{{units.circ_primary.inputs.he_sec|1}}", "unit_in_reply": "kg/s", "show_unit": "kg/s", "decimals": 1, "default_value": 54.02, "follows_controls": "yes"},
+        {"key": "e_sec", "label": "Secondary circulator electricity", "source": "reply", "path": "units.circ_primary.results.e_sec.value", "token": "{{units.circ_primary.results.e_sec|2}}", "unit_in_reply": "MWe", "show_unit": "MWe", "decimals": 2, "default_value": 3.4817, "follows_controls": "yes"},
+        {"key": "dp_sec", "label": "Secondary loop pressure drop", "source": "reply", "path": "units.circ_primary.conditions.CIRC_CENTRAL_DP_SEC_KPA.value", "unit_in_reply": "kPa", "show_unit": "kPa", "decimals": 0, "default_value": 200, "follows_controls": "fixed", "note": "assumed; optional"}
+      ],
+      "flags_to_show": ["flags[param=T_HE_SUPPLY].text, present at the defaults: the 900 degC supply is above the highest measured secondary helium temperature, 859 degC at HTTR in 2004"],
+      "illustration": [],
+      "scenario_branches": [],
+      "drawing_gaps": [
+        "No secondary circulator is drawn on H2, while the engine counts one (e_sec). Add a small circulator symbol on H2 or keep the caption's sentence 3.",
+        "Physics: the engine's reformer tube model (engine/units/src/smr_tube.rs) heats the tube in counterflow, with helium entering at the process outlet end. The drawing brings H1 into the shell near the top (y 470, the feed end, where S01 and S02 enter at y 330) and takes H2 out near the bottom (y 760, beside the S05 outlet at y 815), so an animation would show helium flowing the same way as the process gas. Redraw so that helium enters low and leaves high, or tag the shell-side route as schematic."
+      ]
+    },
+    {
+      "n": 4,
+      "id": "reformer_feed",
+      "title": "Natural gas and steam feed the reformer",
+      "highlight": {
+        "units": ["smr"],
+        "selectors": [".pfd-labels text.tb"]
+      },
+      "animate": [
+        {"stream": "S01", "selector": "[data-stream=\"S01\"] path.core", "from": "battery limit (open end)", "to": "smr", "start": [700, 205], "end": [700, 330], "length_px": 125, "direction_ok": true},
+        {"stream": "S02", "selector": "[data-stream=\"S02\"] path.core", "from": "steam system (open end)", "to": "smr", "start": [790, 205], "end": [790, 330], "length_px": 125, "direction_ok": true}
+      ],
+      "dim_context": ["[data-stream=\"S03\"]", "[data-stream=\"H1\"]", "[data-stream=\"H2\"]"],
+      "caption": [
+        "Fresh natural gas at {ng} MMSCFD and process steam enter the reformer, where the methane-rich recycle of step 9 joins them.",
+        "In the catalyst tubes methane reacts with steam to hydrogen and carbon monoxide, and this reaction takes up the helium heat.",
+        "The engine sets the syngas exit at {t_out} degC, INL's equilibrium assumption; with 900 degC helium on the assumed tube, the tube model reaches only {tube_exit} degC."
+      ],
+      "caption_note": "sentence 3 must not type 900; take it from units.smr.conditions.T_HE_SUPPLY.value",
+      "numbers": [
+        {"key": "ng", "label": "Natural gas feed", "source": "reply", "path": "kpi.ng_mmscfd", "token": "{{kpi.ng_mmscfd|1}}", "unit_in_reply": "MMSCFD", "show_unit": "MMSCFD", "decimals": 1, "default_value": 23.2316, "follows_controls": "yes", "note": "moves with basis; stayed 23.23 under every tail_gas option in the variant solves"},
+        {"key": "t_out", "label": "Reformer outlet, INL equilibrium assumption", "source": "reply", "path": "units.smr.conditions.SYNGAS_CHAIN_C5_HPS_GEN1_T_IN_C.value", "token": "{{units.smr.conditions.SYNGAS_CHAIN_C5_HPS_GEN1_T_IN_C|0}}", "unit_in_reply": "C", "show_unit": "degC", "decimals": 0, "default_value": 871, "follows_controls": "fixed"},
+        {"key": "t_sup", "label": "Helium supply", "source": "reply", "path": "units.smr.conditions.T_HE_SUPPLY.value", "token": "{{units.smr.conditions.T_HE_SUPPLY|0}}", "unit_in_reply": "C", "show_unit": "degC", "decimals": 0, "default_value": 900, "follows_controls": "fixed"},
+        {"key": "tube_exit", "label": "Reformer exit reachable on the assumed tube, 199 tubes", "source": "results_csv", "path": "data/csv/Final_Design_Basis.csv, row id TUBE_EXIT_C_N199, column case_b", "unit_in_reply": "C", "show_unit": "degC", "decimals": 1, "default_value": 782.135035, "follows_controls": "no", "note": "Case B tube model run at a fixed design point; tag Precomputed. Its pair TUBE_SHORTFALL_871C_K_N199 gives 88.9 K below the 871 degC exit. The reply's engine_fields_missing entry for profiles.smr states the same limit in words."},
+        {"key": "p_out", "label": "Reformer outlet pressure", "source": "reply", "path": "profiles.train_P.points.1.value", "stream": "S05", "token": "{{profiles.train_P.points.1|1}}", "unit_in_reply": "bar", "show_unit": "bar", "decimals": 1, "default_value": 30.268, "follows_controls": "scenario_only", "note": "optional"},
+        {"key": "t_mix", "label": "Mixed reformer feed", "source": "reply", "path": "profiles.train_T.points.0.value", "stream": "S04", "token": "{{profiles.train_T.points.0|0}}", "unit_in_reply": "C", "show_unit": "degC", "decimals": 0, "default_value": 537.78, "follows_controls": "scenario_only", "note": "optional; S04 is not drawn"},
+        {"key": "tube_c", "label": "Carbon through the tubes", "source": "reply", "path": "units.wgs.results.tube_c.value", "unit_in_reply": "kmol/h", "show_unit": "kmol/h", "decimals": 0, "default_value": 1574.06, "follows_controls": "yes", "note": "optional; fresh feed carbon is balances.carbon.feed_c.value, 1219.2 kmol/h"},
+        {"key": "steam_kg_h", "label": "Process steam flow", "source": "streams_json", "path": "data/streams.json rows[stream_id=S02].total_kg_h", "unit_in_reply": "kg/h", "show_unit": "kg/h", "decimals": 0, "default_value": 80924.28, "follows_controls": "no", "note": "optional, tag Precomputed; the reply has no steam flow and the steam to carbon control is dropped"},
+        {"key": "ng_unabated", "label": "Gas of an unabated reformer of the same output", "source": "results_csv", "path": "data/csv/Final_Design_Basis.csv, row id RES_NG_UNABATED_MMSCFD, column case_b", "unit_in_reply": "MMSCFD", "show_unit": "MMSCFD", "decimals": 1, "default_value": 35.872251, "follows_controls": "no", "note": "optional, tag Precomputed; column case_a_inl when basis is case_a"}
+      ],
+      "illustration": ["Reaction notation CH4 + H2O <=> CO + 3 H2, tagged Illustration; it carries no engine value."],
+      "scenario_branches": [
+        {"when": "inputs.tail_gas in [export, burn_on_site]", "text": "drop the recycle clause of sentence 1: units.cryogenic.results.recycled_c.value is 0 in these scenarios, so the drawn S03 carries nothing"}
+      ],
+      "drawing_gaps": [
+        "Feed preheat (FEED-PREHEAT) and the mixed feed S04 sit inside the reformer block and are not drawn.",
+        "S01 and S02 start at open ends; the steam system is not drawn."
+      ]
+    },
+    {
+      "n": 5,
+      "id": "shift",
+      "title": "Water-gas shift",
+      "highlight": {
+        "units": ["wgs"],
+        "selectors": [".pfd-labels .t-syn"]
+      },
+      "animate": [
+        {"stream": "S05", "selector": "[data-stream=\"S05\"] path.core", "from": "smr", "to": "wgs", "start": [840, 815], "end": [990, 422], "length_px": 587, "direction_ok": true}
+      ],
+      "dim_context": [],
+      "caption": [
+        "The syngas is cooled to {t_hts} degC by raising steam before it enters the high-temperature shift bed.",
+        "Over the shift catalyst, carbon monoxide reacts with steam to more hydrogen and carbon dioxide, and the two beds release {q_wgs} MW of heat.",
+        "The drawing shows both beds, with the coolers between them, as one vessel."
+      ],
+      "numbers": [
+        {"key": "t_hts", "label": "High-temperature shift inlet, INL Case 5", "source": "reply", "path": "units.wgs.conditions.SYNGAS_CHAIN_C5_HPS_GEN1_T_OUT_C.value", "token": "{{units.wgs.conditions.SYNGAS_CHAIN_C5_HPS_GEN1_T_OUT_C|0}}", "unit_in_reply": "C", "show_unit": "degC", "decimals": 0, "default_value": 335, "follows_controls": "fixed"},
+        {"key": "q_wgs", "label": "Shift heat release", "source": "reply", "path": "units.wgs.results.wgs_heat_release.value", "token": "{{units.wgs.results.wgs_heat_release|1}}", "unit_in_reply": "MW", "show_unit": "MW", "decimals": 1, "default_value": 8.0716, "follows_controls": "scenario_only", "note": "null for tail_gas export, burn_on_site and recycle_fixed; print n/a with the engine_fields_missing reason"},
+        {"key": "t_hts_out", "label": "HTS outlet", "source": "reply", "path": "profiles.train_T.points.3.value", "stream": "S07", "unit_in_reply": "C", "show_unit": "degC", "decimals": 0, "default_value": 412.016, "follows_controls": "scenario_only", "note": "optional"},
+        {"key": "t_lts", "label": "Low-temperature shift inlet, INL Case 5", "source": "reply", "path": "units.wgs.conditions.SYNGAS_CHAIN_C5_WGS_EX2_T_OUT_C.value", "unit_in_reply": "C", "show_unit": "degC", "decimals": 0, "default_value": 191, "follows_controls": "fixed", "note": "optional"},
+        {"key": "t_lts_out", "label": "LTS outlet", "source": "reply", "path": "profiles.train_T.points.6.value", "stream": "S09", "unit_in_reply": "C", "show_unit": "degC", "decimals": 0, "default_value": 216.156, "follows_controls": "scenario_only", "note": "optional"},
+        {"key": "q_hps", "label": "Steam raised from the reformer exit gas, HPS-GEN1 duty", "source": "results_csv", "path": "data/csv/Integrated_Energy_Balance.csv, run_id FS_B_REC_F, term_id Q_HPS-GEN1, value_mw", "unit_in_reply": "MW", "show_unit": "MW", "decimals": 1, "default_value": -44.113899, "follows_controls": "no", "note": "optional, tag Precomputed; signed into the process, so it prints negative; the reply has no HPS-GEN1 field"}
+      ],
+      "illustration": ["Reaction notation CO + H2O <=> CO2 + H2, tagged Illustration."],
+      "scenario_branches": [
+        {"when": "units.wgs.results.wgs_heat_release.value is null", "text": "sentence 2 ends at carbon dioxide, and the n/a reason follows"}
+      ],
+      "drawing_gaps": [
+        "The HPS-GEN1 steam generator between the reformer and the HTS bed is not drawn; S05 runs straight from the reformer to the shift vessel, and its 871 degC label sits on that line.",
+        "The HTS bed, the LTS bed and the exchangers WGS-EX1 to WGS-EX3 share one drawn vessel."
+      ]
+    },
+    {
+      "n": 6,
+      "id": "cooling",
+      "title": "Cooling and condensate",
+      "highlight": {
+        "units": ["syngas_cooler", "separator"],
+        "selectors": [".pfd-labels .t-stm"]
+      },
+      "animate": [
+        {"stream": "S09", "selector": "[data-stream=\"S09\"] path.core", "from": "wgs", "to": "syngas_cooler", "start": [1035, 730], "end": [1060, 730], "length_px": 25, "direction_ok": true, "note": "no arrowhead; short"},
+        {"stream": "S09B", "selector": "[data-stream=\"S09B\"] path.core", "from": "syngas_cooler", "to": "separator", "start": [1160, 730], "end": [1195, 730], "length_px": 35, "direction_ok": true},
+        {"stream": "S10", "selector": "[data-stream=\"S10\"] path.core", "from": "separator", "to": "water treatment (open end)", "start": [1220, 820], "end": [1220, 862], "length_px": 42, "direction_ok": true},
+        {"stream": "S11", "selector": "[data-stream=\"S11\"] path.core", "from": "separator", "to": "absorber", "start": [1245, 660], "end": [1300, 805], "length_px": 200, "direction_ok": true}
+      ],
+      "dim_context": [],
+      "caption": [
+        "After the shift the gas is cooled step by step, and {ex4} MW of the recovered heat is hot enough to drive the MEA reboiler of step 10.",
+        "In the separator at {t_sep} degC, {condensate} t/h of water condenses and leaves as process condensate, and the dry gas goes on to the absorber."
+      ],
+      "numbers": [
+        {"key": "ex4", "label": "Syngas heat to the reboiler", "source": "reply", "path": "units.syngas_cooler.results.ex4.value", "token": "{{units.syngas_cooler.results.ex4|1}}", "unit_in_reply": "MW", "show_unit": "MW", "decimals": 1, "default_value": 8.3867, "follows_controls": "yes", "note": "its threshold temperature lives only in the engine label text (Syngas above 130 C to the reboiler) and in results row L4_GRADE_SYNGAS_C; do not type it"},
+        {"key": "t_sep", "label": "Separator temperature, INL Case 5", "source": "reply", "path": "units.separator.conditions.SYNGAS_CHAIN_C5_KO_DRM_1_T_OUT_C.value", "token": "{{units.separator.conditions.SYNGAS_CHAIN_C5_KO_DRM_1_T_OUT_C|0}}", "unit_in_reply": "C", "show_unit": "degC", "decimals": 0, "default_value": 40, "follows_controls": "fixed"},
+        {"key": "condensate", "label": "Condensate flow", "source": "reply", "path": "units.separator.results.condensate.value", "token": "{{units.separator.results.condensate|0}}", "unit_in_reply": "t/h", "show_unit": "t/h", "decimals": 0, "default_value": 39.6338, "follows_controls": "scenario_only"},
+        {"key": "t_cool_out", "label": "Last exchanger outlet, INL Case 5", "source": "reply", "path": "units.syngas_cooler.conditions.SYNGAS_CHAIN_C5_WGS_EX4_T_OUT_C.value", "unit_in_reply": "C", "show_unit": "degC", "decimals": 0, "default_value": 70, "follows_controls": "fixed", "note": "optional"}
+      ],
+      "illustration": [],
+      "scenario_branches": [
+        {"when": "units.separator.results.condensate.value is null", "text": "print n/a for the condensate with the engine_fields_missing reason"}
+      ],
+      "drawing_gaps": [
+        "Six exchangers are modelled and one cooler is drawn; the knock-out drum and the flash share one separator.",
+        "S10 ends at an open arrow; water treatment is not drawn."
+      ]
+    },
+    {
+      "n": 7,
+      "id": "absorber",
+      "title": "MEA absorber",
+      "highlight": {
+        "units": ["absorber"],
+        "selectors": [".pfd-labels .t-mea", ".pfd-labels .t-mea3"]
+      },
+      "animate": [
+        {"stream": "S11", "selector": "[data-stream=\"S11\"] path.core", "from": "separator", "to": "absorber, bottom", "start": [1245, 660], "end": [1300, 805], "length_px": 200, "direction_ok": true},
+        {"stream": "S18", "selector": "[data-stream=\"S18\"] path.core", "from": "rich_lean_hx", "to": "absorber, top", "start": [1470, 640], "end": [1390, 400], "length_px": 320, "direction_ok": true, "note": "passes the lean cooler and the lean pump on its way up"},
+        {"stream": "S17", "selector": "[data-stream=\"S17\"] path.core", "from": "absorber, bottom", "to": "rich_lean_hx", "start": [1345, 850], "end": [1490, 656], "length_px": 383, "direction_ok": true}
+      ],
+      "dim_context": ["[data-stream=\"S12\"]"],
+      "caption": [
+        "In the packed absorber the gas rises against a falling stream of {w_mea} wt% aqueous MEA at {p_abs} bar.",
+        "The amine takes up {capture_pp} of the CO2 in one pass, {cap} kmol/h, and leaves the bottom as rich solvent while the hydrogen-rich gas leaves the top."
+      ],
+      "numbers": [
+        {"key": "w_mea", "label": "MEA strength", "source": "reply", "path": "inputs.w_mea", "token": "{{inputs.w_mea|0}}", "unit_in_reply": "wt%", "show_unit": "wt%", "decimals": 0, "default_value": 30, "follows_controls": "control", "note": "the drawing's own label binds the same path"},
+        {"key": "p_abs", "label": "Absorber pressure", "source": "reply", "path": "units.absorber.conditions.P_ABSORBER.value", "token": "{{units.absorber.conditions.P_ABSORBER|1}}", "unit_in_reply": "bar", "show_unit": "bar", "decimals": 1, "default_value": 26.8, "follows_controls": "control", "note": "use this field; profiles.train_P S11 stayed 26.82 bar when p_abs_bar was set to 30"},
+        {"key": "capture_pp", "label": "Capture per pass", "source": "reply", "path": "kpi.capture_per_pass", "unit_in_reply": "-", "show_unit": "%", "decimals": 1, "default_value": 0.9, "follows_controls": "control", "note": "fraction; print through fmtValue(v, '-')"},
+        {"key": "cap", "label": "CO2 captured", "source": "reply", "path": "units.absorber.results.cap.value", "token": "{{units.absorber.results.cap|0}}", "unit_in_reply": "kmol/h", "show_unit": "kmol/h", "decimals": 0, "default_value": 1097.904, "follows_controls": "yes"},
+        {"key": "co2_in", "label": "CO2 entering", "source": "reply", "path": "units.absorber.inputs.co2_abs.value", "unit_in_reply": "kmol/h", "show_unit": "kmol/h", "decimals": 0, "default_value": 1219.893, "follows_controls": "yes", "note": "optional"},
+        {"key": "slip", "label": "CO2 slip, recycled through the reformer", "source": "reply", "path": "units.absorber.results.slip.value", "unit_in_reply": "kmol/h", "show_unit": "kmol/h", "decimals": 0, "default_value": 121.989, "follows_controls": "yes", "note": "optional"},
+        {"key": "solvent", "label": "Lean solvent rate", "source": "reply", "path": "kpi.solvent_t_h", "unit_in_reply": "t/h", "show_unit": "t/h", "decimals": 0, "default_value": 894.133, "follows_controls": "yes", "note": "optional; suppress under inl_selexol"},
+        {"key": "loading_lean", "label": "Lean loading", "source": "reply", "path": "units.absorber.conditions.LOADING_LEAN.value", "unit_in_reply": "mol/mol", "show_unit": "mol/mol", "decimals": 2, "default_value": 0.25, "follows_controls": "control", "note": "optional"},
+        {"key": "profile", "label": "Absorber temperature and loading profile", "source": "reply", "path": "profiles.absorber.points", "unit_in_reply": "see profiles.absorber.units", "default_value": "40 points, z_m 0.19 to 14.97 m", "follows_controls": "design_point_only", "note": "optional mini chart; null off the design point"}
+      ],
+      "flags_to_show": ["flags[param=w_mea]", "flags[param=p_abs_bar]", "flags[param=lean_loading]", "flags[param=capture_target]"],
+      "illustration": ["Reaction notation CO2 + 2 RNH2 <=> RNHCOO- + RNH3+, tagged Illustration."],
+      "scenario_branches": [
+        {"when": "inputs.tail_gas == inl_selexol", "text": "Selexol captures the CO2 in this scenario (kpi.capture_per_pass 0.99, class published), while units.absorber still lists MEA conditions and an MEA solvent rate of 921 t/h. Caption: a physical solvent, Selexol, takes the CO2 out in this scenario, and the drawing still shows the MEA plant. Show capture_pp and cap only."}
+      ],
+      "drawing_gaps": []
+    },
+    {
+      "n": 8,
+      "id": "psa_h2",
+      "title": "Hydrogen-rich gas to the external PSA and the hydrogen product",
+      "highlight": {
+        "units": ["psa"],
+        "selectors": [".pfd-frame .pfd-boundary", "[data-stream=\"S12\"] .xing", ".pfd-labels text.t-h2[x=\"1332\"]", ".pfd-labels text.t-h2[x=\"1870\"]", ".pfd-labels .t-h2b", "[data-unit=\"psa\"] .t-mute"]
+      },
+      "animate": [
+        {"stream": "S12", "selector": "[data-stream=\"S12\"] path.core", "from": "absorber, top", "to": "psa", "start": [1345, 330], "end": [1700, 226], "length_px": 699, "direction_ok": true, "note": "crosses the dashed boundary at the ring (1610,270)"},
+        {"stream": "S13", "selector": "[data-stream=\"S13\"] path.core", "from": "psa", "to": "product (open arrow)", "start": [1728, 160], "end": [1846, 160], "length_px": 62, "direction_ok": true, "note": "two subpaths, 1728 to 1744 and 1800 to 1846"}
+      ],
+      "dim_context": ["[data-stream=\"S21\"]", "[data-stream=\"S14\"]"],
+      "caption": [
+        "The hydrogen-rich gas carries {h2_feed} kg/h of hydrogen across the dashed boundary to pressure swing adsorption (PSA), an external block that the engine does not simulate.",
+        "On an assumed recovery of {psa_rec}, the PSA delivers {h2_kg_h} kg/h of purified hydrogen, {h2_t_y} t/y at {avail} availability."
+      ],
+      "numbers": [
+        {"key": "h2_feed", "label": "H2 into the PSA", "source": "reply", "path": "kpi.h2_rich_kg_h", "token": "{{kpi.h2_rich_kg_h|0}}", "unit_in_reply": "kg/h", "show_unit": "kg/h", "decimals": 0, "default_value": 10213.636, "follows_controls": "yes", "note": "same value as units.psa.inputs.h2_feed.value"},
+        {"key": "psa_rec", "label": "PSA H2 recovery, assumed", "source": "reply", "path": "units.psa.conditions.PSA_H2_RECOVERY.value", "unit_in_reply": "-", "show_unit": "%", "decimals": 1, "default_value": 0.88, "follows_controls": "fixed", "note": "fraction; fmtValue"},
+        {"key": "h2_kg_h", "label": "H2 product", "source": "reply", "path": "units.psa.results.h2_product.value", "token": "{{units.psa.results.h2_product|0}}", "unit_in_reply": "kg/h", "show_unit": "kg/h", "decimals": 0, "default_value": 8988, "follows_controls": "yes", "note": "use this, not streams.json S13 (9059.6 kg/h total of the Level 3 flowsheet)"},
+        {"key": "h2_t_y", "label": "Purified H2 after the external PSA", "source": "reply", "path": "kpi.h2_product_t_y", "token": "{{kpi.h2_product_t_y|0}}", "unit_in_reply": "t/y", "show_unit": "t/y", "decimals": 0, "default_value": 66924.648, "follows_controls": "yes", "note": "the drawing's Purified H2 label binds the same path"},
+        {"key": "avail", "label": "Availability", "source": "reply", "path": "inputs.availability", "unit_in_reply": "-", "show_unit": "%", "decimals": 1, "default_value": 0.85, "follows_controls": "control"},
+        {"key": "h2_nm3", "label": "Hydrogen product at Case B", "source": "registry", "path": "registry.fixed[id=H2_B].value", "unit_in_reply": "Nm3/h", "show_unit": "Nm3/h", "decimals": 0, "default_value": 100000, "follows_controls": "fixed", "note": "optional; Case B only, omit when inputs.basis is case_a"},
+        {"key": "t_product", "label": "Product temperature", "source": "reply", "path": "profiles.train_T.points.12.value", "stream": "S13", "unit_in_reply": "C", "show_unit": "degC", "decimals": 0, "default_value": 55, "follows_controls": "scenario_only", "note": "optional"},
+        {"key": "p_product", "label": "Product pressure", "source": "reply", "path": "profiles.train_P.points.12.value", "stream": "S13", "unit_in_reply": "bar", "show_unit": "bar", "decimals": 1, "default_value": 25.924, "follows_controls": "scenario_only", "note": "optional"}
+      ],
+      "status_to_show": "units.psa.status (external) with its STATUS label from panels.js",
+      "illustration": [],
+      "scenario_branches": [],
+      "drawing_gaps": [
+        "Physics caveat: the PSA is drawn as two beds joined in series by S13, with the reject S14 leaving the top of bed 1. A cycling PSA takes product from the top of each bed and releases its tail gas from the feed end. Tag the beds as schematic, since the block is external and unsimulated, or redraw the nozzles."
+      ]
+    },
+    {
+      "n": 9,
+      "id": "reject_cryogenic",
+      "title": "PSA reject returns to the cryogenic unit",
+      "highlight": {
+        "units": ["recycle_compressor", "cryogenic"],
+        "selectors": [".pfd-stack", "[data-stream=\"S14\"] .xing", ".pfd-labels .t-rej", ".pfd-labels text.t-h2[x=\"1230\"]"]
+      },
+      "animate": [
+        {"stream": "S14", "selector": "[data-stream=\"S14\"] path.core", "from": "psa", "to": "recycle_compressor", "start": [1700, 94], "end": [1315, 120], "length_px": 451, "direction_ok": true, "note": "crosses the boundary back in at the ring (1610,74)"},
+        {"stream": "R1", "selector": "[data-stream=\"R1\"] path.core", "from": "recycle_compressor", "to": "cryogenic", "start": [1245, 120], "end": [1120, 120], "length_px": 125, "direction_ok": true},
+        {"stream": "S21", "selector": "[data-stream=\"S21\"] path.core", "from": "cryogenic", "to": "junction on S12 at (1345,190)", "start": [1090, 153], "end": [1345, 190], "length_px": 292, "direction_ok": true, "parallel_group": "cryo_out", "note": "continue the dashes along S12 from (1345,190) to the PSA"},
+        {"stream": "S03", "selector": "[data-stream=\"S03\"] path.core", "from": "cryogenic", "to": "junction on S01 at (700,235)", "start": [1030, 153], "end": [700, 235], "length_px": 412, "direction_ok": true, "parallel_group": "cryo_out", "note": "continue the dashes down S01 from (700,235) to the reformer at (700,330)"},
+        {"stream": "S15", "selector": "[data-stream=\"S15\"] path.core", "from": "cryogenic", "to": "N2-rich stack", "start": [1000, 120], "end": [947, 120], "length_px": 53, "direction_ok": true, "parallel_group": "cryo_out"},
+        {"stream": "S16", "selector": "[data-stream=\"S16\"] path.vent", "from": "N2-rich stack", "to": "atmosphere", "start": [925, 68], "end": [925, 28], "length_px": 40, "direction_ok": true, "note": "path.vent, not path.core, and it is already dashed: animate its dashoffset, or add a separate overlay"}
+      ],
+      "dim_context": [],
+      "caption": [
+        "The PSA reject still holds {h2_rej} kg/h of hydrogen and {tailgas_c} kmol/h of carbon; it crosses back into the boundary and is compressed for the cryogenic unit.",
+        "The cold separation returns hydrogen ahead of the PSA and sends a methane-rich recycle with {recycled_c} kmol/h of carbon to the reformer feed.",
+        "The nitrogen-rich cut, with {burned_c} kmol/h of carbon, is burned and leaves the stack as the plant's residual {co2_atm} t/y of CO2."
+      ],
+      "numbers": [
+        {"key": "h2_rej", "label": "H2 in the PSA reject", "source": "reply", "path": "units.psa.results.h2_reject.value", "token": "{{units.psa.results.h2_reject|0}}", "unit_in_reply": "kg/h", "show_unit": "kg/h", "decimals": 0, "default_value": 1225.636, "follows_controls": "yes"},
+        {"key": "tailgas_c", "label": "Tail gas carbon", "source": "reply", "path": "units.cryogenic.inputs.tailgas_c.value", "token": "{{units.cryogenic.inputs.tailgas_c|0}}", "unit_in_reply": "kmol/h", "show_unit": "kmol/h", "decimals": 0, "default_value": 471.728, "follows_controls": "yes"},
+        {"key": "recycled_c", "label": "Carbon recycled to the reformer", "source": "reply", "path": "units.cryogenic.results.recycled_c.value", "token": "{{units.cryogenic.results.recycled_c|0}}", "unit_in_reply": "kmol/h", "show_unit": "kmol/h", "decimals": 0, "default_value": 354.824, "follows_controls": "yes"},
+        {"key": "burned_c", "label": "Carbon in the burned cut", "source": "reply", "path": "units.cryogenic.results.burned_c.value", "token": "{{units.cryogenic.results.burned_c|0}}", "unit_in_reply": "kmol/h", "show_unit": "kmol/h", "decimals": 0, "default_value": 116.905, "follows_controls": "yes"},
+        {"key": "co2_atm", "label": "CO2 to atmosphere", "source": "reply", "path": "kpi.co2_atm_t_y", "token": "{{kpi.co2_atm_t_y|0}}", "unit_in_reply": "t/y", "show_unit": "t/y", "decimals": 0, "default_value": 38309.011, "follows_controls": "yes", "note": "the N2_RICH_CUT line of results/Emissions_Ledger.csv; the burned cut is the only residual"},
+        {"key": "recycled_t_y", "label": "Recycled carbon as CO2", "source": "reply", "path": "units.cryogenic.results.recycled_t_y.value", "unit_in_reply": "t/y", "show_unit": "t/y", "decimals": 0, "default_value": 116273.8, "follows_controls": "yes", "note": "optional"},
+        {"key": "e_purge", "label": "Recycle and nitrogen removal electricity", "source": "reply", "path": "units.recycle_compressor.results.e_purge.value", "unit_in_reply": "MWe", "show_unit": "MWe", "decimals": 2, "default_value": 4.3226, "follows_controls": "yes", "note": "optional"},
+        {"key": "p_reject", "label": "PSA reject pressure", "source": "streams_json", "path": "data/streams.json rows[stream_id=S14].p_bar", "unit_in_reply": "bar", "show_unit": "bar", "decimals": 1, "default_value": 1.723689, "follows_controls": "no", "note": "optional, tag Precomputed; S21 returns at rows[S21].p_bar 26.6 bar"}
+      ],
+      "illustration": [],
+      "scenario_branches": [
+        {"when": "inputs.tail_gas == export", "text": "the reject is exported across the boundary: recycled_c and burned_c are 0, and the drawn recycle and stack carry nothing in this scenario"},
+        {"when": "inputs.tail_gas == burn_on_site", "text": "the reject is burned on site: recycled_c is 0, burned_c is 454.7 kmol/h at the defaults, balances.energy.tail_gas_to_reboiler.value gives the reboiler heat, and the drawn recycle carries nothing"},
+        {"when": "inputs.tail_gas == recycle_fixed", "text": "the cryogenic cut carbon is held; same captions, live values"}
+      ],
+      "notes_on_screen": ["units.json cryogenic limitation: CO2 slip into this unit is about ten times INL's, so INL's recycle may not transfer to MEA. The unit status is reduced order with term T04 on its anchored value."],
+      "drawing_gaps": [
+        "The burner that burns the nitrogen-rich cut is not drawn, only the stack, and its air (COMBUSTION_O2) is not drawn.",
+        "The recycle compressor and the cryogenic unit are drawn apart and modelled as one unit, so R1 has no stream row.",
+        "The reply has no flow field for S14, S21, S03, S15 or S16; only precomputed rows exist, and their carbon lines differ from the reply (S03 285.1 against 354.8 kmol/h, S14 379.0 against 471.7 kmol/h)."
+      ]
+    },
+    {
+      "n": 10,
+      "id": "stripper_reboiler",
+      "title": "Stripper and reboiler steam",
+      "highlight": {
+        "units": ["rich_lean_hx", "stripper", "reboiler", "lean_cooler", "lean_pump"],
+        "selectors": [".pfd-labels .t-mea2"]
+      },
+      "animate": [
+        {"stream": "S17", "selector": "[data-stream=\"S17\"] path.core", "from": "absorber", "to": "rich_lean_hx", "start": [1345, 850], "end": [1490, 656], "length_px": 383, "direction_ok": true},
+        {"stream": "L3", "selector": "[data-stream=\"L3\"] path.core", "from": "rich_lean_hx", "to": "stripper", "start": [1570, 624], "end": [1640, 480], "length_px": 214, "direction_ok": true},
+        {"stream": "L5", "selector": "[data-stream=\"L5\"] path.core", "from": "stripper", "to": "reboiler", "start": [1685, 820], "end": [1685, 860], "length_px": 40, "direction_ok": true},
+        {"stream": "L6", "selector": "[data-stream=\"L6\"] path.core", "from": "reboiler", "to": "stripper", "start": [1740, 882], "end": [1730, 770], "length_px": 166, "direction_ok": true},
+        {"stream": "L4", "selector": "[data-stream=\"L4\"] path.core", "from": "stripper", "to": "rich_lean_hx", "start": [1640, 790], "end": [1590, 640], "length_px": 200, "direction_ok": true},
+        {"stream": "S18", "selector": "[data-stream=\"S18\"] path.core", "from": "rich_lean_hx", "to": "absorber", "start": [1470, 640], "end": [1390, 400], "length_px": 320, "direction_ok": true}
+      ],
+      "dim_context": ["[data-stream=\"C1\"]"],
+      "caption": [
+        "Rich solvent is warmed in the rich/lean exchanger and enters the stripper at {p_strip} bar, where reboiler steam heats it and drives the CO2 out.",
+        "The reboiler needs {q_reb} MW, {srd} GJ per tonne of CO2, taken in a fixed order: freed Selexol steam {selexol} MW, export steam {export} MW, syngas heat {ex4} MW and reactor steam {gap} MW last.",
+        "The hot lean solvent gives its heat to the rich solvent in the exchanger and is pumped back to the absorber."
+      ],
+      "numbers": [
+        {"key": "p_strip", "label": "Stripper pressure", "source": "reply", "path": "units.stripper.conditions.P_STRIPPER.value", "token": "{{units.stripper.conditions.P_STRIPPER|1}}", "unit_in_reply": "bar", "show_unit": "bar", "decimals": 1, "default_value": 2, "follows_controls": "control"},
+        {"key": "q_reb", "label": "Reboiler duty", "source": "reply", "path": "kpi.q_reboiler_mw", "token": "{{kpi.q_reboiler_mw|1}}", "unit_in_reply": "MW", "show_unit": "MW", "decimals": 1, "default_value": 51.0025, "follows_controls": "yes"},
+        {"key": "srd", "label": "Specific reboiler duty", "source": "reply", "path": "units.reboiler.conditions.srd.value", "token": "{{units.reboiler.conditions.srd|1}}", "unit_in_reply": "GJ/t", "show_unit": "GJ/t", "decimals": 1, "default_value": 3.8, "follows_controls": "control"},
+        {"key": "selexol", "label": "Reboiler heat from freed Selexol steam, first", "source": "reply", "path": "balances.energy.syngas_recovery_selexol.value", "token": "{{balances.energy.syngas_recovery_selexol|1}}", "unit_in_reply": "MW", "show_unit": "MW", "decimals": 1, "default_value": 12.7321, "follows_controls": "yes"},
+        {"key": "export", "label": "Reboiler heat from export steam, second", "source": "reply", "path": "balances.energy.syngas_recovery_export.value", "token": "{{balances.energy.syngas_recovery_export|1}}", "unit_in_reply": "MW", "show_unit": "MW", "decimals": 1, "default_value": 16.7609, "follows_controls": "yes"},
+        {"key": "ex4", "label": "Reboiler heat from syngas, third", "source": "reply", "path": "balances.energy.syngas_recovery_ex4.value", "token": "{{balances.energy.syngas_recovery_ex4|1}}", "unit_in_reply": "MW", "show_unit": "MW", "decimals": 1, "default_value": 8.3867, "follows_controls": "yes"},
+        {"key": "tail", "label": "Reboiler heat from tail gas burned on site", "source": "reply", "path": "balances.energy.tail_gas_to_reboiler.value", "unit_in_reply": "MW", "show_unit": "MW", "decimals": 1, "default_value": 0, "follows_controls": "yes", "note": "insert before reactor steam only when above zero (burn_on_site: 20.8 MW)"},
+        {"key": "gap", "label": "Reboiler heat from reactor steam, last", "source": "reply", "path": "balances.energy.reactor_steam_to_reboiler.value", "token": "{{balances.energy.reactor_steam_to_reboiler|1}}", "unit_in_reply": "MW", "show_unit": "MW", "decimals": 1, "default_value": 13.1228, "follows_controls": "yes", "note": "equals kpi.reboiler_gap_mw"},
+        {"key": "cap_t_h", "label": "CO2 released", "source": "reply", "path": "units.reboiler.inputs.cap_t_h.value", "unit_in_reply": "t/h", "show_unit": "t/h", "decimals": 0, "default_value": 48.318, "follows_controls": "yes", "note": "optional"},
+        {"key": "e_pump", "label": "Lean pump electricity", "source": "reply", "path": "units.lean_pump.results.e_pump.value", "unit_in_reply": "MWe", "show_unit": "MWe", "decimals": 2, "default_value": 0.8691, "follows_controls": "yes", "note": "optional"},
+        {"key": "duties_m6", "label": "Rich/lean exchanger, lean cooler and condenser duties", "source": "reply", "path": "units.rich_lean_hx.results.duty.value, units.lean_cooler.results.duty.value, units.condenser.results.duty.value", "unit_in_reply": "MW", "show_unit": "MW", "decimals": 1, "default_value": "40.7, 35.5, 12.8", "follows_controls": "design_point_only", "note": "leave out of the caption: they come from the M6 column model, whose own reboiler row sits beside them, and not from the anchored reboiler duty above"},
+        {"key": "stripper_profile", "label": "Stripper stage temperatures", "source": "reply", "path": "profiles.stripper.points", "unit_in_reply": "see profiles.stripper.units", "default_value": "13 stages, 101.6 degC at the top to 121.0 degC at the bottom", "follows_controls": "design_point_only", "note": "optional mini chart"}
+      ],
+      "order_note": "Present the heat sources in the approved order of the REB_FROM_* rows of results/Integrated_Energy_Balance.csv (Selexol first, export second, syngas third, tail gas, reactor last). The array order of balances.energy is different (ex4 comes first), so the tour must order by id.",
+      "illustration": [],
+      "scenario_branches": [
+        {"when": "kpi.q_reboiler_mw == 0 (inl_selexol)", "text": "the MEA reboiler is idle in this scenario; drop sentence 2 and say the duty is zero"}
+      ],
+      "drawing_gaps": [
+        "No line brings heat or steam into the reboiler. Freed Selexol steam and export steam have no drawn source, the syngas cooler shows only utility stubs, and the reactor steam from the power block has no line. Add a heat arrow into the reboiler tagged as heat flow, or highlight the source units in sequence.",
+        "Reflux from the condenser to the stripper is not drawn."
+      ]
+    },
+    {
+      "n": 11,
+      "id": "co2_storage",
+      "title": "CO2 compression, ship and offshore storage",
+      "highlight": {
+        "units": ["condenser", "co2_compressor", "co2_storage"],
+        "selectors": [".pfd-labels .t-co2", "[data-unit=\"co2_storage\"] text.tv"]
+      },
+      "animate": [
+        {"stream": "C1", "selector": "[data-stream=\"C1\"] path.core", "from": "stripper", "to": "condenser", "start": [1685, 390], "end": [1740, 355], "length_px": 90, "direction_ok": true},
+        {"stream": "S19", "selector": "[data-stream=\"S19\"] path.core", "from": "condenser", "to": "co2_compressor", "start": [1815, 355], "end": [1840, 355], "length_px": 25, "direction_ok": true, "note": "no arrowhead; short"},
+        {"stream": "S20", "selector": "[data-stream=\"S20\"] path.core", "from": "co2_compressor", "to": "co2_storage", "start": [1910, 355], "end": [1945, 500], "length_px": 180, "direction_ok": true}
+      ],
+      "dim_context": [],
+      "caption": [
+        "The stripper overhead is cooled in the condenser, which returns the water as reflux and passes the CO2 on to the compressor.",
+        "Compression to {p_s20} bar takes {e_co2} MWe, and {captured} t/y of CO2 leaves by ship for offshore storage abroad.",
+        "In the model the ship and the store are a tariff of S${ts} per tonne, {ts_cost} S$M/y in all, with no simulation of either."
+      ],
+      "numbers": [
+        {"key": "p_s20", "label": "Compressed CO2 pressure", "source": "streams_json", "path": "data/streams.json rows[stream_id=S20].p_bar", "unit_in_reply": "bar", "show_unit": "bar", "decimals": 1, "default_value": 138.929354, "follows_controls": "no", "note": "tag Precomputed; the reply has no CO2 pressure; INL's pipeline condition stands in for ship conditioning"},
+        {"key": "e_co2", "label": "Compression electricity", "source": "reply", "path": "units.co2_compressor.results.e_co2.value", "token": "{{units.co2_compressor.results.e_co2|2}}", "unit_in_reply": "MWe", "show_unit": "MWe", "decimals": 2, "default_value": 4.2455, "follows_controls": "yes"},
+        {"key": "captured", "label": "CO2 captured and shipped", "source": "reply", "path": "kpi.co2_captured_t_y", "token": "{{kpi.co2_captured_t_y|0}}", "unit_in_reply": "t/y", "show_unit": "t/y", "decimals": 0, "default_value": 359777.353, "follows_controls": "yes", "note": "the storage label on the drawing binds the same path"},
+        {"key": "ts", "label": "Transport and storage tariff", "source": "reply", "path": "inputs.ts_s_t", "token": "{{inputs.ts_s_t|0}}", "unit_in_reply": "S$/t", "show_unit": "S$/t", "decimals": 0, "default_value": 60, "follows_controls": "control"},
+        {"key": "ts_cost", "label": "Transport and storage charge, ledger line TS", "source": "reply", "path": "units.co2_storage.results.ts_cost.value", "token": "{{units.co2_storage.results.ts_cost|1}}", "unit_in_reply": "S$M/y", "show_unit": "S$M/y", "decimals": 1, "default_value": 21.5866, "follows_controls": "yes"},
+        {"key": "t_s20", "label": "Compressed CO2 temperature", "source": "streams_json", "path": "data/streams.json rows[stream_id=S20].t_c", "unit_in_reply": "C", "show_unit": "degC", "decimals": 0, "default_value": 84.444444, "follows_controls": "no", "note": "optional, tag Precomputed"},
+        {"key": "ts_burden", "label": "Ship fuel burden per tonne stored, assumed, not verified", "source": "reply", "path": "units.co2_storage.conditions.TS_BURDEN.value", "unit_in_reply": "t/t", "show_unit": "t/t", "decimals": 3, "default_value": 0.025, "follows_controls": "fixed", "note": "optional"}
+      ],
+      "illustration": ["A ship and an offshore store beyond the storage vessel, tagged Illustration: the engine models neither, and liquefaction for the ship is not modelled."],
+      "notes_on_screen": ["units.json co2_storage limitation: how offshore storage abroad counts as abatement is unresolved."],
+      "scenario_branches": [],
+      "drawing_gaps": [
+        "No ship or offshore element exists; the storage vessel inside the boundary stands for both, as Figure 2 draws it.",
+        "The reply gives no CO2 pressure or temperature, so both come from the precomputed S20 row."
+      ]
+    },
+    {
+      "n": 12,
+      "id": "power_block",
+      "title": "Power block and site electricity",
+      "highlight": {
+        "units": ["power", "circ_primary"],
+        "selectors": ["[data-unit=\"power\"] text.tv", "[data-unit=\"power\"] text.t"]
+      },
+      "animate": [
+        {"stream": "P1", "selector": "[data-stream=\"P1\"] path.core", "from": "htgr", "to": "junction (330,532)", "start": [291, 640], "end": [370, 532], "length_px": 187, "direction_ok": true, "note": "lead-in only, dimmed"},
+        {"stream": "P4", "selector": "[data-stream=\"P4\"] path.core", "from": "junction on P1 at (330,532)", "to": "junction on P2 at (583,364)", "start": [330, 532], "end": [583, 364], "length_px": 321, "direction_ok": true, "note": "two subpaths with a gap through the power block exchanger (345 to 445 at y 364); the dash run crosses the gap"}
+      ],
+      "dim_context": ["[data-stream=\"P2\"]", "[data-stream=\"P3\"]"],
+      "caption": [
+        "A branch of the hot primary helium carries {branch} MWth to the power block, where it raises steam for a turbine.",
+        "The turbine generates {e_nuc} MWe at {eta} conversion efficiency, and {gap} MW of its steam goes to the reboiler as the last source in that heat order.",
+        "The helium circulators draw {e_circ} MWe of the {e_total} MWe site demand, and grid import is {import} MWe."
+      ],
+      "numbers": [
+        {"key": "branch", "label": "Reactor heat to the power and steam branch", "source": "reply", "path": "units.power.inputs.branch.value", "token": "{{units.power.inputs.branch|1}}", "unit_in_reply": "MWth", "show_unit": "MWth", "decimals": 1, "default_value": 59.5741, "follows_controls": "yes"},
+        {"key": "e_nuc", "label": "Electricity generated", "source": "reply", "path": "units.power.outputs.e_nuc.value", "token": "{{units.power.outputs.e_nuc|1}}", "unit_in_reply": "MWe", "show_unit": "MWe", "decimals": 1, "default_value": 19.7785, "follows_controls": "yes", "note": "the drawing label binds the same path"},
+        {"key": "eta", "label": "Power conversion efficiency", "source": "reply", "path": "inputs.eta_power", "unit_in_reply": "-", "show_unit": "%", "decimals": 1, "default_value": 0.397, "follows_controls": "control"},
+        {"key": "gap", "label": "Reactor steam to the reboiler", "source": "reply", "path": "units.power.results.gap.value", "token": "{{units.power.results.gap|1}}", "unit_in_reply": "MW", "show_unit": "MW", "decimals": 1, "default_value": 13.1228, "follows_controls": "yes"},
+        {"key": "e_circ", "label": "Circulators", "source": "reply", "path": "balances.power.e_circ.value", "token": "{{balances.power.e_circ|2}}", "unit_in_reply": "MWe", "show_unit": "MWe", "decimals": 2, "default_value": 7.4464, "follows_controls": "yes"},
+        {"key": "e_total", "label": "Site electricity demand", "source": "reply", "path": "units.power.results.e_total.value", "token": "{{units.power.results.e_total|2}}", "unit_in_reply": "MWe", "show_unit": "MWe", "decimals": 2, "default_value": 19.7785, "follows_controls": "yes", "note": "equals kpi.e_aux_mwe"},
+        {"key": "import", "label": "Grid import, a card J.29 memo", "source": "reply", "path": "kpi.unmet_power_mwe", "token": "{{kpi.unmet_power_mwe|2}}", "unit_in_reply": "MWe", "show_unit": "MWe", "decimals": 2, "default_value": 0, "follows_controls": "yes", "note": "when above zero also show messages[code=import_memo_high].text"},
+        {"key": "loads", "label": "Load list", "source": "reply", "path": "balances.power (ids reforming, purification, steam, co2comp, purge, cooling, water, mea_pump, mea_cooling, e_proc)", "unit_in_reply": "MWe", "show_unit": "MWe", "decimals": 2, "default_value": "0.82, 0.01, 0.20, 4.25, 4.32, 0.07, 1.02, 0.87, 0.77, 12.33", "follows_controls": "yes", "note": "optional bar list; no ranking words in the caption, since the order of the loads moves with the controls"},
+        {"key": "branch_turbine", "label": "Branch heat to the condensing turbine", "source": "results_csv", "path": "data/csv/Integrated_Energy_Balance.csv, run_id B_REC_F, term_id BRANCH_TO_TURBINE, value_mw", "unit_in_reply": "MW", "show_unit": "MWth", "decimals": 1, "default_value": 44.23358, "follows_controls": "no", "note": "optional, tag Precomputed; the reply has no field for this split"}
+      ],
+      "illustration": [],
+      "notes_on_screen": ["units.json circ_primary and power limitations: whether the 39.7% efficiency is already net of primary circulation is unverified, so the circulator load may be counted twice. Take the percentage from inputs.eta_power."],
+      "scenario_branches": [
+        {"when": "inputs.tail_gas == burn_on_site", "text": "the branch and e_nuc are 0 and the site runs on tail gas burned on site; the reply has no field for that electricity (results row TAIL_GAS_POWER of run B_COMB_H, 15.08 MWe at the defaults, tag Precomputed)"},
+        {"when": "kpi.unmet_power_mwe > 0", "text": "sentence 3 states the import and adds messages[code=import_memo_high].text"}
+      ],
+      "drawing_gaps": [
+        "No electricity line runs from the generator to the loads; only a stub arrow labelled site loads.",
+        "No steam line runs from the power block to the reboiler for the reactor steam."
+      ]
+    },
+    {
+      "n": 13,
+      "id": "closing",
+      "title": "What the plant achieves",
+      "highlight": {
+        "units": ["htgr", "psa", "co2_storage"],
+        "selectors": [".pfd-stack", ".pfd-labels .t-h2b"]
+      },
+      "animate": "all stream groups at low emphasis, or none; none under prefers-reduced-motion",
+      "dim_context": [],
+      "caption": [
+        "An unabated reformer making the same hydrogen would emit {baseline} t/y of CO2 on INL's baseline.",
+        "This plant stores {captured} t/y and sends {atm} t/y to the air, so its net abatement is {abatement} t/y against the {target} t/y target.",
+        "Cho's and IEAGHG's baselines give {cho} t/y and {ieaghg} t/y."
+      ],
+      "numbers": [
+        {"key": "baseline", "label": "Unabated SMR baseline", "source": "reply", "path": "balances.carbon.baseline_t_y.value", "token": "{{balances.carbon.baseline_t_y|0}}", "unit_in_reply": "t/y", "show_unit": "t/y", "decimals": 0, "default_value": 616360.623, "follows_controls": "yes"},
+        {"key": "captured", "label": "Captured and stored", "source": "reply", "path": "kpi.co2_captured_t_y", "token": "{{kpi.co2_captured_t_y|0}}", "unit_in_reply": "t/y", "show_unit": "t/y", "decimals": 0, "default_value": 359777.353, "follows_controls": "yes"},
+        {"key": "atm", "label": "Residual to atmosphere", "source": "reply", "path": "kpi.co2_atm_t_y", "token": "{{kpi.co2_atm_t_y|0}}", "unit_in_reply": "t/y", "show_unit": "t/y", "decimals": 0, "default_value": 38309.011, "follows_controls": "yes"},
+        {"key": "abatement", "label": "Net abatement, INL baseline", "source": "reply", "path": "kpi.abatement_t_y", "token": "{{kpi.abatement_t_y|0}}", "unit_in_reply": "t/y", "show_unit": "t/y", "decimals": 0, "default_value": 578051.612, "follows_controls": "yes", "note": "the baseline less the residual; the page never subtracts"},
+        {"key": "target", "label": "Abatement target", "source": "reply", "path": "kpi.target_abatement_t_y", "token": "{{kpi.target_abatement_t_y|0}}", "unit_in_reply": "t/y", "show_unit": "t/y", "decimals": 0, "default_value": 250000, "follows_controls": "fixed"},
+        {"key": "met", "label": "Abatement target met", "source": "reply", "path": "targets.abatement.met", "unit_in_reply": "boolean", "default_value": true, "follows_controls": "yes", "note": "met is false whenever the plant is infeasible at its rating, even when the tonnage clears the target"},
+        {"key": "cho", "label": "Net abatement, Cho baseline", "source": "reply", "path": "kpi.abatement_cho_t_y", "token": "{{kpi.abatement_cho_t_y|0}}", "unit_in_reply": "t/y", "show_unit": "t/y", "decimals": 0, "default_value": 587436.447, "follows_controls": "yes"},
+        {"key": "ieaghg", "label": "Net abatement, IEAGHG baseline", "source": "reply", "path": "kpi.abatement_ieaghg_t_y", "token": "{{kpi.abatement_ieaghg_t_y|0}}", "unit_in_reply": "t/y", "show_unit": "t/y", "decimals": 0, "default_value": 563744.943, "follows_controls": "yes"},
+        {"key": "capture_plant", "label": "Plant capture", "source": "reply", "path": "kpi.capture_plant", "unit_in_reply": "-", "show_unit": "%", "decimals": 1, "default_value": 0.90377, "follows_controls": "yes", "note": "optional"},
+        {"key": "h2_t_y", "label": "Purified H2", "source": "reply", "path": "kpi.h2_product_t_y", "unit_in_reply": "t/y", "show_unit": "t/y", "decimals": 0, "default_value": 66924.648, "follows_controls": "yes", "note": "optional"},
+        {"key": "cost_status", "label": "Cost target status", "source": "reply", "path": "targets.cost.reason, with kpi.cost_s_per_t and kpi.cost_lac_dcf_s_per_t", "unit_in_reply": "text, S$/t", "default_value": "Not met at these inputs: L5 189.7 S$/t and DCF 190.1 S$/t against the 100 S$/t target ...", "follows_controls": "yes", "note": "show as a status line under the caption, so the closing step never implies the cost target is met"},
+        {"key": "never_generated", "label": "Baseline CO2 never generated", "source": "results_csv", "path": "data/csv/Final_Design_Basis.csv, row id RES_CARBON_NEVER_GENERATED_T_Y, column case_b", "unit_in_reply": "t/y", "show_unit": "t/y", "decimals": 0, "default_value": 218274.258753, "follows_controls": "no", "note": "optional, tag Precomputed"}
+      ],
+      "illustration": [],
+      "notes_on_screen": ["The plant sits on the proposed Western Island reclamation, a proposal of this study with no official approval (the wording the dashboard basis line already uses)."],
+      "scenario_branches": [
+        {"when": "targets.abatement.met == false", "text": "say the target is not met at these inputs and show feasibility.reason when feasibility.feasible is false"}
+      ],
+      "drawing_gaps": []
+    }
+  ],
+  "gaps": {
+    "steps_without_engine_numbers": [
+      "Step 1, fission: the engine treats the reactor as a heat source. It has no fission rate, neutron flux, fuel loading, enrichment, burnup, power density, core or fuel temperature, and nothing on TRISO or graphite. Only heat (MWth), the outlet temperature and helium data exist, so the fission picture is illustration only.",
+      "Step 11, ship and storage: no voyage, liquefaction, shipping, storage site or injection model. Only the tariff (inputs.ts_s_t), the charge (units.co2_storage.results.ts_cost) and the assumed fuel burden exist; CO2 pressure and temperature come from the precomputed S20 row.",
+      "Step 9, burner and stack: no unit or field for the burner of the nitrogen-rich cut; the residual CO2 (kpi.co2_atm_t_y) and the precomputed S15 and S16 rows are all there is.",
+      "Step 2, primary return temperature: no live field. T_CIRC_PRIM_K is a registry constant (764 K) that did not move with ihx_approach_k; P1 to P4 and H1, H2 have no stream rows at all.",
+      "Step 4, steam feed: no steam flow or steam to carbon ratio in the reply (s_c is a dropped control); the S02 row is precomputed.",
+      "Step 5, HPS-GEN1: the boiler between reformer and shift has no reply field; Q_HPS-GEN1 exists only in Integrated_Energy_Balance.csv run FS_B_REC_F.",
+      "Step 10, reboiler steam: the reply gives heat in MW and no steam flow; the rich/lean, lean cooler and condenser duties exist only at the M6 design point and belong to that model's own reboiler duty.",
+      "Step 12 under tail_gas burn_on_site: no reply field for the electricity from tail gas burned on site (results row TAIL_GAS_POWER, run B_COMB_H only).",
+      "Step 8: product in Nm3/h only as the registry fixed value H2_B for Case B; product purity is INL's and not in the reply."
+    ],
+    "stream_paths": {
+      "direction": "All 30 drawn stream groups (P1 to P4, H1, H2, S01 to S03, S05, S09, S09B, S10 to S21, R1, L3 to L6, C1) start at their from unit and end at their to unit, checked point by point against the unit hit rectangles. None is drawn backwards, so a stroke-dashoffset animation from the path start runs with the flow.",
+      "lines_that_start_or_end_on_other_lines": [
+        "P4 starts on P1 at (330,532) and ends on P2 at (583,364).",
+        "S03 ends on S01 at (700,235); continue along S01 from there to the reformer at (700,330).",
+        "S21 ends on S12 at (1345,190); continue along S12 from there to the PSA. S12's own path starts at the absorber top (1345,330), 140 px earlier."
+      ],
+      "multi_subpath": ["P4 (gap 345 to 445 at y 364 through the power block exchanger)", "S13 (gap 1744 to 1800 at y 160 between the PSA beds)"],
+      "special_class": "S16 is drawn with path.vent (already dashed, stroke-dasharray 9 6) and has no path.core.",
+      "short_paths_needing_a_minimum_dwell_px": {"S09": 25, "S19": 25, "S09B": 35, "L5": 40, "S16": 40, "S10": 42, "S15": 53, "S13": 62},
+      "no_arrowhead": ["S09", "S19"],
+      "physics_order_issues": [
+        "Reformer helium (H1 in at y 470, H2 out at y 760) is drawn co-current with the process gas (in at y 330, out at y 815), while the engine's tube model is counterflow with helium entering at the process outlet end.",
+        "PSA: S13 joins the two beds in series and S14 leaves the top of bed 1; in a cycling PSA the product leaves the top of each bed and the tail gas leaves the feed end."
+      ],
+      "missing_paths": [
+        "Secondary circulator on H2 (unit symbol missing; the engine counts it).",
+        "Heat or steam supply into the reboiler from freed Selexol steam, export steam, recovered syngas heat and reactor steam.",
+        "Electricity from the generator to the site loads.",
+        "HPS-GEN1 between the reformer outlet and the HTS bed.",
+        "Mixed reformer feed S04 and feed preheat; burner air COMBUSTION_O2; condenser reflux; CO2 from the storage vessel to a ship."
+      ]
+    },
+    "elements_without_ids": [
+      "HTGR core outline: unnamed path with fill url(#pp-core) inside g[data-unit=htgr].",
+      "Dashed boundary: path.pfd-boundary inside g.pfd-frame.",
+      "Stack: g.pfd-stack, aria-hidden, outside every data-unit group.",
+      "Boundary rings: circle.xing inside the S01, S02, S10, S12, S14, S16 groups.",
+      "Labels: text elements of g.pfd-labels by class only (t-ph, t-sh, t-syn, t-stm, t-h2, t-h2b, t-mea, t-mea2, t-mea3, t-co2, t-rej).",
+      "Suggest data-tour attributes on these so the tour selects them without position or class guesses."
+    ],
+    "engine_and_text_observations": [
+      "inl_selexol: kpi.capture_per_pass becomes 0.99 and q_reboiler 0, while units.absorber still lists ETA_MEA 0.9, W_MEA and an MEA solvent rate (921 t/h). The drawing labels MEA throughout.",
+      "profiles.train_P S11 stays 26.82 bar when p_abs_bar is 30; units.absorber.conditions.P_ABSORBER follows the control. The Results page tags the train profiles Precomputed although they come from a live flowsheet run.",
+      "kpi.ng_mmscfd stays 23.23 under every tail_gas option, including export and burn_on_site where recycled carbon is zero.",
+      "Level 3 stream rows and the anchored reply disagree on carbon lines (S16 CO2 93.9 against burned carbon 116.9 kmol/h, S20 CO2 1108.6 against captured 1097.9 kmol/h); the cryogenic panel's carbon gate limitation states this.",
+      "units.json wgs limitation 'The engine's shift heat release row is not run' is stale: the reply carries units.wgs.results.wgs_heat_release (8.07 MW) and results row WGS_RELEASE exists.",
+      "pfd.js reveal() always scrolls with behavior smooth; no frontend file handles prefers-reduced-motion today."
+    ]
+  }
+}

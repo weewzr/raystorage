@@ -1,0 +1,40 @@
+===== F45 verify:visual major | The frequency-consequence chart in report Figure 3 and slide 21 has its dose axis in mSv, and its points contradict the deck's own rem chart
+EVIDENCE: Slide 21 (deck p21) and report p8 Figure 3 label the x-axis '30-day total effective dose equivalent (TEDE) at 400 m (mSv)'. Crop fc_compare.png: the PAG step sits at x ≈ 10^0.31 ≈ 2 mSv, and the '10 CFR 50.34' pointer sits near 60 to 100 mSv. Q&A slide 62 (the user's slide, credited to the Long Mott PSAR) plots the same LMP target in rem, with the PAG step at 1 rem (10 mSv). Report Figure 3 says 'Adapted from the Xe-100 construction permit application [27]'. The two charts put the PAG point a factor of about 5 apart.
+FIX: Redraw Figure 3 and slide 21 from the cited figure in [27], in that figure's units. If the curve is only a schematic, drop the numeric dose ticks and say so in the caption.
+AREA: deck
+===== F46 verify:visual minor | Deck, speaker script and Q&A sheet use 'team' framing where the report says 'project'
+EVIDENCE: deck.pdf p24 'Team's proposal. No official approval.'; p36 'n = 0.6, team assumption' and chart legend 'n = 0.6 (team assumption)'; script: 'The team's first sum was 206.0', 'This is the team's proposal', 'n of 0.6 is a team assumption'; Q&A sheet Q9: 'It is the team's proposal'. A case-insensitive search for 'team' in report.pdf finds only 'steam'. The report writes 'a siting proposal of this study' and Figure D1 says 'n = 0.6, project assumption'. The deck names a single author on slide 45.
+FIX: Use the report's wording in the deck, chart legend, script and Q&A sheet: 'proposal of this study' and 'project assumption'.
+AREA: deck
+===== F47 verify:visual minor | Speaker script titles for slides 40 and 41 do not match the slides
+EVIDENCE: script_vs_deck.py: TITLE MISMATCH 40 'What S$100/tCO2e would take' vs slide 'What S$100/t would take'; TITLE MISMATCH 41 'S$96/tCO2e: S$100/tCO2e target met ...' vs slide 'S$96/t: S$100/t target met ...'. This occurs in both the running-order table and the body headings of NUSH2_Speaker_Script.docx. All other 44 main and 10 backup titles match exactly.
+FIX: Have build_speaker_docs.py copy the slide title text verbatim, or apply the same unit rewrite to both.
+AREA: deck
+===== F48 verify:visual minor | The speaker script says the backup slides are hidden, but no slide is hidden in the pptx
+EVIDENCE: script.txt line 224: 'These slides stay hidden in the run.' python-pptx check of each slide's show attribute returned {}. A zip scan for show="0" returned 'hidden slides: []', so advancing past slide 46 in a slideshow enters the backups.
+FIX: Set show="0" on slides 47 to 72 if they are meant for questions only, or remove the sentence from the script.
+AREA: deck
+===== F49 verify:visual minor | Q&A sheet Q13 (co-funding) points to slide 41, which has no co-funding content
+EVIDENCE: qaprep.txt: 'Q13. Could public co-funding bring the cost down? ... Show: Slide 41; Q&A slide 72.' Slide 41 shows MATURE_60Y and the base full cost. Only slide 72 carries co-funding figures.
+FIX: Change the Q13 line to 'Show: Q&A slide 72' (optionally adding slide 39 for the unsubsidised base).
+AREA: deck
+===== F51 verify:visual minor | Slide 13's parts do not add to its headline load (12.3 + 7.4 shown against 19.8)
+EVIDENCE: deck.pdf p13 spans '12.3' (bbox 93.6, 535.3), '7.4' (470.7, 535.3) and '19.8' (763.3, 305.6). Tokens: RES_E_PROCESS_MWE 12.33, EB_B_REC_F_HE_CIRCULATION 7.45 (table '7.45'). 12.3 + 7.4 = 19.7 on screen.
+FIX: Print the bar labels to two decimals (12.33 and 7.45, as report Table 2 does), or add a note that the parts are rounded.
+AREA: deck
+===== F52 verify:visual minor | Slide 42 connector runs into a label, and footer status notes are applied unevenly
+EVIDENCE: crop_s42.png: the horizontal connector from the 146.3 bar ends exactly at the 'L' of the 'L5 128.2' label. A footer scan finds 'Reduced-order balances anchored on INL cases' on slides 3, 5, 6, 8-10, 13-17, 27-33, 35-41, 43, 44 and 46-51. It is missing from slides 42 and 54, which also show engine results. Section 3 of the build order also limits footer lines to title, Wee Zhern Ray, MIT licence and the OUTRAM PARK credit.
+FIX: Shorten the connector or move the label in build_figures.py. Either put the status note on every results slide, including 42 and 54, or move it out of the footer into the source line.
+AREA: deck
+===== F53 verify:visual minor | Pictures on Q&A slide 70 are stretched (inherited from the user's source)
+EVIDENCE: piccrop.py on deck slide 70: Big Rock Point 700x640 in a 1.739-aspect frame (distortion 1.590), Diablo Canyon 1.904, Kashiwazaki 1.649, Olkiluoto 3 2.127, fusion 1.226, all with <a:stretch><a:fillRect/> and no srcRect. qa_image6 on slides 58 and 61 is stretched by 1.075. Source slides 14, 2 and 5 have the same geometry.
+FIX: Crop with srcRect to each frame's aspect in qa_backup.py, keeping the frame size, or leave as supplied and record it as a known item.
+AREA: deck
+===== F54 verify:visual minor | Deck cost-ladder labels differ from the report's labels for the same chart
+EVIDENCE: Slides 38 and 50 read 'L3 cumulative', 'Baseline grid power avoided' and 'L5 rebuilt full cost', with the x-axis from -150. Report Figures D2 and D3 (p29) read 'L3 named step', 'Baseline purchased power avoided' and 'L5 full cost', with the axis from -100. The report body and Table 7 use 'named step' and 'Baseline purchased power avoided'.
+FIX: Draw both from one label set in build_figures.py and the report chart builder.
+AREA: deck
+===== F56 verify:visual minor | Slide figures and reference lists are small for projection
+EVIDENCE: Figure 2 on slides 7 and 26 is placed 1235.8 pt wide on a 1440 pt slide (823.9 pt at 13.33 in), so its 19 to 32 px SVG text projects at 7.6 to 12.7 pt. The roadmap on slide 25 is 1303.2 pt wide, so its 16 to 24 px text projects at 6.9 to 10.4 pt. On reference slides 55 and 56 all body text is 16 pt in the PDF (10.7 pt at standard size).
+FIX: For slides 7, 25 and 26, scale up the smallest figure fonts or split the figure across two builds. The backup references can stay as they are.
+AREA: deck

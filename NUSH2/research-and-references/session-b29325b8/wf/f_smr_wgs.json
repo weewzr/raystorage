@@ -1,0 +1,287 @@
+{
+ "key": "smr_wgs",
+ "summary": "Xu-Froment constants are verified from page images, but Xu and Froment never print K(T), and Hoseinzade's constants must not be copied: KH2O is 100 times too low and the k values silently include the 2.246 fresh-catalyst factor. The main technical risk is the hot-end approach. INL's 871 C from 900 C helium is a 29 K Gibbs-equilibrium assumption with no tube model, while the only measured hardware (JAERI mock-up) ran 102 to 125 K below helium, which at S/C 3 and 30.3 bar means 58 to 64% equilibrium conversion instead of 80% (my calculation). INL uses HTS plus LTS and the library has no LTS Cu/Zn kinetics. The 34.0 MMSCFD gas rate depends on 100% tail-gas recycle and the 5.7 MWe nitrogen unit, so excluding them is inconsistent, and deck slide 25's 43.5 MMSCFD is the wrong case (Case 2). TEV-961 Case 6 detail is missing from the local PDF (it ends at A-59, Case 5); Case 5 gives the full cooling train. Tested helium-side correlations exist in JAERI, Sato and TE1236. Ahn and Lee 2026 gives LCOH US$2.37/kg and net GWP 3.50 kgCO2e/kgH2 for h-SMR on a cradle-to-gate basis, implying US$62.7/tCO2e against gray (my calculation). MEA adds about 50 to 60 MW of heat beyond INL's Selexol balance (my calculation), the largest open item on 206.0 MWth.",
+ "key_facts": [
+  {
+   "item": "XF rate coefficients, Table 6 with E from Table 5",
+   "value": "A(k1)=4.225e15, E1=240.1; A(k2)=1.955e6, E2=67.13; A(k3)=1.020e15, E3=243.9 kJ/mol. k1,k3 in kmol bar^0.5/(kg cat h), k2 in kmol/(kg cat h bar)",
+   "source": "XF1 PDF p7 Tables 5,6 (image), units PDF p8"
+  },
+  {
+   "item": "XF adsorption constants",
+   "value": "A(KCO)=8.23e-5, dH -70.65; A(KH2)=6.12e-9, dH -82.90; A(KCH4)=6.65e-4, dH -38.28 (all 1/bar); A(KH2O)=1.77e5, dH +88.68, dimensionless. Tr 648 K for k, KCO, KH2; 823 K for KCH4, KH2O",
+   "source": "XF1 PDF p7 Tables 5,6 (image), PDF p8 notation"
+  },
+  {
+   "item": "XF equilibrium constants",
+   "value": "K(T) not printed in either paper; only units K1,K3 bar^2, K2 dimensionless. Use Zhang Table 1: 1.198e11 exp(-26830/T) MPa^2 and 1.767e-2 exp(4400/T). Solver with these reproduces TE1236 Tables 2.1, 2.2 within 0.3 points and INL raw syngas within 0.4 mol% (my calculation)",
+   "source": "XF1 PDF p8, XF2 PDF p6, Zhang PDF p5, TE1236 PDF p13, TEV-953 PDF p74"
+  },
+  {
+   "item": "XF activity and range",
+   "value": "Tables are reference (aged) activity; multiply k by 2.246 for fresh. Data 773 to 848 K, 3 to 15 bar, H2O/CH4 3 to 5",
+   "source": "XF1 PDF p7, PDF p2 Table 1 (image)"
+  },
+  {
+   "item": "XF effectiveness factors",
+   "value": "Simulated only, one fired case: eta1 and eta3 about 0.014 to 0.025 by eye; eta2 discontinuous at 3.4 m, negative to 9 m; tortuosity 3.54; ring correction 1.071",
+   "source": "XF2 PDF p3, p4, p5 Fig. 6"
+  },
+  {
+   "item": "Hoseinzade constant traps",
+   "value": "KH2O 1.77e3 vs correct 1.77e5; k values equal XF x 2.246 (ratios 2.246, 2.246, 2.245 by my calculation); K2 exponent -4.063 vs ln(1.767e-2) = -4.036. DEN^2 82.7 vs 3.02 at a sample point (my calculation)",
+   "source": "HA PDF p7 Eqs. 48-55 (image), script smr_wgs_17"
+  },
+  {
+   "item": "Other printed equation traps",
+   "value": "XF1 Table 5 LL of KH2O 0.0317 should be about 0.327; Zhang Eq. 12 has 1.176e-2 exp(-4400/T) and (1-X1) vs Table 1 and stoichiometry; Yin Eq. 14 lacks Re^(1/4); Yin Eq. 15 Ergun uses tube diameter",
+   "source": "XF1 PDF p7, Zhang PDF p5, Yin PDF p5 (images)"
+  },
+  {
+   "item": "Mock-up measured tests",
+   "value": "Three dated runs with He, process, inner tube, wall temperatures at 5 stations plus dry GC. 2002-11-28: H2 66.6, N2 0.58, CO 6.74, CO2 11.48, CH4 14.6%; 122.7 Nm3/h; X 0.555 (my calculation); U 150.9 vs 142.0 W/m2K",
+   "source": "JAERI PDF p99, p113, p114, p115; Table 3.3 PDF p28"
+  },
+  {
+   "item": "Mock-up heat balance and design rule",
+   "value": "He 114.4 kW, reaction 75.1 kW, sensible 45.7 kW (sections 1-4); U meas/calc 1.063; weighted dT 0.76 of LMTD; 23.8% area margin",
+   "source": "JAERI Table 3.3 PDF p28, PDF p24"
+  },
+  {
+   "item": "Mock-up runs near equilibrium",
+   "value": "Measured X exceeds equilibrium at the tip thermocouple by 0.030 to 0.040, an equilibrium temperature 13 to 17 K above the reading, so exit composition cannot test kinetics (my calculation)",
+   "source": "JAERI A-2, A-3, A-4; script smr_wgs_17"
+  },
+  {
+   "item": "Hot-end approach evidence",
+   "value": "Measured 102 to 125 K (JAERI 2002-11-28, 2 values by reference point); simulated 97 K (HA); INL Case 6 29 K; Ahn 25 K",
+   "source": "JAERI Table 3.3, A-2; HA PDF p11; TEV-961 PDF p14, p18; Ahn PDF p4"
+  },
+  {
+   "item": "INL reformer basis",
+   "value": "871 C, S/C 3, 78.1% by Gibbs minimisation, no tube or kinetic model",
+   "source": "TEV-953 PDF p18, p41"
+  },
+  {
+   "item": "Equilibrium sensitivity, S/C 3, 30.3 bar",
+   "value": "871 C 80.3%, 850 C 75.9%, 825 C 70.2%, 800 C 64.3%, 775 C 58.2%; pure methane, screening (my calculation)",
+   "source": "script smr_wgs_17, K from Zhang Table 1"
+  },
+  {
+   "item": "Helium-side correlations",
+   "value": "Finned annulus Nu=0.039 Re^0.87 Pr^0.4 (S/De)^0.4 (Hf/De)^-0.19. EVA-I annulus Nu=0.205 Re^0.603 Pr^0.33. EVA-II baffled Nu=1.612 Re^0.502 Pr^0.33",
+   "source": "JAERI PDF p93, Sato PDF p4 Eq. 9, TE1236 PDF p68, p69"
+  },
+  {
+   "item": "Tube geometry tested",
+   "value": "ID 127.8, root OD 147.8, wall 10 mm, 6.37 m, fins 2 mm high at 3 mm pitch, guide tube ID 161.2, Hastelloy XR, 5 x 5 mm catalyst",
+   "source": "JAERI Table 3.1 PDF p26, PDF p25, p94"
+  },
+  {
+   "item": "Pressure drop sources",
+   "value": "Bed Ergun in XF2, HA Eq. 26, Sato Eq. 11. Measured process 0.121 MPa and He 0.056 MPa (Yin); He 0.36 kgf/cm2 (JAERI, low accuracy)",
+   "source": "XF2 PDF p4, HA PDF p5, Sato PDF p4, Yin Table 2 PDF p5, JAERI PDF p116"
+  },
+  {
+   "item": "Printed EVA kinetics",
+   "value": "kCH4 = 2.64e6 (w - 1.5 m/s) exp(-73.5 kJ/mol / RT), approach temperature 4 to 10 K, conversion 1 to 2.5% below equilibrium",
+   "source": "TE1236 PDF p70, p71, p72"
+  },
+  {
+   "item": "INL shift arrangement",
+   "value": "HTS plus LTS. Case 5: HTS 335 to 407 C, S/DG 0.50, CO 3.01% dry; LTS 191 to 213 C, S/DG 0.37, CO 0.33% dry; limits S/DG 0.4 and 0.3, LTS 27 F above dew. About 10 K approach on both beds (my calculation; IEAGHG HTS 11 K)",
+   "source": "TEV-961 PDF p77, TEV-953 PDF p18, p19, p41, IEAGHG PDF p44"
+  },
+  {
+   "item": "LTS source check",
+   "value": "No Cu/Zn kinetics in 96 PDFs searched. Only TE1236 200 to 240 C mention and Chinchen one-line mention. Chinchen (16 to 31 bar, E 121.8 kJ/mol) fits HTS; Kraussler is ambient biomass gas",
+   "source": "library_grep.txt, TE1236 PDF p36, Chinchen PDF p1, p14, Kraussler PDF p8, p10"
+  },
+  {
+   "item": "Case 5 cooling train",
+   "value": "HPS-GEN1 69.3 MW to 335 C; EX1 19.5, EX2 7.1, EX3 19.3, EX4 34.3, KO 5.8 MW; 40 C, 26.8 bar; condensate 126,553 lb/h, 4.36 t/t H2 (MW and t/t by my conversion)",
+   "source": "TEV-961 PDF p79, p80 (images)"
+  },
+  {
+   "item": "Ahn 2026 h-SMR results",
+   "value": "9 t/h, 143.4 MWth, gas 24,816 kg/h, LCOH US$2.37/kg vs gray 1.78 and blue 1.93; net GWP 3.50 vs 12.91 and 8.23 kgCO2e/kgH2; HTGR US$0.64/kg (27%)",
+   "source": "Ahn Table 6 PDF p6, Figs. 4, 6 PDF p7"
+  },
+  {
+   "item": "Ahn boundary and implied cost",
+   "value": "Cradle-to-gate, HTGR in system, waste out, MDEA 95%, tail gas recycled, S/C 2.7, 875 C, 26 bar. Implied US$62.7/tCO2e vs gray, US$93.0/tCO2e vs blue, no T&S line (my calculation)",
+   "source": "Ahn PDF p4, p5, Tables 1, 3, 6"
+  },
+  {
+   "item": "User design values verified",
+   "value": "900 C, 466 C, 78.49 kg/s, 176.8 MWth, 17.3 and 5.7 MWe, 39.7% confirmed in TEV-961 summary tables; He balance 176.9 MW and 206.02 MWth reproduce (my calculation). 210 MWth is a draft value",
+   "source": "TEV-961 PDF p17, p18"
+  },
+  {
+   "item": "176.8 MWth composition",
+   "value": "Process heat including preheat. Case 5 split 71% reforming, 29% preheat; Case 6 split unavailable",
+   "source": "TEV-961 PDF p17, Case 5 PDF p79"
+  },
+  {
+   "item": "MEA heat vs INL balance",
+   "value": "Selexol 19.0 MW vs MEA 70 to 79 MW at 3.4 to 3.8 GJ/t on Case 5 CO2; 50 to 60 MW extra (my calculation, pilot SRD)",
+   "source": "TEV-961 PDF p80, Vinjarapu 2025 PDF p11"
+  }
+ ],
+ "conflicts": [
+  {
+   "topic": "Hot-end approach",
+   "detail": "INL Case 6 has 900 C helium and 871 C process gas (29 K), Ahn 25 K, both without a tube model. JAERI measured 102 to 125 K, HA simulated 97 K.",
+   "resolution": "Keep INL as the base case, label it unvalidated, and add a sensitivity to 800 C.",
+   "changes_conclusions": true
+  },
+  {
+   "topic": "Natural gas rate",
+   "detail": "Deck slide 25 uses 43.5 MMSCFD, which is TEV-961 Case 2 (725 C ROT). Case 6 is 34.0 MMSCFD (TEV-961 PDF p17, final_v1_7 Table A1).",
+   "resolution": "Replace with 34.0, and only if recycle stays in the balance.",
+   "changes_conclusions": true
+  },
+  {
+   "topic": "Purge recovery and tail gas",
+   "detail": "5.7 MWe is excluded and PSA tail gas is out of boundary, yet 34.0 MMSCFD needs full fuel gas recycle and the cryogenic nitrogen unit (TEV-961 PDF p15). Once-through needs about 48 MMSCFD by my estimate.",
+   "resolution": "Treat recycle, its power and 34.0 MMSCFD as one package.",
+   "changes_conclusions": true
+  },
+  {
+   "topic": "Heat label and hydrogen scale",
+   "detail": "Slide 20 calls 176.8 MWth reformer heat duty, but it is process heat with about 29% preheat in Case 5. It belongs to 13.15 t/h while slide 14 uses 8.988 t/h, which would give 120.8 MW (my calculation).",
+   "resolution": "Relabel and use one hydrogen basis.",
+   "changes_conclusions": true
+  },
+  {
+   "topic": "Reactor rating",
+   "detail": "210 MWth in deck and final_v1_7, 230 MWth in report_latest and report_revised_31oct. final_v1_7 Table A2 also uses 47% for capture electricity against 39.7%.",
+   "resolution": "Team to fix one rating and one efficiency.",
+   "changes_conclusions": true
+  },
+  {
+   "topic": "Kinetic constants",
+   "detail": "HA gives KH2O 1.77e3 and fresh-activity k values with no statement; XF gives 1.77e5 and reference activity. HA K2 exponent -4.063 against -4.036 from Zhang's 1.767e-2.",
+   "resolution": "XF governs. Take K(T) from Zhang Table 1, not HA.",
+   "changes_conclusions": true
+  },
+  {
+   "topic": "Helium versus process pressure",
+   "detail": "Process above helium in HTTR (4.5 vs 4.1 MPa, Sato Table 1) and Yin PDF p8. Helium above process in Ahn PDF p4 and INL Case 5 (1015 psi vs about 440 psi). TEV-961 PDF p12 also prints 9.1 MPa.",
+   "resolution": "Open safety-case choice. Do not cite one source as settled.",
+   "changes_conclusions": true
+  },
+  {
+   "topic": "Absorber feed conditions",
+   "detail": "amine_spec uses 21 bar and 2 mol% CO. INL Case 5 gives 26.8 bar and 0.33% CO after LTS. IEAGHG gives 25.8 bar and 4.6% CO with HTS only.",
+   "resolution": "Use 26 to 27 bar unless 21 bar has a basis; set CO after the shift choice.",
+   "changes_conclusions": true
+  },
+  {
+   "topic": "31.7 bar label",
+   "detail": "final_v1_7 Table A1 and amine_spec call 31.7 bar the reformer outlet or exit. In Case 5, 460 psi (31.7 bar) is the gas compressor outlet NG-2 and REFORM-2 outlet is 439 psi, 30.3 bar. Case 6 not available.",
+   "resolution": "Use about 30.3 bar and note it comes from Case 5.",
+   "changes_conclusions": false
+  },
+  {
+   "topic": "HTTR and mock-up hardware details",
+   "detail": "Tubes 37 (JAERI PDF p93) vs 30 (Sato, HA). Hastelloy XR vs Incoloy 800H. Length 6.37 m, 6.54 m, 6.0 m catalyst. Design H2 122.4, 120, 110 Nm3/h. Particle 5 mm vs fitted 1.2 cm.",
+   "resolution": "JAERI governs for mock-up hardware.",
+   "changes_conclusions": false
+  },
+  {
+   "topic": "HA validation claim",
+   "detail": "HA compares against design specifications (923 K, 873 K), while the mock-up measured He out 883 to 905 K and product gas 824 to 838 K on the whole-exchanger basis.",
+   "resolution": "Cite HA as a fit to design values, not to test data.",
+   "changes_conclusions": false
+  },
+  {
+   "topic": "Reformer pressure drop",
+   "detail": "INL has 3 psi (0.2 bar) per stage. Mock-up measured 0.121 MPa over about 6 m (Yin Table 2). XF simulation shows about 3.3 bar over 12 m by eye.",
+   "resolution": "Treat the INL value as a placeholder and calculate with Ergun.",
+   "changes_conclusions": false
+  }
+ ],
+ "decisions": [
+  {
+   "question": "Which shift arrangement does the project adopt?",
+   "why": "CO2 to capture changes by about 17% and absorber CO by a factor of 10 or more (my calculation). All INL numbers assume both beds, and the deck only says WGS.",
+   "default": "HTS plus LTS as INL, inlets 335 and 191 C, 10 K approach to equilibrium.",
+   "options": [
+    "HTS plus LTS (INL)",
+    "HTS only (IEAGHG)"
+   ]
+  },
+  {
+   "question": "Is PSA tail-gas recycle with nitrogen rejection part of the mass balance?",
+   "why": "Gas rate is 34.0 MMSCFD with recycle against about 48 MMSCFD once-through (my estimate), and the 5.7 MWe load follows the choice.",
+   "default": "Keep recycle in the balance, count 17.3 MWe, and state that the external PSA returns tail gas.",
+   "options": [
+    "Recycle in the balance with 17.3 MWe",
+    "Once-through with tail gas exported and its emissions accounted"
+   ]
+  },
+  {
+   "question": "What reformer exit temperature is reported as the base case?",
+   "why": "871 C has no tested support. Conversion at the demonstrated approach is 58 to 64% rather than 80% (my calculation).",
+   "default": "Base 871 C, disclosed as an INL equilibrium assumption, with sensitivities at 825 and 800 C.",
+   "options": [
+    "Keep 871 C with disclosure and sensitivity",
+    "Derate the base case to 825 or 800 C"
+   ]
+  },
+  {
+   "question": "Where does MEA reboiler heat come from?",
+   "why": "MEA needs 50 to 60 MW more than INL's Selexol balance (my calculation), and little syngas heat is hot enough for a reboiler.",
+   "default": "Report it as an extra duty on top of 206.0 MWth until heat integration is done.",
+   "options": [
+    "Helium side extraction",
+    "Export steam plus syngas heat",
+    "Separate boiler with emissions counted"
+   ]
+  },
+  {
+   "question": "Which reformer tube concept is used?",
+   "why": "A JAERI bayonet recovers syngas heat inside the tube, while INL raises 69.3 MW of steam downstream in Case 5, so duty and steam balance depend on it.",
+   "default": "Stay with the INL arrangement because the heat numbers depend on it, and cite the finned bayonet as an option.",
+   "options": [
+    "INL straight tube with waste heat boiler",
+    "JAERI finned bayonet"
+   ]
+  },
+  {
+   "question": "What is the helium to process pressure relationship?",
+   "why": "It sets tube differential and leak direction. INL Case 5 implies about 4 MPa, while tested hardware had about 0.4 MPa.",
+   "default": "Keep the differential near the tested 0.4 MPa and leave the sign to the safety case.",
+   "options": [
+    "Process above helium",
+    "Helium above process"
+   ]
+  },
+  {
+   "question": "If a tube model is built, which kinetic set is used?",
+   "why": "Activity alone is a factor of 2.246, and HA's constants differ further.",
+   "default": "XF Table 6, KH2O 1.77e5, activity 1.0, K(T) from Zhang Table 1. Fit one activity factor to JAERI A-2 and hold back A-3 and A-4.",
+   "options": [
+    "XF reference activity with one fitted factor",
+    "XF fresh activity, times 2.246",
+    "EVA lumped form from TE1236"
+   ]
+  }
+ ],
+ "gaps": [
+  "TEV-961 Case 6 calculator block, flowsheets and Appendix G stream file are missing from the local PDF, which ends at A-59 (Case 5). Case 6 conversion, exit pressure, raw syngas and condensate are not verified.",
+  "No LTS Cu/Zn kinetic source in the library.",
+  "Chinchen Part III kinetics (cited at 129.4 kJ/mol) is not in the library.",
+  "Hou and Hughes 2001, the origin of K(T), is not in the library, so K(T) is second-hand.",
+  "No measured EVA outlet tables; Singh 1984 Nucl. Eng. Des. 78:179 is not in the library.",
+  "JAERI-Tech 2003-046, 2003-034 and Ohashi 2004 are not in the library, so mock-up rate constants, bed void and bed density are not verified. Yin and Sato do not print k0 or E.",
+  "JAERI thermocouple elevations are not verified; JAERI PDF p39 to p92 and appendices B to E were not reviewed in detail.",
+  "No effectiveness factor for any helium reformer catalyst, and no axial composition measurement.",
+  "Only one measured process pressure drop and no profile.",
+  "No water saturation data or Antoine or IAPWS coefficients in the library. Use IAPWS-IF97 or NIST, outside the library.",
+  "No syngas cooler U, area or materials, and no process condensate chemistry or treatment design in any source.",
+  "Ahn Tables S2 and S3 are not in the library, so HTGR cost allocation and CO2 T&S treatment are not verified. No tube creep data at 870 C and about 4 MPa differential."
+ ],
+ "report_path": "C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/findings/smr_wgs.md"
+}

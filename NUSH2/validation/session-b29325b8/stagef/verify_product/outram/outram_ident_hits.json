@@ -1,0 +1,491 @@
+{
+ "P_MAX_PA": {
+  "engine": [
+   "props\\src\\steam.rs"
+  ],
+  "outram_files": 4,
+  "example": [
+   "outram-park-backend\\crates\\outram-park-fork-pflotran\\src\\eos_co2_brine\\co2.rs",
+   "outram-park-backend\\crates\\outram-park-fork-pflotran\\src\\eos_real\\mod.rs"
+  ]
+ },
+ "T_MAX_K": {
+  "engine": [
+   "mea\\src\\density.rs",
+   "mea\\src\\speciate.rs",
+   "mea\\src\\water.rs",
+   "props\\src\\equilibrium.rs",
+   "props\\src\\helium.rs",
+   "props\\src\\steam.rs"
+  ],
+  "outram_files": 5,
+  "example": [
+   "outram-park-backend\\crates\\outram-park-fork-pflotran\\src\\eos_real\\mod.rs",
+   "outram-park-backend\\crates\\tampines-steam-tables\\examples\\chebyshev_residual_export.rs"
+  ]
+ },
+ "T_MIN_K": {
+  "engine": [
+   "mea\\src\\density.rs",
+   "mea\\src\\speciate.rs",
+   "mea\\src\\water.rs",
+   "props\\src\\equilibrium.rs",
+   "props\\src\\helium.rs",
+   "props\\src\\steam.rs"
+  ],
+  "outram_files": 5,
+  "example": [
+   "outram-park-backend\\crates\\outram-park-fork-pflotran\\src\\eos_real\\mod.rs",
+   "outram-park-backend\\crates\\tampines-steam-tables\\examples\\chebyshev_residual_export.rs"
+  ]
+ },
+ "as_mut_ptr": {
+  "engine": [
+   "wasm\\src\\tests.rs"
+  ],
+  "outram_files": 1,
+  "example": [
+   "outram-park-backend\\crates\\outram-mc-libs\\examples\\nd_wasm_probe\\lib.rs"
+  ]
+ },
+ "as_object_mut": {
+  "engine": [
+   "wasm\\src\\solve.rs"
+  ],
+  "outram_files": 9,
+  "example": [
+   "outram-park-backend\\crates\\kovan-literature\\src\\citeproc\\api_control.rs",
+   "outram-park-backend\\crates\\kovan-literature\\src\\citeproc\\attributes.rs"
+  ]
+ },
+ "as_secs_f64": {
+  "engine": [
+   "wasm\\src\\tests.rs"
+  ],
+  "outram_files": 142,
+  "example": [
+   "outram-park-backend\\crates\\bedok\\examples\\run_neacrpd1t.rs",
+   "outram-park-backend\\crates\\boon-lay\\examples\\boon_lay_decay_simulator\\decay_simulator_v1\\backend\\run.rs"
+  ]
+ },
+ "bad_inputs_are_errors": {
+  "engine": [
+   "mea\\src\\kinetics.rs"
+  ],
+  "outram_files": 1,
+  "example": [
+   "outram-park-backend\\crates\\outram-foam-basic-lib\\src\\steady_conduction\\tests.rs"
+  ]
+ },
+ "bad_inputs_are_refused": {
+  "engine": [
+   "props\\src\\equilibrium.rs",
+   "units\\src\\flash.rs",
+   "units\\src\\smr_tube.rs",
+   "units\\src\\wgs.rs"
+  ],
+  "outram_files": 1,
+  "example": [
+   "outram-park-backend\\crates\\outram-mc-libs\\src\\stats\\uq.rs"
+  ]
+ },
+ "create_dir_all": {
+  "engine": [
+   "cli\\src\\main.rs"
+  ],
+  "outram_files": 130,
+  "example": [
+   "outram-park-backend\\crates\\boon-lay\\examples\\rustbca_cascades.rs",
+   "outram-park-backend\\crates\\boon-lay\\examples\\triso_cell_slice.rs"
+  ]
+ },
+ "density_kg_m3": {
+  "engine": [
+   "mea\\src\\density.rs",
+   "mea\\src\\water.rs",
+   "mea\\tests\\properties.rs",
+   "plant\\src\\utility.rs",
+   "props\\src\\helium.rs",
+   "props\\tests\\m2_acceptance.rs",
+   "units\\src\\solvent.rs",
+   "vv\\src\\mea_bench.rs"
+  ],
+  "outram_files": 1,
+  "example": [
+   "outram-park-backend\\crates\\outram-park-fork-dwsim-libs\\src\\thermo\\seawater.rs"
+  ]
+ },
+ "extend_from_slice": {
+  "engine": [
+   "wasm\\src\\lib.rs"
+  ],
+  "outram_files": 114,
+  "example": [
+   "outram-park-backend\\crates\\bedok\\src\\thdiffusion_solvertimexyz.rs",
+   "outram-park-backend\\crates\\boon-lay\\src\\gpu.rs"
+  ]
+ },
+ "from_le_bytes": {
+  "engine": [
+   "wasm\\src\\tests.rs"
+  ],
+  "outram_files": 24,
+  "example": [
+   "outram-park-backend\\crates\\boon-lay\\src\\gpu.rs",
+   "outram-park-backend\\crates\\dhoby-ghaut\\examples\\common\\htr10_beds.rs"
+  ]
+ },
+ "from_raw_parts": {
+  "engine": [
+   "wasm\\src\\lib.rs",
+   "wasm\\src\\tests.rs"
+  ],
+  "outram_files": 1,
+  "example": [
+   "outram-park-backend\\crates\\outram-park-fork-liggghts\\src\\gpu\\mod.rs"
+  ]
+ },
+ "get_or_init": {
+  "engine": [
+   "plant\\tests\\m7_flowsheet.rs",
+   "plant\\tests\\m8_level4.rs",
+   "plant\\tests\\m9_economics.rs",
+   "units\\tests\\m5_acceptance.rs",
+   "vv\\tests\\benchmark_rows.rs"
+  ],
+  "outram_files": 93,
+  "example": [
+   "outram-park-backend\\crates\\boon-lay\\src\\gpu.rs",
+   "outram-park-backend\\crates\\boon-lay\\src\\lagrangian_decay_simulator\\lagrangian_diffusion\\first_passage\\sphere_fpt.rs"
+  ]
+ },
+ "is_ascii_alphanumeric": {
+  "engine": [
+   "plant\\src\\params.rs",
+   "plant\\tests\\no_internal_pointers.rs"
+  ],
+  "outram_files": 35,
+  "example": [
+   "outram-park-backend\\crates\\dhoby-ghaut\\examples\\nuclear_data_web\\acetools.rs",
+   "outram-park-backend\\crates\\dhoby-ghaut\\src\\bin\\dhoby-ghaut\\steps78.rs"
+  ]
+ },
+ "is_ascii_digit": {
+  "engine": [
+   "plant\\tests\\no_internal_pointers.rs"
+  ],
+  "outram_files": 75,
+  "example": [
+   "outram-park-backend\\crates\\boon-lay\\src\\triso_atops_fork\\run_selection\\mod.rs",
+   "outram-park-backend\\crates\\dhoby-ghaut\\examples\\lesson_fission_cascades\\physics.rs"
+  ]
+ },
+ "is_ascii_lowercase": {
+  "engine": [
+   "plant\\tests\\no_internal_pointers.rs"
+  ],
+  "outram_files": 9,
+  "example": [
+   "outram-park-backend\\crates\\kovan-codegen\\src\\zotero\\mod.rs",
+   "outram-park-backend\\crates\\kovan-common\\src\\review\\wizard.rs"
+  ]
+ },
+ "is_none_or": {
+  "engine": [
+   "plant\\tests\\m9_economics.rs",
+   "vv\\tests\\benchmark_rows.rs"
+  ],
+  "outram_files": 55,
+  "example": [
+   "outram-park-backend\\crates\\buangkok\\src\\pydoseia\\assessment.rs",
+   "outram-park-backend\\crates\\buangkok\\src\\pydoseia\\dcf_screening.rs"
+  ]
+ },
+ "is_ok_and": {
+  "engine": [
+   "vv\\src\\fixture.rs"
+  ],
+  "outram_files": 10,
+  "example": [
+   "outram-park-backend\\crates\\kovan-common\\src\\review\\ivv.rs",
+   "outram-park-backend\\crates\\kovan-literature\\src\\zotero\\translators\\bibtex\\common.rs"
+  ]
+ },
+ "is_some_and": {
+  "engine": [
+   "plant\\tests\\no_internal_pointers.rs",
+   "units\\src\\smr_tube.rs",
+   "units\\tests\\m6_acceptance.rs",
+   "vv\\tests\\concept_checks.rs",
+   "wasm\\src\\tests.rs"
+  ],
+  "outram_files": 193,
+  "example": [
+   "outram-park-backend\\crates\\bedok\\src\\iapws_if97\\transport.rs",
+   "outram-park-backend\\crates\\boon-lay\\tests\\triso_atops_upstream_run_file.rs"
+  ]
+ },
+ "needless_range_loop": {
+  "engine": [
+   "mea\\src\\lib.rs"
+  ],
+  "outram_files": 27,
+  "example": [
+   "outram-park-backend\\crates\\bedok\\src\\calc_a1234_expansionxyz.rs",
+   "outram-park-backend\\crates\\changi\\src\\flexpart\\advance.rs"
+  ]
+ },
+ "ok_or_else": {
+  "engine": [
+   "mea\\src\\speciate.rs",
+   "mea\\src\\validation.rs",
+   "plant\\src\\export.rs",
+   "plant\\src\\params.rs",
+   "props\\src\\shomate.rs",
+   "units\\src\\bench\\columns.rs",
+   "units\\src\\solvent.rs",
+   "units\\src\\tube_case_b.rs",
+   "vv\\src\\fixture.rs",
+   "vv\\src\\golden.rs",
+   "vv\\src\\mea_bench.rs",
+   "wasm\\src\\solve.rs"
+  ],
+  "outram_files": 218,
+  "example": [
+   "outram-park-backend\\crates\\boon-lay\\src\\triso_atops_fork\\run_file\\upstream.rs",
+   "outram-park-backend\\crates\\buangkok\\src\\pydoseia\\csv.rs"
+  ]
+ },
+ "out_of_range": {
+  "engine": [
+   "props\\src\\shomate.rs"
+  ],
+  "outram_files": 4,
+  "example": [
+   "outram-park-backend\\crates\\bedok\\src\\sigmavalupd3d_handler.rs",
+   "outram-park-backend\\crates\\dhoby-ghaut\\src\\bin\\dhoby-ghaut\\porous_core.rs"
+  ]
+ },
+ "p_out_pa": {
+  "engine": [
+   "units\\src\\case5.rs",
+   "units\\src\\cooler.rs",
+   "units\\src\\smr_eq.rs",
+   "units\\src\\wgs.rs",
+   "units\\tests\\reaction_guards.rs",
+   "vv\\src\\units_bench.rs"
+  ],
+  "outram_files": 1,
+  "example": [
+   "outram-park-backend\\crates\\tampines\\src\\multiphase_1d\\marviken_tests.rs"
+  ]
+ },
+ "read_to_string": {
+  "engine": [
+   "mea\\tests\\common\\mod.rs",
+   "mea\\tests\\fixture_104.rs",
+   "plant\\tests\\live_fields.rs",
+   "plant\\tests\\m8_level4.rs",
+   "plant\\tests\\no_internal_pointers.rs",
+   "vv\\tests\\concept_checks.rs",
+   "wasm\\src\\tests.rs"
+  ],
+  "outram_files": 240,
+  "example": [
+   "outram-park-backend\\crates\\boon-lay\\examples\\rustbca_cascades.rs",
+   "outram-park-backend\\crates\\boon-lay\\src\\rustbca\\input.rs"
+  ]
+ },
+ "rho_kg_m3": {
+  "engine": [
+   "units\\src\\regen.rs"
+  ],
+  "outram_files": 3,
+  "example": [
+   "outram-park-backend\\crates\\tampines-steam-tables\\src\\backward_eqn_chebyshev_experimental\\p_rho_h.rs",
+   "outram-park-backend\\crates\\tampines-steam-tables\\src\\backward_eqn_chebyshev_experimental\\tests\\p_rho_h.rs"
+  ]
+ },
+ "steam_to_carbon": {
+  "engine": [
+   "vv\\src\\gas_bench.rs"
+  ],
+  "outram_files": 3,
+  "example": [
+   "outram-park-backend\\crates\\dover\\src\\deck.rs",
+   "outram-park-backend\\crates\\dover\\src\\smr.rs"
+  ]
+ },
+ "t_from_h": {
+  "engine": [
+   "units\\src\\smr_tube.rs",
+   "units\\src\\wgs.rs"
+  ],
+  "outram_files": 1,
+  "example": [
+   "outram-park-backend\\crates\\tampines-steam-tables\\src\\interfaces\\tests_and_examples\\rho_h_flash_steam_table\\diagnostics.rs"
+  ]
+ },
+ "t_hot_k": {
+  "engine": [
+   "props\\src\\helium.rs",
+   "units\\src\\cooler.rs",
+   "units\\src\\smr_eq.rs",
+   "units\\src\\smr_tube.rs",
+   "units\\src\\stream.rs"
+  ],
+  "outram_files": 1,
+  "example": [
+   "outram-park-backend\\crates\\outram-park-digital-twin-engine\\examples\\htgr_sim_v1\\physics\\secondary_loop.rs"
+  ]
+ },
+ "t_in_k": {
+  "engine": [
+   "units\\src\\ihx.rs",
+   "units\\src\\regen.rs"
+  ],
+  "outram_files": 1,
+  "example": [
+   "outram-park-backend\\crates\\outram-park-digital-twin-engine\\examples\\htgr_sim_v1\\physics\\primary_loop.rs"
+  ]
+ },
+ "t_out_k": {
+  "engine": [
+   "units\\src\\case5.rs",
+   "units\\src\\cooler.rs",
+   "units\\src\\ihx.rs",
+   "units\\src\\regen.rs",
+   "units\\src\\smr_eq.rs",
+   "units\\tests\\reaction_guards.rs"
+  ],
+  "outram_files": 2,
+  "example": [
+   "outram-park-backend\\crates\\outram-park-digital-twin-engine\\examples\\htgr_sim_v1\\physics\\primary_loop.rs",
+   "outram-park-backend\\crates\\tampines\\src\\gas_phase\\pipe.rs"
+  ]
+ },
+ "to_le_bytes": {
+  "engine": [
+   "wasm\\src\\lib.rs"
+  ],
+  "outram_files": 44,
+  "example": [
+   "outram-park-backend\\crates\\boon-lay\\src\\gpu.rs",
+   "outram-park-backend\\crates\\dhoby-ghaut\\examples\\common\\htr10_beds.rs"
+  ]
+ },
+ "to_path_buf": {
+  "engine": [
+   "vv\\tests\\concept_checks.rs"
+  ],
+  "outram_files": 61,
+  "example": [
+   "outram-park-backend\\crates\\boon-lay\\src\\triso_atops_fork\\run_file\\upstream.rs",
+   "outram-park-backend\\crates\\dhoby-ghaut\\src\\bin\\dhoby-ghaut\\engine.rs"
+  ]
+ },
+ "to_string_lossy": {
+  "engine": [
+   "plant\\tests\\no_internal_pointers.rs",
+   "vv\\tests\\concept_checks.rs"
+  ],
+  "outram_files": 66,
+  "example": [
+   "outram-park-backend\\crates\\dhoby-ghaut\\src\\bin\\dhoby-ghaut\\app.rs",
+   "outram-park-backend\\crates\\dhoby-ghaut\\src\\web_demo\\files.rs"
+  ]
+ },
+ "too_many_arguments": {
+  "engine": [
+   "units\\src\\bench\\columns.rs",
+   "vv\\src\\mea_bench.rs",
+   "wasm\\src\\registry.rs"
+  ],
+  "outram_files": 159,
+  "example": [
+   "outram-park-backend\\crates\\bedok\\src\\calc_a1234_expansionxyz.rs",
+   "outram-park-backend\\crates\\bedok\\src\\calc_a1_expansionxyz.rs"
+  ]
+ },
+ "trim_end_matches": {
+  "engine": [
+   "plant\\tests\\m9_economics.rs",
+   "plant\\tests\\no_internal_pointers.rs",
+   "vv\\src\\mea_bench.rs"
+  ],
+  "outram_files": 38,
+  "example": [
+   "outram-park-backend\\crates\\kovan-common\\src\\call_graph\\upstream.rs",
+   "outram-park-backend\\crates\\kovan-common\\src\\review\\engine_tests.rs"
+  ]
+ },
+ "trim_start_matches": {
+  "engine": [
+   "vv\\src\\golden.rs"
+  ],
+  "outram_files": 33,
+  "example": [
+   "outram-park-backend\\crates\\dhoby-ghaut\\examples\\lesson_fission_cascades\\physics.rs",
+   "outram-park-backend\\crates\\dhoby-ghaut\\examples\\monte_carlo_web\\tapes.rs"
+  ]
+ },
+ "unwrap_or_default": {
+  "engine": [
+   "plant\\src\\export.rs",
+   "units\\src\\bench\\columns.rs",
+   "vv\\src\\fixture.rs",
+   "wasm\\src\\solve.rs"
+  ],
+  "outram_files": 294,
+  "example": [
+   "outram-park-backend\\crates\\bedok\\src\\th_solverxyz.rs",
+   "outram-park-backend\\crates\\boon-lay\\src\\lagrangian_decay_simulator\\lagrangian_diffusion\\chatgpt_5_diffusion_simulator.rs"
+  ]
+ },
+ "unwrap_or_else": {
+  "engine": [
+   "mea\\tests\\common\\mod.rs",
+   "plant\\src\\export.rs",
+   "plant\\tests\\live_fields.rs",
+   "plant\\tests\\m8_level4.rs",
+   "plant\\tests\\m9_economics.rs",
+   "props\\tests\\m2_acceptance.rs",
+   "units\\tests\\m5_acceptance.rs",
+   "units\\tests\\m6_acceptance.rs",
+   "vv\\tests\\benchmark_rows.rs",
+   "wasm\\src\\tests.rs"
+  ],
+  "outram_files": 440,
+  "example": [
+   "outram-park-backend\\crates\\bedok\\examples\\main_exec_diff3d.rs",
+   "outram-park-backend\\crates\\bedok\\src\\iaea3ds.rs"
+  ]
+ },
+ "viscosity_pa_s": {
+  "engine": [
+   "mea\\src\\viscosity.rs",
+   "mea\\src\\water.rs",
+   "mea\\tests\\properties.rs",
+   "plant\\src\\utility.rs",
+   "props\\src\\helium.rs",
+   "props\\tests\\m2_acceptance.rs",
+   "units\\src\\smr_tube.rs",
+   "units\\src\\solvent.rs",
+   "vv\\src\\mea_bench.rs"
+  ],
+  "outram_files": 1,
+  "example": [
+   "outram-park-backend\\crates\\outram-park-fork-dwsim-libs\\src\\thermo\\seawater.rs"
+  ]
+ },
+ "x2545_F491_4F6C_DD1D": {
+  "engine": [
+   "mea\\tests\\aronu_port.rs"
+  ],
+  "outram_files": 6,
+  "example": [
+   "outram-park-backend\\crates\\outram-foam-basic-lib\\src\\krylov\\hybrid_tests.rs",
+   "outram-park-backend\\crates\\outram-foam-basic-lib\\src\\ldu_matrix\\parallel\\tests.rs"
+  ]
+ }
+}

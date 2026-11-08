@@ -1,0 +1,1062 @@
+
+===== PDF PAGE 1 =====
+Contents lists available at ScienceDirect
+International Journal of Greenhouse Gas Control
+journal homepage: www.elsevier.com/locate/ijggc
+Dynamic modelling, simulation and basic control of CO2 absorption based
+on high pressure pilot plant for natural gas treatment
+K.M.S. Salvindera,b, H. Zabiria,b,⁎, F. Isaa,b, S.A. Taqvib, M.A.H. Roslana,b, Azmi M. Shariﬀa,b
+a Research Centre for CO2 Capture (RCCO2C), Universiti Teknologi PETRONAS, 32610 Bandar Seri Iskandar, Perak, Malaysia
+b Chemical Engineering Department, Universiti Teknologi PETRONAS, 32610 Bandar Seri Iskandar, Perak, Malaysia
+A R T I C L E I N F O
+Keywords:
+Natural gas
+Dynamic model
+CO2 removal
+High pressure
+A B S T R A C T
+The continuous exploration of new gas reserves along with the increase in the global power demand necessitates
+the development of less demanding technologies, especially in terms of energy minimization. However, the
+development of CO2-rich type of gas resources poses signiﬁcant challenges in the sour gas treatment industry due
+to bulk CO2 contaminants and high overﬂowing pressure at the well- head. For the treatment of CO2 rich natural
+gas, reliable data at high CO2 partial pressure condition is very crucial and the insight of the transient conditions
+must be thoroughly studied to design a controlled process that can handle any disturbances that might arise in
+the future. This paper reports the dynamic modelling and basic regulatory control studies of a high-pressure
+absorption pilot plant, which is located at Universiti Teknologi PETRONAS (UTP), for CO2 removal using MEA
+solvent. Steady state simulation has been demonstrated using Aspen Plus utilizing both equilibrium and rate
+based approaches. Dynamic and control analysis is then carried out in Aspen Dynamic using a modiﬁed equi-
+librium stage model.
+1. Introduction
+Natural gas (NG) is formed in the underground and can usually be
+found in areas where both coal and oil are situated. Natural gas exists in
+onshore and oﬀshore reservoirs either as produced oil-associated gas or
+oil-free gas. In 2014, the estimated gas reserves are at 6972 million
+cubic feet, against an annual consumption of 78.4 trillion cubic feet
+(Alcheikhhamdon and Hoorfar, 2016). Noting that the crude gas cannot
+be utilized as produced, the gas must ﬁrst undergo a treatment process
+to reduce the concentration of the contaminants to meet pipeline spe-
+ciﬁcations.
+The process for removing H2S and CO2 from a natural gas stream is
+referred to as gas sweetening (Abkhiz et al., 2014). There are diﬀerent
+methods for gas sweetening and the commonly used techniques are
+adsorption and absorption (Tan et al., 2015). With the increasingly
+strict environmental regulations on emissions from natural gas treat-
+ment plants and the market demand for high-quality natural gas, the
+gas sweetening process has become mandatory (Rezakazemi et al.,
+2011).
+The continuous exploration of new gas reserves along with the in-
+crease in the global power demand necessitates the development of less
+demanding technologies, so that the treatment process can be accom-
+plished at a lowest cost (Alcheikhhamdon and Hoorfar, 2016). Natural
+gas industry relies heavily on theoretical approaches to design, improve
+and optimize production and processing units. Testing at large scale is
+so expensive and it is common to use process simulation to evaluate
+such processes. The computer aided process simulation tools are also
+helpful
+in
+determining
+the
+optimum
+operating
+conditions
+with
+minimum time, eﬀort, and cost invested (Muhammad and GadelHak,
+2014).
+In the open literature, various steady state and dynamics analysis
+have been reported for amine-based CO2 absorption (Benadda et al.,
+2000; Maalej et al., 2003; Mores et al., 2012). However, they are mostly
+focusing on post-combustion processes (Manaf et al., 2016). CO2 ab-
+sorption can be represented either via equilibrium-based stage eﬃ-
+ciency model or non-equilibrium rate-based model. The superiority of
+rate based approach to the traditional equilibrium stage model has been
+highlighted in many studies (Borhani et al., 2016; Isa et al., 2016), but
+this is achieved at the expense of higher complexity. In addition, most
+of the simulation analysis is often based on low-pressure experimental
+data. Despite the importance of dynamic model, it is acknowledged that
+the complexity of mathematical formulation for dynamic modelling
+especially using rate-based approach becomes a hindrance and thus
+limits the simulation analysis. Therefore, an alternative technique
+needs to be exploited to increase robustness and reduce computational
+load (Trapp et al., 2015) especially for high-pressure system.
+https://doi.org/10.1016/j.ijggc.2017.12.014
+Received 1 June 2017; Received in revised form 29 November 2017; Accepted 28 December 2017
+⁎ Corresponding author at: Research Centre for CO2 Capture (RCCO2C), Universiti Teknologi PETRONAS, 32610 Bandar Seri Iskandar, Perak, Malaysia.
+E-mail address: haslindazabiri@utp.edu.my (H. Zabiri).
+International Journal of Greenhouse Gas Control 70 (2018) 164–177
+Available online 20 February 2018
+1750-5836/ © 2017 Elsevier Ltd. All rights reserved.
+T
+
+===== PDF PAGE 2 =====
+The aim of this research is to contribute towards the understanding
+of the complex transient behaviour of natural gas process treated at the
+elevated pressure that is concurrent with the industrial requirement for
+controllability and ﬂexible operations to meet the high-quality gas
+standard. The simulation model of the absorption system studied in this
+paper is developed and validated using the experimental set-up and
+data acquired from the high-pressure pilot plant located at Universiti
+Teknologi PETRONAS. In the present study, the equilibrium stage
+model has been modiﬁed to replicate the result of the actual plant and
+the rate based approach. The dynamic analysis and control studies are
+then carried out using Aspen Dynamic platform utilizing the modiﬁed
+equilibrium model.
+2. Model development
+2.1. Process description
+A simpliﬁed process ﬂow diagram for CO2 pilot plant in Universiti
+Teknologi PETRONAS is shown in Fig. 1. Two types of packing are
+available in the pilot plant which are structured and random column. In
+this study, structured packing is selected in both the experimental and
+simulation runs as it has advantages in providing a lower pressure drop
+for every single theoretical stage and improved capacity compared to
+random packing type. The packing material of the pilot plant is of metal
+type FLEXIPAC IY.
+Initially, CO2 and CH4 are heated in the heat exchanger to avoid
+liquidation in the tubing. Then, the gases blend in the static mixer
+before they are compressed and sent to the bottom of the column. For
+adjustment of CO2 concentrations, a mass ﬂow controller is used to
+control the respective gas in the sour gas mixture. The desired level of
+pressure is maintained by regulating the back-pressure regulator. The
+sour gas in this study contains only CO2 and CH4 and monitored at a
+ratio of 1:1. In practical applications, liquid hydrocarbons and dissolved
+gases are typically eliminated prior to the acid gas treatment by ﬂashing
+the stream in a ﬂash separator maintained at an intermediate pressure
+(Mitra, 2015). The heavy hydrocarbons condense in the ﬂash drum
+from the gas stream, and the gas then proceeds to the gas exit of the
+separator to the acid gas removal unit.
+CO2 is removed from the sour gas by means of chemical absorption
+utilizing the 20 wt% aqueous monoethanolamine solution (MEA). The
+lean solvent enters the column at 25–30 °C and pressure of approxi-
+mately 10–11 bar. The lean solvent ﬂowrate is transported using high
+pressure pump at 1 l/min to the top of the column. These conditions are
+similar to the experimental set-up of the pilot plant. Counter current
+mechanism takes place in the absorber column as two phases contacts
+are occurring within the liquid bulk, vapour bulk, ﬁlms and an inter-
+face.
+Due to the size of the pilot plant, each run requires a signiﬁcant
+amount of solvent and feed gas to be fed into the system. Since the work
+reported in this paper is part of a larger project scope, experimental
+runs were conducted only twice per pressure value due to cost issue. In
+addition, the liquid level in the column is maintained by regulating the
+drainage pipe, and this may cause temporary pressure ﬂuctuations in
+the column.
+2.2. Modelling approach
+Aspen Plus V8.0 is utilized in this paper for both the steady-state
+analysis and validation. After convergence is achieved, the model is
+converted into Aspen Dynamic V8.0 for transient analysis and control
+studies. For steady-state simulation, two approaches are available
+within Aspen: equilibrium and rate-based approaches.
+Both techniques will be employed to observe the performance of
+CO2 removal at high pressure to ensure the result agrees with the actual
+pilot plant. Even though the superiority of rate-based model is widely
+acknowledged but the simplicity of traditional equilibrium stage model
+is still elegant from the mathematical point of view and the basis for so
+many commercial column simulation programs (Taylor et al., 2003). In
+addition, the Aspen Dynamic is unable to support rate-based approach.
+To compensate for the deviations of these two modelling approaches,
+Fig. 1. Schematic Diagram for UTP Pilot Plant (CHAS).
+K.M.S. Salvinder et al.
+International Journal of Greenhouse Gas Control 70 (2018) 164–177
+165
+
+===== PDF PAGE 3 =====
+the present study adopted similar technique as presented in (He and
+Ricardez-Sandoval, 2016; Trapp et al., 2015).
+2.2.1. Murphree eﬃciency
+The Murphree tray eﬃciency has been used for many years to relate
+the theoretical number of stages with the actual trays in an absorber.
+This eﬃciency can be based upon the liquid or the vapour composition
+on a particular stage at certain conditions of temperature and pressure
+(Queiroz et al., 2012). In the equilibrium separation model, two distinct
+phases usually operated in counter current conﬁguration and contacted
+thoroughly at each stage and leaves at equilibrium. This type of se-
+paration process is treated as an equilibrium system and this assump-
+tion depends on the ability of each stage to achieve equal pressure,
+temperature and phase equilibria. This kind of assumption is not
+practical and therefore, tray eﬃciencies are used to compensate the
+deviation from equilibrium.
+The equilibrium stage model typically assumes that gas and liquid
+temperatures are equal at each stage. Using Murphree eﬃciencies gives
+a more realistic description of the concentration and temperature pro-
+ﬁles as a function of column height rather than using ideal equilibrium
+stages (ErikØi, 2012). The deﬁnition of Murphree eﬃciency based on
+gas phase mole fraction is illustrated in Fig. 2.
+=
+−
+−
+−
+−
+EM
+y
+y
+y
+y
+(
+)
+( *
+)
+n
+n
+1
+1
+(1)
+where
+n is stage number,
+y is the mole fraction of CO2 in the gas leaving the stage,
+yn−1 is the mole fraction leaving the stage below,
+y* is the mole fraction CO2 in equilibrium with the liquid leaving
+the stage.
+2.2.2. Rate -based approach
+Even though the equilibrium stage model has been successfully
+applied in many separation processes, the rate-based or non-equili-
+brium approach has taken over the standard approach in gas absorber
+design (Hoﬀ, 2003) in recent years. This model accounts explicitly the
+ﬁnite rates of mass transfer, heat transfer and the chemical reaction
+(Borhani et al., 2016). This has led to the speciation of the liquid phase
+including molecular and ionic species and not just the total con-
+centration of CO2 at a given partial pressure (Hoﬀ, 2003). The rate-
+based model avoids the approximation of eﬃciency, by analysing the
+mass and heat transfer phenomena that occur on a real tray or actual
+packing height. Fig. 3 shows the representation of mass transfer model
+at two ﬁlm liquid interface for rate-based approach.
+2.3. Thermophysical properties
+The semi-empirical electrolyte Non-Random Two Liquid (eNRTL)
+model has been selected as the ﬂuid package for the calculation of
+thermophysical properties. This model, which is also known as the
+model of Chen (Kwaterski and Herri, 2011), is a versatile model for the
+excess molar Gibbs energy. It has the capability to describe multi-
+component electrolyte systems over a wide range of state conditions
+(Kwaterski and Herri, 2011). In Aspen Plus V8.0, eNRTL model pro-
+vides a comprehensive electrolyte thermodynamic framework to model
+thermophysical properties of all kinds of electrolyte systems. Two op-
+tions
+for
+eNRTL
+models
+are
+eNRTL-RK
+and
+eNRTL-SR
+(Aspen
+Technology, 2012).
+ENRTL-RK is developed based on the new electrolyte NRTL model
+with the asymmetric reference state while eNRTL-SR is developed based
+on the new electrolyte NRTL model with the symmetric reference state
+(Aspen Technology, 2012). The eNRTL model has been selected since
+this simulation model is based on amine-CO2 capture. The reaction
+between these two components can cause the formation of diﬀerent
+electrolyte species which is strongly non-ideal. Besides, this model is
+suitable as it has the ability to correct the non-ideal behaviour of
+aqueous multicomponent electrolyte systems (Pinto et al., 2013). The
+transport properties such as liquid and vapour viscosities are predicted
+using the default models suggested for use together with eNRTL
+2.4. Thermodynamic and chemical equilibria
+The generation of ionic species makes the system highly non-ideal
+and acid gases and amine partially dissociate in the aqueous phase
+because they are weak electrolytes (Moioli and Pellegrini, 2013).
+Chemical reactions occurring in the liquid phase involving both mole-
+cular and ionic species can be described by the following equilibrium
+reaction (He and Ricardez-Sandoval, 2016).
+↔
++
++
+−
+2H O
+H O
+OH
+2
+3
+(2)
++
+↔
++
+−
+−
++
+H O
+HCO
+CO
+H O
+2
+3
+3
+2
+3
+(3)
++
+↔
++
+−
++
+2H O
+CO
+HCO
+H O
+2
+2
+3
+3
+(4)
++
+↔
++
+−
+−
+H O
+MEACOO
+MEA
+HCO
+2
+3
+(5)
++
+↔
++
++
++
+H O
+MEAH
+MEA
+H O
+2
+3
+(6)
+To describe the vapour liquid equilibrium (VLE) system, the vapour
+phase is represented by an equation of State (EoS) while the liquid
+phase is described by an activity coeﬃcient. For this system, the eNRTL
+model has been applied. The idea is based on the assumptions that
+Fig. 2. Illustration of mole fraction for the deﬁnition of Murphree Eﬃciency (ErikØi,
+2012).
+Fig. 3. A schematic diagram of mass transfer model based on the two-ﬁlm theory.
+Adopted from (Chikukwa et al., 2012).
+K.M.S. Salvinder et al.
+International Journal of Greenhouse Gas Control 70 (2018) 164–177
+166
+
+===== PDF PAGE 4 =====
+repulsive forces between ions of the same charges are strong. The
+considered model provides an expression for the excess Gibbs free en-
+ergy, taking into account molecular and ionic interactions among all
+species in liquid phase (Moioli and Pellegrini, 2013).
+2.5. Steady state absorber model
+For steady state modelling, both equilibrium and rate-based ap-
+proaches have been applied and one of the best features in Aspen si-
+mulator is the RADFRAC model to represent the absorber column. In
+order to simulate the steady state conditions, the present model follows
+the following assumptions (Gáspár and Cormoş, 2011);
+• Counter current with well-mixed between vapour and liquid.
+• The vapourization of solvent is negligible.
+• The heat released to surrounding is very small.
+• The heat and mass transfer between phases follow the two-ﬁlm
+theory.
+For equilibrium approach, the default setting has been applied by
+using vapourization eﬃciency. On the other hand, the rate-based ap-
+proach requires more speciﬁcations such as mass transfer coeﬃcient,
+heat transfer correlation, eﬀective interfacial area and ﬂow model. In
+this study, rate based correlation of Bravo (Rocha et al., 1996) has been
+selected due to the suitability of the correlation with structured packed
+column. The default value for heat transfer correlation is used while the
+ﬂow model is counter current. Film non-ideality correction for liquid
+has been selected and eﬀective interfacial area factor has been main-
+tained at 1. In the convergence section, the strongly non-ideal liquid has
+been chosen due to the usage of MEA and high operating pressure. The
+data for the feed streams and the absorption column are essential for
+simulation of steady-state conditions and hence, the data has been
+collected from UTP pilot plant and tabulated in Table 1 and the sche-
+matic diagram of the steady model is as presented in Fig. 4.
+2.6. Entering dynamic simulation
+To establish the dynamic simulation, several additional inputs need
+to be added before it can be converted to Aspen Dynamic. These include
+equipment sizing and the hydraulics information (Taqvi et al., 2017).
+However, Aspen Plus is not able to support the rate-based approach in
+Aspen Dynamic, thus, equilibrium approach has been applied. To
+compensate for the deviation between these two approaches, the steady
+state model has been adjusted by changing operating conditions and
+design speciﬁcations (He and Ricardez-Sandoval, 2016; Trapp et al.,
+2015). The present study adopted a similar approach as in (He and
+Ricardez-Sandoval, 2016), where the number of stages and Murphree
+eﬃciency have been adjusted to meet similar result as in the rate-based
+approach. The mode of simulation needs to be setup, i.e. either pressure
+driven or ﬂow driven. In this model, ﬂow driven has been selected. The
+pressure driven mode is preferred when the pressure of the system is
+signiﬁcant as in the gas phase. The ﬂow-driven mode is suitable for
+liquid-phase systems or systems with good pressure and ﬂow control.
+Once all the necessary information has been provided and pressure-
+check has been performed, the steady state simulation is carried out and
+the dynamic environment is activated. Fig. 5 illustrates the simulation
+environment for transient analysis in Aspen Dynamic.
+Table 1
+Nominal Operating conditions for steady state simulation.
+Operating Condition
+Inlet data
+Sour gas
+1. CO2
+0.5 mol
+2. CH4
+0.5 mol
+Lean Solvent
+1. H2O
+0.8 mol
+2. MEA
+0.2 mol
+Flowrate
+1. Sour gas
+50 l/min
+2. Lean Solvent
+1.04 l/min
+Temperature
+1. Sour gas
+26.0 °C
+2. Lean Solvent
+26.0 °C
+Pressure
+1. Sour gas
+10.5 bar
+2. Lean Solvent
+10.6 bar
+Absorption Column data
+1. Diameter of column
+0.145 m
+2. Height of column
+1.5 m
+3. Structured packing type
+FLEXIPAC 1Y
+4. Material
+Metal
+5. Initial no. of stages
+5
+Fig. 4. Steady state model in Aspen Plus environment simulation.
+Fig. 5. Dynamic model in Aspen Dynamic environment simulation.
+Fig. 6. Flow controller in dynamic state simulation.
+K.M.S. Salvinder et al.
+International Journal of Greenhouse Gas Control 70 (2018) 164–177
+167
+
+===== PDF PAGE 5 =====
+2.7. Study on the control strategies
+An important goal of the dynamic simulation is to develop an ef-
+fective base-level regulatory control structure for the absorber. In this
+study, controllers will be installed in the dynamic state simulation to
+keep the controlled variables such as ﬂowrate of lean solvent, the
+composition of CO2 in the sweet gas stream, liquid level and pressure in
+the absorber unit at a certain value called the set point (SP). The
+Proportional-Integral-Derivative (PID) controllers will be tuned based
+on the diﬀerent gain (Kc), integral (τI) and derivative (τD) values to
+observe the corrective action of the controllers. Two control strategies
+will be studied, namely, ﬂow control and composition control.
+2.7.1. Flow controller
+The valve B1 as in Fig. 6 is to control the amount of lean solvent
+entering the absorber unit based on the signal sent by the ﬂow con-
+troller. The controller is reverse acting which means that when ﬂowrate
+of the lean solvent loading increases, a reduced signal will be sent to the
+control valve to bring the process variable (PV) to the SP. The corrective
+action of the ﬂow controller with diﬀerent Kc values will be in-
+vestigated to see the quickness of the corrective action based on the
+disturbance introduced. The integral value (τI) will be set constant at
+20 min and the derivative value (τD) is zero since the controller is а
+Proportional-Integral (PI) controller. Fig. 7 shows the face plate of а
+controller.
+2.7.2. Composition controller
+А composition controller will be installed in the dynamic simulation
+to control the composition of CO2 in the sweet gas stream coming out of
+the absorber unit. The valve B1 in Fig. 8 controls the opening to enable
+a certain amount of lean solvent to pass through to maintain the
+composition of CO2 in the sweet gas stream. Fig. 9 shows the face plate
+of the tuning parameters of the composition controller. The composi-
+tion controller is а PID controller. To investigate the composition con-
+troller, τD is set at 1 and τI is maintained at 12. The controller is direct
+acting and initialization will be done once the controller is installed.
+The set point of the composition of CO2 is 0.41 kmol/kmol and the set
+point will be changed to observe the performance of the composition
+controller to bring the process variable to the set point based on dif-
+ferent Kc values.
+Fig. 7. Face plate of the ﬂow controller.
+Fig. 8. Composition controller in dynamic state simulation.
+Fig. 9. Face plate of the composition controller.
+Table 2
+The CO2 removal of pilot plant and steady state simulation.
+Removal of CO2 (%)
+Experimental
+85.0
+Equilibrium based
+55.0
+Rate based
+84.3
+K.M.S. Salvinder et al.
+International Journal of Greenhouse Gas Control 70 (2018) 164–177
+168
+
+===== PDF PAGE 6 =====
+3. Results & discussion
+3.1. Simulation of steady-state absorption
+During the experimental run on the pilot plant absorption column,
+the CO2 content at the top of the column is measured using an infrared
+gas analyser and compared with the inlet CO2 content in the sour gas
+stream. A reduction of CO2 content in the sweet gas stream is observed
+indicating that chemical absorption took place successfully at elevated
+pressure with the use of aqueous MEA solvent. From the experimental
+data, the percentage of CO2 removal at the column pressure of 10 bar is
+calculated to be approximately 85%. Both the equilibrium and rate-
+based approaches are then developed in the Aspen simulator to com-
+pare the CO2 removal percentage.
+Table 2 shows the CO2 removal percentage between the pilot plant
+and the simulation result. It can be observed that the rate-based ap-
+proach produced a better estimate with minimal deviation error. On
+the other hand, a signiﬁcant deviation of approximately 35% is ob-
+served when the equilibrium approach is used. This is as expected
+since rate-based approach is more eﬃcient in describing the separa-
+tion system.
+As mentioned previously, since Aspen Plus only supports the equi-
+librium approach for dynamic simulation, adjustments have been in-
+troduced to produce similar result as rate based approach (He and
+Ricardez-Sandoval, 2016). This step is also important to achieve a
+stable steady state condition for Aspen Dynamic model. In the
+simulation performed in this paper, the steady-state equilibrium-based
+model is adjusted by varying (1) the Murphree eﬃciency, and (2) the
+number of stages. Murphree eﬃciency is varied in order to observe the
+eﬀectiveness of this factor in rectifying the activities in the stages and
+yields out the best process performance (He and Ricardez-Sandoval,
+Fig. 10. Percentage of CO2 removal before adjustments.
+Fig. 11. The percentage of CO2 removal with varied Murphree eﬃciency values.
+Fig. 12. Actual temperature proﬁle along the pilot plant absorber column.
+Fig. 13. a. Temperature proﬁle for Equilibrium Based and Rate Based (vapour and liquid)
+with number of stages = 2. b. CO2 composition proﬁle along the packed column with
+number of stages = 2.
+K.M.S. Salvinder et al.
+International Journal of Greenhouse Gas Control 70 (2018) 164–177
+169
+
+===== PDF PAGE 7 =====
+2016). Murphree eﬃciency has been used for decades in relating the
+theoretical with actual number of stages in a distillation column or
+absorber. This eﬃciency can be based upon the liquid or the vapour
+composition on a particular stage at the speciﬁed conditions of tem-
+perature and pressure (Vazquez-Esparragoza et al., 1997). The oper-
+ating pressure is maintained at 10 bar and the eﬃciency values are
+tuned from 0.1 to 0.3. The results obtained are then compared with the
+pilot plant experimental data.
+Fig. 10 shows the percentages of CO2 removal for both the equili-
+brium and rate-based approaches before any adjustment is made on the
+equilibrium-based model. The result clearly shows the gap between
+these two approaches, where it can be clearly seen that the equilibrium
+model has higher deviation from the experimental data. In Fig. 10, the
+CO2 capture eﬃciencies are plotted against the number of stages from 2
+to 10. In the Rate Sep study by (Zhang et al., 2009), rate-based mod-
+elling approach oﬀers the model exactness compared to equilibrium-
+based modelling which is the traditional way in stage modelling. The
+complexity of mathematical computation embedded in rate based has
+provided a surplus value in accuracy, though at the expense of probably
+relatively longer computational time needed to solve the vast number of
+diﬀerential equations accommodated in (Dutta et al., 2017; Ramesh
+et al., 2007).
+In real situation, vapour and liquid phases are never in phase
+equilibrium with each other as commonly assumed in equilibrium
+model (Zhang et al., 2009). Therefore, actual operations conventionally
+incorporate eﬃciencies such as local eﬃciency, Murphree eﬃciency
+and overall eﬃciency in the model simulation (Ramesh et al., 2007). In
+this work, Murphree eﬃciency is selected to improve the performance
+of the equilibrium-based approach which will be presented in the
+steady-state results (Case 1 and Case 2). Two scenarios are implemented
+for this:
+Case 1. Variation of Murphree eﬃciency by maintaining the number of
+stages at 5.
+Case 2. Variation of the number of stages by maintaining Murphree
+eﬃciency at 0.15.
+3.1.1. Case 1: variation of Murphree eﬃciency
+One approach to minimize the diﬀerences in the percentage of CO2
+removal predicted by the rate-based and equilibrium-based models is to
+adjust the column Murphree eﬃciency for CO2. Murphree eﬃciency can
+be speciﬁed to e.g. 0.25 which is equivalent to the order of magnitude
+1–2 m of packing height. In Lars’s (Øi, 2007) study, Murphree eﬃciencies
+can also be estimated automatically for trays in the simulator. Fig. 11
+shows the percentage of CO2 removal as Murphree eﬃciency values are
+varied. The number of stages of the absorber unit is maintained at 5
+based on the nominal operating conditions as in Table 1.
+For this analysis, the lean solvent ﬂowrate has been adjusted to
+1.09 l/min since the stage dries up when the initial concentration of
+Fig. 14. a. Temperature proﬁle for Equilibrium Based and Rate Based (vapour and liquid)
+with number of stages = 4. b. CO2 composition proﬁle along the packed column with
+number of stages = 4.
+Fig. 15. a. Temperature proﬁle for Equilibrium Based and Rate Based (vapour and liquid)
+with number of stages = 6. b. CO2 composition proﬁle along the packed column with
+number of stages = 6.
+K.M.S. Salvinder et al.
+International Journal of Greenhouse Gas Control 70 (2018) 164–177
+170
+
+===== PDF PAGE 8 =====
+1.04 l/min is simulated. The Murphree eﬃciency is varied and the lean
+solvent ﬂowrate is kept constant at 1.09 l/min. In the block option of
+the absorber column in Aspen Plus, the apparent component approach
+is selected to enable the application of Murphree Eﬃciency. In the work
+by (Tang et al., 2003), the authors have compared the eﬃciency be-
+tween 1 and 0.7 in the Ethyl Acetate (EtAc) distillation system which
+reﬂects how the lower Murphree eﬃciency adequately adapts to the
+thermodynamic changes that happen between the absorption stages.
+This can also be seen in the study by (Queiroz et al., 2012) where
+Murphree eﬃciency set the liquid and vapour composition at equili-
+brium especially in certain conditions where both ﬂuids do not meet the
+thermodynamic equilibrium.
+Fig. 11 illustrates the CO2 removal percentage of the equilibrium-
+based model as the Murphree eﬃciency is varied between 0.1 and 0.3.
+It can be observed that Murphree eﬃciency of 0.15 gives the closest
+estimate to the actual experimental data of approximately 85%.
+3.1.2. Case 2: variation of number of stages
+In case 2, the number of stages is varied with а constant Murphree
+eﬃciency of 0.15. The enhanced performance in CO2 capture is an-
+ticipated by increasing the number of stages similar to the work by
+(Trapp et al., 2015).
+3.1.2.1. Temperature and composition proﬁles. Fig. 12 illustrates the
+actual temperature proﬁle along the absorber column of UTP pilot
+plant. It can be observed that the temperature proﬁle along the column
+exhibits a visible temperature bulge which is the results of solvent
+vapourization
+and
+condensation
+due
+to
+the
+variations
+in
+the
+temperature along the column. The competing heat eﬀects due to
+absorption and reaction may cause the temperature of the solvent to
+increase to a maximum value (Isa et al., 2017). The maximum
+temperature indicates that the reaction is taking place vigorously at
+this point. Since the reaction of CO2 and MEA is exothermic, the heat
+produced leads to the increase in temperature. On the other hand, the
+relatively colder solvent temperature towards the top of the column
+results in the subsequent water condensation.
+Figs. 13a–17a show the temperature proﬁles for both the rate-based
+and the modiﬁed equilibrium-based (designated as Equilibrium*M) ap-
+proaches. The proﬁles are plotted for the variation of the number of
+stages from 2 to 10. The rate-based approach in Aspen Plus provides
+temperature curves for both liquid (red line) and vapour (blue line). On
+the other hand, only one temperature curve (black) is available for the
+equilibrium-based approach, which represents the liquid and vapour
+phase at equilibrium. Generally, it can be seen that equilibrium-based
+model provides greater deviations from the actual experimental data as
+expected. It is noticeable that as the number of stages increases from 4 to
+10 (in Figs. 14a–17a), the proﬁles portrayed by the rate-based approach
+have similar trend in comparison to the pilot plant behaviour. The va-
+pour and liquid proﬁles of the rate-based approach in Figs. 15a–17a
+should be similar, however, the discrepancies observed here may be due
+Fig. 16. a. Temperature proﬁle for Equilibrium Based and Rate Based (vapour and liquid)
+with number of stages = 8. b. CO2 composition proﬁle along the packed column with
+number of stages = 8.
+Fig. 17. a. Temperature proﬁle for Equilibrium Based and Rate Based (vapour and liquid)
+with number of stages = 10. b. CO2 composition proﬁle along the packed column with
+number of stages = 10.
+K.M.S. Salvinder et al.
+International Journal of Greenhouse Gas Control 70 (2018) 164–177
+171
+
+===== PDF PAGE 9 =====
+to the dissimilarity in the heat capacities of the two phases as well as the
+negligible solvent vapourization assumption (Kvamsdal and Rochelle,
+2008; Mores et al., 2011). It should be noted that in the pilot plant, the
+column has 5 temperature indicators along the height of the column, and
+the positions of these indicators do not necessarily represent the number
+of stages observed in the Aspen simulation results.
+Figs. 13b–17b show the corresponding CO2 composition proﬁles of
+the counter current absorption process. Fig. 13b illustrates the huge
+deviation between equilibrium and rate based approaches when the
+number of stages is two. Nevertheless, as the number of stages of the
+absorber column increases, smaller deviations are observed between
+the CO2 composition proﬁles for both modelling approaches. Murphree
+eﬃciency plays а vital role in enhancing the accuracy of the equili-
+brium-based model.
+In Fig. 18, CO2 removal using equilibrium-based approach with and
+without Murphree eﬃciency is compared to the CO2 removal using
+rate-based approach. Initially, equilibrium based approach at 10 bar is
+simulated without Murphree eﬃciency and the trend observed does not
+have signiﬁcant changes as the number of stages increases. When the
+equilibrium-based approach with Murphree eﬃciency of 0.15 is simu-
+lated, increasing percentage of CO2 removal is exhibited. In the rate
+based approach, the simulation model is successfully converged with
+less than 0.07% of error for diﬀerent number of stages. Rate-based is
+well known for its accuracy as it demands reliable predictions of dif-
+fusion coeﬃcients, interfacial areas and mass transfer coeﬃcients
+(Ramesh et al., 2007).
+A comparative observation between the equilibrium approach with
+Murphree eﬃciency of 0.15 and the rate based approach appears to
+agree satisfactorily with the experimental data. Murphree eﬃciency
+acts as an intermediate of equitable agreement between rate-based and
+equilibrium-based if the value is properly tuned until the rational re-
+sults of both approaches are achieved (He and Ricardez-Sandoval,
+2016). Murphree eﬃciency has the ability in improving the thermo-
+dynamic, hydrodynamic and mass transfer of liquid and vapour
+(Queiroz et al., 2012).
+3.2. Dynamic state simulation
+In this section, the dynamic performance of the modiﬁed equili-
+brium-based model is analyzed that includes the following analysis:
+Fig. 18. The percentage of CO2 removal versus number of stages for rate based and
+equilibrium approach.
+Table 3
+Operating condition for dynamic simulation.
+Operating Condition
+Inlet data
+Sour gas
+1. CO2
+0.5 mol
+2. CH4
+0.5 mol
+Lean Solvent
+1. H2O
+0.8 mol
+2. MEA
+0.2 mol
+Flowrate
+1) Sour gas
+50 l/min
+2) Lean Solvent
+a1.09 l/min
+Temperature
+1) Sour gas
+a35.0 °C
+2) Lean Solvent
+a25.0 °C
+Pressure
+1) Sour gas
+10.5 bar
+2) Lean Solvent
+10.6 bar
+Absorption Column data
+1) Diameter of column
+0.145 m
+2) Height of column
+1.5 m
+3) Structured packing type
+FLEXIPAC 1Y
+4) Material
+Metal
+5) No. of Stage
+5
+6) Model approach
+Equilibrium
+7) Column head
+Flat
+a Re-adjusted parameter for dynamic simulation.
+Fig. 19. а. CO2 removal under +10% step change in sour gas ﬂowrate. b. CO2 removal
+under −10% step change in sour gas ﬂowrate.
+K.M.S. Salvinder et al.
+International Journal of Greenhouse Gas Control 70 (2018) 164–177
+172
+
+===== PDF PAGE 10 =====
+Case 3. Step change in sour gas ﬂowrate.
+Case 4. Step change in lean solvent ﬂowrate.
+Case 5. Step change in sour gas and lean solvent input temperature.
+To run the dynamic simulation, the process model is initialized
+using the base case operating condition from steady-state via the
+modiﬁed equilibrium-based approach. A few parameters have been
+adjusted from Section 3.1 and as shown in Table 3.
+The CO2 removal based on the fraction of carbon dioxide in the
+sweet gas stream and the temperature proﬁle are observed for each
+transient situation.
+3.2.1. Case 3: step change in sour gas ﬂowrate
+CO2 concentration may be varied based on reservoir conditions,
+thus leading to the variation of sour gas ﬂowrate. In case 3, the lean
+solvent is kept constant while addressing the sour gas ﬂowrate ﬂuc-
+tuations. A +10% step change is imposed on the sour gas ﬂowrate and
+CO2 removal is observed in the sweet gas line. The trend of the dynamic
+behaviour is illustrated in Figs. 19 and 20. It can be observed in Fig. 19a
+that when the ﬂowrate of CO2 gas increased (black line) in the sour gas,
+higher CO2 mole fraction is also observed in the sweet gas (blue line).
+Initially, 85% removal of CO2 was recorded but once the sour gas in-
+creased by 10%, CO2 removal percentage has dropped. Note that the
+CO2 removal percentage increases or decreases due to smaller/larger
+(L/G) ratio (He and Ricardez-Sandoval, 2016). In this study, since the
+amount of solvent is constant, there is insuﬃcient MEA to absorb the
+increasing amount of CO2 resulting in the increase of CO2 mole fraction
+in the sweet gas stream. The opposite trend is observed when a −10%
+step change in sour gas ﬂowrate is introduced as shown in Fig. 19b. This
+result suggests that a controller needs to be installed in the lean solvent
+stream to accommodate any changes in the output stream. The corre-
+sponding temperature proﬁles are as shown in Fig. 20a and b, respec-
+tively.
+From Fig. 21а, with а 10% increase in the sour gas ﬂowrate, there is
+an initial increase in pressure drop across the column during the tran-
+sient condition. Increase in the incoming sour gas ﬂowrate and the
+constant rate of lean solvent ﬂow caused а temporary surge in pressure
+at every stage. There is an increment in pressure drop from stage 5
+where the gas enters the column to stage 1 where the lean solvent
+enters the column. From Fig. 21b, the sustained decrease of −10% in
+sour gas ﬂowrate results in transient drop in pressure initially across the
+column as expected due to the less amount of gases entering the
+column. It can be generally observed that the overall pressure drop
+across the stages increased with the increase in the sour gas ﬂowrate
+and vice versa.
+3.2.2. Case 4: step change in lean solvent ﬂowrate
+To study the eﬀect of lean solvent ﬂowrate, the initial lean solvent
+ﬂowrate value of 1.09/min is introduced to the simulation. CO2 gas
+composition is observed in the sweet gas line and once stability is
+achieved, lean solvent ﬂowrate is increased to 1.199 l/min as shown in
+Fig. 20. а. Sweet gas temperature under +10% step change in sour gas ﬂowrate. b. Sweet
+gas temperature under −10% step change in sour gas ﬂowrate.
+Fig. 21. a. Pressure at each stage under +10% step change in sour gas ﬂowrate. b.
+Pressure at each stage under −10% step change in sourgas ﬂowrate.
+K.M.S. Salvinder et al.
+International Journal of Greenhouse Gas Control 70 (2018) 164–177
+173
+
+===== PDF PAGE 11 =====
+Fig. 22a. As observed in Fig. 22a, once the lean solvent ﬂowrate is in-
+creased, an instantaneous drop of CO2 mole fraction in the sweet gas
+stream can be observed. Similarly, the opposite trend can be observed
+when a −10% change in introduced in the lean solvent ﬂowrate. The
+corresponding eﬀect on the sweet gas temperature at the top of the
+column are as shown in Fig. 23a and b. Higher solvent ﬂowrate results
+in overall temperature drop at the top of column due the cooling eﬀect
+of the lean solvent, and vice versa for lower solvent rate.
+It can be observed in Fig. 24а that a +10% increase in the solvent
+ﬂowrate results in a decrease in pressure across all stages due to the
+higher amount of CO2 being absorbed from the gaseous phase, and the
+opposite trend can be observed when −10% change is introduced in
+Fig. 24b.
+3.2.3. Case 5: step change in sour gas and lean solvent input temperature
+In any chemical, biological, and physical reactions, the temperature
+is an important parameter. Chemical absorption is inﬂuenced by tem-
+perature and diﬀerent absorbents behave diﬀerently at diﬀerent tem-
+peratures. Figs. 25 and 26 demonstrate the changes in the CO2 com-
+positions in the sweet gas stream (blue line) as the temperature of the
+lean solvent and sour gas (black line) are subjected to +10% and
+−10% changes, respectively. As the lean solvent temperature increases
+in Fig. 25a, the CO2 composition in the sweet gas stream also increases
+due to exothermic reaction and thus leads to low eﬃciency in the ab-
+sorption process (Tan et al., 2012). This result suggests that CO2 ab-
+sorption at high pressure can be optimized if being conducted at am-
+bient temperature, however high-pressure pump and the exothermic
+reaction may also cause the lean solvent temperature to increase. Due
+to that factor, intercooler should be installed into the column to reduce
+any temperature bulge as suggested by (Walters et al., 2016). As ex-
+pected, the opposite trend is observed for a −10% change in the solvent
+inlet temperature as shown in Fig. 25b.
+An increase or decrease in the sour gas inlet temperature, on the
+other hand, results in higher or lower amount of CO2 being absorbed in
+the column, respectively.
+3.3. Basic control strategy
+3.3.1. Case 6: ﬂow controller
+А ﬂow controller maintains the ﬂowrate at the desired set-point (SP)
+in the presence of disturbances. In the standard Proportional-Integral-
+Derivative (PID) controller, the proportional term considers how far the
+process variable (PV) is from SP at any instant in time and its con-
+tribution to the controller output is based on the size of the error, e(t)
+only at time, t. As e(t) grows or shrinks, the inﬂuence of the propor-
+tional term grows or shrinks immediately and proportionately.
+The integral term adds up the error, e(t) and describes how long and
+how far PV has been away from SP. Thus, even a small error, if it
+persists, will have a sum that grows over time and the inﬂuence of the
+integral term will similarly grow. The steepness of the curve and the
+rate of change of a signal trace at a speciﬁc point in time are described
+by the derivative term. Correcting the ﬂowrate without delay prevents
+upset in the process operation.
+Fig. 22. а. CO2 removal under +10% step change in lean solvent ﬂowrate. b. CO2 re-
+moval under −10% step change in lean solvent ﬂowrate.
+Fig. 23. а. Sweet gas temperature under +10% step change in lean solvent ﬂowrate. b.
+Sweet gas temperature under −10% step change in lean solvent ﬂowrate.
+K.M.S. Salvinder et al.
+International Journal of Greenhouse Gas Control 70 (2018) 164–177
+174
+
+===== PDF PAGE 12 =====
+Error, e(t) is calculated as in (Eq. (8)). Fig. 27 shows the error, e(t) in
+а PV and SV graph with data plotted as SP and PV.
+e(t) = SP −PV
+(8)
+The process variable (PV) value will be corrected to the desired set
+point (SP) value.
+Fig. 28 shows the performance of the ﬂow controller under set-
+point change in the lean solvent ﬂowrate (PV) after it is initialized
+with PID controller tuning values of gain (Kc) of 12, integral time, (τI)
+of 20 min and derivative time, (τD) of zero. In this case, a Propor-
+tional-Integral (PI) controller is considered. The blue line represents
+the set point and the black line represents the process variable. It can
+be seen that the controller is eﬀective in bringing the process to the
+new set-point value with minimal overshoot in the lean solvent
+ﬂowrate.
+The graph in Fig. 29 illustrates the eﬀect of diﬀerent Kc values
+ranging from 0.5 to 15 on the controller performance. The graph shows
+the plot of PV which is in l/min against time. The set-point change is
+introduced by increasing the lean solvent ﬂowrate from 1.09 l/min to
+1.13 l/min. The controller gain Kc values are represented as purple line
+for Kc = 15.0, green for Kc = 10.0, blue for Kc = 5.0, red for Kc = 1.0
+and black for Kc = 0.5. When Kc value equal to 0.5, the controller is
+extremely sluggish and takes a substantial time in bringing the PV to
+the new set-point. As the Kc value increases, however, the performance
+of the controller improves as faster response is observed. Very small
+deviations in the performances are observed between Kc value 10 and
+15 compared to those with Kc values between 1.0 and 0.5.
+3.3.2. Case 7: composition controller
+Fig. 30 illustrates the performance of the composition controller
+based on varying Kc values ranging from 0.5 to 15. A set-point change
+has been introduced in the CO2 composition in sweet gas outlet from
+0.41 to 0.45 mol/mol. The composition controller is а direct acting
+controller. When the composition of CO2 is higher than the set point in
+the sweet gas stream, more lean solvent will be fed to the absorber
+column to prevent disturbance to the process as the eﬃciency of the
+process will be aﬀected. The valve on the lean solvent stream controls
+the amount of lean solvent ﬂowing in based on the opening percentage.
+Integral time and derivative time have been initiated for 12 min and
+1 min respectively and these settings clearly show PID controller is
+utilized. From the trend observed, the larger gain value, Kc is able to
+reduce delay in the response. Contrary to the previous controller, de-
+rivative action is implemented to further reduce transient errors as well
+as basing а control’s portion in error predicting activities (Knospe,
+2006).
+4. Conclusion
+This paper studied the modelling, dynamic, and basic control of a
+high-pressure pilot scale absorption packed column processing natural
+gas using Aspen Plus and Aspen Dynamic software. An aqueous 20 wt%
+solution of monoethanolamine (MEA) is used to capture CO2 from
+Fig. 24. a. Pressure at each stage under +10% step change in solvent ﬂowrate. b.
+Pressure at each stage under −10% step change in solvent ﬂowrate.
+Fig. 25. а. CO2 removal of +10% step change in lean solvent temperature. b. CO2 re-
+moval under −10% step change in lean solvent temperature.
+K.M.S. Salvinder et al.
+International Journal of Greenhouse Gas Control 70 (2018) 164–177
+175
+
+===== PDF PAGE 13 =====
+natural gas at 10 bar. The steady-state simulation was established and
+several re-adjustments, which include varying no of stages and
+Murphree eﬃciencies, have been investigated until a reasonable
+agreement between the equilibrium and the rate-based models was
+achieved. These adjustments were made on the equilibrium-based
+model due to the unavailability of the dynamic rate-based model in
+Aspen Plus. Results have shown that the modiﬁed equilibrium-based
+Fig. 27. Error, e(t) in а PV and SP graph (Guru, 2017).
+Fig. 26. a. CO2 removal under +10% step change in sour gas temperature. b. CO2 re-
+moval under −10% step change in sour gas temperature.
+Fig. 28. Performance of the Flow controller under set-point change in the lean solvent
+ﬂowrate (PV).
+Fig. 29. Performance of the Flow controller under set-point change in the lean solvent
+ﬂowrate (PV) with varying Kc values.
+Fig. 30. Performance of the composition controller under set-point change in the CO2
+outlet composition with varying Kc values.
+K.M.S. Salvinder et al.
+International Journal of Greenhouse Gas Control 70 (2018) 164–177
+176
+
+===== PDF PAGE 14 =====
+model is able to achieve comparable CO2 removal as compared to the
+rate-based and experimental data. This allowed the subsequent dy-
+namic and control studies to be carried out on the absorption column
+under various changes in the sour gas and lean solvent ﬂowrates, inlet
+temperatures as well as sweet gas CO2 compositions. This study is
+highly relevant to the real applications of acid gas treatment. The next
+stage of this study is to incorporate the stripping section and study the
+overall structure and energy usage.
+Acknowledgements
+The authors would like to acknowledge the funding received from
+YUTP (0153AA-E09) grant which enabled the completion of this work.
+The authors are also grateful to Universiti Teknologi PETRONAS (UTP)
+and Research Centre of CO2 Capture (RCCO2C) for their guidance and
+support.
+References
+Abkhiz, V., Heydari, I., Taheri, M., 2014. Operational investigation of multi feed amine
+process performance in comparison with conventional process. Int. J. Oil Gas Coal
+Eng. 2, 7.
+Alcheikhhamdon, Y., Hoorfar, M., 2016. Natural gas quality enhancement: a review of the
+conventional treatment processes, and the industrial challenges facing emerging
+technologies. J. Nat. Gas Sci. Eng. 34, 689–701.
+Aspen Technology, I, 2012. Beneﬁts of Multi-Solvent NRTL Models in AspenPlus.
+Benadda, B., Kafouﬁ, K., Monkam, P., Otterbein, M., 2000. Hydrodynamics and mass
+transfer phenomena in counter-current packed column at elevated pressures. Chem.
+Eng. Sci. 55, 6251–6257.
+Borhani, T.N.G., Afkhamipour, M., Azarpour, A., Akbari, V., Emadi, S.H., Manan, Z.A.,
+2016. Modeling study on CO2 and H2S simultaneous removal using MDEA solution.
+J. Ind. Eng. Chem. 34, 344–355.
+Chikukwa, A., Enaasen, N., Kvamsdal, H.M., Hillestad, M., 2012. Dynamic modeling of
+post-combustion CO2 capture using amines–a review. Energy Procedia 23, 82–91.
+Dutta, R., Nord, L.O., Bolland, O., 2017. Prospects of using equilibrium-based column
+models in dynamic process simulation of post-combustion CO 2 capture for coal-ﬁred
+power plant. Fuel 202, 85–97.
+ErikØi, L., 2012. Comparison of aspen HYSYS and aspen plus simulation of CO2 ab-
+sorption into MEA from atmospheric gas. Energy Procedia 23, 360–369.
+Gáspár, J., Cormoş, A.-M., 2011. Dynamic modeling and validation of absorber and
+desorber columns for post-combustion CO 2 capture. Comput. Chem. Eng. 35,
+2044–2052.
+Guru, C., 2017. PID Control and Derivative on Measurement.
+He, Z., Ricardez-Sandoval, L.A., 2016. Dynamic modelling of a commercial-scale CO 2
+capture plant integrated with a natural gas combined cycle (NGCC) power plant. Int.
+J. Greenh. Gas Control 55, 23–35.
+Hoﬀ, K.A., 2003. Modelling and Experimental Study of Carbon Dioxide in Membrane
+Contactor. Department of Chemical Engineering, Norweigian University of Science
+and Technology p. 210.
+Isa, F., Suleman, H., Zabiri, H., Maulud, A.S., Ramasamy, M., Tufa, L.D., Shariﬀ, A.M.,
+2016. An overview on CO2 removal via absorption: eﬀect of elevated pressures in
+counter-current packed column. J. Nat. Gas Sci. Eng. 33, 666–677.
+Isa, F., Zabiri, H., Ramasamy, M., Tufa, L.D., Shariﬀ, A.M., Saleh, S.F., 2017. Pressure
+modiﬁcation index based on hydrodynamics and mass transfer eﬀects for modeling of
+CO2 removal from natural gas via absorption at high pressures. Int. J. Greenh. Gas
+Control 56, 173–186.
+Knospe, C., 2006. PID control. IEEE Control Syst. Mag. 26, 30–31.
+Kvamsdal, H.M., Rochelle, G.T., 2008. Eﬀects of the temperature bulge in CO2 absorption
+from ﬂue gas by aqueous monoethanolamine. Ind. Eng. Chem. Res. 47, 867–875.
+Kwaterski, M., Herri, J.-M., 2011. Modelling gas hydrate equilibria using the electrolyte
+non-random two-liquid (ENRTL) model. 7th International Conference on Gas
+Hydrates (ICGH 2011) p. 438.
+Maalej, S., Benadda, B., Otterbein, M., 2003. Interfacial area and volumetric mass transfer
+coeﬃcient in a bubble reactor at elevated pressures. Chem. Eng. Sci. 58, 2365–2376.
+Manaf, N.A., Cousins, A., Feron, P., Abbas, A., 2016. Dynamic modelling, identiﬁcation
+and preliminary control analysis of an amine-based post-combustion CO 2 capture
+pilot plant. J. Clean. Prod. 113, 635–653.
+Mitra, S., 2015. A Technical Report on Gas Sweetening System.
+Moioli, S., Pellegrini, L., 2013. Regeneration section of CO2 capture plant by MEA
+scrubbing with a rate-based model. Chem. Eng. Trans. 32, 1849–1854.
+Mores, P., Scenna, N., Mussati, S., 2011. Post-combustion CO 2 capture process: equili-
+brium stage mathematical model of the chemical absorption of CO 2 into mono-
+ethanolamine (MEA) aqueous solution. Chem. Eng. Res. Des. 89, 1587–1599.
+Mores, P., Scenna, N., Mussati, S., 2012. A rate based model of a packed column for CO 2
+absorption using aqueous monoethanolamine solution. Int. J. Greenh. Gas Control 6,
+21–36.
+Muhammad, A., GadelHak, Y., 2014. Correlating the additional amine sweetening cost to
+acid gases load in natural gas using Aspen Hysys. J. Nat. Gas Sci. Eng. 17, 119–130.
+Pinto, D.D., Monteiro, J.G.-S., Bersås, A., Haug-Warberg, T., Svendsen, H.F., 2013. eNRTL
+parameter ﬁtting procedure for blended amine systems: MDEA-PZ case study. Energy
+Procedia 37, 1613–1620.
+Øi, L.E., 2007. Aspen HYSYS simulation of CO2 removal by amine absorption from a gas
+based power plant. In: The 48th Scandinavian Conference on Simulation and
+Modeling (SIMS 2007). 30–31 October; 2007; GÃ¶ teborg (SÃ¤ rÃ¶). Linköping
+University Electronic Press. pp. 73–81.
+Queiroz, J.A., Rodrigues, V.M., Matos, H.A., Martins, F., 2012. Modeling of existing
+cooling towers in ASPEN PLUS using an equilibrium stage method. Energy Convers.
+Manag. 64, 473–481.
+Ramesh, K., Aziz, N., Shukor, S.A., Ramasamy, M., 2007. Dynamic rate-based and equi-
+librium model approaches for continuous tray distillation column. J. Appl. Sci. Res. 3,
+2030–2041.
+Rezakazemi, M., Niazi, Z., Mirfendereski, M., Shirazian, S., Mohammadi, T., Pak, A.,
+2011. CFD simulation of natural gas sweetening in a gas–liquid hollow-ﬁber mem-
+brane contactor. Chem. Eng. J. 168, 1217–1226.
+Rocha, J.A., Bravo, J.L., Fair, J.R., 1996. Distillation columns containing structured
+packings: a comprehensive model for their performance. 2. Mass-transfer model. Ind.
+Eng. Chem. Res. 35, 1660–1667.
+Tan, L.S., Shariﬀ, A.M., Lau, K.K., Bustam, M.A., 2012. Factors aﬀecting CO2 absorption
+eﬃciency in packed column: a review. J. Ind. Eng. Chem. 18, 1874–1883.
+Tan, L., Shariﬀ, A., Lau, K., Bustam, M., 2015. Impact of high pressure on high con-
+centration carbon dioxide capture from natural gas by monoethanolamine/N-methyl-
+2-pyrrolidone solvent in absorption packed column. Int. J. Greenh. Gas Control 34,
+25–30.
+Tang, Y.T., Huang, H.-P., Chien, I.-L., 2003. Design of a complete ethyl acetate reactive
+distillation system. J. Chem. Eng. Jpn. 36, 1352–1363.
+Taqvi, S.A., Tufa, L.D., Zabiri, H., Mahadzir, S., Maulud, A.S., Uddin, F., 2017. Rigorous
+dynamic modelling and identiﬁcation of distillation column using Aspen Plus.
+Control and System Graduate Research Colloquium (ICSGRC), 2017 IEEE 8th. IEEE
+262–267.
+Taylor, R., Krishna, R., Kooijman, H., 2003. Real-world modeling of distillation. Transfer
+1000, 1.
+Trapp, C., de Servi, C., Casella, F., Bardow, A., Colonna, P., 2015. Dynamic modelling and
+validation of pre-combustion CO2 absorption based on a pilot plant at the Buggenum
+IGCC power station. Int. J. Greenh. Gas Control 36, 13–26.
+Vazquez-Esparragoza, J., Polasek, J., Hernandez-Valencia, V., Hlavinka, M., BULLIN, J.,
+1997. A simple application of Murphree tray eﬃciency to separation processes.
+Chem. Eng. Commun. 160, 91–101.
+Walters, M.S., Edgar, T.F., Rochelle, G.T., 2016. Dynamic modeling and control of an
+intercooled absorber for post-combustion CO 2 capture. Chem. Eng. Process. Process
+Intensif. 107, 1–10.
+Zhang, Y., Chen, H., Chen, C.-C., Plaza, J.M., Dugas, R., Rochelle, G.T., 2009. Rate-based
+process modeling study of CO2 capture with aqueous monoethanolamine solution.
+Ind. Eng. Chem. Res. 48, 9233–9246.
+K.M.S. Salvinder et al.
+International Journal of Greenhouse Gas Control 70 (2018) 164–177
+177

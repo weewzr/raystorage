@@ -1,0 +1,300 @@
+{
+ "key": "econ_lit",
+ "summary": "The literature supports the team's process numbers, but the BOAK pass at S$98.7/tCO2e in final_v1_7 is not robust. The deck and final_v1_7 are two incompatible models (100,000 Nm3/h, 0.585 Mt, 43.5 MMSCFD against 130 MMSCFD, 0.899 Mt, 34.0 MMSCFD). Four evidence gaps drive the economics. (1) T&S of S$23.2/t comes from a Netherlands EOR assumption, while ERIA/GCCSI shows Singapore transport alone at about US$43 to 86/t. (2) The ledger has no MEA regeneration heat term (S$23 to 34/t), and no reference applies MEA to shifted syngas. (3) Gas saving is 35.2% in INL but 18.8% in Ahn and Lee 2026, which would take BOAK to about S$148/t. (4) The 34.0 MMSCFD figure depends on tail-gas recycle and the 5.7 MWe N2 unit that the drafts exclude. A favourable offset exists: the 600 MWth size scaling is a team assumption, and removing it lowers BOAK by S$55/t. Combining the unfavourable items additively gives about S$168/t BOAK and S$128/t 10-OAK (screening, my calculation). Citation fixes needed: deck slide 26's US$2,900 to 9,200/kW is the AP1000, not the Xe-100 (X-energy states about US$3,600/kW NOAK); Sheng 2023 gives 90% only as a LEDS scenario assumption and says hydrogen is not included; Cho 9.35 is verified as direct emissions from 33 US plants, but the 35/65 split is not in the abstract and the full text could not be opened. The split matches INL's 35.2% gas reduction rather than any stream split; IEAGHG's stream split is 56/44. External facts are verified: NDC 45 to 50 Mt, carbon tax S$45 for 2026 to 2027, INIR tentatively 2027, NMDP 26 Oct 2026, about 100,000 Nm3/h for the SOXAL unit, 2025 LNG US$12.09/MMBtu and FX 1.3065. The NUS-NTU Master's comes from the Minister's lecture and is a target, not part of NMDP. The western island page does not mention nuclear.",
+ "key_facts": [
+  {
+   "item": "IEAGHG 2017 Base Case direct CO2",
+   "value": "0.8091 kg/Nm3, 8.996 kg/kg H2 (conversion is my calculation)",
+   "source": "2017-02 Techno-Economic Evaluation...pdf, Table 2, PDF p16"
+  },
+  {
+   "item": "IEAGHG 2017 Case 1A (syngas MDEA)",
+   "value": "TPC EUR 201.80M, TCR EUR 263.91M, LCOH 13.5 cEUR/Nm3, CAC EUR 47.1/t, overall capture 55.7%, emits 4.12 kg/kg",
+   "source": "Tables 2, 3, 5, PDF pp16 to 18"
+  },
+  {
+   "item": "IEAGHG 2017 Case 3 (flue gas MEA)",
+   "value": "TPC EUR 305.33M, TCR EUR 398.48M, LCOH 16.5 cEUR/Nm3, CAC EUR 69.8/t, overall capture 90.0%, emits 0.99 kg/kg",
+   "source": "Tables 2, 3, 5, PDF pp16 to 18"
+  },
+  {
+   "item": "IEAGHG 2017 Base Case",
+   "value": "TPC EUR 170.95M, TCR EUR 222.89M, O&M EUR 72.43M/y, LCOH 11.4 cEUR/Nm3 at NG EUR 6/GJ LHV, T&S EUR 10/t, 8%, 25 y",
+   "source": "Tables 1, 3, 4, 5, PDF pp12, 17, 18"
+  },
+  {
+   "item": "Capture rate definition",
+   "value": "Case-specific = captured/(captured + emitted); versus base = (0.8091 - emission)/0.8091. Formula reproduced by my arithmetic",
+   "source": "IEAGHG 2017 PDF pp77, 197"
+  },
+  {
+   "item": "IEAGHG 2022 SMR with CCS",
+   "value": "Direct 0.99 kg/kg, stored 8.89 kg/kg, 90% capture on flue gas with MEA, LCOH EUR 2.47/kg against 1.60, abatement EUR 110.01/t without carbon price, EUR 59.36/t with",
+   "source": "IEAGHG_2022 report, Table 19 p114, Table 45 p136, Table 8 p76"
+  },
+  {
+   "item": "IEAGHG 2022 LCA and stream split",
+   "value": "GWP 10.13 grey, 2.78 blue kg CO2e/kg; 9.88 kg/kg with 44% in flue gas",
+   "source": "IEAGHG_2022 PDF pp5, 64"
+  },
+  {
+   "item": "IEAGHG 2022 T&S",
+   "value": "EUR 54.6/t central, 43.4 to 76.0 (2020, Porthos)",
+   "source": "IEAGHG_2022 Table 7, PDF p74"
+  },
+  {
+   "item": "Ahn and Lee 2026 h-SMR",
+   "value": "LCOH US$2.37/kg, gray 1.78, blue 1.93; NG 24,816 kg/h against 30,563 (-18.8%); 143.4 MWth for 9 t/h; PSA tail gas recycled; no T&S price listed in Table 3",
+   "source": "1-s2.0-S0360319926025280-main.pdf, Tables 3, 6, PDF pp4 to 6"
+  },
+  {
+   "item": "INL 925 C ROT case",
+   "value": "34.0 MMSCFD, 176.8 MWt, 17.3 MWe including 5.7 purge recovery, 1,927 ton/d captured, 142 ton/d emitted; 5.95 kg CO2/kg H2 generated (my calculation)",
+   "source": "TEV-961 Table 2, PDF pp17 to 18"
+  },
+  {
+   "item": "Purge recovery meaning",
+   "value": "Cryogenic N2 removal on recycled fuel gas, needed because all fuel gas recycles in Case 6",
+   "source": "TEV-961 PDF pp14 to 15"
+  },
+  {
+   "item": "INL reference size",
+   "value": "130 MMSCFD = 13,154 kg/h, about 146,350 Nm3/h, 1.46x the SOXAL unit (my calculation)",
+   "source": "TEV-953 PDF p16; calculation in econ_calc.py"
+  },
+  {
+   "item": "Cho et al. 2022",
+   "value": "9.35 kg CO2e/kg H2 direct, 33 US facilities; 11.2 with upstream",
+   "source": "Abstract via Semantic Scholar API and Macquarie page, doi 10.1016/j.egyr.2022.10.053"
+  },
+  {
+   "item": "Sheng 2023 90% statement",
+   "value": "Assumed 90% capture for gas power and industrial gas in LEDS scenario; hydrogen not included",
+   "source": "ERIA Ch.15 pp333, 335, https://www.eria.org/uploads/media/Books/2023-Energy-Outlook/21_Ch.15-Singapore.pdf"
+  },
+  {
+   "item": "SOXAL capacity",
+   "value": "About 100,000 Nm3/h planned (2008); close to 100,000 Nm3/h started up 2011",
+   "source": "Air Liquide releases 15 Jan 2008 and 30 Nov 2011"
+  },
+  {
+   "item": "Xe-100 published cost",
+   "value": "About US$3,600/kW NOAK, US$1.1 to 1.2bn for a 320 MWe four-pack, management estimate; US$2,900 to 9,200/kW is AP1000",
+   "source": "X-energy/AAC presentation Dec 2022, p16"
+  },
+  {
+   "item": "INL advanced reactor cost ranges",
+   "value": "BOAK US$4,000/6,000/7,000/kWe, FOAK x1.3/1.6/2.1, learning 5/10/15%, 2019 USD",
+   "source": "INL/RPT-23-72972 Rev 3, Table 1, PDF p5"
+  },
+  {
+   "item": "Singapore transport cost",
+   "value": "About US$86/t integrated, about US$43/t network, transport only, chart-read",
+   "source": "ERIA Research Project Report 2024 No.16, Fig 2.13, PDF p121"
+  },
+  {
+   "item": "End-to-end SE Asia CCUS",
+   "value": "US$141 to 174/t capture to sequestration (BCG/GCMD, 2024); US$60 to 120/t (McKinsey, 2025)",
+   "source": "bcg.com publication 10 Dec 2024; McKinsey 13 Feb 2025"
+  },
+  {
+   "item": "Gas price basis",
+   "value": "2025 mean US$12.09/MMBtu (my mean of FRED monthly values), 1.3065 S$/USD gives S$14.97/GJ; Sep 2026 US$26.64/MMBtu",
+   "source": "FRED PNGASJPUSDM and AEXSIUS"
+  },
+  {
+   "item": "Carbon tax",
+   "value": "S$45/t for 2026 to 2027; S$50 to 80/t by 2030 is an intention; no post-2027 rate given as of 24 Sep 2025",
+   "source": "NCCS carbon tax page; MSE written reply 24 Sep 2025"
+  },
+  {
+   "item": "2035 NDC",
+   "value": "45 to 50 MtCO2e, submitted 10 Feb 2025",
+   "source": "NCCS"
+  },
+  {
+   "item": "INIR Phase 1",
+   "value": "Main mission tentatively 2027, announced 19 May 2026, no nuclear decision",
+   "source": "MSE media release 19 May 2026"
+  },
+  {
+   "item": "NMDP",
+   "value": "Announced 26 Oct 2026, commences 2027; NUS-NTU joint Master's is a working-towards target stated in Energy Lecture para 50, not in the EMA release",
+   "source": "EMA release PDF; METI Energy Lecture 26 Oct 2026"
+  },
+  {
+   "item": "MEA reboiler heat at 70.4 tCO2/h",
+   "value": "68 to 79 MWth against INL steam export 24.5 MWth (my calculation)",
+   "source": "amine_spec.txt duty range; TEV-961 PDF p17"
+  }
+ ],
+ "conflicts": [
+  {
+   "topic": "Two economic models",
+   "detail": "Deck: 100,000 Nm3/h, 66,927 t/y, 0.585 Mt/y, S$31.5M/y gas, US$80/t CCS, US$420M reactor. final_v1_7: 130 MMSCFD, 97,946 t/y, 0.899 Mt/y, S$94.8M/y gas, S$23.2/t T&S, INL reactor basis. 176.8 MWth applies only at 130 MMSCFD; at 100,000 Nm3/h it is 120.8 MWth.",
+   "resolution": "Pick one basis and regenerate the deck. INL 130 MMSCFD is the consistent one.",
+   "changes_conclusions": true
+  },
+  {
+   "topic": "Deck gas saving against its own CO2 ledger",
+   "detail": "Slide 25 uses 43.5 MMSCFD, the 725 C ROT case, while the 6.08 kg/kg process CO2 matches the 925 C case of 34.0 MMSCFD (5.95 kg/kg). At 34.0 the deck saving is S$64.8M/y, not S$31.5M/y.",
+   "resolution": "Use 34.0 MMSCFD for a 925 C design. final_v1_7 already does.",
+   "changes_conclusions": true
+  },
+  {
+   "topic": "T&S tariff",
+   "detail": "S$23.2/t derives from EUR 10/t (NL EOR, ZEP 2011). Deck uses US$20/t (US basis). ERIA/GCCSI gives Singapore transport about US$43 to 86/t before storage; IEAGHG 2022 gives EUR 54.6/t. BOAK fails above S$25.5/t.",
+   "resolution": "Central case should rest on SE Asian evidence. BOAK at S$60/t is S$120.1/t.",
+   "changes_conclusions": true
+  },
+  {
+   "topic": "Gas saving, INL against Ahn",
+   "detail": "INL 35.2% against unabated SMR. Ahn and Lee 18.8%, also with tail-gas recycle and 900 C helium. Implied generated CO2 5.95 against about 7.30 kg/kg (my calculation).",
+   "resolution": "Keep INL central for flowsheet consistency, show Ahn as a sensitivity. BOAK about S$148/t on Ahn's percentage.",
+   "changes_conclusions": true
+  },
+  {
+   "topic": "PSA tail gas boundary",
+   "detail": "Drafts exclude tail-gas handling and the 5.7 MWe unit, yet 34.0 MMSCFD exists only because all fuel gas is recycled with cryogenic N2 removal (TEV-961 PDF pp14 to 15). IEAGHG 2022 and Ahn also tie furnace removal to tail-gas rerouting.",
+   "resolution": "Bring recycle inside the boundary or stop using 34.0 MMSCFD.",
+   "changes_conclusions": true
+  },
+  {
+   "topic": "Solvent and heat source",
+   "detail": "Capture capital is IEAGHG Case 1A activated MDEA, utilities are INL Selexol, but the design is 30 wt% MEA. No MEA reboiler heat appears in the ledger or the 206.0 MWth screening value.",
+   "resolution": "Add an explicit regeneration heat term, or change solvent basis.",
+   "changes_conclusions": true
+  },
+  {
+   "topic": "Cho 35/65 split",
+   "detail": "Deck labels 35% furnace and 65% process. IEAGHG stream split is 56/44, feed and fuel split is 86/14. 35% equals INL's net gas reduction. Abstract has no split; full text not accessible.",
+   "resolution": "Keep 9.35 as the baseline. Rewrite the split as the net effect of nuclear heat plus tail-gas recycle, sourced to INL.",
+   "changes_conclusions": false
+  },
+  {
+   "topic": "Sheng 2023 citation",
+   "detail": "Deck and report cite Sheng for industry-standard amine capture at 90% on syngas. Sheng is a scenario assumption for gas power and industrial gas, with hydrogen not included.",
+   "resolution": "Cite IEAGHG 2022 (90% minimum, p56; Table 5 p72) and disclose that 90% at scale is undemonstrated (p13).",
+   "changes_conclusions": false
+  },
+  {
+   "topic": "Xe-100 cost on slide 26",
+   "detail": "Slide shows US$9,200/kWe and US$1 to 2bn for one 200 MWth unit. The cited source applies US$2,900 to 9,200/kW to AP1000; US$1.1 to 1.2bn is a four-pack NOAK. US$5,250/kWe has no source found.",
+   "resolution": "Replace with the INL basis or the correct X-energy figures, labelled as a management estimate.",
+   "changes_conclusions": true
+  },
+  {
+   "topic": "Headline abatement cost",
+   "detail": "final_v1_7 summary states S$64/t, the 10-OAK value; body shows BOAK S$98.7/t and FOAK S$169.3/t. Capital uses overnight cost with no IDC, owner's cost or contingency, while IEAGHG TCR/TPC is 1.30.",
+   "resolution": "Headline the range by stage. Add at least IDC, which is +S$10 to 20/t on BOAK.",
+   "changes_conclusions": true
+  },
+  {
+   "topic": "Reactor temperature availability",
+   "detail": "Design needs 925 C ROT. Xe-100 and HTR-PM are 750 C; HTTR 950 C is a 30 MWt test reactor. final_v1_7 Table A10 shows the 750 C case fails at every stage, yet the cost basis is a generic reactor figure.",
+   "resolution": "State plainly that the case depends on a reactor not commercially identified.",
+   "changes_conclusions": true
+  },
+  {
+   "topic": "Reactor size and location statements",
+   "detail": "Reactor is 210 MWth in deck and v1.7, 230 MWth in the 31 Oct revision, and INL's equivalent is 178.8 MWt. Slide 9 captions the western island 'proposed location (gov.sg)' while v1.7 uses Jurong Island; gov.sg names power generation only and does not mention nuclear.",
+   "resolution": "Align rating and site. Use Jurong Island as a concept and treat the western island as a future option with no nuclear designation.",
+   "changes_conclusions": false
+  }
+ ],
+ "decisions": [
+  {
+   "question": "Which single scale basis should the deck and report share?",
+   "why": "Abatement, heat duty, gas saving and reactor rating only reconcile on one basis. Moving from 100,000 Nm3/h to 130 MMSCFD changes tonnes by 1.46x.",
+   "default": "INL 130 MMSCFD (97,946 t/y), stated as 1.46x the SOXAL unit.",
+   "options": [
+    "INL 130 MMSCFD with 176.8 MWth",
+    "SOXAL 100,000 Nm3/h with heat scaled to 120.8 MWth"
+   ]
+  },
+  {
+   "question": "What central T&S tariff should the economics use?",
+   "why": "BOAK crosses S$100/t at S$25.5/t, so this input decides pass or fail for BOAK.",
+   "default": "Central S$60/t, with S$23.2/t as the low case and an ERIA-based high case.",
+   "options": [
+    "S$23.2/t retained with a stated caveat",
+    "S$60/t central",
+    "S$112/t or more for a stand-alone chain"
+   ]
+  },
+  {
+   "question": "How is MEA regeneration heat supplied and costed?",
+   "why": "It is 68 to 79 MWth, absent from the ledger and from 206.0 MWth, and worth S$23 to 34/t.",
+   "default": "Keep 30 wt% MEA, add an explicit heat term net of 24.5 MWth export steam.",
+   "options": [
+    "Supply from reactor and raise rating",
+    "Supply from recovered process heat with evidence",
+    "Switch to MDEA or Selexol to match the references"
+   ]
+  },
+  {
+   "question": "Is PSA tail-gas recycle inside the boundary?",
+   "why": "The 34.0 MMSCFD gas saving and the low residual CO2 both rely on it.",
+   "default": "Inside the boundary, restoring 5.7 MWe (220.4 MWth screening requirement).",
+   "options": [
+    "Inside, with 5.7 MWe",
+    "Purge route with purge emissions counted",
+    "Outside, with gas use recalculated without recycle"
+   ]
+  },
+  {
+   "question": "Which gas-saving basis is central?",
+   "why": "INL and Ahn differ by S$44M/y, or S$49/t.",
+   "default": "INL 34.0 MMSCFD central, Ahn 18.8% as a named sensitivity.",
+   "options": [
+    "INL central",
+    "Ahn central",
+    "Midpoint with both shown"
+   ]
+  },
+  {
+   "question": "Which maturity stage is the headline abatement cost?",
+   "why": "S$64/t, S$99/t and S$169/t tell different stories, and the rubric asks for a defensible cost with uncertainty.",
+   "default": "Report BOAK with the FOAK to 10-OAK range and do not headline S$64/t alone.",
+   "options": [
+    "BOAK headline with range",
+    "10-OAK headline with disclosure",
+    "FOAK headline with co-funding gap"
+   ]
+  },
+  {
+   "question": "What capital basis applies to the reactor?",
+   "why": "Overnight cost omits IDC, and the 0.6 size scaling from an unverified 600 MWth reference moves BOAK by S$55/t.",
+   "default": "Add IDC, keep n = 0.6, and label 600 MWth as a team assumption.",
+   "options": [
+    "Overnight only",
+    "Overnight plus IDC",
+    "Overnight plus IDC and owner's cost"
+   ]
+  },
+  {
+   "question": "Should the report name a reactor product or remain generic?",
+   "why": "Xe-100 is 750 C and the draft shows the 750 C case fails at every stage, so naming it undercuts the 925 C basis.",
+   "default": "Generic 925 C HTGR, with Xe-100 used only for safety-case analogy.",
+   "options": [
+    "Generic HTGR",
+    "Named Xe-100 with 750 C economics"
+   ]
+  }
+ ],
+ "gaps": [
+  "Cho full text not accessible (HTTP 403), so any combustion and process split in the paper is not verified.",
+  "ETC Exhibit 3.8 seen only on the deck slide image; the source PDF exceeded the fetch limit.",
+  "Original GCMD report not opened; BCG's page used for the US$141 to 174/t boundary.",
+  "No published Singapore-to-Indonesia project T&S tariff found; storage cost for Singapore in ERIA Table A.2 not read because it is an image.",
+  "Source of US$5,250/kWe not found.",
+  "No published FOAK cost for a single Xe-100 unit found; X-energy S-1 not read in full.",
+  "The claim that INL's US$6,000/kWe reflects a 600 MWth reactor is not verified; reference [46] not opened.",
+  "ALSG total hydrogen capacity and actual output of the 2011 SMR not found.",
+  "Official Singapore gas price in S$/GJ and MAS October 2026 USD/SGD average not found; about 1.28 is from aggregators.",
+  "DICE reboiler duty and PCC-only capital line not extracted; INL/RPT-24-77048 SMR range not accessible (HTTP 403).",
+  "Ahn SI not available, so HTGR capital cost and T&S treatment are unknown.",
+  "Full NDR 2026 speech text not read; only the gov.sg page and secondary reports."
+ ],
+ "report_path": "C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/findings/econ_lit.md"
+}

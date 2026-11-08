@@ -1,0 +1,24 @@
+# H. Petersen, The Properties of Helium, Riso Report No. 224, 1970. Tabulated values, read from the page images.
+# Density rho kg/m3 printed p39 (PDF p43). Viscosity mu in 1e-5 kg/m/s printed p40 (PDF p44), independent of pressure. Conductivity k W/m/K printed p41 (PDF p45).
+# Rows hold the table temperatures that bracket the helium duty of the plant, with the pressures either side of 51.5 bar.
+property,t_k,p_bar,value
+rho,300.00,40,6.2993
+rho,300.00,60,9.3620
+rho,773.16,40,2.4755
+rho,773.16,60,3.7021
+rho,1023.16,40,1.8739
+rho,1023.16,60,2.8047
+rho,1173.16,40,1.6353
+rho,1173.16,60,2.4485
+mu,300.00,40,1.9912
+mu,773.16,40,3.8630
+mu,1023.16,40,4.7000
+mu,1173.16,40,5.1724
+k,300.00,40,0.1557
+k,300.00,60,0.1565
+k,773.16,40,0.3033
+k,773.16,60,0.3040
+k,1023.16,40,0.3694
+k,1023.16,60,0.3700
+k,1173.16,40,0.4068
+k,1173.16,60,0.4073

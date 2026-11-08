@@ -1,0 +1,300 @@
+1-s2.0-S2772656826000588-main.pdf
+HTGR_SMR_MEA_CCS_Research_Local\05_MEA_Thermodynamics\Cownden_Lucquiaud_2026_MEA_Thermodynamic_Equations_Mass_Transfer.pdf
+=====
+--- PDF p.1 ---
+Full Length Article
+An improved open-access steady state model for flue gas CO2 capture 
+with monoethanolamine
+Ryan Cownden *
+, Mathieu Lucquiaud
+School of Mechanical, Aerospace and Civil Engineering, University of Sheffield, Sheffield, S1 3JD, United Kingdom
+A R T I C L E I N F O
+Keywords:
+Carbon capture
+Process model
+Monoethanolamine
+CO2 capture
+Absorption
+Regeneration
+A B S T R A C T
+The U.S. Department of Energy’s Carbon Capture Simulation Initiative (CCSI) developed a “gold-standard” 
+steady state CO2 capture process model in 2018 for aqueous monoethanolamine (MEA) solvent. The CCSI model 
+is publicly available and has been widely used for CO2 capture studies. However, there are underreported issues 
+with the model which impair its accuracy for some conditions. Here, we show how these limitations affect the 
+accuracy of model predictions compared to large-scale pilot data and present results from an improved MEA-CO2 
+capture model which utilises a new combination of mass transfer and thermodynamic/chemistry models. The 
+new process model more closely predicts CO2 capture rate across the wide range of process conditions and 
+equipment scale investigated in this study. The root mean square deviation between predicted capture rate and 
+measured data is reduced to 2.1 pp (percentage points) versus 5.3 pp using the CCSI model for 23 test cases from 
+3 different facilities. The accuracy improvements are particularly substantial (up to 8 pp) for emission sources 
+with low CO2 concentration, such as combined cycle gas turbines, and for absorber designs where mass transfer is 
+not constrained by equilibrium. The Aspen Plus source file for the new process model is provided for other re­
+searchers to use and build upon.
+1. Introduction
+Achieving the Paris Agreement climate stabilisation objectives re­
+quires urgent and ambitious reductions in anthropogenic greenhouse 
+gas (GHG) emissions which are primarily caused by the production and 
+consumption of fossil fuels and industrial processes (Dhakal et al., 
+2022). Deployment of CO2 capture and storage is expected to play a 
+substantial role in mitigating GHG emissions, particularly flue gas from 
+large, point-source emitters such as fossil fuel power generation, steel 
+production, and cement plants (Riahi et al., 2022).
+Regenerative absorption processes using amine solvents have been 
+widely deployed to remove CO2 from process streams in industrial ap­
+plications such as natural gas processing and ammonia synthesis since 
+1930 (Mokhatab et al., 2019; Treese, 2015). They have also been 
+employed since 1978 for post-combustion CO2 capture for merchant CO2 
+supply (e.g., 2–117 ktCO2/y facilities in the food industry) (Chapel et al., 
+1999; Herzog, 1999; Fluor, 2004) and more recently at pilot facilities for 
+CO2 capture technology development – e.g., Technology Centre Mon­
+gstad (TCM) in Norway (c. 74 ktCO2/y for continuous operation) (de 
+Koeijer et al., 2011) and the National Carbon Capture Center (NCCC) in 
+USA (c. 3 ktCO2/y) (Morton et al., 2013) – and industrial-scale power 
+plants for GHG emissions abatement – e.g., Boundary Dam power station 
+in Canada (c. 1 MtCO2/y) (Clarke et al., 2022) and the Petra Nova 
+project in USA (c. 1.6 MtCO2/y) (PETRA NOVA, 2020).
+Amine solvents are synthesised from ammonia by replacing one or 
+more hydrogen atoms with hydrocarbon functional groups. Amines are 
+attractive for CO2 capture applications because they can be relatively 
+stable, have low vapour pressure, and achieve very low residual CO2 
+partial pressure in the outlet gas stream (Mokhatab et al., 2019). 
+Aqueous solutions of monoethanolamine (MEA) are commonly used 
+open-source solvents for CO2 absorption, but many other open-source 
+and proprietary amine solvent blends have been used with a range of 
+characteristics. Amines typically absorb CO2 from flue gas at low tem­
+perature (c. 40–70 ◦C) and near atmospheric pressure in an absorption 
+contactor and release the CO2 at high temperature (c. 100–130 ◦C) and 
+moderate pressure (c. 1–3 barg) in a regenerator (also known as strip­
+per/desorber) before recirculation to the absorber.
+Detailed and accurate process models are crucial to facilitate 
+Abbreviations: CCSI, Carbon Capture Simulation Initiative; NCCC, National Carbon Capture Center; TCM, Technology Centre Mongstad.
+* Corresponding author.
+E-mail address: ryan.cownden@cownden.ca (R. Cownden). 
+Contents lists available at ScienceDirect
+Carbon Capture Science & Technology
+journal homepage: www.elsevier.com/locate/ccst
+https://doi.org/10.1016/j.ccst.2026.100625
+Received 19 March 2026; Received in revised form 8 May 2026; Accepted 10 May 2026  
+19 (2026) 100625 
+Available online 13 May 2026 
+2772-6568/© 2026 The Authors. Published by Elsevier Ltd on behalf of Institution of Chemical Engineers (IChemE). This is an open access article under the CC BY 
+license ( http://creativecommons.org/licenses/by/4.0/ ). 
+
+--- PDF p.2 ---
+deployment of CO2 capture technology and establish related govern­
+ment policies/regulations because they are the foundation for facility 
+design and techno-economic assessments. Rate-based process models 
+are considered more deterministic and accurate than empirical equi­
+librium stage models for regenerative amine solvent absorption pro­
+cesses (Thompson and Tsouris, 2021). Prior studies that developed and 
+validated amine absorption rate-based process models (e.g., Amir­
+khosrow et al. (2020) and Luo and Wang (2017)) have typically vali­
+dated their predictions using data from laboratory-scale equipment that 
+is several orders of magnitude smaller than equipment relevant for 
+industrial-scale applications. Further, these laboratory tests used col­
+umns substantially shorter than typical industrial designs and focused 
+on a relatively narrow range of column liquid fluxes that is not repre­
+sentative of all CO2 capture applications. The mass transfer and column 
+hydraulic models commonly used in process simulations are based on a 
+variety of empirical relationships that deviate substantially based on 
+fluid thermodynamic properties, packing parameters, and superficial 
+velocities.
+To help address the diversity in modelling methodologies, the U.S. 
+Department of Energy’s Carbon Capture Simulation Initiative (CCSI) 
+developed and published a steady state CO2 capture process model for 
+aqueous MEA solvent (Soares Chinen et al., 2018). The CCSI model was 
+developed in Aspen Plus by regressing parameters for mass transfer, 
+column hydraulics, and reaction kinetics to minimise the differences 
+between the process model predictions and a relatively small sample of 
+reported laboratory-scale CO2 absorber and wetted wall column data. 
+Regression with a small sample could result in overfitting and erroneous 
+predictions for conditions outside of the range of the regression data. 
+Performance predicted by the CCSI model was also compared with pilot 
+plant data from NCCC (Morgan et al., 2018), but the data was limited to 
+flue gas from coal fired power generation which constrained the range of 
+operating conditions. The Aspen Plus source file for the CCSI model was 
+subsequently distributed as a standard model for post-combustion CO2 
+capture and has been widely used for other published studies (e.g., Du 
+et al. (2021); Michailos and Gibbins (2022); Mullen and Lucquiaud 
+(2024); de Joannis et al. (2025)).
+The CCSI model uses a variation of the Tsai correlation (Tsai et al., 
+2011) to determine interfacial area for mass transfer (Soares Chinen 
+et al., 2018); this correlation is normally a function of the Weber number 
+and Froude number. However, the dependence of interfacial area on the 
+Froude number was omitted in the CCSI parameter regression and model 
+validation (Morgan, 2024). This reduces the absolute value of the 
+interfacial area calculated by the CCSI model and increases the relative 
+dependence on liquid flux compared to the original Tsai correlation 
+which could adversely affect the accuracy of its predictions, particularly 
+outside of the range of liquid fluxes used in the regression (10–35 
+m3/m2-h).
+Furthermore, the CCSI model uses a simplified chemistry model 
+based on two reactions which does not include all ionic species (excludes 
+H3O+, OH−, and CO3
+2−) (Soares Chinen et al., 2018). The simplified re­
+action scheme combined with the thermodynamic parameters used in 
+the CCSI model provide reasonable predictions of equilibrium CO2 sol­
+ubility in aqueous MEA for many combinations of solvent CO2 loading 
+and temperature. However, as demonstrated in this study, there are 
+some conditions relevant for CO2 capture systems where this is not the 
+case (e.g., high solvent CO2 loading and 120 ◦C, a typical regenerator 
+reboiler temperature).
+The CCSI model is also based on a specific type of structured packing 
+(Mellapak 250Y/252Y), whereas a wide range of packing is anticipated 
+for different flue gas CO2 capture applications. Furthermore, the CCSI 
+model relies on parameters for kinetic, mass transfer, and hydraulic 
+calculations that were regressed based on a limited set of experimental 
+data (one wetted wall column study and one laboratory-scale packed 
+bed absorber) (Soares Chinen et al., 2018).
+This study presents an alternative rate-based steady state process 
+model for flue gas CO2 capture with aqueous MEA that was created to 
+address these issues using broadly applicable mass transfer correlations 
+developed at the University of Texas (Song et al., 2018). These mass 
+transfer correlations are based on an extensive dataset generated with 
+39 different random and structured packings, including the data utilized 
+in the original Tsai effective area correlation, and account for the effect 
+of viscosity on the liquid mass transfer coefficient. The new process 
+model incorporates a rigorous chemistry model which considers 
+water/CO2 
+ionic speciation, was validated against published 
+vapour-liquid equilibrium data for CO2−MEA-water, and includes ki­
+netic limitations in the absorber. The new model was validated over a 
+wider range of geometries/conditions than the CCSI model using four 
+datasets from three different facilities – 0.1–80 tCO2/d and 4–11 %mol 
+inlet gas CO2 concentration.
+2. Methods
+2.1. Thermodynamic property model
+The new rate-based CO2 capture process model was developed in 
+Aspen Plus using the ELECNRTL property method which combines the 
+electrolyte non-random two liquid thermodynamic property model for 
+the liquid phase and the Redlich-Kwong equation-of-state property 
+model for the vapour phase (ASPEN TECHNOLOGY INC., 2019). This 
+property method combination has been used to model MEA absorption 
+of CO2 in previous studies (Amirkhosrow et al., 2020), including the 
+CCSI model (Soares Chinen et al., 2018). Henry’s law is used to deter­
+mine vapour-liquid equilibrium fugacity for CO2, nitrogen, and oxygen. 
+The property method is configured with the options, parameters, and 
+databases as described in the Supplementary Material.
+Model results for absorber/regenerator CO2 profiles are provided as 
+partial pressure for the vapour phase (vapour phase CO2 mole fraction 
+times total pressure) and fugacity for the liquid phase (fL
+CO2) which is 
+calculated in Aspen Plus according to eqn. (1). 
+fL
+CO2 = γCO2xCO2ϕ∗,v
+CO2
+(
+T, p∗,l
+CO2
+)
+p∗,l
+CO2θ∗,l
+CO2
+(1) 
+Where γCO2is the CO2 activity coefficient, xCO2is the liquid phase CO2 
+mole fraction, ϕ∗,v
+CO2
+(
+T, p∗,l
+CO2
+)
+is the fugacity coefficient of CO2 at the 
+system temperature and vapour pressure, p∗,l
+CO2 is the liquid phase vapour 
+pressure of CO2 at the system temperature, and θ∗,l
+CO2 is the Poynting 
+correction factor (near unity for conditions of interest for typical PCC 
+plant applications).
+2.2. Equilibrium chemistry
+The chemical equilibrium reactions determine the electrolytic and 
+molecular species present in the MEA solvent and limit the extent of the 
+kinetically controlled reactions within the absorber unit operation. The 
+reaction mechanism between absorbed CO2 and aqueous MEA and the 
+ionic speciation of CO2/water are modelled using Eqs. (2)–(6)
+(Amirkhosrow et al., 2020). 
+2H2O⇄H3O+ + OH−
+(2) 
+CO2 + 2H2O⇄H3O+ + HCO−
+3
+(3) 
+HCO−
+3 + H2O⇄H3O+ + CO2−
+3
+(4) 
+MEAH+ + H2O⇄H3O+ + MEA
+(5) 
+MEACOO−+ H2O⇄HCO−
+3 + MEA
+(6) 
+Equilibrium constants for each equilibrium reaction (Keq) are unitless 
+based on liquid phase activity (mole gamma basis) and are determined 
+from the temperature of the liquid phase (TL) according to eqn. (7)
+where the constant parameters A, B, C, D are given in Table 1. 
+R. Cownden and M. Lucquiaud                                                                                                                                                                                                              
+Carbon Capture Science & Technology 19 (2026) 100625 
+2 
+
+--- PDF p.3 ---
+Keq = exp
+(
+A + B
+TL
++ C ln(TL) + D TL
+)
+(7) 
+Equilibrium constant parameters for the dissociation of water and 
+CO2 reactions 2–4 are from the widely used Edwards et al. (1978) study. 
+Equilibrium constant parameters for reactions 5–6 were regressed in this 
+study together with the binary interaction parameters in Supplementary 
+Table S1 using the Aspen Plus parameter regression tool and CO2 solu­
+bility measurements for 15–45 %wt MEA, 40–120 ◦C, and CO2 loading 
+0.05–0.50 molCO2/molMEA reported in Aronu et al. (2011). Data from 
+Ma'mun et al. (2005) for 30 %wt MEA, 120 ◦C, and CO2 loading 
+0.15–0.30 molCO2/molMEA was included in the regression dataset due to 
+the lack of data in Aronu et al. for this range of solvent loading, which 
+Table 1 
+Equilibrium constant equation parameters used in this work. Equilibrium 
+constant parameters for reactions 2–4 are from Edwards et al. (1978). Equilib­
+rium constant parameters for reactions 5–6 were determined in this study using 
+the Aspen Plus parameter regression tool and CO2 solubility measurements re­
+ported in Aronu et al. (2011) and Ma'mun et al. (2005).
+reaction
+A
+B
+C
+D
+2
+132.899
+−13,445.9
+−22.4773
+0
+3
+231.465
+−12,092.1
+−36.7816
+0
+4
+216.05
+−12,431.7
+−35.4819
+0
+5
+−12.4751
+−5780.9
+0
+0.0145966
+6
+−10.1504
+−270.194
+0
+0.0074803
+Fig. 1. Model predicted equilibrium vapour phase CO2 partial pressure compared to published measurements for 30 %wt MEA. Comparison of equilibrium 
+vapour phase CO2 partial pressure versus CO2 loading (molCO2/molMEA) predicted by the model used in this study (solid red line) and the CCSI model (dotted black 
+line) with measurements published by Aronu et al. (2011) (solid blue circles), Jou et al. (1995) (solid orange diamonds), Hilliard (2008) (open green squares), Shen 
+and Li (1992) (blue stars), Lee et al. (1976) corrected for the CO2 loading measurement error described in Jou et al. (1995) (red crosses), Xu and Rochelle (2011)
+(solid green squares), Dugas and Rochelle (2009) (solid brown triangles), Ma'mun et al. (2005) (green x’s), and Tong (2012) (open purple triangles) for 30 %wt 
+aqueous MEA at 40 ◦C (a), 60 ◦C (b), 80 ◦C (c), 100 ◦C (d) and 120 ◦C (e).
+R. Cownden and M. Lucquiaud                                                                                                                                                                                                              
+Carbon Capture Science & Technology 19 (2026) 100625 
+3 
+

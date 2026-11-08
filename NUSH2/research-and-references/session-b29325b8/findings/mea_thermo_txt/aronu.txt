@@ -1,0 +1,3102 @@
+
+=====PDF_PAGE 1=====
+Solubility of CO2 in 15, 30, 45 and 60 mass% MEA from 40 to 120 1C and
+model representation using the extended UNIQUAC framework
+Ugochukwu E. Aronu a, Shahla Gondal a, Erik T. Hessen a, Tore Haug-Warberg a, Ardi Hartono a,
+Karl A. Hoff b, Hallvard F. Svendsen a,n
+a Department of Chemical Engineering, Norwegian University of Science and Technology, N-7491 Trondheim, Norway
+b SINTEF Materials and Chemistry, N-7465 Trondheim, Norway
+a r t i c l e i n f o
+Article history:
+Received 23 January 2011
+Received in revised form
+20 August 2011
+Accepted 27 August 2011
+Available online 3 September 2011
+Keywords:
+CO2 absorption
+Separations
+Phase equilibria
+Thermodynamic process
+Extended UNIQUAC
+Monoethanolamine (MEA)
+a b s t r a c t
+New experimental data for vapor–liquid equilibrium of CO2 in aqueous monoethanolamine solutions
+are presented for 15, 30, 45 and 60 mass% MEA and from 40 to 120 1C. CO2 partial pressures over loaded
+MEA solutions were measured using a low temperature equilibrium apparatus while total pressures
+were measured with a high temperature equilibrium apparatus. Experimental data are given as CO2
+partial pressure as function of loading in solution for temperatures from 40 to 80 1C and as total
+pressures for temperatures from 60 to 120 1C for the different MEA concentrations. The extended
+UNIQUAC model framework was applied and model parameters were ﬁtted to the new experimental
+VLE data and physical CO2 solubility data from the literature. The model gives a good representation of
+the experimental VLE data for CO2 partial pressures and total pressures for all MEA concentrations with
+an average absolute relative deviation (AARD) of 24.3% and 11.7%, respectively, while the physical
+solubility data were represented with an AARD of 2.7%. Further, the model predicts well literature data
+on freezing point depression, excess enthalpy and liquid phase speciation determined by NMR.
+& 2011 Elsevier Ltd. All rights reserved.
+1. Introduction
+Scrubbing efﬂuent industrial ﬂuid streams of acid gases such
+as CO2 and H2S is an important industrial process operation. The
+technique has historically been applied for various reasons such
+as improving the caloriﬁc value of gas streams and avoiding
+corrosion on process lines and ﬁttings. Recently, a more compel-
+ling reason for scrubbing of carbon dioxide from process streams
+has been the urgent need to reduce greenhouse gas emissions.
+CO2 capture by absorption technology remains the most promis-
+ing and most mature technology for CO2 removal from exhaust
+gas streams, and reducing the cost of this technology is of global
+interest. Amine-based CO2 solvents have been the most studied
+absorbents for CO2 capture by absorption.
+Several studies have been carried out on the solubility of CO2
+in aqueous MEA solution. Tables presenting summaries of pre-
+vious studies were presented by Jou et al. (1995), Kohl and
+Nielsen (1997) and Ma’mun et al. (2005). The experimental data
+of Jou et al. (1995) covers a wide range of temperatures, pressures
+and loadings, however it is available only for 30 mass% MEA. Of all
+the numerous work on MEA, only Mason and Dodge (1936) and
+Atadan (1954) measured CO2 solubility in MEA at concentrations
+higher than 30 mass%. These data are old and quite few. Mason and
+Dodge (1936) measured only up to 75 1C and between 1.3 and
+100 kPa while Atadan (1954) measured up to 70 1C and between
+103 and 3447 kPa, thus not covering the temperature range for
+regeneration. There is also a strong need for more data in the very
+low loading and pressure regions for modeling purposes. Further
+MEA is often used as a base case solvent in comparative studies of
+new solvents for CO2 absorption and new processes applying higher
+solvent concentrations are being developed. For e.g. Bouillon et al.
+(2011) have shown that use of MEA at higher concentrations can
+give improved CO2 absorption results. Thus an up-to-date robust
+VLE data set for H2O–MEA–CO2 system, spanning a large concen-
+tration range, is clearly needed.
+Accurate correlation of equilibrium behavior of CO2 in aqueous
+MEA solutions will enable better process simulations towards cost
+reduction, better column design as well as improved plant opera-
+tion. Different thermodynamic models have been used to describe
+the equilibrium behavior of CO2 in aqueous alkanolamine solu-
+tions, in particular, MEA. These models could be categorized into
+three (Hessen et al., 2010); the non-rigorous models, e.g. Kent-
+Eisenberg (1976) and the rigorous models with the two branches;
+activity models (excess Gibbs energy) and equation of state models
+(Helmholtz energy). Activity based models vary in complexity,
+ranging from the relatively simple Deshmukh and Mather (1981) to
+the more sophisticated ones, such as electrolyte–NRTL (Chen et al.,
+1982; Chen and Evans, 1986) and extended UNIQUAC models
+(Nicolaisen et al., 1993; Thomsen, 1997; Thomsen and Rasmussen,
+Contents lists available at SciVerse ScienceDirect
+journal homepage: www.elsevier.com/locate/ces
+Chemical Engineering Science
+0009-2509/$ - see front matter & 2011 Elsevier Ltd. All rights reserved.
+doi:10.1016/j.ces.2011.08.042
+n Corresponding author. Tel.: þ47 73594100; fax: þ47 73594080.
+E-mail addresses: ugochukwu.aronu@chemeng.ntnu.no (U.E. Aronu),
+hallvard.svendsen@chemeng.ntnu.no (H.F. Svendsen).
+Chemical Engineering Science 66 (2011) 6393–6406
+i
+An update to this article is included at the end
+
+=====PDF_PAGE 2=====
+1999) models. The extended-UNIQUAC model was used in this
+work. Previous work such as Austgen et al. (1989), Faramarzi et al.
+(2009), Hessen et al. (2010), etc. have, respectively, implemented the
+original electrolyte–NRTL, reﬁned electrolyte–NRTL and extended-
+UNIQUAC models for the H2O–MEA–CO2 system. However, all the
+implementations were based on experimental data of not more than
+30 mass% MEA concentration, except for Hessen et al. (2010) who
+applied the r-e-NRTL to predict experimental VLE results of 60
+mass% MEA up to 80 1C. None of the existing models have used the
+solubility of N2O in MEA which by utilizing the so-called N2O
+analogy (originally proposed by Clarke (1964) and veriﬁed by
+Laddha et al. (1981)) gives a measure of the physical solubility, or
+Henry’s law constant, of CO2 in the aqueous MEA solution. Through
+the physical solubility of CO2, the activity coefﬁcient of CO2 can be
+calculated. In Hessen (2010) it was shown that existing models give
+CO2 activity coefﬁcients which are far from the N2O analogy derived
+values.
+The objectives of this work are to present a consistent VLE data
+set for MEA through experimental VLE measurements for 15, 30,
+45 and 60 mass% MEA in the low and high CO2 loading regions
+from 40 to 120 1C, and to use these data together with CO2
+solubility data based on the N2O analogy, to provide a rigorous
+equilibrium model based on the extended UNIQUAC model
+framework.
+2. Equilibrium experiments
+2-Aminoethanol (MEA) (purity Z99 mass%) was obtained
+from Sigma-Aldrich. Sample solutions of 15, 30, 45 and 60 mass%
+MEA were prepared using deionized water. A total of about 5.0 L
+solution of each MEA concentration was prepared. Solutions were
+prepared using a Sartorius GMBH Gottingen balance within
+70.1 g. The gases used; CO2, purity 499.99 mol% and calibration
+gases, 2.5 mol% CO2 and 4.96 mol% CO2 were supplied by AGA Gas
+GmbH while N2, purity
+499.999 mol% and calibration gas
+100 ppm CO2 were supplied by Yara Praxair AS.
+2.1. Low temperature/atmospheric VLE apparatus
+Vapor–liquid equilibrium for the CO2 loaded MEA systems
+from 40 to 80 1C and at atmospheric pressure were measured
+using a low temperature/atmospheric vapor–liquid equilibrium
+apparatus (see Fig. 1), designed to operate up to 8070.1 1C.
+A volume of 150 cm3 of pre-loaded sample solutions were placed
+in three equilibrium cells, respectively (360 cm3 glass ﬂasks) and
+ﬂushed with N2 gas to remove any dissolved oxygen. The gas phase
+was thereafter circulated by a B ¨UHLER pump (model P2) at a set
+temperature and analyzed online until steady values of gas phase
+CO2 composition were recorded by a calibrated Fisher–Rosemount
+BINOSs 100 NDIR Gas Analyzer. The gas phase was circulated
+typically for 20 min.
+Six different analyzers were used; 0–
+20072 ppm, 0–1000710 ppm, 0–2000720 ppm, 0–170.01%,
+0–570.01%; 0–2070.1%. Analyzers were calibrated every day
+before measurements using certiﬁed calibration gases and gas
+mixtures of CO2 and N2 produced using a Bronkhorst Hi-Tec EL-
+Flow mass ﬂow meter controller. The number of calibrations points
+used in each analyzer range are given in Table 1. Three K-type
+thermocouples recorded the temperatures in the cell, the water
+bath and the gas phase temperature between the condenser and
+the analyzer, respectively, within 70.1 1C. Liquid phase composi-
+tions were obtained by taking a 25 cm3 sample from cell 4 for
+CO2 analysis by the barium chloride method and for total alkali-
+nity. The liquid phases in all the cells are then removed and diluted
+with fresh solution or loaded with more CO2 to change to a new
+loading, then shaken vigorously and reﬁlled into the equilibrium
+cells for a new measurement. The amount of CO2 pre-loaded was
+estimated using PG5002-S Delta Range balance from Mettler
+Toledo within 70.01 g. However, all solutions were analyzed using
+the BaCl2 method where all gravimetric operations were carried
+out using a Mettler PM1200 from Mettler Toledo within 70.001 g.
+The apparatus has been described in detail by Ma’mun et al. (2005,
+2006) and was used by Aronu et al. (2011a,b) for VLE measure-
+ments of amino acid based absorbents.
+The apparatus circulates the gas through the liquid phase
+holding cells until equilibrium is reached. A gas phase bleed is
+extracted for composition measurement and then returned to the
+circulation loop. The extracted bleed is cooled to 10–15 1C to
+condense water and amine and the CO2 content determined
+directly by the NDIR analyzers. The vapor phase will therefore
+consist of CO2, N2, and small amounts of H2O and amine. The CO2
+molfraction in the analyzer is given by
+yIR
+CO2 ¼
+nIR
+CO2
+nIR
+CO2 þnIR
+N2 þnIR
+H2O þnIR
+amine
+ð1Þ
+IR CO2 Analyzer
+Condenser
+Water Bath
+Heater + Fan
+TI
+FI
+Thermostated box
+TI
+TIC
+TIC
+1
+2
+3
+4
+Fig. 1. Low temperature/atmospheric vapor–liquid equilibrium apparatus, Ma’mun et al. (2006).
+Table 1
+Number of calibration points used for each CO2 IR analyzer range.
+CO2 analyzer
+concentration range
+No. of calibration
+points in range
+0–200 ppm
+2
+0–1000 ppm
+2
+0–2000
+5
+0–1.0%
+5
+0–5.0%
+6
+0–20.0%
+8
+U.E. Aronu et al. / Chemical Engineering Science 66 (2011) 6393–6406
+6394
+
+=====PDF_PAGE 3=====
+where n is the molar ﬂow and the superscript IR is the vapor
+phase in the IR analyzer. As non-condensable gases, the ﬂows
+of CO2 and N2 before and after the condenser are assumed to be
+the same. The amount and CO2 content in the condensate was
+checked and was found to have a negligible inﬂuence on the
+results even at low CO2 partial pressures. Eq. (1) together with a
+mole balance gives the molar ﬂow of CO2 in the system as
+yIR
+CO2 ¼
+nCO2
+ntotðnH2OnIR
+H2OÞðnMEAnIR
+MEAÞ
+ð2Þ
+where ntot, nH2O, and nMEA, respectively, denote the total molar
+ﬂow and the molar ﬂows of H2O and MEA in the circulation
+system. By dividing by the total pressure P, Eq.(2), the IR analyzer
+CO2 mole fraction can be expressed as
+yIR
+CO2 ¼ pCO2=½PðpH2OpIR
+H2OÞðpMEApIR
+MEAÞ
+ð3Þ
+Due to the low vapor pressure of most amines at cooler tempera-
+ture, pIR
+MEA is usually negligible. The partial pressures pH2O, pIR
+H2O,
+pMEA , pIR
+MEA are determined from the model but can with negligible
+loss in precision also be determined using Raoult’s law.
+2.2. High temperature equilibrium measurement
+Equilibrium total pressure data in the temperature range
+60–120 1C for the systems were obtained using a high tempera-
+ture VLE apparatus (Fig. 2). The apparatus consists of two
+connected autoclaves (1000 and 200 cm3) rotating 1801 with
+2 rpm and designed to operate up to 10.5 bar and 150 1C.
+Temperature and pressure were measured with two K-type
+thermocouples and a Druck PTX 610 pressure transducer, respec-
+tively. Equilibrium was obtained when the temperature and
+pressure were constant to within 70.2 1C and 70.1 kPa, respec-
+tively. This took about 4–6 h. The experiment starts when the cell
+is evacuated and purged with CO2. Unloaded solution is then
+injected into the reactor through a liquid line and pure CO2 is
+loaded at the desired temperature and at a set pressure. The CO2
+feed line is closed after about 1 h of loading. When equilibrium is
+reached, i.e. when temperature and pressure are constant, a liquid
+sample for analysis is collected by closed sampling into a
+sampling cylinder containing about 100 mL of fresh solution. This
+immediately reduces the CO2 pressure and CO2 loss is avoided.
+The cylinder is weighed before and after sampling and cooled
+below ambient temperature in a refrigerator. This ensures no loss
+of CO2 by ﬂashing at atmospheric pressure. The actual CO2
+loading is determined by titration analysis and a mass balance.
+The data acquisition system uses Field Point Labview. Further
+details on the apparatus are given in Ma’mun et al. (2005).
+3. Chemical and phase equilibrium
+3.1. Chemical equilibrium
+For a ternary H2O–CO2–amine system where the amine has a
+single amine functionality, like MEA, the following equilibrium
+reactions are expected:
+Dissociation of water:
+2H2O"
+Kw H3Oþ þOH
+ð4Þ
+Dissociation of carbon dioxide:
+2H2OþCO2 "
+KCO2H3Oþ þHCO
+3
+ð5Þ
+Dissociation of bicarbonate:
+H2OþHCO
+3 "
+KHCO3
+H3Oþ þCO2
+3
+ð6Þ
+Dissociation of protonated amine, MEA:
+H2OþRNHþ
+3 "
+KRNH2H3Oþ þRNH2
+ð7Þ
+Carbamate reversion to bicarbonate:
+H2OþRNHCOO
+"
+KRNHCOO
+RNH2 þHCO
+3
+ð8Þ
+Equilibrium reactions (4)–(8) are relevant for modeling of the
+equilibrium for the H2O–MEA–CO2 system. The equilibrium point
+of the reaction system was found using a non-stoichiometric
+Gibbs energy minimization routine (Hessen, 2010).
+3.2. Vapor–liquid equilibrium
+For a complete model of the MEA system, chemical equili-
+brium and vapor–liquid equilibrium must be solved simulta-
+neously. The system is formulated as a standard VLE problem
+through the thermodynamic equilibrium criterion at given tem-
+perature and pressure.
+mvap
+i
+ðT,P,nÞ ¼ mliq
+i ðT,P,nÞ
+ð9Þ
+where mvap
+i
+and mliq
+i
+are the chemical potentials of the species i in
+the vapor and liquid phase, respectively. The activity coefﬁcients
+for species in the liquid phase were determined using the
+extended UNIQUAC framework and used in the phase equilibrium
+calculations. The Soave–Redlich–Kwong equation of state was
+used to calculate the gas phase properties. The equilibrium
+distribution of the volatile solute, CO2, between the vapor and
+liquid was modeled based on Henry’s law constant in water at
+system pressure and temperature as reference state. Because of
+the asymmetric reference state of CO2, its phase equilibrium was
+calculated from
+fCO2yCO2P ¼ gCO2xCO2H1
+CO2 exp
+v1
+CO2ðPPS
+H2OÞ
+RT
+ 
+!
+ð10Þ
+where gCO2 and fCO2 are the activity and the fugacity coefﬁcients
+of CO2, respectively, P the total pressure, H1
+CO2 is the Henry’s law
+Fig. 2. High temperature equilibrium apparatus, Ma’mun et al. (2005).
+U.E. Aronu et al. / Chemical Engineering Science 66 (2011) 6393–6406
+6395
+
+=====PDF_PAGE 4=====
+constant in water (Chen et al., 1979), v1
+CO2 the inﬁnite dilution
+partial molar volume of CO2 (Brelvi and O’Connell, 1972) and T ðKÞ
+is temperature. The reference states for water and amine were the
+pure components at system temperature and pressure. Thus the
+phase equilibrium was calculated from
+fiyiP ¼ gixiPifs
+iexp viðPPs
+i Þ
+RT
+
+
+ð11Þ
+Here gi, fi, fs
+i are the activity coefﬁcient, fugacity coefﬁcients and
+saturated vapor fugacity coefﬁcients, respectively, while vi is the
+partial molar volumes for the components (DIPPR, 2004).
+The standard chemical potentials for most of the species in the
+CO2-amine system are not readily available in the literature.
+However, the equilibrium constant for the reaction j is related
+to
+the
+standard
+chemical
+potentials, mO
+i ,
+through
+Eq.
+(12)
+which allows for a calculation of the standard state chemical
+potentials.
+RT lnKjðTÞ ¼ 
+X
+i
+vijmO
+i ðTÞ
+ð12Þ
+For the H2O–MEA–CO2 system there are nine species and four
+reactions, hence Eq. (12) is underspeciﬁed. This was resolved by
+setting four of the standard state chemical potentials to zero and
+then solving for the remaining ones. This solution approach has
+been described by Smith and Missen (1982), Solbraa (2002), and
+Hessen et al. (2010).
+3.3. Activity coefﬁcient model
+The activity coefﬁcients for all species were calculated using
+the extended UNIQUAC thermodynamic model framework. The
+original
+non-electrolyte UNIQUAC
+equation
+by
+Abrams
+and
+Prausnitz (1975) was extended for electrolyte systems by addi-
+tion of an electrostatic term by Sanders et al. (1986) to a modiﬁed
+UNIQUAC equation. The model framework implemented in this
+work is as presented by Thomsen (1997) and Thomsen and
+Rasmussen (1999). The model consists of three terms: a combi-
+natorial, entropic; a residual, enthalpic (short range terms) and
+the electrostatic (long range) term of Debye–H¨uckel type, Eq. (13).
+The model requires volume, r and surface area, q parameters for
+each species and adjustable binary interaction energy parameters,
+uki for each pair of species
+gE
+RT ¼
+gE
+RT
+
+
+Combinatorial
+þ gE
+RT
+
+
+Residual
+þ gE
+RT
+
+
+DebyeH €uckel
+ð13Þ
+The temperature, T ðKÞ, dependence of the interaction energy
+parameter (cki) of the residual term is given as
+cki ¼ exp  ukiuii
+T
+
+
+ð14Þ
+where
+uki ¼ uO
+ki þuT
+kiðT298:15Þ
+ð15Þ
+3.4. Thermodynamic parameters
+Thermodynamic parameters needed for each of the models
+are parameters in the activity coefﬁcient model, equilibrium
+constants and Henry’s law constant for CO2 in pure water. The
+equilibrium constants are deﬁned in terms of mole fractions, thus
+they are dimensionless, while the Henry constant has the unit of
+pascal. The temperature, T ðKÞ, dependencies of the equilibrium
+and Henry’s constant used in this work are given by
+lnK or lnH ¼ C1 þC2=T þC3 lnT þC4T
+ð16Þ
+The coefﬁcients C1–C4 are summarized in Table 2 for all reactions
+together with literature sources.
+3.5. Model parameter regression
+CO2 can be bound chemically by an absorbent or remain as free
+CO2 (physical solubility) in an absorbent. Physical solubility of CO2 into
+an absorbent at various concentrations and temperatures is necessary
+in the development of kinetics and thermodynamic models for the
+system. The problem is that CO2 reacts with the absorbent. This reac-
+tive nature of CO2 with any absorbent does not allow direct measure-
+ment of the physical CO2 solubility in the solution. The physical
+solubility is thus measured indirectly using a similar non-reacting gas,
+N2O by an analogy, the N2O analogy. The N2O analogy was originally
+proposed by Clarke (1964) and veriﬁed by Laddha et al. (1981). It gives
+a measure of the physical solubility of CO2 in the aqueous amine
+solution. It has been applied on various amine systems; Haimour and
+Sandall (1984), Versteeg and Van Swaaij (1988), Mandal et al. (2005),
+and Hartono et al. (2008). Previous works that have modeled CO2
+equilibrium in aqueous MEA solutions have not incorporate experi-
+mentally determined physical (N2O) solubility of CO2 in MEA. The use
+of N2O solubility in the model calculations enables determination of
+the CO2 activity coefﬁcient. Hessen (2010) showed results of CO2
+activity
+coefﬁcients
+calculated
+by
+reﬁned-electrolyte–NRTL
+and
+extended UNIQUAC for N2O solubility and compared to experimental
+values. Results from both models did not agree with experimental
+result. This work implements the Henry’s law constant of CO2 in MEA,
+as described by Eq. (19) as data from Hartono (2009) for solubility of
+N2O into 30 mass% MEA solution at various CO2 loadings were
+included in the parameter regression data set. Expressions for solubi-
+lity of CO2 and N2O in water have been correlated by Versteeg and
+Van Swaaij (1988) in form of Henry’s law constants; where Hw
+CO2 and
+Hw
+N2O are the Henry’s law constants of CO2 and N2O in water,
+respectively, and T ðKÞ is temperature. The solubilities in the mixed
+MEA/water solvent are given as apparent Henry’s law coefﬁcients
+Hw
+CO2 ¼ 2:82  106 expð2044=TÞ
+ð17Þ
+Hw
+N2O ¼ 8:55  106 expð2284=TÞ
+ð18Þ
+Happ,MEA
+CO2
+¼
+Hw
+CO2
+Hw
+N2O
+Happ,MEA
+N2O
+Happ,MEA
+CO2
+¼ gn
+CO2Hw
+CO2
+ð19Þ
+Table 2
+Mole fraction based temperature dependent equilibrium constants and Henry’s law constant for CO2.
+Reaction
+Parameter
+C1
+C2
+C3
+C4
+T (1C)
+Source
+4
+KH2O
+132.899
+13,445.90
+22.4773
+0
+0–225
+Edwards et al. (1978)
+5
+KCO2
+231.465
+12,092.10
+36.7816
+0
+0–225
+Edwards et al. (1978)
+6
+KHCO
+3
+216.049
+12,431.70
+35.4819
+0
+0–225
+Edwards et al. (1978)
+7
+KMEA
+4.9074
+6166.12
+0
+0.00098482
+0–50
+Bates and Pinching (1951)
+8
+KMEACOO
+2.8898
+3635.09
+0
+0
+25–120
+Austgen et al. (1989)
+HCO2
+170.7126
+8477.711
+21.95743
+0.005781
+0–100
+Chen et al. (1979)
+U.E. Aronu et al. / Chemical Engineering Science 66 (2011) 6393–6406
+6396
+
+=====PDF_PAGE 5=====
+The model parameters that need to be evaluated are; volume
+parameters, r, the surface area parameters, q, as well as the
+interaction energy parameters uO
+ki and uT
+ki. The data set used for
+regression of model parameters are; the experimental gas phase CO2
+IR analyzer measurements, yIR
+CO2 expressed as CO2 partial pressures,
+pCO2 using Eq. (3), total pressure measurements from this work and
+data for solubility of N2O into 30 mass% MEA from Hartono (2009).
+Regression of the e-UNIQUAC model parameters was tedious
+and not straight forward. The ﬁrst step taken was to retain as
+many
+literature
+parameters
+as
+possible
+from
+Thomsen
+and
+Rasmussen (1999), Thomsen et al. (1996), and Faramarzi et al.
+(2009). Further, tests were carried out to identify sensitive para-
+meters. The sensitive parameters were grouped according to what
+pressure region they affected the most i.e. low and high pressure
+regions. Parameters that affected the low pressure region were
+regressed to data with loading not greater than 0.3, while higher
+loading data were used to regress the parameters mainly affecting
+the high pressure region. In the end all data sets were combined, and
+all the parameters were re-regressed simultaneously. The regression
+analysis was performed through a Levenberg–Marquardt mini-
+mization using the MATLAB based parameter estimation tool,
+Modﬁt (Hertzberg and Mejdell, 1998). The objective function used
+is given
+F ¼
+X
+n
+i ¼ 1
+pexp
+CO2pcalc
+CO2
+pexp
+CO2
+ 
+!2
+þ
+X
+n
+i ¼ 1
+Pexp
+tot Pcalc
+tot
+Pexp
+tot
+
+2
+þ
+X
+n
+i ¼ 1
+Happ,exp
+CO2
+Happ,calc
+CO2
+Happ,exp
+CO2
+ 
+!2
+ð20Þ
+Table 4
+Equilibrium solubility of CO2 in aqueous 30 mass% MEA.
+40 1C
+60 1C
+80 1C
+100 1C
+120 1C
+pCO2
+(kPa)
+aCO2
+(mol/mol)
+pCO2
+(kPa)
+aCO2
+(mol/mol)
+pCO2
+(kPa)
+aCO2
+(mol/mol)
+Ptot
+(kPa)
+pCO2 model
+(kPa)
+aCO2
+(mol/mol)
+Ptot
+(kPa)
+pCO2 model
+(kPa)
+aCO2
+(mol/mol)
+0.0016
+0.102
+0.0045
+0.053
+0.0056
+0.017
+103.0
+14.464
+0.344
+214.8
+38.534
+0.311
+0.0123
+0.206
+0.0154
+0.105
+0.0219
+0.040
+130.0
+42.199
+0.409
+254.3
+81.379
+0.364
+0.0246
+0.250
+0.0427
+0.162
+0.0557
+0.075
+170.2
+79.197
+0.443
+351.9
+228.102
+0.432
+0.0603
+0.337
+0.1348
+0.244
+0.1406
+0.122
+174.6
+114.232
+0.462
+469.9
+374.623
+0.464
+0.0851
+0.353
+0.3015
+0.303
+0.2485
+0.155
+254.6
+181.397
+0.486
+556.8
+429.659
+0.473
+0.1835
+0.401
+0.6436
+0.360
+0.6137
+0.216
+308.8
+272.872
+0.508
+662.7
+529.618
+0.487
+0.2928
+0.417
+1.0970
+0.393
+1.2538
+0.271
+338.8
+277.827
+0.509
+691.7
+578.233
+0.493
+0.3188
+0.421
+2.5014
+0.428
+3.7522
+0.347
+407.5
+361.398
+0.524
+767.7
+630.539
+0.499
+0.3809
+0.433
+13.558
+0.491
+7.9387
+0.400
+525.5
+478.990
+0.541
+0.5702
+0.447
+8.3031
+0.398
+1.0662
+0.464
+1.8326
+0.476
+1.8278
+0.477
+2.3193
+0.485
+2.8577
+0.489
+8.5583
+0.516
+11.812
+0.524
+Table 3
+Equilibrium solubility of CO2 in aqueous 15 mass% MEA.
+15% MEA
+40 1C
+60 1C
+80 1C
+100 1C
+120 1C
+pCO2
+aCO2
+Ptot
+pCO2
+pCO2 model aCO2
+Ptot
+pCO2
+pCO2 model aCO2
+Ptot
+pCO2 model
+aCO2
+Ptot
+pCO2 model
+aCO2
+(kPa)
+(mol/mol)
+(kPa)
+(kPa)
+(kPa)
+(mol/mol)
+(kPa)
+(kPa)
+(kPa)
+(mol/mol)
+(kPa)
+(kPa)
+(mol/mol)
+(kPa)
+(kPa)
+(mol/mol)
+0.0017
+0.111
+0.0042
+0.048
+0.0603
+0.103
+109.4
+14.623
+0.346
+241.0
+93.575
+0.385
+0.0035
+0.148
+0.0056
+0.060
+0.1315
+0.147
+200.7
+204.957
+0.527
+361.8
+182.307
+0.437
+0.0068
+0.186
+0.0068
+0.075
+0.3544
+0.211
+322.8
+278.634
+0.551
+464.2
+321.367
+0.483
+0.0170
+0.220
+0.0078
+0.069
+0.5250
+0.242
+391.5
+318.213
+0.562
+529.8
+400.784
+0.502
+0.0215
+0.236
+0.0094
+0.098
+3.6374
+0.373
+500.0
+436.601
+0.590
+702.6
+629.533
+0.544
+0.0427
+0.295
+0.0151
+0.135
+6.3092
+0.409
+598.3
+576.507
+0.617
+857.2
+737.313
+0.560
+0.0450
+0.298
+0.0234
+0.144
+138.3
+101.535
+0.551
+717.3
+623.174
+0.625
+1050.2
+929.845
+0.585
+0.0845
+0.342
+0.0417
+0.175
+194.7
+208.891
+0.605
+717.6
+647.446
+0.629
+0.2220
+0.398
+0.0965
+0.230
+288.2
+248.881
+0.620
+799.9
+697.913
+0.637
+0.6634
+0.442
+0.1462
+0.253
+412.5
+358.882
+0.654
+917.5
+757.845
+0.646
+0.7013
+0.450
+1.7998
+0.415
+495.4
+455.126
+0.678
+4.8405
+0.516
+5.4090
+0.480
+598.5
+505.150
+0.689
+7.8861
+0.529
+8.2297
+0.492
+689.0
+539.098
+0.696
+16.0024
+0.565
+82.00
+95.896
+0.624
+792.7
+640.229
+0.715
+149.3
+133.258
+0.652
+898.6
+768.969
+0.736
+178.9
+155.405
+0.666
+298.4
+234.407
+0.706
+407.5
+292.900
+0.729
+505.3
+487.652
+0.784
+611.7
+470.243
+0.780
+671.9
+487.652
+0.784
+819.7
+858.453
+0.847
+934.1
+998.773
+0.864
+U.E. Aronu et al. / Chemical Engineering Science 66 (2011) 6393–6406
+6397
+
+=====PDF_PAGE 6=====
+The deviations of the model results from the experimental data are
+given as absolute average relative deviations (AARD) according
+AARD ¼ 100% 1
+n
+X
+n
+9xmodelxexp
+
+xexp
+ð21Þ
+where x is partial pressure, total pressure or apparent Henry’s law
+constant.
+4. Results and discussion
+Vapor–liquid equilibrium experiment measurement results for
+15, 30, 45 and 60 mass% MEA are given in Tables 3–6, respec-
+tively, for 40–120 1C. Details of the estimated extended UNIQUAC
+model volume, r and surface area, q parameters as well as the
+temperature dependent interaction energy parameters uO
+ki and uT
+ki
+regressed using experimentally determined CO2 partial pressures,
+total pressures and loadings as well as N2O solubility data of
+Hartono (2009) are given in Tables 7–9.
+4.1. Binary H2O–MEA system
+Vapor–liquid equilibrium for the binary H2O–MEA system was
+not measured in this work. However, sample model predicted
+results for the binary H2O–MEA system are given as Pxy diagrams
+in Fig. 3a and compared with experimental results of Tochigi et al.
+(1999) and Belabbaci et al. (2009) while activity coefﬁcients are
+given in Fig. 3b and compared with experimental results of
+Belabbaci et al. (2009) and Kim et al. (2008). Fig. 4a shows results
+for model prediction of excess enthalpy of MEA compared to data
+from Touhara et al. (1982) and Posey (1996). Freezing point
+depression predictions compared to data from Chang et al.
+(1993) are shown in Fig. 4b. These results conﬁrm that the
+e-UNIQUAC implementation of this work is consistent with the
+work of Faramarzi et al. (2009) from which the interaction
+parameters for the binary H2O–MEA system were gathered.
+Quantitative agreement between literature and model prediction
+of different properties of H2O–MEA system expressed as percent
+AARD values are given in Table 10.
+Table 6
+Equilibrium solubility of CO2 in aqueous 60 mass% MEA.
+40 1C
+60 1C
+80 1C
+100 1C
+120 1C
+pCO2
+(kPa)
+aCO2
+(mol/mol)
+pCO2
+(kPa)
+aCO2
+(mol/mol)
+pCO2
+(kPa)
+aCO2
+(mol/mol)
+Ptot
+(kPa)
+pCO2 model
+(kPa)
+aCO2
+(mol/mol)
+Ptot
+(kPa)
+pCO2 model
+(kPa)
+aCO2
+(mol/mol)
+0.0060
+0.173
+0.0007
+0.046
+0.0020
+0.018
+106.3
+30.942
+0.386
+196.9
+77.117
+0.346
+0.0127
+0.242
+0.0110
+0.126
+0.0170
+0.056
+204.9
+78.602
+0.430
+306.0
+185.399
+0.398
+0.0281
+0.306
+0.0341
+0.172
+0.0325
+0.073
+308.6
+126.628
+0.450
+412.3
+306.435
+0.426
+0.0526
+0.344
+0.1097
+0.248
+0.0777
+0.124
+414.6
+226.909
+0.473
+537.0
+395.997
+0.440
+0.1508
+0.394
+0.2933
+0.316
+0.1610
+0.162
+518.3
+279.632
+0.481
+700.0
+551.896
+0.458
+0.3824
+0.427
+0.8475
+0.382
+0.2513
+0.191
+618.4
+438.671
+0.498
+963.3
+845.133
+0.481
+0.9062
+0.449
+3.0267
+0.424
+0.5431
+0.238
+705.0
+529.194
+0.505
+1060.2
+945.232
+0.487
+1.5153
+0.468
+8.2258
+0.457
+0.8699
+0.264
+3.7472
+0.481
+18.967
+0.480
+1.6522
+0.308
+12.472
+0.500
+3.4300
+0.352
+6.0947
+0.387
+9.0463
+0.404
+11.271
+0.416
+Table 5
+Equilibrium solubility of CO2 in aqueous 45 mass% MEA.
+45% MEA
+40 1C
+60 1C
+80 1C
+100 1C
+120 1C
+pCO2
+(kPa)
+aCO2
+(mol/mol)
+Ptot
+(kPa)
+pCO2
+(kPa)
+pCO2 model
+(kPa)
+aCO2
+(mol/mol)
+Ptot
+(kPa)
+pCO2
+(kPa)
+pCO2 model
+(kPa)
+aCO2
+(mol/mol)
+Ptot
+(kPa)
+pCO2 model
+(kPa)
+aCO2
+(mol/mol)
+Ptot
+(kPa)
+pCO2 model
+(kPa)
+aCO2
+(mol/mol)
+0.0035
+0.141
+0.0019
+0.045
+0.0008
+0.017
+86.6
+4.708
+0.270
+165.1
+3.560
+0.145
+0.0035
+0.148
+0.0059
+0.087
+0.0023
+0.027
+201.7
+96.884
+0.445
+241.5
+106.177
+0.374
+0.0077
+0.195
+0.0099
+0.120
+0.0056
+0.038
+319.4
+208.127
+0.479
+361.5
+250.646
+0.426
+0.0099
+0.217
+0.0205
+0.169
+0.0060
+0.025
+433.3
+238.500
+0.485
+443.7
+335.793
+0.443
+0.0123
+0.234
+0.0787
+0.232
+0.0099
+0.061
+539.0
+341.539
+0.501
+538.7
+490.925
+0.465
+0.0164
+0.276
+0.1284
+0.269
+0.0288
+0.086
+625.4
+389.847
+0.507
+653.1
+592.662
+0.476
+0.0178
+0.271
+0.4279
+0.352
+0.0529
+0.109
+747.2
+434.768
+0.512
+752.2
+667.434
+0.483
+0.0364
+0.300
+1.4259
+0.392
+0.1236
+0.135
+879.5
+574.312
+0.525
+852.7
+750.925
+0.490
+0.0598
+0.354
+4.6349
+0.454
+0.3981
+0.236
+974.6
+611.783
+0.528
+928.9
+887.076
+0.500
+0.1087
+0.390
+6.2928
+0.460
+4.5002
+0.389
+1031.0
+693.481
+0.534
+1039.6
+979.386
+0.506
+0.1781
+0.404
+8.2900
+0.471
+11.249
+0.435
+0.2787
+0.428
+56.3
+36.099
+0.503
+97.0
+59.190
+0.479
+0.9173
+0.464
+151.8
+106.190
+0.534
+251.9
+157.604
+0.512
+2.1609
+0.475
+322.2
+264.384
+0.567
+342.5
+279.468
+0.533
+5.4871
+0.497
+422.9
+364.534
+0.580
+446.1
+352.012
+0.542
+509.9
+421.021
+0.586
+523.8
+419.045
+0.549
+627.9
+612.781
+0.602
+624.4
+509.029
+0.557
+714.6
+771.31
+714.8
+615.796
+0.565
+868.0
+947.05
+842.1
+725.466
+0.572
+1030.4
+1243.31
+941.5
+872.797
+0.580
+1039.8
+1121.96
+0.591
+U.E. Aronu et al. / Chemical Engineering Science 66 (2011) 6393–6406
+6398
+
+=====PDF_PAGE 7=====
+4.2. Ternary H2O–MEA–CO2 system
+The extended UNIQUAC model results for the N2O (physical)
+solubility of 30 mass% MEA are shown in Fig. 5. Fig. 5a shows
+that the model adequately correlates the experimental Henry’s
+law constant of CO2 in MEA. The activity coefﬁcient of CO2 is thus
+well represented by the model up to the loading of 0.5 mea-
+sured by Hartono (2009). In Fig. 5b a parity plot is given. The
+AARD value of 2.7% indicates a very good representation of
+experimental data.
+Model calculations and experimental CO2 partial pressures
+from this work as functions of loading and temperature are given
+Table 8
+UNIQUAC interaction energy parameters for uij¼u0
+ijþuT
+ij(T298.15); u0
+ij¼u0
+ji.
+H2O
+MEA
+CO2
+H3Oþ
+MEAHþ
+OH
+HCO3
+
+CO3
+2
+MEACOO
+H2O
+0.0000
+MEA
+173.9645
+414.6924
+CO2
+151.4573
+87.5583
+40.5176
+H3Oþ
+1.0Eþ04
+1.0Eþ09
+1.0Eþ09
+0.0000
+MEAHþ
+20.7732
+310.1293
+30.8035
+1.0Eþ09
+0.0000
+OH
+600.4952
+1.0Eþ09
+2500.0000
+1.0Eþ09
+1.0Eþ09
+1562.8810
+HCO
+3
+517.0278
+655.0881
+597.9726
+1.0Eþ09
+732.7007
+2500.0000
+743.6159
+CO2
+3
+361.3877
+1.0Eþ09
+2500.0000
+1.0Eþ09
+1.0Eþ09
+1588.0250
+719.159
+1458.3440
+MEACOO
+2758.3852
+1.0Eþ09
+1.0Eþ09
+1.0Eþ09
+1.0Eþ09
+1.0Eþ09
+1.0Eþ09
+1.0Eþ09
+1500.0000
+Bold: Thomsen and Rasmussen (1999); Italics: Faramarzi et al. (2009); Non-italics: Regressed, this work.
+Table 9
+UNIQUAC interaction energy parameters for uij¼u0
+ijþuT
+ij(T298.15); uT
+ij¼uT
+ji.
+H2O
+MEA
+CO2
+H3Oþ
+MEAHþ
+OH
+HCO
+3
+CO2
+3
+MEACOO
+H2O
+0.0000
+MEA
+0.8027
+0.6647
+CO2
+6.0908
+4.6660
+13.6290
+H3Oþ
+0.0000
+0.0000
+0.0000
+0.0000
+MEAHþ
+1.9174
+0.1213
+7.3541
+0.0000
+0.0000
+OH
+8.5455
+0.0000
+0.0000
+0.0000
+0.0000
+5.6169
+HCO
+3
+6.9504
+15.2488
+5.8077
+0.0000
+2.8863
+0.0000
+17.1148
+CO2
+3
+3.3516
+0.0000
+0.0000
+0.0000
+0.0000
+2.7496
+2.6115
+1.3448
+MEACOO
+16.9192
+0.0000
+0.0000
+0.0000
+0.0000
+0.0000
+0.0000
+0.0000
+0.0000
+Bold: Thomsen and Rasmussen (1999); Italics: Faramarzi et al. (2009); Non-italics: Regressed, this work.
+Table 7
+UNIQUAC volume, r and surface area, q parameters.
+Species
+r
+q
+Source
+H2O
+0.9200
+1.4000
+Abrams and Prausnitz (1975)
+MEA
+4.2800
+4.2800
+Faramarzi et al. (2009)
+CO2
+5.7410
+6.0806
+Thomsen and Rasmussen (1999)
+H3Oþ
+0.13779
+1.0E15
+Thomsen et al. (1996)
+MEAHþ
+1.0241
+2.5150
+This work
+OH
+9.3973
+8.8171
+Thomsen et al. (1996)
+HCO
+3
+9.1571
+6.3461
+This work
+CO2
+3
+9.7452
+6.4614
+This work
+MEACOO
+1.0741
+0.1106
+This work
+0
+0.2
+0.4
+0.6
+0.8
+1
+0
+10
+20
+30
+40
+50
+60
+70
+80
+Mole fraction MEA
+Pressure [kPa] 
+0
+0.2
+0.4
+0.6
+0.8
+1
+0
+0.2
+0.4
+0.6
+0.8
+1
+1.2
+Mole fraction MEA
+γ
+Fig. 3. (a) Pxy diagram for H2O–MEA system; 90 1C: vapor phase mole fraction (
+, Tochigi et al., 1999;
+, Belabbaci et al., 2009); liquid phase mole fraction (
+, Tochigi
+et al., 1999;
+, Belabbaci et al., 2009). Lines, model predictions. (b) H2O–MEA activity coefﬁcient, 60 1C: H2O (
+, Kim et al., 2008;
+, Belabbaci et al., 2009); MEA (
+, Kim
+et al., 2008;
+, Belabbaci et al., 2009). –, model predictions.
+U.E. Aronu et al. / Chemical Engineering Science 66 (2011) 6393–6406
+6399
+
+=====PDF_PAGE 8=====
+in Fig. 6 while Fig. 7 shows model calculations and experimental
+total pressures. The results show the roboustness of the model. It
+correlates well CO2 partial pressures and total pressures over MEA
+solutions for 15, 30, 45 and 60 mass% MEA. The parity plot
+between experimental data and model predicted pressure are
+given in Fig. 8. Fig. 8a shows parity plot results from this work as
+well as for data for low MEA concentrations; 0.6, 3.0 and
+6.0 mass% MEA. The ﬁgure shows that the model predicts the
+CO2 partial pressure very well even at very low MEA concentra-
+tions. The data for the low MEA concentrations were not used in
+the parameter regression, but serve for validation of the imple-
+mented model. Fig. 8a thus shows that the model accurately
+calculates CO2 equilibrium in MEA at all concentration ranges up
+to 60 mass%. Fig. 8b shows a parity plot where a range of data for
+30 mass% from the literature is included. The ﬁgure indicates
+that the model is able to correlate existing equilibrium data for
+H2O–MEA–CO2 system in a good manner. However, the CO2
+partial pressure data of Goldman and Leibush (1959) and Shen
+and Li (1992) are in general somewhat high, and thus are under-
+predicted by the model, while the data of Lee et al. (1976) and Jou
+et al. (1995) are somewhat low, and thus are generally over-
+predicted by the model. Other literature data represented are
+Hilliard (2008) and Xu and Rochelle (2011). The experimental
+data from this work is observed to lie between the above
+mentioned data sets. Hessen (2010) discussed whether the data
+of Jou et al. (1995) at absorber conditions indicated too low
+partial pressures. The background for this discussion was that an
+implementation of an equilibrium model based on these data into
+the rate-based CO2SIM simulator gave too low partial pressures
+compared with pilot plant data. It is therefore interesting that the
+data obtained in this work can be seen to represent a trade-off
+between different sets of data from the literature. The overall
+average absolute relative deviation (AARD) of 16.2% for the
+ﬁt to own data shows that the model gives a good represen-
+tation of the experimental data used in the regression analysis.
+The AARD value for ﬁt to CO2 partial pressures and total pre-
+ssures
+for
+all
+MEA
+concentrations
+were
+24.3%
+and
+11.7%,
+respectively. The parity plot of the ratio between the model
+results to the experimental pressure results, Pmodel/Pexperiment, for
+the data used in the model regression is shown in Fig. 9. The
+ﬁgure shows that the data points are well distributed by
+the model.
+Fig. 10 shows the concentration dependency of CO2 partial
+pressure for the H2O–MEA–CO2 system as determined by experi-
+ment and model calculations. It is clear from Fig. 10a that CO2
+partial pressures over MEA solution do show a dependency
+on MEA concentration at loadings less than 0.5 mol CO2/mol
+MEA where CO2 partial pressure is observed to decrease with
+increase in MEA concentration. The equilibrium curves are
+observed to ‘‘straighten up’’ with increase in concentration
+showing a strong concentration depedency at higher loadings
+where equilibrium CO2 partial pressures are found to increase
+with increase in amine concentration and CO2 loading in Fig. 10b.
+Cross over of the curves is observed to occur at about 0.45 loading
+as shown in Fig. 10a. A strong dependency of CO2 partial pres-
+sure on amine concentration at high loadings has been pre-
+dicted and observed by Austgen et al. (1989) and Dugas (2009),
+respectively. A further analysis of the experiment and model
+correlation in the low loading region was carried out using a plot
+of the residuals as function of MEA concentration within a narrow
+loading range (0.05–0.15 mol CO2/mol MEA) as shown in Fig. 11.
+The ﬁgure shows a random distribution of the residual points.
+This indicates a good correlation of the experimental data by the
+model also for this region.
+4.3. Speciation
+Liquid phase concentration of the different species is necessary
+in kinetic expressions for mass-transfer at the liquid–vapor
+interfaces. The model speciation results at 40 1C are compared
+with literature NMR results from Poplsteinova et al. (2005),
+B¨ottinger et al. (2008) and Hilliard (2008) in Fig. 12. The model
+results show good agreement with experimental data for the
+main components MEA, MEAHþ, CO2, HCO3
+ and MEACOO.
+0
+0.02
+0.04
+0.06
+0.08
+0.1
+0.12
+0.14
+-22
+-20
+-18
+-16
+-14
+-12
+-10
+-8
+-6
+-4
+-2
+0
+Mole fraction MEA
+Freezing point depression [°C]
+0
+0.2
+0.4
+0.6
+0.8
+1
+-2500
+-2000
+-1500
+-1000
+-500
+0
+Mole fraction MEA
+Excess enthalpy [J/mol]
+Fig. 4. (a) Excess enthalpy H2O–MEA; 25 1C:
+, Touhara et al. (1982); line, model prediction; 69.4 1C:
+, Posey (1996); dashed line, model prediction. (b) Freezing point
+depression, H2O–MEA:
+, Chang et al. (1993); –, model predictions.
+Table 10
+Quantitative agreement between literature and model prediction of different
+properties of H2O–MEA system expressed as percent AARD.
+Literature
+Total
+pressure
+Activity
+coefﬁcient
+Excess
+enthalpy
+Freezing
+point
+depression
+Kim et al. (2008)
+1.06
+10.48
+Tochigi et al. (1999)
+0.86
+7.99
+Touhara et al. (1982)
+8.97
+Posey (1996)
+4.25
+Chang et al. (1993)
+2.41
+U.E. Aronu et al. / Chemical Engineering Science 66 (2011) 6393–6406
+6400
+
+=====PDF_PAGE 9=====
+The model predictions for CO3
+2 are lower than the Poplsteinova
+et al. (2005) results. This may well be due to difﬁculties in
+distinguishing between HCO3
+ and CO3
+2 in the experiments.
+Poplsteinova et al. (2005) relied on changes in chemical shift with
+pH and temperature to predict the individual HCO
+3 and CO2
+3
+concentrations. It indicated that the concentration of carbonate
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+10-4
+10-3
+10-2
+10-1
+100
+101
+102
+103
+CO2 loading (mol CO2/mol MEA)
+PCO2 (kPa)
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+10-4
+10-3
+10-2
+10-1
+100
+101
+102
+103
+104
+CO2 loading (mol CO2/mol MEA)
+PCO2 (kPa)
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+10-4
+10-3
+10-2
+10-1
+100
+101
+102
+103
+104
+CO2 loading (mol CO2/mol MEA)
+PCO2 (kPa)
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+10-4
+10-3
+10-2
+10-1
+100
+101
+102
+103
+104
+CO2 loading (mol CO2 / mol MEA)
+PCO2 (kPa)
+Fig. 6. CO2 partial pressure as function of loading for H2O–MEA–CO2 system. Experimental data;
+, 40 1C;
+, 60 1C;
+, 80 1C;
+, 100 1C, model prediction;
+,
+120 1C, model prediction: (a) 15 mass% MEA, (b) 30 mass% MEA, (C) 45 mass% MEA, and (d) 60 mass% MEA.
+104
+104
+HCO2Experiment
+app,MEA
+HCO2Model
+app,MEA
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.2
+0.4
+0.6
+0.8
+1
+1.2
+1.4
+1.6
+1.8 x 10
+4
+CO2 loading (mol CO2/mol MEA)
+HCO2
+app,MEA (Pa.m3.mol-1)
+o  25°C
++  49°C
+Δ  59°C
+×  68°C
+◊  87°C
+◊  α = 0.0
+o  α = 0.2
+Δ  α = 0.5
+□  40°C
+●  78°C
+□  α = 0.4
+Fig. 5. (a) Apparent Henry’s law constant of CO2 in 30 mass% MEA at various CO2 loadings. Experimental points, Hartono (2009); Lines, model prediction. (b) Parity plot
+between experimental and model predictions of apparent Henry’s law constant of CO2 in 30 mass% MEA.
+U.E. Aronu et al. / Chemical Engineering Science 66 (2011) 6393–6406
+6401
+
+=====PDF_PAGE 10=====
+was most likely signiﬁcantly over-predicted. The lower concen-
+trations of CO3
+2 as predicted in this work thus may give a better
+representation of the real carbonate concentration. This is,
+however, uncertain. B¨ottinger et al. (2008) reported values for
+HCO
+3 and CO2
+3 , but it is not clear if these values are the sum of
+HCO3
+=CO2
+3 . It also reported a combined MEA/MEAHþ result.
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+101
+102
+103
+104
+CO2 loading (mol CO2/mol MEA)
+Ptot (kPa)
+0.2
+0.25 0.3
+0.35 0.4
+0.45 0.5
+0.55 0.6
+0.65
+101
+102
+103
+104
+CO2 loading (mol CO2/mol MEA)
+Ptot (kPa)
+0.2
+0.25
+0.3
+0.35
+0.4
+0.45
+0.5
+0.55
+101
+102
+103
+104
+CO2 loading (mol CO2/mol MEA)
+Ptot (kPa)
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+101
+102
+103
+104
+CO2 loading (mol CO2/mol MEA)
+Ptot (kPa)
+Fig. 7. Total pressure as function of loading for H2O–MEA–CO2 system. Experimental data;
+, 60 1C;
+, 80 1C;
+, 100 1C;
+, 120 1C; Lines, model: (a) 15 mass% MEA,
+(b) 30 mass% MEA, (C) 45 mass% MEA, and (d) 60 mass% MEA.
+10-4
+10-2
+100
+102
+104
+10-4
+10-3
+10-2
+10-1
+100
+101
+102
+103
+104
+Experimental Pressure (kPa)
+Model Pressure (kPa)
+0.6% MEA
+3.0% MEA
+6.0% MEA
+15% MEA
+30% MEA
+45% MEA
+60% MEA
+10-4
+10-2
+100
+102
+104
+106
+10-4
+10-2
+100
+102
+104
+106
+Model Pressure (kPa)
+Experimental Pressure (kPa)
+o This work
+* Mason and Dodge (1936)
++ Goldman and Leibush (1959)
+◊Lee et al. (1976)
+Δ Shen and Li (1992) 
+□Jou et al. (1995)
+Hilliard (2008)
+× Xu and Rochelle (2011)
+Fig. 8. (a) Parity plot between experimental and model predicted pressures and (b) parity plot between experimental data from this work and from literature and model
+predicted pressures.
+U.E. Aronu et al. / Chemical Engineering Science 66 (2011) 6393–6406
+6402
+
+=====PDF_PAGE 11=====
+The speciation results as given in this work seem to be an
+improvement on results from Faramarzi et al. (2009), where
+HCO
+3 concentrations most likely were over-predicted, as was
+further discussed by Hessen (2010).
+The heat of absorption of CO2 in an absorbent, DHabs, can be
+accurately determined by calorimetric measurements using a
+method differential in temperature and semi-differential in load-
+ing, Kim and Svendsen (2007). The model in this work can
+calculate rigorously the heat of absorption of CO2 into aqueous
+MEA system. However, as an estimate, the Gibbs–Helmholtz
+equation, Eq.(22) is used. As pointed out by Kim and Svendsen
+(2007), this method does not necessarily give an accurate descrip-
+tion of the DHabs values
+@lnpCO2
+@ð1=TÞ
+
+
+p,x
+¼ DHabs
+R
+ð22Þ
+Fig. 13 shows the result for the estimated, temperature
+independent heat of absorption calculated from the VLE model.
+The ﬁgure shows that the estimated heat of absorption for MEA
+agrees fairly well with experimental results of Kim (2009),
+considering that the model does not calculate the values rigor-
+ously (Kim et al., 2009).
+Fig. 14 shows the model predictions of MEA volatility where
+the partial pressures of MEA and H2O for 30 mass% MEA are
+compared with experimental data of Hilliard (2008). The model is
+seen to predict well both partial pressures at 60 1C and also the
+partial pressure of water at 40 1C, but it under-predicts the values
+for MEA at 40 1C. Similar results were obtained for MEA using the
+e-NRTL model by Hessen (2010). One may still raise a question
+regarding the accuracy of the data for MEA at 40 1C, in particular
+at high loadings where the partial pressures of MEA are very low.
+5. Conclusions
+New experimental data for vapor–liquid equilibrium of CO2 in
+aqueous monoethanolamine solutions are presented for 15, 30, 45
+and 60 mass% MEA and from 40 to 120 1C. CO2 partial pressures over
+loaded MEA solutions were measured using a low temperature
+equilibrium apparatus while total pressures were measured with a
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+0.2
+0.4
+0.6
+0.8
+1
+1.2
+1.4
+1.6
+1.8
+2
+CO2 loading(mol CO2/mol MEA)
+PModel /PExperiment
+15% MEA
+30% MEA
+45% MEA
+60% MEA
+Fig. 9. Parity plot for the ratio between the model results and the experimental
+pressures used in model regression as a function of CO2 loading.
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+10-4
+10-3
+10-2
+10-1
+100
+101
+102
+103
+104
+PCO2 (kPa)
+0.4
+0.45
+0.5
+0.55
+0.6
+0.65
+0.7
+0.75
+0.8
+0
+5
+10
+15
+20
+25
+30
+PCO2 (kPa)
+6%
+15%
+30%
+45%
+60%
+3%
+0.6%
+15% MEA
+30% MEA
+45% MEA
+60% MEA
+CO2 loading (mol CO2/mol MEA)
+CO2 loading (mol CO2/mol MEA)
+Fig. 10. Concentration dependency of equilibrium CO2 partial pressure of H2O–MEA–CO2 system at 40 1C.
+0.05 0.06 0.07 0.08 0.09
+0.1
+0.11
+0.12 0.13 0.14 0.15
+-0.1
+-0.08
+-0.06
+-0.04
+-0.02
+0
+0.02
+0.04
+0.06
+0.08
+0.1
+pexp - pmodel
+15% MEA
+30% MEA
+45% MEA
+60% MEA
+CO2 loading(mol CO2/mol MEA)
+Fig. 11. Residuals a function of MEA concentration over very narrow loading
+range 0.05–0.15 mol CO2/mol MEA.
+U.E. Aronu et al. / Chemical Engineering Science 66 (2011) 6393–6406
+6403
+
+=====PDF_PAGE 12=====
+high temperature equilibrium apparatus. The extended UNIQUAC
+model framework was applied; model parameters were ﬁtted to the
+new experimental VLE data and physical solubility data from the
+literature. The model gives a good representation of the experimental
+VLE data for CO2 partial pressure and total pressures for all MEA
+concentrations with average absolute relative deviation (AARD) of
+24.3% and 11.7%, respectively, while the physical solubility data was
+represented with an AARD of 2.7%. Further, the model predicts well
+liquid phase speciation results determined by NMR and experimental
+data for freezing point depression and excess enthalpy.
+Nomenclature
+AARD
+average absolute relative deviation
+F
+objective function
+g
+speciﬁc Gibbs energy (J mol1)
+H
+Henry’s law constant (Pa m3 mol1)
+K
+equilibrium constant
+NMR
+nuclear magnetic resonance
+n
+mole number; number of elements
+P
+total pressure (kPa)
+p
+partial pressure (kPa)
+q
+UNIQUAC surface area parameter
+R
+universal gas constant (J mol1 K1)
+r
+UNIQUAC volume parameter
+T
+temperature (K)
+u
+UNIQUAC interaction parameter
+v
+molar volume (m3 mol1)
+v
+stoichiometric coefﬁcient
+x
+liquid phase mole fraction, partial pressure, total pres-
+sure, Henry’s law constant
+y
+vapor phase mole fraction
+Greek letters
+DHabs
+heat of absorption of CO2 (kJ/mol CO2)
+y
+UNIQUAC surface fraction
+m
+chemical potential
+f
+fugacity coefﬁcient
+f
+UNIQUAC volume fraction
+c
+auxiliary function (UNIQUAC)
+u
+UNIQUAC interaction energy parameter
+Subscripts
+i
+component i
+j
+species counter
+k
+species counter
+model
+model calculated
+tot
+total
+v
+stoichometric coefﬁcient
+w
+water
+1
+inﬁnite dilution
+Superscripts
+app
+apparent
+calc
+model calculated
+10
+30
+50
+70
+90
+110
+130
+150
+170
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+Loading (molCO2/mol MEA)
+-ΔHabs (KJ/molCO2)
+Fig. 13. Estimated heat of absorption of CO2 into 30 mass% MEA; experimental
+points:
+, 40 1C; B, 80 1C;
+, 120 1C, Kim (2009). Line; model prediction.
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+10-5
+10-4
+10-3
+10-2
+10-1
+100
+101
+102
+CO2 loading (mol CO2/mol MEA)
+PMEA (kPa)
+H2O
+MEA
+60°C
+40°C
+60°C
+40°C
+Fig. 14. Model prediction of partial pressures (volatility) of MEA and H2O in a
+H2O–MEA–CO2 system. Lines: model prediction; Experimental data: Hilliard
+(2008).
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1
+10-4
+10-3
+10-2
+10-1
+Liquid mole fraction [-]
+CO2 loading [mol CO2 / mol MEA]
+Fig. 12. Liquid phase speciation in 30 mass% MEA at 40 1C.
+, MEA;
+, CO2;
+,
+MEAHþ;
+, HCO3
+;
+, CO3
+2;
+, MEACOO; Poplsteinova et al. (2005)
+,
+HCO3
+ ;
+, MEACOO; B¨ottinger et al. (2008).
+, MEACOO; Hilliard (2008).
+Lines; model prediction.
+U.E. Aronu et al. / Chemical Engineering Science 66 (2011) 6393–6406
+6404
+
+=====PDF_PAGE 13=====
+exp
+experimental
+E
+excess
+IR
+infra red analyzer
+liq
+liquid phase
+o
+standard state; temperature independent
+s
+saturated
+T
+temperature dependent
+vap
+vapor phase
+w
+water
+n
+asymmetrical
+1
+inﬁnite dilution
+Acknowledgments
+This publication forms a part of the BIGCO2 project, performed
+under the strategic Norwegian research program Climit. The
+authors acknowledge the partners: Statoil AS, GE Global Research,
+Statkraft, Aker Clean Carbon, Shell, TOTAL, ConocoPhillips, ALSTOM,
+the Research Council of Norway (178004/I30 and 176059/I30) and
+Gassnova.
+References
+Abrams, D.S., Prausnitz, J.M., 1975. Statistical thermodynamics of liquid mixtures.
+New expression for the excess Gibbs energy of partly or completely miscible
+systems. AIChE J. 21 (1), 116–128.
+Aronu, U.E., Hoff, K.A., Svendsen, H.F., 2011a. Vapor–liquid equilibrium in aqueous
+amine
+amino
+acid salt
+solution:
+3-(methylamino)propylamine/sarcosine.
+Chem. Eng. Sci. 66 (17), 3859–3867.
+Aronu, U.E., Hessen, E.T., Haug-Warberg, T., Hoff, K.A., Svendsen, H.F., 2011b.
+Vapor–liquid equilibrium in amino acid salt system: experiments and model-
+ing. Chem. Eng. Sci. 66 (10), 2191–2198.
+Atadan, E.M., 1954. Absorption of Carbon Dioxide by Aqueous Monoethanolamine
+Solutions. PhD. Thesis. University of Tennessee, Knoxville, TN.
+Austgen, D.M., Rochelle, G.T., Peng, X., Chen, C.C., 1989. Model of vapor–liquid
+equilibria for aqueous acid gas–alkanolamine systems using the electrolyte–
+NRTL equation. Ind. Eng. Chem. Res. 28 (7), 1060–1073.
+Bates, R.G., Pinching, G.D., 1951. Acidic dissociation constant and related thermo-
+dynamic quantities for monoethanolammonium ion in water from 01 to 50 1C.
+J. Res. Natl. Bur. Stand. 46, 349–352.
+Belabbaci, A., Razzouk, A., Mokbel, I., Jose, J., Negadi, L., 2009. Isothermal vapor–liquid
+equilibria of (monoethanolamineþwater) and (4-methylmorpholineþwater)
+binary systems at several temperatures. J. Chem. Eng. Data 54 (8), 2312–2316.
+Brelvi, S.W., O’Connell, J.P., 1972. Corresponding states correlations for liquid
+compressibility and partial molal volumes of gases at inﬁnite dilution in
+liquids. AIChE J. 18 (6), 1239–1243.
+Bouillon, P.A., Lemaire, E., Mangiaracina A., Tabasso C., 2011. First results
+of the 2.25 t/h post-combustion CO2 capture pilot plant of ENEL at the
+Brindisi Coal Power Plant with MEA from 20 to 40 %wt. In: Proceedings of
+the First Post-Combustion Capture Conference (PCCC1), 17–19 May, Abu
+Dhabi.
+B¨ottinger, W., Maiwald, M., Hasse, H., 2008. Online NMR spectroscopic study of
+species distribution in MEA–H2O–CO2 and DEA–H2O–CO2. Fluid Phase Equili-
+bria 263 (2), 131–143.
+Chang, H.T., Posey, M., Rochelle, G.T., 1993. Thermodynamics of alkanolamine–
+water solutions from freezing point measurements. Ind. Eng. Chem. Res.
+32 (10), 2324–2335.
+Chen,
+C.-C.,
+Britt,
+H.I.,
+Boston,
+J.F.,
+Evans,
+L.B.,
+1982.
+Local
+composition
+model
+for
+excess
+Gibbs
+energy
+of
+electrolyte
+systems,
+Part
+I:
+single
+solvent, single completely dissociated electrolyte systems. AIChE J. 28 (4),
+588–596.
+Chen, C.C., Evans, L.B., 1986. A local composition model for the excess Gibbs
+energy of aqueous electrolyte systems. AIChE J. 32 (3), 444–454.
+Chen, C.-C., Britt, H.I., Boston, J.F., Evans, L.B., 1979. Extension and application of
+the Pitzer equation for vapor–liquid equilibrium of aqueous electrolyte
+systems with molecular solutes. AIChE J. 25 (5), 820–831.
+Clarke, J.K.A., 1964. Kinetics of absorption of carbon dioxide in monoetha-
+nolamine solutions at short contact times. Ind. Eng. Chem. Fund. 3 (3),
+239–245.
+Deshmukh, R.D., Mather, A.E., 1981. A mathematical model for equilibrium
+solubility of hydrogen sulﬁde and carbon dioxide in aqueous alkanolamine
+solutions. Chem. Eng. Sci. 36 (2), 355–362.
+Dugas, R.E., 2009. Carbon Dioxide Absorption, Desorption, and Diffusion in
+Aqueous Piperazine and Monoethanolamine. PhD Dissertation. The University
+of Texas at Austin.
+Edwards, T.J., Maurer, G., Newman, J., Prausnitz, J.M., 1978. Vapor–liquid equilibria
+in multicomponent aqueous solutions of volatile weak electrolytes. AIChE J.
+24 (6), 966–976.
+Faramarzi, L., Kontogeorgis, G.M., Thomsen, K., Stenby, E.H., 2009. Extended
+UNIQUAC model for thermodynamic modeling of CO2 absorption in aqueous
+alkanolamine solutions. Fluid Phase Equilibria 282 (2), 121–132.
+Goldman, A.M., Leibush, A.G., 1959. A study of the equilibrium of carbon
+dioxide
+desorption
+of
+monoethanolamine
+solution
+in
+the
+temperature
+range 75–140 1C. Tr. Gos. Nauchno-Issled. Proektn. Inst. Azotn. Promsti 10,
+53–82.
+Haimour, N., Sandall, O.C., 1984. Absorption of carbon dioxide into aqueous
+methyldiethanolamine. Chem. Eng. Sci. 39 (12), 1791–1796.
+Hartono, A. 2009. Characterization of Diethylenetriamine(DETA) as Absorbent
+for Carbon Dioxide. PhD Thesis. Norwegian University of Science and
+Technology.
+Hartono, A., Juliussen, O., Svendsen, H.F., 2008. Solubility of N2O in aqueous
+solution of diethylenetriamine. J. Chem. Eng. Data 53 (11), 2696–2700.
+Hertzberg, T., Mejdell, T., 1998. MODFIT for MATLAB Parameter Estimation in a
+Nonlinear Multiresponse Model. Norwegian University of Science and Technology.
+Hessen, E.T.. 2010. Thermodynamic Models for CO2 Absorption. Ph.D. Thesis.
+Norwegian University of Science and Technology.
+Hessen, E.T., Haug-Warberg, T., Svendsen, H.F., 2010. The reﬁned e-NRTL model
+applied to CO2–H2O–alkanolamine systems. Chem. Eng. Sci. 65 (11), 3638–3648.
+Hilliard, M. 2008. A Predictive Thermodynamic Model for an Aqueous Blend of
+Potassium Carbonate, Piperazine, and Monoethanolamine for Carbon dioxide.
+Ph.D. Thesis. The University of Texas at Austin.
+Jou, F.-Y., Mather, A.E., Otto, F.D., 1995. The solubility of CO2 in a 30 mass percent
+monoethanolamine solution. Can. J. Chem. Eng. 73 (1), 140–147.
+Kent, R.L., Eisenberg, B., 1976. Better data for amine treating. Hydrocarbon
+Processing (1966–2001) 55 (2), 87–90.
+Kim, I., 2009. Heat of Reaction and VLE of Post Combustion CO2 Absorbents. Ph.D.
+Thesis. Chemical Engineering Department, Norwegian University of Science
+and Technology, Trondheim, Norway.
+Kim, I., Hoff, K.A., Hessen, E.T., Haug-Warberg, T., Svendsen, H.F., 2009. Enthalpy of
+absorption of CO2 with alkanolamine solutions predicted from reaction
+equilibrium constants. Chem. Eng. Sci. 64 (9), 2027–2038.
+Kim, I., Svendsen, H.F., 2007. Heat of absorption of carbon dioxide (CO2) in
+monoethanolamine (MEA) and 2-(aminoethyl) ethanolamine (AEEA) solutions.
+Ind. Eng. Chem. Res. 46 (17), 5803–5809.
+Kim, I., Svendsen, H.F., Borresen, E., 2008. Ebulliometric determination of vapor–
+liquid equilibria for pure water, monoethanolamine, n-methyldiethanolamine,
+3-(methylamino)-propylamine,
+and
+their
+binary
+and
+ternary
+solutions.
+J. Chem. Eng. Data 53 (11), 2521–2531.
+Kohl, A.L., Nielsen, R., 1997. Gas Puriﬁcationﬁfth ed Gulf Publishing Company,
+Houston, Texas.
+Laddha, S.S., Diaz, J.M., Danckwerts, P.V., 1981. The nitrous oxide analogy: the
+solubilities of carbon dioxide and nitrous oxide in aqueous solutions of organic
+compounds. Chemical Engineering Science 36 (1), 228–229.
+Lee, J.I., Otto, F.D., Mather, A.E., 1976. Equilibrium between carbon dioxide and
+aqueous monoethanolamine solutions. Journal of Applied Chemistry & Bio-
+technology 26 (10), 541–549.
+Ma’mun, S., Jakobsen, J.P., Svendsen, H.F., Juliussen, O., 2006. Experimental
+and modeling study of the solubility of carbon dioxide in aqueous 30 mass%
+2-((2-aminoethyl)amino)ethanol
+solution.
+Ind.
+Eng.
+Chem.
+Res.
+45
+(8),
+2505–2512.
+Ma’mun, S., Nilsen, R., Svendsen, H.F., Juliussen, O., 2005. Solubility of carbon
+dioxide in 30 mass% monoethanolamine and 50 mass% methyldiethanolamine
+solutions. J. Chem. Eng. Data 50 (2), 630–634.
+Mandal, B.P., Kundu, M., Bandyopadhyay, S.S., 2005. Physical solubility and
+diffusivity of N2O and CO2 into aqueous solutions of (2-amino-2-methyl-
+1-propanolþmonoethanolamine)
+and
+(N-methyldiethanolamineþmono-
+ethanolamine). J. Chem. Eng. Data 50 (2), 352–358.
+Mason, J.W., Dodge, B.F., 1936. Equilibrium absorption of carbon dioxide by
+solutions of the ethanolamines. Trans. Am. Inst. Chem. Eng. 32, 27–48.
+Nicolaisen, H., Rasmussen, P., Soerensen, J.M., 1993. Correlation and prediction of
+mineral solubilities in the reciprocal salt system ðNaþ ,Kþ ÞðCl,SOÞ4
+2Þ–water
+at 0–100 1C. Chem. Eng. Sci. 48 (18), 3149–3158.
+Poplsteinova, J.J., Krane, J., Svendsen, H.F., 2005. Liquid-phase composition
+determination in CO2–H2O–alkanolamine systems: an NMR study. Ind. Eng.
+Chem. Res. 44 (26), 9894–9903.
+Posey, M.L., 1996. Thermodynamic Model for Acid Gas Loaded Aqueous Alkanol-
+amine Solutions. Ph.D. Thesis. The University of Texas at Austin.
+Sander, B., Fredenslund, A., Rasmussen, P., 1986. Calculation of vapor–liquid
+equilibria in mixed solvent/salt systems using an extended UNIQUAC equa-
+tion. Chem. Eng. Sci. 41 (5), 1171–1183.
+Shen, K.P., Li, M.H., 1992. Solubility of carbon dioxide in aqueous mixtures
+of monoethanolamine with methyldiethanolamine. J. Chem. Eng. Data 37 (1),
+96–100.
+Smith, W.R., Missen, R.W., 1982. Chemical Reaction Equilibrium Analysis: Theory
+and Algorithms, second ed. Wiley, New York.
+Solbraa, E., 2002. Equilibrium and Non-Equilibrium. Thermodynamics of Natural
+Gas Processing: Measurement and Modelling of Absorption of Carbon Dioxde
+into Methyldiethanolamine Solutions at High Pressures. Ph.D. Thesis. Norwe-
+gian University of Science and Technology.
+Thomsen, K., 1997. Aqueous Electrolytes: Model Parameters and Process Simula-
+tion. Ph.D. Thesis. Technical University of Denmark.
+U.E. Aronu et al. / Chemical Engineering Science 66 (2011) 6393–6406
+6405
+
+=====PDF_PAGE 14=====
+Thomsen, K., Rasmussen, P., 1999. Modeling of vapor–liquid–solid equilibrium in
+gas–aqueous electrolyte systems. Chem. Eng. Sci. 54 (12), 1787–1802.
+Thomsen, K., Rasmussen, P., Gani, R., 1996. Correlation and prediction of thermal
+properties and phase behavior for a class of aqueous electrolyte systems.
+Chem. Eng. Sci. 51 (14), 3675–3683.
+Tochigi, K., Akimoto, K., Ochi, K., Liu, F., Kawase, Y., 1999. Isothermal vapor–liquid
+equilibria for waterþ2-aminoethanolþdimethyl sulfoxide and its constituent
+three binary systems. J. Chem. Eng. Data 44 (3), 588–590.
+Touhara, H., Okazaki, S., Okino, F., Tanaka, H., Ikari, K., Nakanishi, K., 1982. Thermo-
+dynamic properties of aqueous mixtures of hydrophilic compounds. 2. Ami-
+noethanol and its methyl derivatives. J. Chem. Thermodyn. 14 (2), 145–156.
+Versteeg, G.F., Van Swaaij, W.P.M., 1988. Solubility and diffusivity of acid gases
+(carbon dioxide, nitrous oxide) in aqueous alkanolamine solutions. J. Chem.
+Eng. Data 33 (1), 29–34.
+Xu, Q., Rochelle, G., 2011. Total pressure and CO2 solubility at high temperature in
+aqueous amines. Energy Procedia 4, 117–124.
+U.E. Aronu et al. / Chemical Engineering Science 66 (2011) 6393–6406
+6406
+
+=====PDF_PAGE 15=====
+Update
+Chemical Engineering Science
+Volume 78, Issue , 20 August 2012, Page 246–247
+ https://doi.org/10.1016/j.ces.2012.03.015
+DOI:
+
+=====PDF_PAGE 16=====
+Corrigendum
+Corrigendum to ‘‘Solubility of CO2 in 15, 30, 45 and 60 mass% MEA from 40 to
+120 1C and model representation using the extended UNIQUAC framework’’
+[Chem. Eng. Sci. 64 (2011) 6393–6406]
+Ugochukwu E. Aronu a, Shahla Gondal a, Erik T. Hessen a, Tore Haug-Warberg a, Ardi Hartono a,
+Karl A. Hoff b, Hallvard F. Svendsen a,n
+a Department of Chemical Engineering, Norwegian University of Science and Technology, N-7491 Trondheim, Norway
+b SINTEF Materials and Chemistry, N-7465 Trondheim, Norway
+The author reports that some lines in Table 3 were misplaced making the table very confusing and difﬁcult to read. In addition three
+numbers were missing in Table 5. The correct tables are shown below.
+Contents lists available at SciVerse ScienceDirect
+journal homepage: www.elsevier.com/locate/ces
+Chemical Engineering Science
+Table 3
+Equilibrium solubility of CO2 in aqueous 15 mass% MEA.
+15% MEA
+40 1C
+60 1C
+80 1C
+100 1C
+120 1C
+pco2
+(kPa)
+aco2 (mol/
+mol)
+Ptot
+(kPa)
+pco2
+(kPa)
+pco2model
+(kPa)
+aco2 (mol/
+mol)
+Ptot
+(kPa)
+pco2
+(kPa)
+pco2model
+(kPa)
+aco2 (mol/
+mol)
+Ptot
+(kPa)
+pco2model
+(kPa)
+aco2 (mol/
+mol)
+Ptot
+(kPa)
+pco2model
+(kPa)
+aco2
+(mol/
+mol)
+0.0017
+0.111
+0.0042
+0.048
+0.0603
+0.103
+109.4
+14.623
+0.346
+241.0
+93.575
+0.385
+0.0035
+0.148
+0.0056
+0.060
+0.1315
+0.147
+200.7
+204.957
+0.527
+361.8
+182.307
+0.437
+0.0068
+0.186
+0.0068
+0.075
+0.3544
+0.211
+322.8
+278.634
+0.551
+464.2
+321.367
+0.483
+0.0170
+0.220
+0.0078
+0.069
+0.5250
+0.242
+391.5
+318.213
+0.562
+529.8
+400.784
+0.502
+0.0215
+0.236
+0.0094
+0.098
+3.6374
+0.373
+500.0
+436.601
+0.590
+702.6
+629.533
+0.544
+0.0427
+0.295
+0.0151
+0.135
+6.3092
+0.409
+598.3
+576.507
+0.617
+857.2
+737.313
+0.560
+0.0450
+0.298
+0.0234
+0.144
+138.3
+101.535
+0.551
+717.3
+623.174
+0.625
+1050.2
+929.845
+0.585
+0.0845
+0.342
+0.0417
+0.175
+194.7
+208.891
+0.605
+717.6
+647.446
+0.629
+0.2220
+0.398
+0.0965
+0.230
+288.2
+248.881
+0.620
+799.9
+697.913
+0.637
+0.6634
+0.442
+0.1462
+0.253
+412.5
+358.882
+0.654
+917.5
+757.845
+0.646
+0.7013
+0.450
+1.7998
+0.415
+495.4
+455.126
+0.678
+4.8405
+0.516
+5.4090
+0.480
+598.5
+505.150
+0.689
+7.8861
+0.529
+8.2297
+0.492
+689.0
+539.098
+0.696
+16.0024 0.565
+82.00
+95.896
+0.624
+792.7
+640.229
+0.715
+149.3
+133.258
+0.652
+898.6
+768.969
+0.736
+178.9
+155.405
+0.666
+298.4
+234.407
+0.706
+407.5
+292.900
+0.729
+505.3
+487.652
+0.784
+611.7
+470.243
+0.780
+671.9
+487.652
+0.784
+819.7
+858.45
+0.847
+934.1
+998.77
+0.864
+0009-2509/$ - see front matter & 2012 Elsevier Ltd. All rights reserved.
+http://dx.doi.org/10.1016/j.ces.2012.03.015
+DOI of original article: 10.1016/j.ces.2011.08.042
+n Corresponding author. Tel.: þ47 73594100; fax: þ47 73594080.
+E-mail addresses: ugochukwu.aronu@chemeng.ntnu.no (U.E. Aronu), hallvard.svendsen@chemeng.ntnu.no (H.F. Svendsen).
+Chemical Engineering Science 78 (2012) 246–247
+
+=====PDF_PAGE 17=====
+Table 5
+Equilibrium solubility of CO2 in aqueous 45 mass% MEA.
+45% MEA
+40 1C
+60 1C
+80 1C
+100 1C
+120 1C
+pco2
+(kPa)
+aco2 (mol/
+mol)
+Ptot
+(kPa)
+pco2
+(kPa)
+pco2model
+(kPa)
+aco2 (mol/
+mol)
+Ptot
+(kPa)
+pco2
+(kPa)
+pco2model
+(kPa)
+aco2 (mol/
+mol)
+Ptot
+(kPa)
+pco2model
+(kPa)
+aco2 (mol/
+mol)
+Ptot
+(kPa)
+pco2model
+(kPa)
+aco2
+(mol/
+mol)
+0.0035
+0.141
+0.0019
+0.045
+0.0008
+0.017
+86.6
+4.708
+0.270
+165.1
+3.560
+0.145
+0.0035
+0.148
+0.0059
+0.087
+0.0023
+0.027
+201.7
+96.884
+0.445
+241.5
+106.177
+0.374
+0.0077
+0.195
+0.0099
+0.120
+0.0056
+0.038
+319.4
+208.127
+0.479
+361.5
+250.646
+0.426
+0.0099
+0.217
+0.0205
+0.169
+0.0060
+0.025
+433.3
+238.500
+0.485
+443.7
+335.793
+0.443
+0.0123 0.234
+0.0787
+0.232
+0.0099
+0.061
+539.0
+341.539
+0.501
+538.7
+490.925
+0.465
+0.0164 0.276
+0.1284
+0.269
+0.0288
+0.086
+625.4
+389.847
+0.507
+653.1
+592.662
+0.476
+0.0178 0.271
+0.4279
+0.352
+0.0529
+0.109
+747.2
+434.768
+0.512
+752.2
+667.434
+0.483
+0.0364 0.300
+1.4259
+0.392
+0.1236
+0.135
+879.5
+574.312
+0.525
+852.7
+750.925
+0.490
+0.0598 0.354
+4.6349
+0.454
+0.3981
+0.236
+974.6
+611.783
+0.528
+928.9
+887.076
+0.500
+0.1087 0.390
+6.2928
+0.460
+4.5002
+0.389
+1031.0 693.481
+0.534
+1039.6 979.386
+0.506
+0.1781 0.404
+8.2900
+0.471
+11.249
+0.435
+0.2787 0.428
+56.3
+36.099
+0.503
+97.0
+59.190
+0.479
+0.9173 0.464
+151.8
+106.190
+0.534
+251.9
+157.604
+0.512
+2.1609 0.475
+322.2
+264.384
+0.567
+342.5
+279.468
+0.533
+5.4871 0.497
+422.9
+364.534
+0.580
+446.1
+352.012
+0.542
+509.9
+421.021
+0.586
+523.8
+419.045
+0.549
+627.9
+612.781
+0.602
+624.4
+509.029
+0.557
+714.6
+771.31
+0.612
+714.8
+615.796
+0.565
+868.0
+947.05
+0.621
+842.1
+725.466
+0.572
+1030.4
+1243.31
+0.633
+941.5
+872.797
+0.580
+U.E. Aronu et al. / Chemical Engineering Science 78 (2012) 246–247
+247

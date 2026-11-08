@@ -1,0 +1,13 @@
+Start Chrome for the self test with its own DevTools port and retry
+
+On GitHub's runner the self test has failed three site builds before any
+check ran: Chrome did not answer the DevTools list within about 20 s.
+Chrome now gets port 0 and picks a free port itself, which the test reads
+from DevToolsActivePort or the "DevTools listening on" log line, so no port
+is chosen in advance. Each start may take 45 s. A start that shows no page
+target is stopped, its log tail is printed, and Chrome is started again with
+a fresh profile, up to three starts. If all three fail the test prints FAIL
+with that reason instead of a traceback. The checks themselves are
+unchanged.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>

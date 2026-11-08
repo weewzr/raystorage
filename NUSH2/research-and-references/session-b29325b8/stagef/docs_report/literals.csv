@@ -1,0 +1,53 @@
+value,meaning,class,source
+1,"Note, equation or Table 1 label",label,report structure
+2,"Note, equation or Table 2 label",label,report structure
+3,Note label or Case 3,label,report structure
+4,Note label,label,report structure
+5,INL Case 5 or Appendix item,label,TEV-961
+6,INL Case 6,label,TEV-961
+25,Reactor and item life in years,assumed,freeze section 4.6 LIVES_SHORT
+60,Reactor life in years,assumed,freeze section 4.6 LIVES_LONG
+4.7,Section number,label,report structure
+30,MEA strength wt% and HTTR thermal power,published and assumed,JAEA; design decision D25
+94,Natural gas share of electricity fuel 2024,published,EMA
+500,Lower reforming temperature,published,Mears 2010
+900,Upper reforming temperature and helium level,published,Mears 2010; TEV-961
+3.46,Pilot SRD,published,Vinjarapu 2024
+4.0,Pilot SRD,published,Brigman 2014
+26,MEA strength in the pilot,published,Vinjarapu 2024
+27,MEA strength in the pilot,published,Vinjarapu 2024
+85,Capture in the pilot,published,Brigman 2014
+3.5,CO2 in the pilot feed vol%,published,Brigman 2014
+130,Syngas heat grade and INL rate in MMSCFD,published,TEV-961
+950,HTTR outlet,published,JAEA
+750,HTR-PM and Xe-100 outlet,published,WNN; X-energy
+825,Reformer sensitivity named and not run,assumed,design decision D29
+800,Reformer sensitivity named and not run,assumed,design decision D29
+40,Conversion efficiency in the INL recipe; absorber temperature,published,INL/RPT-23-72972; TEV-961
+400,Xe-100 reference distance in metres,published,Long Mott application
+19,INIR infrastructure areas,published,METI 19 May 2026
+11,Years from HTR-PM construction to operation,published,WNA
+45,2035 NDC low end,published,NCCS
+50,2035 NDC high end,published,NCCS
+9,Conversion equipment share in the INL recipe,published,INL/RPT-23-72972
+000,INL OCC thousands in the recipe,published,INL/RPT-23-72972
+0.91,One less the conversion share,published,INL/RPT-23-72972
+0.40,Conversion efficiency in the INL recipe,published,INL/RPT-23-72972
+1.0,Size exponent label,user decision,Q9
+0.6,Size exponent label,assumed,Q9
+0.31,Ratio of two FOAK estimates,published,INL/RPT-23-72972
+10,DCF test threshold in percent,assumed,build order section 2
+925,Reactor outlet in the INL table name,published,TEV-961
+178.8,INL equivalent reactor size,published,TEV-961
+16.5,INL electricity import,published,TEV-961
+29,INL hot-end approach,published,TEV-961
+"29,000",INL hydrogen rate in lb/h,published,TEV-953
+0.79,Methane in product mass%,published,TEV-953
+102,JAERI measured approach,published,JAERI-Tech 2005-031
+125,JAERI measured approach,published,JAERI-Tech 2005-031
+65,Availability sweep label,assumed,sweep definition
+75,Availability sweep label,assumed,sweep definition
+80,Per-pass capture sweep label,assumed,sweep definition
+90,Availability sweep label,assumed,sweep definition
+95,Per-pass capture sweep label,assumed,sweep definition
+80,Upper end of the 2030 carbon tax band,published,NCCS

@@ -1,0 +1,36 @@
+Report feasibility and one set of target verdicts in the live reply, and add the step-down cost rows
+
+Live reply (nush2_wasm):
+- kpi.unmet_heat_mwth comes from Model::unmet_thermal, the function the
+  export writes as UNMET_THERMAL.
+- New feasibility block (feasible, deficit_mwth, unmet heat, reason).
+  targets.cost.met and targets.abatement.met are true only when the plant is
+  feasible at the rating; the cost reason says why when it is not.
+- targets.cost.cases is one evaluated list of target cases (stage, life, n,
+  size charged, L5, DCF, met) holding BOAK, FOAK and the selected stage, with
+  the selected case marked, so the strip and the cost table read one verdict.
+- Case A natural gas follows its own case (PlantSolution.ng_mmscfd), equal to
+  the case_a_mea cell of RES_NG_MMSCFD.
+- Filled: balances.energy ihx_duty, wgs_heat_release and unmet_thermal; lean
+  cooler, rich/lean exchanger and condenser duties and the absorber and
+  stripper profiles from the M6 design-point run; separator condensate and
+  the train temperature and pressure profiles from the live Level 3
+  flowsheet; kpi_class for every KPI. The reformer profile stays null with
+  its reason.
+
+Results:
+- Rows TUBE_EXIT_C_N199, TUBE_EXIT_C_N5000 and TUBE_SHORTFALL_871C_K_* give
+  the exit the assumed tube reaches with helium at 900 C and the shortfall
+  below 871 C.
+- MATURE_60Y gains the point at the printed gas price (the larger solve
+  rounded up to S$0.1/GJ) and the STEPDOWN family of four bars on L5 and the
+  DCF. No existing number moves.
+- The S13 row states why its total exceeds the headline H2.
+- Source and explanation text in parameters.toml and the results cites the
+  primary source, a decision id or a repository path. A new test fails on
+  pointers into working notes.
+
+scripts/build_numbers.py emits the MATURE_60Y, STEPDOWN and COFUNDING tokens
+and checks the step-down bars against their source rows.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>

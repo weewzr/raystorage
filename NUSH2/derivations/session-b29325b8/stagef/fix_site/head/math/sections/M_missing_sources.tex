@@ -1,0 +1,98 @@
+\section{M. Missing sources and source errata}\label{sec:M}
+
+This section lists what the derivations could not read at source, the printing errors found in the sources that were read, and the places where this document departs from the earlier screening model. A card that leans on an item here carries its tag, \tagM{n}. Each item stays open until its source is in the project library.
+
+\subsection*{Missing source register}
+
+\begingroup\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.9cm}>{\raggedright\arraybackslash}p{3.9cm}>{\raggedright\arraybackslash}p{4.2cm}>{\raggedright\arraybackslash}p{6.6cm}@{}}
+\toprule Id & Missing & Effect & What this document does instead\\\midrule\endfirsthead
+\toprule Id & Missing & Effect & What this document does instead\\\midrule\endhead
+\bottomrule\endlastfoot
+M1 & TEV-961 Case 6 sheets, A-60 onward, and Appendix G & No Case 6 stream data & Case 5 used as a proxy, scaled by 1,927 over 1,970 where used, stated on every card\\
+M2 & TEV-981 & Whether the 39.7\% conversion efficiency is a net value is unknown & 39.7\% kept, 47.5\% as a sensitivity; Case A spans 253 to 271 \U{MW_{th}}\\
+M3 & Hou and Hughes (2001), origin of $K(T)$ & Neither Xu and Froment paper prints $K(T)$ & Zhang et al.\ Table 1 \cite{Zhang21}, cross-checked against NIST data\\
+M4 & Copper-zinc low-temperature shift kinetics & No rate law for the second shift bed & A 10 K approach to equilibrium on INL and IEAGHG operating points\\
+M5 & Helium property correlation in the library & & Petersen (1970) \cite{Petersen}, read on the web and cited as an external source\\
+M6 & Species heat capacity and formation enthalpy & & NIST SRD 69 Shomate form \cite{NIST69}, coefficients read from the WebBook\\
+M7 & Thomsen (1997); Thomsen and Rasmussen (1999) & Activity expressions and the parameters $A(T)$, $b$ and $z$ come from general knowledge of the framework & Indirect support: a prototype reproduces Aronu's published model at 104 points, AARD 0.20\%. The cards say this plainly\\
+M8 & Versteeg and van Swaaij (1988), J.\ Chem.\ Eng.\ Data 33, 29 to 34 & Henry constants second hand & Aronu Eqs 17 and 18; Dugas Eqs 5.9 to 5.11 \cite{Dugas}\\
+M9 & Water saturation data & & IAPWS-IF97 in its place\\
+M10 & H$_2$, CH$_4$ and CO solubility in loaded MEA & No co-absorption model & Zero in the central case, with an aMDEA reference; the purity effect is disclosed\\
+M11 & MEA kinetics and properties above a loading of 0.50 & & Rich loading capped at 0.50\\
+M12 & Specific reboiler duty measured on syngas & & 3.8 \U{GJ\ t^{-1}}, range 3.4 to 4.2, labelled assumed\\
+M13 & Measured circulator power & & \Eq{B.10} with a budget\\
+M14 & Measured IHX pressure drop & & HTR-10 design and the INL 50 kPa; GTHTR300C values of 31 and 58 kPa stay unchecked. JAEA-Technology 2008-093 would close it\\
+M15 & Tochio and Nakagawa constant $C_0$ & Shell-side Nusselt correlation cannot be used & UA anchor \cite{Tochio}\\
+M16 & Catalyst effectiveness in helium-heated service & & One activity factor, fitted and disclosed\\
+M17 & Rocha (1993, 1996) and packing data & Specific area of Mellapak 250Y, $C_L$ and $C_G$ are not local & Mellapak 250Y assumed, with geometry to come from the vendor sheet or Rocha. Until then the working case runs Onda, Khan Eqs 5a and 5b, on a random packing\\
+M18 & Packed-column pressure-drop correlation & & \Eq{H.23} scaling, labelled assumed. Billet and Schultes (1999) would close it\\
+M19 & Surface tension of loaded MEA & The Rocha and Onda areas need it & The Billet and Schultes area, \Eq{H.12}, needs none\\
+M20 & Gas diffusivity method & & Fuller method \tagT{}, from Poling, Prausnitz and O'Connell\\
+M21 & Tabulated heat capacity of the loaded solvent & & 3.6 \U{kJ\ kg^{-1}\ K^{-1}}, from a figure axis range\\
+M22 & Syngas transport properties & & Maker values in JAERI F-2 and G-1, PDF p.~185 and p.~187 \cite{JAERI}, with Wilke mixing \tagT{}\\
+M23 & IAEA-TECDOC-1682 Table 3.17, GA-A24265, an NRC blog summary & IHX and licensing proxies carry S\$21.6 per tonne at Case A & Values carried from earlier project files, labelled as not opened at source\\
+M24 & TEV-954 and TEV-962 & INL's own hydrogen cost analyses are not used & Section L rests on the cost sources named on its cards\\
+M25 & Cho et al.\ full text & The split of the 9.35 \U{kg\ kg^{-1}} mean is unavailable & Abstract only; the 35/65 split is dropped\\
+M26 & ETC exhibit & US\$60 per tonne not checked at source & Not used in the central case\\
+M27 & S\$0.20 per kWh and 0.402 \U{t\ MWh^{-1}} & Not checked at source & Sensitivity and system view only\\
+M28 & Liquefaction power for ship transport & The project flowsheet shows a ship, while INL compresses to 139 bar & Compression power scaled from INL kept as a proxy and flagged; the T\&S tariff carries transport\\
+M29 & Basis for backup firing & & Sensitivity with an assumed efficiency\\
+M30 & Split of the 5.7 MWe row & & Worded as fuel-gas recycle and nitrogen removal equipment; the split is unpublished\\
+M31 & Recycle train cost & & Proxy from the IEAGHG compression cost per MW\\
+\end{longtable}
+\endgroup
+
+\subsection*{Source errata}
+Constants were read from page images wherever a text layer was in doubt. The rows below record what the pages print and how this document handles each case. XF1 and XF2 are Xu and Froment Parts I and II \cite{XF1,XF2}; HA is Hoseinzade and Adams \cite{HA}.
+
+\begingroup\small
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.9cm}>{\raggedright\arraybackslash}p{3.3cm}>{\raggedright\arraybackslash}p{5.7cm}>{\raggedright\arraybackslash}p{5.7cm}@{}}
+\toprule Id & Where & What is printed & Handling\\\midrule\endfirsthead
+\toprule Id & Where & What is printed & Handling\\\midrule\endhead
+\bottomrule\endlastfoot
+T1 & XF1 Table 5, PDF p.~7 & Lower limit of $K_{H_2O}$ printed as 0.0317 & The value 0.4152 and upper limit 0.5032 imply a symmetric lower limit of 0.3272 \tagC. A misprint that touches only the quoted uncertainty\\
+T2 & HA Eq 55, PDF p.~7 & $K_{H_2O}=1.77\times10^{3}$ where XF1 has $1.77\times10^{5}$ & $K_{H_2O}$ is dimensionless (XF1 PDF p.~8), so the bar to kPa division must not apply. At a sample point the rate changes by a factor of 27 \tagC. HA constants are not used\\
+T3 & HA Eqs 48 to 50, PDF p.~7 & Rate constants carry an unstated factor & Each is 2.246 times the XF value \tagC, the fresh-catalyst activity. Not copied\\
+T4 & HA Eq 52 & Exponent of $K_2$ printed as $-4.063$ & $\ln(1.767\times10^{-2})=-4.036$ \tagC, a likely transposition that lowers $K_2$ by 2.7\%\\
+T5 & HA against Zhang et al., $K_1$ & Pressure bases differ & HA's $1.193\times10^{13}$ \U{atm^2} is $1.225\times10^{13}$ \U{bar^2}, against Zhang's $1.198\times10^{13}$ \U{bar^2} \tagC, 2.2\% in $K_1$\\
+T6 & Zhang et al.\ Eq 12, PDF p.~5 & $1.176\times10^{-2}\exp(-4400/T)$ with $(1-X_1)$ in the denominator & Table 1 gives $1.767\times10^{-2}\exp(+4400/T)$ and stoichiometry needs $(1-X_2)$ \tagC. Table 1 is used and the equation derived here\\
+T7 & Zhang et al.\ Eq 11 and Table 1 & $1.198\times10^{23}$ in Eq 11 against $1.198\times10^{11}$ in Table 1 & Eq 11 is in \U{Pa^2} and Table 1 in \U{MPa^2}. Eqs 6 and 7 also carry a stray $\times100\%$\\
+T8 & XF1 Table 2, PDF p.~3, and Table 7, PDF p.~8 & Table 2 lists $-\Delta H$ and Table 7 lists $+\Delta H$; reaction III reads $-165.0$ in one and 164.9 in the other & Sign convention, read with care\\
+T9 & XF1 notation, PDF p.~8 & $R$ given in kJ/kmol with no kelvin; activation energies in kJ/mol while rates are in kmol & XF2 PDF p.~6 gives kJ/(kmol K). Kinetics are coded in the published units and converted at the function boundary\\
+T10 & XF1 Table 5 & Two reference temperatures: 648 K for $k$, $K_{CO}$ and $K_{H_2}$, and 823 K for $K_{CH_4}$ and $K_{H_2O}$ in a footnote & Each constant uses its own reference temperature\\
+T11 & XF1 PDF p.~7 text against Table 6 & $A(K_{H_2})$ printed as $6.13\times10^{-9}$ in the text and $6.12\times10^{-9}$ in the table & Back-calculation gives $6.146\times10^{-9}$ \tagC. Table 6 is used\\
+T12 & XF2 PDF p.~3 & Binary diffusivities attributed to Wilke and Chang (1955), whose title is on dilute solutions, a liquid-phase correlation & A gas-phase method is needed to reproduce the effectiveness factors\\
+T13 & XF2 notation, PDF p.~6 & Gas conductivity in W/(m h K), viscosity in kg/(m s), other terms in hours & Unit mixing. Read from the text layer only\\
+T14 & XF1 text layer & The text gives $-241.3$ where the page image shows $-247.3$ & Constants are taken from page images only\\
+T15 & Yin Eq 14, PDF p.~5 & Blasius printed as $0.3164/Re$ with no exponent & Misprint. Sato Eq 10 prints $Re^{-1/4}$ and is used in \Eq{C.16}\\
+T16 & Yin Eq 15, PDF p.~5 & Ergun with $d_2$ defined as the catalyst tube inner diameter, and $150/Re$ without $(1-\varepsilon_b)$ & Not used as printed. HA Eq 26 or Sato Eq 11 instead\\
+T17 & HA Eq 13, PDF p.~4 & A cross-flow correlation applied to helium over tubes, then raised by 2.7 on the coefficient and 2.3 on area for fins (PDF p.~8) & JAERI's 2.7 is the finned outer to inner area ratio, with $h_o/h_i$ near 4.8 (JAERI PDF p.~24). Not a helium annulus model\\
+T18 & Aronu et al., PDF p.~4 & The text says four reactions & Five are listed and five are correct\\
+T19 & Part 5b, Eq 35 & 2985 & 2895 is the correct value\\
+T20 & Hartono et al., Eqs 3 to 5 & The basis of the variables is unclear & Read as working with $\Phi^1$ and mass fraction, which is an inference\\
+T21 & Isa et al., Eqs 16, 25 and 28 & Forms differ from Khan's & Khan's forms are used\\
+T22 & Khan et al. & Units of the Henry constant are not stated & Read with care\\
+T23 & Wong, Tables 2 and 3 & Unusable as printed & Not used\\
+T24 & TEV-961 text & ``71 C'' and ``3 C'' disagree with Table 2 & Table 2 is used\\
+T25 & IAEA NP-T-4.3, Table 16 & IHX temperatures that are impossible as printed & Not used\\
+T26 & IAEA-TECDOC-1236 & IHX tube outer diameter printed as 3.2 mm & A misprint for 31.8 mm\\
+T27 & Tochio and Nakagawa, Fig 9 & Temperatures cannot be resolved & Only UA and the hot-end gap are quoted\\
+T28 & IEAGHG 2017-02, stream 13 & CH$_4$ of 0.0363 printed in the oxygen row & The balance confirms 201 kmol/h of CH$_4$ \tagC; read as CH$_4$\\
+T29 & DICE Table 5-3 & 263.3 & A steam flow in 1000 lb/h. The reboiler duty is 242 MMBtu/h, per E-104\\
+T30 & Salvinder et al., Table 1 & ``H$_2$O 0.8 mol, MEA 0.2 mol'' against 20 wt\% in the text & A mole fraction of 0.2 is 45.9 wt\% \tagC, so the label is likely a mass-fraction error\\
+T31 & Halim et al. & Text gives mol/(m$^2$ h kPa), figures give mol/(m$^3$ h kPa) & The figures are used\\
+T32 & Versteeg and van Swaaij & The local file is the kinetics paper & The Henry constant paper is separate, see M8\\
+\end{longtable}
+\endgroup
+
+\subsection*{Differences from the screening model}
+The engine reproduces the earlier screening model wherever the two share a method. Reference tests against that model expect the five differences below, and a test that misses by more than the listed effect points to a porting error in the code.
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+\item \textbf{Duct loss.} \Eq{B.14} scales the loss with $\sqrt{\dot m}$, where the screening model scales it with $s$: \cDuctRoot{} against \vQductB{} \U{MW} at Case B.
+\item \textbf{Reboiler steam order.} The screening model draws freed Selexol steam, then EX4 and ZLD steam, then export steam. This document follows the project order: freed Selexol steam, export steam, syngas above 130 C, then reactor steam. The two agree whenever the reboiler uses the whole stack, which holds in every central case. They part only when the reboiler needs less than the stack, for example at an SRD of 3.4 with ZLD steam freed, and then the export steam kept and the lost steam change.
+\item \textbf{Water saturation.} Saturation in \Eq{F.11} comes from IAPWS-IF97, so the result differs slightly from the Antoine value of the screening model.
+\item \textbf{Size exponent.} The default here is $n_s=1.0$, against 0.6 in the screening model.
+\item \textbf{Reformer duty.} The species-enthalpy duty of \Eq{D.34} sits below the INL heat basis. The ledger keeps \Eq{J.14} and prints both.
+\end{enumerate}

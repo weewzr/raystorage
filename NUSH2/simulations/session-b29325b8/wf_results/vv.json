@@ -1,0 +1,58 @@
+{
+ "summary": "I finished the V&V harness that the interrupted run left half done, and committed it locally on develop as 2d1da15. It is not pushed: this step said to commit only, so the push is left to a later step. I audited the earlier work rather than starting over. The harness, the S1 conversion and the props fixture move to engine/vv/data/props were sound, so I kept them. I checked the S7 fixture trim both ways. First, an export from the full eaf9327 fixtures (plus the one added row) gives a Validation_Results.csv byte for byte the same as the trimmed set, so no value a benchmark reads was removed. Second, new read tracking in the column fixtures of nush2_units::bench shows every stored row is read. The one added row, TEV-953 S/C 3.00 at A-42 PDF p76, I checked against the PDF page. results/Validation_Results.csv now holds 613 rows: 310 pass, 22 fail, 243 reported with no limit and 38 not run. That is 59 plant, 24 flowsheet, 19 M2, 104 Aronu points plus AR-1 to AR-4, 85 matrix rows, 86 M4/M5 rows, the S2 LTS NIST row, 202 M6 rows and 33 not_run rows written by the harness itself (the 5 Khan not_run rows are among the 202 M6 rows). docs/VALIDATION_MATRIX.md now has a Status column on every table taken from this export, together with S6, S9 and the other decisions, current fixture counts, and section 19 giving totals and the list of failed rows. cargo test --workspace (dev profile) is green, clippy and fmt are clean on the crates I touched, check_clean.py passes, and two exports match byte for byte. Another agent was working in the tree during this run (wasm, frontend, Cargo.toml, .gitignore, build_wasm.py, wasm_smoke.py). I did not touch or stage any of its files.",
+ "done": [
+  "Audited the earlier run's uncommitted work: engine/vv/src/{fixture,gas_bench,mea_bench,not_run,props_bench,rowkit,units_bench}.rs, the harness, report and cli wiring, the props fixture move and the fixture trims. Kept all of it; nothing was discarded.",
+  "Step 1: harness::run_all puts plant (59), flowsheet M7 (24), M2 props (19), the Aronu points (104) with AR-1 to AR-4 and AR-1-FIXTURE, the vv matrix rows, M4/M5 unit rows (86), M6 column rows (202), the S2 row T961-6-CO-NIST and the not_run rows into results/Validation_Results.csv through `nush2 export`. Test ids are checked for duplicates.",
+  "Step 2 (S1): shomate_spot_values became the benchmark rows PROPS-SHOMATE-CP/S/H, judged on the unchanged limits (Cp 1e-3 rel, S 1e-4 rel, H 0.01 kJ/mol). Its test in engine/vv/tests/benchmark_rows.rs asserts each row is produced, finite and judged against those limits. The JAERI A-2, A-3 and A-5 rows (converted in M6) are checked the same way at 0.03. The props fixtures now live in engine/vv/data/props with their citation comment lines.",
+  "Step 3 (S7): checked the trim. A HEAD/eaf9327 fixture export gives an identical Validation_Results.csv. I added read logging to the column fixture parser in engine/units/src/bench/columns.rs (exposed as COLUMN_FIXTURES and unread_fixture_rows) and a test, column_rows_and_fixtures, that runs every M6 benchmark and fails if any stored row of the 8 column fixtures is never read. It passes. Every fixture row keeps its source and page.",
+  "Step 4: added the Status column to every table in docs/VALIDATION_MATRIX.md, generated from the real export. S6 is in sections 9 and 20, S9 in the XF-1 paragraph and the row notes. Added a short table of the lead decisions the matrix cites, updated the row counts in section 2, corrected the prose that still described removed fixture data as held, and rewrote section 19 (PROPS, JAERI, TAN, SO, ABS-CASEB, DICE, KW, MO, plant, FS) with totals and the 22 failed ids.",
+  "Disclosed in the matrix: VI-3 runs the stripper at the gross pilot reboiler duty (including heat loss), which matrix section 16 warns against. The route was left as built and VI-3-SS2/SS3 stay failed.",
+  "Step 5: re-exported results, checked byte-identical exports, ran the workspace tests, fmt, clippy, check_clean and build_numbers, then committed 2d1da15 with only this task's paths and the 08 section 1.7 trailer.",
+  "scripts/build_numbers.py now emits VAL_N_REPORTED.",
+  "scripts/check_clean.py: the withdrawn-figure regex had unescaped `$` (S$96, S$546M and US$80/t could never match). I escaped them. The bare sums 106.5 and 99.4 are now skipped when followed by %, because the Vinjarapu row VI-SRD-SS54 legitimately prints 'capture 99.4%'."
+ ],
+ "failed_or_skipped": [
+  "Recorded as not_run with their reasons, and still not run: CH-3 and KR-1-OP1..4 (no harness route built), IS-1 (no route; needs the Isa Table 3 inlet state), AH-1/AH-2 (no Sulzer gauze geometry, no printed lean loading), BR-1..BR-4 (needs a coupled absorber and stripper on flue gas), KH-1..KH-4 (no Onda packing data). The section 18 items also stay not_run. None of the newly listed PDFs (TEV-954, TEV-962, TEV-981, TECDOC-1682, Cho 2022, Choi and Stenger 2003, CH4 in MEA) is in the source folder, so W-1 and H-3 cannot run either.",
+  "Literature benchmarks that fail, recorded as failed and not tuned: PROPS-SHOMATE-CP, T953-2, T961-1-ROT825C, T961-5-GHSV-CO, T961-5-GHSV-T, XF-3-III-948K, HA-3, VER-2-298K-PennyRitter1983, JA-A-2-X, JA-A-3-X, JA-A-5-X, SA-1, DICE-SRD, KW-SRD, MO-K16-TOUT, VI-3-SS2, VI-3-SS3, plus the M7 rows FS_CARBON_VS_ANCHOR_{TUBE,TAIL_GAS,RECYCLED,BURNED} and FS_GATE_M7.",
+  "VI-3 basis mismatch (gross duty against a model with no heat loss) is disclosed. I did not fix it, because changing a gated benchmark after seeing its result would act on a known outcome, and S12 already fixes the gate result.",
+  "The S5 note on card H.6 in math/eq_register.csv (left over from M6) was not added. It is outside this task's five steps.",
+  "JAERI benchmark values stay as typed constants in nush2_units::jaeri with page citations, not in a fixture under engine/vv/data. This is disclosed in matrix section 19 and was not moved.",
+  "Tochio, TECDOC-1382, reactor_table_10_1, ihx_benchmarks_10_3 and circulator rows do not exist yet. They belong to M8, which has not run.",
+  "Not pushed. The computed step says commit locally only; the user's push request is for the final deliverables at a later step.",
+  "Workspace-wide `cargo fmt --all --check` and `cargo clippy --workspace` were not run, because another agent has uncommitted wasm and frontend files in the tree. I ran fmt and clippy only on nush2_vv, nush2_units, nush2_cli and nush2_props."
+ ],
+ "checks_run": [
+  "cargo run -q -p nush2_cli -- export --out results (CARGO_TARGET_DIR=.../cargo/vv_harness, dev profile): 'validation rows 613: pass 310, fail 22, reported 243, not_run 38'",
+  "Second export to a scratch dir, then cmp on all seven CSVs against results/: all 7 identical (export byte-identical across processes)",
+  "Export from a scratch copy with the HEAD (= eaf9327 for the 18 original files) fixtures plus the verified tev953 S/C row, then cmp against the trimmed export: Validation_Results.csv IDENTICAL",
+  "python fixture_subset.py (scratch): every trimmed fixture row exists unchanged in HEAD except one added row (tev953 steam_to_carbon_stage1 3.00); 0 rows lack source or locator",
+  "pymupdf read of TEV-953 PDF page 76 (A-42): 'STAGE 1 ... STEAM TO CARBON MOLAR RATIO = 3.00', which confirms the added fixture row",
+  "cargo test -p nush2_vv: benchmark_rows 9 passed (including column_rows_and_fixtures, fixtures_hold_only_read_values, shomate_spot_values, jaeri_rows_keep_their_limit, lts_nist_row_is_reported, aronu_rows_are_present); plant_goldens 12 passed (including export_byte_identical, every_plant_row_passes with 59 rows, golden_balance_all_cases, golden_ledger_grid)",
+  "cargo test --workspace (dev profile), run twice at 21:45 and 21:47: cargo exit 0. All binaries ok: mea 29+20+2+4, numerics 2, plant 27, m7_flowsheet 18, props 35, m2_acceptance 14, units 59, m4 8, m5 14, m6 16, vv benchmark_rows 9, plant_goldens 12, wasm 9",
+  "cargo fmt -p nush2_vv -p nush2_units -p nush2_cli -p nush2_props -- --check: exit 0",
+  "cargo clippy -p nush2_vv -p nush2_units -p nush2_cli -p nush2_props --all-targets -- -D warnings: exit 0",
+  "python scripts/check_clean.py: 'scanned 185 files, 0 hits' (before the regex fix it reported 1 false-positive hit, 'capture 99.4%' in VI-SRD-SS54)",
+  "python scripts/build_numbers.py: wrote build/numbers.json, 8833 tokens, exit 0; VAL_N_TOTAL 613, PASS 310, FAIL 22, REPORTED 243, NOT_RUN 38; one pre-existing WARN ieaghg_bound_two_values (564,013 against 563,745 t/y)",
+  "git commit 2d1da15 on develop with the 08 section 1.7 trailer; 46 files; only this task's paths staged"
+ ],
+ "results_of_note": [
+  "Validation_Results.csv: 613 rows, 310 pass, 22 fail, 243 reported, 38 not run. By group: plant 59/59 pass; FS 19 pass, 5 fail; PROPS 15 pass, 1 fail, 3 reported; Aronu 104/104 pass; vv matrix 79 pass, 5 fail, 1 reported; M4/M5 27 pass, 5 fail, 54 reported; M6 7 pass, 6 fail, 184 reported, 5 not run; 33 not_run written by vv",
+  "PROPS-SHOMATE-CP fail: CO Cp at 400 K, 29.3027 against JANAF 29.342 J/mol/K (0.134% against the 0.1% limit). The printed NIST polynomial itself gives 29.3027",
+  "AR-1 AARD 0.206% against the 0.30% limit; AR-2 21.94%, AR-3 24.41% (Aronu reports 24.3%), AR-4 11.80% (Aronu 11.7%); all pass",
+  "HA-1 0.53% and HA-2 1.61% AARD pass; HA-3 fails at 40.4% against 30% (Khan Eq 8 has no loading term)",
+  "T953-2 fails: 80.33 against 78.1% (pure methane stands in for the conventional feed, as the matrix expected); T961-1-ROT825C fails: 149.37 against 149.1 MWt (0.18% against 0.15%)",
+  "XF-3-III-948K fails: 189.8 against 187.5 kJ/mol (2.0 limit). XF-1 passes only when rounded to 3 decimals; unrounded k3 0.985568 and KH2 1.004181",
+  "S2: T961-6-CO on Zhang K2 reads 0.334 against 0.33 (pass at 0.1). The NIST Gibbs K2 sensitivity row reads 0.287 mol% dry CO, reported with no limit",
+  "JAERI conversion: A-2 0.511 against 0.555 (calibration, activity at the 2.246 limit), A-3 0.516 against 0.567, A-5 0.506 against 0.548 fail; A-4 0.509 against 0.525 passes",
+  "M6: SA-1 72.6 against 85.0%; DICE-SRD 5.293 against 3.638 GJ/t; KW-SRD 4.977 against 3.92; MO-K16-TOUT 121.3 against 122.94 C; VI-3-SS2 0.160 against 0.23, SS3 0.197 against 0.25 (all model lean loadings below the printed values, matching the gross-duty bias); VI-1 3.44% and VI-2 4.34% median error pass. The gate stays GateFailed, so T07 and T08 stay anchored (S12)",
+  "Headline unaffected: HEADLINE_REACTOR_NEED 179.04 MWth and HEADLINE_ABATEMENT 578,052 t/y pass in the plant rows; the other six results CSVs are byte-identical to the committed ones"
+ ],
+ "blocking_findings": [],
+ "needs_user": [
+  "VI-3 runs the stripper at the gross pilot reboiler duty, which includes the pilot's heat loss, while the model has none. VALIDATION_MATRIX section 16 warns against exactly this basis. The lead should decide whether a net-duty route (D.19 SRD times captured CO2, needing FTC2 re-added from eaf9327) should be added later as a separate row. The existing failed rows stay as recorded.",
+  "Another agent has uncommitted changes in the tree that this commit leaves out: Cargo.toml (wasm-release profile), .gitignore, engine/wasm/*, frontend/*, scripts/build_wasm.py, scripts/wasm_smoke.py. The engine/wasm crate embeds results/Validation_Results.csv, which is now 613 rows (235 KB), and its 9 tests pass with it."
+ ],
+ "commits": [
+  "2d1da15 Add validation harness and benchmark results (develop, local, not pushed)"
+ ]
+}

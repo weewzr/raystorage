@@ -1,0 +1,350 @@
+5_292.pdf
+HTGR_SMR_MEA_CCS_Research_Local\08_Integrated_HTGR_SMR_CCS\Sato_2006_HTGR_SMR_Integrated_Model_Dynamic_Model.pdf
+=====
+--- PDF p.1 ---
+日本原子力学会和文論文誌,Vol. 
+5, No.4, 
+p. 292-304 
+(2006)
+技術報告
+動特性解析コードを用いた高温ガス炉に接続する
+水素製造システムの評価
+佐藤
+博之1,*,大
+橋
+弘史1,稲
+葉
+良知1,
+西原
+哲夫1,林
+光二1,稲
+垣
+嘉之1
+Evaluation 
+of Hydrogen 
+Production 
+System 
+Coupling 
+with HTTR 
+Using 
+Dynamic 
+Analysis 
+Code
+Hiroyuki SATO1,*, Hirofumi OHASHI1, 
+Yoshitomo INABA1,
+Tetsuo NISHIHARA1, 
+Koji HAYASHI1 
+and Yoshiyuki INAGAKI1
+1Japan Atomic Energy Agency, 4002 Narita-cho, 
+Oarai-machi, 
+Higashi-ibaraki-gun, 
+Ibaraki 311-1393, Japan
+(Received March 29, 2006 and accepted in revised form July 13, 2006)
+The Japan Atomic Energy Agency (JAEA) was entrusted "Development of Nuclear Heat Utilization 
+Technology"
+by Ministry of Education, Culture, 
+Sports, Science and Technology. In this development, the JAEA investigated 
+the sys-
+tem integration 
+technology to couple the hydrogen production system by steam reforming with the High Temperature
+Engineering Test Reactor (HTTR). Prior to the construction 
+of the hydrogen production system coupling with the
+HTTR, a dynamic analysis 
+code had to be developed to evaluate the system transient 
+behaviour of the hydrogen produc-
+tion system because there are no examples of chemical facilities 
+coupled with nuclear reactor in the world. This report
+describes the evaluation 
+of the hydrogen production system coupling with HTTR using analysis 
+code, N-HYPAC, 
+which
+can estimate transient 
+behaviour of the hydrogen production system by steam reforming. The results 
+of this investigation
+provide that the influence 
+of the thermal disturbance 
+caused by the hydrogen production system on the HTTR can be esti-
+mated well.
+KEYWORDS: 
+nuclear heat utilization 
+technology, system integration technology, steam reforming, HTTR,
+hydrogen production system, dynamic analysis code, transient behaviour, N-HYPAC, 
+thermal disturbance
+I. 緒
+言
+高温ガス炉は,冷却材にヘリウムガス,主要構造材並び
+に減速材に黒鉛を用いることにより,1,000℃近い原子炉
+出口冷却材温度を達成することができるため,発電のほ
+か,水素製造,化学工業の熱源等,多用途にわたる利用が
+可能となる。特に水素は,近年の燃料電池自動車の実用化
+に向けての開発研究の高まりに見られるように,近い将来
+において需要の急増が予想される。しかし,自然界におい
+て単独で存在する水素はごく少量であり,ほとんどが水や
+化石燃料等の化合物の状態で存在していることから,水素
+製造には発電と同様に,エ
+ネルギーを必要とする。したが
+って,将来予想される水素需要に対しては,水素製造に必
+要な大量のエネルギーを環境への負荷をかけずに供給する
+ことが重要課題となる。高温ガス炉を水素製造の熱源とす
+る水素製造システムは化石燃料を使わないことから,CO2
+の排出が少ないため,将来の水素製造システムとして有望
+である。
+日本原子力研究開発機構(以下,「原子力機構」と呼ぶ)
+では,将来の水素利用社会への貢献を目指して高温ガス炉
+水素製造システムの研究開発を進めている1)。国内唯一の
+高温ガス炉である高温工学試験研究炉HTTR 
+(High Tem-
+perature Engineering Test Reactor)では,2004年4月
+に
+世界で初めて原子炉出口冷却材温度950℃の核熱を炉外に
+取り出すことに成功しており2),HTTRに
+水素製造設備を
+接続した実証試験を計画している。原子力機構は文部科学
+省より平成8年度から平成17年度にかけてHTTRと
+天然
+ガスの水蒸気改質法による水素製造設備との接続について
+技術開発を行った。熱利用系として水素製造設備等のよう
+な化学プラントを原子炉に接続したことは世界的に例がな
+いため,HTTRと
+水素製造設備の接続に当たって,ヘ
+リ
+ウムガスおよび水素製造設備の過渡挙動を評価するための
+動特性解析コードが必要であった。原子力機構では,
+HTTRと
+水蒸気改質法による水素製造設備とを接続した
+システム(以下,「水素製造システム」と呼ぶ)において,
+水素製造設備に起因する熱過渡を抑制するために蒸気発生
+器-放熱器を用いた冷却システムを提案しており,動特性
+コード開発においては,この冷却システムでの沸騰・凝縮
+を含む蒸気/水の二相流の熱流動計算および水蒸気改質器
+での化学反応計算を可能とすることが課題であった。その
+ため,新
+たに動特性解析コードを開発し,N-HYPAC3)
+1 
+日本原子力研究開発機構
+* Corresponding 
+author
+, E-mail: 
+sato.hiroyuki09@jaea.go.jp
+C Atomic 
+Energy 
+Society 
+of Japan
+292
+
+--- PDF p.2 ---
+動特性解析コードを用いた高温ガス炉に接続する水素製造システムの評価
+293
+(Nuclear Hydrogen 
+Production 
+Analysis Code)と
+名付け
+た。また,水
+素製造システムの模擬試験装置(以下,「試験
+装置」と呼ぶ)を完成させ4),本
+装置の定常時および非定
+常時の試験結果を用いて,本
+解析コードの解析結果と試験
+結果の比較を行った。
+本報では,本
+解析コードの概要,解
+析結果と試験結果の
+比較および水素製造システムの解析結果について述べる。
+II. 水素製造システムの概要
+水素製造システムの系統図をFig. 
+1に示す。水素製造
+システムは原子炉,中
+間熱交換器,水
+素製造設備から構成
+され,原
+子炉と中間熱交換器の間を1次
+ヘリウムガス,
+中間熱交換器と水素製造設備との間を2次
+ヘリウムガス
+が循環している。原子炉で950℃
+に加熱された1次
+ヘリウ
+ムガスは,中
+間熱交換器で2次
+ヘリウムガスと熱交換し
+(熱交換量10MW),2次
+ヘリウムガスは水素製造設備の
+水蒸気改質器等の熱源として供給される。水素製造設備は
+(1)式
+に示す水蒸気改質反応により,原
+料ガス(天然ガ
+ス)と水蒸気を反応させて水素を製造する。
+CH4+H2O=3H2+CO+ΔH(298K);
+ΔH(298K)=206kJ/mol 
+(1)
+水蒸気改質器には水蒸気改質反応を行わせるため,触
+媒
+を充填した反応管が設置されており,反
+応管の外側を2
+次ヘリウムガス(圧力:4.1MPa,水
+蒸気改質器入口温
+度:880℃),内
+側をプロセスガス(メタンと水蒸気の混合
+ガス並びに反応後の生成ガスの総称,圧
+力:4.5MPa,水
+蒸気改質器入口温度:450℃)が
+流れて熱交換を行う。水
+素製造システムの主要諸元をTable 
+1に示す。また,水
+素製造システムではHTTRの
+スクラムを防止する観点か
+ら,2次
+ヘリウムガスの温度変動を±10℃以内に制御する
+ことを目標としている5)。そこで,水
+蒸気改質器の負荷変
+動による原子炉への戻りヘリウムガスの熱過渡変化を抑制
+するため,水蒸気改質器の下流に蒸気発生器と放熱器を設
+置し,蒸気発生器の保有水の潜熱により2次ヘリウムガ
+スの熱過渡を吸収する冷却システムを採用している。
+III. 動特性解析コードの概要
+1. 動特性解析コードの特長
+水素製造システムの蒸気発生器-放熱器を用いた冷却シ
+ステムを取り扱う動特性解析コードとして,RELAP5の
+ように蒸気/水の二相流の熱流動計算が可能であるコード
+があるが,水蒸気改質器での化学反応計算を行うことはで
+きない。また,化学プラントの解析コードにおいては,蒸
+Table 
+1 
+Design 
+specifications of mock-up 
+test facility and
+HTTR 
+hydrogen 
+production 
+system 
+by 
+steam
+reforming 
+of methane
+Fig. 1 
+Conceptual 
+flow diagram 
+of HTTR 
+hydrogen 
+production 
+system 
+by steam 
+reforming 
+of methane
+日本原子力学会和文論文誌,Vol. 
+5, No. 4 (2006)
+
+--- PDF p.3 ---
+294
+技術報告(佐藤,他)
+気発生器-放熱器を用いた冷却システムでの自然循環時の
+挙動の解析が可能であるコードはない。このように,原
+子
+炉に化学プラントを接続した新しい原子炉システムの動特
+性を評価できる解析コードは存在しない。N-HYPACで
+は,水
+素製造システムでの原子炉本体を除く,1次
+ヘリウ
+ムガス系,2次
+ヘリウムガス系および水素製造設備を構成
+する機器・配管,弁
+および制御系を対象とし,そ
+の温度,
+圧力,流
+量および制御特性等の動特性が計算できる。ま
+た,使
+用流体として,天
+然ガス,窒
+素ガス,生
+成ガス(水
+素,二
+酸化炭素,一
+酸化炭素),水,水
+蒸気(二相流を含
+む)およびヘリウムガスを取り扱うことができる。なお,
+詳細については参考文献3,6)を参照されたい。
+2. 解析モデルの概要
+(1) 
+ヘリウム系,プ
+ロセスガス系解析モデル
+N-HYPACの
+開発において,水
+素製造システムの化学
+反応器である水蒸気改質器での化学反応計算,ヘ
+リウムガ
+ス系およびプロセスガス系の各熱交換器,配
+管での熱流動
+計算を行う解析モデルを開発した。以下に,そ
+の概要を述
+べる。
+(a) 配管
+配管は,流
+体の熱流動計算を1次
+元でモデル化し,基
+礎式には質量,運
+動量およびエネルギーの各保存式,気
+体
+の状態方程式を用いた。また,伝
+熱については1次
+元で
+取り扱った。
+(b) 水蒸気改質器
+水蒸気改質器の解析モデル概要図をFig. 2に示す。水
+蒸気改質器では,質
+量保存式およびエネルギー保存式を基
+礎式として熱収支式と物質収支式を解くことにより,水
+蒸
+気改質器内の温度分布,濃
+度分布を算出した。水蒸気改質
+器はヘリウムガスとプロセスガスとの熱交換のほか,プ
+ロ
+セスガスの再生熱交換を行うバイヨネット型であるため,
+伝熱モデルに関しては2次元とし,触媒層内のプロセス
+ガス,内管内の生成ガス,ヘ
+リウムガス相互の管壁を介し
+たモデルとした。また,流
+れに関しては1次元として扱
+った。触媒層内の化学反応計算には定数型反応速度式を用
+い,反応速度定数は一般的なアレニウス型の式で記述し
+た。(2)か
+ら(4)式
+に主要な反応である水蒸気改質反応
+およびシフト反応の反応速度式を示す。
+(水蒸気改質反応式)
+(2)
+(シフト反応式) 
+(3)
+(4)
+ここで,r:触
+媒重量あたりの反応速度(mol/s/kg-cat)
+k:反
+応速度定数(mol/s/kg-cat/PaPa2)
+Pi:i成
+分の分圧(Pa)
+KP:圧
+平衡定数(Pa*)
+(*:水
+蒸気改質反応では2,シ
+フト反応では0)
+k0:頻
+度因子(mol/s/kg-cat/PaPa2)
+E:活
+性化エネルギー(J/mol)を
+表す。
+また,原
+料となる天然ガスには数種類の低級炭化水素を含
+んでいるため,こ
+れらの熱分解反応を考慮した。本解析
+コードで使用した化学反応式および反応速度式をTable 
+2
+に示す。
+化学反応は触媒層内のプロセスガスのみに対して考慮
+し,(5)式
+に示す物質収支式を用いた。
+(5)
+ここで,Gi:i成
+分の物質量流量(mol/s),
+Fig. 2 Numerical analysis model of the steam reformer
+日本原子力学会和文論文誌,Vol. 
+5, No. 4 (2006)
+

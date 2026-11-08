@@ -1,0 +1,14 @@
+\section{Hydrogen-production result}
+The thermal calculation establishes that the proposed heat path is large enough at screening level; the next question is what hydrogen service that heat supports. The chemical-process model is not re-solved from first principles in this project. Instead, INL Case 6 supplies the source-model process result: 130 MMSCFD H$_2$, an 871$^\circ$C reformer outlet, steam/carbon ratio 3.0 and 88\% PSA hydrogen recovery~\cite{inltev953,inltev961}.
+
+The chemistry explains the sequence represented by that source model. Steam methane reforming converts methane and steam toward carbon monoxide and hydrogen,
+\[
+\mathrm{CH_4+H_2O\rightleftharpoons CO+3H_2},
+\]
+and the Water-Gas Shift reaction converts carbon monoxide and steam toward carbon dioxide and additional hydrogen,
+\[
+\mathrm{CO+H_2O\rightleftharpoons CO_2+H_2}.
+\]
+Carbon dioxide is then separated before Pressure Swing Adsorption (PSA) recovers hydrogen from the remaining gas. The reported 88\% value is \emph{hydrogen recovery}, not hydrogen purity.
+
+INL also reports an instantaneous hydrogen mass rate of approximately 29,000 lb/h for the common service~\cite{inltev953,inltev961}. Section~\ref{sec:ledgers} converts that source rate to annual production using the declared 85\% availability. This distinction matters: 130 MMSCFD and 29,000 lb/h are \textbf{source-model outputs}; approximately 97,946 t/y is the project's \textbf{derived annual result}.

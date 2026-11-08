@@ -1,0 +1,237 @@
+diff --git a/frontend/tour.js b/frontend/tour.js
+index 8fb6bba..7fe0f28 100644
+--- a/frontend/tour.js
++++ b/frontend/tour.js
+@@ -919,6 +919,7 @@ function armTimer() {
+   stepAnim.onfinish = () => {
+     if (!active) return;
+     if (idx < n() - 1) {
++      // An automatic step: the view stays where the reader left it.
+       go(idx + 1);
+     } else {
+       playing = false;
+@@ -929,7 +930,8 @@ function armTimer() {
+   if (!playing) stepAnim.pause();
+ }
+ 
+-// Room kept around a focused tour button, so its focus ring shows as well.
++// Room kept around the control and the card head when the tour scrolls them
++// into view, so a focus ring shows as well.
+ const RING_PX = 8;
+ 
+ /** The side column when it scrolls by itself, from 1200 px wide. */
+@@ -940,52 +942,73 @@ function sideScroller() {
+   return o === "auto" || o === "scroll" ? side : null;
+ }
+ 
+-/** How far a button could move down and still show whole, with its ring, in
+- * the window and in the side column that holds it; below zero when some of
+- * it is hidden now. */
+-function roomBelow(b) {
+-  const r = b.getBoundingClientRect();
+-  let lo = 0;
+-  let hi = window.innerHeight;
+-  const side = sideScroller();
+-  if (side && side.contains(b)) {
+-    const s = side.getBoundingClientRect();
+-    lo = Math.max(lo, s.top);
+-    hi = Math.min(hi, s.bottom);
+-  }
+-  if (r.top < lo + RING_PX - 1 || r.bottom > hi - RING_PX + 1) return -1;
+-  return window.innerHeight - RING_PX - r.bottom;
++/** The focused element when it sits in the card or the bar, else null. */
++function tourFocus() {
++  const a = document.activeElement;
++  return a && a !== document.body && (el.card.contains(a) || el.bar.contains(a)) ? a : null;
+ }
+ 
+-/** Keep the tour in view when the step changes. The side column goes back to
+- * its top, and when the card head sits above the window, the page scrolls up
+- * to it. A card below the window is left there, since the reader is then
+- * looking at the drawing.
+- *
+- * When the reader stepped with a button of the card or the bar, that button
+- * keeps focus and stays in view: the page scrolls up to the card head only as
+- * far as the button allows, and when the new card pushes the button out of
+- * the side column or the window, they scroll just far enough to show it. */
+-function keepCard() {
+-  const side = el.card.parentElement;
+-  if (side && side.scrollTop > 0) side.scrollTop = 0;
++/** How far a scroller that shows top..bottom moves its content up (down when
++ * negative), by the smallest scroll, so that the control shows whole with
++ * RING_PX of room, and the card head as well when the two fit there
++ * together. The head keeps the same room when it can and may otherwise touch
++ * the edge. Boxes are {top, bottom} in window coordinates; ctl is null when
++ * the reader used no control, and head is null when this scroller cannot
++ * bring it into view. */
++function shift(top, bottom, ctl, head) {
++  // The shifts that keep each box inside its range, as [least, most].
++  const keep = (b, room) => [b.bottom - (bottom - room), b.top - (top + room)];
++  const meet = (p, q) => [Math.max(p[0], q[0]), Math.min(p[1], q[1])];
++  const nearest = (r) => (r[0] > r[1] ? null : Math.min(Math.max(0, r[0]), r[1]));
++  const own = ctl ? keep(ctl, RING_PX) : [-Infinity, Infinity];
++  const solo = ctl ? (nearest(own) ?? own[1]) : 0;
++  if (!head) return solo;
++  const both = nearest(meet(own, keep(head, RING_PX))) ?? nearest(meet(own, keep(head, 0)));
++  if (both !== null) return both;
++  // They do not fit, so the control wins; with no control the head's top shows.
++  return ctl ? solo : head.top - top;
++}
++
++/** After a step change the reader asked for: keep the control they used in
++ * view with the smallest scroll, and bring the card head into view too when
++ * the head and that control fit in the window together. When they do not fit,
++ * the control wins. The side column, which holds the card from 1200 px wide,
++ * scrolls first, and then the page. */
++function reveal(ctl) {
+   const behavior = still ? "auto" : "smooth";
+-  const top = el.card.getBoundingClientRect().top;
+-  const a = document.activeElement;
+-  const btn = a && a.tagName === "BUTTON" && (el.card.contains(a) || el.bar.contains(a)) ? a : null;
+-  if (!btn) {
+-    if (top < 0) window.scrollBy({ top: top - 8, behavior });
+-    return;
+-  }
+-  const room = roomBelow(btn);
+-  if (room < 0) {
+-    btn.scrollIntoView({ block: "nearest", inline: "nearest", behavior });
+-  } else if (top < 0 && room > 0) {
+-    window.scrollBy({ top: -Math.min(8 - top, room), behavior });
++  const box = (e) => {
++    const r = e.getBoundingClientRect();
++    return { top: r.top, bottom: r.bottom };
++  };
++  const moved = (b, dy) => ({ top: b.top - dy, bottom: b.bottom - dy });
++  let c = ctl && ctl.isConnected ? box(ctl) : null;
++  let h = box(el.head || el.card);
++  const side = sideScroller();
++  if (side && side.contains(el.card)) {
++    const s = side.getBoundingClientRect();
++    const inSide = Boolean(c && side.contains(ctl));
++    const want = shift(s.top, s.bottom, inSide ? c : null, h);
++    const dy = Math.round(Math.max(-side.scrollTop, Math.min(side.scrollHeight - side.clientHeight - side.scrollTop, want)));
++    if (dy) {
++      side.scrollBy({ top: dy, behavior });
++      if (inSide) c = moved(c, dy);
++      h = moved(h, dy);
++    }
++    // A head the side column keeps hidden, because it does not fit there with
++    // the control, cannot be shown by scrolling the page.
++    if (h.top < s.top - 0.5 || h.bottom > s.bottom + 0.5) h = null;
+   }
++  const max = document.documentElement.scrollHeight - window.innerHeight;
++  const want = shift(0, window.innerHeight, c, h);
++  const dy = Math.round(Math.max(-window.scrollY, Math.min(max - window.scrollY, want)));
++  if (dy) window.scrollBy({ top: dy, behavior });
+ }
+ 
+-function go(i, first) {
++/** Show step i. A step the reader asks for passes reader true and the control
++ * they used, if any, and the view follows it through reveal(). Every other
++ * step change, by the timer or at Start, leaves the page and the side column
++ * where they are: it only redraws the step and announces it. */
++function go(i, reader = false, ctl = null) {
+   if (!active) return;
+   idx = Math.max(0, Math.min(n() - 1, i));
+   ended = false;
+@@ -1000,7 +1023,7 @@ function go(i, first) {
+   armTimer();
+   announce();
+   frame();
+-  if (!first) keepCard();
++  if (reader) reveal(ctl);
+ }
+ 
+ function pause() {
+@@ -1010,11 +1033,13 @@ function pause() {
+   updateBar();
+ }
+ 
+-function resume() {
++/** Play on; after the last step, Replay goes back to step 1 as a step the
++ * reader asked for, with ctl the control they used. */
++function resume(ctl) {
+   if (still) return;
+   if (ended) {
+     playing = true;
+-    go(0);
++    go(0, true, ctl);
+     return;
+   }
+   playing = true;
+@@ -1023,9 +1048,9 @@ function resume() {
+   updateBar();
+ }
+ 
+-function toggle() {
++function toggle(ctl = null) {
+   if (playing) pause();
+-  else resume();
++  else resume(ctl);
+ }
+ 
+ /** Start the tour. Options for the self test: reduced (force still steps),
+@@ -1050,7 +1075,7 @@ export function startTour(opts = {}) {
+   el.bar.classList.toggle("is-still", still);
+   el.track.style.setProperty("--n", String(n()));
+   keyHint();
+-  go(typeof opts.step === "number" ? opts.step : 0, true);
++  go(typeof opts.step === "number" ? opts.step : 0);
+   placeStart();
+   return true;
+ }
+@@ -1105,8 +1130,9 @@ export function exitTour(focusStart) {
+   if (focusStart) el.start.focus();
+ }
+ 
++/** Go to step i as the reader would, with the focused tour element as the control. */
+ export function goTour(i) {
+-  go(i);
++  go(i, true, tourFocus());
+ }
+ 
+ /** Re-render the numbers of the running step after a new reply. */
+@@ -1124,9 +1150,9 @@ function onBar(e) {
+   const b = e.target.closest("[data-act]");
+   if (!b || !active || b.getAttribute("aria-disabled") === "true") return;
+   const act = b.dataset.act;
+-  if (act === "prev") go(idx - 1);
+-  else if (act === "next") go(idx + 1);
+-  else if (act === "play") toggle();
++  if (act === "prev") go(idx - 1, true, b);
++  else if (act === "next") go(idx + 1, true, b);
++  else if (act === "play") toggle(b);
+   else if (act === "exit") exitTour(true);
+ }
+ 
+@@ -1136,17 +1162,19 @@ function onKey(e) {
+   const inDrawing = t && t.closest("[data-unit], [data-stream], .pfd-tip");
+   const formish = t && t.closest("input, select, textarea, [contenteditable=\"true\"]");
+   if (inDrawing || formish) return;
++  // With an arrow key the control is the focused element of the card or the
++  // bar, if focus is there.
+   if (e.key === "ArrowRight") {
+     e.preventDefault();
+-    go(idx + 1);
++    go(idx + 1, true, tourFocus());
+   } else if (e.key === "ArrowLeft") {
+     e.preventDefault();
+-    go(idx - 1);
++    go(idx - 1, true, tourFocus());
+   } else if (e.key === " " || e.key === "Spacebar") {
+     // A focused button or link keeps its own Space, as the key line says.
+     if (t && t.closest("button, a[href], summary")) return;
+     e.preventDefault();
+-    toggle();
++    toggle(tourFocus());
+   }
+ }
+ 
+@@ -1175,6 +1203,7 @@ export function initTour(a) {
+   el.note = document.getElementById("tour-start-note");
+   el.bar = document.getElementById("tour-bar");
+   el.card = document.getElementById("tour-card");
++  el.head = el.card ? el.card.querySelector(".tour-head") : null;
+   el.kicker = document.getElementById("tour-kicker");
+   el.title = document.getElementById("tour-title");
+   el.body = document.getElementById("tour-body");

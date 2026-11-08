@@ -1,0 +1,26 @@
+\section{Historical one-train availability and CCS sensitivity screens}
+\label{app:historical-sensitivity}
+These original Rust-generated one-train sensitivity figures and numerical screens are preserved as historical model-development evidence. Their absolute results are not validated two-train predictions. See Section~\ref{sec:sensitivity} for the current architecture's uncertainty interpretation.
+
+\subsection{Historical one-train sensitivity screens (not preferred two-train predictions)}
+The figures below belong to the earlier one-train final-design model. They are retained to document model behaviour and limitations, but their absolute thresholds, backup economics and availability curves must not be read as validated predictions for the preferred E2B two-train architecture. The controlling two-train FOAK/BOAK/10-OAK economic conclusions are reported in Section~\ref{sec:stage-economics}.
+
+\subsection{Sensitivity and robustness}
+The verified Rust sensitivities deliberately separate two different questions.  In the \emph{no-backup} curve, the x-variable is effective annual process availability and only throughput/emissions are interpreted: if all operating quantities scale linearly, the 0.25 MtCO$_2$e/y threshold is crossed at approximately \textbf{23.2\% effective process availability}.  This does not imply commercially acceptable availability, reliable hydrogen supply, realistic industrial operation or acceptable economics; no no-backup availability economics are reported because installed/fixed plant costs cannot defensibly be scaled with downtime from the available evidence.  At the canonical 85\% case the emissions result remains 0.917 MtCO$_2$e/y.  The separate gas-backup curve instead uses \emph{nuclear-source availability} while backup heat maintains the defined 85\% process-service hours.  At 50\% nuclear-source availability it gives approximately 0.778 MtCO$_2$e/y and S\$48.35/tCO$_2$e.  Backup capital, fixed O\&M, staffing, start-up and integration are excluded, so those economics are a lower-bound operating screen only.
+
+\begin{figure}[htbp]\centering
+\input{../results/final_design/generated/availability_abatement_figure.tex}
+\caption{Rust-generated availability robustness screen.  Solid curve: effective process availability with no backup, interpreted for throughput/emissions only.  Dotted curve: nuclear-source availability while gas backup maintains 85\% process-service hours.  The x-axis definitions therefore differ by series; neither curve is a PRA or plant-availability prediction.}
+\label{fig:availability-robustness}
+\end{figure}
+
+The CCS-delivery sensitivity is an emissions-only algebraic screen varying the fraction of the canonical captured stream that ultimately receives credited capture/storage treatment; the source process operating point is held fixed.  Within this restricted historical sensitivity, even the zero-storage endpoint still avoids approximately 0.388 MtCO$_2$e/y in this narrow model because nuclear heat reduces direct furnace emissions and upstream natural-gas burden.  This means the assignment's 0.25-Mt numerical threshold is not, by itself, proof that CCS is required.  It does \emph{not} mean CCS is unnecessary: direct candidate emissions rise to approximately 0.582 MtCO$_2$/y at that endpoint, and the sensitivity deliberately makes no claim about capture-unit CAPEX resizing, solvent/compression turndown, storage-outage economics or operability.
+
+\begin{figure}[htbp]\centering
+\input{../results/final_design/generated/ccs_robustness_figure.tex}
+\caption{Rust-generated emissions-only sensitivity to the fraction of the canonical captured CO$_2$ stream receiving credited storage treatment.  The source process is fixed; no capture-plant resizing or outage economics are inferred.}
+\label{fig:ccs-robustness}
+\end{figure}
+
+For the historical one-train model, these sensitivity screens illustrate which numerical thresholds were fragile.  The no-backup annual-abatement screen crosses 0.25 MtCO$_2$e/y at about 23.2\% effective availability.  Partial CCS is less critical to the assignment threshold than expected because nuclear heat alone displaces substantial natural-gas combustion, although CCS remains important to the proposed low-direct-emissions architecture.  These are screening robustness statements, not plant-reliability or capture-operability predictions.
+

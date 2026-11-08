@@ -1,0 +1,496 @@
+{
+  "schema": 1,
+  "about": "Static text for the unit panels of the interactive PFD: stream names, governing equations, literature sources and limitations. Live values come from the engine reply and validation rows from data/validation.json. Equation labels are those of the derivations (math/eq_register.csv). A source lists the sections of the project report that cite it; a source no report section cites says so, and a source not read at its origin is marked not verified.",
+  "caption": "Layout follows the project's Figure 2. The dashed line holds the reformer train, the MEA plant, the recycle compressor, the cryogenic unit, the CO₂ compressor and the ship to offshore storage. The PSA sits outside it as an external block with no simulation, and its reject crosses the line on the way back. Offshore storage is a tariff with no simulation. Stream tags are the stream ids of results/Integrated_Mass_Balance.csv, and a ring marks a stream that file lists as crossing the boundary; the feed, steam and condensate cross at their open ends. Lines tagged P, H, L, C or R have no row in that file, since the flowsheet treats them as inside a unit. The reformer block holds S04, the shift block S06 to S09A, the separator S09C, and the burner air COMBUSTION_O2 is not drawn. The drawing shows one helium circulator; the engine counts the secondary circulator too, in that panel. The recycle compressor and the cryogenic unit are drawn apart and modelled as one unit.",
+  "order": ["htgr", "circ_primary", "ihx", "power", "smr", "wgs", "syngas_cooler", "separator", "absorber", "lean_pump", "lean_cooler", "rich_lean_hx", "stripper", "reboiler", "condenser", "co2_compressor", "co2_storage", "psa", "recycle_compressor", "cryogenic"],
+  "refs": {
+    "TEV961": {"cite": "Idaho National Laboratory, TEV-961 Rev. 0 (2010), sensitivity of SMR hydrogen production to HTGR outlet temperature", "report": ["1.1", "1.2", "2.1", "2.2", "2.6", "4.5", "A"]},
+    "TEV953": {"cite": "Idaho National Laboratory, TEV-953 Rev. 0 (2010), HTGR-integrated SMR process analysis", "report": ["1.2", "2.6", "3.2", "A"]},
+    "IEAGHG17": {"cite": "IEAGHG Report 2017-02 (2017), SMR merchant hydrogen plant with CCS", "report": ["1.1", "2.3", "3.2", "4.1", "4.3", "4.6", "D"]},
+    "IEAGHG22": {"cite": "IEAGHG Report 2022-07 (2022), low-carbon hydrogen from natural gas", "report": ["2.3"]},
+    "ARONU": {"cite": "Aronu et al. (2011), CO₂ solubility in aqueous MEA with an extended UNIQUAC model", "report": ["2.3"]},
+    "VINJ24": {"cite": "Vinjarapu et al. (2024), MEA pilot campaign and its regeneration energy terms", "report": ["1.2"]},
+    "BRIGMAN": {"cite": "Brigman et al. (2014), MEA pilot results", "report": ["1.2"]},
+    "JAERI": {"cite": "Shimizu et al., JAERI-Tech 2005, heat exchangers of the HTTR full-scale reformer tube mock-up", "report": ["2.6"]},
+    "AHN": {"cite": "Ahn and Lee (2026), HTGR-integrated helium-heated and electrified SMR", "report": ["2.2", "4.5", "D"]},
+    "ERIA": {"cite": "ERIA (2024), Comprehensive CCUS Research Report, Fig. 2.13", "report": ["4.3", "D"]},
+    "SGID": {"cite": "Ministry of Trade and Industry, Singapore, memoranda with Indonesia on carbon capture and storage", "report": ["2.6", "2.7", "3.4"]},
+    "INL21537": {"cite": "Nelson et al., INL/EXT-11-21537 (2011), optimum reactor outlet temperatures for HTGR process heat", "report": []},
+    "INL11109": {"cite": "Harvego, INL/EXT-06-11109 (2006), NGNP intermediate heat exchanger operating conditions", "report": []},
+    "T1382": {"cite": "IAEA TECDOC-1382 (2003), benchmark analysis of HTTR and HTR-10 initial testing", "report": []},
+    "TE1236": {"cite": "IAEA TECDOC-1236 (2001), heat utilization systems for the HTTR", "report": []},
+    "PETERSEN": {"cite": "Petersen (1970), the properties of helium", "report": []},
+    "TOCHIO": {"cite": "Tochio and Nakagawa (2011), HTTR IHX thermal performance in continuous operation", "report": []},
+    "XF1": {"cite": "Xu and Froment (1989), methane steam reforming, I. Intrinsic kinetics", "report": []},
+    "XF2": {"cite": "Xu and Froment (1989), methane steam reforming, II. Diffusional limitations and reactor simulation", "report": []},
+    "ZHANG21": {"cite": "Zhang et al. (2021), SMR with an HTGR pebble-bed module, thermodynamic analysis", "report": []},
+    "HA": {"cite": "Hoseinzade and Adams (2017), integrated steam reforming and nuclear heat system", "report": []},
+    "CHINCHEN": {"cite": "Chinchen, Logan and Spencer (1984), water gas shift over iron oxide and chromium oxide", "report": []},
+    "IF97": {"cite": "IAPWS-IF97 industrial formulation for water and steam", "report": []},
+    "SONDERBY": {"cite": "Sønderby et al. (2013), pilot absorber for CO₂ capture with MEA", "report": []},
+    "KHAN": {"cite": "Khan et al., rate-based model of CO₂ absorption in MEA", "report": []},
+    "DICE": {"cite": "Nexant (2020), DICE combined cycle with 90 percent post-combustion capture, final report", "report": []},
+    "KWAK": {"cite": "Kwak et al. (2012), CO₂ capture pilot plant by amine absorption", "report": []},
+    "MORGAN": {"cite": "Morgan et al. (2018), steady-state validation of a solvent capture model with pilot data", "report": []},
+    "PLAZA": {"cite": "Plaza (2012), modelling CO₂ absorption in MEA, piperazine and potassium carbonate", "report": []},
+    "TEV981": {"cite": "Idaho National Laboratory, TEV-981, power conversion efficiency behind the TEV-961 note", "report": [], "unread": "TEV-981 is not held locally, so the 39.7% it supplies was not read at source"}
+  },
+  "streams": {
+    "P1": {"name": "Primary helium, reactor outlet to the IHX", "from": "htgr", "to": "ihx", "engine": false, "note": "The helium loops are outside the Level 3 flowsheet, so the stream table has no row for them; the HTGR and IHX panels give their temperatures and pressures"},
+    "P2": {"name": "Primary helium, IHX to the circulator", "from": "ihx", "to": "circ_primary", "engine": false, "note": "The helium loops are outside the Level 3 flowsheet, so the stream table has no row for them; the HTGR and IHX panels give their temperatures and pressures"},
+    "P3": {"name": "Primary helium, circulator to the reactor", "from": "circ_primary", "to": "htgr", "engine": false, "note": "The helium loops are outside the Level 3 flowsheet, so the stream table has no row for them; the HTGR and IHX panels give their temperatures and pressures"},
+    "P4": {"name": "Primary helium branch through the power block", "from": "htgr", "to": "power", "engine": false, "note": "The helium loops are outside the Level 3 flowsheet, so the stream table has no row for them; the HTGR and IHX panels give their temperatures and pressures"},
+    "H1": {"name": "Secondary helium supply to the reformer", "from": "ihx", "to": "smr", "engine": false, "note": "The helium loops are outside the Level 3 flowsheet, so the stream table has no row for them; the HTGR and IHX panels give their temperatures and pressures"},
+    "H2": {"name": "Secondary helium return to the IHX", "from": "smr", "to": "ihx", "engine": false, "note": "The helium loops are outside the Level 3 flowsheet, so the stream table has no row for them; the HTGR and IHX panels give their temperatures and pressures"},
+    "S01": {"name": "Fresh natural gas", "from_text": "the battery limit", "to": "smr"},
+    "S02": {"name": "Process steam", "from_text": "the steam system", "to": "smr"},
+    "S03": {"name": "Recycled methane-rich gas to the reformer feed", "from": "cryogenic", "to": "smr"},
+    "S05": {"name": "Raw syngas, reformer outlet", "from": "smr", "to": "wgs"},
+    "S09": {"name": "Shift outlet to the heat recovery chain", "from": "wgs", "to": "syngas_cooler"},
+    "S09B": {"name": "Cooled syngas to the knock-out drum", "from": "syngas_cooler", "to": "separator"},
+    "S10": {"name": "Process condensate", "from": "separator", "to_text": "water treatment"},
+    "S11": {"name": "Absorber feed", "from": "separator", "to": "absorber"},
+    "S12": {"name": "H₂-rich gas after capture, to the external PSA", "from": "absorber", "to": "psa"},
+    "S13": {"name": "Purified H₂ after the external PSA", "from": "psa", "to_text": "the product"},
+    "S14": {"name": "PSA reject crossing back into the boundary", "from": "psa", "to": "recycle_compressor"},
+    "R1": {"name": "Compressed reject to the cryogenic unit", "from": "recycle_compressor", "to": "cryogenic", "engine": false, "note": "The flowsheet treats the recycle compressor and the cryogenic unit as one unit, so the stream table has no row between them"},
+    "S15": {"name": "Nitrogen-rich cut to the burner and stack", "from": "cryogenic", "to_text": "the N₂-rich burner and stack"},
+    "S16": {"name": "Stack exhaust to the atmosphere", "from_text": "the N₂-rich burner and stack", "to_text": "the atmosphere"},
+    "S21": {"name": "Cryogenic H₂ return ahead of the PSA", "from": "cryogenic", "to": "psa", "drawn": "Drawn joining the S12 line, which carries it across the dashed boundary at the ring"},
+    "S17": {"name": "Rich solvent, absorber to the stripper", "from": "absorber", "to": "rich_lean_hx"},
+    "L3": {"name": "Rich amine, exchanger to the stripper", "from": "rich_lean_hx", "to": "stripper", "engine": false, "note": "The flowsheet carries the rich solvent as one stream, S17, from the absorber to the stripper"},
+    "L4": {"name": "Lean amine, stripper to the exchanger", "from": "stripper", "to": "rich_lean_hx", "engine": false, "note": "The flowsheet carries the lean solvent as one stream, S18, from the stripper to the absorber"},
+    "S18": {"name": "Lean solvent to the absorber through the cooler and pump", "from": "rich_lean_hx", "to": "absorber"},
+    "L5": {"name": "Stripper bottoms to the reboiler", "from": "stripper", "to": "reboiler", "engine": false, "note": "The reboiler loop sits inside the stripper model, so the stream table has no row for it"},
+    "L6": {"name": "Reboiler vapour return", "from": "reboiler", "to": "stripper", "engine": false, "note": "The reboiler loop sits inside the stripper model, so the stream table has no row for it"},
+    "C1": {"name": "Stripper overhead vapour to the condenser", "from": "stripper", "to": "condenser", "engine": false, "note": "The overhead condenser sits inside the stripper model, so the first CO₂ row of the stream table is S19 after it"},
+    "S19": {"name": "CO₂ from capture to the compressor", "from": "condenser", "to": "co2_compressor"},
+    "S20": {"name": "Compressed CO₂ to the ship and offshore storage", "from": "co2_compressor", "to": "co2_storage"}
+  },
+  "units": {
+    "htgr": {
+      "summary": "Generic helium-cooled reactor that supplies all process heat through the IHX, with a branch to the power block.",
+      "in": ["P3"],
+      "out": ["P1", "P4"],
+      "flags": ["T_HE_SUPPLY"],
+      "equations": [
+        {"label": "B.5", "title": "Reactor balance", "html": "<i>Q̇</i><sub>R</sub> − <i>Q̇</i><sub>ves</sub> = <i>ṁ</i><sub>p</sub> <i>c</i><sub>p</sub> (<i>T</i><sub>ROT</sub> − <i>T</i><sub>RI</sub>)"},
+        {"label": "B.20", "title": "Heat allocation", "html": "<i>Q̇</i><sub>R</sub> = <i>Q̇</i><sub>proc</sub> + <i>Q̇</i><sub>rec</sub> + <i>Q̇</i><sub>ihx</sub> + <i>Q̇</i><sub>duct</sub> + <i>Q̇</i><sub>ves</sub> + <i>Q̇</i><sub>br</sub> − <i>Ẇ</i><sub>s</sub> − <i>Ẇ</i><sub>p</sub>"},
+        {"label": "B.13", "title": "Vessel loss", "html": "<i>Q̇</i><sub>ves</sub> = 0.81 (<i>Q̇</i><sub>R</sub> / 30)<sup>2/3</sup> MW"},
+        {"label": "B.9", "title": "Primary flow need", "html": "<i>ṁ</i><sub>p</sub> = <i>Q̇</i><sub>R</sub> / [<i>c</i><sub>p</sub> (<i>T</i><sub>ROT</sub> − <i>T</i><sub>s,ret</sub> − Δ<i>T</i><sub>app</sub>)]"}
+      ],
+      "sources": [
+        {"ref": "TEV961", "locator": "Table 2 and its continuation, PDF pp17 to 18", "eq": ["B.8", "B.23"]},
+        {"ref": "T1382", "locator": "Table 3-21, PDF p164", "eq": ["B.13"]},
+        {"ref": "PETERSEN", "locator": "Eqs 3-19 and 4-4 to 4-6, printed p6", "eq": ["B.1", "B.2"]},
+        {"ref": "INL21537", "locator": "Table 2, PDF p16", "eq": ["B.22"]}
+      ],
+      "limitations": [
+        {"text": "The design basis is a generic {{units.htgr.conditions.ROT.value|0}}°C HTGR. No commercial reactor runs at this outlet, and Xe-100 is only a labelled analogue with a much lower outlet temperature."},
+        {"text": "The decay heat limit at this rating and outlet temperature is unchecked."},
+        {"text": "Heat beyond the process need is held as margin and earns no revenue."},
+        {"text": "The anchored port reports heat shortfall as grid import and has no unmet thermal demand field."}
+      ]
+    },
+    "circ_primary": {
+      "summary": "Helium circulators. Figure 2 draws the primary circulator; the engine counts the secondary circulator on the return leg as well.",
+      "in": ["P2", "H2"],
+      "out": ["P3"],
+      "flags": [],
+      "equations": [
+        {"label": "B.10", "title": "Compression work", "html": "<i>Ẇ</i> = <i>ṁ</i> <i>c</i><sub>p</sub> <i>T</i><sub>1</sub> [(1 + Δ<i>p</i>/<i>p</i>)<sup>(κ−1)/κ</sup> − 1] / <i>η</i><sub>is</sub>"},
+        {"label": "B.12", "title": "Electric draw", "html": "<i>E</i><sub>circ</sub> = (<i>Ẇ</i><sub>s</sub> + <i>Ẇ</i><sub>p</sub>) / <i>η</i><sub>m</sub>"},
+        {"label": "B.6", "title": "Circulator temperature rise", "html": "<i>T</i><sub>RI</sub> = <i>T</i><sub>h,out</sub> + <i>Ẇ</i><sub>p</sub> / (<i>ṁ</i><sub>p</sub> <i>c</i><sub>p</sub>)"}
+      ],
+      "sources": [
+        {"ref": "INL21537", "locator": "Table 2, PDF p16, isentropic efficiency", "eq": ["B.10"]},
+        {"ref": "INL11109", "locator": "PDF pp11 to 12, loop pressure drop budget", "eq": ["B.11"]},
+        {"ref": "TEV961", "locator": "A-55 and A-19, per-exchanger pressure drop labels", "eq": ["B.11"]}
+      ],
+      "limitations": [
+        {"text": "No measured circulator shaft power exists in the local sources."},
+        {"text": "Whether INL's power conversion efficiency is already net of primary circulation is unverified, so this load may be counted twice."},
+        {"text": "The secondary loop pressure drop is an assumption. INL's per-exchanger labels imply a larger drop, which would raise the circulator load."},
+        {"text": "The secondary circulator inlet sits above the circulator inlet temperatures run at HTTR."}
+      ]
+    },
+    "ihx": {
+      "summary": "Helium to helium exchanger between the primary loop and the secondary loop that heats the reformer.",
+      "in": ["P1", "H2"],
+      "out": ["P2", "H1"],
+      "flags": ["ihx_approach_k", "IHX_APPROACH_K", "T_HE_SUPPLY"],
+      "equations": [
+        {"label": "C.1", "title": "Hot side", "html": "<i>Q̇</i><sub>h</sub> = <i>ṁ</i><sub>p</sub> <i>c</i><sub>p</sub> (<i>T</i><sub>h,in</sub> − <i>T</i><sub>h,out</sub>)"},
+        {"label": "C.2", "title": "Cold side", "html": "<i>Q̇</i><sub>c</sub> = <i>ṁ</i><sub>s</sub> <i>c</i><sub>p</sub> (<i>T</i><sub>c,out</sub> − <i>T</i><sub>c,in</sub>)"},
+        {"label": "C.7", "title": "Log mean temperature difference", "html": "Δ<i>T</i><sub>lm</sub> = (Δ<i>T</i><sub>1</sub> − Δ<i>T</i><sub>2</sub>) / ln(Δ<i>T</i><sub>1</sub> / Δ<i>T</i><sub>2</sub>)"},
+        {"label": "B.15", "title": "IHX loss", "html": "<i>Q̇</i><sub>ihx</sub> = <i>f</i><sub>ihx</sub> (<i>Q̇</i><sub>proc</sub> + <i>Q̇</i><sub>rec</sub>)"}
+      ],
+      "sources": [
+        {"ref": "TEV961", "locator": "PDF p11 for the approach, PDF p18 note", "eq": ["C.17"]},
+        {"ref": "T1382", "locator": "Table 3-23, PDF p168, loss fraction", "eq": ["B.15"]},
+        {"ref": "TOCHIO", "locator": "Figs 8 and 10, PDF pp7 to 8, Table 2", "eq": ["C.14", "C.18"]},
+        {"ref": "INL21537", "locator": "Table 2, PDF p16, design constraints", "eq": ["C.18"]}
+      ],
+      "limitations": [
+        {"text": "The approach is a modelling assumption below every measured IHX approach in the local sources; the engine flag below gives the evidence range."},
+        {"text": "No IHX in the local sources has run at this secondary helium temperature."},
+        {"text": "The required conductance of a single unit is far above HTTR's, so the module count is open."},
+        {"text": "The anchored port has no IHX duty field; it computes only the loss terms around the IHX."}
+      ]
+    },
+    "power": {
+      "summary": "Small steam plant on a primary helium branch. It raises electricity for site loads and steam for the reboiler gap.",
+      "in": ["P4"],
+      "out": [],
+      "outputs_note": "Electricity to site loads; the branch helium rejoins the circulator line.",
+      "flags": [],
+      "equations": [
+        {"label": "B.18", "title": "Power branch", "html": "<i>E</i> = <i>η</i><sub>pc</sub> <i>Q̇</i><sub>pc</sub>"},
+        {"label": "B.19", "title": "Back-pressure extraction", "html": "<i>w</i> = min(<i>E</i>, <i>r</i><sub>w</sub> <i>Q̇</i><sub>gap</sub>),  <i>Q̇</i><sub>br</sub> = <i>Q̇</i><sub>gap</sub> + <i>w</i> + (<i>E</i> − <i>w</i>) / <i>η</i><sub>pc</sub>"},
+        {"label": "J.29", "title": "Fixed rating and grid import", "html": "<i>E</i><sub>imp</sub> = <i>E</i><sub>nuc</sub> − max(0, <i>Q̇</i><sub>rated</sub> − <i>Q̇</i><sub>heat</sub>) <i>η</i><sub>pc</sub>"}
+      ],
+      "sources": [
+        {"ref": "TEV961", "locator": "Table 2 continued, note 3, PDF p18", "eq": ["B.17"]},
+        {"ref": "TEV981", "locator": "source of the interpolated efficiency", "eq": ["B.17"]},
+        {"ref": "INL21537", "locator": "Table 4, PDF p20, the higher alternative efficiency", "eq": ["B.17"]},
+        {"ref": "IEAGHG17", "locator": "Case 1A back-pressure work ratio", "eq": ["B.19"]}
+      ],
+      "limitations": [
+        {"text": "The efficiency traces to TEV-981, which is not held locally, so whether it is net of circulation is unknown."},
+        {"text": "The block is a small steam plant with process extraction, sized by this balance with no equipment design."},
+        {"text": "Unmet electrical demand is reported as grid import at rating."}
+      ]
+    },
+    "smr": {
+      "summary": "Reformer tubes heated by secondary helium in place of fired furnaces.",
+      "in": ["S01", "S02", "S03", "H1"],
+      "out": ["S05", "H2"],
+      "flags": ["T_HE_SUPPLY"],
+      "equations": [
+        {"label": "J.14", "title": "Process heat, used by the Headline solve", "html": "<i>Q̇</i><sub>proc</sub> = 176.8 <i>s</i> MW, with <i>s</i> the scale from INL Case 6"},
+        {"label": "D.11", "title": "Exit equilibrium", "html": "<i>Q</i><sub>1</sub>(<i>x</i>) = <i>K</i><sub>1</sub>(<i>T</i>),  <i>Q</i><sub>2</sub>(<i>x</i>) = <i>K</i><sub>2</sub>(<i>T</i>) at the exit <i>T</i>, <i>p</i>"},
+        {"label": "D.7", "title": "Equilibrium constant of reaction I", "html": "<i>K</i><sub>1</sub>(<i>T</i>) = 1.198 × 10<sup>13</sup> exp(−26830 / <i>T</i>)"},
+        {"label": "D.16", "title": "Rate of reaction I, tube model", "html": "<i>r</i><sub>1</sub> = (<i>k</i><sub>1</sub> / <i>p</i><sub>H₂</sub><sup>2.5</sup>) (<i>p</i><sub>CH₄</sub> <i>p</i><sub>H₂O</sub> − <i>p</i><sub>H₂</sub><sup>3</sup> <i>p</i><sub>CO</sub> / <i>K</i><sub>1</sub>) / DEN<sup>2</sup>"},
+        {"label": "D.36", "title": "Hot-end approach", "html": "Δ<i>T</i><sub>hot</sub> = <i>T</i><sub>s,sup</sub> − <i>T</i><sub>ref,out</sub>"}
+      ],
+      "sources": [
+        {"ref": "TEV961", "locator": "Table 2, PDF p17, process heat; PDF p14, reformer exit", "eq": ["J.14", "D.36"]},
+        {"ref": "TEV953", "locator": "PDF p18, steam to carbon ratio and Gibbs conversion", "eq": ["D.5", "D.11"]},
+        {"ref": "XF1", "locator": "Eq 3, PDF p5; Tables 5 and 6, PDF p7", "eq": ["D.13", "D.16"]},
+        {"ref": "ZHANG21", "locator": "Table 1, PDF p5, converted to bar", "eq": ["D.7", "D.8"]},
+        {"ref": "JAERI", "locator": "Table 3.3, PDF p28, and sheets A-2 to A-5", "eq": ["D.27", "D.36"]},
+        {"ref": "HA", "locator": "Table 6, PDF p11, assumed tube geometry", "eq": ["D.35"]},
+        {"ref": "AHN", "locator": "Table 6, PDF p6, alternative heat basis", "eq": ["J.28"]}
+      ],
+      "limitations": [
+        {"tag": "Tube check", "text": "On the assumed tube (Hoseinzade and Adams geometry with the JAERI finned helium annulus) and helium supplied at {{units.smr.conditions.T_HE_SUPPLY.value|0}}°C, the tube model found no tube count in its search range that reaches the {{units.smr.conditions.SYNGAS_CHAIN_C5_HPS_GEN1_T_IN_C.value|0}}°C exit. The two lower exit temperatures of the reformer exit sensitivity, flowsheet runs FS_B_REC_F_T825 and FS_B_REC_F_T800, are reachable. The design exit therefore stays INL's equilibrium assumption, and the Headline solve does not use the tube model."},
+        {"tag": "JAERI benchmark", "text": "The A-2 run sets the single tuned catalyst activity, and the held-back runs miss the measured methane conversion.", "validation": ["JA-A-2-X", "JA-A-3-X", "JA-A-5-X"]},
+        {"text": "The Xu and Froment rates are extrapolated well above the temperature and pressure of their data."},
+        {"text": "Process heat is the total heat to the reformer train and includes preheat."},
+        {"text": "Ahn and Lee's heat basis gives a different duty that this model has not reconciled; the dashboard shows the surplus on both bases."},
+        {"tag": "Carbon gate", "text": "The Level 3 carbon comparison failed, so the gas feed term T13 stays on its anchored value.", "validation": ["FS_GATE_M7", "FS_T13_NG_FOR_CASE_B_H2"]},
+        {"text": "The equilibrium layer misses INL's printed conventional reformer conversion.", "validation": ["T953-2"]}
+      ]
+    },
+    "wgs": {
+      "summary": "High and low temperature shift beds in one drawn vessel.",
+      "in": ["S05"],
+      "out": ["S09"],
+      "flags": [],
+      "equations": [
+        {"label": "E.1", "title": "CO conversion", "html": "<i>X</i><sub>CO</sub> = (<i>F</i><sub>CO,in</sub> − <i>F</i><sub>CO,out</sub>) / <i>F</i><sub>CO,in</sub>"},
+        {"label": "E.4", "title": "Approach to equilibrium", "html": "<i>Q</i><sub>2</sub>(<i>T</i><sub>out</sub>) = <i>K</i><sub>2</sub>(<i>T</i><sub>out</sub> + Δ<i>T</i><sub>eq</sub>)"},
+        {"label": "E.6", "title": "Heat release", "html": "<i>Q̇</i><sub>WGS</sub> = <i>ξ</i> (−Δ<sub>r</sub><i>h</i><sub>2</sub>)"},
+        {"label": "J.6", "title": "Carbon split after the shift", "html": "<i>φ</i><sub>c</sub> = <i>F</i><sub>CO₂,abs</sub> / <i>T</i><sub>C</sub>"}
+      ],
+      "sources": [
+        {"ref": "TEV953", "locator": "PDF pp18 to 19, shift operating window", "eq": ["E.13", "E.14"]},
+        {"ref": "TEV961", "locator": "A-53, PDF p77; A-56, PDF p80", "eq": ["E.4", "E.12"]},
+        {"ref": "CHINCHEN", "locator": "Table 1, PDF p6, high temperature shift rate", "eq": ["E.7", "E.9"]},
+        {"ref": "IEAGHG17", "locator": "PDF p44, approach", "eq": ["E.4"]}
+      ],
+      "limitations": [
+        {"text": "No low temperature shift kinetics exist in the local sources; the approach comes from two flowsheets."},
+        {"text": "One vessel is drawn for two modelled beds."},
+        {"text": "At Chinchen's test space velocity the high temperature shift misses INL's outlet.", "validation": ["T961-5-GHSV-CO", "T961-5-GHSV-T"]},
+        {"tag": "Carbon gate", "text": "The Level 3 flowsheet gives a different carbon split from the anchored value, and the comparison failed.", "validation": ["FS_GATE_M7", "FS_CARBON_VS_ANCHOR_TUBE"]},
+        {"text": "The engine's shift heat release row is not run."}
+      ]
+    },
+    "syngas_cooler": {
+      "summary": "Heat recovery chain from the reformer exit down to the separator, drawn as one exchanger.",
+      "in": ["S09"],
+      "out": ["S09B"],
+      "outputs_note": "Raised steam and recovered heat leave as utilities and are not drawn.",
+      "flags": [],
+      "equations": [
+        {"label": "F.1", "title": "Sensible duty", "html": "<i>Q̇</i> = Σ<sub><i>i</i></sub> <i>F</i><sub><i>i</i></sub> [<i>h</i><sub><i>i</i></sub>(<i>T</i><sub>1</sub>) − <i>h</i><sub><i>i</i></sub>(<i>T</i><sub>2</sub>)]"},
+        {"label": "F.11", "title": "Heat above a minimum temperature", "html": "<i>Q̇</i>(<i>T</i><sub>min</sub>) = ∫ <i>Ċ</i> d<i>T</i> + <i>ṁ</i><sub>cond</sub> Δ<i>h</i><sub>vap</sub>"},
+        {"label": "J.17", "title": "Reboiler heat order", "html": "freed Selexol steam, export steam, syngas above 130°C, then reactor steam"}
+      ],
+      "sources": [
+        {"ref": "TEV961", "locator": "A-55 to A-59, PDF pp79 to 83; PDF p81 pinch", "eq": ["F.2", "J.30"]}
+      ],
+      "limitations": [
+        {"text": "INL Case 5 stands in for Case 6, whose stream sheets are not held locally."},
+        {"text": "No source gives the heat transfer coefficient or area of these exchangers."},
+        {"text": "Six exchangers are modelled and one is drawn."}
+      ]
+    },
+    "separator": {
+      "summary": "Knock-out drum that removes condensed water before the absorber.",
+      "in": ["S09B"],
+      "out": ["S10", "S11"],
+      "flags": [],
+      "equations": [
+        {"label": "F.7", "title": "Flash", "html": "Σ<sub><i>i</i></sub> <i>z</i><sub><i>i</i></sub> (<i>K</i><sub><i>i</i></sub> − 1) / [1 + <i>V</i> (<i>K</i><sub><i>i</i></sub> − 1)] = 0"},
+        {"label": "F.6", "title": "Dissolved CO₂", "html": "<i>x</i><sub>CO₂</sub> = <i>y</i><sub>CO₂</sub> <i>p</i> / <i>H</i><sub>CO₂</sub>"},
+        {"label": "F.10", "title": "Condensate split", "html": "<i>L</i> = <i>L</i><sub>ret</sub> + <i>L</i><sub>treat</sub>"}
+      ],
+      "sources": [
+        {"ref": "TEV961", "locator": "A-54 and A-59, PDF p78 and p83", "eq": ["F.10"]},
+        {"ref": "ARONU", "locator": "Eq 17, PDF p4", "eq": ["F.6"]},
+        {"ref": "IF97", "locator": "saturation pressure of water", "eq": ["F.4"]},
+        {"ref": "IEAGHG17", "locator": "PDF pp37 to 38", "eq": ["F.13"]}
+      ],
+      "limitations": [
+        {"text": "The Headline solve runs no flash; condensate flow comes only from the Level 3 flowsheet."},
+        {"text": "Condensate chemistry is absent."},
+        {"text": "CO₂ dissolved in the condensate sits outside the ledger."}
+      ]
+    },
+    "absorber": {
+      "summary": "Packed column where {{inputs.w_mea|0}} wt% MEA takes CO₂ out of the shifted syngas at pressure.",
+      "in": ["S11", "S18"],
+      "out": ["S12", "S17"],
+      "flags": [],
+      "equations": [
+        {"label": "H.27", "title": "Capture per pass", "html": "<i>η</i><sub>pp</sub> = (<i>y</i><sub>in</sub> <i>n</i><sub>in</sub> − <i>y</i><sub>out</sub> <i>n</i><sub>out</sub>) / (<i>y</i><sub>in</sub> <i>n</i><sub>in</sub>)"},
+        {"label": "H.28", "title": "Solvent rate", "html": "<i>ṁ</i><sub>solv</sub> = <i>ṅ</i><sub>CO₂</sub> <i>M</i><sub>MEA</sub> / [<i>w</i> (<i>α</i><sub>rich</sub> − <i>α</i><sub>lean</sub>)]"},
+        {"label": "G.19", "title": "CO₂ vapour liquid equilibrium", "html": "<i>φ</i><sub>CO₂</sub> <i>y</i><sub>CO₂</sub> <i>p</i> = <i>γ</i>*<sub>CO₂</sub> <i>x</i><sub>CO₂</sub> <i>H</i> exp[<i>v</i><sup>∞</sup>(<i>p</i> − <i>p</i><sub>s</sub>) / <i>RT</i>]"},
+        {"label": "G.12", "title": "Loading", "html": "<i>α</i> = total CO₂ / total MEA, mol/mol"}
+      ],
+      "sources": [
+        {"ref": "ARONU", "locator": "Eqs 10 to 17, PDF pp3 to 4; Table 2", "eq": ["G.19", "G.2"]},
+        {"ref": "SONDERBY", "locator": "Eqs 1 to 11, PDF pp3 to 4", "eq": ["H.14", "H.21"]},
+        {"ref": "KHAN", "locator": "Eqs 2, 4 and 8", "eq": ["H.5", "H.6", "H.9"]},
+        {"ref": "VINJ24", "locator": "Eq 20", "eq": ["H.27"]},
+        {"ref": "IEAGHG22", "locator": "solvent choice", "eq": []},
+        {"ref": "IEAGHG17", "locator": "solvent choice on shifted syngas", "eq": []}
+      ],
+      "limitations": [
+        {"tag": "Column benchmarks", "text": "The pilot absorber benchmark misses, and the high-pressure runs sit far below the measured removal. The column gate failed, so the Headline solve keeps the fixed per-pass capture and the column model runs only in the validation harness.", "validation": ["SA-1", "TAN-P1", "HA-3", "ABS-CASEB-SPEC"]},
+        {"text": "No pilot has run aqueous MEA on shifted syngas at this pressure."},
+        {"text": "No solubility data exist in MEA for H₂ or the other light gases, and solvent property data end near the rich loading cap of {{units.absorber.conditions.LOADING_RICH.value|2}} mol/mol."},
+        {"text": "The liquid to gas ratio is far above that of flue-gas pilots."},
+        {"text": "The literature on solvent choice is mixed, so Selexol and activated MDEA stay as sensitivities."}
+      ]
+    },
+    "lean_pump": {
+      "summary": "Raises lean solvent from stripper pressure to absorber pressure.",
+      "in": ["S18"],
+      "out": ["S18"],
+      "flags": [],
+      "equations": [
+        {"label": "J.20", "title": "Lean pump power", "html": "<i>E</i> = <i>ṁ</i><sub>solv</sub> (<i>p</i><sub>abs</sub> − <i>p</i><sub>strip</sub>) / (<i>ρ</i> <i>η</i><sub>pump</sub> <i>η</i><sub>m</sub>)"}
+      ],
+      "sources": [
+        {"ref": "TEV961", "locator": "A-53, PDF p77, absorber pressure", "eq": ["J.20"]},
+        {"ref": "PLAZA", "locator": "Eqs 3.16 and 3.17, solvent density", "eq": ["G.26"]}
+      ],
+      "limitations": [
+        {"text": "Pump and motor efficiencies are project assumptions, and no letdown recovery is credited."},
+        {"tag": "Column gate", "text": "The column benchmarks failed, so term T07 stays on its anchored value.", "validation": ["SA-1", "VI-3-SS2"]}
+      ]
+    },
+    "lean_cooler": {
+      "summary": "Trims lean solvent to absorber temperature with cooling water.",
+      "in": ["S18"],
+      "out": ["S18"],
+      "flags": [],
+      "equations": [
+        {"label": "J.21", "title": "Cooling electricity", "html": "<i>E</i> = <i>k</i><sub>cool</sub> <i>Q̇</i><sub>reb</sub>"},
+        {"label": "F.1", "title": "Sensible duty, not computed in the Headline solve", "html": "<i>Q̇</i> = <i>ṁ</i> <i>c</i><sub>p</sub> (<i>T</i><sub>in</sub> − <i>T</i><sub>out</sub>)"}
+      ],
+      "sources": [
+        {"ref": "DICE", "locator": "PDF p18, order of magnitude check", "eq": ["J.21"]}
+      ],
+      "limitations": [
+        {"text": "The cooling electricity factor is an assumption with no direct published ratio."},
+        {"text": "The anchored port scales the cooling load on the reboiler duty and computes no lean cooler duty."},
+        {"tag": "Column gate", "text": "The column benchmarks failed, so term T08 stays on its anchored value.", "validation": ["SA-1", "DICE-SRD"]}
+      ]
+    },
+    "rich_lean_hx": {
+      "summary": "Cross exchanger that heats rich solvent on its way to the stripper with hot lean solvent.",
+      "in": ["S17", "L4"],
+      "out": ["L3", "S18"],
+      "flags": [],
+      "equations": [
+        {"label": "I.10", "title": "Rich and lean balance", "html": "<i>ṁ</i><sub>r</sub> <i>c</i><sub>p</sub> (<i>T</i><sub>r,out</sub> − <i>T</i><sub>r,in</sub>) = <i>ṁ</i><sub>l</sub> <i>c</i><sub>p</sub> (<i>T</i><sub>l,in</sub> − <i>T</i><sub>l,out</sub>)"},
+        {"label": "I.1", "title": "CO₂ carried", "html": "<i>ṅ</i><sub>CO₂</sub> = <i>ṅ</i><sub>MEA</sub> (<i>α</i><sub>rich</sub> − <i>α</i><sub>lean</sub>)"}
+      ],
+      "sources": [
+        {"ref": "DICE", "locator": "exchanger approach", "eq": ["I.10"]},
+        {"ref": "PLAZA", "locator": "Fig 3.13, solvent heat capacity axis", "eq": ["G.25"]}
+      ],
+      "limitations": [
+        {"text": "Solvent heat capacity is assumed, since the local data are figures only."},
+        {"text": "The Headline solve folds this exchanger into the fixed specific reboiler duty and computes no duty for it."}
+      ]
+    },
+    "stripper": {
+      "summary": "Regenerates rich MEA near {{units.stripper.conditions.P_STRIPPER.value|1}} bar and releases the captured CO₂ overhead.",
+      "in": ["L3", "L6"],
+      "out": ["L4", "L5", "C1"],
+      "flags": [],
+      "equations": [
+        {"label": "I.12", "title": "Specific reboiler duty", "html": "SRD = <i>Q̇</i><sub>reb</sub> / <i>ṁ</i><sub>CO₂</sub>"},
+        {"label": "I.1", "title": "CO₂ balance", "html": "<i>ṅ</i><sub>CO₂</sub> = <i>ṅ</i><sub>MEA</sub> (<i>α</i><sub>rich</sub> − <i>α</i><sub>lean</sub>)"},
+        {"label": "I.8", "title": "Reflux", "html": "condensate returned = water in the overhead at <i>T</i><sub>cond</sub> − vent water"}
+      ],
+      "sources": [
+        {"ref": "VINJ24", "locator": "Eqs 19 and 23, PDF pp11 to 12", "eq": ["I.12", "I.8"]},
+        {"ref": "BRIGMAN", "locator": "pilot regeneration energy", "eq": ["I.14"]},
+        {"ref": "DICE", "locator": "PDF pp186 and 192", "eq": ["I.17"]},
+        {"ref": "KWAK", "locator": "pilot regeneration energy", "eq": []},
+        {"ref": "MORGAN", "locator": "Eq 1, PDF p5, stripper outlet temperature", "eq": []}
+      ],
+      "limitations": [
+        {"tag": "Column benchmarks", "text": "The stripper model misses the pilot rows it is judged on, and the DICE pre-FEED design SRD, which is itself a calculation and earns no measured-data credit. The column gate failed, so the Headline solve keeps the approved specific reboiler duty (decision S12 in docs/VALIDATION_MATRIX.md).", "validation": ["DICE-SRD", "KW-SRD", "MO-K16-TOUT", "VI-3-SS2", "VI-3-SS3"]},
+        {"text": "No measured specific reboiler duty exists for high-pressure syngas; the value is a judgement carried from flue-gas pilots, and the direction of its bias is unknown."}
+      ]
+    },
+    "reboiler": {
+      "summary": "Supplies stripping steam, drawing heat in a fixed order from recovered heat and then reactor steam.",
+      "in": ["L5"],
+      "out": ["L6"],
+      "flags": [],
+      "equations": [
+        {"label": "J.16", "title": "Reboiler duty", "html": "<i>Q̇</i><sub>reb</sub> = <i>ṁ</i><sub>CO₂</sub> SRD"},
+        {"label": "J.17", "title": "Heat stack", "html": "freed Selexol steam, export steam, syngas above 130°C, then reactor steam"},
+        {"label": "J.18", "title": "Reactor steam gap", "html": "<i>Q̇</i><sub>gap</sub> = max(0, <i>Q̇</i><sub>reb</sub> − <i>Q̇</i><sub>stack</sub>)"}
+      ],
+      "sources": [
+        {"ref": "TEV961", "locator": "A-56, PDF p80; Table 2, PDF p17; PDF p81 pinch", "eq": ["J.17", "J.30"]},
+        {"ref": "VINJ24", "locator": "Eq 19, PDF p11", "eq": ["I.12"]},
+        {"ref": "DICE", "locator": "PDF p192, source temperature", "eq": ["I.17"]}
+      ],
+      "limitations": [
+        {"text": "Syngas near the bottom of its recovery range cannot drive this reboiler directly."},
+        {"text": "All export steam is forfeited at this duty."},
+        {"text": "The freed Selexol steam credit exists only against INL's flowsheet."},
+        {"text": "The specific reboiler duty is fixed because the column gate failed.", "validation": ["DICE-SRD", "KW-SRD"]}
+      ]
+    },
+    "condenser": {
+      "summary": "Cools the stripper overhead, returns reflux and passes the captured CO₂ on.",
+      "in": ["C1"],
+      "out": ["S19"],
+      "outputs_note": "Reflux returns to the stripper and is not drawn.",
+      "flags": [],
+      "equations": [
+        {"label": "I.7", "title": "Condenser duty", "html": "<i>Q̇</i><sub>cond</sub> = <i>Q̇</i><sub>H₂O</sub> + <i>Q̇</i><sub>steam</sub> + <i>Q̇</i><sub>CO₂</sub>"},
+        {"label": "I.8", "title": "Reflux", "html": "condensate returned = water in the overhead at <i>T</i><sub>cond</sub> − vent water"}
+      ],
+      "sources": [
+        {"ref": "VINJ24", "locator": "Eqs 23 and 24, PDF pp12 to 13", "eq": ["I.7", "I.8"]}
+      ],
+      "limitations": [
+        {"text": "H₂ carried into the product CO₂ without a rich flash is a scoping estimate."},
+        {"text": "The Headline solve folds the condenser into the fixed specific reboiler duty and computes no duty for it."}
+      ]
+    },
+    "co2_compressor": {
+      "summary": "Compresses captured CO₂ for the ship and offshore storage.",
+      "in": ["S19"],
+      "out": ["S20"],
+      "flags": [],
+      "equations": [
+        {"label": "J.22", "title": "Compression electricity, scaled from INL", "html": "<i>E</i> = 6.4 <i>C</i> / <i>C</i><sub>6</sub> MWe"}
+      ],
+      "sources": [
+        {"ref": "TEV961", "locator": "Table 2, PDF p17; A-53", "eq": ["J.22"]},
+        {"ref": "DICE", "locator": "compression load, scope not compared", "eq": []}
+      ],
+      "limitations": [
+        {"text": "DICE gives a higher compression load, and the two scopes were not compared."},
+        {"text": "INL's outlet is a pipeline condition; conditioning for the ship is not modelled."},
+        {"tag": "Carbon gate", "text": "The Level 3 carbon comparison failed, so term T09 stays on its anchored value.", "validation": ["FS_GATE_M7", "FS_CARBON_VS_ANCHOR_CAPTURED"]}
+      ]
+    },
+    "co2_storage": {
+      "summary": "Ship transport to offshore storage abroad, inside the dashed line as Figure 2 draws it.",
+      "in": ["S20"],
+      "out": [],
+      "outputs_note": "None in the model: storage ends the CO₂ path.",
+      "flags": [],
+      "equations": [
+        {"label": "L.15", "title": "Transport and storage charge", "html": "<i>C</i><sub>TS</sub> = <i>p</i><sub>TS</sub> <i>E</i><sub>cap</sub>"},
+        {"label": "K.7", "title": "Captured mass", "html": "<i>E</i><sub>cap</sub> = <i>C</i> <i>M</i><sub>CO₂</sub> <i>t</i><sub>h</sub>"}
+      ],
+      "sources": [
+        {"ref": "IEAGHG17", "locator": "transport and storage cost", "eq": ["L.15"]},
+        {"ref": "ERIA", "locator": "Fig. 2.13", "eq": ["L.15"]},
+        {"ref": "SGID", "locator": "cross-border storage arrangement", "eq": []}
+      ],
+      "limitations": [
+        {"text": "Storage is a tariff only, with no simulation."},
+        {"text": "How offshore storage abroad counts as abatement is unresolved."}
+      ]
+    },
+    "psa": {
+      "summary": "Pressure swing adsorption, an external block outside the dashed line.",
+      "in": ["S12", "S21"],
+      "out": ["S13", "S14"],
+      "flags": [],
+      "equations": [
+        {"label": "J.12", "title": "PSA block, unsimulated", "html": "<i>F</i><sub>H₂,prod</sub> = <i>ξ</i><sub>PSA</sub> <i>F</i><sub>H₂,in</sub>"}
+      ],
+      "sources": [
+        {"ref": "TEV953", "locator": "PDF p19 and p21", "eq": ["J.12"]},
+        {"ref": "TEV961", "locator": "A-53", "eq": ["J.12"]}
+      ],
+      "limitations": [
+        {"text": "The PSA is not simulated; recovery is assumed from INL and product purity is INL's."},
+        {"text": "The reject return is a boundary stream, by project decision."}
+      ]
+    },
+    "recycle_compressor": {
+      "summary": "Compresses the PSA reject that crosses back into the boundary for the cryogenic unit.",
+      "in": ["S14"],
+      "out": ["R1"],
+      "flags": [],
+      "equations": [
+        {"label": "J.23", "title": "Recycle and nitrogen removal electricity", "html": "<i>E</i><sub>pur</sub> = 5.7 <i>s</i> (1 + Δ<i>F</i><sub>slip</sub> / 1473) MWe"}
+      ],
+      "sources": [
+        {"ref": "TEV961", "locator": "Table 2, PDF p17, purge recovery; A-16 and A-18, PDF p40 and p42", "eq": ["J.23", "J.10"]}
+      ],
+      "limitations": [
+        {"text": "INL's row covers Case 6 fuel-gas recycle and nitrogen removal equipment together, and the split is not published."},
+        {"text": "No published cost exists for this train; the ledger line is a proxy."}
+      ]
+    },
+    "cryogenic": {
+      "summary": "Returns a CH₄-rich recycle to the reformer feed and H₂ to the PSA feed. The N₂-rich cut goes to the stack.",
+      "in": ["R1"],
+      "out": ["S03", "S21", "S15"],
+      "flags": [],
+      "equations": [
+        {"label": "J.10", "title": "Tail gas fates", "html": "<i>G</i> = <i>T</i><sub>C</sub> − <i>C</i> − <i>P</i>;  recycled <i>f</i><sub>r</sub> <i>G</i>;  burned (1 − <i>f</i><sub>r</sub>) <i>G</i>"},
+        {"label": "J.8", "title": "Tube carbon", "html": "<i>T</i><sub>C</sub> = (<i>F</i><sub>C</sub> − <i>f</i><sub>r</sub> <i>P</i>) / [1 − <i>f</i><sub>r</sub> (1 − <i>η</i><sub>pp</sub> <i>φ</i><sub>c</sub>)]"},
+        {"label": "J.7", "title": "INL recycle fraction", "html": "<i>f</i><sub>r</sub> = (<i>T</i><sub>6</sub> − <i>F</i><sub>C</sub>) / <i>G</i><sub>6</sub>"}
+      ],
+      "sources": [
+        {"ref": "TEV961", "locator": "A-16 and A-18, PDF p40 and p42; Table 2 and A-53", "eq": ["J.7", "J.10"]},
+        {"ref": "TEV953", "locator": "A-40, carbon closure", "eq": ["J.11"]}
+      ],
+      "limitations": [
+        {"tag": "Carbon gate", "text": "The Level 3 flowsheet and the anchored ledger disagree on the carbon split after the shift, four carbon lines miss (tube, tail gas, recycled, burned), and term T04 stays on its anchored value.", "validation": ["FS_GATE_M7", "FS_CARBON_VS_ANCHOR_TAIL_GAS", "FS_CARBON_VS_ANCHOR_RECYCLED", "FS_CARBON_VS_ANCHOR_BURNED"]},
+        {"text": "CO₂ slip into this unit is about ten times INL's, and freeze-out and reverse shift are unquantified, so INL's recycle may not transfer to MEA."},
+        {"text": "The burned N₂-rich cut leaves to the atmosphere and is counted in the emissions."}
+      ]
+    }
+  }
+}

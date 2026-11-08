@@ -1,0 +1,2331 @@
+HTGR_SMR_MEA_CCS_Research_Local\1-s2.0-S175058361630843X-main.pdf
+=====
+--- PDF p.1 ---
+International
+ Journal
+ of
+ Greenhouse
+ Gas
+ Control
+ 56
+ (2017)
+ 173–186
+Contents
+ lists
+ available
+ at
+ ScienceDirect
+International
+ Journal
+ of
+ Greenhouse
+ Gas
+ Control
+j ourna
+ l
+ h
+ o
+ mepage:
+ www.elsevier.com/locate/ijggc
+Pressure
+ modiﬁcation
+ index
+ based
+ on
+ hydrodynamics
+ and
+ mass
+transfer
+ effects
+ for
+ modeling
+ of
+ CO2 removal
+ from
+ natural
+ gas
+ via
+absorption
+ at
+ high
+ pressures
+F. Isa a, H.
+ Zabiri a,∗, M.
+ Ramasamy a, L.D.
+ Tufa a, A.M.
+ Shariff a, S.F.
+ Saleh b
+a Chemical
+ Engineering
+ Department,
+ Universiti
+ Teknologi
+ PETRONAS,
+ 32610
+ Bandar
+ Seri
+ Iskandar,
+ Perak,
+ Malaysia
+b Faculty
+ of
+ Engineering,
+ Universiti
+ Malaysia
+ Sarawak
+ (UNIMAS),
+ Jalan
+ Meranti,
+ 94300
+ Kota
+ Samarahan,
+ Sarawak,
+ Malaysia
+a
+ r
+ t
+ i c l e 
+i n
+ f o
+Article
+ history:
+Received
+ 11
+ April
+ 2016
+Received
+ in
+ revised
+ form
+13
+ September
+ 2016
+Accepted
+ 16
+ November
+ 2016
+Available
+ online
+ 1
+ December
+ 2016
+Keywords:
+CO2 absorption
+MEA
+High
+ pressure
+Natural
+ gas
+Pressure
+ modiﬁcation
+ index
+a
+ b
+ s t r
+ a c t
+In this paper,
+ experimental
+ works
+ involving
+ high
+ concentration
+ CO2 removal
+ at elevated pressures
+ are
+conducted
+ using a high pressure
+ CO2 pilot plant
+ and the result
+ is used
+ to validate
+ a simulation
+ model
+based
+ on established
+ models
+ in the literature.
+ A rate based non-equilibrium
+ model
+ using 20 wt%
+ aque-
+ous
+ monoethanolamine
+ (MEA)
+ is developed
+ based on the work
+ of Pandya
+ (1983).
+ The model considers
+reaction
+ kinetics,
+ mass transfer rate and heat transfer. Since
+ the condition
+ of CO2 removal at atmospheric
+and
+ high pressure
+ are different, a pressure modiﬁcation
+ index
+ is proposed
+ and incorporated
+ in the mass
+transfer
+ ﬂux equation
+ to account for the non-idealities.
+ Comparative
+ study
+ involving
+ the modiﬁed
+ model
+with
+ index-f, original
+ rate-based
+ non-equilibrium
+ model,
+ Aspen Plus
+ equilibrium
+ and non-equilibrium
+models
+ has also been carried out for the CO2 loading
+ at the top column
+ exit of 1.505 m. It is found
+ that
+ the
+introduction
+ of the proposed
+ pressure
+ modiﬁcation
+ index together
+ with proper selection
+ of mass
+ transfer
+and
+ effective interfacial
+ area correlations
+ results
+ in an improvement
+ in the average
+ error from more than
+100%
+ to as low as 18% between
+ the estimated
+ and the pilot plant data.
+©
+ 2016 Elsevier
+ Ltd.
+ All rights
+ reserved.
+1.
+ Introduction
+In
+ Malaysia,
+ CO2 content
+ in
+ natural
+ gas
+ ﬁelds
+ varies
+ from
+ 28%
+ to
+87%,
+ and
+ over
+ 13
+ trillion
+ cubic
+ feet
+ natural
+ gas
+ reserves
+ are
+ unde-
+veloped
+ due
+ to
+ high
+ CO2 content
+ (Tan
+ et
+ al.,
+ 2012).
+ CO2 must
+ be
+removed
+ from
+ natural
+ gas
+ because
+ in
+ the
+ presence
+ of
+ water
+ this
+impurity
+ can
+ form
+ acids
+ that
+ corrode
+ pipelines
+ and
+ other
+ equip-
+ment.
+ Furthermore,
+ CO2 provides
+ no
+ heating
+ value
+ and
+ must
+ be
+removed
+ to
+ meet
+ gas
+ quality
+ speciﬁcations
+ before
+ distribution
+ to
+gas
+ users.
+ The
+ maximum
+ level
+ of
+ CO2 permitted
+ in
+ natural
+ gas
+ trans-
+mitted
+ to
+ customers
+ by
+ pipeline
+ is
+ typically
+ less
+ than
+ 3%
+ (Rufford
+et
+ al.,
+ 2012).
+ The
+ speciﬁcations
+ of
+ CO2 removal
+ from
+ natural
+ gas
+ to
+be
+ processed
+ in
+ a
+ cryogenic
+ plant
+ to
+ produce
+ LNG,
+ recover
+ liqueﬁed
+petroleum
+ gas
+ (LPG)
+ or
+ natural
+ gas
+ liquids
+ (NGL)
+ are
+ more
+ stringent
+than
+ those
+ for
+ typical
+ gas
+ pipelines.
+Natural
+ gas
+ reserves
+ have
+ high
+ ﬂowing
+ pressure
+ at
+ the
+ well
+head
+ that
+ come
+ from
+ the
+ reservoir
+ at
+ a
+ pressure
+ more
+ than
+ 200
+ bar
+(Addicks
+ et
+ al.,
+ 2002) which
+ is
+ reduced
+ to
+ within
+ 70–100
+ bar
+ for
+subsequent
+ operation
+ at
+ offshore
+ platform
+ (Tan
+ et
+ al.,
+ 2012).
+ In
+∗Corresponding
+ author.
+E-mail
+ addresses:
+ haslindazabiri@utp.edu.my, zhaslinda@yahoo.com
+ (H.
+ Zabiri).
+order
+ to
+ open
+ up
+ the
+ possibility
+ of
+ exploring
+ high
+ CO2 natural
+ gas
+reserves
+ at
+ reasonable
+ cost,
+ processing
+ the
+ natural
+ gas
+ at
+ offshore
+platform
+ becomes
+ a
+ necessity,
+ and
+ hence
+ operating
+ packed
+ col-
+umn
+ at
+ high
+ pressures
+ are
+ very
+ crucial.
+ It
+ should
+ be
+ noted
+ that
+ at
+high
+ pressures,
+ some
+ of
+ the
+ experimental
+ studies
+ used
+ sterically
+hindered
+ type
+ of
+ amines
+ such
+ as
+ 2-amino-2-methyl-1-propanol
+(AMP)
+ (Afkhamipour
+ and
+ Mofarahi,
+ 2014)
+ towards
+ improving
+ the
+absorption
+ selectivity
+ while
+ the
+ new
+ technology
+ embarks
+ on
+ using
+membrane
+ as
+ a
+ physical
+ separator
+ (Víctor
+ et
+ al.,
+ 2007).
+ Neverthe-
+less,
+ monoethanolamine
+ (MEA)
+ has
+ been
+ established
+ for
+ a
+ long
+ time
+and
+ any
+ thriving
+ effort
+ toward
+ its
+ optimum
+ usage
+ will
+ lead
+ to
+ con-
+siderable
+ improvement
+ (Godini
+ and
+ Mowla,
+ 2008).
+ It
+ is
+ widely
+ used
+due
+ to
+ its
+ high
+ reactivity
+ with
+ CO2 and
+ low
+ solvent
+ cost
+ (Tan
+ et
+ al.,
+2012;
+ Mandal
+ et
+ al.,
+ 2001;
+ Aroonwilas
+ et
+ al.,
+ 2003).
+Table
+ 1
+ shows
+ some
+ of
+ the
+ experimental
+ works
+ that
+ have
+been
+ conducted
+ at
+ high
+ pressure
+ and
+ the
+ inﬂuence
+ of
+ mass
+ trans-
+fer
+ towards
+ the
+ efﬁciency
+ of
+ CO2 removal.
+ For
+ elevated
+ pressure
+absorption
+ system,
+ water
+ was
+ formerly
+ used
+ but
+ due
+ to
+ its
+ low
+ CO2
+removal
+ efﬁciency
+ and
+ very
+ high
+ pumping
+ cost
+ (Kohl
+ and
+ Nielsen,
+1997),
+ a
+ more
+ efﬁcient
+ system
+ using
+ chemical
+ solvent
+ is
+ preferred
+and
+ the
+ most
+ popular
+ solvent
+ used
+ is
+ mono-ethanolamine
+ (MEA)
+in
+ range
+ of
+ 10–30
+ wt%
+ (Aroonwilas
+ and
+ Tontiwachwuthikul,
+ 1997).
+http://dx.doi.org/10.1016/j.ijggc.2016.11.024
+1750-5836/©
+ 2016
+ Elsevier
+ Ltd.
+ All
+ rights
+ reserved.
+
+--- PDF p.2 ---
+174
+ 
+F.
+ Isa
+ et
+ al.
+ / International
+ Journal
+ of
+ Greenhouse
+ Gas
+ Control
+ 56
+ (2017)
+ 173–186
+Nomenclature
+a
+ 
+Packing
+ speciﬁc
+ surface
+ area
+ (1/m)
+ae
+Effective
+ speciﬁc
+ interfacial
+ area
+ (1/m)
+aeBRF
+Effective
+ speciﬁc
+ interfacial
+ area
+ from
+ Bravo,
+ Rocha,
+&
+ Fair
+ (1/m)
+c 
+Concentration
+ of
+ component
+ (mol/m3)
+CE
+Correction
+ factor
+ CE =
+ 0.9
+Cp
+Heat
+ capacity
+ (J/mol
+ K)
+Ch
+Packing
+ speciﬁc
+ constant,
+ 0.554
+deq
+Channel
+ equivalent
+ diameter
+ (m)
+dh/s
+Hydraulic
+ diameter
+ of
+ column
+ (m)
+DL/G
+Diffusivity
+ of
+ phase
+ (m2/s)
+E
+ 
+Enhancement
+ factor
+FSE
+Factor
+ for
+ surface
+ enhancement
+f
+ 
+Fugacity
+ (bar)
+f 
+Fraction
+ of
+ cell
+ occupied/pressure
+ modiﬁed
+ index
+g
+ 
+Gravitational
+ acceleration
+ (m/s2)
+G
+ 
+Superﬁcial
+ mass
+ velocity
+ of
+ gas
+ (mol/m2 s)
+H
+ 
+Solubility
+ coefﬁcient/Henry’s
+ constant
+ (mol/m3 bar)
+HV/L
+Liquid/gas
+ enthalpy
+ (J/mol)
+hV/L
+j
+The
+ heat
+ transfer
+ coefﬁcient
+ in
+ liquid/vapor
+ phase
+at
+ stage
+ j
+ (kJ/m2s K)
+hL
+Liquid
+ hold
+ up
+ (m3/m3)
+i
+ 
+Number
+ of
+ components/interphase
+j
+ 
+Number
+ of
+ stages
+k’L
+Thermal
+ conductivity
+ (J/h
+ m
+ K)
+k2
+Second
+ order
+ rate
+ constant
+ (l/mol)
+kL/G
+Gas/liquid
+ mass
+ transfer
+ coefﬁcient
+ (mol/s
+ bar
+ m2)
+L
+ 
+Superﬁcial
+ mass
+ velocity
+ of
+ liquid
+ (mol/m2 s)
+Lp
+Wetted
+ perimeter
+ in
+ cross
+ sectional
+ slice
+ of
+ packing
+(m)
+Lj/Vj
+Total
+ liquid/vapor
+ leaving
+ the
+ stage
+ (kmol/s)
+N/R
+ 
+Rate
+ of
+ absorption/area
+ (kmol/m2s)
+NL
+ij
+Net
+ gain
+ of
+ component
+ i into
+ liquid
+ (kmol/s)
+NV
+ij
+Net
+ loss
+ of
+ component
+ i from
+ vapor
+ phase
+ (kmol/s)
+P
+ 
+Pressure
+ (bar)
+p 
+Partial
+ pressure
+ (bar)
+q’L/G
+Flux
+ of
+ heat
+ transfer
+ (J/s
+ m2)
+Q
+ 
+Volumetric
+ ﬂow
+ rate
+ (m3/s)
+Qj
+The
+ net
+ loss
+ of
+ energy
+ from
+ the
+ section
+ of
+ j (kJ/s)
+R
+ 
+Universal
+ gas
+ constant
+ (J/mol/K)
+S
+ 
+Side
+ dimension
+ of
+ corrugation
+ (m)
+SR
+Relative
+ stability
+ index
+t 
+Contact
+ time
+ (s)
+T 
+Temperature
+ (K)
+UL/G
+Velocity
+ of
+ phase
+ (m/s)
+Vl
+Molar
+ volume
+ of
+ a
+ liquid
+ (m3)
+w
+ 
+Mass
+ of
+ amine
+ (wt%)
+xij/yij
+Liquid/gas
+ mole
+ fraction
+ for
+ species
+ i
+ at
+ stage
+ j
+Y
+ 
+Component
+ gas/carrier
+ gas
+ (mol/mol)
+Z
+ 
+Height
+ of
+ column
+ (m)
+Dimensionless
+ number
+WeL
+Weber
+ number
+ of
+ liquid
+ phase
+FrL
+Froude
+ number
+ of
+ liquid
+ phase
+PrG/L
+Prandtl
+ number
+ of
+ gas/liquid
+ phase
+ReL/G
+Reynolds
+ number
+ for
+ liquid
+ or
+ gas
+ phase
+ScL/G
+Schmidt
+ number
+Greek
+ symbols
+ 
+Density
+ (kg/m3)
+
+ 
+CO2 loading
+ in
+ lean
+ and
+ rich
+ solvent
+ (mol
+ CO2/mol
+MEA)
+c
+Critical
+ surface
+ tension
+ of
+ packing
+ material
+ (kg/h2)
+L
+Surface
+ tension
+ of
+ liquid
+ (kg/h2)
+
+ 
+Void
+ fraction
+ of
+ packing
+εL
+j
+Net
+ gain
+ of
+ energy
+ (kJ/s)
+εV
+j
+Net
+ loss
+ of
+ energy
+ (kJ/s)
+
+ 
+Dynamic
+ viscosity
+ (kg
+ m/s)
+
+ 
+Kinematic
+ viscosity
+ (m2/s)
+
+ 
+Surface
+ tension,
+ N/m
+	
+ 
+Decay
+ rate
+ of
+ the
+ stretched
+ exponential
+ used
+
+ 
+Corrugation
+ channel
+ (degree)
+
+ 
+3.1416
+
+ 
+Absolute
+ efﬁciency
+rel
+Relative
+ efﬁciency
+
+ 
+Fugacity
+ coefﬁcient
+
+ 
+Activity
+ coefﬁcient/contact
+ angle
+
+ 
+Chemical
+ potential
+Various
+ studies
+ have
+ been
+ conducted
+ to
+ understand
+ mass
+ trans-
+fer
+ and
+ hydrodynamics
+ behavior
+ of
+ gas-liquid
+ absorption
+ systems
+at
+ elevated
+ pressures
+ (Maalej
+ et
+ al.,
+ 2003;
+ Benadda
+ et
+ al.,
+ 2000,
+1996;
+ Zhang
+ et
+ al.,
+ 2003;
+ Oyevaar
+ et
+ al.,
+ 1991).
+ An
+ experimental
+study
+ by
+ Heintz
+ et
+ al.
+ (2008)
+ reported
+ the
+ effect
+ of
+ pressures
+ in
+the
+ range
+ of
+ 6–30
+ bar
+ at
+ various
+ temperatures,
+ mixing
+ speeds
+ and
+liquid
+ heights
+ on
+ the
+ equilibrium
+ solubility,
+ hydrodynamics
+ and
+mass.
+ It
+ was
+ found
+ that
+ increasing
+ the
+ pressure
+ will
+ enhance
+ the
+liquid
+ side
+ mass
+ transfer
+ coefﬁcient
+ (kLae),
+ and
+ gas
+ liquid
+ interfacial
+area
+ (ae) appeared
+ to
+ be
+ controlling
+ this
+ behavior.
+ The
+ study
+ also
+revealed
+ that
+ increasing
+ pressure
+ results
+ in
+ the
+ formation
+ of
+ small
+gas
+ bubbles
+ with
+ large
+ gas-liquid
+ interfacial
+ area.
+ Effect
+ of
+ pressure
+on
+ kLae is
+ also
+ discussed
+ by
+ Kojima
+ et
+ al.
+ (1997). The
+ liquid
+ side
+mass
+ transfer
+ coefﬁcient
+ and
+ gas
+ liquid
+ interfacial
+ area
+ increase
+ as
+pressure
+ increases
+ and
+ become
+ more
+ signiﬁcant
+ at
+ higher
+ super-
+ﬁcial
+ gas
+ velocities.
+ The
+ ﬁndings
+ reported
+ in
+ Maalej
+ et
+ al.
+ (2003)
+and
+ Benadda
+ et
+ al.
+ (1996)
+ indicated
+ that
+ pressure
+ will
+ inﬂuence
+both
+ the
+ effective
+ interfacial
+ area
+ and
+ the
+ volumetric
+ liquid
+ side
+mass
+ transfer
+ coefﬁcient.
+ While
+ majority
+ of
+ the
+ studies
+ revealed
+ the
+independence
+ of
+ kL towards
+ pressure,
+ the
+ same
+ does
+ not
+ apply
+ for
+volumetric
+ liquid
+ side
+ mass
+ transfer
+ coefﬁcient
+ and
+ interfacial
+ area.
+The
+ inﬂuence
+ of
+ pressure
+ on
+ liquid
+ side
+ mass
+ transfer
+ coefﬁcient
+and
+ gas
+ liquid
+ interfacial
+ area
+ is
+ pronounced,
+ however
+ the
+ results
+for
+ both
+ these
+ parameters
+ are
+ sometimes
+ contradictory,
+ i.e.
+ either
+decrease
+ or
+ increase
+ with
+ pressure
+ (Maalej
+ et
+ al.,
+ 2003;
+ Benadda
+et
+ al.,
+ 1996).
+ It
+ is
+ noted
+ in
+ Maalej
+ et
+ al.
+ (2003)
+ that
+ for
+ a
+ given
+ gas
+mass
+ ﬂow
+ rate,
+ ae and
+ kLae decrease
+ with
+ high
+ pressures
+ due
+ to
+ the
+reduced
+ gas
+ superﬁcial
+ velocity
+ as
+ density
+ increases.
+ However,
+ for
+a
+ given
+ gas
+ superﬁcial
+ velocity,
+ ae and
+ kLae increase
+ with
+ pressure
+due
+ to
+ the
+ dispersion
+ enhancement
+ within
+ the
+ unit
+ caused
+ by
+ gas
+mass
+ ﬂow
+ rate
+ augmentation
+ at
+ high
+ pressure.
+Though
+ a
+ number
+ of
+ experimental
+ works
+ has
+ been
+ reported,
+ lim-
+ited
+ study
+ has
+ been
+ carried
+ out
+ for
+ modeling
+ of
+ CO2 removal
+ at
+ high
+pressures
+ based
+ on
+ hydrodynamics
+ and
+ mass
+ transfer.
+ As
+ shown
+ in
+Table
+ 2, a
+ determination
+ of
+ high-pressure
+ modiﬁcation
+ factor
+ via
+experimental
+ data
+ has
+ been
+ presented
+ in
+ Zhang
+ et
+ al.
+ (2003). They
+introduced
+ an
+ index-f
+ that
+ represents
+ the
+ inﬂuence
+ of
+ high
+ pres-
+sure
+ on
+ hydrodynamics
+ and
+ mass
+ transfer.
+ It
+ is
+ reported
+ that
+ there
+is
+ a
+ signiﬁcant
+ effect
+ of
+ high
+ pressure
+ on
+ mass
+ transfer
+ whereby
+the
+ interfacial
+ area
+ increases
+ as
+ pressure
+ increases
+ up
+ to
+ 13
+ bar.
+Using
+ an
+ absorption
+ column
+ of
+ a
+ fertilizer
+ plant
+ with
+ a
+ height
+ of
+11
+ m,
+ Zhang
+ et
+ al.
+ (2003)
+ has
+ shown
+ that
+ their
+ pressure
+ modiﬁcation
+
+--- PDF p.3 ---
+F.
+ Isa
+ et
+ al.
+ / International
+ Journal
+ of
+ Greenhouse
+ Gas
+ Control
+ 56
+ (2017)
+ 173–186
+ 
+175
+Table
+ 1
+Overview
+ on
+ experimental
+ studies
+ of
+ CO2 absorption
+ at
+ elevated
+ pressure.
+Pressure
+ (bar)
+ 
+Media
+ of
+ absorption
+ 
+Findings
+ 
+References
+1–50
+ 
+NaOH/Na2CO3-NaHCO3
+• The
+ effect
+ of
+ high
+ pressure
+ on
+ the
+mass
+ transfer
+ rate
+ and
+ interfacial
+area
+ is
+ only
+ pronounced
+ for
+operating
+ pressures
+ up
+ to
+ 20
+ bar.
+•
+ Liquid
+ mass
+ transfer
+ coefﬁcient
+ and
+effective
+ interfacial
+ area
+ decrease
+ as
+pressure
+ increases
+ to
+ 50
+ bar.
+Maalej
+ et
+ al.
+ (2003)
+2–6.25
+MDEA-Piperazine
+ (PZ)
+ 
+• Successfully
+ designed
+ the
+complexity
+ index
+ to
+ relate
+ the
+ effect
+of
+ high
+ pressure
+ to
+ the
+ rate
+ of
+ CO2
+absorption.
+Zhang
+ et
+ al.
+ (2003)
+100–200
+Water
+ &
+ MDEA
+•
+ Presented
+ a
+ new
+ data
+ for
+ high
+pressure
+ system
+ and
+ comparing
+ the
+inﬂuence
+ of
+ pressure
+ with
+ fugacity
+Addicks
+ et
+ al.
+ (2002)
+70
+ 
+Enhanced
+ Amine
+ Solvent
+(Stonvent)
+•
+ Increased
+ solubility
+ of
+ CO2 at
+ high
+pressures
+ with
+ new
+ solvents
+ but
+ the
+performance
+ is
+ slightly
+ lower
+ than
+MEA.
+Tan
+ et
+ al.
+ (2011)
+1–13
+Na2CO3-NaHCO3
+• Effective
+ interfacial
+ area
+ increases
+ as
+pressure
+ increases.
+Benadda
+ et
+ al.
+ (2000)
+6–30
+ 
+Perﬂuorinated
+ compound
+ 
+• Found
+ that
+ interfacial
+ area
+ and
+ mass
+transfer
+ coefﬁcient,
+ kLae increase
+ as
+pressure
+ increases
+ to
+ 17
+ bar.
+•
+ Increasing
+ pressure
+ results
+ in
+ the
+formation
+ of
+ bubble
+ that
+ increases
+the
+ interfacial
+ area
+ but
+ bubble
+diameter
+ is
+ decreased
+ slightly
+ as
+pressure
+ goes
+ beyond
+ 17
+ bar.
+Heintz
+ et
+ al.
+ (2008)
+Table
+ 2
+Overview
+ for
+ modeling
+ studies
+ of
+ CO2 absorption
+ at
+ elevated
+ pressure.
+Reference
+ 
+Findings
+Wang
+ et
+ al.
+ (2006)
+Design
+ correlation
+ for
+ effective
+ interfacial
+ area
+up
+ to
+ 27
+ bar
+ but
+ not
+ for
+ CO2 removal
+ system.
+Zhang
+ et
+ al.
+ (2003)
+ 
+Derived
+ pressure
+ modiﬁcation
+ index
+ based
+ on
+hydrodynamics
+ and
+ mass
+ transfer
+experimentally
+ but
+ pressure
+ range
+ is
+ very
+small
+ (2–7.6
+ bar)
+ and
+ limited
+ to
+ MDEA
+ based
+system
+Escobillana
+ et
+ al.
+ (1991)
+ 
+The
+ value
+ of
+ effective
+ interfacial
+ area
+ is
+ simply
+reduced
+ by
+ 50%
+ to
+ ﬁt
+ the
+ model
+ with
+experimental
+ data.
+Tan
+ et
+ al.
+ (2016)
+ 
+Model
+ performs
+ well
+ for
+ P
+ <
+ 30
+ bar.
+Emphasized
+ the
+ need
+ for
+ correction
+ factor
+ for
+ae for
+ P
+ >
+ 30
+ bar,
+ however
+ the
+ correction
+ value
+used
+ is
+ not
+ presented
+ and
+ discussed.
+index-f is
+ able
+ to
+ reduce
+ the
+ error
+ in
+ the
+ estimated
+ column
+ height
+from
+ 78%
+ to
+ 6.3%.
+ The
+ study
+ however
+ is
+ limited
+ to
+ a
+ small
+ pressure
+range
+ of
+ 2–7
+ bar
+ only
+ and
+ utilized
+ MDEA
+ as
+ the
+ solvent.
+ Wang
+ et
+ al.
+(2006)
+ proposed
+ a
+ new
+ effective
+ interfacial
+ area
+ for
+ high
+ pressures
+system
+ however
+ it
+ is
+ applicable
+ only
+ up
+ to
+ 27
+ bar.
+ Moreover
+ it
+ is
+ not
+speciﬁcally
+ designed
+ for
+ CO2 removal
+ process.
+ Modeling
+ using
+ rate
+based
+ non
+ equilibrium
+ approach
+ for
+ CO2 removal
+ has
+ also
+ been
+ car-
+ried
+ out
+ by
+ Escobillana
+ et
+ al.
+ (1991)
+ and
+ Tan
+ et
+ al.
+ (2016). However,
+in
+ Escobillana
+ et
+ al.
+ (1991), the
+ value
+ of
+ effective
+ interfacial
+ area,
+ae is
+ simply
+ adjusted
+ by
+ 50%
+ to
+ ﬁt
+ their
+ model
+ with
+ experimental
+data.
+ On
+ the
+ other
+ hand,
+ the
+ model
+ presented
+ in
+ Tan
+ et
+ al.
+ (2016)
+performs
+ very
+ well
+ for
+ pressure
+ up
+ to
+ 30
+ bar
+ utilizing
+ the
+ correla-
+tion
+ developed
+ by
+ Wang
+ et
+ al.
+ (2006). They
+ emphasized
+ the
+ need
+for
+ correction
+ factor
+ for
+ CO2 removal
+ at
+ pressures
+ beyond
+ 30
+ bar,
+however
+ the
+ correction
+ value
+ used
+ is
+ not
+ presented
+ and
+ discussed.
+All
+ the
+ previous
+ works
+ cited
+ so
+ far
+ signify
+ the
+ needs
+ to
+ prop-
+erly
+ account
+ for
+ the
+ high
+ pressure
+ on
+ hydrodynamics
+ and
+ mass
+transfer
+ in
+ modeling
+ the
+ absorption
+ system
+ for
+ CO2 removal.
+ The
+review
+ unfolds
+ the
+ signiﬁcance
+ of
+ the
+ inﬂuence
+ of
+ pressure
+ on
+ mass
+transfer
+ parameters,
+ namely
+ interfacial
+ area
+ and
+ mass
+ transfer
+ coef-
+ﬁcients.
+ However,
+ the
+ review
+ on
+ the
+ current
+ works
+ related
+ to
+ this
+aspect
+ revealed
+ a
+ few
+ shortcomings.
+ Though
+ various
+ experimental
+studies
+ have
+ been
+ carried
+ out
+ to
+ analyze
+ the
+ effect
+ of
+ pressure
+ on
+ the
+mass
+ transfer
+ parameters,
+ very
+ limited
+ modeling
+ works
+ have
+ been
+reported
+ that
+ accounts
+ for
+ mass
+ transfer
+ related
+ correction
+ factor.
+This
+ creates
+ a
+ bottleneck
+ for
+ performance
+ analysis
+ and
+ selection
+ of
+suitable
+ experimental
+ techniques
+ and
+ models
+ for
+ certain
+ upscale
+studies.
+ With
+ the
+ exception
+ of
+ the
+ works
+ by
+ Wang
+ et
+ al.
+ (2006)
+ and
+Gualito
+ et
+ al.
+ (1997), majority
+ of
+ interfacial
+ area
+ correlations,
+ how-
+ever,
+ are
+ developed
+ at
+ atmospheric
+ pressure,
+ and
+ this
+ may
+ lead
+ to
+substantial
+ miscalculations
+ (Oyevaar
+ et
+ al.,
+ 1991).
+ In
+ the
+ case
+ where
+pressure
+ modiﬁcation
+ index
+ is
+ introduced
+ to
+ account
+ for
+ this
+ effect
+on
+ their
+ absorption
+ kinetics
+ model,
+ the
+ study
+ is
+ either
+ limited
+ to
+medium
+ pressure
+ only,
+ limited
+ for
+ MDEA
+ based
+ system
+ alone
+ or
+ the
+interfacial
+ area
+ value
+ is
+ simply
+ adjusted
+ to
+ suit
+ their
+ data
+ without
+proper
+ justiﬁcation
+ (Tan
+ et
+ al.,
+ 2016;
+ Oyevaar
+ et
+ al.,
+ 1991;
+ Wang
+et
+ al.,
+ 2006).
+ Based
+ on
+ these
+ gaps,
+ the
+ outstanding
+ problems
+ this
+paper
+ attempt
+ to
+ address
+ are:
+a)
+ The
+ need
+ to
+ develop
+ and
+ evaluate
+ a
+ pressure
+ modiﬁcation
+ index
+to
+ account
+ for
+ the
+ non-idealities
+ introduced
+ by
+ elevated
+ pres-
+sures
+ in
+ an
+ MEA-based
+ CO2 absorption
+ system
+ experimentally.
+b)
+ The
+ need
+ to
+ develop
+ and
+ evaluate
+ a
+ rate-based
+ non-equilibrium
+model
+ based
+ on
+ the
+ pressure
+ modiﬁcation
+ index
+ that
+ can
+ reduce
+the
+ prediction
+ error.
+In
+ this
+ paper,
+ the
+ idea
+ of
+ Zhang
+ et
+ al.
+ (2003)
+ is
+ utilized
+ to
+ derive
+a
+ pressure
+ modiﬁcation
+ index
+ for
+ CO2 removal
+ from
+ natural
+ using
+

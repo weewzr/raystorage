@@ -1,0 +1,23 @@
+[375x812_m] Tab presses to the start button: 10, focus #tour-start; start note: 13 steps, from fission heat to the hydrogen and CO₂ ends, about 1.5 minutes.
+[375x812_m] after Enter: active True, playing True, still False, reducedOS False, play hidden False, focus #tour-title [661, 684, 31, 344] in view True, kicker [640, 659, 31, 344], title [661, 684, 31, 344], vh 812
+[375x812_m] key line: With focus off the drawing, the Left and Right arrow keys change the step, and Space pauses or plays except on a button or a link, where it keeps its usual action. Escape leaves the tour.
+[375x812_m] Space on #tour-title: playing False
+[375x812_m] step  1 fission   playing False focus #tour-title [661, 684, 31, 344] in view True; kicker [640, 659, 31, 344], card next [1481, 1519, 132, 202], running 0, flows 0, page width 375/375
+[375x812_m] step  2 primary   playing False focus #tour-title [661, 684, 31, 344] in view True; kicker [640, 659, 31, 344], card next [1262, 1300, 132, 202], running 0, flows 3, page width 375/375
+[375x812_m] step  3 secondary playing False focus #tour-title [661, 708, 31, 344] in view True; kicker [640, 659, 31, 344], card next [1365, 1403, 132, 202], running 0, flows 2, page width 375/375
+[375x812_m] step  4 feed      playing False focus #tour-title [661, 708, 31, 344] in view True; kicker [640, 659, 31, 344], card next [1379, 1417, 132, 202], running 0, flows 2, page width 375/375
+[375x812_m] step  5 shift     playing False focus #tour-title [661, 684, 31, 344] in view True; kicker [640, 659, 31, 344], card next [1263, 1301, 132, 202], running 0, flows 1, page width 375/375
+[375x812_m] step  6 cooling   playing False focus #tour-title [661, 684, 31, 344] in view True; kicker [640, 659, 31, 344], card next [1227, 1265, 132, 202], running 0, flows 4, page width 375/375
+[375x812_m] step  7 absorber  playing False focus #tour-title [661, 684, 31, 344] in view True; kicker [640, 659, 31, 344], card next [1202, 1240, 132, 202], running 0, flows 3, page width 375/375
+[375x812_m]   Tab path: ['card button[prev]', 'card button[next]']
+[375x812_m]   Tab to the card Next: 2 press(es), focus button[next]
+[375x812_m] step  8 psa       playing False focus card button[next] [616, 654, 132, 202] in view True; kicker [21, 40, 31, 344], card next [616, 654, 132, 202], running 0, flows 2, page width 375/375
+[375x812_m] step  9 reject    playing False focus card button[next] [736, 774, 132, 202] in view True; kicker [21, 40, 31, 344], card next [736, 774, 132, 202], running 0, flows 8, page width 375/375
+[375x812_m] step 10 stripper  playing False focus card button[next] [654, 692, 132, 202] in view True; kicker [21, 40, 31, 344], card next [654, 692, 132, 202], running 0, flows 6, page width 375/375
+[375x812_m] step 11 co2       playing False focus card button[next] [766, 804, 132, 202] in view True; kicker [-93, -74, 31, 344], card next [766, 804, 132, 202], running 0, flows 3, page width 375/375
+[375x812_m] step 12 power     playing False focus card button[next] [695, 733, 132, 202] in view True; kicker [21, 40, 31, 344], card next [695, 733, 132, 202], running 0, flows 2, page width 375/375
+[375x812_m] step 13 closing   playing False focus card button[next] [766, 804, 132, 202] in view True; kicker [-16, 3, 31, 344], card next [766, 804, 132, 202], running 0, flows 30, page width 375/375
+[375x812_m] at the last step: step 13, Next aria-disabled ['true', 'true'], ended False, playing False
+[375x812_m] Enter on a disabled Next: step 13, focus button[next]
+[375x812_m] Escape: active False, focus #tour-start in view True, live 'The process tour is closed.', running 0
+[375x812_m] errors [], network [], hosts ['http://127.0.0.1:58435']

@@ -1,0 +1,1027 @@
+
+=====PDFPAGE 1=====
+Comparative techno-economic and environmental assessment of 
+HTGR-integrated hydrogen production via helium-heated and electrified 
+steam methane reforming
+Soo-min Ahn a
+, Chul-Jin Lee a,b,*
+a Department of Chemical Engineering, Chung-Ang University, 84 Heukseok-ro, Dongjak-gu, Seoul, Republic of Korea
+b Department of Intelligent Energy Industry, Chung-Ang University, 84 Heukseok-ro, Dongjak-gu, Seoul, Republic of Korea
+A R T I C L E I N F O
+Keywords:
+High temperature gas-cooled reactor
+Helium-heated steam methane reforming
+Electrified steam methane reforming
+A B S T R A C T
+Two HTGR-integrated hydrogen-production pathways based on steam methane reforming—helium-heated SMR 
+(h-SMR) and electrified SMR (e-SMR)—are proposed. The former directly supplies HTGR heat to the reformer 
+through helium, whereas the latter converts HTGR heat into electricity. Aspen Plus evaluates these systems 
+against conventional and electrolysis-based benchmarks. Elimination of the fired furnace reduces natural gas 
+consumption by 18.8% for h-SMR and 23.3% for e-SMR relative to gray hydrogen. Levelized cost of hydrogen is 
+estimated at $2.37/kg for h-SMR and $2.99/kg for e-SMR, indicating cost competitiveness relative to the 
+benchmarked pink and green hydrogen pathways under the assumed conditions. Furthermore, life-cycle as­
+sessments reveal net global warming potentials of 3.5 and 3.18 kgCO2/kgH2 for h-SMR and e-SMR, a reduction of 
+>70% relative to gray hydrogen. Sensitivity analysis confirms the economic robustness of the h-SMR pathway 
+across market scenarios. HTGR-integrated SMR processes offer a practical and cost-effective transition pathway 
+for large-scale hydrogen production.
+Nomenclature
+SMR
+Steam methane reforming
+h-SMR
+Helium-heated steam methane reforming
+e-SMR
+Electrified steam methane reforming
+HTGR
+High temperature gas-cooled reactor
+PSA
+Pressure swing adsorption
+WGS
+Water-gas shift
+S/C
+Steam-to-carbon
+ALK
+Alkaline electrolyzer
+PEM
+Proton exchange membrane electrolyzer
+SOEC
+Solid oxide electrolyzer cell
+TEA
+Techno-economic analysis
+CAPEX
+Capital expenditure
+OPEX
+Operating expenditure
+LCA
+Life cycle assessment
+LCOH
+Levelized cost of hydrogen
+GWP
+Global warming potential
+1. Introduction
+Achieving net-zero pathways commonly requires decarbonization 
+strategies that combine various renewable electricity sources, such as 
+wind and solar energy, with dispatchable low-carbon options, including 
+nuclear generation and fossil-based systems equipped with carbon 
+capture and storage (CCS) [1]. In this context, nuclear energy is an 
+attractive low-carbon option because it can supply electricity and 
+high-grade heat continuously and stably on a large scale, enabling 
+centralized substitution for fossil-based energy inputs [2]. Many fossil 
+fuel-based hydrogen production routes, such as reforming and gasifi­
+cation, are strongly endothermic, and a significant fraction of plant-wide 
+CO2 emissions originate from the combustion of additional fuels 
+required to supply process heat. Therefore, replacing this heat input 
+with non-carbon energy sources presents a direct opportunity to reduce 
+CO2 emissions while conserving fossil fuels [3].
+In this context, small modular reactors are of particular interest 
+because their modular deployment and enhanced safety characteristics 
+can enable more flexible operation than conventional large reactors, 
+including the ability to vary thermal and electrical outputs through 
+* Corresponding author. Department of Chemical Engineering, Chung-Ang University, 84 Heukseok-ro, Dongjak-gu, Seoul, Republic of Korea
+E-mail address: cjlee@cau.ac.kr (C.-J. Lee). 
+Contents lists available at ScienceDirect
+International Journal of Hydrogen Energy
+journal homepage: www.elsevier.com/locate/he
+https://doi.org/10.1016/j.ijhydene.2026.155890
+Received 14 April 2026; Received in revised form 31 May 2026; Accepted 2 June 2026  
+International Journal of Hydrogen Energy 247 (2026) 155890 
+Available online 5 June 2026 
+0360-3199/© 2026 Hydrogen Energy Publications LLC. Published by Elsevier Ltd. All rights are reserved, including those for text and data mining, AI training, and 
+similar technologies. 
+
+=====PDFPAGE 2=====
+power ramping and cogeneration [2]. Among small modular reactor 
+designs, high-temperature gas-cooled reactor (HTGR) concepts are 
+frequently highlighted due to their inherent safety features and high 
+outlet temperatures reaching ~950 ◦C [4], thereby supporting efficient 
+electricity generation and the delivery of high-grade process heat to 
+chemical and petroleum applications [5]. Although alternative 
+nuclear-driven hydrogen pathways—including thermolysis, thermo­
+chemical cycles, radiolysis, and photolysis—have been proposed, tech­
+nological and economic limitations have hindered their near-term, 
+large-scale deployment [6]. Consequently, HTGR-integrated steam 
+methane reforming (SMR) is widely considered a promising near-term 
+scalable route for low-carbon hydrogen production [7].
+Helium-heated steam methane reforming (h-SMR) has been pro­
+posed as a nuclear-assisted route for reducing the carbon intensity of 
+conventional hydrogen production by directly supplying high- 
+temperature heat to the reformer [8]. In Japan, the technical feasi­
+bility of HTGR–SMR integration has been experimentally examined 
+using a large-scale mockup facility [9]. Additionally, the Japan Atomic 
+Energy Agency (JAEA) is conducting a project to integrate an SMR with 
+the 30 MWt High Temperature Engineering Test Reactor (HTTR), which 
+supplies process heat at temperatures ranging from 750 to 800 ◦C. This 
+system is expected to reduce methane consumption by 35% compared 
+with the conventional route [10], with a demonstrated hydrogen pro­
+duction capacity exceeding 800 Nm3/h [11]. Furthermore, the HTTR 
+has achieved a reactor-outlet coolant temperature of 950 ◦C, enabling 
+HTGR usage beyond electricity generation by providing high-grade heat 
+suitable for advanced power cycles and hydrogen production [12]. In 
+the United States, techno-economic evaluations performed by the Idaho 
+National Laboratory have similarly suggested that HTGR-integrated 
+SMR can reduce natural gas consumption by 11.6% and CO2 emissions 
+by up to 38.6% when CCS is implemented [13]. Beyond such 
+system-level assessments, reactor-scale studies have advanced the 
+design of helium-heated reformers. For instance, Wu et al. developed a 
+one-dimensional reaction–flow model for an HTGR-heated reformer 
+tube and validated it against experimental results [14]. Later, they 
+further extended this framework to a membrane reformer to quantify the 
+effect of selective H2 removal on methane conversion and hydrogen 
+yield [15]. Additionally, Mozdzierz et al. employed numerical analysis 
+to examine the operating configuration of a helium-heated reformer and 
+discuss a parallel-flow scheme for alleviating excessive temperature 
+gradients and the associated thermal stress risks. Helium heating has 
+also been explored for other endothermic catalytic processes [16]. For 
+example, Zhang et al. performed a non-dominated sorting genetic 
+algorithm-based multi-objective optimization of an industrial-scale 
+helium-heated reverse water-gas shift reactor using a two-dimensional 
+pseudo-homogeneous model [17].
+Electrified steam methane reforming (e-SMR) is driven by the limi­
+tations of conventional fired reforming in which heat must be supplied 
+externally, resulting in inefficient reactor heat transfer and substantial 
+methane fuel consumption [18]. Resistive heating, also known as Ohmic 
+or Joule heating, is a specific implementation of electrification that in­
+volves passing an electrical current through a conductive reactor to 
+directly generate high-temperature heat [19]. Wismann et al. demon­
+strated this concept using Ni-based catalyst-coated FeCrAl alloy tubes 
+with Cu sockets at the tube ends to deliver electrical power for Ohmic 
+heating [20]. This direct resistive heating scheme is associated with 
+highly uniform heat delivery near the catalyst layer. Specifically, the 
+predicted temperature difference across the catalytic coating is report­
+edly <2 ◦C, supporting stable operation under strongly endothermic 
+conditions [21]. Such integrated electrified SMR concepts enable 
+compact reactor configurations and rapid start-up responses, as heat is 
+supplied directly by electricity rather than by an externally fired furnace 
+[22]. Significantly, scaling analysis indicated that a conventional 
+1100 m3 side-fired reformer producing 2230 kmol H2/h could be 
+replaced by a 5 m3 resistance-heated reformer, demonstrating the 
+effectiveness of this technology for modular scale applications [23].
+Despite these advances, a comprehensive plant-wide analysis is 
+essential, as reactor and heat-supply configurations significantly influ­
+ence the utility, heat recovery, and optimal energy layout of hydrogen 
+plants [24]. Accordingly, this study proposes HTGR-integrated nuclear 
+heat integration (h-SMR) and nuclear electricity integration (e-SMR) 
+and comparatively evaluates their techno-economic and environmental 
+performances. Specifically, the system boundary explicitly incorporates 
+the HTGR-based supply of both heat and electricity, rather than treating 
+nuclear energy as an external utility. To ensure comparability, all 
+pathways are evaluated based on consistent functional units and system 
+boundaries. To further evaluate the competitiveness of the proposed 
+HTGR-integrated configurations, pink and green hydrogen production 
+pathways are established as reference benchmarks. These pathways 
+represent the most prominent low-carbon alternatives currently being 
+pursued and provide broader context for comparative assessment. In 
+Fig. 1, gray and blue hydrogen correspond to SMR without and with 
+CCS, respectively, while pink and green hydrogen refer to hydrogen 
+produced via nuclear- and renewable-powered electrolysis [26].
+2. Process description and modeling
+2.1. Technological overview
+Both h-SMR and e-SMR are hydrogen production processes based on 
+SMR, which is the primary industrial process employed for hydrogen 
+production [27]. SMR involves the reaction of natural gas with 
+high-temperature steam; however, since natural gas typically contains 
+sulfur and heavier hydrocarbons—in addition to its primary component, 
+methane—a pre-reformer is employed to prevent coke formation in the 
+main reformer [28]. During pre-reforming, the conversion of represen­
+tative species, such as ethane and propane, follows the reaction stoi­
+chiometry outlined in Eqs. (1) and (2): 
+C2H6 + 2H2O →2CO + 5H2, ΔH◦= 347 kJ / mol,
+(1) 
+C3H8 + 3H2O →3CO + 7H2, ΔH◦= 499 kJ / mol.
+(2) 
+Subsequently, SMR converts natural gas into hydrogen according to 
+the reforming reaction outlined in Eq. (3). Since this reaction is highly 
+endothermic, a continuous external heat supply is required. In conven­
+tional SMR processes, a fired furnace is employed in which radiant heat 
+is transferred to the process gas flowing through catalyst-filled tubes. 
+CH4 + H2O ↔CO + 3H2, ΔHR = 206 kJ/mol
+(3) 
+To maximize the hydrogen yield, the reformer effluent was directed 
+into a water-gas shift (WGS) reactor. Since the WGS reaction (outlined in 
+Eq. (4)) is exothermic, the conversion in the high-temperature shift 
+reactor is thermodynamically limited by equilibrium at elevated 
+temperatures. 
+CO + H2O ↔CO2 + H2, ΔHR = −41 kJ/mol
+(4) 
+Subsequent hydrogen purification is achieved using pressure-swing 
+adsorption (PSA), which exploits the principle that impurities are 
+selectively adsorbed onto solid adsorbents at elevated pressures as 
+hydrogen passes through. The PSA process typically consists of five 
+primary steps: adsorption, regeneration, pressure equalization, depres­
+surization, and pressurization. These steps proceed sequentially in a 
+cyclic manner across multiple adsorbent beds. In conventional pro­
+cesses, high-purity hydrogen is recovered for storage, whereas the 
+remaining gas mixture, referred to as PSA tail gas, is utilized as fuel for 
+the SMR furnace.
+The transition from gray to blue hydrogen was achieved by inte­
+grating a carbon capture unit (CCU) into a conventional SMR process. In 
+this study, the CO2 capture unit was placed downstream of the WGS 
+section and upstream of the PSA unit to capture CO2 from the shifted 
+syngas stream. Although various carbon capture technologies have been 
+developed, including adsorption, absorption, and membrane separation, 
+S.-m. Ahn and C.-J. Lee                                                                                                                                                                                                                       
+International Journal of Hydrogen Energy 247 (2026) 155890 
+2 
+
+=====PDFPAGE 3=====
+chemical absorption is the most widely used technology in industrial 
+applications [29]. This process relies on a chemical reaction between the 
+liquid solvent and the target gas. Specifically, CO2 is captured via a 
+chemical reaction with the solvent (methyldiethanolamine) in the 
+absorber column, and the solvent is subsequently regenerated by sepa­
+rating CO2 in the stripper.
+In the h-SMR process, the conventional gas-fired furnace is replaced 
+with a helium-heated steam reformer. This unit operates as a shell-and- 
+tube type system, where high-temperature secondary helium from the 
+HTGR flows through the shell side, transferring thermal energy to the 
+catalyst-filled tubes where the reforming reaction occurs [30]. By 
+eliminating the requirement for natural gas combustion as a heat source, 
+this configuration significantly reduces direct CO2 emissions from the 
+furnace stack. In the e-SMR process, a conventional gas-fired furnace is 
+replaced by an electric heating mechanism based on Ohmic heating 
+principles [23]. Unlike traditional SMR in which heat is supplied via 
+combustion, e-SMR uses electrical energy to directly drive the endo­
+thermic reforming reaction. In the process simulation, the required 
+thermal duty is supplied by electricity generated from the Brayton cycle 
+of the HTGR [31]. Electrification necessitates a significant modification 
+of the process configuration in which the combustion section is elimi­
+nated. Furthermore, the PSA tail gas, which contains unreacted methane 
+Fig. 1. Hydrogen production pathways and color classification [25]. (For interpretation of the references to color in this figure legend, the reader is referred to the 
+Web version of this article.)
+Fig. 2. Process flow diagram for h-SMR.
+S.-m. Ahn and C.-J. Lee                                                                                                                                                                                                                       
+International Journal of Hydrogen Energy 247 (2026) 155890 
+3 
+
+=====PDFPAGE 4=====
+and hydrogen, is recycled back into the reformer feed stream to enhance 
+the overall hydrogen yield, rather than being combusted as a fuel.
+2.2. Process modeling
+All processes were simulated using Aspen Plus V14 [32]. The Pen­
+g–Robinson equation of state was used as the thermodynamic model for 
+the hydrogen production processes, while the ENRTL-RK model was 
+applied to the carbon capture processes. Figs. 2 and 3 illustrate the 
+simplified process flow diagrams for the proposed systems.
+For the purpose of this study, it was assumed that the natural gas 
+feedstock was desulfurized [33]. Within the pre-reformer operating at 
+500 ◦C, almost all heavier hydrocarbons were converted into carbon 
+oxides, methane, and hydrogen. The steam-to-carbon (S/C) ratio was set 
+to 2.7 to optimize reaction efficiency while mitigating carbon deposi­
+tion. The other key assumptions employed for process modeling are 
+summarized in Table 1. Unlike conventional SMR, which employs the 
+PSA tail gas as fuel for the furnace, the h-SMR and e-SMR configurations 
+recycle this stream back into the process, since these systems operate 
+without a fired furnace. Consequently, it was necessary to install an 
+additional compressor downstream of the PSA.
+The HTGR served as the primary thermal energy source in this study. 
+Using helium as the coolant, thermal energy was transferred from the 
+primary loop to the secondary loop via an intermediate heat exchanger, 
+assuming a temperature difference of 50 ◦C. The key design parameters 
+of the HTGR are summarized in Table 2. In the process simulation, the 
+HTGR core was modeled using a heater block to simulate steady heat 
+generation. Specifically, secondary helium heated to ~900 ◦C was 
+supplied to the reformer to maintain the required reaction temperature. 
+From a safety perspective, the operating pressure of the process gas in­
+side the reformer tubes was maintained at lower than that of the sec­
+ondary helium coolant. This pressure differential ensures that in the 
+event of tube rupture, leakage occurs from the helium side to the process 
+side, thereby preventing ingress of flammable gases into the nuclear 
+system [10].
+Electrolysis-based hydrogen production routes, including pink and 
+green hydrogen, are included as benchmarks because they represent 
+widely discussed low-carbon alternatives in market and policy contexts 
+[35,36]. These benchmarks were evaluated using literature-based, 
+parameterized techno-economic, and environmental assessment calcu­
+lations rather than detailed process simulations, consistent with the 
+scope of this work, which focuses on HTGR-integrated reforming and 
+plant-wide integration. All pathways were compared using consistent 
+functional units, financial assumptions, and system boundaries.
+Fig. 3. Process flow diagram for e-SMR.
+Table 1 
+Design assumptions for the SMR plant [34].
+Parameter
+Value
+Unit
+Pre-reformer
+Temperature
+500
+◦C
+Pressure
+26
+bar
+S/C ratio
+2.7
+​
+Steam methane reformer
+Temperature
+875
+◦C
+Pressure
+26
+bar
+S/C ratio
+2.7
+​
+High-temperature water gas shift
+Temperature
+320
+◦C
+Pressure
+26
+bar
+Pressure swing adsorption
+Temperature
+30
+◦C
+Pressure
+26
+bar
+H2 recovery
+90
+%
+H2 purity
+99.99
+%
+Carbon capture
+CO2 recovery
+95
+%
+CO2 purity
+99
+%
+Table 2 
+Design parameters for the HTGR
+Parameter
+Value
+Unit
+Thermal power
+600
+MWt
+Reactor inlet coolant temperature (primary)
+450
+◦C
+Reactor outlet coolant temperature (primary)
+950
+◦C
+Reactor outlet coolant temperature (secondary)
+900
+◦C
+Primary coolant pressure
+4
+MPa
+S.-m. Ahn and C.-J. Lee                                                                                                                                                                                                                       
+International Journal of Hydrogen Energy 247 (2026) 155890 
+4 
+
+=====PDFPAGE 5=====
+3. Evaluation methodology
+3.1. Techno-economic analysis (TEA)
+The capital expenditure (CAPEX) and operating expenditure (OPEX) 
+were estimated based primarily on the methodology and cost correla­
+tions provided by Turton et al. [37]. The key economic assumptions used 
+in the techno-economic analysis (TEA) are summarized in Table 3. 
+However, costs associated with nuclear waste disposal were not 
+included in the cost estimation as a separate item. This exclusion is, 
+therefore, treated as a limitation of the present economic assessment.
+The base cost of each piece of equipment was calculated using the 
+key capacity attributes derived directly from the process simulation 
+results, as described by the following scaling law (Eq (5)): 
+C = Cref
+( A
+Aref
+)n
+,
+(5) 
+where C and Cref represent the estimated and reference costs, respec­
+tively, A and Aref are the capacity attributes of the target and reference 
+equipment, respectively, and n is the corresponding scaling exponent. 
+Subsequently, the cost of the bare module was determined by applying 
+scaling and pressure factors to account for the operating conditions. 
+Detailed values are presented in Table S2 and S3. All costs were adjusted 
+to the 2024 base year using the Chemical Engineering Plant Cost Index 
+(CEPCI) to account for inflation.
+3.2. Levelized cost of hydrogen
+The Levelized Cost of Hydrogen (LCOH) was adopted as the primary 
+economic indicator to ensure consistent comparison and evaluate the 
+feasibility of various production pathways. Sensitivity analysis was 
+conducted to account for the technological maturity and inherent un­
+certainty of the input parameters. The key variables selected for this 
+analysis included the price of natural gas, HTGR cost of capital, interest 
+rate, and carbon tax. Through this analysis, the key cost drivers exerting 
+the most significant influence on the LCOH were identified. These eco­
+nomic and sensitivity results provide critical insights for determining the 
+cost competitiveness of current technologies and identifying the optimal 
+conditions for the transition toward hydrogen production with reduced 
+emissions.
+3.3. Life cycle assessment
+Life cycle assessment (LCA) is widely recognized as a fundamental 
+tool for quantifying the environmental impacts of hydrogen production 
+technologies [38]. In this study, LCA was conducted in strict accordance 
+with the methodological framework outlined in the ISO 14040 and ISO 
+14044 standards [39,40], which serve as global benchmarks for envi­
+ronmental auditing in the energy sector. Global warming potential 
+(GWP) was selected as an impact factor. The system boundary was 
+defined as “cradle-to-gate,” covering direct process emissions as well as 
+indirect emissions associated with the upstream production of feed­
+stocks and utilities. However, the environmental impacts of nuclear 
+waste management were not separately quantified. Therefore, the LCA 
+results for HTGR-integrated pathways may vary depending on 
+waste-management practices. All assessment data were sourced from the 
+Ecoinvent Ecoquery database, as detailed in Table 4 [41].
+4. Results and discussion
+4.1. Technical results
+Initially, the technical performance of the proposed hydrogen- 
+production scenario was evaluated. Specifically, the impact of inte­
+grating HTGR nuclear heat on reducing natural gas consumption and 
+shifting the distribution of energy resources is discussed in detail.
+4.1.1. Model validation
+To ensure the reliability of the process simulation model, the gray 
+hydrogen process, which served as the base case, was validated against 
+benchmark data from the IEAGHG technical report [34]. Table 5 pre­
+sents a comparison between the simulation results and the reference 
+data. The key performance indicators, including specific CO2 emissions, 
+showed strong correlation with the reference values, with relative errors 
+under 1%, confirming that the developed model accurately captures the 
+characteristics of commercial SMR processes.
+4.1.2. Process performance
+The hydrogen production pathways were modeled based on the 
+validated gray hydrogen case. To ensure a consistent comparative 
+framework, all pathways were constrained to a production capacity of 
+9 t/h and a fixed product purity of 99.99%. This approach isolates the 
+effects of process configuration on feedstock consumption, utility re­
+quirements, and environmental impacts; the results are summarized in 
+Table 6. Both h-SMR and e-SMR processes avoid the use of natural gas as 
+a fuel by substituting the heat required for reforming with high- 
+temperature helium from the HTGR and from nuclear-generated elec­
+tricity, respectively.
+Table 3 
+Techno-economic assumptions for calculation
+Category
+Item
+Value
+Basis
+Plant specifications
+Plant life
+25
+years
+Operating hours
+8322
+hours
+Base year
+2024
+-
+CEPCI
+797.6
+-
+Interest rate
+8
+%
+Market Prices [34]
+Natural gas
+7
+$/GJ (LHV)
+Process water
+0.22
+$/tonne
+Cooling water
+0.35
+$/GJ
+Electricity
+0.09
+$/kWh
+Fixed OPEX [37]
+Direct supervisory & clerical labor
+18
+% of operating labor
+Maintenance & repairs
+6
+% of fixed capital investment
+Operating supplies
+0.9
+% of fixed capital investment
+Laboratory charges
+15
+% of operating labor
+Patents and royalties
+3
+% of total operating cost
+Taxes and insurance
+3.2
+% of fixed capital investment
+Plant overhead costs
+60
+% of operating labor + direct supervisory & clerical labor + maintenance & repairs
+Administration costs
+15
+% of operating labor + direct supervisory & clerical labor + maintenance & repairs
+Distribution & selling costs
+11
+% of total operating cost
+S.-m. Ahn and C.-J. Lee                                                                                                                                                                                                                       
+International Journal of Hydrogen Energy 247 (2026) 155890 
+5 
+
+=====PDFPAGE 6=====
+4.2. Economic results
+Fig. 4 illustrates the LCOH breakdown for natural-gas-based 
+hydrogen production methods. In conventional gray and blue SMR, 
+LCOH is predominantly driven by feedstock costs, which account for 
+55−57 % of the total unit cost. In the HTGR-integrated pathways, the 
+cost structure shifts as HTGR-related costs become an additional major 
+contributor. For h-SMR, feedstock cost remains the largest component, 
+while HTGR-related costs account for 27% of the LCOH. In contrast, e- 
+SMR is more strongly affected by HTGR-related expenses, which account 
+for 53% of the LCOH, mainly due to the additional nuclear heat-to- 
+electricity conversion required for electric reformer heating. Further­
+more, h-SMR had a lower unit cost than e-SMR, which can be attributed 
+to the superior exergetic efficiency of direct thermal integration, which 
+eliminates the energy losses associated with converting nuclear heat into 
+electricity for reformer heating.
+Fig. 5 presents the LCOHs for gray, blue, h-SMR, and e-SMR 
+hydrogen production, which were derived from the current process 
+simulation. For benchmarking purposes, the corresponding values are 
+also shown for pink and green hydrogen, calculated based on literature 
+data [42–44]. The HTGR-integrated reforming pathways (h-SMR and 
+e-SMR) demonstrated superior economic performance over electrolysis. 
+While the gray and blue processes maintained the lowest LCOHs 
+($1.78–1.93/kg), the proposed h-SMR ($2.37/kg) and e-SMR 
+($2.99/kg) systems bridged the gap between fossil-based and 
+renewable-based hydrogen. Compared to the benchmarked pink and 
+green pathways, nuclear-integrated SMR routes offered a significantly 
+more cost-effective decarbonization strategy.
+4.3. Environmental considerations
+Fig. 6 provides a breakdown of the net GWPs for the various 
+hydrogen production pathways, which are categorized into direct CO2 
+emissions, natural gas, electricity, and water. Gray hydrogen exhibited 
+the highest net GWP at 12.91 kg CO2/kgH2, where direct CO2 emissions 
+constituted the dominant share at 9.10 (70%), followed by a natural gas 
+contribution of 3.80 (29%). Although the total GWP of blue hydrogen 
+decreased to 8.23, direct CO2 emissions (51%) remained the primary 
+contributor, as CO2 capture was applied only to the shifted syngas 
+stream, whereas the CO2 in the fired reformer flue gas was not captured. 
+By contrast, the HTGR-integrated h-SMR and e-SMR processes proposed 
+in this study demonstrated significant reductions, yielding GWP values 
+of 3.5 and 3.18, respectively, representing a decrease of >70% 
+compared with gray hydrogen. In particular, the contribution of direct 
+CO2 emissions dropped sharply to 4% in both processes. This result in­
+dicates that the primary driver of net GWP reduction is the structural 
+elimination of direct emissions. Unlike conventional SMR, which gen­
+erates vast quantities of CO2 through tail gas combustion within a 
+furnace, the proposed pathways suppress these emissions by recycling 
+tail gas as a process feedstock. Consequently, the dominant GWP 
+contributor shifts from direct CO2 emissions to emissions from natural 
+gas.
+Fig. 7 compares the net GWPs of electrolysis-based pathways with 
+those of the proposed methods. The pink hydrogen pathway, which uses 
+HTGR-derived power, achieved the lowest GWP (0.26–0.38) in this 
+comparison, while the environmental performance of green hydrogen 
+varied significantly depending on the renewable energy source. Specif­
+ically, wind-based green hydrogen (0.66–0.97) exhibited a low GWP, 
+whereas solar-based (photovoltaic) green hydrogen (3.31–4.95) gave a 
+relatively high GWP, primarily due to greater emissions from photo­
+voltaic power systems compared to wind. Furthermore, considering the 
+same power source, the solid oxide electrolyzer cell (SOEC) exhibited a 
+lower GWP than the alkaline electrolyzer (ALK) and the proton ex­
+change membrane electrolyzer (PEM), since the differences in specific 
+Table 4 
+LCA parameters: GWP [41].
+Name
+Type
+Time period
+GWP (kgCO2eq/functional unit)
+Functional unit
+Utility
+Electricity
+Market
+2020–2023
+0.6475
+kWh
+Electricity
+Nuclear
+1990–2023
+0.0068
+kWh
+Electricity
+Onshore wind
+2005–2023
+0.0176
+kWh
+Electricity
+Onshore photovoltaic
+2008–2023
+0.0897
+kWh
+Cooling water
+Market
+2012–2023
+0.0013
+kg
+Raw material
+Natural gas
+Market
+2021–2023
+0.8229
+m3
+Water
+Market
+2011–2023
+0.0005
+kg
+Table 5 
+Comparison of simulation results with reference data for the gray hydrogen 
+process
+Parameter
+Unit
+Reference 
+[34]
+Base case
+Difference 
+(%)
+Inlet streams
+Natural gas (as 
+feedstock)
+t/h
+26.231
+26.231
+-
+Natural gas (as fuel)
+t/h
+4.332
+4.332
+-
+Natural gas (total 
+consumption)
+t/h
+30.563
+30.563
+-
+Natural gas LHV
+MJ/kg
+46.500
+46.651
+-
+Total energy input
+MW
+394.770
+396.054
+-
+Outlet streams
+Hydrogen product to 
+battery limit
+t/h
+8.994
+9.000
+0.07%
+​
+Nm3/h
+100000
+100117
+-
+Hydrogen LHV
+MJ/kg
+119.960
+119.909
+-
+Total energy in the 
+product
+MW
+299.700
+299.773
+-
+Specific consumptions
+Natural gas (as 
+feedstock)
+GJ/1000 
+Nm3 H2
+12.197
+12.231
+-
+Natural gas (as fuel)
+GJ/1000 
+Nm3 H2
+2.014
+2.020
+-
+Total (feedstock +
+fuel)
+GJ/1000 
+Nm3 H2
+14.212
+14.251
+-
+Specific emissions
+Specific CO2 
+emission
+t/1000 
+Nm3 H2
+0.809
+0.817
+0.99%
+Table 6 
+Summary of process simulation results
+Category
+Parameter
+Gray 
+H2
+Blue 
+H2
+h-SMR
+e-SMR
+Feedstock & 
+utilities
+Natural gas (kg/h)
+30,563
+31,762
+24,816
+23,439
+Process water (t/h)
+83.8
+82.8
+72.7
+68.2
+Direct HTGR process 
+heat duty (MWth)
+0
+0
+143.4
+49.2
+HTGR thermal input 
+for power generation 
+(MWth)
+0
+0
+0
+256.6
+​
+Total HTGR thermal 
+requirement (MWth)
+0
+0
+143.4
+305.8
+Economic
+Levelized cost of 
+hydrogen ($/kg H2)
+1.78
+1.93
+2.37
+2.99
+Environment
+Net GWP (kg CO2/kg 
+H2)
+12.91
+8.23
+3.50
+3.18
+S.-m. Ahn and C.-J. Lee                                                                                                                                                                                                                       
+International Journal of Hydrogen Energy 247 (2026) 155890 
+6 
+
+=====PDFPAGE 7=====
+power consumption per unit of hydrogen are directly reflected in the 
+indirect emissions. These GWP variations observed for the green 
+hydrogen pathways indicate that environmental performance is not 
+determined solely by the use of renewable electricity but also by the life- 
+cycle emissions and supply chain assumptions of the electricity source 
+[25]. Therefore, instead of assuming green hydrogen as a universally 
+optimal 
+solution, 
+these 
+findings 
+imply 
+that 
+transitional 
+reduced-emission pathways, such as HTGR-integrated SMR, can 
+represent more viable and advantageous options, depending on regional 
+context.
+4.4. Sensitivity analysis
+Sensitivity analysis was performed to evaluate the effects of market 
+uncertainties (e.g., feedstock prices and carbon taxes) on the economic 
+competitiveness of the proposed pathways. Fig. 8 presents the results of 
+the sensitivity analysis, highlighting the impact of fluctuations in indi­
+vidual variables on the LCOH, while maintaining all other parameters 
+constant. Since the baseline cost estimation assumes an environment 
+without carbon tax, the range of the carbon tax includes only the base 
+and maximum values. The obtained results indicate that the h-SMR and 
+e-SMR processes are the most sensitive to changes in natural gas prices, 
+as they still rely on natural gas as the primary feedstock.
+Fig. 9 illustrates the cost-parity conditions between conventional 
+blue hydrogen production and the proposed h-SMR and e-SMR pro­
+cesses. Under simultaneous variations in natural gas prices and carbon 
+taxes, h-SMR exhibited an extensive economically dominant region 
+compared to blue hydrogen, even under relatively low natural gas prices 
+and carbon tax conditions (Fig. 9(a)). Conversely, e-SMR secures an 
+economic advantage over blue hydrogen only in scenarios in which both 
+natural gas prices and carbon taxes are significantly high (Fig. 9(b)). 
+Fig. 9(c) and (d) present a comparative analysis of the relative economic 
+viability concerning the HTGR capital costs and natural gas prices, with 
+the carbon tax for blue hydrogen fixed at zero. This analysis revealed 
+that h-SMR maintained its competitiveness against blue hydrogen when 
+natural gas prices remained above a specific threshold, even with 
+Fig. 4. Breakdown of the LCOH by (a) unit cost and (b) relative contribution.
+Fig. 5. Comparison of the LCOH across various production pathways.
+Fig. 6. Breakdown of Net GWP by (a) specific emissions per unit of hydrogen produced and (b) relative contribution.
+S.-m. Ahn and C.-J. Lee                                                                                                                                                                                                                       
+International Journal of Hydrogen Energy 247 (2026) 155890 
+7 
+
+=====PDFPAGE 8=====
+increasing capital costs associated with the HTGR (Fig. 9(c)). However, 
+for the e-SMR process, capital cost reduction alone yielded a restricted 
+parity region within the analyzed range. In this case, competitiveness 
+against blue hydrogen is only achievable when accompanied by exog­
+enous shifts such as rising natural gas prices (Fig. 9(d)). This underscores 
+the requirement for further sensitivity analyses encompassing additional 
+variables, such as power consumption. Collectively, these findings 
+indicate that the feasible region for the h-SMR process to achieve eco­
+nomic parity with blue hydrogen is broader and situated within a more 
+realistic range than that of the e-SMR process.
+5. Conclusion
+This paper proposed heat-integrated h-SMR and electricity- 
+integrated e-SMR as HTGR-integrated hydrogen production pathways 
+and evaluated their technical, economic, and environmental perfor­
+mances through process simulations. From a technical perspective, the 
+proposed processes maximized resource efficiency by eliminating the 
+conventional fired furnace through HTGR integration and recycling the 
+PSA tail gas as a process feed. Consequently, the HTGR-integrated pro­
+cesses reduced natural gas consumption by 18.8% for h-SMR and 23.3% 
+for e-SMR compared with conventional gray hydrogen. Furthermore, 
+direct carbon emissions were suppressed by >98% via structural 
+changes in the heating mechanism, which fundamentally altered the 
+emission profile of the SMR process. Additionally, techno-economic 
+analysis demonstrated that HTGR-integrated reforming offers a signifi­
+cantly more cost-effective decarbonization strategy than electrolysis- 
+based routes. The LCOH was estimated to be $2.37/kg for h-SMR and 
+$2.99/kg for e-SMR, revealing high cost-competitiveness against 
+benchmarked pink hydrogen ($5.10–6.98/kg) and green hydrogen 
+($5.35–9.86/kg). Sensitivity analysis further confirmed the economic 
+robustness of the h-SMR pathway, which maintained a broad dominant 
+region over blue hydrogen across various natural gas prices and carbon 
+tax scenarios. Furthermore, life-cycle assessments revealed that the 
+proposed processes substantially reduced climate impact, with net GWPs 
+of 3.5 kgCO2/kgH2 for h-SMR and 3.18 kgCO2/kgH2 for e-SMR. These 
+values represent significant reductions of >70% compared to gray 
+hydrogen (12.91 kgCO2/kgH2). Notably, the contribution of direct CO2 
+emissions dropped sharply from 70% in the conventional process to 4% 
+in the proposed systems, confirming that the benefits of HTGR- 
+integrated pathways arise from structural decarbonization rather than 
+simple end-of-pipe capture. Overall, the study findings demonstrate that 
+HTGR-integrated SMR processes exhibit potential as a bridging tech­
+nology for reducing emissions from fossil fuel-based hydrogen produc­
+tion. Notably, integration with HTGR can achieve energy independence 
+during hydrogen production, eliminate the requirement for PSA tail gas 
+combustion, and exploit existing SMR infrastructure, thereby structur­
+ally reducing direct CO2 emissions. This approach could, therefore, 
+represent a practical, scalable, and short-term solution for large-scale 
+hydrogen supply with reduced emissions. Building on the steady-state 
+assessment and environmental framework developed in this study, 
+future research should focus on developing a dynamic simulation model 
+to evaluate the operational flexibility of the system under HTGR load- 
+following scenarios.
+Fig. 7. Comparison of the net GWP across various production pathways.
+Fig. 8. Sensitivity analysis for the LCOH.
+S.-m. Ahn and C.-J. Lee                                                                                                                                                                                                                       
+International Journal of Hydrogen Energy 247 (2026) 155890 
+8 
+
+=====PDFPAGE 9=====
+CRediT authorship contribution statement
+Soo-min Ahn: Conceptualization, Data curation, Formal analysis, 
+Methodology, Validation, Visualization, Writing – original draft. Chul- 
+Jin Lee: Conceptualization, Funding acquisition, Project administra­
+tion, Supervision, Writing – review & editing.
+Declaration of competing interest
+The authors declare that they have no known competing financial 
+interests or personal relationships that could have appeared to influence 
+the work reported in this paper.
+Acknowledgements
+This study was supported by the Korea Institute of Energy Technol­
+ogy Evaluation and Planning (KETEP), South Korea and the Ministry of 
+Climate, Energy, and Environment (MCEE), South Korea of the Republic 
+of Korea (No. RS-2025-02653278).
+Appendix A. Supplementary data
+Supplementary data to this article can be found online at https://doi. 
+org/10.1016/j.ijhydene.2026.155890.
+References
+[1] Davis SJ, et al. Net-zero emissions energy systems. Science 2018;360(6396): 
+eaas9793.
+[2] Dong Z, Li B, Huang X, Dong Y, Zhang Z. Power-pressure coordinated control of 
+modular high temperature gas-cooled reactors. Energy 2022;252:124042.
+[3] Muradov N. Low to near-zero CO2 production of hydrogen from fossil fuels: status 
+and perspectives. Int J Hydrogen Energy 2017;42(20):14058–88.
+[4] International Atomic Energy Agency. Small modular reactors: advances in SMR 
+developments, 2024. Vienna: IAEA; 2024.
+[5] Ni H, Qu X, Peng W, Zhao G, Zhang P. Study of two innovative hydrogen and 
+electricity co-production systems based on very-high-temperature gas-cooled 
+reactors. Energy 2023;273:127206.
+[6] Constantin A. Nuclear hydrogen projects to support clean energy transition: 
+updates on international initiatives and IAEA activities. Int J Hydrogen Energy 
+2024;54:768–79.
+[7] Avargani VM, Zendehboudi S, Duan X, Maarof HA. Advancements in non- 
+renewable and hybrid hydrogen production: technological innovations for 
+efficiency and carbon reduction. Fuel 2025;395:135065.
+[8] Peterman D, Fontaine R, Quade R, Halvers L, Jahromi A. Studies of the use of high- 
+temperature nuclear heat from an HTGR for hydrogen production. 1975.
+[9] Ohashi H, et al. Performance test results of mock-up test facility of HTTR hydrogen 
+production system. Journal of nuclear science and technology 2004;41(3):385–92.
+[10] Nagatsuka K, et al. Current status of high temperature gas-cooled reactor 
+development in Japan. Nucl Eng Des 2024;425:113338.
+[11] International Atomic Energy Agency. Developing a roadmap for the commercial 
+deployment of nuclear hydrogen production. Vienna: IAEA; 2024.
+[12] Fujikawa S, et al. Achievement of reactor-outlet coolant temperature of 950◦C in 
+HTTR. J Nucl Sci Technol 2004;41(12):1245–54.
+[13] Wood R, Boardman R, Patterson M, Mills P. Htgr-integrated hydrogen production 
+via steam methane reforming (smr) process analysis, vol. 15. Idaho National 
+Laboratory Technical Evaluation TEV-953; 2010. September.
+[14] Wu C, Wang Z, Zhang H, Yin H. Comprehensive study on parameter sensitivity 
+analysis of steam reformer tube for hydrogen production using HTGR. Ann Nucl 
+Energy 2025;213:111159.
+[15] Wu C, Wu B, Zhang H, Yin H. Study on the performance of membrane reactor using 
+steam methane reforming for hydrogen production heated by HTGR. Nucl Eng 
+Technol 2025:103744.
+[16] Mozdzierz M, Brus G, Kimijima S, Szmyd J. Numerical analysis of helium-heated 
+methane/steam reformer. J Phys Conf 2016;745(3):032081. IOP Publishing.
+Fig. 9. Sensitivity analysis of the LCOH: (a) natural gas prices and carbon taxes for the h-SMR and (b) e-SMR processes, and (c) natural gas prices and HTGR capital 
+costs for the h-SMR and (d) e-SMR processes.
+S.-m. Ahn and C.-J. Lee                                                                                                                                                                                                                       
+International Journal of Hydrogen Energy 247 (2026) 155890 
+9 
+
+=====PDFPAGE 10=====
+[17] Zhang L, Chen L, Xia S, Ge Y, Wang C, Feng H. Multi-objective optimization for 
+helium-heated reverse water gas shift reactor by using NSGA-II. Int J Heat Mass 
+Tran 2020;148:119025.
+[18] Spagnolo D, Cornett L, Chuang K. Direct electro-steam reforming: a novel catalytic 
+approach. Int J Hydrogen Energy 1992;17(11):839–46 [Online]. Available: http 
+s://www.sciencedirect.com/science/article/pii/036031999290033S.
+[19] De Cata D, Mazzeo L, Piemonte V, Giaconia A. Electrified steam methane reforming 
+as efficient pathway for sustainable hydrogen production and industrial 
+decarbonization: a critical review. Int J Hydrogen Energy 2025;105:31–44.
+[20] Wismann ST, et al. Electrified methane reforming: elucidating transient 
+phenomena. Chem Eng J 2021;425:131509.
+[21] Wismann ST, et al. Electrified methane reforming: understanding the dynamic 
+interplay. Ind Eng Chem Res 2019;58(51):23380–8.
+[22] Ma J, et al. A compact and high-efficiency electrified reactor for hydrogen 
+production by methane steam reforming. Int J Hydrogen Energy 2022;47(98): 
+41421–31.
+[23] Wismann ST, et al. Electrified methane reforming: a compact approach to greener 
+industrial hydrogen production. Science 2019;364(6442):756–9.
+[24] Lee J, Park H, Lee S, Kim J-K. Process design and integration for the electrification 
+of a SMR-Based hydrogen plant with absorption-based CO2 capture. Appl Therm 
+Eng 2025;262:125274.
+[25] Ajanovic A, Sayer M, Haas R. The economics and the environmental benignity of 
+different colors of hydrogen. Int J Hydrogen Energy 2022;47(57):24136–54.
+[26] Incer-Valverde J, Korayem A, Tsatsaronis G, Morosuk T. "“Colors” of hydrogen: 
+definitions and carbon intensity," energy conversion and management 2023;291: 
+117294.
+[27] Simpson AP, Lutz AE. Exergy analysis of hydrogen production via steam methane 
+reforming. Int J Hydrogen Energy 2007;32(18):4811–20 [Online]. Available: 
+https://www.sciencedirect.com/science/article/pii/S036031990700482X.
+[28] Jaggai C, et al. Towards greater sustainable development within current mega- 
+Methanol (MM) production. Green Chem 2020;22(13):4279–94.
+[29] Zhang Y, Xu H, Xu J, Zhang X. Advancements and challenges in chemical 
+absorption technologies for shipborne carbon capture applications: absorbent 
+development, improvement of absorption towers, and system integration. J Energy 
+Chem 2025;106:880–910.
+[30] Hoseinzade L, Adams II TA. Modeling and simulation of an integrated steam 
+reforming and nuclear heat system. Int J Hydrogen Energy 2017;42(39):25048–62.
+[31] Bae SJ, Lee J, Ahn Y, Lee JI. Preliminary studies of compact brayton cycle 
+performance for small modular high temperature gas-cooled reactor system. Ann 
+Nucl Energy 2015;75:11–9.
+[32] Aspen technology inc. https://www.aspentech.com/en/products/engineering 
+/aspen-plus.
+[33] Katebah M, Al-Rawashdeh Mm, Linke P. Analysis of hydrogen production costs in 
+Steam-methane reforming considering integration with electrolysis and CO2 
+capture. Cleaner Engineering and Technology 2022;10:100552.
+[34] Collodi G, et al. Techno-economic evaluation of SMR based standalone (merchant) 
+hydrogen plant with CCS. Tech Rev 2017;2. 2017-02, 2017.
+[35] Odenweller A, Ueckerdt F. The green hydrogen ambition and implementation gap. 
+Nat Energy 2025;10(1):110–23.
+[36] Khawaja MK, Al-Mohamad R, Salameh T, Alkhalidi A. Strategies to promote 
+nuclear energy utilization in hydrogen production. Int J Hydrogen Energy 2024;82: 
+36–46.
+[37] Turton Richard, Bailie Richard, Whiting Wallace, Shaeiwitz Joseph. Analysis, 
+synthesis, and design of chemical processes. Pearson Edu 2008.
+[38] Bhandari R, Trudewind CA, Zapp P. Life cycle assessment of hydrogen production 
+via Electrolysis–A review. J Clean Prod 2014;85:151–63.
+[39] Iso T. 207 (2006) ISO 14040: 2006 environmental Management—Life cycle 
+Assessment—Principles and framework. Switzerland: ISO; 2006.
+[40] Iso E. 14044 2018 environmental management–life cycle assessment–requirements 
+and guidelines (ISO 14044: 2006+ amd 1: 2017). 2018. German version EN ISO 
+14044: 2006+ A1.
+[41] Wernet G, Bauer C, Steubing B, Reinhard J, Moreno-Ruiz E, Weidema B. The 
+ecoinvent database version 3 (part I): overview and methodology. Int J Life Cycle 
+Assess 2016;21(9):1218–30.
+[42] Holst M, Aschbrenner S, Smolinka T, Voglst¨atter C, Grimm G. Cost forecast for low- 
+temperature electrolysis-technology driven bottom-up prognosis for PEM and 
+alkaline water electrolysis systems. Fraunhofer Institute for Solar Energy Systems 
+ISE: Freiburg, Germany 2021;79:1201–14.
+[43] Shin H, Jang D, Lee S, Cho H-S, Kim K-H, Kang S. Techno-economic evaluation of 
+green hydrogen production with low-temperature water electrolysis technologies 
+directly coupled with renewable power sources. Energy Convers Manag 2023;286: 
+117083.
+[44] Wendt DS, Knighton LT, Boardman RD. High temperature steam electrolysis 
+process performance and cost estimates. Idaho Falls, ID (United States): Idaho 
+National Laboratory (INL); 2022.
+S.-m. Ahn and C.-J. Lee                                                                                                                                                                                                                       
+International Journal of Hydrogen Energy 247 (2026) 155890 
+10 

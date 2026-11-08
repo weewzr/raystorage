@@ -1,0 +1,206 @@
+{
+ "width": 375,
+ "height": 812,
+ "mobile": true,
+ "reduced": false,
+ "mode": "shots",
+ "before_start": "shots_375_00_before.png",
+ "focus_after_start": "tour-title",
+ "steps": [
+  {
+   "step": 1,
+   "id": "fission",
+   "flows": 0,
+   "running": 11,
+   "running_kinds": [
+    "tf-f1",
+    "tf-f2",
+    "tf-he-flow",
+    "tf-heat",
+    "tf-heatup",
+    "tf-n0",
+    "tf-n1",
+    "tf-n2",
+    "tf-nuc",
+    "tour-fill",
+    "tour-on"
+   ],
+   "title": "Fission heat in the HTGR core",
+   "card_height": 890,
+   "scroll_left": 0,
+   "shot": "shots_375_step01.png"
+  },
+  {
+   "step": 2,
+   "id": "primary",
+   "flows": 3,
+   "running": 4,
+   "running_kinds": [
+    "tour-fill",
+    "tour-flow"
+   ],
+   "title": "Primary helium loop",
+   "card_height": 658,
+   "scroll_left": 0,
+   "shot": "shots_375_step02.png"
+  },
+  {
+   "step": 3,
+   "id": "secondary",
+   "flows": 2,
+   "running": 3,
+   "running_kinds": [
+    "tour-fill",
+    "tour-flow"
+   ],
+   "title": "Secondary helium loop to the reformer",
+   "card_height": 714,
+   "scroll_left": 126,
+   "shot": "shots_375_step03.png"
+  },
+  {
+   "step": 4,
+   "id": "feed",
+   "flows": 1,
+   "running": 3,
+   "running_kinds": [
+    "tour-fill",
+    "tour-flow"
+   ],
+   "title": "Natural gas and steam feed the reformer",
+   "card_height": 789,
+   "scroll_left": 194,
+   "shot": "shots_375_step04.png"
+  },
+  {
+   "step": 5,
+   "id": "shift",
+   "flows": 1,
+   "running": 2,
+   "running_kinds": [
+    "tour-fill",
+    "tour-flow"
+   ],
+   "title": "Water-gas shift",
+   "card_height": 674,
+   "scroll_left": 285
+  },
+  {
+   "step": 6,
+   "id": "cooling",
+   "flows": 3,
+   "running": 5,
+   "running_kinds": [
+    "tour-fill",
+    "tour-flow"
+   ],
+   "title": "Cooling and condensate",
+   "card_height": 569,
+   "scroll_left": 395
+  },
+  {
+   "step": 7,
+   "id": "absorber",
+   "flows": 2,
+   "running": 4,
+   "running_kinds": [
+    "tour-fill",
+    "tour-flow"
+   ],
+   "title": "CO₂ capture in the MEA absorber",
+   "card_height": 590,
+   "scroll_left": 493,
+   "shot": "shots_375_step07.png"
+  },
+  {
+   "step": 8,
+   "id": "psa",
+   "flows": 2,
+   "running": 3,
+   "running_kinds": [
+    "tour-fill",
+    "tour-flow"
+   ],
+   "title": "Hydrogen product from the external PSA",
+   "card_height": 600,
+   "scroll_left": 623
+  },
+  {
+   "step": 9,
+   "id": "reject",
+   "flows": 4,
+   "running": 9,
+   "running_kinds": [
+    "tour-fill",
+    "tour-flow"
+   ],
+   "title": "PSA reject back to the cryogenic unit",
+   "card_height": 766,
+   "scroll_left": 324,
+   "shot": "shots_375_step09.png"
+  },
+  {
+   "step": 10,
+   "id": "stripper",
+   "flows": 5,
+   "running": 7,
+   "running_kinds": [
+    "tour-fill",
+    "tour-flow"
+   ],
+   "title": "Stripper and reboiler heat",
+   "card_height": 692,
+   "scroll_left": 604
+  },
+  {
+   "step": 11,
+   "id": "co2",
+   "flows": 3,
+   "running": 6,
+   "running_kinds": [
+    "tour-fill",
+    "tour-flow",
+    "ts-ship",
+    "ts-wave"
+   ],
+   "title": "CO₂ compression, ship and offshore storage",
+   "card_height": 901,
+   "scroll_left": 659,
+   "shot": "shots_375_step11.png"
+  },
+  {
+   "step": 12,
+   "id": "power",
+   "flows": 2,
+   "running": 3,
+   "running_kinds": [
+    "tour-fill",
+    "tour-flow"
+   ],
+   "title": "Power block and site electricity",
+   "card_height": 687,
+   "scroll_left": 0,
+   "shot": "shots_375_step12.png"
+  },
+  {
+   "step": 13,
+   "id": "closing",
+   "flows": 1,
+   "running": 31,
+   "running_kinds": [
+    "tour-fill",
+    "tour-flow"
+   ],
+   "title": "The plant from end to end",
+   "card_height": 810,
+   "scroll_left": 61,
+   "shot": "shots_375_step13.png"
+  }
+ ],
+ "after_escape": {
+  "active": false,
+  "focus": "tour-start"
+ },
+ "errors": [],
+ "notes": []
+}

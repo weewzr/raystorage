@@ -1,0 +1,428 @@
+HTGR_SMR_MEA_CCS_Research_Local\1-s2.0-S0378381211004043-main.pdf
+=====
+--- PDF p.1 ---
+Fluid Phase Equilibria 311 (2011) 67–75
+Contents lists available at SciVerse ScienceDirect
+Fluid Phase Equilibria
+journal homepage: www.elsevier.com/locate/fluid
+Thermodynamic modeling for CO2 absorption in aqueous MEA solution with
+electrolyte NRTL model
+Ying Zhang a, Huiling Que a, Chau-Chyun Chen b,∗
+a AspenTech Limited, Pudong, Shanghai 201203, China
+b Aspen Technology, Inc., Burlington, MA 01803, USA
+a r t i c l e
+i n f o
+Article history:
+Received 8 April 2011
+Received in revised form 16 July 2011
+Accepted 27 August 2011
+Available online 3 September 2011
+Keywords:
+Electrolyte NRTL model
+Vapor–liquid equilibrium
+CO2 absorption
+Monoethanolamine
+Enthalpy of absorption
+Activity coefﬁcient
+a b s t r a c t
+Accurate modeling of thermodynamic properties of CO2 absorption in aqueous alkanolamine solutions
+is essential for simulation and design of such CO2 capture processes. In this study, we use the Electrolyte
+Nonrandom Two-liquid activity coefﬁcient model in Aspen Plus to develop a rigorous and thermody-
+namically consistent representation for the MEA–H2O–CO2 system. Vapor–liquid equilibrium (VLE), heat
+capacity and excess enthalpy data for the binary aqueous amine system (MEA–H2O) are used to determine
+the NRTL interaction parameters for the MEA–H2O binary. VLE, enthalpy of absorption, heat capacity and
+NMR spectroscopic data for the MEA–H2O–CO2 ternary system are used to identify the electrolyte NRTL
+interaction parameters for the molecule–electrolyte binaries and the previously unavailable standard
+state properties of the amine ions, MEA protonate and carbamate. The predicted VLE, enthalpy of absorp-
+tion, heat capacity and speciation for the MEA–H2O–CO2 system are compared favorably to experimental
+data.
+© 2011 Elsevier B.V. All rights reserved.
+1. Introduction
+For many decades aqueous monoethanolamine (MEA) solution
+has been widely used in the absorption/stripping operations for
+acid gas removal [1]. The recent interest in CO2 capture with amines
+has further increased attention on the MEA solution. To properly
+simulate and design the CO2 absorption/stripping processes with
+the aqueous MEA solutions, it is essential to understand the process
+fundamentals. Knowledge of vapor–liquid equilibrium is the basis
+for the simulation and design of acid gas absorption/stripping pro-
+cesses [2]. In addition, mass transfer rate-based simulation models
+requires knowledge on liquid phase speciation resulting from aque-
+ous phase reactions [3]. Furthermore, to evaluate and optimize
+energy consumption for CO2 capture, accurate knowledge on the
+enthalpy of CO2 absorption is essential. In other words, scalable
+simulation, design and optimization of the CO2 capture processes
+start with the modeling of thermodynamic properties, speciﬁcally
+vapor–liquid equilibrium, chemical reaction equilibrium, as well as
+calorimetric properties.
+Excess Gibbs energy-based activity coefﬁcient models provide
+a practical and rigorous thermodynamic framework to model ther-
+modynamic properties of aqueous electrolyte systems including
+aqueous alkanolamines systems for CO2 capture [4,5]. For example,
+∗Corresponding author. Tel.: +1 781 221 6420; fax: +1 781 221 6410.
+E-mail address: chauchyun.chen@aspentech.com (C.-C. Chen).
+Austgen et al. [2] and Posey [6] applied electrolyte NRTL model
+[7–9] to correlate CO2 solubilities in aqueous MEA solution and
+other aqueous alkanolamines. Hilliard [10] updated these MEA
+modeling studies and ﬁtted the VLE, enthalpy of absorption, heat
+capacity and speciation data from NMR spectrum. Faramarzi et al.
+[11] used the extended UNIQUAC model [12] to represent VLE
+for CO2 absorption in aqueous MDEA, MEA and mixtures of the
+two alkanolamines. They also predicted concentrations of the
+species in both MDEA and MEA solutions containing CO2 and in
+the case of MEA compared to NMR spectroscopic measurements
+[10,13]. Recently, Hessen et al. [14] used a reﬁned electrolyte NRTL
+model [15] to correlate CO2 solubility in aqueous MEA and MDEA
+solutions and predict the speciation for the MEA–H2O–CO2 and
+MDEA–H2O–CO2 systems.
+In this work, we aim to develop an accurate and compre-
+hensive thermodynamic model for CO2 absorption in aqueous
+MEA solutions. Speciﬁcally we extend our recent work on
+thermodynamic
+modeling
+the
+MDEA–H2O–CO2
+system
+[5],
+the
+MDEA–H2O–CO2–H2S
+system
+[16],
+the
+DIPA–H2O–CO2
+system,
+the
+DIPA–sulfolane–H2O–CO2
+system,
+and
+the
+MDEA–sulfolane–H2O–CO2 system [17]. We use the 2009 version
+[7] of the electrolyte NRTL model as the thermodynamic frame-
+work to correlate available experimental data for CO2 absorption
+in aqueous MEA solution. Many of the thermodynamic properties
+and calorimetric properties data for the MEA–H2O–CO2 system
+have become available in recent years and they cover wider ranges
+of temperature, pressure, MEA concentration and CO2 loading.
+0378-3812/$ – see front matter © 2011 Elsevier B.V. All rights reserved.
+doi:10.1016/j.ﬂuid.2011.08.025
+
+--- PDF p.2 ---
+68
+Y. Zhang et al. / Fluid Phase Equilibria 311 (2011) 67–75
+Table 1
+Parameters for PC-SAFT equation of state.
+m
+ε
+
+εAB
+kAB
+Source
+MEA
+2.9029
+306.20
+3.1067
+2369.0
+0.01903
+This work
+m, segment number parameter; ε, segment energy parameter (K); , segment size parameter ( ˚A); εAB, association energy parameter (K); kAB, effective association volume
+parameter ( ˚A3).
+Table 2
+Parameters for the standard states properties.
+Property
+f Gig
+298.15 (J/kmol)
+f Hig
+298.15 (J/kmol)
+f G∞,aq
+298.15 (J/kmol)
+f H∞,aq
+298.15 (J/kmol)
+Source
+MEA
+−1.0330 × 108
+−2.0670 × 108
+Aspen Databank [23]
+MEAH+
+−1.8992 × 108a
+−3.3442 × 108a
+This work
+MEACOO−
+−4.8994 × 108a
+−6.9313 × 108a
+This work
+a The values of MEAH+ are calculated from the chemical equilibrium constant in Hamborg and Versteeg [20]. The values of MEACOO−are calculated from the chemical
+equilibrium constant in Kim et al. [21]. They are used as the initial guess to ﬁt the experimental data.
+Table 3
+Parameters for ideal gas heat capacity.a
+Unit
+C1i
+C2i
+C3i
+C4i
+Source
+MEA
+J/kmol K
+1.3207 × 104
+2.8158 × 102
+−0.1513
+3.1287 × 10−5
+Aspen Databank [23]
+a Correlation for the ideal gas heat capacity, Cig
+p = C1i + C2iT + C3iT2 + C4iT3, 283 < T < 1000, The unit for temperature is K.
+The binary NRTL parameters for MEA–water binary are regressed
+from the binary VLE, excess enthalpy and heat capacity data.
+The binary electrolyte NRTL parameters for water–electrolyte
+binaries and the standard state properties of protonated MEA ion
+and MEA carbamate are obtained by ﬁtting to the ternary VLE,
+enthalpy of absorption, heat capacity and NMR spectroscopic data.
+This updated model for the MEA–H2O–CO2 system should cover
+broader range of conditions and give more reliable predictions
+over previous works.
+In conjunction with use of the electrolyte NRTL model for the
+liquid phase activity coefﬁcients, we use the PC-SAFT [18,19] equa-
+tion of state (EOS) for the vapor phase fugacity coefﬁcients. PC-SAFT
+EOS is chosen over typical cubic EOS because of its ability to model
+accurately vapor phase fugacity coefﬁcients at high pressures, an
+important consideration for CO2 capture and compression. The PC-
+SAFT parameters for H2O and CO2 are taken from our previous
+work for the MDEA–H2O–CO2 system [5]. The parameters for MEA,
+summarized in Table 1, are obtained from regression of exper-
+imental data on vapor pressure, enthalpy of vaporization, liquid
+heat capacity and liquid density. All the PC-SAFT binary interaction
+parameters are set to 0.
+2. Thermodynamic framework
+2.1. Aqueous phase chemical equilibrium
+The acid gas solubility in aqueous amines solutions is deter-
+mined by both its physical solubility and the chemical equilibrium
+for the aqueous phase reactions among acid gas, water and amines.
+Aqueous
+phase
+chemical
+reactions
+involved
+in
+the
+MEA–H2O–CO2 system can be expressed as:
+2H2O ↔H3O+ + OH−
+(1)
+MEAH+ + H2O ↔MEA + H3O+
+(2)
+MEACOO−+ H2O ↔MEA + HCO3
+−
+(3)
+CO2 + 2H2O ↔H3O+ + HCO3
+−
+(4)
+HCO3
+−+ H2O ↔H3O+ + CO3
+−2
+(5)
+We calculate chemical equilibrium constants from the reference
+state Gibbs free energies of the participating components
+−RT
+ln Kj = G◦
+j
+(6)
+where Kj is the chemical equilibrium constant of reaction j, G◦
+j
+is the reference state Gibbs energy change for reaction j, R is the
+universal gas constant, and T is the system temperature.
+For the aqueous phase reactions, the reference states chosen
+are pure liquid for the solvents water and MEA and aqueous phase
+inﬁnite dilution for the solutes, ionic and molecular.
+The calculation method for the Gibbs energies of the solvents
+and solutes together with the standard state property constants
+have been summarized in our previous work [5]. Additional stan-
+dard state property constants for MEA, MEAH+, and MEACOO−are
+given in Tables 2–4. We calculate the standard state properties of
+MEAH+ ion from the experimental chemical equilibrium constant
+of Eq. (2), as reported by Hamborg and Versteeg [20]. Likewise,
+we calculate those of MEACOO−ion from the chemical equilibrium
+constant of Eq. (3), as reported by Kim et al. [21] These calculated
+standard state properties for MEAH+ and MEACOO−are then used
+as part of the adjustable parameters in ﬁtting the experimental data
+of thermodynamic properties.
+2.2. Physical solubility
+Physical solubility is the equilibrium between gaseous CO2
+molecules and CO2 molecules in the aqueous amine solutions. It
+can be expressed by Henry’s law:
+P · yCO2 · CO2 = HCO2 · xCO2 · ∗
+CO2
+(7)
+Table 4
+Parameters for aqueous phase inﬁnite dilution heat capacity.a
+MEAH+ (J/kmol K)
+MEACOO−(J/kmol K)
+Source
+This work
+This work
+C∞,aq
+p,i
+1.82 × 105
+−1.80 × 105
+a The C∞,aq
+p,i
+values of MEAH+ and MEACOO−are calculated from the chemical
+equilibrium constants in Hamborg and Versteeg [20] and Kim et al. [21], which are
+used as the initial guess to ﬁt experimental data.
+
+--- PDF p.3 ---
+Y. Zhang et al. / Fluid Phase Equilibria 311 (2011) 67–75
+69
+Table 5
+Parameters for dielectric constant.a
+Ai
+Bi
+Ci
+Source
+MEA
+37.72
+0
+298.15
+Aspen Databank [23]
+a Correlation for the dielectric constant, εi(T) = Ai + Bi((1/T) −(1/Ci)). The unit for temperature is K.
+where P is the system pressure, yCO2 is the CO2 mole fraction in
+vapor phase, CO2 is the CO2 fugacity coefﬁcient in vapor phase,
+HCO2 is the Henry’s law constant of CO2 in the mixed solvent of
+water and amine, xCO2 is the CO2 mole fraction in liquid phase, ∗
+CO2
+is the unsymmetric activity coefﬁcient of CO2 in the mixed solvent
+of water and amine.
+The Henry’s constant in the mixed solvent is calculated from
+those in the pure solvents:
+ln
+
+Hi
+∞
+i
+
+=
+
+A
+wA
+ln
+
+HiA
+∞
+iA
+
+(8)
+where Hi is the Henry’s constant of molecular solute i, i.e., CO2, in
+the mixed solvent, HiA is the Henry’s constant of molecular solute
+i in pure solvent A, ∞
+i
+is the inﬁnite dilution activity coefﬁcient of
+molecular solute i in the mixed solvent, ∞
+iA is the inﬁnite dilution
+activity coefﬁcient of molecular solute i in pure solvent A.
+Weighting factor wA is calculated by Eq. (9)
+wA =
+xA(V ∞
+iA )2/3
+
+BxB(V ∞
+iB )2/3
+(9)
+where xA is the mole fraction of solvent A on solute-free basis, V ∞
+iA
+is the partial molar volume of molecular solute i at inﬁnite dilution
+in pure solvent A. V ∞
+iA is calculated from the Brelvi-O’Connell model
+[22] with the characteristic volume for the solute (V BO
+CO2) and sol-
+vent (V BO
+s
+). We use the critical volume from Aspen Databank [23],
+0.225 m3/kmol, as the characteristic volume for MEA. V BO
+CO2 and V BO
+H2O
+can be found in our previous work [5].
+The Henry’s law constants for CO2 with water and with MEA
+are required. The former has been well studied [24] while the
+knowledge about the latter is relatively limited. The concept of N2O
+analogy used to determine the Henry’s constant for CO2 with amine
+has been summarized previously [5]. Based on the works of Wang
+et al. [25] and Versteeg and van Swaaij [26], we obtain the following
+expression for the Henry’s constant for CO2 with MEA:
+HCO2,MEA
+(Pa) = 6.6434 × 108
+exp
+ −896.5
+T
+
+(10)
+2.3. Enthalpy of absorption
+Enthalpy of CO2 absorption in aqueous MEA solution can be
+derived from enthalpy balance of the absorption process:
+Habs =
+nFinalHl
+Final −nInitialHl
+Initial −nCO2Hv
+CO2
+nCO2
+(11)
+where Habs is the enthalpy of absorption per unit mole of CO2,
+Hl
+Final is the molar enthalpy of the ﬁnal solution, Hl
+Initial is the
+molar enthalpy of the initial solution, Hv
+CO2 is the molar enthalpy
+of gaseous CO2 absorbed, nFinal is the number of moles of the ﬁnal
+solution, nInitial is the number of moles of the initial solution, nCO2
+is the number of moles of CO2 absorbed.
+There are two kinds of enthalpy of absorption, i.e. the integral
+enthalpy of absorption and the differential enthalpy of absorption.
+The integral enthalpy of absorption for a certain amine–H2O–CO2
+system is the heat effect per unit mole of CO2 during the CO2 load-
+ing process with the CO2 loading increasing from zero to the ﬁnal
+value of the amine–H2O–CO2 system. The differential enthalpy of
+absorption for an amine–H2O–CO2 system is the heat effect per unit
+mole of CO2 when an inﬁnitesimal amount of CO2 is added into this
+amine–H2O–CO2 system.
+2.4. Activity coefﬁcients
+Activity coefﬁcients are required in aqueous phase chemical
+equilibrium calculations, phase equilibrium calculations, enthalpy
+of absorption, liquid enthalpy and liquid heat capacity calculations.
+Activity coefﬁcient of a component in a liquid mixture is func-
+tion of temperature, pressure, mixture composition and choice of
+reference state. In vapor–liquid equilibrium calculations we use
+the inﬁnite dilution mixed solvent reference state for molecular
+solute CO2 and in aqueous phase chemical equilibrium calculations
+we choose the inﬁnite dilution aqueous phase reference state for
+molecular solute CO2 and all ionic species.
+In applying electrolyte NRTL model for activity coefﬁcient calcu-
+lations, binary NRTL interaction parameters for molecule–molecule
+binary, molecule–electrolyte binary and electrolyte–electrolyte
+binary are required. Here electrolytes are deﬁned as pairs of cation
+and anion. In addition, solvent dielectric constants are needed to
+facilitate calculations of long-range ion–ion interaction contribu-
+tion to activity coefﬁcients. Table 5 shows the dielectric constant
+correlation for MEA.
+Unless speciﬁed otherwise, all molecule–molecule binary
+parameters and electrolyte–electrolyte binary parameters are
+defaulted to zero and all molecule–electrolyte binary parameters
+are defaulted to (8, −4). The nonrandomness factor, ˛, is ﬁxed at 0.2.
+The calculated thermodynamic properties of the electrolyte solu-
+tion are dominated by the binary NRTL parameters associated with
+the major species in the system. For the MEA–H2O–CO2 system, the
+binary parameters for the water–MEA binary, the water–(MEAH+,
+HCO3−) binary, the water–(MEAH+, MEACOO−) binary determine
+the predicted thermodynamic properties. These binary parameters
+are in turn to be identiﬁed from ﬁtting to available experimental
+data.
+3. Modeling results
+Table 6 summarizes the model parameters and how these
+parameters are identiﬁed in this work. Most of the parameters
+can be obtained from Aspen Plus databank (see Tables 2–5). Other
+parameters are determined by ﬁtting to the experimental data.
+3.1. MEA
+Extensive experimental vapor pressure data, enthalpy of vapor-
+ization data, liquid heat capacity data and liquid density data are
+available for MEA. The PC-SAFT parameters of MEA are regressed
+from the vapor pressure data [27–30] with average relative devi-
+ation of 3.9%, enthalpy of vaporization data [31,32] with average
+relative deviation of 2.8%, liquid heat capacity data [33,34] with
+average relative deviation of 0.5% and liquid density data [35–37]
+with average relative deviation of 0.03%. The identiﬁed PC-SAFT
+parameters for MEA are given in Table 1.
+

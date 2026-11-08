@@ -1,0 +1,183 @@
+Modeling of the Helium-Heated Steam Reformer for HTR-10.pdf
+HTGR_SMR_MEA_CCS_Research_Local\03_SMR_Reactor\Yin_2007_SMR_Heat_Transfer_Validation_Data.pdf
+=====
+--- PDF p.1 ---
+Journal of Nuclear Science and Technology
+ISSN: 0022-3131 (Print) 1881-1248 (Online) Journal homepage: www.tandfonline.com/journals/tnst20
+Modeling of the Helium-Heated Steam Reformer
+for HTR-10
+Huaqiang YIN, Shengyao JIANG, Youjie ZHANG & Huaiming JU
+To cite this article: Huaqiang YIN, Shengyao JIANG, Youjie ZHANG & Huaiming JU (2007)
+Modeling of the Helium-Heated Steam Reformer for HTR-10, Journal of Nuclear Science and
+Technology, 44:7, 977-984, DOI: 10.1080/18811248.2007.9711337
+To link to this article:  https://doi.org/10.1080/18811248.2007.9711337
+Published online: 05 Jan 2012.
+Submit your article to this journal 
+Article views: 410
+View related articles 
+Citing articles: 2 View citing articles 
+Full Terms & Conditions of access and use can be found at
+https://www.tandfonline.com/action/journalInformation?journalCode=tnst20
+
+--- PDF p.2 ---
+Modeling of the Helium-Heated Steam Reformer for HTR-10
+Huaqiang YIN, Shengyao JIANG, Youjie ZHANG and Huaiming JU
+Advanced Reactor Engineering and Safety, Key Laboratory of MOE of China, Institute
+of Nuclear and New Energy Technology, Tsinghua University, Beijing 100084, China
+(Received February 9, 2007 and accepted in revised form April 9, 2007)
+In this study, based on the pseudo-homogeneous one-dimensional model, a steady-state model of the
+helium-heated steam reformer planned to be connected with the 10 MW high temperature gas cooled re-
+actor (HTR-10) has been developed. Good agreement is shown between the simulating results and exper-
+imental data. The inﬂuence of main process parameters on the performance with respect to the methane
+conversion and the hydrogen yield is investigated and discussed. The performance increases remarkably
+with the increase in the inlet helium temperature when it is lower than 1,000C. Whereas, the eﬀect be-
+comes weak when the temperature is higher than 1,000C. The inﬂuence of the inlet helium ﬂow rate is not
+as evident as that of the temperature. The inlet helium pressure and inlet process gas temperature have
+almost no inﬂuence on the performance. The performance increases with the decrease in the inlet process
+gas pressure. The inﬂuence of the inlet process gas ﬂow rate and steam-to-carbon ratio (S/C) is compli-
+cated. Optimal values should be chosen for them to obtain a high performance.
+KEYWORDS: nuclear process heat application, HTR-10, hydrogen production, helium-heated
+steam reformer
+I. Introduction
+World hydrogen consumption for fertilizer and oil reﬁning
+is about 50 million metric tons per year.1) The rapid growth
+in demand is a result of the decreased availability of the light
+crude oil and corresponding increased use of the heavy crude
+oil.2) The light crude oil does not require extra hydrogen for
+conversion to gasoline while the heavy crude oil requires a
+massive amount of hydrogen for conversion to gasoline. If
+the cost goals for automotive fuel cells are reached, the
+transportation sector may ultimately be fueled by hydrogen.
+This implies a growth in the hydrogen consumption by one
+to two orders of magnitude over a period of several deca-
+des.3) Although the demand for hydrogen will increase in
+the near future, a primary energy is needed to produce hy-
+drogen from the fossil fuel or water. Taking into account
+global warming and environment protection issues, nuclear
+energy supplied by the high-temperature gas-cooled reactor
+is a suitable energy source for a huge amount of hydrogen
+production compared with the fossil fuel energy.4)
+HTR-10 was operated in 2000 at the Institute of Nuclear
+and New Energy Technology (INET), Tsinghua University,
+Beijing. This test reactor will be utilized to develop a mod-
+ular high temperature gas cooled reactor technology as well
+as to establish an experimental base for a nuclear process
+heat application. INET has started a R&D project for devel-
+oping a hydrogen system.5) A hydrogen production system
+by steam methane reforming (SMR) is to be the ﬁrst heat uti-
+lization system of HTR-10. The coupling technology be-
+tween HTR-10 and the hydrogen production system by
+SMR can contribute to other hydrogen production systems
+such as water-splitting by a thermochemical method.6,7)
+The helium-heated reformer is the key component of the
+hydrogen production system. It is diﬀerent from that of the
+conventional reformer in such aspects as heat transferring,
+geometry and operation conditions. It was experimentally in-
+vestigated in the EVA-I and EVA-II test facilities at the
+Research Center Juelich8) and in the mock-up model test fa-
+cilities at Japan Atomic Energy Agency (JAEA).9) In this pa-
+per, a systematic analysis of the performance of the reformer
+by means of numerical simulations is addressed. A steady-
+state mathematical model based on the pseudo-homogeneous
+one-dimensional model has been set up and a corresponding
+computer program is developed. With this program, the in-
+ﬂuence of main process parameters such as the inlet helium
+parameters, inlet process gas parameter, and S/C on the per-
+formance with respect to the methane conversion and hydro-
+gen yield is investigated and discussed.
+II. HTR-10 Hydrogen Production System
+1. Overview of HTR-10 Hydrogen Production System
+The HTR-10 hydrogen production system is designed to
+utilize the nuclear heat eﬀectively and to achieve hydrogen
+productivity competitive to that of a commercial fossil-ﬁred
+plant with operability, controllability, and safety. Figure 1
+Atomic Energy Society of Japan
+Corresponding author,
+E-mail: yinhuaqiang@mail.tsinghua.edu.cn
+Journal of NUCLEAR SCIENCE and TECHNOLOGY, Vol. 44, No. 7, p. 977–984 (2007)
+977
+ARTICLE
+
+--- PDF p.3 ---
+shows an arrangement of main components of the HTR-10
+hydrogen production system. HTR-10 can supply the nuclear
+heat with 750C now, and later with 950C for the hydrogen
+production, to intermediate heat exchanger (IHX) in a pri-
+mary helium gas loop. And the nuclear heat is transferred
+from the primary helium gas loop to a secondary helium
+gas loop at IHX, which is to be utilized as a heat source
+for the hydrogen production. Hydrogen is produced by
+SMR in a steam reformer (SR) which is designed to have
+an
+approximate
+hydrogen
+production
+capacity
+of
+2,500 Nm3/h. Due to the heat loss along the secondary heli-
+um gas pipes from IHX to SR, the secondary helium gas
+temperature is reduced to 890C at SR inlet whereas the
+IHX outlet temperature is 905C.
+2. Helium-heated Steam Reformer
+The helium-heated steam reformer is the key component
+of the HTR-10 hydrogen production system. Two main
+chemical reactions are considered here.
+The ﬁrst reaction is the endothemic steam reforming reac-
+tion:
+CH4 þ H2O ¼ CO þ 3H2  205.8 kJ/mol:
+ð1Þ
+The second reaction is the exothemic water gas shift reac-
+tion:
+CO þ H2O ¼ CO2 þ H2 þ 41.2 kJ/mol:
+ð2Þ
+The overall reaction is as follows:
+CH4 þ 2H2O ¼ CO2 þ 4H2  164.6 kJ/mol:
+ð3Þ
+Although the second reaction is exothemic, the overall re-
+action is endothemic. Hence, the conversion requires a large
+quantity of heat. And the number of the moles of the conver-
+sion is increased. So, high-temperature and low-pressure
+conditions are more favorable for this process. In addition,
+this process is limited by a thermodynamic equilibrium.
+The structure schematic diagram of the reformer is illustrat-
+ed in Figs. 2(a) and (b). Generally speaking, the helium-
+heated reformer is a tube-shell type reformer which is made
+up of reformer tube bundles. From inside to outside, it can be
+divided into three parts: centric tube, catalyst tube, and guide
+tube. The process gas with a low temperature enters the
+process gas inlet at the top and ﬂows downwards through
+the annular catalyst bed, where it absorbs two parts of heat,
+one part from the helium side and the other part from the re-
+turning process gas in the centric tube. The heat is used to
+drive the chemical reaction and promote the temperature
+of the process gas. At the bottom of the catalyst bed, the
+temperature of the process gas reaches its maximum, and
+then, it returns to the centric tube and ﬂows upwards. As it
+ﬂows further, the heat is transferred back to the reacting
+process gas due to the temperature diﬀerence. Then, it leaves
+the reformer from the process gas outlet at the top. On the
+other hand, the helium with the high temperature enters
+the helium gas inlet at the bottom and ﬂows upwards through
+the annular space formed by the catalyst tube and the guide
+tube. As it ﬂows further, the heat is transferred to the react-
+ing process gas due to the large temperature diﬀerence.
+Then, it leaves the reformer from the helium gas outlet at
+the top. Usually, in order to enhance the heat transfer, some
+measures are put into practice, for example, ﬁns at the out-
+side of the catalyst tube. Some design parameters of the re-
+former are listed in Table 1.
+III. Mathematical Model of the Reformer
+1. Reaction Rate Equations
+Prior to High Temperature Engineering Test Reactor hy-
+drogen production system, a catalyst test was carried out
+by Ohashi and Inagaki at JAERI.11) The apparent activation
+energy and reaction rate constant of the Ni-based catalyst
+was obtained. Reaction rate equations are as follows:
+Fig. 1
+Flow scheme of the HTR-10 hydrogen production system
+Fig. 2
+Schematic diagram of the steam reformer
+978
+H. YIN et al.
+JOURNAL OF NUCLEAR SCIENCE AND TECHNOLOGY
+

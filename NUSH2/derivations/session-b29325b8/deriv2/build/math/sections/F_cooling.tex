@@ -1,0 +1,157 @@
+\section{F. Syngas cooling and separation}\label{sec:F}
+After the second shift bed the gas falls from 213 C to 40 C and most of its water condenses. The INL sheets give the full train for Case 5, which stands in for the missing Case 6. Two results matter most for the plant balance: the heat that can reach the reboiler and the dry feed to the absorber. The condensate is tracked alongside them.
+
+Inside this section $T_{in}$ and $T_{out}$ replace plain numbered temperatures, and the flash uses $\beta_V$ with $F_f$, $V_f$ and $L_f$, because $V$ and $L$ already name a control volume and a tube length. Numbers tagged \tagC{} are hand arithmetic on printed values. No engine test has run for these cards, and each benchmark is a stated target. The Case 5 duties are printed in \U{MMBtu\ h^{-1}}, and 1 \U{MMBtu\ h^{-1}} is 0.29307 MW.
+
+\begin{eqcard}{F.1}{R}{Sensible duty}
+\Stmt{\dot Q=\sum_iF_i\left[h_i\left(T_{in}\right)-h_i\left(T_{out}\right)\right]}
+\Interp{The heat a cooler removes while no water condenses. It reads straight from the enthalpies at the two ends.}
+\Deriv{\Eq{A.8} on the gas side with no work and no change of composition. The enthalpies of \Eq{A.9} carry the temperature dependence, so no mean heat capacity is needed.}
+\Vars{\V{T_{in}}{cooler inlet temperature}{\U{K}} \V{T_{out}}{cooler outlet temperature}{\U{K}}}
+\Assume{SS, IG. No phase change above the dew point.}
+\Source{\tagT{} Consequence of \Eq{A.8}.}
+\Impl{\fn{units::cooler::sensible}}
+\Valid{PUB}{eq_f_01}{Target from TEV-961 \cite{TEV961}, A-55 and A-56, PDF p.~79 and p.~80: HPS-GEN1 236.3 \U{MMBtu\ h^{-1}}, 69.3 MW, from 1600 to 635 F. WGS-EX1 66.7, 19.5 MW, from 764 to 480 F. WGS-EX2 24.2, 7.1 MW, from 480 to 375 F.}
+\end{eqcard}
+
+\begin{eqcard}{F.2}{R}{Cooling train}
+\Stmt{\dot Q_{train}=\dot Q_{HPS}+\dot Q_{EX1}+\dot Q_{EX2}+\dot Q_{EX3}+\dot Q_{EX4}+\dot Q_{KO}}
+\Interp{The whole train is six exchangers in series, with the two shift beds between them. Summing them gives the total heat taken out of the gas between the reformer and the absorber.}
+\Deriv{Case 5 prints 236.3, 66.7, 24.2, 65.7, 117.1 and 19.7 \U{MMBtu\ h^{-1}} from HPS-GEN1 through KO-DRM-1. The sum is 529.7 \U{MMBtu\ h^{-1}}, or 155.2 MW \tagC. WGS-EX3 runs from 415 to 300 F, WGS-EX4 from 300 to 158 F and the knock-out drum from 158 to 104 F. INL gives neither exchanger types nor areas.}
+\Vars{\V{\dot Q_{train}}{total duty of the cooling train}{\U{W}}}
+\Assume{Case 5 proxy.}
+\Source{\tagP{} TEV-961 \cite{TEV961}, A-55 and A-56, PDF p.~79 and p.~80. \tagM{1}: Case 6 sheets missing.}
+\Impl{\fn{units::cooler::train}}
+\Valid{PUB}{eq_f_02}{Target: within 15\% for WGS-EX3 and WGS-EX4 on the first pass, with any misfit reported and left in place.}
+\end{eqcard}
+
+\begin{eqcard}{F.3}{R}{Dew point}
+\Stmt{y_{H_2O}\,p=p_{sat}\left(T_{dp}\right)}
+\Interp{Water starts to condense when its partial pressure reaches the saturation pressure. Above that temperature \Eq{F.1} holds. Below it the latent heat dominates.}
+\Deriv{Raoult's law for a nearly pure liquid water phase, with $\gamma=1$ and $x_w=1$. The ideal gas sets the partial pressure.}
+\Vars{\V{y_{H_2O}}{water mole fraction in the gas}{1} \V{p_{sat}}{water saturation pressure}{\U{Pa}}}
+\Assume{Raoult, $\gamma=1$.}
+\Source{\tagT{} Textbook result.}
+\Impl{\fn{units::cooler::dew_point}}
+\Valid{PUB}{eq_f_03}{Target: 331 F printed on A-53, which is 166 C. Hand estimate at the second bed inlet: $y_{H_2O}=0.269$ at 413 psi gives 7.66 bar of water, which saturates near 169 C \tagC, about 3 K above the printed value.}
+\end{eqcard}
+
+\begin{eqcard}{F.4}{E}{Saturation pressure}
+\Stmt{p_{sat}\left(T\right)=\text{IAPWS-IF97 saturation line}}
+\Interp{Water properties come from the international steam tables through a maintained library.}
+\Deriv{The library holds no water saturation table and no Antoine coefficients. The screening Antoine fit is carried no further, because its constants are rated from 99 to 374 C and it gives 6.10 kPa at 35 C, against 5.63 kPa on the project input sheet. The maintained source is IF97 through \texttt{seuif97}, under an MIT licence.}
+\Vars{\V{p_{sat}(T)}{saturation pressure at $T$}{\U{Pa}}}
+\Assume{Screening Antoine not carried.}
+\Source{\tagM{9}: no water saturation data in the library, IF97 used in its place.}
+\Impl{\fn{props::steam::psat}, present code \fn{props::steam::psat_pa}}
+\Valid{PUB}{eq_f_04}{Target: the IF97 verification table.}
+\end{eqcard}
+
+\begin{eqcard}{F.5}{R}{Water left in the gas}
+\Stmt{y_wp=x_w\gamma_wp_{sat}\left(T\right),\qquad x_w\approx1}
+\Interp{Gas leaving a cold knock-out drum still carries water, set by the drum temperature and pressure.}
+\Deriv{The same balance as \Eq{F.3}, written for $y_w$ at a known temperature. Dissolved gases are dilute, so $x_w$ stays near one.}
+\Vars{\V{y_w}{water mole fraction in the gas}{1} \V{x_w}{water mole fraction in the liquid}{1} \V{\gamma_w}{water activity coefficient}{1}}
+\Assume{Dilute gases.}
+\Source{\tagT{} Textbook result. Stream value from IEAGHG 2017-02 \cite{IEAGHG17}, PDF p.~44.}
+\Impl{\fn{units::flash::k_water}}
+\Valid{PUB}{eq_f_05}{Target: 0.24 mol\% at 35 C and 25.8 bar, IEAGHG stream 7. With 5.63 kPa from the project input sheet, this equation gives 0.22 mol\% \tagC. The printed stream implies 6.19 kPa, which is 10\% higher.}
+\end{eqcard}
+
+\begin{eqcard}{F.6}{E}{Dissolved gas}
+\Stmt{x_{CO_2}=\frac{y_{CO_2}\,p}{H_x},\qquad H_x=H^w_{CO_2}\,c_w}
+\Interp{Some CO$_2$ dissolves in the condensate. Henry's law gives the amount from its partial pressure.}
+\Deriv{$H^w_{CO_2}$ is the water value of \Eq{G.22} on a concentration basis, so the molar density of water $c_w$ turns it into the mole fraction constant $H_x$. Aronu prints no unit beside its Eq 17. Dugas Eq 5.9 prints the same constants with \U{Pa\ m^3\ mol^{-1}}. Both trace to Versteeg and van Swaaij (1988), a paper the library lacks. The local Versteeg file is the kinetics paper.}
+\Vars{\V{x_i}{liquid mole fraction of $i$}{1} \V{H_x}{Henry constant, mole fraction basis}{\U{Pa}} \V{H^w_{CO_2}}{Henry constant of CO$_2$ in water}{\U{Pa\ m^3\ mol^{-1}}} \V{c_w}{molar density of liquid water}{\U{mol\ m^{-3}}}}
+\Assume{Dilute CO$_2$ in pure water. No ionisation.}
+\Source{\tagP{} Aronu et al., Chem.\ Eng.\ Sci.\ 66 (2011) 6393, Eq 17, PDF p.~4, with the unit from Dugas \cite{Dugas}, Eq 5.9, PDF p.~129. \tagM{8}: second hand.}
+\Impl{\fn{units::flash::k_gas}}
+\Valid{PUB}{eq_f_06}{Target: 288 \U{kg\ h^{-1}} of CO$_2$ at Case 5, a project calculation. Hand check at 40 C and 4.74 bar of CO$_2$: 115 \U{mol\ m^{-3}} in 57.4 \U{t\ h^{-1}} of condensate, about 290 \U{kg\ h^{-1}} \tagC.}
+\end{eqcard}
+
+\begin{eqcard}{F.7}{R}{Flash equation}
+\Stmt{\sum_i\frac{z_i\left(K_i-1\right)}{1+\beta_V\left(K_i-1\right)}=0}
+\Interp{One equation with one unknown, the fraction of the feed that stays as vapour. It has a single root between the physical limits, so it solves reliably.}
+\Deriv{Combine \Eq{F.8} with $y_i=K_ix_i$ to get $x_i=z_i/[1+\beta_V(K_i-1)]$. Subtract $\sum_ix_i=1$ from $\sum_iy_i=1$ to reach this form, due to Rachford and Rice.}
+\Vars{\V{z_i}{feed mole fraction of $i$}{1} \V{K_i}{vapour to liquid ratio of $i$}{1} \V{\beta_V}{vapour fraction of the feed}{1}}
+\Assume{Vapour and liquid leave in equilibrium.}
+\Source{\tagT{} Rachford-Rice, textbook result.}
+\Impl{\fn{units::flash::flash}}
+\Valid{ID}{eq_f_07}{Residual of the root, and $\sum_ix_i=\sum_iy_i=1$.}
+\end{eqcard}
+
+\begin{eqcard}{F.8}{R}{Flash mass balance}
+\Stmt{F_f=V_f+L_f,\qquad F_fz_i=V_fy_i+L_fx_i}
+\Interp{What enters the drum leaves as gas or liquid. The same holds for each species.}
+\Deriv{\Eq{A.2} and \Eq{A.3} on the drum at steady state, with no reaction.}
+\Vars{\V{F_f}{flash feed}{\U{mol\ s^{-1}}} \V{V_f}{flash vapour}{\U{mol\ s^{-1}}} \V{L_f}{flash liquid}{\U{mol\ s^{-1}}}}
+\Assume{SS.}
+\Source{\tagT{} Consequence of \Eq{A.2} and \Eq{A.3}.}
+\Impl{\fn{units::flash::flash}}
+\Valid{PUB}{eq_f_08}{Target: 349,724 = 223,172 + 126,553 \U{lb\ h^{-1}}, sheet A-56. The printed sum is 349,725, so rounding sets the limit of this check.}
+\end{eqcard}
+
+\begin{eqcard}{F.9}{R}{Flash energy balance}
+\Stmt{\dot Q=V_fh_V+L_fh_L-F_fh_F}
+\Interp{The heat the drum must lose to reach its temperature. Most of it is the latent heat of the water that condenses inside.}
+\Deriv{\Eq{A.8} on the drum with no shaft work. A negative value means heat leaves.}
+\Vars{\V{h_V}{molar enthalpy of the vapour}{\U{J\ mol^{-1}}} \V{h_L}{molar enthalpy of the liquid}{\U{J\ mol^{-1}}} \V{h_F}{molar enthalpy of the feed}{\U{J\ mol^{-1}}}}
+\Assume{SS.}
+\Source{\tagT{} Consequence of \Eq{A.8}.}
+\Impl{\fn{units::flash::flash}}
+\Valid{PUB}{eq_f_09}{Target: KO-DRM-1 19.7 \U{MMBtu\ h^{-1}}, 5.8 MW, sheet A-56.}
+\end{eqcard}
+
+\begin{eqcard}{F.10}{R}{Condensate split}
+\Stmt{L_{cond}=L_{ret}+L_{treat}}
+\Interp{The condensate has two destinations. A small part returns as reformer water, and the rest goes to treatment.}
+\Deriv{A mass balance at the splitter. Case 5 prints 126,553 \U{lb\ h^{-1}} from the drum, 12,945 \U{lb\ h^{-1}} to the reformer and 113,607 \U{lb\ h^{-1}} to biotreatment and reverse osmosis. The vent line reads 0. IEAGHG sends process condensate to boiler feed water through the deaerator, but gives no condensate chemistry, so that route is noted and left unassessed.}
+\Vars{\V{L_{cond}}{total condensate}{\U{kg\ s^{-1}}} \V{L_{ret}}{condensate returned to the reformer}{\U{kg\ s^{-1}}} \V{L_{treat}}{condensate sent to treatment}{\U{kg\ s^{-1}}}}
+\Assume{Zero vent.}
+\Source{\tagP{} TEV-961 \cite{TEV961}, A-54, A-56 and A-59, PDF p.~78, p.~80 and p.~83. Route from IEAGHG 2017-02 \cite{IEAGHG17}, PDF p.~37 and p.~38.}
+\Impl{\fn{units::flash::condensate}}
+\Valid{PUB}{eq_f_10}{Target: 57.4 \U{t\ h^{-1}}, and 4.36 t per t of hydrogen on 29,000 \U{lb\ h^{-1}} of product \tagC.}
+\end{eqcard}
+
+\begin{eqcard}{F.11}{O}{Heat above a temperature limit}
+\Stmt{\dot Q\left(T_{min}\right)=\int_{T_{min}}^{149\,\mathrm{C}}\dot C\,dT+\dot m_{cond}\Delta h_{vap}}
+\Interp{The part of WGS-EX4 that is hot enough to drive a reboiler. Below the dew point most of the heat is latent, so a small temperature step carries a large duty.}
+\Deriv{Screening form: dry gas of 9,644 \U{kmol\ h^{-1}}, heat capacities of 31 and 35 \U{kJ\ kmol^{-1}\ K^{-1}} for dry gas and vapour, 2,170 \U{kJ\ kg^{-1}} of latent heat at 27 bar, and vapour held at saturation by \Eq{F.5}. With $n_v$ the water vapour flow at each end, condensation is $\dot m_{cond}=M_w[n_v(149\,\mathrm{C})-n_v(T_{min})]$. At 130 C the curve gives 11.8 MW, against 11.5 MW from a reading of the WGS-EX4 line between 300 and 266 F. The engine uses IF97, so its value will differ slightly from the Antoine figure.}
+\Vars{\V{T_{min}}{lowest useful gas temperature}{\U{K}} \V{\dot C}{gas capacity rate}{\U{W\ K^{-1}}} \V{\dot m_{cond}}{condensate formed over the interval}{\U{kg\ s^{-1}}} \V{\Delta h_{vap}}{latent heat of water}{\U{J\ kg^{-1}}}}
+\Assume{Case 5 proxy.}
+\Source{\tagC{} Screening model, on TEV-961 \cite{TEV961}, A-56, PDF p.~80.}
+\Impl{\fn{units::cooler::heat_above}}
+\Valid{GOLD}{eq_f_11}{Target: 11.5 to 11.8 MW at 130 C, before scaling by $s$ and 1,927/1,970. Port check only, so it says nothing about the physics.}
+\end{eqcard}
+
+\begin{eqcard}{F.12}{O}{CO$_2$ lost in condensate}
+\Stmt{\dot m_{CO_2,cond}=\frac{\dot m_{cond}}{M_w}\,x_{CO_2}\,M_{CO_2}}
+\Interp{Dissolved CO$_2$ leaves with the condensate and never reaches the absorber. The amount is small and real, so it is stated openly and kept out of the ledger.}
+\Deriv{\Eq{F.6} applied to the Case 5 drum at 40 C and 4.74 bar of CO$_2$. This gives 288 \U{kg\ h^{-1}}, about 0.4\% of the 75 \U{t\ h^{-1}} of CO$_2$ in the shifted gas, or roughly 2,100 \U{t\ y^{-1}} at 85\% availability \tagC. INL prints zero vent and shows no gas stripped from this line.}
+\Vars{\V{\dot m_{CO_2,cond}}{CO$_2$ leaving in condensate}{\U{kg\ s^{-1}}} \V{M_w}{molar mass of water}{\U{kg\ mol^{-1}}} \V{M_{CO_2}}{molar mass of CO$_2$}{\U{kg\ mol^{-1}}}}
+\Assume{About 0.4\% of CO$_2$. Outside the ledger.}
+\Source{\tagC{} Calculated here with \Eq{F.6}.}
+\Impl{\fn{units::flash::co2_loss}}
+\Valid{NONE}{eq_f_12}{Disclosed term. No published value exists for it.}
+\end{eqcard}
+
+\begin{eqcard}{F.13}{R}{Absorber feed}
+\Stmt{y_{i,dry}=\frac{F_i}{\sum_{dry}F_j},\qquad i=\mathrm{CO_2,\ CO,\ CH_4,\ H_2,\ N_2}}
+\Interp{The dry composition reaching the absorber. It fixes the CO$_2$ partial pressure that drives the column.}
+\Deriv{Apply \Eq{F.8} at the drum and strip water from the sum. CO$_2$ at 17.7 mol\% and 26.8 bar gives 4.74 bar of CO$_2$, the bottom driving force of Section H. A-56 prints 104 F and 389 psi at this point.}
+\Vars{\V{y_{i,dry}}{dry mole fraction of $i$}{1}}
+\Assume{Water free basis. Case 5 proxy.}
+\Source{\tagP{} TEV-961 \cite{TEV961}, A-53, PDF p.~77, for 17.7 mol\% CO$_2$ and 0.33 mol\% CO, and A-56, PDF p.~80, for temperature and pressure. \tagC{} CH$_4$ and H$_2$ by the balance of the Section E example.}
+\Impl{\fn{units::cooler::absorber_feed}}
+\Valid{PUB}{eq_f_13}{Target: 17.7, 0.33, 4.8 and 76.3 mol\% dry for CO$_2$, CO, CH$_4$ and H$_2$, within 0.5 mol\%.}
+\end{eqcard}
+
+\subsection*{Worked example: heat and water at Case B}
+Case 5 sets the shape of the train, and Case B follows by the factor 1,927/1,970 for captured CO$_2$ and the factor $s=\vScaleB$ on product, which together give 0.668.
+
+Reboiler heat. WGS-EX4 passes the 130 C limit of the plant with 11.5 MW above it by the reading used in \Eq{F.11}. Scaling gives 11.25 MW at Case A and 7.69 MW at Case B. That heat is one layer of the plant steam credit of \vQstackB{} MW against a reboiler of \vQrebB{} MW, which leaves the gap of \vQgapB{} MW that the reactor must carry. The temperature limit matters more than the duty: all of WGS-EX3 runs above 130 C and INL already spends it on LP steam, while most of WGS-EX4 runs too cold to be useful.
+
+Water. The drum condenses 57.4 \U{t\ h^{-1}} at Case 5, which scales to 38.4 \U{t\ h^{-1}} at Case B. Of this, 3.9 \U{t\ h^{-1}} returns to the reformer and 34.4 \U{t\ h^{-1}} goes to treatment by \Eq{F.10}. Dissolved CO$_2$ by \Eq{F.12} scales to about 190 \U{kg\ h^{-1}}. The dry composition of \Eq{F.13} stays the same, so the absorber sees 4.74 bar of CO$_2$ at either scale.
+
+\subsection*{Link to the sources}
+Sheets A-55 and A-56 are the only complete cooling train in the library. IEAGHG shows the same layout down to the condensate separator, and its flowsheet with one shift bed leaves about 4.6 mol\% CO in the same stream, which is why the second shift bed matters for this project. Water saturation and gas solubility rest on outside data, recorded as \tagM{9} and \tagM{8}.

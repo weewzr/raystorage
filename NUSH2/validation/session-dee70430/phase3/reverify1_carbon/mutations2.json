@@ -1,0 +1,45 @@
+[
+ {
+  "label": "M4a_capture_sign_flowsheet",
+  "desc": "negative capture efficiency in the MEA island",
+  "file": "engine/plant/src/flowsheet.rs",
+  "old": "        let cap = self.eta * feed.n[CO2];\n        let mut gas = feed.n;\n        gas[CO2] -= cap;\n        let treated = Stream::gas(\"S12\", ABSORBER_OUT.t_k(), ABSORBER_OUT.p_pa(), gas);\n        // The absorber sets circulation",
+  "new": "        let cap = -self.eta * feed.n[CO2];\n        let mut gas = feed.n;\n        gas[CO2] -= cap;\n        let treated = Stream::gas(\"S12\", ABSORBER_OUT.t_k(), ABSORBER_OUT.p_pa(), gas);\n        // The absorber sets circulation"
+ },
+ {
+  "label": "M13_ts_sign",
+  "desc": "transport and storage emission added instead of subtracted",
+  "file": "engine/plant/src/emissions.rs",
+  "old": "            a_net: a_direct - ts_emission,",
+  "new": "            a_net: a_direct + ts_emission,"
+ },
+ {
+  "label": "M15_reference_carbon_drops_product",
+  "desc": "reference carbon omits the product methane P",
+  "file": "engine/plant/src/abatement.rs",
+  "old": "        Ok(e.baseline_central / k + c.p + (1.0 - v) * k_ref)",
+  "new": "        Ok(e.baseline_central / k + (1.0 - v) * k_ref)"
+ },
+ {
+  "label": "M18_c2_atoms",
+  "desc": "ethane counted with one carbon atom in the ledger",
+  "file": "engine/plant/src/carbon.rs",
+  "old": "pub const CARBON_ATOMS: [f64; NSP] = [0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 2.0, 3.0, 4.0, 5.0];",
+  "new": "pub const CARBON_ATOMS: [f64; NSP] = [0.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 3.0, 4.0, 5.0];"
+ },
+ {
+  "label": "M19_hours_in_k",
+  "desc": "annual conversion uses 8760 h instead of availability hours",
+  "file": "engine/plant/src/abatement.rs",
+  "old": "    pub fn tonnes_per_kmol_h(hours: f64) -> f64 {",
+  "new": "    pub fn tonnes_per_kmol_h(_hours: f64) -> f64 {\n        let hours = 8760.0;"
+ },
+ {
+  "label": "M10w_ts_terminal_dropped_workspace",
+  "desc": "terminal share dropped from the T&S sum, whole workspace test run",
+  "file": "engine/plant/src/abatement.rs",
+  "old": "            terminal: t.terminal,",
+  "new": "            terminal: 0.0,",
+  "workspace": true
+ }
+]

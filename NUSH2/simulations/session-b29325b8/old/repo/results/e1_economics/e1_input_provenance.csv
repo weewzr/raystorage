@@ -1,0 +1,8 @@
+id,value,unit,original_year,currency,target_year,normalization,provenance,evidence_class,double_count_treatment
+IAEA2075_MHRT_CAPEX,2748,million USD,2021,USD,2025,US BEA GDP deflator 128.893/110.159 then 1.2776 SGD/USD,IAEA TECDOC 2075 Table 73,SOURCE CASE,replaces historical favourable nuclear bridge in E1 central
+IAEA2075_MHRT_OM,324,million USD/y,2021,USD,2025,US BEA GDP deflator 128.893/110.159 then 1.2776 SGD/USD,IAEA TECDOC 2075 Table 73,SOURCE CASE,included once in NPP annual burden
+IAEA2075_HTGR200_CAPEX,2065,million USD,2021,USD,2025,US BEA GDP deflator 128.893/110.159 then 1.2776 SGD/USD,IAEA TECDOC 2075 Table 73,SOURCE CASE,alternative nuclear case
+IAEA2075_HTGR200_OM,192,million USD/y,2021,USD,2025,US BEA GDP deflator 128.893/110.159 then 1.2776 SGD/USD,IAEA TECDOC 2075 Table 73,SOURCE CASE,included once in NPP annual burden
+IAEA1682_IHX_LOOP,69,million USD,2012 publication-year proxy,USD,2025,US BEA GDP deflator proxy then 1.2776 SGD/USD,IAEA TECDOC 1682 Table 3.17,PRELIMINARY SOURCE ANCHOR,tested separately; not stacked on modern NPP cases because scope overlap unresolved
+NG_PRICE,15,SGD/GJ,screening,SGD,2025,no conversion,project assumption A-08,SCREENING ASSUMPTION,baseline and candidate consistently
+TS_PRICE,15,SGD/tCO2,screening,SGD,2025,no conversion,project assumption A-16,SCREENING ASSUMPTION,separate from capture CAPEX

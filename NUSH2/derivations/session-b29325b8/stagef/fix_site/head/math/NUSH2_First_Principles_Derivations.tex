@@ -1,0 +1,66 @@
+% NUS-H2 first-principles derivations. Master file; each section is its own file.
+\documentclass[11pt,a4paper]{article}
+\input{preamble}
+\input{macros}
+\input{generated/values}
+
+\begin{document}
+
+\hypersetup{pdftitle={NUS-H2: First-Principles Derivations},pdfauthor={Wee Zhern Ray}}
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\centering
+\vspace*{3cm}
+{\LARGE\bfseries NUS-H2: First-Principles Derivations\par}
+\vspace{0.8cm}
+{\large Nuclear-Upgraded Steam Methane Reforming with Carbon Capture\\
+for Low-Carbon Hydrogen in Singapore\par}
+\vspace{1.5cm}
+{\large Wee Zhern Ray\par}
+\vspace{1.0cm}
+{\normalsize MIT licence. OUTRAM PARK (github.com/theodoreOnzGit/outram-park-backend) was consulted as a reference; no OUTRAM PARK code is included and no endorsement is implied.\par}
+\vspace{1.5cm}
+\begin{minipage}{0.86\textwidth}\centering\small\itshape \vNumberBasis\end{minipage}
+\vfill
+\end{titlepage}
+\hypersetup{pageanchor=true}
+
+\tableofcontents
+\clearpage
+
+% A blank line after each input closes the last paragraph of that section, so the number
+% block at the head of the next file adds no stray spaces to it.
+\input{sections/00_reference_frame}
+
+\input{sections/00_variables}
+
+\input{sections/A_conservation}
+
+\input{sections/B_htgr}
+
+\input{sections/C_ihx}
+
+\input{sections/D_smr}
+
+\input{sections/E_wgs}
+
+\input{sections/F_cooling}
+
+\input{sections/G_mea_thermo}
+
+\input{sections/H_absorber}
+
+\input{sections/I_stripper}
+
+\input{sections/J_plant}
+
+\input{sections/K_emissions}
+
+\input{sections/L_economics}
+
+\input{sections/M_missing_sources}
+
+\clearpage
+\bibliography{refs}
+
+\end{document}

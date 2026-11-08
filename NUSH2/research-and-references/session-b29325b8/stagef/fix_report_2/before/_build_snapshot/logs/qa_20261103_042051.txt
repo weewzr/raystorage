@@ -1,0 +1,78 @@
+1	PASS	Main text pages	15 pages, Executive Summary at PDF p3, References at PDF p18
+T1	PASS	PDF A4 and opens	31 pages, sizes {(595, 842)}
+T1b	PASS	PDF page count equals Word count	Word 31, PDF 31, route P1
+T1c	PASS	Fonts embedded, Times New Roman, no Gungsuh	Cambria, CambriaMath, TimesNewRomanPS-BoldItalicMT, TimesNewRomanPS-BoldMT, TimesNewRomanPS-ItalicMT, TimesNewRomanPSMT
+2	PASS	12 pt in main text except scripts	small spans 0; size histogram [(12.0, 31556), (8.5, 343), (14.0, 172)]
+2b	PASS	No run below 12 pt in docx main text	min run size style default
+3	PASS	1.5 spacing on long paragraphs	Normal line=414 rule=exact, 45 long paragraphs, overrides 0
+3b	PASS	Line height with inline math	modal pitch 20.8 pt, 0 of 225 pitches more than 0.5 pt from it inside paragraphs, 16 at paragraph or table boundaries
+4	PASS	Forbidden strings	none
+4b	PASS	Product rules in all docx parts, PDF text and metadata	none
+4c	PASS	Author and last modified by read Wee Zhern Ray	{"creator": "Wee Zhern Ray", "lastModifiedBy": "Wee Zhern Ray", "pdf author": "Wee Zhern Ray", "company": "", "manager": "", "title": "NUS-H2: Nuclear-Upgraded Steam Methane Reforming with Carbon Capture for Low-Carbon Hydrogen in Singapore", "subject": "Nuclear process heat and amine capture for low-carbon hydrogen"}
+4d	PASS	No lecture photograph among the images	8 images, 14 lecture photographs hashed, byte matches []
+4e	PASS	SMR defined at first use as steam methane reforming	first SMR context 'd conventional steam methane reforming (SMR) '
+4f	PASS	Cover lines are title, author, licence and credit only	cover 'NUS-H₂: Nuclear-Upgraded Steam Methane Reforming with Carbon Capture for Low-Carbon Hydrogen in Singapore Wee Zhern Ray MIT licence OUTRAM PARK was consulted as'
+5	PASS	Stale values outside Case A or walk context	2 hits in context, outside: []
+6	PASS	Jurong Island uses reviewed	3 hits, listed in log
+7	PASS	First Western Island carries proposed and no-approval label	he proposed Western Island, a siting proposal of this study with no official approval. It makes 100,000 Nm3 h−1 of purifi
+8	PASS	Citations resolve, all cited, no author-date	60 refs, listed 62, uncited [], unresolved [], author-date []
+9	PASS	Tables, figures numbered and cited; A1, A2 present	tables {'': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 'A': [1, 2], 'B': [1, 2], 'C': [1], 'D': [1, 2, 3, 4, 5], 'E': [1, 2]}, figures {'': [1, 2, 3, 4, 5], 'D': [1, 2, 3]}, uncited [], equations [('3', '1'), ('3', '2'), ('4', '1'), ('4', '2'), ('4', '3')]
+10	PASS	Number lint: content numbers are tokens or literals	stray [], raw money 0 in content, 0 in tables
+10b	PASS	Headline tokens printed with the same text	missing []
+10c	PASS	Report built from current numbers.json and results	numbers.json matches results/
+11	PASS	Units are native math	oMath 391, unit tokens in content 214, vertAlign 0, raw []
+11b	PASS	OMML to MathML round trip	391 objects, 0 failures
+12	PASS	Style: no em dash, no banned constructions	em dashes 0, flagged [], triad candidates 31 logged
+13	PASS	Equal prominence of the three n	widths [37, 37, 37]
+14	PASS	TOC page numbers match PDF for level 1 headings	12 of 12 matched, wrong []; Word saved the file with no repair
+15	PASS	Only the two final files under report/ are visible to git, nothing staged	visible ['report/NUSH2_Final_Report.docx', 'report/NUSH2_Final_Report.pdf'], builder files not ignored [], staged []
+16	PASS	Headline set in the deck	NUSH2_Final_Presentation.pptx: missing []
+C	PASS	Direction claims in prose hold on current numbers	39 claims, failed: []
+
+Images in the docx, each checked by eye on the rendered pages:
+  word/media/image1.png 1096x519 e69c7db40433
+  word/media/image2.png 3000x1449 24a1525a6628
+  word/media/image3.png 1364x792 35b2dfc6c6e3
+  word/media/image4.png 3000x1008 08a422e45a2b
+  word/media/image5.png 1606x944 6c5762c50655
+  word/media/image6.png 1771x968 070df87cfb68
+  word/media/image7.png 1771x1086 519d2fa59700
+  word/media/image8.png 1771x1086 53f4ea566a10
+
+Jurong Island hits for review:
+  val. The plant is sized on the SOXAL hydrogen plant on Jurong Island, about 100,000 Nm3 h
+   engagement with Western Island planners, neighbouring Jurong Island operators and nearby
+   government has announced that smaller islands around Jurong Island will be connected int
+
+Triad candidates for review:
+  with duct loss, vessel loss and circulator
+  heat losses, helium circulators and the
+  as the reference solvent, with Selexol and activated
+  that retain fission products, while helium cooling and the
+  The primary helium boundary, IHX and independent
+  19 areas of infrastructure, including emergency preparedness and radioactive
+  with Western Island planners, neighbouring Jurong Island operators and nearby
+  a new western island, reclaimed over coming decades, and its
+  licensing, investment and construction, and each
+  reactor, primary and secondary
+  cryogenic unit, CO₂ compressor and ship
+  Selexol case to MEA, gas rises to N and abatement
+  the IEAGHG Base Case, N of capital and N
+  storage, integration and operating
+  IHX and loop, licensing and decommissioning
+  changes only the reactor, licensing and decommissioning
+  and N at BOAK, and N and N
+  is a named step, N and N, and it
+  the power island, the recycle train and lost
+  The row is indicative, since gas price and scale
+  two solves for N, N on the ledger and N
+  the nuclear-chemical heat interface, site-specific emergency planning and contracted
+  the SRD on syngas, IHX performance and the
+  and IHX qualification overseas, site-specific safety and licensing
+  Selexol and PSA flowsheet, including CO₂ compression and purge
+  The carbon, hydrogen and mass
+  adverse corners of SRD, losses and circulator
+  already holds owner costs, licensing and decommissioning
+  N heat-recovery rows, N input rows and N
+  conversion, availability and capture
+  so the recycle, compression and gas

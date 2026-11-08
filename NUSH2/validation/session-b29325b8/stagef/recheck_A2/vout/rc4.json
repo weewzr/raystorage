@@ -1,0 +1,157 @@
+{
+ "r178.4": {
+  "feasible": false,
+  "kpi_unmet_power": 1.3745679109799127,
+  "need": 178.4938639024726,
+  "output": 178.4,
+  "gen": 18.403914342338762,
+  "circ": 7.446362672726349,
+  "proc": 12.332119580592325,
+  "unmet_electrical": 1.3745679109799127,
+  "import_at_rated": [
+   1.3745679109799127,
+   "Grid import if the reactor is held at its rating, a card J.29 memo item that reads high below the need when back-pressure work feeds a reboiler gap"
+  ],
+  "memo_msg": [
+   "The grid import below the need is the card J.29 memo. J.29 converts the 2.22 MWe of back-pressure work on the reboiler steam at the cycle efficiency, where card B.19 counts it one to one, so the import reads high by up to 1.34 MWe"
+  ]
+ },
+ "r178.494": {
+  "feasible": true,
+  "kpi_unmet_power": 0,
+  "need": 178.4938639024726,
+  "output": 178.4938639024726,
+  "gen": 19.778482253318675,
+  "circ": 7.446362672726349,
+  "proc": 12.332119580592325,
+  "unmet_electrical": 0,
+  "import_at_rated": [
+   0,
+   "Grid import if the reactor is held at its rating, a card J.29 memo item that reads high below the need when back-pressure work feeds a reboiler gap"
+  ],
+  "memo_msg": []
+ },
+ "r179.5": {
+  "feasible": true,
+  "kpi_unmet_power": 0,
+  "need": 178.4938639024726,
+  "output": 178.4938639024726,
+  "gen": 19.778482253318675,
+  "circ": 7.446362672726349,
+  "proc": 12.332119580592325,
+  "unmet_electrical": 0,
+  "import_at_rated": [
+   0,
+   "Grid import if the reactor is held at its rating, a card J.29 memo item that reads high below the need when back-pressure work feeds a reboiler gap"
+  ],
+  "memo_msg": []
+ },
+ "r181": {
+  "feasible": true,
+  "kpi_unmet_power": 0,
+  "need": 178.4938639024726,
+  "output": 178.4938639024726,
+  "gen": 19.778482253318675,
+  "circ": 7.446362672726349,
+  "proc": 12.332119580592325,
+  "unmet_electrical": 0,
+  "import_at_rated": [
+   0,
+   "Grid import if the reactor is held at its rating, a card J.29 memo item that reads high below the need when back-pressure work feeds a reboiler gap"
+  ],
+  "memo_msg": []
+ },
+ "r210": {
+  "feasible": true,
+  "kpi_unmet_power": 0,
+  "need": 178.4938639024726,
+  "output": 178.4938639024726,
+  "gen": 19.778482253318675,
+  "circ": 7.446362672726349,
+  "proc": 12.332119580592325,
+  "unmet_electrical": 0,
+  "import_at_rated": [
+   0,
+   "Grid import if the reactor is held at its rating, a card J.29 memo item that reads high below the need when back-pressure work feeds a reboiler gap"
+  ],
+  "memo_msg": []
+ },
+ "r170": {
+  "feasible": false,
+  "kpi_unmet_power": 4.709367910979914,
+  "need": 178.4938639024726,
+  "output": 170,
+  "gen": 15.06911434233876,
+  "circ": 7.446362672726349,
+  "proc": 12.332119580592325,
+  "unmet_electrical": 4.709367910979914,
+  "import_at_rated": [
+   4.709367910979914,
+   "Grid import if the reactor is held at its rating, a card J.29 memo item that reads high below the need when back-pressure work feeds a reboiler gap"
+  ],
+  "memo_msg": [
+   "The grid import below the need is the card J.29 memo. J.29 converts the 2.22 MWe of back-pressure work on the reboiler steam at the cycle efficiency, where card B.19 counts it one to one, so the import reads high by up to 1.34 MWe"
+  ]
+ },
+ "r100": {
+  "feasible": false,
+  "kpi_unmet_power": 19.778482253318675,
+  "need": 178.4938639024726,
+  "output": 100,
+  "gen": 0,
+  "circ": 7.446362672726349,
+  "proc": 12.332119580592325,
+  "unmet_electrical": 19.778482253318675,
+  "import_at_rated": [
+   19.778482253318675,
+   "Grid import if the reactor is held at its rating, a card J.29 memo item that reads high below the need when back-pressure work feeds a reboiler gap"
+  ],
+  "memo_msg": [
+   "The grid import below the need is the card J.29 memo. J.29 converts the 2.22 MWe of back-pressure work on the reboiler steam at the cycle efficiency, where card B.19 counts it one to one, so the import reads high by up to 1.34 MWe"
+  ]
+ },
+ "caseA_mea": {
+  "feasible": false,
+  "kpi_unmet_power": 22.102853021591002,
+  "need": 260.7447679730755,
+  "output": 210,
+  "gen": 6.832695386401454,
+  "circ": 10.88716110460526,
+  "proc": 18.048387303387194,
+  "unmet_electrical": 22.102853021591002,
+  "import_at_rated": [
+   22.102853021591002,
+   "Grid import if the reactor is held at its rating, a card J.29 memo item that reads high below the need when back-pressure work feeds a reboiler gap"
+  ],
+  "memo_msg": [
+   "The grid import below the need is the card J.29 memo. J.29 converts the 3.25 MWe of back-pressure work on the reboiler steam at the cycle efficiency, where card B.19 counts it one to one, so the import reads high by up to 1.96 MWe"
+  ]
+ },
+ "caseA_sel": {
+  "feasible": false,
+  "kpi_unmet_power": 12.866470391509573,
+  "need": 242.40924531830737,
+  "output": 210,
+  "gen": 14.876706357250285,
+  "circ": 10.443176748759862,
+  "proc": 17.299999999999997,
+  "unmet_electrical": 12.866470391509573,
+  "import_at_rated": [
+   12.866470391509573,
+   "Grid import if the reactor is held at its rating, a card J.29 memo item that reads high below the need when back-pressure work feeds a reboiler gap"
+  ],
+  "memo_msg": []
+ },
+ "kpi_label": "Grid import at rating, a J.29 memo",
+ "results_memo": [
+  "Grid import at the reactor output, the electricity the power branch cannot make 0 MWe calculated",
+  "Auxiliary electricity 19.78 MWe; generated from reactor heat at the need 19.78 MWe; grid import if the reactor is held at its rating 0.00 MWe, a memo item not added to supply. Engine totals.",
+  "Electricity above the rated reactor sink electricity 0 J.29 Anchored port"
+ ],
+ "results_status_flag": [
+  "info, plant: status=gated_T05"
+ ],
+ "dash_import_row": [
+  "Grid import at the rating, MWe 0.00 22.10 12.87"
+ ]
+}

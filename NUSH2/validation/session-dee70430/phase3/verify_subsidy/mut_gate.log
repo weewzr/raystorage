@@ -1,0 +1,10 @@
+export exit 0
+compare exit 1
+  Subsidy_Scenarios.csv line 37 [B_REC_F,FOAK] private_capital_sgdm: '1145.618248' against '372.647749'
+  Subsidy_Scenarios.csv line 38 [B_REC_F,FOAK] private_capital_sgdm: '1145.618248' against '372.647749'
+  Subsidy_Scenarios.csv line 39 [B_REC_F,FOAK] private_capital_sgdm: '772.970500' against '745.295498'
+  Subsidy_Scenarios.csv line 40 [B_REC_F,FOAK] private_capital_sgdm: '772.970500' against '745.295498'
+  Subsidy_Scenarios.csv line 41 [B_REC_F,FOAK] private_capital_sgdm: '400.322751' against '1117.943247'
+  Subsidy_Scenarios.csv: further differences not listed
+Validation_Results.csv: agrees, 9750 cells compared, 0 unequal as text but within tolerance
+FAIL: 41 difference(s)

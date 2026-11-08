@@ -1,0 +1,373 @@
+HTGR_SMR_MEA_CCS_Research_Local\1-s2.0-S030626192301557X-main.pdf
+=====
+--- PDF p.1 ---
+Applied Energy 355 (2024) 122193
+Available online 18 November 2023
+0306-2619/© 2023 The Author(s). Published by Elsevier Ltd. This is an open access article under the CC BY license (http://creativecommons.org/licenses/by/4.0/).
+Contents lists available at ScienceDirect
+Applied Energy
+journal homepage: www.elsevier.com/locate/apenergy
+Results from pilot-scale CO2 capture testing using 30 wt% MEA at a
+Waste-to-Energy facility: Optimisation through parametric analysis
+Sai Hema Bhavya Vinjarapu a,∗, Randi Neerup a, Anders Hellerup Larsen a, Jens Kristian Jørsboe a,
+Sebastian Nis Bay Villadsen a, Søren Jensen b, Jakob Lindkvist Karlsson b, Jannik Kappel c,
+Henrik Lassen c, Peter Blinksbjerg c, Nicolas von Solms a, Philip Loldrup Fosbøl a
+a Technical University of Denmark (DTU), Department of Chemical Engineering, Center for Energy Resources Engineering (CERE), Søltofts Plads, Building
+229, 2800 Kongens Lyngby, Denmark
+b Pentair Union Engineering A/S, Snaremosevej 27, 7000 Fredericia, Denmark
+c Amager Bakke, ARC, Vindmøllevej 6, 2300 Copenhagen, Denmark
+G R A P H I C A L
+A B S T R A C T
+A R T I C L E
+I N F O
+Keywords:
+CO2 capture
+Waste-to-Energy
+A B S T R A C T
+Post-combustion carbon capture is a well-established technology for removing CO2 from industrial emissions.
+However, research is still underway to optimise the process and make it more energy efficient. The current
+∗Corresponding author.
+E-mail address: shbvin@kt.dtu.dk (S.H.B. Vinjarapu).
+https://doi.org/10.1016/j.apenergy.2023.122193
+Received 11 July 2023; Received in revised form 24 October 2023; Accepted 28 October 2023
+
+--- PDF p.2 ---
+Applied Energy 355 (2024) 122193
+2
+S.H.B. Vinjarapu et al.
+Specific reboiler duty (SRD)
+Capture efficiency
+Stripping intensity
+work aims to present the results from pilot-scale (with a capacity of 1 tonne CO2/day) studies of CO2 capture
+conducted at Amager Bakke, a Waste-to-Energy facility in Copenhagen, Denmark. The pilot operation is fully
+automated, and the process control structure helps achieve multiple steady states at regular intervals. In
+addition, the pilot is capable of several configurations which can assist in optimising the energy required for
+solvent regeneration. The current work discusses the base case configuration of the pilot plant by employing
+30 wt% MEA as the solvent. Experiments were conducted to analyse the influence of reboiler duty, solvent
+flow rate, and gas flow rate on the pilot’s performance. The influence of these parameters on several aspects is
+discussed in detail, and recommendations for the optimal operation of such plants are provided. An optimum
+specific reboiler duty of 3.46 GJ/tonne CO2 is obtained at a solvent flow rate of 306 kg/h, flue gas flow rate
+of 113 kg/h, and reboiler duty of 17.5 kW excluding heat loss.
+Nomenclature
+Abbreviations
+𝑎𝑣𝑔
+average
+𝐶𝐶𝑈𝑆
+Carbon capture, utilisation, and storage
+𝑒𝑠𝑡
+estimated
+𝐻𝐸
+Heat exchanger
+𝐻𝑀𝐼
+Human machine interface
+𝐿𝑀𝑇𝐷
+Logarithmic mean temperature difference
+𝑀𝐸𝐴
+Monoethanolamine
+𝑀𝑂𝑉
+Motorised valve
+𝑀𝑊
+Molecular weight
+𝑃𝐶𝐶
+Post-combustion capture
+𝑃𝐹𝐷
+Process flow diagram
+𝑃𝐼
+Proportional–integral
+𝑃𝐿𝐶
+Programmable logic controller
+𝑅𝐷
+Reboiler duty
+𝑆𝑅𝐷
+Specific reboiler duty
+𝑊𝑡𝐸
+Waste-to-Energy
+Symbols
+𝛼
+Loading
+𝛥𝑇
+Temperature difference
+𝜖
+Capture efficiency
+𝜆
+Latent heat of vaporisation of water
+𝜌
+Density
+𝐴
+Excess volume parameter
+𝑎
+Correlation parameter
+𝐴𝑟
+Area
+𝐺
+Flue gas flow rate
+𝐿
+Lean solvent flow rate
+𝑚
+Mass flow rate
+𝑛
+Molar flow rate
+𝑇
+Temperature
+𝑈
+Overall heat transfer coefficient
+𝑉
+Superficial gas velocity
+𝑉
+Volume
+𝑤𝑡%
+Weight percentage
+𝑥
+Mole fraction
+𝑦
+Concentration in gas phase
+𝑦𝑠𝑎𝑡
+Saturated concentration of water
+1. Introduction
+Carbon capture, utilisation, and storage (CCUS) is becoming in-
+creasingly important in addressing climate change [1–3]. CCUS is a
+crucial technology for reducing greenhouse gas emissions, especially
+Subscripts
+𝑎𝑏𝑠
+CO2 absorption
+𝑐
+condenser exit stream
+CO2, 𝑔
+CO2 in flue gas phase
+CO2, 𝑖𝑛
+CO2 in the inlet stream
+CO2, 𝑙
+CO2 in liquid phase
+CO2, 𝑜𝑢𝑡
+CO2 in the outlet stream
+CO2, 𝑠
+CO2 at stripper top
+𝑑𝑒𝑠, CO2
+CO2 desorption
+𝑓𝑙𝑢𝑒𝑔𝑎𝑠, 𝑖𝑛
+inlet flue gas stream
+𝑓𝑙𝑢𝑒𝑔𝑎𝑠, 𝑜𝑢𝑡
+outlet flue gas stream
+𝑙𝑒𝑎𝑛
+lean solvent stream
+𝑀𝐸𝐴, 𝑙𝑜𝑎𝑑𝑒𝑑
+MEA concentration in a loaded sample
+𝑀𝐸𝐴, 𝑢𝑛𝑙𝑜𝑎𝑑𝑒𝑑
+MEA concentration in an unloaded sample
+𝑟𝑖𝑐ℎ
+rich solvent stream
+𝑠𝑒𝑛𝑠
+sensible heating
+𝑡𝑜𝑡𝑎𝑙
+total stream flow rate
+𝑣𝑎𝑝
+vapour phase
+in industries that are difficult to decarbonise, such as cement and
+steel production [4]. Post-combustion capture (PCC) is a promising
+technology for reducing greenhouse gas emissions from large station-
+ary industrial processes, such as heat and power generation [5]. PCC
+involves the treatment of industrial gases consisting of low CO2 par-
+tial pressures in large streams of non-condensable gases. The process
+technology for acid gas removal by chemical absorption from natural
+gas was developed in the 1920s [6]. Amine-based PCC offers various
+advantages: it has high capture efficiency and selectivity, the tech-
+nology is commercially available, and it can be retrofitted to existing
+power plants [7–9]. Nevertheless, the technology has some limitations,
+such as the high energy consumption required for the regeneration
+process, the corrosive nature of the amine solvents, and the potential
+for solvent degradation due to contaminants in the flue gas [8,10].
+30 wt% Monoethanolamine (MEA), which is the most widely used
+solvent, requires regeneration energy of 3.6–3.8 GJ/tonne CO2 [10,11]
+which corresponds to an 11%–15% drop in the thermal efficiency of
+the power plant including CO2 compression [12,13]. Regeneration of
+MEA contributes to 70%–80% of the operating cost [14]. The energy
+efficiency of the process could be improved by configuring the pilot for
+optimisation [15], heat integration with the power plant, development
+of new solvents [11,13,16–18], or a combination.
+Pilot-scale testing of CO2 capture is essential for developing reliable
+and cost-effective technologies. Pilot testing helps identify potential
+problems and evaluate the performance of the capture process. Several
+pilot-scale tests have been conducted at coal-fired power plants [10,19–
+22] and natural gas-fired power plants [13,23–26] employing MEA as
+the solvent. All of these studies were conducted without employing any
+optimisation of a general absorption–desorption process for CO2 cap-
+ture, which is essential for improving energy efficiency and reducing
+the cost of the capture process. Literature on pilot-scale testing of CO2
+capture employing various flue gas sources is presented in Table 1.
+
+--- PDF p.3 ---
+Applied Energy 355 (2024) 122193
+3
+S.H.B. Vinjarapu et al.
+Table 1
+Pilot-scale studies of CO2 capture utilising different flue gas sources.
+Flue gas source
+CO2 concentration
+Capacity
+Reference
+Laziska power plant
+9–13 vol%
+1000 kg/h
+[19]
+Coal-fired power plant
+–
+7.2 tons/day
+[20]
+Coal-fired power plant
+12 vol%
+1000 kg/h
+[10,21]
+Natural gas burner +
+CO2 feed from gas bottles +
+3.6–13.4 vol%
+10 kg/h
+[13,23,25]
+CO2 recycle from desorber
+Waste incinerator
+8–12 vol%
+–
+[27]
+Coal-fired power plant
+–
+–
+[22]
+Simulated natural-gas fired
+3%
+10 kg/h
+[28]
+Natural-gas fired
+–
+1 tonne/day
+[24]
+Combination of NG turbine & boiler
+4 vol%, 8 vol%
+1 tonne/day
+[29]
+Flue gas
+4–14 vol%
+–
+[30]
+Syngas
+9 vol%
+35 kg/h
+[31]
+Mixed gas
+15–20 vol%
+35 kg/h
+[31]
+Flue gas
+6 vol%
+35 kg/h
+[31]
+Lignite-fired power plant
+14.2 vol%
+7.2 tonnes/day
+[32,33]
+Ferrybridge power station
+–
+100 tonnes/day
+[34]
+Combined heat and power
+3.5 vol%
+25000 tonnes/yr
+[35,36]
+Residue fluid catalytic cracker
+13–14 vol%
+74000 tonnes/yr
+[36,37]
+Norcem cement plant
+17.8 vol%
+1000 Nm3/h
+[38]
+Residual fluid catalytic cracker
+14 vol%
+1000 Nm3/h
+[39]
+Coal-fired boiler
+11.5 vol%
+1000 Nm3/h
+[40]
+In addition to fossil fuel-based power plants, Waste-to-Energy (WtE)
+facilities also produce CO2 emissions. These facilities use thermal treat-
+ment of waste to produce energy. They are becoming increasingly
+popular as an alternative to landfilling due to their environmental ben-
+efits and use of renewable energy sources [41–44]. Shell’s CANSOLV
+capture technology and solvent DC-103 pilot tests were conducted for
+2000 operational hours at the Forum Oslo Varme WtE plant in Oslo,
+Norway. However, limited information is available about the energy
+consumed for solvent regeneration [45]. The Saga waste incineration
+plant in Saga City, Japan has a CO2 capture plant that can capture
+10 tonnes of CO2/day and use it for algae cultivation [46]. However,
+information about the capture technology’s operation and performance
+is scarce. The AVR Duiven WtE facility has implemented a commercial-
+scale CO2 capture system with the ability to capture 100,000 tonnes
+of CO2/yr [47]. A commercial-scale CO2 capture system is expected
+to be operational at the Twence WtE facility in the Netherlands by
+the end of 2023 [48]. These are the current full-scale and pilot-scale
+activities related to CO2 capture in WtE facilities. WtE plants inte-
+grated with CO2 capture are part of BECCS and contribute to negative
+emissions [49]. Therefore, it is critical to conduct more pilot-scale
+tests to develop reliable and cost-effective CO2 capture technologies for
+full-scale implementation.
+The current work aims to present baseline results from a pilot-scale
+CO2 capture plant tested at Amager Bakke, Copenhagen, Denmark,
+which is a WtE facility. The baseline experiments employed a 30 wt%
+MEA solution, which will be the basis for comparing the performance
+of advanced process configurations and new solvents. The Amager
+Bakke WtE facility, operated by Amager Resource Center (ARC), is
+expected to emit 600,000 tonnes of CO2 annually. Therefore, CCUS in-
+tegration is essential to achieve net-zero emissions. To gain knowledge
+and experience before constructing a full-scale facility, the Technical
+University of Denmark (DTU) conducted pilot-scale tests on-site from
+September to December 2021. In addition to the base case experiments,
+the tests included several process configurations such as rich recycle,
+split feed, inter-cooled absorber, interheated stripper, Lean Vapour
+Recompression (LVC), and flexible operation of the pilot with 30 wt%
+MEA. Several new solvent formulations have also been tested with
+the above-mentioned process configurations. New solvent formulations
+and advanced process configurations have the potential to reduce the
+specific reboiler duty (SRD) considerably. To determine the extent of
+optimisation obtained, it is essential to establish the operation of the
+pilot in a base case mode which serves as the standard for comparison.
+The current article details the performance of the pilot plant using
+30 wt% MEA operated in a base case configuration. In addition, a
+parametric analysis was conducted to better understand the perfor-
+mance of the pilot at varying operating conditions. Literature available
+on CO2 capture typically provides a very superficial analysis of the
+experimental data, often limiting the discussion around the SRD. It is
+crucial to obtain a thorough understanding of the several aspects of
+the pilot functionality for efficient full-scale implementation of such a
+capture plant. This work gives an in-depth insight into various aspects
+of the pilot plant which are most often overlooked.
+2. Description of the Mobile Test Unit
+DTU, in collaboration with Pentair, has designed and constructed
+a Mobile Test Unit (MTU) for pilot-scale CO2 capture. The pilot is de-
+signed to test using aqueous MEA or similar solvents to clean 150 Nm3/h
+flue gas. A 3D drawing of the pilot plant is presented in Fig. 1(a). In
+addition, a picture of the pilot is presented in Fig. 1(b).
+Fig. 1(a) shows that the pilot consists of four columns: absorber,
+desorber, wash tower, and an additional column for advanced con-
+figurations. It has two skids within which several process equipment,
+such as filters, heat exchangers, pumps, flow meters, etc., are placed.
+In addition to flexibility in terms of solvent use, the MTU allows the
+testing of several advanced configurations which enhance absorption,
+allow for heat integration, and optimise energy consumption for solvent
+regeneration. A simplified Process Flow Diagram (PFD) of the pilot is
+provided in Fig. 2. However, the pilot plant can have several process
+configurations not presented in the PFD.
+The gas and solvent flow through the system are configured for
+a base case operation. The processes involved are briefed in the sub-
+sequent sections. A detailed description of the pilot is available in
+Appendix A.
+2.1. Gas flow
+Fig. 2 shows that before the flue gas enters the absorber, it goes
+through a knock-out drum. The knock-out drum acts as a gas–water
+separator, removing the condensate from the water-saturated flue gas.
+The condensate collected in the knock-out drum is removed through
+an Armstrong valve provided at the bottom of the drum. An Armstrong
+valve is a gas–liquid separator that removes condensate from the gas
+phase. The flue gas entering the pilot has a temperature of around
+35–45 ◦C. From the knock-out drum, the flue gas enters the activated
+carbon filter that is designed to remove any Hydrogen Chloride (HCl)
+or Hydrogen Fluoride (HF) that is present in the flue gas as shown in
+

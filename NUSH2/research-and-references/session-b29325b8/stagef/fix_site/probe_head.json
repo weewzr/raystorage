@@ -1,0 +1,79 @@
+{
+ "F05_mature": {
+  "caption": [
+   "S$ per tonne CO₂e abated, and LCOH in S$/kg, reactor charged at 210.0 MWth, gas at S$20.7/GJ",
+   "Same layout, reactor charged at 178.5 MWth, gas at S$20.7/GJ"
+  ],
+  "dashtext": [],
+  "strip": "Cost at or below S$100/t on the L5 ledger and the DCF, at 10OAK_P46, 60 y, n = 1.0, gas at S$20.7/GJ: Met at these inputs: L5 95.6 and DCF 95.9 S$/t",
+  "radio": [
+   "base:false",
+   "mature:true"
+  ]
+ },
+ "F19_ts_after_mature": {
+  "radio": [
+   "base:false",
+   "mature:false"
+  ],
+  "note": "other",
+  "tile": "Abatement cost, L5 ledger, selected stage, life and exponent 72.7S$/t Base result 189.7 S$/t"
+ },
+ "F19_case_a_after_mature": {
+  "radio": [
+   "base:false",
+   "mature:false"
+  ],
+  "tile": "Abatement cost, L5 ledger, selected stage, life and exponent 51.1S$/t Base result 189.7 S$/t"
+ },
+ "F19_base": {
+  "radio": [
+   "base:true",
+   "mature:false"
+  ],
+  "tile": "189.7S$/t",
+  "dcf": "190.1S$/t"
+ },
+ "F22_focus": [
+  "INPUT:scenario:mature:true",
+  "INPUT:scenario:base:true"
+ ],
+ "F29_ladder": [
+  "Capture all-in chargeNone at these inputs0.00",
+  "Export revenueNone at these inputs0.00"
+ ],
+ "F29_minus_zero": false,
+ "F20_tornado": [
+  "Capture solvent | Solvent Selexol | 176.3 | Solvent aMDEA | 187.8"
+ ],
+ "F25_status": "Level 3 flowsheet / H₂-rich gas after capture (PSA_FEED)",
+ "F25_raw_words": false,
+ "F23_escape": {
+  "tip_shown_after_enter": true,
+  "after_one_escape_hidden_focus": [
+   true,
+   "S10"
+  ]
+ },
+ "m10": {
+  "skip": true,
+  "streamTab": 30
+ },
+ "F24_overflow": {
+  "n": 97,
+  "over": []
+ },
+ "page_hscroll_results_375": false,
+ "page_hscroll_pfd_375": false,
+ "F40_link": "THIRD_PARTY_NOTICES.txt?v=dc234a2b20432282af7d4070a946d330ff62c3ec",
+ "F40_fetch": "200 text/plain",
+ "console_errors": [],
+ "requests_other_host": [],
+ "failed_loads": [],
+ "F21_print": {
+  "pages": 3,
+  "MATURE": 1,
+  "base189.7": true,
+  "gas20.7": true
+ }
+}

@@ -1,0 +1,12 @@
+Add anchored engine, discounted cash flow and results
+
+Rust workspace with eight crates, the anchored port of the screening
+balance, the L0 to L5 ledger, the discounted cash flow with IEAGHG 2017-02
+Base Case SMR capital and fixed O&M, the exporter, the wasm ABI, the check
+scripts and the seven results files. All input numbers live in
+engine/data/parameters.toml.
+
+Every result row is an anchored port. Validation_Results.csv holds only
+verification of that port against the screening script.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>

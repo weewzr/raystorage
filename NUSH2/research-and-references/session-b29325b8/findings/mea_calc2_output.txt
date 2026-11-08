@@ -1,0 +1,45 @@
+
+======== Reactor size with extraction steam for the regeneration heat ========
+E=11.6 MWe r=0.169 SRD=3.4: Qreb 66.5 need 22.9 W_ext 3.9 reactor 223.0 MWth
+E=11.6 MWe r=0.169 SRD=3.8: Qreb 74.3 need 30.7 W_ext 5.2 reactor 228.9 MWth
+E=11.6 MWe r=0.169 SRD=4.2: Qreb 82.1 need 38.6 W_ext 6.5 reactor 234.7 MWth
+E=11.6 MWe r=0.3 SRD=3.4: Qreb 66.5 need 22.9 W_ext 6.9 reactor 218.5 MWth
+E=11.6 MWe r=0.3 SRD=3.8: Qreb 74.3 need 30.7 W_ext 9.2 reactor 222.7 MWth
+E=11.6 MWe r=0.3 SRD=4.2: Qreb 82.1 need 38.6 W_ext 11.6 reactor 227.0 MWth
+E=17.3 MWe r=0.169 SRD=3.4: Qreb 66.5 need 22.9 W_ext 3.9 reactor 237.4 MWth
+E=17.3 MWe r=0.169 SRD=3.8: Qreb 74.3 need 30.7 W_ext 5.2 reactor 243.2 MWth
+E=17.3 MWe r=0.169 SRD=4.2: Qreb 82.1 need 38.6 W_ext 6.5 reactor 249.0 MWth
+E=17.3 MWe r=0.3 SRD=3.4: Qreb 66.5 need 22.9 W_ext 6.9 reactor 232.8 MWth
+E=17.3 MWe r=0.3 SRD=3.8: Qreb 74.3 need 30.7 W_ext 9.2 reactor 237.1 MWth
+E=17.3 MWe r=0.3 SRD=4.2: Qreb 82.1 need 38.6 W_ext 11.6 reactor 241.4 MWth
+no export credit, SRD 3.8, E 11.6, r 0.169:
+need 55.3 W 9.3 reactor 247.1
+
+======== Interheating arithmetic (Vinjarapu 2025 Table 4) ========
+base: total stripping heat 14.44 kW; total specific 3.71 GJ/t; reported reboiler-only SRD 3.71
+SI_IH 7%: total stripping heat 14.36 kW; total specific 3.64 GJ/t; reported reboiler-only SRD 3.38
+SI_IH 28%: total stripping heat 13.71 kW; total specific 3.77 GJ/t; reported reboiler-only SRD 2.71
+28% of 74.3 MW = 20.8 MW
+
+======== Absorber adiabatic rise and rich equilibrium margin ========
+solvent 1300 t/h: absorption heat 37.7 MW, rise if all to liquid 29.0 K
+solvent 1600 t/h: absorption heat 37.7 MW, rise if all to liquid 23.6 K
+
+======== Hatta and instantaneous enhancement screening at 40 C ========
+k2 13119 L/mol/s; H(Eq 8) 30.5 (units not stated); DCO2,w 2.71e-09 m2/s
+flue 12.5 vol%: pCO2 0.131 bar, C_i 4.2 mol/m3, E_inf 355.1
+syngas bottom: pCO2 4.74 bar, C_i 153.3 mol/m3, E_inf 10.8
+syngas top 90%: pCO2 0.58 bar, C_i 18.8 mol/m3, E_inf 81.0
+Hatta at kL=1e-4 m/s, C_MEA=5 kmol/m3, D=0.6 D_w: 103
+
+======== Small unit checks ========
+20 wt% MEA mole fraction 0.069; 0.2 mole fraction = 45.9 wt%
+Kwak: CO2 feed 104.5 kg/h, 90% = 94.0 kg/h; MEA 6.39 kmol/h; delta alpha needed 0.335
+Kwak solvent per t CO2 13.8
+Vinjarapu 3.46 point: L/G 2.71 kg/kg
+Halim KGa ratio low: 0.18 kmol vs 1.0 mol: 180; high: 0.60 vs 3.65: 164
+INL Selexol H2 in CO2: 0.7 mol% x 1706 kmol/h = 11.9 kmol/h; of H2 feed 7369: 0.162%
+MEA H2 co-absorption screening (not verified): 7.8e-4 mol/L/atm x pH2 x 1400 m3/h
+  pH2 15.9 bar: 16.3 kmol/h in water-solubility limit; 0.22% of 7477 kmol/h
+  pH2 20.0 bar: 20.5 kmol/h in water-solubility limit; 0.27% of 7477 kmol/h
+deck residual on plant carbon: 6.08 t/t vs INL 5.95 tCO2/tH2

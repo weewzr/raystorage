@@ -1,0 +1,17 @@
+PASS context masks every name fragment at every window position 
+PASS surname and edge fragment masked: Reforming {\large <people> <name>\\<people> Zhern Ray\\<people> <people>}
+PASS typeface and w:name values hit the people rule (2 hits)
+PASS font hit lines name no one
+PASS creator of the embedded workbook is checked
+PASS shared strings of the embedded workbook are scanned
+PASS b64 path is found as encoded_local_path
+PASS b64 cohort is found as encoded_group
+PASS b64 course is found as encoded_course
+PASS b64 owner is found as encoded_owner
+PASS b64 course pattern is found as encoded_course
+PASS b64 drive roots is found as encoded_local_path
+PASS hex name is found as encoded_people
+PASS rot13 name is found as encoded_people
+PASS reversed is found as encoded_course
+PASS generic encoded rules are not hits (0)
+0 failure(s)

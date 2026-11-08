@@ -1,0 +1,157 @@
+\section{Carbon balance and CCS}\label{sec:carbon}
+\subsection{Carbon-closure evidence gate}
+A physical CO$_2$ capture stream is not the same thing as a verified plant-wide capture percentage. At steady state, every carbon atom entering with methane or another carbon-bearing feed must leave as captured CO$_2$, emitted CO$_2$, carbon-bearing product/purge/tail gas or another measured outlet:
+\[
+\dot n_{C,\mathrm{in}}=\dot n_{C,\mathrm{captured}}+
+\dot n_{C,\mathrm{emitted}}+\dot n_{C,\mathrm{products}}+
+\dot n_{C,\mathrm{other}},\qquad
+[\mathrm{kmol\ C/h}].
+\]
+The source-model anchors are 1,927 short ton CO$_2$/day captured and 142 short ton CO$_2$/day reported emitted for one nuclear-assisted Case-6 train. Their ratio, $1927/(1927+142)=93.14\%$, describes only these two reported CO$_2$ streams; it is \emph{not} a verified 90\% absorber-inlet or plant-wide capture fraction. The separate 3,205 short ton/day baseline emission belongs to another process configuration and cannot close the proposed plant's carbon balance.
+
+Pressure Swing Adsorption (PSA) recovers hydrogen but leaves an offgas containing species that must be tracked. INL TEV-953 (p.~14) describes a CO$_2$-absorption-followed-by-PSA configuration that produces a high-heating-value fuel-gas stream \emph{for use in the reformer}~\cite{inltev953}. This supports an intended fuel-gas use in the reference process description, but does not by itself quantify the Case-6 PSA offgas composition, combustion emissions, recycle splits or absorber boundary. Without those streamwise quantities and complete flue-gas routing, the elemental carbon residual and plant-wide capture fraction remain \textbf{not calculable}. The older lifecycle ledger below is retained as a conditional screening calculation, not a validated closed carbon balance. See \texttt{results/PSA\_TAIL\_GAS\_CARBON\_CLOSURE\_AUDIT.md}.
+
+The key accounting question is not simply how much CO$_2$ is captured. It is how much lifecycle climate impact is avoided compared with producing the same hydrogen conventionally:
+\[
+A_{\mathrm{lifecycle},y}
+=E_{\mathrm{baseline},y}-E_{\mathrm{candidate},y}
+\quad[\mathrm{tCO_2e/y}].
+\]
+Each $E$ includes the categories defined in the model boundary. Captured CO$_2$ is a material stream (tCO$_2$/y), whereas $A_{\mathrm{lifecycle},y}$ is a comparison of greenhouse-gas impacts (tCO$_2$e/y); adding captured tonnes again to the avoided-emissions ledger would double count their effect.
+
+\input{sections/07_lifecycle_formulation}
+
+\subsection{Carbon balance and lifecycle emissions}
+The source process reports 3,205 short ton/day baseline emissions~\cite{inltev953}, and 142 short ton/day residual emissions plus 1,927 short ton/day captured CO$_2$ for Case 6~\cite{inltev961}. These source values are converted rather than reverse-engineered from an assumed pure-methane feed, because the INL process model already distinguishes feed, fuel and process streams. The annualisation uses the Nishihara design-study availability $A=0.85$ (Assumption A-02)~\cite{nishihara2007potential}. Using the standard conversion 1 short ton = 0.90718474 t, the general annualization for a source daily CO$_2$ rate $\dot M_{CO_2,d}$ is
+\begin{equation}\label{eq:co2-annual-general}
+M_{CO_2,y}=\dot M_{CO_2,d}(0.90718474)(365)A,
+\end{equation}
+where $M_{CO_2,y}$ is annual CO$_2$ mass (t/y), $\dot M_{CO_2,d}$ is source CO$_2$ rate (short ton/d), and $A$ is availability (-). For the baseline:
+\begin{equation}\label{eq:base-direct}
+E_{\rm base,direct}=3205\frac{\mathrm{short\ ton}}{\mathrm d}
+(0.90718474)\frac{\mathrm t}{\mathrm{short\ ton}}(365)(0.85)
+=902{,}060~\mathrm{t/y}.
+\end{equation}
+\begin{equation}\label{eq:cand-direct}
+E_{\rm cand,direct}=142(0.90718474)(365)(0.85)
+=39{,}966~\mathrm{t/y}.
+\end{equation}
+so
+\begin{equation}\label{eq:direct-avoided}
+A_{\rm direct}=902{,}060-39{,}966=862{,}094~\mathrm{tCO_2/y}.
+\end{equation}
+The same conversion gives
+\begin{equation}\label{eq:captured-annual}
+M_{\rm captured}=1927(0.90718474)(365)(0.85)
+=542{,}362~\mathrm{tCO_2/y}.
+\end{equation}
+
+Natural-gas use falls from 52.5 MMSCFD~\cite{inltev953} to 34.0 MMSCFD~\cite{inltev961}. To convert a volumetric gas rate $F_{\rm NG}$ (MMSCFD) to daily energy, the screening model uses
+\begin{equation}\label{eq:ng-energy}
+Q_{\rm NG,d}=F_{\rm NG}(10^6)(HHV_{\rm NG})(1.05505585262\times10^{-6}),
+\end{equation}
+where $Q_{\rm NG,d}$ is natural-gas energy (GJ/d), $HHV_{\rm NG}$ is gas higher heating value (Btu/scf), and the final factor is GJ/Btu. Assumption A-03 uses $HHV_{\rm NG}=1044$ Btu/scf as the project screening basis; it is not asserted as an INL-measured gas property. Assumption A-04 uses the IEA global-average 11.5 kgCO$_2$e/GJ gas-supply factor~\cite{iea2026lng}. Annual upstream emissions are calculated as
+\begin{equation}\label{eq:upstream-ng}
+E_{\rm NG,up}=Q_{\rm NG,d}(365)A\,e_{\rm NG}/1000,
+\end{equation}
+where $E_{\rm NG,up}$ is upstream emissions (tCO$_2$e/y) and $e_{\rm NG}=11.5$ kgCO$_2$e/GJ is Assumption A-04~\cite{iea2026lng}. For the 52.5 MMSCFD baseline~\cite{inltev953},
+\begin{equation}\label{eq:upstream-ng-base}
+\begin{aligned}
+E_{\rm NG,up,base}
+&=\left[(52.5~\mathrm{MMSCFD})(10^6~\mathrm{scf/MMSCF})(1044~\mathrm{Btu/scf})\right.\\
+&\qquad\left.\times(1.05505585262\times10^{-6}~\mathrm{GJ/Btu})\right]
+(365~\mathrm{d/y})(0.85)
+\frac{11.5~\mathrm{kgCO_2e/GJ}}{1000~\mathrm{kg/t}}\\
+&\approx206{,}322~\mathrm{tCO_2e/y}.
+\end{aligned}
+\end{equation}
+Here 1044 Btu/scf is Assumption A-03 and 11.5 kgCO$_2$e/GJ is the IEA global proxy (A-04)~\cite{iea2026lng}. For the 34.0 MMSCFD candidate~\cite{inltev961},
+\begin{equation}\label{eq:upstream-ng-candidate}
+\begin{aligned}
+E_{\rm NG,up,cand}
+&=\left[(34.0~\mathrm{MMSCFD})(10^6~\mathrm{scf/MMSCF})(1044~\mathrm{Btu/scf})\right.\\
+&\qquad\left.\times(1.05505585262\times10^{-6}~\mathrm{GJ/Btu})\right]
+(365~\mathrm{d/y})(0.85)
+\frac{11.5~\mathrm{kgCO_2e/GJ}}{1000~\mathrm{kg/t}}\\
+&\approx133{,}618~\mathrm{tCO_2e/y}.
+\end{aligned}
+\end{equation}
+The upstream saving used in the lifecycle ledger is therefore
+\begin{equation}\label{eq:upstream-ng-saving}
+A_{\rm upstream}=E_{\rm NG,up,base}-E_{\rm NG,up,cand}
+=206{,}322-133{,}618\approx72{,}704~\mathrm{tCO_2e/y}.
+\end{equation}
+$E_{\rm NG,up,base}$ and $E_{\rm NG,up,cand}$ are annual upstream gas-supply emissions (tCO$_2$e/y), and $A_{\rm upstream}$ is their project-derived difference (tCO$_2$e/y).  The new candidate burdens use Assumption A-05, the UNECE 5.5 kgCO$_2$e/MWh$_e$ nuclear-electricity lifecycle anchor~\cite{unece2022lca}. For direct heat, Assumption A-06 multiplies that electricity factor by the declared 0.504 MWh$_e$-equivalent/MWh$_{th}$ allocation proxy; this is not a published direct-heat LCA. The auxiliary term uses the source 17.3 MWe candidate demand~\cite{inltev961} minus Assumption A-01 = 6.3 MWe, a retained historical project screening anchor rather than an INL common-output value. Assumption A-07 = 0.025 tCO$_2$e/tCO$_2$ is likewise a generic project T\&S lifecycle screen, not a Singapore-route measurement. Thus the nuclear-heat lifecycle burden is calculated from
+\begin{equation}\label{eq:nuclear-lca-general}
+E_{\rm nuclear}=\dot Q_{\rm process}(1000)t_{\rm op}(e_{\rm nuc}\eta_e)/10^6,
+\end{equation}
+where $\dot Q_{\rm process}$ is process heat (MWth), $t_{\rm op}$ is operating time (h/y), $e_{\rm nuc}$ is the nuclear electricity lifecycle anchor (kgCO$_2$e/MWh$_e$), and $\eta_e=0.504$ is the declared allocation factor. Numerically,
+\begin{equation}\label{eq:nuclear-lca}
+E_{\rm nuclear}=176.8(1000)(7446)(5.5\times0.504)/10^6
+=3{,}649~\mathrm{tCO_2e/y},
+\end{equation}
+The incremental auxiliary burden is
+\begin{equation}\label{eq:aux-lca-general}
+E_{\rm aux}=(P_{\rm cand}-P_{\rm common})(1000)t_{\rm op}e_{\rm nuc}/10^6,
+\end{equation}
+where $P_{\rm cand}$ and $P_{\rm common}$ are candidate and retained common electricity demands (MWe). Substitution gives
+\begin{equation}\label{eq:aux-lca}
+E_{\rm aux}=(17.3-6.3)(1000)(7446)(5.5)/10^6
+=450~\mathrm{tCO_2e/y},
+\end{equation}
+and the T\&S lifecycle screen is
+\begin{equation}\label{eq:ts-lca-general}
+E_{\rm T\&S}=e_{\rm T\&S}M_{\rm captured},
+\end{equation}
+where $e_{\rm T\&S}$ is the screening T\&S factor (tCO$_2$e/tCO$_2$) and $M_{\rm captured}$ is captured CO$_2$ (t/y). Thus
+\begin{equation}\label{eq:ts-lca}
+E_{\rm T\&S}=0.025(542{,}362)=13{,}559~\mathrm{tCO_2e/y}.
+\end{equation}
+Direct CO$_2$ and lifecycle CO$_2$e are not interchangeable. The conventional and candidate plant stacks first determine the direct saving in Eq.~\ref{eq:direct-avoided}. Lifecycle accounting then adds the upstream saving from Eq.~\ref{eq:upstream-ng-saving} and subtracts the nuclear, auxiliary-electricity and T\&S burdens from Eqs.~\ref{eq:nuclear-lca}, \ref{eq:aux-lca} and \ref{eq:ts-lca}:
+\begin{equation}\label{eq:lifecycle-avoided}
+A_{\rm lifecycle}=A_{\rm direct}+A_{\rm upstream}-E_{\rm nuclear}-E_{\rm aux}-E_{\rm T\&S}.
+\end{equation}
+
+\LifecycleFlowFigure
+
+\begin{table}[htbp]\centering\scriptsize
+\caption{Canonical lifecycle-emissions ledger generated by Rust. SAVED means less than the conventional baseline; ADDED means a new candidate burden.}
+\label{tab:co2-ledger}
+\pgfplotstabletypeset[col sep=comma,
+columns={item,direction,change_tco2e_y,meaning},
+columns/item/.style={string type,column name=Item,column type={p{0.31\linewidth}}},
+columns/direction/.style={string type,column name=Direction,column type={p{0.11\linewidth}}},
+columns/change_tco2e_y/.style={fixed,precision=0,column name={tCO$_2$e/y},column type=r},
+columns/meaning/.style={string type,column name=Meaning,column type={p{0.31\linewidth}}},
+every head row/.style={before row=\toprule,after row=\midrule},
+every last row/.style={after row=\bottomrule}]
+{../results/final_design/generated/lifecycle_ledger.csv}
+\end{table}
+
+\begin{figure}[htbp]\centering
+\input{../results/final_design/generated/co2_bridge_figure.tex}
+\caption{Rust-generated lifecycle contribution bridge.  Positive bars are savings; negative bars are candidate lifecycle burdens.  The net bar reproduces the canonical lifecycle result.}
+\label{fig:co2-bridge}
+\end{figure}
+
+Using Eq.~\ref{eq:lifecycle-avoided}, the arithmetic reconciliation is
+\begin{equation}\label{eq:lifecycle-reconciliation}
+862{,}093.8+72{,}703.8-3{,}649.2-450.5-13{,}559.0
+=\mathbf{917{,}138.9~tCO_2e/y}.
+\end{equation}
+The candidate lifecycle total is
+\begin{equation}\label{eq:candidate-lifecycle-total}
+E_{\rm cand,LC}=39{,}966.48+133{,}617.86+3{,}649.21+450.48+13{,}559.05
+=191{,}243.07~\mathrm{tCO_2e/y}.
+\end{equation}
+Using annual hydrogen production from Eq.~\ref{eq:annual-h2}, the candidate lifecycle intensity is
+\begin{equation}\label{eq:lifecycle-intensity}
+I_{H_2}=\frac{E_{\rm cand,LC}}{M_{H_2}}
+=\frac{191{,}243.07~\mathrm{tCO_2e/y}}{97{,}946.0~\mathrm{tH_2/y}}
+\approx1.95~\mathrm{kgCO_2e/kgH_2}.
+\end{equation}
+Here $E_{\rm cand,LC}$ is candidate lifecycle emissions (tCO$_2$e/y), $M_{H_2}$ is annual hydrogen mass (t/y), and $I_{H_2}$ is lifecycle carbon intensity; t/t is numerically identical to kg/kg.
+
+Lifecycle avoidance exceeds direct avoidance because the approximately 72.7 ktCO$_2$e/y upstream natural-gas saving is larger than the approximately 17.7 ktCO$_2$e/y of new lifecycle burdens. Captured CO$_2$ is not added again to the numerator, avoiding double counting.  The one-tonne-scale difference obtained by adding rounded table entries is rounding only.
+
+The lifecycle abatement result remains dominated by the same-output direct-emissions difference and lower natural-gas use. Cross-border CCS availability, mature-design reactor economics, the direct-heat lifecycle proxy and detailed reactor/process integration remain important screening limitations.

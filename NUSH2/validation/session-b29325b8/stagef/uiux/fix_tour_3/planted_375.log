@@ -1,0 +1,39 @@
+site commit 2f244e8364beb48f712164fa1081e12b7907a2d9, run local, viewport 375x812 mobile, verdict fail after 46.8 s, page time 46273 ms
+first full solve 44 ms against the 500 ms plan budget: within; registry request to first result 561 ms
+PASS wasm_empty_imports: 1067548 bytes, 0 imports, ABI 1
+PASS registry_loads: 22 parameters, 32 KPIs, 20 units, engine 0.1.0
+PASS commit_matches_build: engine 2f244e8364beb48f712164fa1081e12b7907a2d9, build.json 2f244e8364beb48f712164fa1081e12b7907a2d9, page stamp 2f244e8364beb48f712164fa1081e12b7907a2d9, run local
+PASS parameter_ranges: 14 number parameters
+PASS default_solve_ok: ok in 18 ms, budget 3000 ms
+PASS headline_parity: 91 values against data/reference.json, relative 0.000001, floor 0.000001
+PASS null_kpis_listed: 0 null KPI(s)
+PASS closure_finite: carbon closure 2.1938006966593093e-13 kmol/h
+PASS hard_limit_rejected: rating_mwth = 351: rejected, violation names rating_mwth
+PASS controls_move_kpis: 22 controls, 30 probes
+PASS case_a_parity: ok, 21 KPIs against the case_a_mea cells, relative 0.000001
+PASS mature_scenario_parity: ok; inputs stage 10OAK_P46, life 60 y, n 1.0, gas 20.7 S$/GJ; cost_s_per_t live 95.6 against MATURE_60Y_L5 95.6 (relative 2.9e-9); cost_lac_dcf_s_per_t live 95.9 against MATURE_60Y_DCF 95.9 (relative 3.0e-10)
+PASS panels_seven_sections: 20 panels, every section filled
+PASS stream_tags_engine_ids: 18 engine stream tags, 12 lines with no row (P1, P4, P2, P3, H1, H2, L3, L4, L5, L6, C1, R1); crossing S01, S02, S10, S12, S21, S14, S16
+PASS stream_link_scrolls: row S12 marked, top 378 px of 812, focused true
+PASS target_verdicts_agree: default: feasible true, strip cost false, table false; rating 100 MWth: feasible false, strip cost false, table false; 10OAK_P46 with gas at 25 S$/GJ: feasible true, strip cost true, table false; Case A: feasible false, strip cost false, table false
+PASS scenario_control: MATURE_60Y tile 95.6 against 95.6, radio true; then ihx_approach_k at 50: radio none, tile names MATURE_60Y false; base tile 189.7 against 189.7, radio true
+PASS tour_steps_bound: 13 steps over 16 scenario branches; every unit, stream, label key, text key and reply path they name resolves
+PASS tour_plays: started from its button with focus on the step title in view, 13 of 13 steps visited in order, dashes moving on every step with flows, exited with focus on the start button
+PASS tour_numbers_live: 100 caption numbers over 13 steps at the default inputs, each equal to its reply field
+PASS tour_text_rules: 15138 characters over 13 steps, every number spaced from its unit
+PASS tour_keyboard: ArrowRight to step 2, ArrowLeft to step 1, Space playing true then false then true, Escape closed the stream tip first true, then the tour with focus on the start button true, every control a button true
+PASS tour_reduced_motion: 13 still steps with 0 animation(s) running before and none added, stays on step 1, Play hidden true
+PASS tour_autoplay: ran to step 13 of 13 and stopped, playing false; dwell 7 to 8 s a step, 97 s in all
+PASS tour_follows_controls: rating 100 MWth: infeasibility reason shown true, rating shown 100, IHX and process heat at the need true, step 12 generation 0, import 19.778482253318675, demand 19.778482253318675, need wording true, abatement verdict "does not count the target as met" stated true; Case A: step 12 generation 6.832695386401454, import 22.102853021591002, demand 28.935548407992457, need wording true, abatement verdict "does not count the target as met" stated true; 51 numbers equal to the reply
+PASS tour_focus_kept: 36 step changes by the card's buttons and the bar's Next; the button kept focus and showed whole with its ring on every step true; ends reached true
+FAIL tour_head_shown: 60 step changes by the card's buttons and the bar's Next, 24 of them with the button first near the top; head and button fit together on 52 and the head showed whole on each of them false; on the other 8 the button came first; button whole with focus on every one true; bar Next, step 2: head 998..1065 px with the button at 387..425 px; bar Next, step 3: head 998..1089 px with the button at 387..425 px; bar Next, step 4: head 998..1089 px with the button at 387..425 px; bar Next, step 5: head 998..1065 px with the button at 387..425 px; bar Next, step 6: head 998..1065 px with the button at 387..425 px
+FAIL tour_auto_stays: bar Play, page at the card: step 1 to 2 by the timer with the button out of view, page at 1190 px; card Next, page at the drawing: step 1 to 2 by the timer with the button out of view, page at 665 px; bar Play, page at the card: the page moved from 1190 to 580 px; card Next, page at the drawing: the page moved from 665 to 1067 px
+PASS tour_closing_lines: recycle 30 lines moving, dark none; export 24 lines moving, dark S03 S21 S14 R1 S15 S16; burn_on_site 25 lines moving, dark P4 S03 S21 R1 S15; inl_selexol 25 lines moving, dark L3 L4 L5 L6 C1
+PASS pfd_units_bound: 20 PFD units, 20 engine units
+SKIP pfd_streams_bound: streams are null in this solve, listed in engine_fields_missing: the live reply carries the anchored balance; the stream table of the Level 3 flowsheet is precomputed in results/Integrated_Mass_Balance.csv
+PASS charts_have_marks: 16 charts
+PASS visible_text_rules: 97318 characters checked
+PASS no_console_error: 0 error(s) caught by this test, page shell verdict pass
+browser: 0 error(s), 0 other console or log line(s), 30 request(s), 0 to another host, 0 network problem(s); 1 worker session(s) watched, 1 worker request(s)
+FAIL: page verdict fail, 2 check(s) failed
+exit 1

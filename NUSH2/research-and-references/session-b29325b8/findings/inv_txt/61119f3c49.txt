@@ -1,0 +1,335 @@
+HTGR_SMR_MEA_CCS_Research_Local\1-s2.0-S175058361730498X-main.pdf
+=====
+--- PDF p.1 ---
+Contents lists available at ScienceDirect
+International Journal of Greenhouse Gas Control
+journal homepage: www.elsevier.com/locate/ijggc
+Dynamic modelling, simulation and basic control of CO2 absorption based
+on high pressure pilot plant for natural gas treatment
+K.M.S. Salvindera,b, H. Zabiria,b,⁎, F. Isaa,b, S.A. Taqvib, M.A.H. Roslana,b, Azmi M. Shariﬀa,b
+a Research Centre for CO2 Capture (RCCO2C), Universiti Teknologi PETRONAS, 32610 Bandar Seri Iskandar, Perak, Malaysia
+b Chemical Engineering Department, Universiti Teknologi PETRONAS, 32610 Bandar Seri Iskandar, Perak, Malaysia
+A R T I C L E I N F O
+Keywords:
+Natural gas
+Dynamic model
+CO2 removal
+High pressure
+A B S T R A C T
+The continuous exploration of new gas reserves along with the increase in the global power demand necessitates
+the development of less demanding technologies, especially in terms of energy minimization. However, the
+development of CO2-rich type of gas resources poses signiﬁcant challenges in the sour gas treatment industry due
+to bulk CO2 contaminants and high overﬂowing pressure at the well- head. For the treatment of CO2 rich natural
+gas, reliable data at high CO2 partial pressure condition is very crucial and the insight of the transient conditions
+must be thoroughly studied to design a controlled process that can handle any disturbances that might arise in
+the future. This paper reports the dynamic modelling and basic regulatory control studies of a high-pressure
+absorption pilot plant, which is located at Universiti Teknologi PETRONAS (UTP), for CO2 removal using MEA
+solvent. Steady state simulation has been demonstrated using Aspen Plus utilizing both equilibrium and rate
+based approaches. Dynamic and control analysis is then carried out in Aspen Dynamic using a modiﬁed equi-
+librium stage model.
+1. Introduction
+Natural gas (NG) is formed in the underground and can usually be
+found in areas where both coal and oil are situated. Natural gas exists in
+onshore and oﬀshore reservoirs either as produced oil-associated gas or
+oil-free gas. In 2014, the estimated gas reserves are at 6972 million
+cubic feet, against an annual consumption of 78.4 trillion cubic feet
+(Alcheikhhamdon and Hoorfar, 2016). Noting that the crude gas cannot
+be utilized as produced, the gas must ﬁrst undergo a treatment process
+to reduce the concentration of the contaminants to meet pipeline spe-
+ciﬁcations.
+The process for removing H2S and CO2 from a natural gas stream is
+referred to as gas sweetening (Abkhiz et al., 2014). There are diﬀerent
+methods for gas sweetening and the commonly used techniques are
+adsorption and absorption (Tan et al., 2015). With the increasingly
+strict environmental regulations on emissions from natural gas treat-
+ment plants and the market demand for high-quality natural gas, the
+gas sweetening process has become mandatory (Rezakazemi et al.,
+2011).
+The continuous exploration of new gas reserves along with the in-
+crease in the global power demand necessitates the development of less
+demanding technologies, so that the treatment process can be accom-
+plished at a lowest cost (Alcheikhhamdon and Hoorfar, 2016). Natural
+gas industry relies heavily on theoretical approaches to design, improve
+and optimize production and processing units. Testing at large scale is
+so expensive and it is common to use process simulation to evaluate
+such processes. The computer aided process simulation tools are also
+helpful
+in
+determining
+the
+optimum
+operating
+conditions
+with
+minimum time, eﬀort, and cost invested (Muhammad and GadelHak,
+2014).
+In the open literature, various steady state and dynamics analysis
+have been reported for amine-based CO2 absorption (Benadda et al.,
+2000; Maalej et al., 2003; Mores et al., 2012). However, they are mostly
+focusing on post-combustion processes (Manaf et al., 2016). CO2 ab-
+sorption can be represented either via equilibrium-based stage eﬃ-
+ciency model or non-equilibrium rate-based model. The superiority of
+rate based approach to the traditional equilibrium stage model has been
+highlighted in many studies (Borhani et al., 2016; Isa et al., 2016), but
+this is achieved at the expense of higher complexity. In addition, most
+of the simulation analysis is often based on low-pressure experimental
+data. Despite the importance of dynamic model, it is acknowledged that
+the complexity of mathematical formulation for dynamic modelling
+especially using rate-based approach becomes a hindrance and thus
+limits the simulation analysis. Therefore, an alternative technique
+needs to be exploited to increase robustness and reduce computational
+load (Trapp et al., 2015) especially for high-pressure system.
+https://doi.org/10.1016/j.ijggc.2017.12.014
+Received 1 June 2017; Received in revised form 29 November 2017; Accepted 28 December 2017
+⁎ Corresponding author at: Research Centre for CO2 Capture (RCCO2C), Universiti Teknologi PETRONAS, 32610 Bandar Seri Iskandar, Perak, Malaysia.
+E-mail address: haslindazabiri@utp.edu.my (H. Zabiri).
+International Journal of Greenhouse Gas Control 70 (2018) 164–177
+Available online 20 February 2018
+1750-5836/ © 2017 Elsevier Ltd. All rights reserved.
+T
+
+--- PDF p.2 ---
+The aim of this research is to contribute towards the understanding
+of the complex transient behaviour of natural gas process treated at the
+elevated pressure that is concurrent with the industrial requirement for
+controllability and ﬂexible operations to meet the high-quality gas
+standard. The simulation model of the absorption system studied in this
+paper is developed and validated using the experimental set-up and
+data acquired from the high-pressure pilot plant located at Universiti
+Teknologi PETRONAS. In the present study, the equilibrium stage
+model has been modiﬁed to replicate the result of the actual plant and
+the rate based approach. The dynamic analysis and control studies are
+then carried out using Aspen Dynamic platform utilizing the modiﬁed
+equilibrium model.
+2. Model development
+2.1. Process description
+A simpliﬁed process ﬂow diagram for CO2 pilot plant in Universiti
+Teknologi PETRONAS is shown in Fig. 1. Two types of packing are
+available in the pilot plant which are structured and random column. In
+this study, structured packing is selected in both the experimental and
+simulation runs as it has advantages in providing a lower pressure drop
+for every single theoretical stage and improved capacity compared to
+random packing type. The packing material of the pilot plant is of metal
+type FLEXIPAC IY.
+Initially, CO2 and CH4 are heated in the heat exchanger to avoid
+liquidation in the tubing. Then, the gases blend in the static mixer
+before they are compressed and sent to the bottom of the column. For
+adjustment of CO2 concentrations, a mass ﬂow controller is used to
+control the respective gas in the sour gas mixture. The desired level of
+pressure is maintained by regulating the back-pressure regulator. The
+sour gas in this study contains only CO2 and CH4 and monitored at a
+ratio of 1:1. In practical applications, liquid hydrocarbons and dissolved
+gases are typically eliminated prior to the acid gas treatment by ﬂashing
+the stream in a ﬂash separator maintained at an intermediate pressure
+(Mitra, 2015). The heavy hydrocarbons condense in the ﬂash drum
+from the gas stream, and the gas then proceeds to the gas exit of the
+separator to the acid gas removal unit.
+CO2 is removed from the sour gas by means of chemical absorption
+utilizing the 20 wt% aqueous monoethanolamine solution (MEA). The
+lean solvent enters the column at 25–30 °C and pressure of approxi-
+mately 10–11 bar. The lean solvent ﬂowrate is transported using high
+pressure pump at 1 l/min to the top of the column. These conditions are
+similar to the experimental set-up of the pilot plant. Counter current
+mechanism takes place in the absorber column as two phases contacts
+are occurring within the liquid bulk, vapour bulk, ﬁlms and an inter-
+face.
+Due to the size of the pilot plant, each run requires a signiﬁcant
+amount of solvent and feed gas to be fed into the system. Since the work
+reported in this paper is part of a larger project scope, experimental
+runs were conducted only twice per pressure value due to cost issue. In
+addition, the liquid level in the column is maintained by regulating the
+drainage pipe, and this may cause temporary pressure ﬂuctuations in
+the column.
+2.2. Modelling approach
+Aspen Plus V8.0 is utilized in this paper for both the steady-state
+analysis and validation. After convergence is achieved, the model is
+converted into Aspen Dynamic V8.0 for transient analysis and control
+studies. For steady-state simulation, two approaches are available
+within Aspen: equilibrium and rate-based approaches.
+Both techniques will be employed to observe the performance of
+CO2 removal at high pressure to ensure the result agrees with the actual
+pilot plant. Even though the superiority of rate-based model is widely
+acknowledged but the simplicity of traditional equilibrium stage model
+is still elegant from the mathematical point of view and the basis for so
+many commercial column simulation programs (Taylor et al., 2003). In
+addition, the Aspen Dynamic is unable to support rate-based approach.
+To compensate for the deviations of these two modelling approaches,
+Fig. 1. Schematic Diagram for UTP Pilot Plant (CHAS).
+K.M.S. Salvinder et al.
+International Journal of Greenhouse Gas Control 70 (2018) 164–177
+165
+
+--- PDF p.3 ---
+the present study adopted similar technique as presented in (He and
+Ricardez-Sandoval, 2016; Trapp et al., 2015).
+2.2.1. Murphree eﬃciency
+The Murphree tray eﬃciency has been used for many years to relate
+the theoretical number of stages with the actual trays in an absorber.
+This eﬃciency can be based upon the liquid or the vapour composition
+on a particular stage at certain conditions of temperature and pressure
+(Queiroz et al., 2012). In the equilibrium separation model, two distinct
+phases usually operated in counter current conﬁguration and contacted
+thoroughly at each stage and leaves at equilibrium. This type of se-
+paration process is treated as an equilibrium system and this assump-
+tion depends on the ability of each stage to achieve equal pressure,
+temperature and phase equilibria. This kind of assumption is not
+practical and therefore, tray eﬃciencies are used to compensate the
+deviation from equilibrium.
+The equilibrium stage model typically assumes that gas and liquid
+temperatures are equal at each stage. Using Murphree eﬃciencies gives
+a more realistic description of the concentration and temperature pro-
+ﬁles as a function of column height rather than using ideal equilibrium
+stages (ErikØi, 2012). The deﬁnition of Murphree eﬃciency based on
+gas phase mole fraction is illustrated in Fig. 2.
+=
+−
+−
+−
+−
+EM
+y
+y
+y
+y
+(
+)
+( *
+)
+n
+n
+1
+1
+(1)
+where
+n is stage number,
+y is the mole fraction of CO2 in the gas leaving the stage,
+yn−1 is the mole fraction leaving the stage below,
+y* is the mole fraction CO2 in equilibrium with the liquid leaving
+the stage.
+2.2.2. Rate -based approach
+Even though the equilibrium stage model has been successfully
+applied in many separation processes, the rate-based or non-equili-
+brium approach has taken over the standard approach in gas absorber
+design (Hoﬀ, 2003) in recent years. This model accounts explicitly the
+ﬁnite rates of mass transfer, heat transfer and the chemical reaction
+(Borhani et al., 2016). This has led to the speciation of the liquid phase
+including molecular and ionic species and not just the total con-
+centration of CO2 at a given partial pressure (Hoﬀ, 2003). The rate-
+based model avoids the approximation of eﬃciency, by analysing the
+mass and heat transfer phenomena that occur on a real tray or actual
+packing height. Fig. 3 shows the representation of mass transfer model
+at two ﬁlm liquid interface for rate-based approach.
+2.3. Thermophysical properties
+The semi-empirical electrolyte Non-Random Two Liquid (eNRTL)
+model has been selected as the ﬂuid package for the calculation of
+thermophysical properties. This model, which is also known as the
+model of Chen (Kwaterski and Herri, 2011), is a versatile model for the
+excess molar Gibbs energy. It has the capability to describe multi-
+component electrolyte systems over a wide range of state conditions
+(Kwaterski and Herri, 2011). In Aspen Plus V8.0, eNRTL model pro-
+vides a comprehensive electrolyte thermodynamic framework to model
+thermophysical properties of all kinds of electrolyte systems. Two op-
+tions
+for
+eNRTL
+models
+are
+eNRTL-RK
+and
+eNRTL-SR
+(Aspen
+Technology, 2012).
+ENRTL-RK is developed based on the new electrolyte NRTL model
+with the asymmetric reference state while eNRTL-SR is developed based
+on the new electrolyte NRTL model with the symmetric reference state
+(Aspen Technology, 2012). The eNRTL model has been selected since
+this simulation model is based on amine-CO2 capture. The reaction
+between these two components can cause the formation of diﬀerent
+electrolyte species which is strongly non-ideal. Besides, this model is
+suitable as it has the ability to correct the non-ideal behaviour of
+aqueous multicomponent electrolyte systems (Pinto et al., 2013). The
+transport properties such as liquid and vapour viscosities are predicted
+using the default models suggested for use together with eNRTL
+2.4. Thermodynamic and chemical equilibria
+The generation of ionic species makes the system highly non-ideal
+and acid gases and amine partially dissociate in the aqueous phase
+because they are weak electrolytes (Moioli and Pellegrini, 2013).
+Chemical reactions occurring in the liquid phase involving both mole-
+cular and ionic species can be described by the following equilibrium
+reaction (He and Ricardez-Sandoval, 2016).
+↔
++
++
+−
+2H O
+H O
+OH
+2
+3
+(2)
++
+↔
++
+−
+−
++
+H O
+HCO
+CO
+H O
+2
+3
+3
+2
+3
+(3)
++
+↔
++
+−
++
+2H O
+CO
+HCO
+H O
+2
+2
+3
+3
+(4)
++
+↔
++
+−
+−
+H O
+MEACOO
+MEA
+HCO
+2
+3
+(5)
++
+↔
++
++
++
+H O
+MEAH
+MEA
+H O
+2
+3
+(6)
+To describe the vapour liquid equilibrium (VLE) system, the vapour
+phase is represented by an equation of State (EoS) while the liquid
+phase is described by an activity coeﬃcient. For this system, the eNRTL
+model has been applied. The idea is based on the assumptions that
+Fig. 2. Illustration of mole fraction for the deﬁnition of Murphree Eﬃciency (ErikØi,
+2012).
+Fig. 3. A schematic diagram of mass transfer model based on the two-ﬁlm theory.
+Adopted from (Chikukwa et al., 2012).
+K.M.S. Salvinder et al.
+International Journal of Greenhouse Gas Control 70 (2018) 164–177
+166
+

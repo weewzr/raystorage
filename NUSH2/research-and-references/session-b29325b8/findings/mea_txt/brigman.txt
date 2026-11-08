@@ -1,0 +1,560 @@
+
+===== PDF PAGE 1 =====
+ Energy Procedia  63 ( 2014 )  6012 – 6022 
+Available online at www.sciencedirect.com
+ScienceDirect
+1876-6102 © 2014 The Authors. Published by Elsevier Ltd. This is an open access article under the CC BY-NC-ND license 
+(http://creativecommons.org/licenses/by-nc-nd/3.0/).
+Peer-review under responsibility of the Organizing Committee of GHGT-12
+doi: 10.1016/j.egypro.2014.11.635 
+GHGT-12 
+Results of amine plant operations from 30 wt% and 40 wt% aqueous 
+MEA testing at the CO2 Technology Centre Mongstad 
+Natasha Brigmana,b, Muhammad I. Shahc, Olav Falk-Pedersena,c, Toine Centsa,b, Vian 
+Smitha,b, Thomas De Cazenovea, Anne K. Morkena,d, Odd A. Hvidstena,d, Milan 
+Chhaganlala,d, Jane K. Festea,d, Gerard Lombardoa,c, Otto M. Badee, Jacob Knudsene, 
+Shalendra C. Subramoneyb, Berit F. Foståsd, Gelein de Koeijerd, Espen S. Hamborga,d,* 
+aCO2 Technology Centre Mongstad (TCM DA), 5954 Mongstad, Norway 
+bSasol Technology, P.O. Box 5486, Johannesburg 2000, South Africa 
+cGassnova SF, Dokkvegen 10, 3920 Porsgrunn, Norway 
+dStatoil ASA, P.O. Box 8500, 4035 Stavanger, Norway 
+eAker Solutions, P. O. Box 222, 1326 Lysaker, Norway 
+Abstract 
+An amine plant campaign has been performed at the CO2 Technology Centre Mongstad applying the aqueous 30 wt% and 40 
+wt% monoethanolamine (MEA) solvent systems for treatment of flue gas from a combined heat and power (CHP) plant. CHP 
+flue gas flow rates were ranging from about 40.000 Sm3/h to 60.000 Sm3/h and the CO2 content was about 3.5 vol%. 
+Minimum specific reboiler duties (SRD) of respectively 4.0 MJ/kg CO2 and 3.7 MJ/kg CO2 were obtained for the aqueous 30 
+wt% MEA solvent system without and with the addition of anti-foam solution. A minimum SRD of 3.4 MJ/kg CO2 was obtained 
+for the aqueous 40 wt% MEA solvent system. Lower SRD and absorber liquid to gas (L/G) ratios were obtained with higher 
+concentration MEA solvents. 
+Increased absorber packing heights resulted in lower SRD. Variation in flue gas supply flow rates and corresponding 
+variations in solvent flow rates, i.e. constant L/G ratios, did not yield any significant variations in SRD. Decreased flue gas 
+supply temperatures resulted in lower SRD. 
+For any future large scale post-combustion capture (PCC) amine plant, engineering aspects such as the flue gas supply 
+temperature and instrumentation monitoring CO2 content in the flue gas must be evaluated to avoid the chemical equilibrium 
+pinch behavior. Engineering and environmental aspects related to the use of anti-foam solutions for future large scale PCC amine 
+plants must also be considered. 
+ 
+ 
+* Corresponding author. Tel.: +47 56 34 52 20. 
+E-mail address: eham@tcmda.com 
+
+===== PDF PAGE 2 =====
+ Natasha Brigman et al. /  Energy Procedia  63 ( 2014 )  6012 – 6022 
+6013
+ 
+© 2013 The Authors. Published by Elsevier Ltd. 
+Selection and peer-review under responsibility of GHGT. 
+Keywords: Amine plant operations; 30 wt% monoethanolamine; 40 wt% monoethanolamine 
+1. Introduction 
+The CO2 Technology Centre Mongstad (TCM DA) is the one of the world’s largest and most advanced facilities 
+for testing and improving CO2 capture technology. The facility enables vendors of suitable amine formulations and 
+other post-combustion capture processes to test their process, collecting performance data to support full-scale 
+design. The vendors can then anticipate the associated performance and operating costs of their amine formulations 
+and capture processes. As a result, one of the main objectives of TCM DA is to investigate and demonstrate the 
+flexibility of post-combustion amine based solvent systems with respect to load changes, variations in flue gas 
+composition, variations in amine plant operations and solvent system compositions in order to achieve optimal and 
+environmentally safe operating conditions.  The flue gas utility system allows for flue gas supplies with varying 
+temperatures, flow rates, and CO2 content and also different types of flue gases with various trace components from 
+either a combined heat and power (CHP) plant or a refinery catalytic cracker. In the CHP plant, the natural gas is 
+combusted in a gas turbine and the flue gas content and characteristics are similar to those of a combined cycle gas 
+turbine (CCGT) power plant.  The amine plant at TCM DA is a highly flexible and well instrumented generic amine 
+plant, designed and constructed by Aker Solutions, aimed to accommodate a variety of technologies with capabilities 
+of treating flue gas streams of up to 60.000 Sm3 per hour. The flexibility of the amine plant allows for handling of a 
+wide range of flue gas flow rates, temperatures, and CO2 content in the flue gas, and also a wide range of various 
+operational parameters, i.e. solvent flow rates, absorber packing heights, stripper pressures, reboiler heat duties, lean 
+amine and cross heat exchanger duties, absorber water wash temperatures and flow rates with or without acid 
+injections, anti-foam solution injections, etc. [1, 2] 
+The campaign described in the current paper was conducted at TCM DA in the period December 2013 to 
+February 2014 as a part of Aker Solutions’ test period. In general, during the campaign the aqueous 30 wt% 
+monoethanolamine (MEA) solvent system was applied treating the flue gas from the CHP plant. The primary 
+purposes and goals of the campaign were: 
+ 
+x 
+Generate results from CHP plant operations with CO2 capture 
+x 
+Generate an independently verified TCM DA amine plant base case while treating CHP plant flue gas with 
+the aqueous 30 wt% MEA solvent system [3, 4]  
+x 
+Investigate the performance potential of higher MEA concentration solvents 
+x 
+Verify design capacities and flexibilities of the TCM DA amine plant and specific functionalities 
+x 
+Gain better understanding of scale-up, performance, and emission aspects and transient operations of the 
+TCM DA amine plant 
+x 
+Verify and improve process simulation models 
+x 
+Test and improve various online analyser for emission monitoring [5] 
+x 
+Scientific dissemination of some results 
+ 
+These purposes and goals are aimed for gaining experience and knowledge for future large scale carbon capture and 
+storage (CCS) projects.  
+This work is part of a continuous effort of gaining better understanding of the performance potential of the non-
+proprietary aqueous MEA solvent system, conducted by TCM DA and its affiliates and owners, in order to test, 
+verify, and demonstrate CO2 capture technologies. [3, 4, 5] The purpose of the current work is to provide results of 
+various operational conditions of the TCM DA amine plant, and hence demonstrating some capacities, flexibilities, 
+and performances of the plant while treating CHP flue gases. 
+ 
+© 2014 The Authors. Published by Elsevier Ltd. This is an open access article under the CC BY-NC-ND license 
+(http://creativecommons.org/licenses/by-nc-nd/3.0/).
+Peer-review under responsibility of the Organizing Committee of GHGT-12
+
+===== PDF PAGE 3 =====
+6014  
+ Natasha Brigman et al. /  Energy Procedia  63 ( 2014 )  6012 – 6022 
+2. Testing Philosophy 
+An overview of the TCM DA amine plant has been given elsewhere. [3, 4, 5]  
+The test philosophy during the current campaign was to adjust one operational parameter at a time, e.g. the 
+solvent flow rate, the gas flow rate, etc., whilst subsequently allowing the amine plant to reach steady-state 
+operations and simultaneously manually controlling the CO2 capture rate to a specific value. The CO2 capture rate 
+was controlled to about 85% for most of the campaign by manually adjusting the reboiler steam flow rate. The 
+response time of the amine plant was up to about 3 hours, depending on the varied operational parameter. The plant 
+was operated for at least an additional 3 hours of steady-state operations after an operational parameter change 
+before the plant was considered to provide representative process values. Any solvent sampling for laboratory 
+analysis was conducted once representative process values were obtained. Certain transient operations were 
+conducted during the campaign, and the aforementioned test philosophy was adapted in order to accommodate such 
+operations. During Base-Case testing, as described elsewhere [3, 4], the amine plant was operated at steady-state 
+operations for about 1 week. 
+Table 1 provides the main operational parameters and ranges adjusted during the campaign. Approximately 150 
+different operating conditions were conducted during the campaign, and the results of some of these are presented in 
+the current work. 
+ 
+Table 1: MEA campaign overview 
+Adjusted operational parameter 
+Range 
+Flue gas flow rate 
+Sm3/h 
+30.000 - 60.000 
+Flue gas temperature 
+°C 
+20 – 50 
+Flue gas CO2 concentration 
+vol% 
+3.2 – 11.0 
+Lean solvent flow rate 
+m3/h 
+30 – 150 
+Lean solvent temperature 
+°C 
+20 – 45 
+L/G ratio 
+kg liquid / kg gas 
+0.5 – 2.5 
+CO2 capture rate 
+% 
+60 – 95 
+MEA concentration 
+wt% 
+25 – 45  
+Absorber packing height 
+m 
+12 – 24  
+Stripper pressure 
+bara 
+1.9 – 2.5 
+Stripper reboiler duties 
+MW 
+2.5 – 6  
+ 
+The calculations procedures for the various performance indices presented in the current work are as described by 
+Thimsen et al. [3] and Hamborg et al. [4]. 
+   
+3. Chemicals 
+MEA [CAS: 141-43-5] was supplied by AkzoNobel, and was diluted to a desired solvent concentration by 
+addition of demineralized water. Anti-foam solution was supplied from KCC Basildon. 
+ 
+
+===== PDF PAGE 4 =====
+ Natasha Brigman et al. /  Energy Procedia  63 ( 2014 )  6012 – 6022 
+6015
+4. Results and Discussion 
+4.1. Mass recovery and MEA solvent concentrations 
+The total mass and CO2 mass recovery also referred to as the total mass and CO2 mass balances, for the complete 
+campaign, were determined as described by Thimsen et al. [3] and displayed in Figure 1. The total mass recovery is, 
+as expected, close to 100% during the complete campaign. The CO2 mass recovery is however scattered, and this 
+may be attributed to inadequate instrumentation for monitoring of the CO2 gas phase concentrations in the flue gas 
+supply and depleted flue gas. The gas phase concentrations of CO2 in the flue gas streams were monitored by the 
+installed Fourier transform infrared spectroscopy (FTIR) analyzer, and accuracy and precision challenges with 
+respect to this FTIR analyzer setup has been described by elsewhere. [4] The scattering of the CO2 mass recovery 
+displayed in Figure 1 leads to uncertainties in the CO2 capture rates, whereas the specific thermal use, as derived in  
+the current work, is independent of the FTIR analyzer system. [4] 
+The MEA solvent concentrations, based on sampling and laboratory analysis of the lean amine, are displayed in 
+Figure 2. The MEA solvent concentration was maintained at about 30 wt% during most of the campaign, and was 
+increased to above 40 wt% towards the end. The MEA solvent water balance was maintained by adjusting the 
+depleted flue gas temperature to the flue gas supply temperature, and, if necessary, addition of demineralized water 
+to the MEA solvent. Due to the rapid change of operational parameters and conditions and additional time 
+consuming sampling and laboratory analysis, the MEA solvent concentration could not be maintained at constant 
+values throughout the campaign. 
+ 
+ 
+80
+85
+90
+95
+100
+105
+110
+115
+120
+0
+20
+40
+60
+80
+100
+120
+140
+Mass recovery [%]
+Operating condition no.
+Total mass
+CO₂ mass
+ 
+Figure 1: Total and CO2 mass recovery at various operating conditions 
+  
+ 
+
+===== PDF PAGE 5 =====
+6016  
+ Natasha Brigman et al. /  Energy Procedia  63 ( 2014 )  6012 – 6022 
+20
+25
+30
+35
+40
+45
+50
+0
+20
+40
+60
+80
+100
+120
+140
+160
+MEA concentration [wt%]
+Operating condition no.
+ 
+Figure 2: MEA concentrations at various operating conditions 
+ 
+4.2. Overall energy performances 
+Figure 3 displays the specific reboiler duties (SRD) for the aqueous 30 wt% MEA solvent system with and 
+without the use of anti-foam solutions. The plant was operated with 24 meters of absorber packing heights, 1.9 bara 
+stripper pressure, and a flue gas flow rate of about 47.000 Sm3/h at 25 °C. The CO2 capture rate was kept at about 85 
+%. The results in Figure 3 show a clear minimum in the SRD of about 4.0 MJ/kg CO2 at a lean amine loading of 
+about 0.25 for operations without anti-foam solutions added.  Results refer to Base-Case testing as presented 
+elsewhere [4] provided a SRD of 4.1 MJ/kg CO2 and is displayed in Figure 3. For operations with addition of anti-
+foam solutions, the minimum SRD is shifted towards lower lean CO2 loadings, and the cause for this behavior is 
+described later. The minimum SRD for these operations with anti-foam addition may have not been achieved. The 
+lean amine CO2 loading can be assumed closely proportional to the MEA solvent circulation rate, assuming steady-
+state plant operations, and in these specific cases solvent circulation rates approached the minimum achievable due 
+to solvent pump limitations. Lower solvent flow rates could have been achieved with the use of the solvent filtration 
+system however this was not tested during operations with addition of anti-foam solutions. The minimum SRD 
+obtained for operations with anti-foam solutions added was approximately 3.7 MJ/kg CO2. 
+Figure 4 displays the SRD for the aqueous 40 wt% MEA solvent system. The plant was operated with 24 meters 
+of absorber packing heights, 1.9 bara stripper pressure, and a flue gas flow rate of about 59.000 Sm3/h at 25 °C. The 
+CO2 capture rate was kept at about 85 %. The results in Figure 4 show a minimum in the SRD of about 3.4 MJ/kg 
+CO2 at lean amine loadings ranging between 0.2 and 0.25. A batch of anti-foam solutions were added several days 
+prior to these tests, and the effect of the anti-foam solution was likely present during these operating conditions. 
+ 
+ 
+ 
+
+===== PDF PAGE 6 =====
+ Natasha Brigman et al. /  Energy Procedia  63 ( 2014 )  6012 – 6022 
+6017
+3
+3.5
+4
+4.5
+5
+5.5
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+SRD [MJ/kg CO2]
+Lean amine loading [mol/mol]
+25°C AF
+25°C
+BC
+ 
+Figure 3: SRD for the 30 wt% aqueous MEA solvent system as a function of the lean amine CO2 loading. AF indicates operations with anti-foam 
+solutions injected into the aqueous MEA solvent system. BC indicates the Base-Case operation as in described by Hamborg et al. [4] 
+ 
+ 
+3
+3.5
+4
+4.5
+5
+5.5
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+SRD [MJ/kg CO2]
+Lean amine loading [mol/mol]
+ 
+Figure 4: SRD for the 40 wt% aqueous MEA solvent system as a function of the lean amine CO2 loading. 
+ 
+Figure 5 displays a comparison of the results presented in Figure 3 and Figure 4 as a function of the ratio of 
+solvent flow rate to the flue gas supply rate on mass basis (L/G ratio). Operations with the 40 wt% aqueous MEA 
+solvent system clearly provide lower values of the SRD and L/G ratios. The use of 40 wt% or higher MEA 
+concentrations must however be considered with respect to higher solvent degradation rates, as described by Morken 
+et al. [5], and possible material corrosion rates. The latter is however irrelevant for the TCM DA amine plant as it is 
+constructed primarily of high grade stainless steel and polypropylene plastic material for absorber lining. The metal 
+ion concentrations were monitored during the MEA campaign, and no significant increase in ion concentration was 
+observed for 40 wt% operations. 
+ 
+
+===== PDF PAGE 7 =====
+6018  
+ Natasha Brigman et al. /  Energy Procedia  63 ( 2014 )  6012 – 6022 
+3
+3.5
+4
+4.5
+5
+5.5
+0.00
+0.20
+0.40
+0.60
+0.80
+1.00
+1.20
+1.40
+1.60
+1.80
+2.00
+SRD [MJ/kg CO2]
+L/G [mass/mass]
+30wt%, 47000Sm³/h
+30wt%, 47000Sm³/h, AF
+40wt%, 59000Sm³/h
+BC
+ 
+Figure 5: SRD for the 30 wt% and 40 wt% aqueous MEA solvent system as a function of L/G ratios 
+4.3. Effects of absorber packing heights 
+Figure 6 displays the effects of absorber packing heights. The SRD obtained with 24 meters of absorber packing 
+heights of about 4.0 MJ/kg CO2 are lower than those of 18 meters of about 4.5 MJ/kg CO2. The plant was operated 
+at 1.9 bara stripper pressure and a flue gas flow rate of about 47.000 Sm3/h at 25 °C. The CO2 capture rate was kept 
+at about 85 %.  
+It is well known that MEA is considered an amine with a relatively high kinetic reaction rate towards CO2, and 
+equilibrium conditions could be expected in the absorber bottom section. Solvent sampling and laboratory analysis 
+resulted in rich solvent CO2 loadings of about 0.44 and 0.48 for respective 18 meters and 24 meters of absorber 
+packing heights, whereas the expected CO2 equilibrium loading for the aqueous MEA system was approximately 
+0.50. Preliminary simulation work has indicated that it is most likely the kinetic rate which limits the approach to 
+equilibrium in the test runs.  
+Similar trends, as displayed in Figure 6, were observed with the 40 wt% aqueous MEA solvent system at 
+different absorber packing heights.  
+
+===== PDF PAGE 8 =====
+ Natasha Brigman et al. /  Energy Procedia  63 ( 2014 )  6012 – 6022 
+6019
+3
+3.5
+4
+4.5
+5
+5.5
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+SRD [MJ/kg CO2]
+Lean amine loading [mol/mol]
+18m
+24m
+BC
+ 
+Figure 6: SRD for the 30 wt% aqueous MEA solvent system as a function of the lean amine CO2 loading and absorber packing heights 
+4.4. Effect of flue gas supply flow rates  
+Figure 7 displays the effects of flue gas supply flow rates. The flue gas supply rate shows no significant effect on 
+the SRD at specific lean amine loadings. The plant was operated with 24 meters of absorber packing heights, 1.9 
+bara stripper pressure, and a flue gas supply temperature of 25 °C. The CO2 capture rate was kept at about 85 %.  At 
+specific lean amine loadings it can be assumed that the amine plant was operated at close to identical conditions for 
+the various flue gas supply flow rates, except the correlated adjustment of the solvent flow rate. This would ideally 
+create a constant L/G ratio for the various flue gas supply flow rates at a certain lean amine loading. The minor 
+differences in the SRD between the various flue gas supply flow rates at a certain lean amine loading must therefore 
+be attributed to normal operational variations of the various amine plant unit operations.  
+ 
+ 
+3
+3.5
+4
+4.5
+5
+5.5
+0.10
+0.15
+0.20
+0.25
+0.30
+0.35
+SRD [MJ/kg CO2]
+Lean amine loading [mol/mol]
+52000m³/h
+47000m³/h
+47000m³/h AF
+42000m³/h
+BC
+ 
+Figure 7: SRD for the 30wt% aqueous MEA solvent system as a function of the lean amine CO2 loading and flue gas supply flow rates 
+
+===== PDF PAGE 9 =====
+6020  
+ Natasha Brigman et al. /  Energy Procedia  63 ( 2014 )  6012 – 6022 
+4.5. Effect of flue gas supply temperatures 
+Increased SRD were observed when increasing the flue gas supply temperatures from 25 °C to about 50 °C. The 
+SRD was determined to be about 4 MJ/kg CO2 for the 30 wt% aqueous MEA solvent system at 25 °C flue gas 
+supply temperatures, whereas the SRD was determined to be about 5.0 MJ/kg CO2 for 50 °C flue gas supply 
+temperatures. Some increase is expected due to the temperature dependent CO2 vapor liquid equilibria behavior in 
+the absorber bottom, leading to a lower rich amine loading at increased absorber bottom temperature, and the fact 
+that the partial pressure of CO2 is slightly lower in the flue gas supply stream of 50 °C than 20 °C leading to 
+decreased mass transfer driving forces. However, the more important aspect encountered during these test conditions 
+at elevated flue gas supply temperatures was chemical equilibrium pinching of the upper section of the absorber. 
+This was encountered when the lean amine loading was not sufficiently low, i.e. the CO2 equilibrium pressure in the 
+lean amine solvent entering the absorber is close to or identical to the actual CO2 partial pressure in the gas phase of 
+the upper section of the absorber. At such conditions little mass transfer will occur in the upper section of the 
+absorber, as mass transfer driving forces are low. In order to avoid such chemical equilibrium pinching, the lean 
+amine loading would need to be lowered by e.g. increasing the stripper bottom temperature. Aspects around this are 
+described further below. 
+The chemical equilibrium pinch behavior, as aforementioned, was encountered primarily as a result of the very 
+low targeted depleted flue gas CO2 partial pressure, as is a consequence of CO2 capture from low partial CO2 
+pressure CHP flue gases. Assuming flue gas supply CO2 content of about 3.5 vol% and a corresponding partial 
+pressure of about 35 mbara by assumption of ideal gas law behavior, the depleted flue gas CO2 partial pressure 
+would be about 5 mbara at 85 % CO2 capture rate. In order to avoid and control such chemical equilibrium pinching 
+behavior for any future large scale PCC amine plants in the upper section of the absorber, engineering 
+considerations such as e.g. flue gas supply temperatures and sufficient instrumentation for monitoring of the CO2 
+content in the depleted flue gas should be taken into account. 
+ 
+4.6. Effect of stripper behavior  
+Figure 8 and Figure 9 displays the effect of addition of anti-foam solution to the solvent. The effect of anti-foam 
+solution addition on the SRD is more pronounced at lower lean amine loadings. The plant was operated at 1.9 bara 
+stripper pressure and a flue gas flow rate of about 47.000 Sm3/h at 25 °C. The CO2 capture rate was kept at 
+approximately 85 %.  
+Addition of anti-foam solutions showed no impact on the absorber temperature profile as displayed by Figure 8, 
+but showed a considerable impact on the stripper temperature profile as displayed by Figure 9. The temperature 
+values displayed in the Figure 8 and Figure 9 are the average value of four temperature sensors in the radial plane at 
+each axial column position. For operations without anti-foam solutions, the stripper temperature profile shows 
+relatively high temperatures in the upper section of the stripper of about 115 °C. It is well known that such will lead 
+to excessive amounts of water vapor leaving the stripper and being further directed to the overhead condenser, 
+which will lead to an unnecessarily high SRD. Upon analysis of the stripper temperature profiles in the radial plane 
+and axial direction, it was concluded that transient channeling in the stripper bed occurred during operations without 
+addition of anti-foam solution. This resulted in poor gas liquid distribution and contact, and condensation of the 
+stripping gas and water vapor occurred in the overhead condenser rather than inside the stripper bed. Addition of 
+anti-foam solution reduced the channeling behavior in the stripper, and well defined as expected stripper 
+temperature profiles were obtained in the axial direction, as displayed by Figure 9, and minor temperature 
+differences were observed in the radial plane. At these stripper operating conditions, only moderate amounts of 
+water vapor, as defined by chemical phase equilibria, will leave the stripper and be further directed to the overhead 
+condenser. This is defined as optimal stripper behavior. The exact cause of the observed transient steam channeling 
+is not yet clearly understood, however it may be caused by the solvent foaming. Engineering aspects related to this 
+and the use of anti-foam solutions for future large scale PCC amine plants must be considered. Environmental 
+
+===== PDF PAGE 10 =====
+ Natasha Brigman et al. /  Energy Procedia  63 ( 2014 )  6012 – 6022 
+6021
+aspects of the use of anti-foam in such amine plants where the depleted flue gas may be emitted to air must also be 
+considered. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+0
+5
+10
+15
+20
+25
+25
+35
+45
+55
+Absorber height [m]
+Temperature [°C]
+No AF
+AF
+ 
+Figure 8: Absorber temperature profile with and without antifoam 
+0
+1
+2
+3
+4
+5
+6
+7
+8
+95
+105
+115
+125
+Stripper height [m]
+Temperature [°C]
+No AF
+AF
+ 
+Figure 9: Stripper temperature profile with and without antifoam 
+
+===== PDF PAGE 11 =====
+6022  
+ Natasha Brigman et al. /  Energy Procedia  63 ( 2014 )  6012 – 6022 
+5. Conclusion 
+A campaign has been performed in the amine plant at the CO2 Technology Centre Mongstad applying the 
+aqueous 30 wt% and 40 wt% MEA solvent systems for treatment of flue gas from a combined heat and power 
+(CHP) plant. CHP flue gas flow rates were ranging from about 40.000 Sm3/h to 60.000 Sm3/h and the CO2 content 
+was about 3.5 vol%. 
+Minimum steam reboiler duties (SRD) of respectively 4.0 MJ/kg CO2 and 3.7 MJ/kg CO2 were obtained for the 
+aqueous 30 wt% MEA solvent system without and with addition of anti-foam solution. Minimum SRD of 3.4 MJ/kg 
+CO2 was obtained for the aqueous 40 wt% MEA solvent system. Lower SRD and absorber liquid to gas (L/G) ratios 
+could be obtained with the higher concentration MEA solvents. 
+Increased absorber packing heights resulted in lower SRD. Variation in flue gas supply flow rates and 
+corresponding variations in solvent flow rates did not yield any significant variations in SRD. Decreased flue gas 
+supply temperatures resulted in lower SRD, as rich amine loadings increased and chemical equilibrium pinch 
+behavior in the upper section of the absorber was limited. 
+Engineering aspects such as flue gas supply temperatures and instrumentation for gas phase monitoring of the 
+CO2 flue gas contents must be considered for any future large scale PCC amine plant in order to avoid chemical 
+equilibrium pinch behavior during treatment of CHP flue gases. Engineering and environmental aspects related to 
+the use of anti-foam solutions for future large scale PCC amine plants must also be considered. 
+ 
+ 
+Acknowledgements 
+The authors gratefully acknowledge the staff of TCM DA, Gassnova, Statoil, Shell, Sasol, and Aker Solutions for 
+their contribution and work at the TCM DA facility. 
+The authors also gratefully acknowledge Gassnova, Statoil, Shell, and Sasol as the owners of TCM DA and Aker 
+Solutions for their financial support and contributions. 
+ 
+ 
+References 
+[1] Andersson V, Wittmeyer K. Operational Experience and Initial Results from the First Test Period at CO2 Technology Centre Mongstad. 
+Energy Procedia; 2013; 37:6348-6356 
+[2] de Koeijer G, Enge Y. CO2 Technology Centre Mongstad – Design, functionality and emissions of the amine plant. Energy Procedia; 2011; 
+4:1207-1213 
+[3] Thimsen D, Maxson A, Smith V, Cents T, Falk-Pedersen O, Gorset O, Hamborg E S. Results from MEA testing at the CO2 Technology 
+Centre Mongstad. Part I: Post-Combustion CO2 capture testing methodology. Energy Procedia; 2014 
+[4] Hamborg E S, Smith V, Cents T, Brigman N, Falk-Pedersen O, De Cazenove T, Chhaganlal M, Feste J K, Ullestad Ø, Ulvatn H, Gorset O, 
+Askestad I, Gram L K, Fostås B F, Shah M I, Maxson A, Thimsen D. Results from MEA testing at the CO2 Technology Centre Mongstad. 
+Part II: Verification of baseline results. Energy Procedia; 2014 
+[5] Morken A K, Nenseter B, Pedersen S, Chhaganlal M, Feste J K, Tyborgnes R B, Ullestad Ø, Ulvatn H, Zhu L, Mikoviny T, Wisthaler A, 
+Cents T, Bade O M, Knudsen J, De Koeijer G, Falk-Pedersen O, Hamborg E S. Emission results of amine plant operations from MEA testing 
+at the CO2 Technology Centre Mongstad. Energy Procedia; 2014. 

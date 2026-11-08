@@ -1,0 +1,6 @@
+burn_r100 ok {'rating_mwth': 100, 'basis': 'case_b', 'tail_gas': 'burn_on_site'} 13 steps
+export_r100 ok {'rating_mwth': 100, 'basis': 'case_b', 'tail_gas': 'export'} 13 steps
+selexol_r100 ok {'rating_mwth': 100, 'basis': 'case_b', 'tail_gas': 'inl_selexol'} 13 steps
+r150 ok {'rating_mwth': 150, 'basis': 'case_b', 'tail_gas': 'recycle'} 13 steps
+r170 ok {'rating_mwth': 170, 'basis': 'case_b', 'tail_gas': 'recycle'} 13 steps
+errors 0

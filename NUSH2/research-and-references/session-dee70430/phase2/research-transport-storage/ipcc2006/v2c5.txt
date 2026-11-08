@@ -1,0 +1,1635 @@
+                                                  Chapter 5: Carbon Dioxide Transport, Injection and Geological Storage
+
+CHAPTER 5
+
+CARBON DIOXIDE TRANSPORT,
+INJECTION AND GEOLOGICAL
+STORAGE
+
+2006 IPCC Guidelines for National Greenhouse Gas Inventories  5.1
+Volume 2: Energy
+
+Authors
+
+Sam Holloway (UK), Anhar Karimjee (USA),
+Makoto Akai (Japan), Riitta Pipatti (Finland), and Kristin Rypdal (Norway)
+
+5.2  2006 IPCC Guidelines for National Greenhouse Gas Inventories
+            Chapter 5: Carbon Dioxide Transport, Injection and Geological Storage
+
+                                    Contents
+
+5 Carbon Dioxide Transport, Injection and Geological Storage
+   5.1 Introduction ...........................................................................................................................................5.5
+   5.2 Overview ...............................................................................................................................................5.5
+   5.3 CO2 capture ...........................................................................................................................................5.7
+   5.4 CO2 transport.........................................................................................................................................5.8
+      5.4.1 CO2 transport by pipeline ..............................................................................................................5.8
+      5.4.2 CO2 transport by ship ..................................................................................................................5.10
+      5.4.3 Intermediate storage facilities on CO2 transport routes ...............................................................5.10
+   5.5 CO2 injection .......................................................................................................................................5.10
+   5.6 Geological storage of CO2...................................................................................................................5.11
+      5.6.1 Description of emissions pathways/sources ................................................................................5.11
+   5.7 Methodological issues .........................................................................................................................5.13
+      5.7.1 Choice of method ........................................................................................................................5.14
+      5.7.2 Choice of emission factors and activity data ...............................................................................5.16
+      5.7.3 Completeness ..............................................................................................................................5.17
+      5.7.4 Developing a consistent time series.............................................................................................5.17
+   5.8 Uncertainty assessment .......................................................................................................................5.18
+   5.9 Inventory Quality Assurance/Quality Control (QA/QC).....................................................................5.18
+   5.10 Reporting and Documentation.............................................................................................................5.20
+
+Annex 5.1 Summary description of potential monitoring technologies for geological CO2 storage sites ....5.22
+References .....................................................................................................................................................5.31
+
+                                 Equation
+
+Equation 5.1 Total national emissions ......................................................................................................5.16
+
+            Figures
+
+Figure 5.1  Schematic representation of the carbon capture and storage process
+            with numbering linked to systems discussion above. ............................................................5.6
+Figure 5.2
+Figure 5.3  CO2 capture systems (After the SRCCS):..............................................................................5.7
+Figure A1
+            Procedures for estimating emissions from CO2 storage sites ..............................................5.13
+
+            An illustration of the potential for leakage of CO2 from a geological storage reservoir to
+            occur outside the storage site...............................................................................................5.22
+
+2006 IPCC Guidelines for National Greenhouse Gas Inventories  5.3
+Volume 2: Energy
+
+                  Table
+
+     Table 5.1    Source categories for CCS.....................................................................................................5.7
+     Table 5.2
+                  Default Tier 1 emission factors for pipeline transport of CO2
+     Table 5.3    from a CO2 capture site to the final storage site...................................................................5.10
+     Table 5.4    Potential emission pathways from geological reservoirs.....................................................5.12
+
+     Table A 5.1  Overview table: overview of CO2 capture, transport, injection
+     Table A 5.2  and CO2 for long-term storage.............................................................................................5.19
+     Table A 5.3  Potential deep subsurface monitoring technologies and their likely application .................5.24
+
+     Table A 5.4  Potential shallow subsurface monitoring technologies and their likely application ............5.26
+     Table A 5.5
+     Table A 5.6  Technologies for determining fluxes from ground or water to
+                  atmosphere, and their likely application ..............................................................................5.27
+
+                  Technologies for detection of raised CO2 levels in air and soil (leakage detection)............5.28
+                  Proxy measurements to detect leakage from geological CO2 storage sites..........................5.29
+                  Technologies for monitoring CO2 levels in sea water and their likely application..............5.30
+
+     Box 5.1                               Box
+
+                  Derivation of default emission factors for CO2 pipeline transport ........................................5.9
+
+5.4               2006 IPCC Guidelines for National Greenhouse Gas Inventories
+                                                  Chapter 5: Carbon Dioxide Transport, Injection and Geological Storage
+
+5 CARBON DIOXIDE TRANSPORT, INJECTION
+   AND GEOLOGICAL STORAGE
+
+5.1 INTRODUCTION
+
+Carbon dioxide (CO2) capture and storage (CCS) is an option in the portfolio of actions that could be used to
+reduce greenhouse gas emissions from the continued use of fossil fuels.
+
+At its simplest, the CCS process is a chain consisting of three major steps: the capture and compression of CO2
+(usually at a large industrial installation1 ), its transport to a storage location and its long-term isolation from the
+atmosphere. IPCC (2005) has produced a Special Report on Carbon Dioxide Capture and Storage (SRCCS),
+from which additional information on CCS can be obtained. The material in these Guidelines has been produced
+in consultation with the authors of the SRCCS.
+
+Geological storage can take place in natural underground reservoirs such as oil and gas fields, coal seams and
+saline water-bearing formations utilizing natural geological barriers to isolate the CO2 from the atmosphere. A
+description of the storage processes involved is given in Chapter 5 of the SRCCS. Geological CO2 storage may
+take place either at sites where the sole purpose is CO2 storage, or in tandem with enhanced oil recovery,
+enhanced gas recovery or enhanced coalbed methane recovery operations (EOR, EGR and ECBM respectively).
+
+These Guidelines provide emission estimation guidance for carbon dioxide transport, injection and geological
+storage (CCGS) only. No emissions estimation methods are provided for any other type of storage option such as
+ocean storage or conversion of CO2 into inert inorganic carbonates. With the exception of the mineral
+carbonation of certain waste materials, these technologies are at the research stage rather than the demonstration
+or later stages of technological development IPCC (2005). If and when they reach later stages of development,
+guidance for compiling inventories of emissions from these technologies may be given in future revisions of the
+Guidelines.
+
+Emissions resulting from fossil fuels used for capture, compression, transport, and injection of CO2, are not
+addressed in this chapter. Those emissions are included and reported in the national inventory as energy use in
+the appropriate stationary or mobile energy use categories. Fuel use by ships engaged in international transport
+will be excluded where necessary by the bunker rules, whatever the cargo, and it is undesirable to extend the
+bunker provisions to emissions from any energy used in operating pipelines.
+
+5.2 OVERVIEW
+
+In these Guidelines, the CO2 capture and geological storage chain is subdivided into four systems (Figure 5.1)
+
+1. Capture and compression system. The systems boundary includes capture, compression and, where
+     necessary, conditioning, for transport.
+
+2. Transport system. Pipelines and ships are considered the most likely means of large-scale CO2 transport. The
+     upstream systems boundary is the outlet of the compression / conditioning plant in the capture and
+     compression system. The downstream systems boundary is the downstream end of a transport pipeline, or a
+     ship offloading facility. It should be noted that there may be compressor stations located along the pipeline
+     system, which would be additional to any compression in System 1 or System 3.
+
+3. Injection system. The injection system comprises surface facilities at the injection site, e.g. storage facilities,
+     distribution manifold at end of transport pipeline, distribution pipelines to wells, additional compression
+     facilities, measurement and control systems, wellhead(s) and the injection wells. The upstream systems
+     boundary is the downstream end of transport pipeline, or ship offloading facility. The downstream systems
+     boundary is the geological storage reservoir.
+
+4. Storage system. The storage system comprises the geological storage reservoir.
+
+1 Examples of large point sources of CO2 where capture is possible include power generation, iron and steel manufacturing,
+  natural gas processing, cement manufacture, ammonia production, hydrogen production and ethanol manufacturing plants.
+
+2006 IPCC Guidelines for National Greenhouse Gas Inventories  5.5
+Volume 2: Energy
+
+Figure 5.1           Schematic representation of the carbon capture and storage process with
+                     numbering linked to systems discussion above.
+
+            Plant                              1                             1                             1
+         power plant,                   CO2 Capture                   Liquefaction             Intermediate Storage
+     industrial process                 Compression
+                                                                                               Ship Transport              2
+                                  1
+
+                  2                     Pipeline Transport                                     Intermediate Storage     2
+
+                                     3  Injection                                              Injection             3
+
+                                                                                      4
+                                                                      Geological Storage Site
+
+            Possible Emissions (emission values linked to Table 5.1)
+
+This chapter does not include guidance for CO2 capture and compression. A brief summary and information on
+where to find emissions estimation guidelines for CO2 capture and compression can be found in Section 5.3.
+Guidelines for compiling inventories of emissions from the CO2 transport, injection and storage systems of the
+CCGS chain are given in Sections 5.4, 5.5 and 5.6 of this Chapter, respectively. Fugitive emissions from surface
+facilities at EOR, EGR and ECBM site (with or without CO2 storage) are classified as oil and gas operations and
+Volume 2, Chapter 4 provides guidance on estimating these emissions. Emissions from underground storage
+reservoirs at EOR, EGR and ECBM sites are classified as emissions from geological storage sites and Section
+5.7 of this Chapter provides guidance on estimating these emissions.
+
+Table 5.1 shows the categories in which the emissions from the CO2 transport, injection and storage systems are
+reported.
+
+5.3 CO2 CAPTURE
+
+Anthropogenic carbon dioxide emissions arise mainly from combustion of fossil fuels (and biomass) in the
+power generation, industrial, buildings and transport sectors. CO2 is also emitted from non-combustion sources
+in certain industrial processes such as cement manufacture, natural gas processing and hydrogen production.
+
+CO2 capture produces a concentrated stream of CO2 at high pressure that can be transported to a storage site and
+stored. In these Guidelines, the systems boundary for capture includes compression and any dehydration or other
+conditioning of the CO2 that takes place before transportation.
+
+Electric power plants and other large industrial facilities are the primary candidates for CO2 capture, although it
+is the high purity streams of CO2 separated from natural gas in the gas processing industry that have been
+captured and stored to date. Available technology is generally deployed in a way that captures around 85-95
+percent of the CO2 processed in a capture plant IPCC (2005). Figure 5.2, taken from the SRCCS provides an
+overview of the relevant processes. The main techniques are briefly described below. Further detail is available
+in Chapter 3 of the SRCCS:
+
+· Post-combustion capture: CO2 can be separated from the flue gases of the combustion plant or from natural
+     gas streams and fed into a compression and dehydration unit to deliver a relatively clean and dry CO2 stream
+     to a transportation system. These systems normally use a liquid solvent to capture the CO2.
+
+· Pre-combustion capture: This involves reacting a fuel with oxygen or air, and/or steam to produce a
+     `synthesis gas' or `fuel gas' composed mainly of carbon monoxide and hydrogen. The carbon monoxide is
+     reacted with steam in a catalytic reactor, called a shift converter, to give CO2 and more hydrogen. CO2 is
+     then separated from the gas mixture, usually by a physical or chemical absorption process, resulting in a
+     hydrogen-rich fuel which can be used in many applications, such as boilers, furnaces, gas turbines and fuel
+     cells. This technology is widely used in hydrogen production, which is used mainly for ammonia and
+     fertilizer manufacture, and in petroleum refining operations. Guidance on how to estimate and report
+     emissions from this process is provided in Chapter 2, section 2.3.4 of this Volume.
+
+5.6                                                         2006 IPCC Guidelines for National Greenhouse Gas Inventories
+                                                        Chapter 5: Carbon Dioxide Transport, Injection and Geological Storage
+
+· Oxy-fuel capture: In oxy-fuel combustion, nearly pure oxygen is used for combustion instead of air,
+     resulting in a flue gas that is mainly CO2 and H2O. This flue gas stream can directly be fed into a CO2
+     compression and dehydration unit. This technology is at the demonstration stage. Guidance on how to
+     estimate and report emissions from this process is provided in Chapter 2, section 2.3.4 of this volume.
+
+                                                                    TABLE 5.1
+                                                        SOURCE CATEGORIES FOR CCS
+
+1C          Carbon dioxide                              Carbon dioxide (CO2) capture and storage (CCS) involves the capture of
+            Transport and Storage                       CO2, its transport to a storage location and its long-term isolation from the
+                                                        atmosphere. Emissions associated with CO2 transport, injection and storage
+                                                        are covered under category 1C. Emissions (and reductions) associated with
+                                                        CO2 capture should be reported under the IPCC sector in which capture
+                                                        takes place (e.g. Stationary Combustion or Industrial Activities).
+
+1C 1        Transport of CO2                            Fugitive emissions from the systems used to transport captured CO2 from
+                                                        the source to the injection site. These emissions may comprise fugitive
+                                                        losses due to equipment leaks, venting and releases due to pipeline ruptures
+                                                        or other accidental releases (e.g. temporary storage).
+
+1 C 1 a Pipelines                                       Fugitive emissions from the pipeline system used to transport CO2 to the
+                                                        injection site.
+
+1 C 1 b Ships                                           Fugitive emissions from the ships used to transport CO2 to the injection site.
+
+1 C 1 c Other (please                                   Fugitive emissions from other systems used to transport CO2 to the injection
+                         specify)                       site and temporary storage.
+
+1C 2        Injection and Storage Fugitive emissions from activities and equipment at the injection site and
+                                           those from the end containment once the CO2 is placed in storage.
+
+1 C 2 a Injection                                       Fugitive emissions from activities and equipment at the injection site.
+
+1 C 2 b Storage                                         Fugitive emissions from the end containment once the CO2 is placed in
+                                                        storage.
+1C 3        Other
+                                                        Any other emissions from CCS not reported elsewhere.
+
+Figure 5.2  CO2 capture systems (After the SRCCS):
+
+                                           Coal         Power & Heat              N2
+                                                                                  O2
+Post combustion Gas
+                                                                                      CO2
+                                     Biomass                                      Separation
+
+                                                   Air                                             CO2
+
+                   Coal            Air/O2                                            CO2                      CO2
+                   Gas             Steam                                                                Compression
+                                                                                                        & Dehydration
+            Biomass
+
+Pre combustion     Gasification                         Reformer H2          Power & Heat N2 O2
+                    Gas, Oil                            +CO2 Sep
+
+                                                                        Air
+
+Oxyfuel                       Coal                                Power & Heat       CO2
+                               Gas                                            O2            N2
+                         Biomass
+                                                                  Air Separation
+                                                             Air
+                                                        Air/O2
+
+                                               Coal               Process +CO2 Sep.           CO2
+
+Industrial Processes Gas
+
+                                          Biomass
+
+                                                        Raw material         Gas, Ammonia, Steel
+
+As already mentioned in a number of industrial processes, chemical reactions lead to the formation of CO2 in
+quantities and concentrations that allow for direct capture or separation of the CO2 from their off gases, for
+example: ammonia production, cement manufacture, ethanol manufacture, hydrogen manufacture, iron and steel
+manufacture, and natural gas processing plant.
+
+2006 IPCC Guidelines for National Greenhouse Gas Inventories                                                                            5.7
+Volume 2: Energy
+
+The location of guidelines for compiling inventories of emissions from the CO2 capture and compression system
+depends on the nature of the CO2 source:
+
+· Stationary combustion systems (mainly electric power and heat production plants): Volume 2, Chapter 2,
+     Section 2.3.4.
+
+· Natural gas processing plants: Volume 2, Section 4.2.1.
+
+· Hydrogen production plants: Volume 2, Section 4.2.1.
+
+· Capture from other industrial processes: Volume 3 (IPPU) Chapter 1, Section 1.2.2, and specifically for
+
+      (i) Cement manufacture: IPPU Volume, Section 2.2
+
+      (ii) Methanol manufacture: IPPU Volume, Section 3.9
+
+     (iii) Ammonia production: IPPU Volume, Section 3.2
+
+      (iv) Iron and steel manufacture: IPPU Volume section 4.2
+
+Negative emissions may arise from the capture and compression system if CO2 generated by biomass
+combustion is captured. This is a correct procedure and negative emissions should be reported as such.
+
+Although many of the potential emissions pathways are common to all types of geological storage, some of the
+emission pathways in enhanced hydrocarbon recovery operations differ from those for geological CO2 storage
+without enhanced hydrocarbon recovery. In EOR operations, CO2 is injected into the oil reservoir, but a
+proportion of the amount injected is commonly produced along with oil, hydrocarbon gas and water at the
+production wells. The CO2-hydrocarbon gas mixture is separated from the crude oil and may be reinjected into
+the oil reservoir, used as fuel gas on site or sent to a gas processing plant for separation into CO2 and
+hydrocarbon gas, depending upon its hydrocarbon content. EGR and ECBM processes attempt to avoid CO2
+production because it is costly to separate the CO2 from a produced gas mixture. CO2 separated from the
+hydrocarbon gas may be recycled and re-injected in the EOR operation, or vented; depending on the economics
+of recycling versus injecting imported CO2. CO2-rich gas is also released from the crude oil storage tanks at the
+EOR operation. This vapour may be vented, flared or used as fuel gas depending upon its hydrocarbon content.
+Thus there are possibilities for additional sources of fugitive emissions from the venting of CO2 and the flaring or
+combustion of CO2-rich hydrocarbon gas, and also from any injected CO2 exported with the incremental
+hydrocarbons. These emissions along with fugitive emissions from surface operations at EOR, and EGR and
+ECBM sites (from the injection of CO2, and/or the production, recycling, venting, flaring or combustion of CO2-
+rich hydrocarbon gas), and including any injected CO2 exported with the incremental hydrocarbons, can be
+estimated and reported using the higher methods described guidance given in Volume 2 Chapter 4.
+
+5.4 CO2 TRANSPORT
+
+Fugitive emissions may arise e.g. from pipeline breaks, seals and valves, intermediate compressor stations on
+pipelines, intermediate storage facilities, ships transporting low temperature liquefied CO2, and ship loading and
+offloading facilities. Emissions from transport of captured CO2 are reported under category 1C (see Table 5.1).
+CO2 pipelines are the most prevalent means of bulk CO2 transport and are a mature market technology in
+operation today. Bulk transport of CO2 by ship also already takes place, though on a relatively minor scale. This
+occurs in insulated containers at temperatures well below ambient, and much lower pressures than pipeline
+transport. Transport by truck and rail is possible for small quantities of CO2, but unlikely to be significant in
+CCS because of the very large masses likely to be captured. Therefore no methods of calculating emissions from
+truck and rail transport are given here. Further information on CO2 transport is available in Chapter 4 of the
+SRCCS (IPCC 2005).
+
+5.4.1 CO2 transport by pipeline
+
+To estimate emissions from pipeline transport of CO2, default emission factors can be derived from the emission
+factors for transmission (pipeline transport) of natural gas as provided in section 4.2 of this volume. The Tier 1
+emission factors for natural gas pipeline transport, presented in, Tables 4.2.4 and 4.2.5 are provided on the basis
+of gas throughput primarily because pipeline length is not a national statistic that is commonly available.
+However, fugitive emissions from pipeline transport are largely independent of the throughput, but depend on
+the size of and the equipment installed in the pipeline systems. Since it is assumed that there exists a relationship
+between the size of the systems and natural gas used, such an approach is acceptable as Tier 1 method for natural
+gas transport.
+
+5.8  2006 IPCC Guidelines for National Greenhouse Gas Inventories
+                               Chapter 5: Carbon Dioxide Transport, Injection and Geological Storage
+
+The above might not be true for the transport of CO2 in CCS applications. Since it is good practice to treat both
+capture and storage in a per plant or facility basis, the length of the transporting CO2 pipeline system will be
+known and should be used to estimate emissions from transport.
+
+                                                             BOX 5.1
+                    DERIVATION OF DEFAULT EMISSION FACTORS FOR CO2 PIPELINE TRANSPORT
+
+The pressure drop of a gas over any geometry is described by:
+
+                                     P = f   v 2 l
+                                            2       D
+
+in which
+
+· v is the linear velocity of the gas through the leak and, with the same size of the leak, is
+     proportional to the leaking volume;
+
+·  is the density of the gas;
+
+· f is the dimensionless friction number
+
+· l/D (length divided by diameter) is characterizing the physical size of the system.
+
+For leaks, f = 1 and independent on the nature of the gas. So assuming the internal pressure of the
+pipe-line and the physical dimensions being the same for CO2 and CH4 transport, the leak-velocity
+is inversely proportional to the root of the density of the gas and hence proportional to the root of
+the molecular mass.
+
+So when P is the same for methane and carbon dioxide
+
+                                            v~ 1
+                                                  
+
+The molecule mass of CO2 is 44 and of CH4 is 16. So on a mass-basis the CO2-emission rate is
+
+44  = 1.66 times  the  CH4-emission  rate.
+16
+
+From this the default emission factors for CO2 pipeline transport are obtained by multiplying the
+relevant default emission factorsa in Table 4.2.8 for natural gas (is mainly CH4) by a factor of 1.66.
+
+Notes:
+a to convert the factors expressed in m3 to mass units, a specific mass of 0.7 kg/m3 for methane is
+applied.
+
+See chapter 5 in: R.H. Perry, D. Green, Perry's chemical engineers handbook, 6th edition,
+McGraw Hill Book Company - New York, 1984.
+
+Table 4.2.8 in section 4.2 of this volume provides indicative leakage factors for natural gas pipeline transport. To
+obtain Tier 1 default emission factors for CO2 transport by pipeline these values should be converted from cubic
+metres to mass units and multiplied by 1.66 (see Box 1). The resulting default emission factors are given in
+Table 5.2.
+
+2006 IPCC Guidelines for National Greenhouse Gas Inventories                                            5.9
+Volume 2: Energy
+
+                                                               TABLE 5.2
+      DEFAULT TIER 1 EMISSION FACTORS FOR PIPELINE TRANSPORT OF CO2 FROM A CO2 CAPTURE SITE TO THE
+
+                                                                        FINAL STORAGE SITE
+
+      Emission Source                       Value                                   Units of Measure
+                                                                       Uncertainty
+
+                               Low Medium High
+
+      Fugitive emissions from  0.00014 0.0014  0.014  ± a factor of 2               Gg per year and per km
+      CO2 transportation by                                                         of transmission pipeline
+      pipeline
+
+Although the leakage emissions from pipeline transport are independent of throughput, the number of leaks is
+not necessarily correlated to the length of the pipeline. The best correlation will be between the number and type
+of equipment components and the type of service. Most of the equipment tends to occur at the facilities
+connected to the pipeline rather than with the pipeline itself. In fact, unless the CO2 is being transported over
+very large distances and intermediate compressor stations are required, virtually all of the fugitive emissions
+from a CCS system will be associated with the initial CO2 capture and compression facilities at the start of the
+pipeline and the injection facilities at the end of the pipeline, with essentially no emissions from the pipeline
+itself. In Tier 3 approach, the leakage emissions from the transport pipeline could be obtained from data on
+number and type of equipment and equipment-specific emission factors.
+
+5.4.2 CO2 transport by ship
+
+Default emission factors for fugitive emissions from CO2 transport by ship are not available. The amounts of gas
+should be metered during loading and discharge using flow metering and losses reported as fugitive emissions of
+CO2 resulting from transport by ship under category 1C1 b.
+
+5.4.3 Intermediate storage facilities on CO2 transport
+           routes
+
+If there is a temporal mismatch between supply and transport or storage capacity, a CO2 buffer (above ground or
+underground) might be needed to temporarily store the CO2. If the buffer is a tank, fugitive emissions should be
+measured and treated as part of the transport system and reported under category 1C1 c (other). If the
+intermediate storage facility (or buffer) is a geological storage reservoir, fugitive emissions from it can be treated
+in the same way as for any other geological storage reservoir (see Section 5.6 of this Chapter) and reported under
+category 1C3.
+
+5.5 CO2 INJECTION
+
+The injection system comprises surface facilities at the injection site, e.g. storage facilities, any distribution
+manifold at the end of the transport pipeline, distribution pipelines to wells, additional compression facilities,
+measurement and control systems, wellhead(s) and the injection wells. Additional information on the design of
+injection wells can be found in the SRCCS, Chapter 5, Section 5.5.
+
+Meters at the wellhead measure the flow rate, temperature and pressure of the injected fluid. The wellhead also
+contains safety features to prevent the blowout of the injected fluids. Safety features, such as a downhole safety
+valve or check valve in the tubing, may also be inserted below ground level, to prevent backflow in the event of
+the failure of the surface equipment. Valve and other seals may be affected by supercritical CO2, so appropriate
+materials will need to be selected. Carbon steel and conventional cements may be liable to be attacked by highly
+saline brines and CO2-rich fluids (Scherer et al. 2005). Moreover the integrity of CO2 injection wells needs to be
+maintained for very long terms, so appropriate well construction materials and regulations will be needed.
+Cements used for sealing between the well and the rock formation and, after abandonment, plugging the well,
+must also be CO2/salt brine resistant over long terms. Such cements have been developed but need further testing.
+Due to the potential for wells to act as conduits for CO2 leakage back to the atmosphere, they should be
+monitored as part of a comprehensive monitoring plan as laid out in Section 5.7 of this Chapter.
+
+The amount of CO2 injected into a geological formation through a well can be monitored by equipment at the
+wellhead, just before it enters the injection well. A typical technique is described by Wright and Majek (1998).
+Meters at the wellhead continuously measure the pressure, temperature and flow rate of the injected gas. The
+
+5.10                           2006 IPCC Guidelines for National Greenhouse Gas Inventories
+                                                  Chapter 5: Carbon Dioxide Transport, Injection and Geological Storage
+
+composition of the imported CO2 commonly shows little variation and is analyzed periodically using a gas
+chromatograph. The mass of CO2 passing through the wellhead can then be calculated from the measured
+quantities. No default method is suggested and the reporting of the mass of CO2 injected as calculated from
+direct measurements is good practice.
+
+If the pressure of the CO2 arriving at the storage site is not as high as the required injection pressure,
+compression will be necessary. Any emissions from compression of the stored gas at the storage site should be
+measured and reported.
+
+5.6 GEOLOGICAL STORAGE OF CO2
+
+Chapter 5 of the SRCCS (IPCC 2005) indicates that geological storage of carbon dioxide may take place onshore
+or offshore, in:
+
+· Deep saline formations. These are porous and permeable reservoir rocks containing saline water in their
+     pore spaces.
+
+· Depleted or partially depleted oil fields - either as part of, or without, enhanced oil recovery (EOR)
+     operations.
+
+· Depleted or partially depleted natural gas fields ­ either with or without enhanced gas recovery (EGR)
+     operations.
+
+· Coal seams (= coal beds) ­ either with or without enhanced coalbed methane recovery (ECBM) operations.
+
+Additionally, niche opportunities for storage may arise from other concepts such as storage in salt caverns,
+basalt formations and organic-rich shales.
+
+Further information on these type of storage sites and the trapping mechanisms that retain CO2 within them can
+be found in Chapter 5 of the SRCCS (IPCC 2005).
+
+5.6.1 Description of emissions pathways/sources
+
+The Introduction to the SRCCS states that >99% of the CO2 stored in geological reservoirs is likely to remain
+there for over one thousand years. Therefore potential emissions pathways created or activated by slow or long-
+term processes need to be considered as well as those that may act in the short to medium term (decades to
+centuries).
+
+In these Guidelines the term migration is defined as the movement of CO2 within and out of a geological storage
+reservoir whilst remaining below the ground surface or the sea bed, and the term leakage is defined as a transfer
+of CO2 from beneath the ground surface or sea bed to the atmosphere or ocean.
+
+The only emissions pathways that need to be considered in the accounting are CO2 leakage to the ground surface
+or seabed from the geological storage reservoir2. Potential emission pathways from the storage reservoir are
+shown in Table 5.3.
+
+There is a possibility that methane emissions, as well as CO2 emissions, could arise from geological storage
+reservoirs that contain hydrocarbons. Although there is insufficient information to provide guidance for
+estimating methane emissions, it would be good practice to undertake appropriate assessment of the potential for
+methane emissions from such reservoirs and, if necessary, include any such emissions attributable to the CO2
+storage process in the inventory.
+
+2 Emissions of CO2 may occur as free gas or gas dissolved in groundwater that reaches the surface e.g. at springs.
+
+2006 IPCC Guidelines for National Greenhouse Gas Inventories                                                        5.11
+Volume 2: Energy
+
+                                                          TABLE 5.3
+                        POTENTIAL EMISSION PATHWAYS FROM GEOLOGICAL RESERVOIRS
+
+      Type of emission Potential emissions pathways/          Additional comments
+                                                sources
+
+      Direct leakage    · Operational or abandoned · It is anticipated that every effort will be made to
+      pathways created
+      by wells and      wells                                 identify abandoned wells in and around the
+      mining
+                                                              storage site. Inadequately constructed, sealed,
+
+                                                              and/or plugged wells may present the biggest
+
+                                                              potential risk for leakage. Techniques for
+
+                                                              remediating leaking wells have been developed
+
+                                                              and should be applied if necessary.
+
+                        · Well blow-outs (uncontrolled · Possible source of high-flux leakage, usually
+
+                        emissions from injection wells)       over a short period of time. Blowouts are
+
+                                                              subject to remediation and likely to be rare as
+
+                                                              established drilling practice reduces risk.
+
+                        · Future mining of CO2 reservoir · An issue for coal bed reservoirs
+
+      Natural leakage   · Through the pore system in          · Proper site characterization and selection and
+      and migration          low permeability cap rocks if         controlled injection pressure can reduce risk
+      pathways (that         the capillary entry pressure is       of leakage.
+      may lead to            exceeded or the CO2 is in
+      emissions over         solution                         · Proper site characterization and selection can
+      time)                                                        reduce risk of leakage.
+                        · If the cap rock is locally
+      Other Fugitive         absent                           · Proper site characterization and selection,
+      Emissions at the                                             including an evaluation of the hydrogeology,
+      Geological        · Via a spill point if reservoir           can reduce risk of leakage.
+      Storage Site           is overfilled
+                                                              · Proper site characterization and selection can
+                        · Through a degraded cap rock              reduce risk of leakage. Detailed assessment
+                             as a result of CO2/water/rock         of cap rock and relevant geochemical factors
+                             reactions                             will be useful.
+
+                        · Via dissolution of CO2 into         · Proper site characterization and selection,
+                             pore fluid and subsequent             including an evaluation of the hydrogeology,
+                             transport out of the storage          can determine/reduce risk of leakage.
+                             site by natural fluid flow
+                                                              · Possible source of high-flux leakage. Proper
+                        · Via natural or induced faults            site characterization and selection and
+                             and/or fractures                      controlled injection pressure can reduce risk
+                                                                   of leakage.
+
+                        · Fugitive methane emissions          Needs appropriate assessment.
+                             could result from the
+                             displacement of CH4 by CO2
+                             at geological storage sites.
+                             This is particularly the case
+                             for ECBM, EOR, and depleted
+                             oil and gas reservoirs.
+
+5.12                           2006 IPCC Guidelines for National Greenhouse Gas Inventories
+                                                             Chapter 5: Carbon Dioxide Transport, Injection and Geological Storage
+
+5.7 METHODOLOGICAL ISSUES
+
+Geological conditions vary widely and only a few published studies of monitoring programmes that identify and
+quantify fugitive anthropogenic carbon dioxide emissions from geological storage operations currently exist
+(Arts et al. 2003, Wilson and Monea 2005; Klusman 2003a, b, c). Although the Summary for Policymakers of
+the SRCCS suggests that properly selected geological storage sites are likely to retain greater than 99 percent of
+the stored CO2 over 1000 years and may retain it for up to millions of years, at the time of writing, the small
+number of monitored storage sites means that there is insufficient empirical evidence to produce emission factors
+that could be applied to leakage from geological storage reservoirs. Consequently, this guidance does not include
+Tier 1 or Tier 2 methodology. However, there is the possibility of developing such methodologies in the future,
+when more monitored storage sites are in operation and existing sites have been operating for a long time
+(Yoshigahara et al. 2005). However a site-specific Tier 3 approach can be developed. Monitoring technologies
+have been developed and refined over the past 30 years in the oil and gas, groundwater and environmental
+monitoring industries (also see Annex 1). The suitability and efficacy of these technologies can be strongly
+influenced by the geology and potential emissions pathways at individual storage sites, so the choice of
+monitoring technologies will need to be made on a site-by-site basis. Monitoring technologies are advancing
+rapidly and it would be good practice to keep up to date on new technologies.
+
+Tier 3 procedures for estimating and reporting emissions from CO2 storage sites are summarised in Figure 5.3
+and discussed below.
+
+Figure 5.3                 Procedures for estimating emissions from CO2 storage sites
+
+            Estimating, Verifying & Reporting Emissions from CO2 Storage Sites
+
+            Sit e          Risk of Leakage Characterization    Confirm that geology of storage site has been evaluated and that local and
+                                                             regional hydrogeology and leakage pathways (Table 5.1) have been identified.
+
+            Assessment of                                    Confirm that the potential for leakage has been evaluated through a combination
+                                                              of site characterization and realistic models that predict movement of CO2 over
+
+                                                                                time and locations where emissions might occur.
+
+            Monitoring                                       Ensure that an adequate monitoring plan is in place. The monitoring plan should
+                                                               identify potential leakage pathways, measure leakage and/or validate update
+                                                                                               models as appropriate.
+
+                                                            Report CO2 injected and emissions from storage siteReporting
+
+In order to understand the fate of CO2 injected into geological reservoirs over long timescales, assess its potential
+to be emitted back to the atmosphere or seabed via the leakage pathways identified in Table 5.3, and measure
+any fugitive emissions, it is necessary to:
+(a) Properly and thoroughly characterise the geology of the storage site and surrounding strata;
+(b) Model the injection of CO2 into the storage reservoir and the future behaviour of the storage system;
+(c) Monitor the storage system;
+
+2006 IPCC Guidelines for National Greenhouse Gas Inventories                                                                                   5.13
+Volume 2: Energy
+
+(d) Use the results of the monitoring to validate and/or update the models of the storage system.
+
+Proper site selection and characterization can help build confidence that there will be minimal leakage, improve
+modelling capabilities and results, and ultimately reduce the level of monitoring needed. Further information on
+site characterisation is available in the SRCCS and from the International Energy Agency Greenhouse Gas R &
+D Programme (IEAGHG 2005).
+
+Monitoring technologies have been developed and refined over the past 30 years in the oil and gas, groundwater
+and environmental monitoring industries. The most commonly used technologies are described in Tables 5.1-5.6
+in Annex I of this chapter. The suitability and efficacy of these technologies can be strongly influenced by the
+geology and potential emissions pathways at individual storage sites, so the choice of monitoring technologies
+will need to be made on a site-by-site basis. Monitoring technologies are advancing rapidly and it would be good
+practice to keep up to date on new technologies.
+
+A range of modelling tools is available, some of which have undergone a process of code inter-comparison
+(Pruess et al. 2004). All models approximate and/or neglect some processes, and make simplifications. Moreover,
+their results are dependent on their intrinsic qualities and, especially, on the quality of the data put into them.
+Many of the physico-chemical factors involved (changes in temperature and pressure, mixing of the injected gas
+with the fluids initially present in the reservoir, the type and rate of carbon dioxide immobilization mechanisms
+and fluid flow through the geological environment) can be modelled successfully with numerical modelling tools
+known as reservoir simulators. These are widely used in the oil and gas industry and have proved effective in
+predicting movement of gases and liquids, including CO2, through geological formations.
+
+Reservoir simulation can be used to predict the likely location, timing and flux of any emissions, which, in turn,
+could be checked using direct monitoring techniques. Thus it can be an extremely useful technique for assessing
+the risk of leakage from a storage site. However, currently there is no single model that can account for all the
+processes involved at the scales and resolution required. Thus, sometimes, additional numerical modelling
+techniques may need to be used to analyze aspects of the geology. Multi-phase reaction transport models, which
+are normally used for the evaluation of contaminant transport can be used to model transport of CO2 within the
+reservoir and CO2/water/rock reactions, and potential geomechanical effects may need to be considered using
+geomechanical models. Such models may be coupled to reservoir simulators or independent of them.
+
+Numerical simulations should be validated by direct measurements from the storage site, where possible. These
+measurements should be derived from a monitoring programme, and comparison between monitoring results and
+expectations used to improve the geological and numerical models. Expert opinion is needed to assess whether
+the geological and numerical modelling are valid representations of the storage site and surrounding strata and
+whether subsequent simulations give an adequate prediction of site performance.
+
+Monitoring should be conducted according to a suitable plan, as described below. This should take into account
+the expectations from the modelling on where leakage might occur, as well as measurements made over the
+entire zone in which CO2 is likely to be present. Site managers will typically be responsible for installing and
+operating carbon dioxide storage monitoring technologies (see Annex 1). The inventory compiler will need to
+ensure that it has sufficient information from each storage site to assess annual emissions in accordance with the
+guidance provided in this Chapter. To make this assessment, the inventory compiler should establish a formal
+arrangement with each site operator that will allow for annual reporting, review and verification of site-specific
+data.
+
+5.7.1 Choice of method
+
+At the time of writing, the few CO2 storage sites that exist are part of petroleum production operations and are
+regulated as such. For example, acid gas storage operations in western Canada need to conform to requirements
+that deal with applications to operate conventional oil and gas reservoirs (Bachu and Gunter, 2005). Regulatory
+development for CCS is in its early stages. There are no national or international standards for performance of
+geological CO2 storage sites and many countries are currently developing relevant regulations to address the
+risks of leakage. Demonstration of monitoring technologies is a necessary part of this development (see Annex
+1). As these standards and regulatory approaches are developed and implemented, they may be able to provide
+emissions information with relative certainty. Therefore, as part of the annual inventory process, if one or more
+appropriate governing bodies that regulate carbon dioxide capture and storage exist, then the inventory compiler
+may obtain emissions information from those bodies. If the inventory compiler relies on this information, he/she
+should submit supporting documentation that explains how emissions were estimated or measured and how these
+methods are consistent with IPCC practice. If no such agency exists, then it would be good practice for the
+inventory compiler to follow the methodology presented below. In the methodology presented below, site
+characterization, modelling, assessment of the risk of leakage and monitoring activities are the responsibility of
+the storage project manager and/or an appropriate governing body that regulates carbon dioxide capture and
+
+5.14  2006 IPCC Guidelines for National Greenhouse Gas Inventories
+                             Chapter 5: Carbon Dioxide Transport, Injection and Geological Storage
+
+storage. In addition, the storage project manager or regulatory authority will likely develop the emission
+estimates that will be reported to the national inventory compiler as part of the annual inventory process. The
+responsibility of the national inventory compiler is to request the emissions data and seek assurance of its
+validity. In the case of CCS associated with ECBM recovery, the methodology should be applied both to CO2
+and CH4 detection.
+
+1. Identify and document all geological storage operations in the jurisdiction. The inventory compiler should
+keep an updated record of all geological storage operations, including all the information needed to cross-
+reference from this section to other elements of the CO2 capture and storage chain for QA/QC purposes, that is
+for each operation:
+
+· The location of the site;
+
+· The type of operation (whether or not associated with EOR, EGR, ECBM);
+
+· The year in which CO2 storage began;
+
+· Source(s), annual mass of CO2 injected attributable to each source and the imputed cumulative amount in
+     storage; and
+
+· Associated CO2 transport, injection and recycling infrastructure, if appropriate (i.e. on-site generation and
+     capture facilities, pipeline connections, injection technology etc.) and emissions therefrom.
+
+Although the inventory compiler is only responsible for reporting on the effect of operations in its jurisdiction,
+he/she must record cross-border transfers of CO2 for cross-checking and QA/QC purposes (see Section 5.9).
+
+2. Determine whether an adequate geological site characterization report has been produced for each
+storage site. The site characterization report should identify and characterize potential leakage pathways such as
+faults and pre-existing wells, and quantify the hydrogeological properties of the storage system, particularly with
+respect to CO2 migration. The site characterisation report should include sufficient data to represent such
+features in a geological model of the site and surrounding area. It should also include all the data necessary to
+create a corresponding numerical model of the site and surrounding area for input into an appropriate numerical
+reservoir simulator.
+
+3. Determine whether the operator has assessed the potential for leakage at the storage site. The operator
+should determine the likely timing, location and flux of any fugitive emissions from the storage reservoir, or
+demonstrate that leakage is not expected to occur. Short-term simulations of CO2 injection should be made, to
+predict the performance of the site from the start of injection until significantly after injection ceases (likely to be
+decades). Long-term simulations should be performed to predict the fate of the CO2 over centuries to millenia.
+Sensitivity analysis should be conducted to assess the range of possible emissions. The models should be used in
+the design of a monitoring programme that will verify whether or not the site is performing as expected. The
+geological model and reservoir model should be updated in future years in the light of any new data and to
+account for any new facilities or operational changes.
+
+4. Determine whether each site has a suitable monitoring plan. Each site's monitoring plan should describe
+monitoring activities that are consistent with the leakage assessment and modelling results. Existing technologies
+presented in Annex 1 can measure leaks to the ground surface or seabed. The SRCCS includes detailed
+information on monitoring technologies and approaches (see Annex 1). In summary the monitoring programme
+should include provisions for:
+
+(i)  Measurement of background fluxes of CO2 (and if appropriate CH4) at both the storage site and
+
+     any likely emission points outside the storage site. Geological storage sites may have a natural,
+
+     seasonally variable (ecological and/or industrial) background flux of emissions prior to
+
+     injection. This background flux should not be included in the estimate of annual emissions. See
+
+     Annex 1 for a discussion of potential methods. Isotopic analysis of any background fluxes of
+
+     CO2 is recommended, as this is likely to help distinguish between natural and injected CO2.
+
+(ii) Continuous measurement of the mass of CO2 injected at each well throughout the injection
+          period, see Section 5.5 above.
+
+(iii) Monitoring to determine any CO2 emissions from the injection system.
+
+(iv) Monitoring to determine any CO2 (and if appropriate CH4) fluxes through the seabed or ground
+          surface, including where appropriate through wells and water sources such as springs. Periodic
+          investigations of the entire site, and any additional area below which monitoring and modelling
+          suggests CO2 is distributed, should be made to detect any unpredicted leaks.
+
+(v) Post-injection Monitoring: The plan should provide for monitoring of the site after the
+           injection phase. The post-injection phase of monitoring should take account of the results of
+
+2006 IPCC Guidelines for National Greenhouse Gas Inventories                5.15
+Volume 2: Energy
+
+                     the forward modelling of CO2 distribution to ensure that monitoring equipment is deployed at
+                     appropriate places and appropriate times. Once the CO2 approaches its predicted long-term
+                     distribution within the reservoir and there is agreement between the models of CO2 distribution
+                     and measurements made in accordance with the monitoring plan, it may be appropriate to
+                     decrease the frequency of (or discontinue) monitoring. Monitoring may need to be resumed if
+                     the storage site is affected by unexpected events, for example seismic events.
+
+          (vi) Incorporating improvements in monitoring techniques/technologies over time.
+
+          (vii) Periodic verification of emissions estimates. The necessary periodicity is a function of project
+                     design, implementation and early determination of risk potential. During the injection period,
+                     verification at least every five years or after significant change in site operation is suggested.
+
+Continuous monitoring of the injection pressure and periodic monitoring of the distribution of CO2 in the
+subsurface would be useful as part of the monitoring plan. Monitoring the injection pressure is necessary to
+control the injection process, e.g. to prevent excess pore fluid pressure building up in the reservoir. It can provide
+valuable information on the reservoir characteristics and early warning of leakage. This is already common
+practice and can be a regulatory requirement for current underground injection operations. Periodically
+monitoring the distribution of CO2 in the subsurface, either directly or remotely would also be useful because it
+can provide evidence of any migration of CO2 out of the storage reservoir and early warning of potential leaks to
+the atmosphere or seabed.
+
+5. Collect and verify annual emissions from each site: The operators of each storage site should, on an annual
+basis, provide the inventory compiler with annual emissions estimates, which will be made publicly available.
+The emissions recorded from the site and any leaks that may occur inside or outside the site in any year will be
+the emissions as estimated from the modelling (which may be zero), adjusted to take account of the annual
+monitoring results. If a sudden release occurs, e.g. from a well blowout, the amount of CO2 emitted should be
+estimated in the inventory. To simplify accounting for offshore geological storage, leakage to the seabed should
+be considered as emissions to the atmosphere for the purposes of compiling the inventory. In addition to total
+annual emissions, background data should include the total amount of CO2 injected, the source of the injected
+CO2, the cumulative total amount of CO2 stored to date, the technologies used to estimate emissions, and any
+verification procedures undertaken by the site operators in accordance with the monitoring plan as indicated
+under 4(iii) and 4(iv) above. To verify emissions, the inventory compiler should request and review
+documentation of the monitoring data, including the frequency of monitoring, technology detection limits, and
+the share of emissions coming from the various pathways identified in the emission monitoring plan and any
+changes introduced as a result of verification. If a model was used to estimate emissions during years in which
+direct monitoring did not take place, the inventory compiler should compare modelled results against the most
+recent monitoring data. Steps 2, 3, and 4 above should indicate the potential for, and likely timing of future leaks
+and the need for direct monitoring.
+
+Total national emissions for geological carbon dioxide storage will be the sum of the site-specific emission
+estimates:
+
+                                                           EQUATION 5.1
+                                                  TOTAL NATIONAL EMISSIONS
+             National Emissions from geological carbon dioxide storage = carbon dioxide storage site
+
+                                                              emissions
+
+Further guidance on reporting emissions where more than one country is involved in CO2 capture, storage,
+and/or emissions is provided in Section 5.10: Reporting and Documentation.
+
+5.7.2 Choice of emission factors and activity data
+
+Tier 1 or 2 emission factors are not currently available for carbon dioxide storage sites, but may be developed in
+the future (see Section 5.7). However, as part of a Tier 3 emissions estimation process, the inventory compiler
+should collect activity data from the operator on annual and cumulative CO2 stored. These data can be easily
+monitored at the injection wellhead or in adjacent pipework.
+
+Monitoring in early projects may help obtain useful data that could be used to develop Tier 1 or 2 methodologies
+in the future. Examples of the application of monitoring technologies are provided by the monitoring
+programmes at the enhanced oil recovery projects at Rangely in Colorado, USA (Klusman, 2003a, b, c)
+Weyburn in Saskatchewan, Canada (Wilson and Monea, 2005), and the Sleipner CO2 storage project, North Sea
+(Arts et al., 2003; also see Annex 5.1). None of the other CO2-injection projects around the world have yet
+published the results of systematic monitoring for leaking CO2.
+
+5.16  2006 IPCC Guidelines for National Greenhouse Gas Inventories
+                                                  Chapter 5: Carbon Dioxide Transport, Injection and Geological Storage
+
+The Rangely enhanced oil recovery project started injecting CO2 into the Weber Sand Unit oil reservoir in the
+Rangely field in 1986. Cumulative CO2 injection to 2003 was approximately 23 million tonnes. A monitoring
+programme was undertaken (Klusman 2003a, b, c), based on 41 measurement locations scattered across a 78 km2
+site. No pre-injection background measurements were available (which, at a new site, would be determined at
+step 4 (i) in the monitoring plan outlined above). In lieu of a pre-injection baseline, 16 measurement locations in
+a control area outside the field were sampled. The results of the monitoring programme indicate an annual deep-
+sourced CO2 emission of less than 3 800 tonnes/yr from the ground surface above the oil field. It is likely that at
+least part, if not all, of this flux is due to the oxidation of deep-sourced methane derived from the oil reservoir or
+overlying strata, but it is possible that part of it could be fugitive emissions of CO2 injected into the oil reservoir.
+The absence of pre-injection baseline measurements prevents definitive identification of its source.
+
+CO2 has been injected at the Weyburn oil field (Saskatchewan, Canada) for EOR since September 2000. Soil gas
+sampling, with the primary aims of determining background concentrations and whether there have been any
+leaks of CO2 or associated tracer gases from the reservoir, took place in three periods from July 2001 and
+October 2003. There is no evidence to date for escape of injected CO2. However, further monitoring of soil gases
+is necessary to verify that this remains the case in the future and more detailed work is necessary to understand
+the causes of variation in soil gas contents, and to investigate further possible conduits for gas escape (Wilson
+and Monea 2005).
+
+The Sleipner CO2 storage site in the North Sea, offshore Norway (Chadwick et al. 2003) has been injecting
+approximately 1 million tonnes of CO2 per year into the Utsira Sand, a saline formation, since 1996. Cumulative
+CO2 injection to 2004 was >7 million tonnes. The distribution of CO2 in the subsurface is being monitored by
+means of repeated 3-D seismic surveys (pre-injection and two repeat surveys are available publicly to date) and,
+latterly, by gravity surveys (only one survey has been acquired to date). The results of the 3D seismic surveys
+indicate no evidence of leakage (Arts et al. 2003).
+
+Taken together, these studies show that a Tier 3 methodology can be implemented so as to support not only zero
+emissions estimates but also to detect leakage, even at low levels, if it occurs.
+
+There has been only one large-scale trial of enhanced coalbed methane (ECBM) production using CO2 as an
+injectant; the Allison project in the San Juan Basin, USA (Reeves, 2005). There was sufficient information
+derived from the Allison project to indicate that CO2 was sequestered securely in the coal seams. Pressure and
+compositional data from 4 injection wells and 15 production wells indicated no leakage. Some CO2 was
+recovered from the production wells after approximately five years. However, this was expected and, for
+inventory purposes, it would be accounted as an emission (if it was not separated from the produced coalbed
+methane and recycled). No monitoring of the ground surface for CO2 or methane leakage was undertaken.
+
+5.7.3 Completeness
+
+All emissions (CO2 and if relevant, CH4) from all CO2 storage sites should be included in the inventory. In cases
+where CO2 capture occurs in a different country from CO2 storage, arrangements to ensure that there is no
+double accounting of storage should be made between the relevant national inventory compilers.
+
+The site characterization and monitoring plans should identify possible sources of emissions outside the site (e.g.,
+lateral migration, groundwater, etc.). Alternatively, a reactive strategy to locations outside the site could be
+deployed, based on information from inside it. If the emissions are predicted and/or occur outside the country
+where the storage operation (CO2 injection) takes place, arrangements should be made between the relevant
+national inventory compilers to monitor and account these emissions.( see Section 5.10 below).
+
+Estimates of CO2 dissolved in oil and emitted to the atmosphere as a result of surface processing are covered
+under the methodologies for oil and gas production. The inventory compiler should ensure that information on
+these emissions collected from CO2 storage sites is consistent with estimates under those source categories.
+
+5.7.4 Developing a consistent time series
+
+If the detection capabilities of monitoring equipment improve over time, or if previously unrecorded emissions
+are identified, or if updating of models suggests that unidentified emissions have occurred, and an updated
+monitoring programme corroborates this, appropriate recalculation of emissions will be necessary. This is
+particularly important given the generally low precision associated with current monitoring suites, even using the
+most advanced current technologies. Establishment of the background flux and variability is also critical. For
+dedicated CO2 storage sites, anthropogenic emissions prior to injection and storage will be zero. For some
+enhanced oil recovery operations, there may be anthropogenic emissions prior to conversion to a CO2 storage
+site.
+
+2006 IPCC Guidelines for National Greenhouse Gas Inventories  5.17
+Volume 2: Energy
+
+5.8 UNCERTAINTY ASSESSMENT
+
+It is a part of good practice that an uncertainty assessment is included when using Tier 3 methods. Uncertainty in
+the emissions estimates will depend on the precision of the monitoring techniques used to verify and measure
+any emissions and the modelling used to predict leakage from the storage site. The concept of percentage
+uncertainties may not be applicable for this sector and therefore confidence intervals and/or probability curves
+could be given.
+
+The uncertainty in field measurements is most important and will depend on the sampling density and frequency
+of measurement and can be determined using standard statistical methods.
+
+An effective reservoir simulation should address the issues of variability and uncertainty in the physical
+characteristics, especially reservoir rock and reservoir fluid properties, because reservoir models are designed to
+predict fluid movements over a long timescale and because geological reservoirs are inherently heterogeneous
+and variable. The uncertainty in estimates derived from modelling will therefore depend on:
+
+· The completeness of the primary data used during the site assessment;
+
+· The correspondence between the geological model and critical aspects of the geology of the site and
+     surrounding area, in particular the treatment of possible migration pathways;
+
+The accuracy of critical data that support the model:
+
+· Its subsequent numerical representation by grid blocks
+
+· Adequate representation of the processes in the physico-chemical numerical and analytical models
+
+Uncertainty estimates are typically made by varying the model input parameters and undertaking multiple
+simulations to determine the impact on short-term model results and long-term predictions. The uncertainty in
+field measurements will depend on the sampling density and frequency of measurement and can be determined
+using standard statistical methods. Where model estimates and measurements are both available, the best
+estimate of emissions will be made by validating the model, and then estimating emissions with the updated
+model. Multiple realizations using the history-matched model can address uncertainty in these estimates. These
+data may be used to modify original monitoring requirements (e.g. add new locations or technology, increase or
+reduce frequency) and ultimately comprise the basis of an informed decision to decommission the facility.
+
+5.9 INVENTORY QUALITY ASSURANCE/QUALITY
+           CONTROL (QA/QC)
+
+QA/QC for the whole CCS system
+
+CO2 capture should not be reported without linking it to long-term storage.
+
+A check should be made that the mass of CO2 captured does not exceed the mass of CO2 stored plus the reported
+fugitive emissions in the inventory year (Table 5.4).
+
+There has been limited experience with CCS to date, but it is expected that experience will increase over the next
+few years. Therefore, it would be good practice to compare monitoring methods and possible leakage scenarios
+between comparable sites internationally. International cooperation will also be advantageous in developing
+monitoring methodologies and technologies.
+
+5.18  2006 IPCC Guidelines for National Greenhouse Gas Inventories
+                               Chapter 5: Carbon Dioxide Transport, Injection and Geological Storage
+
+                                                     TABLE 5.4
+OVERVIEW TABLE: OVERVIEW OF CO2 CAPTURE, TRANSPORT, INJECTION AND CO2 FOR LONG-TERM
+
+                                                                     STORAGE
+
+Category                                     Activity               CO2 (Gg) 1
+
+                                    Data Source               Unit
+
+Total amount captured for      Summed from all relevant       Gg
+storage (A)                    categories
+
+Total amount of import for     Data from pipeline             Gg
+storage (B)                    companies, or statistical
+                               agencies
+
+Total amount of export for     Data from pipeline             Gg
+storage (C)                    companies, or statistical
+                               agencies
+
+Total amount of CO2 injected   Data from storage sites        Gg
+at storage sites (D)           provided by operators, as
+                               described in Chapter 5
+
+Total amount of leakage        Summed from IPCC               Gg
+during transport (E1)          reporting category 1 C 1
+
+Total amount of leakage        Summed from IPCC               Gg
+during injection (E2)          reporting category 1 C 2 a
+
+Total amount of leakage from Summed from IPCC                 Gg
+
+storage sites (E3)             reporting category 1 C 2 b
+
+Total leakage (E4)             E1 + E2 + E3                   Gg
+
+Capture + Imports (F)          A+B                            Gg
+
+Injection + Leakage + Exports  D + E4 + C                     Gg
+(G)
+
+Discrepancy                    F-G                            Gg
+
+1 Once captured, there is no differentiated treatment between biogenic carbon and fossil carbon: emissions and
+
+  storage of both will be estimated and reported.
+
+Ideally, (Capture + Imports) = (Injection + Exports + Leakage)
+
+If (Capture + Imports) < (Injection + Exports + Leakage) then there is need to check that
+
+          Exports are not overestimated
+
+          Imports are not underestimated
+
+          Data for CO2 injection does not include EOR operations not associated with storage
+If (Capture + Imports) > (Injection + Exports + Leakage) then need to check that
+
+          Exports are not under-estimated
+
+          Imports are not overestimated
+
+CO2 capture designated as `for long-term storage' is actually going to other short-term emissive uses (e.g.,
+products, EOR without storage)
+
+Site QA/QC
+
+On-site QA/QC will be achieved by regular inspection of monitoring equipment and site infrastructure by the
+operator. Monitoring equipment and programmes will be subject to independent scrutiny by the inventory
+compiler and/or regulatory agency.
+
+All data including the site characterization reports, geological models, simulations of CO2 injection, predictive
+modelling of the site, risk assessments, injection plans, licence applications, monitoring strategies and results and
+verification should be retained by the operator and forwarded to the inventory compiler for QA/QC.
+
+2006 IPCC Guidelines for National Greenhouse Gas Inventories                                                    5.19
+Volume 2: Energy
+
+The inventory compiler should compare (benchmark) the leak rates of a given storage facility against analogous
+storage sites and explain the reasons for differences in performance.
+
+Where applicable, the relevant regulatory body can provide verification of emissions estimates and/or the
+monitoring plan described above. If no such body exists, the site operator should at the outset provide the
+inventory compiler with the results of peer review by a competent third party confirming that the geological and
+numerical models are representative, the reservoir simulator is suitable, the modelling realistic and the
+monitoring plan suitable. As they become available, the site operator should compare the results of the
+monitoring programme with the predictive models and adjust models, monitoring programme and/or injection
+strategy appropriately. The site operator should inform the inventory compiler of changes made.
+
+5.10 REPORTING AND DOCUMENTATION
+
+Guidelines for reporting emissions from geological storage:
+
+Prior to the start of the geological storage operation, the national inventory compiler where storage takes place
+should obtain and archive the following:
+
+· Report on the methods and results of the site characterization
+
+· Report on the methods and results of modelling
+
+· A description of the proposed monitoring programme including appropriate background measurements
+
+· The year in which CO2 storage began or will begin
+· The proposed sources of the CO2 and the infrastructure involved in the whole CCGS chain between source
+
+     and storage reservoir
+
+The same national inventory compiler should receive annually from each site:
+
+· The mass of CO2 injected during the reporting year
+· The mass of CO2 stored during the reporting year
+· The cumulative mass of CO2 stored at the site
+· The source (s) of the CO2 and the infrastructure involved in the whole CCGS chain between source and
+
+     storage reservoir
+
+· A report detailing the rationale, methodology, monitoring frequency and results of the monitoring
+     programme - to include the mass of any fugitive emissions of CO2 and any other greenhouse gases to the
+     atmosphere or sea bed from the storage site during the reporting year
+
+· A report on any adjustment of the modelling and forward modelling of the site that was necessary in the
+     light of the monitoring results
+
+· The mass of any fugitive emissions of CO2 and any other greenhouse gases to the atmosphere or sea bed
+     from the storage site during the reporting year
+
+· Descriptions of the monitoring programmes and monitoring methods used, the monitoring frequency and
+     their results
+
+· Results of third party verification of the monitoring programme and methods
+
+There may be additional reporting requirements at the project level where the site is part of an emissions trading
+scheme.
+
+Reporting of cross-border CCS operations
+
+CO2 may be captured in one country, Country A, and exported for storage in a different country, Country B.
+Under this scenario, Country A should report the amount of CO2 captured, any emissions from transport and/or
+temporary storage that takes place in Country A, and the amount of CO2 exported to Country B. Country B
+should report the amount of CO2 imported, any emissions from transport and/or temporary storage (that takes
+place in Country B), and any emissions from injection and geological storage sites.
+
+If CO2 is injected in one country, Country A, and travels from the storage site and leaks in a different country,
+Country B, Country A is responsible for reporting the emissions from the geological storage site. If such leakage
+is anticipated based on site characterization and modelling, Country A should make an arrangement with
+Country B to ensure that appropriate standards for long-term storage and monitoring and/or estimation of
+
+5.20  2006 IPCC Guidelines for National Greenhouse Gas Inventories
+                                                  Chapter 5: Carbon Dioxide Transport, Injection and Geological Storage
+
+emissions are applied (relevant regulatory bodies may have existing arrangements to address cross-border issues
+with regard to groundwater protection and/or oil and gas recovery).
+If more than one country utilizes a common storage site, the country where the geological storage takes place is
+responsible for reporting emissions from that site. If the emissions occur outside of that country, they are still
+responsible for reporting those emissions as described above. In the case where a storage site occurs in more than
+one country, the countries concerned should make an arrangement whereby each reports an agreed fraction of the
+total emissions.
+
+2006 IPCC Guidelines for National Greenhouse Gas Inventories  5.21
+Volume 2: Energy
+
+Annex 5.1 Summary description of potential monitoring
+             technologies for geological CO2 storage sites
+
+Introduction
+
+Monitoring of the geological storage of CO2 requires the use of a range of techniques that can define the
+distribution, phase and mass of the injected CO2 anywhere along any path from the injection point in the
+geological storage reservoir to the ground surface or seabed. This will commonly require the application of
+several different techniques concurrently.
+
+The geology of the storage site and its surrounding area should be characterized to identify features, events and
+processes that could lead to an escape of CO2 from the storage reservoir, and also to model potential CO2
+transport routes and fluxes in case there should be an escape of CO2 from a storage reservoir, as this will not
+necessarily be on the injection site (Figure A1).
+
+Figure A1         An illustration of the potential for leakage of CO2 from a geological storage
+                  reservoir to occur outside the storage site.
+
+If CO2 migrates from a storage reservoir (a) via an undetected fault into porous and permeable reservoir rock (b),
+it may be transported by buoyancy towards the ground surface at point (c). This may result in the emission of
+CO2 at the ground surface several kilometres from the site itself at an unknown time in the future.
+Characterization of the geology of the storage site and surrounding area and numerical modelling of potential
+leakage scenarios and processes can provide the information needed to correctly site surface and subsurface
+monitoring equipment during and after the injection process.
+
+Tables A5.1 - A5.6 list the more common monitoring techniques and measurement tools that can be used for
+monitoring CO2 in the deep subsurface (here considered to be the zone approximately 200 metres to 5 000 metres
+below the ground surface or sea bed), the shallow subsurface (approximately the top 200 metres below the
+ground surface or sea bed) and the near surface (regions less than 10 metres above and below the ground surface
+or sea bed).
+
+The techniques that will produce the most accurate results given the circumstances should be used. The
+appropriate techniques will usually be apparent to specialists, but different techniques can also be assessed for
+relative suitability. There are no sharply defined detection limits for most techniques. In the field, their ability to
+measure the distribution, phase and mass of CO2 in a subsurface reservoir will be site-specific. It will be
+determined as much by the geology of the site and surrounding area, and ambient conditions of temperature,
+pressure and water saturation underground as by the theoretical sensitivity of the techniques or measurement
+instruments themselves.
+
+5.22              2006 IPCC Guidelines for National Greenhouse Gas Inventories
+                                                  Chapter 5: Carbon Dioxide Transport, Injection and Geological Storage
+
+Similarly, the detection limits of surface monitoring techniques are determined by environmental parameters as
+well as the sensitivity of the monitoring instruments themselves. In near-surface systems on land, CO2 fluxes and
+concentrations are determined by uptake of CO2 by plants during photosynthesis, root respiration, microbial
+respiration in soil, deep outgassing of CO2 and exchange of CO2 between the soil and atmosphere [Oldenburg
+and Unger 2003]. Any outgassing of CO2 from a man-made CO2 storage reservoir needs to be distinguished
+from the variable natural background (Oldenburg and Unger 2003, Klusman 2003a, c). Analysis of stable and
+radiogenic carbon isotope ratios in detected CO2 can help this process.
+
+Most techniques require calibration or comparison with baseline surveys made before injection starts, e.g. to
+determine background fluxes of CO2. Strategies for monitoring in the deep subsurface have been applied at the
+Weyburn oil field and Sleipner CO2 storage site (Wilson and and Monea 2005, Arts et al. 2003). Interpretation of
+4D seismic surveys has been highly successful in both cases. In the Weyburn field, geochemical information
+obtained from some of the many wells has also proved extremely useful.
+
+Strategies for monitoring the surface and near-surface onshore have been proposed (Oldenburg and Unger 2003)
+and applied (Klusman 2003a, c; Wilson and Monea 2005). Soil gas surveys and surface gas flux measurements
+have been used. To date there has been no application of shallow subsurface or seabed monitoring specifically
+for CO2 offshore. However, monitoring of natural gas seepage and its effects on the shallow subsurface and
+seabed has been undertaken and considered as an analogue for CO2 seepage [e.g., Schroot and Schüttenhelm
+2003a, b].
+
+2006 IPCC Guidelines for National Greenhouse Gas Inventories  5.23
+Volume 2: Energy
+
+                                                                                 TABLE A 5.1
+                                POTENTIAL DEEP SUBSURFACE MONITORING TECHNOLOGIES AND THEIR LIKELY APPLICATION
+
+Technique         Capabilities                                        Detection limits                       Where           Limitations                         Current technology status
+                                                                                                       applicable, costs
+2D, 3D and                                                                                                                                                Highly developed with full commercial
+4D (time-   Images geological structure of site and    Site-specific. Optimum depth of target          Onshore and           Cannot image dissolved       deployment in oil and gas industry
+lapse) and  surrounding area; structure, distribution  commonly 500-3000 m. At Sleipner, which         offshore. Imaging     CO2 (insufficient impedance
+multi-      and thickness of the reservoir rock and    is close to optimum for the technique,          poorer through        contrast between CO2-        Highly developed with full commercial
+component   cap rock; distribution (and with time-     detection limit in Utsira Sand is c. 2800       karst, beneath salt,  saturated pore fluid and     deployment in oil and gas industry
+seismic     lapse surveys movement) of CO2 in          tonnes CO2. At Weyburn, detection limit is c.   beneath gas, in       native pore fluid). Cannot   Highly developed with full commercial
+reflection  reservoir. May verify (within limits)      2500 - 7500 tonnes CO2 (White et al. 2004).     general resolution    image well in cases in       deployment in oil and gas industry
+surveys     mass of CO2 in reservoir. Permanent        Likely that dispersed CO2 in overlying strata   decreases with        which there is little
+            seismic arrays can be installed (but are   could be detected - shallow natural gas         depth                 impedance contrast between
+Crosshole   not necessary) for time-lapse (4D)         pockets imaged as bright spots and dispersed                          fluid and CO2-saturated
+seismic     acquisition.                               methane in gas chimneys can be well                                   rock. These will be fairly
+                                                       imaged.                                                               common (Wang, 1997)
+Vertical
+seismic     Images velocity distribution between       Site specific. Resolution could be higher than  Onshore and           As above, and limited to
+profile     wells. Provides 2D information about       surface seismic reflection surveys but          offshore              area between wells
+            rocks and their contained fluids.          coverage more restricted
+
+            Image velocity distribution around a       Site specific                                   Onshore and           As above and limited to
+            single well. Map fluid pressure                                                            offshore              small area around a single
+            distribution around well. Potential early                                                                        well
+            warning of leakage around well.
+
+2006 IPCC Guidelines for National Greenhouse Gas Inventories                                                                                                                                     5.24
+                                                                                                            Chapter 5: Carbon Dioxide Transport, Injection and Geological Storage
+
+                                                        TABLE A 5.1(CONTINUED)
+               POTENTIAL DEEP SUBSURFACE MONITORING TECHNOLOGIES AND THEIR LIKELY APPLICATION
+
+Technique                    Capabilities                                Detection limits                          Where                 Limitations            Current technology status
+                                                                                                            applicable, costs
+ Microseismic  Detects and triangulates location of        Site specific. Depends on background noise                            Requires wells for             Well developed with some commercial
+ monitoring    microfractures in the reservoir rock and    amongst other factors. More receivers in         Onshore and          deployment                     deployment
+               surrounding strata. Provides an             more wells provides greater accuracy in          offshore
+Monitoring     indication of location of injected fluid    location of events                                                    Certain functions can only     Monitoring wells deployed e.g. in natural
+wells          fronts. Assesses induced seismic hazard.                                                     Onshore and          be performed before the        gas storage industry. Many tools highly
+                                                           Downhole geochemical samples can be              offshore. More       well is cased. Others require  developed and routinely deployed in oil
+Wellhead       Many potential functions including          analyzed by Inductively Coupled Plasma           expensive to access  the perforation of certain     and gas industry, others under
+pressure       measurement of CO2 saturation, fluid        Mass Spectrometer (has resolution of parts       offshore.            intervals of the casing. Cost  development
+monitoring     pressure, temperature. Cement and or        per billion). Perflourocarbon tracers can be                          is a limitation, especially
+during         casing degradation or failure. Well         detected in parts per 1012. Well logs provide    Onshore and          offshore                       Highly developed with full commercial
+injection,     logging. Tracer detection - fast-moving     accurate measurement of many parameters          offshore. More                                      deployment in oil and gas industry
+formation      tracers might provide an opportunity to     (porosity, resistivity, density, etc).           expensive offshore   Cannot image dissolved
+pressure       intervene in the leakage prevention by                                                                            CO2 (insufficient density      Highly developed with full commercial
+testing        modifying operating parameters.             Proven technology for oil and gas field          Onshore and          contrast with native pore      deployment in oil and gas industry. Widely
+Gravity        Detection of geochemical changes in         reservoir engineering and reserves               offshore. Cheap      fluid).                        used in geophysical research
+surveys        formation fluids. Physical sampling of      estimation. ICP-MS used to detect subtle         onshore.
+               rocks and fluids. In-well tilt meters for   changes in elemental composition due to CO2
+               detecting ground movement caused by         injection.
+               CO2 injection. Monitoring formations
+               overlying the storage reservoir for signs   Minimum amounts detectable in the order of
+               of leakage from the reservoir.              hundreds of thousands to low millions of
+                                                           tonnes (Benson et al. 2004; Chadwick et al
+               Injection pressure can be continuously      2003). Actual amounts detectable are site -
+               monitored at the wellhead by meters         specific. The greater the porosity and the
+               (Wright & Majek 1998). Downhole             density contrast between the native pore fluid
+               pressure can be monitored with gauges.      and the injected CO2, the better the resolution
+               Injection pressure tests and production
+               tests applied in well to determine
+               permeability, presence of barriers in
+               reservoir, ability of cap rocks to retain
+               fluids.
+
+               Determine mass and approximate
+               distribution of CO2 injected from
+               minute change in gravity caused by
+               injected CO2 displacing the original
+               pore fluid from the reservoir. Can detect
+               vertical CO2 migration from repeat
+               surveys, especially where phase change
+               from supercritical fluid to gas is
+               involved because of change in density.
+               Detection limit is poor and site-specific.
+
+2006 IPCC Guidelines for National Greenhouse Gas Inventories                                                                                                    5.25
+Volume 2: Energy
+
+                                                                                    TABLE A 5.2
+                                POTENTIAL SHALLOW SUBSURFACE MONITORING TECHNOLOGIES AND THEIR LIKELY APPLICATION
+
+Technique         Capabilities                                Detection limits                                   Where            Limitations                     Current technology status
+                                                                                                           applicable, costs
+ Sparker:                                                                                                                                                          Highly developed, widely deployed
+ Seismic         Image (changes in) gas distribution in    Generally free gas concentrations >2%           Offshore               Greater penetration but less     commercially, in sea bed and shallow
+ source with     the shallow subsurface (typically         identified by acoustic blanking. Vertical                              resolution than deep towed       seismic survey industry, also in marine
+ central         represented by acoustic blanking, bright  resolution >1m                                                         boomer                           research
+ frequency       spots, reflector enhancement).
+ around 0.1 to                                                                                                                    Gas quantification can be        Highly developed, widely deployed
+ 1.2 kHz is                                                                                                                       difficult when concentrations    commercially, in sea bed and shallow
+ towed                                                                                                                            above 5%                         seismic survey industry, also in marine
+ generally at                                                                                                                                                      research
+ shallow depth.  Image (changes in) shallow gas            Generally free gas concentrations >2%           Offshore               Bubble streams more soluble
+                 distribution in sediments (typically      identified by acoustic blanking. Resolution of                         than methane bubbles            Highly developed, widely deployed
+ Deep towed      represented by acoustic blanking, bright  sea bed morphology typically less than 1                               therefore may dissolve in       commercially in sea bed survey industry,
+ boomer:         spots, etc.). Image the morphology of     metre. Penetration can be up to about 200 m                            relatively shallow water        also in marine research
+ Seismic         the sea bed. Image bubble streams in      below sea bed but generally less.                                      columns (approximately 50
+ source          sea water                                                                                                        m). Bubble streams may be       Widely deployed in marine research
+ generating a                                                                                                                     intermittent and missed by a
+ broad band                                                                                                                       single survey. Accurate         At research stage
+ sound pulse                                                                                                                      positioning of boomer is
+ with a central                                                                                                                   critical
+ frequency
+ around 2.5      Image the morphology of the sea bed.      Optimum method for detecting gas bubbles.       Offshore               As above. Accurate
+ kHz is towed    Image bubble streams in sea water                                                                                positioning of side scan sonar
+ at depth.                                                 Can identify changes in sea bed morphology of Offshore                 fish is critical.
+                 Characterisation of sea bed lithology eg  as little as 10 cm.
+Sidescan sonar   carbonate cementation                                                                                            As above. Greater coverage in
+                                                                                                                                  shorter time
+Multi-beam       Image the morphology of the sea bed.
+echo-sounding    Repeat surveys allow quantification of    Relatively low cost and low resolution          Onshore and offshore   Resolution - Needs
+(Swath           morphological change. Sea bed lithology                                                   surface EM capability  development and further
+bathymetry)      identified from backscatter.                                                              demonstrated. Needs    demonstration
+                                                                                                           development for
+Electrical       May detect change in resistivity due to                                                   application in CO2
+methods          replacement of native pore fluid with                                                     storage
+                 CO2, especially when the CO2 is
+                 supercritical. EM and electrical methods
+                 potentially could map the spread of CO2
+                 in a storage reservoir. Surface EM may
+                 have potential to map CO2 saturation
+                 changes within the reservoir.
+
+2006 IPCC Guidelines for National Greenhouse Gas Inventories                                                                                                      5.26
+                                                                                                              Chapter 5: Carbon Dioxide Transport, Injection and Geological Storage
+
+                                                                                          TABLE A 5.3
+                        TECHNOLOGIES FOR DETERMINING FLUXES FROM GROUND OR WATER TO ATMOSPHERE, AND THEIR LIKELY APPLICATION
+
+Technique               Capabilities                                        Detection limits                  Where applicable, costs              Limitations                           Current technology
+                                                                                                                                                                                         status
+ Eddy covariance         Measures CO2 fluxes in air from a                   Realistic flux detectable in a    Can only be used onshore.            Several instrument towers may be
+ technique (Miles,       mathematically-defined footprint upwind of the      biologically active area with     Proven technology. Relatively        needed to cover a whole site. With    Deployed by research
+ Davis and               detection equipment. Equipment is mounted on a      hourly measurements =             cheap. Potential to survey           a detector mounted on a 10 m          community
+ Wyngaard 2005).         platform or tower. Gas analysis data, usually       4.4 x 10-7 kg m-2 s-1 = 13870 t   relatively large areas to            tower a footprint in the order of
+                         from fixed open- or closed-path infra-red CO2       km-2/year (Miles, Davis and       determine fluxes and detect          104-106 m2 is likely. Development     Deployed by research
+ Accumulation            detectors, is integrated with wind speed and        Wyngaard 2005)                    leaks. Once a leak is detected       may be desirable to automate          community
+ chambers technique,     direction to define footprint and calculate flux.                                     likely to require detailed           measurement. Quantitative
+ using field IR or lab                                                       Easily capable of detecting       (portable IR CO2 detector or soil    determination of fluxes may be       Commercially deployed
+ analysis of sampled     Accumulation chambers of known volume are           fluxes of 0.04g CO2 m-2 day-1     gas) survey of footprint to          limited to regions of flat terrain.
+ gas to measure flux     placed on the ground and loosely connected to       = 14.6 t/km2/year (Klusman        pinpoint it.
+ (Klusman 2003).         the ground surface, e.g. by building up soil        2003a). Main issue is                                                  Gaps between sample points allow
+                         around them, or placed on collars inserted into     detection of genuine              Technology proven at Rangely         theoretical possibility of
+Groundwater and          the ground. Gas in chambers is sampled              underground leak against          (Klusman 2003a, b, c). Powerful      undetected leaks. In oil and gas
+surface water gas        periodically and analysed e.g. by portable IR gas   varying biogenic background       tool when used in combination        fields the possibility exists that
+analysis.                detectors, and then returned to chamber to          levels (potentially, tracers      with analysis of other gases and     CO2 may be microbially oxidised
+                         monitor build-up over time,. Detects any fluxes     could help with this). Works      stable and radiogenic carbon         CH4 rather than leaking CO2 from
+                         through the soil.                                   better in winter because the      isotope analysis -these help in      a repository.
+                                                                             seasonal variation in             identify the source of the
+                        Samples and measures gas content of groundwater      biological activity is            collected CO2. Tracer gases         Should take account of varying
+                        and surface water such as springs. Could:            suppressed during winter.         added to the injected CO2 could     water flux.
+                                                                                                               also help with this ­ detection of
+                        a) Place a partial vacuum over the liquid and       Background levels likely to be     fast-moving tracers might
+                        extract dissolved gases. Analyse for gases by gas   in low ppm range. Detection        provide an opportunity to
+                        chromatography, mass spectrometry etc.              limit for bicarbonate in <2 ppm    intervene in the leakage
+                                                                            range                              prevention by modifying
+                        b) For a fresh sample, analyse for bicarbonate                                         operating parameters (i.e., avoid
+                        content. This is essentially what was done at                                          remediation).
+                        Weyburn in the field and at the well-head
+                        (Shevalier et al. 2004). As dissolved CO2 and                                         Onshore. Should be used in
+                        bicarbonate contents are linked, then analysis of                                     combination with ground to
+                        bicarbonate can be directly related to dissolved                                      atmosphere flux measurements as
+                        CO2 content (assuming equilibrium conditions).                                        provides an alternative pathway for
+                                                                                                              CO2 emissions. Measurement
+                                                                                                              techniques well developed and
+                                                                                                              relatively straightforward (e.g.
+                                                                                                              Evans et al., 2002) but care should
+                                                                                                              be taken to account for rapid
+                                                                                                              degassing of CO2 from the water
+                                                                                                              (Gambardella et al., 2004).
+
+2006 IPCC Guidelines for National Greenhouse Gas Inventories                                                                                                                             5.27
+Volume 2: Energy
+
+                                                                                                          TABLE A 5.4
+                                                       TECHNOLOGIES FOR DETECTION OF RAISED CO2 LEVELS IN AIR AND SOIL (LEAKAGE DETECTION)
+
+Technique                  Capabilities                             Detection limits                                  Where applicable, costs                        Limitations                 Current technology
+                                                                                                                                                                                                          status
+Long open path infra-red   Measures absorption by CO2 in air of a   Needs development but estimate             Onshore. Probably has the best near-       Technology still under
+laser gas analysis         specific part of the infra-red spectrum  potential at ±3% of ambient (c.11          term potential to cover several km2 with   development. Measures CO2             At demonstration and
+                           along the path of a laser beam, and      ppm) or better                             one device, therefore whole fields with a  concentration over long path, so      development stage
+                           thus CO2 levels in air near ground                                                  few devices. Costs estimated at $1000's    interpretation of tomography or
+                           level. It is possible to construct a                                                per unit, therefore potential to survey    more detailed survey necessary to
+                           tomographic map from the                                                            whole fields relatively cheaply. Once a    locate leaks precisely. Difficult to
+                           measurements but little track record of                                             leak is detected may require more          calculate fluxes or detect low
+                           converting this to a flux through the                                               detailed (portable IR CO2 detector or      level leaks against relatively high
+                           ground.                                                                             soil gas) survey to pinpoint it.           and varying natural background.
+
+Soil gas analysis          Establishment of the background flux     Portable infra-red detectors used in       Onshore. Technology proven at              Each measurement may take             Deployed by research
+                           from the ground surface and its          soil gas surveys can resolve changes in    Weyburn and Rangely fields and             several minutes. Surveying large      community
+                           variation is critical. Technique         CO2 concentration down to at least ±       volcanic/geothermal areas. Useful for      areas accurately is relatively
+                           measures CO2 levels and fluxes in soil   1-2 ppm. Absolute values of CO2 in         detailed measurements, especially          costly and time consuming. In oil
+                           using probes, commonly hammered          soil gas (0.2-4%) are higher than in air,  around detected low flux leakage points.   and gas fields the possibility
+                           into soil to a depth of 50-100 cm but    but background flux variations are less                                               exists that CO2 may be
+                           can also sample from wells. Sampling     below ground than above so low                                                        microbially oxidised CH4 rather
+                           usually on a grid. Lower part of probe   fluxes from underground are easier to                                                 than leaking CO2 from repository
+                           or tube inserted in well is perforated   detect. A range of gases may be
+                           and soil gas is drawn up for on-site     measured - ratios of other gases and
+                           analysis using a portable IR laser       isotopes can provide clues to origin of
+                           detector or into gas canisters for lab   CO2.
+                           analysis.
+
+Portable personal safety-  Measures CO2 levels in air               Resolution of small hand-held devices      Can be used onshore and on offshore        Not sufficiently accurate for         Widely deployed
+oriented hand-held infra-                                           for personal protection is typically c.    infrastructure such as platforms. Proven   monitoring CO2 leakage                commercially
+red gas analyzers                                                   100 ppm.                                   technology. Small hand-held devices for
+                                                                                                               personal protection typically <$1000 per
+                                                                                                               unit. Could also be useful for
+                                                                                                               pinpointing high-concentration leaks
+                                                                                                               detected by wider search methods.
+
+Airborne infra-red laser   Helicopter or aeroplane-mounted open     Brantley and Koepenick (1995) quote        Onshore. Proven technology for             Measurements are made a               Commercially deployed
+gas analysis               or closed-path infra-red laser gas       a ±1 ppm above ambient detection           detecting methane leaks from pipelines     minimum of hundred(s) metres          in natural gas pipeline
+                           detectors have potential to take         limit for the equipment used in            and CO2 from very large point sources.     above ground, and concentrations      applications, not in CO2
+                           measurements of CO2 in air every         airborne closed path technique. Less       Possible application for detecting CO2     at ground level likely to be much     detection applications
+                           ~10m.                                    information is available on the open       leaks from pipelines and infrastructure    higher than minimum detectable
+                                                                    path technique, though it is likely to be  or concentrated leaks from underground.    at these levels. CO2 is heavier
+                                                                    ±1% or less.                                                                          then air, so will hug the ground
+                                                                                                                                                          and not be so easily detectable as
+                                                                                                                                                          methane by airborne methods
+
+Notes: Data partly from Schuler & Tang (2005) included by permission of the CO2 Capture Project.
+
+2006 IPCC Guidelines for National Greenhouse Gas Inventories                                                                                                                                                     5.28
+                                                                                                Chapter 5: Carbon Dioxide Transport, Injection and Geological Storage
+
+                                                                   TABLE A 5.5
+                       PROXY MEASUREMENTS TO DETECT LEAKAGE FROM GEOLOGICAL CO2 STORAGE SITES
+
+Technique              Capabilities                           Detection limits                  Where applicable, costs              Limitations               Current
+                                                                                                                                                               technology
+Satellite or airborne  Detects anomalous changes in the    Spatial resolution of satellite and             Onshore       Research required to determine        status
+hyperspectral imaging  health of vegetation that could be  airborne images 1-3m. Not                                     levels of CO2 in soil that will
+                       due to leakage of CO2 to ground     calibrated in terms of flux or                  Onshore       produce detectable changes in         At research stage
+Satellite              surface. Can also detect subtle or  volume fraction of CO2 in air or                              vegetation health and distribution.
+interferometry         hidden faults that may be           soil gas, but may give indications                            Many repeat surveys needed to         At research
+                       pathways for gases emerging at      of areas that should be sampled in                            establish (seasonal) responses to     stage, not yet
+                       the ground surface. Uses parts of   detail.                                                       variations in weather. Not useful in  deployed for
+                       visible and infra-red spectrum.                                                                   arid areas                            CO2 storage
+                                                           InSAR (Interferometric Synthetic
+                       Repeated satellite radar surveys    Aperture Radar) can detect                                    Changes in elevation may not
+                       detect changes in ground surface    millimetre-scale changes in                                   occur, or may occur seasonally,
+                       elevation potentially caused by     elevation                                                     e.g. due to freezing/thawing. Local
+                       CO2 injection, if absidence                                                                       atmospheric and topographic
+                       (ground uplift) occurs                                                                            conditions may interfere.
+
+2006 IPCC Guidelines for National Greenhouse Gas Inventories                                                                                                                      5.29
+Volume 2: Energy
+
+                                                                          TABLE A 5.6
+                        TECHNOLOGIES FOR MONITORING CO2 LEVELS IN SEA WATER AND THEIR LIKELY APPLICATION
+
+Technique               Capabilities                          Detection limits                     Where applicable, costs      Limitations                          Current
+                                                                                                                                                                     technology
+Sediment gas analysis   Samples and, in laboratory,          Uncertain how measured gas            Offshore. Ship time costly.  Pressure correction of data will be  status
+                        measure gas content of sea bed       contents relate to in situ gas                                     necessary unless pressurised
+Sea water gas analysis  sediments.                           contents.                                                          sample is collected. ROV's and       Deployed by
+                                                                                                                                divers could be used for sampling    research
+                        Sample and, in laboratory,           Detection limits of analytical        Offshore. Ship time costly.  if necessary. Ship time costly.      community for
+                        measure gas content of sea water.    equipment likely to be in low ppm                                                                       methane gas
+                        Protocols exist for analysis of sea  range or better. Detection limit for                               As above                             analysis offshore
+                        water samples.                       bicarbonate in <2 ppm range.
+                                                             Ability to detect leaks in field                                                                        Deployed in near
+                                                             unproven. Minimum size of leak                                                                          surface waters in
+                                                             that could be detected in practice                                                                      research
+                                                             unproven.                                                                                               community, not
+                                                                                                                                                                     widely used at
+                                                                                                                                                                     depth.
+
+2006 IPCC Guidelines for National Greenhouse Gas Inventories                                                                                                                            5.30
+                                                  Chapter 5: Carbon Dioxide Transport, Injection and Geological Storage
+
+References
+
+Arts, R., Eiken, O., Chadwick, R.A., Zweigel, P., van der Meer, L.G.H. and Zinszner, B. (2003). `Monitoring of CO2
+        injected at Sleipner using time-lapse seismic data.' Proceedings of the 6th International Conference on
+        Greenhouse Gas Control Technologies (GHGT-6), J. Gale & Y. Kaya (eds.), 1-4 October 2002, Kyoto, Japan,
+        Pergamon, v. 1, pp. 347-352.
+
+Bachu, S. and Gunter, W.D. (2005). `Overview of acid-gas injection operations in Western Canada.' In: E.S. Rubin,
+        D.W. Keith & C.F. Gilboy (Eds.), Greenhouse Gas Control Technologies, Proceedings of the 7th International
+        Conference on Greenhouse Gas Control Technologies, 5-9 September 2004, Vancouver, Canada. Volume 1:
+        Peer Reviewed Papers and Overviews, Elsevier, Oxford, pp.443-448.
+
+Benson, S.M., Gasperikova, E. and Hoversten, M. (2004). `Overview of monitoring techniques and protocols for
+        geologic storage projects.' IEA Greenhouse Gas R&D Programme Report, PH4/29. 99 pages.
+
+Brantley, S. L. and Koepenick, K. W. (1995). `Measured carbon-dioxide emissions from Oldoinyo-Lengai and the
+        skewed distribution of passive volcanic fluxes.' Geology, v. 23(10), pp. 933-936.
+
+Chadwick, R.A., Zweigel, P., Gregersen, U., Kirby, G.A., Holloway, S. and Johannesen, P.N. (2003). `Geological
+        characterization of CO2 storage sites: Lessons from Sleipner, northern North Sea.' Proceedings of the 6th
+        International Conference on Greenhouse Gas Control Technologies (GHGT-6), J. Gale and Y. Kaya (eds.), 1­4
+        October 2002, Kyoto, Japan, Pergamon, v.I, 321­326.
+
+Evans, W. C., Sorey, M.L., Cook, A.C., Kennedy, B.M., Shuster, D.L., Colvard, E.M., White, L.D., and Huebner,
+        M.A., (2002). `Tracing and quantifying magmatic carbon discharge in cold groundwaters: lessons learned from
+        Mammoth Mountain, USA.' Journal of Volcanology and Geothermal Research, v. 114(3-4), pp. 291-312.
+
+Gambardella, B., Cardellini, C., Chiodini, G., Frondini, F., Marini, L., Ottonello, G., Vetuschi Zuccolini, M., (2004).
+        `Fluxes of deep CO2 in the volcanic areas of central-southern Italy'. J. Volcanol. Geotherm. Res. v. 136 (1-2),
+        pp. 31-52.
+
+IEA GHG, (2005). `Permitting issues for CO2 capture and storage: A review of regulatory requirements in Europe,
+        USA and Australia.' IEA Greenhouse Gas R&D Programme, Report IEA/CON/04/104, Cheltenham, UK.
+
+Intergovernmental Panel on Climate Change (IPCC), (2005). Special Report on Carbon Dioxide Capture and Storage
+        [Metz, B., Davidson, O., Meyer, L and. de Coninck, H.C (eds.)] Cambridge University Press, Cambridge,
+        United Kingdom, and New York, USA.
+
+Jones, D. G., Beaubien, S., Strutt, M. H., Baubron, J.-C., Cardellini, C., Quattrochi, F. and Penner, L. A. (2003).
+        `Additional soil gas monitoring at the Weyburn unit (2003).' Task 2.8 Report for PTRC. British Geological
+        Survey Commissioned Report, CR/03/326.
+
+Klusman, R.W. (2003(a)). `Rate measurements and detection of gas microseepage to the atmosphere from an
+        enhanced oil recovery/sequestration operation, Rangely, Colorado, USA.' Applied Geochemistry, v. 18, pp.
+        1825-1838.
+
+Klusman, R.W. (2003(b)) `Computer modelling of methanotrphic oxidation of hydrocarbons in the unsaturated zone
+        from an enhanced oil recovery/sequestration project, Rangely, Colorado, USA.' Applied Geochemistry, v. 18,
+        pp. 1839-1852.
+
+Klusman, R.W., (2003 (c)). `A geochemical perspective and assessment of leakage potential for a mature carbon
+        dioxide-enhanced oil recovery project and as a prototype for carbon dioxide sequestration; Rangely field,
+        Colorado.' American Association of Petroleum Geologists Bulletin, v. 87(9), pp. 1485­1507.
+
+Miles, N.L., Davis, K.J. and Wyngaard, J.C. (2005). `Detecting leaks from belowground CO2 reservoirs using eddy
+        covariance, Carbon Dioxide Capture for Storage in Deep Geologic Formations.' Results from the CO2 Capture
+        Project, v. 2: Geologic Storage of Carbon Dioxide with Monitoring and Verification S.M. Benson (ed.),
+        Elsevier Science, London, pp. 1031-1044.
+
+Oldenburg, C.M. and A.J. Unger, (2003). `On leakage and seepage from geologic carbon sequestration sites:
+        unsaturated zone attenuation. Vadose Zone'. Journal, 2, 287­296.
+
+Pruess, K., García, J., Kovscek, T., Oldenburg, C., Rutqvist, J., Steefel, C., and Xu, T. (2004). `Code intercomparison
+        builds confidence in numerical simulation models for geologic disposal of CO2'. Energy, v. 29, pp. 1431-1444.
+
+Reeves, S.R., (2005). `The Coal-Seq project: Key results from field, laboratory and modeling studies.' Proceedings of
+        the 7th International Conference on Greenhouse Gas Control Technologies (GHGT-7), September 5­9, 2004,
+        Vancouver, Canada, v.II, 1399-1406.
+
+2006 IPCC Guidelines for National Greenhouse Gas Inventories  5.31
+Volume 2: Energy
+
+Scherer, G.W., Celia, M.A., Prevost, J-H., Bachu, S., Bruant, R , Duguid, A, Fuller, R., Gasda, S.E., Radonjic, M. and
+        Vichit-Vadakan, W. (2005). `Leakage of CO2 through abandoned wells: role of corrosion of cement, carbon
+        dioxide capture for storage in deep geologic formations' Results from the CO2 Capture Project, v. 2: Geologic
+        Storage of Carbon Dioxide with Monitoring and Verification, Benson, S.M. (Ed.), Elsevier Science, London,
+        pp. 827­850.
+
+Schroot, B.M. and. Schüttenhelm, R.T.E (2003). `Expressions of shallow gas in the Netherlands North Sea.'
+        Netherlands Journal of Geosciences, v. 82(1), pp. 91-105.
+
+Schroot, B.M. and. Schüttenhelm, R.T.E (2003). `Shallow gas and gas seepage: expressions on seismic and other
+        acoustic data from the Netherlands North Sea.' Journal of Geochemical Exploration, v. 4061, pp. 1-5.
+
+Shevalier, M., Durocher, K., Perez, R., Hutcheon, I., Mayer, B., Perkins, E., and Gunter, W. (2004). `Geochemical
+        monitoring of gas-water-rock interaction at the IEA Weyburn CO2 Monitoring and Storage Project.'
+        Saskatchewan, Canada. GHGT7 Proceedings. At: http://www.ghgt7.ca/papers_posters.php?format=poster.
+
+Shuler, P. and. Tang, Y (2005). `Atmospheric CO2 monitoring systems, carbon dioxide capture for storage in deep
+        geologic formations.' Results from the CO2 Capture Project, v. 2: Geologic Storage of Carbon Dioxide with
+        Monitoring and Verification, S.M. Benson (ed.), Elsevier Science, London, pp. 1015­1030.
+
+Strutt, M.H, Beaubien, S.E.,. Beabron, J.C., Brach, M., Cardellini, C., Granieri, R., Jones, D.G., Lombardi, S., Penner,
+        L., Quattrocchi F. and Voltatorni, N. (2003). `Soil gas as a monitoring tool of deep geological sequestration of
+        carbon dioxide: preliminary results from the EnCana EOR project in Weyburn, Saskatchewan (Canada).'
+        Proceedings of the 6th International Conference on Greenhouse Gas Control Technologies (GHGT-6), J. Gale
+        and Y. Kaya (eds.), 1­4 October 2002, Kyoto, Japan, Pergamon, Amsterdam, v.I., 391­396.
+
+Wang, Z, (1997). `Feasibility of time-lapse seismic reservoir monitoring; the physical basis.' The Leading Edge, v. 16,
+        pp. 1327-1329.
+
+White, D.J., Burrowes, G., Davis, T., Hajnal, Z., Hirsche, I., Hutcheon, K., Majer, E., Rostron, B and. Whittaker, S.
+        (2004). `Greenhouse gas sequestration in abandoned oil reservoirs.' The International Energy Agency
+        Weyburn pilot project. GSA Today, 14, 4­10.
+
+Wilson, M., and Monea, M. (2005). IEA GHG Weyburn Monitoring and Storage Project, Summary Report, 2000-
+        2004. Petroleum Technology Research Center, Regina SK, Canada. In: Proceedings of the 7th International
+        Conference on Greenhouse Gas Control Technologies (GHGT-7), Vol. III, September 5­9, Vancouver,
+        Canada.
+
+Wright, G. and Majek, A. (1998). `Chromatograph, RTU System monitors CO2 injection'. Oil and Gas Journal, July
+        20, 1998.
+
+Yoshigahara, C, Itaoka, K. and Akai, M. (2005). `Draft accounting rules for CO2 capture and storage'. Proceedings of
+        the GHGT-7 Conference.
+
+Other References
+
+Barrie, J., Brown, K., Hatcher, P.R. & Schellhase, H.U. (2005). `Carbon dioxide pipelines: A preliminary review of
+        design and risks.' In: E.S. Rubin, D.W. Keith & C.F. Gilboy (Eds.), Greenhouse Gas Control Technologies,
+        Proceedings of the 7th International Conference on Greenhouse Gas Control Technologies, 5-9 September 2004,
+        Vancouver, Canada. Volume 1: Peer Reviewed Papers and Overviews, Elsevier, Oxford, pp. 315-320.
+
+Haefeli, S., Bosi, M. and Philibert, C. (2004). `Carbon dioxide capture and storage issues - accounting and baselines
+        under the United Nations Framework Convention on Climate Change'. IEA Information Paper. IEA, Paris, 36
+        p.
+
+Holloway, S., Pearce, J.M., Ohsumi, T. and Hards, V.L. (2005). `A review of natural CO2 occurrences and their
+        relevance to CO2 storage.' IEA Greenhouse Gas R&D Programme, Cheltenham, UK.
+
+Oldenburg, Curtis M., Lewicki, Jennifer L., and Hepple, Robert P., (2003). `Near-surface monitoring strategies for
+        geologic carbon dioxide storage verification.' Lawrence Berkeley National Laboratory, Berkeley, CA LBNL-
+        54089.
+
+Schremp, F.W. and Roberson, G.R. (1975). `Effect of supercritical carbon dioxide (CO2) on construction materials.'
+        Society of Petroleum Engineers Journal, June 1975, 227­233.
+
+5.32  2006 IPCC Guidelines for National Greenhouse Gas Inventories
+

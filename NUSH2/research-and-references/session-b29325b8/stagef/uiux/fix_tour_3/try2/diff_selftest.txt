@@ -1,0 +1,226 @@
+diff --git a/frontend/selftest.js b/frontend/selftest.js
+index 89e6d13..aee4bed 100644
+--- a/frontend/selftest.js
++++ b/frontend/selftest.js
+@@ -592,8 +592,10 @@ const press = (key) => (document.activeElement || document.body)
+ // reply fields; it starts from its button, visits every step and exits with no
+ // error; each caption number equals its source; the keys work; reduced motion
+ // runs no animation and does not advance; the numbers follow the controls; a
+-// button the reader steps with keeps focus and stays in view; the closing step
+-// moves only the lines the earlier steps of the same scenario move.
++// button the reader steps with keeps focus and stays in view, with the card
++// head in view too when both fit; an automatic step moves neither the page nor
++// the side column; the closing step moves only the lines the earlier steps of
++// the same scenario move.
+ async function tourChecks(add) {
+   location.hash = "#pfd";
+   await sleep(ROUTE_WAIT_MS);
+@@ -823,37 +825,66 @@ async function tourChecks(add) {
+     tour.exitTour(false);
+   }
+ 
++  // Where the tour keeps things in view: the window, cut to the side column
++  // when that column scrolls by itself and holds the element.
++  const card = document.getElementById("tour-card");
++  const head = card.querySelector(".tour-head");
++  const side = card.parentElement;
++  const sideScrolls = () => ["auto", "scroll"].includes(getComputedStyle(side).overflowY);
++  const shownIn = (e) => {
++    let lo = 0;
++    let hi = window.innerHeight;
++    if (sideScrolls() && side.contains(e)) {
++      const s = side.getBoundingClientRect();
++      lo = Math.max(lo, s.top);
++      hi = Math.min(hi, s.bottom);
++    }
++    return [lo, hi];
++  };
++  // Wait until the page and the side column stop scrolling.
++  const rest = async () => {
++    let key = "";
++    let calm = 0;
++    for (let i = 0; i < 50 && calm < 3; i += 1) {
++      await sleep(60);
++      const now = `${window.scrollY}|${side.scrollTop}`;
++      calm = now === key ? calm + 1 : 0;
++      key = now;
++    }
++  };
++  const whole = (b) => {
++    const r = b.getBoundingClientRect();
++    const [lo, hi] = shownIn(b);
++    // The ring is a 2 px outline 2 px off the button.
++    const ok = r.width > 0 && r.top - 4 >= lo - 0.5 && r.bottom + 4 <= hi + 0.5;
++    return { ok, at: `${Math.round(r.top)}..${Math.round(r.bottom)} px, shown ${Math.round(lo)}..${Math.round(hi)} px` };
++  };
++  // The card head must show whole after a step the reader asked for whenever
++  // it fits with the control used, with 8 px of room on each side and 1 px
++  // to spare against rounding.
++  const headFits = (b) => {
++    const h = head.getBoundingClientRect();
++    const r = b.getBoundingClientRect();
++    const [hl, hh] = shownIn(head);
++    const [bl, bh] = shownIn(b);
++    const fits = Math.max(h.bottom, r.bottom) - Math.min(h.top, r.top) + 16 <= Math.min(hh, bh) - Math.max(hl, bl) - 1;
++    const seen = h.top >= hl - 0.5 && h.bottom <= hh + 0.5;
++    return { fits, seen, at: `head ${Math.round(h.top)}..${Math.round(h.bottom)} px with the button at ${Math.round(r.top)}..${Math.round(r.bottom)} px` };
++  };
++  const heads = { fit: 0, seen: 0, apart: 0, bad: [] };
++  const headAfter = (b, at) => {
++    const v = headFits(b);
++    if (!v.fits) heads.apart += 1;
++    else if (v.seen) heads.fit += 1;
++    else heads.bad.push(`${at}: ${v.at}`);
++    if (v.seen) heads.seen += 1;
++  };
++
+   // A button the reader steps with keeps focus, and the button with its focus
+   // ring lies whole inside the window and inside the side column when that
+   // column scrolls. The card's own buttons step to the end and back, then
+   // the bar's Next steps to the end again.
+   try {
+-    const card = document.getElementById("tour-card");
+-    const side = card.parentElement;
+-    const rest = async () => {
+-      let key = "";
+-      let calm = 0;
+-      for (let i = 0; i < 50 && calm < 3; i += 1) {
+-        await sleep(60);
+-        const now = `${window.scrollY}|${side.scrollTop}`;
+-        calm = now === key ? calm + 1 : 0;
+-        key = now;
+-      }
+-    };
+-    const whole = (b) => {
+-      const r = b.getBoundingClientRect();
+-      let lo = 0;
+-      let hi = window.innerHeight;
+-      const o = getComputedStyle(side).overflowY;
+-      if (side.contains(b) && (o === "auto" || o === "scroll")) {
+-        const s = side.getBoundingClientRect();
+-        lo = Math.max(lo, s.top);
+-        hi = Math.min(hi, s.bottom);
+-      }
+-      // The ring is a 2 px outline 2 px off the button.
+-      const ok = r.width > 0 && r.top - 4 >= lo - 0.5 && r.bottom + 4 <= hi + 0.5;
+-      return { ok, at: `${Math.round(r.top)}..${Math.round(r.bottom)} px, shown ${Math.round(lo)}..${Math.round(hi)} px` };
+-    };
+     start.click();
+     await until(() => tour.tourState().active, 2000);
+     await rest();
+@@ -874,6 +905,7 @@ async function tourChecks(add) {
+         }
+         const w = whole(b);
+         if (!w.ok) bad.push(`${at}: button at ${w.at}`);
++        headAfter(b, at);
+       }
+     };
+     await stepWith(card.querySelector('[data-act="next"]'), "card Next");
+@@ -890,6 +922,107 @@ async function tourChecks(add) {
+     tour.exitTour(false);
+   }
+ 
++  // The card head comes into view with the control after a step the reader
++  // asks for, whenever the two fit together. Besides the step changes above,
++  // the card's Next steps to the end and its Previous back with the button
++  // first placed near the top of where it shows, so that a shorter card
++  // moves the button up and out of view. These run on still steps, where the
++  // scrolls jump, to keep the test short; the rule is the same.
++  try {
++    const bad = [];
++    let moves = 0;
++    tour.startTour({ reduced: true, step: 0 });
++    await rest();
++    if (tour.tourState().playing) act("play").click();
++    const nearTop = async (b, label) => {
++      b.focus({ preventScroll: true });
++      for (let k = 0; k < n - 1; k += 1) {
++        const [lo] = shownIn(b);
++        const dy = Math.round(b.getBoundingClientRect().top - (lo + 12));
++        if (sideScrolls() && side.contains(b)) side.scrollBy({ top: dy, behavior: "instant" });
++        else window.scrollBy({ top: dy, behavior: "instant" });
++        await sleep(40);
++        b.click();
++        await rest();
++        moves += 1;
++        const at = `${label} from near the top, step ${tour.tourState().step + 1}`;
++        if (document.activeElement !== b) {
++          bad.push(`${at}: focus moved off the button`);
++          continue;
++        }
++        const w = whole(b);
++        if (!w.ok) bad.push(`${at}: button at ${w.at}`);
++        headAfter(b, at);
++      }
++    };
++    await nearTop(card.querySelector('[data-act="next"]'), "card Next");
++    const atEnd = tour.tourState().step === n - 1;
++    await nearTop(card.querySelector('[data-act="prev"]'), "card Previous");
++    const atStart = tour.tourState().step === 0;
++    tour.exitTour(false);
++    bad.push(...heads.bad);
++    const total = 3 * (n - 1) + moves;
++    add("tour_head_shown", bad.length === 0 && atEnd && atStart && moves === 2 * (n - 1) && heads.fit + heads.apart === total,
++      `${total} step changes by the card's buttons and the bar's Next, ${moves} of them with the button first near the top; head and button fit together on ${heads.fit + heads.bad.length} and the head showed whole on each of them ${heads.bad.length === 0}; on the other ${heads.apart} the button came first; button whole with focus on every one ${bad.length === heads.bad.length}${bad.length ? `; ${bad.slice(0, 5).join("; ")}` : ""}`);
++  } catch (e) {
++    add("tour_head_shown", false, String(e && e.message ? e.message : e));
++    tour.exitTour(false);
++  }
++
++  // An automatic step leaves the page and the side column where the reader
++  // put them, also with focus on a tour button out of view: the bar's Play
++  // with the page scrolled down to the card, or as far as the page goes, and
++  // the card's Next with the page at the drawing. Where the side column
++  // scrolls, it is moved off its top as well. The tour runs with motion at a
++  // test pace in every run, reduced motion included, since the timer is under
++  // test here.
++  try {
++    const docY = (e, edge) => window.scrollY + e.getBoundingClientRect()[edge];
++    const maxY = () => document.documentElement.scrollHeight - window.innerHeight;
++    const cases = [
++      ["bar Play, page at the card", () => act("play"),
++        () => Math.max(docY(card, "top") - 8, docY(bar, "bottom") + 10), 120],
++      ["card Next, page at the drawing", () => card.querySelector('[data-act="next"]'),
++        () => docY(document.getElementById("pfd-svg"), "top") - 8, 60],
++    ];
++    const bad = [];
++    const parts = [];
++    for (const [label, btnOf, yOf, sideTop] of cases) {
++      tour.startTour({ reduced: false, scale: 0.1 });
++      await rest();
++      if (tour.tourState().playing) act("play").click();
++      const b = btnOf();
++      b.focus({ preventScroll: true });
++      window.scrollTo({ top: Math.max(0, Math.min(maxY(), Math.round(yOf()))), behavior: "instant" });
++      if (sideScrolls()) side.scrollTo({ top: sideTop, behavior: "instant" });
++      await rest();
++      const y0 = window.scrollY;
++      const s0 = side.scrollTop;
++      const step0 = tour.tourState().step;
++      const hidden = !whole(b).ok;
++      act("play").click();
++      const moved = await until(() => tour.tourState().step !== step0, 4000);
++      const step1 = tour.tourState().step;
++      if (tour.tourState().playing) act("play").click();
++      await sleep(250);
++      await rest();
++      const y1 = window.scrollY;
++      const s1 = side.scrollTop;
++      const kept = document.activeElement === b;
++      tour.exitTour(false);
++      if (!moved) bad.push(`${label}: no automatic step within 4 s`);
++      if (y1 !== y0) bad.push(`${label}: the page moved from ${y0} to ${y1} px`);
++      if (s1 !== s0) bad.push(`${label}: the side column moved from ${s0} to ${s1} px`);
++      if (!kept) bad.push(`${label}: focus left the button`);
++      parts.push(`${label}: step ${step0 + 1} to ${step1 + 1} by the timer with the button ${hidden ? "out of view" : "in view"}, page at ${y0} px${sideScrolls() ? `, side column at ${s0} px` : ""}`);
++    }
++    add("tour_auto_stays", bad.length === 0,
++      `${parts.join("; ")}${bad.length ? `; ${bad.join("; ")}` : "; neither moved and focus stayed"}`);
++  } catch (e) {
++    add("tour_auto_stays", false, String(e && e.message ? e.message : e));
++    tour.exitTour(false);
++  }
++
+   // The closing step moves the lines that the steps before it move in the
+   // same scenario, and no other line, for each reject route: under Selexol it
+   // leaves the MEA regeneration lines dark as steps 10 and 11 do. Its dashes

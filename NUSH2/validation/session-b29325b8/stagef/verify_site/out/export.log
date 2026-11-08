@@ -1,0 +1,17 @@
+   Compiling nush2_vv v0.1.0 (C:\Users\Alf\AppData\Local\Temp\claude\C--Ray-Claude-Ray-Debug-VS-Code\b29325b8-d1b9-49cd-bfe6-262261d7ffef\scratchpad\stagef\verify_site\src\engine\vv)
+   Compiling nush2_cli v0.1.0 (C:\Users\Alf\AppData\Local\Temp\claude\C--Ray-Claude-Ray-Debug-VS-Code\b29325b8-d1b9-49cd-bfe6-262261d7ffef\scratchpad\stagef\verify_site\src\engine\cli)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 3.15s
+     Running `C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/cargo/verify_site\debug\nush2.exe export --out 'C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/stagef/verify_site/out/export'`
+wrote C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/stagef/verify_site/out/export\Final_Design_Basis.csv (102474 bytes)
+wrote C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/stagef/verify_site/out/export\Integrated_Mass_Balance.csv (73105 bytes)
+wrote C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/stagef/verify_site/out/export\Integrated_Energy_Balance.csv (77826 bytes)
+wrote C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/stagef/verify_site/out/export\Emissions_Ledger.csv (39028 bytes)
+wrote C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/stagef/verify_site/out/export\Economic_Ledger.csv (449159 bytes)
+wrote C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/stagef/verify_site/out/export\Sensitivity_Results.csv (185463 bytes)
+wrote C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/stagef/verify_site/out/export\Validation_Results.csv (255515 bytes)
+validation rows 650: pass 325, fail 32, reported 251, not_run 42
+
+real	2m20.488s
+user	0m0.000s
+sys	0m0.015s
+exit=0

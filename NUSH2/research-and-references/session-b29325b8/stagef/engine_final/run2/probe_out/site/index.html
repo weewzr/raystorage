@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NUS-H₂: Nuclear-Upgraded Steam Methane Reforming with Carbon Capture for Low-Carbon Hydrogen in Singapore</title>
+<meta name="description" content="Browser simulator of the NUS-H2 plant. The Rust engine runs as WebAssembly in your browser; nothing leaves the page.">
+<link rel="icon" href="favicon.svg?v=local" type="image/svg+xml">
+<link rel="stylesheet" href="style.css?v=local">
+<link rel="stylesheet" href="views.css?v=local">
+<link rel="stylesheet" href="print.css?v=local" media="print">
+<script type="module" src="app.js?v=local"></script>
+<script type="module" src="views.js?v=local"></script>
+<script type="module" src="selftest.js?v=local"></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <h1 id="title">NUS-H₂: Nuclear-Upgraded Steam Methane Reforming with Carbon Capture for Low-Carbon Hydrogen in Singapore</h1>
+    <p class="engine-line" id="engine-line">Loading the engine</p>
+    <nav class="tabs" aria-label="Sections">
+      <a href="#dashboard" data-route="dashboard">Dashboard</a>
+      <a href="#pfd" data-route="pfd">Interactive PFD</a>
+      <a href="#parameters" data-route="parameters">Parameters</a>
+      <a href="#results" data-route="results">Results</a>
+      <a href="#export" data-route="export">Export</a>
+      <a href="#validation" data-route="validation">Validation</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="statusbar" id="statusbar" data-state="busy" role="status" aria-live="polite">
+    <span class="status-dot" aria-hidden="true"></span>
+    <span id="status-text">Starting the engine</span>
+    <span class="stale-tag" id="stale-tag" hidden>Last converged result</span>
+  </div>
+  <div class="banner" id="banner" role="alert" hidden></div>
+</div>
+
+<main class="wrap" id="main">
+  <section class="route" id="route-dashboard" data-route="dashboard" aria-labelledby="h-dashboard">
+    <h2 id="h-dashboard">Dashboard</h2>
+    <p class="lede" id="basis-line"></p>
+    <div class="kpi-grid" id="kpi-strip" data-mount="kpi" aria-live="off"></div>
+    <div class="targets" id="targets"></div>
+    <ul class="flag-list" id="flag-list" aria-label="Inputs outside their evidence range"></ul>
+    <div class="mount" data-mount="dashboard"></div>
+  </section>
+
+  <section class="route" id="route-pfd" data-route="pfd" aria-labelledby="h-pfd" hidden>
+    <h2 id="h-pfd">Interactive PFD</h2>
+    <link rel="stylesheet" href="pfd.css?v=local">
+    <p class="lede">Select a unit on the drawing, or pick it from the list, to open its panel. Labels on the drawing and every value in a panel come from the engine running in your browser.</p>
+    <div class="pfd-layout">
+      <div class="pfd-main">
+        <label class="pfd-pick">Unit
+          <select id="pfd-select" aria-controls="pfd-panel"></select>
+        </label>
+        <div id="pfd-mount" class="pfd-mount" data-mount="pfd" role="region" aria-label="Process flow diagram">
+          <div class="pfd-scroll" tabindex="-1">
+<svg id="pfd-svg" viewBox="0 0 2070 1000" role="group" aria-labelledby="pfd-svg-title" xmlns="http://www.w3.org/2000/svg">
+<title id="pfd-svg-title">NUS-H₂ process flow diagram after the project's Figure 2: HTGR, helium loops, helium-heated reformer, shift, MEA capture, CO₂ compression and storage, external PSA and the reject recycle</title>
+<defs>
+<linearGradient id="pg-vessel" x1="0" x2="1"><stop offset="0" stop-color="#50565d"/><stop offset="0.3" stop-color="#727981"/><stop offset="0.65" stop-color="#61686f"/><stop offset="1" stop-color="#474c52"/></linearGradient>
+<linearGradient id="pg-smr" x1="0" x2="1"><stop offset="0" stop-color="#584672"/><stop offset="0.28" stop-color="#a896c0"/><stop offset="0.6" stop-color="#7c6798"/><stop offset="1" stop-color="#433557"/></linearGradient>
+<linearGradient id="pg-wgs" x1="0" x2="1"><stop offset="0" stop-color="#7d630c"/><stop offset="0.3" stop-color="#e2c457"/><stop offset="0.62" stop-color="#b9962a"/><stop offset="1" stop-color="#6f560a"/></linearGradient>
+<linearGradient id="pg-sep" x1="0" x2="1"><stop offset="0" stop-color="#3f4852"/><stop offset="0.3" stop-color="#8d98a3"/><stop offset="0.65" stop-color="#5a6570"/><stop offset="1" stop-color="#353c44"/></linearGradient>
+<linearGradient id="pg-abs" x1="0" x2="1"><stop offset="0" stop-color="#174a7a"/><stop offset="0.32" stop-color="#57a4e0"/><stop offset="0.62" stop-color="#2a73b6"/><stop offset="1" stop-color="#143f69"/></linearGradient>
+<linearGradient id="pg-str" x1="0" x2="1"><stop offset="0" stop-color="#a8420a"/><stop offset="0.32" stop-color="#f5934a"/><stop offset="0.62" stop-color="#d9651a"/><stop offset="1" stop-color="#8c3306"/></linearGradient>
+<linearGradient id="pg-reb" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#e57a6c"/><stop offset="0.45" stop-color="#b13a30"/><stop offset="1" stop-color="#74201a"/></linearGradient>
+<linearGradient id="pg-store" x1="0" x2="1"><stop offset="0" stop-color="#3a434d"/><stop offset="0.3" stop-color="#9aa5b0"/><stop offset="0.62" stop-color="#5b6772"/><stop offset="1" stop-color="#2f363e"/></linearGradient>
+<linearGradient id="pg-psa" x1="0" x2="1"><stop offset="0" stop-color="#0f6b55"/><stop offset="0.32" stop-color="#4fc7a6"/><stop offset="0.62" stop-color="#1f9a7c"/><stop offset="1" stop-color="#0c5a47"/></linearGradient>
+<linearGradient id="pg-comp" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#e8ecef"/><stop offset="0.45" stop-color="#a9b2ba"/><stop offset="1" stop-color="#6c7680"/></linearGradient>
+<linearGradient id="pg-hx" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#6f8fae"/><stop offset="0.35" stop-color="#3d5f82"/><stop offset="1" stop-color="#1d3550"/></linearGradient>
+<linearGradient id="pg-hxv" x1="0" x2="1"><stop offset="0" stop-color="#6f8fae"/><stop offset="0.35" stop-color="#3d5f82"/><stop offset="1" stop-color="#1d3550"/></linearGradient>
+<linearGradient id="pg-tube" x1="0" x2="1"><stop offset="0" stop-color="#8a9096"/><stop offset="0.45" stop-color="#d4d8db"/><stop offset="1" stop-color="#80868c"/></linearGradient>
+<linearGradient id="pg-pump" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#c9d1d8"/><stop offset="1" stop-color="#66717c"/></linearGradient>
+<linearGradient id="pg-cryo" x1="0" x2="1"><stop offset="0" stop-color="#2c6a86"/><stop offset="0.3" stop-color="#9fd3e8"/><stop offset="0.65" stop-color="#5c9fbd"/><stop offset="1" stop-color="#245a75"/></linearGradient>
+<pattern id="pp-core" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="12" height="12" fill="#c8783c"/><line x1="0" y1="0" x2="0" y2="12" stroke="#5b2f15" stroke-width="5"/></pattern>
+<pattern id="pp-pack" width="14" height="14" patternUnits="userSpaceOnUse"><path d="M0,0 L14,14 M14,0 L0,14" stroke="#cfe6f8" stroke-width="1.3" opacity="0.75"/></pattern>
+<pattern id="pp-cat" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.6" fill="#f6e7a6" opacity="0.85"/><circle cx="8" cy="8" r="1.6" fill="#f6e7a6" opacity="0.85"/></pattern>
+<pattern id="pp-ads" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1.5" fill="#c8f1e3" opacity="0.85"/><circle cx="8" cy="8" r="1.5" fill="#c8f1e3" opacity="0.85"/></pattern>
+<path id="pa-r" d="M7.7,0 L-7.7,-7.7 L-7.7,7.7 Z"/>
+<path id="pa-l" d="M-7.7,0 L7.7,-7.7 L7.7,7.7 Z"/>
+<path id="pa-u" d="M0,-7.7 L-7.7,7.7 L7.7,7.7 Z"/>
+<path id="pa-d" d="M0,7.7 L-7.7,-7.7 L7.7,-7.7 Z"/>
+</defs>
+<rect width="2070" height="1000" fill="#ffffff"/>
+
+<g class="pfd-frame" aria-hidden="true">
+<path class="pfd-boundary" d="M15,41 Q15,15 41,15 L1584,15 Q1610,15 1610,41 L1610,274 Q1610,300 1636,300 L2029,300 Q2055,300 2055,326 L2055,959 Q2055,985 2029,985 L41,985 Q15,985 15,959 Z"/>
+<line class="pfd-divider" x1="625" y1="22" x2="625" y2="978"/>
+<text class="pfd-section" x="40" y="52" font-size="24">NUCLEAR</text>
+<text class="pfd-section" x="655" y="54" font-size="27">SMR + CCS</text>
+<g class="pfd-legend">
+<rect x="30" y="70" width="580" height="90" rx="8"/>
+<g class="st-ph"><line class="cas" x1="46" y1="92" x2="76" y2="92"/><line class="core" x1="46" y1="92" x2="76" y2="92"/></g><text x="84" y="99" font-size="20">Primary He</text>
+<g class="st-sh"><line class="cas" x1="46" y1="118" x2="76" y2="118"/><line class="core" x1="46" y1="118" x2="76" y2="118"/></g><text x="84" y="125" font-size="20">Secondary He</text>
+<g class="st-ng"><line class="cas" x1="46" y1="144" x2="76" y2="144"/><line class="core" x1="46" y1="144" x2="76" y2="144"/></g><text x="84" y="151" font-size="20">Natural gas</text>
+<g class="st-stm"><line class="cas" x1="242" y1="92" x2="272" y2="92"/><line class="core" x1="242" y1="92" x2="272" y2="92"/></g><text x="280" y="99" font-size="20">Steam</text>
+<g class="st-syn"><line class="cas" x1="242" y1="118" x2="272" y2="118"/><line class="core" x1="242" y1="118" x2="272" y2="118"/></g><text x="280" y="125" font-size="20">Syngas</text>
+<g class="st-mea"><line class="cas" x1="242" y1="144" x2="272" y2="144"/><line class="core" x1="242" y1="144" x2="272" y2="144"/></g><text x="280" y="151" font-size="20">MEA solvent</text>
+<g class="st-co2"><line class="cas" x1="420" y1="92" x2="450" y2="92"/><line class="core" x1="420" y1="92" x2="450" y2="92"/></g><text x="458" y="99" font-size="20">Captured CO₂</text>
+<g class="st-h2"><line class="cas" x1="420" y1="118" x2="450" y2="118"/><line class="core" x1="420" y1="118" x2="450" y2="118"/></g><text x="458" y="125" font-size="20">H₂-rich / H₂</text>
+<g class="st-rej"><line class="cas" x1="420" y1="144" x2="450" y2="144"/><line class="core" x1="420" y1="144" x2="450" y2="144"/></g><text x="458" y="151" font-size="20">PSA reject</text>
+</g>
+</g>
+
+<g class="pfd-streams">
+<g class="st st-ph" data-stream="P1"><path class="cas" d="M291,640 L330,640 L330,532 L370,532"/><path class="core" d="M291,640 L330,640 L330,532 L370,532"/><use href="#pa-u" class="arw" x="330" y="589"/></g>
+<g class="st st-ph" data-stream="P4"><path class="cas" d="M330,532 L330,364 L345,364 M445,364 L583,364"/><path class="core" d="M330,532 L330,364 L345,364 M445,364 L583,364"/><use href="#pa-u" class="arw" x="330" y="450"/><use href="#pa-r" class="arw" x="515" y="364"/><circle class="jn" cx="330" cy="532" r="7"/><circle class="jn" cx="583" cy="364" r="7"/></g>
+<g class="st st-ph" data-stream="P2"><path class="cas" d="M530,532 L583,532 L583,232 L476,232"/><path class="core" d="M530,532 L583,532 L583,232 L476,232"/><use href="#pa-u" class="arw" x="583" y="424"/><use href="#pa-l" class="arw" x="529" y="232"/></g>
+<g class="st st-ph" data-stream="P3"><path class="cas" d="M421,196 L421,175 L157,175 L157,264"/><path class="core" d="M421,196 L421,175 L157,175 L157,264"/><use href="#pa-l" class="arw" x="289" y="175"/><use href="#pa-d" class="arw" x="157" y="223"/></g>
+<rect class="gap" x="576" y="459" width="14" height="22"/>
+<g class="st st-sh" data-stream="H1"><path class="cas" d="M395,512 L395,470 L650,470"/><path class="core" d="M395,512 L395,470 L650,470"/><use href="#pa-r" class="arw" x="481" y="470"/></g>
+<g class="st st-sh" data-stream="H2"><path class="cas" d="M650,760 L505,760 L505,552"/><path class="core" d="M650,760 L505,760 L505,552"/><use href="#pa-l" class="arw" x="584" y="760"/><use href="#pa-u" class="arw" x="505" y="664"/></g>
+<g class="st st-ng" data-stream="S1"><path class="cas" d="M700,205 L700,330"/><path class="core" d="M700,205 L700,330"/><use href="#pa-d" class="arw" x="700" y="269"/></g>
+<g class="st st-stm" data-stream="S2"><path class="cas" d="M790,205 L790,330"/><path class="core" d="M790,205 L790,330"/><use href="#pa-d" class="arw" x="790" y="269"/></g>
+<rect class="gap" x="783" y="224" width="14" height="22"/>
+<g class="st st-rej" data-stream="S13"><path class="cas" d="M1030,153 L1030,235 L700,235"/><path class="core" d="M1030,153 L1030,235 L700,235"/><use href="#pa-d" class="arw" x="1030" y="196"/><use href="#pa-l" class="arw" x="925" y="235"/><use href="#pa-l" class="arw" x="742" y="235"/><circle class="jn" cx="700" cy="235" r="7"/></g>
+<g class="st st-syn" data-stream="S3"><path class="cas" d="M840,815 L900,815 L900,400 L990,400 L990,422"/><path class="core" d="M840,815 L900,815 L900,400 L990,400 L990,422"/><use href="#pa-u" class="arw" x="900" y="759"/><use href="#pa-r" class="arw" x="946" y="400"/></g>
+<g class="st st-syn" data-stream="S4"><path class="cas" d="M1035,730 L1060,730"/><path class="core" d="M1035,730 L1060,730"/></g>
+<g class="st st-syn" data-stream="S5"><path class="cas" d="M1160,730 L1195,730"/><path class="core" d="M1160,730 L1195,730"/><use href="#pa-r" class="arw" x="1180" y="730"/></g>
+<g class="st st-syn" data-stream="S7"><path class="cas" d="M1245,660 L1272,660 L1272,805 L1300,805"/><path class="core" d="M1245,660 L1272,660 L1272,805 L1300,805"/><use href="#pa-d" class="arw" x="1272" y="741"/></g>
+<g class="st st-stm" data-stream="S6"><path class="cas" d="M1220,820 L1220,862"/><path class="core" d="M1220,820 L1220,862"/><path class="arw" d="M1220,883 L1208,859 L1232,859 Z"/></g>
+<g class="st st-mea" data-stream="L2"><path class="cas" d="M1345,850 L1345,872 L1490,872 L1490,656"/><path class="core" d="M1345,850 L1345,872 L1490,872 L1490,656"/><use href="#pa-r" class="arw" x="1421" y="872"/><use href="#pa-u" class="arw" x="1490" y="774"/></g>
+<g class="st st-mea" data-stream="L3"><path class="cas" d="M1570,624 L1570,480 L1640,480"/><path class="core" d="M1570,624 L1570,480 L1640,480"/><use href="#pa-u" class="arw" x="1570" y="559"/><use href="#pa-r" class="arw" x="1608" y="480"/></g>
+<g class="st st-mea" data-stream="L4"><path class="cas" d="M1640,790 L1615,790 L1615,640 L1590,640"/><path class="core" d="M1640,790 L1615,790 L1615,640 L1590,640"/><use href="#pa-u" class="arw" x="1615" y="724"/></g>
+<g class="st st-mea" data-stream="L1"><path class="cas" d="M1470,640 L1435,640 L1435,400 L1390,400"/><path class="core" d="M1470,640 L1435,640 L1435,400 L1390,400"/><use href="#pa-u" class="arw" x="1435" y="617"/><use href="#pa-u" class="arw" x="1435" y="429"/></g>
+<g class="st st-mea" data-stream="L5"><path class="cas" d="M1685,820 L1685,860"/><path class="core" d="M1685,820 L1685,860"/><use href="#pa-d" class="arw" x="1685" y="842"/></g>
+<g class="st st-mea" data-stream="L6"><path class="cas" d="M1740,882 L1762,882 L1762,770 L1730,770"/><path class="core" d="M1740,882 L1762,882 L1762,770 L1730,770"/><use href="#pa-u" class="arw" x="1762" y="829"/></g>
+<g class="st st-h2" data-stream="S8"><path class="cas" d="M1345,330 L1345,150 L1480,150 L1480,270 L1700,270 L1700,226"/><path class="core" d="M1345,330 L1345,150 L1480,150 L1480,270 L1700,270 L1700,226"/><use href="#pa-u" class="arw" x="1345" y="244"/><use href="#pa-r" class="arw" x="1413" y="150"/><use href="#pa-d" class="arw" x="1480" y="213"/><use href="#pa-r" class="arw" x="1546" y="270"/><use href="#pa-u" class="arw" x="1700" y="249"/><circle class="xing" cx="1610" cy="270" r="8"/></g>
+<g class="st st-h2" data-stream="S14"><path class="cas" d="M1090,153 L1090,190 L1345,190"/><path class="core" d="M1090,153 L1090,190 L1345,190"/><use href="#pa-d" class="arw" x="1090" y="172"/><use href="#pa-r" class="arw" x="1160" y="190"/><circle class="jn" cx="1345" cy="190" r="7"/></g>
+<g class="st st-h2" data-stream="S9"><path class="cas" d="M1728,160 L1744,160 M1800,160 L1846,160"/><path class="core" d="M1728,160 L1744,160 M1800,160 L1846,160"/><path class="arw" d="M1865,160 L1841,148 L1841,172 Z"/></g>
+<g class="st st-co2" data-stream="C1"><path class="cas" d="M1685,390 L1685,355 L1740,355"/><path class="core" d="M1685,390 L1685,355 L1740,355"/><use href="#pa-r" class="arw" x="1715" y="355"/></g>
+<g class="st st-co2" data-stream="C2"><path class="cas" d="M1815,355 L1840,355"/><path class="core" d="M1815,355 L1840,355"/></g>
+<g class="st st-co2" data-stream="C3"><path class="cas" d="M1910,355 L1945,355 L1945,500"/><path class="core" d="M1910,355 L1945,355 L1945,500"/><use href="#pa-d" class="arw" x="1945" y="471"/></g>
+<g class="st st-rej" data-stream="S10"><path class="cas" d="M1700,94 L1700,74 L1400,74 L1400,120 L1315,120"/><path class="core" d="M1700,94 L1700,74 L1400,74 L1400,120 L1315,120"/><use href="#pa-l" class="arw" x="1652" y="74"/><use href="#pa-l" class="arw" x="1510" y="74"/><use href="#pa-d" class="arw" x="1400" y="98"/><use href="#pa-l" class="arw" x="1360" y="120"/><circle class="xing" cx="1610" cy="74" r="8"/></g>
+<g class="st st-rej" data-stream="S11"><path class="cas" d="M1245,120 L1120,120"/><path class="core" d="M1245,120 L1120,120"/><use href="#pa-l" class="arw" x="1185" y="120"/></g>
+<g class="st st-rej" data-stream="S12"><path class="cas" d="M1000,120 L947,120"/><path class="core" d="M1000,120 L947,120"/><use href="#pa-l" class="arw" x="974" y="120"/><path class="vent" d="M925,68 L925,28"/><path class="vent-arw" d="M925,3 L913,27 L937,27 Z"/><circle class="xing" cx="925" cy="15" r="8"/></g>
+</g>
+
+<g class="pfd-stack" aria-hidden="true">
+<polygon points="908,75 942,75 953,205 897,205" fill="url(#pg-store)" stroke="#262c33" stroke-width="2" stroke-linejoin="round"/>
+<rect x="903" y="68" width="44" height="9" rx="3" fill="#3a434d" stroke="#262c33" stroke-width="1.5"/>
+<text class="t" x="885" y="112" font-size="22" text-anchor="end">N₂-rich</text>
+<text class="t" x="885" y="139" font-size="22" text-anchor="end">stack</text>
+<text class="t-mute" x="950" y="44" font-size="20">to atmosphere</text>
+</g>
+
+<g class="pfd-units">
+<g class="unit" data-unit="htgr" tabindex="0" role="button" aria-pressed="false" aria-label="HTGR and helium loop">
+<rect class="hit" x="37" y="258" width="236" height="610"/>
+<rect x="45" y="270" width="220" height="590" rx="58" ry="72" fill="url(#pg-vessel)" stroke="#3b4046" stroke-width="2"/>
+<rect x="58" y="345" width="194" height="420" rx="8" fill="#2c3035"/>
+<rect x="70" y="357" width="170" height="396" rx="4" fill="#4a5560"/>
+<rect x="80" y="372" width="9" height="362" fill="#1f4f7d"/>
+<rect x="221" y="372" width="9" height="362" fill="#1f4f7d"/>
+<rect x="145" y="598" width="20" height="258" fill="#2b2d31"/>
+<path d="M102,392 Q102,380 114,380 L196,380 Q208,380 208,392 L208,545 L163,600 L147,600 L102,545 Z" fill="url(#pp-core)" stroke="#e08c4c" stroke-width="4"/>
+<rect x="74" y="626" width="152" height="50" fill="#ecc4a8"/>
+<rect x="265" y="626" width="26" height="50" fill="#ecc4a8" stroke="#d6aa8b" stroke-width="1.5"/>
+<rect x="148" y="262" width="18" height="9" rx="2" fill="#2b3036"/>
+<text class="tb" x="155" y="908" font-size="31" text-anchor="middle">HTGR</text>
+<text class="tv" x="155" y="942" font-size="25" text-anchor="middle"><tspan data-bind="kpi.rating_mwth" data-decimals="0">…</tspan> MWth</text>
+<rect class="ring" x="37" y="258" width="236" height="610" rx="64"/>
+</g>
+
+<g class="unit" data-unit="circ_primary" tabindex="0" role="button" aria-pressed="false" aria-label="Helium circulators">
+<rect class="hit" x="416" y="193" width="64" height="64"/>
+<path d="M421,196 L421,222 A27,27 0 1 0 448,201" fill="none" stroke="#c4793f" stroke-width="10"/>
+<circle cx="448" cy="228" r="27" fill="#f3e3d4" stroke="#d08a52" stroke-width="5"/>
+<circle cx="448" cy="228" r="17" fill="#ffffff" stroke="#7a8086" stroke-width="1.5"/>
+<path d="M452,228 Q460,225 460,236 M450,231 Q456,237 447,243 M446,231 Q444,239 434,234 M444,228 Q436,230 436,220 M446,224 Q440,219 449,213 M450,224 Q452,217 461,221" fill="none" stroke="#2b2f34" stroke-width="2.6" stroke-linecap="round"/>
+<circle cx="448" cy="228" r="4" fill="#2b2f34"/>
+<text class="t" x="405" y="238" font-size="23" text-anchor="end">He circulator</text>
+<rect class="ring" x="414" y="191" width="68" height="68" rx="34"/>
+</g>
+
+<g class="unit" data-unit="ihx" tabindex="0" role="button" aria-pressed="false" aria-label="Intermediate heat exchanger">
+<rect class="hit" x="362" y="504" width="176" height="56"/>
+<rect x="370" y="512" width="160" height="40" rx="5" fill="url(#pg-hx)" stroke="#1d3046" stroke-width="2"/>
+<rect x="370" y="512" width="16" height="40" rx="2" fill="#c8642e"/>
+<rect x="514" y="512" width="16" height="40" rx="2" fill="#a9cbe3"/>
+<path d="M388,523 L512,523 M388,532 L512,532 M388,541 L512,541" stroke="#c9d6e2" stroke-width="1.4" opacity="0.8"/>
+<path d="M431,532 L422,527 L422,537 Z M481,532 L472,527 L472,537 Z" fill="#d7e3ee" opacity="0.85"/>
+<text class="tb" x="450" y="594" font-size="29" text-anchor="middle">IHX</text>
+<rect class="ring" x="362" y="504" width="176" height="56" rx="10"/>
+</g>
+
+<g class="unit" data-unit="power" tabindex="0" role="button" aria-pressed="false" aria-label="Power and steam block">
+<rect class="hit" x="340" y="262" width="176" height="122"/>
+<rect x="345" y="350" width="100" height="28" rx="4" fill="url(#pg-hx)" stroke="#1d3046" stroke-width="1.5"/>
+<rect x="345" y="350" width="12" height="28" rx="2" fill="#c8642e"/>
+<rect x="433" y="350" width="12" height="28" rx="2" fill="#a9cbe3"/>
+<path d="M358,350 L358,301 L368,301 M410,327 L410,350" fill="none" stroke="#1f68a3" stroke-width="7"/>
+<path d="M358,350 L358,301 L368,301 M410,327 L410,350" fill="none" stroke="#3d93d6" stroke-width="4.5"/>
+<polygon points="368,290 425,270 425,332 368,312" fill="url(#pg-comp)" stroke="#4a545e" stroke-width="2" stroke-linejoin="round"/>
+<rect x="425" y="296" width="8" height="10" fill="#4a545e"/>
+<circle cx="451" cy="301" r="20" fill="url(#pg-pump)" stroke="#2b3238" stroke-width="2.2"/>
+<text class="tb" x="451" y="309" font-size="22" text-anchor="middle">G</text>
+<path d="M471,301 L497,301" stroke="#4a5058" stroke-width="3"/>
+<path d="M509,301 L495,294 L495,308 Z" fill="#4a5058"/>
+<text class="t" x="278" y="298" font-size="22">Power</text>
+<text class="t" x="278" y="325" font-size="22">block</text>
+<text class="tv" x="572" y="285" font-size="19" text-anchor="end"><tspan data-bind="units.power.outputs.e_nuc.value" data-decimals="1">…</tspan> MWe</text>
+<text class="t" x="572" y="327" font-size="19" text-anchor="end">site loads</text>
+<rect class="ring" x="340" y="262" width="176" height="122" rx="10"/>
+</g>
+
+<g class="unit" data-unit="smr" tabindex="0" role="button" aria-pressed="false" aria-label="Helium-heated steam methane reformer">
+<rect class="hit" x="642" y="322" width="206" height="556"/>
+<rect x="650" y="330" width="190" height="540" rx="44" fill="url(#pg-smr)" stroke="#3d3050" stroke-width="2"/>
+<rect x="676" y="400" width="138" height="420" rx="11" fill="#f4eaf6" stroke="#b993c9" stroke-width="3"/>
+<rect x="685" y="415" width="120" height="11" rx="2" fill="#7b8186"/>
+<rect x="685" y="794" width="120" height="11" rx="2" fill="#7b8186"/>
+<rect x="695" y="426" width="16" height="368" fill="url(#pg-tube)" stroke="#6d7378"/>
+<rect x="737" y="426" width="16" height="368" fill="url(#pg-tube)" stroke="#6d7378"/>
+<rect x="779" y="426" width="16" height="368" fill="url(#pg-tube)" stroke="#6d7378"/>
+<text class="tb" x="755" y="905" font-size="22" text-anchor="middle">Helium-heated SMR</text>
+<text class="tv" x="755" y="932" font-size="22" text-anchor="middle"><tspan data-bind="kpi.q_process_mwth" data-decimals="1">…</tspan> MWth</text>
+<text class="t" x="755" y="958" font-size="22" text-anchor="middle">process heat</text>
+<rect class="ring" x="642" y="322" width="206" height="556" rx="50"/>
+</g>
+
+<g class="unit" data-unit="wgs" tabindex="0" role="button" aria-pressed="false" aria-label="Water gas shift">
+<rect class="hit" x="938" y="414" width="104" height="362"/>
+<rect x="945" y="420" width="90" height="350" rx="42" fill="url(#pg-wgs)" stroke="#5e4a08" stroke-width="2"/>
+<rect x="947" y="495" width="86" height="205" fill="url(#pp-cat)"/>
+<path d="M947,495 L1033,495 M947,700 L1033,700" stroke="#f6e7a6" stroke-width="2" opacity="0.8"/>
+<text class="tb" x="990" y="815" font-size="32" text-anchor="middle">WGS</text>
+<rect class="ring" x="938" y="414" width="104" height="362" rx="48"/>
+</g>
+
+<g class="unit" data-unit="syngas_cooler" tabindex="0" role="button" aria-pressed="false" aria-label="Syngas cooler and heat recovery">
+<rect class="hit" x="1054" y="696" width="112" height="68"/>
+<rect x="1060" y="714" width="100" height="32" rx="4" fill="url(#pg-hx)" stroke="#1d3046" stroke-width="1.5"/>
+<rect x="1060" y="714" width="12" height="32" rx="2" fill="#c8642e"/>
+<rect x="1148" y="714" width="12" height="32" rx="2" fill="#a9cbe3"/>
+<path d="M1074,724 L1146,724 M1074,730 L1146,730 M1074,736 L1146,736" stroke="#c9d6e2" stroke-width="1.3" opacity="0.8"/>
+<path d="M1085,714 L1085,698 M1135,746 L1135,762" stroke="#1f68a3" stroke-width="7"/>
+<path d="M1085,714 L1085,698 M1135,746 L1135,762" stroke="#3d93d6" stroke-width="4.5"/>
+<text class="t" x="1108" y="664" font-size="24" text-anchor="middle">Syngas</text>
+<text class="t" x="1108" y="691" font-size="24" text-anchor="middle">cooler</text>
+<rect class="ring" x="1054" y="696" width="112" height="68" rx="8"/>
+</g>
+
+<g class="unit" data-unit="separator" tabindex="0" role="button" aria-pressed="false" aria-label="Condensate separator">
+<rect class="hit" x="1189" y="634" width="62" height="192"/>
+<rect x="1195" y="640" width="50" height="180" rx="18" fill="url(#pg-sep)" stroke="#2b3238" stroke-width="2"/>
+<text class="t" x="1222" y="592" font-size="24" text-anchor="middle">Condensate</text>
+<text class="t" x="1222" y="619" font-size="24" text-anchor="middle">separator</text>
+<rect class="ring" x="1189" y="634" width="62" height="192" rx="22"/>
+</g>
+
+<g class="unit" data-unit="absorber" tabindex="0" role="button" aria-pressed="false" aria-label="MEA absorber">
+<rect class="hit" x="1294" y="324" width="102" height="532"/>
+<rect x="1300" y="330" width="90" height="520" rx="44" fill="url(#pg-abs)" stroke="#0f3457" stroke-width="2"/>
+<rect x="1302" y="430" width="86" height="170" fill="url(#pp-pack)"/>
+<rect x="1302" y="635" width="86" height="155" fill="url(#pp-pack)"/>
+<path d="M1302,430 L1388,430 M1302,600 L1388,600 M1302,635 L1388,635 M1302,790 L1388,790" stroke="#e6f2fb" stroke-width="2.2" opacity="0.9"/>
+<text class="tb" x="1338" y="908" font-size="32" text-anchor="middle">Absorber</text>
+<rect class="ring" x="1294" y="324" width="102" height="532" rx="50"/>
+</g>
+
+<g class="unit" data-unit="lean_pump" tabindex="0" role="button" aria-pressed="false" aria-label="Lean amine pump">
+<rect class="hit" x="1409" y="439" width="52" height="52"/>
+<circle cx="1435" cy="465" r="20" fill="url(#pg-pump)" stroke="#2b3238" stroke-width="2.2"/>
+<path d="M1435,452 L1424,474 L1446,474 Z" fill="#ffffff" opacity="0.9"/>
+<text class="t" x="1464" y="473" font-size="22">Pump</text>
+<rect class="ring" x="1409" y="439" width="52" height="52" rx="26"/>
+</g>
+
+<g class="unit" data-unit="lean_cooler" tabindex="0" role="button" aria-pressed="false" aria-label="Lean amine cooler">
+<rect class="hit" x="1414" y="502" width="58" height="94"/>
+<rect x="1420" y="508" width="30" height="82" rx="4" fill="url(#pg-hxv)" stroke="#1d3046" stroke-width="1.5"/>
+<rect x="1420" y="579" width="30" height="11" rx="2" fill="#c8642e"/>
+<rect x="1420" y="508" width="30" height="11" rx="2" fill="#a9cbe3"/>
+<path d="M1450,526 L1466,526 M1450,572 L1466,572" stroke="#1f68a3" stroke-width="7"/>
+<path d="M1450,526 L1466,526 M1450,572 L1466,572" stroke="#3d93d6" stroke-width="4.5"/>
+<text class="t" x="1474" y="557" font-size="22">Cooler</text>
+<rect class="ring" x="1414" y="502" width="58" height="94" rx="8"/>
+</g>
+
+<g class="unit" data-unit="rich_lean_hx" tabindex="0" role="button" aria-pressed="false" aria-label="Rich and lean amine exchanger">
+<rect class="hit" x="1464" y="618" width="132" height="44"/>
+<rect x="1470" y="624" width="120" height="32" rx="4" fill="url(#pg-hx)" stroke="#1d3046" stroke-width="1.5"/>
+<rect x="1470" y="624" width="12" height="32" rx="2" fill="#c8642e"/>
+<rect x="1578" y="624" width="12" height="32" rx="2" fill="#a9cbe3"/>
+<path d="M1484,634 L1576,634 M1484,640 L1576,640 M1484,646 L1576,646" stroke="#c9d6e2" stroke-width="1.3" opacity="0.8"/>
+<text class="t" x="1503" y="690" font-size="21">Rich/lean</text>
+<text class="t" x="1503" y="715" font-size="21">HX</text>
+<rect class="ring" x="1464" y="618" width="132" height="44" rx="8"/>
+</g>
+
+<g class="unit" data-unit="stripper" tabindex="0" role="button" aria-pressed="false" aria-label="MEA stripper">
+<rect class="hit" x="1634" y="384" width="102" height="442"/>
+<rect x="1640" y="390" width="90" height="430" rx="42" fill="url(#pg-str)" stroke="#6b2704" stroke-width="2"/>
+<path d="M1653,455 L1705,455 M1671,485 L1723,485 M1653,515 L1705,515 M1671,545 L1723,545 M1653,575 L1705,575 M1671,605 L1723,605 M1653,635 L1705,635 M1671,665 L1723,665 M1653,695 L1705,695 M1671,725 L1723,725 M1653,755 L1705,755 M1671,785 L1723,785" stroke="#fbd2ae" stroke-width="2.4" opacity="0.9"/>
+<text class="tb" x="1743" y="630" font-size="30">Stripper</text>
+<rect class="ring" x="1634" y="384" width="102" height="442" rx="48"/>
+</g>
+
+<g class="unit" data-unit="reboiler" tabindex="0" role="button" aria-pressed="false" aria-label="Reboiler">
+<rect class="hit" x="1624" y="854" width="122" height="56"/>
+<rect x="1630" y="860" width="110" height="44" rx="20" fill="url(#pg-reb)" stroke="#5a1712" stroke-width="2"/>
+<rect x="1641" y="865" width="88" height="8" rx="3" fill="#ffffff" opacity="0.22"/>
+<text class="t" x="1690" y="940" font-size="24" text-anchor="middle">Reboiler</text>
+<rect class="ring" x="1624" y="854" width="122" height="56" rx="26"/>
+</g>
+
+<g class="unit" data-unit="condenser" tabindex="0" role="button" aria-pressed="false" aria-label="Overhead condenser">
+<rect class="hit" x="1736" y="322" width="84" height="66"/>
+<rect x="1740" y="340" width="75" height="30" rx="4" fill="url(#pg-hx)" stroke="#1d3046" stroke-width="1.5"/>
+<rect x="1740" y="340" width="12" height="30" rx="2" fill="#c8642e"/>
+<rect x="1803" y="340" width="12" height="30" rx="2" fill="#a9cbe3"/>
+<path d="M1760,340 L1760,324 M1797,370 L1797,386" stroke="#1f68a3" stroke-width="7"/>
+<path d="M1760,340 L1760,324 M1797,370 L1797,386" stroke="#3d93d6" stroke-width="4.5"/>
+<text class="t" x="1790" y="410" font-size="21" text-anchor="middle">Condenser</text>
+<rect class="ring" x="1736" y="322" width="84" height="66" rx="8"/>
+</g>
+
+<g class="unit" data-unit="co2_compressor" tabindex="0" role="button" aria-pressed="false" aria-label="CO2 compressor">
+<rect class="hit" x="1834" y="312" width="82" height="86"/>
+<polygon points="1840,318 1910,336 1910,374 1840,392" fill="url(#pg-comp)" stroke="#4a545e" stroke-width="2" stroke-linejoin="round"/>
+<path d="M1847,327 L1903,341" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+<text class="t" x="1870" y="438" font-size="22" text-anchor="middle">CO₂</text>
+<text class="t" x="1870" y="464" font-size="22" text-anchor="middle">compressor</text>
+<rect class="ring" x="1834" y="312" width="82" height="86" rx="8"/>
+</g>
+
+<g class="unit" data-unit="co2_storage" tabindex="0" role="button" aria-pressed="false" aria-label="CO2 storage, ship offshore">
+<rect class="hit" x="1889" y="494" width="112" height="352"/>
+<rect x="1895" y="500" width="100" height="340" rx="44" fill="url(#pg-store)" stroke="#262c33" stroke-width="2"/>
+<path d="M1897,545 L1993,545 M1897,795 L1993,795" stroke="#262c33" stroke-width="2" opacity="0.4"/>
+<text class="tb" x="1945" y="885" font-size="25" text-anchor="middle">CO₂ storage,</text>
+<text class="tb" x="1945" y="916" font-size="25" text-anchor="middle">ship offshore</text>
+<text class="tv" x="1945" y="948" font-size="21" text-anchor="middle"><tspan data-bind="kpi.co2_captured_t_y" data-decimals="0">…</tspan> t/y</text>
+<rect class="ring" x="1889" y="494" width="112" height="352" rx="50"/>
+</g>
+
+<g class="unit" data-unit="psa" tabindex="0" role="button" aria-pressed="false" aria-label="PSA, external block">
+<rect class="hit" x="1666" y="88" width="140" height="144"/>
+<rect x="1672" y="94" width="56" height="132" rx="24" fill="url(#pg-psa)" stroke="#0a4a3a" stroke-width="2"/>
+<rect x="1674" y="117" width="52" height="86" fill="url(#pp-ads)"/>
+<rect x="1744" y="94" width="56" height="132" rx="24" fill="url(#pg-psa)" stroke="#0a4a3a" stroke-width="2"/>
+<rect x="1746" y="117" width="52" height="86" fill="url(#pp-ads)"/>
+<text class="tb" x="1776" y="262" font-size="30" text-anchor="middle">PSA</text>
+<text class="t-mute" x="1830" y="250" font-size="21">external,</text>
+<text class="t-mute" x="1830" y="275" font-size="21">unsimulated</text>
+<rect class="ring" x="1666" y="88" width="140" height="144" rx="28"/>
+</g>
+
+<g class="unit" data-unit="recycle_compressor" tabindex="0" role="button" aria-pressed="false" aria-label="Recycle compressor">
+<rect class="hit" x="1239" y="80" width="82" height="80"/>
+<polygon points="1315,83 1245,101 1245,139 1315,157" fill="url(#pg-comp)" stroke="#4a545e" stroke-width="2" stroke-linejoin="round"/>
+<path d="M1308,92 L1252,106" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+<text class="t" x="1280" y="72" font-size="22" text-anchor="middle">Recycle compressor</text>
+<rect class="ring" x="1239" y="80" width="82" height="80" rx="8"/>
+</g>
+
+<g class="unit" data-unit="cryogenic" tabindex="0" role="button" aria-pressed="false" aria-label="Cryogenic unit">
+<rect class="hit" x="994" y="81" width="132" height="78"/>
+<rect x="1000" y="87" width="120" height="66" rx="8" fill="url(#pg-cryo)" stroke="#1d4256" stroke-width="2"/>
+<rect x="1006" y="92" width="108" height="9" rx="3" fill="#ffffff" opacity="0.25"/>
+<path d="M1060,104 L1060,142 M1043.5,113.5 L1076.5,132.5 M1043.5,132.5 L1076.5,113.5" stroke="#e8f6fc" stroke-width="3" stroke-linecap="round"/>
+<text class="t" x="1060" y="74" font-size="22" text-anchor="middle">Cryogenic unit</text>
+<rect class="ring" x="994" y="81" width="132" height="78" rx="12"/>
+</g>
+</g>
+
+<g class="pfd-labels" aria-hidden="true">
+<text class="t-ph" x="342" y="662" font-size="25">Primary He</text>
+<text class="t-ph" x="342" y="694" font-size="25"><tspan data-bind="units.htgr.conditions.ROT.value" data-decimals="0">…</tspan>°C</text>
+<text class="t-sh" x="470" y="405" font-size="23" text-anchor="middle">Secondary He</text>
+<text class="t-sh" x="470" y="434" font-size="23" text-anchor="middle"><tspan data-bind="units.htgr.conditions.T_HE_SUPPLY.value" data-decimals="0">…</tspan>°C</text>
+<text class="t-sh" x="520" y="800" font-size="23" text-anchor="middle"><tspan data-bind="units.htgr.conditions.T_HE_RETURN.value" data-decimals="0">…</tspan>°C return</text>
+<text class="tb" x="696" y="188" font-size="27" text-anchor="middle">NG</text>
+<text class="tb" x="800" y="188" font-size="27" text-anchor="middle">Steam</text>
+<text class="t-syn" font-size="22" text-anchor="middle" transform="translate(879,640) rotate(-90)">Syngas, <tspan data-bind="units.smr.conditions.SYNGAS_CHAIN_C5_HPS_GEN1_T_IN_C.value" data-decimals="0">…</tspan>°C</text>
+<text class="t-stm" x="1208" y="890" font-size="24" text-anchor="end">Condensate</text>
+<text class="t-h2" x="1332" y="222" font-size="24" text-anchor="end">H₂-rich</text>
+<text class="t-h2" x="1332" y="251" font-size="24" text-anchor="end">gas</text>
+<text class="t-mea" x="1455" y="397" font-size="24">Lean amine</text>
+<text class="t-mea2" x="1532" y="906" font-size="24" text-anchor="middle">Rich amine</text>
+<text class="t-mea3" x="1510" y="937" font-size="24" text-anchor="middle"><tspan data-bind="inputs.w_mea" data-decimals="0">…</tspan> wt% aqueous</text>
+<text class="t-mea3" x="1510" y="964" font-size="24" text-anchor="middle">MEA</text>
+<text class="t-co2" x="1672" y="340" font-size="23" text-anchor="end">Captured</text>
+<text class="t-co2" x="1672" y="367" font-size="23" text-anchor="end">CO₂</text>
+<text class="t-rej" x="1628" y="40" font-size="23">PSA reject returns</text>
+<text class="t-rej" x="1628" y="63" font-size="19">across the boundary</text>
+<text class="t-rej" x="930" y="268" font-size="22" text-anchor="middle">CH₄-rich recycle</text>
+<text class="t-rej" x="930" y="295" font-size="22" text-anchor="middle">to reformer feed</text>
+<text class="t-h2" x="1230" y="178" font-size="22" text-anchor="middle">H₂ return</text>
+<text class="t-h2b" x="1870" y="170" font-size="27">Purified H₂</text>
+<text class="t-h2" x="1870" y="200" font-size="21"><tspan data-bind="kpi.h2_product_t_y" data-decimals="0">…</tspan> t/y</text>
+</g>
+</svg>
+          </div>
+          <p class="pfd-hint">Scroll the drawing sideways to see all of it.</p>
+          <div class="pfd-tip" id="pfd-tip" role="tooltip" hidden></div>
+          <p class="pfd-caption" id="pfd-caption">Layout follows the project's Figure 2. The PSA is an external block outside the dashed line and is not simulated; offshore storage is a tariff with no simulation.</p>
+        </div>
+      </div>
+      <aside class="pfd-side">
+        <div id="pfd-panel" class="mount pfd-panel" data-mount="panel" aria-live="polite"></div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="route" id="route-parameters" data-route="parameters" aria-labelledby="h-parameters" hidden>
+    <h2 id="h-parameters">Parameters</h2>
+    <p class="lede">Every control comes from the engine registry. The engine refuses a value outside its hard range even when the page is bypassed.</p>
+    <div class="mount" data-mount="controls"></div>
+  </section>
+
+  <section class="route" id="route-results" data-route="results" aria-labelledby="h-results" hidden>
+    <h2 id="h-results">Results</h2>
+    <div class="mount" data-mount="results"></div>
+  </section>
+
+  <section class="route" id="route-export" data-route="export" aria-labelledby="h-export" hidden>
+    <h2 id="h-export">Export</h2>
+    <div class="mount" data-mount="export"></div>
+  </section>
+
+  <section class="route" id="route-validation" data-route="validation" aria-labelledby="h-validation" hidden>
+    <h2 id="h-validation">Validation</h2>
+    <div class="mount" data-mount="validation"></div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <p>NUS-H₂: Nuclear-Upgraded Steam Methane Reforming with Carbon Capture for Low-Carbon Hydrogen in Singapore. Wee Zhern Ray. MIT licence. OUTRAM PARK (github.com/theodoreOnzGit/outram-park-backend) was consulted as a reference; no OUTRAM PARK code is included and no endorsement is implied.</p>
+    <p>Engine <span id="foot-version">loading</span>, commit <span id="foot-commit">loading</span>.</p>
+  </div>
+</footer>
+<noscript><div class="wrap"><p class="banner" data-level="warn">This simulator needs JavaScript and WebAssembly to run the engine in your browser.</p></div></noscript>
+</body>
+</html>

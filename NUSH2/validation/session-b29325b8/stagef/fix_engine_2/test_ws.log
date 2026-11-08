@@ -1,0 +1,528 @@
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 29 tests
+test density::tests::range_is_enforced ... ok
+test aronu::tests::eq_g_02_table2_values_at_298k ... ok
+test kinetics::tests::eq_h_05_k2_units_agree_with_the_versteeg_form ... ok
+test kinetics::tests::bad_inputs_are_errors ... ok
+test kinetics::tests::e1_tends_to_the_hatta_number ... ok
+test kinetics::tests::eq_h_08_enhancement_respects_both_limits ... ok
+test density::tests::thirty_percent_solvent_is_about_five_molar ... ok
+test kinetics::tests::onda_groups_return_plausible_values ... ok
+test kinetics::tests::henry_units_agree_with_water_at_25c ... ok
+test kinetics::tests::overall_rate_is_gas_limited_at_large_enhancement ... ok
+test aronu::tests::bad_mole_fractions_are_an_error ... ok
+test aronu::tests::eq_g_16_u_matrix_is_symmetric ... ok
+test pstar::tests::cubic_root_matches_a_known_factorisation ... ok
+test pstar::tests::poynting_at_21_bar_and_40c ... ok
+test pstar::tests::single_root_branch_is_taken_when_disc_is_positive ... ok
+test pstar::tests::stencil_is_exact_on_nodes_and_sums_to_one ... ok
+test pstar::tests::phi_tends_to_one_at_low_pressure ... ok
+test solve::tests::brent_finds_a_root_and_rejects_a_bad_bracket ... ok
+test solve::tests::lu_recovers_a_known_solution ... ok
+test solve::tests::lu_reports_a_singular_matrix ... ok
+test validation::tests::escaping_quotes_cells_that_need_it ... ok
+test validation::tests::quoted_cells_keep_their_commas ... ok
+test viscosity::tests::eq_g_27_pure_water_limit ... ok
+test water::tests::water_density_agrees_with_hartono_table_a1 ... ok
+test water::tests::water_viscosity_is_near_the_known_room_value ... ok
+test viscosity::tests::range_is_enforced ... ok
+test water::tests::range_is_enforced ... ok
+test validation::tests::targets_parse_to_104_rows ... ok
+test pstar::tests::lookup_reads_the_table_only_up_to_thirty_percent ... ok
+
+test result: ok. 29 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.12s
+
+
+running 20 tests
+test dugas_table44 ... ok
+test eq_g_08_and_g_09_and_g_10_and_g_11_speciation_balances_close ... ok
+test gamma_inf ... ok
+test repeated_table3_row ... ok
+test eq_g_07_k_mea_shift_is_required ... ok
+test n2o_analogy_hartono_table11 ... ok
+test aronu_table4_data ... ok
+test eq_g_24_heat_of_absorption_regression ... ok
+test water_vapour_pressure_stays_below_pure_water ... ok
+test rich_end ... ok
+test eq_g_29_free_mea_falls_with_loading_and_water_activity_stays_below_one ... ok
+test carbamate_peak_near_05 ... ok
+test port_golden_60_points ... ok
+test aronu_104_model_columns ... ok
+test eq_g_32_range_error_outside_validity ... ok
+test residual_grid ... ok
+test pstar_table_interp ... ok
+test table_nodes_equal_direct_solves_at_each_strength ... ok
+test solver_covers_the_accepted_range ... ok
+test pstar_table_interp_other_strengths ... ok
+
+test result: ok. 20 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.71s
+
+
+running 2 tests
+test stored_rows_all_carry_the_status_of_their_comparison ... ok
+test stored_rows_match_a_fresh_run ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+
+running 4 tests
+test density_weiland ... ok
+test khan_henry_against_hartono_table11 ... ok
+test rate_closure_runs_from_end_to_end ... ok
+test viscosity_weiland ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 2 tests
+test tests::fixed_point_failure_returns_err ... ok
+test tests::fixed_point_finds_cosine_root ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 46 tests
+test carbon::tests::eq_j_11_unclosed_case_keeps_its_residual ... ok
+test carbon::tests::carbon_counts_every_carbon_species ... ok
+test carbon::tests::eq_j_11_closed_synthetic_case ... ok
+test carbon::tests::reported_ratio_is_a_stream_ratio ... ok
+test anchored::tests::crf_refuses_zero_life ... ok
+test carbon::tests::eq_j_11_missing_tail_gas_is_never_zero ... ok
+test dcf::tests::eq_l_34_replacement_every_25_y_with_straight_line_credit ... ok
+test dcf::tests::eq_l_34_uniform_spend_sums_to_total ... ok
+test anchored::tests::availability_out_of_range_names_the_parameter ... ok
+test anchored::tests::eta_net_of_primary_circ_removes_the_primary_row ... ok
+test dcf::tests::annual_lines_match_the_ledger_exactly ... ok
+test export::tests::a_row_that_moves_with_a_gated_term_says_so ... ok
+test dcf::tests::eq_l_03_decommissioning_at_end_of_life_equals_the_sinking_fund ... ok
+test export::tests::quoted_cells_split_back ... ok
+test export::tests::term_rows_follow_the_preset_that_used_the_model ... ok
+test export::tests::modelled_energy_rows_compare_with_the_anchored_rows ... ok
+test anchored::tests::reboiler_order_is_approved ... ok
+test flowsheet::tests::eq_a_06_reformer_has_two_independent_reactions ... ok
+test gates::tests::a_failed_row_blocks_and_a_reported_row_does_not_count ... ok
+test gates::tests::a_gate_without_rows_is_not_run ... ok
+test gates::tests::khan_rows_without_data_are_left_out_of_the_column_gate ... ok
+test emissions::tests::eq_k_08_vented_condensate_keeps_carbon ... ok
+test heatrec::tests::eq_b_19_extraction_saves_heat_against_direct ... ok
+test heatrec::tests::eq_e_06_release_is_positive_for_a_forward_shift ... ok
+test heatrec::tests::eq_j_17_reboiler_order_is_approved ... ok
+test heatrec::tests::eq_i_17_hot_water_is_too_cold_and_the_cut_is_the_pinch ... ok
+test heatrec::tests::eq_j_18_gap_is_never_negative ... ok
+test params::tests::bad_rows_are_refused ... ok
+test emissions::tests::eq_k_20_heater_adds_heat_to_the_site_intensity ... ok
+test dcf::tests::whole_years_only ... ok
+test flowsheet::tests::bad_specs_are_refused ... ok
+test flowsheet::tests::eq_j_05_lumped_feed_keeps_the_registry_carbon ... ok
+test flowsheet::tests::eq_j_07_recycle_fraction_matches_the_golden ... ok
+test dcf::tests::dcf_lines_follow_the_replacement_rule_on_both_plants ... ok
+test flowsheet::tests::eq_j_16_eq_j_20_eq_j_21_anchored_island_rows ... ok
+test utility::tests::eq_b_20_reactor_need_adds_up ... ok
+test dcf::tests::smr_island_is_common_to_both_plants ... ok
+test params::tests::unknown_id_is_an_error ... ok
+test params::tests::set_refuses_non_finite ... ok
+test dcf::tests::smr_variable_lines_scale_from_95_to_85_percent_availability ... ok
+test dcf::tests::gap_terms_sum_to_the_gap ... ok
+test params::tests::embedded_file_parses ... ok
+test terms::tests::scale_flips_carry_the_case_b_value ... ok
+test terms::tests::flip_requires_gate_in_code ... ok
+test terms::tests::a_flip_reaches_the_balance_and_nothing_else_moves ... ok
+test utility::tests::level4_rebuilds_the_case_b_reactor_side ... ok
+
+test result: ok. 46 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.92s
+
+
+running 2 tests
+test natural_gas_follows_the_case_of_the_run ... ok
+test unmet_heat_is_the_export_function ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.11s
+
+
+running 20 tests
+test flowsheet_defaults_are_pinned ... ok
+test eq_j_13_h2_ledger_lines ... ok
+test eq_j_10_cryogenic_split_holds_the_inl_fraction ... ok
+test bounds_enforced ... ok
+test eq_j_12_psa_recovery_and_purity ... ok
+test eq_j_11_flowsheet_carbon_closes ... ok
+test flowsheet_energy_closes ... ok
+test flowsheet_elements_close ... ok
+test h2_return_closes_the_inl_pair ... ok
+test eq_a_02_envelope_mass_closes ... ok
+test eq_a_03_units_without_reaction_keep_every_species ... ok
+test hydrogen_basis_is_met_on_every_run ... ok
+test reformer_temperature_runs_through_the_flowsheet ... ok
+test connectivity ... ok
+test term_slots_are_filled_and_stay_unused ... ok
+test fallback_with_fixed_lean_loading_runs_and_is_logged ... ok
+test carbon_matches_anchor ... ok
+test tear_converges_from_three_starts ... ok
+test sweep_cases_share_no_stale_state ... ok
+test full_tier_carries_the_flowsheet ... ok
+
+test result: ok. 20 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.28s
+
+
+running 10 tests
+test flip_requires_gate ... ok
+test drift_reads_the_section_7_limits ... ok
+test eq_j_24_energy_groups_close_on_their_rows ... ok
+test eq_j_11_anchored_nodes_close ... ok
+test anchored_closures_come_from_the_flowsheet_where_one_exists ... ok
+test energy_rows_cover_the_brief_list ... ok
+test crosses_boundary_follows_figure_2 ... ok
+test reactor_budget_closes_on_its_rows ... ok
+test combustion_o2_is_a_row ... ok
+test cryo_split_sensitivity_is_recorded ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 10.94s
+
+
+running 7 tests
+test eq_b_19_branch_split_adds_up ... ok
+test eq_l_31_stepdown_bars_equal_their_source_rows ... ok
+test eq_l_31_mature_and_cofunding_reach_their_target ... ok
+test dcf_family_matches_the_ledger_family ... ok
+test eq_l_31_levers_reach_the_target ... ok
+test a_sweep_without_its_flowsheet_stays_visible ... ok
+test sens_trends ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+
+running 2 tests
+test the_detector_sees_each_pattern ... ok
+test parameters_and_results_cite_no_working_note ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.29s
+
+
+running 35 tests
+test equilibrium::tests::a_recycle_with_no_methane_can_run_backwards ... ok
+test equilibrium::tests::eq_d_10_solution_satisfies_both_mass_action_laws ... ok
+test equilibrium::tests::elements_close_with_c2_plus_and_inerts_in_the_feed ... ok
+test equilibrium::tests::nist_route_solves_as_well ... ok
+test equilibrium::tests::unit_conversion_of_k1_follows_zhang_table_1 ... ok
+test helium::tests::outside_the_range_is_an_error ... ok
+test equilibrium::tests::bad_inputs_are_refused ... ok
+test mixture::tests::absent_species_cannot_trip_a_range_limit ... ok
+test helium::tests::prandtl_eq_8_1_matches_the_property_ratio ... ok
+test helium::tests::eq_b_01_density_law_reduces_to_the_ideal_gas_with_z ... ok
+test helium::tests::gamma_is_the_ratio_of_the_heat_capacities ... ok
+test mixture::tests::bad_flows_are_refused ... ok
+test mixture::tests::condensing_one_mol_releases_the_latent_heat ... ok
+test mixture::tests::elements_count_every_atom ... ok
+test mixture::tests::enthalpy_flow_is_the_sum_of_the_species ... ok
+test mixture::tests::entropy_of_mixing_is_positive ... ok
+test mixture::tests::eq_a_14_ideal_density_of_nitrogen ... ok
+test mixture::tests::fractions_sum_to_one_and_mass_follows_composition ... ok
+test mixture::tests::liquid_flow_cannot_exceed_the_water_present ... ok
+test shomate::tests::cp_table_integrates_exactly_for_its_interpolant ... ok
+test shomate::tests::cp_table_refuses_points_outside_its_nodes ... ok
+test shomate::tests::empty_table_is_a_range_error ... ok
+test species::tests::alkane_cp_nodes_are_returned_at_the_nodes ... ok
+test species::tests::alkanes_carry_no_entropy ... ok
+test species::tests::enthalpy_at_298_is_the_formation_enthalpy_for_the_alkanes ... ok
+test species::tests::enthalpy_rises_with_temperature_for_every_species ... ok
+test species::tests::molar_masses_match_the_webbook_digits ... ok
+test species::tests::species_order_matches_the_index ... ok
+test steam::tests::eq_f_04_boiling_point_at_one_atmosphere ... ok
+test steam::tests::liquid_enthalpy_refuses_vapour_states ... ok
+test steam::tests::out_of_range_is_an_error ... ok
+test steam::tests::saturation_round_trip ... ok
+test transport::tests::fit_returns_the_printed_values_at_both_points ... ok
+test transport::tests::printed_prandtl_numbers_follow_from_the_readings ... ok
+test equilibrium::tests::bisection_nest_agrees_with_newton ... ok
+
+test result: ok. 35 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+
+running 14 tests
+test he_duty_176p8 ... ok
+test h2o_branch_continuity_500k ... ok
+test k_zhang_vs_nist_within_6pct ... ok
+test inl_a40_raw_syngas ... ok
+test if97_release_vectors ... ok
+test k_nist_vs_janaf_log_kf ... ok
+test k_zhang_departure_outside_the_6pct_domain_is_recorded ... ok
+test shomate_piecewise_continuity ... ok
+test psat_vs_tsat_backward ... ok
+test shomate_range_error ... ok
+test helium_petersen_points ... ok
+test latent_heat_298k ... ok
+test te1236_equilibrium_three_points ... ok
+test transport_range_flags ... ok
+
+test result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 7 tests
+test dilute_region_2_path_holds_to_its_lower_edge ... ok
+test eq_b_02_cp_is_the_monatomic_ideal_value ... ok
+test correlation_edges_follow_the_declared_policy ... ok
+test eq_d_07_k1_carries_heat_capacity_integrals ... ok
+test if97_phase_follows_the_side_of_the_saturation_line ... ok
+test eq_a_09_liquid_water_sits_on_one_offset ... ok
+test eq_a_10_reaction_enthalpy_and_entropy_sum_from_species ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 69 tests
+test absorber::tests::eq_h_10_rocha_liquid_film_grows_with_root_velocity ... ok
+test absorber::tests::eq_h_06_enhancement_follows_hatta_when_reagent_is_plentiful ... ok
+test circulator::tests::eq_b_14_duct_loss_is_the_reference_at_the_reference_flow ... ok
+test absorber::tests::eq_h_29_diameter_from_liquid_load ... ok
+test absorber::tests::eq_h_12_billet_schultes_branches_meet_their_printed_forms ... ok
+test circulator::tests::eq_b_06_rise_inverts_the_work ... ok
+test absorber::tests::eq_h_01_flux_balances_both_films ... ok
+test circulator::tests::eq_b_09_flows_carry_the_duty ... ok
+test circulator::tests::eq_b_10_zero_rise_needs_no_work ... ok
+test absorber::tests::eq_h_28_solvent_rate_returns_the_anchored_circulation_form ... ok
+test circulator::tests::eq_c_16_blasius_matches_its_closed_form ... ok
+test case5::tests::printed_masses_add_up_to_the_feed ... ok
+test case5::tests::temperature_conversion ... ok
+test cooler::tests::eq_f_01_sensible_cooling_matches_the_mean_heat_capacity ... ok
+test flash::tests::bad_inputs_are_refused ... ok
+test cooler::tests::eq_f_09_condensation_adds_latent_heat ... ok
+test cooler::tests::heating_through_a_cooler_is_refused ... ok
+test flash::tests::eq_f_03_dry_or_hot_gas_stays_vapour ... ok
+test flash::tests::eq_f_05_saturated_vapour_follows_psat ... ok
+test flash::tests::eq_f_06_dissolved_co2_follows_henry ... ok
+test gas::tests::eq_a_15_closure_sees_a_missing_heat_term ... ok
+test flash::tests::eq_f_08_drum_closes_and_keeps_every_atom ... ok
+test gas::tests::eq_a_15_closure_of_an_identity_is_zero ... ok
+test gas::tests::eq_f_13_dry_fraction_leaves_water_out ... ok
+test ihx::tests::eq_c_03_closure_is_zero_when_the_loss_covers_the_gap ... ok
+test ihx::tests::eq_c_07_lmtd_reaches_its_balanced_limit ... ok
+test ihx::tests::eq_c_13_sizing_and_rating_agree ... ok
+test ihx::tests::eq_c_11_counterflow_limits ... ok
+test ihx::tests::eq_c_17_cascade_and_c_18_limits ... ok
+test jaeri::tests::stations_span_the_heated_length ... ok
+test jaeri::tests::printed_conversions_follow_from_the_dry_analysis ... ok
+test jaeri::tests::the_a2_area_and_u_give_the_printed_ua ... ok
+test newton::tests::dense_lu_recovers_a_known_solution ... ok
+test regen::tests::eq_i_11_steam_at_4_bar_needs_its_latent_heat ... ok
+test regen::tests::eq_i_12_srd_and_eq_j_16_duty_are_inverse ... ok
+test regen::tests::eq_i_10_exchanger_pinches_at_the_cold_end_when_rich_is_larger ... ok
+test newton::tests::coloured_newton_solves_a_tridiagonal_nonlinear_chain ... ok
+test smr_eq::tests::eq_d_33_te1236_conversion_point_and_closure ... ok
+test smr_eq::tests::liquid_in_the_feed_is_refused ... ok
+test smr_tube::tests::bad_inputs_are_refused ... ok
+test solve::tests::brent_finds_a_cubic_root ... ok
+test solve::tests::brent_needs_a_bracket ... ok
+test solve::tests::lu_solves_and_refuses_a_singular_matrix ... ok
+test solve::tests::rk45_reproduces_an_exponential ... ok
+test stripper::tests::eq_i_01_balance_and_eq_i_08_reflux ... ok
+test tube_case_b::tests::feed_carries_the_scaled_carbon ... ok
+test tube_case_b::tests::helium_flow_scales_on_heat ... ok
+test tube_ht::tests::bed_coefficient_reruns_the_printed_sheet ... ok
+test tube_ht::tests::eq_d_27_overall_coefficient_reruns_the_printed_sheet ... ok
+test tube_ht::tests::eq_d_29_helium_film_coefficient_reruns_the_printed_sheet ... ok
+test tube_ht::tests::spheres_mix_less_than_cylinders ... ok
+test wgs::tests::bad_inputs_are_refused ... ok
+test wgs::tests::eq_e_03_extent_reaches_the_equilibrium_constant ... ok
+test wgs::tests::eq_e_04_ieaghg_outlet_sits_near_nine_tenths_of_equilibrium ... ok
+test wgs::tests::eq_e_09_rate_constant_returns_the_table_at_its_nodes ... ok
+test wgs::tests::eq_e_15_lts_sits_at_the_set_approach ... ok
+test xf::tests::a_feed_with_no_hydrogen_stays_finite ... ok
+test xf::tests::activity_scales_every_rate ... ok
+test xf::tests::eq_d_15_den_squared_matches_the_hand_value ... ok
+test xf::tests::eq_d_17_and_d_18_rates_vanish_at_equilibrium ... ok
+test wgs::tests::eq_e_07_hts_closes_and_a_huge_bed_reaches_equilibrium ... ok
+test wgs::tests::eq_e_10_a_sized_bed_stops_at_its_target ... ok
+test solvent::tests::aw_table_equals_direct_solves_on_nodes_and_between_them ... ok
+test solvent::tests::enthalpy_path_rises_with_temperature_and_falls_with_absorption ... ok
+test smr_tube::tests::eq_d_25_straight_tube_closes ... ok
+test solvent::tests::fresh_solvent_has_no_back_pressure_and_cold_states_are_counted ... ok
+test smr_tube::tests::eq_d_04_c2_plus_is_converted_at_constant_enthalpy ... ok
+test stripper::tests::eq_i_05_reboiler_temperature_rises_as_loading_falls ... ok
+test smr_tube::tests::bayonet_tube_closes_and_meets_at_the_tip ... ok
+
+test result: ok. 69 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.09s
+
+
+running 4 tests
+test eq_g_21_binary_is_a_vapour_at_low_pressure ... ok
+test eq_g_19_absorber_vapour_is_ideal_with_poynting ... ok
+test eq_g_21_phi_at_absorber_pressure ... ok
+test eq_g_33_solvent_reads_share_no_stale_state ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.68s
+
+
+running 8 tests
+test case5_reformer_enthalpy ... ok
+test wgs_case5_hts ... ok
+test flash_case5_condensate ... ok
+test case5_smr_eq_raw_syngas ... ok
+test gas_terms_are_reported ... ok
+test cooler_case5_duties ... ok
+test wgs_case5_lts ... ok
+test chain_sensitivities_are_reported ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.06s
+
+
+running 14 tests
+test smr_tube_tends_to_equilibrium ... ok
+test xf_guards ... ok
+test xf_table5_vs_table6 ... ok
+test jaeri_a4_holdout ... ok
+test exit_approach_on_a2_is_reported ... ok
+test jaeri_axial_shares_are_reported ... ok
+test jaeri_measured_u_sensitivity_is_reported ... ok
+test jaeri_a2_objective_profile_is_reported ... ok
+test jaeri_a3_holdout ... ok
+test jaeri_a2_fit ... ok
+test bench_rows_are_reported ... ok
+test jaeri_a5_holdout ... ok
+test jaeri_a2_fit_stops_at_the_upper_limit ... ok
+test case_b_tube_report ... ok
+
+test result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 21.58s
+
+
+running 17 tests
+test absorber_khan_table1 ... ok
+test column_gate_fails_on_any_gated_miss ... ok
+test stripper_dice ... ok
+test eq_i_03_stripper_closes_and_modes_agree ... ok
+test absorber_closes ... ok
+test eq_h_27_capture_counts_absorber_inlet_co2 ... ok
+test eq_h_26_repeat_run_is_identical ... ok
+test eq_h_24_grid_doubling_moves_capture_little ... ok
+test absorber_salvinder_85pct ... ok
+test stripper_kwak ... ok
+test absorber_case_b_spec ... ok
+test eq_a_08_capture_island_closes ... ok
+test absorber_sonderby_profiles ... ok
+test stripper_morgan ... ok
+test case_b_terms_are_reported ... ok
+test absorber_tan_trend ... ok
+test stripper_vinjarapu ... ok
+
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 13.59s
+
+
+running 7 tests
+test eq_d_13_gas_constants_are_exact_or_explained ... ok
+test eq_d_11_le_chatelier_on_smr_eq ... ok
+test eq_d_16_driving_forces_vanish_on_the_equilibrium_grid ... ok
+test eq_d_32_defaults_are_pinned ... ok
+test eq_d_21_long_bed_approach_is_set_by_thermodynamics ... ok
+test eq_a_05_hydrogen_ceiling_and_fractions ... ok
+test eq_d_28_tube_inlets_ends_and_bounds ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.58s
+
+
+running 1 test
+test ihx_bench::tests::eq_c_11_inl_and_httr_rows_run ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 9 tests
+test aronu_rows_are_present ... ok
+test shomate_spot_values ... ok
+test literature_rows_are_well_formed ... ok
+test lts_nist_row_is_reported ... ok
+test jaeri_rows_keep_their_limit ... ok
+test unit_rows_are_well_formed ... ok
+test fixtures_hold_only_read_values ... ok
+test ids_are_unique_across_groups ... ok
+test column_rows_and_fixtures has been running for over 60 seconds
+test column_rows_and_fixtures ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 63.86s
+
+
+running 7 tests
+test unit_modules_name_their_class ... ok
+test no_unit_mixes_concentration_with_pressure_basis_k ... ok
+test failed_rows_state_value_and_limit ... ok
+test no_published_text_claims_validated_status ... ok
+test wasm_crates_use_no_host_only_api ... ok
+test register_and_code_agree_or_the_gap_is_pinned ... ok
+test second_definitions_name_the_copy_they_sit_beside ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.10s
+
+
+running 12 tests
+test headline_cost_pair ... ok
+test carbon_closes_on_every_run ... ok
+test headline_entry_values ... ok
+test params_complete ... ok
+test eq_l_37_lac_dcf_against_l5 ... ok
+test sizing_walk ... ok
+test screening_21_checks ... ok
+test golden_ledger_grid ... ok
+test golden_balance_all_cases ... ok
+test golden_availability ... ok
+test every_plant_row_passes ... ok
+test export_byte_identical ... ok
+
+test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 16.45s
+
+
+running 19 tests
+test tests::case_a_kpis_match_the_case_a_mea_cells ... ok
+test tests::model_range_raises_a_flag_without_blocking ... ok
+test tests::ffi_round_trip_frames_the_reply ... ok
+test tests::registry_reply_carries_every_record_field ... ok
+test tests::default_solve_has_every_section_and_kpi ... ok
+test tests::rating_100_is_infeasible_and_no_case_is_met ... ok
+test tests::rust_refuses_out_of_range_and_unknown_input ... ok
+test tests::ten_oak_at_25_gas_reads_one_verdict ... ok
+test tests::every_pfd_unit_has_status_and_sections ... ok
+test tests::sweep_reply_parses_and_is_capped ... ok
+test tests::sweep_rows_carry_the_engine_verdicts ... ok
+test tests::island_duties_follow_the_design_point ... ok
+test tests::default_solve_matches_the_published_results ... ok
+test tests::energy_items_keep_the_need_and_the_rating_apart ... ok
+test tests::energy_items_match_the_export_rows ... ok
+test tests::grid_import_is_zero_wherever_the_rating_covers_the_need ... ok
+test tests::every_control_moves_a_kpi ... ok
+test tests::native_solve_time_is_recorded ... ok
+test tests::no_control_moves_the_h2_return_closure ... ok
+
+test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 6.54s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

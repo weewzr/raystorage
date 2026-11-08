@@ -1,0 +1,179 @@
+1 MMBtu/h = 0.29307 MW
+
+======== Vinjarapu 2024 Table D.19 statistics ========
+steady states parsed: 85 last id 85.0
+SRD all: min 3.455 median 3.942 max 5.632
+eps 85-95%: n=38 SRD min 3.46 median 3.75 max 4.82; alpha_lean 0.123-0.248; alpha_rich 0.479-0.545; wtMEA lean 24.5-30.9
+eps 88-92%: n=16 SRD min 3.46 median 3.75 max 4.82; alpha_lean 0.123-0.248; alpha_rich 0.479-0.542; wtMEA lean 27.5-30.9
+eps 89-91%: n=3 SRD min 3.77 median 3.90 max 4.82; alpha_lean 0.123-0.218; alpha_rich 0.515-0.523; wtMEA lean 27.5-28.7
+alpha_rich all: 0.456 to 0.545; alpha_lean all: 0.112 to 0.277
+three lowest SRD: [(3.4549, 7.0, 97.2223), (3.4616, 59.0, 88.773), (3.4617, 57.0, 92.1099), (3.4799, 60.0, 94.0837)]
+RD 18.3 kW loss 2.9 kW -> 15.8% of gross; gross/net 1.188
+RD 16.3 kW loss 2.8 kW -> 17.2% of gross; gross/net 1.207
+RD 22.3 kW loss 2.9 kW -> 13.0% of gross; gross/net 1.149
+gross SRD at 3.46: 4.11, at 3.67: 4.36
+
+======== Morgan 2018 NCCC SI Tables S1-S3: own SRD ========
+cases 23 23 23
+case al ar w gas% liq% Q Tout Ps SRDgas SRDliq
+K1  0.145 0.384 0.298  99.91  89.45  431  120.2  183.9  4.13  4.61
+K2  0.247 0.385 0.312  99.49  93.26  430  117.4  182.1  4.20  4.48
+K3  0.091 0.475 0.295  83.57  72.90  427  122.2  184.4  5.33  6.11
+K4  0.083 0.470 0.310  78.10  70.86  427  122.5  184.2  5.29  5.83
+K5  0.108 0.295 0.306  99.53  90.69  673  121.7  183.4  8.08  8.87
+K6  0.347 0.469 0.307  59.03  58.89  173  110.2  179.9  3.53  3.53
+K7  0.399 0.471 0.288  54.76  57.50  170  103.8  184.4  3.72  3.54
+K8  0.154 0.275 0.285  98.07  93.92  677  120.3  183.4  8.24  8.60
+K9  0.239 0.474 0.311  55.48  52.30  166  117.7  182.8  3.57  3.79
+K10 0.062 0.477 0.297  98.43  89.69  671  124.0  182.7  8.15  8.94
+K11 0.161 0.378 0.293  99.75  91.63  425  119.9  182.7  4.69  5.11
+K12 0.160 0.341 0.293  99.61  92.47  422  120.6  183.8  5.63  6.07
+K13 0.164 0.360 0.303  97.98  89.84  419  120.7  183.2  5.02  5.48
+K14 0.224 0.420 0.303  98.27  92.89  420  119.3  184.0  4.02  4.25
+K15 0.224 0.413 0.313  99.42  91.72  420  119.3  182.0  3.93  4.26
+K16 0.124 0.476 0.329  93.54  84.74  419  122.9  181.9  4.11  4.54
+K17 0.168 0.354 0.307  97.61  88.92  418  120.5  181.9  5.11  5.61
+K18 0.141 0.349 0.302  92.85  85.72  425  120.4  184.1  4.88  5.29
+K19 0.184 0.276 0.278  98.21  93.18  427  118.0  183.8  6.80  7.17
+K20 0.075 0.393 0.276  95.55  89.92  438  120.4  183.6  7.81  8.30
+K21 0.074 0.385 0.271  96.32  90.05  437  120.4  184.4  8.05  8.61
+K22 0.130 0.291 0.281  99.49  94.58  427  119.2  183.1  7.06  7.43
+K23 0.138 0.283 0.281  99.58  92.61  427  119.3  181.8  7.36  7.92
+SRD(gas side) min 3.53 median 5.11 max 8.24
+capture 85-95 gas side: [('K16', 4.11, 4.54), ('K18', 4.88, 5.29)]
+stripper Ps 179.9-184.4 kPa, Tout 103.8-124.0 C
+
+======== DICE (Nexant/Bechtel 2020) stream table Fig 5-2, E-104, Table 5-3 ========
+alpha rich 0.400 lean 0.160 delta 0.240
+CO2 product t/h 70.21 (from lbmol) ; 154793 lb/h = 70.21 t/h
+reboiler 242 MMBtu/h = 70.9 MW; SRD 3.64 GJ/t
+steam 263.3 klb/h -> implied hfg 919 Btu/lb
+capture 90.0%; feed yCO2 10.24 mol%
+L/G mass (lean/flue) 2.74 ; molar 3.49; lean t/h 1400; t solvent/t CO2 19.9
+condenser 64.4 -> 0.97 GJ/t; H2O/CO2 overhead 0.905
+T rich 58.9 C, T lean 123.2 C, P lean 1.945 bar, OVHD 96.6 C 1.886 bar
+steam 60 psia = 4.14 bar
+
+======== IEAGHG 2017-02 Case 1A and Case 3 ========
+absorber CO2 in 1073.6 out 14.4 kmol/h, removal 98.66%
+CO2 to pipeline 1058.8 kmol/h, plant-level absorber recovery 98.62%
+syngas carbon: CO2 1073.6 CO 305.5 CH4 201.3 -> CO2 share 67.9%
+H2 feed 4989 kmol/h; flash H2 2.36; CO2 stream H2 0.44; loss 0.056%
+CH4 feed 201.3; flash 0.165; CO2 stream 0.110; loss 0.137%
+CO feed 305.5; flash 0.130; loss 0.042%
+CH4 check on stream 13: 0.0363 x n13 = 201.0 vs feed 201.3 (table prints it in the oxygen row)
+pCO2 feed 2.60 MPa x 0.1627 = 4.230 bar; product pCO2 0.0671 bar
+Case 1A steam 64530 kg/h, heat 141.3 GJ/h = 39.2 MW, SRD 3.03 GJ/t
+Case 3 steam 97475 kg/h, heat 213.4 GJ/h = 59.3 MW, SRD 2.67 GJ/t
+Case 1A W/Qcond = 0.169
+overall capture 1A 55.7%
+Case 3 flue yCO2 0.1897; 0.0190 MPa? pressure printed 0.02 MPa(g) assumed
+
+======== INL TEV-961 Case 5 syngas chain (A-53, A-56, A-57) ========
+EX1 66.7 MMBtu/h = 19.5 MW
+EX2 24.2 MMBtu/h = 7.1 MW
+EX3 65.7 MMBtu/h = 19.3 MW
+EX4 117.1 MMBtu/h = 34.3 MW
+KO 19.7 MMBtu/h = 5.8 MW
+sum 293.40000000000003 = 86.0 MW
+SG2 764 F = 406.7 C
+SG3 480 F = 248.9 C
+SG4 375 F = 190.6 C
+SG5 415 F = 212.8 C
+SG6 300 F = 148.9 C
+SG7 158 F = 70.0 C
+SG8 104 F = 40.0 C
+SG1 436 psi = 30.06 bar
+SG8 389 psi = 26.82 bar
+Selexol steam 71874 lb/h, 65.0 MMBtu/h = 19.05 MW
+CO2 product 74.6 t/h; Selexol SRD 0.920 GJ/t
+LP gen 95.2 = 27.9 MW; LP users 121.7 = 35.7 MW; HW users 43.0 = 12.6; cooler 74.1 = 21.7
+HP export Case5 54.3 = 15.9 MW; Case6 83.7 = 24.5 MW
+LP steam 75 psi = 5.17 bar, 307 F = 152.8 C
+shifted wet mol%: {'H2': 57.25, 'CO': 0.25, 'CO2': 13.25, 'N2': 0.7, 'H2O': 24.95, 'CH4': 3.6}
+dry CO2 17.66%, CH4 4.80%, CO 0.33%, H2 76.28%
+mean MW 12.32, total 12872 kmol/h, CO2 1706 kmol/h = 75.1 t/h, H2O 57.9 t/h (KO liquid 57.4 t/h)
+carbon share CO2 77.5% CH4 21.1% CO 1.4%
+pCO2 at 26.8 bar dry feed 4.74 bar
+dew point approx: psat=6.71 bar
+dew point 163.6 C
+check EX3 213->149: 14.7 MW (flowsheet 19.3)
+check EX4 149->70: 29.2 MW (flowsheet 34.3)
+check KO 70->40: 5.6 MW (flowsheet 5.8)
+EX4 scale factor for own curve 1.176
+T=145: EX4 part 3.1 MW; after-LTS total 22.4 MW; whole chain from 405 C 49.0 MW
+T=140: EX4 part 6.7 MW; after-LTS total 26.0 MW; whole chain from 405 C 52.6 MW
+T=135: EX4 part 9.9 MW; after-LTS total 29.2 MW; whole chain from 405 C 55.8 MW
+T=130: EX4 part 12.7 MW; after-LTS total 32.0 MW; whole chain from 405 C 58.6 MW
+T=125: EX4 part 15.4 MW; after-LTS total 34.7 MW; whole chain from 405 C 61.3 MW
+T=120: EX4 part 17.8 MW; after-LTS total 37.1 MW; whole chain from 405 C 63.7 MW
+band 130->110 C: 9.3 MW; 135->110 C: 12.2 MW; 125->105: n/a
+
+======== Reboiler demand against supply ========
+Case 6 absorber CO2 if 99% per pass: 1671.8 kmol/h
+2069 stpd = 1777.0 kmol/h ; 1927 = 72.8 t/h
+spec 1599 kmol/h m=70.4 t/h {3.0: 58.7, 3.4: 66.5, 3.46: 67.7, 3.64: 71.2, 3.8: 74.3, 4.0: 78.2, 4.2: 82.1, 4.5: 88.0}
+Case 6 at 90% of 1672 m=66.2 t/h {3.0: 55.2, 3.4: 62.5, 3.46: 63.7, 3.64: 67.0, 3.8: 69.9, 4.0: 73.6, 4.2: 77.3, 4.5: 82.8}
+Case 6 captured 1927 stpd m=72.8 t/h {3.0: 60.7, 3.4: 68.8, 3.46: 70.0, 3.64: 73.6, 3.8: 76.9, 4.0: 80.9, 4.2: 85.0, 4.5: 91.0}
+SRD 3.4: Q 66.5 MW; above Selexol 47.4; after Case 6 export 22.9
+SRD 3.8: Q 74.3 MW; above Selexol 55.3; after Case 6 export 30.7
+SRD 4.2: Q 82.1 MW; above Selexol 63.1; after Case 6 export 38.6
+Budget check 206.0 = 176.8 + 11.6/0.397 = 206.0
+margin 210-206.0 = 4.0 MWth
+W/Q=0.169 SRD 3.4: cogen heat 68.6 MW, extra direct 0.0 MW, reactor 257.0 MWth
+W/Q=0.169 SRD 3.8: cogen heat 68.6 MW, extra direct 0.0 MW, reactor 257.0 MWth
+W/Q=0.169 SRD 4.2: cogen heat 68.6 MW, extra direct 0.0 MW, reactor 257.0 MWth
+W/Q=0.300 SRD 3.4: cogen heat 38.7 MW, extra direct 0.0 MW, reactor 227.1 MWth
+W/Q=0.300 SRD 3.8: cogen heat 38.7 MW, extra direct 0.0 MW, reactor 227.1 MWth
+W/Q=0.300 SRD 4.2: cogen heat 38.7 MW, extra direct 0.0 MW, reactor 227.1 MWth
+
+======== Solvent flow, L/G, pump ========
+rich 0.45 lean 0.25: 23.1 t/t, 1628 t/h, L/G mass on 105.6 t/h 15.4
+rich 0.50 lean 0.25: 18.5 t/t, 1303 t/h, L/G mass on 105.6 t/h 12.3
+rich 0.50 lean 0.30: 23.1 t/t, 1628 t/h, L/G mass on 105.6 t/h 15.4
+rich 0.55 lean 0.25: 15.4 t/t, 1086 t/h, L/G mass on 105.6 t/h 10.3
+rich 0.40 lean 0.16: 19.3 t/t, 1357 t/h, L/G mass on 105.6 t/h 12.9
+F 1300 t/h at 21 bar: 0.344 m3/s, pump 0.89 MW (eta 0.75)
+F 1300 t/h at 27 bar: 0.344 m3/s, pump 1.17 MW (eta 0.75)
+F 1400 t/h at 21 bar: 0.370 m3/s, pump 0.96 MW (eta 0.75)
+F 1400 t/h at 27 bar: 0.370 m3/s, pump 1.26 MW (eta 0.75)
+F 1600 t/h at 21 bar: 0.423 m3/s, pump 1.10 MW (eta 0.75)
+F 1600 t/h at 27 bar: 0.423 m3/s, pump 1.44 MW (eta 0.75)
+gas rho 11.01 kg/m3 at 26.8 bar 40 C, Q 2.66 m3/s
+F 1.0 Pa^0.5: u 0.301 m/s, area 8.8 m2, D 3.36 m, liquid load at 1400 t/h 151 m3/m2/h
+F 1.5 Pa^0.5: u 0.452 m/s, area 5.9 m2, D 2.74 m, liquid load at 1400 t/h 226 m3/m2/h
+F 2.0 Pa^0.5: u 0.603 m/s, area 4.4 m2, D 2.37 m, liquid load at 1400 t/h 302 m3/m2/h
+liquid load 40 m3/m2/h: area 33.3 m2, D 6.51 m
+liquid load 60 m3/m2/h: area 22.2 m2, D 5.32 m
+liquid load 100 m3/m2/h: area 13.3 m2, D 4.12 m
+
+======== UTP absorber closure checks ========
+P 20: CO2 feed 1.096 mol/min, MEA 3.37 mol/min, MEA/CO2 3.08; Table 9 alpha 0.056 implies removal 17%; 95% removal needs alpha 0.309
+P 30: CO2 feed 1.110 mol/min, MEA 3.27 mol/min, MEA/CO2 2.95; Table 9 alpha 0.085 implies removal 25%; 95% removal needs alpha 0.322
+P 40: CO2 feed 1.110 mol/min, MEA 3.37 mol/min, MEA/CO2 3.04; Table 9 alpha 0.117 implies removal 36%; 95% removal needs alpha 0.313
+P 50: CO2 feed 1.112 mol/min, MEA 3.27 mol/min, MEA/CO2 2.95; Table 9 alpha 0.159 implies removal 47%; 95% removal needs alpha 0.323
+P 60: CO2 feed 1.111 mol/min, MEA 3.27 mol/min, MEA/CO2 2.95; Table 9 alpha 0.196 implies removal 58%; 95% removal needs alpha 0.322
+Halim 5 MPa            pCO2 10.00 bar
+Isa 20 bar             pCO2 10.00 bar
+Isa 60 bar             pCO2 30.00 bar
+Tan 1 MPa              pCO2 5.00 bar
+Tan 5 MPa              pCO2 25.00 bar
+Salvinder 10 bar       pCO2 5.25 bar
+Project INL Case 5     pCO2 4.74 bar
+Project amine_spec     pCO2 3.78 bar
+IEAGHG Case 1A         pCO2 4.23 bar
+
+======== Instantaneous enhancement limit, screening ========
+12.5 vol% flue 1.05 bar pCO2 0.131 bar: C_i 3.3 mol/m3, E_inf 458.1 (assumes unconverted MEA 5000 mol/m3, D ratio 0.6, b=2)
+syngas 4.75 bar pCO2 4.750 bar: C_i 118.8 mol/m3, E_inf 13.6 (assumes unconverted MEA 5000 mol/m3, D ratio 0.6, b=2)
+Mongstad 3.5 vol% pCO2 0.035 bar: C_i 0.9 mol/m3, E_inf 1715.3 (assumes unconverted MEA 5000 mol/m3, D ratio 0.6, b=2)
+
+======== Capture definition ========
+amine_spec CO2 share 18/(18+2+4) overall syngas carbon capture 67.5%; captured 274668; residual 132248; net 493519 t/y; reduction 78.9%
+INL Case 5 share overall syngas carbon capture 69.8%; captured 283824; residual 123092; net 502675 t/y; reduction 80.3%
+IEAGHG share overall syngas carbon capture 60.8%; captured 247201; residual 159715; net 466052 t/y; reduction 74.5%
+deck: residual 40692, net 585075 reduction 93.5%
+spec carbon: 1777+395+197 = 2369 kmol/h; 1599/that = 67.5%; ratio to 2069 stpd = 1.333
+INL overall Case 6 93.1%, Case 5 94.0%, Case 1 71.5%
+Treated gas CO2 at 90%: spec 2.15 mol%, pCO2 at 26.8 bar 57.6 kPa, at 21 bar 45.1 kPa
+Mongstad 5 mbar = 0.5 kPa; Vinjarapu 90% of 12.5 vol% at 1.1 bar: 1.52 kPa

@@ -1,0 +1,103 @@
+% One block for every row of the seed table. Numbers that the plant calculates are macros.
+\section{Variables}\label{sec:variables}
+Each block below expands one row of the seed table: what the quantity means, its typical value, its units, the job it does in the model and the caveat that goes with it. Symbols that appear in a single card are defined on that card and listed in the Reference Frame table.
+
+\subsection*{Plant scale and product}
+
+\VarBlock{Scale factor}{$s$}{Ratio of the Case B hydrogen mass flow to the INL Case A hydrogen mass flow.}{\vScaleB{} at Case B and \vScaleA{} at Case A.}{Dimensionless.}{Scales INL stream data and flowsheet duties to the headline plant size.}{Linear scaling assumes the INL flowsheet keeps its ratios at the smaller size. Every scaled row says so on its card.}
+
+\VarBlock{Hydrogen product rate}{$\dot m_{H_2}$}{Hydrogen leaving the external PSA boundary.}{\vMdotHtwoB{} at Case B and \vMdotHtwoA{} at Case A.}{\U{kg\ s^{-1}}.}{Sets the size of every downstream ledger.}{Stated at the external PSA boundary, because the PSA is outside the simulated plant.}
+
+\VarBlock{Annual hydrogen}{$M_{H_2}$}{Hydrogen sold in a year at the assumed availability.}{\vMHtwoB{} at Case B and \vMHtwoA{} at Case A.}{\U{t\ y^{-1}}.}{Denominator of intensity and cost per kilogram.}{Hydrogen runs only in the availability hours. Backup firing is a sensitivity, so these tonnes carry no firing emissions.}
+
+\VarBlock{Availability}{$f_{av}$}{Fraction of the year at rated output.}{0.85, with a range of 0.65 to 0.90.}{Dimensionless.}{Converts rates to annual totals through $t_h$.}{Assumed. Published studies assume 90 to 92\%, and no measured HTGR availability was found.}
+
+\VarBlock{Annual hours}{$t_h$}{Operating hours in a year, $8760f_{av}$.}{\vHours.}{\U{h\ y^{-1}}.}{Links hourly flows to annual ledgers.}{Moves one for one with $f_{av}$.}
+
+\VarBlock{Natural gas rate}{$\dot V_{NG}$}{Natural gas drawn across the plant boundary.}{\vNGB{} at Case B and \vNGA{} at Case A.}{\U{MMSCFD}, with \U{1\ MMSCFD = 13.83\ mol\ s^{-1}} at \U{60\ ^{\circ}F}.}{Sets feed carbon and the gas bill.}{The Case A value rests on the INL recycle of tail gas. Without recycle the demand rises.}
+
+\subsection*{Reactor and helium loops}
+
+\VarBlock{Selected rating}{$\dot Q_{rated}$}{Reactor thermal rating chosen for the plant.}{\cQrated{} at Case B. Case A has no selected rating.}{\U{MW_{th}}.}{Sets reactor capital in the cost ladder.}{A project choice. The rating earns no revenue above what the plant draws.}
+
+\VarBlock{Reactor heat required}{$\dot Q_R$}{Thermal power the plant actually draws from the core, from \Eq{B.20}.}{\vQRB{} at Case B and \vQRA{} at Case A.}{\U{MW_{th}}.}{Closes the nuclear island balance.}{Depends on $\eta_{pc}$, whose net or gross status is open.}
+
+\VarBlock{Spare margin}{$\dot Q_{spare}$}{Rating less requirement, \Eq{B.21}.}{\vSpareB{} at Case B. At Case A the value is \vSpareA, so \cQrated{} \U{MW_{th}} cannot carry that plant.}{\U{MW_{th}}.}{Shows how much of the rating sits idle.}{Credited with no revenue.}
+
+\VarBlock{Reactor outlet temperature}{$T_{ROT}$}{Helium temperature leaving the core.}{1198.15 (925 C).}{\U{K}.}{Top of the temperature cascade in \Eq{C.17}.}{Taken from the INL Case 6 basis. No HTGR has run a long campaign at this value with a process heat load.}
+
+\VarBlock{Secondary supply temperature}{$T_{s,sup}$}{Secondary helium leaving the IHX for the reformer.}{1173.15 (900 C).}{\U{K}.}{Hot end of the reformer heat source.}{Assumes a \U{25\ K} IHX approach and no duct drop.}
+
+\VarBlock{Secondary return temperature}{$T_{s,ret}$}{Secondary helium returning to the IHX.}{739.15 (466 C).}{\U{K}.}{Sets the secondary flow through \Eq{B.8}.}{Published for INL Case 6 at its own preheat train. A different train moves it.}
+
+\VarBlock{Reformer exit temperature}{$T_{ref,out}$}{Process gas temperature at the catalyst exit.}{1144.15 (871 C).}{\U{K}.}{Sets methane conversion through \Eq{D.11}.}{An INL Gibbs result with no tube model behind it. Sensitivities at 825 and 800 C are carried.}
+
+\VarBlock{Secondary helium flow}{$\dot m_s$}{Mass flow in the intermediate loop.}{\vMsB{} at Case B on process heat alone, \vMscB{} with the slip heat, and \vMsA{} published at Case A.}{\U{kg\ s^{-1}}.}{Sets the secondary circulator and IHX.}{Published by INL at Case A only.}
+
+\VarBlock{Primary helium flow}{$\dot m_p$}{Mass flow through the core at $\dot Q_R$.}{\vMpB{} at Case B and \vMpAr{} at Case A.}{\U{kg\ s^{-1}}.}{Sets the primary circulator and core rise.}{Calculated. INL publishes no primary flow.}
+
+\VarBlock{Process heat}{$\dot Q_{proc}$}{Heat handed to the process by secondary helium.}{\vQprocB{} at Case B and \vQprocA{} at Case A.}{\U{MW_{th}}.}{Largest term in the reactor balance.}{Ahn and Lee print \U{143.4\ MW_{th}} on a comparable duty, so this basis has a stated upper case.}
+
+\VarBlock{Slip recycle heat}{$\dot Q_{rec}$}{Sensible heat to bring recycled CO$_2$ slip back to reformer conditions.}{\vQrecB{} at Case B and \vQrecA{} at Case A.}{\U{MW_{th}}.}{Added to the secondary helium load.}{Calculated. INL has no equivalent stream because Selexol slip differs.}
+
+\VarBlock{Circulator shaft powers}{$\dot W_s$, $\dot W_p$}{Shaft work into the secondary and primary helium.}{\vWsB{} and \vWpB{} at Case B.}{\U{MW}.}{Heat the gas and draw electricity through \Eq{B.12}.}{No measured circulator power exists in the library.}
+
+\VarBlock{Heat losses}{$\dot Q_{ves}$, $\dot Q_{ihx}$, $\dot Q_{duct}$}{Loss from the reactor vessel, the IHX and the hot duct.}{\vQvesB, \vQihxB{} and \vQductB{} at Case B.}{\U{MW}.}{Raise $\dot Q_R$ in \Eq{B.20}.}{Each one rests on a single small anchor. The table prints the screening duct value and \Eq{B.14} scales it differently.}
+
+\VarBlock{Power conversion efficiency}{$\eta_{pc}$}{Electricity per unit of heat in the power branch.}{0.397, with 0.475 as an alternative.}{Dimensionless.}{Turns electricity demand into reactor heat through \Eq{B.19}.}{Interpolated by INL from TEV-981, which is not in the library, so the net or gross status of the value is unresolved.}
+
+\VarBlock{Work ratio}{$r_w$}{Electricity from back-pressure work per unit of heat extracted for the reboiler.}{0.169, with 0.30 as a high case.}{\U{MW_e\ MW_{th}^{-1}}.}{Lets extraction steam make power on its way to the reboiler.}{Calculated from one IEAGHG case.}
+
+\subsection*{Heat recovery and electricity}
+
+\VarBlock{Reboiler duty}{$\dot Q_{reb}$}{Heat to regenerate the MEA solvent, $SRD$ times captured CO$_2$.}{\vQrebB{} at Case B and \vQrebA{} at Case A.}{\U{MW}.}{Largest heat load after reforming.}{Inherits the uncertainty of $SRD$.}
+
+\VarBlock{Plant steam credit}{$\dot Q_{stack}$}{Heat recovered from the plant in the approved order for the reboiler.}{\vQstackB{} at Case B and \vQstackA{} at Case A.}{\U{MW}.}{Reduces what the reactor must supply.}{The whole stack is used at central cases. Order matters only when the reboiler is smaller than the stack.}
+
+\VarBlock{Reboiler gap}{$\dot Q_{gap}$}{Reboiler duty that the plant steam cannot cover.}{\vQgapB{} at Case B and \vQgapA{} at Case A.}{\U{MW}.}{Passed to the reactor through \Eq{B.19}.}{Falls to zero at low $SRD$ when freed steam is counted.}
+
+\VarBlock{Electricity}{$E_{proc}$, $E_{tot}$}{Process electricity, and the total with circulators.}{\vEprocB{} and \vEtotB{} at Case B.}{\U{MW_e}.}{Feed the power branch.}{Row splits inherit INL scaling and the restored fuel-gas recycle line.}
+
+\subsection*{Capture}
+
+\VarBlock{Per-pass capture}{$\eta_{pp}$}{CO$_2$ removed per pass through the absorber.}{0.90.}{Dimensionless.}{Fixed target for the absorber.}{Assumed. The rate-based absorber tests it.}
+
+\VarBlock{Plant capture}{$\eta_{pl}$}{Captured carbon over feed carbon.}{\vEtaPl.}{Dimensionless.}{Reports capture on the whole plant, including recycle.}{Its closeness to $\eta_{pp}$ is a numerical result of this plant and is no general rule.}
+
+\VarBlock{Carbon split}{$\phi_c$}{Share of tube carbon that reaches the absorber as CO$_2$ after shift.}{\vPhiC.}{Dimensionless.}{Sets CO$_2$ to capture.}{Follows from the INL anchors, so a different shift train changes it.}
+
+\VarBlock{Recycle fraction}{$f_r$}{Share of tail-gas carbon returned to the reformer.}{\vFr.}{Dimensionless.}{Sets gas demand and residual emissions.}{Held from INL, whose PSA and cryogenic block is outside this model.}
+
+\VarBlock{Specific reboiler duty}{$SRD$}{Reboiler heat per tonne of CO$_2$.}{3.8, with a range of 3.4 to 4.2.}{\U{GJ\ t^{-1}}.}{Sets $\dot Q_{reb}$.}{A judgement from flue gas pilots. No syngas measurement exists, and the direction of any bias is unknown.}
+
+\VarBlock{Solvent loadings}{$\alpha_{rich}$, $\alpha_{lean}$}{Moles of CO$_2$ per mole of MEA in rich and lean solvent.}{0.50 and 0.25.}{\U{mol\ mol^{-1}}.}{Set the solvent rate.}{Rich loading is capped at 0.50 because kinetics and properties stop there.}
+
+\VarBlock{Captured CO$_2$}{$\dot m_{CO_2}$}{CO$_2$ leaving the stripper.}{\vMcotwoB{} at Case B and \vMcotwoA{} at Case A.}{\U{t\ h^{-1}}.}{Scales the reboiler, compression and storage.}{Follows $\phi_c$ and $\eta_{pp}$.}
+
+\VarBlock{Lean solvent rate}{$\dot m_{solv}$}{Lean solvent circulated to the absorber.}{\vMsolvB{} at Case B and \vMsolvA{} at Case A.}{\U{t\ h^{-1}}.}{Sets pumps and column size.}{Depends on the assumed loading swing.}
+
+\VarBlock{Absorber conditions}{$p_{abs}$, $T_{abs}$}{Absorber pressure and temperature.}{26.8 bar and 313.15 K.}{\U{Pa}, \U{K}.}{Fix the driving force.}{Taken from INL Case 5 for Selexol, then held for MEA.}
+
+\subsection*{Emissions}
+
+\VarBlock{Baseline intensity}{$e_{base}$}{Direct CO$_2$ per kilogram of hydrogen from an unabated SMR.}{\vEbaseInt, with a range of 9.00 to 9.35.}{\U{kg\ kg^{-1}}.}{Reference for abatement.}{The bounds come from the Cho and IEAGHG studies.}
+
+\VarBlock{Baseline CO$_2$}{$E_{base}$}{Annual CO$_2$ from the unabated SMR at the same output.}{\vEbaseB{} at Case B and \vEbaseA{} at Case A.}{\U{t\ y^{-1}}.}{Reference term in abatement.}{Direct emissions only.}
+
+\VarBlock{Residual CO$_2$}{$E_{atm}$}{CO$_2$ reaching the atmosphere from the plant.}{\vEatmB{} at Case B and \vEatmA{} at Case A.}{\U{t\ y^{-1}}.}{Second term in abatement.}{Excludes lifecycle emissions, which are a sensitivity.}
+
+\VarBlock{Direct abatement}{$\mathcal A$}{Baseline less residual.}{\vAbateB{} at Case B and \vAbateA{} at Case A.}{\U{t\ y^{-1}}.}{Denominator of abatement cost.}{Direct, at the atmosphere boundary.}
+
+\subsection*{Economics}
+
+\VarBlock{Discount rate}{$i$}{Real rate used for annuities and the cash flow.}{0.08, with 0.05 and 0.10.}{Dimensionless.}{Annualises capital.}{Taken from the IEAGHG 2017-02 basis.}
+
+\VarBlock{Life}{$t_\ell$}{Reactor life.}{25 and 60.}{\U{y}.}{Sets annuity length and the printed pair of results.}{Items with shorter lives are replaced in the cash flow.}
+
+\VarBlock{Size exponent}{$n_s$}{Exponent of reactor cost on rating.}{1.0, with 0.6 and 0.31 at equal prominence.}{Dimensionless.}{Scales the INL reactor cost to \cQrated{} \U{MW_{th}}.}{0.6 is a team assumption, and 0.31 is a ratio of two FOAK estimates, so it is a weak adverse bound.}
+
+\VarBlock{Overnight capital cost}{$c_{kWt}$}{Reactor overnight cost per kilowatt thermal with no turbine.}{2{,}184.}{\U{US\$_{2019}\ kWt^{-1}}.}{Base of reactor capital.}{Calculated from published INL cost tables.}
+
+\VarBlock{Gas and storage prices}{$p_{gas}$, $p_{TS}$}{Delivered gas price, and the transport and storage tariff.}{15 and 60.}{\U{S\$\ GJ^{-1}}, \U{S\$\ t^{-1}}.}{Main operating cost and credit.}{Gas runs from 10 to 20. The tariff runs from 23.2 to 112.}
+
+\VarBlock{Abatement cost}{$AC$}{Incremental annual cost over direct abatement, at ladder step L3.}{\vACTwentyFive{} at 25 y and \vACSixty{} at 60 y, on the BOAK basis with $n_s=1$ at \cQrated{} \U{MW_{th}}.}{\U{S\$\ t^{-1}}.}{A named step in the cost ladder.}{The headline is the rebuilt full cost, which includes every plant cost. Sections K and L state it.}

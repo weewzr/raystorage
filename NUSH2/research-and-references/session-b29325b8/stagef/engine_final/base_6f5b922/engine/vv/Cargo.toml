@@ -1,0 +1,14 @@
+[package]
+name = "nush2_vv"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+nush2_numerics = { path = "../numerics" }
+nush2_props = { path = "../props" }
+nush2_mea = { path = "../mea" }
+nush2_units = { path = "../units" }
+nush2_plant = { path = "../plant" }
+serde_json.workspace = true

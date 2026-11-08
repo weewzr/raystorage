@@ -1,0 +1,20 @@
+Refreshing run status every 30 seconds. Press Ctrl+C to quit.
+
+* main site · 42156650626
+Triggered via push about 1 minute ago
+
+JOBS
+* build (ID 127692286635)
+  ✓ Set up job
+  ✓ Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+  ✓ Toolchain from rust-toolchain.toml
+  * Test
+  * Compile WebAssembly
+  * Regenerate and compare results
+  * Build site
+  * Content guard
+  * Browser self test
+  * Browser self test under reduced motion
+  * Upload Pages artifact
+  * Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+failed to get run: Get "https://api.github.com/repos/weewzr/NUSH2/actions/runs/42156650626?exclude_pull_requests=true": read tcp 10.249.100.179:61929->20.205.243.168:443: wsarecv: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond.

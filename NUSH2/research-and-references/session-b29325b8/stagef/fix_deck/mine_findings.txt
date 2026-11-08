@@ -1,0 +1,66 @@
+Traceback (most recent call last):
+  File "<string>", line 9, in <module>
+  File "C:\Users\Alf\AppData\Local\Programs\Python\Python310\lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2248' in position 168: character maps to <undefined>
+===== F00 verify:numbers major | Deck cost headline and README use gas at S$20.7/GJ without saying it is above the tested and evidence range
+EVIDENCE: The deck PDF text (pymupdf extract, SP/stagef/verify_numbers/txt/deck.txt) shows slide 41 '...target met ... with gas at S$20.7/GJ' and 'S$20.7/GJ Gas price that meets the target' with no range caveat, and slides 42, 43 and 46 and notes n41/n42/n46 are the same. The same deck shows slide 34 'Gas 10 15 20 S$/GJ' (low, central, high) and slide 40 'Tested range ... To 20'. Final_Design_Basis.csv:106-107 has GAS_CENTRAL low 10 / high 20 and GAS_HIGH 20 ('Author sensitivity value'). The site, run in a browser on a scratch build at 10dac7b with MATURE_60Y selected, prints the engine flag 'Natural gas price at 20.7 S$/GJ lies outside the evidence range 10 to 20 S$/GJ'. The report p16 discloses it ('at S$20/GJ, the top of the tested range, the scenario sits at S$99.6/tCO2e'). README.md:42 does not.
+FIX: Add one line on slide 41, in notes n41 and in README.md:42, filled from tokens GAS_HIGH, MATURE_60Y_L5_AT_20 and MATURE_60Y_DCF_AT_20. Suggested wording: 'S$20.7/GJ lies above the S$10 to S$20/GJ range tested; at S$20/GJ the scenario gives S$99.6/t on L5 and S$99.9/t by DCF.'
+AREA: deck
+===== F01 verify:numbers major | Slide 44 validation summary overstates the independent evidence and leaves out 42 not-run and 251 reported checks
+EVIDENCE: Slide 44 and notes n44 say: '360 of 650 checks are independent of the source data. 325 rows pass and 32 fail ... 9 results rows did not run.' A crosstab of results/Validation_Results.csv by data_use and status gives: independent 92 pass, 18 fail, 219 reported, 31 not_run; same_dataset_disclosed 231 pass; status totals pass 325, reported 251, not_run 42, fail 32. The '9' is numbers.json status_rows.not_run, which counts non-validation results rows. README.md:127 and report p30 print the full split (42 not run, and only 92 passes on independent data). So the slide implies the independent checks broadly pass and that only 9 checks did not run.
+FIX: Print '325 pass (92 on independent data), 32 fail, 251 reported without a limit, 42 not run' from VAL_N_* tokens. Add a VAL_N_INDEPENDENT_PASS token in scripts/build_numbers.py (owner: engine:final) so the 92 comes from numbers.json.
+AREA: deck
+===== F02 verify:numbers minor | Slide 15 sizing walk ends at 179.0 while its title and headline say 178.5 MWth
+EVIDENCE: In the rendered slide 15 (png at SP/stagef/verify_numbers/png/deck_15.png), the title reads 'The walk to 178.5 MWth', the last bar 'Reboiler gap' reads 179.0 and the large number reads 178.5. Notes n15 say 'MEA's reboiler gap takes the need to 178.5'. Validation_Results.csv:397 has SIZING_WALK_STEP_6 at 179.039591 (anchored freeze golden). Final_Design_Basis.csv:412 has RES_REACTOR_NEEDED_MWTH at 178.493864 (gated_T05). The 0.5 MWth T05 step is never shown.
+FIX: Add a final bar for the Headline preset step (T05 syngas heat on its model, 179.0 to 178.5, from DRIFT_ANCHORED_R_MWTH and DRIFT_HEADLINE_R_MWTH), or label the walk as the anchored preset.
+AREA: deck
+===== F03 verify:numbers minor | Slide 33 says the largest gap between the methods is 0.2%; over all DCF points it is 0.47%
+EVIDENCE: Slide 33 reads '0.2% largest gap between the methods' and notes n33 'They differ by at most 0.2 percent.' The LAC_L5_GAP_REL rows in results/Economic_Ledger.csv give a maximum of 0.004701 over 72 points (B_REC_F 10OAK_P46, 40 y, n 1.0, 178.49) and 0.004201 at 210 MWth. On the 12-point BOAK/FOAK 25/60 y grid the maximum is 0.002039. docs/FINAL_DESIGN_DECISIONS.md:28 itself states 0.47% over all 72 points.
+FIX: Qualify the slide and the note as 'on the headline grid', or print the 0.47% maximum alongside it.
+AREA: deck
+===== F04 verify:numbers minor | Deck calls MATURE_60Y a '10th-of-a-kind plant' without naming the learning route; the other published route misses the target
+EVIDENCE: Slides 41, 42, 43 and 46 and notes n41/n42/n46 say only '10th-of-a-kind'. The run is 10OAK_P46, which learns from BOAK. Economic_Ledger.csv has 10OAK_P47 (learning from FOAK), 60 y, n 1.0, 210 MWth, BASE_POWER cum_s_per_t 181.802248. With the same gas step of -32.58 S$/t that route gives about 149.2 S$/t, which misses the target. Notes n35 say FOAK 'is what a single plant would be'. README.md:42, FDD:30 and report p16 do state 'on INL's BOAK learning route'.
+FIX: Add 'on INL's BOAK learning route' to the slide 41 card heading and the slide 42 bar label, from STEPDOWN_2_LABEL.
+AREA: deck
+===== F07 verify:numbers minor | Some printed numbers are computed inside the deck and report builders, not taken from numbers.json
+EVIDENCE: presentation/build_deck.py:190-192 evaluates the NEW_ formulas in presentation/deck_storyboard.md:769-773. Those formulas produce the 4 K pinch (slide 20), '12 times that duty' (n20, divided by CTX_HTTR_IHX_MW = 10 typed at storyboard line 789) and '2.0 times our central price' (n40). report/_build/resolve_numbers.py:24 and 111-123 hard-code CARBON_TAX_S_T = 45.0, 50.0 and 80.0 and compute TAX_NET_BOAK_25Y, which the report prints on p17 as 'would leave S$144.7/tCO2e'. None of these values is a numbers.json token.
+FIX: Move the derived values into scripts/build_numbers.py as tokens, with the carbon tax as a cited input row. The 29 K pinch already exists as L4_SUPPLY_OVER_REFORMER_K.
+AREA: deck
+===== F08 verify:numbers minor | Deck still frames work as a team's
+EVIDENCE: Deck text and notes: slide 24 'Team's proposal', slide 36 'n = 0.6, team assumption', n15 'The team's first sum was 206.0', n24 'This is the team's proposal', n36 'n of 0.6 is a team assumption'. For the same items the report and README say 'project assumption', 'this study' and 'the author's proposal'. Slide 45 names a single author.
+FIX: Replace 'team' with 'project' or 'author' on slides 24 and 36 and in notes n15, n24 and n36 (owner: docs:deck).
+AREA: deck
+===== F33 verify:product major | Third-party images are published in the deck and report with no licence or permission note, while the root MIT licence claims the documentation files
+EVIDENCE: LICENSE grants MIT over 'this software and associated documentation files'. README.md:153 to 157 ('Licence and credit') states MIT for the repository with no exclusion for figures.
+
+The published pptx and pdf embed:
+- slide 24: image16.jpg, a Straits Times graphic whose image prints 'Source: Prime Minister's Office, Photo: Google Earth, Straits Times Graphics'
+- slide 13: image10.png, a fission diagram, 'Source: Nuclear-Power.com'
+- slide 35: image20.png, an 'Xe-100 reactor render', 'Source: INL'
+- slides 1 to 4: duotone stock photographs of unknown origin with no credit (build_deck.py:464 to 470 makes them from presentation/media/image1.jpeg and image45.jpeg)
+- Q&A slides 57 to 71: reactor and site photographs with no source line at all (deck_dump.txt shows no Source or credit text on slides 57 to 71, only alt text such as 'Olkiluoto 3' and 'Kashiwazaki ABWR')
+- report Figure 1 (word/media/image1.png): a reproduced INL graphic that carries the id '08-GA50599-04', credited [7]
+FIX: Add a third-party content notice to README.md, and a pointer to it beside LICENSE, stating that credited figures and photographs remain their owners' and are not covered by the MIT licence. Credit every image on its slide. Replace or remove images with no reuse licence (the news graphic, the commercial-site diagram, the vendor render, uncredited stock and Q&A photographs) before the deliverables are committed.
+AREA: deck
+===== F35 verify:product minor | Team framing remains in the deck, speaker script, Q&A sheet and one results row shipped to the site
+EVIDENCE: The team text appears in:
+- slide24.xml: <a:t>Team's proposal. No official approval.</a:t> (deck PDF p24)
+- slide36.xml: <a:t>n = 0.6, team assumption</a:t> (deck PDF p36)
+- notesSlide24.xml: 'team's proposal'
+- notesSlide36.xml: 'team assumption'
+- presentation/render/NUSH2_Speaker_Script.pdf p5: 'The team's first sum was 206.0'
+- the same PDF p6: 'This is the team's proposal'
+- the same PDF p9: 'n of 0.6 is a team assumption'
+- presentation/render/NUSH2_QA_Prep.pdf p4: 'It is the team's proposal'
+- results/Final_Design_Basis.csv:155: 'N_TEAM,cost,N team,0.6,...'. My scratch site build carries it in data/csv/Final_Design_Basis.csv:155 and data/provenance.json ('"parameter":"N team"').
+
+The report already says 'project assumption' (Figure D1 legend) and has 0 'team' hits.
+FIX: Use 'the author's proposal' or 'proposed site' and 'project assumption' in the deck, notes, script and Q&A sheet. Change the N_TEAM parameter label in engine/data/parameters.toml (for example 'Size exponent 0.6') and re-export results/. The code identifier n_team can stay.
+AREA: deck
+===== F44 verify:visual major | Slide 15's walk ends at 179.0 under a '178.5' title, and the script says the reboiler gap reaches 178.5
+EVIDENCE: Slide 15 (deck.pdf p15) text: title 'The walk to 178.5 MWth', big number '178.5', last bar 'Reboiler gap 179.0' (bbox y 614.7). Script line: 'MEA's reboiler gap takes the need to 178.5.' Tokens: VAL_SIZING_WALK_STEP_6_SIM 179.04 and R_NEEDED_B_MWTH 178.49. Report Table A2 has a separate row 'Headline, syngas heat on its gated model 178.49', which the slide leaves out.
+FIX: Add the final walk step (gated syngas heat, 179.0 to 178.5) as a bar on slide 15, and change the script line to say the reboiler gap gives 179.0 and the gated syngas heat brings the need to 178.5.
+AREA: deck
+===== F45 verify:visual major | The frequency-consequence chart in report Figure 3 and slide 21 has its dose axis in mSv, and its points contradict the deck's own rem chart
+EVIDENCE: 

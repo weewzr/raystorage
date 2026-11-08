@@ -1,0 +1,264 @@
+HTGR_SMR_MEA_CCS_Research_Local\1-s2.0-S1383586624010505-main.pdf
+=====
+--- PDF p.1 ---
+Separation and Purification Technology 345 (2024) 127311
+Available online 5 April 2024
+1383-5866/© 2024 The Author(s). Published by Elsevier B.V. This is an open access article under the CC BY license (http://creativecommons.org/licenses/by/4.0/).
+Contents lists available at ScienceDirect
+Separation and Purification Technology
+journal homepage: www.elsevier.com/locate/seppur
+Pilot-scale CO2 capture demonstration of heat integration through split flow
+configuration using 30 wt% MEA at a Waste-to-Energy facility
+Sai Hema Bhavya Vinjarapu a,∗, Randi Neerup a, Anders Hellerup Larsen a, Sebastian Nis
+Bay Villadsen a, Nicolas von Solms a, Søren Jensen b, Jakob Lindkvist Karlsson b, Jannik Kappel c,
+Henrik Lassen c, Peter Blinksbjerg c, Philip Loldrup Fosbøl a
+a Technical University of Denmark (DTU), Department of Chemical Engineering, Center for Energy Resources Engineering (CERE), Søltofts Plads, Building
+229, 2800 Kongens Lyngby, Denmark
+b Pentair Union Engineering A/S, Snaremosevej 27, 7000 Fredericia, Denmark
+c Amager Bakke, ARC, Vindmøllevej 6, 2300 Copenhagen, Denmark
+A R T I C L E
+I N F O
+Keywords:
+CO2 capture
+Waste-to-Energy
+Process intensification
+Split flow configuration
+Base case configuration
+Pilot-scale
+A B S T R A C T
+Post-combustion carbon capture is a well-established technology to limit CO2 from industrial emissions.
+However, challenges such as high energy requirements for solvent regeneration persist. Research is still being
+conducted to improve the energy efficiency of the process. This study aims to present the results of process
+intensification in a pilot-scale CO2 capture plant. The pilot-scale investigations were carried out at Amager
+Bakke, a Waste-to-Energy facility in Copenhagen, Denmark. The tests were conducted by implementing the
+split flow configuration as a method of process intensification. The CO2 rich stream was split before flowing
+through the rich/lean heat exchanger. One of the split streams was fed to the stripper top, and the other
+was sent through the heat exchanger and then fed to the stripper. The cold split stream at the stripper top is
+heated by the overhead vapours which would otherwise escape the stripper. The current work discusses the
+split flow configuration results of the pilot plant by employing 30 wt% MEA as the solvent and compares it to
+the base-case performance of the pilot. Experiments were conducted by splitting 22% of the rich solvent and
+feeding it to the stripper top. The performance of the split flow configuration was analysed at different reboiler
+duties. A minimum specific reboiler duty of 3.45 GJ/tonne CO2 is obtained for the split flow configuration,
+which is less than the base case by 7.8%. Additionally, a reduction in the condenser duty by at least 68% was
+achieved by the implementation of the split flow configuration.
+1. Introduction
+Post-combustion capture (PCC) is a critical technology to reduce the
+CO2 emissions into the atmosphere from industrial operations. Amine-
+based CO2 capture is a well-established and mature technology. It can
+be retrofitted to the existing power plants [1,2]. Implementing carbon
+capture and storage for Waste-to-Energy (WtE) plants can make waste
+an attractive source of zero or negative emissions energy, depending
+on the fraction of biogenic waste [3]. There are three incineration
+facilities integrated with CO2 capture currently. These are located in
+the Netherlands (AVR and Twence plants) and Japan (Saga City) [3–
+5]. In Saga City, Japan, 10 tonnes of CO2 is captured per day utilising
+aqueous amine solvent [6,7]. The captured CO2 is utilised for algae
+and crop cultivation [6]. At AVR’s WtE, 60,000 tonnes of captured
+CO2 per year is supplied to the horticulture sector in the region [8].
+830,000 tonnes of waste is processed at the Twence WtE facility and
+∗Corresponding author.
+E-mail address: shbvin@kt.dtu.dk (S.H.B. Vinjarapu).
+0.1 MTpa of CO2 was expected to be captured by the end of 2023 [9].
+For further implementation of full-scale capture at WtE facilities, it is
+critical to conduct pilot-scale tests for understanding the operation of
+a CO2 capture unit in a WtE setting. Pilot experiments are also vital to
+explore new solvents and advanced process configurations for energy-
+efficient operation. Such pilot campaigns are very limited [10,11].
+Consequently, it is of utmost importance to carry out additional pilot-
+scale experiments to establish efficient CO2 capture methods that can
+be utilised for full-scale deployment in WtE facilities.
+Monoethanolamine (MEA) is one of the most commonly used sol-
+vents as it offers various advantages, such as high reaction rates, high
+capacity and selectivity, commercial readiness, and reasonable solvent
+costs [1,12–14]. However, disadvantages such as high operating costs
+for regeneration of the solvent, corrosion of equipment, and solvent
+https://doi.org/10.1016/j.seppur.2024.127311
+Received 17 November 2023; Received in revised form 5 March 2024; Accepted 29 March 2024
+
+--- PDF p.2 ---
+Separation and Purification Technology 345 (2024) 127311
+2
+S.H.B. Vinjarapu et al.
+Nomenclature
+Abbreviations
+𝐻𝐸
+Heat exchanger
+𝐿𝑀𝑇𝐷
+Logarithmic mean temperature difference
+𝑀𝐸𝐴
+Monoethanolamine
+𝑀𝑇𝑈
+Mobile Test Unit
+𝑃𝐶𝐶
+Post-combustion capture
+𝑃𝐹𝐷
+Process flow diagram
+𝑃𝐼
+Proportional Integral
+𝑃𝐿𝐶
+Programmable Logic Controller
+𝑅𝐷
+Reboiler duty
+𝑆𝑅𝐷
+Specific reboiler duty
+𝑊𝑡𝐸
+Waste-to-Energy
+Symbols
+𝛼
+loading
+𝛥𝑇
+temperature difference
+𝜖
+capture efficiency
+𝐶𝑝
+specific heat capacity
+𝑚
+mass flow rate
+𝑛
+molar flow rate
+𝑞
+percentage of reboiler duty excluding heat
+loss
+𝑇
+temperature
+𝑦
+concentration in gas phase
+degradation are some limitations of the solvent [12,15,16]. Regenera-
+tion of the solvent in the stripper consumes about 15%–30% of the net
+power production in a coal-fired power plant as parasitic load [17].
+Innovative process configurations can be implemented to reduce energy
+consumption for solvent regeneration [18]. Split flow configuration is
+a stipulated process intensification in which a fraction of the CO2 rich
+solvent stream exiting the absorber bottom bypasses the main heat
+exchanger (main HE) and enters the stripper top. In the main HE,
+the cold rich solvent is heated by the hot lean solvent, whereas the
+split flow fed to the stripper top is heated internally by the overhead
+saturated steam, condensing the steam, which would otherwise be lost
+from the system. The utilisation of the overhead steam to heat a portion
+of the cold rich solvent reduces the reboiler duty [18–32].
+Additionally, the cooling duty of the overhead condenser is also
+reduced due to the lower mass flow of steam leaving the stripper. A
+slightly different version of the usage of the overhead vapours has also
+been patented [33]. A few modelling studies of the split flow configura-
+tion have been conducted to analyse the energy reductions obtained for
+solvent regeneration [34–41]. Furthermore, a few different variations
+of the split flow configuration have been simulated [13,18,41–47].
+However, minimal pilot data is available on implementing a split
+flow configuration. The split flow configuration was tested at the
+Tarong pilot plant using MEA as the solvent. A 7% reduction in the
+regeneration energy was observed, along with a 60% reduction in
+the cooling water requirement in the condenser. The influence of the
+split flow configuration was stated to be strongly dependent on the
+performance of the main HE [48]. Another pilot-scale testing of the
+split flow configuration was conducted at the Jaworzno II Power plant,
+which showed a reduction in the reboiler duty by 5% [49]. It is crucial
+to conduct pilot-scale testing of such process intensification methods to
+understand the performance of a CO2 capture plant and to validate and
+develop better models.
+The current work aims to present the split flow configuration results
+from a pilot-scale CO2 capture plant tested at Amager Bakke, Copen-
+hagen, Denmark, which is a WtE facility. The split flow configuration
+Subscripts
+𝑐
+condenser exit stream
+𝑐𝑙
+cold lean stream
+CO2, 𝑐𝑎𝑝
+CO2 captured
+CO2, 𝑖𝑛
+CO2 in the inlet stream
+CO2, 𝑜𝑢𝑡
+CO2 in the outlet stream
+𝑐𝑜𝑛𝑑
+condenser
+𝑐𝑜𝑜𝑙𝑖𝑛𝑔, 𝑝𝑟𝑒𝑑
+total predicted cooling in the lean cooler
+and the condenser
+𝑐𝑜𝑜𝑙𝑖𝑛𝑔
+total cooling in the lean cooler and the
+condenser
+𝑐𝑟
+cold rich stream
+𝑓𝑙𝑢𝑒𝑔𝑎𝑠, 𝑖𝑛
+inlet flue gas stream
+𝑓𝑙𝑢𝑒𝑔𝑎𝑠, 𝑜𝑢𝑡
+outlet flue gas stream
+𝑔𝑎𝑖𝑛𝑒𝑑, 𝑠𝑓
+sensible heat gained by the split flow stream
+ℎ𝑙
+hot lean stream
+ℎ𝑟
+hot rich stream
+𝑙𝑒𝑎𝑛𝑐𝑜𝑜𝑙𝑒𝑟, 𝑝𝑟𝑒𝑑
+predicted cooling in the lean cooler
+𝑙𝑒𝑎𝑛𝑐𝑜𝑜𝑙𝑒𝑟
+cooling in the lean cooler
+𝑙𝑒𝑎𝑛
+lean solvent stream
+𝑚𝑎𝑥, 𝑟𝑒𝑐
+maximum energy recovery possible in the
+main heat exchanger
+𝑟𝑒𝑏, ℎ𝑒𝑎𝑡𝑙𝑜𝑠𝑠
+heat loss in the reboiler
+𝑟𝑒𝑏
+reboiler
+𝑟𝑒𝑐
+energy recovery in the main heat exchanger
+𝑟𝑖𝑐ℎ
+rich solvent stream
+𝑠𝑒𝑛𝑠, 𝑟𝑖𝑐ℎ
+sensible heating of the hot rich stream
+𝑠𝑒𝑛𝑠, 𝑠𝑓
+sensible heating of the split flow stream
+𝑠𝑒𝑛𝑠
+total sensible heating of the solvent in the
+stripper
+𝑠𝑓
+split flow stream
+𝑆𝑇𝐸
+liquid distributor above stripper packed bed
+E
+𝑡𝑜𝑡𝑎𝑙
+total stream flow rate
+𝑤𝑙
+warm lean stream
+will be compared to the pilot’s performance in a base case configura-
+tion. The base case results have been discussed in detail in a previous
+work [50].
+2. Description
+DTU, in partnership with Pentair Union Engineering, has developed
+and built a Mobile Test Unit (MTU) for conducting pilot-scale CO2
+capture. The pilot can process 150 Nm3/h of flue gas. A 3D illustration
+of the pilot and a picture of the pilot at the WtE facility are presented
+in Figs. 1(a) and 1(b), respectively.
+Fig. 1(a) exhibits that the pilot has four columns: absorber, desorber,
+wash column, and an additional column for process intensification. The
+taller columns at the back are used as absorber and desorber, whereas
+one of the shorter ones in the front is used as the wash column. Process
+equipment, such as filters, pumps, heat exchangers, and flow meters,
+are in the two skids below the columns. A detailed description of the
+pilot and the process has been given in a previous work [50]. The
+results of the split flow configuration are presented and discussed in
+the current work. The Process Flow Diagram (PFD) of the split flow
+configuration is presented in Fig. 2.
+Fig. 2 represents the PFD of the pilot for the split flow configuration.
+The PFD of the process for the base case configuration and the control
+structure have been described in detail in the previous work [50].
+
+--- PDF p.3 ---
+Separation and Purification Technology 345 (2024) 127311
+3
+S.H.B. Vinjarapu et al.
+Fig. 1. Illustration of the pilot plant. (a) 3D model of the pilot. (b) The pilot plant at the WtE facility. Equipment such as flow meters and pumps are visible.
+Fig. 2. Process Flow Diagram with control structure for the split flow configuration. The magenta dashed line represents the split stream which bypasses the main HE and enters
+the stripper above packed bed F. The packing bed heights presented for the stripper are accumulated heights. The individual bed heights are: C- 3.4 m, D- 3.5 m, E- 3.5 m, F-
+3.5 m.
+In the base case configuration, the flue gas is contacted with 30 wt%
+MEA in the absorber. During the start-up of the pilot plant, the liquid
+circulation through the absorber and the stripper is first established.
+This is done either manually or in auto-mode. A control structure was
+designed and implemented in the Programmable Logic Controller (PLC)
+for the pilot plant. When the operator activates the auto-mode, the
+rich pump starts, followed by the lean pump with a few minutes of
+delay. The flows were expected to stabilise in approximately 10 min.
+

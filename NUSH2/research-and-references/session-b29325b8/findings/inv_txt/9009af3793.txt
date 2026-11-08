@@ -1,0 +1,358 @@
+HTGR_SMR_MEA_CCS_Research_Local\1-s2.0-S0009250911006117-mainext.pdf
+=====
+--- PDF p.1 ---
+Solubility of CO2 in 15, 30, 45 and 60 mass% MEA from 40 to 120 1C and
+model representation using the extended UNIQUAC framework
+Ugochukwu E. Aronu a, Shahla Gondal a, Erik T. Hessen a, Tore Haug-Warberg a, Ardi Hartono a,
+Karl A. Hoff b, Hallvard F. Svendsen a,n
+a Department of Chemical Engineering, Norwegian University of Science and Technology, N-7491 Trondheim, Norway
+b SINTEF Materials and Chemistry, N-7465 Trondheim, Norway
+a r t i c l e i n f o
+Article history:
+Received 23 January 2011
+Received in revised form
+20 August 2011
+Accepted 27 August 2011
+Available online 3 September 2011
+Keywords:
+CO2 absorption
+Separations
+Phase equilibria
+Thermodynamic process
+Extended UNIQUAC
+Monoethanolamine (MEA)
+a b s t r a c t
+New experimental data for vapor–liquid equilibrium of CO2 in aqueous monoethanolamine solutions
+are presented for 15, 30, 45 and 60 mass% MEA and from 40 to 120 1C. CO2 partial pressures over loaded
+MEA solutions were measured using a low temperature equilibrium apparatus while total pressures
+were measured with a high temperature equilibrium apparatus. Experimental data are given as CO2
+partial pressure as function of loading in solution for temperatures from 40 to 80 1C and as total
+pressures for temperatures from 60 to 120 1C for the different MEA concentrations. The extended
+UNIQUAC model framework was applied and model parameters were ﬁtted to the new experimental
+VLE data and physical CO2 solubility data from the literature. The model gives a good representation of
+the experimental VLE data for CO2 partial pressures and total pressures for all MEA concentrations with
+an average absolute relative deviation (AARD) of 24.3% and 11.7%, respectively, while the physical
+solubility data were represented with an AARD of 2.7%. Further, the model predicts well literature data
+on freezing point depression, excess enthalpy and liquid phase speciation determined by NMR.
+& 2011 Elsevier Ltd. All rights reserved.
+1. Introduction
+Scrubbing efﬂuent industrial ﬂuid streams of acid gases such
+as CO2 and H2S is an important industrial process operation. The
+technique has historically been applied for various reasons such
+as improving the caloriﬁc value of gas streams and avoiding
+corrosion on process lines and ﬁttings. Recently, a more compel-
+ling reason for scrubbing of carbon dioxide from process streams
+has been the urgent need to reduce greenhouse gas emissions.
+CO2 capture by absorption technology remains the most promis-
+ing and most mature technology for CO2 removal from exhaust
+gas streams, and reducing the cost of this technology is of global
+interest. Amine-based CO2 solvents have been the most studied
+absorbents for CO2 capture by absorption.
+Several studies have been carried out on the solubility of CO2
+in aqueous MEA solution. Tables presenting summaries of pre-
+vious studies were presented by Jou et al. (1995), Kohl and
+Nielsen (1997) and Ma’mun et al. (2005). The experimental data
+of Jou et al. (1995) covers a wide range of temperatures, pressures
+and loadings, however it is available only for 30 mass% MEA. Of all
+the numerous work on MEA, only Mason and Dodge (1936) and
+Atadan (1954) measured CO2 solubility in MEA at concentrations
+higher than 30 mass%. These data are old and quite few. Mason and
+Dodge (1936) measured only up to 75 1C and between 1.3 and
+100 kPa while Atadan (1954) measured up to 70 1C and between
+103 and 3447 kPa, thus not covering the temperature range for
+regeneration. There is also a strong need for more data in the very
+low loading and pressure regions for modeling purposes. Further
+MEA is often used as a base case solvent in comparative studies of
+new solvents for CO2 absorption and new processes applying higher
+solvent concentrations are being developed. For e.g. Bouillon et al.
+(2011) have shown that use of MEA at higher concentrations can
+give improved CO2 absorption results. Thus an up-to-date robust
+VLE data set for H2O–MEA–CO2 system, spanning a large concen-
+tration range, is clearly needed.
+Accurate correlation of equilibrium behavior of CO2 in aqueous
+MEA solutions will enable better process simulations towards cost
+reduction, better column design as well as improved plant opera-
+tion. Different thermodynamic models have been used to describe
+the equilibrium behavior of CO2 in aqueous alkanolamine solu-
+tions, in particular, MEA. These models could be categorized into
+three (Hessen et al., 2010); the non-rigorous models, e.g. Kent-
+Eisenberg (1976) and the rigorous models with the two branches;
+activity models (excess Gibbs energy) and equation of state models
+(Helmholtz energy). Activity based models vary in complexity,
+ranging from the relatively simple Deshmukh and Mather (1981) to
+the more sophisticated ones, such as electrolyte–NRTL (Chen et al.,
+1982; Chen and Evans, 1986) and extended UNIQUAC models
+(Nicolaisen et al., 1993; Thomsen, 1997; Thomsen and Rasmussen,
+Contents lists available at SciVerse ScienceDirect
+journal homepage: www.elsevier.com/locate/ces
+Chemical Engineering Science
+0009-2509/$ - see front matter & 2011 Elsevier Ltd. All rights reserved.
+doi:10.1016/j.ces.2011.08.042
+n Corresponding author. Tel.: þ47 73594100; fax: þ47 73594080.
+E-mail addresses: ugochukwu.aronu@chemeng.ntnu.no (U.E. Aronu),
+hallvard.svendsen@chemeng.ntnu.no (H.F. Svendsen).
+Chemical Engineering Science 66 (2011) 6393–6406
+i
+An update to this article is included at the end
+
+--- PDF p.2 ---
+1999) models. The extended-UNIQUAC model was used in this
+work. Previous work such as Austgen et al. (1989), Faramarzi et al.
+(2009), Hessen et al. (2010), etc. have, respectively, implemented the
+original electrolyte–NRTL, reﬁned electrolyte–NRTL and extended-
+UNIQUAC models for the H2O–MEA–CO2 system. However, all the
+implementations were based on experimental data of not more than
+30 mass% MEA concentration, except for Hessen et al. (2010) who
+applied the r-e-NRTL to predict experimental VLE results of 60
+mass% MEA up to 80 1C. None of the existing models have used the
+solubility of N2O in MEA which by utilizing the so-called N2O
+analogy (originally proposed by Clarke (1964) and veriﬁed by
+Laddha et al. (1981)) gives a measure of the physical solubility, or
+Henry’s law constant, of CO2 in the aqueous MEA solution. Through
+the physical solubility of CO2, the activity coefﬁcient of CO2 can be
+calculated. In Hessen (2010) it was shown that existing models give
+CO2 activity coefﬁcients which are far from the N2O analogy derived
+values.
+The objectives of this work are to present a consistent VLE data
+set for MEA through experimental VLE measurements for 15, 30,
+45 and 60 mass% MEA in the low and high CO2 loading regions
+from 40 to 120 1C, and to use these data together with CO2
+solubility data based on the N2O analogy, to provide a rigorous
+equilibrium model based on the extended UNIQUAC model
+framework.
+2. Equilibrium experiments
+2-Aminoethanol (MEA) (purity Z99 mass%) was obtained
+from Sigma-Aldrich. Sample solutions of 15, 30, 45 and 60 mass%
+MEA were prepared using deionized water. A total of about 5.0 L
+solution of each MEA concentration was prepared. Solutions were
+prepared using a Sartorius GMBH Gottingen balance within
+70.1 g. The gases used; CO2, purity 499.99 mol% and calibration
+gases, 2.5 mol% CO2 and 4.96 mol% CO2 were supplied by AGA Gas
+GmbH while N2, purity
+499.999 mol% and calibration gas
+100 ppm CO2 were supplied by Yara Praxair AS.
+2.1. Low temperature/atmospheric VLE apparatus
+Vapor–liquid equilibrium for the CO2 loaded MEA systems
+from 40 to 80 1C and at atmospheric pressure were measured
+using a low temperature/atmospheric vapor–liquid equilibrium
+apparatus (see Fig. 1), designed to operate up to 8070.1 1C.
+A volume of 150 cm3 of pre-loaded sample solutions were placed
+in three equilibrium cells, respectively (360 cm3 glass ﬂasks) and
+ﬂushed with N2 gas to remove any dissolved oxygen. The gas phase
+was thereafter circulated by a B ¨UHLER pump (model P2) at a set
+temperature and analyzed online until steady values of gas phase
+CO2 composition were recorded by a calibrated Fisher–Rosemount
+BINOSs 100 NDIR Gas Analyzer. The gas phase was circulated
+typically for 20 min.
+Six different analyzers were used; 0–
+20072 ppm, 0–1000710 ppm, 0–2000720 ppm, 0–170.01%,
+0–570.01%; 0–2070.1%. Analyzers were calibrated every day
+before measurements using certiﬁed calibration gases and gas
+mixtures of CO2 and N2 produced using a Bronkhorst Hi-Tec EL-
+Flow mass ﬂow meter controller. The number of calibrations points
+used in each analyzer range are given in Table 1. Three K-type
+thermocouples recorded the temperatures in the cell, the water
+bath and the gas phase temperature between the condenser and
+the analyzer, respectively, within 70.1 1C. Liquid phase composi-
+tions were obtained by taking a 25 cm3 sample from cell 4 for
+CO2 analysis by the barium chloride method and for total alkali-
+nity. The liquid phases in all the cells are then removed and diluted
+with fresh solution or loaded with more CO2 to change to a new
+loading, then shaken vigorously and reﬁlled into the equilibrium
+cells for a new measurement. The amount of CO2 pre-loaded was
+estimated using PG5002-S Delta Range balance from Mettler
+Toledo within 70.01 g. However, all solutions were analyzed using
+the BaCl2 method where all gravimetric operations were carried
+out using a Mettler PM1200 from Mettler Toledo within 70.001 g.
+The apparatus has been described in detail by Ma’mun et al. (2005,
+2006) and was used by Aronu et al. (2011a,b) for VLE measure-
+ments of amino acid based absorbents.
+The apparatus circulates the gas through the liquid phase
+holding cells until equilibrium is reached. A gas phase bleed is
+extracted for composition measurement and then returned to the
+circulation loop. The extracted bleed is cooled to 10–15 1C to
+condense water and amine and the CO2 content determined
+directly by the NDIR analyzers. The vapor phase will therefore
+consist of CO2, N2, and small amounts of H2O and amine. The CO2
+molfraction in the analyzer is given by
+yIR
+CO2 ¼
+nIR
+CO2
+nIR
+CO2 þnIR
+N2 þnIR
+H2O þnIR
+amine
+ð1Þ
+IR CO2 Analyzer
+Condenser
+Water Bath
+Heater + Fan
+TI
+FI
+Thermostated box
+TI
+TIC
+TIC
+1
+2
+3
+4
+Fig. 1. Low temperature/atmospheric vapor–liquid equilibrium apparatus, Ma’mun et al. (2006).
+Table 1
+Number of calibration points used for each CO2 IR analyzer range.
+CO2 analyzer
+concentration range
+No. of calibration
+points in range
+0–200 ppm
+2
+0–1000 ppm
+2
+0–2000
+5
+0–1.0%
+5
+0–5.0%
+6
+0–20.0%
+8
+U.E. Aronu et al. / Chemical Engineering Science 66 (2011) 6393–6406
+6394
+
+--- PDF p.3 ---
+where n is the molar ﬂow and the superscript IR is the vapor
+phase in the IR analyzer. As non-condensable gases, the ﬂows
+of CO2 and N2 before and after the condenser are assumed to be
+the same. The amount and CO2 content in the condensate was
+checked and was found to have a negligible inﬂuence on the
+results even at low CO2 partial pressures. Eq. (1) together with a
+mole balance gives the molar ﬂow of CO2 in the system as
+yIR
+CO2 ¼
+nCO2
+ntotðnH2OnIR
+H2OÞðnMEAnIR
+MEAÞ
+ð2Þ
+where ntot, nH2O, and nMEA, respectively, denote the total molar
+ﬂow and the molar ﬂows of H2O and MEA in the circulation
+system. By dividing by the total pressure P, Eq.(2), the IR analyzer
+CO2 mole fraction can be expressed as
+yIR
+CO2 ¼ pCO2=½PðpH2OpIR
+H2OÞðpMEApIR
+MEAÞ
+ð3Þ
+Due to the low vapor pressure of most amines at cooler tempera-
+ture, pIR
+MEA is usually negligible. The partial pressures pH2O, pIR
+H2O,
+pMEA , pIR
+MEA are determined from the model but can with negligible
+loss in precision also be determined using Raoult’s law.
+2.2. High temperature equilibrium measurement
+Equilibrium total pressure data in the temperature range
+60–120 1C for the systems were obtained using a high tempera-
+ture VLE apparatus (Fig. 2). The apparatus consists of two
+connected autoclaves (1000 and 200 cm3) rotating 1801 with
+2 rpm and designed to operate up to 10.5 bar and 150 1C.
+Temperature and pressure were measured with two K-type
+thermocouples and a Druck PTX 610 pressure transducer, respec-
+tively. Equilibrium was obtained when the temperature and
+pressure were constant to within 70.2 1C and 70.1 kPa, respec-
+tively. This took about 4–6 h. The experiment starts when the cell
+is evacuated and purged with CO2. Unloaded solution is then
+injected into the reactor through a liquid line and pure CO2 is
+loaded at the desired temperature and at a set pressure. The CO2
+feed line is closed after about 1 h of loading. When equilibrium is
+reached, i.e. when temperature and pressure are constant, a liquid
+sample for analysis is collected by closed sampling into a
+sampling cylinder containing about 100 mL of fresh solution. This
+immediately reduces the CO2 pressure and CO2 loss is avoided.
+The cylinder is weighed before and after sampling and cooled
+below ambient temperature in a refrigerator. This ensures no loss
+of CO2 by ﬂashing at atmospheric pressure. The actual CO2
+loading is determined by titration analysis and a mass balance.
+The data acquisition system uses Field Point Labview. Further
+details on the apparatus are given in Ma’mun et al. (2005).
+3. Chemical and phase equilibrium
+3.1. Chemical equilibrium
+For a ternary H2O–CO2–amine system where the amine has a
+single amine functionality, like MEA, the following equilibrium
+reactions are expected:
+Dissociation of water:
+2H2O"
+Kw H3Oþ þOH
+ð4Þ
+Dissociation of carbon dioxide:
+2H2OþCO2 "
+KCO2H3Oþ þHCO
+3
+ð5Þ
+Dissociation of bicarbonate:
+H2OþHCO
+3 "
+KHCO3
+H3Oþ þCO2
+3
+ð6Þ
+Dissociation of protonated amine, MEA:
+H2OþRNHþ
+3 "
+KRNH2H3Oþ þRNH2
+ð7Þ
+Carbamate reversion to bicarbonate:
+H2OþRNHCOO
+"
+KRNHCOO
+RNH2 þHCO
+3
+ð8Þ
+Equilibrium reactions (4)–(8) are relevant for modeling of the
+equilibrium for the H2O–MEA–CO2 system. The equilibrium point
+of the reaction system was found using a non-stoichiometric
+Gibbs energy minimization routine (Hessen, 2010).
+3.2. Vapor–liquid equilibrium
+For a complete model of the MEA system, chemical equili-
+brium and vapor–liquid equilibrium must be solved simulta-
+neously. The system is formulated as a standard VLE problem
+through the thermodynamic equilibrium criterion at given tem-
+perature and pressure.
+mvap
+i
+ðT,P,nÞ ¼ mliq
+i ðT,P,nÞ
+ð9Þ
+where mvap
+i
+and mliq
+i
+are the chemical potentials of the species i in
+the vapor and liquid phase, respectively. The activity coefﬁcients
+for species in the liquid phase were determined using the
+extended UNIQUAC framework and used in the phase equilibrium
+calculations. The Soave–Redlich–Kwong equation of state was
+used to calculate the gas phase properties. The equilibrium
+distribution of the volatile solute, CO2, between the vapor and
+liquid was modeled based on Henry’s law constant in water at
+system pressure and temperature as reference state. Because of
+the asymmetric reference state of CO2, its phase equilibrium was
+calculated from
+fCO2yCO2P ¼ gCO2xCO2H1
+CO2 exp
+v1
+CO2ðPPS
+H2OÞ
+RT
+ 
+!
+ð10Þ
+where gCO2 and fCO2 are the activity and the fugacity coefﬁcients
+of CO2, respectively, P the total pressure, H1
+CO2 is the Henry’s law
+Fig. 2. High temperature equilibrium apparatus, Ma’mun et al. (2005).
+U.E. Aronu et al. / Chemical Engineering Science 66 (2011) 6393–6406
+6395
+

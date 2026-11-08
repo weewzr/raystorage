@@ -1,0 +1,238 @@
+mea/src/density.rs:7://! raises AARD against Hartono Table 3 from 0.51% to 4.84% (`mea_thermo.md` s9).
+mea/src/density.rs:32:/// stripper range above 80 C is extrapolation.
+mea/src/kinetics.rs:5://! (`mea_thermo.md` s7).
+mea/src/kinetics.rs-6-//!
+mea/src/kinetics.rs:27://! Rate fits in the local literature end near loading 0.50 (`mea_thermo.md` s7), so
+mea/src/kinetics.rs:28://! use above that loading is extrapolation.
+mea/src/pstar.rs:57:/// `mea_thermo.md` s3: Eq 19 equates a mole fraction activity coefficient to a
+mea/src/pstar.rs-58-/// concentration ratio, so rate work keeps Khan's closure.
+mea/src/speciate.rs:11:/// rates K_MEACOO from 25 C (PDF p4), so 25 C to 40 C is extrapolation.
+mea/src/speciate.rs:14:/// extrapolation.
+mea/src/validation.rs:21:/// Every point must fall within this relative deviation (section 8 of the plan).
+mea/src/validation.rs:25:/// Header of `Validation_Results.csv`, freeze section 8.
+mea/tests/aronu_port.rs:1://! Port acceptance for the Aronu model, section 8 of the engine plan. Printed lines
+mea/tests/aronu_port.rs-2-//! with the value that each check found use `--nocapture`.
+mea/tests/aronu_port.rs:99:    // 17 model-column points at 30 mass%, as `mea_thermo.md` s3 tabulates.
+mea/tests/aronu_port.rs:228:/// strengths and only reports them, because the plan's grid does not reach 0.5% at 45
+mea/tests/aronu_port.rs-229-/// and 60 mass%. The grid stays as planned.
+mea/tests/aronu_port.rs:296:    // `mea_thermo.md` s3 table, kJ/mol CO2, 30 mass%. Kind: plausibility. A regression
+mea/tests/aronu_port.rs-297-    // on the prototype with no validation claim.
+mea/tests/aronu_port.rs:359:/// `mea_thermo.md` s3: gamma*_CO2 times Aronu Eq 17 against Hartono Table 11 through
+mea/tests/aronu_port.rs-360-/// Eq 19, AARD 3.4% with n 15, against the 2.7% Aronu quotes (PDF p1).
+plant/src/anchored.rs:1503:    /// Sizing walk at scale `s`, Case B form of freeze section 5.
+plant/src/anchored.rs-1504-    ///
+plant/src/carbon.rs:3://! Rewritten from the old repository's `psa_carbon_closure.rs` for the new stream
+plant/src/carbon.rs-4-//! set, which adds C4 and C5 and tracks N2. The rule carried over is that a
+plant/src/carbon.rs:96:    /// Carbon closure over the plant: fresh feed in; storage, stack, product and
+plant/src/carbon.rs-97-    /// condensate out.
+plant/src/dcf.rs:19://! - Both plants carry the SMR island unchanged, so reformer differences are
+plant/src/dcf.rs-20-//!   assumed to cancel. Its variable lines are raw water and chemicals with
+plant/src/drift.rs:1://! Drift between the presets, plan section 7. One record holds every term with
+plant/src/drift.rs-2-//! all its modelled slots, the Headline and Modelled registries built from the
+plant/src/economics.rs:90:    /// MMSCFD of the plant.
+plant/src/economics.rs:108:    /// Export steam of the unabated SMR and of the plant, MMBtu/h.
+plant/src/export.rs:2://! browser. Schemas follow freeze section 8, with a trailing `status` column.
+plant/src/export.rs-3-//! Economic rows also carry `dcf_value` and `dcf_unit`, because S$/kg and S$/t
+plant/src/export.rs:257:/// Run definitions of freeze section 7.3, sorted by id.
+plant/src/export.rs:291:/// The six tables the plant crate can build. Validation lives in `nush2_vv`.
+plant/src/export.rs:919:    // The labelled SMR plus CCS comparator, plan section 9.
+plant/src/export.rs:1638:/// Mass balance header: freeze section 8, with the four C2+ species beside their
+plant/src/export.rs-1639-/// sum and the liquid part of the water, so the flowsheet rows carry every
+plant/src/flowsheet.rs:115:/// TEV-961 PDF p14. 825 C and 800 C run as sensitivities (user answers, rest).
+plant/src/flowsheet.rs-116-///
+plant/src/flowsheet.rs:174:/// the lumping of plan section 3: C6 enters as 1.2 mol C5 per mol, O2 joins N2.
+plant/src/flowsheet.rs:185:/// Tear tolerance on the scaled residual. The plan's 1e-7 is the floor; the
+plant/src/flowsheet.rs-186-/// flowsheet asks for more so the envelope closes to 1e-9 in elements.
+plant/src/flowsheet.rs:190:/// Damped direct substitution budget, plan section 5.
+plant/src/flowsheet.rs:192:/// Element closure limit of the envelope, plan section 12.
+plant/src/flowsheet.rs:194:/// Energy closure limit of the envelope, plan section 12 and card A.15.
+plant/src/flowsheet.rs:301:    /// plan section 14.
+plant/src/flowsheet.rs:1383:    // Fallback of plan section 5: damped direct substitution.
+plant/src/flowsheet.rs:1511:/// slide 4 figure (Q6, build order section 5 item 1). Inside: the nuclear
+plant/src/flowsheet.rs-1512-/// island, the reformer train with its coolers and flash, MEA capture, the
+plant/src/flowsheet.rs:1706:        // Fallback of plan section 14: S03 alone with the lean loading fixed.
+plant/src/flowsheet.rs:2232:/// Relative tolerance of `carbon_matches_anchor`, plan section 12.
+plant/src/flowsheet.rs:2234:/// Relative tolerance of the three-start tear test, plan section 12.
+plant/src/flowsheet.rs:2236:/// Relative limit on modelled natural gas against 23.2 MMSCFD, plan section 7.
+plant/src/gates.rs:12://! Rules, plan section 7: a row that failed blocks the gate; a row that did not
+plant/src/gates.rs-13-//! run blocks it as not run, except the Khan rows that lack source data, which
+plant/src/heatrec.rs:6://! Approved order (USER_ANSWERS, Rest row): freed Selexol steam, export steam,
+plant/src/heatrec.rs-7-//! syngas above 130 C, then reactor steam. ZLD steam, off by default, sits after
+plant/src/heatrec.rs:46:/// The approved order, USER_ANSWERS Rest row, with ZLD before the reactor.
+plant/src/lib.rs:236:/// Run the plant.
+plant/src/sens.rs:1://! One-at-a-time sweeps, plan section 11, plus the cost and carbon sweeps that
+plant/src/sens.rs:2://! build order section 5 item 5 moves out of the report builder. Overrides stay
+plant/src/sens.rs-3-//! in memory. Corner runs carry no probability.
+plant/src/sens.rs:25:/// Metric names, freeze section 8, the L5 pair of the rebuilt headline and the
+plant/src/sens.rs-26-/// DCF pair of method 2.
+plant/src/sens.rs:109:/// captured stream to the atmosphere, kmol/h at the plant.
+plant/src/sens.rs:438:/// Levers to the cost target one at a time, freeze section 6.6 recomputed on
+plant/src/sens.rs-439-/// the full cost set: L5 and the DCF, BOAK and FOAK, 25 y and 60 y, n = 1.0,
+plant/src/sens.rs:1192:    // Term T05 on the plant's own flowsheet: the gated value is the Case 5 chain
+plant/src/sens.rs-1193-    // scaled on plant CO2; the Level 3 EX3 outlet of FS_B_REC_F gives its own.
+plant/src/terms.rs:5://! Presets, plan section 7. `Anchored` uses no model. `Headline` flips T04,
+plant/src/terms.rs-6-//! T05, T07 and T08 on a passed gate and keeps every other term anchored, for
+plant/src/terms.rs:35:/// What the Headline preset does with a term, plan section 7.
+plant/src/terms.rs:131:/// Scale from the Case 5 syngas term to the plant, the same as the anchored
+plant/src/terms.rs-132-/// `Q_EX4_ABOVE_130C` takes.
+plant/src/utility.rs:38:/// Reactor heat the plant needs,
+plant/src/utility.rs-39-/// `Q_R = Q_proc + Q_rec + Q_ihx + Q_duct + Q_ves + Q_br - W_s - W_p`, MW.
+plant/src/utility.rs:115:    /// The same at the tube counts the S8 finding names for 800 and 825 C.
+plant/src/utility.rs:165:/// Tube counts of the S8 finding: 327 reaches 800 C, 1079 reaches 825 C.
+props/src/equilibrium.rs:31:/// Residual tolerance on the ln K pair, from the solver table in the engine plan.
+props/src/shomate.rs:126:/// trapezoid sum and is exact for this interpolant.
+props/src/species.rs:341:/// n-C5H12, webbook.nist.gov ID C109660. C6 enters the plant lumped into this
+props/src/species.rs-342-/// species, 1.2 mol per mol, so the carbon flow stays right.
+props/src/transport.rs:31:/// Model class of this fit, in the terms of the engine plan.
+props/tests/m2_acceptance.rs:1://! Milestone M2 acceptance tests, named as in the engine plan section 12.
+props/tests/m2_acceptance.rs-2-//! Fixtures in `engine/vv/data/props` carry their citations. Tolerances without a
+props/tests/m2_acceptance.rs:3://! target in the plan are stated at each test, and each one comes from the printed
+props/tests/m2_acceptance.rs-4-//! digits or the stated uncertainty of the source. Run with `--nocapture` to see
+props/tests/m2_acceptance.rs:142:/// The grid is the one in the plan's scoping script, 680 K to 871 C, filled in at
+props/tests/m2_acceptance.rs-143-/// 5 K. It spans the reformer and the high-temperature shift. The low-temperature
+props/tests/m2_acceptance.rs:169:/// A record, with no pass mark from the plan. It prints Zhang against NIST across
+props/tests/m2_acceptance.rs-170-/// the whole plant, and holds the fact that Zhang K2 falls more than 6% below NIST
+props/tests/m2_acceptance.rs:283:/// The acceptance run is the one in the evidence report: pure methane at S/C 3,
+props/tests/m2_acceptance.rs-284-/// where N2 stays out of the comparison. The published feed gas runs beside it.
+props/tests/m2_acceptance.rs:305:    // joins N2, as the plan's feed lumping says. S/C is on all carbon fed.
+props/tests/thermo_guards.rs:47:/// Item 19: K1 carries the heat capacity integrals. Holding dH and dS at their
+props/tests/thermo_guards.rs-48-/// 298.15 K values drops both Kirchhoff integrals. At 1123.15 K the full route must
+props/tests/thermo_guards.rs:67:/// Item 23 (a): reaction enthalpy and entropy at 298.15 K summed from the species
+props/tests/thermo_guards.rs-68-/// table agree with the JANAF fixture: dS from the absolute entropies and dH from
+props/tests/thermo_guards.rs:90:/// Item 23 (b): liquid water enters the formation-basis balance through one
+props/tests/thermo_guards.rs-91-/// constant offset from the IF97 datum, 300 to 450 K, within 1 J/mol.
+props/tests/thermo_guards.rs:110:/// Item 27: Petersen's heat capacity is the monatomic ideal value 5/2 R/M within
+props/tests/thermo_guards.rs-111-/// 0.1%, with R/M the 2077.3 J/kg/K the report uses (Eq. 3-2).
+props/tests/thermo_guards.rs:123:/// Item 34: each correlation behaves as its doc declares just inside each edge
+props/tests/thermo_guards.rs-124-/// (Ok) and 1e-6 relative outside (Range error, or a flag where the doc says so).
+props/tests/thermo_guards.rs:177:/// Item 29 (a): at each pressure where the engine evaluates water, `state` at
+props/tests/thermo_guards.rs-178-/// Tsat - 1 mK returns liquid and at Tsat + 1 mK returns vapour, never the other
+props/tests/thermo_guards.rs:197:/// Item 29 (b): the dilute Region 2 path that sets H2O vapour below 500 K holds down
+props/tests/thermo_guards.rs-198-/// to 273.15 K and refuses anything colder.
+units/src/absorber.rs:1://! ABS: rate-based packed absorber, class ReducedOrder (plan section 4).
+units/src/absorber.rs-2-//!
+units/src/absorber.rs:38://! doubled grid follow, as plan section 5 sets out. Solvent strength for p* stays
+units/src/absorber.rs-39-//! at the lean value, while the water balance itself is tracked.
+units/src/absorber.rs:959:/// Solve the column with the fallback ladder of plan section 5: Newton, then
+units/src/absorber.rs-960-/// pseudo-transient continuation, then continuation in pressure from 1 bar, then
+units/src/bench/columns.rs:8://! `docs/VALIDATION_MATRIX.md` (KH, SA, VI) or the plan's section 12 targets.
+units/src/bench/columns.rs:47:/// (lead decision S7).
+units/src/bench/columns.rs:517:/// loading where Table 6 prints it, all reported with no limit (plan section 12).
+units/src/bench/columns.rs:1021:/// temperature within the 1.4 C band (plan section 12, Morgan PDF p13) and lean
+units/src/bench/columns.rs-1022-/// loading reported.
+units/src/bench.rs:492:    /// T05 on Case 5, heat from 149 C to 130 C, MW, before the plant's CO2 scale.
+units/src/case5.rs:3://! 6 sheets are absent from the local PDF, so Case 5 stands in, as plan section 4
+units/src/case5.rs-4-//! records. Every number below is a printed Case 5 value unless a comment says it
+units/src/case5.rs:7://! The chain here is the gas side of plan section 4: reformer outlet, HPS-GEN1,
+units/src/case5.rs-8-//! HTS, WGS-EX1, WGS-EX2, LTS, WGS-EX3, WGS-EX4, KO-DRM-1.
+units/src/case5.rs:93:/// Natural gas mol%, A-50 PDF p74, with the lumping of plan section 3: C6 enters
+units/src/case5.rs-94-/// as 1.2 mol C5 per mol, and O2 joins N2.
+units/src/case5.rs:108:/// PSA reject mol%, calculated because the sheets print none: `inl.md` s3.3
+units/src/case5.rs-109-/// rebuilds it from the raw syngas, a shift to 0.33% dry CO, 99% CO2 removal and
+units/src/circulator.rs:6://! Every function takes plain numbers, so the plant can feed it the flows of any
+units/src/circulator.rs-7-//! preset. No measured circulator shaft power exists in the library; the forms
+units/src/circulator.rs:10://! Class ReducedOrder (engine plan section 4): adiabatic compression on an
+units/src/circulator.rs-11-//! assumed pressure-drop budget, with no measured shaft power to close it.
+units/src/circulator.rs:107:    /// extrapolation.
+units/src/columns.rs:10://! plant crate: absorber 26.8 bar (`P_ABSORBER`) and 40 C (USER_ANSWERS Rest),
+units/src/columns.rs-11-//! stripper 2.0 bar (`P_STRIPPER`), lean loading 0.25 (`LOADING_LEAN`), rich cap
+units/src/flash.rs:23:/// From the solver table in the engine plan.
+units/src/ihx.rs:9://! Class ReducedOrder (engine plan section 4): the approach temperature and the
+units/src/ihx.rs-10-//! loss fraction are assumed and U is not modelled, so the governing balance is
+units/src/ihx.rs:18:/// Overall coefficients at which the area is printed, W/m2/K (plan section 9).
+units/src/ihx.rs-19-/// 400 is the order of the HTTR measured sets (card C.5: 428 at 30 MW, 375 at
+units/src/ihx.rs:20:/// 15 MW); 760 is the plan's upper case.
+units/src/newton.rs:1://! Damped Newton for the column models, plan section 5. The Jacobian is built by
+units/src/newton.rs-2-//! forward differences with a block colouring, since a slice or stage residual
+units/src/packing.rs:4://! Mellapak 250Y, the packing the derivations assume for the plant, has no local
+units/src/packing.rs-5-//! geometry (derivation note M17: channel side and the Billet and Schultes
+units/src/regen.rs:2://! terms, class ReducedOrder (plan section 4). Solvent heat capacity is the assumed
+units/src/regen.rs-3-//! 3.6 kJ/kg/K of `solvent`, not verified against a table (derivation note M21).
+units/src/regen.rs:9:/// Approved SRD, GJ/t, and its range (USER_ANSWERS, plan section 7).
+units/src/smr_tube.rs:4://! Class ReducedOrder. The rate law is `xf`, extrapolated about 300 K and a factor
+units/src/smr_tube.rs-5-//! of 2 in pressure, and the activity lumps catalyst state, effectiveness and bed
+units/src/smr_tube.rs:15://! independent extents. Each step of the implicit trapezoid holds the discrete
+units/src/smr_tube.rs-16-//! enthalpy balance of each stream exactly, so energy closes to the Newton
+units/src/smr_tube.rs:560:    /// steeply there that the trapezoid would ring.
+units/src/solvent.rs:12://! - below 298.15 K, ln p* is extrapolated linearly in 1/T from 298.15 and 303.15 K,
+units/src/solvent.rs-13-//!   and density and viscosity are read at 293.15 K when the state is colder;
+units/src/solvent.rs:21://! heat capacity of 3.6 kJ/kg/K is the plan's assumed value (G.25, derivation note
+units/src/solvent.rs-22-//! M21), since no local source tabulates it.
+units/src/solvent.rs:66:/// in the plant, N2 or CH4 in the benchmarks. Card G.21's SRK form holds CO2 and
+units/src/solvent.rs-67-/// water only, and card G.21 limits it to the model column comparison. Applied here,
+units/src/stream.rs:129:/// Free-text condition raised by a unit or the plant.
+units/src/stripper.rs:2://! reboiler, class ReducedOrder (plan section 4).
+units/src/stripper.rs-3-//!
+units/src/stripper.rs:9://! Kinetics are left out: the plan's equilibrium stage (I.3) assumes the reaction
+units/src/stripper.rs-10-//! is fast at 120 C, and the Murphree efficiency is an assumption (no local source
+units/src/stripper.rs:28:/// Residual target, plan section 5.
+units/src/tube_case_b.rs:55:/// `qproc_kcheck.py`, scaled here on process heat.
+units/src/wgs.rs:10://! The bed volume of the plant is not published anywhere in the library, so
+units/src/wgs.rs-11-//! `HtsSize` offers two bases. `Ghsv` takes a space velocity, with Chinchen's own
+units/src/xf.rs:5://! Traps from `smr_wgs.md` s2.6 that shape this module:
+units/src/xf.rs-6-//!
+units/src/xf.rs:25://! extrapolation of about 300 K and a factor of 2 in pressure.
+units/src/xf.rs:231:    /// Table 6 at a chosen activity. Plan rule: 1.0 until the JAERI A-2 fit.
+units/src/xf.rs-232-    ///
+units/src/xf.rs:304:        // The sample point of `smr_wgs.md` trap T2 at 30 bar.
+units/src/xf.rs:316:        // `smr_wgs.md` T2 prints DEN^2 = 82.7 at 1000 K for this composition.
+units/tests/absorber_vapour.rs:5://! water only. In the plant absorber the vapour is H2-rich syngas at 26.8 bar, so
+units/tests/absorber_vapour.rs-6-//! the binary describes the wrong mixture there.
+units/tests/m4_acceptance.rs:1://! M4 acceptance tests, plan section 12. Limits are the plan's and stay as written.
+units/tests/m4_acceptance.rs-2-//! Each test prints what it computed, so a run with `--nocapture` gives the table.
+units/tests/m4_acceptance.rs:186:/// Values M4 hands to the plant terms, from `bench::gas_terms`. T01 and T05 flip at
+units/tests/m4_acceptance.rs-187-/// M8 only after their gates pass there; T03 stays anchored by plan, so only its
+units/tests/m5_acceptance.rs:1://! M5 acceptance tests, plan section 12. Limits are the plan's and stay as written.
+units/tests/m5_acceptance.rs-2-//! Code tests and literature benchmarks are kept apart: a JAERI run that misses its
+units/tests/m5_acceptance.rs:115:    // Hoseinzade and Adams carry KH2O 100 times too small, trap T2.
+units/tests/m5_acceptance.rs:120:    // Their k values hold the fresh factor 2.246, trap T3.
+units/tests/m5_acceptance.rs:248:/// model share is printed beside them, with no limit in the plan.
+units/tests/m6_acceptance.rs:1://! M6 acceptance tests, plan section 12. Code tests and literature benchmarks are
+units/tests/m6_acceptance.rs-2-//! kept apart: each benchmark test checks that its rows are produced, that every
+units/tests/reaction_guards.rs:17:/// Item 20: on a grid of 700 to 1200 K and 15 to 40 bar, for both K sources, every
+units/tests/reaction_guards.rs-18-/// Xu-Froment driving force divided by its forward term is at most 1e-9 at the
+units/tests/reaction_guards.rs:108:/// Item 20, long-bed half: the equilibrium limit belongs to thermodynamics, so on
+units/tests/reaction_guards.rs-109-/// the isothermal limit tube a long bed lands on SMR-EQ at its own outlet state
+units/tests/reaction_guards.rs:161:/// Item 21: hard ceilings. Hydrogen out of any unit stays at or below the
+units/tests/reaction_guards.rs-162-/// stoichiometric limit of its feed (H2 + CO + (3n+1) CnH2n+2), every mole fraction
+units/tests/reaction_guards.rs:214:/// Item 22: Le Chatelier holds for SMR-EQ at the Case 5 feed. CH4 conversion falls
+units/tests/reaction_guards.rs-215-/// strictly with pressure, rises strictly with temperature and with steam to
+units/tests/reaction_guards.rs:268:/// Items 1, 25 and 30 on the two heated tubes the engine uses (Case B on the HA
+units/tests/reaction_guards.rs-269-/// tube, JAERI A-2): helium enters at z = L at its prescribed temperature, the
+units/tests/reaction_guards.rs:345:/// Item 7: defaults hold through the ordinary constructors. Zhang is the default K
+units/tests/reaction_guards.rs-346-/// source, Table 6 runs at activity 1.0 until a fit sets it, the JAERI benchmarks
+units/tests/reaction_guards.rs:380:/// Item 28: one gas constant per purpose. The MEA prototype's 8.314462 equals the
+units/tests/reaction_guards.rs-381-/// exact SI value to 1e-6. Xu and Froment name R in their notation (Part I, PDF p8)
+vv/src/gas_bench.rs:49:/// TEV-953 A-40 natural gas per mol, lumped as plan section 3 states: C6 enters as
+vv/src/gas_bench.rs-50-/// 1.2 mol of C5 and O2 joins N2.
+vv/src/ihx_bench.rs:1://! IHX benchmarks of plan section 12 (`ihx_benchmarks_10_3`), on the rating model
+vv/src/ihx_bench.rs-2-//! of `nush2_units::ihx`.
+vv/src/ihx_bench.rs:18:/// Limits of plan section 12: INL outlets 2 K, HTTR outlets 5 K.
+vv/src/report.rs:1://! Validation_Results.csv writer, freeze section 8 schema.
+vv/tests/benchmark_rows.rs:1://! Tests of the benchmark rows. Lead decision S1 keeps code tests and literature
+vv/tests/benchmark_rows.rs-2-//! benchmarks apart: these tests check that each row is produced, finite and
+vv/tests/benchmark_rows.rs:120:/// Lead decision S2: the LTS keeps Zhang K2, and the NIST constant runs as one
+vv/tests/benchmark_rows.rs-121-/// sensitivity row with no limit.
+vv/tests/benchmark_rows.rs:180:/// The M6 column rows are well formed, and lead decision S7 holds for the
+vv/tests/benchmark_rows.rs-181-/// fixtures that `nush2_units::bench` reads: after every column benchmark has run
+vv/tests/benchmark_rows.rs:203:/// Lead decision S7: a fixture read by this crate holds only values a benchmark
+vv/tests/benchmark_rows.rs-204-/// reads. Each stored row must be returned by at least one lookup.
+vv/tests/concept_checks.rs:90:/// Item 4: one definition per physical constant and per numerical routine. A
+vv/tests/concept_checks.rs-91-/// definition of a listed name with a literal value, or a second routine of a listed
+vv/tests/concept_checks.rs:167:/// Item 6: every unit operation module names its model class and the reason in its
+vv/tests/concept_checks.rs-168-/// header, and a module that records a `ModelClass` names that class.
+vv/tests/concept_checks.rs:207:/// Item 18 (c): no gas-phase rate in `engine/units/src` mixes a concentration
+vv/tests/concept_checks.rs-208-/// closure with a pressure-basis equilibrium constant.
+vv/tests/concept_checks.rs:222:/// Item 33 (b): crates built for wasm32 call no timer, thread or file system API
+vv/tests/concept_checks.rs-223-/// outside their test modules, since compiling for wasm32 does not show that a call
+vv/tests/concept_checks.rs:261:/// Item 12: every failed row states the measured value and the limit it missed, so
+vv/tests/concept_checks.rs-262-/// a reader can judge it without re-running it.
+vv/tests/concept_checks.rs:284:/// Item 36: no published text claims validated status. Every module's author
+vv/tests/concept_checks.rs-285-/// sign-off is "not yet checked by the author" (docs/VALIDATION_MATRIX.md section
+vv/tests/concept_checks.rs:328:/// Item 35, partly adopted: the register and the code agree in both directions. The
+vv/tests/concept_checks.rs-329-/// test resolves each `engine_fn` of `math/eq_register.csv` to an item of that name
+wasm/src/solve.rs:575:/// Whether the rated reactor runs the plant: thermal surplus at the rating at
+wasm/src/solve.rs-576-/// or above zero and no heat duty above the rating.
+wasm/src/tests.rs:419:    // (build order section 5 item 3 moves Final_Design_Basis.csv onto the same value).
+wasm/src/tests.rs:915:/// At 100 MWth the plant cannot run: the reply says so and why, carries the
+wasm/src/tests.rs-916-/// unmet heat of the export function, and no target case reads met.

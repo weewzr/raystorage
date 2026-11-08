@@ -1,0 +1,284 @@
+\section{Carbon balance and techno-economic analysis}
+\label{sec:ledgers}
+The heat and hydrogen calculations define the physical plant. This section follows first the carbon and then the money. The ledgers are generated from the same Rust functions as the final result, so the arithmetic remains tied to the reproducible model rather than manually transcribed headline values.
+
+\subsection{Annual hydrogen production from the source rate}
+INL reports the common hydrogen service as 130 MMSCFD and approximately 29,000 lb/h~\cite{inltev953,inltev961}. Using Assumption A-02, $A=0.85$~\cite{nishihara2007potential}, annual hydrogen production is calculated from
+\begin{equation}\label{eq:annual-h2-general}
+M_{H_2}=\dot m_{H_2}\,t_{\rm year}\,A,
+\end{equation}
+where $M_{H_2}$ is annual hydrogen production (t/y), $\dot m_{H_2}$ is instantaneous hydrogen mass rate (t/h), $t_{\rm year}=8760$ h/y, and $A$ is annual availability (-). Converting the cited 29,000 lb/h source rate gives
+\begin{equation}\label{eq:annual-h2}
+M_{H_2}=29{,}000\frac{\mathrm{lb}}{\mathrm h}
+\left(0.45359237\frac{\mathrm{kg}}{\mathrm{lb}}\right)
+(8760\,\mathrm{h/y})(0.85)
+\left(\frac{1\,\mathrm t}{1000\,\mathrm{kg}}\right)
+=97{,}946~\mathrm{t/y}.
+\end{equation}
+This is a project annualisation of the source instantaneous rate, not a separate literature-reported annual plant output.
+
+\subsection{Carbon balance and lifecycle emissions}
+The source process reports 3,205 short ton/day baseline emissions~\cite{inltev953}, and 142 short ton/day residual emissions plus 1,927 short ton/day captured CO$_2$ for Case 6~\cite{inltev961}. These source values are converted rather than reverse-engineered from an assumed pure-methane feed, because the INL process model already distinguishes feed, fuel and process streams. The annualisation uses the Nishihara design-study availability $A=0.85$ (Assumption A-02)~\cite{nishihara2007potential}. Using the standard conversion 1 short ton = 0.90718474 t, the general annualization for a source daily CO$_2$ rate $\dot M_{CO_2,d}$ is
+\begin{equation}\label{eq:co2-annual-general}
+M_{CO_2,y}=\dot M_{CO_2,d}(0.90718474)(365)A,
+\end{equation}
+where $M_{CO_2,y}$ is annual CO$_2$ mass (t/y), $\dot M_{CO_2,d}$ is source CO$_2$ rate (short ton/d), and $A$ is availability (-). For the baseline:
+\begin{equation}\label{eq:base-direct}
+E_{\rm base,direct}=3205\frac{\mathrm{short\ ton}}{\mathrm d}
+(0.90718474)\frac{\mathrm t}{\mathrm{short\ ton}}(365)(0.85)
+=902{,}060~\mathrm{t/y}.
+\end{equation}
+\begin{equation}\label{eq:cand-direct}
+E_{\rm cand,direct}=142(0.90718474)(365)(0.85)
+=39{,}966~\mathrm{t/y}.
+\end{equation}
+so
+\begin{equation}\label{eq:direct-avoided}
+A_{\rm direct}=902{,}060-39{,}966=862{,}094~\mathrm{tCO_2/y}.
+\end{equation}
+The same conversion gives
+\begin{equation}\label{eq:captured-annual}
+M_{\rm captured}=1927(0.90718474)(365)(0.85)
+=542{,}362~\mathrm{tCO_2/y}.
+\end{equation}
+
+Natural-gas use falls from 52.5 MMSCFD~\cite{inltev953} to 34.0 MMSCFD~\cite{inltev961}. To convert a volumetric gas rate $F_{\rm NG}$ (MMSCFD) to daily energy, the screening model uses
+\begin{equation}\label{eq:ng-energy}
+Q_{\rm NG,d}=F_{\rm NG}(10^6)(HHV_{\rm NG})(1.05505585262\times10^{-6}),
+\end{equation}
+where $Q_{\rm NG,d}$ is natural-gas energy (GJ/d), $HHV_{\rm NG}$ is gas higher heating value (Btu/scf), and the final factor is GJ/Btu. Assumption A-03 uses $HHV_{\rm NG}=1044$ Btu/scf as the project screening basis; it is not asserted as an INL-measured gas property. Assumption A-04 uses the IEA global-average 11.5 kgCO$_2$e/GJ gas-supply factor~\cite{iea2026lng}. Annual upstream emissions are calculated as
+\begin{equation}\label{eq:upstream-ng}
+E_{\rm NG,up}=Q_{\rm NG,d}(365)A\,e_{\rm NG}/1000,
+\end{equation}
+where $E_{\rm NG,up}$ is upstream emissions (tCO$_2$e/y) and $e_{\rm NG}=11.5$ kgCO$_2$e/GJ is Assumption A-04~\cite{iea2026lng}. For the 52.5 MMSCFD baseline~\cite{inltev953},
+\begin{equation}\label{eq:upstream-ng-base}
+\begin{aligned}
+E_{\rm NG,up,base}
+&=\left[(52.5~\mathrm{MMSCFD})(10^6~\mathrm{scf/MMSCF})(1044~\mathrm{Btu/scf})\right.\\
+&\qquad\left.\times(1.05505585262\times10^{-6}~\mathrm{GJ/Btu})\right]
+(365~\mathrm{d/y})(0.85)
+\frac{11.5~\mathrm{kgCO_2e/GJ}}{1000~\mathrm{kg/t}}\\
+&\approx206{,}322~\mathrm{tCO_2e/y}.
+\end{aligned}
+\end{equation}
+Here 1044 Btu/scf is Assumption A-03 and 11.5 kgCO$_2$e/GJ is the IEA global proxy (A-04)~\cite{iea2026lng}. For the 34.0 MMSCFD candidate~\cite{inltev961},
+\begin{equation}\label{eq:upstream-ng-candidate}
+\begin{aligned}
+E_{\rm NG,up,cand}
+&=\left[(34.0~\mathrm{MMSCFD})(10^6~\mathrm{scf/MMSCF})(1044~\mathrm{Btu/scf})\right.\\
+&\qquad\left.\times(1.05505585262\times10^{-6}~\mathrm{GJ/Btu})\right]
+(365~\mathrm{d/y})(0.85)
+\frac{11.5~\mathrm{kgCO_2e/GJ}}{1000~\mathrm{kg/t}}\\
+&\approx133{,}618~\mathrm{tCO_2e/y}.
+\end{aligned}
+\end{equation}
+The upstream saving used in the lifecycle ledger is therefore
+\begin{equation}\label{eq:upstream-ng-saving}
+A_{\rm upstream}=E_{\rm NG,up,base}-E_{\rm NG,up,cand}
+=206{,}322-133{,}618\approx72{,}704~\mathrm{tCO_2e/y}.
+\end{equation}
+$E_{\rm NG,up,base}$ and $E_{\rm NG,up,cand}$ are annual upstream gas-supply emissions (tCO$_2$e/y), and $A_{\rm upstream}$ is their project-derived difference (tCO$_2$e/y).  The new candidate burdens use Assumption A-05, the UNECE 5.5 kgCO$_2$e/MWh$_e$ nuclear-electricity lifecycle anchor~\cite{unece2022lca}. For direct heat, Assumption A-06 multiplies that electricity factor by the declared 0.504 MWh$_e$-equivalent/MWh$_{th}$ allocation proxy; this is not a published direct-heat LCA. The auxiliary term uses the source 17.3 MWe candidate demand~\cite{inltev961} minus Assumption A-01 = 6.3 MWe, a retained historical project screening anchor rather than an INL common-output value. Assumption A-07 = 0.025 tCO$_2$e/tCO$_2$ is likewise a generic project T\&S lifecycle screen, not a Singapore-route measurement. Thus the nuclear-heat lifecycle burden is calculated from
+\begin{equation}\label{eq:nuclear-lca-general}
+E_{\rm nuclear}=\dot Q_{\rm process}(1000)t_{\rm op}(e_{\rm nuc}\eta_e)/10^6,
+\end{equation}
+where $\dot Q_{\rm process}$ is process heat (MWth), $t_{\rm op}$ is operating time (h/y), $e_{\rm nuc}$ is the nuclear electricity lifecycle anchor (kgCO$_2$e/MWh$_e$), and $\eta_e=0.504$ is the declared allocation factor. Numerically,
+\begin{equation}\label{eq:nuclear-lca}
+E_{\rm nuclear}=176.8(1000)(7446)(5.5\times0.504)/10^6
+=3{,}649~\mathrm{tCO_2e/y},
+\end{equation}
+The incremental auxiliary burden is
+\begin{equation}\label{eq:aux-lca-general}
+E_{\rm aux}=(P_{\rm cand}-P_{\rm common})(1000)t_{\rm op}e_{\rm nuc}/10^6,
+\end{equation}
+where $P_{\rm cand}$ and $P_{\rm common}$ are candidate and retained common electricity demands (MWe). Substitution gives
+\begin{equation}\label{eq:aux-lca}
+E_{\rm aux}=(17.3-6.3)(1000)(7446)(5.5)/10^6
+=450~\mathrm{tCO_2e/y},
+\end{equation}
+and the T\&S lifecycle screen is
+\begin{equation}\label{eq:ts-lca-general}
+E_{\rm T\&S}=e_{\rm T\&S}M_{\rm captured},
+\end{equation}
+where $e_{\rm T\&S}$ is the screening T\&S factor (tCO$_2$e/tCO$_2$) and $M_{\rm captured}$ is captured CO$_2$ (t/y). Thus
+\begin{equation}\label{eq:ts-lca}
+E_{\rm T\&S}=0.025(542{,}362)=13{,}559~\mathrm{tCO_2e/y}.
+\end{equation}
+Direct CO$_2$ and lifecycle CO$_2$e are not interchangeable. The conventional and candidate plant stacks first determine the direct saving in Eq.~\ref{eq:direct-avoided}. Lifecycle accounting then adds the upstream saving from Eq.~\ref{eq:upstream-ng-saving} and subtracts the nuclear, auxiliary-electricity and T\&S burdens from Eqs.~\ref{eq:nuclear-lca}, \ref{eq:aux-lca} and \ref{eq:ts-lca}:
+\begin{equation}\label{eq:lifecycle-avoided}
+A_{\rm lifecycle}=A_{\rm direct}+A_{\rm upstream}-E_{\rm nuclear}-E_{\rm aux}-E_{\rm T\&S}.
+\end{equation}
+
+\begin{table}[htbp]\centering\scriptsize
+\caption{Canonical lifecycle-emissions ledger generated by Rust. SAVED means less than the conventional baseline; ADDED means a new candidate burden.}
+\label{tab:co2-ledger}
+\pgfplotstabletypeset[col sep=comma,
+columns={item,direction,change_tco2e_y,meaning},
+columns/item/.style={string type,column name=Item,column type={p{0.31\linewidth}}},
+columns/direction/.style={string type,column name=Direction,column type={p{0.11\linewidth}}},
+columns/change_tco2e_y/.style={fixed,precision=0,column name={tCO$_2$e/y},column type=r},
+columns/meaning/.style={string type,column name=Meaning,column type={p{0.31\linewidth}}},
+every head row/.style={before row=\toprule,after row=\midrule},
+every last row/.style={after row=\bottomrule}]
+{../results/final_design/generated/lifecycle_ledger.csv}
+\end{table}
+
+\begin{figure}[htbp]\centering
+\input{../results/final_design/generated/co2_bridge_figure.tex}
+\caption{Rust-generated lifecycle contribution bridge.  Positive bars are savings; negative bars are candidate lifecycle burdens.  The net bar reproduces the canonical lifecycle result.}
+\label{fig:co2-bridge}
+\end{figure}
+
+Using Eq.~\ref{eq:lifecycle-avoided}, the arithmetic reconciliation is
+\begin{equation}\label{eq:lifecycle-reconciliation}
+862{,}093.8+72{,}703.8-3{,}649.2-450.5-13{,}559.0
+=\mathbf{917{,}138.9~tCO_2e/y}.
+\end{equation}
+The candidate lifecycle total is
+\begin{equation}\label{eq:candidate-lifecycle-total}
+E_{\rm cand,LC}=39{,}966.48+133{,}617.86+3{,}649.21+450.48+13{,}559.05
+=191{,}243.07~\mathrm{tCO_2e/y}.
+\end{equation}
+Using annual hydrogen production from Eq.~\ref{eq:annual-h2}, the candidate lifecycle intensity is
+\begin{equation}\label{eq:lifecycle-intensity}
+I_{H_2}=\frac{E_{\rm cand,LC}}{M_{H_2}}
+=\frac{191{,}243.07~\mathrm{tCO_2e/y}}{97{,}946.0~\mathrm{tH_2/y}}
+\approx1.95~\mathrm{kgCO_2e/kgH_2}.
+\end{equation}
+Here $E_{\rm cand,LC}$ is candidate lifecycle emissions (tCO$_2$e/y), $M_{H_2}$ is annual hydrogen mass (t/y), and $I_{H_2}$ is lifecycle carbon intensity; t/t is numerically identical to kg/kg.
+
+Lifecycle avoidance exceeds direct avoidance because the approximately 72.7 ktCO$_2$e/y upstream natural-gas saving is larger than the approximately 17.7 ktCO$_2$e/y of new lifecycle burdens. Captured CO$_2$ is not added again to the numerator, avoiding double counting.  The one-tonne-scale difference obtained by adding rounded table entries is rounding only.
+
+\subsection{Techno-economic calculation}
+The natural-gas saving is directly reproducible from the same cited 52.5 and 34.0 MMSCFD source rates. Assumption A-08 sets the gas price $P_{\rm NG}$ to S\$15/GJ as a project screening value, not a contracted Singapore tariff. Annual gas expenditure is
+\begin{equation}\label{eq:ng-cost-general}
+C_{\rm NG}=Q_{\rm NG,d}(365)A P_{\rm NG},
+\end{equation}
+where $C_{\rm NG}$ is annual gas cost (S\$/y). For the cited baseline flow~\cite{inltev953},
+\begin{equation}\label{eq:ng-cost-base}
+C_{\rm NG,base}
+=\left[(52.5)(10^6)(1044)(1.05505585262\times10^{-6})\right]
+(365)(0.85)(15)
+\approx\mathrm{S\$}269.115~\mathrm{million/y},
+\end{equation}
+where the bracketed term is GJ/d and Assumption A-08 is $P_{\rm NG}=\mathrm{S\$}15$/GJ. For the cited candidate flow~\cite{inltev961},
+\begin{equation}\label{eq:ng-cost-candidate}
+C_{\rm NG,cand}
+=\left[(34.0)(10^6)(1044)(1.05505585262\times10^{-6})\right]
+(365)(0.85)(15)
+\approx\mathrm{S\$}174.284~\mathrm{million/y}.
+\end{equation}
+The factors have dimensions MMSCFD$\times$scf/MMSCF$\times$Btu/scf$\times$GJ/Btu$\times$d/y$\times$S\$/GJ, leaving S\$/y.
+hence
+\begin{equation}\label{eq:ng-saving}
+S_{\rm NG}=269.115-174.284
+=\mathbf{S\$94.831~million/y}.
+\end{equation}
+
+The selected source economic burden is deliberately charged in full. Nishihara reports source heat cost $p_{h,0}=0.52$ JPY/MJ and source electricity cost $p_{e,0}=4.9$ JPY/kWh~\cite{nishihara2007potential}. Let $D_{JP}=112.27/99.59=1.12732$ be the recorded 2007-to-2025 Japan GDP-deflator factor (-) and $X_{JPY}=0.008117$ SGD/JPY the dated project FX conversion. The normalized heat price is
+\begin{equation}\label{eq:heat-price-normalization}
+\begin{aligned}
+p_h&=p_{h,0}D_{JP}X_{JPY}(1000~\mathrm{MJ/GJ})\\
+&=(0.52~\mathrm{JPY/MJ})(1.12732)(0.008117~\mathrm{SGD/JPY})\\
+&\qquad\times(1000~\mathrm{MJ/GJ})
+\approx\mathrm{S\$}4.758/\mathrm{GJ}.
+\end{aligned}
+\end{equation}
+Similarly,
+\begin{equation}\label{eq:electric-price-normalization}
+\begin{aligned}
+p_e&=p_{e,0}D_{JP}X_{JPY}(1000~\mathrm{kWh/MWh})\\
+&=(4.9~\mathrm{JPY/kWh})(1.12732)(0.008117~\mathrm{SGD/JPY})\\
+&\qquad\times(1000~\mathrm{kWh/MWh})
+\approx\mathrm{S\$}44.837/\mathrm{MWh}.
+\end{aligned}
+\end{equation}
+Here $p_h$ and $p_e$ are normalized source-product prices. The deflator and FX bases are documented project normalization inputs; the GDP deflator is a broad screening index, not a nuclear-construction index. Therefore
+\begin{equation}\label{eq:source-heat-cost}
+C_{\rm source,heat}
+=(370~\mathrm{MW_{th}})(7446~\mathrm{h/y})(3.6~\mathrm{GJ/MWh})(4.758~\mathrm{S\$/GJ})
+\approx\mathrm{S\$}47.193~\mathrm{million/y}.
+\end{equation}
+The 370 MWth source process-heat/economic branch is from Nishihara~\cite{nishihara2007potential}; 7446 h/y is $8760\times0.85$ using Assumption A-02; 3.6 GJ/MWh is an exact energy conversion; and 4.758 S\$/GJ is Eq.~\ref{eq:heat-price-normalization}. The dimensions reduce as MW$\times$h/y$\times$GJ/MWh$\times$S\$/GJ = S\$/y. This is the heat-product share of the selected published source economic burden.
+\begin{equation}\label{eq:source-electric-cost}
+C_{\rm source,electric}
+=(88~\mathrm{MWe})(7446~\mathrm{h/y})(44.837~\mathrm{S\$/MWh})
+\approx\mathrm{S\$}29.380~\mathrm{million/y}.
+\end{equation}
+The 88 MWe complementary source product is the rounded Nishihara high-hydrogen economic configuration~\cite{nishihara2007potential}; 44.837 S\$/MWh is Eq.~\ref{eq:electric-price-normalization}. MW$\times$h/y$\times$S\$/MWh reduces to S\$/y.
+and
+\begin{equation}\label{eq:source-total-cost}
+C_{\rm source}\approx\mathbf{S\$76.572~million/y}.
+\end{equation}
+The 88 MWe term is used only to recover the full published source economic burden; it is not a project export claim.
+
+IEAGHG Case 1A provides the source capture-capital anchor $C_{\rm CCS,0}=\mathrm{EUR}\,41.02$ million (2014 basis)~\cite{ieaghg2017smr}. The canonical reference capture scale is $M_0=387{,}805.2$ t/y and the project capture scale is $M_{\rm captured}=542{,}361.98$ t/y from Eq.~\ref{eq:captured-annual}. The project assumes linear captured-tonne scaling, exponent $\alpha=1$, together with the recorded 2014-to-2025 deflator proxy $D_{EU}=123.84/90.46=1.36834$ and dated FX $X_{EUR}=1.452$ SGD/EUR. Thus
+\begin{equation}\label{eq:ccs-capex-general}
+C_{\rm CCS}=C_{\rm CCS,0}D_{EU}X_{EUR}
+\left(\frac{M_{\rm captured}}{M_0}\right)^{\alpha},
+\end{equation}
+where $C_{\rm CCS}$ is project screening capture CAPEX (S\$), $C_{\rm CCS,0}$ is source CAPEX (EUR), $D_{EU}$ is the price-year factor (-), $X_{EUR}$ is FX (SGD/EUR), and $\alpha=1$ is the explicit project scaling assumption. Numerically,
+\begin{equation}\label{eq:ccs-capex-substitution}
+C_{\rm CCS}
+=(41.02~\mathrm{million~EUR})(1.36834)(1.452~\mathrm{SGD/EUR})
+\left(\frac{542{,}361.98~\mathrm{t/y}}{387{,}805.2~\mathrm{t/y}}\right)
+\approx\mathrm{S\$}114.036~\mathrm{million}.
+\end{equation}
+IEAGHG did not report S\$114.036 million for this project; it is the project-normalized, linearly scaled result. Capital is annualized using
+\begin{equation}\label{eq:crf}
+\mathrm{CRF}(i,n)=\frac{i(1+i)^n}{(1+i)^n-1},
+\end{equation}
+where $i$ is annual discount rate (-) and $n$ is economic life (y). Assumption A-13 retains the IEAGHG $i=0.08$ and $n=25$ y basis~\cite{ieaghg2017smr}; therefore
+\begin{equation}\label{eq:ccs-annual-cost}
+C_{\rm CCS,annual}=C_{\rm CCS}\,\mathrm{CRF}(0.08,25)
+=(114.036~\mathrm{million~S\$})(0.09368)
+\approx\mathbf{S\$10.683~million/y}.
+\end{equation}
+$C_{\rm CCS,annual}$ is annualized capture capital (S\$/y), and $\mathrm{CRF}(0.08,25)\approx0.09368$ y$^{-1}$.
+Assumption A-14 is an explicit 10\% project integration/site capital allowance rather than an observed Singapore cost. The S\$546.283 million reactor/source capital basis is the normalized 59.7 billion JPY Nishihara source plant cost~\cite{nishihara2007potential}; S\$114.036 million is the project CCS CAPEX from Eq.~\ref{eq:ccs-capex-substitution}. Assumption A-15 applies the retained 3\% annualisation rate and 40-y life to this allowance; these are screening/design-study bases, not a financing offer. It contributes approximately
+\begin{equation}\label{eq:integration-cost}
+C_{\rm integration}=0.10(546.283+114.036)\,\mathrm{million}\,\mathrm{CRF}(0.03,40)\approx\mathbf{S\$2.857~million/y}.
+\end{equation}
+while Assumption A-16 sets T\&S to S\$15/tCO$_2$ as a project screening tariff, not an observed or contracted Singapore tariff. Official Singapore evidence is cited only for the separate statement that actual cross-border CCS costs remain unresolved~\cite{mticcs2025cost}. Using $M_{\rm captured}=542{,}362$ t/y from Eq.~\ref{eq:captured-annual},
+\begin{equation}\label{eq:ts-cost}
+C_{\rm T\&S}=542{,}362(15)
+\approx\mathbf{S\$8.135~million/y}.
+\end{equation}
+Assumption A-17 sets project electricity revenue to exactly \textbf{S\$0/y} because no validated off-design export model exists; this is a conservative model boundary, not a market-price claim.
+The economic ledger follows the same logic. The conventional baseline's natural-gas expenditure is replaced by lower candidate gas use plus the full selected source reactor economic burden, CCS annualisation, integration allowance and T\&S. Project electricity revenue is exactly zero.
+
+\begin{table}[htbp]\centering\scriptsize
+\caption{Canonical annual-cost ledger generated by Rust for the zero-electricity-credit model boundary.}
+\label{tab:cost-ledger}
+\pgfplotstabletypeset[col sep=comma,
+columns={item,direction,annual_sgd,meaning},
+columns/item/.style={string type,column name=Item,column type={p{0.31\linewidth}}},
+columns/direction/.style={string type,column name=Direction,column type={p{0.11\linewidth}}},
+columns/annual_sgd/.style={fixed,precision=0,column name={S\$/y},column type=r},
+columns/meaning/.style={string type,column name=Meaning,column type={p{0.31\linewidth}}},
+every head row/.style={before row=\toprule,after row=\midrule},
+every last row/.style={after row=\bottomrule}]
+{../results/final_design/generated/cost_ledger.csv}
+\end{table}
+
+Total money saved is approximately S\$94.831 million/y.  Total new represented costs are approximately S\$98.247 million/y, so
+\begin{equation}\label{eq:annual-incremental-cost}
+\Delta C_{\rm annual}
+\approx98.247-94.831
+=\mathbf{S\$3.416~million/y}.
+\end{equation}
+The final division is therefore
+\begin{equation}\label{eq:abatement-cost-final}
+C_{\rm abatement}
+=\frac{\Delta C_{\rm annual}}{A_{\rm lifecycle}}
+\approx\frac{\mathrm{S\$}3.416\ \mathrm{million/y}}{917{,}139\ \mathrm{tCO_2e/y}}
+\approx\mathbf{S\$3.725/\mathrm{tCO_2e}}.
+\end{equation}
+
+\begin{figure}[htbp]\centering
+\input{../results/final_design/generated/cost_bridge_figure.tex}
+\caption{Rust-generated annual cost-contribution bridge.  Natural-gas savings are negative cost; reactor, CCS, integration and transport/storage are added costs.  Electricity revenue is zero by model boundary.}
+\label{fig:cost-bridge}
+\end{figure}
+
+\subsection{What is not fully priced here?}
+The low screening abatement cost is not a turnkey Singapore project price. The current boundary does not fully price project-specific FOAK premium, financing structure, Singapore site/construction premium, licensing and security, detailed EPC/contingency, emergency-planning infrastructure, detailed 176.8 MWth IHX qualification, waste/decommissioning, insurance/liability, schedule risk, or negotiated cross-border CCS infrastructure/contracts. No monetary values are invented for these unresolved items. Their omission is why the economic conclusion is threshold compliance within the declared model, not bankability.

@@ -1,0 +1,1190 @@
+[
+ {
+  "size": "1200x800",
+  "path": "start_mouse",
+  "target": "sidepanel",
+  "stepped": true,
+  "steps": [
+   [
+    "primary",
+    1522
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": -204,
+  "ref": {
+   "win": "text.t",
+   "side": "h4."
+  },
+  "hold": {
+   "win": [
+    0,
+    "text.t",
+    0
+   ],
+   "side": [
+    0.8,
+    "#pfd-panel",
+    3
+   ]
+  },
+  "y0": 369,
+  "max0": 471,
+  "max1": 471,
+  "side0": 959,
+  "sideMax0": 2560,
+  "sideMax1": 2373,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "1200x800",
+  "path": "start_mouse",
+  "target": "sidebottom",
+  "stepped": true,
+  "steps": [
+   [
+    "secondary",
+    1204
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 121,
+  "ref": {
+   "win": "text.t",
+   "side": "li."
+  },
+  "hold": {
+   "win": [
+    0,
+    "text.t",
+    0
+   ],
+   "side": [
+    -0.1,
+    "#pfd-panel",
+    4
+   ]
+  },
+  "y0": 369,
+  "max0": 471,
+  "max1": 471,
+  "side0": 2373,
+  "sideMax0": 2373,
+  "sideMax1": 4315,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "1200x800",
+  "path": "start_mouse",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:60167"
+   ],
+   "network": []
+  }
+ },
+ {
+  "size": "1200x800",
+  "path": "next_mouse",
+  "target": "sidepanel",
+  "stepped": true,
+  "steps": [
+   [
+    "secondary",
+    1419
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 121,
+  "ref": {
+   "win": "text.t",
+   "side": "p.empty-note"
+  },
+  "hold": {
+   "win": [
+    0,
+    "text.t",
+    0
+   ],
+   "side": [
+    -0.1,
+    "#pfd-panel",
+    3
+   ]
+  },
+  "y0": 369,
+  "max0": 471,
+  "max1": 471,
+  "side0": 755,
+  "sideMax0": 2373,
+  "sideMax1": 4315,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "1200x800",
+  "path": "next_mouse",
+  "target": "sidebottom",
+  "stepped": true,
+  "steps": [
+   [
+    "feed",
+    1642
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": -4,
+  "ref": {
+   "win": "text.t",
+   "side": "span.vnote"
+  },
+  "hold": {
+   "win": [
+    0,
+    "text.t",
+    0
+   ],
+   "side": [
+    0.3,
+    "#pfd-panel",
+    7
+   ]
+  },
+  "y0": 369,
+  "max0": 471,
+  "max1": 471,
+  "side0": 4315,
+  "sideMax0": 4315,
+  "sideMax1": 4311,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "1200x800",
+  "path": "next_mouse",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:49675"
+   ],
+   "network": []
+  }
+ },
+ {
+  "size": "1200x800",
+  "path": "arrow",
+  "target": "sidepanel",
+  "stepped": true,
+  "steps": [
+   [
+    "secondary",
+    1309
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 121,
+  "ref": {
+   "win": "text.t",
+   "side": "p.empty-note"
+  },
+  "hold": {
+   "win": [
+    0,
+    "text.t",
+    0
+   ],
+   "side": [
+    -0.1,
+    "#pfd-panel",
+    3
+   ]
+  },
+  "y0": 369,
+  "max0": 471,
+  "max1": 471,
+  "side0": 755,
+  "sideMax0": 2373,
+  "sideMax1": 4315,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "1200x800",
+  "path": "arrow",
+  "target": "sidebottom",
+  "stepped": true,
+  "steps": [
+   [
+    "feed",
+    1313
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": -4,
+  "ref": {
+   "win": "text.t",
+   "side": "span.vnote"
+  },
+  "hold": {
+   "win": [
+    0,
+    "text.t",
+    0
+   ],
+   "side": [
+    0.3,
+    "#pfd-panel",
+    7
+   ]
+  },
+  "y0": 369,
+  "max0": 471,
+  "max1": 471,
+  "side0": 4315,
+  "sideMax0": 4315,
+  "sideMax1": 4311,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "1200x800",
+  "path": "arrow",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:50588"
+   ],
+   "network": []
+  }
+ },
+ {
+  "size": "1280x720",
+  "path": "start_mouse",
+  "target": "sidepanel",
+  "stepped": true,
+  "steps": [
+   [
+    "primary",
+    1194
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": -204,
+  "ref": {
+   "win": "rect.",
+   "side": "p.empty-note"
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ],
+   "side": [
+    0.8,
+    "#pfd-panel",
+    3
+   ]
+  },
+  "y0": 369,
+  "max0": 471,
+  "max1": 471,
+  "side0": 959,
+  "sideMax0": 2640,
+  "sideMax1": 2453,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "1280x720",
+  "path": "start_mouse",
+  "target": "sidebottom",
+  "stepped": true,
+  "steps": [
+   [
+    "secondary",
+    1964
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 121,
+  "ref": {
+   "win": "rect.",
+   "side": "li."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ],
+   "side": [
+    -0.1,
+    "#pfd-panel",
+    4
+   ]
+  },
+  "y0": 369,
+  "max0": 471,
+  "max1": 471,
+  "side0": 2453,
+  "sideMax0": 2453,
+  "sideMax1": 4395,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "1280x720",
+  "path": "start_mouse",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:54511"
+   ],
+   "network": []
+  }
+ },
+ {
+  "size": "1280x720",
+  "path": "next_mouse",
+  "target": "sidepanel",
+  "stepped": true,
+  "steps": [
+   [
+    "secondary",
+    1343
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 121,
+  "ref": {
+   "win": "rect.",
+   "side": "div.prow"
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ],
+   "side": [
+    -0.1,
+    "#pfd-panel",
+    3
+   ]
+  },
+  "y0": 369,
+  "max0": 471,
+  "max1": 471,
+  "side0": 755,
+  "sideMax0": 2453,
+  "sideMax1": 4395,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "1280x720",
+  "path": "next_mouse",
+  "target": "sidebottom",
+  "stepped": true,
+  "steps": [
+   [
+    "feed",
+    1263
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": -4,
+  "ref": {
+   "win": "rect.",
+   "side": "li."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ],
+   "side": [
+    0.3,
+    "#pfd-panel",
+    6
+   ]
+  },
+  "y0": 369,
+  "max0": 471,
+  "max1": 471,
+  "side0": 4395,
+  "sideMax0": 4395,
+  "sideMax1": 4391,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "1280x720",
+  "path": "next_mouse",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:51133"
+   ],
+   "network": []
+  }
+ },
+ {
+  "size": "1280x720",
+  "path": "arrow",
+  "target": "sidepanel",
+  "stepped": true,
+  "steps": [
+   [
+    "secondary",
+    1356
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 121,
+  "ref": {
+   "win": "rect.",
+   "side": "div.prow"
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ],
+   "side": [
+    -0.1,
+    "#pfd-panel",
+    3
+   ]
+  },
+  "y0": 369,
+  "max0": 471,
+  "max1": 471,
+  "side0": 755,
+  "sideMax0": 2453,
+  "sideMax1": 4395,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "1280x720",
+  "path": "arrow",
+  "target": "sidebottom",
+  "stepped": true,
+  "steps": [
+   [
+    "feed",
+    1321
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": -4,
+  "ref": {
+   "win": "rect.",
+   "side": "li."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ],
+   "side": [
+    0.3,
+    "#pfd-panel",
+    6
+   ]
+  },
+  "y0": 369,
+  "max0": 471,
+  "max1": 471,
+  "side0": 4395,
+  "sideMax0": 4395,
+  "sideMax1": 4391,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "1280x720",
+  "path": "arrow",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:62058"
+   ],
+   "network": []
+  }
+ },
+ {
+  "size": "1366x768",
+  "path": "start_mouse",
+  "target": "sidepanel",
+  "stepped": true,
+  "steps": [
+   [
+    "primary",
+    1246
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": -194,
+  "ref": {
+   "win": "rect.",
+   "side": "section.psec"
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ],
+   "side": [
+    0,
+    "#pfd-panel",
+    2
+   ]
+  },
+  "y0": 369,
+  "max0": 471,
+  "max1": 471,
+  "side0": 949,
+  "sideMax0": 2563,
+  "sideMax1": 2331,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "1366x768",
+  "path": "start_mouse",
+  "target": "sidebottom",
+  "stepped": true,
+  "steps": [
+   [
+    "secondary",
+    1548
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 80,
+  "ref": {
+   "win": "rect.",
+   "side": "li."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ],
+   "side": [
+    -0.7,
+    "#pfd-panel",
+    4
+   ]
+  },
+  "y0": 369,
+  "max0": 471,
+  "max1": 471,
+  "side0": 2331,
+  "sideMax0": 2331,
+  "sideMax1": 4193,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "1366x768",
+  "path": "start_mouse",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:51137"
+   ],
+   "network": []
+  }
+ },
+ {
+  "size": "1366x768",
+  "path": "next_mouse",
+  "target": "sidepanel",
+  "stepped": true,
+  "steps": [
+   [
+    "secondary",
+    1283
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 80,
+  "ref": {
+   "win": "rect.",
+   "side": "p.empty-note"
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ],
+   "side": [
+    -0.7,
+    "#pfd-panel",
+    3
+   ]
+  },
+  "y0": 370,
+  "max0": 471,
+  "max1": 471,
+  "side0": 755,
+  "sideMax0": 2331,
+  "sideMax1": 4193,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "1366x768",
+  "path": "next_mouse",
+  "target": "sidebottom",
+  "stepped": true,
+  "steps": [
+   [
+    "feed",
+    1354
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 15,
+  "ref": {
+   "win": "rect.",
+   "side": "span.vnote"
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ],
+   "side": [
+    -0.2,
+    "#pfd-panel",
+    7
+   ]
+  },
+  "y0": 370,
+  "max0": 471,
+  "max1": 471,
+  "side0": 4193,
+  "sideMax0": 4193,
+  "sideMax1": 4208,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "1366x768",
+  "path": "next_mouse",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:51901"
+   ],
+   "network": []
+  }
+ },
+ {
+  "size": "1366x768",
+  "path": "arrow",
+  "target": "sidepanel",
+  "stepped": true,
+  "steps": [
+   [
+    "secondary",
+    1336
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 80,
+  "ref": {
+   "win": "rect.",
+   "side": "p.empty-note"
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ],
+   "side": [
+    -0.7,
+    "#pfd-panel",
+    3
+   ]
+  },
+  "y0": 369,
+  "max0": 471,
+  "max1": 471,
+  "side0": 755,
+  "sideMax0": 2331,
+  "sideMax1": 4193,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "1366x768",
+  "path": "arrow",
+  "target": "sidebottom",
+  "stepped": true,
+  "steps": [
+   [
+    "feed",
+    1356
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 15,
+  "ref": {
+   "win": "rect.",
+   "side": "span.vnote"
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ],
+   "side": [
+    -0.2,
+    "#pfd-panel",
+    7
+   ]
+  },
+  "y0": 369,
+  "max0": 471,
+  "max1": 471,
+  "side0": 4193,
+  "sideMax0": 4193,
+  "sideMax1": 4208,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "1366x768",
+  "path": "arrow",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:56926"
+   ],
+   "network": []
+  }
+ },
+ {
+  "size": "1440x900",
+  "path": "start_mouse",
+  "target": "sidepanel",
+  "stepped": true,
+  "steps": [
+   [
+    "primary",
+    1244
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 0,
+  "other_calls": [],
+  "dy": 0,
+  "dside": -205,
+  "ref": {
+   "win": "rect.",
+   "side": "span.p-label"
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ],
+   "side": [
+    -0.1,
+    "#pfd-panel",
+    4
+   ]
+  },
+  "y0": 369,
+  "max0": 471,
+  "max1": 471,
+  "side0": 937,
+  "sideMax0": 2317,
+  "sideMax1": 2083,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "1440x900",
+  "path": "start_mouse",
+  "target": "sidebottom",
+  "stepped": true,
+  "steps": [
+   [
+    "secondary",
+    1486
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 0,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 103,
+  "ref": {
+   "win": "rect.",
+   "side": "span.src"
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ],
+   "side": [
+    -0.6,
+    "#pfd-panel",
+    5
+   ]
+  },
+  "y0": 369,
+  "max0": 471,
+  "max1": 471,
+  "side0": 2083,
+  "sideMax0": 2083,
+  "sideMax1": 3734,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "1440x900",
+  "path": "start_mouse",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:59586"
+   ],
+   "network": []
+  }
+ },
+ {
+  "size": "1440x900",
+  "path": "next_mouse",
+  "target": "sidepanel",
+  "stepped": true,
+  "steps": [
+   [
+    "secondary",
+    1380
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 0,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 103,
+  "ref": {
+   "win": "rect.",
+   "side": "h4."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ],
+   "side": [
+    -0.6,
+    "#pfd-panel",
+    3
+   ]
+  },
+  "y0": 369,
+  "max0": 471,
+  "max1": 471,
+  "side0": 732,
+  "sideMax0": 2083,
+  "sideMax1": 3734,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "1440x900",
+  "path": "next_mouse",
+  "target": "sidebottom",
+  "stepped": true,
+  "steps": [
+   [
+    "feed",
+    1608
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 0,
+  "other_calls": [],
+  "dy": 0,
+  "dside": -35,
+  "ref": {
+   "win": "rect.",
+   "side": "li."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ],
+   "side": [
+    -0.2,
+    "#pfd-panel",
+    4
+   ]
+  },
+  "y0": 369,
+  "max0": 471,
+  "max1": 471,
+  "side0": 3734,
+  "sideMax0": 3734,
+  "sideMax1": 3699,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "1440x900",
+  "path": "next_mouse",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:55304"
+   ],
+   "network": []
+  }
+ },
+ {
+  "size": "1440x900",
+  "path": "arrow",
+  "target": "sidepanel",
+  "stepped": true,
+  "steps": [
+   [
+    "secondary",
+    1316
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 0,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 103,
+  "ref": {
+   "win": "rect.",
+   "side": "h4."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ],
+   "side": [
+    -0.6,
+    "#pfd-panel",
+    3
+   ]
+  },
+  "y0": 369,
+  "max0": 471,
+  "max1": 471,
+  "side0": 732,
+  "sideMax0": 2083,
+  "sideMax1": 3734,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "1440x900",
+  "path": "arrow",
+  "target": "sidebottom",
+  "stepped": true,
+  "steps": [
+   [
+    "feed",
+    1340
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 0,
+  "other_calls": [],
+  "dy": 0,
+  "dside": -35,
+  "ref": {
+   "win": "rect.",
+   "side": "li."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ],
+   "side": [
+    -0.2,
+    "#pfd-panel",
+    4
+   ]
+  },
+  "y0": 369,
+  "max0": 471,
+  "max1": 471,
+  "side0": 3734,
+  "sideMax0": 3734,
+  "sideMax1": 3699,
+  "focus": [
+   "card #tour-title",
+   "card #tour-title"
+  ]
+ },
+ {
+  "size": "1440x900",
+  "path": "arrow",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:52862"
+   ],
+   "network": []
+  }
+ }
+]

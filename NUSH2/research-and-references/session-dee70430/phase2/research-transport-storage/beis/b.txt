@@ -1,0 +1,2660 @@
+  CO2 Shipping Study
+Final Report for BEIS
+
+      Shipping CO2
+           ­ UK Cost
+          Estimation
+                 Study
+
+                Final report
+
+                           for
+  Business, Energy &
+
+    Industrial Strategy
+              Department
+
+         November 2018
+
+        Element Energy Limited
+Suite 1 Bishop Bateman Court
+
+                Thompson's Lane
+            Cambridge CB5 8AQ
+
+               Tel: 01223 852499
+                                          CO2 Shipping Study
+                                         Final Report for BEIS
+
+Authors:
+
+For comments or queries please contact:
+
+Emrah.durusut@element-energy.co.uk
+Tel: 0330 119 0990
+
+Michael.Joos@element-energy.co.uk
+Tel: 0330 119 0989
+
+Disclaimer
+
+This study was commissioned by the Department for Business, Energy and Industrial Strategy
+(BEIS). The conclusions and recommendations do not necessarily represent the view of BEIS.
+Whilst every effort has been made to ensure the accuracy of this report, neither BEIS nor
+Element Energy warrant its accuracy or will, regardless of its or their negligence, assume
+liability for any foreseeable or unforeseeable use made of this report which liability is hereby
+excluded.
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+
+Acknowledgements
+
+We gratefully acknowledge the following stakeholders for the support and input they provided:
+     · Hans Carl Amlie (Brevik Engineering ­ project partner)
+     · Martin Hay (Brevik Engineering ­ project partner)
+     · Arne Markussen (Polarkonsult ­ project partner)
+     · Robert de Kler (TNO ­ project partner)
+     · Tom Mikunda (TNO ­ project partner)
+     · Andrew Scott (Babcock International)
+     · Angus Campbell (Bernard Schulte Shipmanagement)
+     · Baris Dolek (Shell)
+     · Derek McGlashan (Forth Ports Grangemouth)
+     · Frank Ollerhead (Equinor)
+     · Mark Gilks (Calor)
+     · Steve Murphy (Pale Blue Dot)
+                                                                                                          CO2 Shipping Study
+                                                                                                        Final Report for BEIS
+
+Contents
+
+1 Executive summary .............................................................................................................1
+          Project outline ...........................................................................................................1
+          Shipping infrastructure components and variables ..................................................1
+          Opportunities and barriers ........................................................................................3
+          Recommendations for further work ..........................................................................4
+
+2 Introduction ..........................................................................................................................5
+3 Shipping infrastructure elements .........................................................................................6
+
+          Liquefaction ..............................................................................................................7
+          Temporary CO2 storage ...........................................................................................9
+          Loading .................................................................................................................. 11
+          CO2 Ship ................................................................................................................ 12
+          Unloading .............................................................................................................. 17
+          Gasification ............................................................................................................ 18
+4 Cost model methodology...................................................................................................20
+          Liquefaction ........................................................................................................... 20
+          Storage .................................................................................................................. 22
+          Loading .................................................................................................................. 24
+          Ship costs .............................................................................................................. 25
+          Unloading .............................................................................................................. 28
+          Gasification costs .................................................................................................. 29
+5 CO2 shipping cost modelling results ..................................................................................31
+          Key cost components and parameters.................................................................. 31
+          Comparison of pipeline transport and shipping (port to port) ................................ 38
+          Comparison of pipeline transport and shipping (port to storage) .......................... 40
+6 Opportunities and barriers .................................................................................................44
+          Opportunities in the UK ......................................................................................... 44
+          International opportunities ..................................................................................... 49
+          Key barriers ........................................................................................................... 51
+7 Conclusions and recommendations ..................................................................................57
+8 References ........................................................................................................................59
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+
+1 Executive summary
+
+      Project outline
+
+The Clean Growth Strategy (CGS) sets out Government's ambition of having the option to deploy
+Carbon Capture, Usage and Storage (CCUS) at scale during the 2030s, subject to the costs coming
+down sufficiently. The Department for Business, Energy and Industrial Strategy (BEIS) has identified
+a need to explore the potential role that CO2 shipping could play in reducing the cost of deploying
+CCUS in the UK.
+The key objectives of this work are:
+· Estimate costs of shipping CO2 from different terminals, and at a range of scales, to geological
+
+     CO2 storage sites in the UK, and elsewhere; and
+· Identify the opportunities shipping brings to the UK, including circumstances in which shipping
+
+     costs may represent value for money in the UK relative to fixed pipelines. Conversely, the study
+     also aims to identify barriers to CO2 shipping which must be navigated to develop this industry.
+Element Energy has been commissioned by BEIS to undertake this study, along with project partners
+Brevik Engineering and SINTEF (Norway), Polarkonsult, naval architects & marine engineers (Norway)
+and TNO (Netherlands). The study examines whether CO2 shipping could unlock additional
+possibilities across the CCUS chain, including development of smaller-scale and potentially cheaper
+CCUS projects, port-to-port shipping to aggregate CO2 for transport to a single storage site, and the
+potential for cross-border transport of CO2 to/from other countries.
+
+      Shipping infrastructure components and variables
+
+Figure 1-1 shows the components involved in the CO2 shipping chain. The scope of the study includes
+CO2 shipping, both port-to-port and port-to-storage, as well as the port infrastructure requirements; it
+excludes the CO2 capture, onshore transport and the CO2 storage facilities. The key infrastructure
+elements include equipment for liquefaction, temporary storage, loading/unloading, ships and
+gasification.
+Figure 1-1 Components of the CO2 shipping chain
+
+It is important for policy makers to understand the cost-effectiveness of shipping CO2 in a range of
+situations, relative to alternative CO2 transport options, such as pipelines. The data and information
+
+                                                                                                                                      1
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+
+gathered from partners, stakeholders and literature was used to inform development of a CO2 shipping
+costing model. Figure 1-2 gives a summary of the breakdown of the total shipping cost, allowing an
+understanding of the relative importance of the different cost components. As shown, liquefaction
+and ship costs including capital expenditure (capex), operational expenditure (opex) and fuel,
+are the biggest cost components of CO2 shipping. Additionally, shipping costs are dominated
+by operational and fuel costs, unlike pipelines which are dominated by capex.
+
+Figure 1-2 Cost components of CO2 shipping under central case assumptions
+
+The variables which impact the economics of CO2 shipping were explored.
+· As the liquefaction cost is a significant proportion of the overall cost, the total cost of transporting
+
+     pre-pressurised CO2 can be more than a third lower. The CO2 is likely to be transported via
+     onshore pipelines from CO2 sources to the liquefaction plant at the port and is expected to arrive
+     in pre-pressurised form. It was found that total shipping costs can be in the range of £7-
+     12/tCO2 for pre-pressurised CO2 for liquefaction under certain conditions (without the costs
+     of transport from the source to the port and initial compression for onshore transportation).
+· Economies of scale can be realised in shipping across many components of the chain, including
+     ship capex, ship fuel usage and harbour fees. Therefore, a higher CO2 flow rate decreases the
+     unit cost of CO2 shipping. Additionally, selecting the largest ships possible reduces the unit
+     cost, provided there is not significant unutilised capacity.
+· A sensitivity analysis was also completed on the overall cost of shipping. For a given CO2
+     pressure condition, lifetime project cost shows highest sensitivity to the CO2 flow rate, due
+     to additional ships being required; as this cost is spread over a greater quantity of CO2, the unit
+     cost (£/tCO2) shows a smaller impact of flow rate. Shipping costs were also found to be
+     sensitive to project lifetime and ship size. On the other hand, pipeline costs show much higher
+     sensitivity to distance and flow rate compared to shipping costs. Therefore, the relative cost-
+     effectiveness of shipping compared to pipelines depends on a number of important factors
+     including distance, flow-rate and project duration.
+Figure 1-3 presents the unit cost of shipping 1 MtCO2/yr over a distance of 600km with a 20-year
+project timeframe. As shown, under the central cost assumptions, it is estimated that port-to-port
+shipping is likely to be significantly cheaper than utilising a CO2 pipeline for an equivalent CO2 transport
+requirement. However, this is not always the case, and the variables which affect the cost-
+effectiveness of shipping relative to a pipeline are explored. The results show that shipping is more
+favourable for a project under the following circumstances:
+· Lower CO2 flow rates (e.g. less than 5Mtpa depending on distance and project lifetime): as
+     shipping is less capital intensive compared to pipelines.
+· Shorter project durations (e.g. less than 20 years depending on distance and flow rate):
+     favour shipping due to the lower initial outlay and hence lower sunk costs.
+· Longer transport distances (e.g. more than 500km for transporting 5MtCO2/yr for 20 years):
+     due to the high sensitivity of pipeline costs to transport distance as they are dominated by capex.
+
+                                                                                                                                      2
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+
+Figure 1-3 Comparison of the unit cost of CO2 transport for transporting 1 MtCO2/year over a
+distance of 600 km and timeframe of 20 years. All other central case assumptions were used.
+
+The potential for achieving cost reduction via re-using existing infrastructure is higher for
+pipelines, which are dominated by capex (it should be noted that the pipeline costs shown in this
+report are for new build pipelines). Although it may be technically feasible to convert an existing
+Liquefied Natural Gas (LNG) or Liquefied Petroleum Gas (LPG) ship into a CO2 ship, re-use of an
+existing ship would bring only negligible cost reductions as ship capex corresponds to around
+14% of the total shipping costs (see Figure 1-2) and some capital investment will be needed to convert
+the ship, which is expected to be less optimised compared to a new-built ship.
+The CO2 emissions from combustion of ship fuel and generation of the electricity consumed for
+liquefaction were not found to be a significant proportion of the transported CO2, staying below 2% in
+the majority of cases. However, it should be noted that the full life-cycle analysis (LCA) emissions of
+the ships have not been included in the analysis. This proportion increases as ship size decreases
+and shipping distance increases; for the smallest ship, of 1,000 tCO2, emissions may be higher than
+8% of the transported CO2 due to the higher number of trips.
+
+      Opportunities and barriers
+
+CO2 shipping can unlock a number of opportunities for the UK, such as reducing the cost of
+early UK CCUS projects, extending the economic locations for CCUS and importing CO2 from
+other European clusters.
+· Gathering CO2 from multiple locations via shipping (analogous to the planned Norwegian
+
+     projects) may enable the deployment of several clusters in parallel cost-effectively.
+· Shipping may also extend the viability of CCUS to clusters such as that in South Wales, which
+
+     does not have viable storage sites nearby.
+· For short duration projects of small-scale, the potential sunk costs after 10 years are found to be
+
+     significantly lower for shipping than for pipelines, thereby improving the economics.
+· Finally, a market with considerable future potential is that of importing CO2 from other European
+
+     CCUS clusters via shipping to increase the scale of the CO2 transport and storage (T&S) market
+     in the UK, with the aim of contributing to UK economic growth. CO2 shipping can connect the UK
+     ports with potential early movers (such as Norway and Rotterdam) and other key industrial hubs
+     with limited offshore CO2 storage potential (e.g. France and Germany). Total T&S unit costs,
+     including shipping from European ports to Humber, offshore pipeline and storage at Bunter,
+
+                                                                                                                                      3
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+
+     could be less than £20/tCO2 (e.g. for transport from Le Havre in France to Humberside in the
+     UK).
+
+Key barriers to CO2 shipping include regulations, port constraints and the lack of business
+models.
+
+· The key barrier for cross-border CO2 shipping is the London Protocol, which prevents the cross-
+     border movement of CO2 for CCUS. Other relevant regulations include the EU-Emissions
+     Trading System Directive, the EU CCS Directive, the United Nations Convention on the Law of
+     the Seas (UNCLOS), the International Convention for the Safety of Life at Sea (SOLAS) and the
+     IMO International Code of the Construction and Equipment of Ships Carrying Liquefied Gases in
+     Bulk (IGC Code).
+
+· Early projects may be required to meet the specific constraints of existing ports (including
+     maximum ship length, maximum ship draft, berth availability, and storage space) but dedicated
+     infrastructure can be installed in the longer-term.
+
+· There is currently limited experience in CO2 shipping at the scale needed, so demonstration
+     projects may be needed.
+
+· Additionally, business models and incentives for CO2 shipping will be required, as existing
+     LPG/LNG business models and contracts are not expected to be replicable for CO2 shipping.
+
+      Recommendations for further work
+
+CO2 shipping may have an important role to play in supporting CCUS in the UK (and elsewhere).
+The technical and regulatory barriers can be overcome to realise the opportunities that CO2 shipping
+presents, both in protecting existing UK energy-intensive industry and in developing expertise in the
+emerging field of CO2 transportation and storage. Additional studies or research should be
+completed to explore more detailed aspects of the supply chain and the potential market both in the
+UK and abroad. It is important to understand the implications of potential CO2 shipping business
+models for industry, consumers and the government. Some suggestions for further work are given
+below:
+
+· More detailed assessment of potential UK ports/terminals for CO2 shipping. This may include
+     identification of suitable sites, site-specific feasibility studies, and identification of site-specific
+     constraints.
+
+· Inclusion of CO2 storage infrastructure (e.g. pipelines, wells, etc.) in the CO2 shipping cost
+     model to understand financial implications of port-to-storage shipping. Detailed assessment of
+     port-to-storage options, including their potential impact on CO2 storage costs.
+
+· Detailed assessment of the market potential for importing CO2 from other European countries
+     and the associated value to the UK. This may include economic modelling on the impact on
+     employment, gross value added (GVA) and potential additional investment.
+
+· Activities to promote the ratification of the proposed amendment to the London Protocol by
+     other Member States to enable cross-border CO2 transport.
+
+· Inclusion of CO2 shipping in the BEIS Energy Innovation Programme (if possible) or provision of
+     additional funding to demonstrate CO2 shipping in the UK.
+
+· Assessment of viable business models for CO2 shipping, including incentive mechanisms,
+     ownership structure (e.g. which entities are likely to own port vs. ship), risk management
+     strategies and capital financing.
+
+                                                                                                                                      4
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+
+2 Introduction
+
+The Clean Growth Strategy (CGS) sets out Government's ambition of having the option to deploy
+Carbon Capture, Usage and Storage (CCUS) at scale during the 2030s, subject to costs coming down
+sufficiently. In common with gas and electricity transmission infrastructure, CO2 transportation and
+storage (T&S) operations could benefit from significant economy of scale cost savings. The unit cost
+of transporting CO2 has the potential to decrease significantly at higher volumes, because the costs of
+constructing and installing pipelines grow at a much slower rate than volumes they can transport.
+Similarly, the unit costs of storing CO2 can decrease significantly when higher volumes are stored in a
+single large storage facility compared with multiple smaller capacity facilities.
+While the costs of large-scale trunk CO2 pipelines (£/tCO2) may be lower, they require substantial
+upfront capital investment, which has been a significant challenge for the previous UK CCUS projects.
+Recent activities in Norway have shown that CO2 shipping could be a feasible option, even for the first
+phase CCUS projects in the UK. The Norwegian CCUS project plans to transport CO2 from the capture
+facilities in the eastern part of Norway by ship to an onshore facility on the west coast of Norway. CO2
+will be temporarily stored, before being transported via an offshore pipeline to a safe geological
+formation in the North Sea. It is suggested that in a later phase of the project, CO2 could be transported
+via ship from other European countries to the pipeline injection site in Norway for transport to the
+storage site, which can accommodate up to 4 Mt of CO2 per year.1
+
+Figure 2-1: Illustration of the envisioned Norwegian CCS project: The dotted lines indicate ship
+transport, the solid arrow indicates the offshore pipeline; source: (Gassnova, 2018)
+
+CO2 shipping could bring a number of opportunities, including: enabling the development of smaller-
+scale and potentially cheaper CCUS projects (such as industrial emitters and hydrogen production);
+development of CCUS projects at multiple locations (including ones not located near geological CO2
+storage) in the UK in parallel (similar to the Norwegian CCS project); potential CO2 storage outside the
+UK; and storage of CO2 from other European countries within the UK storage sites.
+Within this context, the Department for Business, Energy and Industrial Strategy (BEIS) commissioned
+Element Energy and its partners to explore the potential role that shipping, as a mode of transporting
+
+1 https://www.gassnova.no/en/ccs-in-norway-entering-a-new-phase
+                                                                                                                                      5
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+
+carbon dioxide (CO2), could play in reducing the cost of deploying CCUS in the UK. The key objectives
+of this work are:
+· to estimate the costs of shipping CO2 from different terminals, and at a range of scales, to
+
+     geological CO2 storage sites in the UK, and elsewhere; and
+· to identify the circumstances (scales/capacity/locations/time) in which shipping costs may
+
+     represent value for money in the UK relative to fixed pipelines.
+The project methodology included the following steps:
+· As a first step, we carried out literature review and targeted stakeholder interviews to identify key
+
+     infrastructure elements for CO2 shipping, which are presented in Section 3.
+· We then developed an interactive CO2 shipping cost model, which allows the user to run different
+
+     scenarios/sensitivities and compare shipping and pipeline costs. The cost model methodology and
+     the key data used to populate the model are presented in Section 4.
+· Using the cost model, we assessed where shipping has the potential to be a cost-effective
+     transport solution and what the impact of key cost/performance parameters on costs are. The
+     results are presented in Section 5.
+· Finally, we identified the key opportunities and barriers regarding CO2 shipping (Section 6) and
+     developed a set of recommendations for BEIS (Section 7).
+
+3 Shipping infrastructure elements
+
+Figure 3-1: Components of the CO2 shipping chain
+
+Figure 3-1 shows the components of the CO2 shipping chain which are in the scope of the model. CO2
+is liquefied after arriving at the liquefaction plant in either pressurised or non-pressurised form. It is
+stored in liquified form in temporary storage tanks. From the tanks it is loaded onto the CO2 carrying
+ship via a cargo handling system and then transported by ship to the destination.
+Where the project involves port-to-port shipping, the CO2 is unloaded onshore, as in the uppermost
+option in Figure 3-1. The CO2 is unloaded from the ship in liquid form to temporary storage tanks using
+a cargo handling system as in the starting port. After this, the CO2 is pumped and heated to conditions
+suitable for pipeline transport to a long-term storage site.
+In addition to port-to-port shipping, port-to-storage shipping was considered. Two offshore unloading
+options are modelled, direct injection or onto a platform with storage, as shown in Figure 3-1. In the
+case of direct injection, the CO2 is pumped and heated on board the ship and transferred via an
+offshore unloading system to the injection well of an offshore storage site. The second offshore
+unloading option is to transfer the CO2 in liquid form to an offshore platform, where it is stored
+
+                                                                                                                                      6
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+temporarily and finally pumped and heated to conditions suitable for injection into an offshore storage
+site.
+This section describes the different infrastructure components of CO2 shipping based on the literature
+reviewed. Each component of the shipping chain allows for particular design choices (Figure 3-2).
+Figure 3-2: Key design options and parameters of CO2 shipping chain components
+
+      Liquefaction
+
+For pipeline transport, as well as for shipping, CO2 should be in a dense form, not gaseous, to be cost
+effective. While for LNG transport, natural gas is liquified by cooling it to a temperature below -160°C
+and then transported in tanks at atmospheric pressure, this is not an option for CO2, as it only exists
+in gaseous or solid form at atmospheric pressure (see Figure 3-3).
+Figure 3-3: Phase diagram of CO2 (left, source: (Seo, 2016)) and density of CO2 liquid and gas
+at different pressures (right, source: (Yara, Larvik Shipping, Polarkonsult, 2016))
+
+Transport in gaseous form is not economic due to the low density of the gas, whereas transport in
+solid form is uneconomic due to the significant effort involved in loading and unloading (Geske, 2015).
+
+                                                                                                                                      7
+                                                                 CO2 Shipping Study
+                                                                Final Report for BEIS
+
+Therefore, CO2 is transported at or above the boundary between the liquid and gaseous phase at
+pressures higher than atmospheric pressure (Yara, Larvik Shipping, Polarkonsult, 2016). The density
+of CO2 liquid and gas with varying temperature and pressure is shown in Table 3-1.
+
+Table 3-1: Density of CO2 liquid and gas at different pressures and temperatures considered
+for shipping transport; source: (Yara, Larvik Shipping, Polarkonsult, 2016)
+
+Pressure range   Temperature   Pressure Density liquid (kg/m3)  Density gas (kg/m3)
+High pressure             30                                                 333
+Medium pressure           10   72   607                                      135
+Low pressure                                                                  53
+                        -19.5  45   861                                       37
+                         -30                                                  25
+                         -41   20   1,029                                     15
+                         -55
+                               14   1,076
+
+                               9.8  1,119
+
+                               5.5  1,173
+
+A design choice which has significant implications for all parts of the shipping chain is the CO2 transport
+pressure. In the literature reviewed, 3 distinct pressure ranges for liquid CO2 transport are discussed,
+namely low pressure, medium pressure and high pressure (as shown above). Throughout the report
+we will use the terminology of low pressure, medium pressure and high pressure transport to refer to
+the pressure ranges as specified above.2
+
+Several liquefaction processes are proposed in the literature. The general principle of liquefaction is a
+combination of process stages of cooling and compression of the CO2. Process designs can be divided
+into ones that use an external refrigeration system (so called "closed" systems) and ones which cool
+the CO2 solely by compression and expansion, without use of an external refrigerant ("open" systems
+or "integrated" refrigeration). Open systems have a simpler design but are less efficient (Alabdulkarem,
+2012). During liquefaction, water needs to be removed from the CO2 inlet stream by condensation and
+regenerative adsorption, to prevent hydration, freezing and corrosion. Other contaminants (volatile
+components such as nitrogen and argon) must be removed as well to prevent dry ice formation (Geske,
+2015) (Brownsort, 2015).
+
+The liquefaction costs are dominated by electricity costs for refrigeration and compression. The
+electricity requirement (kWh/tCO2) depends on the initial entry condition (temperature and pressure)
+of the CO2 and the desired final condition. Since the first step of the liquefaction processes usually
+consists of compression of the CO2, the energy requirement is significantly reduced if the inlet CO2 is
+pre-pressurised rather than at atmospheric pressure when it arrives at the liquefaction plant. This is
+the case if the CO2 enters the plant through an onshore pipeline as it would be pressurised to about
+100 bar for pipeline transport. Typical pressures discussed in the literature are 1-2 bar for non-
+pressurised CO2 inlet and 70-100 bar for pre-pressurised CO2.
+
+Four design variants of CO2 liquefaction systems were compared (Seo Y, 2015): a Linde Hampson
+system, a dual-pressure Linde Hampson system, a pre-cooled Linde Hampson system and a closed
+system. The first three are classified as open systems, the last one is a closed system. It should be
+
+2 The low pressure and medium pressure conditions correspond to two standard transport modes of LPG shipping.
+While the low-pressure condition is very similar to the transport condition of so-called semi-refrigerated LPG (ZEP,
+2011), the medium pressure condition is similar to the condition of so-called fully pressurised LPG. It is suggested
+that similar storage technology and materials currently used for LPG shipping could be applied to CO2 storage
+tanks (Brownsort, 2015). The fleet of tankers carrying semi-refrigerated hydrocarbon gases is estimated to consist
+of more than 300 ships (ZEP, 2011).
+
+                                                                                       8
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+
+noted that even though the pre-cooled Linde Hampson system is classified as an open system, it uses
+an external refrigerant in an initial process step.
+
+The pre-cooled Linde Hampson and the closed system showed higher performance than the other
+process alternatives. Subsequently these two processes are considered in a follow up study, which
+compares the total cost of CO2 shipping systems for 7 different CO2 transport pressures (Seo, 2016):
+6 bar, 15 bar, 25 bar, 35 bar, 45 bar, 55 bar, and 65 bar. The power requirement of the liquefaction
+plant for the different transport pressures is shown in Figure 3-4 (left). The power requirement for
+refrigeration decreases with increasing pressure as the liquefaction temperature increases. The
+refrigeration requirement is significantly reduced when moving from a transport pressure of 6 bar to a
+transport pressure of 15 bar, as the temperature of the liquefied CO2 at 15 bar is almost 25°C warmer
+than at 6 bar Table 3-1, right. Considering the total cost of shipping, the study concluded that the 15
+bar condition was the optimal balance of liquefaction cost against ship and storage costs.
+
+Figure 3-4 Power requirement for the liquefaction plant of a 1Mtpa project for different transport
+pressures (left) and temperatures (and pressures) for transport pressures; source: (Seo et al.,
+2016)
+
+Several liquefaction process designs were simulated in literature using external as well as integrated
+refrigeration and their costs compared (Oi, 2016). The study assumed an inlet gas pressure of 2 bar
+and an inlet gas temperature of 20°C. The outlet CO2 condition of their liquefaction processes is 7 bar
+and -50°C, i.e. the low pressure transport condition. It was found that compressor costs dominate the
+capital as well as operational expenditure (energy for compression); a process using external
+refrigeration was found to be cost optimal. This differs from the finding in (Seo, 2016) that energy
+requirements are dominated by energy demand for refrigeration in the case of low pressure transport.
+This illustrates the significant differences between suggested liquefaction designs. The choice of
+liquefaction will not be determined by the minimum energy requirement alone, but also by the
+availability or desirability of an external refrigeration system (e.g. using ammonia) and the temperature
+of available cooling water, as well as available corporate experience (Brownsort, 2015).
+
+CO2 liquefaction is already operated today for CO2 shipping. The main demand for CO2 is in the food
+and beverage industry. However, these projects are of much smaller scale and use smaller ships,
+transporting less than 2,000 tCO2, whereas a ship with a 10,000 tCO2 capacity is needed for a project
+with moderate flow rate of 1 Mtpa. There is rarely any LNG liquefaction capacity of scale in Europe,
+therefore there is limited potential for reuse of LNG liquefaction plants for CO2 liquefaction.
+
+      Temporary CO2 storage
+
+While the flow of CO2 from a source such as a power plant or industrial emitter, and the subsequent
+liquefaction, is continuous, the shipping occurs in discrete runs and is a batch process. An intermediate
+buffer storage is therefore needed to store the CO2, when there is no ship in the port. This storage
+
+                                                                                                                                      9
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+
+also minimises the loading time of the ship by allowing a faster transfer rate than the flow rate of the
+CO2 source; this ensures the ships are used most efficiently.
+
+To enable fast loading of the ship, the storage should have at least the capacity of the ship in tonnes
+of CO2. On the other hand, if the ship is unexpectedly delayed, the storage should be sufficient that it
+does not meet capacity, resulting in a halt to the CO2 capture and subsequent liquefaction. To allow
+for operational flexibility, different safety margins are discussed in the literature. The capacity is
+quantified in multiples of the CO2 ship carrying capacity. While several reports choose a storage
+capacity of 100% of the ship capacity ( (ZEP, 2011), (Seo, 2016)), sizes of up to 150% of the ship
+capacity are suggested (Berger, 2004). Yoo (2013) suggest a factor of 120% based on experience in
+LNG shipping and to balance the flexibility and cost efficiency. Unlike in the case of poisonous or highly
+flammable gases, CO2 can be released into the air in case of delays and thus the storage does not
+have to be sized based on extraordinary incidents3. It is usually assumed that the design and
+specifications of the storage tanks on board the ship are similar or identical to those of the tanks which
+are used for the temporary buffer storage onshore ( (Vermeulen, 2011), (Seo, 2016)).
+
+Depending on the availability of land close to the exporting CO2 harbour, the liquefied CO2 could be
+stored either onshore or on a floating barge, which are common in hydrocarbon transport systems.
+Yoo (2013) describes different conceptual designs for floating storage barges depending on the
+storage capacity. For smaller capacities around 28,000 m3, the cylindrical storage tanks are arranged
+horizontally in the ship, whereas for large capacities around 110,000 m3, the tanks would be arranged
+vertically in the ship, which allows for more flexibility in terms of arranging the tanks inside the ship
+and subsequently choosing the dimensions of the ship.
+
+Materials, tank shape and maximum size
+
+A variety of classes of steel are used for the storage tanks, depending on the pressure and temperature
+of the contained CO2. For the high pressure condition, which corresponds to ambient temperature
+(about 10°C), forged carbon steel is used. Carbon steel is used for the medium pressure condition in
+combination with either foam insulation or double skin vacuum insulation (Yara, Larvik Shipping,
+Polarkonsult, 2016). The low temperature condition requires the use of specialised low temperature
+materials, with carbon manganese steel, stainless steel and low temperature steel grades being
+suggested in the literature ( (Yoo B. C., 2013), (Yara, Larvik Shipping, Polarkonsult, 2016), and (Seo,
+2016)). Storage tank material and equipment are required to withstand a range of CO2 pressures and
+temperatures either side of the intended operational values. The conditions of the stored or transported
+CO2 will vary during operation, for example due to heat leakage leading due partial vaporisation of the
+CO2 and subsequent pressure increase (Vermeulen, 2011).
+
+Cylindrical as well as spherical shapes of CO2 storage tanks are feasible. Advantages and
+disadvantages of these tank shape are compared in literature (Vermeulen, 2011). Most reviewed
+studies propose cylindrical tank shapes. The maximum size of the cylindrical CO2 storage tanks varies
+with the chosen transport pressure. The wall thickness increases with increasing pressure and can be
+calculated in accordance with guidelines of the Pressure Vessel Handbook. It should be noted that the
+wall thickness also varies with the ship dimensions, since larger ships usually have lower
+accelerations. This leads to lower additional pressure ("dynamic pressure") in the tanks due to such
+accelerations consequently lower required thickness4. The International Code of the Construction and
+Equipment of Ships Carrying Liquefied Gases in Bulk (IGC Code) recommends a maximum wall
+thickness of 40mm which is equivalent to a medium pressure tank of ~6m diameter5. The maximum
+size of a storage tank decreases with increasing wall thickness; this leads to less favourable economics
+
+3 Polarkonsult, 2018, personal communication
+4 Polarkonsult, 2018, personal communication
+5 Brevik, 2018, personal communication
+
+                                                                                                                                    10
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+
+of storage for higher transport pressure, since more tanks must be constructed to transport the same
+volume of CO2 (Seo, 2016). Brevik (2017) mention a wall thickness of 53 ­ 55 mm and a thickness of
+the insulation of 120 mm for the medium pressure condition. This is outside the area where normal
+design rules apply and drives cost and risk6.
+
+CO2 storage operation
+
+The CO2 will be present in the tanks in liquid as well as in gaseous form. In the bottom of the tank
+there is liquid CO2 at the given pressure and temperature. Above the liquid is gaseous CO2 at the
+same pressure and temperature (Knutsen OAS Shipping, 2016, p. 20). In fact, the storage tanks are
+not initially filled from bottom to top with liquid CO2, but a certain share of the volume is intentionally
+left for the gaseous phase, to avoid hydraulic lock. Hydraulic lock can occur due to heat ingress and
+can cause rapid transient pressure spikes of the order of 10,000 bar which can result in catastrophic
+equipment failure; more details are given in (Yara, Larvik Shipping, Polarkonsult, 2016). The maximum
+allowable loading levels (in % of tank volume) range from 98% in the low pressure condition to 72% in
+the high pressure condition (Yara, Larvik Shipping, Polarkonsult, 2016).
+
+As the tanks are filled with liquid CO2, pressure builds up in the gaseous phase above the liquid phase.
+To avoid excessive pressure in the tanks, CO2 vapour (also referred to as boil off gas, BOG7) is
+removed. Conversely, when the tanks are emptied, this leads to a drop in pressure within the tanks,
+which can result in solidification of the tank content. To prevent this, CO2 vapor is added to the tanks
+during emptying, as shown in Figure 3-5. Therefore, in addition to the connection used to charge or
+discharge the liquid CO2, the storage tanks have a connection used to add or subtract gaseous CO2
+(cp. Figure 3-5). When CO2 is transferred from the onshore storage to the storage onboard the carrier,
+the boil off gas in the ship tanks is returned to the emptying tanks onshore (Vermeulen, 2011).
+Vermeulen (2011) discuss the pressure increase in the tanks over up to 90 days, given different
+choices of storage tank design parameters such as insulation thickness, insulation thermal conductivity
+and initial tank filling level.
+
+Figure 3-5: Charging and discharging of liquid CO2 with simultaneous vapour discharging and
+charging respectively; source: (Knutsen OAS Shipping, 2016)
+
+Vapour discharge                     Vapour filling
+Liquid filling             Liquid discharge
+
+                  Loading                            Discharging
+
+      Loading
+
+Loading the CO2 from the onshore temporary storage in the port to the CO2 carrier can be performed
+using conventional articulated loading arms, developed for other cryogenic liquids such as LPG and
+LNG. The liquid is transferred through an insulated pipeline, specified for the chosen pressure and
+temperature, from the storage to the loading arm and ship, using pumps located near the storage. As
+mentioned in Section 3.2, a second line returns boil off gas of the ship's tanks either to the onshore
+storage tanks or to the liquefaction plant. Flexible hoses may be used as an alternative to loading
+
+6 Brevik, 2018, personal communication
+7 Boil off gas can also be a result of heat leakage from the tank environment to the inside.
+
+                                                                                                                                    11
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+
+arms, but these may be less reliable, which makes loading arms the preferred solution (Vermeulen,
+2011).
+
+The largest components of the overall trip time are the loading time, the ship journey and the unloading
+time. The total trip time determines the schedule of the ship and ultimately the number of ships needed
+to transport a given flow rate. While the loading costs comprise a minor cost component of the overall
+shipping costs, the impact of the loading time is significant and therefore the loading time should be
+reduced as much as possible. With increasing ship size, several loading arms should be used in
+parallel to avoid an increase of the loading time. Several studies therefore assume a loading time
+independent of the ship capacity (Geske, 2015) utilising high loading rates where necessary. For
+example, Vermeulen (2011) suggests a loading speed of 2,500 m3 per hour, corresponding to 2,875
+t/hour8. This would allow the loading of a 30,000m3 ship in 12 hours. The high charging rate for the
+loading arms requires an adequate emergency shutdown (ESD) system to prevent leakage of
+significant amounts of CO2 in case of loading arm failure or unintended disconnection from the carrier
+(Vermeulen, 2011).
+
+      CO2 Ship
+3.4.1 Experience with CO2 shipping
+
+CO2 shipping has been taking place for 30 years, with the main demand for CO2 coming from the food
+and beverage industry. The first dedicated CO2 tanker was launched in 1988 in Norway (Yara, Larvik
+Shipping, Polarkonsult, 2016). However, the scale of the yearly CO2 trade flows, and therefore the ship
+sizes, are much smaller than those needed for CCS projects. Currently CO2 ships typically have a
+transport capacity of about 1,000 m3 (ZEP, 2011) i.e. 1,060t of CO29 and the total European trade flow
+in CO2 is around 3 Mtpa (Brownsort, 2015). Industrial gas supplier Praxair owns 4 liquid CO2 tankers
+operated by Larvik Shipping, which have been reconditioned for CO2 transport from general cargo/bulk
+carriage. They have CO2 carrying capacities of 1,200 ­ 1,800 tCO210. These ships are rated for medium
+pressure transport, at 16 ­ 21 bar and around -30°C. Shipping company IM Skaugen has six 10,000
+m3 ships which are registered to carry liquid CO2, however their normal cargo is LPG and it is not clear
+if the ships have been used for CO2 transport yet (Brownsort, 2015).
+
+3.4.2 Ship design
+
+Low pressure condition
+
+Most publications which focus on the low pressure transport condition propose to use either existing
+designs of semi refrigerated LPG ships, or modifications of those. When using a conventional LPG
+tanker design, it is typically proposed to employ a low number of cylindrical tanks (less than ten),
+arranged in pairs horizontally. Vermeulen (2011) and Yoo (2013) propose a design using 6 tanks of
+capacity of 3,833 m3 and 5,000 m3 respectively (Figure 3-6), which result in a total capacity of 23,000m3
+and 30,000m3 or 26,450t and 34,500t CO2 respectively11.
+
+Alternative designs suggested differ in the shape of the tanks and/or the arrangement from the one
+described above. Vermeulen (2011) presents a ship design, called X-bow, where one smaller
+cylindrical tank is placed on top of 2 larger ones. This ship design is capable of transporting the same
+volume of gas as the variant based on a conventional LPG tanker, namely 30,000 m3, but is much
+more compact (shorter in length) and thus requires less steel, leading to lower building costs. However,
+these benefits are outweighed by operational disadvantages of the X-bow design. In particular, the
+manoeuvrability when unloading offshore is reduced, since the bridge and accommodation are located
+
+8 Given a density of liquid CO2 of 1150kg/m3 in the low pressure condition
+9 Given a density of liquid CO2 of 1060 kg/m3 in the medium pressure condition
+10 Personal communication with Polarkonsult;
+11 Assuming a density of 1150kg/m3 of liquid CO2 at 7bar and -49°C
+
+                                                                                                                                    12
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+on the bow section, which requires the ship to approach the offloading tower with its stern (Vermeulen,
+2011).
+Figure 3-6: Proposed ship designs for low pressure transport based on ship designs for semi-
+refrigerated LPG: left: (Vermeulen, 2011), right: (Yoo B. C., 2013)
+
+A further alternative design for a very large ship arranges 91 x 1000 m3 tanks vertically for a total ship
+capacity of 91,000 m3 (Figure 3-7, right). This design offers more flexibility in the arrangement of the
+tanks and thus can be better adjusted to a given ship size (Yoo B. C., 2013). A second layer of pairs
+of cylindrical tanks may be arranged on top of a lower one (Seo, 2016), for a ship of 12,310 tCO2
+capacity and the various transport pressures are considered (Figure 3-7, left). Alternative shapes of
+tanks suggested include ones with a bi-lobe cross section (Chiyoda Corporation and Global CCS
+Institute, 2011) as well as spherical tanks (Brownsort, 2015).
+Figure 3-7: Ship design suggested by for a 12310 tCO2 ship (left) and for a 105,000 tCO2 ship
+(right); source: left: (Seo, 2016), right: (Yoo B. C., 2013)
+
+For offshore unloading the ship will require a dynamic positioning system (DPS) consisting of
+automatically controlled thrusters to maintain the position of the ship at the offshore storage site (Yara,
+Larvik Shipping, Polarkonsult, 2016), (Tel-Tek, 2014). This will be necessary regardless of the chosen
+transport pressure.
+
+Medium and high pressure condition
+
+Most studies reviewed which focused on low pressure transport do not discuss the specific choices of
+materials and equipment in detail but remain on a rather high level, assuming that design choices
+would be very similar to those of LPG ships.
+Detailed ship design studies have been commissioned in recent years by the Norwegian state owned
+gas company Gassco ( (Yara, Larvik Shipping, Polarkonsult, 2016), (Brevik, 2017)). These reports
+develop concepts for the medium pressure transport condition. For different flow rates from 0.2 up to
+1.6 Mtpa, Brevik develop a ship concept, based on the design of an existing ship type. Cost estimates
+
+                                                                                                                                    13
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+are provided for the proposed designs, informed by inputs from potential equipment vendors and
+experience of shipyard costs. Four ship types are developed, with capacities of 2,315 tCO2, 4,534
+tCO2, 7,017 tCO2 and 9,787 tCO2, corresponding to flow rates of 0.2 Mtpa, 0.4 Mtpa, 0.6 Mtpa and 0.8
+Mtpa respectively, with combinations of the proposed ship types used for projects of higher flow rates.
+The ship tanks are envisaged to operate at a temperature of -23°C and a pressure of 14 - 19 bar. All
+proposed ship types carry 5 cylindrical tanks, 1 positioned at the bow of the ship, in front of 4 further
+tanks arranged 2 by 2 horizontally. Schematic designs for these ship concepts are depicted in Figure
+3-8.
+Figure 3-8 Top: ship concepts proposed by (Brevik, 2017); bottom: ship design proposed by
+(Yara, Larvik Shipping, Polarkonsult, 2016)
+
+                                                                                                                                    14
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+Similarly, the joint report by fertiliser producer Yara12, shipping company Larvik and consultancy
+Polarkonsult, develops a dedicated ship concept for the medium pressure condition. This provides
+cost estimates based on ship construction indices, main systems budget quotations and their own
+recent project experience of building new as well as operating existing ships. They consider projects
+with flowrates of 0.3 ­ 1.3 Mtpa and propose a small ship carrying one cylindrical tank of 1,850 m3
+volume and a larger ship carrying 4 tanks of 1,850m3 volume, arranged 2 by 2 horizontally in the
+interior of the ship. These cargo tanks correspond to a CO2 capacity of 1,776 t and 7,104 t respectively
+for the envisaged transport condition of -25°C and 16 bar. A follow up study (Polarkonsult, Praxair,
+Larvik Shipping, 2017) considered ship designs for the medium pressure condition, with CO2 carrying
+capacities of 2,369 tCO2, 4,745 tCO2, 7,107 tCO2 and 9,394 tCO2. The dimensions of the tanks
+considered for the different ship types varied significantly with tank lengths ranging from 27m to 51m.
+Figure 3-9: Ship design concepts for the Norwegian CCS Demonstration Project; source
+(Polarkonsult, Praxair, Larvik Shipping, 2017)
+
+Seo (2016) developed ship designs for a ship with a CO2 capacity of 12,310 t (for a 1 Mtpa project)
+and 7 different transportation pressures. They calculate the required cargo holding volume of the ship
+for the different pressures. As the pressure increases, the density of the liquid CO2 decreases,
+therefore the required volume increases. Another contributing factor is that the maximum tank size
+decreases as pressure increases, so a greater number of tanks is required. The tanks must also be
+kept at a certain distance from each other to allow for inspections. Therefore, the required cargo
+holding volume increases for an increasing number of tanks. Thus, while the required volume of the
+12,310 tCO2 is 34% higher for the high pressure condition (45 bar) due to the reduced density
+compared to the low pressure condition (6 bar), the required holding volume is increased by 122%.
+
+12 Now owned by Praxair, which owns CO2 ships operated by Larvik Shipping
+                                                                                                                                    15
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+
+Transport pressure for large ships
+
+While the medium pressure condition is the most proven form to transport liquid CO2, it is not
+considered practical for ship sizes above 10,000 tCO2. The reason for this is of commercial and
+technical nature: the dimensions and requirements for ships up to 10,000 tCO2 are within the range
+typical for fully pressurised LPG ships and thus shipping designs are readily available. For higher
+capacities, new designs are required adding a significant premium, and the design of such larger ships
+is challenging. Tanks for the medium pressure condition have a maximum diameter of about 9 m,
+which allows a 2 by 2 arrangement at the bottom of the ship, while staying within the standard
+proportions of available ship designs. Depending on the ship shape, carrying more than 10,000 tCO2
+may require arrangement of the tanks on top of each other, which is more complex structurally13.
+Increasing the length of the tanks and the ship would lead to a long and narrow ship, which is not well
+suited for the envisaged environment14.
+
+Repurposing LPG ships, operating multi-gas ships
+
+Not only could new CO2 ships be built with similar design elements to LPG ships, but it is also
+suggested that an existing LPG ship could be repurposed for CO2 shipping, or ships could be built in
+such a way that they could be operated as multigas ships, transporting CO2 as well as LPG.
+Conversely, CO2 ships could be repurposed for LPG transport, which would offer a risk reduction for
+potential investors, should the ship become redundant for CO2 trade ( (Yara, Larvik Shipping,
+Polarkonsult, 2016), (ZEP, 2011), (Equinor, 2018)). However, the economic feasibility of such a
+conversion or a multigas operation has not been proven yet. While the now bankrupt Norwegian
+shipping company IM Skaugen had six 10,000 m3 LPG ships which were also approved for the carriage
+of CO2, these ships did not seem to have been used for CO2 transport yet (Brownsort, 2015).
+Furthermore, interviews with shipping management companies and consultancies have pointed to
+challenges and significant effort to repurpose LPG to CO2 ships.
+
+A further obstacle for converting an LPG ship into a CO2 ship is the difference in the densities; LPG
+has about half the density of liquid CO2 (LCO2) at the considered pressure range. Therefore, a ship
+designed to carry a certain volume (in m3) of LPG might not be able to carry the same volume of LCO2
+due to the greater weight of CO2. Subsequently the structural design of the carrier may be suboptimal
+for LCO2 transport15. Finally, retrofitting LPG ships would not bring substantial cost savings since ship
+CAPEX is not the most significant cost element within the overall shipping supply-chain (~14%
+estimated as explained in Section 5).
+
+3.4.3 CO2 transport pressure comparison
+
+The density of liquid CO2 decreases, and the cost of storage tanks increases, with increasing pressure
+(Section 3.2). Therefore, it is most cost effective to ship CO2 at low pressure and temperature. Most
+studies assume a transport condition close to the triple point (5.2 bar, -56.6°C)16, where CO2 coexists
+in the gaseous, liquid and solid form, for CO2 shipping. Usually the transport condition is chosen with
+a sufficient margin between the triple point to reduce the risk of solid formation under normal
+operational pressure and temperature ranges. However, the costs of liquefaction are a significant part
+of the total cost of CO2 transport by ship and are higher for lower transport pressure, so these costs
+are included when assessing the cost-optimal condition of CO2.
+
+(Yara, Larvik Shipping, Polarkonsult, 2016) point to proximity to the triple point as requiring additional
+engineering equipment to mitigate the risk of freezing, in the case of low pressure transport, which
+leads to additional costs. It is also suggested that heavy engineering is required for purification of CO2
+
+13 Source: confidential discussions with industry players
+14 Source: confidential discussions with industry players
+15 Source: confidential discussions with industry players
+16 https://www.linde-gas.com/en/images/LMB_Safety%20Advice_01_tcm17-165650.pdf
+
+                                                                                                                                    16
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+
+in the case of high pressure transport, leading to increased CAPEX. Storage tanks are more expensive
+and heavier for the high pressure condition, leading also to higher transport OPEX. Additionally, the
+high pressure transport may requires mitigation of the risk of so called cold BLEVE, where
+depressurisation from a high pressure saturation condition can cause sudden catastrophic failure.
+Medium pressure transport is recommended as the best understood condition.
+
+      Unloading
+
+The CO2 can either be unloaded onshore at a port (port-to-port shipping) from where it would be
+transported further by pipeline or offshore to a long term storage site. While port-to-port transport is
+tried and tested through experience in the food and beverage as well as ammonia sectors, offshore
+unloading of CO2 is still unproven. However, significant experience from hydrocarbon transfer exists
+and it is suggested that this could be utilised for developing infrastructure for offshore unloading of
+CO2.
+
+When we refer to unloading infrastructure, we mean the physical connection between:
+     · the ship and the temporary storage in the port in the case of onshore unloading
+     · the ship and the wellhead of the long term storage site in the case of offshore unloading.
+
+The infrastructure needed to bring the CO2 into conditions suitable for pipeline transport or the long-
+term storage site is referred to as gasification infrastructure and described in Section 3.6.
+
+In case of onshore unloading in a port, the CO2 is transferred from the ship to a temporary storage in
+the port, using the same infrastructure as for loading: pumps, loading arms and pipelines. More detail
+on this infrastructure component has already been described in Section 3.3.
+
+In case of offshore unloading, several hydrocarbon transfer systems are suggested for use connecting
+the ship to the injection well, with no clear consensus on what the most appropriate solution for CO2
+is. Offshore unloading of CO2 is still immature and untested as a concept17. Vermeulen (2011)
+considers 4 different so called Single Point Mooring (SPM) systems to be used for the connection
+between ship and wellhead:
+
+      · A Submerged Loading System (SLS)
+      · A Fixed Tower Mooring System (FTSPM) also referred to as Tower Mooring System (TMS)
+      · A Single Anchor Leg Mooring System (SALM)
+      · A Conventional Buoy Mooring System (CBM)
+
+These systems differ in terms of the water depths in which they can be deployed and their accessibility
+in case of high sea states. More information on these systems can be found in the literature, both in
+overview (Brownsort, 2015), and a detailed description (Vermeulen, 2011). This study found all
+considered systems to be feasible for deployment in typical North Sea conditions but recommended
+the FTSPM for locations with moderate depth (26.5m).
+
+The transfer systems can be differentiated in terms of whether the CO2 is discharged;
+     · directly to the wellhead via some subsea connection (direct injection); or
+     · via a platform (such as FTSPM or a Floating Storage Vessel), which allows instalment of
+          processing equipment on it.
+
+The CO2 needs to be brought from the ship transport condition to a condition suitable for injection into
+the well, which depends on the storage site characteristics (more detail on this in Section 3.6). In the
+case of direct injection, this conditioning of the CO2 must be performed entirely on the ship. In the case
+of unloading via a platform, it can be performed partly on the ship, partly on the platform.
+
+17 Brevik, 2018, personal communication
+
+                                                                                                                                    17
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+
+These two offshore unloading options are discussed in detail in literature (TNO, 2016), with discussion
+of whether the platform has temporary storage available or not. Using a platform with temporary
+storage allows to discharge the CO2 in liquid form from the ship to the platform, which reduces the
+unloading time significantly. For the direct injection option, a SALM system is used; for the option of a
+platform without storage, an FTSPM system is used; and for the option of a platform with storage, a
+Floating Storage Vessel is used. TNO (2016) is the only study reviewed which provides detailed design
+analysis for unloading offshore as well as cost estimates for the studied designs.
+
+To show two clearly distinct offshore unloading options, in this high level study we decided to model
+the direct injection option (using the SALM system) and the option of using a platform with storage.
+These two options differ in that the unloading time is considerably higher for the direct injection option
+due to a faster discharging rate of CO2 in the liquid compared to in the gaseous phase.
+
+      Gasification
+
+For injection into a storage site, the CO2 temperature and pressure condition must be suitable for the
+reservoir used for long term storage. We refer to the process of reaching this required condition as
+gasification.
+
+The CO2 conditions suitable for injection depend on various characteristics of the storage site. Most
+studies on CO2 shipping consider injection to be outside the scope of the study. However, the injection
+conditions determine not only the gasification requirements and suitable unloading technology, but
+also the possible flow rate, as storage sites have maximum achievable injection rates in terms of kg/s.
+Therefore, the flow rate of any project using a single storage site is limited by the injection rate of the
+storage site. In addition, careful consideration must be given to the ramping up and down of the
+injection of the CO2 as a sudden stop in injection (e.g. when a ship has been fully discharged by direct
+injection) might lead to dry ice and hydrate formation (Vermeulen, 2011).
+
+Injection of the CO2 is outside the scope of this study, but it is recommended that for more detailed
+analysis of particular CO2 shipping projects with chosen sources and storage sites, the injection
+conditions and their implications on the total CO2 shipping chain should be considered in sufficient
+detail. A detailed analysis of the technical requirements of injection is given in Vermeulen (2011), an
+overview is given in Brownsort (2015). TNO (2016) describes the injection conditions for 2 different
+types of saline aquifers and 2 different types of depleted gas fields, each at four different depths
+(1000 m, 2000 m, 3000 m, and 4000 m). Together, these 16 different types of subsurface storage sites
+cover the range of typical conditions of storage locations in the North Sea region.
+
+The storage site imposes, among others, the following constraints on the CO2 conditions suitable for
+injection:
+
+· The CO2 pressure at the bottom-hole of the well (reservoir inlet) must overcome the reservoir
+     pressure. This pressure depends on the filling level of the reservoir and thus changes with the
+     maturity of the project. The pressure requirement at the bottom-hole translates into a requirement
+     at the wellhead, and wellhead pressures of 50 ­ 400 bar are discussed.
+
+· To avoid hydrate and dry ice formation, which can cause blockages, the temperature at the bottom-
+     hole of the well (reservoir inlet) must be greater than 15°C. This translates into a required
+     temperature of -15°C to +20°C at the wellhead depending on the pressure requirement.
+
+To bring the CO2 from the transport condition to the required wellhead condition, it is pumped to the
+appropriate pressure and heated to the appropriate temperature using a heat exchanger. Vermeulen
+(2011) suggests a small vaporiser unit should be installed on the ship to maintain the pressure in the
+ship tanks when the liquid CO2 is discharged. Compressing liquid CO2 using pumps requires much
+less energy than compressing gaseous CO2 using compressors due to the significantly smaller specific
+volume of liquid CO2 (Alabdulkarem, 2012).
+
+                                                                                                                                    18
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+The energy requirements for pumping and heating CO2 vary depending on the injection condition as
+well as the transport condition. It is usually assumed that seawater is used in the heat exchanger to
+heat the CO2. Depending on the required wellhead temperature and the seawater temperature, it may
+be necessary to pre-warm the seawater used in the heat exchanger. The heat required for this can be
+provided by waste heat from the ship engine or from available waste heat from the injection platform,
+if a platform is used for unloading. If there is not sufficient waste heat available, a fuelled heating
+system might be required which can have implications on costs and additional emissions (Brownsort,
+2015).
+In the case of onshore unloading, gasification happens onshore after the unloading from the ship to
+the temporary storage. In addition to the pressure requirement from the storage site, the CO2 must be
+pumped to a sufficient pressure to overcome the pipeline pressure. Seo (2016) assume onshore
+unloading in their study and describe the equipment necessary to bring the CO2 from the various ship
+transport conditions from 6 to 65 bar to a pipeline pressure of 100 bar. In their process design, the CO2
+is first brought to the appropriate pressure and afterwards heated to the appropriate temperature using
+the heat exchanger. They mention that for the transport pressure of 65 bar, a heat exchanger is not
+necessary anymore, since the temperature of the CO2 at the transport pressure is already above 15°C.
+For offshore unloading, most studies suggest the CO2 is pumped and heated either entirely on the
+ship or to some extent on the ship and to some extent on the platform. For direct injection from the
+ship, all pumping and heating must occur onboard the ship. Vermeulen (2011) describes a concept
+design for a gasification system on board the ship which pumps the CO2 to the required pressure (154-
+400 bar) in 2 stages, with the heating applied to the CO2 after the first pumping stage.
+TNO (2016) considered detailed design concepts of the pumping and heating equipment needed for
+the unloading options they consider: direct injection or unloading via a platform (with or without
+storage). They also perform process simulations of the gasification and provide cost estimates for the
+equipment, as well as energy requirements for pumping and heating for all 16 types of North Sea
+reservoirs considered. In the case of direct injection, the CO2 is completely pumped and heated on
+board the ship.
+
+                                                                                                                                    19
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+
+4 Cost model methodology
+
+Figure 4-1 gives an overview of the cost model methodology showing user inputs, the model cost
+database, internal calculations and cost outputs. The following subsections describe in more detail the
+methodology by which the cost of each infrastructure component of the CO2 shipping chain is
+modelled, as described in the previous section. Furthermore, the modelling assumptions, including
+cost estimates from literature, are presented.
+Figure 4-1: High level methodology of the CO2 shipping cost model
+
+      Liquefaction
+
+Liquefaction costs consist of the CAPEX and fixed OPEX of the liquefaction plant as well as variable
+electricity costs. We assume the CAPEX of the liquefaction plant depends linearly on the flow rate of
+the project. The annual CO2 flow rate determines the quantity per hour which the liquefaction plant
+must produce, and therefore the liquefaction plant scales with the flow rate of the project.
+Table 4-1 shows the CAPEX and OPEX values of liquefaction found in the literature as well as the
+values of the liquefaction energy requirement in kWh per tCO2. Costs have been converted to 2017 £
+using UK government exchange18 and inflation rates19.
+
+18 https://www.gov.uk/government/publications/exchange-rates-for-customs-and-vat-yearly
+19 https://www.ons.gov.uk/economy/inflationandpriceindices/timeseries/l55o/mm23
+
+                                                                                                                                    20
+                                                                           CO2 Shipping Study
+                                                                          Final Report for BEIS
+
+Table 4-1: Liquefaction cost estimates from the literature
+
+Reference     Transport     Inlet     Flow    CAPEX         Specific      Fixed OPEX/y Energy
+              pressure      pressure  rate    (£m)          CAPEX         (% of CAPEX) (kWh/tCO2)
+                            (bar)     (Mtpa)                (£/(tCO2/a))
+
+Oi et al, 2016 - 1 Low P    2         1.1     18.4          16.8          N/A  80.3
+                                                                          N/A  80.2
+Oi et al, 2016 - 2 Low P    2         1.1     19.1          17.4          N/A  143.2
+                                                                          N/A  87.0
+Oi et al, 2016 - 3 Low P    2         1.1     23.1          21.1          N/A  130.5
+                                                                          N/A   104
+Oi et al, 2016 - 4 Low P    2         1.1     22.6          20.6          N/A    88
+                                                                          N/A  106.3
+Seo et al, 2016 - 1 Low P   1.8       1       21.3          21.3          N/A   N/A
+                                                                          N/A   N/A
+Seo et al, 2016 -2 Med P    1.8       1       16.6          16.6          10%    42
+
+Seo et al, 2016 - 3 High P  1.8       1       10.6          10.6
+
+Yoo et al, 2013 - 1 Low P   1         10      N/A           N/A
+
+TelTek, 2014 - 1 Low P      70        0.8     6.3           7.9
+
+TelTek, 2014 - 2 Low P      70        0.8     9.9           12.4
+
+CO2Europipe,  Low P         75        3       27.2          9.1
+2011
+
+Yoo et al, 2013 - 2 Low P   100       10      N/A           N/A           N/A  17.3
+
+Mitsubishi Heavy Low P      100       6.2     23.7          3.8           5%   14.4
+Industries, 2004
+
+Based on the literature values, the input values for the cost model are summarised in Table 4-2. The
+reasons for choosing these input values are explained in further detail below.
+
+CAPEX and energy requirements:
+
+For low pressure transport, both the case of non-pressurised as well as pre-pressurised CO2, the
+average of the literature values listed is used. The specific CAPEX value of Mitsubishi Heavy Industries
+(2004) is discarded as outlier. The pressure values of the inlet CO2 vary among the reports which have
+been used (between 70 and 100 bar in the case of pre-pressurised CO2 and 1 and 2 bar in the case
+of non-pressurised CO2). The calculated values thus represent range of configurations both for pre-
+pressurised and non-pressurised CO2. This is in line with the goal to use representative values for 2
+principal options: liquefaction directly at the source of CO2 (non-pressurised) or transport of the CO2
+to the liquefaction plant by pipelines (pre-pressurised).
+
+For the medium and high pressure transport condition, less detailed data was available. Therefore,
+the following assumptions were made:
+
+      o Non-pressurised CO2: CAPEX and energy requirement are assumed to be reduced
+          compared to the low-pressure condition by the same factor as reported in Seo et al. (2016)
+          (e.g. specific CAPEX for the medium pressure condition for non-pressurised inlet CO2 are
+          given by the specific CAPEX for the low pressure condition for non-pressurised inlet CO2,
+          multiplied by a factor of 16.6/21.3 = 78% cp. Table 4-1, lines 6 and 7)
+
+      o Pre-pressurised CO2: CAPEX and energy requirement are assumed to be reduced
+          compared to the non-pressurised condition by the same factor as for low pressure transport
+          (e.g. specific CAPEX for the medium pressure condition for pre-pressurised inlet CO2 is
+          given by the specific CAPEX for medium pressure condition for non-pressurised CO2
+          (15.1£/(tCO2/a)) multiplied by a factor of 9.8/19.5=50% (cp. Table 4-2, line 2 and 3).
+
+                                                                                                 21
+                                                              CO2 Shipping Study
+                                                             Final Report for BEIS
+
+· Fixed OPEX: Fixed OPEX is assumed to be a percentage of CAPEX; the value used is 10% (CO2
+    Europipe, 2011). Other sources did either not specify fixed OPEX (such as personnel,
+    maintenance, and administration) or were discarded due to the low costs specified in comparison
+    to the other literature values (Mitsubishi Heavy Industries, 2004).
+
+· Liquefaction fuel price: The electricity price used is £0.08/kWh, corresponding to the price
+    currently paid by large businesses in the UK20. Low and high fuel price sensitivities are defined as
+    a 25% decrease and increase to this value respectively.
+
+Table 4-2: Liquefaction cost assumptions used in the model
+
+Transport  Inlet pressure   Specific CAPEX  Fixed OPEX/y     Energy
+pressure                    £/(tCO2/a)      (% of CAPEX)     (kWh/t)
+Low P      Pre-pressurised
+Low P      Non-pressurised             9.8              10%           24.6
+Med P      Pre-pressurised            19.5              10%           104.2
+Med P      Non-pressurised             7.6              10%           19.6
+High P     Pre-pressurised            15.1              10%           83.1
+High P     Non-pressurised             4.9              10%           16.6
+                                       9.7              10%           70.3
+
+Many reports in the literature do not debate different liquefaction process options but focus instead on
+a particular option due to local cooling service availability or corporate experience but without clear
+justification (Brownsort, 2015). Given the significant share of liquefaction in the total shipping cost, a
+detailed feasibility study for a shipping project should consider different process options for
+liquefaction.
+
+      Storage
+
+For the cost model, it is assumed that the cost of temporary onshore storage depends linearly on the
+storage capacity. The storage capacity is assumed to be 120% of the combined CO2 capacity of the
+ship fleet, i.e. a fleet of two 10,000 tCO2 ships requires storage capacity of 24,000 tCO2. This multiple
+is based on literature (Yoo B. C., 2013), providing a good compromise between operational flexibility
+and cost efficiency. The values for the specific cost of the temporary storage (i.e. cost per tonne of
+CO2 storage capacity) as found in the literature are illustrated in Figure 4-2.
+
+20 https://www.gov.uk/government/statistical-data-sets/prices-of-fuels-purchased-by-manufacturing-industry
+                                                                                                                                    22
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+
+Figure 4-2 Specific storage CAPEX of temporary storage from literature
+
+For the medium and high pressure condition, the specific CAPEX from (Seo, 2016) is used, the only
+reviewed publication specifying costs for low pressure and high pressure transport. For the low
+pressure condition, we consider only the specific CAPEX values of the 2 newest publications (Seo,
+2016) and (Tel-Tek, 2014) and furthermore only the NOAK (Nth of a kind) value of the latter one. The
+other literature cost values are discarded as they are not considered to be consistent with the ones of
+(Seo, 2016); they show higher cost values for the low pressure condition than the ones specified by
+(Seo, 2016) for the medium pressure condition. This is in contradiction to the finding explored by (Seo,
+2016) that higher transport pressures lead to higher storage costs.
+
+Storage OPEX values (in % of CAPEX, primarily maintenance and repair) are taken from (Seo et al.,
+2016). The cost values for storage from the literature and the ones used in the model are summarised
+in Table 4-3 and Table 4-4 respectively. In the case of onshore unloading, or offshore unloading to a
+platform, it is assumed that storage of the same size as for loading will be built in the destination
+terminal or platform. In the case of offshore unloading with direct injection, no storage is assumed to
+be built for the unloading site.
+
+Table 4-3: Storage cost estimates from the literature
+
+Datapoint reference   Transport  Capacity              CAPEX      Specific   OPEX/y
+                      pressure   (tCO2)                (£m)       CAPEX      (% of
+Seo et al., 2016 - 1                                              (£/tCO2)   CAPEX)
+Seo et al., 2016 - 2  Low P      12,310                     5.9
+Seo et al., 2016 - 3  Med P      12,310                     9.8        482        5%
+TelTek, 2014 - 1      High P     12,310                     37.8
+                      Low P      14,285                     12.3       795        5%
+
+                                                                      3,073       5%
+                                                                       550        5%
+
+                                                                                                                             23
+                                                                 CO2 Shipping Study
+                                                                Final Report for BEIS
+
+Table 4-4: Storage assumptions used in the model
+
+Transport pressure   CAPEX per tCO2 of      OPEX/y (% of
+                     storage capacity       CAPEX)
+Low P                (£/tCO2)
+Med P                                                   5%
+High P                            516                   5%
+                                  795                   5%
+                                 3,073
+
+      Loading
+
+The loading infrastructure in the port consists of pumps and pipelines, through which the CO2 is
+pumped from the temporary storage onto the ship. The loading time is assumed to be independent of
+the ship size due to the reasoning in Section 3.3 and a loading time of 15 hours is assumed (Cato,
+2016), representing a central value compared to further values specified in the literature.
+
+It is assumed that the CAPEX for the loading infrastructure in the port depends linearly on the flow rate
+of the project, as more loading infrastructure must be deployed for higher flow rates to keep the loading
+time constant. The cost values of CAPEX and OPEX of loading infrastructure found in the literature
+are displayed in Table 4-5.
+
+Table 4-5: Loading cost estimates from the literature
+
+Datapoint reference           Flow rate           CAPEX         Specific      OPEX/a
+                              (Mtpa)              (£m)          CAPEX         (% of
+                                                                (£/(tCO2/a))  CAPEX)
+CO2 Europipe, 2011                     3                   8.4
+                                                           6.3        2.80           2%
+MHI, 2004                              6.2                57.0        1.02          25%
+                                                           4.6        7.03           2%
+MIT, 2003                              8.1                 2.6        0.46           1%
+                                                           0.9        0.88           1%
+Aspelund and Gundersen, 2009           10                  1.3        1.07           5%
+                                                                      1.68           4%
+Kuljanpää, 2011                        3
+
+TelTEK, 2014 - 1                       0.8
+
+TelTEK, 2014 - 2                       0.8
+
+In the model, the average of the values of specific CAPEX and OPEX specified in the literature are
+used, after discarding the outliers (MHI, 2004 and MIT, 2003). These averages are shown in Table
+4-6. For unloading onshore, the same costs as for loading are assumed, since the same infrastructure
+as for loading (e.g. pumps, pipelines, loading arms) is used.
+
+Table 4-6: Loading cost assumptions used in the model
+
+Specific CAPEX       OPEX/a
+(£/(tCO2/a))         (% of CAPEX)
+
+               1.4                 3%
+
+                                                                                         24
+                                                               CO2 Shipping Study
+                                                              Final Report for BEIS
+
+      Ship costs
+
+Ship costs are modelled as consisting of the ship CAPEX and OPEX, where the OPEX is broken down
+into fixed OPEX, harbour fees and fuel costs.
+
+4.4.1 Ship CAPEX
+
+The ship CAPEX depends on several factors, primarily the ship size and the number of ships needed.
+For a given flow rate, distance and ship size, the model calculates the number of ships needed using
+the total round-trip duration; this duration consists of loading time, travelling time (to and from
+destination, dependent on distance and speed), port manoeuvring and unloading time. A ship speed
+of 15 knots is assumed, the average speed of chemical tankers (Seo, 2016), and in line with the values
+found in the literature review (mostly between 13 ­ 16 knots). Dividing the total operational hours of a
+ship per year by this total trip time delivers the total number of trips a ship can make per year, and thus
+the amount of CO2 that can be transported per ship per year. Dividing the flow rate by the amount of
+CO2 transportable per ship per year delivers the number of ships needed. The parameters assumed
+for the ship operation modelling are summarised in the table below.
+
+Table 4-7: Operational parameters of shipping
+
+Parameter                       Unit Value            Source
+
+Loading/unloading time onshore    h              15   Cato 2016
+Unloading time offshore           h              36   Cato 2016
+Port entry/exit                   h              2    Seo et al., 2016
+Offshore connection               h              4    TelTek, 2014
+Annual operational hours          h            8,322  Roussanaly et al, 2014
+Ship speed (large ships)        nm/h             15   Seo et al., 2016
+
+The figure below shows values of ship CAPEX, i.e. construction cost, found in the literature. For the
+low and medium pressure transport condition, power regression curves are used to estimate values.
+
+Figure 4-3: Ship CAPEX values found in the literature
+
+                                                                                     25
+                                                                CO2 Shipping Study
+                                                               Final Report for BEIS
+
+Based on the values found in the literature, the cost assumptions used in the model are summarised
+in the table below. The values for low and medium pressure transport are based on the regression
+curves as displayed in the chart above. The high pressure values are derived by scaling the regression
+curve of the medium pressure transport condition such that it crosses the data point found for high
+pressure transport. The resulting values for the ship capacities used in the model are also displayed
+below. For ship sizes above 10 kt CO2 it is assumed that only the low pressure transport is viable.
+
+Table 4-8: Ship CAPEX values used in the model
+
+Capacity CAPEX low  CAPEX med. CAPEX high          Capacity    CAPEX low
+                                                   (tCO2)      pressure (£m)
+(tCO2)  pressure (£m) pressure (£m) pressure (£m)
+                                                       20,000          42
+2,000   12          26  52
+
+4,000   17          37  74                         30,000      53
+
+6,000   21          45  90                         40,000      61
+
+8,000   25          52  104                        50,000      69
+
+10,000  28          58  117
+
+4.4.2 Ship fixed OPEX
+
+Fixed OPEX of the ship consists of the costs for crew, maintenance and repair as well as administration
+and insurance costs. The values for these costs in % of the ship CAPEX are displayed in Figure 4-4.
+Based on these, in the model we are using 5% of CAPEX as the value of fixed OPEX, the most
+common value specified in the literature.
+
+Figure 4-4: shipping fixed OPEX values found in the literature
+
+4.4.3 Harbour fees
+
+A further cost component of the ship OPEX are harbour fees, which increase with the size, i.e. capacity,
+of the ship. A regression based on the data found in the literature is presented below. We are modelling
+the harbour fees using the regression line shown. The resulting fees for the ship sizes used in the
+model are shown below. Harbour fees vary of course between harbours and detailed feasibility studies
+for any particular project should consider the fees of all harbours on the route of the ship.
+
+                                                                                                                                    26
+                                                                    CO2 Shipping Study
+                                                                   Final Report for BEIS
+
+Figure 4-5: Harbour fees found in the literature, per round trip.
+
+4.4.4 Ship fuel costs
+
+Fuel costs depend on the fuel consumption of the ship and the ship size (in tCO2). The fuel
+consumption values in MWh/d found in the literature for various ship sizes are displayed in Figure 4-6.
+We use the regression line displayed to calculate the fuel consumption for the ship sizes used in the
+model, with the values given in the table below.
+
+Figure 4-6: Fuel consumption values found in the literature
+
+The ship fuel can be selected by the user: either LNG or MDO (Marine Diesel Oil). The fuel
+consumption in MWh/d is converted to a fuel consumption of tonnes of LNG per day or tonnes of MDO
+per day, depending on which fuel is used. This fuel consumption in t/d is multiplied by the total travelling
+time of one ship per year, and the number of ships, to obtain the total fuel consumption of the fleet per
+year. Finally, this consumption is multiplied with the assumed fuel prices of LNG and MDO respectively,
+shown in Table 4-9. The fuel prices in £/t have been converted to £/MWh using a fuel content of 11.63
+MWh/t for MDO and of 14.45 MWh/t in the case of LNG. As a sensitivity, the user can select a high
+fuel cost or a low fuel cost scenario. In these cases, the fuel prices are increased or decreased by 25%
+respectively.
+
+                                                                                                                                    27
+                                                                  CO2 Shipping Study
+                                                                 Final Report for BEIS
+
+Table 4-9: Ship fuel prices and sources
+
+Fuel    Price (£/t)   Price (£/MWh)      Source
+LNG            282             20        Ship and bunker, 2018
+MDO            275             24        Baresic et al., 2018
+
+Table 4-10: ship OPEX used in the model, depending on ship size
+
+Capacity Fixed OPEX   Harbour fees       Fuel
+                      (£/cycle)          consumption
+(tCO2)  (% of CAPEX)                     (MWh/d)
+
+2,000   5%            6,486              233
+
+4,000   5%            7,413              240
+
+6,000   5%            8,340              248
+
+8,000   5%            9,267              256
+
+10,000  5%            10,194             263
+
+20,000  5%            14,829             301
+
+30,000  5%            19,464             339
+
+40,000  5%            24,099             377
+
+50,000  5%            28,734             415
+
+      Unloading
+
+4.5.1 Onshore unloading
+
+As mentioned before, the same costs as for loading are assumed to accrue in the case of onshore
+unloading, since the same infrastructure is used. Therefore, these costs are modelled in the same way
+as loading costs.
+
+4.5.2 Offshore unloading
+
+For offshore unloading there are 3 user options available:
+     · Direct injection
+     · Injection via a new platform with storage
+     · Injection via an existing platform with storage
+
+The cost estimates are based on (TNO, 2016), which explores the offshore unloading option in most
+detail among the reviewed literature and provides cost estimates of the necessary infrastructure. The
+cost estimates of this infrastructure, as specified in this study, along with estimates from other studies
+are summarised in the table below.
+
+                                                                                        28
+                                                                        CO2 Shipping Study
+                                                                       Final Report for BEIS
+
+Table 4-11: Offshore unloading cost estimates found in the literature
+
+Reference         Design           CO2 condition  CO2 flow       CAPEX    OPEX/a (% of
+                                                  rate (Mtpa)    (£m)     CAPEX)
+Cato, 2016        SALM21
+Cato, 2016        TMS22            Low P          3.8               16.5             5%
+Cato, 2016        Platf. w/ stor.                                   37.2             5%
+Petrofac, 2012    CALM23           Low P          3.8               91.0             5%
+TelTEK, 2014      STL NOAK                                          60.6             4%
+                                   Low P          3.8               17.2             5%
+
+                                   Low P                      5
+
+                                   Low P          0.8
+
+For the direct injection option, the cost of the SALM system specified (Cato, 2016) is assumed as a
+fixed CAPEX cost, with OPEX assumed to be 5% of CAPEX yearly.
+
+The CAPEX estimate in (TNO, 2016) for the platform with storage includes the cost of a 40,000 t
+storage system. As the storage cost has already been accounted for in the model, we subtract our
+model's estimate for a 40,000 t storage system from the estimate in (TNO, 2016) to avoid double
+counting of the storage system on the platform. The yearly OPEX is assumed to be 5% of CAPEX.
+
+In the case of unloading to an existing platform with storage, we assume no CAPEX for the platform
+but the same OPEX as in the case of unloading to a (newly built) platform.
+
+CAPEX costs of the offshore unloading infrastructure have been assumed to be a fixed cost,
+independent of the flow rate, to reflect the fact that offshore infrastructure cannot simply be scaled to
+the project size but requires large scale equipment which comes in standardised form and the
+construction in challenging conditions is costly. This approach to model offshore unloading CAPEX
+was also taken in (TNO, 2016).
+
+Gasification costs
+
+4.6.1 Gasification onshore
+
+For onshore gasification, the cost assumptions taken from (Seo, 2016) are summarised in Table 4-12.
+CAPEX is assumed to scale with the flow rate of the project and OPEX is modelled as a cost per t CO2
+including maintenance and fuel cost of the plant.
+
+Table 4-12: Onshore gasification cost assumptions used in the model
+
+Reference         Transport        CAPEX      OPEX (£/tCO2)
+                  pressure         (£/(t/a))
+Seo et al., 2016  Low P                                 0.33
+Seo et al., 2016  Med P               0.83              0.31
+Seo et al., 2016  High P              0.78              0.23
+                                      0.50
+
+21 Single Anchor Leg Mooring
+22 Tower Mooring System
+23 Catenary Anchor Leg Mooring
+
+                                                                                                                                    29
+                                                                      CO2 Shipping Study
+                                                                     Final Report for BEIS
+
+4.6.2 Gasification offshore
+
+For offshore gasification, the cost estimates given in (TNO, 2016) are used as this study provides the
+highest level of detail for the offshore unloading option among the reviewed literature, while also
+providing cost estimates. The assumptions used are given in Table 4-13.
+
+Table 4-13 Offshore gasification cost assumptions used in the model
+
+Reference  Unloading       Transport  CAPEX      Fixed OPEX (% Energy
+           option          pressure   (£/(t/a))
+                           Low P                 of CAPEX)  (kWh/tCO2)
+                           Med P         4.3
+(TNO, 2016) Direct inj.    High P        4.3     5%                  6.8
+                           Low P         4.3
+(TNO, 2016) Direct inj.    Med P         6.7     5%                  6.5
+                           High P        6.7
+(TNO, 2016) Direct inj.                  6.7     5%                  5.4
+
+(TNO, 2016) Platf. w/ st.                        5%                  10.3
+
+(TNO, 2016) Platf. w/ st.                        5%                  10.0
+
+(TNO, 2016) Platf. w/ st.                        5%                  9.0
+
+A generator efficiency of 35% was assumed for the electricity generator on board the ship or the
+platform to produce the electricity needed to operate the pump. It is assumed the generator uses the
+same fuel as the ship, i.e. either LNG or MDO.
+
+It should be noted that for a given flow rate, the energy requirement for gasification is higher in the
+case of injection via a platform than for direct injection. This is because the CO2 injection pressure is
+about 200 bar in the case of direct injection whereas it is 300 bar in the case of injection via a platform.
+However, the injection at 300 bar also enables a higher injection rate and thus shorter unloading time.
+
+                                                                                            30
+                                                              CO2 Shipping Study
+                                                             Final Report for BEIS
+
+5 CO2 shipping cost modelling results
+
+      Key cost components and parameters
+
+For analysing the cost model results, a central case was chosen from which to explore the sensitivities
+of the results further. The parameters of the central case are summarised in Table 5-1. Costs in this
+section are specified without any discount rate.
+
+Table 5-1 Assumed central model parameters
+
+Parameter                Central value      Parameter        Central value
+
+Unloading option         Onshore            Ship fuel        LNG
+Flow rate                1 Mtpa
+Distance                 600 km             Ship fuel price  central
+Initial CO2 condition    Pre-pressurised
+Transport CO2 condition  Low pressure       Liquefaction fuel price central
+Ship size                10 ktCO2
+                                            Lifetime         20 years
+
+                                            Discount rate    0%
+
+The cost components are displayed in Figure 5-1 and the unit cost in £/tCO2 in Figure 5-2. Ship and
+liquefaction costs, both CAPEX and OPEX, are the biggest components of CO2 shipping. Together
+they constitute 83% of the cost. Storage, loading and gasification costs are low in comparison.
+Liquefaction and ship costs are dominated by OPEX: ship and liquefaction OPEX (including fuel) make
+up 54% of the total cost.
+
+Figure 5-1: Cost components of CO2 shipping for the central case
+
+                                                                                    31
+                                                                                                         CO2 Shipping Study
+                                                                                                       Final Report for BEIS
+Figure 5-2 Costs components of CO2 shipping for the central case (£/tCO2)
+
+The potential for achieving cost reduction via re-using existing infrastructure is higher for pipelines,
+which are dominated by CAPEX. Note that the pipeline costs shown in this report are for new build
+pipelines. Although it may be technically feasible to convert an existing Liquefied Natural Gas (LNG)
+or Liquefied Petroleum Gas (LPG) ship into a CO2 ship, re-use of an existing ship would bring only
+negligible cost reductions as ship capex corresponds to around 14% of the total shipping costs and
+some capital investment will be needed to convert the ship, which is expected to be less optimised
+compared to a new-built ship.
+
+5.1.1 Impact of pressure
+
+Both the chosen transport pressure and the initial CO2 pressure before entering the liquefaction plant
+have a significant impact on the shipping costs. Figure 5-3 below shows the unit cost of shipping for
+the three different transport pressures, for non-pressurised CO2 in the case of the left figure and pre-
+pressurised CO2 in the case of the right figure. All other parameters are at central case values. Costs
+of liquefaction decrease with increasing transport pressure due to the lower energy requirement for
+refrigeration. However, the ship and storage costs increase, leading to a total increase of shipping
+costs. If the CO2 is pre-pressurised (which is the case if onshore pipelines are used to transport CO2
+from capture plan to port), costs are significantly lower in all three cases, mainly due to the lower
+liquefaction fuel cost.
+Costs of the low pressure and medium pressure transport condition are similar in the case of non-
+pressurised CO2, as the reduction in liquefaction costs balance the increase in ship and storage costs.
+In the case of pre-pressurised CO2, the liquefaction cost is a smaller component of the overall cost
+and thus cannot balance the increase in ship and storage costs in the same way. All remaining charts
+in this report assume a pre-pressurised CO2 for liquefaction and low CO2 pressure condition for
+transport.
+
+                                                                                                                                     32
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+Figure 5-3: Impact of transport pressure and initial pressure on unit cost of CO2 shipping
+
+5.1.2 Impact of flow rate
+
+Figure 5-4 below shows the unit cost of CO2 shipping for different flow rates, while all other parameters
+are kept at the same values as in the central case. Increasing the flow rate above 1 Mtpa can bring
+the levelised cost of shipping to less than £10/tCO2. Ship related cost components are reduced with
+higher flow rates due to economies of scale; shipping CAPEX per tCO2 decreases, as do shipping fuel
+costs and harbour fees since bigger ships are used (50 kt in the case of 5 Mtpa). On the contrary
+liquefaction unit costs do not decrease as liquefaction infrastructure scales with the flow rate and is
+furthermore dominated by OPEX.
+Figure 5-4: Impact of flow rate on unit cost of CO2 shipping (£/tCO2), undiscounted
+
+5.1.3 Impact of ship size
+
+Figure 5-5 below illustrates the impact of choosing different ship sizes. While all other parameters are
+kept at the central case value, the ship size is varied from 1,000 tCO2 to 30,000 tCO2.
+Increasing ship size reduces the number of ships needed as well as the total number of trips, thus
+harbour fees and fuel costs are reduced. Ship CAPEX is reduced as well, due to economies of scale
+of ship building.
+
+                                                                                                                                    33
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+
+For ships bigger than 10,000 tCO2, the number of ships does not reduce anymore by increasing the
+ship size, therefore shipping costs increase as the ship becomes bigger than necessary, as well as
+increasing costs of storage, sized in relation to the ship capacity.
+
+Figure 5-5: Impact of ship size on unit cost of CO2 shipping 1 Mtpa, undiscounted.
+
+Table 5-2 shows the optimal ship size and the number of ships needed for a variety of shipping
+distances and flow rates, as calculated by the model. Selecting a larger ship is always advantageous
+to using several ships of lower size. The model only chooses to use several ships, if the capacity of
+one ship cannot be increased further as the maximum ship size of 50 kt CO2 is reached.
+
+Table 5-2: Ship sizes and number of ships needed for different flow rates and transportation
+distances
+
+                Flow rate (Mtpa)
+
+Transportation  0.1      0.2      0.5      1         2         5         10
+distance (km)
+200             1x1,000  1x2,000  1x4,000  1x8,000   1x20,000  1x30,000  2x30,000
+400             1x2,000  1x2,000  1x4,000  1x8,000   1x20,000  1x40,000  2x40,000
+600             1x2,000  1x2,000  1x8,000  1x10,000  1x20,000  1x50,000  2x50,000
+800             1x2,000  1x4,000  1x8,000  1x20,000  1x30,000  2x30,000  3x40,000
+1,000           1x2,000  1x4,000  1x8,000  1x20,000  1x30,000  2x40,000  3x50,000
+
+5.1.4 Sensitivities
+
+The sensitivities of the unit and lifetime cost of CO2 shipping have been tested to understand which
+parameters the costs are most sensitive to. Starting from the central case, single parameters were
+changed by ±25% (±50% in the case of unloading time) and the resulting percentage changes of the
+unit and lifetime cost were recorded. The results are illustrated in Figure 5-6 and Table 5-3 below.
+
+The table shows the relative change of unit and lifetime cost for an increase ("High") or decrease
+("Low") of the parameter in question by 25%. The unit cost in the central case is £10.02/tCO2, the
+lifetime cost in the central case is £200m.
+
+                                                                             34
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+
+Lifetime costs show the highest sensitivity to flow rate, lifetime and ship size. Increasing the distance,
+unloading time and flow rate leads to a bigger ship being required. As the ship size can only be
+increased in discrete increments (e.g. from 10 ktCO2 to 20 ktCO2 in this case), this leads to a significant
+increase in capital costs. The increment size for the larger ship sizes (>10,000 tCO2) is taken from
+(Cato, 2016) and used to reflect the fact that ships are built in standardised sizes. The impact of
+particular parameter changes are described in more detail below.
+
+Distance
+
+Reducing the distance by 25% (to 450 km) leads to a decrease of the unit cost by 5% as a smaller
+ship size can be used (8,000 tCO2 instead of 10,000 tCO2). Increasing the distance by 25% (to
+750 km) leads to an increase of the unit cost of 19%. However, the reason for this high increase is that
+the ship size must be increased in this case from 10 ktCO2 to 20 ktCO2 (given the increments of ship
+size assumed); the sensitivity in unit cost to distance would be lower where the ship size does not
+need to change to accommodate the additional duration of travel. A longer distance leads to a longer
+trip time of the ship and thus a lower number of trips per ship. Consequently, the amount of CO2
+transported by the ship annually is reduced. Therefore, a bigger ship is needed to transport the same
+amount of CO2 annually as in the central case.
+
+Figure 5-6: Sensitivities of unit cost (left) and lifetime cost (right) of CO2 shipping
+
+Table 5-3: Sensitivities of unit and lifetime cost of shipping, numerical values
+
+                            Change in unit cost (£/tCO2)  Change in lifetime cost (£)
+
+                            Low       High                Low        High
+
+Distance (+/-25%)                -5%        19%                -5%                19%
+Flow rate (+/-25%)
+Lifetime (+/-25%)                9%         5%                 -15%               36%
+Liqu. Energy (+/-25%)
+Unloading time (+/-50%)          9%         -5%                -18%               18%
+Electricity price (+/-25%)
+Fuel price (+/-25%)              -5%        5%                 -5%                5%
+
+                                 0%         18%                0%                 18%
+
+                                 -5%        5%                 -5%                5%
+
+                                 -2%        2%                 -2%                2%
+
+Flow rate
+
+A 25% lower flow rate increases the unit costs by 9% as economies of scale are reduced. A ship of
+smaller size can be used for the lower flow rate (8,000 tCO2 instead of 10,000 tCO2) but the reduction
+
+                                                                                       35
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+of CAPEX is more than compensated by the fact that the CAPEX is now spread over a lower number
+of tCO2. Increasing the flow rate. on the other hand. leads to a bigger ship being required (20,000 tCO2
+instead of 10,000 tCO2). However, this increase in CAPEX is spread over more tCO2, therefore the
+increase of the unit cost is only 5%. If increasing the flow rate doesn't require a larger ship, a higher
+flow rate leads to lower unit costs.
+Lifetime
+A higher lifetime leads to a 5% lower unit cost, as the CAPEX can be spread over more tCO2. The
+opposite is the case for a lower lifetime, leading to an increase in unit costs of 9%. Lifetime costs show
+a high sensitivity to changes in the lifetime: they are increased and reduced by 18% given a 25%
+increase or decrease of lifetime. This is because the shipping costs are dominated by OPEX and
+therefore lifetime costs and lifetime change by a similar rate (unlike in the case of pipeline costs, which
+are dominated by CAPEX and thus don't scale with lifetime in the same way).
+Unloading time
+As with the increase in distance or flow rate, increasing the unloading time by 50% (from 15h to 22.5h)
+requires a larger ship, and consequently storage. This is because the longer loading time increases
+the total trip time of the ship and consequently reduces the number of trips per ship and thus the
+amount of CO2 transported per year per ship. Reducing the unloading time by 50% does not have a
+similar impact, the ship size cannot be reduced and thus this parameter change does not have any
+impact at all.
+Liquefaction energy, liquefaction fuel price, ship fuel price
+Unit costs and lifetime costs increase by 5% given an increase of liquefaction fuel prices or the
+liquefaction energy requirement by 25%, while decreasing by 5% given a decrease of one of these
+parameters by 25%. The sensitivity to ship fuel prices is significantly lower (±2%). Increasing both fuel
+prices by 25% would thus lead to an increase of unit and lifetime costs by 7%, with a corresponding
+decrease of 7% given a decrease of both fuel prices by 25%.
+
+                                                                                                                                    36
+               CO2 Shipping Study
+              Final Report for BEIS
+
+5.1.5 Emissions from shipping
+
+The emissions from combustion of ship fuel and generation of the consumed electricity for liquefaction
+have been calculated for the central case as well as cases deviating from the central case in terms of
+ship size and distance. Figure 5-7 a) displays the CO2 emissions for a distance of 600 km and various
+ship sizes. Figure 5-7 b) shows the emissions for a 10kt CO2 ship and various distances. Emissions
+are expressed in % of the transported quantity of CO2 (1 Mtpa in all cases) and LNG is assumed to be
+used as ship fuel.
+
+Figure 5-7: Variation in emissions from CO2 shipping with a) ship size and b) shipping distance
+
+a) Ship size  b) Shipping distance
+
+In most cases emissions stay below 2% of the transported CO2 quantity. However, using a very small
+ship (1,000 tCO2) leads to emissions higher than 8% of the transported CO2 due to the higher number
+of trips. It should be noted that these emissions have not been considered for the calculation of the
+unit costs of shipping, i.e. the cost of shipping are calculated per tCO2 transported, not per tCO2 abated.
+When a sufficiently large ship is used, the unit cost per abated tCO2 would not significantly differ from
+the unit cost per transported tCO2. However, if a very small ship is selected (<2000 ktCO2), the unit
+cost per abated tCO2 will be significantly higher than the unit cost per transported tCO2, so the shipping
+emissions should be considered. While ships of this size are currently used for shipping CO2 for the
+food and beverage sector, they would not be suitable for a CCUS project. For a more detailed
+assessment of emissions, potential methane leakage through the main engine should be considered
+as well in the case of using LNG as ship fuel.24 Also, it should be noted that the full life-cycle analysis
+(LCA) emissions of the ships have not been included in the analysis.
+
+24 Personal communication with Brevik
+                                                                                                                                    37
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+
+      Comparison of pipeline transport and shipping (port to port)
+5.2.1 Sensitivities to flow rate and distance
+
+Comparing the unit cost of pipeline and port to port shipping transport shows their fundamentally
+different cost structure, as seen in Figure 5-8. Pipeline costs are dominated by CAPEX and thus show
+high sensitivity to flow rates, as higher flow rates allow the CAPEX to be spread over more tCO2. As a
+result, unit costs of pipes are significantly lower for high flow rates (left chart). Shipping costs are
+dominated by OPEX and thus are less sensitive to flow rates (right chart).
+Furthermore, pipeline costs are highly sensitive to distance as CAPEX costs are proportional to
+distance (left chart). Shipping costs are far less sensitive to distance: fuel cost is a small component
+of costs and CAPEX are only increased due to larger distances if these lead to a larger ship being
+required.25
+Figure 5-8: Unit cost of pipeline transport and shipping for different flow rates and distances
+
+5.2.2 Breakeven distances of shipping ­ impact of flow rate
+
+The charts above display that for high distances and low flow rates, shipping CO2 is cheaper than
+pipeline transport. The distance at which shipping breaks even with pipeline transport depends on the
+flow rate. For a low flow rate pipeline transport is not economic and the breakeven distance of shipping
+is low. For a higher flow rate, pipeline transport unit costs decrease and the breakeven distance of
+shipping increases, as depicted in Figure 5-9 below.
+
+25 Pipeline transport is based on a 15MPa pressure drop allowed between start and end point, 20 year lifetime,
+0% discount rate. Shipping costs are based on onshore unloading, low pressure transport, pre-pressurised CO2,
+optimal ship size (picked by model), LNG fuel, central fuel prices, 20 year lifetime, 0% discount rate.
+
+                                                                                                                                    38
+                                                                      CO2 Shipping Study
+                                                                     Final Report for BEIS
+
+Figure 5-9: Breakeven distance of shipping for different flow rates
+
+For a low flow rate of 0.5 Mtpa, shipping CO2 is cheaper than pipeline transport for all distances above
+200km (left chart). For a high flow rate of 5 Mtpa, shipping is only cheaper than pipeline transport for
+distances above 500km. The remaining assumptions for shipping and pipeline transport are the same
+as in section 5.2.1.
+
+To show the impact of the flow rate on the comparison of pipeline and shipping costs, Figure 5-10
+shows the unit costs of both transport options for flow rates from 0.1Mtpa to 10 Mtpa, in the case of a
+transport distance of 100 km (left) and 400 km (right). The remaining assumptions are the same as in
+Section 5.2.1. For the short distance, pipeline transport is cheaper for flow rates above approximately
+0.15 Mtpa, whereas for the longer distance, pipeline transport is cheaper for flow rates above
+approximately 2.5 Mtpa (note that the scale of the chart is logarithimic).
+
+Figure 5-10: Breakeven flow rates of pipeline transport for two different transport distances
+
+5.2.3 Breakeven distances of shipping ­ impact of lifetime
+
+The breakeven distance of CO2 shipping furthermore depends on the lifetime of the project. This is
+illustrated in Figure 5-11 below, showing unit costs of shipping and pipeline transport for a 1 Mtpa
+project and various distances. The project lifetime is 10 years in the chart on the left, and 40 years in
+that on the right. The remaining assumptions are as in Section 5.2.1. For a short lifetime of 10 years,
+pipeline transport is expensive, as the CAPEX cannot be distributed over many tonnes of CO2.
+Therefore, shipping is cheaper already at small distances (left chart). Increasing the lifetime to 40 years
+reduces pipeline unit costs to a much higher extent than shipping costs and thus shipping is only more
+economic for distances above about 380 km (right).
+
+                                                                                                                                    39
+                                                                      CO2 Shipping Study
+                                                                     Final Report for BEIS
+
+Figure 5-11: Breakeven distance of shipping for different lifetimes
+
+      Comparison of pipeline transport and shipping (port to storage)
+5.3.1 Impact of flow rate on lifetime costs
+
+Lifetime costs for offshore unloading options have been compared to those for onshore unloading
+options, as well as those of pipeline transport, as shown in Figure 5-12. Figure a) shows the lifetime
+costs for the different transport and unloading options for a flow rate of 0.5 Mtpa, and Figure b) shows
+the lifetime costs of the different options for a flow rate of 5 Mtpa.26
+The following observations can be made:
+
+     · For the low flow rate, all shipping options are cheaper than pipeline transport. For the 5 Mtpa
+          flow rate, pipeline economics improve; unloading to a new platform with storage is more
+          expensive than pipeline transport, the other shipping options remain slightly cheaper than
+          pipeline transport.
+
+     · Liquefaction fuel cost (i.e. electricity cost) becomes the dominant cost component of
+          shipping for high flow rates.
+
+     · For higher flow rates, onshore unloading and direct injection have similar costs.
+     · Gasification and unloading costs are significant cost components for all offshore unloading
+
+          options.
+It should be noted that very few detailed design studies of the offshore unloading options have been
+undertaken and therefore the cost estimates are more indicative, with greater uncertainty than the
+onshore unloading estimates. While the onshore unloading option has been tried and tested for CO2,
+if only on a smaller scale than expected for CCUS projects, the offshore unloading option remains
+untested.
+
+26 Pipeline cost is based on 600km distance, 15MPa pressure drop allowed between start and end point, 20 year
+lifetime, 0% discount rate. Shipping cost is based on 600km distance, low pressure transport, pre-pressurised
+CO2, optimal ship size (picked by model), LNG fuel, central fuel prices, 20 year lifetime, 0% discount rate.
+
+                                                                                                                                    40
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+Figure 5-12: Lifetime cost of shipping for different unloading options with a flow rate of a) 0.5
+Mtpa and b) 5 Mtpa.
+  Lifetime cost for transporting 0.5 MtCO2/yr
+
+   Lifetime cost for transporting 5 MtCO2/yr
+
+5.3.2 Impact of lifetime on lifetime costs
+
+Figure 5-13 shows the estimates of the lifetime cost of a 1 Mtpa project for the different shipping
+transport and unloading options relative to a pipeline, for a 10-year project lifetime (a) and a 40-year
+project lifetime (b). The remaining assumptions are as in Section 5.3.1.
+Due to the high CAPEX proportion, pipelines become more cost-effective with a greater lifetime. For
+the chosen distance and flow rate, all shipping options are cheaper than pipeline transport for the short
+lifetime of 10 years, however for the longer lifetime, only shipping with either onshore unloading or
+direct injection is cheaper than pipeline transport.
+Offshore unloading to a new platform is the most expensive shipping option; however, assessment
+should include detailed storage cost calculations to be able to compare the options properly (e.g. if
+platforms are needed anyway for certain flow-rates and storage sites and thus need to be added to
+pipeline transport and shipping with onshore unloading as well). Overall ship costs (i.e. CAPEX and
+OPEX of the CO2 ship) are highest for direct injection as a bigger ship is needed due to the longer
+unloading time. However, platform CAPEX and OPEX offset the ship cost savings in case of unloading
+offshore to a platform for high flow rates. For the low flow rate costs of direct injection and unloading
+to an existing platform are almost identical (£165m and £167m respectively).
+
+                                                                                                                                    41
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+Figure 5-13: Lifetime costs of shipping for different unloading options with lifetimes of a) 10
+years and b) 40 years
+  Lifetime costs ­ 10-year lifetime
+
+   Lifetime costs ­ 40-year lifetime
+
+5.3.3 Breakeven distance for offshore unloading options
+
+The unit costs of shipping are compared with that of pipeline transport in Figure 5-14, for onshore
+unloading, direct injection and unloading to an existing platform with storage.27
+Offshore unloading is more expensive than onshore unloading. Therefore, the breakeven distance of
+shipping costs with pipeline costs is higher for the offshore unloading options than for the onshore
+unloading case. However, shipping with any of the selected unloading options is cheaper than pipeline
+transport for distances above about 500 km.
+
+27 Pipeline transport is based on 1 Mtpa flow rate, 15 MPa pressure drop allowed between start and end point,
+20-year lifetime, 0% discount rate. Shipping is based on 1 Mtpa flow rate, low pressure transport, pre-pressurised
+CO2, optimal ship size (picked by model), LNG fuel, central fuel prices, 20-year lifetime, 0% discount rate.
+
+                                                                                                                                    42
+                                      CO2 Shipping Study
+                                     Final Report for BEIS
+
+Figure 5-14: Breakeven distances for pipeline transport and CO2 shipping with a) onshore
+unloading b) direct injection and c) existing platform
+
+a) Onshore unloading (port to port)  b) Direct injection
+
+c) Existing platform
+
+                                                            43
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+
+6 Opportunities and barriers
+
+Previous chapter clearly showed that CO2 shipping can be more cost-effective compared to CO2
+pipelines under certain conditions. CO2 shipping therefore presents opportunities for the
+decarbonisation of the UK and for clean growth of the UK economy. However, the current barriers to
+CO2 shipping must be considered and overcome to develop this emerging industry effectively. This
+section presents the key opportunities in the UK and internationally, and the key barriers that must
+be overcome
+
+      Opportunities in the UK
+
+This section presents the key roles that CO2 shipping can play in the UK CCUS market, including:
+     · Collecting CO2 from multiple clusters via shipping to enable the development of multiple CCUS
+          clusters in parallel;
+     · Enabling the deployment of CCUS clusters in locations that do not have nearby offshore
+          storage sites such as South Wales; and
+     · Enabling the deployment of small-scale and short-duration projects if needed.
+
+These key opportunities are illustrated via three case studies below.
+
+Case study 1: Gathering CO2 from multiple UK CCUS clusters via shipping
+
+The first case study aims to illustrate that several CCUS clusters can be developed in parallel using
+CO2 shipping to gather CO2 from various locations. this case study, it is assumed that 1 MtCO2 per
+annum is being capture and transported from St Fergus and Teesside each. Figure 6-1 shows three
+illustrative options for the development of St Fergus and Teesside clusters in parallel:
+
+     1) Two offshore pipelines from St Fergus and Teesside to the Captain Aquifer to transport 1
+          MtCO2 per annum each;
+
+     2) An offshore pipeline from St Fergus to the Captain Aquifer and another offshore pipeline from
+          Teesside to the Bunter Aquifer to transport 1MtCO2 per annum each;
+
+     3) CO2 shipping from Teesside to the St Fergus and an offshore pipeline from St Fergus to the
+          Captain Aquifer to transport 2MtCO2 per annum.
+
+Figure 6-1 Illustrative options for the development of St Fergus and Teesside clusters in
+parallel28
+
+28 Figure shows undiscounted unit costs (assuming a 20-year project lifetime for all new assets) assuming new
+infrastructure. Re-using existing infrastructure and over-sizing/future-proofing are not included in this case study.
+
+                                                                                                                                    44
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+Figure 6-2: Lifetime and unit cost of CO2 transport (undiscounted and discounted at 10%)
+
+The modelling results show that shipping CO2 from Teesside to St Fergus could the most cost-effective
+solution for this case study (considering the discounted costs). However, the business model and
+charging mechanism that will be selected for CO2 transport may have an impact on the feasibility of
+this solution. Although shipping CO2 from Teesside to St Fergus leads to economies of scale for the
+offshore transportation at St Fergus, Teesside may need to pay two separate transport fees (i.e.
+shipping from Teesside to St Fergus and offshore pipeline from St Fergus to Captain), whereas
+emitters near St Fergus may benefit from reduced transport fees due to the economies of scale. It may
+therefore be more cost-effective for Teesside to transport its CO2 to Bunter via an offshore pipeline
+(although it may be more expensive for the whole T&S system). Appropriate contracting arrangements
+should therefore be explored further in potential subsequent studies. It should also be noted that
+Option 2 will require the development of two storage sites, which are not included in this analysis. Unit
+costs of storage can decrease significantly when higher volumes are stored in a single large storage
+facility compared with multiple smaller capacity facilities. Gathering CO2 from multiple clusters may
+also bring potential benefits of achieving economies of scale for CO2 storage
+It may be possible to ship CO2 from more than one cluster to St Fergus.
+Figure 6-3 illustrates how St Fergus can be used to gather CO2 from Grangemouth, Teesside, Humber
+and Thames via shipping (1MtCO2 per annum from each cluster, 5MtCO2 per annum in total). Total
+costs over 20 years are calculated to be around £1billion to transport 100MtCO2, which corresponds
+to £10/tCO2 (undiscounted).
+
+                                                                                                                                    45
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+Figure 6-3: Costs of shipping CO2 from several CCUS clusters to St Fergus
+
+Case study 2: Enabling the deployment of the South Wales CCUS cluster via shipping
+
+CO2 shipping can enable the deployment of CCUS clusters, which lack potential CO2 storage sites
+nearby. For instance, in its report "Building a low carbon economy in Wales", the CCC identified that
+"The lack of potential CO2 storage sites close to South Wales presents a greater challenge in deploying
+carbon capture and storage (CCS)." (Committee on Climate Change, 2017) This case study aims to
+illustrate how CO2 shipping can enable the deployment of the South Wales CCUS cluster. Three
+illustrative options for South Wales are shown in the maps below, namely Merseyside (450km away),
+Humber (1,150 km away) and St Fergus (1,300 km away).
+Figure 6-4: Three illustrative options for South Wales to ship its CO2 to other ports
+
+The shipping costs for these three options are estimated to be between £9.5/tCO2 and £12.4/tCO2
+(undiscounted unit costs). The model estimates that a single ship would be sufficient to transport
+1MtCO2 per annum from South Wales to these three ports; however, the required ship capacity is a
+lot bigger for Humber and St Fergus (20kt) compared to Merseyside (8kt). Similarly, temporary storage
+capacity requirement increases to accommodate longer transportation duration for each trip. The case
+study shows that it would be feasible for South Wales to transport its CO2 to other potential CCUS
+hubs for permanent storage.
+
+                                                                                                                                    46
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+Figure 6-5: Unit costs of shipping CO2 from South Wales (undiscounted)
+
+Case study 3: Small-scale and short-duration early projects
+
+One of the key challenges of potential early small-scale projects is the scale of investment needed for
+capital-intensive offshore pipelines. It was therefore suggested by many CCUS experts that first CCUS
+projects in the UK should include over-sized (or future-proofed) offshore infrastructure to achieve
+economies of scale. Although this leads to a significant cost reduction in the longer-term, it is still a
+challenge for the first CCUS projects. In this illustrative case study, potential shipping costs for direct
+injection to a storage site are presented for three different flow rates of 0.1, 0.5 and 1MtCO2 per annum
+for 10 years.
+Figure 6-6: Three illustrative direct injection scenarios for CO2 shipping
+
+The shipping costs are estimated to be significantly lower than the pipeline costs, especially for the
+0.1MtCO2 per annum case. Also, potential sunk costs after 10 years are found to be significantly lower
+for shipping compared to pipelines. For instance, the capital cost of an offshore pipeline with a capacity
+of 1MtCO2 per annum is estimated to be more than double the capital costs of shipping 1MtCO2 per
+annum. It may also be possible to convert the CO2 ship to an LPG ship with some additional capital
+investment (if there was demand for LPG ships in the market). However, it should be noted that
+shipping costs are based on "direct injection" rather than "port-to-port" and direct injection cost
+estimates are currently highly uncertain. Further demonstration may be needed to demonstrate "direct
+injection" applications of CO2 shipping in the UK.
+
+                                                                                                                                    47
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+Figure 6-7: Comparison of pipelines and CO2 shipping for smaller-scale projects
+
+                                                                                                                                    48
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+
+      International opportunities
+
+Beyond the key roles that CO2 shipping can play within the UK, CO2 shipping may enable
+development of a UK CO2 T&S industry which can be utilised by other countries through long
+distance cross-border transport. CO2 shipping can connect the UK ports with potential early
+movers, such as Norway and Rotterdam, and other key industrial hubs with limited offshore CO2
+storage potential, such as France and Germany. CO2 from other European CO2 capture clusters
+(including the nearby industrial clusters) can be shipped to the UK, either to Ports, or directly to
+storage sites. Figure 6-8 shows potential CO2 storage locations (Poulsen, 2014) and key emission
+sources (EU Commission, 2012). The proximity of many storage sites to the UK, and the lower
+storage potential of some other European counties, positions the UK well to utilise our natural
+resources.
+
+Figure 6-8 Potential CO2 storage formations and CO2 emission sources in Europe
+
+The distribution of this storage capacity across Europe will be an important influence on future policy
+choices, with some member states such as Italy, Spain and France particularly dependent on
+onshore storage locations. Integrated transport networks and cross-border CCUS agreements
+similarly offer benefits in most countries but will be particularly relevant where storage capacity is
+restricted e.g. reduced onshore capacity or limited site availability. The emissions from the key
+industrial clusters around the North Sea are shown below.
+
+Table 6-1 Estimated industrial emissions from key industrial hubs near the UK
+
+Key industrial hubs near the UK  Emissions
+                                  MtCO2/yr
+Rotterdam (Netherlands)
+Antwerp (Belgium)                     ~20
+Ruhr (Germany)                        ~20
+Le Havre (France)                     ~35
+                                      ~15
+
+The total cost of T&S for these industrial hubs was estimated, with the results shown in Figure 6-9.
+The figures include both the cross-border shipping to Humber, and the offshore pipeline transport
+and storage at Bunter. T&S costs shown for Bunter are based on the Strategic UK CO2 Storage
+Appraisal (Energy Technologies Institute, 2016) and assumed to be the same for both 1 MtCO2/yr
+
+                                                                                                                                    49
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+
+and 5 MtCO2/yr in this illustrative case study. The analysis indicates that total T&S unit costs could
+be less than £20/tCO2. This is comparable to the levelised unit cost of Forties 5 Site 1, which was
+estimated to be £18/tCO2 by the Strategic UK CO2 Storage Appraisal project.
+
+Figure 6-9 Total T&S costs from nearby European ports to Bunter via Humber
+
+   5 MtCO2/yr
+
+1 MtCO2/yr
+
+These costs could potentially by lowered even further if direct CO2 storage via shipping is proven
+feasible and offshore CO2 storage hubs are developed in the UK. Considering the UK's relevant
+expertise and existing supply-chain (i.e. offshore oil and gas operations), UK companies can
+potentially benefit from this significant international opportunity. In addition to the opportunities in
+CO2 shipping itself, cross-border CO2 transport could lead to a significant increase in the
+development of offshore transport and storage assets in the UK. However, the key barriers explained
+in the following sub-section should be addressed to unlock this significant potential.
+
+Figure 6-10: Shipping distances (in km, one way) between some of the UK and European ports
+considered for international CO2 transport; sources: Marinetraffic29, Sea-distances30,
+Searoutes31
+
+To\From         Teesside  Humberside  Thames   Rotterdam Porsgrunn  Duisburg  Le Havre  Antwerp
+Teesside                       248    Estuary                          707      706       454
+Humberside        248                          467  874                593      620       494
+Thames Estuary    522          409      522                           1002      370       304
+Rotterdam         467          363      409    363  922                220      500       131
+Porsgrunn         874          922                                    1067      1326      1100
+Duisburg          707          593      276    276  1522                        789       306
+Le Havre          706          620     1522                            789                483
+Antwerp           454          494     1002         913                306      483
+                                        370
+                                        304    913
+
+                                               220  1067
+
+                                               500  1326
+
+                                               131  1100
+
+29https://www.marinetraffic.com/en/voyage-planner/
+30https://sea-distances.org/
+31https://www.searoutes.com/routing/
+
+                                                                                                                                    50
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+
+      Key barriers
+
+6.3.1 Regulatory Barriers
+
+CO2 has been transported by ship as a commodity between various European countries for a number
+of years. However, transporting CO2 for the purposes of offshore storage is exposed to different
+international regulatory frameworks which will have an influence on the development and requirements
+for CO2 shipping. These include environmental legislation, monitoring and reporting guidelines, safety
+procedures and CO2 storage regulations. A summary of these regulatory frameworks and their
+relevance for national and international CO2 transport by ship is provided in this section.
+
+THE LONDON PROTOCOL ­ ARTICLE 6 ON TRANSBOUNDARY CO2 TRANSPORTATION
+
+The "Convention on the Prevention of Marine Pollution by Dumping of Wastes and Other Matter 1972",
+the "London Convention" for short, is one of the first global conventions to protect the marine
+environment from human activities and has been in force since 1975 (International Energy Agency,
+2011). Its objective is to promote the effective control of all sources of marine pollution and to take all
+practicable steps to prevent pollution of the sea by dumping of wastes and other matter (International
+Maritime Organisation, 2018).
+
+In 1996, the "London Protocol" (LP) was agreed to further modernise the Convention and, eventually,
+replace it (International Maritime Organisation, 2006). Under the Protocol all dumping of wastes is
+prohibited, except for the named possible acceptable wastes on the so-called "reverse list", listed in
+Annex I of the Protocol. The Protocol entered into force on 24 March 2006, and there are currently 50
+Parties to the Protocol (International Maritime Organisation, 2018).
+
+CO2 sequestration in the London Protocol
+
+In 2007, in recognition of the potential damage of human induced climate change could have on the
+marine environment, and the emergence of CCUS as a promising mitigation option, the LP was
+amended to add CO2 onto the list of possible acceptable wastes which could be "dumped". In fact, it
+was agreed that "Carbon dioxide streams from carbon dioxide capture processes for sequestration"
+could be considered for dumping (Annex 1, Para 1.8), only if:
+1. disposal is into a sub-seabed geological formation; and
+2. they consist overwhelmingly of carbon dioxide. They may contain incidental associated
+
+     substances derived from the source material and the capture and sequestration processes used;
+     and
+3. no wastes or other matter are added for the purpose of disposing of those wastes or other matter.
+
+The amendment entered into force on 10 February 2007 for all Contracting Parties to the Protocol.
+
+Despite CO2 being placed on the list of acceptable wastes under the London Protocol, the regulation
+still prevents the transboundary movement of CO2 for the purposes of disposal at sea. Article 6 states
+"Contracting Parties shall not allow the export of wastes or other matter to other countries for dumping
+or incineration at sea." Therefore, the transportation of CO2 from EU member states, by ship or
+pipeline, for geological storage to the UK offshore sector, would currently be in violation of an
+international treaty. Conversely, the transboundary transportation of CO2 for the purposes of storage
+onshore, or for utilisation, is not blocked by the London Protocol.
+
+In recognition of this potential regulatory barrier, in 2009 Norway submitted a proposed amendment to
+the London Protocol, which added an additional paragraph (2) to Article 6 as follows:
+
+                                                                                                                                    51
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+
+          "Notwithstanding paragraph 1, the export of carbon dioxide streams for disposal in accordance
+with Annex 1 may occur, provided that an agreement or arrangement has been entered into by the
+countries concerned."
+
+The amendment was adopted as a Resolution (Resolution LP.3(4)) by vote. However, in order for the
+Resolution to come into force (for parties that accept it), it must be ratified by two-thirds of the (46)
+Contracting Parties. At present, only Norway, the UK, the Netherlands, Finland and Iran have ratified
+the Resolution (T. Dixon, personal communication 24th September 2018). It is unclear why in almost
+10 years, only 5 parties have ratified the Resolution, although it is assumed that the majority of parties
+see limited value in the transboundary movement of CO2. Based on the progress to date, there is a
+low probability that an additional 24 parties will ratify the Resolution within the next 5 years. This could
+delay the development of transboundary CO2 projects, such as those presented as part of European
+Projects of Common Interest (compare (EU Commission, 2018)for further information).
+
+In recent years, this potential barrier has been analysed and possible legal solutions have been
+offered. In its working paper, the IEA (2011) explored possible ways to resolve this and distinguished
+five possible approaches to enable transboundary CCUS:
+
+     · To issue an interpretative resolution based on the general rules of interpretation
+     · Resolve to provisionally apply the 2009 amendment, until it is ratified
+     · To enter into bilateral or multilateral agreements
+     · Agree to modify the operation of the relevant aspects of the London Protocol between specific
+
+          contracting parties
+     · Agree to suspend the operation of the relevant aspects of the London Protocol between
+
+          specific contracting parties
+
+(Henriksen, 2017) have since further developed the options presented by the IEA and found that the
+first option could offer room for a legal solution. Based on the general principles for interpretation from
+the Vienna Convention on the Law of Treaties (VCLT) from 1969, in summary, the authors applied the
+rule of `overall logic' to conclude that although the transboundary movement of CO2 for dumping would
+be in conflict with the wording of Article 6, the activity would not hinder the objective and purpose of
+the London Protocol. The objective of the London Protocol, according to Article 2 is, `Contracting
+parties shall individually and collectively protect and preserve the marine environment [...]". As part of
+this objective, they shall, where appropriate "harmonize their policies in this regard". Therefore,
+transporting CO2 between parties of the Protocol should not jeopardise the objective, as all parties are
+bound by the same obligations. Transportation of CO2 between parties to the protocol and third-parties
+would still be prohibited.
+
+Despite these possible solutions, Henriksen & Ombudstvedt (2017) conclude that there is no one
+size fits all solution to the Article 6 issue, and each option entails complex legal arguments and
+interpretations. Notwithstanding these challenges, CCUS projects involving transboundary CO2
+movements between parties to the London Protocol continue to be discussed. It is likely that as
+industrial CCUS projects move closer to implementation, the relevant parties to the London Protocol
+affected by this barrier will undertake concrete legal steps to avert Article 6 derailing large scale
+investments in transboundary CCUS projects. Nevertheless, the London Protocol remains an
+uncertainty and efforts may be required to hasten the amendment.
+
+EU-ETS MONITORING AND REPORTING GUIDELINES
+
+As of 2013, CCS was fully included in Phase III of the European Union Emissions Trading Scheme
+(EU ETS). The last set of finalized Monitoring and Report Guidelines (MRGs) were released in 2012
+to be used during Phase III of the EU ETS (2013-2020) (EU Commission, 2018). In Annex IV of
+these guidelines, activity specific guidelines are provided for determining the monitoring
+
+                                                                                                                                    52
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+
+requirements for CO2 capture, transport by pipeline and storage in geological formations. Monitoring
+guidelines for CO2 shipping vessels, liquefaction processes and associated loading and offloading
+equipment were not included. The exclusion of shipping in the current EU ETS MRGs generates
+questions on how CCS projects with shipping can be effectively and adequately monitored and
+verified. One possible solution could be that a Member State `opt-in' shipping CO2 as a regulated
+activity under the EU-ETS under Article 24 of the Directive. This would also require the proposal and
+acceptance by the European Parliament and Council of a bespoke MRG approach to CO2 shipping
+vessels.
+
+As of January 2018, the EU Regulation on monitoring, reporting and verification of carbon dioxide
+emissions from maritime transport (Regulation (EU) No. 757/2015 as amended), requires all ships
+with a gross tonnage of over 5000t to be subject to the monitoring and reporting of CO2 emissions.
+However, maritime vessels are not currently included in the EU-ETS. Therefore, including CO2
+shipping vessels as part of the EU-ETS could raise conflicts of interest with the broader maritime
+industry, as such an inclusion could represent a precedent for greater inclusion of maritime vessels
+in the EU-ETS, and the financial consequences that would bring.
+
+THE EU DIRECTIVE FOR THE GEOLOGICAL STORAGE OF CO2 (2009/31/EC)
+
+The EU Directive for the geological storage of CO2, `the CCS Directive' is the key piece of regulation
+for the storage of CO2 in Europe. The Directive provides the rules and definitions for Member State
+competent authorities to issue CO2 storage permits, and covers the requirements for monitoring
+plans, risk assessments and corrective measures. However, the Directive is primarily focused on the
+storage component of CCS projects, and only briefly mentions the transport of CO2. Furthermore,
+only transport by pipeline is mentioned in the document. There is no reference to marine
+transportation of CO2.
+
+UNITED NATIONS CONVENTION ON THE LAW OF THE SEA 1982
+
+When transport and storage (T&S) occurs in the territory of a state, the applicable legislation is easily
+determined: it is the law of the sovereign state that applies to all aspects of the transport and storage
+facility. In the case of offshore T&S, the situation is far more complex. International law determines
+which State has the competence to regulate the transport and storage. Offshore, several maritime
+zones are identified for which international law recognises different rights and obligations. The
+UNCLOS (United Nations Convention on the Law of the Seas of 1982) has defined the different
+maritime zones (United Nations, 2018):
+
+     · Baseline, coast at low water, sovereign rights of the coastal state (Art. 5 UNCLOS).
+     · Territorial waters, 12 nautical miles (nm) out of the coast, law of the coastal State applies (Art.
+
+          2 UNCLOS) 6 - Continental shelf, a natural prolongation of the land territory where coastal
+          states have functional jurisdiction regarding the exploration and production of oil and gas,
+          including the right to establish the necessary installations and the right to construct and
+          regulate pipelines transporting the hydrocarbons to shore (Art. 79 UNCLOS, limited rights to
+          lay pipelines) .
+     · The Exclusive Economic Zone (EEZ), extends 200 nm from the coast, and gives coastal states
+          the rights to explore and exploit minerals and other types of energy and to establish all
+          necessary installations/cables (Art. 56 UNCLOS).
+     · High seas, Art.112 UNCLOS which provides for the freedom to lay pipelines.
+
+Practically speaking, for shipping scenarios that involve transporting CO2 from the UK mainland to UK
+storage sites on the territorial waters or the EEZ, the UK has full jurisdiction (in territorial waters) and
+reserves the right to conduct economic activities in the EEZ. However, if CO2 from the UK would be
+
+                                                                                                                                    53
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+
+transported across the border to a neighboring parties EEZ, this country would assume jurisdiction
+over any T&S infrastructure, as it would with any other economic activity.
+
+UNCLOS also applies to shipping vessels, whereby the concept of `innocent passage' is important
+here. Innocent passage is defined in UNCLOS as "navigation through the territorial sea for the purpose
+of traversing it while being nonprejudicial to the peace, good order or security of the coastal state."
+UNCLOS does allow coastal states to apply laws and regulations relevant to safety of navigation and
+maritime traffic in its territorial waters. Importantly, innocent passage may not be denied by the coastal
+State merely based on the cargo of the ship. In the EEZ, UNCLOS states that all foreign ships enjoy
+the freedom of navigation, so long as they comply with the general provisions of UNCLOS and
+international maritime law.
+
+Simply speaking, should a Danish ship carrying CO2 have to pass through the Dutch and or German
+EEZ on route to a storage site in the UK North Sea, the Dutch or German authorities would have no
+jurisdictional power to prevent the ship traversing their territorial waters or EEZ, so long as there was
+no threat to its maritime environment. Therefore, although relevant, UNCLOS presents no regulatory
+barrier to national or international maritime transport of CO2.
+
+THE SOLAS CONVENTION AND IMO IGC CODE
+
+The primary instrument of international law dealing with safety in shipping is the International
+Convention for the Safety of Life at Sea of 1974 (SOLAS Convention, (International Maritime
+Organization, 2018)). The SOLAS Convention has a wide remit, with provisions for the design and
+construction of ships, rules with regards to the on-board equipment for safe navigation and
+emergency situations, and rules regarding the operation of the ship. Chapter VII of the convention is
+dedicated to the carriage of dangerous goods, including liquid chemicals and irradiated nuclear fuel.
+Part C of the chapter is focused on ships carrying liquified gases in bulk, which is relevant for the
+transportation of CO2. These laws will have a bearing on the design and operation of CO2 ships, and
+therefore the final cost and viability of CO2 shipping.
+
+Within Chapter VII, there are a number of sub-themes, so-called IMO codes, which include specific
+requirements for certain types of ships carrying various loads. Regarding CO2, the International Code
+for the Construction and Equipment of Ships Carrying Liquefied Gases in Bulk (IGC Code), in place
+since 1986, is applicable. In fact, this code covers the carriage by ships of liquefied gases having a
+vapour pressure exceeding 2.8 bar absolute at a temperature of 37.8°C, in addition to a list of other
+products contained in Chapter 19 of the SOLAS Convention. Despite already exceeding the criteria
+for pressure mentioned above, in 2006 the IMO adopted a resolution to add CO2 onto the list of
+substances in Chapter 19. The IGC code stipulates that ships carrying applicable substances, such
+as CO2, must meet the requirements of the "International Certificate of Fitness for the Carriage of
+Liquefied Gases in Bulk". To receive and maintain such as certificate, a ship must undergo a series of
+surveys to be carried out by officers of the flag state. Further requirements to the design of liquified
+bulk carriers are distinguished by the foreseen hazardousness of the cargo. The least hazardous
+category, 3G, includes refrigerant gases, nitrogen and carbon dioxide.
+
+Chapter 17 of the code provides "Special Requirements" for ships carrying substances covered in
+Chapter 19. Sections 17.21 and 17.22 lists the special requirements for ships carrying CO2. The
+section makes a distinction between high purity CO2, and reclaimed quality CO2. Reclaimed quality
+CO2 is understood to be that which has been captured from industrial processes. These provisions
+are primarily focused on the management of pressure of the CO2 during transportation, to ensure it
+stays in liquid form. Information on the "triple point" temperature of the CO2 must be supplied to the
+carrier to ensure the minimum temperature and pressure needed to keep the liquid phase of the
+cargo is maintained. The CO2 must be kept at 0.05 MPa above the triple point. Another important
+requirement is the installation of carbon dioxide monitoring equipment in areas of the ship where
+
+                                                                                                                                    54
+                                                                           CO2 Shipping Study
+                                                                          Final Report for BEIS
+
+CO2 accumulation could occur. Ships carrying reclaimed CO2 must comply with all the requirements
+for pure CO2, with the addition that the cargo system must also take account of the possibility of
+corrosion, in case the reclaimed quality carbon dioxide cargo contains impurities such as water or
+Sulphur dioxide.
+
+6.3.2 Port Constraints
+
+Using existing ports for CO2 shipping projects is cost effective due to the availability of services and
+infrastructure e.g. for docking as well as storing and loading CO2. Existing ports can impose
+constraints on CO2 shipping projects, including ship length, ship draft, berth availability, and
+storage space requirements. For instance, very large CO2 ships (e.g. >30 ktCO2) may not be able
+to meet the specific maximum length and draft requirements of some ports. Many UK ports are in
+strategic locations for industrial clusters and CO2 storage sites. A summary of the key UK port
+parameters is shown in Table 6-2. Other port requirements may include proximity to CO2 sources,
+and electricity grid reinforcements that may be needed for the liquefaction plants.
+
+Table 6-2 Summary of UK port parameters, including ship size, tonnage and storage availability
+
+Port                       Maximum Maximum No. of          Approx         Storage ­        Storage ­
+                           length (m) draft (m) berths      annual        open (m2)        covered
+Teesside                                                tonnage (Mt)                       (m2)
+St Fergus/Peterhead        304            17    21                        Large areas
+Grangemouth                                                    27         available        30,000
+Merseyside (Liverpool)
+                           280            11    -                   10.3  -                -
+
+                           183            11    20                  8.5   Large areas      29,000
+                                                                          available
+
+                           292            12.8  50                  33.4  Unlimited >1,000,000
+
+Humberside (Hull)          214            10.4  -                   9.3   650,000          125,000
+
+South Wales (Port Talbot)  300            16.5  3                   9.0   -                -
+
+Thames Estuary             350            13    2                   4.0   320,000          17,500
+(Thamesport)
+Thames Estuary (Tilbury)   310            13    4                   8.3   6,800,000 3,200,000
+
+Table 6-3 shows the estimated size of CO2 ships in the literature.
+Table 6-3 CO2 ship parameters
+
+Report                     CO2 transport        Ship Size (tCO2)          Ship length (m)  Ship draft
+                              pressure                                                         (m)
+Yara, Larvik Shipping,                             1,700-7,500
+Polarkonsult 2016               Med P              2,400-9,400            94-160              5-7
+Polarkonsult, Praxair,          Med P             2,300-10,000
+Larvik Shipping, 2016           Med P                                     102-160             5-7
+Brevik 2017                     Low P                 30,000
+                                                                          103-150             5-8
+Petrofac 2012
+                                                                          210                 11
+
+Whilst the port parameters may impose constraints on the ship design in early projects, in the longer
+term, dedicated infrastructure can be installed.
+
+                                                                                                    55
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+
+6.3.3 Limited experience in large-scale CO2 shipping
+
+The shipping industry is conservative and risk averse with regards to new business areas. Large
+scale CO2 shipping is considered technically feasible, but a demonstration project of substantial size
+may be needed to create confidence in the investment environment. The risk premium of a new
+technology is likely to decrease quickly. For example, the cost of LNG powered ships has reduced
+significantly after the first 3 - 5 ships. The Norwegian CCUS project plans to start with a small-scale
+shipping project but for the second phase an aim of a 1.5 MtCO2/yr flow rate has been set with the
+intention to scale this up to 4 MtCO2/yr relatively quickly. In the longer term, a stable supply chain
+and market for CO2 shipping must develop, to ensure ongoing momentum, investment and
+innovation.
+
+6.3.4 Lack of viable business models
+
+Existing LNG/LPG model may not be replicable for CO2
+
+Shipping companies expect the business model of CO2 shipping to differ substantially from
+LNG/LPG shipping. Whereas the LNG/LPG value chain is highly distributed and fragmented, the
+CO2 shipping chain is expected to be owned/operated by one entity, to allow for easier
+administration. Joint ventures are likely to be common practice and are already being considered by
+shipping and infrastructure companies. The main difference between the cargos is that LNG/LPG
+offers value, whereas CO2 is a waste product. Therefore, except for Enhanced Oil Recovery, CO2
+shipping requires the availability of an incentive or government backing, to create a revenue model.
+Business models will depend on future market conditions. Creating momentum and confidence by
+realising an initial demonstration project should be prioritised in the early phase while business
+models can be developed and refined at a later stage.
+
+Ship ownership and chartering
+
+The most common forms of shipping contracts between a ship owner and a ship charterer are the
+following:
+· Voyage charter: contract for the carriage of a stated quantity and type of cargo, by a named
+
+     vessel between named ports against an agreed price, called freight. It is the most widespread
+     form of chartering.
+· Time charter: contract for the hire of a named vessel for a specified period of time, during which
+     time the charterer may use the vessel as he wishes. With a traditional time charter the time
+     charterer will hire the ship equipped and manned. The fixed costs of the ship are for the account
+     of the owner and the variable costs are for the account of the time charterer.
+· Bareboat charter: Under a bareboat charter, or demise charter, the charterer must equip and
+     man the ship himself. The charterer must pay for all operating costs and recruit the captain and
+     the crew.
+Large oil and gas companies also own substantial fleets of ships themselves.
+
+Ownership of port infrastructure
+
+Oil and gas companies own and operate several port facilities in the UK. Examples include:
+· INEOS operates 4 berths in Grangemouth, Scotland and Hound Point, Scotland
+· Calorgas owns and operates an LPG terminal on Canvey Island, England
+· Shell and Exxon own Braefoot Bay, an LPG terminal in Scotland
+The shipping management companies that were interviewed do not own any port facilities
+themselves. However, the CO2 shipping chain including port infrastructure is expected to be
+owned/operated by one entity (which could be a joint venture of private companies, the government
+or a public private partnership) as all shipping infrastructure is likely to be dedicated to a single
+CCUS project for several years or decades.
+
+                                                                                                                                    56
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+
+7 Conclusions and recommendations
+
+CO2 shipping may have an important role to play in supporting CCUS in the UK (and elsewhere).
+The technical and regulatory barriers can be overcome to realise the opportunities CO2 shipping
+presents, both in protecting existing UK energy intensive industry and in developing expertise in the
+emerging field of CO2 transport and storage.
+
+In many situations, it is found that the CO2 shipping costs may be lower than the equivalent
+CO2 pipeline costs. However, this is dependent on factors such as distance, project duration,
+pressure requirements and CO2 flow-rate. Liquefaction and ship costs (CAPEX and OPEX) are
+found to be the biggest cost components of CO2 shipping (i.e. more than 70%). Shipping costs are
+dominated by operational and fuel costs, unlike pipelines, which are dominated by CAPEX. The cost-
+effectiveness of shipping costs depends on the initial and transport pressure conditions; shipping
+costs can be £7-10/tCO2 for pre-pressurised CO2 for liquefaction and low pressure CO2 transport.
+Sensitivity analysis showed that, for a given CO2 pressure condition, lifetime shipping project cost
+shows highest sensitivity to the CO2 flow rate, due to additional ships being required; however, as
+this cost is spread over a greater quantity of CO2, the unit cost (£/tCO2) shows a smaller impact of
+flow rate. Shipping costs were also found to be sensitive to project lifetime and ship size selected.
+Pipeline costs show much higher sensitivity to distance and flow rate than shipping costs, due to the
+high capex costs. In general, shipping costs are found to be more cost-effective relative to
+pipelines for lower CO2 flow rates, longer distances and shorter project lifetimes.
+
+Key barriers to CO2 shipping include regulations, port constraints and the lack of business
+models. The key barrier for cross-border CO2 shipping is the London Protocol, which still prevents
+the cross-border movement of CO2 for CCUS. Other relevant regulations include EU-ETS Derective,
+EU CCS Directive, UNCLOS, and SOLAS and IMO IGC Code. Early projects may be required to
+meet the specific port constraints (including ship length, ship draft, berth availability, and storage
+space) but dedicated infrastructure can be installed in the longer-term. There is currently limited
+experience in CO2 shipping at the scale needed, so demonstration projects may be needed.
+Additionally, business models and incentives for CO2 shipping will be required as existing LPG/LNG
+business models and contracts are not expected to be replicable for CO2 shipping.
+
+CO2 shipping can unlock a number of opportunities for the UK, such as reducing the cost of
+early UK CCUS projects, extending the economic locations for CCUS and importing CO2 from
+other European clusters. Gathering CO2 from multiple locations via shipping (analogous to the
+planned Norwegian projects) may enable the deployment of several clusters in parallel cost-
+effectively. Shipping may also extend the viability of CCUS to clusters such as that in South Wales,
+which does not have viable storage sites nearby. For short duration projects of small-scale, the
+potential sunk costs after 10 years are found to be significantly lower for shipping than for pipelines,
+thereby improving the economics. Finally, a market with considerable future potential is that of
+importing CO2 from other European CCUS clusters via shipping, to increase the scale of the CO2
+T&S market in the UK, with the aim of contributing to UK economic growth.
+
+7.1.1.1 Recommendations for further work
+
+This study has presented an analysis of the costs of CO2 shipping, relative to pipeline transport, as
+well as an overview of the opportunities and barriers associated with the development of CO2
+shipping in the UK. Additional studies or research should be completed to explore more detailed
+aspects of the supply chain and the potential market both in the UK and abroad. It is important to
+understand the implications of potential CO2 shipping business models for industry, consumers and
+the government. Some suggestions for further work are given below:
+
+                                                                                                                                    57
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+· More detailed assessment of potential UK ports/terminals for CO2 shipping. This may include
+     identification of suitable sites, site-specific feasibility studies, and identification of site-specific
+     constraints. Discussion with potential UK carbon capture clusters may be beneficial.
+· Inclusion of CO2 storage infrastructure (e.g. pipelines, wells, etc.) in the CO2 shipping cost
+     model to understand financial implications of port-to-storage shipping. Detailed assessment of
+     different port-to-storage options, including their potential impact on CO2 storage costs e.g. due
+     to their potential effect on injectivity.
+· Detailed assessment of the market potential for importing CO2 from other European countries
+     and the associated value to the UK. This may include economic modelling on the impact on
+     employment, GVA and potential additional investment.
+· Activities to promote the ratification of the proposed amendment to the London Protocol by
+     other Member States to enable cross-border CO2 transport. Research should be undertaken to
+     understand the current barriers to ratification by remaining countries and tackle these challenges
+     where necessary.
+· Inclusion of CO2 shipping in the BEIS Energy Innovation Programme (if possible) or provision of
+     additional funding to demonstrate CO2 shipping in the UK. The UK may also learn from any
+     demonstration programmes abroad, such as that currently being developed in Norway, but direct
+     injection applications are likely to require further demonstration.
+· Assessment of viable business models for CO2 shipping, including incentive mechanisms,
+     ownership structure (e.g. which entities are likely to own port vs. ship), risk management
+     strategies and capital financing. Consideration should be given to the cost-effectiveness of these
+     mechanisms, as well as the long-term sustainability of any policies implemented in terms of
+     market development.
+
+                                                                                                                                    58
+                                                                                                        CO2 Shipping Study
+                                                                                                      Final Report for BEIS
+
+8 References
+
+Alabdulkarem, A. H. (2012). Development of CO2 liquefaction cycles for CO2 sequestration. Appl.
+          Thermal Eng. 33, 144-156.
+
+American Society of Mechanical Engineers . (2010). ASME Boiler and Pressure Vessel Code, Section
+          VIII, Division 1: Rules for Construction of Pressure Vessels.
+
+Aspelund, A., & Gundersen, T. (2009). A liquefied energy chain for transport and utilization of natural
+          gas for power production with CO2 capture and storage ­ Part 3: The combined carrier and
+          onshore storage. Appl. Energy 86, 805­814.
+
+Baresic, D. (2018). LNG as a marine fuel in the EU. Transport & Environment.
+
+Berger, B. K. (2004). Creating a large-scale CO2 infrastructure for enhanced oil recovery. Greenhouse
+          Gas Control Technologies 7 Volume I, 2005, (pp. 321-328). Vancouver, Canada.
+
+Brevik. (2017). CO2 ship transport study - Concept study report. Gassco.
+
+Brownsort, P. (2015). Ship transport of CO2 for Enhanced Oil Recovery ­ Literature Survey.
+          Edinburgh: Scottish Carbon Capture and Storage.
+
+Chiyoda Corporation. (2011). Preliminary Feasibility Study on CO2 Carrier for Ship-based CCS. Global
+          CCS Institute.
+
+Chiyoda Corporation. (2012). Preliminary Feasibility Study on CO2 Carrier for Ship-based CCS
+          (Phase-2 ­ unmanned offshore facility). Global CCS Institute.
+
+Chiyoda Corporation and Global CCS Institute. (2011). Preliminary Feasibility Study. Chiyoda
+          Corporation and Global CCS.
+
+CO2EuroPipe. (2011). Towards a transport infrastructure for large-scale CCS in Europe; D4.3.2 Kårstø
+          CO2 Pipeline Project: Extension to a European Case.
+
+Committee on Climate Change. (2017). Building a low-carbon economy in Wales - Setting Welsh
+          carbon targets. Committee on Climate Change.
+
+Decarre, S. (2010). CO2 maritime transportation. International Journal of Greenhouse Gas Control 4,
+          857­864.
+
+DNV. (2011). Rules for Classification of Ships/High Speed, Light Craft and Naval Surface Craft, Part
+          2, Chapter 2, Metallic Materials.
+
+Energy Technologies Institute. (2016). Strategic UK CCS Storage Appraisal. Energy Technologies
+          Institute.
+
+Equinor. (2018). Personal Communication.
+
+EU Commission. (2012, October 03). EU GEOCAPACITY project. Retrieved from
+          https://cordis.europa.eu/result/rcn/49623_en.html
+
+EU Commission. (2018). Monitoring, reporting and verification of EU ETS emissions. Retrieved from
+          https://ec.europa.eu/clima/policies/ets/monitoring_en
+
+EU Commission. (2018). Projects of Common Interest. Retrieved from
+          https://ec.europa.eu/energy/en/topics/infrastructure/projects-common-interest
+
+                                                                                                                                    59
+                                                                      CO2 Shipping Study
+                                                                     Final Report for BEIS
+
+Gao, L. (2011). Cost analysis of CO2 transportation: case study in China. Energy Proc. 4, 5974­5981.
+
+Gassnova. (2018, June 29). CCS in Norway entering a new phase. Retrieved from
+          https://www.gassnova.no/en/ccs-in-norway-entering-a-new-phase
+
+Geske, J. B. (2015). Cost-effective balance between CO2 vessel and pipeline transport. International
+          Journal of Greenhouse Gas Control, 175-188.
+
+Haugen, H. A. (2009). Options for transporting CO2 from coal fired power plants Case Denmark.
+          Energy Procedia 1, 1665-1672.
+
+Henriksen, D. E. (2017). Cross-Border Transportation ­ A Key to Unlock Full-Scale CCS. Energy
+          Procedia 114, 7443-7458.
+
+International Energy Agency. (2011). Carbon Capture and Storage and the London Protocol - Options
+          for Enabling Transboundary CO2. International Energy Agency.
+
+International Maritime Organisation. (2006). 1996 Protocol to the Convention on the Prevention of
+          Marine Pollution by Dumping of Wastes and other Matter, 1972 (as amended in 2006).
+          International Maritime Organisation.
+
+International Maritime Organisation. (2018). Convention on the Prevention of Marine Pollution by
+
+Dumping   of  Wastes  and                         Other  Matter.     Retrieved          from
+
+http://www.imo.org/en/OurWork/Environment/LCLP/Pages/default.aspx
+
+International Maritime Organization. (2008). International Code of the Construction and Equipment of
+          Ships Carrying Liquefied Gases in Bulk (IGC Code).
+
+International Maritime Organization. (2018). International Convention for the Safety of Life at Sea
+
+(SOLAS),      1974.                                      Retrieved                      from
+
+http://www.imo.org/en/About/conventions/listofconventions/pages/international-convention-
+
+for-the-safety-of-life-at-sea-(solas),-1974.aspx
+
+Knutsen OAS Shipping. (2016). Feasibility Study CO2 Transportation.
+
+Kujanpää, L. (2011). Cross-border CO2 infrastructure options for a CCS demonstration in Finland.
+          Energy Procedia 4, 2425­3243.
+
+Megyesy, E. F. (2008). Pressure Vessel Handbook, 14th ed. Oklahoma: PV Publishing Inc.
+
+Mitsubishi Heavy Industries. (2004). Ship Transport of CO2. Cheltenham: IEA Greenhouse Gas R&D
+          Programme.
+
+Nam, H., Lee, T., Lee, J., & Chung, H. (2013). Design of carrier-based offshore CCS system: Plant
+          location and fleet assignment. International Journal of Greenhouse Gas 12, 220-230.
+
+Neele, F. (2017). CO2 transport by ship: the way forward in Europe. Energy Procedia 114, 6824 ­
+          6834.
+
+Oi, L. E. (2016). Simulation and cost comparison of CO2 liquefaction. Energy Procedia 86, 500-510.
+
+Petrofac Engineering Services. (2012). Peterhead CO2 Importation Feasibility Study. CO2 DeepStore.
+
+Plomaritou, E. (2014). A Review of Shipowner's & Charterer's Obligations in Various Types of Charter.
+          Journal of Shipping and Ocean Engineering 4 , 307-321.
+
+                                                                                            60
+            CO2 Shipping Study
+           Final Report for BEIS
+
+Polarkonsult, Praxair, Larvik Shipping. (2017). Concept study of CO2 transport by ship, as part of the
+          Norwegian CCS Demonstration Project.
+
+Poulsen, N. (2014). Assessment of CO2 storage potential in Europe - CO2StoP Final Report. Danish
+          Ministry of Climate, Energy and Building.
+
+Roussanaly, S. (2014). Benchmarking of CO2 transport technologies: Part II ­ Offshore pipeline and
+          shipping to an offshore site. Int. J. Greenhouse Gas Control 28, 283­299.
+
+Seo Y, Y. H. (2015). Evaluation of CO2 liquefaction processes for ship-based carbon capture and
+          storage (CCS) in terms of life cycle cost (LCC) considering availability. International Journal
+          of Greenhouse Gas Control 35, 1-12.
+
+Seo, Y. H. (2016). Comparison of CO2 liquefaction pressures for ship-based carbon capture and
+          storage (CCS) chain. International Journal of Greenhouse Gas Control 52 (2016), 1-12.
+
+Ship & Bunker. (2018). World Bunker Prices. Retrieved from
+          https://shipandbunker.com/prices/av/region/av-eme-emea-average#IFO380
+
+Svenson, R. (2004). Transportation systems for CO2 ­ application to carbon sequestration. Energy
+          Convers. Manage. 45, 2343­2353.
+
+Tel-Tek. (2014). Ship transport of CO2 - Status and Technology Gaps. Tel-Tek.
+
+TNO. (2016). Transportation and unloading of CO2 by ship - a comparative assessment WP9 Final
+          Report. Cato.
+
+United Nations. (2018). United Nations Convention on the Law of the Sea of 10 December 1982.
+
+Retrieved                                                                      from
+
+http://www.un.org/depts/los/convention_agreements/convention_overview_convention.htm
+
+Vermeulen, T. (2011). Knowledge Sharing Report-CO2 Liquid Logistics Shipping Concept (LLSC):
+          Overall Supply Chain Optimiszation. The Hague: Tebodin Netherlands BV.
+
+Yara, Larvik Shipping, Polarkonsult. (2016). CO2 Ship Transport Study In support of Full Scale CCS
+          Chain Evaluation in Norway.
+
+Yoo, B. C. (2013). Development of CO2 terminal and CO2 carrier for future commercialized CCS
+          market. Int. J. Greenh. Gas Control 12, 323-332.
+
+Yoo, B.-Y. (2011). New CCS system integration with CO2 carrier and liquefaction process. Energy
+          Procedia 4 , 2308-2314.
+
+ZEP. (2011). The Costs of CO2 Transport. Brussels: European Technology Platform for Zero Emission
+          Fossil Fuel Power Plants.
+
+                                                                                      61
+

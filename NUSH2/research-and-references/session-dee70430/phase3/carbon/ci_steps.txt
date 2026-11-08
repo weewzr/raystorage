@@ -1,0 +1,10 @@
+      - name: Legacy basis against the snapshot
+        run: |
+          cargo run --release -p nush2_cli -- export --out "$RUNNER_TEMP/legacy" --basis legacy
+          python3 scripts/compare_results.py engine/vv/data/legacy_results "$RUNNER_TEMP/legacy" \
+            --subset \
+            --names Economic_Ledger.csv Emissions_Ledger.csv Final_Design_Basis.csv \
+              Integrated_Energy_Balance.csv Integrated_Mass_Balance.csv Sensitivity_Results.csv \
+              Validation_Results.csv \
+            --allow-cell Validation_Results.csv:PARAMS_COMPLETE:conditions \
+            --allow-cell Validation_Results.csv:EXPORT_BYTE_IDENTICAL:conditions

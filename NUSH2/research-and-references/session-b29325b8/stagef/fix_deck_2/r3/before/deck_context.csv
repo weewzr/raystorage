@@ -1,0 +1,13 @@
+token,value,meaning,source
+CTX_H2_POWER_PCT,50,Hydrogen's possible share of power needs by 2050,`r3`
+CTX_INL_GAS_CUT_PCT,30.9,INL gas reduction at 925 C ROT,`r8` PDF p5
+CTX_INL_OPT_ROT_C,875,INL optimum ROT for steam methane reforming,"`d_nelson2011` PDF p9, p21"
+CTX_TEST_REACTOR_MAX_MW,46,"Largest reactor to reach 950 C, AVR",`iaeanpt43` printed p23
+CTX_TRISO_LIMIT_C,1600,Accident limit for TRISO fuel,"`d_tecdoc1236` printed p24, p104"
+CTX_HE_MEASURED_C,859,Highest measured IHX secondary temperature,`iaeanpt43` printed p14
+CTX_HTTR_IHX_MW,10,HTTR IHX duty,"`d_tochio2011` PDF p4, p8"
+CTX_CHO_PLANTS,33,US steam methane reforming facilities in Cho,`cho2022`
+CTX_CARBON_TAX_NOW,45,"Carbon tax, S$/t, 2026 to 2027",`nccstax`
+CTX_CARBON_TAX_2030_LOW,50,"Stated 2030 band, low",`nccstax`
+CTX_CARBON_TAX_2030_HIGH,80,"Stated 2030 band, high",`nccstax`
+CTX_ATR_CAPTURE_PCT,99,"Stated capture, Air Liquide and Aster MoU",`aster2025`

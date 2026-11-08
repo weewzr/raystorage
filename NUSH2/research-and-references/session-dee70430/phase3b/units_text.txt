@@ -1,0 +1,16 @@
+cryogenic: "Returns a CH₄-rich recycle to the reformer feed and H₂ to the PSA feed. The N₂-rich cut goes to the stack."
+  in: ["R1"]
+  out: ["S03", "S21", "S15"]
+  limits: [{"tag": "Carbon gate", "text": "The Level 3 flowsheet and the anchored ledger disagree on the carbon split after the shift, four carbon lines miss (tube, tail gas, recycled, burned), and term T04 stays on its anchored value.", "validation": ["FS_GATE_M7", "FS_CARBON_VS_ANCHOR_TAIL_GAS", "FS_CARBON_VS_ANCHOR_RECYCLED", "FS_CARBON_VS_ANCHOR_BURNED"]}, {"text": "CO₂ slip into this unit is about ten times INL's, and freeze-out and reverse shift are unquantified, so INL's recycle may not transfer to MEA."}, {"text": "The burned N₂-rich cut leaves to the atmosphere and is counted in the emissions."
+psa: "Pressure swing adsorption, an external block outside the dashed line."
+  in: ["S12", "S21"]
+  out: ["S13", "S14"]
+  limits: [{"text": "The PSA is not simulated; recovery is assumed from INL and product purity is INL's."}, {"text": "The reject return is a boundary stream, by project decision."}]
+power: "Small steam plant on a primary helium branch. It raises electricity for site loads and steam for the reboiler gap."
+  in: ["P4"]
+  out: []
+  limits: [{"text": "The efficiency traces to TEV-981, which is not held locally, so whether it is net of circulation is unknown."}, {"text": "The block is a small steam plant with process extraction, sized by this balance with no equipment design."}, {"text": "Unmet electrical demand is reported as grid import at rating."}]
+smr: "Reformer tubes heated by secondary helium in place of fired furnaces."
+  in: ["S01", "S02", "S03", "H1"]
+  out: ["S05", "H2"]
+  limits: [{"tag": "Tube check", "text": "On the assumed tube (Hoseinzade and Adams geometry with the JAERI finned helium annulus) and helium supplied at {{units.smr.conditions.T_HE_SUPPLY.value|0}}°C, the tube model found no tube count in its search range that reaches the {{units.smr.conditions.SYNGAS_CHAIN_C5_HPS_GEN1_T_IN_C.value|0}}°C exit. The two lower exit temperatures of the reformer exit sensitivity, flowsheet runs FS_B_REC_F_T825 and FS_B_REC_F_T800, are reachable. The design exit therefore stays INL's equilibrium assumption, and the Headline solve does not use the tube model."}, {"tag": "JAER

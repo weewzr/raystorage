@@ -1,0 +1,680 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.32s
+     Running unittests src\main.rs (C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/cargo/engine_final\debug\deps\nush2-d4136274caf5a326.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\basis_flag.rs (C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/cargo/engine_final\debug\deps\basis_flag-6da25d1e1bdae759.exe)
+
+running 3 tests
+test an_unknown_basis_is_refused ... ok
+test the_legacy_basis_keeps_the_anchored_ledger ... ok
+test the_default_basis_is_the_plants_own_ledger ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.25s
+
+     Running unittests src\lib.rs (C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/cargo/engine_final\debug\deps\nush2_mea-063898518390274a.exe)
+
+running 29 tests
+test kinetics::tests::e1_tends_to_the_hatta_number ... ok
+test aronu::tests::bad_mole_fractions_are_an_error ... ok
+test kinetics::tests::eq_h_08_enhancement_respects_both_limits ... ok
+test density::tests::thirty_percent_solvent_is_about_five_molar ... ok
+test kinetics::tests::bad_inputs_are_errors ... ok
+test kinetics::tests::eq_h_05_k2_units_agree_with_the_versteeg_form ... ok
+test kinetics::tests::henry_units_agree_with_water_at_25c ... ok
+test density::tests::range_is_enforced ... ok
+test kinetics::tests::onda_groups_return_plausible_values ... ok
+test kinetics::tests::overall_rate_is_gas_limited_at_large_enhancement ... ok
+test aronu::tests::eq_g_02_table2_values_at_298k ... ok
+test aronu::tests::eq_g_16_u_matrix_is_symmetric ... ok
+test pstar::tests::cubic_root_matches_a_known_factorisation ... ok
+test pstar::tests::phi_tends_to_one_at_low_pressure ... ok
+test pstar::tests::single_root_branch_is_taken_when_disc_is_positive ... ok
+test pstar::tests::poynting_at_21_bar_and_40c ... ok
+test pstar::tests::stencil_is_exact_on_nodes_and_sums_to_one ... ok
+test solve::tests::lu_recovers_a_known_solution ... ok
+test solve::tests::brent_finds_a_root_and_rejects_a_bad_bracket ... ok
+test solve::tests::lu_reports_a_singular_matrix ... ok
+test validation::tests::escaping_quotes_cells_that_need_it ... ok
+test validation::tests::quoted_cells_keep_their_commas ... ok
+test viscosity::tests::eq_g_27_pure_water_limit ... ok
+test viscosity::tests::range_is_enforced ... ok
+test water::tests::range_is_enforced ... ok
+test water::tests::water_density_agrees_with_hartono_table_a1 ... ok
+test validation::tests::targets_parse_to_104_rows ... ok
+test water::tests::water_viscosity_is_near_the_known_room_value ... ok
+test pstar::tests::lookup_reads_the_table_only_up_to_thirty_percent ... ok
+
+test result: ok. 29 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.26s
+
+     Running tests\aronu_port.rs (C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/cargo/engine_final\debug\deps\aronu_port-9367f22ca3b3da9e.exe)
+
+running 20 tests
+test gamma_inf ... ok
+test dugas_table44 ... ok
+test n2o_analogy_hartono_table11 ... ok
+test eq_g_08_and_g_09_and_g_10_and_g_11_speciation_balances_close ... ok
+test aronu_table4_data ... ok
+test repeated_table3_row ... ok
+test eq_g_07_k_mea_shift_is_required ... ok
+test eq_g_24_heat_of_absorption_regression ... ok
+test rich_end ... ok
+test water_vapour_pressure_stays_below_pure_water ... ok
+test port_golden_60_points ... ok
+test carbamate_peak_near_05 ... ok
+test eq_g_29_free_mea_falls_with_loading_and_water_activity_stays_below_one ... ok
+test aronu_104_model_columns ... ok
+test eq_g_32_range_error_outside_validity ... ok
+test residual_grid ... ok
+test pstar_table_interp ... ok
+test table_nodes_equal_direct_solves_at_each_strength ... ok
+test solver_covers_the_accepted_range ... ok
+test pstar_table_interp_other_strengths ... ok
+
+test result: ok. 20 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.95s
+
+     Running tests\fixture_104.rs (C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/cargo/engine_final\debug\deps\fixture_104-13d6534effebb90f.exe)
+
+running 2 tests
+test stored_rows_all_carry_the_status_of_their_comparison ... ok
+test stored_rows_match_a_fresh_run ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.10s
+
+     Running tests\properties.rs (C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/cargo/engine_final\debug\deps\properties-d2de6df3293c3739.exe)
+
+running 4 tests
+test rate_closure_runs_from_end_to_end ... ok
+test density_weiland ... ok
+test khan_henry_against_hartono_table11 ... ok
+test viscosity_weiland ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\lib.rs (C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/cargo/engine_final\debug\deps\nush2_numerics-2ed2c9c9a217bf83.exe)
+
+running 2 tests
+test tests::fixed_point_failure_returns_err ... ok
+test tests::fixed_point_finds_cosine_root ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\lib.rs (C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/cargo/engine_final\debug\deps\nush2_plant-a809dbf43448c7bb.exe)
+
+running 52 tests
+test carbon::tests::eq_j_11_unclosed_case_keeps_its_residual ... ok
+test carbon::tests::eq_j_11_closed_synthetic_case ... ok
+test carbon::tests::eq_j_11_missing_tail_gas_is_never_zero ... ok
+test carbon::tests::reported_ratio_is_a_stream_ratio ... ok
+test anchored::tests::crf_refuses_zero_life ... ok
+test carbon::tests::carbon_counts_every_carbon_species ... ok
+test dcf::tests::eq_l_34_replacement_every_25_y_with_straight_line_credit ... ok
+test dcf::tests::eq_l_34_uniform_spend_sums_to_total ... ok
+test anchored::tests::availability_out_of_range_names_the_parameter ... ok
+test anchored::tests::reboiler_order_is_approved ... ok
+test dcf::tests::whole_years_only ... ok
+test emissions::tests::eq_k_20_heater_adds_heat_to_the_site_intensity ... ok
+test emissions::tests::eq_k_08_vented_condensate_keeps_carbon ... ok
+test dcf::tests::annual_lines_match_the_ledger_exactly ... ok
+test export::tests::a_signed_zero_is_not_a_change ... ok
+test export::tests::modelled_energy_rows_compare_with_the_anchored_rows ... ok
+test dcf::tests::eq_l_03_decommissioning_at_end_of_life_equals_the_sinking_fund ... ok
+test export::tests::a_row_that_moves_with_a_gated_term_says_so ... ok
+test export::tests::quoted_cells_split_back ... ok
+test export::tests::term_rows_follow_the_preset_that_used_the_model ... ok
+test anchored::tests::eta_net_of_primary_circ_removes_the_primary_row ... ok
+test flowsheet::tests::eq_a_06_reformer_has_two_independent_reactions ... ok
+test gates::tests::a_failed_row_blocks_and_a_reported_row_does_not_count ... ok
+test gates::tests::a_gate_without_rows_is_not_run ... ok
+test gates::tests::khan_rows_without_data_are_left_out_of_the_column_gate ... ok
+test heatrec::tests::eq_b_19_extraction_saves_heat_against_direct ... ok
+test heatrec::tests::eq_e_06_release_is_positive_for_a_forward_shift ... ok
+test heatrec::tests::eq_i_17_hot_water_is_too_cold_and_the_cut_is_the_pinch ... ok
+test heatrec::tests::eq_j_17_reboiler_order_is_approved ... ok
+test heatrec::tests::eq_j_18_gap_is_never_negative ... ok
+test params::tests::bad_rows_are_refused ... ok
+test dcf::tests::smr_variable_lines_scale_from_95_to_85_percent_availability ... ok
+test flowsheet::tests::bad_specs_are_refused ... ok
+test flowsheet::tests::eq_j_05_lumped_feed_keeps_the_registry_carbon ... ok
+test flowsheet::tests::eq_j_07_recycle_fraction_matches_the_golden ... ok
+test dcf::tests::dcf_lines_follow_the_replacement_rule_on_both_plants ... ok
+test dcf::tests::gap_terms_sum_to_the_gap ... ok
+test flowsheet::tests::eq_j_16_eq_j_20_eq_j_21_anchored_island_rows ... ok
+test params::tests::embedded_file_parses ... ok
+test dcf::tests::smr_island_is_common_to_both_plants ... ok
+test utility::tests::eq_b_20_reactor_need_adds_up ... ok
+test params::tests::unknown_id_is_an_error ... ok
+test params::tests::set_refuses_non_finite ... ok
+test subsidy::tests::eq_s_7d_a_closed_form_that_fails_the_residual_check_falls_back_to_bisection ... ok
+test subsidy::tests::eq_s_1_registry_membership_follows_decision_d7b ... ok
+test terms::tests::scale_flips_carry_the_case_b_value ... ok
+test subsidy::tests::eq_s_2_the_grid_defaults_and_limits_are_read_and_checked ... ok
+test subsidy::tests::eq_s_3d_and_s_5a_only_the_implemented_conventions_are_accepted ... ok
+test subsidy::tests::eq_s_1_a_flag_that_is_not_zero_or_one_is_refused ... ok
+test terms::tests::flip_requires_gate_in_code ... ok
+test terms::tests::a_flip_reaches_the_balance_and_nothing_else_moves ... ok
+test utility::tests::level4_rebuilds_the_case_b_reactor_side ... ok
+
+test result: ok. 52 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 4.49s
+
+     Running tests\live_fields.rs (C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/cargo/engine_final\debug\deps\live_fields-e833ff64eca45848.exe)
+
+running 2 tests
+test natural_gas_follows_the_case_of_the_run ... ok
+test unmet_heat_is_the_export_function ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.36s
+
+     Running tests\m10_subsidy.rs (C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/cargo/engine_final\debug\deps\m10_subsidy-f77224870013deee.exe)
+
+running 39 tests
+test eq_s_0_1_dcf_bucket_factor_equals_the_dated_buckets ... ok
+test eq_s_0_2_the_two_interest_factors_differ_by_the_closed_form_gap ... ok
+test eq_s_3a_a_grant_at_close_pays_the_earliest_buckets_and_leaves_the_owner_the_rest ... ok
+test eq_s_1_eligible_capital_is_the_flagged_sum_and_b_contains_a ... ok
+test eq_s_0_3_replacement_factor_gives_the_replaced_item_gap ... ok
+test eq_s_1_worked_numbers_of_the_derivation_follow_from_its_membership ... ok
+test eq_s_0_4_decommissioning_sinking_fund_equals_the_discounted_payment ... ok
+test eq_s_3d_idle_cash_earning_the_rate_gives_the_lowest_break_even_share ... ok
+test eq_s_3c_the_ledger_form_at_close_and_its_limits ... ok
+test eq_s_4b_a_progressive_grant_scales_the_ledger_reactor_value ... ok
+test eq_s_0_5_closed_forms_reproduce_both_costs_per_tonne ... ok
+test eq_s_0_6_the_gap_between_the_methods_at_zero_subsidy_is_predicted ... ok
+test eq_s_3b_the_closed_form_equals_the_balance_recursion ... ok
+test eq_s_4a_a_progressive_grant_scales_every_private_payment ... ok
+test eq_s_5a_interest_is_charged_on_the_private_balance_and_the_saving_is_reported ... ok
+test eq_s_5b_the_net_cost_is_the_gross_cost_less_the_grant_and_the_interest_it_saves ... ok
+test eq_s_6a_derivation_tables_for_definition_b_follow_from_its_membership ... ok
+test eq_s_7b_break_even_for_a_progressive_grant ... ok
+test eq_s_8_a_grant_leaves_the_rx_mult_lever_alone ... ok
+test eq_s_7e_a_break_even_set_is_a_pure_function_of_its_inputs ... ok
+test eq_s_2_private_capital_never_rises_with_the_share_and_the_grant_stays_within_eligible ... ok
+test eq_s_8_reported_quantities_are_consistent ... ok
+test eq_s_7e_cases_of_the_break_even_share_and_the_strict_target_flag ... ok
+test eq_s_2_the_subsidy_changes_no_physical_flow_and_no_operating_cost ... ok
+test eq_s_7a_progressive_cost_is_affine_and_the_cost_at_close_bends ... ok
+test eq_s_9b_limiting_cases_at_zero_and_full_share ... ok
+test eq_s_9b_a_zero_share_changes_nothing_bit_for_bit ... ok
+test eq_s_9c_gap_terms_still_sum_to_the_gap_with_a_grant ... ok
+test eq_s_7c_break_even_at_close_in_both_regimes_of_the_ledger ... ok
+test eq_s_9c_the_grant_effect_by_four_routes_that_share_no_code_with_the_engine ... ok
+test eq_s_7e_every_scenario_passes_just_above_its_break_even_and_fails_just_below ... ok
+test eq_s_6a_ledger_cost_follows_the_closed_form_for_each_timing ... ok
+test eq_s_6b_dcf_cost_follows_the_closed_form_for_each_timing ... ok
+test eq_s_8_the_committed_table_reproduces_the_economic_ledger_at_a_zero_share ... ok
+test eq_s_9c_the_gap_between_the_methods_equals_the_prediction_and_stays_below_the_limit ... ok
+test eq_s_9b_zero_subsidy_reproduces_the_committed_ledger_and_dcf ... ok
+test eq_s_8_the_committed_table_matches_the_engine ... ok
+test eq_s_7d_the_exact_route_and_the_bisection_agree_and_the_orderings_hold ... ok
+test eq_s_9a_the_cost_falls_strictly_with_the_share_and_bends_one_way ... ok
+
+test result: ok. 39 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.01s
+
+     Running tests\m11_carbon.rs (C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/cargo/engine_final\debug\deps\m11_carbon-bdfdb377d9f8e50a.exe)
+
+running 53 tests
+test a_run_that_cannot_solve_is_an_error_and_never_the_legacy_ledger ... ok
+test eq_n_1_1_carbon_per_kmol_and_feed_carbon ... ok
+test eq_n_2_2_stream_vector_of_the_modelled_streams ... ok
+test eq_n_1_3_hydrogen_at_the_absorber ... ok
+test eq_n_1_2_hydrogen_potential_table_and_conservation ... ok
+test eq_n_3_2_plant_capture_stays_below_one ... ok
+test eq_n_4_1_recycle_fraction_read_back_from_the_streams ... ok
+test eq_n_4_4_stack_carbon_curve ... ok
+test eq_n_5_1_complete_combustion_of_the_cut ... ok
+test eq_n_4_2_nitrogen_balance_of_the_cut ... ok
+test eq_n_4_3_inl_back_calculation_is_fragile ... ok
+test eq_n_3_1_captured_co2_is_the_specified_capture_times_the_absorber_co2 ... ok
+test eq_n_6_2_the_tear_check_against_the_closed_forms ... ok
+test eq_n_6_1_verdicts_are_never_closed_while_a_stream_is_unknown ... ok
+test eq_n_1_4_psa_loop_with_the_hydrogen_return ... ok
+test eq_n_6_1_tolerance_and_the_exported_residual ... ok
+test eq_n_7_2_firing_gas_is_not_negative_and_needs_no_invented_efficiency ... ok
+test eq_n_7_3_reference_identity_on_the_inl_gas_flows ... ok
+test eq_n_7_4_system_terms_are_added_once ... ok
+test eq_n_8_1_operating_hours ... ok
+test eq_n_8_2_annual_mass_of_a_carbon_flow ... ok
+test eq_n_10_4_reported_residual_carries_its_tolerance_and_statuses ... ok
+test eq_n_5_2_direct_emission_is_the_stack_plus_the_vented_condensate ... ok
+test eq_n_8_3_annual_hydrogen_and_the_unit_conversions ... ok
+test eq_n_9_1_hand_ledger_of_the_direct_abatement ... ok
+test eq_n_9_2_decomposition_of_the_direct_abatement ... ok
+test eq_n_9_3_capture_based_abatement ... ok
+test eq_n_9_5_lifecycle_view_counts_transport_and_storage_once ... ok
+test eq_n_9_5_the_exported_lifecycle_is_the_closed_form_on_the_aggregate_factor ... ok
+test eq_n_10_intensities_and_the_reduction ... ok
+test inls_reference_gas_is_a_comparison_with_a_reported_cost_effect ... ok
+test comb_h_export_and_comb_n_ledgers ... ok
+test flowsheet_spec_defaults_follow_the_basis ... ok
+test eq_n_9_4_net_abatement_after_transport_and_storage ... ok
+test plant_and_reference_make_the_same_hydrogen ... ok
+test eq_n_7_floors_lie_below_every_published_reference ... ok
+test rule_1_of_n_7_the_gas_line_the_decomposition_and_the_lifecycle_read_one_gas_difference ... ok
+test the_cost_denominator_is_the_net_abatement ... ok
+test the_energy_table_does_not_move_with_the_basis ... ok
+test eq_n_7_1_reference_process_gas_and_its_limits ... ok
+test eq_n_1_5_gas_rate_from_the_hydrogen_target ... ok
+test the_implied_gas_reproduces_inls_gas_when_given_inls_intensity ... ok
+test ledger_streams_are_non_negative_and_close_for_every_kind ... ok
+test the_legacy_basis_is_bit_identical_to_the_anchored_functions ... ok
+test the_legacy_basis_keeps_inls_reference_gas_bit_for_bit ... ok
+test ledger_cache_is_deterministic ... ok
+test range_guards_refuse_and_never_clamp ... ok
+test cryogenic_defaults_equal_their_calibration ... ok
+test eq_n_2_1_tube_carbon_closed_form_for_three_tear_starts ... ok
+test ledger_run_equals_the_suite_run ... ok
+test legacy_export_matches_the_snapshot ... ok
+test no_co2e_quantity_appears_without_a_label_in_any_view ... ok
+test only_the_ledger_rows_of_the_plant_carry_the_independent_status ... ok
+
+test result: ok. 53 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 37.90s
+
+     Running tests\m7_flowsheet.rs (C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/cargo/engine_final\debug\deps\m7_flowsheet-825d2d27faf34e21.exe)
+
+running 20 tests
+test flowsheet_defaults_are_pinned ... ok
+test eq_j_10_cryogenic_split_holds_the_inl_fraction ... ok
+test eq_j_11_flowsheet_carbon_closes ... ok
+test eq_j_13_h2_ledger_lines ... ok
+test eq_j_12_psa_recovery_and_purity ... ok
+test bounds_enforced ... ok
+test eq_a_02_envelope_mass_closes ... ok
+test eq_a_03_units_without_reaction_keep_every_species ... ok
+test flowsheet_elements_close ... ok
+test flowsheet_energy_closes ... ok
+test connectivity ... ok
+test h2_return_closes_the_inl_pair ... ok
+test hydrogen_basis_is_met_on_every_run ... ok
+test term_slots_are_filled_and_stay_unused ... ok
+test reformer_temperature_runs_through_the_flowsheet ... ok
+test fallback_with_fixed_lean_loading_runs_and_is_logged ... ok
+test carbon_matches_anchor ... ok
+test tear_converges_from_three_starts ... ok
+test sweep_cases_share_no_stale_state ... ok
+test full_tier_carries_the_flowsheet ... ok
+
+test result: ok. 20 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.05s
+
+     Running tests\m8_level4.rs (C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/cargo/engine_final\debug\deps\m8_level4-e5c291fe16d3422b.exe)
+
+running 10 tests
+test flip_requires_gate ... ok
+test drift_reads_the_section_7_limits ... ok
+test anchored_closures_come_from_the_flowsheet_where_one_exists ... ok
+test combustion_o2_is_a_row ... ok
+test eq_j_24_energy_groups_close_on_their_rows ... ok
+test eq_j_11_anchored_nodes_close ... ok
+test crosses_boundary_follows_figure_2 ... ok
+test energy_rows_cover_the_brief_list ... ok
+test reactor_budget_closes_on_its_rows ... ok
+test cryo_split_sensitivity_is_recorded ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 38.47s
+
+     Running tests\m9_economics.rs (C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/cargo/engine_final\debug\deps\m9_economics-907fd03c082f5906.exe)
+
+running 7 tests
+test eq_b_19_branch_split_adds_up ... ok
+test eq_l_31_stepdown_bars_equal_their_source_rows ... ok
+test dcf_family_matches_the_ledger_family ... ok
+test eq_l_31_mature_and_cofunding_reach_their_target ... ok
+test eq_l_31_levers_reach_the_target ... ok
+test a_sweep_without_its_flowsheet_stays_visible ... ok
+test sens_trends ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.74s
+
+     Running tests\no_internal_pointers.rs (C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/cargo/engine_final\debug\deps\no_internal_pointers-c11f45c24444aeff.exe)
+
+running 2 tests
+test the_detector_sees_each_pattern ... ok
+test parameters_and_results_cite_no_working_note ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.65s
+
+     Running unittests src\lib.rs (C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/cargo/engine_final\debug\deps\nush2_props-bcbde6974bb3479e.exe)
+
+running 35 tests
+test equilibrium::tests::bad_inputs_are_refused ... ok
+test equilibrium::tests::nist_route_solves_as_well ... ok
+test helium::tests::gamma_is_the_ratio_of_the_heat_capacities ... ok
+test helium::tests::prandtl_eq_8_1_matches_the_property_ratio ... ok
+test equilibrium::tests::eq_d_10_solution_satisfies_both_mass_action_laws ... ok
+test helium::tests::eq_b_01_density_law_reduces_to_the_ideal_gas_with_z ... ok
+test equilibrium::tests::unit_conversion_of_k1_follows_zhang_table_1 ... ok
+test helium::tests::outside_the_range_is_an_error ... ok
+test mixture::tests::absent_species_cannot_trip_a_range_limit ... ok
+test equilibrium::tests::elements_close_with_c2_plus_and_inerts_in_the_feed ... ok
+test equilibrium::tests::a_recycle_with_no_methane_can_run_backwards ... ok
+test mixture::tests::bad_flows_are_refused ... ok
+test mixture::tests::condensing_one_mol_releases_the_latent_heat ... ok
+test mixture::tests::elements_count_every_atom ... ok
+test mixture::tests::enthalpy_flow_is_the_sum_of_the_species ... ok
+test mixture::tests::entropy_of_mixing_is_positive ... ok
+test mixture::tests::eq_a_14_ideal_density_of_nitrogen ... ok
+test mixture::tests::fractions_sum_to_one_and_mass_follows_composition ... ok
+test mixture::tests::liquid_flow_cannot_exceed_the_water_present ... ok
+test shomate::tests::cp_table_integrates_exactly_for_its_interpolant ... ok
+test shomate::tests::cp_table_refuses_points_outside_its_nodes ... ok
+test shomate::tests::empty_table_is_a_range_error ... ok
+test species::tests::alkane_cp_nodes_are_returned_at_the_nodes ... ok
+test species::tests::alkanes_carry_no_entropy ... ok
+test species::tests::enthalpy_at_298_is_the_formation_enthalpy_for_the_alkanes ... ok
+test species::tests::enthalpy_rises_with_temperature_for_every_species ... ok
+test species::tests::molar_masses_match_the_webbook_digits ... ok
+test species::tests::species_order_matches_the_index ... ok
+test steam::tests::eq_f_04_boiling_point_at_one_atmosphere ... ok
+test steam::tests::liquid_enthalpy_refuses_vapour_states ... ok
+test steam::tests::out_of_range_is_an_error ... ok
+test steam::tests::saturation_round_trip ... ok
+test transport::tests::fit_returns_the_printed_values_at_both_points ... ok
+test transport::tests::printed_prandtl_numbers_follow_from_the_readings ... ok
+test equilibrium::tests::bisection_nest_agrees_with_newton ... ok
+
+test result: ok. 35 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests\m2_acceptance.rs (C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/cargo/engine_final\debug\deps\m2_acceptance-b17627b6a870b978.exe)
+
+running 14 tests
+test h2o_branch_continuity_500k ... ok
+test helium_petersen_points ... ok
+test psat_vs_tsat_backward ... ok
+test he_duty_176p8 ... ok
+test inl_a40_raw_syngas ... ok
+test k_zhang_departure_outside_the_6pct_domain_is_recorded ... ok
+test k_zhang_vs_nist_within_6pct ... ok
+test latent_heat_298k ... ok
+test shomate_range_error ... ok
+test if97_release_vectors ... ok
+test shomate_piecewise_continuity ... ok
+test k_nist_vs_janaf_log_kf ... ok
+test transport_range_flags ... ok
+test te1236_equilibrium_three_points ... ok
+
+test result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\thermo_guards.rs (C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/cargo/engine_final\debug\deps\thermo_guards-acac9e09fcce226b.exe)
+
+running 7 tests
+test dilute_region_2_path_holds_to_its_lower_edge ... ok
+test correlation_edges_follow_the_declared_policy ... ok
+test eq_b_02_cp_is_the_monatomic_ideal_value ... ok
+test eq_d_07_k1_carries_heat_capacity_integrals ... ok
+test eq_a_09_liquid_water_sits_on_one_offset ... ok
+test if97_phase_follows_the_side_of_the_saturation_line ... ok
+test eq_a_10_reaction_enthalpy_and_entropy_sum_from_species ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\lib.rs (C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/cargo/engine_final\debug\deps\nush2_units-5475e3d2f7bdfd94.exe)
+
+running 69 tests
+test absorber::tests::eq_h_01_flux_balances_both_films ... ok
+test absorber::tests::eq_h_06_enhancement_follows_hatta_when_reagent_is_plentiful ... ok
+test case5::tests::temperature_conversion ... ok
+test circulator::tests::eq_b_06_rise_inverts_the_work ... ok
+test absorber::tests::eq_h_28_solvent_rate_returns_the_anchored_circulation_form ... ok
+test absorber::tests::eq_h_29_diameter_from_liquid_load ... ok
+test case5::tests::printed_masses_add_up_to_the_feed ... ok
+test absorber::tests::eq_h_12_billet_schultes_branches_meet_their_printed_forms ... ok
+test circulator::tests::eq_b_09_flows_carry_the_duty ... ok
+test circulator::tests::eq_b_10_zero_rise_needs_no_work ... ok
+test circulator::tests::eq_b_14_duct_loss_is_the_reference_at_the_reference_flow ... ok
+test absorber::tests::eq_h_10_rocha_liquid_film_grows_with_root_velocity ... ok
+test cooler::tests::eq_f_01_sensible_cooling_matches_the_mean_heat_capacity ... ok
+test circulator::tests::eq_c_16_blasius_matches_its_closed_form ... ok
+test cooler::tests::heating_through_a_cooler_is_refused ... ok
+test cooler::tests::eq_f_09_condensation_adds_latent_heat ... ok
+test flash::tests::bad_inputs_are_refused ... ok
+test flash::tests::eq_f_03_dry_or_hot_gas_stays_vapour ... ok
+test flash::tests::eq_f_05_saturated_vapour_follows_psat ... ok
+test flash::tests::eq_f_06_dissolved_co2_follows_henry ... ok
+test gas::tests::eq_a_15_closure_of_an_identity_is_zero ... ok
+test flash::tests::eq_f_08_drum_closes_and_keeps_every_atom ... ok
+test gas::tests::eq_a_15_closure_sees_a_missing_heat_term ... ok
+test gas::tests::eq_f_13_dry_fraction_leaves_water_out ... ok
+test ihx::tests::eq_c_03_closure_is_zero_when_the_loss_covers_the_gap ... ok
+test ihx::tests::eq_c_07_lmtd_reaches_its_balanced_limit ... ok
+test ihx::tests::eq_c_11_counterflow_limits ... ok
+test ihx::tests::eq_c_13_sizing_and_rating_agree ... ok
+test ihx::tests::eq_c_17_cascade_and_c_18_limits ... ok
+test jaeri::tests::printed_conversions_follow_from_the_dry_analysis ... ok
+test jaeri::tests::stations_span_the_heated_length ... ok
+test jaeri::tests::the_a2_area_and_u_give_the_printed_ua ... ok
+test newton::tests::dense_lu_recovers_a_known_solution ... ok
+test regen::tests::eq_i_10_exchanger_pinches_at_the_cold_end_when_rich_is_larger ... ok
+test regen::tests::eq_i_11_steam_at_4_bar_needs_its_latent_heat ... ok
+test regen::tests::eq_i_12_srd_and_eq_j_16_duty_are_inverse ... ok
+test smr_eq::tests::eq_d_33_te1236_conversion_point_and_closure ... ok
+test smr_eq::tests::liquid_in_the_feed_is_refused ... ok
+test newton::tests::coloured_newton_solves_a_tridiagonal_nonlinear_chain ... ok
+test smr_tube::tests::bad_inputs_are_refused ... ok
+test solve::tests::brent_finds_a_cubic_root ... ok
+test solve::tests::brent_needs_a_bracket ... ok
+test solve::tests::lu_solves_and_refuses_a_singular_matrix ... ok
+test solve::tests::rk45_reproduces_an_exponential ... ok
+test stripper::tests::eq_i_01_balance_and_eq_i_08_reflux ... ok
+test tube_case_b::tests::feed_carries_the_scaled_carbon ... ok
+test tube_case_b::tests::helium_flow_scales_on_heat ... ok
+test tube_ht::tests::bed_coefficient_reruns_the_printed_sheet ... ok
+test tube_ht::tests::eq_d_27_overall_coefficient_reruns_the_printed_sheet ... ok
+test tube_ht::tests::spheres_mix_less_than_cylinders ... ok
+test tube_ht::tests::eq_d_29_helium_film_coefficient_reruns_the_printed_sheet ... ok
+test wgs::tests::bad_inputs_are_refused ... ok
+test wgs::tests::eq_e_03_extent_reaches_the_equilibrium_constant ... ok
+test wgs::tests::eq_e_04_ieaghg_outlet_sits_near_nine_tenths_of_equilibrium ... ok
+test wgs::tests::eq_e_09_rate_constant_returns_the_table_at_its_nodes ... ok
+test wgs::tests::eq_e_15_lts_sits_at_the_set_approach ... ok
+test xf::tests::a_feed_with_no_hydrogen_stays_finite ... ok
+test xf::tests::activity_scales_every_rate ... ok
+test xf::tests::eq_d_15_den_squared_matches_the_hand_value ... ok
+test xf::tests::eq_d_17_and_d_18_rates_vanish_at_equilibrium ... ok
+test wgs::tests::eq_e_07_hts_closes_and_a_huge_bed_reaches_equilibrium ... ok
+test wgs::tests::eq_e_10_a_sized_bed_stops_at_its_target ... ok
+test solvent::tests::aw_table_equals_direct_solves_on_nodes_and_between_them ... ok
+test solvent::tests::fresh_solvent_has_no_back_pressure_and_cold_states_are_counted ... ok
+test solvent::tests::enthalpy_path_rises_with_temperature_and_falls_with_absorption ... ok
+test smr_tube::tests::eq_d_25_straight_tube_closes ... ok
+test smr_tube::tests::eq_d_04_c2_plus_is_converted_at_constant_enthalpy ... ok
+test stripper::tests::eq_i_05_reboiler_temperature_rises_as_loading_falls ... ok
+test smr_tube::tests::bayonet_tube_closes_and_meets_at_the_tip ... ok
+
+test result: ok. 69 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.87s
+
+     Running tests\absorber_vapour.rs (C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/cargo/engine_final\debug\deps\absorber_vapour-70a38e957cfacc19.exe)
+
+running 4 tests
+test eq_g_21_binary_is_a_vapour_at_low_pressure ... ok
+test eq_g_21_phi_at_absorber_pressure ... ok
+test eq_g_19_absorber_vapour_is_ideal_with_poynting ... ok
+test eq_g_33_solvent_reads_share_no_stale_state ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.20s
+
+     Running tests\m4_acceptance.rs (C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/cargo/engine_final\debug\deps\m4_acceptance-b638defc60920e37.exe)
+
+running 8 tests
+test case5_reformer_enthalpy ... ok
+test case5_smr_eq_raw_syngas ... ok
+test wgs_case5_lts ... ok
+test flash_case5_condensate ... ok
+test cooler_case5_duties ... ok
+test gas_terms_are_reported ... ok
+test wgs_case5_hts ... ok
+test chain_sensitivities_are_reported ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.10s
+
+     Running tests\m5_acceptance.rs (C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/cargo/engine_final\debug\deps\m5_acceptance-a63f2cf7c67e2364.exe)
+
+running 14 tests
+test smr_tube_tends_to_equilibrium ... ok
+test xf_guards ... ok
+test xf_table5_vs_table6 ... ok
+test jaeri_axial_shares_are_reported ... ok
+test jaeri_a4_holdout ... ok
+test exit_approach_on_a2_is_reported ... ok
+test jaeri_measured_u_sensitivity_is_reported ... ok
+test jaeri_a2_objective_profile_is_reported ... ok
+test jaeri_a2_fit ... ok
+test jaeri_a5_holdout ... ok
+test jaeri_a3_holdout ... ok
+test bench_rows_are_reported ... ok
+test jaeri_a2_fit_stops_at_the_upper_limit ... ok
+test case_b_tube_report ... ok
+
+test result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 43.52s
+
+     Running tests\m6_acceptance.rs (C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/cargo/engine_final\debug\deps\m6_acceptance-7106b8046e19757b.exe)
+
+running 17 tests
+test column_gate_fails_on_any_gated_miss ... ok
+test absorber_khan_table1 ... ok
+test stripper_dice ... ok
+test eq_i_03_stripper_closes_and_modes_agree ... ok
+test absorber_closes ... ok
+test eq_h_27_capture_counts_absorber_inlet_co2 ... ok
+test eq_h_26_repeat_run_is_identical ... ok
+test eq_h_24_grid_doubling_moves_capture_little ... ok
+test stripper_kwak ... ok
+test eq_a_08_capture_island_closes ... ok
+test absorber_case_b_spec ... ok
+test absorber_salvinder_85pct ... ok
+test absorber_sonderby_profiles ... ok
+test stripper_morgan ... ok
+test case_b_terms_are_reported ... ok
+test absorber_tan_trend ... ok
+test stripper_vinjarapu ... ok
+
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 18.52s
+
+     Running tests\reaction_guards.rs (C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/cargo/engine_final\debug\deps\reaction_guards-22bd3c80897eed48.exe)
+
+running 7 tests
+test eq_d_13_gas_constants_are_exact_or_explained ... ok
+test eq_d_11_le_chatelier_on_smr_eq ... ok
+test eq_d_32_defaults_are_pinned ... ok
+test eq_d_16_driving_forces_vanish_on_the_equilibrium_grid ... ok
+test eq_d_21_long_bed_approach_is_set_by_thermodynamics ... ok
+test eq_a_05_hydrogen_ceiling_and_fractions ... ok
+test eq_d_28_tube_inlets_ends_and_bounds ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 3.20s
+
+     Running unittests src\lib.rs (C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/cargo/engine_final\debug\deps\nush2_vv-367465f19edebaa2.exe)
+
+running 1 test
+test ihx_bench::tests::eq_c_11_inl_and_httr_rows_run ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\benchmark_rows.rs (C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/cargo/engine_final\debug\deps\benchmark_rows-00dea1ee637a7bb2.exe)
+
+running 9 tests
+test aronu_rows_are_present ... ok
+test shomate_spot_values ... ok
+test literature_rows_are_well_formed ... ok
+test lts_nist_row_is_reported ... ok
+test jaeri_rows_keep_their_limit ... ok
+test unit_rows_are_well_formed ... ok
+test fixtures_hold_only_read_values ... ok
+test ids_are_unique_across_groups ... ok
+test column_rows_and_fixtures has been running for over 60 seconds
+test column_rows_and_fixtures ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 265.00s
+
+     Running tests\concept_checks.rs (C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/cargo/engine_final\debug\deps\concept_checks-3b683e0f8227eeeb.exe)
+
+running 7 tests
+test unit_modules_name_their_class ... ok
+test no_unit_mixes_concentration_with_pressure_basis_k ... ok
+test failed_rows_state_value_and_limit ... ok
+test no_published_text_claims_validated_status ... ok
+test wasm_crates_use_no_host_only_api ... ok
+test register_and_code_agree_or_the_gap_is_pinned ... ok
+test second_definitions_name_the_copy_they_sit_beside ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.18s
+
+     Running tests\plant_goldens.rs (C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/cargo/engine_final\debug\deps\plant_goldens-75e98821b215a605.exe)
+
+running 12 tests
+test carbon_closes_on_every_run ... ok
+test headline_entry_values ... ok
+test screening_21_checks ... ok
+test sizing_walk ... ok
+test params_complete ... ok
+test eq_l_37_lac_dcf_against_l5 ... ok
+test golden_balance_all_cases ... ok
+test headline_cost_pair ... ok
+test golden_ledger_grid ... ok
+test golden_availability ... ok
+test export_byte_identical ... ok
+test every_plant_row_passes ... ok
+
+test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 57.32s
+
+     Running unittests src\lib.rs (C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/cargo/engine_final\debug\deps\nush2_wasm-eacf46bf1dc1273d.exe)
+
+running 19 tests
+test tests::case_a_kpis_match_the_case_a_mea_cells ... ok
+test tests::model_range_raises_a_flag_without_blocking ... ok
+test tests::ffi_round_trip_frames_the_reply ... ok
+test tests::registry_reply_carries_every_record_field ... ok
+test tests::default_solve_has_every_section_and_kpi ... ok
+test tests::rating_100_is_infeasible_and_no_case_is_met ... ok
+test tests::rust_refuses_out_of_range_and_unknown_input ... ok
+test tests::ten_oak_at_25_gas_reads_one_verdict ... ok
+test tests::every_pfd_unit_has_status_and_sections ... ok
+test tests::sweep_reply_parses_and_is_capped ... ok
+test tests::island_duties_follow_the_design_point ... ok
+test tests::default_solve_matches_the_published_results ... ok
+test tests::sweep_rows_carry_the_engine_verdicts ... ok
+test tests::energy_items_keep_the_need_and_the_rating_apart ... ok
+test tests::energy_items_match_the_export_rows ... ok
+test tests::grid_import_is_zero_wherever_the_rating_covers_the_need ... ok
+test tests::every_control_moves_a_kpi ... ok
+test tests::native_solve_time_is_recorded ... ok
+test tests::no_control_moves_the_h2_return_closure ... ok
+
+test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 18.93s
+
+   Doc-tests nush2_mea
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests nush2_numerics
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests nush2_plant
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests nush2_props
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests nush2_units
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests nush2_vv
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

@@ -1,0 +1,2 @@
+import sys, runpy
+sys.argv = [sys.argv[1]] + sys.argv[2:]

@@ -1,0 +1,478 @@
+AVAILABILITY [via_reader] [assumed] dec=D05
+   S: Project value; no availability in TEV-953 or TEV-961 (inl.md s6)
+   L: s6
+H2_A [primary] [published] dec=
+   S: TEV-953 doc p15 (PDF p16): net 130 MMSCFD = 29,000 lb/h
+   L: PDF p16, doc p15
+H2_A_MMSCFD [primary] [published] dec=
+   S: TEV-961 Table 2 doc p16 (PDF p17)
+   L: Table 2, PDF p17, doc p16
+RHO_H2_NORMAL [via_reader] [published] dec=
+   S: Deck slide 14; IEAGHG 2017 uses 8.994 t/h per 100,000 Nm3/h (0.08994)
+   L: slide 14
+H2_B [via_reader] [published] dec=D03
+   S: Air Liquide releases 15 Jan 2008, 30 Nov 2011 (econ_lit.md s9)
+   L: s9
+NG_CASE6 [primary] [published] dec=
+   S: TEV-961 Table 2 doc p16 (PDF p17), 925 C ROT
+   L: Table 2, PDF p17, doc p16
+NG_CONV_NOCC [primary] [published] dec=
+   S: TEV-953 Table 2 doc p29 (PDF p30)
+   L: Table 2, PDF p30, doc p29
+NG_NORECYCLE [via_reader] [published] dec=D33
+   S: TEV-953 Table 2: HTGR no CC, all PSA reject fired, no recycle. Fit of Cases 2-5 gives 44.3 (inl_calcs_output)
+   L: Table 2
+NG_TUBE_CONVCC_TOTAL [primary] [published] dec=
+   S: TEV-953 A-18 (PDF p52): 90.98% of 49.2 to tubes
+   L: PDF p52, A-18
+NG_TUBE_CONVCC_TO_TUBES [primary] [published] dec=
+   S: TEV-953 A-18 (PDF p52): 90.98% of 49.2 to tubes
+   L: PDF p52, A-18
+NG_HHV [primary] [published] dec=
+   S: TEV-961 A-50 (PDF p74)
+   L: PDF p74, A-50
+C_PER_MOL_NG_CH4 [primary] [published] dec=
+   S: TEV-953 A-5 (PDF p39) composition
+   L: PDF p39, A-5
+C_PER_MOL_NG_C2 [primary] [published] dec=
+   S: TEV-953 A-5 (PDF p39) composition
+   L: PDF p39, A-5
+C_PER_MOL_NG_C3 [primary] [published] dec=
+   S: TEV-953 A-5 (PDF p39) composition
+   L: PDF p39, A-5
+C_PER_MOL_NG_C4 [primary] [published] dec=
+   S: TEV-953 A-5 (PDF p39) composition
+   L: PDF p39, A-5
+C_PER_MOL_NG_C5 [primary] [published] dec=
+   S: TEV-953 A-5 (PDF p39) composition
+   L: PDF p39, A-5
+C_PER_MOL_NG_C6 [primary] [published] dec=
+   S: TEV-953 A-5 (PDF p39) composition
+   L: PDF p39, A-5
+C_PER_MOL_NG_CO2 [primary] [published] dec=
+   S: TEV-953 A-5 (PDF p39) composition
+   L: PDF p39, A-5
+PSA_H2_RECOVERY [primary] [published] dec=D04
+   S: TEV-953 doc p18, doc p20; TEV-961 A-53
+   L: doc p18, doc p20, A-53
+WATER_GPM_CASE_A [via_reader] [published] dec=
+   S: TEV-961 process water, freeze section 4.1
+   L: freeze section 4.1
+CO2_CAPTURED_C6 [via_reader] [published] dec=
+   S: TEV-961 Table 2 doc p16. Ton = short ton, inl.md s4.5
+   L: Table 2, doc p16, s4.5
+CO2_EMITTED_C6 [primary] [published] dec=
+   S: TEV-961 Table 2 doc p16
+   L: Table 2, doc p16
+CO2_CONV_NOCC [primary] [published] dec=D07
+   S: TEV-953 Table 2 doc p29
+   L: Table 2, doc p29
+CO2_HTGR_NOCC [primary] [published] dec=
+   S: TEV-953 Table 2 doc p29 (44.5 MMSCFD, no recycle, no capture)
+   L: Table 2, doc p29
+CO2_CAPTURED_CONVCC [primary] [published] dec=
+   S: TEV-953 Table 2 doc p29
+   L: Table 2, doc p29
+CO2_EMITTED_CONVCC [primary] [published] dec=
+   S: TEV-953 Table 2 doc p29 (PDF p30): emitted CO2, conventional plant with capture
+   L: Table 2, PDF p30, doc p29
+ETA_SELEXOL [primary] [published] dec=
+   S: TEV-953 doc p20; TEV-961 A-53 (PDF p77); separation block with a fixed split
+   L: PDF p77, doc p20, A-53
+ETA_MEA [via_reader] [assumed] dec=
+   S: Project per-pass capture on absorber-inlet CO2 (amine_spec rows 42-45)
+   L: whole source
+CH4_IN_H2 [primary] [published] dec=
+   S: TEV-953 A-40; TEV-961 A-50: product 99.9% H2, 0.1% CH4
+   L: A-40, A-50
+PHI_RECYCLE [via_reader] [calculated] dec=
+   S: CO2/(CO2+CH4+CO) after shift. Case 5 reconstruction, mea_columns s9, inl_calcs_output 3754/(3754+1020+70)
+   L: s9
+BASELINE_IEAGHG_RHO [primary] [published] dec=D07
+   S: IEAGHG 2017-02 Table 2 PDF p16: 8.994 t/h at 100,000 Nm3/h
+   L: Table 2, PDF p16
+BASELINE_IEAGHG_ROUNDED [primary] [calculated] dec=D07
+   S: IEAGHG 2017-02 Table 2 PDF p16, the rounded bound printed in the freeze
+   L: Table 2, PDF p16
+GRID_EF [via_old_repo] [published] dec=
+   S: EMA 2024 via old repo csv, audit_recompute section F; not re-verified
+   L: whole source
+EF_NG_LHV [via_reader] [published] dec=
+   S: IPCC 2006 via Stationary Combustion Guidance Table (htgr_ihx.md)
+   L: whole source
+EF_UPSTREAM [not_verified] [published] dec=
+   S: IEA 2026 via final_v1_7 Table A2 (not re-verified)
+   L: Table A2
+TS_BURDEN [via_reader] [assumed] dec=
+   S: final_v1_7 Table A2, project assumption
+   L: Table A2
+EF_NUCLEAR [not_verified] [published] dec=
+   S: UNECE 2022 via final_v1_7 Table A2 (not re-verified)
+   L: Table A2
+IHX_APPROACH_K [via_reader] [calculated] dec=
+   S: Primary return 491 C against secondary return 466 C, freeze section 4.2
+   L: freeze section 4.2
+LOADING_RICH [via_reader] [assumed] dec=D28
+   S: mea_columns s3 design value; mea_thermo cap, no kinetic data above 0.50
+   L: s3
+LOADING_LEAN [not_verified] [assumed] dec=
+   S: amine_spec line 34, Guo 2018 Table 2 (not read)
+   L: Table 2
+P_ABSORBER [primary] [published] dec=D28
+   S: TEV-961 A-53 (PDF p77), 389 psia, Case 5
+   L: PDF p77, A-53
+P_STRIPPER [via_reader] [assumed] dec=
+   S: amine_spec line 51
+   L: whole source
+Q_PROCESS [primary] [published] dec=
+   S: TEV-961 Table 2 doc p16: total process heat, covering preheat as well as reforming
+   L: Table 2, doc p16
+Q_PROCESS_AHN_CASE_B [primary] [published] dec=
+   S: Ahn and Lee 2026 Table 6 PDF p6, alternative process heat at Case B
+   L: Table 6, PDF p6
+HE_FLOW [primary] [published] dec=
+   S: TEV-961 Table 2 cont. doc p17 (PDF p18)
+   L: Table 2 cont., PDF p18, doc p17
+ETA_POWER_ALT [primary] [published] dec=D32
+   S: INL/EXT-11-21537 Table 4 doc p7 (PDF p20), 66% of Carnot at 900 C
+   L: Table 4, PDF p20, doc p7
+EXPORT_STEAM_C6 [primary] [published] dec=
+   S: TEV-961 Table 2 doc p16
+   L: Table 2, doc p16
+EXPORT_STEAM_C5 [primary] [published] dec=
+   S: TEV-961 Table 2. Used as the no-recycle proxy, since the 83.7 in Case 6 includes N2-rich cut combustion (TEV-961 doc p18)
+   L: Table 2, doc p18
+EXPORT_STEAM_CONV [primary] [published] dec=
+   S: TEV-953 Table 2 doc p29
+   L: Table 2, doc p29
+Q_SELEXOL_C5_MMBTU_H [primary] [published] dec=
+   S: TEV-961 A-56 (PDF p80): 65.0 MMBtu/h LP steam
+   L: PDF p80, A-56
+Q_ZLD_C5_MMBTU_H [primary] [published] dec=
+   S: TEV-961 A-57 (PDF p81): 56.7 MMBtu/h LP steam
+   L: PDF p81, A-57
+T_LP_STEAM_C5_F [primary] [published] dec=
+   S: TEV-961 A-57 (PDF p81) steam system: LPS-USRS, LPS-1 and LPS-2 at 307 F and 75 psi, the LP steam Selexol and ZLD use; read from the rendered page
+   L: PDF p81, A-57
+T_HP_STEAM_C5_F [primary] [published] dec=
+   S: TEV-961 A-57 (PDF p81) steam system: HPS-EXP1 and HPS-EXP2 to HPS-EXPT at 489 F and 615 psi, the exported steam; read from the rendered page
+   L: PDF p81, A-57
+T_HOT_WATER_C5_F [primary] [published] dec=
+   S: TEV-961 A-57 (PDF p81) steam system: hot water loop HW-1 at 200 F and 30 psi, returning at 104 F; read from the rendered page
+   L: PDF p81, A-57
+Q_EX4_ABOVE_130C [via_reader] [calculated] dec=
+   S: inl_calcs_output: WGS-EX4 300 to 266 F; independent check in Section 4 of this script
+   L: whole source
+SRD_LOW [via_reader] [assumed] dec=D26
+   S: mea_columns s6 recommendation; low end needs good heat recovery
+   L: s6
+SRD_CENTRAL [via_reader] [assumed] dec=D26
+   S: mea_columns s6: 88-92% window median 3.75; Kwak 3.92; DICE 3.64
+   L: s6
+SRD_HIGH [via_reader] [assumed] dec=D26
+   S: mea_columns s6: Mongstad cluster 3.95-4.25
+   L: s6
+CP_HE [via_reader] [published] dec=
+   S: Petersen 1970, via htgr_ihx.md s5; INL implied 5190
+   L: s5
+SLIP_CP_KJ_KMOL_K [not_verified] [assumed] dec=
+   S: CO2 slip sensible heat, screening balance, RWGS excluded
+   L: screening.py balance
+SLIP_DT_K [not_verified] [assumed] dec=
+   S: CO2 slip temperature rise to the reformer, screening balance
+   L: screening.py balance
+CIRC_LOW_P_MPA [via_reader] [assumed] dec=
+   S: htgr_ihx.md s6 budget from INL-11109 and JAERI values
+   L: s6
+CIRC_LOW_DP_SEC_KPA [via_reader] [assumed] dec=
+   S: htgr_ihx.md s6 budget from INL-11109 and JAERI values
+   L: s6
+CIRC_LOW_DP_PRIM_KPA [via_reader] [assumed] dec=
+   S: htgr_ihx.md s6 budget from INL-11109 and JAERI values
+   L: s6
+CIRC_LOW_ETA [via_reader] [assumed] dec=
+   S: htgr_ihx.md s6 budget from INL-11109 and JAERI values
+   L: s6
+CIRC_CENTRAL_P_MPA [via_reader] [assumed] dec=
+   S: htgr_ihx.md s6; INL-21537 Table 2 gives eta 0.75
+   L: Table 2, s6
+CIRC_CENTRAL_DP_SEC_KPA [via_reader] [assumed] dec=
+   S: htgr_ihx.md s6; INL-21537 Table 2 gives eta 0.75
+   L: Table 2, s6
+CIRC_CENTRAL_DP_PRIM_KPA [via_reader] [assumed] dec=
+   S: htgr_ihx.md s6; INL-21537 Table 2 gives eta 0.75
+   L: Table 2, s6
+CIRC_CENTRAL_ETA [via_reader] [assumed] dec=
+   S: htgr_ihx.md s6; INL-21537 Table 2 gives eta 0.75
+   L: Table 2, s6
+CIRC_CENTRAL_5P15_P_MPA [via_reader] [assumed] dec=
+   S: htgr_ihx.md s6
+   L: s6
+CIRC_CENTRAL_5P15_DP_SEC_KPA [via_reader] [assumed] dec=
+   S: htgr_ihx.md s6
+   L: s6
+CIRC_CENTRAL_5P15_DP_PRIM_KPA [via_reader] [assumed] dec=
+   S: htgr_ihx.md s6
+   L: s6
+CIRC_CENTRAL_5P15_ETA [via_reader] [assumed] dec=
+   S: htgr_ihx.md s6
+   L: s6
+CIRC_HIGH_P_MPA [via_reader] [assumed] dec=
+   S: htgr_ihx.md s6; HTTR map peak efficiency about 0.65
+   L: s6
+CIRC_HIGH_DP_SEC_KPA [via_reader] [assumed] dec=
+   S: htgr_ihx.md s6; HTTR map peak efficiency about 0.65
+   L: s6
+CIRC_HIGH_DP_PRIM_KPA [via_reader] [assumed] dec=
+   S: htgr_ihx.md s6; HTTR map peak efficiency about 0.65
+   L: s6
+CIRC_HIGH_ETA [via_reader] [assumed] dec=
+   S: htgr_ihx.md s6; HTTR map peak efficiency about 0.65
+   L: s6
+T_CIRC_SEC_K [via_reader] [calculated] dec=
+   S: Secondary circulator inlet, 466 C, htgr_calc2.py
+   L: whole source
+T_CIRC_PRIM_K [via_reader] [calculated] dec=
+   S: Primary circulator inlet, 491 C, htgr_calc2.py
+   L: whole source
+LOSS_LOW_IHX [via_reader] [assumed] dec=
+   S: 90 m duct, INL-11109 Table 3 scaled (htgr_ihx.md s7); vessel P^(2/3)
+   L: Table 3, s7
+LOSS_LOW_DUCT [via_reader] [assumed] dec=
+   S: 90 m duct, INL-11109 Table 3 scaled (htgr_ihx.md s7); vessel P^(2/3)
+   L: Table 3, s7
+LOSS_CENTRAL_IHX [via_reader] [calculated] dec=
+   S: IHX 0.8% from HTTR heat balance residual, TECDOC-1382 Table 3-23 (htgr_ihx.md)
+   L: Table 3
+LOSS_CENTRAL_DUCT [via_reader] [calculated] dec=
+   S: IHX 0.8% from HTTR heat balance residual, TECDOC-1382 Table 3-23 (htgr_ihx.md)
+   L: Table 3
+LOSS_HIGH_IHX_MWTH [not_verified] [assumed] dec=
+   S: IHX 8.1 MWth is the final_v1_7 allowance (no source); 500 m duct; vessel 2.7% of power
+   L: whole source
+LOSS_HIGH_DUCT [not_verified] [assumed] dec=
+   S: IHX 8.1 MWth is the final_v1_7 allowance (no source); 500 m duct; vessel 2.7% of power
+   L: whole source
+LOSS_HIGH_VESSEL_FRACTION [not_verified] [assumed] dec=
+   S: IHX 8.1 MWth is the final_v1_7 allowance (no source); 500 m duct; vessel 2.7% of power
+   L: whole source
+R_WORK_HIGH [via_reader] [assumed] dec=
+   S: mea_columns s10, assumed upper value
+   L: s10
+R_WORK_CENTRAL [via_reader] [calculated] dec=
+   S: IEAGHG 2017-02 Case 1A back-pressure ratio, mea_columns s10
+   L: s10
+CO_SHARE_OF_UNCONVERTED_CO [via_reader] [calculated] dec=
+   S: Case 5 reconstruction, inl_calcs_output line 54
+   L: whole source
+CO_SHARE_OF_UNCONVERTED_CH4 [via_reader] [calculated] dec=
+   S: Case 5 reconstruction, inl_calcs_output line 54
+   L: whole source
+EX4_CHECK_DRY_KMOL_H [via_reader] [calculated] dec=
+   S: Independent check of the WGS-EX4 heat above 130 C, screening syngas cooling curve; Case 5 dry gas from inl_calcs_output
+   L: whole source
+EX4_CHECK_CP_DRY [via_reader] [assumed] dec=
+   S: Independent check of the WGS-EX4 heat above 130 C, screening syngas cooling curve; Case 5 dry gas from inl_calcs_output
+   L: whole source
+EX4_CHECK_CP_VAP [via_reader] [assumed] dec=
+   S: Independent check of the WGS-EX4 heat above 130 C, screening syngas cooling curve; Case 5 dry gas from inl_calcs_output
+   L: whole source
+EX4_CHECK_LATENT [via_reader] [assumed] dec=
+   S: Independent check of the WGS-EX4 heat above 130 C, screening syngas cooling curve; Case 5 dry gas from inl_calcs_output
+   L: whole source
+EX4_CHECK_P_BAR [via_reader] [assumed] dec=
+   S: Independent check of the WGS-EX4 heat above 130 C, screening syngas cooling curve; Case 5 dry gas from inl_calcs_output
+   L: whole source
+EX4_CHECK_T_IN_C [via_reader] [published] dec=
+   S: Independent check of the WGS-EX4 heat above 130 C, screening syngas cooling curve; Case 5 dry gas from inl_calcs_output
+   L: whole source
+EX4_CHECK_T_OUT_C [via_reader] [assumed] dec=
+   S: Independent check of the WGS-EX4 heat above 130 C, screening syngas cooling curve; Case 5 dry gas from inl_calcs_output
+   L: whole source
+E_PSA [primary] [published] dec=
+   S: TEV-961 A-56 (PDF p80) PSA-PWR 17.3 kW, Case 5
+   L: PDF p80, A-56
+E_CONV_NOCC [primary] [published] dec=
+   S: TEV-953 Table 2 doc p29
+   L: Table 2, doc p29
+PSA_REJECT_KMOL_H [via_reader] [calculated] dec=
+   S: Case 5 reject molar flow, inl_calcs_output, used to raise purge load with CO2 slip
+   L: whole source
+ETA_MOTOR [via_reader] [assumed] dec=
+   S: htgr_ihx.md s8, reader assumption, applied to pumps and circulators
+   L: s8
+K_COOLING [primary] [assumed] dec=
+   S: Pumps and fans per MWth rejected. Same order as DICE circ. pumps plus fans 3.4 MWe (PDF p18); no direct published ratio
+   L: PDF p18
+DISCOUNT [primary] [assumed] dec=
+   S: Project basis; same as IEAGHG 2017 (PDF p12)
+   L: PDF p12
+LIVES_SHORT [via_reader] [assumed] dec=
+   S: Task; deck slide 29
+   L: slide 29
+LIVES_MID [via_reader] [assumed] dec=
+   S: Task; deck slide 29
+   L: slide 29
+LIVES_LONG [via_reader] [assumed] dec=
+   S: Task; deck slide 29
+   L: slide 29
+FX [via_reader] [published] dec=
+   S: FRED AEXSIUS 2025 (econ_lit.md s9h)
+   L: whole source
+F_2019USD_TO_2025SGD [via_reader] [calculated] dec=
+   S: 128.885/103.9745 GDP deflator x 1.3065, final_v1_7 Table A2; GDP deflator understates nuclear escalation
+   L: Table A2
+F_2014EUR_TO_2025SGD [via_reader] [calculated] dec=
+   S: final_v1_7 Table A9 check 9
+   L: Table A9
+GAS_LOW [via_reader] [assumed] dec=
+   S: final_v1_7 s3.6
+   L: s3.6
+GAS_CENTRAL [via_reader] [published] dec=
+   S: US$12.09/MMBtu 2025 mean x 1.3065 / 1.05506 = S$14.97 (econ_lit.md s9h)
+   L: whole source
+GAS_HIGH [via_reader] [assumed] dec=
+   S: final_v1_7 s3.6
+   L: s3.6
+TS_CENTRAL [via_reader] [assumed] dec=D10
+   S: econ_lit.md s11; ERIA network transport about US$43/t = S$56, storage extra
+   L: s11
+OCC_LOW [primary] [published] dec=D09
+   S: INL/RPT-23-72972 Rev 3 PDF p47: 4,000 x 0.91 x 0.4
+   L: PDF p47
+OCC_CENTRAL [via_reader] [calculated] dec=D09
+   S: Same recipe with 6,000/kWe; final_v1_7 s3.4
+   L: s3.4
+OCC_HIGH [primary] [published] dec=D09
+   S: INL/RPT-23-72972 Rev 3 PDF p47: 7,000 x 0.91 x 0.4
+   L: PDF p47
+OPEX_LOW [primary] [published] dec=
+   S: INL/RPT-23-72972 PDF p47, includes annualised fuel
+   L: PDF p47
+OPEX_CENTRAL [via_reader] [calculated] dec=
+   S: US$25/MWh at 40%, final_v1_7 s3.2
+   L: s3.2
+OPEX_HIGH [primary] [published] dec=
+   S: INL/RPT-23-72972 PDF p47
+   L: PDF p47
+OPEX_FUEL_SHARE_HTGR [primary] [published] dec=
+   S: INL/RPT-23-72972 Table 9 (PDF p37); fuel scales linearly, staff scales with n
+   L: Table 9, PDF p37
+FOAK_LOW [primary] [published] dec=
+   S: INL/RPT-23-72972 Table 1 (PDF p5)
+   L: Table 1, PDF p5
+LEARNING [primary] [published] dec=
+   S: INL/RPT-23-72972 Table 1, applied to FOAK in its worked example PDF p47
+   L: Table 1, PDF p47
+LEARNING_UNITS [primary] [published] dec=D09
+   S: INL/RPT-23-72972 PDF p46, p47: learning carried to the tenth unit
+   L: PDF p46
+REACTOR_COST_REF_SIZE [via_reader] [assumed] dec=
+   S: final_v1_7 s3.4; INL Table 1 is not tied to any size (econ_lit.md s11)
+   L: Table 1, s3.4, s11
+N_TEAM [not_verified] [assumed] dec=D09
+   S: final_v1_7 s3.4, Carelli 2010, Peters 2003 (not read)
+   L: s3.4
+N_NGNP_COST_600 [primary] [published] dec=D09
+   S: INL/RPT-23-72972 PDF p25: single-unit FOAK NGNP US$18,313/kWe at 600 MWth, US$26,553/kWe at 350 MWth
+   L: PDF p25
+N_NGNP_COST_350 [primary] [published] dec=D09
+   S: INL/RPT-23-72972 PDF p25: single-unit FOAK NGNP US$18,313/kWe at 600 MWth, US$26,553/kWe at 350 MWth
+   L: PDF p25
+N_NGNP_SIZE_600 [primary] [published] dec=D09
+   S: INL/RPT-23-72972 PDF p25: single-unit FOAK NGNP US$18,313/kWe at 600 MWth, US$26,553/kWe at 350 MWth
+   L: PDF p25
+N_NGNP_SIZE_350 [primary] [published] dec=D09
+   S: INL/RPT-23-72972 PDF p25: single-unit FOAK NGNP US$18,313/kWe at 600 MWth, US$26,553/kWe at 350 MWth
+   L: PDF p25
+REACTOR_RATED_MWTH [primary] [user_decision] dec=D03
+   S: User decision Q3: headline reactor rating and the size charged
+   L: Q3
+DECOM_LOW [primary] [published] dec=
+   S: INL NZW09 Table (PDF p7): US LWR history; applied to R x 0.40
+   L: PDF p7
+DECOM_KWE_PER_KWT [primary] [assumed] dec=
+   S: INL NZW09 Table (PDF p7): US LWR history; applied to R x 0.40
+   L: PDF p7
+LICENCE_LOW [primary] [assumed] dec=
+   S: Plant licensing 0.56% and site permits 0.23% already in INL OCC, COA 12-13 (PDF p34)
+   L: PDF p34
+LICENCE_HIGH_NRC_USDM [via_reader] [published] dec=
+   S: NRC upper US$75M plus X-energy deck p37 NOAK fee US$250M per four-pack / 4
+   L: whole source
+LICENCE_HIGH_FOURPACK_USDM [via_reader] [published] dec=
+   S: NRC upper US$75M plus X-energy deck p37 NOAK fee US$250M per four-pack / 4
+   L: whole source
+LICENCE_HIGH_FOURPACK_UNITS [via_reader] [published] dec=
+   S: NRC upper US$75M plus X-energy deck p37 NOAK fee US$250M per four-pack / 4
+   L: whole source
+IHX_LOOP_COST [via_old_repo] [published] dec=
+   S: IAEA-TECDOC-1682 Table 3.17 via old repo E1 model; primary not opened (HTTP 402), so not verified at source
+   L: Table 3
+IHX_REF_MW [via_old_repo] [published] dec=
+   S: IAEA-TECDOC-1682 Table 3.17 via old repo E1 model; primary not opened (HTTP 402), so not verified at source
+   L: Table 3
+DEFLATOR_2012_2025_NUM [via_old_repo] [calculated] dec=
+   S: Old repo E1 proxy deflators
+   L: whole source
+DEFLATOR_2012_2025_DEN [via_old_repo] [calculated] dec=
+   S: Old repo E1 proxy deflators
+   L: whole source
+IHX_LOW_USD_KWTH [via_old_repo] [published] dec=
+   S: GA-A24265 USD43/kWth loop only, via old repo; not verified at source
+   L: whole source
+IHX_LOW_REF_MWTH [via_old_repo] [published] dec=
+   S: GA-A24265 USD43/kWth loop only, via old repo; not verified at source
+   L: whole source
+IHX_LIFE_HIGH_H [primary] [published] dec=
+   S: HTTR basis 105,120 h (TECDOC-1236 PDF p17) at 7,446 h/y
+   L: PDF p17
+CAPTURE_FOM [via_reader] [assumed] dec=D10
+   S: final_v1_7 Table A2, derived from IEAGHG cases
+   L: Table A2
+CAPTURE_ALLIN [not_verified] [published] dec=D10
+   S: ETC exhibit via deck slide 23; includes compression; energy content not verified
+   L: slide 23
+ELECTRICITY_PRICE [not_verified] [assumed] dec=
+   S: final_v1_7 s3.2 (source not verified)
+   L: s3.2
+CONSTRUCTION_YEARS [primary] [published] dec=
+   S: INL NZW09 base case (PDF p7); uniform spend at 8%
+   L: PDF p7
+SMR_ISLAND_TCR_EURM [primary] [published] dec=D08
+   S: IEAGHG 2017-02 Table 3, Capital Cost of SMR Based H2 Plant, Base Case Total Capital Requirement at 100,000 Nm3/h. TCR holds TPC, IDC, owner's cost, spares, working capital and start-up (PDF p9). The DCF uses TCR for the island because it carries its own IDC, and replaces it in full every 25 y
+   L: Table 3, PDF p17
+SMR_ISLAND_TPC_EURM [primary] [published] dec=D08
+   S: IEAGHG 2017-02 Table 3, Base Case Total Plant Cost: hydrogen plant 97.21, power island 20.12, utilities and balance of plant 53.62 (PDF p222)
+   L: Table 3, PDF p17
+SMR_ISLAND_FOM_EUR_Y [primary] [published] dec=D08
+   S: IEAGHG 2017-02 Table 4, Operating Cost of SMR Based H2 Plant, Base Case Fixed Costs sub-total: direct labour 2,280,000, overheads 991,714, insurance and local taxes 1,709,520, maintenance 2,564,280
+   L: Table 4, PDF p18
+SMR_ISLAND_RAW_WATER_EUR_Y [primary] [published] dec=D08
+   S: IEAGHG 2017-02 Table 4, Base Case Variable Costs, Raw water (make-up). The row sums with feedstock and chemicals to the printed sub-total 71,484,752
+   L: Table 4, PDF p18
+SMR_ISLAND_CHEMICALS_EUR_Y [primary] [published] dec=D08
+   S: IEAGHG 2017-02 Table 4, Base Case Variable Costs, Chemicals and catalysts. The row sums with feedstock and raw water to the printed sub-total 71,484,752
+   L: Table 4, PDF p18
+SMR_ISLAND_AVAILABILITY [primary] [published] dec=D08
+   S: IEAGHG 2017-02 Table 4 heading, Variable Costs (Availability - 95%). The DCF scales the SMR island raw water and chemicals to the plant's own operating hours from this value
+   L: Table 4, PDF p18
+COMPARATOR_EMIT_CASE3_KG_NM3 [primary] [published] dec=D11
+   S: IEAGHG 2017-02 Tables 2 and 5, Case 3, MEA on flue gas at 100,000 Nm3/h
+   L: Table 2, PDF p16
+COMPARATOR_CAPTURED_CASE3_KG_NM3 [primary] [published] dec=D11
+   S: IEAGHG 2017-02 Tables 2 and 5, Case 3, MEA on flue gas at 100,000 Nm3/h
+   L: Table 2, PDF p16
+COMPARATOR_CAC_EUR [primary] [published] dec=D11
+   S: IEAGHG 2017-02 Tables 2 and 5, Case 3, MEA on flue gas at 100,000 Nm3/h
+   L: Table 5, PDF p18
+COMPARATOR_OVERALL_CAPTURE [primary] [published] dec=D11
+   S: IEAGHG 2017-02 Tables 2 and 5, Case 3, MEA on flue gas at 100,000 Nm3/h
+   L: Table 2, PDF p16
+AMDEA_ETA [via_reader] [published] dec=D25
+   S: mea_columns.md s2, aMDEA sensitivity from IEAGHG 2017-02 Case 1A
+   L: s2
+AMDEA_SRD [via_reader] [published] dec=D25
+   S: mea_columns.md s2, aMDEA sensitivity from IEAGHG 2017-02 Case 1A
+   L: s2
+159 of 231

@@ -1,0 +1,327 @@
+HTGR_SMR_MEA_CCS_Research_Local\1-s2.0-S0360544225006152-main.pdf
+=====
+--- PDF p.1 ---
+Energy 320 (2025) 134973
+Available online 20 February 2025
+0360-5442/© 2025 The Authors. Published by Elsevier Ltd. This is an open access article under the CC BY license (http://creativecommons.org/licenses/by/4.0/).
+Contents lists available at ScienceDirect
+Energy
+journal homepage: www.elsevier.com/locate/energy
+Pilot-scale CO2 capture demonstration of stripper interheating using 30 wt%
+MEA at a Waste-to-Energy facility
+Sai Hema Bhavya Vinjarapu a
+,∗, Randi Neerup a, Anders Hellerup Larsen a,
+Sebastian Nis Bay Villadsen a, Søren Jensen b, Jakob Lindkvist Karlsson b, Jannik Kappel c,
+Henrik Lassen c, Peter Blinksbjerg c, Nicolas von Solms a, Philip Loldrup Fosbøl a
+a Technical University of Denmark (DTU), Department of Chemical Engineering, Center for Energy Resources Engineering (CERE), Søltofts Plads, Building
+229, 2800 Kongens Lyngby, Denmark
+b Pentair Union Engineering A/S, Snaremosevej 27, 7000 Fredericia, Denmark
+c Amager Bakke, ARC, Vindmøllevej 6, 2300 Copenhagen, Denmark
+A R T I C L E
+I N F O
+Keywords:
+Climate action
+CO2 capture
+Stripper interheating
+Heat integration
+Pilot scale demonstration
+Process optimisation
+A B S T R A C T
+Post-combustion CO2 capture is a widely recognised technology for controlling industrial CO2 emissions.
+However, issues like the substantial energy demands for solvent regeneration still need to be solved. The
+current work aims to discuss the outcomes of process optimisation within a pilot-scale CO2 capture facility
+by implementing interheating in the stripper to reduce energy consumption. The pilot-scale experiments
+were executed at Amager Bakke, a Waste-to-Energy plant in Copenhagen, Denmark. These tests used 30 wt%
+Monoethanolamine as the solvent. A semi-lean solvent from the middle of the stripper is withdrawn for external
+heating by an interheater and fed to the stripper at the same height. A steam generator with adjustable
+electrical duty is used as the heat source for the interheater. The novelty of this work lies in the pilot scale
+demonstration of stripper interheating at an industrial facility, which has seldom been done. The objective is to
+experimentally demonstrate the performance of the Interheating configuration at the pilot scale and analyse
+the potential improvements in the energy consumption of the process. The interheating experiments were
+conducted by varying the reboiler duty in the range of 12 to 20 kW and the interheater duty in the range of 2
+to 5 kW while maintaining a solvent flow of 267 kg/h and a flue gas flow of 99 kg/h. The results provide several
+possible scenarios, are discussed in detail, and are compared to previously obtained base case results. While
+maintaining a capture efficiency of around 83%, stripper interheating has demonstrated a specific reboiler duty
+of 2.71 GJ/tonne CO2 compared to 3.71 GJ/tonne CO2 achieved by the base case operation. A 3% reduction in
+the specific reboiler duty was achieved by interheating at a capture efficiency slightly over 90%. A preliminary
+model based on the experimental results has shown a further reduction of SRD to 2.25 GJ/tonne CO2 at high
+capture efficiencies.
+1. Introduction
+Post-combustion capture (PCC) is a critical technology essential to
+eliminate industrial CO2 emissions into the atmosphere. PCC is closely
+linked to achieving SDG goals such as Climate Action and Afford-
+able and Clean Energy. Amine-based CO2 capture is a well-established
+technology which can effectively capture 90 to 100% of the CO2
+emissions from flue gases released by fossil-based power plants, Waste-
+to-Energy (WtE) facilities processing Municipal Solid Waste (MSW)
+and biogenic waste, and biogas plants. Monoethanolamine (MEA) is
+one of the most known and commonly used amine solvents. MEA
+has several advantages, such as fast reaction kinetics, high solvent
+∗Corresponding author.
+E-mail address: shbvin@kt.dtu.dk (S.H.B. Vinjarapu).
+capacity, and operational knowledge [1–5]. However, drawbacks like
+high solvent regeneration energy requirements, solvent degradation,
+and equipment corrosion persist [1,6,7]. The regeneration of CO2-
+rich MEA solution requires a significant amount of energy, typically
+ranging from 3.6 to 3.8 GJ/tonne CO2 [8]. This energy demand can
+reduce the net efficiency of a power plant when the energy is sourced
+internally. Reports indicate a decrease in net efficiency of between
+5% and 28.5%, depending on the level of CO2 recovery achieved.
+Additionally, compressing the recovered CO2 for transportation further
+diminishes net efficiency. As a result, retrofitting a power plant with
+PCC technology will likely result in an overall loss of net efficiency.
+https://doi.org/10.1016/j.energy.2025.134973
+Received 20 November 2024; Received in revised form 31 January 2025; Accepted 9 February 2025
+
+--- PDF p.2 ---
+Energy 320 (2025) 134973
+2
+S.H.B. Vinjarapu et al.
+Nomenclature
+Abbreviations
+𝐻 𝐸
+Heat exchanger
+𝐼 𝐻
+Interheater
+𝐿𝑀 𝑇 𝐷
+Logarithmic mean temperature difference
+𝐿𝑉 𝐶
+Lean Vapour Compression
+𝑀 𝐸 𝐴
+Monoethanolamine
+𝑀 𝑇 𝑈
+Mobile Test Unit
+𝑃 𝐶 𝐶
+Post-combustion capture
+𝑃 𝐹 𝐷
+Process flow diagram
+𝑅𝐷
+Reboiler duty
+𝑆 𝐼
+Fraction of total stripping intensity
+𝑆 𝑅𝐷
+Specific reboiler duty
+𝑆 𝑡𝑟𝑖𝑛𝑡
+Stripping intensity
+𝑊 𝑡𝐸
+Waste-to-Energy
+Symbols
+𝛼
+Loading
+𝛥𝑇
+Temperature difference
+𝜖
+Capture efficiency
+𝐶𝑝,𝑇
+Specific heat capacity at temperature 𝑇
+𝑚
+Mass flow rate
+𝑛
+Molar flow rate
+𝑃
+Partial pressure
+𝑄
+Duty exchanged
+𝑞
+Percentage of reboiler duty excluding heat
+loss
+𝑇
+Temperature
+𝑢
+Slope of linear correlation
+𝑦
+Concentration in gas phase
+Subscripts
+𝑐
+Condenser exit stream
+𝑐 𝑙
+Cold lean stream
+CO2, 𝑐 𝑎𝑝
+CO2 captured
+CO2, 𝑖𝑛
+CO2 in the inlet stream
+CO2, 𝑜𝑢𝑡
+CO2 in the outlet stream
+𝑐 𝑜𝑛𝑑
+Condenser
+𝑐 𝑜𝑜𝑙 𝑖𝑛𝑔
+Total cooling in the lean cooler and the
+condenser
+𝑐 𝑟
+Cold rich stream
+𝑒𝑥𝑝
+Experimental
+𝑓 𝑙 𝑢𝑒𝑔 𝑎𝑠, 𝑖𝑛
+Inlet flue gas stream
+𝑓 𝑙 𝑢𝑒𝑔 𝑎𝑠, 𝑜𝑢𝑡
+Outlet flue gas stream
+ℎ𝑙
+Hot lean stream
+ℎ𝑟
+Hot rich stream
+𝐼 𝐻 , ℎ𝑒𝑎𝑡𝑙 𝑜𝑠𝑠
+Heat loss in the interheater
+𝐼 𝐻
+Interheater
+𝑖𝑛𝑡, 𝑝𝑟𝑒𝑑
+Integrated case, predicted
+𝑙 𝑒𝑎𝑛𝑐 𝑜𝑜𝑙 𝑒𝑟
+Cooling in the lean cooler
+𝑙 𝑒𝑎𝑛
+Lean solvent stream
+𝑚𝑎𝑖𝑛𝐻 𝐸
+Main heat exchanger
+𝑚𝑎𝑥, 𝑟𝑒𝑐
+Maximum energy recovery possible in the
+main heat exchanger
+Research is underway to develop new solvents and process technolo-
+gies to overcome the drawbacks. The disadvantages are encountered
+mainly due to high temperature and pressure conditions maintained in
+𝑟𝑒𝑏, ℎ𝑒𝑎𝑡𝑙 𝑜𝑠𝑠
+Heat loss in the reboiler
+𝑟𝑒𝑏
+Reboiler
+𝑟𝑒𝑐
+Energy recovery in the main heat exchanger
+𝑟𝑖𝑐 ℎ
+Rich solvent stream
+𝑠𝑒𝑛𝑠, 𝑟𝑖𝑐 ℎ
+Sensible heating of the hot rich stream
+𝑠𝑒𝑛𝑠, 𝑠𝑓
+Sensible heating of the split flow stream
+𝑠𝑒𝑛𝑠
+Total sensible heating of the solvent in the
+stripper
+𝑠𝑓
+Split flow stream
+𝑆 𝑇 𝐸
+Liquid distributor above stripper packed
+bed E
+𝑆 𝑇 𝐹
+Liquid distributor above stripper packed
+bed F
+𝑡𝑜𝑡𝑎𝑙
+Total stream flow rate
+𝑤𝑙
+Warm lean stream
+the stripper for desorption of CO2 and solvent regeneration. Therefore,
+advanced process configurations that optimise the stripper operation
+can help overcome the disadvantages. MEA is a well-documented and
+tested solvent in operation, solvent degradation, emissions, and process
+simulation. Therefore, it is a good candidate for testing advanced
+process configurations. There are several documented process config-
+urations in the literature which report an improvement in the energy
+efficiency of CO2 capture, such as intercooled absorber, interheated
+stripper, split flow, lean vapour compression, among several others [9].
+In our previous work, we have discussed in detail the demonstration
+of split flow configuration [10]. The current work aims to discuss the
+implementation of stripper interheating.
+Interheating is done by withdrawing a stream of semi-lean solvent
+from the middle of the stripper and injecting it back into the strip-
+per [9,11–15]. This is a simplified version of heat integrated stripper
+and is easier to implement on existing structures [9]. Interheating in
+the stripper optimises the temperature profile in the stripper’s top and
+middle. An optimal temperature profile can be achieved by heating
+the semi-lean solvent, bringing the stripper temperature in the middle
+closer to the reboiler temperature [9]. The interheater modification was
+predicted to reduce the stripper parasitic loss by 4.6 to 6.1% [13,15,
+16]. Several other works can be found in the literature which conducted
+simulations of interheating of the stripper [17–26].
+The semi-lean solvent could be interheated by various sources [9]:
+• the hot flue gas before it is cooled and sent to the absorber [27]
+• the reboiler condensate [11,16]
+• the hot lean solvent exiting the stripper bottom [11,16,28]
+• a combination [11]
+• high-temperature heat pumps integrated with waste heat recov-
+ery.
+Simulations were conducted to model waste heat recovery from
+different parts of a post-combustion power plant as a heat source for
+interheating the semi-lean solvent in the stripper [12]. The patent
+says that waste heat recovery for interheating in the stripper causes
+a reduction in the reboiler duty by 6.77% and an increase in the
+condenser duty by 1% [18].
+Muhammad et al. [29] has simulated the use of reboiler conden-
+sate for interheating the stripper. Simulations were done to optimise
+the withdrawal and feed stages in the stripper. An optimal SRD was
+observed when a CO2-rich solvent was withdrawn from stage 2 (from
+the top) and fed to the stripper at stage 15 (from the top). When the
+solvent was interheated, it caused further steam and CO2 production.
+As the interheated solvent was fed to stage 15, the vapour stream had
+a longer contact time with the solvent in the stripper, thus stripping
+
+--- PDF p.3 ---
+Energy 320 (2025) 134973
+3
+S.H.B. Vinjarapu et al.
+Fig. 1. CO2 capture pilot plant. (a) 3D model of the pilot. (b) The pilot plant located at the WtE facility (June 2021 to April 2022).
+more CO2 and reducing the SRD. SRD values as low as 2.63 GJ/tonne
+CO2 were obtained [29].
+De Miguel Mercader et al. [15] provides an overall perspective of
+the implementation of several configurations with no and low level of
+heat integration and their impact on the net efficiency of a 1070 MWe
+coal-fired power plant connected to a CO2 capture plant (250 MWe
+equivalent). It was reported that implementing an interheated stripper
+with low-level heat integration results in the least penalty on the net
+efficiency of the power plant. The interheated case with low-level heat
+integration gave the best results compared to several configurations,
+such as base case, Lean Vapour compression (LVC), split flow, and
+LVC + split flow. However, an interheated stripper without any heat
+integration was shown to have a higher penalty on efficiency when
+compared to LVC + split flow with no integration. Karimi et al. [30]
+has detailed the positive and negative effects of interheating through a
+simulation study. Interheating was shown to negatively impact the SRD
+of the process without heat integration in the system. However, when
+done in conjugation with heat integration, interheating was beneficial
+by bringing the temperature profile in the stripper closer to the optimal.
+An optimal stripper temperature profile would be linear, eliminating
+pinch regions and efficiently using the packing. Both the reboiler and
+the condenser duty were shown to be reduced by 5.7% and 13.3% for
+one interheater and 9.9% and 22.7%, respectively, for two interheater
+cases. The optimal location for the placement of the interheater was
+also simulated and said to be 1/3rd from the top of the column.
+Van Wagener [26] has shown that interheating has the most sig-
+nificant impact when done in the middle of the stripper. When the
+interheater was placed at the bottom, directly above the reboiler, the
+extracted solvent from the stripper was much hotter than the middle
+of the stripper. Therefore, less heat could be exchanged. Additionally,
+the driving force at the reboiler was higher than the middle or the
+stripper top. Implementing interheating just above the reboiler would
+cause desorption of CO2 due to a high driving force rather than heating
+the solvent. The interheater at the stripper middle would operate
+closer to the mass transfer pinch point, thus effectively heating the
+solvent. The equivalent work was shown to be reduced by 1.5 kJ/mol
+CO2 by implementing interheating. It was presented that the stripper’s
+performance was improved by interheating due to higher selectivity of
+CO2 compared to water at high temperatures. Hot lean solvent exiting
+the stripper was used to interheat the semi-lean solvent.
+Frailie et al. [17] conducted a simulation study of interheating in
+stripper for 8 m PZ, 7 m MDEA/2 m PZ, and 5 m PZ solvents. The hot
+fluid for interheating was the hot lean solvent exiting the stripper.
+As the duty was displaced from the main HE to the interheater, the
+temperature of the hot rich solvent entering the stripper top was lower.
+A decrease in the hot rich solvent temperature resulted in an increased
+value of PCO2∕PH2O and consequently reduced the SRD of the system. Li
+et al. [19] also showed that the use of hot lean solvent for interheating
+the stripper reduces the energy requirement for the production of
+steam and sensible heating of the solvent, thus reducing the SRD by
+6.1% from 3.6 GJ/tonne CO2 to 3.38 GJ/tonne CO2. Zhao et al. [20]
+has shown that the SRD could be reduced to 2.56 GJ/tonne CO2 by
+implementing interheating by hot lean solvent for MDEA/PZ based
+solvent. Additionally, the net efficiency penalty was reported to reduce
+from 8.49% to 8.25%.
+Li et al. [25] conducted a Techno-economic assessment on several
+advanced process configurations such as split flow, intercooling, and
+interheating. Interheating the stripper was reported to reduce the net
+costs by US$2.9/tonne CO2 despite the increased capital costs due to
+extra heat exchanger requirements.
+Stoffregen et al. [31] reported a pilot-scale demonstration of strip-
+per interheating at a coal-fired power plant. However, no informa-
+tion is available regarding the configuration’s performance. Stripper
+interheating by use of the hot lean solvent and steam condensate
+from the reboiler has been commercialised by Mitsubishi Heavy In-
+dustries at a natural gas-fired power plant in Abu Dhabi [32]. The
+commercial plant utilised KS-1 solvent, and an energy consumption of
+2.9 GJ/tonne CO2 was obtained using stripper interheating. However,
+there is no documentation of the operation or detailed analysis of the
+configuration.
+

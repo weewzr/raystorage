@@ -1,0 +1,12 @@
+1440x900: Tab from the title:
+    card:button.tour-btn[prev] @847..885 tabindex=null
+    card:button.tour-btn[next] @847..885 tabindex=null
+    panel:div.eq-body @431..485 tabindex=null
+    :body @-349..1002 tabindex=null
+    :a.skip-link @8..52 tabindex=null
+    :a @89..107 tabindex=null
+    :a @122..167 tabindex=null
+    :a @122..167 tabindex=null
+unit list choice while playing: playing True -> False; 9.8 s later step 1 -> 1, panel stripper
+errors []
+exit 0

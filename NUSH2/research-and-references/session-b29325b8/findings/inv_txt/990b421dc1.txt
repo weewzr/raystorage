@@ -1,0 +1,298 @@
+acs.iecr.8b01472.pdf
+HTGR_SMR_MEA_CCS_Research_Local\06_MEA_Absorber\Morgan_2018_MEA_Absorber_Stripper_Validation_Data.pdf
+=====
+--- PDF p.1 ---
+Development of a Rigorous Modeling Framework for Solvent-Based
+CO2 Capture. Part 2: Steady-State Validation and Uncertainty
+Quantiﬁcation with Pilot Plant Data
+Joshua C. Morgan,†,§ Anderson Soares Chinen,† Benjamin Omell,§ Debangsu Bhattacharyya,*,†
+Charles Tong,‡ David C. Miller,§ Bill Buschle,∥and Mathieu Lucquiaud∥
+†Department of Chemical Engineering, West Virginia University, Morgantown, West Virginia 26506, United States
+‡Lawrence Livermore National Laboratory, Livermore, California 94550, United States
+§National Energy Technology Laboratory, 626 Cochrans Mill Road, Pittsburgh, Pennsylvania 15236, United States
+∥School of Engineering, University of Edinburgh, Edinburgh EH9 3JL, U.K.
+*
+S Supporting Information
+ABSTRACT: The U.S. DOE’s Carbon Capture Simulation Initiative (CCSI) has a strong focus on the development of state of
+the art process models for accelerating the development and commercialization of postcombustion carbon capture system
+technologies. One of CCSI’s goals is the development of a process model that will serve not only as a deﬁnitive reference for
+benchmarking of the performance of solvent-based CO2 capture systems but also as a framework for the development of highly
+predictive models of advanced solvent systems. In Part 1 of this paper and previous work, submodels for the system were
+developed, including those for physical properties, kinetics, mass transfer, and column hydraulics, by calibrating model
+parameters to ﬁt relevant experimental data. For individual submodels, a Bayesian inference methodology was used to reﬁne the
+estimates of the parameter values and to quantify the parametric uncertainty of the models. This work is focused on
+incorporating these submodels into a complete process model and validating this model with large scale pilot plant data from
+the Pilot Solvent Test Unit (PSTU) at the National Carbon Capture Center (NCCC). The model has been validated with data
+representing a wide range of operating conditions for absorber and stripper columns, including variable packing height and
+presence of intercooling in the absorber. The uncertainty in the solvent composition is measured by comparing the process
+measurements at NCCC to standard laboratory techniques of a known uncertainty. Through a sensitivity study, this
+measurement uncertainty is used to provide insight into some discrepancy between model and data. Parametric uncertainty for
+various submodel parameters has been propagated through the process model to assess the resulting uncertainty in the key
+model outputs. Finally, a variance-based sensitivity analysis is used to provide insight into the relative contributions of
+parameters from various submodels to the overall uncertainty of the process outputs in various operating regimes.
+1. INTRODUCTION
+The U.S. Department of Energy’s Carbon Capture Simulation
+Initiative (CCSI) focused on developing computational tools
+and models to accelerate the development and commercializa-
+tion of CO2 capture technologies.1 One key goal of CCSI was
+Received:
+April 4, 2018
+Revised:
+June 23, 2018
+Accepted:
+July 2, 2018
+Published: July 2, 2018
+Article
+pubs.acs.org/IECR
+Cite This: Ind. Eng. Chem. Res. 2018, 57, 10464−10481
+© 2018 American Chemical Society
+10464
+DOI: 10.1021/acs.iecr.8b01472
+Ind. Eng. Chem. Res. 2018, 57, 10464−10481
+This is an open access article published under an ACS AuthorChoice License, which permits
+copying and redistribution of the article or any adaptations for non-commercial purposes.
+Downloaded from pubs.​acs.​org/​iecred/​article-pdf/​57/​31/​10464/​67009146/​acs.​iecr.​8b01472.​pdf by NATL UNIV OF SINGAPORE user on 30 October 2026
+
+--- PDF p.2 ---
+to develop a modeling approach for solvent-based CO2 capture
+that can be readily applied to any solvent system. Speciﬁcally, it
+is desired to use this framework for accelerating the model
+development and scale-up of novel solvent systems. However,
+the baseline solvent system used for the development of the
+solvent modeling framework is aqueous monoethanolamine
+(MEA), due to the relatively large amount of property and
+process data available in the open literature for this system.
+Aqueous solutions with 30 wt % MEA have been the industrial
+standard for acid gas removal from solvents since 1970.2 Our
+previous work,3,4 in addition to Part 1 of this two-part paper,
+have focused on development and uncertainty quantiﬁcation
+(UQ) of the submodels that comprise the overall process
+model of CO2 capture by aqueous MEA. In Part 1,
+development of rigorous submodels for mass transfer and
+hydraulics and their UQ is described. In Part 2, the focus is on
+model validation using steady-state data obtained from the
+Pilot Solvent Test Unit (PSTU) at the National Carbon
+Capture Center (NCCC) in Wilsonville, AL. This pilot plant,
+with a CO2 capture capacity of approximately 10 ton/day and
+electric output 0.5 MWe, is relatively large in comparison to
+most of the solvent-based CO2 capture systems for which data
+is available in the open literature. As part of the model
+validation process, uncertainties in the integrated model are
+quantiﬁed.
+Deterministic process models of the CO2 capture system
+with MEA are available in the open literature, including
+comparison with pilot plant data. Most of the existing
+validation work, however, is based on pilot plants of a smaller
+scale or over narrower operating ranges. In the work of Luo et
+al.,5 models from leading commercial simulators are compared
+with data from four separate pilot plants, with signiﬁcant
+discrepancy in the results generated by the various models for
+both the absorber and stripper. Previous MEA solvent test
+campaigns have also been performed and used for model
+validation at pilot plant (0.1 MWe) at the J.J. Pickle Research
+Center of The University of Texas at Austin.6−8 The pilot plant
+(0.2 MWe) at SaskPower’s Boundary Dam Power Station has
+also been the subject of previous validation work with
+MEA.9,10 Data from the pilot plant (∼0.01 MWe) at the
+University of Kaiserslautern have been reported for various
+solvent systems, with aqueous MEA generally considered as a
+baseline.11−17 Multiple papers from Moser et al.18−20 have
+presented information regarding a long-term MEA test at a
+power plant (∼0.35 MWe) at RWE Power’s power station in
+Niederaussem, Germany. In addition to those mentioned here,
+various other MEA model validation studies with small-scale
+pilot plant data have been reported.21−30 Some work on MEA
+model validation with large-scale pilot plant data (∼1.2 MWe)
+is available for the CASTOR project pilot plant at the Esbjerg
+power station in Denmark, although validation over a large
+range of operating conditions for both columns is not
+shown.31,32 In summary, validation with the data from large
+pilot plants such as NCCC is very scarce. Furthermore, models
+have typically been validated over a narrow range of operating
+conditions. However, when the host power plant must ramp up
+or down, there can be signiﬁcant variations in the operating
+conditions of the CO2 capture plant. Furthermore, variable
+CO2 capture, as opposed to the standard 90% capture
+condition, can be exploited as a strategy for load-following.
+Therefore, it is desired that the model be validated with the
+pilot plant data over a wide range of operating conditions
+including the CO2 capture percentage.
+Existing models of the MEA-based CO2 capture process are
+deterministic in nature, meaning that rigorous parametric
+uncertainty quantiﬁcation for the system has not been
+considered; however, some work has studied the sensitivity
+of the overall process model to process variables and
+parameters in the underlying submodels. Nuchitprasittichai
+and Cremaschi33 performed a sensitivity analysis in which the
+eﬀect of ﬂuctuations in ﬂue gas CO2 concentration and utility
+costs on process economics is studied for various amine-based
+CO2 capture systems. Tönnies et al.34 performed a sensitivity
+study for the MEA system with respect to input parameters
+describing ﬂuid dynamics and physical and chemical properties
+of the system. In the MEA system absorber model validation
+work of Tobiesen et al.,24 a parametric sensitivity study
+concluded that the match between experimental data and
+model predications are particularly sensitive to the equilibrium
+model. deMontigny et al.35 studied the eﬀects of operating
+variables such as liquid and gas ﬂow, solvent CO2 loading,
+MEA concentration, and CO2 partial pressure on the overall
+mass transfer coeﬃcient. An optimization study was performed
+by Dinca and Badea36 in which process variables such as
+solvent ﬂow rate and composition and operating temperatures
+were manipulated to minimize heat required for MEA
+regeneration and maximize CO2 capture eﬃciency. Another
+optimization study focused on maximizing the ratio between
+absorbed CO2 and total heating and cooling utility and the
+ratio between absorbed CO2 and amine ﬂow rate by
+manipulating the key process variables.37
+The contributions of this work may be summarized as
+follows. (1) A modeling framework for modeling and
+uncertainty quantiﬁcation of solvent-based CO2 capture
+systems has been outlined and applied to a baseline aqueous
+MEA system. (2) A model of a large-scale pilot plant (PSTU at
+Figure 1. Schematic of process model development approach.
+Industrial & Engineering Chemistry Research
+Article
+DOI: 10.1021/acs.iecr.8b01472
+Ind. Eng. Chem. Res. 2018, 57, 10464−10481
+10465
+Downloaded from pubs.​acs.​org/​iecred/​article-pdf/​57/​31/​10464/​67009146/​acs.​iecr.​8b01472.​pdf by NATL UNIV OF SINGAPORE user on 30 October 2026
+
+--- PDF p.3 ---
+NCCC) has been developed in Aspen Plus, consisting of
+physical property, kinetic, mass transfer, and hydraulic
+submodels reported in our previous work. (3) This model
+has been validated with experimental data that span a wide
+range of operating conditions, including liquid and gas ﬂow
+rates and compositions, stripper reboiler duty, and packing
+height in the absorber column. (4) Probability density
+functions (PDFs) describing parametric uncertainty from the
+aforementioned submodels are propagated through the process
+model for various test cases, allowing estimation of the
+corresponding uncertainty in key process variables. The eﬀect
+of uncertainty of individual parameters on process output
+variable uncertainty is assessed for various operating
+conditions. (5) Uncertainty in the measurement of the solvent
+composition has been experimentally determined, and the
+eﬀect of the measurement uncertainty on the process output
+variables is assessed.
+2. METHODOLOGY
+2.1. Modeling Framework. Although this work is
+primarily focused on model validation with pilot plant data
+for the MEA system speciﬁcally, it is important to note that the
+model has been developed with a systematic framework that
+may be applied to a generic solvent system. The overall process
+is shown schematically in Figure 1.
+The overall process model is composed of various
+submodels, including physical property (e.g., thermodynamic
+and transport properties for the solvent system) and process
+(e.g., kinetic, mass transfer, hydraulics) models. The develop-
+ment of these models includes a method for identifying
+uncertain parameters through parameter selection and
+uncertainty quantiﬁcation with Bayesian inference; this results
+in a combined set of uncertain parameters (Θ̃) that
+incorporates all submodels. Both deterministic and stochastic
+versions of the overall process model are developed and
+validated with process data, which may be from either bench or
+pilot scale. The major diﬀerence between the deterministic and
+stochastic models is related to the treatment of the uncertain
+parameters. For the deterministic model, the parameters are
+treated as a set of point values (θ̃), generally the maximum
+likelihood estimators that are obtained from regression of the
+submodel forms with relevant experimental data. In the
+stochastic model, these parameters are represented as
+probability density functions (PDFs) that are estimated
+through a Bayesian framework. When evaluating the stochastic
+model for a ﬁxed set of input variables X̃, a sample θ̃i is drawn
+from the joint parameter distribution and used to generate a
+set of model output values (Ỹi) for that speciﬁc instantiation
+from the distribution. The overall process model is validated
+through comparison with process data (e.g., operation data for
+the absorber and stripper columns at a pilot plant) both
+deterministically and stochastically. The common validation
+approach is to compare plant data with deterministic model
+output over a range of operating conditions (variable X̃) and
+check for accuracy in prediction. This methodology expands
+upon this approach by using the stochastic model to predict
+ranges of output variable values in order to allow for model
+uncertainty to be taken into consideration during the
+validation process. It is important to note that all parameter
+values and distributions are characterized independently of the
+validation data, meaning that no parameters are tuned to
+improve the ﬁt of the process model to the data. Although the
+modeling approach could be modiﬁed from the version shown
+in Figure 1 to allow for use of process data to update submodel
+parameter values and distributions, this will be left to future
+work.
+In the variance-based sensitivity analysis, the mapping
+(denoted as
+Y
+Θ̃ →̃
+) of the output variable values to the
+uncertain parameter values for a speciﬁc set of input values is
+used to decompose the variance in the model output into
+individual contributions of parameters and their interactions.
+One such analysis is described in the work of Sobol,38 and will
+be applied to this work. For each output variable (Y ∈Ỹ) and
+each parameter (Θ ∈Θ̃) or combination of parameters, an
+index value is calculated; larger index values indicate that the
+output variable has relatively higher sensitivity to that
+particular combination of parameters. For simplifying this
+analysis, the total sensitivity index for a parameter can be
+interpreted as the index for that individual parameter and the
+sum of its interactions with all other groups of parameters.
+Parameters with very low indices for all outputs over a wide
+range of input conditions can be assumed to have little eﬀect
+on the uncertainty in the model output. Therefore, the
+uncertainty of these parameters may be neglected and the
+parameters treated as point values, when evaluating the
+stochastic model in future applications. The use of the results
+from the variance-based sensitivity analysis to downselect the
+set of uncertain parameters is an optional step in the process,
+as denoted by the dashed line in Figure 1. Due to the
+computational expense of this procedure, particularly when
+considering multiple outputs over a wide range of input
+variables, the sensitivity analysis may be performed with a
+surrogate model replacing the actual simulation model f X
+(
+)̃
+|Θ̃ .
+This framework has been applied to an aqueous MEA
+system as a baseline, with physical property submodels
+described in previous work3,4 and other process submodels
+in Part 1 of this work. The subsequent sections of this paper
+will focus on the validation of the deterministic and stochastic
+process models with pilot plant data along with the variance-
+based sensitivity analysis, thus completing the demonstration
+of this methodology for the baseline MEA solvent.
+2.2. NCCC Steady State Test. The validation data used in
+this work were obtained from a test campaign at the PSTU at
+NCCC in the summer of 2014. Although this work is focused
+on validation at steady-state, dynamic data were also collected
+during this testing period. A number of important inputs,
+disturbances, and operating conditions were selected for the
+steady-state test cases, which include the following variables:
+(1) solvent ﬂow rate, (2) ﬂue gas ﬂow rate, (3) ﬂue gas
+composition, (4) lean solvent loading, (5) number of absorber
+beds, and (6) presence/absence of intercooler.
+The PSTU at NCCC has a CO2 capacity of 10 ton/day and
+a maximum reboiler duty of about 700 kW. The absorber and
+stripper columns consist of three and two beds, respectively,
+with each bed containing approximately 6 m of MellapakPlus
+252Y structured packing. The column diameter is approx-
+imately 0.64 m for the absorber and 0.59 m for the stripper.
+Multiple solvent inlets are present in the absorber column so
+that the number of beds may be varied between 1 and 3, and
+intercoolers are present between the absorber beds.
+A set of 31 test runs was proposed using a test matrix based
+on a statistical experimental design in which variables are
+varied simultaneously to cover a wide range of operating
+conditions to obtain a ﬁnal data set that is suitable for rigorous
+model validation. Figure 2 shows an example of the test matrix
+Industrial & Engineering Chemistry Research
+Article
+DOI: 10.1021/acs.iecr.8b01472
+Ind. Eng. Chem. Res. 2018, 57, 10464−10481
+10466
+Downloaded from pubs.​acs.​org/​iecred/​article-pdf/​57/​31/​10464/​67009146/​acs.​iecr.​8b01472.​pdf by NATL UNIV OF SINGAPORE user on 30 October 2026
+

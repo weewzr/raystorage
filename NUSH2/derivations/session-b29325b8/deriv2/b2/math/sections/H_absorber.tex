@@ -1,0 +1,355 @@
+\section{H. Rate-based MEA absorber}\label{sec:H}
+Rate-based here describes the method. The column is a one-dimensional film model with an approximate enhancement factor, so these cards carry tier O, and it runs in a regime no local source has measured: 30 wt\% MEA on hydrogen-rich gas at 26.8 bar. The closest experiments use 20 wt\% MEA on methane at similar CO$_2$ partial pressure. Each result from this section is therefore an estimate with a stated test behind it, and none enters the headline ledger as a measured value.
+
+Symbols keep this section apart from the rest of the document. $\mathcal E$, $\mathcal E_1$ and $\mathcal E_\infty$ are enhancement factors and $\mathcal M$ is the Hatta group, because $E$ and $M$ name stored energy and mass in Section A. $G_n$ and $L_n$ are molar flows, because $G$ is a mass velocity and $L$ a tube length. $a_p$ is packing area and $a_e$ the effective area that Sonderby writes as $a$. $h_{GL}$, $q_{GL}$ and $S_{ch}$ replace plain $h$, $q$ and $S$. Khan et al., Chem.\ Eng.\ Res.\ Des.\ 89 (2011) 1600, is cited as Khan, and Isa et al., Int.\ J.\ Greenh.\ Gas Control 56 (2017) 173, as Isa. No engine test was run for this document, and the column itself is a later milestone, so each benchmark below is a stated target. Implementation lines give the planned name first and the present code second, where the property and kinetic functions already exist.
+
+\begin{eqcard}{H.1}{O}{Gas film}
+\Stmt{N_{CO_2}=k_G\left(p_{CO_2}-p_{int}\right)}
+\Interp{CO$_2$ crosses a thin gas film by diffusion, driven by the drop in partial pressure from the bulk gas to the interface.}
+\Deriv{Whitman two-film theory, as Khan Fig 1 shows it. Each film resists in series and holds no material at steady state.}
+\Vars{\V{N_{CO_2}}{CO$_2$ flux from gas to liquid}{\U{mol\ m^{-2}\ s^{-1}}} \V{k_G}{gas film coefficient}{\U{mol\ m^{-2}\ s^{-1}\ Pa^{-1}}} \V{p_{int}}{CO$_2$ partial pressure at the interface}{\U{Pa}}}
+\Assume{Two-film.}
+\Source{\tagP{} Khan, Fig 1 and text, PDF p.~2.}
+\Impl{\fn{units::absorber::flux}}
+\Valid{ID}{eq_h_01}{Sign and zero flux at zero driving force.}
+\end{eqcard}
+
+\begin{eqcard}{H.2}{O}{Liquid film}
+\Stmt{N_{CO_2}=\mathcal E\,k_L^\circ\,\frac{p_{int}-p^*_{CO_2}}{H}}
+\Interp{Reaction in the liquid film speeds absorption up. $\mathcal E$ measures that gain over plain physical absorption.}
+\Deriv{Physical absorption gives $k_L^\circ(C_{int}-C_b)$. Sonderby's first assumption places all reaction inside the film and leaves the bulk at equilibrium, so $C_b=p^*_{CO_2}/H$, with $p^*_{CO_2}$ from \Eq{G.33}. Then \Eq{H.3} gives this form.}
+\Vars{\V{\mathcal E}{enhancement factor}{1} \V{k_L^\circ}{physical liquid film coefficient}{\U{m\ s^{-1}}} \V{H}{Henry constant of CO$_2$ on the rate side}{\U{Pa\ m^3\ mol^{-1}}}}
+\Assume{All reaction in the film and the bulk at equilibrium.}
+\Source{\tagP{} Sonderby et al.\ \cite{Sonderby}, assumption 1, PDF p.~3.}
+\Impl{\fn{units::absorber::flux}}
+\Valid{ID}{eq_h_02}{Flux changes sign when $p_{int}$ passes $p^*_{CO_2}$.}
+\end{eqcard}
+
+\begin{eqcard}{H.3}{R}{Interface equilibrium}
+\Stmt{p_{int}=H\,C_{int}}
+\Interp{The two sides of the interface are at equilibrium, even though the bulk phases are far from it.}
+\Deriv{Henry's law at the interface, which has no resistance in two-film theory.}
+\Vars{\V{C_{int}}{CO$_2$ concentration at the interface}{\U{mol\ m^{-3}}}}
+\Assume{Henry.}
+\Source{\tagT{} Textbook result.}
+\Impl{\fn{units::absorber::flux}}
+\Valid{ID}{eq_h_03}{Direct identity.}
+\end{eqcard}
+
+\begin{eqcard}{H.4}{O}{Overall coefficient}
+\Stmt{N_{CO_2}=K_G\left(p_{CO_2}-p^*_{CO_2}\right),\qquad\frac{1}{K_G}=\frac{1}{k_G}+\frac{H}{\mathcal E\,k_L^\circ}}
+\Interp{Two resistances in series. Whichever is larger controls, and in this column the liquid film is expected to dominate.}
+\Deriv{Write \Eq{H.1} and \Eq{H.2} as $N_{CO_2}/k_G=p_{CO_2}-p_{int}$ and $N_{CO_2}H/(\mathcal Ek_L^\circ)=p_{int}-p^*_{CO_2}$, and add them to remove $p_{int}$. Khan Eq 3 is the same form per unit volume, with $p^*_{CO_2}$ set to zero.}
+\Vars{\V{K_G}{overall gas side coefficient}{\U{mol\ m^{-2}\ s^{-1}\ Pa^{-1}}}}
+\Assume{Two-film.}
+\Source{\tagP{} Sonderby et al.\ \cite{Sonderby}, Eqs 9 and 10, PDF p.~3. Khan, Eq 3, PDF p.~3.}
+\Impl{\fn{units::absorber::k_overall}}
+\Valid{EXP}{eq_h_04}{Target: Sonderby runs, through the column tests.}
+\end{eqcard}
+
+\begin{eqcard}{H.5}{E}{Rate constant}
+\Stmt{\log_{10}k_2=10.99-\frac{2152}{T}}
+\Interp{The second-order rate constant of CO$_2$ with MEA. It doubles about every 14 K, so the temperature bulge inside the column speeds the reaction up.}
+\Deriv{Hikita's correlation through Khan Eq 2. Khan prints no unit. Taken in \U{m^3\ kmol^{-1}\ s^{-1}} it gives 5,918 at 298.15 K, close to 5,993 from $4.4\times10^{11}\exp(-5400/T)$ in Part 5b Eq 41. Rate constants are tied to the activity and diffusivity models they were fitted with, so this one stays with the Khan set and must not be mixed with the Plaza or Dugas sets.}
+\Vars{\V{k_2}{second-order rate constant}{\U{m^3\ kmol^{-1}\ s^{-1}}}}
+\Assume{Stays with the Khan set. Fit runs to loading about 0.50.}
+\Source{\tagP{} Khan, Eq 2, PDF p.~3.}
+\Impl{\fn{units::absorber::k2}, present code \fn{mea::kinetics::k2_hikita}}
+\Valid{PUB}{eq_h_05}{Target: Versteeg and van Swaaij Table 10, PDF p.~12, Hikita rows 4.42, 5.87 and 7.72 \U{m^3\ mol^{-1}\ s^{-1}} at 293, 298 and 303 K, which is 4,420 to 7,720 in the unit here, matrix row VER-1. Also Part 5b Table 1, Carbon Management 3 (2012) 201.}
+\end{eqcard}
+
+\begin{eqcard}{H.6}{O}{Hatta group and first-order enhancement}
+\Stmt{\mathcal M=\frac{D_lk_2C_B}{\left(k_L^\circ\right)^2},\qquad\mathcal E_1=\frac{\sqrt{\mathcal M}}{\tanh\sqrt{\mathcal M}}}
+\Interp{$\mathcal M$ compares reaction speed with diffusion through the film. When it is large, $\mathcal E_1$ tends to $\sqrt{\mathcal M}$ and absorption depends on reaction with no need for bulk mixing.}
+\Deriv{Film theory with a pseudo-first-order reaction gives this result. Khan Eq 4 prints $\mathcal E_1$ in this form beside $M^2$ on the left of the group, and calls $M$ the Hatta modulus. Those two lines conflict. The form here follows film theory and agrees with $E=\sqrt M$ in Sonderby Table 1. $C_B$ is free MEA from \Eq{G.29}, in \U{kmol\ m^{-3}} with $k_2$ of \Eq{H.5}.}
+\Vars{\V{\mathcal M}{Hatta group, the Hatta number squared}{1} \V{\mathcal E_1}{pseudo-first-order enhancement}{1} \V{C_B}{free MEA in the bulk liquid}{\U{kmol\ m^{-3}}}}
+\Assume{$C_B$ is free MEA.}
+\Source{\tagP{} Khan, Eq 4, PDF p.~3, with the correction stated above. Sonderby et al.\ \cite{Sonderby}, Table 1, PDF p.~4.}
+\Impl{\fn{units::absorber::enhancement}, present code \fn{mea::kinetics::hatta} and \fn{mea::kinetics::e1_of_hatta}}
+\Valid{ID}{eq_h_06}{Limits at small and large $\mathcal M$.}
+\end{eqcard}
+
+\begin{eqcard}{H.7}{O}{Instantaneous enhancement}
+\Stmt{\mathcal E_\infty=1+\frac{C_BD_B}{b\,D_lC_{int}}}
+\Interp{The ceiling on enhancement. Reaction can go no faster than MEA reaches the interface. At high CO$_2$ pressure the interface concentration is large, so this ceiling comes down.}
+\Deriv{Khan Eq 4. With $b=2$ from the carbamate reaction $\mathrm{CO_2+2RNH_2}$, two MEA arrive for each CO$_2$. Khan gives no correlation for $D_B$, so the caller supplies it.}
+\Vars{\V{\mathcal E_\infty}{enhancement for an instantaneous reaction}{1} \V{D_B}{MEA diffusivity in solution}{\U{m^2\ s^{-1}}} \V{b}{MEA consumed per CO$_2$, 2}{1}}
+\Assume{$b=2$.}
+\Source{\tagP{} Khan, Eq 4 and reaction R1, PDF p.~2 and p.~3.}
+\Impl{\fn{units::absorber::enhancement}, present code \fn{mea::kinetics::e_infinity}}
+\Valid{PUB}{eq_h_07}{Target: about 11 at 4.74 bar and about 355 at 0.13 bar, project calculations with the Hatta number near 100.}
+\end{eqcard}
+
+\begin{eqcard}{H.8}{O}{Enhancement by Wellek}
+\Stmt{\mathcal E=1+\frac{1}{\left[\left(\dfrac{1}{\mathcal E_\infty-1}\right)^{1.35}+\left(\dfrac{1}{\mathcal E_1-1}\right)^{1.35}\right]^{1/1.35}}}
+\Interp{A smooth blend of the two limits. The smaller of $\mathcal E_1$ and $\mathcal E_\infty$ controls, so at the column bottom the instantaneous ceiling is expected to set the rate.}
+\Deriv{Khan Eq 4, an explicit fit to the second-order problem. Khan states it deviates by less than 3\% from van Krevelen and Hoftijzer. Sonderby uses the implicit form instead and finds all forms close at flue gas conditions. Pseudo-first-order forms from flue gas work will overpredict rate near the instantaneous limit, which is why this form is used.}
+\Vars{\V{\mathcal E}{enhancement factor}{1}}
+\Assume{Within 3\% of the van Krevelen fit.}
+\Source{\tagP{} Khan, Eq 4, PDF p.~3.}
+\Impl{\fn{units::absorber::enhancement}.\newline Present code: \fn{mea::kinetics::enhancement_wellek}.}
+\Valid{EXP}{eq_h_08}{Target: Khan Table 1 runs, matrix rows KH-1 and KH-2.}
+\end{eqcard}
+
+\begin{eqcard}{H.9}{E}{Henry constant in the Khan set}
+\Stmt{H=10^{\,5.3-0.035\,C_{MEA}-1140/T}}
+\Interp{Rate-side solubility of CO$_2$ in the solvent. It belongs to the Khan set and stays with it, while equilibrium uses \Eq{G.19}.}
+\Deriv{Khan Eq 8, after Danckwerts. Khan prints no unit, so \U{atm\ L\ mol^{-1}} is assumed. At zero MEA and 298.15 K that reading gives 29.95, against 29.32 from Aronu Eq 17 in the same unit. Multiply by 101.325 for \U{Pa\ m^3\ mol^{-1}}. The form has no loading term, while the measured N$_2$O Henry constant rises by about 70\% from loading 0 to 0.5 at 25 C, so a misfit at high loading is expected. Hartono's own correlation cannot replace it, because its unloaded base is not reconstructible.}
+\Vars{\V{C_{MEA}}{total MEA concentration}{\U{kmol\ m^{-3}}}}
+\Assume{Unit not stated, assumed atm L/mol.}
+\Source{\tagP{} Khan, Eq 8, PDF p.~4.}
+\Impl{\fn{units::absorber::henry_khan}.\newline Present code: \fn{mea::kinetics::henry_khan_pa_m3_mol}.}
+\Valid{EXP}{eq_h_09}{Target: Hartono et al.\ Table 11 through the N$_2$O analogy of \Eq{G.23}, matrix row HA-3. That row may fail at high loading, and it stays recorded either way.}
+\end{eqcard}
+
+\begin{eqcard}{H.10}{E}{Liquid film coefficient}
+\Stmt{k_L^\circ=2\left(\frac{D_lC_EU_L}{\pi S_{ch}}\right)^{1/2},\qquad C_E=0.9}
+\Interp{Penetration theory: liquid renews itself at each corrugation, and shorter contact gives faster transfer.}
+\Deriv{Rocha form as printed in Isa Table 4, Eq 10, with $C_E=0.9$ from the nomenclature. $S_{ch}$ for the assumed Mellapak 250Y is not local \tagM{17}, and geometry may not be taken from memory. Until the vendor sheet or Rocha is in hand, the working case runs Onda on a random packing, Khan Eq 5b: $k_L^\circ(\rho_L/\mu_Lg)^{1/3}=0.0051(L_m/a_w\mu_L)^{2/3}(\mu_L/\rho_LD_l)^{-0.5}(a_pd_p)^{0.4}$, with $L_m$ a mass velocity. Isa Eq 16 prints this form differently, and Khan's form is used.}
+\Vars{\V{C_E}{surface renewal correction, 0.9}{1} \V{U_L}{superficial liquid velocity}{\U{m\ s^{-1}}} \V{S_{ch}}{corrugation channel side}{\U{m}} \V{L_m}{liquid mass velocity}{\U{kg\ m^{-2}\ s^{-1}}} \V{a_w}{wetted area per unit volume, Onda}{\U{m^2\ m^{-3}}} \V{a_p}{packing area per unit volume}{\U{m^2\ m^{-3}}} \V{d_p}{nominal packing size}{\U{m}} \V{\rho_L}{liquid density}{\U{kg\ m^{-3}}} \V{\mu_L}{liquid viscosity}{\U{Pa\ s}}}
+\Assume{$S_{ch}$ for the packing is missing.}
+\Source{\tagP{} Isa, Table 4, Eq 10, PDF p.~6, with $C_E$ from PDF p.~2. Khan, Eq 5b, PDF p.~3. \tagM{17}: Rocha and packing data not local.}
+\Impl{\fn{units::absorber::kl_rocha}}
+\Valid{EXP}{eq_h_10}{Target: through \Eq{H.4}, on the column runs.}
+\end{eqcard}
+
+\begin{eqcard}{H.11}{E}{Gas film coefficient}
+\Stmt{k_{G,v}=0.054\,\frac{D_G}{S_{ch}}\left[\frac{\left(U_L+U_G\right)\rho_GS_{ch}}{\mu_G}\right]^{0.8}\left(\frac{\mu_G}{D_G\rho_G}\right)^{0.33},\qquad k_G=\frac{k_{G,v}}{RT}}
+\Interp{Turbulent gas flow through corrugated channels. Hydrogen makes this gas light and very diffusive, so the gas film should offer little resistance.}
+\Deriv{Rocha form as printed in Isa Table 4, Eq 11, with velocities taken relative to the falling liquid. The result is in \U{m\ s^{-1}}, and dividing by $RT$ gives the unit of \Eq{H.1}. The working Onda case is Khan Eq 5a: $k_GRT/(a_pD_G)=C_1(G_m/a_p\mu_G)^{0.7}(\mu_G/\rho_GD_G)^{1/3}(a_pd_p)^{-2.0}$. Khan's $C_1$ depends on packing size and has no printed value, while Isa uses 5.23.}
+\Vars{\V{k_{G,v}}{gas film coefficient as a velocity}{\U{m\ s^{-1}}} \V{D_G}{gas diffusivity of CO$_2$}{\U{m^2\ s^{-1}}} \V{U_G}{superficial gas velocity}{\U{m\ s^{-1}}} \V{\rho_G}{gas density}{\U{kg\ m^{-3}}} \V{\mu_G}{gas viscosity}{\U{Pa\ s}} \V{G_m}{gas mass velocity}{\U{kg\ m^{-2}\ s^{-1}}} \V{C_1}{Onda packing constant}{1}}
+\Assume{$D_G$ by the Fuller method \tagM{20}.}
+\Source{\tagP{} Isa, Table 4, Eq 11, PDF p.~6. Khan, Eq 5a, PDF p.~3.}
+\Impl{\fn{units::absorber::kg_rocha}}
+\Valid{EXP}{eq_h_11}{Target: through \Eq{H.4}, on the column runs.}
+\end{eqcard}
+
+\begin{eqcard}{H.12}{E}{Effective area, central}
+\Stmt{\frac{a_e}{a_p}=\begin{cases}C_{h,BS}\left(\dfrac{U_L\rho_L}{a_p\mu_L}\right)^{0.15}\left(\dfrac{U_L^2a_p}{g}\right)^{0.1},&Re_L<5\\[8pt]0.85\,C_{h,BS}\left(\dfrac{U_L\rho_L}{a_p\mu_L}\right)^{0.25}\left(\dfrac{U_L^2a_p}{g}\right)^{0.1},&Re_L\ge5\end{cases}\qquad C_{h,BS}=0.554}
+\Interp{Only part of the packing surface takes part in mass transfer. This correlation estimates that share from the liquid flow alone.}
+\Deriv{Billet and Schultes in Isa Table 5, Eqs 17 and 18, the only local form that is stated to 30 bar and needs no surface tension. The two branches meet at $Re_L=5$ to within 0.2\%, and both are printed as the source gives them. The plant sits on the second branch. With a liquid load of 40 to 100 \U{m^3\ m^{-2}\ h^{-1}}, the solvent of the Section G example at 40 C, water viscosity of 0.653 \U{mPa\ s} from the IAPWS release and the 420 \U{m^2\ m^{-3}} of Isa's Flexipac 1Y, $Re_L$ runs from about 14 to 34 on lean solvent and from 12 to 29 on rich solvent \tagC. $C_{h,BS}$ is the packing constant in Isa's nomenclature, for a column that holds Flexipac 1Y, so carrying it to another packing is an assumption. The engine plan names the Wang form as its working area, so the choice is confirmed when the column first runs.}
+\Vars{\V{a_e}{effective area per unit volume}{\U{m^2\ m^{-3}}} \V{C_{h,BS}}{Billet and Schultes packing constant}{1} \V{Re_L}{liquid Reynolds number, $U_L\rho_L/a_p\mu_L$}{1}}
+\Assume{Stated to 30 bar. Needs no surface tension.}
+\Source{\tagP{} Isa, Table 5, Eqs 17 and 18, PDF p.~6, with $C_{h,BS}$ from PDF p.~2 and the packing area from PDF p.~9.}
+\Impl{\fn{units::absorber::area_bs}}
+\Valid{EXP}{eq_h_12}{Target: Isa Table 8, PDF p.~9.}
+\end{eqcard}
+
+\begin{eqcard}{H.13}{E}{Effective area, alternatives}
+\Stmt{\begin{gathered}\frac{a_e}{a_p}\Big|_{R}=F_{SE}\frac{29.12\left(We_LFr_L\right)^{0.15}S_{ch}^{0.359}}{Re_L^{0.2}\varepsilon_p^{0.6}\left(1-0.93\cos\gamma_c\right)\left(\sin\theta\right)^{0.3}}\\\frac{a_e}{a_p}\Big|_{W}=\frac{a_e}{a_p}\Big|_{R}\,0.17\left(\frac{\rho_L}{\rho_G}\right)^{0.16}e^{-0.15/U_G},\qquad\frac{a_e}{a_p}\Big|_{Gu}=\frac{a_e}{a_p}\Big|_{R}\,\frac{1.2}{1+0.2\,e^{15U_L/U_G}}\end{gathered}}
+\Interp{Other published forms, kept to show how far the answer moves with the choice of correlation. In Isa's high-pressure column it moved a great deal.}
+\Deriv{Rocha Eq 19, Wang Eq 20 and Gualito Eq 23 of Isa Table 5, with stated ranges of 0.33 to 20.4, 6.9 to 27.6 and 0.05 to 27.2 bar. Sonderby sets $F_{SE}=0.25$ for a small column, against 0.35 in the original. Rocha and Onda need the surface tension of loaded solvent \tagM{19}, and Onda also appears as Khan Eq 5c. Isa Table 7 shows predicted heights from 0.00 m to 5.2 million m across correlation pairs for a 1.505 m column.}
+\Vars{\V{F_{SE}}{surface enhancement factor}{1} \V{We_L}{liquid Weber number}{1} \V{Fr_L}{liquid Froude number}{1} \V{\varepsilon_p}{packing void fraction}{1} \V{\gamma_c}{liquid contact angle}{rad}}
+\Assume{Surface tension is missing.}
+\Source{\tagP{} Isa, Table 5, Eqs 19, 20 and 23, PDF p.~6, and Table 7, PDF p.~9. Sonderby et al.\ \cite{Sonderby}, PDF p.~4. \tagM{19}: surface tension.}
+\Impl{\fn{units::absorber::area_alt}}
+\Valid{NONE}{eq_h_13}{Sensitivity only, with no benchmark of its own.}
+\end{eqcard}
+
+\begin{eqcard}{H.14}{O}{Gas flow along the column}
+\Stmt{\frac{dG_n}{dz}=-\left(N_{CO_2}+N_{H_2O}\right)a_eA_c}
+\Interp{The gas loses moles as it rises, because CO$_2$ and water leave it. With 18 mol\% CO$_2$ that loss is large enough to matter.}
+\Deriv{Sonderby Eq 1, a mole balance on a slice of height $dz$ with $z$ measured up from the gas inlet. Khan holds gas flow constant, which suits flue gas and fails here, so the variable form is used.}
+\Vars{\V{G_n}{total gas molar flow}{\U{mol\ s^{-1}}} \V{N_{H_2O}}{water flux from gas to liquid}{\U{mol\ m^{-2}\ s^{-1}}}}
+\Assume{IN for H$_2$, CH$_4$ and CO. Variable gas flow.}
+\Source{\tagP{} Sonderby et al.\ \cite{Sonderby}, Eq 1, PDF p.~3.}
+\Impl{\fn{units::absorber::rhs}}
+\Valid{EXP}{eq_h_14}{Target: Sonderby Tables 3 to 6 through the full column.}
+\end{eqcard}
+
+\begin{eqcard}{H.15}{O}{Gas CO$_2$ fraction}
+\Stmt{\frac{dy_{CO_2}}{dz}=\frac{N_{CO_2}a_eA_c\left(y_{CO_2}-1\right)+N_{H_2O}y_{CO_2}a_eA_c}{G_n}}
+\Interp{CO$_2$ fraction falls as CO$_2$ leaves. The second term is a small correction, because losing water concentrates what remains.}
+\Deriv{A balance on CO$_2$ gives $d(G_ny_{CO_2})/dz=-N_{CO_2}a_eA_c$. Expand the product and substitute \Eq{H.14}.}
+\Vars{\V{y_{CO_2}}{CO$_2$ mole fraction in the gas}{1}}
+\Assume{As \Eq{H.14}.}
+\Source{\tagP{} Sonderby et al.\ \cite{Sonderby}, Eq 2, PDF p.~3.}
+\Impl{\fn{units::absorber::rhs}}
+\Valid{EXP}{eq_h_15}{Target: Sonderby Tables 3 to 6.}
+\end{eqcard}
+
+\begin{eqcard}{H.16}{O}{Gas water fraction}
+\Stmt{\frac{dy_{H_2O}}{dz}=\frac{N_{H_2O}a_eA_c\left(y_{H_2O}-1\right)+N_{CO_2}y_{H_2O}a_eA_c}{G_n}}
+\Interp{The same balance for water. Water can move either way, depending on the local temperature of the two phases.}
+\Deriv{As \Eq{H.15}, starting from $d(G_ny_{H_2O})/dz=-N_{H_2O}a_eA_c$.}
+\Vars{\V{y_{H_2O}}{water mole fraction in the gas}{1}}
+\Assume{As \Eq{H.14}.}
+\Source{\tagP{} Sonderby et al.\ \cite{Sonderby}, Eq 3, PDF p.~3.}
+\Impl{\fn{units::absorber::rhs}}
+\Valid{EXP}{eq_h_16}{Target: Sonderby Tables 3 to 6.}
+\end{eqcard}
+
+\begin{eqcard}{H.17}{O}{Liquid flow along the column}
+\Stmt{\frac{dL_n}{dz}=-N_{H_2O}a_eA_c}
+\Interp{The liquid is counted on a CO$_2$-free basis, so only water changes its flow.}
+\Deriv{Liquid falls toward smaller $z$, so a balance across $dz$ gives $L_n(z)=L_n(z+dz)+N_{H_2O}a_eA_c\,dz$. Sonderby Eq 4 follows.}
+\Vars{\V{L_n}{liquid molar flow, CO$_2$-free basis}{\U{mol\ s^{-1}}}}
+\Assume{CO$_2$-free basis.}
+\Source{\tagP{} Sonderby et al.\ \cite{Sonderby}, Eq 4, PDF p.~3.}
+\Impl{\fn{units::absorber::rhs}}
+\Valid{EXP}{eq_h_17}{Target: Sonderby Tables 3 to 6.}
+\end{eqcard}
+
+\begin{eqcard}{H.18}{O}{Liquid composition}
+\Stmt{\frac{dX_{CO_2}}{dz}=\frac{\left(N_{H_2O}X_{CO_2}-N_{CO_2}\right)a_eA_c}{L_n},\qquad\frac{dX_{H_2O}}{dz}=\frac{N_{H_2O}\left(X_{H_2O}-1\right)a_eA_c}{L_n}}
+\Interp{Moving down the column, the liquid gains CO$_2$, so $X_{CO_2}$ falls as $z$ rises. Loading follows directly from $X_{CO_2}$.}
+\Deriv{Balances on CO$_2$ and water in the liquid give $d(L_nX_i)/dz=-N_ia_eA_c$. Expand and use \Eq{H.17}. Sonderby Eq 6 prints its left side as $X_{H_2O}/dz$, with the leading $d$ missing, and the form here is the balance it means.}
+\Vars{\V{X_{CO_2}}{CO$_2$ in the liquid per mole of CO$_2$-free liquid}{1} \V{X_{H_2O}}{water fraction of the CO$_2$-free liquid}{1}}
+\Assume{CO$_2$-free basis.}
+\Source{\tagP{} Sonderby et al.\ \cite{Sonderby}, Eqs 5 and 6, PDF p.~3.}
+\Impl{\fn{units::absorber::rhs}}
+\Valid{EXP}{eq_h_18}{Target: Sonderby Tables 3 to 6.}
+\end{eqcard}
+
+\begin{eqcard}{H.19}{O}{Gas temperature}
+\Stmt{\frac{dT_G}{dz}=-\frac{q_{GL}a_eA_c}{G_nc_{p,G}}}
+\Interp{The rising gas takes up heat from warmer liquid or gives it to cooler liquid. The sign depends on where in the column it sits.}
+\Deriv{Sonderby Eq 7, an energy balance on the gas with heat crossing the interface. The sensible heat carried by the transferred species is charged to the liquid in \Eq{H.20}.}
+\Vars{\V{T_G}{gas temperature}{\U{K}} \V{q_{GL}}{gas to liquid heat flux}{\U{W\ m^{-2}}} \V{c_{p,G}}{gas molar heat capacity}{\U{J\ mol^{-1}\ K^{-1}}}}
+\Assume{Adiabatic column, assumption 5.}
+\Source{\tagP{} Sonderby et al.\ \cite{Sonderby}, Eq 7, PDF p.~3, read as an image.}
+\Impl{\fn{units::absorber::rhs}}
+\Valid{EXP}{eq_h_19}{Target: Sonderby temperature profiles.}
+\end{eqcard}
+
+\begin{eqcard}{H.20}{O}{Liquid temperature}
+\Stmt{\begin{aligned}\frac{dT_L}{dz}=&\ \frac{\left(N_{CO_2}c_{p,CO_2}+N_{H_2O}c_{p,H_2O}\right)a_eA_c\left(T_L-T_G\right)}{L_nc_{p,L}}-\frac{q_{GL}a_eA_c}{L_nc_{p,L}}\\&+\frac{\left(N_{CO_2}\Delta h_{CO_2}+N_{H_2O}\Delta h_{H_2O}\right)a_eA_c}{L_nc_{p,L}}\end{aligned}}
+\Interp{Absorption releases heat into the liquid, and this drives the temperature bulge seen in absorbers. The first term brings transferred gas to liquid temperature, and the second is exchange with the gas.}
+\Deriv{Liquid falls toward smaller $z$, so the balance across $dz$ gives $L_nc_{p,L}[T_L(z)-T_L(z+dz)]$ on one side and the three heat inputs on the other. Signs follow the page image of Sonderby Eq 8. The middle term is negative because heat from a hotter gas warms the falling liquid. The last term carries enthalpy changes that are negative for exothermic absorption and condensation, so it also warms the falling liquid, and $\Delta h_{CO_2}=-\Delta h_{abs}$ from \Eq{G.24}. $\Delta h_{H_2O}$ is the condensation enthalpy of water.}
+\Vars{\V{T_L}{liquid temperature}{\U{K}} \V{c_{p,L}}{liquid molar heat capacity}{\U{J\ mol^{-1}\ K^{-1}}} \V{\Delta h_{CO_2}}{enthalpy change of CO$_2$ absorption}{\U{J\ mol^{-1}}} \V{\Delta h_{H_2O}}{enthalpy change of water condensation}{\U{J\ mol^{-1}}}}
+\Assume{Signs from the image. Interface at the liquid temperature, assumption 2.}
+\Source{\tagP{} Sonderby et al.\ \cite{Sonderby}, Eq 8 and assumption 2, PDF p.~3, read as an image.}
+\Impl{\fn{units::absorber::rhs}}
+\Valid{EXP}{eq_h_20}{Target: the temperature bulge in the Sonderby profiles.}
+\end{eqcard}
+
+\begin{eqcard}{H.21}{O}{Heat flux}
+\Stmt{q_{GL}=h_{GL}\left(T_G-T_L\right),\qquad h_{GL}=k_{G,v}\,c_G\,c_{p,G}\left(\frac{Sc}{Pr}\right)^{2/3}}
+\Interp{Heat and mass cross the gas film by the same mechanism, so the mass transfer coefficient also gives the heat transfer coefficient.}
+\Deriv{Sonderby Eq 11 gives the flux. Chilton and Colburn set the heat and mass transfer $j$ factors equal, $h_{GL}Pr^{2/3}/(c_Gc_{p,G}u)=k_{G,v}Sc^{2/3}/u$, which gives $h_{GL}$. The same area serves heat and mass, as assumption 4 states.}
+\Vars{\V{h_{GL}}{gas side heat transfer coefficient}{\U{W\ m^{-2}\ K^{-1}}} \V{c_G}{gas molar density}{\U{mol\ m^{-3}}} \V{Sc}{gas Schmidt number}{1}}
+\Assume{Chilton-Colburn analogy. Same area for heat and mass.}
+\Source{\tagP{} Sonderby et al.\ \cite{Sonderby}, Eq 11 and assumption 4, PDF p.~3. \tagT{} Analogy.}
+\Impl{\fn{units::absorber::heat_flux}}
+\Valid{ID}{eq_h_21}{Direct identity at equal Schmidt and Prandtl numbers.}
+\end{eqcard}
+
+\begin{eqcard}{H.22}{O}{Water flux}
+\Stmt{N_{H_2O}=k_{G,H_2O}\left(p_{H_2O}-p^*_{H_2O}\right)}
+\Interp{Water moves between the phases with almost no liquid side resistance, so the gas film alone sets its rate.}
+\Deriv{Sonderby's third assumption neglects liquid side resistance for the volatile solvent, so the interface sits at $p^*_{H_2O}$ from \Eq{G.20}. The coefficient follows from \Eq{H.11} with the diffusivity of water.}
+\Vars{\V{k_{G,H_2O}}{gas film coefficient of water}{\U{mol\ m^{-2}\ s^{-1}\ Pa^{-1}}} \V{p_{H_2O}}{water partial pressure in the bulk gas}{\U{Pa}} \V{p^*_{H_2O}}{water pressure at equilibrium with the solvent}{\U{Pa}}}
+\Assume{Liquid side resistance small.}
+\Source{\tagP{} Sonderby et al.\ \cite{Sonderby}, assumption 3, PDF p.~3.}
+\Impl{\fn{units::absorber::flux}}
+\Valid{ID}{eq_h_22}{Sign and zero flux at equilibrium.}
+\end{eqcard}
+
+\begin{eqcard}{H.23}{F}{Column pressure drop}
+\Stmt{\frac{\Delta p}{Z_c}=\left(\frac{\Delta p}{Z_c}\right)_{ref}\left(\frac{F_s}{F_{s,ref}}\right)^2,\qquad F_s=U_G\sqrt{\rho_G}}
+\Interp{Pressure loss grows with the kinetic energy of the gas. Without a local packing correlation, this simple scaling stands in.}
+\Deriv{Friction in the turbulent range scales with $\rho_GU_G^2$. The reference point comes from Sonderby Table 5, which prints small differences across the column, 5.8 mbar in run R1, with some runs changing sign, so it is weak even at 1 bar. INL prints no pressure loss across its Selexol block, 389 psi in and out.}
+\Vars{\V{Z_c}{packed height}{\U{m}} \V{F_s}{gas load factor}{\U{Pa^{1/2}}}}
+\Assume{Scaling from Sonderby Table 5.}
+\Source{\tagM{18}: no packed-column correlation in the library. \tagA{} Assumed. INL from TEV-961 \cite{TEV961}, A-56, PDF p.~80.}
+\Impl{\fn{units::absorber::dp}}
+\Valid{NONE}{eq_h_23}{No benchmark exists at pressure.}
+\end{eqcard}
+
+\begin{eqcard}{H.24}{O}{Grid}
+\Stmt{\frac{dG_n}{dz}\Big|_k\approx\frac{G_{n,k}-G_{n,k-1}}{\Delta z},\qquad\frac{dL_n}{dz}\Big|_k\approx\frac{L_{n,k+1}-L_{n,k}}{\Delta z},\qquad\Delta z=\frac{Z_c}{N_z}}
+\Interp{The column is cut into slices. Each phase takes its value from upstream, which means from below for gas and from above for liquid.}
+\Deriv{Finite volume form of \Eq{H.14} to \Eq{H.20}, written for one variable of each phase. Upwinding keeps the scheme stable at this order. Khan used forward differences in a spreadsheet, solving each phase in turn. Here all slices are solved together, because the temperature bulge couples both directions.}
+\Vars{\V{N_z}{number of slices}{1} \V{\Delta z}{slice height}{\U{m}}}
+\Assume{$N_z=50$ and 100 compared.}
+\Source{\tagT{} Textbook result. Khan, section 2.5, PDF p.~4, for the forward difference scheme.}
+\Impl{\fn{units::absorber::grid}}
+\Valid{ID}{eq_h_24}{Target: capture changes by less than 0.2\% between the two grids.}
+\end{eqcard}
+
+\begin{eqcard}{H.25}{O}{Boundary conditions}
+\Stmt{z=0:\ G_n,\ y_{CO_2},\ y_{H_2O},\ T_G\ \text{given};\qquad z=Z_c:\ L_n,\ X_{CO_2},\ X_{H_2O},\ T_L\ \text{given}}
+\Interp{Gas enters at the bottom and liquid at the top, so half the conditions sit at each end. This makes the column a two-point problem.}
+\Deriv{Sonderby states the problem as a boundary value problem on Eqs 1 to 8, with inlet flows, composition, pressure and temperature defined. The eight unknowns of \Eq{H.14} to \Eq{H.20} match the eight conditions here.}
+\Vars{\V{Z_c}{packed height}{\U{m}}}
+\Assume{Two-point problem.}
+\Source{\tagP{} Sonderby et al.\ \cite{Sonderby}, PDF p.~4.}
+\Impl{\fn{units::absorber::bc}}
+\Valid{ID}{eq_h_25}{End values equal the inputs.}
+\end{eqcard}
+
+\begin{eqcard}{H.26}{O}{Solution method}
+\Stmt{\mathbf J\left(\mathbf w^{(m)}\right)\Delta\mathbf w=-\mathbf f\left(\mathbf w^{(m)}\right),\qquad\mathbf w^{(m+1)}=\mathbf w^{(m)}+\lambda\Delta\mathbf w,\qquad\lVert\mathbf f\rVert_\infty<10^{-8}}
+\Interp{All slices are solved at once by repeated linearisation. The matrix is banded, so each step stays fast.}
+\Deriv{Newton's method on the system from \Eq{H.24} and \Eq{H.25}. The damping factor $\lambda$ reduces a step that would push a composition negative. The start is an isothermal guess.}
+\Vars{\V{\mathbf w}{all unknowns on the grid}{mixed} \V{\mathbf f}{residual vector}{mixed} \V{\mathbf J}{Jacobian of the residual}{mixed} \V{\lambda}{damping factor}{1}}
+\Assume{Start from an isothermal guess.}
+\Source{\tagT{} Textbook result.}
+\Impl{\fn{numerics::ode::banded_newton}}
+\Valid{ID}{eq_h_26}{A repeat run gives identical output.}
+\end{eqcard}
+
+\begin{eqcard}{H.27}{R}{Per-pass capture}
+\Stmt{\eta_{pp}=\frac{y_{in}n_{in}-y_{out}n_{out}}{y_{in}n_{in}}}
+\Interp{The share of CO$_2$ removed in one pass through the absorber. Plant capture is a different number, and Section J relates the two.}
+\Deriv{Definition, on the gas side and with total flows in and out, as both Vinjarapu and Kwak write it.}
+\Vars{\V{\eta_{pp}}{per-pass capture}{1} \V{y_{in}}{CO$_2$ fraction in the feed gas}{1} \V{y_{out}}{CO$_2$ fraction in the treated gas}{1} \V{n_{in}}{gas flow in}{\U{mol\ s^{-1}}} \V{n_{out}}{gas flow out}{\U{mol\ s^{-1}}}}
+\Assume{None.}
+\Source{\tagP{} Vinjarapu et al., Appl.\ Energy 355 (2024) 122193, Eq 20, PDF p.~11. Kwak et al.\ \cite{Kwak}, Eq 2, PDF p.~3.}
+\Impl{\fn{units::absorber::capture}}
+\Valid{EXP}{eq_h_27}{Target: Salvinder et al., Int.\ J.\ Greenh.\ Gas Control 70 (2018) 164, Table 2, PDF p.~5, 85.0\% at 10.5 bar. Tan et al., Int.\ J.\ Greenh.\ Gas Control 34 (2015) 25, PDF p.~4, 95\% at 1 MPa with 50\% CO$_2$ in the feed, which is 5 bar of CO$_2$. Both use 20 wt\% MEA on natural gas. Tan defines removal on inlet and outlet concentrations alone. With half the feed absorbed that basis reads low: 95\% on concentrations is 97.4\% by this equation if only CO$_2$ transfers \tagC.}
+\end{eqcard}
+
+\begin{eqcard}{H.28}{R}{Solvent flow}
+\Stmt{\dot m_{solv}=\frac{\dot n_{CO_2}M_{MEA}}{w_{MEA}\left(\alpha_{rich}-\alpha_{lean}\right)}}
+\Interp{Each kilogram of solvent carries a fixed swing of CO$_2$, so the solvent flow follows from the swing and the mass fraction alone.}
+\Deriv{A CO$_2$ balance over the column: $\dot n_{CO_2}=\dot n_{MEA}(\alpha_{rich}-\alpha_{lean})$, with $\dot n_{MEA}=w_{MEA}\dot m_{solv}/M_{MEA}$. The result is on a CO$_2$-free basis, so the lean stream itself is heavier by the CO$_2$ it carries.}
+\Vars{\V{\dot m_{solv}}{lean solvent, CO$_2$-free basis}{\U{kg\ s^{-1}}} \V{\dot n_{CO_2}}{CO$_2$ absorbed}{\U{mol\ s^{-1}}} \V{M_{MEA}}{molar mass of MEA}{\U{kg\ mol^{-1}}} \V{w_{MEA}}{MEA mass fraction, CO$_2$-free basis}{1}}
+\Assume{$\alpha_{rich}\le0.50$.}
+\Source{\tagC{} Calculated here.}
+\Impl{\fn{units::absorber::solvent_rate}}
+\Valid{GOLD}{eq_h_28}{Target: \vMsolvB{} \U{t\ h^{-1}} at Case B and \vMsolvA{} \U{t\ h^{-1}} at Case A, the screening values, which is a port check. Hand comparison with DICE \cite{DICE}, Fig 5-2, PDF p.~192: 3,517 \U{lbmol\ h^{-1}} of CO$_2$, or 70.2 \U{t\ h^{-1}}, with loadings 0.16 and 0.40 at 30 wt\% gives 1,354 \U{t\ h^{-1}} on this basis. The lean stream prints 1,400 \U{t\ h^{-1}}, and its 47 \U{t\ h^{-1}} of CO$_2$ closes the difference \tagC.}
+\end{eqcard}
+
+\begin{eqcard}{H.29}{O}{Column diameter}
+\Stmt{D_c=\sqrt{\frac{4\dot V_L}{\pi\,\ell_L}},\qquad\ell_L=40\text{ to }100\ \mathrm{m^3\ m^{-2}\ h^{-1}}}
+\Interp{Liquid sets this diameter. Syngas is so light that the liquid to gas ratio is about five times that of a flue gas absorber, so gas capacity is the easier limit.}
+\Deriv{Divide the liquid flow by an allowed load. L/G runs 12 to 15 \U{kg\ kg^{-1}} here against 2.4 to 3.0 in flue gas pilots \tagC. The load range is a project judgement, with no vendor rating behind it.}
+\Vars{\V{D_c}{column diameter}{\U{m}} \V{\dot V_L}{liquid volume flow}{\U{m^3\ s^{-1}}} \V{\ell_L}{liquid load}{\U{m\ s^{-1}}}}
+\Assume{L/G 12 to 15 kg/kg.}
+\Source{\tagC{} Calculated here.}
+\Impl{\fn{units::absorber::diameter}}
+\Valid{PUB}{eq_h_29}{Target: 4 to 6.5 m at about 1,400 \U{t\ h^{-1}} of solvent, a project calculation. Case B is in the worked example.}
+\end{eqcard}
+
+\begin{eqcard}{H.30}{F}{Co-absorption}
+\Stmt{\dot n_{H_2,abs}=\dot n_{CH_4,abs}=\dot n_{CO,abs}=0}
+\Interp{Hydrogen and methane also dissolve a little and leave with the solvent. No data exist for this solvent, so the central case sets them to zero and states the reference value beside it.}
+\Deriv{No local source gives H$_2$, CH$_4$ or CO solubility in loaded MEA. The nearest reference is activated MDEA in IEAGHG Case 1A. Flash gas stream 16 and CO$_2$ stream 17 hold 2.80 \U{kmol\ h^{-1}} of H$_2$ and 0.28 of CH$_4$, against 4,989 and 201 in feed stream 7, or 0.056\% and 0.137\% \tagC. Yield loss is small on that reference. The effect on CO$_2$ purity is larger, and it is disclosed.}
+\Vars{\V{\dot n_{H_2,abs}}{H$_2$ absorbed}{\U{mol\ s^{-1}}} \V{\dot n_{CH_4,abs}}{CH$_4$ absorbed}{\U{mol\ s^{-1}}} \V{\dot n_{CO,abs}}{CO absorbed}{\U{mol\ s^{-1}}}}
+\Assume{Zero central. Reference aMDEA, 0.056\% H$_2$ and 0.137\% CH$_4$.}
+\Source{\tagC{} Calculated here from IEAGHG 2017-02 \cite{IEAGHG17}, streams 7, 16 and 17, PDF p.~75 and p.~76. \tagM{10}: no solubility data for MEA.}
+\Impl{\fn{units::absorber::coabsorb}}
+\Valid{NONE}{eq_h_30}{Disclosed term, with no benchmark for MEA.}
+\end{eqcard}
+
+\begin{eqcard}{H.31}{E}{Pressure index, listed and unused}
+\Stmt{f=\frac{L_vC^0_{MEA}}{a_p}\int_{\alpha_1}^{\alpha_2}\frac{d\alpha}{H\sqrt{D_lk_{MEA}C_{MEA}}\left(p-p^*\right)}}
+\Interp{A fitted correction for high pressure. It is printed for completeness and takes no part in the plant.}
+\Deriv{Isa Eq 42, with $k_{MEA}=4.61\times10^{9}\exp(-4412/T)$ from Eq 43. Table 10 gives $f$ from 9.92 to 2.92 for the Tsai area and from 77.47 to 22.82 for the Billet area between 20 and 60 bar. It was fitted to 20 wt\% MEA with no regeneration, on CO$_2$ and CH$_4$ at 1:1, in one column. Moving it to 30 wt\% on hydrogen would have no basis, so the plant leaves it out.}
+\Vars{\V{f}{pressure modification index}{1} \V{L_v}{liquid flow in Isa's balance}{\U{m^3\ s^{-1}}} \V{C^0_{MEA}}{MEA concentration fed}{\U{mol\ m^{-3}}} \V{k_{MEA}}{reaction rate constant of Isa Eq 43}{\U{m^3\ mol^{-1}\ s^{-1}}}}
+\Assume{Fitted to 20 wt\% on a CH$_4$ carrier.}
+\Source{\tagP{} Isa, Eqs 42 and 43, PDF p.~7, and Table 10, PDF p.~10.}
+\Impl{none. The equation is listed only.}
+\Valid{NONE}{eq_h_31}{Listed for reference. Table 10 sits in the benchmark fixture and no test uses it.}
+\end{eqcard}
+
+\subsection*{Worked example: Case B solvent, diameter and driving force}
+Solvent. Case B captures \vMcotwoB{} \U{t\ h^{-1}} of CO$_2$, or 305 \U{mol\ s^{-1}}. With $w_{MEA}=0.30$ and a swing of 0.25, \Eq{H.28} gives 248.4 \U{kg\ s^{-1}}, which is the \vMsolvB{} \U{t\ h^{-1}} of the ledger. The lean stream also carries its own loading of 0.25, equal to the swing, so it adds another \vMcotwoB{} \U{t\ h^{-1}} and weighs 942 \U{t\ h^{-1}}.
+
+Diameter. At the 1,057 \U{kg\ m^{-3}} of the Section G example that is 892 \U{m^3\ h^{-1}}. \Eq{H.29} then gives 3.4 m at a load of 100 and 5.3 m at a load of 40 \U{m^3\ m^{-2}\ h^{-1}}. These sizes are for one column and use no gas side check.
+
+Driving force. The feed holds 17.7 mol\% CO$_2$ at 26.8 bar, so $p_{CO_2}=4.74$ bar at the bottom. With 4.9 \U{kmol\ m^{-3}} of MEA at 40 C, \Eq{H.9} gives 30.8 \U{atm\ L\ mol^{-1}}, or 3,117 \U{Pa\ m^3\ mol^{-1}}, so $C_{int}$ reaches 152 \U{mol\ m^{-3}} if the gas film is taken as negligible. \Eq{H.5} gives $k_2=13{,}100$ \U{m^3\ kmol^{-1}\ s^{-1}} at this temperature. \Eq{H.7} then gives $\mathcal E_\infty=1+16\,D_B/D_l$ with total MEA as an upper bound on $C_B$. Khan gives no $D_B$, and a ratio near 0.6 recovers the target of about 11. Free MEA at the rich end is far smaller than the total, so the real ceiling there is lower still, which is the plain reason the rich loading stays capped at 0.50.
+
+\subsection*{Link to the sources}
+Sonderby supplies the column structure, tested at 30 wt\% and 1 bar, and Khan the kinetic set with a test at up to 7.24 bar. The high-pressure work of Isa and Salvinder uses 20 wt\% MEA on natural gas, and its findings warn against trust in any one correlation pair. So the absorber result carries a named gap at every step, and the 90\% per-pass capture stays an assumption of the ledger until the column runs and its result is reported, whether it meets that figure or falls short.

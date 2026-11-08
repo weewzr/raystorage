@@ -1,0 +1,52 @@
+P1 | Primary helium, reactor outlet to the IHX | htgr -> ihx | engine False | drawn None
+P2 | Primary helium, IHX to the circulator | ihx -> circ_primary | engine False | drawn None
+P3 | Primary helium, circulator to the reactor | circ_primary -> htgr | engine False | drawn None
+P4 | Primary helium branch through the power block | htgr -> power | engine False | drawn None
+H1 | Secondary helium supply to the reformer | ihx -> smr | engine False | drawn None
+H2 | Secondary helium return to the IHX | smr -> ihx | engine False | drawn None
+S01 | Fresh natural gas | None -> smr | engine None | drawn None
+S02 | Process steam | None -> smr | engine None | drawn None
+S03 | Recycled methane-rich gas to the reformer feed | cryogenic -> smr | engine None | drawn None
+S05 | Raw syngas, reformer outlet | smr -> wgs | engine None | drawn None
+S09 | Shift outlet to the heat recovery chain | wgs -> syngas_cooler | engine None | drawn None
+S09B | Cooled syngas to the knock-out drum | syngas_cooler -> separator | engine None | drawn None
+S10 | Process condensate | separator -> None | engine None | drawn None
+S11 | Absorber feed | separator -> absorber | engine None | drawn None
+S12 | H₂-rich gas after capture, to the external PSA | absorber -> psa | engine None | drawn None
+S13 | Purified H₂ after the external PSA | psa -> None | engine None | drawn None
+S14 | PSA reject crossing back into the boundary | psa -> recycle_compressor | engine None | drawn None
+R1 | Compressed reject to the cryogenic unit | recycle_compressor -> cryogenic | engine False | drawn None
+S15 | Nitrogen-rich cut to the burner and stack | cryogenic -> None | engine None | drawn None
+S16 | Stack exhaust to the atmosphere | None -> None | engine None | drawn None
+S21 | Cryogenic H₂ return ahead of the PSA | cryogenic -> psa | engine None | drawn Drawn joining the S12 line, which carries it across the dashed boundary at the ring
+S17 | Rich solvent, absorber to the stripper | absorber -> rich_lean_hx | engine None | drawn None
+L3 | Rich amine, exchanger to the stripper | rich_lean_hx -> stripper | engine False | drawn None
+L4 | Lean amine, stripper to the exchanger | stripper -> rich_lean_hx | engine False | drawn None
+S18 | Lean solvent to the absorber through the cooler and pump | rich_lean_hx -> absorber | engine None | drawn None
+L5 | Stripper bottoms to the reboiler | stripper -> reboiler | engine False | drawn None
+L6 | Reboiler vapour return | reboiler -> stripper | engine False | drawn None
+C1 | Stripper overhead vapour to the condenser | stripper -> condenser | engine False | drawn None
+S19 | CO₂ from capture to the compressor | condenser -> co2_compressor | engine None | drawn None
+S20 | Compressed CO₂ to the ship and offshore storage | co2_compressor -> co2_storage | engine None | drawn None
+UNITS
+htgr | None | keys ['summary', 'in', 'out', 'flags', 'equations', 'sources', 'limitations']
+circ_primary | None | keys ['summary', 'in', 'out', 'flags', 'equations', 'sources', 'limitations']
+ihx | None | keys ['summary', 'in', 'out', 'flags', 'equations', 'sources', 'limitations']
+power | None | keys ['summary', 'in', 'out', 'outputs_note', 'flags', 'equations', 'sources']
+smr | None | keys ['summary', 'in', 'out', 'flags', 'equations', 'sources', 'limitations']
+wgs | None | keys ['summary', 'in', 'out', 'flags', 'equations', 'sources', 'limitations']
+syngas_cooler | None | keys ['summary', 'in', 'out', 'outputs_note', 'flags', 'equations', 'sources']
+separator | None | keys ['summary', 'in', 'out', 'flags', 'equations', 'sources', 'limitations']
+absorber | None | keys ['summary', 'in', 'out', 'flags', 'equations', 'sources', 'limitations']
+lean_pump | None | keys ['summary', 'in', 'out', 'flags', 'equations', 'sources', 'limitations']
+lean_cooler | None | keys ['summary', 'in', 'out', 'flags', 'equations', 'sources', 'limitations']
+rich_lean_hx | None | keys ['summary', 'in', 'out', 'flags', 'equations', 'sources', 'limitations']
+stripper | None | keys ['summary', 'in', 'out', 'flags', 'equations', 'sources', 'limitations']
+reboiler | None | keys ['summary', 'in', 'out', 'flags', 'equations', 'sources', 'limitations']
+condenser | None | keys ['summary', 'in', 'out', 'outputs_note', 'flags', 'equations', 'sources']
+co2_compressor | None | keys ['summary', 'in', 'out', 'flags', 'equations', 'sources', 'limitations']
+co2_storage | None | keys ['summary', 'in', 'out', 'outputs_note', 'flags', 'equations', 'sources']
+psa | None | keys ['summary', 'in', 'out', 'flags', 'equations', 'sources', 'limitations']
+recycle_compressor | None | keys ['summary', 'in', 'out', 'flags', 'equations', 'sources', 'limitations']
+cryogenic | None | keys ['summary', 'in', 'out', 'flags', 'equations', 'sources', 'limitations']
+CAPTION Layout follows the project's Figure 2. The dashed line holds the reformer train, the MEA plant, the recycle compressor, the cryogenic unit, the CO₂ compressor and the ship to offshore storage. The PSA sits outside it as an external block with no simulation, and its reject crosses the line on the way back. Offshore storage is a tariff with no simulation. Stream tags are the stream ids of results/Integrated_Mass_Balance.csv, and a ring marks a stream that file lists as crossing the boundary; the feed, steam and condensate cross at their open ends. Lines tagged P, H, L, C or R have no row in that file, since the flowsheet treats them as inside a unit. The reformer block holds S04, the shift block S06 to S09A, the separator S09C, and the burner air COMBUSTION_O2 is not drawn. The drawing shows one helium circulator; the engine counts the secondary circulator too, in that panel. The recycle compressor and the cryogenic unit are drawn apart and modelled as one unit.

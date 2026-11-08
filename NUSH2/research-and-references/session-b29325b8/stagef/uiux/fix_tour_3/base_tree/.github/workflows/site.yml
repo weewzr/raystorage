@@ -1,0 +1,84 @@
+name: site
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: site-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  CARGO_TERM_COLOR: always
+  PYTHONIOENCODING: utf-8
+  GIT_SHA: ${{ github.sha }}
+  CLI_PKG: nush2_cli
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Toolchain from rust-toolchain.toml
+        run: rustup toolchain install && rustc --version && cargo --version && python3 --version
+      - name: Test
+        run: |
+          mkdir -p target
+          set -o pipefail
+          cargo test --workspace --release 2>&1 | tee target/test.log
+      - name: Compile WebAssembly
+        run: |
+          python3 scripts/build_wasm.py --out target/site-wasm/nush2.wasm
+          python3 scripts/check_wasm.py target/site-wasm/nush2.wasm
+      - name: Regenerate and compare results
+        run: |
+          cargo run --release -p "$CLI_PKG" -- export --out target/results
+          python3 scripts/compare_results.py results target/results
+      - name: Build site
+        run: |
+          python3 scripts/build_site.py --wasm target/site-wasm/nush2.wasm --results results \
+            --commit "$GIT_SHA" --run-id "$GITHUB_RUN_ID" --test-log target/test.log --out _site
+      - name: Content guard
+        run: |
+          python3 scripts/check_site.py --site _site --repo .
+          python3 scripts/check_site.py --site _site --repo . --prove
+      - name: Browser self test
+        run: python3 scripts/selftest.py --site _site --chrome google-chrome --no-sandbox --expect-commit "$GIT_SHA"
+      - name: Browser self test under reduced motion
+        run: python3 scripts/selftest.py --site _site --chrome google-chrome --no-sandbox --expect-commit "$GIT_SHA" --reduced-motion
+      - name: Upload Pages artifact
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: _site
+
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

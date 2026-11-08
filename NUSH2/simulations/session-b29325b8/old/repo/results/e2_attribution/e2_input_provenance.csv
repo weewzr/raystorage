@@ -1,0 +1,11 @@
+case,input,value,unit,provenance,normalization,limitation
+A,IEAGHG H2 source scale,100000,Nm3/h,IEAGHG 2017-02,normalize by 8.994 t/h per 100000 Nm3/h to project 29000 lb/h,IEAGHG and INL source families differ
+A,NG input,394.77,MW LHV,IEAGHG base case,same H2 normalization,source conventional process
+A,direct CO2,0.8091,kg/Nm3 H2,IEAGHG base case,same H2 normalization,plant gate
+B,NG input,407.68,MW LHV,IEAGHG Case 1A,same H2 normalization,includes CCS energy penalty
+B,direct CO2,0.3704,kg/Nm3 H2,IEAGHG Case 1A,same H2 normalization,plant gate
+B,captured CO2,0.4660,kg/Nm3 H2,IEAGHG Case 1A,same H2 normalization,55.7 percent overall capture topology differs from Case C
+B,non-TS avoidance cost,77.7,SGD/t direct avoided,economics/singapore_case1a_screen_v1.md,CEPCI/FX screening harmonization,not lifecycle-denominator cost
+C,NG,34.0,MMSCFD,INL Case 6,current project source service,cross-source matching limitation
+C,direct/captured CO2,142/1927,short ton/day,INL Case 6,current project annualization,cross-source matching limitation
+C,economics,E1 central,SGD/y,results/E1_ENGINEERING_ECONOMIC_MODEL.md,no change,E1 one-module MHR-T case

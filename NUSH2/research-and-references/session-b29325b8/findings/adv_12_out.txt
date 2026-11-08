@@ -1,0 +1,130 @@
+=== 1. 130 MMSCFD conversions ===
+hours at 85% 7446.0 days 310.25
+scf/lbmol at 60F 379.48
+kmol/h 6474.5
+Nm3/h (0 C, 1 atm, ideal) 145119.0 ratio to 100,000: 1.4512 inverse 0.6891
+if pure H2, kg/h 13051.8 lb/h 28774.0
+99.9/0.1 product, kg/h 13142.6 lb/h 28974.0
+INL 29,000 lb/h = kg/h 13154.2 t/y 97946.0
+pure H2 mass fraction 0.9921 pure H2 in 29,000 lb/h, t/y 97172.0
+via density 0.08988, t/y 97120.0
+econ_lit 29,000 lb/h / 0.08988 = 146353.0 Nm3/h (mixes product mass with pure H2 density)
+mass scale s = 66,925/97,946 = 0.6833  volume scale = 0.6891
+100,000 Nm3/h t/y 66924.6
+
+=== 2. Deck emissions ===
+H2 t/y from 8.988 t/h 66925.0  215.71 t/d x 310.25 = 66924.0
+baseline 625767 comb 218851 proc 406916 35% exact 219019
+ capture 0.8 captured 325533 residual 81383 net 544384
+ capture 0.85 captured 345879 residual 61037 net 564730
+ capture 0.9 captured 366225 residual 40692 net 585076
+ capture 0.95 captured 386570 residual 20346 net 605422
+no CCS net 218851
+70% avail 481827 90% avail 619492
+reduction 93.5
+
+=== 3. Reactor sizing ===
+E adj 11.6
+slide 6: 206.02  th for power 29.22
+complete Case 6: 220.38
+Case 5: 205.83
+Case 6 at 47.5%: 213.22
+210: power available 13.18 short of 17.3 by 4.12
+230 unallocated 9.6 4.4 %
+v1_7: 184.9 + 25.1 = 210.0  11.8/25.1 = 0.47
+Case 6 row sum 17.3
+He: 78.49*5.193*434/1000 = 176.9 implied cp 5.1901
+He excess: 78.49*5.193*5/1000 = 2.04
+INL 0.30 x 600 = 180.0  178.8/600 = 0.298
+Case 5 He 630342 lb/h = kg/s 79.42  duty 166.6
+
+=== 4. Natural gas ===
+9.0 MMSCFD GJ/d 9913.3  18.5: 20377.3  10.5: 11565.5
+ 9.0 MMSCFD S$M/y 46.13  x0.6833: 31.52
+ 18.5 MMSCFD S$M/y 94.83  x0.6833: 64.8
+ 10.5 MMSCFD S$M/y 53.82  x0.6833: 36.78
+Savings: 34/52.5 35.2  34/49.2 30.9  43.5/49.2 11.6
+Purge 5.7 MWe x 7446 h x S$0.20/kWh = S$M/y 8.49
+H2/NG: Case 6 3.82   no recycle 130/44.5 2.92   Case 2 2.99
+Once-through H2 scf/scf gas (conv 0.78, shift .96, PSA .88): 2.91  implies NG MMSCFD 44.6
+Stoich ceiling with full reforming, H2/NG: 4.22 Case 6 uses 90.6 % of ceiling
+fit NG vs RECY-1: intercept 44.29 slope per 1000 lb/h -0.427 ; NG=34.0 needs RECY-1 24082.0
+
+=== 5. Recycle compression in Case 6 ===
+ RECY-1 2244 lb/h, 398.3 kW, spec 0.1775 kW/(lb/h)
+ RECY-1 8012 lb/h, 1409.0 kW, spec 0.1759 kW/(lb/h)
+ RECY-1 14743 lb/h, 2542.0 kW, spec 0.1724 kW/(lb/h)
+ RECY-1 23358 lb/h, 3943.5 kW, spec 0.1688 kW/(lb/h)
+ Case 6 all reject 29786 lb/h at 0.165-0.169: 4.91-5.03 MW
+ Case 6 all reject 31000 lb/h at 0.165-0.169: 5.12-5.24 MW
+ Case 6 all reject 32000 lb/h at 0.165-0.169: 5.28-5.41 MW
+ Case 6 all reject 33770 lb/h at 0.165-0.169: 5.57-5.71 MW
+ lb/h that absorbs all 5.7 MW at 0.1688: 33768
+ Case 5 row: 4744.8 kW; Case 6 NG-COMP scaled 600.9
+
+=== 6. MEA heat ===
+v1_7 t/h 70.39 [66.5, 74.3, 76.3, 79.2, 82.1]
+REC_F t/h 70.72 [66.8, 74.6, 76.6, 79.6, 82.5]
+deck t/h 49.18 [46.5, 51.9, 53.3, 55.3, 57.4]
+Selexol 65.0 MMBtu/h MW 19.05  x 1927/1970 18.63
+Selexol GJ/t 0.92
+Export 83.7 MMBtu/h MW 24.53  ZLD 56.7: 16.62
+ SRD 3.4: reb 66.8; gap with EX4 12.5; gap no EX4 23.7; gap with ZLD freed -3.8; gap with no export steam 37.0
+ SRD 3.8: reb 74.6; gap with EX4 20.3; gap no EX4 31.5; gap with ZLD freed 4.0; gap with no export steam 44.8
+ SRD 4.2: reb 82.5; gap with EX4 28.2; gap no EX4 39.4; gap with ZLD freed 11.9; gap with no export steam 52.7
+
+=== 7. Screening walk ===
+branch 87.94
+reactor 261.5
+Circulator shaft check: (5.10+5.81)*0.9 = 9.82
+If no reboiler/circulator double: 261.5 - 0.6833 scale: 178.7  with 0.6891: 180.2
+
+=== 8. Secondary circulator on INL's own 60 psi ===
+isentropic MW 7.43  at eta .75 shaft 9.91  MWe at motor .9 11.01
+Screening central dP 200 kPa = psi 29.0  INL 60 psi = kPa 414.0
+Extra electricity vs central 5.91 MWe; net reactor effect 9.6 MWth
+
+=== 9. Deck cost ledger ===
+ceiling 58.51 CCS 38.09  US$M 29.3
+CRF [0.0937, 0.0839, 0.0808]
+Reactor S$M 546.0 annual [51.15, 45.79, 44.12]
+gas avoided 31.52 budget 51.94 after reactor 0.8
+S$/t 25y: 98.6
+candidate (38.09+45.8-31.5)/0.544 = 96.31
+same at 0.585: 89.56 ; 57.79/0.60 = 96.32
+consistent 80% capture: CCS 33.86  25y 98.4  40y 88.5
+100 - 3.725 = 96.275
+gas at 34.0 scaled 64.8  S$/t 41.9  +O&M24.1+IHX11.4: 102.5  at 40y: 93.3
+Learning units to reach BOAK from 1.6: 22.0
+5250 x 80000 = 420.0  x1.6 = 672.0  per kWt at 200 MWth 2100.0
+X-energy 3600 x 320 MW = US$M 1152.0  per 80 MWe 288.0  9200 x 80 MWe 736.0  9200x 200 MWth at .4 736.0
+
+=== 10. INL cost recipe ===
+OCC central kWt 2184.0  low 1456.0  high 2548.0
+FOAK 3494.4  0.9^log2(10) = 0.7047
+10-OAK via BOAK (p46 route) 1539.0  via FOAK (p47 route) 2462.0
+Reactor capital n=.6, S$M 1289.4 annual 120.8
+Reactor capital n=1, S$M 924.9 annual 86.6
+OPEX n=1 S$M/y 31.5  n=.6 staff scaled 38.4
+L0 75.0 88.7  L1 134.0  L2 148.5  L3 157.9
+n=1 25y: L0 48.3, L1 85.6, L1+IHX 100.0, L3 109.4
+n=1 40y: L0 37.5, L1 74.8, L1+IHX 89.2, L3 98.7
+n=1 60y: L0 34.2, L1 71.5, L1+IHX 85.9, L3 95.3
+share of S$/t from unverified IHX + licensing at Case A: 21.6
+
+=== 11. Ahn anchor at 100,000 Nm3/h ===
+gas saving 18.8 %
+MW per t/h H2: Ahn 15.93  INL 13.44  ratio 1.185
+kg NG/kg H2: Ahn 2.757  INL Case 6 2.21
+Case B process heat scaled INL 120.8  Ahn 143.4, delta 22.6
+Case B central 179.0 + delta = 201.6  surplus vs 210: 8.4
+Deck method at Ahn heat: 143.4 + 11.6*.6833/.397 = 163.4 ; + 17.3*.6833/.397 = 173.2
+
+=== 12. Carbon ===
+feed C as st/d CO2 2077.6  captured+emitted 2069  closure 99.59
+t/t H2: 5.97  deck 6.08 over by 1.84 %
+1927/.99 = 1946.5  2069*.9= 1862.1  .9*1946.5 = 1751.9
+3205 st/d t/y 902060.0  kg/kg 9.21
+35.4%: 35.4
+Abat: baseline-emission REC_F 845994
+0.9 per pass, recycle limit: if slip recycles fully and only cryo fraction lost

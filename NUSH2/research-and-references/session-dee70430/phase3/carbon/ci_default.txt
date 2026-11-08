@@ -1,0 +1,4 @@
+      - name: Default basis against results
+        run: |
+          cargo run --release -p nush2_cli -- export --out "$RUNNER_TEMP/results"
+          python3 scripts/compare_results.py results "$RUNNER_TEMP/results"

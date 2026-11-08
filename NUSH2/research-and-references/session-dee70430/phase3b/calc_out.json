@@ -1,0 +1,758 @@
+{
+ "f_idc": 1.1976602936432723,
+ "f_dcf": 1.2002299997090922,
+ "crf25": 0.09367877905196811,
+ "crf60": 0.08079794876364567,
+ "island_capital_sgdm": 517.55058,
+ "FOAK_25": {
+  "capital": {
+   "reactor": 1188.428,
+   "capture": 99.721,
+   "ihx": 89.247,
+   "licence": 65.325,
+   "power_island": 27.675,
+   "recycle": 48.83
+  },
+  "idc_reactor_ledger_basis": 234.905,
+  "sum_six": 1519.2267,
+  "csv_total": 1519.226703,
+  "diff_total": -1.1e-05,
+  "E_A": 1188.428,
+  "csv_E_A": 1188.427968,
+  "E_B": 1491.5517,
+  "csv_E_B": 1491.551701,
+  "fom_ratio": 0.027
+ },
+ "BOAK_25": {
+  "capital": {
+   "reactor": 742.767,
+   "capture": 99.721,
+   "ihx": 89.247,
+   "licence": 65.325,
+   "power_island": 17.297,
+   "recycle": 48.83
+  },
+  "idc_reactor_ledger_basis": 146.816,
+  "sum_six": 1063.1881,
+  "csv_total": 1063.188089,
+  "diff_total": -5e-06,
+  "E_A": 742.7675,
+  "csv_E_A": 742.76748,
+  "E_B": 1045.8912,
+  "csv_E_B": 1045.891213,
+  "fom_ratio": 0.027
+ },
+ "10OAK_P46_25": {
+  "capital": {
+   "reactor": 523.419,
+   "capture": 99.721,
+   "ihx": 89.247,
+   "licence": 65.325,
+   "power_island": 12.189,
+   "recycle": 48.83
+  },
+  "idc_reactor_ledger_basis": 103.459,
+  "sum_six": 838.732,
+  "csv_total": 838.732002,
+  "diff_total": -1.4e-05,
+  "E_A": 523.4194,
+  "csv_E_A": 523.419367,
+  "E_B": 826.5431,
+  "csv_E_B": 826.5431,
+  "fom_ratio": 0.027
+ },
+ "10OAK_P47_25": {
+  "capital": {
+   "reactor": 837.471,
+   "capture": 99.721,
+   "ihx": 89.247,
+   "licence": 65.325,
+   "power_island": 19.502,
+   "recycle": 48.83
+  },
+  "idc_reactor_ledger_basis": 165.535,
+  "sum_six": 1160.097,
+  "csv_total": 1160.096963,
+  "diff_total": -5e-06,
+  "E_A": 837.471,
+  "csv_E_A": 837.470987,
+  "E_B": 1140.5947,
+  "csv_E_B": 1140.59472,
+  "fom_ratio": 0.027
+ },
+ "regression_L5_progressive": {
+  "BOAK_25_A_25": [
+   165.828267,
+   165.828267,
+   2.09e-07
+  ],
+  "BOAK_25_A_50": [
+   128.476201,
+   128.476201,
+   4.17e-07
+  ],
+  "BOAK_25_A_75": [
+   91.124136,
+   91.124136,
+   -3.74e-07
+  ],
+  "BOAK_25_B_25": [
+   153.100623,
+   153.100623,
+   1.06e-07
+  ],
+  "BOAK_25_B_50": [
+   103.020913,
+   103.020913,
+   2.12e-07
+  ],
+  "BOAK_25_B_75": [
+   52.941203,
+   52.941203,
+   3.18e-07
+  ],
+  "BOAK_60_A_25": [
+   145.978085,
+   145.978085,
+   -4.23e-07
+  ],
+  "BOAK_60_A_50": [
+   113.761927,
+   113.761927,
+   1.54e-07
+  ],
+  "BOAK_60_A_75": [
+   81.54577,
+   81.54577,
+   -2.69e-07
+  ],
+  "BOAK_60_B_25": [
+   135.000491,
+   135.000491,
+   1.98e-07
+  ],
+  "BOAK_60_B_50": [
+   91.80674,
+   91.80674,
+   3.96e-07
+  ],
+  "BOAK_60_B_75": [
+   48.61299,
+   48.61299,
+   -4.06e-07
+  ]
+ },
+ "table": {
+  "FOAK_25": {
+   "lac0": 294.568329,
+   "kappa_per_sm": 0.16795312247723237,
+   "K_incr": 1519.2266921780579,
+   "K_island": 517.55058,
+   "K_integrated": 2036.777272178058,
+   "reactor_idc_gross": 234.90502569202388,
+   "s0": {
+    "C1_incremental_only": 294.5683,
+    "C2_island_NUSH2_side_only": 294.5683,
+    "island_effect": -0.0,
+    "A_reactor_only": 294.5683,
+    "grant_C1_sgdm": 0.0,
+    "grant_integrated_sgdm": 0.0,
+    "private_capital_C1": 1519.227,
+    "private_capital_integrated": 2036.777,
+    "state_pv_prog_C1": 0.0
+   },
+   "s5": {
+    "C1_incremental_only": 279.8377,
+    "C2_island_NUSH2_side_only": 275.4915,
+    "island_effect": -4.3462,
+    "A_reactor_only": 282.6157,
+    "grant_C1_sgdm": 75.961,
+    "grant_integrated_sgdm": 101.839,
+    "private_capital_C1": 1443.265,
+    "private_capital_integrated": 1934.938,
+    "state_pv_prog_C1": 87.859
+   },
+   "s25": {
+    "C1_incremental_only": 220.9154,
+    "C2_island_NUSH2_side_only": 199.1843,
+    "island_effect": -21.7311,
+    "A_reactor_only": 234.805,
+    "grant_C1_sgdm": 379.807,
+    "grant_integrated_sgdm": 509.194,
+    "private_capital_C1": 1139.42,
+    "private_capital_integrated": 1527.583,
+    "state_pv_prog_C1": 439.296
+   },
+   "s50": {
+    "C1_incremental_only": 147.2624,
+    "C2_island_NUSH2_side_only": 103.8003,
+    "island_effect": -43.4621,
+    "A_reactor_only": 175.0417,
+    "grant_C1_sgdm": 759.613,
+    "grant_integrated_sgdm": 1018.389,
+    "private_capital_C1": 759.613,
+    "private_capital_integrated": 1018.389,
+    "state_pv_prog_C1": 878.593
+   },
+   "s75": {
+    "C1_incremental_only": 73.6094,
+    "C2_island_NUSH2_side_only": 8.4162,
+    "island_effect": -65.1932,
+    "A_reactor_only": 115.2784,
+    "grant_C1_sgdm": 1139.42,
+    "grant_integrated_sgdm": 1527.583,
+    "private_capital_C1": 379.807,
+    "private_capital_integrated": 509.194,
+    "state_pv_prog_C1": 1317.889
+   },
+   "s100": {
+    "C1_incremental_only": -0.0436,
+    "C2_island_NUSH2_side_only": -86.9678,
+    "island_effect": -86.9242,
+    "A_reactor_only": 55.5151,
+    "grant_C1_sgdm": 1519.227,
+    "grant_integrated_sgdm": 2036.777,
+    "private_capital_C1": 0.0,
+    "private_capital_integrated": 0.0,
+    "state_pv_prog_C1": 1757.186
+   },
+   "breakeven_C1": 0.660423,
+   "breakeven_C2": 0.50996
+  },
+  "FOAK_60": {
+   "lac0": 257.01639,
+   "kappa_per_sm": 0.14485957141992264,
+   "K_incr": 1519.2266936111546,
+   "K_island": 517.55058,
+   "K_integrated": 2036.7772736111547,
+   "reactor_idc_gross": 234.90502284310236,
+   "s0": {
+    "C1_incremental_only": 257.0164,
+    "C2_island_NUSH2_side_only": 257.0164,
+    "island_effect": -0.0,
+    "A_reactor_only": 257.0164,
+    "grant_C1_sgdm": 0.0,
+    "grant_integrated_sgdm": 0.0,
+    "private_capital_C1": 1519.227,
+    "private_capital_integrated": 2036.777,
+    "state_pv_prog_C1": 0.0
+   },
+   "s5": {
+    "C1_incremental_only": 244.3113,
+    "C2_island_NUSH2_side_only": 240.5626,
+    "island_effect": -3.7486,
+    "A_reactor_only": 246.7072,
+    "grant_C1_sgdm": 75.961,
+    "grant_integrated_sgdm": 101.839,
+    "private_capital_C1": 1443.265,
+    "private_capital_integrated": 1934.938,
+    "state_pv_prog_C1": 87.859
+   },
+   "s25": {
+    "C1_incremental_only": 193.4907,
+    "C2_island_NUSH2_side_only": 174.7477,
+    "island_effect": -18.743,
+    "A_reactor_only": 205.4705,
+    "grant_C1_sgdm": 379.807,
+    "grant_integrated_sgdm": 509.194,
+    "private_capital_C1": 1139.42,
+    "private_capital_integrated": 1527.583,
+    "state_pv_prog_C1": 439.296
+   },
+   "s50": {
+    "C1_incremental_only": 129.965,
+    "C2_island_NUSH2_side_only": 92.4789,
+    "island_effect": -37.4861,
+    "A_reactor_only": 153.9247,
+    "grant_C1_sgdm": 759.613,
+    "grant_integrated_sgdm": 1018.389,
+    "private_capital_C1": 759.613,
+    "private_capital_integrated": 1018.389,
+    "state_pv_prog_C1": 878.593
+   },
+   "s75": {
+    "C1_incremental_only": 66.4393,
+    "C2_island_NUSH2_side_only": 10.2102,
+    "island_effect": -56.2291,
+    "A_reactor_only": 102.3788,
+    "grant_C1_sgdm": 1139.42,
+    "grant_integrated_sgdm": 1527.583,
+    "private_capital_C1": 379.807,
+    "private_capital_integrated": 509.194,
+    "state_pv_prog_C1": 1317.889
+   },
+   "s100": {
+    "C1_incremental_only": 2.9136,
+    "C2_island_NUSH2_side_only": -72.0585,
+    "island_effect": -74.9722,
+    "A_reactor_only": 50.833,
+    "grant_C1_sgdm": 1519.227,
+    "grant_integrated_sgdm": 2036.777,
+    "private_capital_C1": 0.0,
+    "private_capital_integrated": 0.0,
+    "state_pv_prog_C1": 1757.186
+   },
+   "breakeven_C1": 0.617925,
+   "breakeven_C2": 0.477145
+  },
+  "BOAK_25": {
+   "lac0": 203.180333,
+   "kappa_per_sm": 0.16795312247723237,
+   "K_incr": 1063.1880841566986,
+   "K_island": 517.55058,
+   "K_integrated": 1580.7386641566986,
+   "reactor_idc_gross": 146.81564105751494,
+   "s0": {
+    "C1_incremental_only": 203.1803,
+    "C2_island_NUSH2_side_only": 203.1803,
+    "island_effect": -0.0,
+    "A_reactor_only": 203.1803,
+    "grant_C1_sgdm": 0.0,
+    "grant_integrated_sgdm": 0.0,
+    "private_capital_C1": 1063.188,
+    "private_capital_integrated": 1580.739,
+    "state_pv_prog_C1": 0.0
+   },
+   "s5": {
+    "C1_incremental_only": 193.0191,
+    "C2_island_NUSH2_side_only": 188.6729,
+    "island_effect": -4.3462,
+    "A_reactor_only": 195.7099,
+    "grant_C1_sgdm": 53.159,
+    "grant_integrated_sgdm": 79.037,
+    "private_capital_C1": 1010.029,
+    "private_capital_integrated": 1501.702,
+    "state_pv_prog_C1": 60.596
+   },
+   "s25": {
+    "C1_incremental_only": 152.3744,
+    "C2_island_NUSH2_side_only": 130.6433,
+    "island_effect": -21.7311,
+    "A_reactor_only": 165.8283,
+    "grant_C1_sgdm": 265.797,
+    "grant_integrated_sgdm": 395.185,
+    "private_capital_C1": 797.391,
+    "private_capital_integrated": 1185.554,
+    "state_pv_prog_C1": 302.978
+   },
+   "s50": {
+    "C1_incremental_only": 101.5684,
+    "C2_island_NUSH2_side_only": 58.1063,
+    "island_effect": -43.4621,
+    "A_reactor_only": 128.4762,
+    "grant_C1_sgdm": 531.594,
+    "grant_integrated_sgdm": 790.369,
+    "private_capital_C1": 531.594,
+    "private_capital_integrated": 790.369,
+    "state_pv_prog_C1": 605.956
+   },
+   "s75": {
+    "C1_incremental_only": 50.7624,
+    "C2_island_NUSH2_side_only": -14.4308,
+    "island_effect": -65.1932,
+    "A_reactor_only": 91.1241,
+    "grant_C1_sgdm": 797.391,
+    "grant_integrated_sgdm": 1185.554,
+    "private_capital_C1": 265.797,
+    "private_capital_integrated": 395.185,
+    "state_pv_prog_C1": 908.934
+   },
+   "s100": {
+    "C1_incremental_only": -0.0436,
+    "C2_island_NUSH2_side_only": -86.9678,
+    "island_effect": -86.9242,
+    "A_reactor_only": 53.7721,
+    "grant_C1_sgdm": 1063.188,
+    "grant_integrated_sgdm": 1580.739,
+    "private_capital_C1": 0.0,
+    "private_capital_integrated": 0.0,
+    "state_pv_prog_C1": 1211.912
+   },
+   "breakeven_C1": 0.507718,
+   "breakeven_C2": 0.355613
+  },
+  "BOAK_60": {
+   "lac0": 178.194242,
+   "kappa_per_sm": 0.14485957141992264,
+   "K_incr": 1063.188086643709,
+   "K_island": 517.55058,
+   "K_integrated": 1580.7386666437092,
+   "reactor_idc_gross": 146.81563308866305,
+   "s0": {
+    "C1_incremental_only": 178.1942,
+    "C2_island_NUSH2_side_only": 178.1942,
+    "island_effect": -0.0,
+    "A_reactor_only": 178.1942,
+    "grant_C1_sgdm": 0.0,
+    "grant_integrated_sgdm": 0.0,
+    "private_capital_C1": 1063.188,
+    "private_capital_integrated": 1580.739,
+    "state_pv_prog_C1": 0.0
+   },
+   "s5": {
+    "C1_incremental_only": 169.4302,
+    "C2_island_NUSH2_side_only": 165.6816,
+    "island_effect": -3.7486,
+    "A_reactor_only": 171.751,
+    "grant_C1_sgdm": 53.159,
+    "grant_integrated_sgdm": 79.037,
+    "private_capital_C1": 1010.029,
+    "private_capital_integrated": 1501.702,
+    "state_pv_prog_C1": 60.596
+   },
+   "s25": {
+    "C1_incremental_only": 134.3741,
+    "C2_island_NUSH2_side_only": 115.631,
+    "island_effect": -18.743,
+    "A_reactor_only": 145.9781,
+    "grant_C1_sgdm": 265.797,
+    "grant_integrated_sgdm": 395.185,
+    "private_capital_C1": 797.391,
+    "private_capital_integrated": 1185.554,
+    "state_pv_prog_C1": 302.978
+   },
+   "s50": {
+    "C1_incremental_only": 90.5539,
+    "C2_island_NUSH2_side_only": 53.0679,
+    "island_effect": -37.4861,
+    "A_reactor_only": 113.7619,
+    "grant_C1_sgdm": 531.594,
+    "grant_integrated_sgdm": 790.369,
+    "private_capital_C1": 531.594,
+    "private_capital_integrated": 790.369,
+    "state_pv_prog_C1": 605.956
+   },
+   "s75": {
+    "C1_incremental_only": 46.7338,
+    "C2_island_NUSH2_side_only": -9.4953,
+    "island_effect": -56.2291,
+    "A_reactor_only": 81.5458,
+    "grant_C1_sgdm": 797.391,
+    "grant_integrated_sgdm": 1185.554,
+    "private_capital_C1": 265.797,
+    "private_capital_integrated": 395.185,
+    "state_pv_prog_C1": 908.934
+   },
+   "s100": {
+    "C1_incremental_only": 2.9136,
+    "C2_island_NUSH2_side_only": -72.0585,
+    "island_effect": -74.9722,
+    "A_reactor_only": 49.3296,
+    "grant_C1_sgdm": 1063.188,
+    "grant_integrated_sgdm": 1580.739,
+    "private_capital_C1": 0.0,
+    "private_capital_integrated": 0.0,
+    "state_pv_prog_C1": 1211.912
+   },
+   "breakeven_C1": 0.446109,
+   "breakeven_C2": 0.312461
+  },
+  "10OAK_P46_25": {
+   "lac0": 158.200387,
+   "kappa_per_sm": 0.16795312247723237,
+   "K_incr": 838.7319884134413,
+   "K_island": 517.55058,
+   "K_integrated": 1356.2825684134414,
+   "reactor_idc_gross": 103.45922628457208,
+   "s0": {
+    "C1_incremental_only": 158.2004,
+    "C2_island_NUSH2_side_only": 158.2004,
+    "island_effect": -0.0,
+    "A_reactor_only": 158.2004,
+    "grant_C1_sgdm": 0.0,
+    "grant_integrated_sgdm": 0.0,
+    "private_capital_C1": 838.732,
+    "private_capital_integrated": 1356.283,
+    "state_pv_prog_C1": 0.0
+   },
+   "s5": {
+    "C1_incremental_only": 150.2882,
+    "C2_island_NUSH2_side_only": 145.942,
+    "island_effect": -4.3462,
+    "A_reactor_only": 152.9361,
+    "grant_C1_sgdm": 41.937,
+    "grant_integrated_sgdm": 67.814,
+    "private_capital_C1": 796.795,
+    "private_capital_integrated": 1288.468,
+    "state_pv_prog_C1": 47.177
+   },
+   "s25": {
+    "C1_incremental_only": 118.6394,
+    "C2_island_NUSH2_side_only": 96.9083,
+    "island_effect": -21.7311,
+    "A_reactor_only": 131.8788,
+    "grant_C1_sgdm": 209.683,
+    "grant_integrated_sgdm": 339.071,
+    "private_capital_C1": 629.049,
+    "private_capital_integrated": 1017.212,
+    "state_pv_prog_C1": 235.884
+   },
+   "s50": {
+    "C1_incremental_only": 79.0784,
+    "C2_island_NUSH2_side_only": 35.6163,
+    "island_effect": -43.4621,
+    "A_reactor_only": 105.5573,
+    "grant_C1_sgdm": 419.366,
+    "grant_integrated_sgdm": 678.141,
+    "private_capital_C1": 419.366,
+    "private_capital_integrated": 678.141,
+    "state_pv_prog_C1": 471.768
+   },
+   "s75": {
+    "C1_incremental_only": 39.5174,
+    "C2_island_NUSH2_side_only": -25.6758,
+    "island_effect": -65.1932,
+    "A_reactor_only": 79.2357,
+    "grant_C1_sgdm": 629.049,
+    "grant_integrated_sgdm": 1017.212,
+    "private_capital_C1": 209.683,
+    "private_capital_integrated": 339.071,
+    "state_pv_prog_C1": 707.652
+   },
+   "s100": {
+    "C1_incremental_only": -0.0436,
+    "C2_island_NUSH2_side_only": -86.9678,
+    "island_effect": -86.9242,
+    "A_reactor_only": 52.9142,
+    "grant_C1_sgdm": 838.732,
+    "grant_integrated_sgdm": 1356.283,
+    "private_capital_C1": 0.0,
+    "private_capital_integrated": 0.0,
+    "state_pv_prog_C1": 943.536
+   },
+   "breakeven_C1": 0.367789,
+   "breakeven_C2": 0.23739
+  },
+  "10OAK_P46_60": {
+   "lac0": 139.399038,
+   "kappa_per_sm": 0.14485957141992264,
+   "K_incr": 838.7319924295953,
+   "K_island": 517.55058,
+   "K_integrated": 1356.2825724295953,
+   "reactor_idc_gross": 103.4592230113791,
+   "s0": {
+    "C1_incremental_only": 139.399,
+    "C2_island_NUSH2_side_only": 139.399,
+    "island_effect": -0.0,
+    "A_reactor_only": 139.399,
+    "grant_C1_sgdm": 0.0,
+    "grant_integrated_sgdm": 0.0,
+    "private_capital_C1": 838.732,
+    "private_capital_integrated": 1356.283,
+    "state_pv_prog_C1": 0.0
+   },
+   "s5": {
+    "C1_incremental_only": 132.5748,
+    "C2_island_NUSH2_side_only": 128.8262,
+    "island_effect": -3.7486,
+    "A_reactor_only": 134.8586,
+    "grant_C1_sgdm": 41.937,
+    "grant_integrated_sgdm": 67.814,
+    "private_capital_C1": 796.795,
+    "private_capital_integrated": 1288.468,
+    "state_pv_prog_C1": 47.177
+   },
+   "s25": {
+    "C1_incremental_only": 105.2777,
+    "C2_island_NUSH2_side_only": 86.5346,
+    "island_effect": -18.743,
+    "A_reactor_only": 116.6967,
+    "grant_C1_sgdm": 209.683,
+    "grant_integrated_sgdm": 339.071,
+    "private_capital_C1": 629.049,
+    "private_capital_integrated": 1017.212,
+    "state_pv_prog_C1": 235.884
+   },
+   "s50": {
+    "C1_incremental_only": 71.1563,
+    "C2_island_NUSH2_side_only": 33.6703,
+    "island_effect": -37.4861,
+    "A_reactor_only": 93.9944,
+    "grant_C1_sgdm": 419.366,
+    "grant_integrated_sgdm": 678.141,
+    "private_capital_C1": 419.366,
+    "private_capital_integrated": 678.141,
+    "state_pv_prog_C1": 471.768
+   },
+   "s75": {
+    "C1_incremental_only": 37.035,
+    "C2_island_NUSH2_side_only": -19.1941,
+    "island_effect": -56.2291,
+    "A_reactor_only": 71.292,
+    "grant_C1_sgdm": 629.049,
+    "grant_integrated_sgdm": 1017.212,
+    "private_capital_C1": 209.683,
+    "private_capital_integrated": 339.071,
+    "state_pv_prog_C1": 707.652
+   },
+   "s100": {
+    "C1_incremental_only": 2.9136,
+    "C2_island_NUSH2_side_only": -72.0585,
+    "island_effect": -74.9722,
+    "A_reactor_only": 48.5897,
+    "grant_C1_sgdm": 838.732,
+    "grant_integrated_sgdm": 1356.283,
+    "private_capital_C1": 0.0,
+    "private_capital_integrated": 0.0,
+    "state_pv_prog_C1": 943.536
+   },
+   "breakeven_C1": 0.288668,
+   "breakeven_C2": 0.186321
+  },
+  "10OAK_P47_25": {
+   "lac0": 222.600416,
+   "kappa_per_sm": 0.16795312247723237,
+   "K_incr": 1160.0969582034431,
+   "K_island": 517.55058,
+   "K_integrated": 1677.6475382034432,
+   "reactor_idc_gross": 165.53475778540485,
+   "s0": {
+    "C1_incremental_only": 222.6004,
+    "C2_island_NUSH2_side_only": 222.6004,
+    "island_effect": -0.0,
+    "A_reactor_only": 222.6004,
+    "grant_C1_sgdm": 0.0,
+    "grant_integrated_sgdm": 0.0,
+    "private_capital_C1": 1160.097,
+    "private_capital_integrated": 1677.648,
+    "state_pv_prog_C1": 0.0
+   },
+   "s5": {
+    "C1_incremental_only": 211.4682,
+    "C2_island_NUSH2_side_only": 207.122,
+    "island_effect": -4.3462,
+    "A_reactor_only": 214.1775,
+    "grant_C1_sgdm": 58.005,
+    "grant_integrated_sgdm": 83.882,
+    "private_capital_C1": 1102.092,
+    "private_capital_integrated": 1593.765,
+    "state_pv_prog_C1": 66.389
+   },
+   "s25": {
+    "C1_incremental_only": 166.9394,
+    "C2_island_NUSH2_side_only": 145.2084,
+    "island_effect": -21.7311,
+    "A_reactor_only": 180.4859,
+    "grant_C1_sgdm": 290.024,
+    "grant_integrated_sgdm": 419.412,
+    "private_capital_C1": 870.073,
+    "private_capital_integrated": 1258.236,
+    "state_pv_prog_C1": 331.946
+   },
+   "s50": {
+    "C1_incremental_only": 111.2784,
+    "C2_island_NUSH2_side_only": 67.8163,
+    "island_effect": -43.4621,
+    "A_reactor_only": 138.3714,
+    "grant_C1_sgdm": 580.048,
+    "grant_integrated_sgdm": 838.824,
+    "private_capital_C1": 580.048,
+    "private_capital_integrated": 838.824,
+    "state_pv_prog_C1": 663.892
+   },
+   "s75": {
+    "C1_incremental_only": 55.6174,
+    "C2_island_NUSH2_side_only": -9.5758,
+    "island_effect": -65.1932,
+    "A_reactor_only": 96.257,
+    "grant_C1_sgdm": 870.073,
+    "grant_integrated_sgdm": 1258.236,
+    "private_capital_C1": 290.024,
+    "private_capital_integrated": 419.412,
+    "state_pv_prog_C1": 995.838
+   },
+   "s100": {
+    "C1_incremental_only": -0.0436,
+    "C2_island_NUSH2_side_only": -86.9678,
+    "island_effect": -86.9242,
+    "A_reactor_only": 54.1425,
+    "grant_C1_sgdm": 1160.097,
+    "grant_integrated_sgdm": 1677.648,
+    "private_capital_C1": 0.0,
+    "private_capital_integrated": 0.0,
+    "state_pv_prog_C1": 1327.784
+   },
+   "breakeven_C1": 0.550657,
+   "breakeven_C2": 0.396037
+  },
+  "10OAK_P47_60": {
+   "lac0": 194.944064,
+   "kappa_per_sm": 0.14485957141992264,
+   "K_incr": 1160.0969577204346,
+   "K_island": 517.55058,
+   "K_integrated": 1677.6475377204347,
+   "reactor_idc_gross": 165.53475929351694,
+   "s0": {
+    "C1_incremental_only": 194.9441,
+    "C2_island_NUSH2_side_only": 194.9441,
+    "island_effect": -0.0,
+    "A_reactor_only": 194.9441,
+    "grant_C1_sgdm": 0.0,
+    "grant_integrated_sgdm": 0.0,
+    "private_capital_C1": 1160.097,
+    "private_capital_integrated": 1677.648,
+    "state_pv_prog_C1": 0.0
+   },
+   "s5": {
+    "C1_incremental_only": 185.3425,
+    "C2_island_NUSH2_side_only": 181.5939,
+    "island_effect": -3.7486,
+    "A_reactor_only": 187.6793,
+    "grant_C1_sgdm": 58.005,
+    "grant_integrated_sgdm": 83.882,
+    "private_capital_C1": 1102.092,
+    "private_capital_integrated": 1593.765,
+    "state_pv_prog_C1": 66.389
+   },
+   "s25": {
+    "C1_incremental_only": 146.9365,
+    "C2_island_NUSH2_side_only": 128.1934,
+    "island_effect": -18.743,
+    "A_reactor_only": 158.6203,
+    "grant_C1_sgdm": 290.024,
+    "grant_integrated_sgdm": 419.412,
+    "private_capital_C1": 870.073,
+    "private_capital_integrated": 1258.236,
+    "state_pv_prog_C1": 331.946
+   },
+   "s50": {
+    "C1_incremental_only": 98.9288,
+    "C2_island_NUSH2_side_only": 61.4428,
+    "island_effect": -37.4861,
+    "A_reactor_only": 122.2966,
+    "grant_C1_sgdm": 580.048,
+    "grant_integrated_sgdm": 838.824,
+    "private_capital_C1": 580.048,
+    "private_capital_integrated": 838.824,
+    "state_pv_prog_C1": 663.892
+   },
+   "s75": {
+    "C1_incremental_only": 50.9212,
+    "C2_island_NUSH2_side_only": -5.3079,
+    "island_effect": -56.2291,
+    "A_reactor_only": 85.9728,
+    "grant_C1_sgdm": 870.073,
+    "grant_integrated_sgdm": 1258.236,
+    "private_capital_C1": 290.024,
+    "private_capital_integrated": 419.412,
+    "state_pv_prog_C1": 995.838
+   },
+   "s100": {
+    "C1_incremental_only": 2.9136,
+    "C2_island_NUSH2_side_only": -72.0585,
+    "island_effect": -74.9722,
+    "A_reactor_only": 49.6491,
+    "grant_C1_sgdm": 1160.097,
+    "grant_integrated_sgdm": 1677.648,
+    "private_capital_C1": 0.0,
+    "private_capital_integrated": 0.0,
+    "state_pv_prog_C1": 1327.784
+   },
+   "breakeven_C1": 0.494422,
+   "breakeven_C2": 0.355592
+  }
+ },
+ "BOAK25_L5_sm_y": 113.32736800000004,
+ "BOAK25_capital_annuity_sm_y": 113.35167162640067,
+ "BOAK25_operating_net_sm_y": -0.024303626400637768
+}

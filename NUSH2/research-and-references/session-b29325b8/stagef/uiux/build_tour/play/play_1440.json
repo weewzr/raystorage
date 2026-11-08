@@ -1,0 +1,78 @@
+{
+ "width": 1440,
+ "height": 900,
+ "mobile": false,
+ "reduced": false,
+ "mode": "play",
+ "before_start": "play_1440_00_before.png",
+ "focus_after_start": "tour-title",
+ "ended_after_s": 97.34,
+ "began": [
+  {
+   "step": 1,
+   "t_s": 0.0
+  },
+  {
+   "step": 2,
+   "t_s": 7.76
+  },
+  {
+   "step": 3,
+   "t_s": 14.73
+  },
+  {
+   "step": 4,
+   "t_s": 21.84
+  },
+  {
+   "step": 5,
+   "t_s": 29.81
+  },
+  {
+   "step": 6,
+   "t_s": 36.97
+  },
+  {
+   "step": 7,
+   "t_s": 44.06
+  },
+  {
+   "step": 8,
+   "t_s": 51.06
+  },
+  {
+   "step": 9,
+   "t_s": 58.02
+  },
+  {
+   "step": 10,
+   "t_s": 66.17
+  },
+  {
+   "step": 11,
+   "t_s": 74.11
+  },
+  {
+   "step": 12,
+   "t_s": 82.32
+  },
+  {
+   "step": 13,
+   "t_s": 89.31
+  }
+ ],
+ "final_state": {
+  "ready": false,
+  "active": true,
+  "step": 12,
+  "id": "closing",
+  "playing": false,
+  "ended": true,
+  "still": false,
+  "steps": 13,
+  "flows": 1
+ },
+ "last_shot": "play_1440_played_end.png",
+ "errors": [],
+ "notes": []
+}

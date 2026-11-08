@@ -1,0 +1,54 @@
+M1a_drop_condensate_stream exit 101 failed 6 compile_error False
+   FAIL comb_h_export_and_comb_n_ledgers
+   FAIL eq_n_10_4_reported_residual_carries_its_tolerance_and_statuses
+   FAIL eq_n_5_2_direct_emission_is_the_stack_plus_the_vented_condensate
+   FAIL eq_n_9_1_hand_ledger_of_the_direct_abatement
+   FAIL eq_n_9_2_decomposition_of_the_direct_abatement
+   FAIL eq_n_9_3_capture_based_abatement
+M1b_drop_product_from_account exit 101 failed 2 compile_error False
+   FAIL eq_n_10_4_reported_residual_carries_its_tolerance_and_statuses
+   FAIL eq_n_6_1_verdicts_are_never_closed_while_a_stream_is_unknown
+M2_unknown_set_to_zero exit 101 failed 1 compile_error False
+   FAIL eq_n_6_1_verdicts_are_never_closed_while_a_stream_is_unknown
+M3_swap_baseline exit 101 failed 2 compile_error False
+   FAIL eq_n_9_1_hand_ledger_of_the_direct_abatement
+   FAIL inls_reference_gas_is_a_comparison_with_a_reported_cost_effect
+M4a_capture_sign_flowsheet SKIPPED: old string occurs 2 times
+M4b_capture_sign_closed_form exit 101 failed 5 compile_error False
+   FAIL eq_n_1_5_gas_rate_from_the_hydrogen_target
+   FAIL eq_n_2_1_tube_carbon_closed_form_for_three_tear_starts
+   FAIL eq_n_3_2_plant_capture_stays_below_one
+   FAIL eq_n_4_4_stack_carbon_curve
+   FAIL eq_n_6_2_the_tear_check_against_the_closed_forms
+M5_double_count_condensate exit 101 failed 6 compile_error False
+   FAIL comb_h_export_and_comb_n_ledgers
+   FAIL eq_n_10_4_reported_residual_carries_its_tolerance_and_statuses
+   FAIL eq_n_5_2_direct_emission_is_the_stack_plus_the_vented_condensate
+   FAIL eq_n_9_1_hand_ledger_of_the_direct_abatement
+   FAIL eq_n_9_2_decomposition_of_the_direct_abatement
+   FAIL eq_n_9_3_capture_based_abatement
+M6_baseline_sign exit 101 failed 4 compile_error False
+   FAIL eq_n_9_1_hand_ledger_of_the_direct_abatement
+   FAIL legacy_export_matches_the_snapshot
+   FAIL the_cost_denominator_is_the_net_abatement
+   FAIL the_legacy_basis_is_bit_identical_to_the_anchored_functions
+M7_verdict_closed_with_unknowns exit 0 failed 0 compile_error False
+M8_drop_co2e_label exit 101 failed 1 compile_error False
+   FAIL no_co2e_quantity_appears_without_a_label_in_any_view
+M9_gas_back_to_inl exit 101 failed 2 compile_error False
+   FAIL inls_reference_gas_is_a_comparison_with_a_reported_cost_effect
+   FAIL rule_1_of_n_7_the_gas_line_the_decomposition_and_the_lifecycle_read_one_gas_difference
+M10_ts_terminal_dropped exit 0 failed 0 compile_error False
+M11_kappa_zero exit 101 failed 6 compile_error False
+   FAIL eq_n_1_5_gas_rate_from_the_hydrogen_target
+   FAIL eq_n_2_1_tube_carbon_closed_form_for_three_tear_starts
+   FAIL eq_n_2_2_stream_vector_of_the_modelled_streams
+   FAIL eq_n_3_2_plant_capture_stays_below_one
+   FAIL eq_n_4_4_stack_carbon_curve
+   FAIL eq_n_6_2_the_tear_check_against_the_closed_forms
+M12_ts_ship_units exit 101 failed 4 compile_error False
+   FAIL eq_n_9_4_net_abatement_after_transport_and_storage
+   FAIL inls_reference_gas_is_a_comparison_with_a_reported_cost_effect
+   FAIL no_co2e_quantity_appears_without_a_label_in_any_view
+   FAIL only_the_ledger_rows_of_the_plant_carry_the_independent_status
+git status clean

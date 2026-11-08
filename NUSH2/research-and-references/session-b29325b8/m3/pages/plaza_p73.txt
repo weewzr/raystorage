@@ -1,0 +1,44 @@
+ 
+38 
+ 
+Figure 3.6: Density fit for the Phoenix model for 10m MEA.  Lines generated in 
+Aspen Plus®.  Points by Amundsen et al. (2009).  
+3.3.1.2. Viscosity calculation in the Phoenix model 
+The viscosity of the solution was also implemented in the model using a 
+FORTRAN subroutine that calculates the viscosity using the following equation from 
+Weiland et al. (1998): 
+ 
+!!"# ! !!!!!"#
+!!!"# ! !
+! !!!"# ! !" ! ! ! ! !!"#
+!!
+ 
+(3.18) 
+Where: µ is the viscosity of the solution (sln) and water (H2O) in mPa-s 
+ 
+xMEA is the mass percent of MEA in the solution 
+ 
+T is the temperature in Kelvin 
+ 
+& is the CO2 loading (mol CO2/ mol MEA) 
+ 
+a = 21.186 
+ 
+b = 2373 
+1!
+1.04!
+1.08!
+1.12!
+1.16!
+0.1!
+0.2!
+0.3!
+0.4!
+0.5!
+Density (g/cm3)!
+Loading (mol CO2/mol alkalinity)!
+25oC%
+40oC%
+50oC%
+LM:@!
+NM:@!

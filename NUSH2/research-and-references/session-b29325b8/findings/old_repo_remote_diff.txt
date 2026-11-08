@@ -1,0 +1,88 @@
+head b2e963cae69f5da59cce3d106cb0b3f7fc386e71 truncated False entries 466
+remote files 419 local files 377 same 377
+ONLY REMOTE 42
+   simulation/.gitignore 596
+   simulation/01_Nuclear_HTGR/IAEA_2003_HTGR_Reference_Design_Validation_Data.pdf 3951248
+   simulation/01_Nuclear_HTGR/INDEX.md 1667
+   simulation/02_Intermediate_Heat_Exchanger/INDEX.md 1457
+   simulation/02_Intermediate_Heat_Exchanger/Tochio_Nakagawa_2011_IHX_Heat_Transfer_Validation_Data.pdf 4000244
+   simulation/03_SMR_Reactor/Hoseinzade_Adams_2017_SMR_Dynamic_Model_Integrated_Model.pdf 1258278
+   simulation/03_SMR_Reactor/INDEX.md 7505
+   simulation/03_SMR_Reactor/JAERI_2005_SMR_Heat_Transfer_Reference_Design.pdf 21711698
+   simulation/03_SMR_Reactor/Xu_Froment_1989_Part1_SMR_Kinetic_Equations.pdf 680813
+   simulation/03_SMR_Reactor/Xu_Froment_1989_Part2_SMR_Mass_Transfer_Numerical_Methods.pdf 495603
+   simulation/03_SMR_Reactor/Yin_2007_SMR_Heat_Transfer_Validation_Data.pdf 634364
+   simulation/04_WGS_Reactor/Chinchen_1984_WGS_Mass_Transfer_Experimental_Data.pdf 1012833
+   simulation/04_WGS_Reactor/INDEX.md 2448
+   simulation/04_WGS_Reactor/Kraussler_Hofbauer_2017_WGS_Kinetic_Equations_Validation_Data.pdf 810122
+   simulation/05_MEA_Thermodynamics/Cownden_Lucquiaud_2026_MEA_Thermodynamic_Equations_Mass_Transfer.pdf 4496296
+   simulation/05_MEA_Thermodynamics/Dugas_2009_MEA_Experimental_Data_Mass_Transfer.pdf 1982529
+   simulation/05_MEA_Thermodynamics/INDEX.md 5748
+   simulation/05_MEA_Thermodynamics/Plaza_2012_MEA_Thermodynamic_Equations_Kinetic_Equations.pdf 7538934
+   simulation/05_MEA_Thermodynamics/Wong_2016_MEA_Thermodynamic_Equations_Experimental_Data.pdf 718852
+   simulation/06_MEA_Absorber/INDEX.md 5573
+   simulation/06_MEA_Absorber/Morgan_2018_MEA_Absorber_Stripper_Validation_Data.pdf 12968189
+   simulation/06_MEA_Absorber/Morgan_2018_MEA_Absorber_Stripper_Validation_Data_SI.pdf 579496
+   simulation/06_MEA_Absorber/Sonderby_2013_MEA_Absorber_Experimental_Data_Mass_Transfer.pdf 922157
+   simulation/06_MEA_Absorber/Tan_2015_MEA_Absorber_Experimental_Data_Validation_Data.pdf 1294856
+   simulation/07_MEA_Stripper/INDEX.md 1565
+   simulation/07_MEA_Stripper/Kwak_2012_MEA_Stripper_Experimental_Data_Reference_Design.pdf 497334
+   simulation/08_Integrated_HTGR_SMR_CCS/IAEA_2017_HTGR_SMR_Reference_Design_Literature_Values.pdf 4088184
+   simulation/08_Integrated_HTGR_SMR_CCS/INDEX.md 4755
+   simulation/08_Integrated_HTGR_SMR_CCS/Sato_2006_HTGR_SMR_Integrated_Model_Dynamic_Model.pdf 4174155
+   simulation/08_Integrated_HTGR_SMR_CCS/Zhang_2021_HTGR_SMR_Integrated_Model_Thermodynamic_Equations.pdf 2625410
+   simulation/09_Software_Models_and_Code/INDEX.md 474
+   simulation/10_Supporting_References/IEAGHG_2022_SMR_CCS_Reference_Design_Literature_Values.pdf 7487579
+   simulation/10_Supporting_References/INDEX.md 3536
+   simulation/10_Supporting_References/Nexant_Bechtel_2020_MEA_Capture_Plant_Reference_Design.pdf 17059002
+   simulation/11_Out_of_Scope/Grande_2008_PSA_Adsorption_Experimental_Data.pdf 594225
+   simulation/11_Out_of_Scope/INDEX.md 1232
+   simulation/12_Theodore_Simulation_Prompt/.gitkeep 0
+   simulation/Equipment_Literature_Map.md 17302
+   simulation/Literature_Inventory.csv 23967
+   simulation/MASTER_ORGANISATIONAL_PROMPT.md 15120
+   simulation/README.md 7934
+   simulation/RESEARCH_PDF_RENAME_ORGANISE_AND_GITHUB_HANDOFF_PROMPT.md 17685
+ONLY LOCAL 0
+CHANGED 0
+commits 700
+b2e963cae6 2026-10-30T08:43:00Z Merge pull request #2: add four papers to the simulation research library
+e8aeb77733 2026-10-30T08:42:20Z Add four papers to the simulation research library
+74f2d1ddfe 2026-10-30T08:32:10Z Merge pull request #1: simulation folder with master prompt and organised research library
+0c2e98b3f1 2026-10-30T08:29:05Z Add organised HTGR-SMR-MEA-CCS research library to simulation folder
+eae5dd7643 2026-10-30T07:55:08Z Add simulation folder with master organisational prompt
+5486313109 2026-10-30T07:50:58Z Add research PDF renaming and organisation prompt
+f775ebc77f 2026-10-13T06:35:59Z Commit citation batch 04 safety Singapore with evidence limits and corrections
+54da165512 2026-10-13T06:35:21Z Qualify modelled abatement threshold against open PSA carbon closure
+6e0698f50e 2026-10-13T06:35:06Z Correct HTR-PM draft consultation citation and narrow safety claim
+9619cd952b 2026-10-13T06:33:01Z Add citation-to-claim batch for sensitivity safety Singapore and conclusions
+02e6405e3e 2026-10-13T06:29:55Z Commit citation-to-claim batch 03 carbon energy economics
+eb82a42f31 2026-10-13T06:28:48Z Add bounded citation audit for carbon energy and techno-economic sections
+67e639fde3 2026-10-13T06:26:44Z Complete citation batch 02 model heat hydrogen with occurrence ledger
+af03434e56 2026-10-13T06:22:52Z Add bounded citation claim audit for model heat integration and hydrogen sections
+ffad0f45e3 2026-10-13T06:19:23Z Record citation claim batch 01 with every occurrence and unresolved source limits
+5d9ee5cb20 2026-10-13T06:17:03Z Add bounded first citation-to-claim verification batch for active manuscript
+5d794edcad 2026-10-13T06:12:56Z Require final claim-level citation audit after 56-link test completion
+5b033364fd 2026-10-13T06:10:04Z Consolidate 56 actual link tests with batch evidence
+869bbab0cf 2026-10-13T06:09:47Z Close MEE identity mismatch with verified metadata correction
+4c33a19ea1 2026-10-13T06:09:39Z Correct MEE 2008 consultation-letter identity without changing citation key
+793bff09e3 2026-10-13T06:09:31Z Commit final six live bibliography link attempts
+e772927a5e 2026-10-13T06:09:20Z Commit batch 05 actual DOI and safety link tests
+b517e6e9e0 2026-10-13T06:09:05Z Commit batch 04 ten tested safety and IAEA references
+7075290c50 2026-10-13T06:08:49Z Commit batch 03 ten direct and DOI link attempts
+b00eed9356 2026-10-13T06:08:35Z Commit batch 02 ten tested reference links
+0c4a9c5f6e 2026-10-13T06:08:21Z Commit batch 01 ten actual publisher link tests
+23c92717c4 2026-10-13T06:06:13Z Require actual tested link evidence for each bibliography entry in committed batches
+b11b668130 2026-10-13T06:02:38Z Require completion of outstanding 56-source citation-to-claim verification deliverables
+058733b9d0 2026-10-13T06:00:18Z Qualify PSA offgas fate using TEV-953 page 14 without claiming carbon closure
+1751c7e344 2026-10-13T05:48:23Z Add complete bibliography and citation-to-claim verification task for Main Research
+f7ff823e65 2026-10-13T05:41:03Z Record publisher-verified MTI and JAEA citation metadata corrections
+5eb14a9597 2026-10-13T05:40:55Z Correct MTI speech citation identity and remove duplicate IHX note
+465a0c9ff1 2026-10-13T05:39:12Z Correct GTHTR300 citation to workshop contribution within JAERI proceedings
+24e74b4fa7 2026-10-13T05:38:25Z Document verified bibliography corrections and remaining publication identity checks
+b80da4b1d0 2026-10-13T05:38:18Z Repair JAEA IHX link and IAEA process-heat report metadata
+00a9c52d49 2026-10-13T05:32:26Z Document deterministic carbon closure module and synthetic-only test boundary
+9f643e0338 2026-10-13T05:32:23Z Record independent 56-reference URL and DOI access test with unresolved sources
+53cd84a5c9 2026-10-13T05:32:18Z Register tested PSA carbon closure module
+9fb2b00fd3 2026-10-13T05:32:11Z Add evidence-gated elemental carbon closure with synthetic verification tests
+c22d267283 2026-10-13T03:29:57Z Verify INL cost report DOI and remove unverified IHX URL

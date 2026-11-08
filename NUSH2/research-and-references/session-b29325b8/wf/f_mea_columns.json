@@ -1,0 +1,279 @@
+{
+ "key": "mea_columns",
+ "summary": "No pilot or high-pressure study covers 30 wt% MEA on shifted syngas. The four natural gas studies (Isa, Tan, Halim, Salvinder) use 20 wt% or up to about 24 wt% fresh solvent with no stripper, so they give no SRD. They give no usable rich loading (Isa Table 9 does not close its mass balance) and no H2 or CH4 co-absorption data. The report's 3.46 to 4.0 GJ/t pairs two campaign minima on different bases, so carry 3.8 GJ/t, range 3.4 to 4.2 [own estimate], which is 74 MW (67 to 82 MW) at 70.4 t/h. Reboilers run at 114 to 124 C on steam near 145 C, so syngas at 120 to 130 C cannot drive them. Syngas above 135 C offers 29 MW after the LTS or 56 MW over the whole chain, and low-grade syngas suits only a stripper interheater near 102 C. MEA is defensible only as a conservative reference: IEAGHG uses aMDEA, INL uses Selexol at 0.92 GJ/t, and Tan's selection chart puts this feed in the physical solvent or hot carbonate region. The 90% is per-pass on absorber-inlet CO2, which is about 68 to 70% of syngas carbon unless tail gas is recycled. 210 MWth does not close with MEA; screening gives 219 to 235 MWth at 11.6 MWe. All 0.585 Mt/y variants stay above 0.25 Mt/y. Full evidence is in the report at report_path.",
+ "key_facts": [
+  {
+   "item": "Closest pressure experiments by pCO2",
+   "value": "Tan 1 MPa, 50% CO2: 5 bar, 95% removal (20 wt%, 1.0 m). Salvinder 10.5 bar: 5.25 bar, 85.0% exp, 84.3% rate-based. Project: 4.74 bar [calc]",
+   "source": "Tan 2015 PDF p3-4; Salvinder 2018 Table 2, PDF p5; TEV-961 PDF p77, p80"
+  },
+  {
+   "item": "INL absorber feed, Case 5",
+   "value": "40 C, 389 psi (26.8 bar), 17.7 mol% CO2 dry, Selexol 99% capture, 2.2 MW, 71,874 lb/h steam, 65.0 MMBtu/h",
+   "source": "TEV-961 PDF p77 (A-53), p80 (A-56); image-only pages"
+  },
+  {
+   "item": "Selexol specific heat",
+   "value": "0.92 GJ/tCO2 [calc]; 19.05 MW for 74.6 t/h CO2; literature-based separation block, not a rigorous column",
+   "source": "TEV-961 PDF p74, p80; TEV-953 PDF p21"
+  },
+  {
+   "item": "SRD availability at high pressure",
+   "value": "None. Isa states regeneration is not available; Tan and Halim use a storage tank; Salvinder lists the stripper as next stage",
+   "source": "Isa 2017 PDF p7; Tan 2015 Fig 2; Halim 2015 PDF p3; Salvinder 2018 PDF p14"
+  },
+  {
+   "item": "Isa rich loading",
+   "value": "Table 9: 0.056-0.196 at 20-60 bar. Table 3 flows plus about 95% removal imply 0.31-0.32 [calc]. Not usable as capacity data",
+   "source": "Isa 2017 Tables 3, 9, Fig 10, PDF p4, p9, p12-13"
+  },
+  {
+   "item": "Rich loading on flue gas",
+   "value": "0.48 Mongstad 24 m (0.44 at 18 m); 0.50 Kwak; 0.456-0.545 Vinjarapu all runs; 0.40 DICE design [calc]. Design value for syngas 0.50, upper 0.55",
+   "source": "Brigman PDF p7; Kwak PDF p4-5; Vinjarapu Appl. En. Table D.19 PDF p38; DICE Fig 5-2 PDF p192"
+  },
+  {
+   "item": "Equilibrium above 0.5 at pressure",
+   "value": "Aronu 30 mass%: 0.524 at 11.8 kPa 40 C, 0.541 at 479 kPa 100 C; no data near 4.7 bar at 40-80 C. Wong Fig 3: about 0.7 at 5 bar 40 C pure CO2 [figure]",
+   "source": "Aronu 2011 Table 4 PDF p5; Wong 2016 Fig 3 PDF p5"
+  },
+  {
+   "item": "H2 and CH4 co-absorption",
+   "value": "aMDEA: 0.056% H2, 0.137% CH4 lost [calc]; 0.04 mol% H2 in CO2. Selexol spec: 0.7 mol% H2, 2687 ppmv CH4. MEA: not verified, water-solubility screen 0.2-0.3% H2",
+   "source": "IEAGHG 2017-02 streams 7, 16, 17, 18, PDF p75-76; TEV-961 PDF p74"
+  },
+  {
+   "item": "Mass transfer regime at pressure",
+   "value": "KGav 1.0-3.65 mol/m3.h.kPa at 50 bar vs 0.18-0.60 kmol/m3.h.kPa at 1 atm, about 170x lower [figure, calc]. E-infinity about 355 at 0.13 bar, about 11 at 4.74 bar [calc]",
+   "source": "Halim 2015 Figs 2, 5, PDF p4; Khan 2011 Eqs 2, 4, 8"
+  },
+  {
+   "item": "Correlation reliability",
+   "value": "Isa predicted heights 0.00 m to 5.2 million m for a 1.505 m column. Index-f 9.92 to 2.92 (Tsai), average error 18% only for Billet and Schultes, 20-50 bar, 20 wt%",
+   "source": "Isa 2017 Tables 7, 10, 12, PDF p9-11, p13"
+  },
+  {
+   "item": "Origin of 3.46 GJ/t",
+   "value": "Lowest of 85 runs, SS57/59, lean 0.22, rich 0.54, L/G 2.71 [calc], 26-28 wt% measured, excludes 2.8-2.9 kW loss (13-17% of gross [calc]). 88-92% window median 3.75, max 4.82 [calc]",
+   "source": "Vinjarapu Appl. En. PDF p2, p22, Table D.19 PDF p38; Sep. Pur. Table 2 PDF p5"
+  },
+  {
+   "item": "Origin of 4.0 GJ/t",
+   "value": "Mongstad minimum without anti-foam at 85% capture, 3.5 vol% CO2, lean about 0.25; 3.7 with anti-foam; base case 4.1; 4.5 at 18 m; 5.0 at 50 C flue gas",
+   "source": "Brigman 2014 PDF p5, p7, p9"
+  },
+  {
+   "item": "Other 30 wt% SRD benchmarks",
+   "value": "Kwak 3.92 at 90%, 0.15/0.50, 113.8 C. DICE design 3.64 at 90%, 70.2 t/h, 1400 t/h lean [calc]. NCCC 3.5-8.2, median 5.1 [calc]",
+   "source": "Kwak 2012 PDF p1, p3-5; DICE PDF p192, p215 (E-104 242 MMBtu/h); Morgan 2018 SI S1-S3"
+  },
+  {
+   "item": "SRD to carry",
+   "value": "3.8 GJ/tCO2, range 3.4-4.2 [own recommendation]; 74 MW (67-82 MW) at 70.4 t/h. Bottom-up syngas screen 3.4-3.95 [calc]",
+   "source": "mea_columns.md section 6; mea_calc.py, mea_calc2.py"
+  },
+  {
+   "item": "Absorber top pinch",
+   "value": "Treated-gas pCO2 58 kPa at 26.8 bar [calc] vs 0.5 kPa Mongstad, 1.5 kPa Vinjarapu [calc]. Lean 0.25 at 0.025 kPa, 0.40 at 0.18 kPa, 40 C",
+   "source": "Brigman PDF p9; Aronu 2011 Table 4 PDF p5"
+  },
+  {
+   "item": "Reboiler and steam grade",
+   "value": "Reboiler 113.8-124 C at 1.5-2 bar. Steam 2.95-3.2 barg (Vinjarapu), 60 psia sat. about 145 C (DICE), 0.44 MPa 177 C (IEAGHG), 153 C INL LP header",
+   "source": "Kwak Table 2; Vinjarapu Fig 12 PDF p13; Morgan SI S2; DICE PDF p186, p192; IEAGHG PDF p68; TEV-961 PDF p81"
+  },
+  {
+   "item": "Syngas heat, INL Case 5",
+   "value": "EX1 19.5, EX2 7.1, EX3 19.3, EX4 34.3, KO 5.8 MW [conversion of flowsheet]. Above 135 C: 29 MW after LTS, 56 MW whole chain [calc, EX4 split scaled by 1.176]. Dew point about 164 C [calc]",
+   "source": "TEV-961 PDF p74, p80 (A-50, A-56)"
+  },
+  {
+   "item": "Interheating reality check",
+   "value": "2.71 GJ/t is reboiler only; total heat 3.77 GJ/t [calc], vs base 3.71. IH exit about 102 C, up to 28% of stripping heat, about 21 MW here. 130-110 C syngas band offers 9-12 MW [calc]",
+   "source": "Vinjarapu Energy 2025 Tables 2-4, PDF p12, p17"
+  },
+  {
+   "item": "Solvent practice for shifted syngas",
+   "value": "aMDEA called state of the art, MEA standard for flue gas; INL Selexol; chart amine region tops out near 48 psia, project feed 55-69 psia [figure, calc]; aMDEA SRD about 3.0 [calc]",
+   "source": "IEAGHG 2017-02 PDF p3, p5 notes 2-3; IEAGHG 2022-07 PDF p44, p72; TEV-953 PDF p21; Tan 2015 Fig 1 PDF p2"
+  },
+  {
+   "item": "Absorber vs plant capture",
+   "value": "IEAGHG Case 1A 98.7% absorber [calc], 55.7% overall. INL Case 6 99% block, 93.1% plant (1,927/2,069 ton/d) with full tail gas recycle [calc]",
+   "source": "IEAGHG PDF p16, p75-76; TEV-953 PDF p21; TEV-961 PDF p15, p17"
+  },
+  {
+   "item": "Project 90% as share of syngas carbon",
+   "value": "67.5% (amine_spec), 69.8% (INL Case 5) [calc]; abatement 0.494-0.503 Mt/y, 78.9-80.3%, vs deck 0.585 Mt/y, 93.5%",
+   "source": "amine_spec.txt; TEV-961 A-50, A-53; deck slide 15; mea_calc.py"
+  },
+  {
+   "item": "Heat budget test",
+   "value": "206.0 MWth = 176.8 + 11.6/0.397 confirmed; margin 4.0 MWth. Net regeneration gap 23-39 MW after Selexol and export credits [calc]. INL Case 6 excess heat only 2.0 MWt",
+   "source": "TEV-961 PDF p17-18; mea_calc2.py"
+  },
+  {
+   "item": "Reactor screening with extraction",
+   "value": "219-235 MWth at 11.6 MWe; 233-249 MWth at 17.3 MWe [calc, first-order, work ratio 0.169-0.30]",
+   "source": "mea_calc2.py; IEAGHG Case 1A PDF p16, p75 for 0.169"
+  },
+  {
+   "item": "Project absorber hydraulics",
+   "value": "L/G 12-15 kg/kg vs 2.4-3.0 in flue pilots; 1300-1630 t/h solvent; 4.1-6.5 m diameter at 100-40 m3/m2/h; lean pump 1.2-1.4 MW at 27 bar [all calc]",
+   "source": "mea_calc.py; Vinjarapu Table 5; DICE Fig 5-2"
+  },
+  {
+   "item": "Best V&V sets",
+   "value": "Morgan SI S1-S4 (23 runs); Vinjarapu Tables D.10-D.19 (85 states); Sonderby Tables 3-6 (23 runs); DICE Fig 5-2, Table 5-3; IEAGHG Case 1A streams; Khan Table 1 incl. Pintola 724 kPa",
+   "source": "Morgan SI PDF p2-5; Vinjarapu Appl. En. PDF p30-38; Sonderby PDF p7-8; Khan PDF p5"
+  }
+ ],
+ "conflicts": [
+  {
+   "topic": "Reported SRD range",
+   "detail": "Report gives approx. 3.46 to 4.0 GJ/t from [31,32]. 3.46 is a best run at 26-28 wt% excluding heat loss. 4.0 is a minimum at 85% capture on 3.5 vol% CO2.",
+   "resolution": "Replace with 3.8, range 3.4-4.2, on a heat-loss-included reboiler basis.",
+   "changes_conclusions": true
+  },
+  {
+   "topic": "Deck omits regeneration heat",
+   "detail": "Deck slide 12 notes say 11.6 MWe provides all parasitic energy. Reboiler heat of 67-82 MW appears nowhere in the 206 MWth budget.",
+   "resolution": "Add the reboiler to the energy balance and state the source of the heat.",
+   "changes_conclusions": true
+  },
+  {
+   "topic": "Meaning of 90%",
+   "detail": "amine_spec applies 90% to absorber feed CO2. Deck applies it to all process CO2 with 10% slip and 93.5% reduction. CH4 and CO bypass the absorber.",
+   "resolution": "Report both per-pass and plant capture. Without recycle plant capture is about 68-70%.",
+   "changes_conclusions": true
+  },
+  {
+   "topic": "Tail gas fate",
+   "detail": "Proposal recycles tail gas. 31 Oct report puts it outside the boundary. 5.7 MWe purge recovery, which enables INL Case 6 recycle, is removed from the load.",
+   "resolution": "Choose one: keep recycle and 17.3 MWe, or exclude it and show lower plant capture.",
+   "changes_conclusions": true
+  },
+  {
+   "topic": "Absorber CO2 flow",
+   "detail": "amine_spec uses 1,777 kmol/h, which equals INL total plant CO2 of 2,069 ton/d, plus 395 CH4 and 197 CO. Carbon totals 2,369 kmol/h, 133% of INL. Case 6 absorber CO2 at 99% is about 1,672 kmol/h [calc].",
+   "resolution": "Rebuild feed from INL streams; Case 5 gives 1,706 kmol/h CO2 [calc].",
+   "changes_conclusions": true
+  },
+  {
+   "topic": "Absorber pressure",
+   "detail": "amine_spec uses 21 bar, 35 C, 18 mol% from Chen and Ahn, with pCO2 3.78 bar. INL Case 5 flowsheet gives 26.8 bar, 40 C, 17.7 mol% and pCO2 4.74 bar.",
+   "resolution": "Use INL conditions for consistency with the 130 MMSCFD basis.",
+   "changes_conclusions": false
+  },
+  {
+   "topic": "Reactor size across drafts",
+   "detail": "v1.7: 210 MWth, 25.1 MWth, 47%, 11.8 MWe. Deck: 206 MWth, 11.6 MWe. 31 Oct: 230 MWth, 220.4 MWth, 17.3 MWe, 39.7%. None includes the reboiler.",
+   "resolution": "Re-size with regeneration heat. Screening gives 219-249 MWth.",
+   "changes_conclusions": true
+  },
+  {
+   "topic": "Slide 12 heat wording",
+   "detail": "Slide says 206 MWth of helium heat at 900 C. Only 176.8 MWth reaches the reformer at 900 C.",
+   "resolution": "Reword; the remainder is the screening allocation for power.",
+   "changes_conclusions": false
+  },
+  {
+   "topic": "Interheating SRD",
+   "detail": "Vinjarapu 2025 abstract gives 2.71 at about 83%, Table 4 gives 80%, conclusion gives 2.73. Total heat including interheater is 3.77 GJ/t [calc].",
+   "resolution": "Do not quote 2.25-2.71 as heat savings. Use only as a duty shift to lower grade heat.",
+   "changes_conclusions": false
+  },
+  {
+   "topic": "Isa Table 9 loadings",
+   "detail": "Table 9 gives 0.056-0.196. Table 3 flows with Fig 10 removal imply 0.31-0.32 [calc]. Text and table also swap the alpha labels.",
+   "resolution": "Do not use as rich loading data. Use removal only.",
+   "changes_conclusions": false
+  },
+  {
+   "topic": "Published table errors",
+   "detail": "Salvinder Table 1 mol basis vs 20 wt% text; Halim text mol/m2 vs figure mol/m3; IEAGHG stream 13 prints CH4 in the oxygen row; Isa Eqs 16, 25, 28 differ from Khan.",
+   "resolution": "Use Halim figures, read stream 13 as CH4 (balance confirms 201 kmol/h), and use Khan's equation forms.",
+   "changes_conclusions": false
+  },
+  {
+   "topic": "DICE utility table",
+   "detail": "Table 5-3 value 263.3 is steam in 1000 lb/h, which looks like duty. E-104 lists 242 MMBtu/h.",
+   "resolution": "Use 242 MMBtu/h, giving 3.64 GJ/t [calc]. The two values agree through an implied 919 Btu/lb.",
+   "changes_conclusions": false
+  }
+ ],
+ "decisions": [
+  {
+   "question": "Which solvent does the report carry as its base case?",
+   "why": "Selexol at 0.92 GJ/t or aMDEA near 3.0 against MEA at 3.4-4.2 shifts low-grade heat by 47-63 MW and therefore reactor size.",
+   "default": "Keep 30 wt% MEA as a stated conservative reference, and add one sensitivity each for Selexol and aMDEA.",
+   "options": [
+    "Keep MEA with disclosure and sensitivities",
+    "Switch base case to aMDEA",
+    "Revert to INL Selexol"
+   ]
+  },
+  {
+   "question": "Which SRD does the model carry?",
+   "why": "It sets reboiler duty from 67 to 82 MW and drives heat, cost and reactor sizing.",
+   "default": "3.8 GJ/tCO2, range 3.4 to 4.2, replacing 3.46 to 4.0.",
+   "options": [
+    "3.8 with 3.4-4.2 range",
+    "3.64 from DICE design",
+    "Keep 3.46-4.0 as pilot context only"
+   ]
+  },
+  {
+   "question": "Is PSA tail gas recycled to the reformer?",
+   "why": "It decides whether 90% per pass is about 93% or about 68-70% of plant carbon, and whether 5.7 MWe is in the load.",
+   "default": "Recycle as in INL Case 6, restore 17.3 MWe, and state per-pass and plant capture together.",
+   "options": [
+    "Recycle with 17.3 MWe",
+    "Keep tail gas outside boundary and report 68-70% with 0.49-0.50 Mt/y"
+   ]
+  },
+  {
+   "question": "Where does regeneration heat come from, and at what reactor size?",
+   "why": "210 MWth has 4 MWth margin against a 23-39 MW net gap. This changes reactor scale and cost.",
+   "default": "Use about 230 MWth at 11.6 MWe or about 245 MWth at 17.3 MWe, with extraction steam and INL export steam diverted, labelled as screening.",
+   "options": [
+    "Uprate reactor with extraction steam",
+    "Keep 210 MWth and buy heat elsewhere",
+    "Keep 210 MWth and change solvent"
+   ]
+  },
+  {
+   "question": "What absorber feed basis is used?",
+   "why": "Current spec overstates carbon by 33% and uses 21 bar rather than INL 26.8 bar, which changes solvent rate, loads and capture accounting.",
+   "default": "Rebuild from INL Case 5 streams (26.8 bar, 40 C, 17.7 mol% dry, about 1,706 kmol/h CO2), scaled to Case 6 totals.",
+   "options": [
+    "INL-derived feed",
+    "Keep Chen and Ahn composition with corrected carbon balance"
+   ]
+  },
+  {
+   "question": "What stripper pressure is used?",
+   "why": "About 1.5 bar gives about 114 C against about 122 C at 2 bar, which opens lower-grade heat but increases compression power.",
+   "default": "Keep 1.9 to 2.0 bar and run 1.5 bar as a sensitivity.",
+   "options": [
+    "1.9-2.0 bar",
+    "1.5 bar with added compression"
+   ]
+  }
+ ],
+ "gaps": [
+  "No pilot of 30 wt% MEA on shifted syngas or on any H2-rich gas exists in the folder.",
+  "No stripper data exist for solvent loaded at high pressure, so SRD on syngas is an extrapolation.",
+  "H2, CH4 and CO co-absorption in MEA are not measured in any local source; values are not verified.",
+  "No 30 wt% VLE near 4.7 bar at 40-80 C locally: Aronu stops near 12-14 kPa at or below 60 C, and Wong covers 30-50 C on pure CO2.",
+  "TEV-961 Appendix A in the local PDF ends at A-59 in Case 5, and electronic Appendix G is absent, so Case 5 stands in for Case 6.",
+  "INL Selexol is a separation block with literature utilities, so 0.92 GJ/t is not a rigorous column result.",
+  "IEAGHG gives no reboiler duty; aMDEA 3.0 and split-flow MEA 2.67 GJ/t are my estimates using steam enthalpies not verified from the report.",
+  "Morgan Part 1 is not in the folder, so MellapakPlus correlation forms are missing, and Billet-Schultes CL and CG constants for project packings are not available.",
+  "Effect on reformer yield of about 184 kmol/h recycled CO2 at 90% per pass is not quantified in any local source.",
+  "MEA degradation and corrosion on oxygen-free syngas with CO present are not verified; Kwak's 79.11 mpy at the stripper bottom is the only local corrosion figure.",
+  "Sources cited in amine_spec (Chen and Ahn, Guo, Abu-Zahra, De Castro) and Sheng 2023 were not read or verified in this review.",
+  "Column hydraulics at L/G 12-15 kg/kg on 27 bar syngas are not covered by any local experiment; 4-6.5 m diameter is a screening value."
+ ],
+ "report_path": "C:/Users/Alf/AppData/Local/Temp/claude/C--Ray-Claude-Ray-Debug-VS-Code/b29325b8-d1b9-49cd-bfe6-262261d7ffef/scratchpad/findings/mea_columns.md"
+}

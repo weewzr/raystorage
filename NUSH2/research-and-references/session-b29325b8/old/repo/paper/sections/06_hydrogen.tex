@@ -1,0 +1,40 @@
+\section{Hydrogen production and material balance}\label{sec:hydrogen}
+At the whole-plant level, annual hydrogen is the per-train production rate multiplied by the number of identical trains and annual operating time. If $\dot m_{\mathrm{H_2}}$ is the mass rate in kg/h, $H_y=8760A$ is operating hours per year, and $N$ is the number of trains, then
+\[
+M_{\mathrm{H_2},y}=\frac{N\dot m_{\mathrm{H_2}}H_y}{1000}
+\quad[\mathrm{t/y}].
+\]
+The divisor converts kilograms to tonnes; $A=0.85$ is assumed integrated availability, not a measured uptime guarantee. This identity is used below with the literature-derived per-train rate.
+
+The thermal calculation establishes that the proposed heat path is large enough at screening level; the next question is what hydrogen service that heat supports. The chemical-process model is not re-solved from first principles in this project. Instead, INL Case 6 supplies the source-model process result: 130 MMSCFD H$_2$, an 871$^\circ$C reformer outlet, steam/carbon ratio 3.0 and 88\% PSA hydrogen recovery~\cite{inltev953,inltev961}.
+
+The chemistry explains the sequence represented by that source model. Steam methane reforming converts methane and steam toward carbon monoxide and hydrogen,
+\[
+\mathrm{CH_4+H_2O\rightleftharpoons CO+3H_2},
+\]
+and the Water-Gas Shift reaction converts carbon monoxide and steam toward carbon dioxide and additional hydrogen,
+\[
+\mathrm{CO+H_2O\rightleftharpoons CO_2+H_2}.
+\]
+Carbon dioxide is then separated before Pressure Swing Adsorption (PSA) recovers hydrogen from the remaining gas. The reported 88\% value is \emph{hydrogen recovery}, not hydrogen purity.
+
+INL also reports an instantaneous hydrogen mass rate of approximately 29,000 lb/h for the common service~\cite{inltev953,inltev961}. The annualisation below converts that source rate to annual production using the declared 85\% availability. This distinction matters: 130 MMSCFD and 29,000 lb/h are \textbf{source-model outputs}; approximately 97,946 t/y is the project's \textbf{derived annual result}.
+
+
+\HydrogenScaleFigure
+
+\subsection{Annual hydrogen production from the source rate}
+INL reports the common hydrogen service as 130 MMSCFD and approximately 29,000 lb/h~\cite{inltev953,inltev961}. Using Assumption A-02, $A=0.85$~\cite{nishihara2007potential}, annual hydrogen production is calculated from
+\begin{equation}\label{eq:annual-h2-general}
+M_{H_2}=\dot m_{H_2}\,t_{\rm year}\,A,
+\end{equation}
+where $M_{H_2}$ is annual hydrogen production (t/y), $\dot m_{H_2}$ is instantaneous hydrogen mass rate (t/h), $t_{\rm year}=8760$ h/y, and $A$ is annual availability (-). Converting the cited 29,000 lb/h source rate gives
+\begin{equation}\label{eq:annual-h2}
+M_{H_2}=29{,}000\frac{\mathrm{lb}}{\mathrm h}
+\left(0.45359237\frac{\mathrm{kg}}{\mathrm{lb}}\right)
+(8760\,\mathrm{h/y})(0.85)
+\left(\frac{1\,\mathrm t}{1000\,\mathrm{kg}}\right)
+=97{,}946~\mathrm{t/y}.
+\end{equation}
+This is a project annualisation of the source instantaneous rate, not a separate literature-reported annual plant output.
+

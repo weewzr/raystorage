@@ -1,0 +1,26 @@
+[
+ {
+  "label": "A water-basis DH, z=10, b=1.5",
+  "AARD_vs_exp_%": 189.091200506128,
+  "mean_ln_ratio_exp": 0.9556753228759673,
+  "AARD_vs_Aronu_model_column_%": 58.84182433397449,
+  "mean_ln_ratio_model": 0.4581751417026025,
+  "max_resid": 1.899813639738568e-10
+ },
+ {
+  "label": "B water+MEA basis DH",
+  "AARD_vs_exp_%": 182.654771737575,
+  "mean_ln_ratio_exp": 0.9471193960241363,
+  "AARD_vs_Aronu_model_column_%": 54.01262722864804,
+  "mean_ln_ratio_model": 0.4273578992324747,
+  "max_resid": 1.1696754675938337e-10
+ },
+ {
+  "label": "C no DH term",
+  "AARD_vs_exp_%": 791.4146353310684,
+  "mean_ln_ratio_exp": 2.0498279257491756,
+  "AARD_vs_Aronu_model_column_%": 437.18408543120285,
+  "mean_ln_ratio_model": 1.674228671716408,
+  "max_resid": 2.2916113451287856e-10
+ }
+]

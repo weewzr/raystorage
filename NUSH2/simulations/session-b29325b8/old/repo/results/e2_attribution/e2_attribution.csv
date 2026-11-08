@@ -1,0 +1,13 @@
+metric,value,unit,interpretation
+A_to_B_lifecycle_abatement,461084.190,tCO2e/y,CCS comparator step on IEAGHG matched source family
+B_to_C_bundled_lifecycle_difference,350488.363,tCO2e/y,cross-source difference NOT pure nuclear attribution
+A_to_C_cross_source_total,811572.553,tCO2e/y,cross-source E2 matched-service total
+A_to_B_share_of_cross_source_total,0.568137,fraction,descriptive attribution
+B_to_C_bundled_share_of_cross_source_total,0.431863,fraction,NOT pure nuclear share
+A_to_B_incremental_cost,44733460.879,SGD/y,screening matched comparator
+B_to_C_bundled_cost_difference,96544353.154,SGD/y,NOT pure nuclear premium
+A_to_B_step_cost,97.017989,SGD/tCO2e,CCS step
+B_to_C_bundled_step_cost,275.456658,SGD/tCO2e,NOT pure nuclear step metric
+A_lifecycle,1002815.625,tCO2e/y,
+B_lifecycle,541731.436,tCO2e/y,
+C_lifecycle,191243.073,tCO2e/y,

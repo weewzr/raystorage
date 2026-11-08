@@ -1,0 +1,41 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "name": "__MSG_APP_NAME__",
+  "description": "__MSG_APP_DESCRIPTION__",
+  "manifest_version": 2,
+  "version": "1.0.0.6",
+  "minimum_chrome_version": "29",
+  "default_locale": "en",
+  "app": {
+    "background": {
+      "scripts": [
+        "craw_background.js"
+      ]
+    }
+  },
+  "permissions": [
+    "identity",
+    "webview",
+    "https://www.google.com/",
+    "https://www.googleapis.com/*",
+    "https://payments.google.com/payments/v4/js/integrator.js",
+    "https://sandbox.google.com/payments/v4/js/integrator.js"
+  ],
+  "oauth2": {
+    "auto_approve": true,
+    "scopes": [
+      "https://www.googleapis.com/auth/sierra",
+      "https://www.googleapis.com/auth/sierrasandbox",
+      "https://www.googleapis.com/auth/chromewebstore",
+      "https://www.googleapis.com/auth/chromewebstore.readonly"
+    ],
+    "client_id": "203784468217.apps.googleusercontent.com"
+  },
+  "icons": {
+    "16": "images/icon_16.png",
+    "128": "images/icon_128.png"
+  },
+  "display_in_launcher": false,
+  "display_in_new_tab_page": false
+}

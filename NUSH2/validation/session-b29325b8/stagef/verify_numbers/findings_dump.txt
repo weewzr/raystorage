@@ -1,0 +1,98 @@
+===== F00 major Deck cost headline and README use gas at S$20.7/GJ without saying it is above the tested and evidence range
+EVIDENCE: The deck PDF text (pymupdf extract, SP/stagef/verify_numbers/txt/deck.txt) shows slide 41 '...target met ... with gas at S$20.7/GJ' and 'S$20.7/GJ Gas price that meets the target' with no range caveat, and slides 42, 43 and 46 and notes n41/n42/n46 are the same. The same deck shows slide 34 'Gas 10 15 20 S$/GJ' (low, central, high) and slide 40 'Tested range ... To 20'. Final_Design_Basis.csv:106-107 has GAS_CENTRAL low 10 / high 20 and GAS_HIGH 20 ('Author sensitivity value'). The site, run in a browser on a scratch build at 10dac7b with MATURE_60Y selected, prints the engine flag 'Natural gas price at 20.7 S$/GJ lies outside the evidence range 10 to 20 S$/GJ'. The report p16 discloses it ('at S$20/GJ, the top of the tested range, the scenario sits at S$99.6/tCO2e'). README.md:42 does not.
+FIX: Add one line on slide 41, in notes n41 and in README.md:42, filled from tokens GAS_HIGH, MATURE_60Y_L5_AT_20 and MATURE_60Y_DCF_AT_20. Suggested wording: 'S$20.7/GJ lies above the S$10 to S$20/GJ range tested; at S$20/GJ the scenario gives S$99.6/t on L5 and S$99.9/t by DCF.'
+===== F01 major Slide 44 validation summary overstates the independent evidence and leaves out 42 not-run and 251 reported checks
+EVIDENCE: Slide 44 and notes n44 say: '360 of 650 checks are independent of the source data. 325 rows pass and 32 fail ... 9 results rows did not run.' A crosstab of results/Validation_Results.csv by data_use and status gives: independent 92 pass, 18 fail, 219 reported, 31 not_run; same_dataset_disclosed 231 pass; status totals pass 325, reported 251, not_run 42, fail 32. The '9' is numbers.json status_rows.not_run, which counts non-validation results rows. README.md:127 and report p30 print the full split (42 not run, and only 92 passes on independent data). So the slide implies the independent checks broadly pass and that only 9 checks did not run.
+FIX: Print '325 pass (92 on independent data), 32 fail, 251 reported without a limit, 42 not run' from VAL_N_* tokens. Add a VAL_N_INDEPENDENT_PASS token in scripts/build_numbers.py (owner: engine:final) so the 92 comes from numbers.json.
+===== F02 minor Slide 15 sizing walk ends at 179.0 while its title and headline say 178.5 MWth
+EVIDENCE: In the rendered slide 15 (png at SP/stagef/verify_numbers/png/deck_15.png), the title reads 'The walk to 178.5 MWth', the last bar 'Reboiler gap' reads 179.0 and the large number reads 178.5. Notes n15 say 'MEA's reboiler gap takes the need to 178.5'. Validation_Results.csv:397 has SIZING_WALK_STEP_6 at 179.039591 (anchored freeze golden). Final_Design_Basis.csv:412 has RES_REACTOR_NEEDED_MWTH at 178.493864 (gated_T05). The 0.5 MWth T05 step is never shown.
+FIX: Add a final bar for the Headline preset step (T05 syngas heat on its model, 179.0 to 178.5, from DRIFT_ANCHORED_R_MWTH and DRIFT_HEADLINE_R_MWTH), or label the walk as the anchored preset.
+===== F03 minor Slide 33 says the largest gap between the methods is 0.2%; over all DCF points it is 0.47%
+EVIDENCE: Slide 33 reads '0.2% largest gap between the methods' and notes n33 'They differ by at most 0.2 percent.' The LAC_L5_GAP_REL rows in results/Economic_Ledger.csv give a maximum of 0.004701 over 72 points (B_REC_F 10OAK_P46, 40 y, n 1.0, 178.49) and 0.004201 at 210 MWth. On the 12-point BOAK/FOAK 25/60 y grid the maximum is 0.002039. docs/FINAL_DESIGN_DECISIONS.md:28 itself states 0.47% over all 72 points.
+FIX: Qualify the slide and the note as 'on the headline grid', or print the 0.47% maximum alongside it.
+===== F04 minor Deck calls MATURE_60Y a '10th-of-a-kind plant' without naming the learning route; the other published route misses the target
+EVIDENCE: Slides 41, 42, 43 and 46 and notes n41/n42/n46 say only '10th-of-a-kind'. The run is 10OAK_P46, which learns from BOAK. Economic_Ledger.csv has 10OAK_P47 (learning from FOAK), 60 y, n 1.0, 210 MWth, BASE_POWER cum_s_per_t 181.802248. With the same gas step of -32.58 S$/t that route gives about 149.2 S$/t, which misses the target. Notes n35 say FOAK 'is what a single plant would be'. README.md:42, FDD:30 and report p16 do state 'on INL's BOAK learning route'.
+FIX: Add 'on INL's BOAK learning route' to the slide 41 card heading and the slide 42 bar label, from STEPDOWN_2_LABEL.
+===== F07 minor Some printed numbers are computed inside the deck and report builders, not taken from numbers.json
+EVIDENCE: presentation/build_deck.py:190-192 evaluates the NEW_ formulas in presentation/deck_storyboard.md:769-773. Those formulas produce the 4 K pinch (slide 20), '12 times that duty' (n20, divided by CTX_HTTR_IHX_MW = 10 typed at storyboard line 789) and '2.0 times our central price' (n40). report/_build/resolve_numbers.py:24 and 111-123 hard-code CARBON_TAX_S_T = 45.0, 50.0 and 80.0 and compute TAX_NET_BOAK_25Y, which the report prints on p17 as 'would leave S$144.7/tCO2e'. None of these values is a numbers.json token.
+FIX: Move the derived values into scripts/build_numbers.py as tokens, with the carbon tax as a cited input row. The 29 K pinch already exists as L4_SUPPLY_OVER_REFORMER_K.
+===== F08 minor Deck still frames work as a team's
+EVIDENCE: Deck text and notes: slide 24 'Team's proposal', slide 36 'n = 0.6, team assumption', n15 'The team's first sum was 206.0', n24 'This is the team's proposal', n36 'n of 0.6 is a team assumption'. For the same items the report and README say 'project assumption', 'this study' and 'the author's proposal'. Slide 45 names a single author.
+FIX: Replace 'team' with 'project' or 'author' on slides 24 and 36 and in notes n15, n24 and n36 (owner: docs:deck).
+===== F32 major The report docx theme maps the Gujarati script to a typeface whose name equals a teammate's first name, and the pre-push scanner strips that attribute
+EVIDENCE: An independent unzip of report/NUSH2_Final_Report.docx found the hit in word/theme/theme1.xml. A regex for <a:font script="Gujr" typeface="..."/> matched twice, at offsets 1279 and 2689 (the major and minor font lists). In both, the 6-character value matches the people rule.
+
+The extract.py people rule flagged 'docx!word/theme/theme1.xml RAW 2'. The same test on the three pptx themes and the embedded xlsx theme gives 'Gujr' count 0, because the deck's scrub_zip (presentation/build_deck.py:1918) removes it. report/_build has no equivalent; grep for 'Gujr|scrub' in report/_build/*.py returned nothing.
+
+prepush_scan.py line 160 runs TYPEFACE.sub("", xml) before the text rules (the TYPEFACE pattern is at line 72), so the tree scan reported 0 hits for this file.
+FIX: After the last Word save, remove or rename the two Gujr font entries in word/theme/theme1.xml, reusing build_deck.py scrub_zip. Then re-zip and rerun the report checks. In prepush_scan.py, test typeface and w:name values against the people rule before stripping them.
+===== F33 major Third-party images are published in the deck and report with no licence or permission note, while the root MIT licence claims the documentation files
+EVIDENCE: LICENSE grants MIT over 'this software and associated documentation files'. README.md:153 to 157 ('Licence and credit') states MIT for the repository with no exclusion for figures.
+
+The published pptx and pdf embed:
+- slide 24: image16.jpg, a Straits Times graphic whose image prints 'Source: Prime Minister's Office, Photo: Google Earth, Straits Times Graphics'
+- slide 13: image10.png, a fission diagram, 'Source: Nuclear-Power.com'
+- slide 35: image20.png, an 'Xe-100 reactor render', 'Source: INL'
+- slides 1 to 4: duotone stock photographs of unknown origin with no credit (build_deck.py:464 to 470 makes them from presentation/media/image1.jpeg and image45.jpeg)
+- Q&A slides 57 to 71: reactor and site photographs with no source line at all (deck_dump.txt shows no Source or credit text on slides 57 to 71, only alt text such as 'Olkiluoto 3' and 'Kashiwazaki ABWR')
+- report Figure 1 (word/media/image1.png): a reproduced INL graphic that carries the id '08-GA50599-04', credited [7]
+FIX: Add a third-party content notice to README.md, and a pointer to it beside LICENSE, stating that credited figures and photographs remain their owners' and are not covered by the MIT licence. Credit every image on its slide. Replace or remove images with no reuse licence (the news graphic, the commercial-site diagram, the vendor render, uncredited stock and Q&A photographs) before the deliverables are committed.
+===== F35 minor Team framing remains in the deck, speaker script, Q&A sheet and one results row shipped to the site
+EVIDENCE: The team text appears in:
+- slide24.xml: <a:t>Team's proposal. No official approval.</a:t> (deck PDF p24)
+- slide36.xml: <a:t>n = 0.6, team assumption</a:t> (deck PDF p36)
+- notesSlide24.xml: 'team's proposal'
+- notesSlide36.xml: 'team assumption'
+- presentation/render/NUSH2_Speaker_Script.pdf p5: 'The team's first sum was 206.0'
+- the same PDF p6: 'This is the team's proposal'
+- the same PDF p9: 'n of 0.6 is a team assumption'
+- presentation/render/NUSH2_QA_Prep.pdf p4: 'It is the team's proposal'
+- results/Final_Design_Basis.csv:155: 'N_TEAM,cost,N team,0.6,...'. My scratch site build carries it in data/csv/Final_Design_Basis.csv:155 and data/provenance.json ('"parameter":"N team"').
+
+The report already says 'project assumption' (Figure D1 legend) and has 0 'team' hits.
+FIX: Use 'the author's proposal' or 'proposed site' and 'project assumption' in the deck, notes, script and Q&A sheet. Change the N_TEAM parameter label in engine/data/parameters.toml (for example 'Size exponent 0.6') and re-export results/. The code identifier n_team can stay.
+===== F38 minor The report uses SMR in its table of contents and PDF outline before defining it
+EVIDENCE: report/NUSH2_Final_Report.pdf p2 (table of contents) reads '4.6 SMR plus CCS comparator', and the PDF outline (toc entry 26) has '4.6 SMR plus CCS comparator'. The first definition, 'conventional steam methane reforming (SMR)', is on p3 in the Executive Summary. The rule asks for SMR to be defined at first use.
+FIX: Title section 4.6 'Steam methane reforming plus CCS comparator', or define SMR on the cover, then regenerate the table of contents and outline.
+===== F43 major Report figure text prints at 3.6 to 7 pt
+EVIDENCE: report/NUSH2_Final_Report.pdf. Figure 2 (PDF p5) is placed 450.6 pt wide (imginfo.py: transform 450.6 x 217.6). Figure_2 SVG viewBox is 2070 px wide with font-size 19 to 32, so text prints at 4.14 to 6.97 pt (22 px, the most common size, prints at 4.79 pt). Figure 4 roadmap (p10) is placed 450.6 pt wide from a 2000 px viewBox with font-size 16 to 24, so 3.60 to 5.41 pt. Figure 1 (p4, 1096x519 px at 317 pt) and Figure 3 (p8, 771x447 px at 277.8 pt) look the same size or smaller in the 1100 px page renders. Figure 2's legend, stream labels and stakeholder text cannot be read at print size.
+FIX: Use a landscape page or full text width for Figures 2 and 4. Better, export report-specific versions with fonts scaled so the smallest label prints at 6.5 pt or more, and enlarge Figures 1 and 3 or split their panels.
+===== F44 major Slide 15's walk ends at 179.0 under a '178.5' title, and the script says the reboiler gap reaches 178.5
+EVIDENCE: Slide 15 (deck.pdf p15) text: title 'The walk to 178.5 MWth', big number '178.5', last bar 'Reboiler gap 179.0' (bbox y 614.7). Script line: 'MEA's reboiler gap takes the need to 178.5.' Tokens: VAL_SIZING_WALK_STEP_6_SIM 179.04 and R_NEEDED_B_MWTH 178.49. Report Table A2 has a separate row 'Headline, syngas heat on its gated model 178.49', which the slide leaves out.
+FIX: Add the final walk step (gated syngas heat, 179.0 to 178.5) as a bar on slide 15, and change the script line to say the reboiler gap gives 179.0 and the gated syngas heat brings the need to 178.5.
+===== F45 major The frequency-consequence chart in report Figure 3 and slide 21 has its dose axis in mSv, and its points contradict the deck's own rem chart
+EVIDENCE: Slide 21 (deck p21) and report p8 Figure 3 label the x-axis '30-day total effective dose equivalent (TEDE) at 400 m (mSv)'. Crop fc_compare.png: the PAG step sits at x ≈ 10^0.31 ≈ 2 mSv, and the '10 CFR 50.34' pointer sits near 60 to 100 mSv. Q&A slide 62 (the user's slide, credited to the Long Mott PSAR) plots the same LMP target in rem, with the PAG step at 1 rem (10 mSv). Report Figure 3 says 'Adapted from the Xe-100 construction permit application [27]'. The two charts put the PAG point a factor of about 5 apart.
+FIX: Redraw Figure 3 and slide 21 from the cited figure in [27], in that figure's units. If the curve is only a schematic, drop the numeric dose ticks and say so in the caption.
+===== F46 minor Deck, speaker script and Q&A sheet use 'team' framing where the report says 'project'
+EVIDENCE: deck.pdf p24 'Team's proposal. No official approval.'; p36 'n = 0.6, team assumption' and chart legend 'n = 0.6 (team assumption)'; script: 'The team's first sum was 206.0', 'This is the team's proposal', 'n of 0.6 is a team assumption'; Q&A sheet Q9: 'It is the team's proposal'. A case-insensitive search for 'team' in report.pdf finds only 'steam'. The report writes 'a siting proposal of this study' and Figure D1 says 'n = 0.6, project assumption'. The deck names a single author on slide 45.
+FIX: Use the report's wording in the deck, chart legend, script and Q&A sheet: 'proposal of this study' and 'project assumption'.
+===== F47 minor Speaker script titles for slides 40 and 41 do not match the slides
+EVIDENCE: script_vs_deck.py: TITLE MISMATCH 40 'What S$100/tCO2e would take' vs slide 'What S$100/t would take'; TITLE MISMATCH 41 'S$96/tCO2e: S$100/tCO2e target met ...' vs slide 'S$96/t: S$100/t target met ...'. This occurs in both the running-order table and the body headings of NUSH2_Speaker_Script.docx. All other 44 main and 10 backup titles match exactly.
+FIX: Have build_speaker_docs.py copy the slide title text verbatim, or apply the same unit rewrite to both.
+===== F48 minor The speaker script says the backup slides are hidden, but no slide is hidden in the pptx
+EVIDENCE: script.txt line 224: 'These slides stay hidden in the run.' python-pptx check of each slide's show attribute returned {}. A zip scan for show="0" returned 'hidden slides: []', so advancing past slide 46 in a slideshow enters the backups.
+FIX: Set show="0" on slides 47 to 72 if they are meant for questions only, or remove the sentence from the script.
+===== F49 minor Q&A sheet Q13 (co-funding) points to slide 41, which has no co-funding content
+EVIDENCE: qaprep.txt: 'Q13. Could public co-funding bring the cost down? ... Show: Slide 41; Q&A slide 72.' Slide 41 shows MATURE_60Y and the base full cost. Only slide 72 carries co-funding figures.
+FIX: Change the Q13 line to 'Show: Q&A slide 72' (optionally adding slide 39 for the unsubsidised base).
+===== F50 minor The report docx theme still lists the Gujarati typeface the deck builder scrubbed from the pptx
+EVIDENCE: zipgrep.py over the four Office files: report.docx word/theme/theme1.xml has 2 hits ('<a:font script="Gujr" typeface="..."/>' in the major and minor font lists); deck_copy.pptx, script.docx and qaprep.docx have 0. Per the docs:deck report, this typeface name equals a team member's first name. prepush_scan.py strips typeface attributes before scanning, so it does not flag them.
+FIX: Run the same theme scrub as build_deck.py scrub_zip() on report/NUSH2_Final_Report.docx after the last Word save, then rescan the XML.
+===== F51 minor Slide 13's parts do not add to its headline load (12.3 + 7.4 shown against 19.8)
+EVIDENCE: deck.pdf p13 spans '12.3' (bbox 93.6, 535.3), '7.4' (470.7, 535.3) and '19.8' (763.3, 305.6). Tokens: RES_E_PROCESS_MWE 12.33, EB_B_REC_F_HE_CIRCULATION 7.45 (table '7.45'). 12.3 + 7.4 = 19.7 on screen.
+FIX: Print the bar labels to two decimals (12.33 and 7.45, as report Table 2 does), or add a note that the parts are rounded.
+===== F52 minor Slide 42 connector runs into a label, and footer status notes are applied unevenly
+EVIDENCE: crop_s42.png: the horizontal connector from the 146.3 bar ends exactly at the 'L' of the 'L5 128.2' label. A footer scan finds 'Reduced-order balances anchored on INL cases' on slides 3, 5, 6, 8-10, 13-17, 27-33, 35-41, 43, 44 and 46-51. It is missing from slides 42 and 54, which also show engine results. Section 3 of the build order also limits footer lines to title, Wee Zhern Ray, MIT licence and the OUTRAM PARK credit.
+FIX: Shorten the connector or move the label in build_figures.py. Either put the status note on every results slide, including 42 and 54, or move it out of the footer into the source line.
+===== F53 minor Pictures on Q&A slide 70 are stretched (inherited from the user's source)
+EVIDENCE: piccrop.py on deck slide 70: Big Rock Point 700x640 in a 1.739-aspect frame (distortion 1.590), Diablo Canyon 1.904, Kashiwazaki 1.649, Olkiluoto 3 2.127, fusion 1.226, all with <a:stretch><a:fillRect/> and no srcRect. qa_image6 on slides 58 and 61 is stretched by 1.075. Source slides 14, 2 and 5 have the same geometry.
+FIX: Crop with srcRect to each frame's aspect in qa_backup.py, keeping the frame size, or leave as supplied and record it as a known item.
+===== F54 minor Deck cost-ladder labels differ from the report's labels for the same chart
+EVIDENCE: Slides 38 and 50 read 'L3 cumulative', 'Baseline grid power avoided' and 'L5 rebuilt full cost', with the x-axis from -150. Report Figures D2 and D3 (p29) read 'L3 named step', 'Baseline purchased power avoided' and 'L5 full cost', with the axis from -100. The report body and Table 7 use 'named step' and 'Baseline purchased power avoided'.
+FIX: Draw both from one label set in build_figures.py and the report chart builder.
+===== F55 minor The report mixes two subscript styles for CO2 and H2
+EVIDENCE: Span count over report.pdf: 54 Unicode subscript-two glyphs (TimesNewRomanPSMT 52, Bold 2) on 23 pages, and 115 size-reduced formatted '2' subscripts after CO or H on 20 pages. Both appear on the same pages, for example p13: 'CO₂ transport and storage (T&S) is S$60/tCO2' with the formatted subscript.
+FIX: Normalise every CO2 and H2 to one form in resolve_numbers.py or the docx writer, preferably the formatted subscript used in the math runs.
+===== F56 minor Slide figures and reference lists are small for projection
+EVIDENCE: Figure 2 on slides 7 and 26 is placed 1235.8 pt wide on a 1440 pt slide (823.9 pt at 13.33 in), so its 19 to 32 px SVG text projects at 7.6 to 12.7 pt. The roadmap on slide 25 is 1303.2 pt wide, so its 16 to 24 px text projects at 6.9 to 10.4 pt. On reference slides 55 and 56 all body text is 16 pt in the PDF (10.7 pt at standard size).
+FIX: For slides 7, 25 and 26, scale up the smallest figure fonts or split the figure across two builds. The backup references can stay as they are.

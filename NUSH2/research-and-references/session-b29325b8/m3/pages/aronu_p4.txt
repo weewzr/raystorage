@@ -1,0 +1,223 @@
+constant in water (Chen et al., 1979), v1
+CO2 the inﬁnite dilution
+partial molar volume of CO2 (Brelvi and O’Connell, 1972) and T ðKÞ
+is temperature. The reference states for water and amine were the
+pure components at system temperature and pressure. Thus the
+phase equilibrium was calculated from
+fiyiP ¼ gixiPifs
+iexp viðPPs
+i Þ
+RT
+
+
+ð11Þ
+Here gi, fi, fs
+i are the activity coefﬁcient, fugacity coefﬁcients and
+saturated vapor fugacity coefﬁcients, respectively, while vi is the
+partial molar volumes for the components (DIPPR, 2004).
+The standard chemical potentials for most of the species in the
+CO2-amine system are not readily available in the literature.
+However, the equilibrium constant for the reaction j is related
+to
+the
+standard
+chemical
+potentials, mO
+i ,
+through
+Eq.
+(12)
+which allows for a calculation of the standard state chemical
+potentials.
+RT lnKjðTÞ ¼ 
+X
+i
+vijmO
+i ðTÞ
+ð12Þ
+For the H2O–MEA–CO2 system there are nine species and four
+reactions, hence Eq. (12) is underspeciﬁed. This was resolved by
+setting four of the standard state chemical potentials to zero and
+then solving for the remaining ones. This solution approach has
+been described by Smith and Missen (1982), Solbraa (2002), and
+Hessen et al. (2010).
+3.3. Activity coefﬁcient model
+The activity coefﬁcients for all species were calculated using
+the extended UNIQUAC thermodynamic model framework. The
+original
+non-electrolyte UNIQUAC
+equation
+by
+Abrams
+and
+Prausnitz (1975) was extended for electrolyte systems by addi-
+tion of an electrostatic term by Sanders et al. (1986) to a modiﬁed
+UNIQUAC equation. The model framework implemented in this
+work is as presented by Thomsen (1997) and Thomsen and
+Rasmussen (1999). The model consists of three terms: a combi-
+natorial, entropic; a residual, enthalpic (short range terms) and
+the electrostatic (long range) term of Debye–H¨uckel type, Eq. (13).
+The model requires volume, r and surface area, q parameters for
+each species and adjustable binary interaction energy parameters,
+uki for each pair of species
+gE
+RT ¼
+gE
+RT
+
+
+Combinatorial
+þ gE
+RT
+
+
+Residual
+þ gE
+RT
+
+
+DebyeH €uckel
+ð13Þ
+The temperature, T ðKÞ, dependence of the interaction energy
+parameter (cki) of the residual term is given as
+cki ¼ exp  ukiuii
+T
+
+
+ð14Þ
+where
+uki ¼ uO
+ki þuT
+kiðT298:15Þ
+ð15Þ
+3.4. Thermodynamic parameters
+Thermodynamic parameters needed for each of the models
+are parameters in the activity coefﬁcient model, equilibrium
+constants and Henry’s law constant for CO2 in pure water. The
+equilibrium constants are deﬁned in terms of mole fractions, thus
+they are dimensionless, while the Henry constant has the unit of
+pascal. The temperature, T ðKÞ, dependencies of the equilibrium
+and Henry’s constant used in this work are given by
+lnK or lnH ¼ C1 þC2=T þC3 lnT þC4T
+ð16Þ
+The coefﬁcients C1–C4 are summarized in Table 2 for all reactions
+together with literature sources.
+3.5. Model parameter regression
+CO2 can be bound chemically by an absorbent or remain as free
+CO2 (physical solubility) in an absorbent. Physical solubility of CO2 into
+an absorbent at various concentrations and temperatures is necessary
+in the development of kinetics and thermodynamic models for the
+system. The problem is that CO2 reacts with the absorbent. This reac-
+tive nature of CO2 with any absorbent does not allow direct measure-
+ment of the physical CO2 solubility in the solution. The physical
+solubility is thus measured indirectly using a similar non-reacting gas,
+N2O by an analogy, the N2O analogy. The N2O analogy was originally
+proposed by Clarke (1964) and veriﬁed by Laddha et al. (1981). It gives
+a measure of the physical solubility of CO2 in the aqueous amine
+solution. It has been applied on various amine systems; Haimour and
+Sandall (1984), Versteeg and Van Swaaij (1988), Mandal et al. (2005),
+and Hartono et al. (2008). Previous works that have modeled CO2
+equilibrium in aqueous MEA solutions have not incorporate experi-
+mentally determined physical (N2O) solubility of CO2 in MEA. The use
+of N2O solubility in the model calculations enables determination of
+the CO2 activity coefﬁcient. Hessen (2010) showed results of CO2
+activity
+coefﬁcients
+calculated
+by
+reﬁned-electrolyte–NRTL
+and
+extended UNIQUAC for N2O solubility and compared to experimental
+values. Results from both models did not agree with experimental
+result. This work implements the Henry’s law constant of CO2 in MEA,
+as described by Eq. (19) as data from Hartono (2009) for solubility of
+N2O into 30 mass% MEA solution at various CO2 loadings were
+included in the parameter regression data set. Expressions for solubi-
+lity of CO2 and N2O in water have been correlated by Versteeg and
+Van Swaaij (1988) in form of Henry’s law constants; where Hw
+CO2 and
+Hw
+N2O are the Henry’s law constants of CO2 and N2O in water,
+respectively, and T ðKÞ is temperature. The solubilities in the mixed
+MEA/water solvent are given as apparent Henry’s law coefﬁcients
+Hw
+CO2 ¼ 2:82  106 expð2044=TÞ
+ð17Þ
+Hw
+N2O ¼ 8:55  106 expð2284=TÞ
+ð18Þ
+Happ,MEA
+CO2
+¼
+Hw
+CO2
+Hw
+N2O
+Happ,MEA
+N2O
+Happ,MEA
+CO2
+¼ gn
+CO2Hw
+CO2
+ð19Þ
+Table 2
+Mole fraction based temperature dependent equilibrium constants and Henry’s law constant for CO2.
+Reaction
+Parameter
+C1
+C2
+C3
+C4
+T (1C)
+Source
+4
+KH2O
+132.899
+13,445.90
+22.4773
+0
+0–225
+Edwards et al. (1978)
+5
+KCO2
+231.465
+12,092.10
+36.7816
+0
+0–225
+Edwards et al. (1978)
+6
+KHCO
+3
+216.049
+12,431.70
+35.4819
+0
+0–225
+Edwards et al. (1978)
+7
+KMEA
+4.9074
+6166.12
+0
+0.00098482
+0–50
+Bates and Pinching (1951)
+8
+KMEACOO
+2.8898
+3635.09
+0
+0
+25–120
+Austgen et al. (1989)
+HCO2
+170.7126
+8477.711
+21.95743
+0.005781
+0–100
+Chen et al. (1979)
+U.E. Aronu et al. / Chemical Engineering Science 66 (2011) 6393–6406
+6396

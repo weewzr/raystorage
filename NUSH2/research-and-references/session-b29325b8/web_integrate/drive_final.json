@@ -1,0 +1,607 @@
+{
+ "label": "final",
+ "checks": [
+  {
+   "id": "page_loads_and_solves",
+   "status": "pass",
+   "detail": "'Solved in 24 ms' after 0.33 s from navigation"
+  },
+  {
+   "id": "solve_time_budget",
+   "status": "pass",
+   "detail": "20 full solves in headless Chrome: wasm call median 7.1 ms, max 9.0 ms; page round trip median 7.7 ms, max 9.6 ms; budget 500 ms on this machine"
+  },
+  {
+   "id": "dashboard_kpis_match_results",
+   "status": "pass",
+   "detail": "13 KPI tiles against data/reference.json cells of results/*.csv at printed precision"
+  },
+  {
+   "id": "dashboard_cost_table_matches_results",
+   "status": "pass",
+   "detail": "40 cells of the rating cost table against Final_Design_Basis.csv headline cells"
+  },
+  {
+   "id": "cost_target_state",
+   "status": "pass",
+   "detail": "page says 'missed': 'Target S$100/t: missed. No case in this table sits at or below it on both the L5 ledger and the discounted cash flow.'; results: 0 passing cells, lowest cell 165.6 S$/t"
+  },
+  {
+   "id": "l3_not_on_dashboard",
+   "status": "pass",
+   "detail": "L3 value 137.7 S$/t absent from the dashboard text"
+  },
+  {
+   "id": "n_rows_equal_prominence",
+   "status": "pass",
+   "detail": "cost table cell font sizes ['15.2px']"
+  },
+  {
+   "id": "withdrawn_values_absent_rendered",
+   "status": "pass",
+   "detail": "11 withdrawn-figure rules over the rendered text of 6 routes"
+  },
+  {
+   "id": "internal_note_refs_rendered",
+   "status": "skip",
+   "detail": "2 distinct internal note pointers in rendered text: ['parameters: econ_lit.md s9', 'parameters: econ_lit.md s9h']"
+  },
+  {
+   "id": "no_unresolved_tokens",
+   "status": "pass",
+   "detail": "no unresolved panel token on 6 routes"
+  },
+  {
+   "id": "no_em_dash_rendered",
+   "status": "pass",
+   "detail": "no em dash in the rendered text of 6 routes"
+  },
+  {
+   "id": "pfd_units_panels",
+   "status": "pass",
+   "detail": "20 units clicked, each panel has 7 sections with text; sections that print the 'no entry' note: 1"
+  },
+  {
+   "id": "pfd_keyboard",
+   "status": "pass",
+   "detail": "Enter on circ_primary opens its panel: True; Tab moves focus to ihx; Space opens it: True"
+  },
+  {
+   "id": "pfd_stream_tooltip",
+   "status": "pass",
+   "detail": "hover on P1: 'P1Primary helium, reactor outlet to the IHX\\nFrom HTGR and helium loop to Intermediate heat exchanger.\\nStream conditions: n/a, the fast tier does not run the Lev'"
+  },
+  {
+   "id": "pfd_labels_bound",
+   "status": "pass",
+   "detail": "10 bound labels; kpi.rating_mwth=210, units.power.outputs.e_nuc.value=19.8, kpi.q_process_mwth=120.8, kpi.co2_captured_t_y=359,777, units.htgr.conditions.ROT.value=925, units.htgr.conditions.T_HE_SUPPLY.value=900, units.htgr.conditions.T_HE_RETURN.value=466, units.smr.conditions.SYNGAS_CHAIN_C5_HPS_GEN1_T_IN_C.value=871, inputs.w_mea=30, kpi.h2_product_t_y=66,925"
+  },
+  {
+   "id": "charts_hover_and_table",
+   "status": "pass",
+   "detail": "11 drawn charts hovered and toggled to table and back; 5 state n/a with a reason"
+  },
+  {
+   "id": "waterfalls_reach_engine_totals",
+   "status": "pass",
+   "detail": "no waterfall flags a subtotal mismatch"
+  },
+  {
+   "id": "na_charts_state_reason",
+   "status": "pass",
+   "detail": "5 n/a charts, all with a stated reason"
+  },
+  {
+   "id": "control_rating_179",
+   "status": "pass",
+   "detail": "rating 179 MWth: surplus 0.506 MWth (process needs 178.494), L5 cost 161.6 S$/t, DCF 161.9 S$/t; status 'Solved in 9 ms'"
+  },
+  {
+   "id": "control_hard_limit_blocked",
+   "status": "pass",
+   "detail": "typed 351: page error '351 is outside the hard range and was not sent to the engine. Allowed 100 to 350 MWth.'; input kept at 179"
+  },
+  {
+   "id": "control_forced_value_rejected_by_rust",
+   "status": "pass",
+   "detail": "forced 351 past the page: status 'Input refused', banner 'Input refused. Reactor rating at 351 MWth lies outside 100 to 350 MWth. Rule: hard_range. The previous result is kept.'"
+  },
+  {
+   "id": "control_reset",
+   "status": "pass",
+   "detail": "reset: 32 KPIs back to the default solve"
+  },
+  {
+   "id": "control_evidence_flag",
+   "status": "pass",
+   "detail": "rating_mwth = 216 (evidence max 215): engine flag True, control badge 'Outside evidence range. Reactor rating at 216 MWth lies outside the evidence range 150 to 215 MWth.', dashboard list 'Reactor rating at 216 MWth lies outside the evidence range 150 to 215 MWth\\nIHX approach at 25 K lies outside the evidence range 50 to 82 K, and the cross rules '"
+  },
+  {
+   "id": "case_a_deficit_visible",
+   "status": "pass",
+   "detail": "Case A: H2 97946 t/y, surplus -50.74 MWth, abatement 845994 t/y, unmet power 22.102853021591002; tile 'deficit Thermal deficit at rating -50.7MWth Deficit: the process needs more heat than the rating Rating 210.0 MWth, process needs 260.7 MWth'; unmet tile 'unmet Unmet electrical demand at rating 22.10MWe Unmet by the reactor, covered by grid import'"
+  },
+  {
+   "id": "control_tail_gas_burn",
+   "status": "pass",
+   "detail": "tail_gas burn_on_site: abatement 467353 t/y against 578052 t/y at recycle; flags ['ihx_approach_k', 'T_HE_SUPPLY']"
+  },
+  {
+   "id": "exports_download",
+   "status": "pass",
+   "detail": "11 files downloaded; results CSV 588 rows, header section,id,label,value,unit,class; inputs JSON keys 16: schema,title,engine,commit,exported_utc,inputs,inputs_as_solved,changed_from_headline_basis; status JSON keys 8: schema,engine,exported_utc,model_status,provenance_counts,terms,validation,validation_note"
+  },
+  {
+   "id": "print_summary",
+   "status": "pass",
+   "detail": "basis line in the summary after reset: '    Engineering summary. Engine 0.1.0, commit a31d73e, headl'; print() called 1 time(s); summary element True with 1 SVG; navigation hidden in print media: True; PDF 814648 bytes, 5 page(s)"
+  },
+  {
+   "id": "validation_counts_equal_csv",
+   "status": "pass",
+   "detail": "page {'pass': '324', 'fail': '29', 'not_run': '40', 'reported': '249'}, results/Validation_Results.csv {'not_run': 40, 'reported': 249, 'pass': 324, 'fail': 29}, failure list 29 items"
+  },
+  {
+   "id": "reload_same_commit",
+   "status": "pass",
+   "detail": "after reload: build.json a31d73e, footer a31d73e, 18 resources, unstamped []"
+  },
+  {
+   "id": "mobile_375_no_horizontal_scroll",
+   "status": "pass",
+   "detail": "6 routes at 375 px: document scroll width within the viewport"
+  },
+  {
+   "id": "mobile_pfd_scroller_and_picker",
+   "status": "pass",
+   "detail": "PFD scroller scrolls True (scrollWidth > clientWidth True); unit picker visible True with 20 options; picking wgs opens panel wgs"
+  },
+  {
+   "id": "console_errors",
+   "status": "pass",
+   "detail": "0 console errors or exceptions, 0 other console lines"
+  },
+  {
+   "id": "network_local_only",
+   "status": "pass",
+   "detail": "45 requests, all to http://127.0.0.1:55682"
+  }
+ ],
+ "info": {
+  "first_solve_status": "Solved in 24 ms",
+  "load_to_first_solve_s": 0.33,
+  "solve_times": {
+   "n": 20,
+   "worker_ms_median": 7.099999999627471,
+   "worker_ms_max": 9,
+   "round_trip_ms_median": 7.699999999254942,
+   "round_trip_ms_max": 9.600000000558794
+  },
+  "dashboard_kpis": {
+   "rating_mwth": "210.0",
+   "reactor_required_mwth": "178.5",
+   "surplus_mwth": "31.5",
+   "q_process_mwth": "120.8",
+   "h2_product_t_y": "66,925",
+   "ng_mmscfd": "23.23",
+   "co2_captured_t_y": "359,777",
+   "capture_plant": "90.4",
+   "q_reboiler_mw": "51.0",
+   "e_aux_mwe": "19.78",
+   "abatement_t_y": "578,052",
+   "cost_s_per_t": "189.7",
+   "cost_lac_dcf_s_per_t": "190.1"
+  },
+  "internal_note_refs": [
+   "parameters: econ_lit.md s9",
+   "parameters: econ_lit.md s9h"
+  ],
+  "panel_text": {
+   "htgr": {
+    "summary": "Generic helium-cooled reactor that supplies all process heat through the IHX, with a branch to the power block.",
+    "lims": [
+     "The design basis is a generic 925°C HTGR. No commercial reactor runs at this outlet, and Xe-100 is only a labelled analogue with a much lower outlet temperature.",
+     "The decay heat limit at this rating and outlet temperature is unchecked.",
+     "Heat beyond the process need is held as margin and earns no revenue.",
+     "The anchored port reports heat shortfall as grid import and has no unmet thermal demand field.",
+     "Input outside its evidence range. Helium supply temperature is fixed at 900 C. Highest measured secondary helium temperature is 859 C, HTTR 2004 high-temperature run (IAEA NP-T-4.3 printed p.14)"
+    ]
+   },
+   "circ_primary": {
+    "summary": "Helium circulators. Figure 2 draws the primary circulator; the engine counts the secondary circulator on the return leg as well.",
+    "lims": [
+     "No measured circulator shaft power exists in the local sources.",
+     "Whether INL's power conversion efficiency is already net of primary circulation is unverified, so this load may be counted twice.",
+     "The secondary loop pressure drop is an assumption. INL's per-exchanger labels imply a larger drop, which would raise the circulator load.",
+     "The secondary circulator inlet sits above the circulator inlet temperatures run at HTTR."
+    ]
+   },
+   "ihx": {
+    "summary": "Helium to helium exchanger between the primary loop and the secondary loop that heats the reformer.",
+    "lims": [
+     "The approach is a modelling assumption below every measured IHX approach in the local sources; the engine flag below gives the evidence range.",
+     "No IHX in the local sources has run at this secondary helium temperature.",
+     "The required conductance of a single unit is far above HTTR's, so the module count is open.",
+     "The anchored port has no IHX duty field; it computes only the loss terms around the IHX.",
+     "Input outside its evidence range. IHX approach at 25 K lies outside the evidence range 50 to 82 K, and the cross rules cap the control at 50 K",
+     "Input outside its evidence range. Helium supply temperature is fixed at 900 C. Highest measured secondary helium temperature is 859 C, HTTR 2004 high-temperature run (IAEA NP-T-4.3 printed p.14)"
+    ]
+   },
+   "power": {
+    "summary": "Small steam plant on a primary helium branch. It raises electricity for site loads and steam for the reboiler gap.",
+    "lims": [
+     "The efficiency traces to TEV-981, which is not held locally, so whether it is net of circulation is unknown.",
+     "The block is a small steam plant with process extraction, sized by this balance with no equipment design.",
+     "Unmet electrical demand is reported as grid import at rating."
+    ]
+   },
+   "smr": {
+    "summary": "Reformer tubes heated by secondary helium in place of fired furnaces.",
+    "lims": [
+     "Stage 2 tube check. On the assumed tube (Hoseinzade and Adams geometry with the JAERI finned helium annulus) and helium supplied at 900°C, the tube model found no tube count in its search range that reaches the 871°C exit. The two lower exit temperatures of the Stage 2 sensitivity, flowsheet runs FS_B_REC_F_T825 and FS_B_REC_F_T800, are reachable. The design exit therefore stays INL's equilibrium assumption, and the Headline solve does not use the tube model.",
+     "Stage 2 JAERI benchmark. The A-2 run sets the single tuned catalyst activity, and the held-back runs miss the measured methane conversion.",
+     "The Xu and Froment rates are extrapolated well above the temperature and pressure of their data.",
+     "Process heat is the total heat to the reformer train and includes preheat.",
+     "Ahn and Lee's heat basis gives a different duty that this model has not reconciled; the dashboard shows the surplus on both bases.",
+     "Stage 3 carbon gate. The Level 3 carbon comparison failed, so the gas feed term T13 stays on its anchored value.",
+     "The equilibrium layer misses INL's printed conventional reformer conversion.",
+     "Input outside its evidence range. Helium supply temperature is fixed at 900 C. Highest measured secondary helium temperature is 859 C, HTTR 2004 high-temperature run (IAEA NP-T-4.3 printed p.14)"
+    ]
+   },
+   "wgs": {
+    "summary": "High and low temperature shift beds in one drawn vessel.",
+    "lims": [
+     "No low temperature shift kinetics exist in the local sources; the approach comes from two flowsheets.",
+     "One vessel is drawn for two modelled beds.",
+     "At Chinchen's test space velocity the high temperature shift misses INL's outlet.",
+     "Stage 3 carbon gate. The Level 3 flowsheet gives a different carbon split from the anchored value, and the comparison failed.",
+     "The engine's shift heat release row is not run."
+    ]
+   },
+   "syngas_cooler": {
+    "summary": "Heat recovery chain from the reformer exit down to the separator, drawn as one exchanger.",
+    "lims": [
+     "INL Case 5 stands in for Case 6, whose stream sheets are not held locally.",
+     "No source gives the heat transfer coefficient or area of these exchangers.",
+     "Six exchangers are modelled and one is drawn."
+    ]
+   },
+   "separator": {
+    "summary": "Knock-out drum that removes condensed water before the absorber.",
+    "lims": [
+     "The Headline solve runs no flash; condensate flow comes only from the Level 3 flowsheet.",
+     "Condensate chemistry is absent.",
+     "CO₂ dissolved in the condensate sits outside the ledger."
+    ]
+   },
+   "absorber": {
+    "summary": "Packed column where 30 wt% MEA takes CO₂ out of the shifted syngas at pressure.",
+    "lims": [
+     "Stage 3 column benchmarks. The pilot absorber benchmark misses, and the high-pressure runs sit far below the measured removal. The column gate failed, so the Headline solve keeps the fixed per-pass capture and the column model runs only in the validation harness.",
+     "No pilot has run aqueous MEA on shifted syngas at this pressure.",
+     "No solubility data exist in MEA for H₂ or the other light gases, and solvent property data end near the rich loading cap of 0.50 mol/mol.",
+     "The liquid to gas ratio is far above that of flue-gas pilots.",
+     "The literature on solvent choice is mixed, so Selexol and activated MDEA stay as sensitivities."
+    ]
+   },
+   "lean_pump": {
+    "summary": "Raises lean solvent from stripper pressure to absorber pressure.",
+    "lims": [
+     "Pump and motor efficiencies are project assumptions, and no letdown recovery is credited.",
+     "Stage 3 column gate. The column benchmarks failed, so term T07 stays on its anchored value."
+    ]
+   },
+   "lean_cooler": {
+    "summary": "Trims lean solvent to absorber temperature with cooling water.",
+    "lims": [
+     "The cooling electricity factor is an assumption with no direct published ratio.",
+     "The anchored port scales the cooling load on the reboiler duty and computes no lean cooler duty.",
+     "Stage 3 column gate. The column benchmarks failed, so term T08 stays on its anchored value."
+    ]
+   },
+   "rich_lean_hx": {
+    "summary": "Cross exchanger that heats rich solvent on its way to the stripper with hot lean solvent.",
+    "lims": [
+     "Solvent heat capacity is assumed, since the local data are figures only.",
+     "The Headline solve folds this exchanger into the fixed specific reboiler duty and computes no duty for it."
+    ]
+   },
+   "stripper": {
+    "summary": "Regenerates rich MEA near 2.0 bar and releases the captured CO₂ overhead.",
+    "lims": [
+     "Stage 3 column benchmarks. The stripper model misses the pilot regeneration energy and lean loading. The column gate failed, so the Headline solve keeps the approved specific reboiler duty (decision S12 in docs/VALIDATION_MATRIX.md).",
+     "No measured specific reboiler duty exists for high-pressure syngas; the value is a judgement carried from flue-gas pilots, and the direction of its bias is unknown."
+    ]
+   },
+   "reboiler": {
+    "summary": "Supplies stripping steam, drawing heat in a fixed order from recovered heat and then reactor steam.",
+    "lims": [
+     "Syngas near the bottom of its recovery range cannot drive this reboiler directly.",
+     "All export steam is forfeited at this duty.",
+     "The freed Selexol steam credit exists only against INL's flowsheet.",
+     "The specific reboiler duty is fixed because the column gate failed."
+    ]
+   },
+   "condenser": {
+    "summary": "Cools the stripper overhead, returns reflux and passes the captured CO₂ on.",
+    "lims": [
+     "H₂ carried into the product CO₂ without a rich flash is a scoping estimate.",
+     "The Headline solve folds the condenser into the fixed specific reboiler duty and computes no duty for it."
+    ]
+   },
+   "co2_compressor": {
+    "summary": "Compresses captured CO₂ for the ship and offshore storage.",
+    "lims": [
+     "DICE gives a higher compression load, and the two scopes were not compared.",
+     "INL's outlet is a pipeline condition; conditioning for the ship is not modelled.",
+     "Stage 3 carbon gate. The Level 3 carbon comparison failed, so term T09 stays on its anchored value."
+    ]
+   },
+   "co2_storage": {
+    "summary": "Ship transport to offshore storage abroad, inside the dashed line as Figure 2 draws it.",
+    "lims": [
+     "Storage is a tariff only, with no simulation.",
+     "How offshore storage abroad counts as abatement is unresolved."
+    ]
+   },
+   "psa": {
+    "summary": "Pressure swing adsorption, an external block outside the dashed line.",
+    "lims": [
+     "The PSA is not simulated; recovery is assumed from INL and product purity is INL's.",
+     "The reject return is a boundary stream, by project decision."
+    ]
+   },
+   "recycle_compressor": {
+    "summary": "Compresses the PSA reject that crosses back into the boundary for the cryogenic unit.",
+    "lims": [
+     "INL's row covers Case 6 fuel-gas recycle and nitrogen removal equipment together, and the split is not published.",
+     "No published cost exists for this train; the ledger line is a proxy."
+    ]
+   },
+   "cryogenic": {
+    "summary": "Returns a CH₄-rich recycle to the reformer feed and H₂ to the PSA feed. The N₂-rich cut goes to the stack.",
+    "lims": [
+     "Stage 3 carbon gate. The Level 3 flowsheet and the anchored ledger disagree on the carbon split after the shift, four carbon lines miss (tube, tail gas, recycled, burned), and term T04 stays on its anchored value.",
+     "CO₂ slip into this unit is about ten times INL's, and freeze-out and reverse shift are unquantified, so INL's recycle may not transfer to MEA.",
+     "The burned N₂-rich cut leaves to the atmosphere and is counted in the emissions."
+    ]
+   }
+  },
+  "panel_md_refs": {
+   "circ_primary": [
+    "htgr_ihx.md ",
+    "htgr_ihx.md ",
+    "htgr_ihx.md ",
+    "htgr_ihx.md ",
+    "htgr_ihx.md "
+   ],
+   "lean_pump": [
+    "htgr_ihx.md "
+   ],
+   "stripper": [
+    "VALIDATION_MATRIX.md)"
+   ],
+   "co2_compressor": [
+    "inl.md "
+   ],
+   "co2_storage": [
+    "econ_lit.md "
+   ]
+  },
+  "pfd_sections_with_no_entry_note": {
+   "co2_storage": [
+    "outputs"
+   ]
+  },
+  "charts": [
+   {
+    "key": "abatement",
+    "na": false,
+    "mismatch": "",
+    "route": "route-dashboard",
+    "reason": ""
+   },
+   {
+    "key": "species",
+    "na": false,
+    "mismatch": "",
+    "route": "route-results",
+    "reason": ""
+   },
+   {
+    "key": "live-smr",
+    "na": true,
+    "mismatch": "",
+    "route": "route-results",
+    "reason": "n/a. the anchored port carries no axial or train profile; column models stay anchored because their gates failed"
+   },
+   {
+    "key": "live-train_T",
+    "na": true,
+    "mismatch": "",
+    "route": "route-results",
+    "reason": "n/a. the anchored port carries no axial or train profile; column models stay anchored because their gates failed"
+   },
+   {
+    "key": "live-train_P",
+    "na": true,
+    "mismatch": "",
+    "route": "route-results",
+    "reason": "n/a. the anchored port carries no axial or train profile; column models stay anchored because their gates failed"
+   },
+   {
+    "key": "train-t",
+    "na": false,
+    "mismatch": "",
+    "route": "route-results",
+    "reason": ""
+   },
+   {
+    "key": "train-p",
+    "na": false,
+    "mismatch": "",
+    "route": "route-results",
+    "reason": ""
+   },
+   {
+    "key": "live-absorber",
+    "na": true,
+    "mismatch": "",
+    "route": "route-results",
+    "reason": "n/a. the anchored port carries no axial or train profile; column models stay anchored because their gates failed"
+   },
+   {
+    "key": "live-stripper",
+    "na": true,
+    "mismatch": "",
+    "route": "route-results",
+    "reason": "n/a. the anchored port carries no axial or train profile; column models stay anchored because their gates failed"
+   },
+   {
+    "key": "reboiler-stack",
+    "na": false,
+    "mismatch": "",
+    "route": "route-results",
+    "reason": ""
+   },
+   {
+    "key": "reactor-heat",
+    "na": false,
+    "mismatch": "",
+    "route": "route-results",
+    "reason": ""
+   },
+   {
+    "key": "electricity",
+    "na": false,
+    "mismatch": "",
+    "route": "route-results",
+    "reason": ""
+   },
+   {
+    "key": "carbon-waterfall",
+    "na": false,
+    "mismatch": "",
+    "route": "route-results",
+    "reason": ""
+   },
+   {
+    "key": "cost-ladder",
+    "na": false,
+    "mismatch": "",
+    "route": "route-results",
+    "reason": ""
+   },
+   {
+    "key": "cost-dumbbell",
+    "na": false,
+    "mismatch": "",
+    "route": "route-results",
+    "reason": ""
+   },
+   {
+    "key": "tornado-pre",
+    "na": false,
+    "mismatch": "",
+    "route": "route-results",
+    "reason": ""
+   }
+  ],
+  "downloads": [
+   "Economic_Ledger_a31d73e.csv",
+   "Emissions_Ledger_a31d73e.csv",
+   "Final_Design_Basis_a31d73e.csv",
+   "Integrated_Energy_Balance_a31d73e.csv",
+   "Integrated_Mass_Balance_a31d73e.csv",
+   "Sensitivity_Results_a31d73e.csv",
+   "Validation_Results_a31d73e.csv",
+   "nush2_inputs_a31d73e.json",
+   "nush2_results_a31d73e.csv",
+   "nush2_status_a31d73e.json",
+   "nush2_streams_a31d73e.csv"
+  ],
+  "console_notes": []
+ },
+ "shots": [
+  {
+   "file": "final_desktop_dashboard.png",
+   "w": 1440,
+   "h": 3185
+  },
+  {
+   "file": "final_desktop_pfd.png",
+   "w": 1440,
+   "h": 1318
+  },
+  {
+   "file": "final_desktop_results.png",
+   "w": 1440,
+   "h": 9000
+  },
+  {
+   "file": "final_desktop_parameters.png",
+   "w": 1440,
+   "h": 4453
+  },
+  {
+   "file": "final_desktop_dashboard_refused.png",
+   "w": 1440,
+   "h": 900
+  },
+  {
+   "file": "final_desktop_dashboard_case_a.png",
+   "w": 1440,
+   "h": 3198
+  },
+  {
+   "file": "final_desktop_export.png",
+   "w": 1440,
+   "h": 1431
+  },
+  {
+   "file": "final_print_media.png",
+   "w": 1440,
+   "h": 3309
+  },
+  {
+   "file": "final_desktop_validation.png",
+   "w": 1440,
+   "h": 9000
+  },
+  {
+   "file": "final_mobile_dashboard.png",
+   "w": 375,
+   "h": 5729
+  },
+  {
+   "file": "final_mobile_pfd.png",
+   "w": 375,
+   "h": 3542
+  },
+  {
+   "file": "final_mobile_parameters.png",
+   "w": 375,
+   "h": 6522
+  },
+  {
+   "file": "final_mobile_results.png",
+   "w": 375,
+   "h": 9000
+  },
+  {
+   "file": "final_mobile_export.png",
+   "w": 375,
+   "h": 2361
+  },
+  {
+   "file": "final_mobile_validation.png",
+   "w": 375,
+   "h": 9000
+  },
+  {
+   "file": "final_mobile_pfd_picked.png",
+   "w": 375,
+   "h": 3796
+  }
+ ]
+}

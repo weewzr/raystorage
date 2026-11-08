@@ -1,0 +1,2143 @@
+
+===== PDF PAGE 1 =====
+Separation and Purification Technology 345 (2024) 127311
+Available online 5 April 2024
+1383-5866/© 2024 The Author(s). Published by Elsevier B.V. This is an open access article under the CC BY license (http://creativecommons.org/licenses/by/4.0/).
+Contents lists available at ScienceDirect
+Separation and Purification Technology
+journal homepage: www.elsevier.com/locate/seppur
+Pilot-scale CO2 capture demonstration of heat integration through split flow
+configuration using 30 wt% MEA at a Waste-to-Energy facility
+Sai Hema Bhavya Vinjarapu a,∗, Randi Neerup a, Anders Hellerup Larsen a, Sebastian Nis
+Bay Villadsen a, Nicolas von Solms a, Søren Jensen b, Jakob Lindkvist Karlsson b, Jannik Kappel c,
+Henrik Lassen c, Peter Blinksbjerg c, Philip Loldrup Fosbøl a
+a Technical University of Denmark (DTU), Department of Chemical Engineering, Center for Energy Resources Engineering (CERE), Søltofts Plads, Building
+229, 2800 Kongens Lyngby, Denmark
+b Pentair Union Engineering A/S, Snaremosevej 27, 7000 Fredericia, Denmark
+c Amager Bakke, ARC, Vindmøllevej 6, 2300 Copenhagen, Denmark
+A R T I C L E
+I N F O
+Keywords:
+CO2 capture
+Waste-to-Energy
+Process intensification
+Split flow configuration
+Base case configuration
+Pilot-scale
+A B S T R A C T
+Post-combustion carbon capture is a well-established technology to limit CO2 from industrial emissions.
+However, challenges such as high energy requirements for solvent regeneration persist. Research is still being
+conducted to improve the energy efficiency of the process. This study aims to present the results of process
+intensification in a pilot-scale CO2 capture plant. The pilot-scale investigations were carried out at Amager
+Bakke, a Waste-to-Energy facility in Copenhagen, Denmark. The tests were conducted by implementing the
+split flow configuration as a method of process intensification. The CO2 rich stream was split before flowing
+through the rich/lean heat exchanger. One of the split streams was fed to the stripper top, and the other
+was sent through the heat exchanger and then fed to the stripper. The cold split stream at the stripper top is
+heated by the overhead vapours which would otherwise escape the stripper. The current work discusses the
+split flow configuration results of the pilot plant by employing 30 wt% MEA as the solvent and compares it to
+the base-case performance of the pilot. Experiments were conducted by splitting 22% of the rich solvent and
+feeding it to the stripper top. The performance of the split flow configuration was analysed at different reboiler
+duties. A minimum specific reboiler duty of 3.45 GJ/tonne CO2 is obtained for the split flow configuration,
+which is less than the base case by 7.8%. Additionally, a reduction in the condenser duty by at least 68% was
+achieved by the implementation of the split flow configuration.
+1. Introduction
+Post-combustion capture (PCC) is a critical technology to reduce the
+CO2 emissions into the atmosphere from industrial operations. Amine-
+based CO2 capture is a well-established and mature technology. It can
+be retrofitted to the existing power plants [1,2]. Implementing carbon
+capture and storage for Waste-to-Energy (WtE) plants can make waste
+an attractive source of zero or negative emissions energy, depending
+on the fraction of biogenic waste [3]. There are three incineration
+facilities integrated with CO2 capture currently. These are located in
+the Netherlands (AVR and Twence plants) and Japan (Saga City) [3–
+5]. In Saga City, Japan, 10 tonnes of CO2 is captured per day utilising
+aqueous amine solvent [6,7]. The captured CO2 is utilised for algae
+and crop cultivation [6]. At AVR’s WtE, 60,000 tonnes of captured
+CO2 per year is supplied to the horticulture sector in the region [8].
+830,000 tonnes of waste is processed at the Twence WtE facility and
+∗Corresponding author.
+E-mail address: shbvin@kt.dtu.dk (S.H.B. Vinjarapu).
+0.1 MTpa of CO2 was expected to be captured by the end of 2023 [9].
+For further implementation of full-scale capture at WtE facilities, it is
+critical to conduct pilot-scale tests for understanding the operation of
+a CO2 capture unit in a WtE setting. Pilot experiments are also vital to
+explore new solvents and advanced process configurations for energy-
+efficient operation. Such pilot campaigns are very limited [10,11].
+Consequently, it is of utmost importance to carry out additional pilot-
+scale experiments to establish efficient CO2 capture methods that can
+be utilised for full-scale deployment in WtE facilities.
+Monoethanolamine (MEA) is one of the most commonly used sol-
+vents as it offers various advantages, such as high reaction rates, high
+capacity and selectivity, commercial readiness, and reasonable solvent
+costs [1,12–14]. However, disadvantages such as high operating costs
+for regeneration of the solvent, corrosion of equipment, and solvent
+https://doi.org/10.1016/j.seppur.2024.127311
+Received 17 November 2023; Received in revised form 5 March 2024; Accepted 29 March 2024
+
+===== PDF PAGE 2 =====
+Separation and Purification Technology 345 (2024) 127311
+2
+S.H.B. Vinjarapu et al.
+Nomenclature
+Abbreviations
+𝐻𝐸
+Heat exchanger
+𝐿𝑀𝑇𝐷
+Logarithmic mean temperature difference
+𝑀𝐸𝐴
+Monoethanolamine
+𝑀𝑇𝑈
+Mobile Test Unit
+𝑃𝐶𝐶
+Post-combustion capture
+𝑃𝐹𝐷
+Process flow diagram
+𝑃𝐼
+Proportional Integral
+𝑃𝐿𝐶
+Programmable Logic Controller
+𝑅𝐷
+Reboiler duty
+𝑆𝑅𝐷
+Specific reboiler duty
+𝑊𝑡𝐸
+Waste-to-Energy
+Symbols
+𝛼
+loading
+𝛥𝑇
+temperature difference
+𝜖
+capture efficiency
+𝐶𝑝
+specific heat capacity
+𝑚
+mass flow rate
+𝑛
+molar flow rate
+𝑞
+percentage of reboiler duty excluding heat
+loss
+𝑇
+temperature
+𝑦
+concentration in gas phase
+degradation are some limitations of the solvent [12,15,16]. Regenera-
+tion of the solvent in the stripper consumes about 15%–30% of the net
+power production in a coal-fired power plant as parasitic load [17].
+Innovative process configurations can be implemented to reduce energy
+consumption for solvent regeneration [18]. Split flow configuration is
+a stipulated process intensification in which a fraction of the CO2 rich
+solvent stream exiting the absorber bottom bypasses the main heat
+exchanger (main HE) and enters the stripper top. In the main HE,
+the cold rich solvent is heated by the hot lean solvent, whereas the
+split flow fed to the stripper top is heated internally by the overhead
+saturated steam, condensing the steam, which would otherwise be lost
+from the system. The utilisation of the overhead steam to heat a portion
+of the cold rich solvent reduces the reboiler duty [18–32].
+Additionally, the cooling duty of the overhead condenser is also
+reduced due to the lower mass flow of steam leaving the stripper. A
+slightly different version of the usage of the overhead vapours has also
+been patented [33]. A few modelling studies of the split flow configura-
+tion have been conducted to analyse the energy reductions obtained for
+solvent regeneration [34–41]. Furthermore, a few different variations
+of the split flow configuration have been simulated [13,18,41–47].
+However, minimal pilot data is available on implementing a split
+flow configuration. The split flow configuration was tested at the
+Tarong pilot plant using MEA as the solvent. A 7% reduction in the
+regeneration energy was observed, along with a 60% reduction in
+the cooling water requirement in the condenser. The influence of the
+split flow configuration was stated to be strongly dependent on the
+performance of the main HE [48]. Another pilot-scale testing of the
+split flow configuration was conducted at the Jaworzno II Power plant,
+which showed a reduction in the reboiler duty by 5% [49]. It is crucial
+to conduct pilot-scale testing of such process intensification methods to
+understand the performance of a CO2 capture plant and to validate and
+develop better models.
+The current work aims to present the split flow configuration results
+from a pilot-scale CO2 capture plant tested at Amager Bakke, Copen-
+hagen, Denmark, which is a WtE facility. The split flow configuration
+Subscripts
+𝑐
+condenser exit stream
+𝑐𝑙
+cold lean stream
+CO2, 𝑐𝑎𝑝
+CO2 captured
+CO2, 𝑖𝑛
+CO2 in the inlet stream
+CO2, 𝑜𝑢𝑡
+CO2 in the outlet stream
+𝑐𝑜𝑛𝑑
+condenser
+𝑐𝑜𝑜𝑙𝑖𝑛𝑔, 𝑝𝑟𝑒𝑑
+total predicted cooling in the lean cooler
+and the condenser
+𝑐𝑜𝑜𝑙𝑖𝑛𝑔
+total cooling in the lean cooler and the
+condenser
+𝑐𝑟
+cold rich stream
+𝑓𝑙𝑢𝑒𝑔𝑎𝑠, 𝑖𝑛
+inlet flue gas stream
+𝑓𝑙𝑢𝑒𝑔𝑎𝑠, 𝑜𝑢𝑡
+outlet flue gas stream
+𝑔𝑎𝑖𝑛𝑒𝑑, 𝑠𝑓
+sensible heat gained by the split flow stream
+ℎ𝑙
+hot lean stream
+ℎ𝑟
+hot rich stream
+𝑙𝑒𝑎𝑛𝑐𝑜𝑜𝑙𝑒𝑟, 𝑝𝑟𝑒𝑑
+predicted cooling in the lean cooler
+𝑙𝑒𝑎𝑛𝑐𝑜𝑜𝑙𝑒𝑟
+cooling in the lean cooler
+𝑙𝑒𝑎𝑛
+lean solvent stream
+𝑚𝑎𝑥, 𝑟𝑒𝑐
+maximum energy recovery possible in the
+main heat exchanger
+𝑟𝑒𝑏, ℎ𝑒𝑎𝑡𝑙𝑜𝑠𝑠
+heat loss in the reboiler
+𝑟𝑒𝑏
+reboiler
+𝑟𝑒𝑐
+energy recovery in the main heat exchanger
+𝑟𝑖𝑐ℎ
+rich solvent stream
+𝑠𝑒𝑛𝑠, 𝑟𝑖𝑐ℎ
+sensible heating of the hot rich stream
+𝑠𝑒𝑛𝑠, 𝑠𝑓
+sensible heating of the split flow stream
+𝑠𝑒𝑛𝑠
+total sensible heating of the solvent in the
+stripper
+𝑠𝑓
+split flow stream
+𝑆𝑇𝐸
+liquid distributor above stripper packed bed
+E
+𝑡𝑜𝑡𝑎𝑙
+total stream flow rate
+𝑤𝑙
+warm lean stream
+will be compared to the pilot’s performance in a base case configura-
+tion. The base case results have been discussed in detail in a previous
+work [50].
+2. Description
+DTU, in partnership with Pentair Union Engineering, has developed
+and built a Mobile Test Unit (MTU) for conducting pilot-scale CO2
+capture. The pilot can process 150 Nm3/h of flue gas. A 3D illustration
+of the pilot and a picture of the pilot at the WtE facility are presented
+in Figs. 1(a) and 1(b), respectively.
+Fig. 1(a) exhibits that the pilot has four columns: absorber, desorber,
+wash column, and an additional column for process intensification. The
+taller columns at the back are used as absorber and desorber, whereas
+one of the shorter ones in the front is used as the wash column. Process
+equipment, such as filters, pumps, heat exchangers, and flow meters,
+are in the two skids below the columns. A detailed description of the
+pilot and the process has been given in a previous work [50]. The
+results of the split flow configuration are presented and discussed in
+the current work. The Process Flow Diagram (PFD) of the split flow
+configuration is presented in Fig. 2.
+Fig. 2 represents the PFD of the pilot for the split flow configuration.
+The PFD of the process for the base case configuration and the control
+structure have been described in detail in the previous work [50].
+
+===== PDF PAGE 3 =====
+Separation and Purification Technology 345 (2024) 127311
+3
+S.H.B. Vinjarapu et al.
+Fig. 1. Illustration of the pilot plant. (a) 3D model of the pilot. (b) The pilot plant at the WtE facility. Equipment such as flow meters and pumps are visible.
+Fig. 2. Process Flow Diagram with control structure for the split flow configuration. The magenta dashed line represents the split stream which bypasses the main HE and enters
+the stripper above packed bed F. The packing bed heights presented for the stripper are accumulated heights. The individual bed heights are: C- 3.4 m, D- 3.5 m, E- 3.5 m, F-
+3.5 m.
+In the base case configuration, the flue gas is contacted with 30 wt%
+MEA in the absorber. During the start-up of the pilot plant, the liquid
+circulation through the absorber and the stripper is first established.
+This is done either manually or in auto-mode. A control structure was
+designed and implemented in the Programmable Logic Controller (PLC)
+for the pilot plant. When the operator activates the auto-mode, the
+rich pump starts, followed by the lean pump with a few minutes of
+delay. The flows were expected to stabilise in approximately 10 min.
+
+===== PDF PAGE 4 =====
+Separation and Purification Technology 345 (2024) 127311
+4
+S.H.B. Vinjarapu et al.
+After a delay of 10 min, the reboiler was automatically switched on
+at the duty given as the set point. Once the reboiler switches on, the
+solvent circulating in the stripper begins heating. The control structure
+is designed so that the pilot can accept flue gas once the stripper
+column reaches a temperature close to 100 ◦C. It takes approximately
+an hour for the stripper to reach this temperature. Following this, the
+system sends a request to the WtE facility for flue gas, which triggers
+the automatic gas inlet and outlet valves to open. Once the flue gas
+is available to the pilot, capture and desorption of CO2 starts. The
+start-up procedure takes approximately 1 to 2 hours, depending on the
+functioning of the pumps, controllers, availability of flue gas, and other
+factors. The control structure was designed to run the pilot 24 hours a
+day with safety trips in place to ensure that the pilot runs safely when
+operators are not on site and to avoid long start-ups every day.
+The flue gas flow rate (FT1 in Fig. 2) is controlled by a Proportional
+Integral (PI) controller. CO2 from the flue gas is captured by the
+solvent, and the flue gas depleted of CO2 goes through the wash tower
+for removing amine slip and maintaining water balance. The level in
+the absorber sump (LT1 in Fig. 2) is maintained by a PI controller which
+manipulates the cooling water flow rate to the water wash section in
+the wash tower. The water wash level (LT3 in Fig. 2) is maintained by
+a PI controller which manipulates the water make-up flow rate to the
+absorber top.
+The CO2-rich solvent (rich solvent) exits the absorber bottom and
+is pumped through the main heat exchanger (main HE) before being
+fed to the stripper at a packing height of 10.4 m (bed E). The rich
+solvent flow rate (FT2 in Fig. 2) is controlled by a PI controller. The
+stripper is operated at a pressure of 0.85 to 0.89 barg and the reboiler
+temperature is maintained around 117 ◦C to 120 ◦C. The reboiler
+temperature depends on the stripper pressure. The stripper top pressure
+(PT1 in Fig. 2) is maintained by a PI controller. CO2 from the rich
+solvent is stripped, and the CO2-lean solvent (lean solvent) exiting the
+stripper is pumped through a flash vessel and the main HE for energy
+recovery. The level in the flash vessel (LT2 in Fig. 2) is maintained
+by a PI controller which manipulates the lean solvent flow rate to the
+absorber.
+The reboiler at the stripper bottom is integrated with a steam
+generator. The steam generator consists of an electric heating ele-
+ment submerged in demineralised water. When the steam generator
+is switched on and duty is provided, the water is heated, and steam
+is generated as the saturation temperature is reached. As steam is
+generated, the pressure in the steam generator increases. The reboiler
+is a plate heat exchanger. The steam from the steam generator is the
+hot fluid, and the lean solvent flowing down the stripper is the cold
+fluid. Due to the heat exchange, the steam is cooled and then condensed
+as it reaches the dew point at the pressure maintained in the steam
+generator. Condensation provides further heating to the lean solvent.
+The lean solvent is heated until it reaches the saturation temperature
+at the pressure maintained in the stripper. Once the saturation tem-
+perature is reached, steam is generated from the lean solvent. This
+steam produced from the lean solvent acts as the stripping agent in the
+desorber. The steam and the condensate flow from and to the steam
+generator by the thermosyphon concept. The steam flow rate produced
+from the lean solvent corresponds to the electrical duty given as an
+input to the heating element. The unutilised steam leaves the stripper
+top along with the stripped CO2. The steam-CO2 mixture is cooled
+in the overhead condenser. The steam is condensed, and the water is
+added to the absorber sump, whereas the CO2 exits the pilot plant and
+joins the WtE facility’s (Amager Bakke) exhaust line. Process conditions
+such as flow rates, temperatures, pressures, densities, sump levels, and
+concentrations are measured at several locations in the pilot plant. The
+process conditions and the locations at which they are measured can
+be found in Appendix B.
+In the split flow configuration, the gas flow is the same as in the base
+case configuration. A difference in solvent circulation is prominent. As
+it can be seen from Fig. 2, a fraction of the rich solvent that exits the
+absorber bottom at around 40 ◦C bypasses the main HE and directly
+enters the stripper above packed bed F, which is at an accumulated
+packing height of 13.9 m. This is called the ‘‘split flow’’. The split
+flow’s flow rate is set by manipulating a manual valve. The remaining
+rich solvent goes through the main HE, which is heated to around
+100 ◦C by the hot lean solvent from the flash tank. The heated rich
+solvent, ‘‘hot rich solvent’’, enters the stripper above packed bed E at an
+accumulated packing height of 10.4 m. The split flow joins the hot rich
+solvent in the liquid distributor above packed bed E. In the base case
+configuration, all the solvent exiting the bottom of the absorber passes
+through the main HE and enters the stripper at the liquid distributor
+above packed bed E. Therefore, in the base case configuration, packed
+bed F is unused. The details about the equipment are provided in
+Appendix A. However, in the split flow configuration, the CO2-steam
+mixture exiting packed bed E and moving through packed bed F is
+expected to heat the cold split flow.
+Components such as hoses, heat exchangers, liquid sumps and ves-
+sels, and the reboiler are insulated with Armaflex. The four columns are
+insulated with mineral wool, and the flue gas components are insulated
+with glass wool.
+3. Methodology
+The pilot plant operation has been described in detail in the previ-
+ous work [50]. The operation of the pilot, for the most part, was the
+same for the split flow configuration, except for bypassing a fraction
+of the rich solvent from the main HE. The split flow was diverted
+from the main HE by a ball valve. Manipulating the valve helped
+in adjusting the split solvent’s flow rate. Approximately 22% of the
+rich solvent was sent as a split flow to the stripper. The experiments
+were initially designed for 15% and 20% split flows as they showed
+the most promising results in simulations conducted by the project
+partner Pentair Union Engineering. As shown in Fig. 2, a PI controller
+maintains the rich solvent flow rate, while a manual hand valve is
+adjusted to maintain the split flow rate. However, due to improper
+PI controller tuning and sensitivities of the hand valve, the split flow
+could only be maintained at 22%. Nevertheless, the results obtained
+at a 22% split flow have provided significant insights (as discussed
+in Section 4) into the pilot’s performance. At this split flow of 22%,
+the reboiler duty was varied to obtain various capture efficiencies and
+analyse the pilot’s behaviour. The manipulation of the reboiler duty
+was automated, which aided in running the pilot continuously while
+maintaining the other operating parameters constant. Fig. 3 depicts an
+example of this operation.
+From Fig. 3, it can be observed that the total rich solvent flow
+rate and the split solvent flow rate were maintained at a constant
+magnitude, whereas the heating element duty was increased in steps
+of 1 kW every 2.5 h. As mentioned in Section 2, the heating element
+duty is equivalent to the steam flow rate generated in the reboiler
+and is therefore considered the reboiler duty. In this example, the
+rich solvent flow rate was maintained at 258 ± 6 kg/h, and the split
+solvent’s flow rate was maintained at 41 ± 1 kg/h, and the reboiler
+duty was stepped from 15.3 kW to 19.3 kW. The stripper pressure was
+maintained for the experiments within a range of 0.87 to 0.89 barg.
+As the solvent flow rate and stripper pressure were maintained as
+constants, the changing reboiler duty influenced the lean loading,
+rich loading, and capture efficiency. Solvent samples along the length
+of the absorber were collected for the steady states obtained during
+a daytime operation and analysed for MEA concentration and CO2
+loading. For the steady states obtained during the night-time operation,
+the measured densities of the rich and lean solvents were utilised to
+determine the corresponding loadings. The methodology for loading
+determination was described in the previous publication [50]. The most
+important operating parameters of the pilot results discussed in this
+work are presented in Table 1.
+
+===== PDF PAGE 5 =====
+Separation and Purification Technology 345 (2024) 127311
+5
+S.H.B. Vinjarapu et al.
+Fig. 3. Steady state operation of the pilot in the split flow configuration with
+automated step changes in the reboiler duty. The thick blue line represents the total
+rich flow rate exiting the absorber bottom. The dashed blue line represents the split
+flow which bypasses the main HE.
+Table 1
+Important operating parameters of the pilot for analysing the influence of stripping
+intensity for the base case and split flow configurations.
+Parameter
+Split flow = 0%
+Split flow = 22%
+Rich solvent flow [kg/h]
+276 ± 1
+269 ± 6
+Gas flow [kg/h]
+100 ± 1
+100 ± 1
+CO2 concentration [vol%, wet basis]
+12.5 ± 0.2
+12.7 ± 0.3
+Gas temperature [◦C]
+33 ± 2
+37 ± 3
+Stripper bottom pressure [barg]
+0.89 ± 0.01
+0.87 ± 0.01
+Reboiler duty [kW]
+16–22
+15–19
+Lean temperature [◦C]
+40 ± 1
+46 ± 2
+Table 1 depicts some of the most critical operating parameters of
+the pilot. These parameters have been provided for the base case (split
+flow = 0%) and the split flow (split flow = 22%) configurations. It can
+be observed that most of the parameters were maintained consistently
+for both cases.
+4. Results and discussion
+In this section, the results of the split flow configuration (split flow
+= 22%) are compared against the base case configuration (split flow =
+0%) and discussed in detail. A list of all the abbreviations, symbols, and
+subscripts is provided in the Nomenclature.
+4.1. Influence on SRD
+Experiments were conducted by varying the stripping intensity of
+the system for both configurations. A new term called ‘‘stripping inten-
+sity’’ is introduced to discuss the results. This term has been discussed in
+a previous publication [50]. Stripping intensity is defined as the energy
+available per kg of the solvent. It is determined as follows:
+Stripping intensity [kJ∕kgtotal] =
+𝑅𝐷reb −𝑅𝐷reb,heat loss
+𝑚rich
+(1)
+where RDreb [kW] is the reboiler duty, RDreb, heat loss [kW] is the am-
+bient heat loss in the stripper, and mrich [kg/s] is the rich solvent
+flow rate. Stripping intensity, therefore, is a factor independent of the
+reboiler duty and the rich solvent flow rate. At any particular stripping
+intensity, the gas flow rate can be increased or decreased to reach
+90% capture efficiency. Stripping intensity can thus be used to scale up
+the capture process, as it is independent of the reboiler duty and the
+solvent flow rate. It therefore could be a valuable factor in employing
+Table 2
+Stripping intensities, reboiler duties, and rich solvent flow rates for the base case and
+split flow results discussed in this section.
+Split flow
+Stripping intensity
+RDreb
+RDreb, heatloss
+mrich
+%
+[kJ/kgtotal]
+[kW]
+[kW]
+⋅1/3600 [kg/s]
+175
+16.3
+2.8
+276
+189
+17.3
+2.8
+275
+201
+18.3
+2.9
+277
+0
+201
+18.3
+2.9
+276
+225
+20.3
+2.9
+278
+240
+21.3
+2.9
+276
+255
+22.3
+2.9
+274
+159
+15.2
+2.8
+281
+180
+16.2
+2.8
+268
+22
+195
+17.2
+2.9
+265
+207
+18.3
+2.9
+268
+208
+18.3
+2.9
+266
+220
+19.3
+2.9
+269
+Fig. 4. Influence of the stripping intensity on the SRD for split flow and base case
+configurations. The dotted lines indicate a fitted curve.
+the current results to extrapolate to a full-scale capture plant or to
+compare to other pilot plants (the results become independent of scale).
+As mentioned in Table 1, the rich solvent flow rate was maintained as
+a constant in the current work, while the reboiler duty was stepped
+up. Consequently, the stripping intensity is proportional to the reboiler
+duty. The stripping intensities, their corresponding reboiler duties and
+rich solvent flow rates for the results discussed in this section are
+presented in Table 2. The influence of stripping intensity on the SRD
+of the system is presented in Fig. 4.
+Fig. 4 shows the influence of stripping intensity on the SRD of the
+system both for the base case and the split flow. The SRD of the system
+is defined as
+SRD [GJ∕tonne CO2] =
+𝑅𝐷reb −𝑅𝐷reb,heat loss
+𝑚CO2,cap
+(2)
+Where mCO2,cap [kg/s] is the flow rate of CO2 captured. Determination
+of mCO2,cap is presented in Appendix C. From Fig. 4, it can be observed
+that the SRD follows a U-shaped trend with varying stripping intensity
+for both configurations. The SRD of the system when implementing
+split flow is consistently lower than in the base case. At a stripping
+intensity of 180 kJ/kgtotal, a minimum SRD of 3.45 GJ/tonne CO2 is
+obtained by implementing a split flow of 22%. Similarly, for the base
+case, an optimum SRD obtained is 3.74 GJ/tonne CO2 at a stripping
+intensity of 201 kJ/kgtotal. Therefore, the SRD could be reduced by
+7.8% by splitting the rich flow to the main HE by 22% and feeding it as
+
+===== PDF PAGE 6 =====
+Separation and Purification Technology 345 (2024) 127311
+6
+S.H.B. Vinjarapu et al.
+Fig. 5. Influence of stripping intensity on the 𝜖of the pilot for the base case and split
+flow configurations. The dashed lines are guides.
+a cold stream to the stripper top. As the rich solvent flow rate is kept
+constant and the reboiler duty is changed, changing stripping intensity
+influences the capture efficiency (𝜖) of the system. The 𝜖of the pilot is
+determined as follows:
+𝜖[%] =
+𝑦CO2, in ⋅𝑛flue gas, in −𝑦CO2,out ⋅𝑛flue gas,out
+𝑦CO2, in𝑛flue gas, in
+⋅100
+(3)
+Where yCO2,in [vol%,wet] and yCO2,out [vol%,wet] are the inlet and
+outlet concentrations of CO2 in the raw and clean flue gas, respectively,
+nflue gas,in [mol/h] and nflue gas,out [mol/h] are the molar flow rates
+of the raw and clean flue gas respectively. Fig. 5 depicts stripping
+intensity’s influence on the 𝜖.
+Fig. 5 shows the impact of varying stripping intensity on the 𝜖of the
+system in the base case and split flow configurations. It can be observed
+that as the stripping intensity increases, the 𝜖of the system increases.
+This behaviour aligns with theoretical expectations since the solvent
+flow rate is constant, and the reboiler duty varies. For both the base
+case and split flow configurations, a stripping intensity of the range
+190 to 210 kJ/kgtotal results in an 𝜖of 90 ± 5%. The system’s 𝜖depends
+on the rich and lean loading of the circulating solvent. The difference
+between the rich and lean loadings is known as the cyclic capacity of
+the solvent. The lean and rich loadings for both configurations at the
+varying stripping intensities are presented in Figs. 6.
+From Fig. 6, it can be observed that the rich and lean loadings
+are similar for the base case and split flow configurations. As the
+stripping intensity increases from 160 to 220 kJ/kgtotal, the lean load-
+ing decreases from 0.26 to 0.2 mol CO2/mol MEA for the split flow
+configuration. Similarly, for the base case, the lean loading decreases
+from 0.26 to 0.16 mol CO2/MEA as the stripping intensity changes from
+175 to 255 kJ/kgtotal. The uncertainty in lean loading is approximately
+±0.03 mol CO2/mol MEA. This decrease in lean loading is due to the
+increased steam flow rate with the stripping intensity, causing higher
+stripping of CO2 and a leaner solvent. Additionally, increasing stripping
+intensity can slightly decrease the rich loading. This is because the ca-
+pacity of the solvent no longer limits the capture. Consequently, capture
+efficiencies (𝜖) close to 100% are observed at high stripping intensities
+(220 to 260 kJ/kgtotal). The variations in the loadings are within the
+uncertainty limits. To obtain an 𝜖of 90%, a cyclic capacity (𝛼rich-
+𝛼lean) close to 0.3 mol CO2/mol MEA is required, which is obtained
+at stripping intensities in the range of 200 to 220 kJ/kgtotal for both
+the split flow and base case configurations.
+Fig. 6. Influence of stripping intensity on lean and rich loadings for both base case
+and split flow configurations are presented.
+Table 3
+Important operating and performance parameters for selected data points. The logged
+data for these cases can be found in D.
+Parameter
+Split flow = 0%
+Split flow = 22%
+𝛼lean [mol CO2/mol MEA]
+0.21 ± 0.03
+0.21 ± 0.03
+𝛼rich [mol CO2/mol MEA]
+0.53 ± 0.02
+0.54 ± 0.02
+Lean temperature [◦C]
+39
+49
+Gas flow rate [kg/h]
+100
+99
+Gas inlet temperature [◦C]
+32
+33
+Solvent flow rate [kg/h]
+276
+268
+CO2 concentration [vol%,wet basis]
+12.5
+13
+Stripping intensity [kJ/kgtotal]
+201
+207
+Stripper bottom pressure [barg]
+0.88
+0.88
+RDreb [kW]
+18
+18
+CO2 captured [kg/h]
+15.1 ± 0.1
+15.6 ± 0.1
+𝜖[%]
+90
+91
+SRD [GJ/tonne CO2]
+3.67
+3.56
+4.2. Performance of the stripper
+The split flow configuration influences the stripper’s performance as
+a stream of the cold rich solvent enters the stripper top while the rest
+of the hot rich solvent enters the second packing section from the top.
+The impact of the split flow configuration can be analysed by look-
+ing at the temperature profile developed in the stripper and comparing
+it to that of the base case configuration. To ensure that the only influ-
+encing factor is the split flow, data points are chosen such that the strip-
+ping intensity maintained for both configurations is 204 ± 4 kJ/kgtotal.
+The temperature profiles developed for the base case and the split flow
+configurations are presented in Fig. 7. Some of the important operating
+and performance parameters are outlined Table 3. It can be seen that
+the data points under consideration have similar loadings, stripping
+intensity, stripper pressure, and capture efficiency.
+Fig. 7 compares the temperature profiles developed in the stripper
+for the base case and split flow configurations. For the split flow
+configuration, it can be observed that 22% of the cold rich solvent from
+the absorber bottom enters the stripper at a total packing height of
+13.9 m (indicated by the yellow box in Fig. 7), whereas the hot rich
+solvent enters the stripper at an accumulated packing height of 10.4 m
+(indicated by the green box in Fig. 7). The temperature profile of the
+split flow configuration can be observed to be higher than the base case.
+The cold split enters the stripper at a temperature of around 40 ◦C and
+gets heated to approximately 100 ◦C in the stripper top by the overhead
+steam.
+
+===== PDF PAGE 7 =====
+Separation and Purification Technology 345 (2024) 127311
+7
+S.H.B. Vinjarapu et al.
+Fig. 7. Temperature profile developed in the stripper for the base case (split flow =
+0%) and split flow (= 22%) configurations. The data point highlighted in the yellow
+region indicates the height at which 22% of the cold rich solvent enters the absorber.
+The data points highlighted in green indicate the height at which the hot rich solvent
+enters the stripper. The data points indicated as triangles (
+= base case and
+=
+split flow) show the temperature of the CO2-steam mixture leaving the stripper top.
+It can be observed that there are two regions with high driving
+forces in the stripper for the split flow configuration: at the top (10 m
+to 13.4 m) and the bottom (0 m to 4 m). This is evident from the
+temperature differences. In contrast, a high driving force is located only
+at the bottom for the base case configuration, while the rest of the strip-
+per is in a pinch (constant temperature). A pinch implies the absence
+of a driving force, leading to no desorption of CO2. Regions with a
+temperature pinch should be minimised to improve the utilisation of
+the packing and make the stripper operation more reversible.
+The temperatures developed along the length of the stripper are also
+higher in the split flow configuration than in the base case. The CO2 in
+the split solvent is likely stripped when the solvent falls through packed
+bed F and comes in contact with steam. This corresponds to the region
+of the high driving force at the top. Desorption of CO2 at the stripper
+top implies that the solvent flowing through the stripper is leaner than
+the base case. The boiling point of a leaner solvent is higher, leading
+to higher temperatures along the length of the stripper.
+The PFDs of the base case and split flow configurations with the
+stream data are presented in Figs. 8(a) and 8(b), respectively, to better
+illustrate the split flow’s impact.
+Fig. 8(a) shows a section of the base case PFD. Some of the stream
+data is provided to depict the pilot’s behaviour in base case operation.
+The cold rich stream, at 42 ◦C, flows through the main HE. The rich
+stream is heated to 101 ◦C in the main HE by the hot lean stream.
+The hot rich stream exiting the main HE enters the stripper at a total
+packing height of 10.4 m, just above the packed bed E.
+In contrast, Fig. 8(b) shows the pilot’s behaviour in a split flow
+configuration. The rich solvent exits the absorber bottom at 43 ◦C,
+similar to the base case. The split flow bypasses the main HE and
+enters the stripper at a packing height of 13.4 m and 43 ◦C. 78% of
+the cold rich stream goes through the main HE and gets heated up
+to 107 ◦C. The cold rich solvent flow rate through the main HE is
+lesser than the base case, whereas the hot lean solvent flow rate is the
+same. Therefore, the temperature of the hot rich solvent is higher for
+the split flow configuration. The hot rich solvent enters the stripper at
+an accumulated packing height of 10.4 m (bed E). Inside the stripper,
+the split solvent reaches a temperature of 100 ◦C. Additionally, the
+CO2-steam mixture exiting the stripper top is at 67 ◦C as opposed to
+the 92 ◦C in the base case configuration. Therefore, the energy in the
+CO2-steam flow is utilised for heating the split flow instead of being
+lost in the condenser. Consequently, the condenser’s duty to cool the
+CO2-steam mixture is also reduced.
+Notably, the lean temperature to the absorber is higher for the split
+flow configuration than the base case by 10 ◦C. The impact of split
+flow configuration on the operation of the main heat exchanger, the
+lean cooler and the condenser are discussed in Sections 4.3 and 4.5,
+respectively. Furthermore, the impact of a high lean temperature on
+the absorber performance is discussed in Section 4.6.
+4.3. Influence of the split flow on the main heat exchanger
+In the split flow configuration, a fraction of the cold rich solvent
+bypasses the main HE, whereas the lean solvent flow rate is similar
+to that of the base case configuration. A plate-heat exchanger was
+designed to transfer heat from the hot lean solvent to the cold rich
+solvent. The main heat exchanger was designed for a solvent flow rate
+of 500 kg/h, heat exchange of 37 W, and an LMTD of 6.7 K. The
+maximum surface area for heat exchange is 102 m2. Several aspects
+of the main HE, such as the Logarithmic Mean Temperature Difference
+(LMTD), heat transferred, and energy recovery, are impacted in the
+split flow configuration. These phenomena are discussed below.
+4.3.1. LMTD of the main heat exchanger
+LMTD indicates the average driving force in a heat exchanger. It
+can also help determine the extent of energy recovery in the HE and its
+performance. LMTD is calculated as follows:
+𝛥𝑇1 = 𝑇ℎ𝑙−𝑇ℎ𝑟
+(4)
+𝛥𝑇2 = 𝑇𝑤𝑙−𝑇𝑐𝑟
+(5)
+𝐿𝑀𝑇𝐷=
+𝛥𝑇1 −𝛥𝑇2
+log(𝛥𝑇1∕𝛥𝑇2)
+(6)
+Where Thl [◦], Thr [◦] are lean and rich temperatures on the hot
+side, and Twl [◦], Tcr [◦] are the lean and rich temperatures on the cold
+side of the main HE. The streams are presented in Figs. 8(a) and 8(b).
+A high value of LMTD indicates a significant temperature difference
+between the hot and cold sides of the heat exchanger, implying a large
+driving force and high heat loss. A low LMTD implies that the system
+is close to equilibrium and has a low heat loss to the environment. The
+LMTD of the main HE for the base case and split flow configurations
+are presented in Fig. 9.
+Fig. 9 shows the LMTD of the main HE for both configurations at
+varying stripping intensities. It can be observed that the LMTD for the
+split flow configuration is consistently higher than that of the base case
+configuration at all the stripping intensities. Additionally, no specific
+trend is apparent between the LMTD and the stripping intensity. For
+the split flow configuration, the LMTD ranges between 12 ◦C and 15 ◦C
+and between 10 ◦C and 12 ◦C for the base case configuration. A higher
+LMTD for the split flow configuration than the base case configuration
+follows a theoretical expectation. This is because, in the split flow
+configuration, a fraction of the cold rich solvent bypasses the main
+HE, while the hot lean solvent flow rate is similar to the base case
+(Figs. 8(a) and 8(b)). Therefore, the LMTD is higher for the split flow
+configuration. Additionally, a reduced cold rich flow rate results in
+a decrease in the amount of heat transferred. Heat transfer in a heat
+exchanger can be determined as:
+𝑅𝐷𝐻𝐸[kW] = 𝑚⋅∫
+𝑇2
+𝑇1
+𝐶𝑝(𝑇, 𝛼, 𝑤𝑀𝐸𝐴)𝑑𝑇
+(7)
+where RDHE [kW] is the duty exchanged in the main HE, m [kg/s] is the
+mass flow through, Cp(T,𝛼,wMEA) [kJ/kg K] is the specific heat capacity
+as a function of temperature (T), loading of the solvent (𝛼), and the
+concentration of the solvent (wMEA). The expression for the specific
+heat capacity (Cp) usually depends on the thermodynamic model of
+choice. In the current work, it was determined by the Extended UNI-
+QUAC model developed by Kaj Thomsen [51]. The parameters used
+
+===== PDF PAGE 8 =====
+Separation and Purification Technology 345 (2024) 127311
+8
+S.H.B. Vinjarapu et al.
+Fig. 8. PFD with data streams for (a) base case configuration (b) split flow configuration where the red-dashed line indicates the rich stream, which bypasses the main HE and
+enters the stripper at the top packing bed before the polishing section. The topmost packing bed, represented by the dashed lines, is the polishing section. The packing heights
+presented for the stripper are accumulated heights. The individual bed heights are: C- 3.4 m, D- 3.5 m, E- 3.5 m, F- 3.5 m.
+for the model can be found in Vinjarapu [52]. The model is capable
+of taking the temperature and molar flows of MEA, H2O, and CO2 as
+inputs and providing Cp of the stream as an output. The component
+molar flow rates and temperatures of the hot and cold streams of the
+rich and lean flows are thus provided as inputs, and the specific heat
+capacities are obtained. As the absolute value of the Cp is obtained from
+the model, an energy balance around the heat exchanger is utilised
+instead of
+Eq. (7). The streams going into and out of the main HE
+are shown in Fig. 10. Fig. 10 shows the information available for each
+stream. The mass flows, and the temperatures are available from the
+pilot plant data, whereas the specific heat capacities are obtained from
+the Extended UNIQUAC model. Based on this information, the heat
+exchanged in the main HE can be thus calculated as:
+𝑅𝐷𝐻𝐸[kW] = 𝑚lean ⋅(𝐶𝑝,lean,𝑇ℎ𝑙⋅𝑇ℎ𝑙−𝐶𝑝,lean,𝑇𝑤𝑙⋅𝑇𝑤𝑙)
+(8)
+= 𝑚rich ⋅(𝐶𝑝,rich,𝑇ℎ𝑟⋅𝑇ℎ𝑟−𝐶𝑝,rich,𝑇𝑐𝑟⋅𝑇𝑐𝑟)
+(9)
+Fig. 10 presents the streams and their notations. 𝐶𝑝,lean,𝑇[kJ/kg K]
+represents the specific heat capacity of the lean stream at temperature
+𝑇. The notation is similar to the rich stream. As the rich flow through
+the main HE is reduced, the heat transferred to the rich solvent also
+decreases. Consequently, the lean temperature exiting the main HE in
+the split flow configuration is higher than the base case. The temper-
+ature difference between the inlet and outlet lean streams to the main
+HE are presented in Fig. 11.
+From Fig. 11, it can be observed that the temperature difference
+between the hot lean (inlet) and cold lean (outlet) streams in the
+main HE is lower for the split flow configuration when compared to
+the base case. As the flow rate of the lean solvent is similar in both
+configurations, it can be concluded that the amount of heat transferred
+to the rich solvent is lower for the split flow configuration due to a
+reduced rich solvent flow rate through the main HE. As a consequence
+of reduced heat transfer, the extent of energy recovered from the lean
+solvent is impacted.
+4.3.2. Energy recovery in the main heat exchanger
+The main HE is meant for energy recovery from the hot lean solvent
+exiting the flash column (Fig. 2). The main HE is designed for a flow
+rate of 488 kg/h (hot side), an LMTD of 6.7 ◦C, and to exchange 37 kW
+of duty from the hot lean solvent to the cold rich solvent. However, due
+to lower flow rates and heat loss to the environment, higher LMTD and
+lower exchange of duty are observed in the experiments.
+Energy recovery is calculated as the percentage of total energy that
+could be extracted from the lean solvent as it exits the flash vessel
+
+===== PDF PAGE 9 =====
+Separation and Purification Technology 345 (2024) 127311
+9
+S.H.B. Vinjarapu et al.
+Fig. 9. LMTD the main HE at varying stripping intensities for the base case and split
+flow configurations.
+at approximately 120 ◦C and enters the absorber at approximately
+40 ◦C. The hot lean solvent first flows through the main HE, where
+energy recovery occurs. From the main HE, the lean solvent is further
+cooled in the lean cooler to approximately 40 ◦C before it enters the
+absorber (Figs. 8(a) and 8(b)). A lower energy recovery in the main HE
+also implies a higher cooling duty in the lean cooler. Determination of
+energy recovery is done as follows:
+Energy recovery [%] =
+𝑚lean ⋅(𝐶𝑝,lean,𝑇ℎ𝑙⋅𝑇hl −𝐶𝑝,lean,𝑇𝑤𝑙⋅𝑇wl)
+𝑚lean ⋅(𝐶𝑝,lean,𝑇ℎ𝑙⋅𝑇hl −𝐶𝑝,lean,𝑇𝑐𝑙⋅𝑇cl) ⋅100
+(10)
+=
+𝑅𝐷rec
+𝑅𝐷max,rec
+⋅100
+(11)
+Where Tcl [◦C] is the temperature of the lean solvent exiting the lean
+cooler and entering the absorber, RDrec [kW] is the duty recovered from
+the hot lean solvent in the main HE, and RDmax,rec [kW] is the maximum
+recoverable duty from the hot lean solvent in the main HE. The stream
+notations are presented in Figs. 8(a) and 8(b). The energy recovery
+obtained in the main HE for the base case and split flow configurations
+is presented in Fig. 12.
+From Fig. 12, it can be observed that the energy recovery obtained
+in the split flow configuration is lower than the base case configuration
+at all the stripping intensities under consideration. This is a trade-off of
+bypassing the rich solvent from the main HE and recovering energy
+from the escaping steam from the stripper top into the condenser.
+Reduced cold rich solvent flow rate results in less heat transfer from the
+hot lean solvent. Therefore, even though the hot rich solvent exiting the
+main HE is at a higher temperature, the energy recovery in the main
+HE is lower than in the base case. Additionally, a higher cooling duty
+is required in the lean cooler.
+4.4. Influence of the split flow on the stripper
+The reboiler duty provided in the stripper is utilised for three
+different purposes:
+1. Sensible heating of the rich solvent from the inlet temperature
+to the reboiler temperature
+2. Desorption of CO2 by provided energy equivalent to the heat of
+absorption
+3. Generation of steam
+As shown in Figs. 8(a) and 8(b), the rich solvent exiting the absorber
+is heated by the hot lean solvent in the main HE. Even though the rich
+solvent gets heated up in the main HE, the temperature is still lower
+than the reboiler. Therefore, a fraction of the energy provided to the
+reboiler is spent on sensible heating of the solvent in the stripper to
+increase its temperature to that of the reboiler. However, the fraction
+of the energy spent on sensible heating is also expected to depend on
+the performance of the main HE, energy recovery in the main HE, and
+the heat lost at the main HE. A higher fraction of the reboiler duty is
+spent on sensible heating if the hot rich temperature is low. The energy
+required for sensible heating of the rich solvent for the base case is
+calculated as follows:
+𝑅𝐷sens,rich [kW] = 𝑚rich ⋅(𝐶𝑝,rich,Treb ⋅𝑇reb −𝐶𝑝,rich,Thr ⋅𝑇ℎ𝑟)
+(12)
+Where RDsens is the duty spent on sensible heating, mrich [kg/s] is
+the flow rate of the hot rich solvent entering the stripper, Cp,rich,T [kJ/kg
+K] is the specific heat capacity of the rich solvent stream at a specific
+temperature T, and Treb [◦] is the temperature of the reboiler. For the
+base case, the total sensible heating requirement comes from the hot
+rich solvent. The sensible heating duty for the split flow configuration
+is calculated as follows:
+𝑅𝐷sens,rich [kW] = 𝑚rich ⋅(𝐶𝑝,rich,Treb ⋅𝑇reb −𝐶𝑝,rich,Thr ⋅𝑇ℎ𝑟)
+(13)
+𝑅𝐷sens,sf [kW] = 𝑚sf ⋅(𝐶𝑝,sf,Treb ⋅𝑇reb −𝐶𝑝,sf,TSTE ⋅𝑇STE)
+(14)
+𝑅𝐷sens [kW] = 𝑅𝐷sens,rich + 𝑅𝐷sens,sf
+(15)
+Where msf [kg/s] is the split flow rate, Cp,sf [kJ/kg K] is the specific
+heat capacity of the split flow, TSTE [◦] is the temperature of the
+solvent in the liquid collector above packing bed E in the stripper.
+The total duty spent on the sensible heating (RDsens) in the split flow
+configuration is the sum of the sensible heating duty required for the
+hot rich (RDsens,rich) and split flows (RDsens,sf). The overhead steam
+heats the split flow until it reaches the liquid collector above the packed
+bed E, otherwise lost to the condenser. The split flow solvent joins the
+hot rich solvent in the liquid distributor above packed bed E and gains
+sensible heat from the reboiler. Hence, while calculating the sensible
+heating duty of the split flow, the temperature at packed bed E is
+considered the initial temperature.
+Data points for split flow and base case configuration, previously
+considered for temperature profile (Fig. 7) with similar stripping in-
+tensities (201 and 207 kJ/kgtotal respectively) and 𝜖(90% and 91%)
+are considered to eliminate the influence of stripping intensity on the
+sensible heat requirements. For further clarification, these data points
+are not the conditions where minimum SRD is obtained. The process
+conditions of the pilot plant for these two data points are presented in
+Table 3.
+The split flow configuration can be advantageous if the lower
+energy recovery from the main HE is overcompensated by the recov-
+ery (RDsens,sf) obtained in the stripper top. The energy recovery in
+the main HE can impact the fraction of the reboiler duty spent on
+sensible heating of the solvent (RDsens) in the stripper. However, the
+sensible heating of the solvent varies for the two configurations under
+consideration. The influence of energy recovery on the sensible heating
+duty required in the stripper for these two experiments is presented in
+Fig. 13(a). The percentage of the reboiler duty (excluding heat loss at
+the reboiler) utilised for sensible heating in the stripper for these two
+cases is presented in Fig. 13(b).
+Fig. 13(a) shows the sensible heating duty required for both config-
+urations corresponding to the energy recovery at the main HE. The data
+compared are at a similar stripping intensity. Therefore, the differences
+observed are dependent only on heat integration in the system. It
+can be observed that even though the energy recovery for the split
+flow configuration is lower than the base case by approximately 5%,
+the duty required for sensible heating in the stripper is lower. This
+implies that the loss of energy recovery in the main HE in the split
+
+===== PDF PAGE 10 =====
+Separation and Purification Technology 345 (2024) 127311
+10
+S.H.B. Vinjarapu et al.
+Fig. 10. The streams going in and out of the main HE.
+Fig. 11. Temperature difference between the inlet (hot) and outlet (cold) lean streams
+to the main HE for the base case and split flow configurations. ΔTlean = Thl −Twl.
+Fig. 12. Extent of energy recovered from the hot lean solvent in the main HE for the
+base case and split flow configurations.
+Fig. 13. Reboiler duty spent on sensible heating of the solvent in the stripper
+in relation to the energy recovery at the main HE for the base case and split
+flow configurations. The data points have similar stripping intensities of 201 and
+208 kJ/kgtotal for the base case and split flow configurations, respectively.
+
+===== PDF PAGE 11 =====
+Separation and Purification Technology 345 (2024) 127311
+11
+S.H.B. Vinjarapu et al.
+Fig. 14. Influence of the energy recovery from the main HE on the CO2 stripped for
+the base case and split flow configurations at similar stripping intensities of 208 and
+201 kJ/kgtotal respectively.
+flow configuration is compensated well by the energy gained from the
+overhead steam.
+Additionally, it was previously observed in Fig. 7 that the temper-
+atures maintained along the length of the stripper are higher for split
+flow when compared to the base case configuration. As the cold split
+solvent comes in contact with steam in packed bed F, CO2 from the
+solvent will likely be desorbed. Consequently, the extent of desorption
+along the rest of the column would be lower than the base case.
+Desorption of CO2 is an endothermic process. Therefore, a reduction in
+the extent of desorption causes a higher temperature in the column and
+simultaneously reduces the amount of duty required for the sensible
+heating of the solvent. Fig. 13(b) shows the percentage of the reboiler
+duty (excluding heat loss at the reboiler) used for sensible heating
+(qsens) in the stripper for the base case and split flow configurations.
+qsens is determined as follows:
+𝑞sens [%] =
+(
+𝑅𝐷sens
+𝑅𝐷reb −𝑅𝐷reb,heatloss
+)
+⋅100
+(16)
+qsens is lower for the split flow configuration than the base case due
+to a reduction in RDsens. Estimating qsens helps scale the parameters.
+qsens is reduced from 30% in the base case configuration to 22% in
+the split flow configuration. As the percentage of reboiler duty utilised
+for sensible heating is lower for the split flow configuration, there is
+a likelihood that the amount of duty utilised for desorption of CO2 is
+higher. This is reflected in the amount of CO2 stripped as presented in
+Fig. 14.
+Fig. 14 shows that the CO2 stripped increases by 4.5% in the split
+flow configuration compared to the base case. Therefore, reducing the
+duty spent on sensible solvent heating contributes to higher stripping
+of CO2. Besides, the split flow configuration for this case does not
+negatively influence the lean loading of the solvent (Table 3), which
+maintains the desired capture efficiency (𝜖) while lowering the SRD.
+4.4.1. Influence of split flow on the net duty lost
+Utilising the latent heat from the overhead steam compensates
+for the loss of energy recovery at the main HE. The latent heat of
+condensation provides sensible heat to the split solvent, resulting in
+a temperature increase from
+40 ◦C to
+100 ◦C. Therefore, a lower
+fraction of the reboiler duty is utilised for sensible heating of the solvent
+in the stripper, and more is available for desorption of CO2. Despite
+Fig. 15. Impact of energy recovery and split flow integration on the net sensible duty
+lost in the system for the base case and split flow configurations at similar stripping
+intensities of 208 and 201 kJ/kgtotal respectively.
+heat integration, the system would still experience a net duty loss, as
+presented in Fig. 15.
+The net loss of duty in the system is calculated as
+Net sensible duty lost [kW] = 𝑅𝐷max,rec −𝑅𝐷rec −𝑅𝐷gained,sf
+(17)
+𝑅𝐷max,rec [kW] = 𝑚lean ⋅(𝐶𝑝,lean,𝑇ℎ𝑙⋅𝑇ℎ𝑙−𝐶𝑝,lean,𝑇𝑐𝑙⋅𝑇𝑐𝑙)
+(18)
+𝑅𝐷rec [kW] = 𝑚lean ⋅(𝐶𝑝,lean,𝑇ℎ𝑙⋅𝑇ℎ𝑙−𝐶𝑝,lean,𝑇𝑤𝑙⋅𝑇𝑤𝑙)
+(19)
+𝑅𝐷gained,sf [kW] = 𝑚𝑠𝑓⋅(𝐶𝑝,𝑠𝑓,𝑇𝑆𝑇𝐸⋅𝑇𝑆𝑇𝐸−𝐶𝑝,rich,𝑇𝑐𝑟⋅𝑇𝑐𝑟)
+(20)
+The net sensible duty lost is the difference between the maximum
+recoverable duty from the hot lean solvent (RDmax,rec), the duty recov-
+ered in the main HE (RDrec), and the duty recovered by the split flow in
+the stripper top (packed bed F, RDgained,sf). The duty recovered in the
+stripper top (packed bed F) for the base case would be zero as there is
+no solvent flow through packed bed F. The stream tags ℎ𝑙, 𝑐𝑙, 𝑤𝑙, and
+𝑠𝑓can be found in Figs. 8(a) and 8(b).
+Fig. 15 shows the net sensible duty lost. Despite a lower energy
+recovery for the split flow configuration, the net duty lost is lower
+when compared to the base case. This indicates that heat integration
+by utilising latent heat from the overhead steam compensates for the
+lower energy recovery in the main HE. The net duty loss reduces by
+58% from 2.8 kW to 0.9 kW (corresponding to 15% and 5% of the total
+RD), which is significant. The SRD of the system is impacted due to
+increased CO2 desorption and decreased net duty loss. The influence of
+the net sensible duty lost on the SRD for the base case and split flow
+configurations is presented in Fig. 16.
+From Fig. 16, it can be observed that the SRD reduces by 3.5% from
+3.67 to 3.56 GJ∕tonne CO2 for the base case and split flow configura-
+tions, respectively. Therefore, reducing the net duty lost due to heat
+integration positively influences the SRD. To confirm this conclusion,
+the net duty lost and the SRD at all the stripping intensities for the split
+flow and base case configuration are presented in Fig. 17.
+Fig. 17 confirms that the net duty lost and the SRD for the split flow
+configuration are consistently lower than the base case. As previously
+discussed, the net sensible duty loss for the split flow configuration is
+lower than the base case due to the compensation of the energy recov-
+ery in the main HE by the heat gained from the overhead steam. This
+displays that implementing the split flow configuration is advantageous
+when the net duty loss is lower than the base case.
+
+===== PDF PAGE 12 =====
+Separation and Purification Technology 345 (2024) 127311
+12
+S.H.B. Vinjarapu et al.
+Fig. 16. Impact of the net sensible duty lost on the SRD for the base case and split flow
+configurations at similar stripping intensities of 208 and 201 kJ/kgtotal respectively.
+Fig. 17. Impact of the net sensible duty lost on the SRD for the base case and split
+flow configurations at varying stripping intensities.
+4.4.2. Influence of split flow on the condenser
+The CO2-steam mixture exiting the stripper top enters the con-
+denser, where it is cooled to approximately 30 ◦C. The condensate is
+returned to the absorber sump, and the pure CO2 stream leaves the
+pilot, as shown in Fig. 2. In the base case configuration, the CO2-steam
+stream leaves the stripper top at around 90 ◦C to 100 ◦C. Whereas, in
+the split flow configuration, due to the cold split flow, the CO2-steam
+mixture leaves the stripper top at lower temperatures. The temperatures
+of the vapour stream exiting the stripper top for both configurations are
+illustrated in Fig. 18.
+Fig. 18 shows that the CO2-steam mixture is at 90 ◦C to 97 ◦C for
+the base case configuration, whereas, for the split flow configuration,
+it is in the range of 40 ◦C to 74 ◦C. The temperature increases with
+stripping intensity, especially for the split flow configuration. For the
+base case, the magnitude of the temperature increase is low. As the
+stripping intensity increases from 160 kJ/kgtotal to 255 kJ/kgtotal, the
+temperature increases by 7 ◦C for the base case. In contrast, the tem-
+perature rises by 34 ◦C for the split flow configuration. As the stripping
+intensity increases, the steam produced is higher. This implies that a
+Fig. 18. Temperature of the CO2-steam mixture exiting the stripper top at varying
+stripping intensity.
+Fig. 19. Cooling duty of the condenser and the amount of steam lost from the stripper
+at varying stripping intensities for base case and split flow configurations.
+fraction of the energy in the CO2-steam mixture is lost from the stripper
+top after heating the cold split solvent. The energy loss is reflected in
+the increasing stripper top temperatures with stripping intensity. As
+the CO2-steam mixture is cooled in the condenser, the cooling duty
+quantifies the energy lost from the stripper top. The cooling duty of the
+condenser and the amount of steam escaping the stripper at different
+stripping intensities are presented in Fig. 19.
+Fig. 19 shows the cooling duty (RDcond) of the condenser and the
+magnitude of steam lost from the stripper top at varying stripping
+intensities for the base case and split flow configurations. The determi-
+nation of the condenser duty has been presented in detail in a previous
+work [50]. The condenser cools the CO2-steam mixture exiting the
+tripper top. The cooling duty and steam loss are consistently lower
+for the split flow configuration than the base case. The cooling duty
+is in the range of 0.2 kW to 1.8 kW for the split flow configuration,
+whereas for the base case, it is in the range of 3.4 kW to 7.2 kW. The
+condenser duties are in proportion to the steam lost. At similar stripping
+intensities, the cooling duty can be reduced by at least 68% from the
+base case by implementing a split flow configuration. The percentage
+of the reboiler duty (excluding the heat loss) used for sensible heating
+
+===== PDF PAGE 13 =====
+Separation and Purification Technology 345 (2024) 127311
+13
+S.H.B. Vinjarapu et al.
+Fig. 20. Influence of the stripping intensity on the SRD of the system and the
+percentage of the reboiler duty (𝑞) spend sensible heating in the stripper and lost
+as the cooling duty in the condenser for the split flow = 22% configuration.
+of the solvent and lost as cooling duty at varying stripping intensities,
+along with the SRD of the system, for the split flow configuration, are
+presented in Fig. 20.
+From Fig. 20, it can be observed that the percentage of the reboiler
+duty used for sensible heating initially decreases from 26% to 20% as
+the stripping intensity increases from 159 kJ/kgtotal to 195 kJ/kgtotal.
+However, for stripping intensities from 195 kJ/kgtotal to 220 kJ/kgtotal,
+the qsens value is fairly constant at approximately 20%. Therefore, for
+the split flow configuration (split-22%), it can be said that a minimum
+of 20% of the reboiler duty (excluding heat loss) is required for the
+sensible heating of the solvent in the stripper. This value could be
+manipulated by changing the fraction of the cold rich solvent used
+as the split flow. In contrast, as the stripping intensity increases, the
+percentage of the reboiler duty is lost as the cooling duty in the
+condenser increases from 2% to 11%. This increase is due to increasing
+steam loss, as seen in Fig. 19. Due to these opposing trends, the SRD of
+the system exhibits a U-curve with an optimum value of 3.45 GJ/tonne
+CO2.
+4.5. Influence of split flow on total cooling duty
+In the split flow configuration, as a fraction of the rich solvent
+bypasses the main HE and contacts the overhead steam in the stripper
+top, the cooling duties of the heat exchangers are impacted. The PFD
+presented in Fig. 2 depicts two locations where cooling is required:
+1. The lean solvent exiting the main HE is cooled in the lean cooler
+before entering the absorber.
+2. The saturated CO2 stream exiting the stripper top is cooled in
+the condenser before it joins the exhaust line.
+The energy recovery is reduced due to bypassing a fraction of
+the cold rich stream from the main HE. A reduction in the energy
+recovery leads to an increase in the cooling duty of the lean cooler.
+Simultaneously, using the overhead steam to heat the split flow in the
+stripper reduces the amount of steam exiting the stripper. This reduces
+the condenser duty, as seen in Fig. 19. Therefore, there is a trade-off of
+these two cooling duties, as shown in Fig. 21.
+Fig. 21 shows the cooling duties required in the lean cooler and the
+condenser for the base case and split flow configurations at varying
+stripping intensities. It can be observed that the cooling duty of the lean
+cooler is higher for the split flow configuration than the base case. As
+previously mentioned, lower energy recovery in the main HE causes the
+Fig. 21. Cooling duties of the lean cooler and condenser for the base case and split
+flow configurations.
+Fig. 22. Total cooling duties for the base case and split flow configurations at varying
+stripping intensities. The predicted duty is calculated using Eq. (22).
+temperature of the lean solvent entering the lean cooler to be higher
+(Figs. 11 and 8(b)). Therefore, higher cooling duties are required for
+the lean cooler in the split flow configuration than the base case. In
+contrast, the condenser duties for the split flow configuration are much
+lower than the base case, which has been discussed in detail previously.
+The split flow configuration is advantageous, provided the reduction in
+the condenser duty is higher than the increase in the lean cooler duty.
+The total cooling duty is calculated as follows:
+𝑅𝐷cooling [kW] = 𝑅𝐷lean cooler + 𝑅𝐷cond
+(21)
+Where RDcooling is the total cooling duty, RDlean cooler is the cooling
+duty of the lean cooler, and RDcond is the cooling duty of the condenser.
+The total cooling duties for the base case and split flow configurations
+are presented in Fig. 22.
+Fig. 22 shows that the total cooling duty required for the split
+flow configuration is consistently lower than the base case. As the
+stripping intensity increases, the cooling duty also increases. However,
+this increase is very steep for the base case due to the increased steam
+production. For the base case, the cooling duty increases by 3 kW as
+
+===== PDF PAGE 14 =====
+Separation and Purification Technology 345 (2024) 127311
+14
+S.H.B. Vinjarapu et al.
+the stripping intensity goes from 200 to 260 kJ/kgtotal. In contrast, the
+cooling duty increase is not significant with the stripping intensity for
+the split flow configuration. Therefore, for a split flow of 22%, the total
+cooling duty is lower than the base case configuration by a minimum
+of 1.2 kW.
+However, the lean cooler operated at higher temperatures than the
+base case for the split flow configuration. This implies that the lean
+solvent exiting the lean cooler was at a higher temperature in the split
+flow configuration than the base case (see Table 1). In the split flow
+configuration, the solvent exiting the lean cooler was at 46 ± 2 ◦C,
+whereas in the base case, it was at 40 ± 1 ◦C. Nevertheless, the
+temperature of the cooled lean solvent can be assumed to be 40 ◦C
+and the total cooling duty can be predicted as shown in Eqs. (22) and
+(23).
+𝑅𝐷cooling, pred [kW] = 𝑅𝐷lean cooler,pred + 𝑅𝐷cond
+(22)
+𝑅𝐷lean cooler,pred [kW] = 𝑚lean ⋅(𝐶𝑝,lean,𝑇𝑤𝑙⋅𝑇𝑤𝑙−𝐶𝑝,lean,𝑇𝑐𝑙⋅𝑇𝑐𝑙=base case) (23)
+Where RDcooling,pred
+is the predicted total cooling duty and
+RDlean cooler,pred is the predicted lean cooler duty for the split flow
+configuration, assuming that the cold lean temperature is similar to
+that of the base case. The predicted total cooling duty is represented by
+triangles with guidelines in Fig. 22. It can be seen that the total cooling
+duties required would be very similar for the base case and split flow
+configurations if the lean solvent is cooled to the same temperature.
+The total cooling duty corresponds to 51 to 60% of the reboiler duty
+for the base case, 40 to 47% for the split flow configuration (observed),
+and 50 to 63% for split flow configuration (predicted). The reboiler
+duty does not include heat loss. The heat loss from a big plant would
+be relatively small compared to a pilot plant. Therefore, the cooling
+duty reduction in the condenser is offset by the lean cooler in the
+split flow configuration. Consequently, split flow configuration is not
+more advantageous than the base case regarding the total cooling duty
+required in the system, unless the energy recovery from the hot lean
+solvent can be increased. However, most of the literature discussion
+is usually limited to the reduction of the condenser duty in isolation,
+without accounting for the increase in the lean cooler duty [48,53–55].
+Nevertheless, the split flow configuration is advantageous in terms
+of the SRD of the system. As previously seen, a lower fraction of the
+reboiler duty is utilised for the sensible heating of the solvent in the
+stripper, thereby stripping more CO2 and reducing the SRD.
+4.6. Influence of lean temperature on absorber profile
+The temperature of the inlet lean solvent influences the performance
+of the absorber. High temperatures in the absorber enable the kinetics
+of CO2 absorption, whereas low temperatures are thermodynamically
+favourable [29]. The temperature profile in the absorber depends on
+the liquid and gas flow rates, the lean solvent inlet temperature, and
+the heat of absorption. As discussed in Section 4.5, with respect to the
+total cooling duty, split flow configuration is advantageous only if the
+lean cooler is operated at higher temperatures. Otherwise, the lowered
+condenser duty is offset by the increased lean cooler duty.
+The total cooling duty can be lowered provided higher lean temper-
+atures do not worsen the absorber performance and ensure the desired
+capture efficiency (𝜖). The absorber temperature profiles for the base
+case and split flow configuration are presented in Fig. 23. The operating
+and performance parameters for these data points are in Table 3. These
+data points have similar lean loading, gas and liquid flow rates, inlet
+gas temperature, and packing heights. Lean temperature is the only
+variable parameter (39 ◦C for the base case and 49 ◦C for the split
+flow).
+Fig. 23 displays the temperature profile developed in the absorber
+for the two configurations in which the lean temperatures differ. It can
+be observed that the behaviour exhibited is similar in both cases. How-
+ever, for the split flow configuration, for which the lean temperature
+Fig. 23. Temperature profiles developed in the absorber for the selected data points
+with different lean temperatures. The lean temperatures are 39 ◦C and 48 ◦C for split
+flows = 0% and 22% respectively.
+was 49 ◦C, the temperatures in the absorber are higher than in the
+base case. A consequence of a high lean temperature is better kinetics
+of absorption of CO2 into the solvent. Despite the temperatures being
+higher at the absorber top and middle sections for the absorber for
+the split flow case, it can be observed that the temperatures at the
+bottom for the base case and split flow configurations. Therefore, the
+kinetics are improved at the absorber top and middle due to higher
+temperatures without negatively impacting the VLE at the bottom.
+Consequently, the rich solvent loading for the split flow config-
+uration is similar to the base case. It is, therefore, advantageous to
+maintain the lean temperature of the solvent higher than the rec-
+ommended 40 ◦C as long as the temperature at the bottom is not
+significantly increased. The patent by Arronwilas and Veawab [56],
+has also shown that partitioning the absorber into high and low-
+temperature regions in the upper and lower sections, respectively, is
+beneficial. The authors predicted rich loadings as high as 0.58 mol
+CO2/mol MEA and an SRD of 2.1 GJ/tonne CO2 with this division
+into kinetic- and thermodynamic-driven absorption sections. Therefore,
+operating the lean cooler at higher temperatures is advantageous for
+the upper half of the absorber. The temperature in the lower half can
+be further lowered by using an intercooler or the rich solvent exiting
+the absorber bottom as suggested in [56]. However, a higher lean
+temperature could negatively influence the amine slip into the flue
+gas [57], which will not be a part of the discussion of the present work.
+4.7. Limits of sensible heat gained
+The split flow utilises the latent heat from the overhead steam to
+gain sensible heat. This occurs as the split flow and the steam pass
+through packed bed F. Therefore, the temperature of the heated split
+flow above packed bed E helps determine the magnitude of sensible
+heat gained by the split flow (Fig. 2). However, due to process con-
+ditions in the stripper, there is a limit on the amount of sensible heat
+that can be extracted from the overhead steam. The amount of sensible
+heat gained by the split flow and the temperature of the split flow above
+packed bed E are presented in Fig. 24.
+From Fig. 24, it can be observed that, at a low stripping intensity of
+159 kJ/kgtotal, the split flow gains a duty of 2.5 kW. As the stripping
+intensity increases up to a maximum of 220 kJ/kgtotal, the RDgained
+fluctuates in the range 2.6 kW to 2.8 kW. Similarly, the temperature
+of the split flow heated by the overhead steam increases from 96 ◦C to
+
+===== PDF PAGE 15 =====
+Separation and Purification Technology 345 (2024) 127311
+15
+S.H.B. Vinjarapu et al.
+Fig. 24. Magnitude of sensible heat gained by the split flow and temperature of the
+heated split flow above packed bed E in the stripper at varying stripping intensities
+for the split flow configuration.
+101 ◦C as the stripping intensity goes from 159 to 180 kJ/kgtotal. The
+temperature remains unchanged as the stripping intensity increases to
+220 kJ/kgtotal. The pressure maintained at the stripper top is around
+0.83 barg. At these pressure and temperature conditions, vaporisation
+of water and desorption of CO2 from the solvent occurs. Consequently,
+the temperature decreases. This could be a possible explanation for a
+constant temperature of the heated split flow despite higher stripping
+intensities. Therefore, for a split flow of 22%, a maximum of 2.8 kW
+could be gained back into the system, regardless of the stripping inten-
+sity maintained. Beyond this, energy is lost as steam to the condenser.
+Higher split flows could be investigated to utilise the steam at higher
+stripping intensities efficiently. Nevertheless, a minimum of 20% of
+the reboiler duty is required for sensible solvent heating when heat
+integration through the split flow configuration is implemented.
+5. Conclusion
+This current work analyses the performance of a pilot-scale CO2
+capture plant by implementing the rich split flow configuration as a
+method of process intensification. The tests were performed by utilisa-
+tion of 30 wt% MEA.
+The tests were conducted by splitting 22% of the cold rich solvent
+before the main HE and feeding it to the stripper top. The reboiler
+duty was varied to obtain different capture efficiencies. 𝜖of 90% was
+obtained at a stripping intensity of approximately 200 kJ/kgtotal for
+both the base case and split flow configurations. The SRD of the system
+was 3.49 GJ/tonne CO2, which was 5.4% less than the base case
+configuration, which was 3.69 GJ/tonne CO2 to achieve an 𝜖of 90%.
+At any desired 𝜖, the split flow configuration was observed to result
+in a lower SRD when compared to the base case. The minimum SRD
+obtained for the split flow configuration was 3.45 GJ/tonne CO2, less
+than the base case minimum by 7.8%, for an 𝜖of 83%.
+The split flow configuration was observed to result in higher tem-
+peratures in the stripper as compared to the base case. The split flow
+entering the stripper top was heated by the overhead vapours exiting
+the stripper. Depending on the stripping intensity maintained, a duty of
+2.5 kW (20% of RD excluding heat loss) to 2.8 kW (21% of RD excluding
+heat loss) could be gained from the overhead steam by the split flow.
+Consequently, the saturated steam exiting the stripper top was observed
+to reduce from 3 kg/h to 7 kg/h, requiring a cooling duty of 3 kW (25%
+of RD excluding heat loss) to 7 kW (37% of RD excluding heat loss) in
+the base case to 0.2 kg/h to 1.7 kg/h requiring a cooling duty of 0.2 kW
+(2% of RD excluding heat loss) to 1.8 kW (11% of RD excluding heat
+loss). A split flow of 22% could therefore reduce the cooling duty by at
+least 68% from the base case. The split flow configuration also results
+in an increase in the lean cooler duty due to lowered energy recovery in
+the main HE. As a consequence of a higher lean cooler duty, the total
+cooling duty of the system is similar for the base case and split flow
+configurations.
+A maximum limit of 2.8 kW was observed in terms of energy gained
+due to the flashing of the solvent in the stripper. A deeper analysis
+of the influence of different split flow values needs to be conducted.
+Nevertheless, implementing split flow aids in energy gain from the
+overhead vapours and reduction of the cooling duty requirements with
+minimal process modifications. The SRD of the system can be reduced
+by 5.4% by a split flow of 22%.
+The results presented in the current work can be used for scaling
+up of CO2 capture plants. The solvent flows can be determined based
+on simple mass balances, and gas flows to be treated. The stripping
+intensity and the SRD values would remain unchanged for a desired
+capture efficiency at full scale. Utilities such as steam and cooling water
+can also be scaled linearly. Apart from utilities, the auxiliary operating
+costs include the power required for running the pumps, blower, the air
+cooler, the PLC, electricity consumed by the operators, maintenance
+work, make-up solvent, and safety sensors. The energy consumption
+for these auxiliary units is well understood and is not discussed in this
+work. This work does not also cover analysis related to solvent make-up
+and service of components, which can be considered a separate study.
+Scaling up of the equipment can be done in different ways. For the
+columns, if the scale-up is done based on a constant residence time
+and velocity of the flue gas in the absorber, the area of the column
+would scale linearly with the gas flow to be treated, and the diameter
+of the column would scale linearly on a logarithmic scale. The mass
+transfer observed in the absorber and the stripper can be expected to be
+equivalent to a full-scale plant, as the total surface area of the packing
+material can be scaled based on the gas flows to be treated. The height
+of the column would remain unchanged. The surface area of the plate
+heat exchangers (main HE, lean cooler, condenser, and reboiler) used
+at several places in the process scale linearly with the fluid flow rates,
+assuming the heat transfer coefficient and the design LMTD is the same
+as those used in the pilot plant. Pumps for solvent circulation can be
+scaled based on the system curves. While discussion of other fixed costs
+such as land, material, construction is vital, it is out of scope of the
+current work.
+Funding sources
+The financial support is from the Net Zero Energy Carbon Capture
+at ARC: Pilot scale development and demonstration of carbon cap-
+ture from waste-to-energy plants project (the Danish 318 Government
+through the EUDP agency no. 64020-1025). The funding source had
+no involvement in the study design; in the collection, analysis and
+interpretation of data; in the report’s writing; and in the decision to
+submit the article for publication.
+CRediT authorship contribution statement
+Sai Hema Bhavya Vinjarapu: Writing – review & editing, Writ-
+ing – original draft, Visualization, Validation, Supervision, Method-
+ology, Investigation, Formal analysis, Data curation, Conceptualiza-
+tion. Randi Neerup: Writing – review & editing, Resources. An-
+ders Hellerup Larsen: Resources, Methodology. Sebastian Nis Bay
+Villadsen: Project administration, Funding acquisition. Nicolas von
+Solms: Project administration. Søren Jensen: Writing – review &
+editing, Supervision, Resources, Project administration, Methodology.
+Jakob Lindkvist Karlsson: Writing – review & editing, Resources,
+Project administration. Jannik Kappel: Resources, Project administra-
+tion. Henrik Lassen: Resources, Project administration. Peter Blinks-
+bjerg: Resources, Project administration. Philip Loldrup Fosbøl: Writ-
+ing – review & editing, Supervision, Resources, Project administration,
+Methodology, Formal analysis.
+
+===== PDF PAGE 16 =====
+Separation and Purification Technology 345 (2024) 127311
+16
+S.H.B. Vinjarapu et al.
+Declaration of competing interest
+The authors declare that they have no known competing finan-
+cial interests or personal relationships that could have appeared to
+influence the work reported in this paper.
+Data availability
+The data will be published in Data in Brief Journal.
+Declaration of Generative AI and AI-assisted technologies in the
+writing process
+During the preparation of this work, the author(s) used ChatGPT
+and Grammarly in order to improve language and readability. After
+using this tool/service, the author(s) reviewed and edited the content as
+needed and take(s) full responsibility for the content of the publication.
+Acknowledgements
+The financial support is from the Net Zero Energy Carbon Cap-
+ture at ARC: Pilot scale development and demonstration of carbon
+capture from waste-to-energy plants project (the Danish 318 Govern-
+ment through the EUDP agency no. 64020-1025) and the Technical
+University of Denmark (DTU). The authors would like to acknowledge
+Duc Thuong Vu, Zahra Nickmand, and Simon Hjort Munk for their
+contributions to the sample analysis.
+Appendix A. Equipment details
+Information on the equipment is summarised in Table A.4.
+Appendix B. Measurement of process conditions
+Process conditions such as flow rates, temperatures, pressures, sump
+levels, densities, and concentrations, among others, have been mea-
+sured at several locations in the pilot plant. This section aims to provide
+an overview of these measurements. The PFD of the pilot plant with the
+major streams indicated is shown in Fig. B.25. The measured process
+conditions are logged every second and saved in the PLC. The data is
+available as a .csv file, which is used for analysis.
+B.1. Guide to the streams
+The following are the notations for the streams indicated in Fig. B.25.
+1. G - Gas stream
+2. A - Absorber
+3. AB - Absorber bed
+4. W - Wash column
+5. WB - Wash column bed
+6. S - Stripper
+7. SB - Stripper bed
+8. F - Flash vessel
+9. C - Condenser
+The following are the measurements conducted for each of these
+components.
+B.1.1. Process conditions measured for gas (g)
+1. G1 - Temperature, pressure
+2. G2 - Flow rate, temperature, pressure, CO2 concentration
+3. G3 - Temperature, pressure
+4. G4 - Flow rate, temperature, pressure, CO2 concentration
+Table A.4
+Summary of the design data of some of the pilot components.
+Absorber
+Height
+19.36 m
+Packing height
+5.325 m to 15 m
+Polishing section height
+1.045 m
+Diameter
+0.217 m
+Volume
+778 litres
+Packing material
+CMR 0A random plastic
+Polishing section packing material
+Mellapak 250Y structured
+Liquid collector volume
+2 litres
+Sump height
+1.43 m
+Sump volume
+120 litres
+Operating pressure
+1.1 bar
+Material of construction
+Stainless steel
+Stripper
+Height
+17.54 m
+Packing height
+3.4 m to 13.9 m
+Polishing section height
+0.5 m
+Diameter
+0.217 m
+Volume
+632 litres
+Packing material
+Flexiring 5/8 inch random, Stainless steel
+Polishing section packing material
+Mellapak plus 250Y
+Operating pressure
+1.85 bar
+Reboiler duty
+40 kW
+Flash vessel
+Volume
+156 litres
+Height
+1.12 m
+Main heat exchanger
+Type
+Plate heat exchanger
+Maximum heating surface area
+102 m2
+Design duty exchange
+37 kW
+Design LMTD
+6.7 P◦C
+Direction of fluids
+Counter-current
+Plate material
+Alloy 316
+Lean cooler
+Type
+Fusion-bonded plate heat exchanger
+Maximum heating surface area
+1.43 m2
+Design duty exchange
+10.5 kW
+Design LMTD
+7.2 ◦C
+Direction of fluids
+Counter-current
+Condenser
+Type
+Plate heat exchanger
+Maximum heating surface area
+0.23 m2
+Design duty exchange
+21.2 kW
+Direction of fluids
+Counter-current
+Air-cooled dry cooler
+Capacity
+90 kW
+Number of fans
+4
+B.1.2. Process conditions measured for absorber (a)
+1. A1 - Flow rate, temperature, pressure, density
+2. A2 - Temperature
+3. A3 - Flow rate, temperature, pressure, density
+4. A4 - Temperature, pressure
+5. A5 - Temperature, pressure
+6. A6 - Flow rate, Temperature, pressure
+7. AB1:AB4 - Temperature
+B.1.3. Process conditions measured for wash column (w)
+1. W1 - Temperature
+2. W2 - Flow rate, temperature, pressure
+3. W3 - Temperature, pressure
+4. W4 - Pressure, pH
+5. W5 - Flow rate, temperature, pressure
+6. WB1:WB6 - Temperature
+
+===== PDF PAGE 17 =====
+Separation and Purification Technology 345 (2024) 127311
+17
+S.H.B. Vinjarapu et al.
+Table D.5
+Gas data.
+Split flow [%]
+TTG1 [◦C]
+PTG1 [mbarg]
+TTG2 [◦C]
+PTG2 [mbarg]
+TTG3 [◦C]
+PTG3 [mbarg]
+FTG3 [kg/h]
+QTG3 [vol%]
+FTG4 [kg/h]
+QTG4 [vol%]
+0
+35.9 ± 0.2
+0.039 ± 0.27
+32.2 ± 0.1
+−94.6 ± 0.3
+58.5 ± 0.1
+51.1 ± 0.4
+100.2 ± 0.1
+12.5 ± 0.5
+77.4 ± 0.4
+1.5 ± 0.1
+22
+36.9 ± 0.1
+−0.271 ± 0.305
+33.4 ± 0.1
+−103.0 ± 0.5
+58.3 ± 0.9
+51.3 ± 0.5
+98.5 ± 0.2
+13.0 ± 1.2
+78.5 ± 0.4
+0.02 ± 1.5
+Table D.6
+Gas data.
+Split flow [%]
+PTG4 [mbarg]
+TTG4 [◦C]
+0
+0.00384 ± 0.000
+36.8 ± 2.6
+22
+0.00395 ± 0.000
+29.0 ± 0.1
+Table D.7
+Absorber data.
+Split flow [%]
+LTA1 [%]
+FTA1 [kg/h]
+PTA1 [barg]
+DTA1 [kg/m3]
+TTA1 [◦C]
+TTA4 [◦C]
+PTA4 [barg]
+TTA5 [◦C]
+PTA5 [barg]
+TTA2 [◦C]
+TTA3 [◦C]
+0
+44.5 ± 0.2
+276 ± 1
+4.44 ± 0.01
+1.1e+03 ± 0
+41.9 ± 0.1
+101 ± 0.2
+4.24 ± 0.01
+118 ± 0.1
+4.89 ± 0.04
+50.2 ± 0.1
+39.4 ± 0.3
+22
+44.9 ± 0.2
+268 ± 1
+4.43 ± 0.01
+1.1e+03 ± 0
+42.9 ± 0.1
+107 ± 0.1
+4.29 ± 0.01
+118 ± 0.1
+4.89 ± 0.03
+62.4 ± 0.3
+48.5 ± 0.2
+B.1.4. Process conditions measured for stripper (s)
+1. S1 - Temperature
+2. S2 - Temperature, pressure
+3. S3 - Temperature, pressure
+4. S4 - Reboiler duty
+5. SB1:SB5 - Temperature
+B.1.5. Process conditions measured for condenser (c)
+1. C1 - Temperature, pressure
+2. C2 - Flow rate, temperature, pressure
+Appendix C. Determination of co2 flow rate
+The CO2 captured can be calculated by three different methods:
+from the flue gas phase, liquid phase, and the flow rate from the
+stripper top. In the current work, the CO2 flow rates were determined
+by all three methods and compared to each other in Fig. C.26. The
+comparison between each two methods is provided in Figs. C.26(a),
+C.26(b), and C.26(c). These three methods have been discussed in detail
+in a previous publication [50].
+Table D.8
+Absorber data.
+Split flow [%]
+FTA3 [kg/h]
+DTA3 [kg/m3]
+FTA6 [l/h]
+0
+276 ± 2
+1.05e+03 ± 0
+0.145 ± 0.00
+22
+272 ± 2
+1.04e+03 ± 0
+54.3 ± 0.4
+Fig. C.26(a) shows the comparison of CO2 capture flow rates be-
+tween the flue gas and the stripper top. The CO2 captured is determined
+in the flue gas by obtaining the difference in the CO2 content in the
+inlet and outlet flue gas flows. The CO2 captured from the stripper
+top is calculated using the flow rate and reducing the water content
+in the flow. It can be seen from Fig. C.26(a) that these two values
+are in agreement with each other for a majority of the steady state
+experiments.
+Fig. C.26(b) depicts the CO2 capture flow rates based on the flue
+gas and liquid flows. The CO2 capture flow through liquid flows is
+determined based on the loadings of the rich and lean solvents. It can
+be observed that the CO2 capture rate through the liquid flows is lower
+Fig. B.25. PFD of the pilot plant in the split flow configuration with the major streams indicated.
+
+===== PDF PAGE 18 =====
+Separation and Purification Technology 345 (2024) 127311
+18
+S.H.B. Vinjarapu et al.
+Fig. C.26. Comparison of CO2 flow rates determined by three different methods. (a) CO2 captured estimated by flue gas phase vs. stripper top. (b) CO2 captured estimated by
+flue gas phase vs. liquid phase. (c) CO2 captured estimated by liquid phase vs. stripper top.
+Fig. C.27. Standard deviation and standard error of mCO2,cap.
+than that based on the flue gas flows. Uncertainties in loading deter-
+mination, MEA concentration, density, and temperature measurements
+can lead to disagreement between the two flows.
+Fig. C.26(c) shows the comparison between the CO2 capture flow
+rate from the liquid and the stripper top flows. It can be seen that the
+stripper top CO2 flow is higher than that from the liquid flows. This
+could be expected as the stripper top and flue gas flows agree with
+each other, and therefore, the liquid flow would be lower than that of
+the stripper top.
+The final mCO2,cap was taken as a mean of the two methods which
+agreed the most at every steady state. The standard deviation and
+error for the final CO2 flow rate are presented in Fig. C.27. It can be
+observed that the standard deviation in the CO2 capture flows is less
+than 0.5 kg/h for most of the experiments and the standard error is less
+than ±5%.
+Appendix D. Experimental data
+The detailed experimental data for the cases shown in Table 3
+are presented in detail in this Section. The notations for the different
+sections have been presented in Appendix B. The guide for the tags
+is as follows. The experimental data with uncertainties is presented in
+Tables D.5, D.6, D.7, D.8, D.9, D.10, D.11, D.12, D.13, D.14.
+D.1. Guide for tags
+1. TT - Temperature transmitter
+2. PT - Pressure transmitter
+3. FT - Flow transmitter
+4. QT - Concentration transmitter
+5. LT - Level transmitter
+6. DT - Density measurement
+7. TE - Temperature transmitter
+8. RD - Reboiler duty
+
+===== PDF PAGE 19 =====
+Separation and Purification Technology 345 (2024) 127311
+19
+S.H.B. Vinjarapu et al.
+Table D.9
+Absorber temperature data.
+Split flow [%]
+TE1AB2 [◦C]
+TE2AB2 [◦C]
+TE3AB2 [◦C]
+TTAB3 [◦C]
+TE1AB3 [◦C]
+TE2AB3 [◦C]
+TE3AB3 [◦C]
+TTAB4 [◦C]
+TE1AB4 [◦C]
+TE2AB4 [◦C]
+TE3AB4 [◦C]
+0
+68.2 ± 0.2
+74.4 ± 0.2
+76.1 ± 0.1
+66.5 ± 0.2
+57.7 ± 0.1
+61.4 ± 0.2
+65.2 ± 0.2
+55.9 ± 0.1
+45.3 ± 0.1
+51.9 ± 0.1
+55.0 ± 0.1
+22
+73.7 ± 0.6
+77.6 ± 0.2
+78.3 ± 0.4
+72.2 ± 0.7
+60.4 ± 0.4
+65.8 ± 0.8
+70.6 ± 0.9
+58.5 ± 0.4
+45.0 ± 0.2
+53.4 ± 0.2
+57.2 ± 0.3
+Table D.10
+Wash tower data.
+Split flow [%]
+TTW1 [◦C]
+PTW2 [barg]
+TTW2 [◦C]
+TTW3 [◦C]
+FTW3 [kg/h]
+PTW4 [barg]
+PTW5 [barg]
+FTW5 [kg/h]
+TTW5 [◦C]
+QTW5 [pH]
+LTW [%]
+0
+56.4 ± 0.1
+4.22 ± 0.01
+52.8 ± 0.7
+33.1 ± 3.2
+263.0 ± 0.3
+0.84 ± 0.00
+−0.17 ± 0.01
+0 ± 0
+26.8 ± 0.1
+6.61 ± 0.01
+59.98 ± 0.16
+22
+61.5 ± 0.3
+4.21 ± 0.01
+52.3 ± 0.2
+29.8 ± 0.2
+267.0 ± 0.3
+0.85 ± 0.0
+−0.18 ± 0.01
+0 ± 0
+25.0 ± 0.7
+6.56 ± 0.01
+66.81 ± 0.26
+Table D.11
+Wash tower data.
+Split flow [%]
+TTWB2 [◦C]
+TTWB3 [◦C]
+TTWB4 [◦C]
+TTWB5 [◦C]
+TTWB6 [◦C]
+0
+38.1 ± 2.7
+39.9 ± 2.3
+38.9 ± 1.1
+38.4 ± 3.5
+37.2 ± 4.2
+22
+29.1 ± 0.1
+29.7 ± 0.1
+29.6 ± 0.1
+29.5 ± 0.1
+30.0 ± 0.1
+Table D.12
+Stripper data.
+Split flow [%]
+TTSB2 [◦C]
+TTSB3 [◦C]
+TTSB4 [◦C]
+TTSB5 [◦C]
+TTS1 [◦C]
+PTS1 [barg]
+RD [kW]
+TTS2 [◦C]
+PTS2 [barg]
+TTS3 [◦C]
+PTS3 [barg]
+LTF [%]
+0
+91.51 ± 0.01
+93.2 ± 0.2
+96.9 ± 0.1
+96.2 ± 0.2
+118.0 ± 0.1
+0.882 ± 0.001
+18.3 ± 0.1
+143.0 ± 0.1
+3.05 ± 0.01
+128.0 ± 0.1
+2.95 ± 0.01
+35.9 ± 0.3
+22
+68.67 ± 0.73
+99.6 ± 0.1
+100.0 ± 0.2
+102.0 ± 0.1
+119.0 ± 0.1
+0.875 ± 0.001
+18.3 ± 0.1
+143.0 ± 0.1
+3.07 ± 0.01
+128.0 ± 0.1
+2.97 ± 0.01
+36.1 ± 0.6
+Table D.13
+Condenser data.
+Split flow [%]
+PTC1 [barg]
+TTC1 [◦C]
+FTC2 [kg/h]
+TTC2 [◦C]
+PTC2 [barg]
+0
+0.858 ± 0.007
+92 ± 0.2
+15.3 ± 0.3
+29.4 ± 0.1
+0.82 ± 0.01
+22
+0.836 ± 0.002
+67 ± 0.3
+15.7 ± 0.2
+28.8 ± 0.1
+0.82 ± 0.01
+Table D.14
+Performance indicators data.
+Split flow [%]
+SRD [GJ/tonne CO2]
+CO2 captured [kg/h]
+Heat lossstripper [kW]
+𝜖[%]
+wtMEA,lean [wt%]
+wtMEA,rich [wt%]
+𝛼lean [mol CO2/mol MEA]
+𝛼rich [mol CO2/mol MEA]
+0
+3.67 ± 0.02
+15.1 ± 0.1
+2.9
+90
+29.3
+26.8
+0.214 ± 0.032
+0.528 ± 0.026
+22
+3.56 ± 0.01
+15.6 ± 0.1
+2.9
+91
+27.5
+25.8
+0.213 ± 0.032
+0.536 ± 0.027
+References
+[1] A.B. Rao, E.S. Rubin, A technical, economic, and environmental assessment of
+amine-based CO2 capture technology for power plant greenhouse gas control,
+Environ. Sci. Technol. 36 (20) (2002) 4467–4475, http://dx.doi.org/10.1021/
+es0158861.
+[2] A. Kohl, R. Nielsen, Gas purification, fifth ed., Gulf Publishing Company,
+Houston, 1997.
+[3] D.T.
+Kearns,
+Waste-to-Energy
+with
+CCS:
+A
+pathway
+to
+carbon-negative
+power
+generation,
+Technical
+Report,
+Global
+CCS
+Institute,
+2019,
+URL
+https://www.globalccsinstitute.com/wp-content/uploads/2019/10/Waste-to-
+Energy-Perspective_October-2019-5.pdf.
+[4] P. Wienchol, A. Szle¸k, M. Ditaranto, Waste-to-energy technology integrated
+with carbon capture – challenges and opportunities, Energy 198 (2020) http:
+//dx.doi.org/10.1016/j.energy.2020.117352.
+[5] L.A. Pellegrini, S. Moioli, G. De Guido, E. Fasola, D. Alberti, A. Carrara, Study
+of the application of CCUS in a WtE Italian plant, Chem. Eng. Trans. 99 (2023)
+331–336, http://dx.doi.org/10.3303/CET2399056.
+[6] Saga city- the world’s best kept secret (for now), in: Global CCS Institute. Insights,
+2018, URL https://www.globalccsinstitute.com/news-media/insights/saga-city-
+the-worlds-best-kept-secret-for-now/.
+[7] Toshiba complete installation of world’s first commercial use ccu system in
+incineration plant, in: Toshiba News, 2016, URL https://www.global.toshiba/
+ww/news/corporate/2016/08/pr1001.html#:~:text=News%20Releases-.
+[8] CO2 capture plant - AVR - too good to waste, 2023, URL https://www.avr.nl/
+en/optimal-process/co2-capture-plant/.
+[9] H. Barlow, S.S.M. Shahi, M. Loughrey, State of the art: CCS Technologies 2023,
+Technical Report, Global CCS Institute, 2023.
+[10] E. Skylogianni, R.V. Figueiredo, P. Van Os, J. Frost, J. Hall, T.S. Yelland, J.
+Kiewik, M. Vos, J. Garcia, M.-S. Monteiro, Demonstration of solvent performance
+at an industrial WtE facility, in: 16th International Conference on Greenhouse Gas
+Control Technologies, GHGT-16, 2022, URL https://ssrn.com/abstract=4286070.
+[11] I. Aouini, A. Ledoux, L. Estel, S. Mary, Pilot plant studies for CO2 capture from
+waste incinerator flue gas using MEA based solvent, Oil Gas Sci. Technol. 69 (6)
+(2014) 1091–1104, http://dx.doi.org/10.2516/ogst/2013205.
+[12] M.R. Abu-Zahra, L.H. Schneiders, J.P. Niederer, P.H. Feron, G.F. Versteeg,
+CO2 capture from power plants. Part I. A parametric study of the technical
+performance based on monoethanolamine, Int. J. Greenhouse Gas Control 1 (1)
+(2007) 37–46, http://dx.doi.org/10.1016/S1750-5836(06)00007-7.
+[13] D. Aaron, C. Tsouris, Separation of CO2 from flue gas: A review, Sep. Sci.
+Technol. 40 (1–3) (2005) 321–348, http://dx.doi.org/10.1081/SS-200042244.
+[14] R. Steeneveldt, B. Berger, T.A. Torp, CO2 capture and storage: Closing the
+knowing-doing gap, Chem. Eng. Res. Des. 84 (9 A) (2006) 739–763, http:
+//dx.doi.org/10.1205/cherd05049.
+[15] A. Veawab, A. Aroonwilas, Identification of oxidizing agents in aqueous amine-
+CO2 systems using a mechanistic corrosion model, Corros. Sci. 44 (2001)
+967–987, http://dx.doi.org/10.1016/S0010-938X(01)00125-1.
+[16] J.N. Knudsen, J.N. Jensen, P.J. Vilhelmsen, O. Biede, Experience with CO2
+capture from coal flue gas in pilot-scale: Testing of different amine solvents,
+Energy Procedia 1 (1) (2009) 783–790, http://dx.doi.org/10.1016/j.egypro.2009.
+01.104.
+[17] M.S. Jassim, G.T. Rochelle, Innovative absorber/stripper configurations for CO2
+capture by aqueous monoethanolamine, Ind. Eng. Chem. Res. 45 (8) (2006)
+2465–2472, http://dx.doi.org/10.1021/ie050547s.
+[18] B.A. Oyenekan, G.T. Rochelle, Alternative stripper configurations for CO2 capture
+by aqueous amines, AIChE J. 53 (12) (2007) 3144–3154, http://dx.doi.org/10.
+1002/aic.11316.
+[19] B. Eisenberg, M. Plains, R.R. Johnson, Amine regeneration process. US4152217,
+1978.
+[20] D. Gelowitz, P. Tontiwachwuthikul, R. Idem, Method and absorbent composition
+for recovering a gaseous component from a gas stream. US2010/0229723a1,
+2010.
+[21] F. Van Hecke, Regeneration of regenerable aqueous scrubbing solutions used for
+removing acidic gases from gas mixtures. US4035166, 1975.
+[22] G. Giammarco, P. Giammarco, Process for removing gaseous impurities from a
+gaseous mixture containing the same. US4146569, ISBN: 2,134,50710/1, 1977.
+[23] M. Koch, J.P. Naumovitz, Method and system for reducing energy requirements
+of a CO2 capture system. WO2012/036878a1, 2012.
+[24] T. Ogawa, Y. Ohashi, H. Kitamura, Carbon dioxide recovery aparatus and carbon
+dioxide recovery method. US2012/0118162a1, 2012.
+[25] J. Mak, R.D. Fish, Configurations and methods for acid gas absorption and
+solvent regeneration. US2008/0184887a1, 2008.
+
+===== PDF PAGE 20 =====
+Separation and Purification Technology 345 (2024) 127311
+20
+S.H.B. Vinjarapu et al.
+[26] B. Baburao, J.W. Leister, F. Vitse, Process for CO2 capture with improved stripper
+performance. US2010/0242731a1, 2009.
+[27] P. Richter, R. Schneider, H. Schramm, Method and device for separating carbon
+dioxide from an exhaust gas of a fossil fired power plant. WO2010/086039a1,
+2010.
+[28] Y. Le Moullec, M. Kanniche, Screening of flowsheet modifications for an
+efficient monoethanolamine (MEA) based post-combustion CO2 capture., Int. J.
+Greenhouse Gas Control 5 (4) (2011) 727–740, http://dx.doi.org/10.1016/j.ijggc.
+2011.03.004.
+[29] Y. Le Moullec, T. Neveux, A. Al Azki, A. Chikukwa, K.A. Hoff, Process modifi-
+cations for solvent-based post-combustion CO2 capture, Int. J. Greenhouse Gas
+Control 31 (2014) 96–112, http://dx.doi.org/10.1016/j.ijggc.2014.09.024.
+[30] A. Cousins, L.T. Wardhaugh, P.H. Feron, A survey of process flow sheet
+modifications for energy efficient CO2 capture from flue gases using chemical
+absorption., Int. J. Greenhouse Gas Control 5 (4) (2011) 605–619, http://dx.doi.
+org/10.1016/j.ijggc.2011.01.002.
+[31] G. Soave, J.A. Feliu, Saving energy in distillation towers by feed splitting, Appl.
+Therm. Eng. 22 (2002) 889–896, http://dx.doi.org/10.1016/S1359-4311(02)
+00006-6.
+[32] M. Iijima, T. Kamijo, T. Yonekawa, T. Mimura, Y. Yagi, Apparatus and method
+for recovering CO2. EP1736231b1, 2005.
+[33] J.P. Herrin, Process sequencing for amine regeneration. US4798910, 1985.
+[34] A. Cousins, L.T. Wardhaugh, P.H. Feron, Preliminary analysis of process flow
+sheet modifications for energy efficient CO2 capture from flue gases using
+chemical absorption, Chem. Eng. Res. Des. 89 (8) (2011) 1237–1251, http:
+//dx.doi.org/10.1016/j.cherd.2011.02.008.
+[35] A. Cousins, L.T. Wardhaugh, P.H. Feron, Analysis of combined process flow sheet
+modifications for energy efficient CO2 capture from flue gases using chemical
+absorption., Energy Procedia 4 (2011) 1331–1338, http://dx.doi.org/10.1016/j.
+egypro.2011.01.191.
+[36] Z. Amrollahi, I.S. Ertesvåg, O. Bolland, Optimized process configurations of post-
+combustion CO2 capture for natural-gas-fired power plant-exergy analysis, Int.
+J. Greenhouse Gas Control 5 (6) (2011) 1393–1405, http://dx.doi.org/10.1016/
+j.ijggc.2011.09.004.
+[37] F. de Miguel Mercader, G. Magneschi, E. Sanchez Fernandez, G.J. Stienstra,
+E.L. Goetheer, Integration between a demo size post-combustion CO2 capture
+and full size power plant. An integral approach on energy penalty for different
+process options., Int. J. Greenhouse Gas Control 11 (SUPPL) (2012) 102–113,
+http://dx.doi.org/10.1016/j.ijggc.2012.09.016.
+[38] D.H. Van Wagener, Stripper Modeling for CO2 Removal Using Monoethanolamine
+and Piperazine Solvents (Ph.D. thesis), The University of Texas Austin, Austin,
+2011, pp. 111–121.
+[39] T. Neveux, Y. Le Moullec, J.P. Corriou, E. Favre, Energy performance of CO2
+capture processes: Interaction between process design and solvent, Chem. Eng.
+Trans. 35 (2013) 337–342, http://dx.doi.org/10.3303/CET1335056.
+[40] A. Aroonwilas, Evaluation of split-flow scheme for CO2 absorption process using
+mechanistic mass-transfer and hydrodynamic model, Greenhouse Gas Control
+Technol. 2 (2005) 1841–1845, http://dx.doi.org/10.1016/B978-008044704-9/
+50223-8.
+[41] H. Ahn, M. Luberti, Z. Liu, S. Brandani, Process configuration studies of the
+amine capture process for coal-fired power plants, Int. J. Greenhouse Gas Control
+16 (2013) 29–40, http://dx.doi.org/10.1016/j.ijggc.2013.03.002.
+[42] J.C. Polasek, J.A. Bullin, S.T. Donnelly, Alternative Flow Schemes to Reduce
+Capital and Operating Costs of Amine Sweetening Units, Technical Report, Texas,
+2006.
+[43] M. Karimi, M. Hillestad, H.F. Svendsen, Capital costs and energy considerations
+of different alternative stripper configurations for post combustion CO2 capture,
+Chem. Eng. Res. Des. 89 (8) (2011) 1229–1236, http://dx.doi.org/10.1016/j.
+cherd.2011.03.005.
+[44] H. Gao, L. Zhou, Z. Liang, R.O. Idem, K. Fu, T. Sema, P. Tontiwachwuthikul,
+Comparative studies of heat duty and total equivalent work of a new heat
+pump distillation with split flow process, conventional split flow process, and
+conventional baseline process for CO2 capture using monoethanolamine., Int.
+J. Greenhouse Gas Control 24 (2014) 87–97, http://dx.doi.org/10.1016/j.ijggc.
+2014.03.001.
+[45] Z. Liang, H. Gao, W. Rongwong, Y. Na, Comparative studies of stripper overhead
+vapor integration-based configurations for post-combustion CO2 capture., Int.
+J. Greenhouse Gas Control 34 (2015) 75–84, http://dx.doi.org/10.1016/j.ijggc.
+2014.12.019.
+[46] P.T. Frailie, T. Madan, B.J. Sherman, G.T. Rochelle, Energy performance of
+advanced stripper configurations., Energy Procedia 37 (2013) 1696–1705, http:
+//dx.doi.org/10.1016/j.egypro.2013.06.045.
+[47] T. Damartzis, A.I. Papadopoulos, P. Seferlis, Process flowsheet design optimiza-
+tion for various amine-based solvents in post-combustion CO2 capture plants., J.
+Clean. Prod. 111 (2016) 204–216, http://dx.doi.org/10.1016/j.jclepro.2015.04.
+129.
+[48] A. Cousins, A. Cottrell, A. Lawson, S. Huang, P.H. Feron, Model verification
+and evaluation of the rich-split process modification at an Australian-based post
+combustion CO2 capture pilot plant, Greenhouse Gases: Sci. Technol. 2 (5)
+(2012) 329–345, http://dx.doi.org/10.1002/ghg.
+[49] M. Stec, A. Tatarczuk, L. Wie¸cław-Solny, A. Krótki, M. Scia¸zko, S. Tokarski,
+Pilot plant results for advanced CO2 capture process using amine scrubbing at
+the jaworzno II power plant in Poland, Fuel 151 (2015) 50–56, http://dx.doi.
+org/10.1016/j.fuel.2015.01.014.
+[50] S.H.B. Vinjarapu, R. Neerup, A.H. Larsen, J.K. Jørsboe, S.N.B. Villadsen, S.
+Jensen, J.L. Karlsson, J. Kappel, H. Lassen, P. Blinksbjerg, N. von Solms, P.L.
+Fosbøl, Results from pilot-scale CO2 capture testing using 30 wt% MEA at a
+waste-to-energy facility: Optimisation through parametric analysis, Appl. Energy
+355 (2024) http://dx.doi.org/10.1016/j.apenergy.2023.122193.
+[51] K. Thomsen, P. Rasmussen, R. Gani, Correlation and prediction of thermal
+properties and phase behaviour for a class of aqueous electrolyte systems,
+Chem. Eng. Sci. 51 (14) (1996) 3675–3683, http://dx.doi.org/10.1016/0009-
+2509(95)00418-1.
+[52] S.H.B. Vinjarapu, CO2 capture for Waste-to-Energy: Pilot scale demonstration
+and investigation of thermodynamic properties for new solvents (Ph.D. thesis),
+Technical University of Denmark, Lyngby, 2023, pp. 346–348.
+[53] C.A. Obek, F.K. Ayittey, A. Saptoro, Improved process modifications of aqueous
+ammonia-based CO2 capture system, MATEC Web Conf. 268 (2019) http://dx.
+doi.org/10.1051/matecconf/201926802004.
+[54] J. Liu, Investigation into an energy-saving mechanism for advanced stripper
+configurations in post-combustion carbon capture, J. Taiwan Inst. Chem. Eng.
+108 (2020) 43–54, http://dx.doi.org/10.1016/j.jtice.2019.12.012.
+[55] L. Dubois, D. Thomas, Simulations of various configurations of the post-
+combustion CO2 capture process applied to a cement plant flue gas: Parametric
+study with different solvents, Energy Procedia 114 (2017) 1409–1423, http:
+//dx.doi.org/10.1016/j.egypro.2017.03.1265.
+[56] A. Arronwilas, A. Veawab, Heat recovery gas absorption process. US7906087,
+2011, pp. 1–3.
+[57] T. Spietz, S. Dobras, T. Chwoła, A. Wilk, A. Krótki, L. Wie¸cław-Solny, Ex-
+perimental results of amine emission from the CO2 capture process using
+2-amino-2-methyl-1-propanol (AMP) with piperazine (PZ), Int. J. Greenhouse Gas
+Control 102 (2020) http://dx.doi.org/10.1016/j.ijggc.2020.103155.

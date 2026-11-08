@@ -1,0 +1,957 @@
+Chapter 2 
+HIGH TEMPERATURE ENGINEERING TEST REACTOR (HTTR) 
+REACTOR PHYSICS BENCHMARKS  
+2.1. HTTR GENERAL INFORMATION 
+The High Temperature Engineering Test Reactor (HTTR) of the Japan Atomic Energy 
+Research Institute (JAERI) is a graphite-moderated and helium gas cooled reactor with an 
+outlet temperature of 950°C and a thermal output of 30 MW [2-1]. 
+The major objectives of the HTTR are to establish and upgrade the technological basis 
+for advanced high temperature gas-cooled reactors (HTGRs) and to conduct various 
+irradiation tests for innovative high temperature basic researches.  
+The construction was completed on May 1996. The fuel loading of was started on July 
+1, 1998 from core periphery. The first criticality was attained in annular type core of 19 
+columns on Nov.10, 1998. The first full power operation with an average  core outlet 
+temperature of 850°C was completed on 7 December 2001, and operational licensing of the 
+HTTR was approved on 6 March 2002.  
+2.1.1.
+Facility Description 
+2.1.1.1. Background 
+In June 1987, the Japanese Atomic Energy Commission (JAEC) issued a revised 
+“Long Term Program for Development and Utilization of Nuclear Energy” stressing that 
+Japan should proceed to develop more advanced reactor technologies in parallel with the 
+upgrading of existing nuclear reactors. It was recognized in this programme that the HTGR 
+was not to be incorporated into the present existing power plant system, but the benefits that 
+could be derived, such as its inherent safety and production of high temperature heat, are 
+remarkable and should be pursued. Therefore, the promotion of R&D on the HTGR in Japan 
+is quite significant from the viewpoint of a new nuclear technology frontier.  
+Within this programme, the early construction of a test reactor in place of the 
+experimental Very High Temperature Reactor (VHTR) was recommended based on the 
+estimated length of time (~ 10 years) to construct the plant and perform associated testing. 
+Based on the conclusions by a special committee investigating the HTGR R&D plan for the 
+JAEC, demand of nuclear heat applications to ~ 1,000°C is expected to become strong in the 
+early part of the 21st century. The committee requested that a test reactor making the most use 
+of Japanese technology be designed and built to test and study advanced HTGRs for the 
+future. Accordingly, the test reactor should have an in-core irradiation region equipped with 
+the capability to test the threshold of fuel failure and for the irradiation of various materials.  
+The committee’s report also stated that the reactor outlet coolant temperature should 
+be 950°C, which is the highest temperature attainable considering the current technology 
+level. For irradiation tests, a prismatic block type core structure was proposed, with a thermal 
+power rating of 30MW for securing adequate regions for irradiation tests at high temperature 
+[2-6, 2-7]. 
+3
+
+Based on these suggestions, JAERI suspended the previous programme where the 
+experimental VHTR was defined as an initial step toward nuclear heat application 
+development and proceed with the design and R&D specifically necessary to prepare the 
+safety analysis report of the HTTR, with the objectives to:   
+• Establish and upgrade the technology base of the HTGR  
+• Perform innovative basic research in the field of high temperature engineering 
+• Demonstrate high temperature heat applications and utilization achieved from nuclear 
+heat. 
+The Japanese government approved proceeding with the HTTR in its 1989 fiscal year 
+budget. Construction began in March 1991 following submittal by JAERI of the HTTR safety 
+analysis report and subsequent review by the Science and Technology Agency, and then, by 
+the Nuclear Safety Commission. 
+2.1.1.2. General design features of the HTTR 
+The reactor core is designed to keep all specific safety features within the graphite 
+blocks. The intermediate heat exchanger (IHX) is equipped to supply high temperature clean 
+helium for process heat application systems, and the instrumentation and control system is 
+designed to allow operations that simulate accidents and anticipated operational occurrences 
+(AOOs). As the HTTR is the first HTGR in Japan and a test reactor with various purposes, it 
+incorporates specific aspects regarding the safety design. JAERI established the following 
+safety design principles for the HTTR in reference to the “Guidelines for Safety Design of 
+LWR Power Plants”, but taking into account the significant safety characteristics of the 
+HTGR and the corresponding design requirements as a test reactor:  
+• Coated fuel particles shall not fail during normal operation and AOOs. To satisfy this 
+principle, the maximum fuel temperature, including systematic and random uncertainties, 
+shall not exceed 1600°C for any AOO.  
+• The reactor shall be shut down safely and reliably during operation using the control rod 
+system. Furthermore, a reserved shutdown system (RSS) which is independent of the 
+control rod system shall be provided.  
+• A severe accident resulting from control rod ejection must be avoided.  
+• The residual heat after reactor shutdown shall be removed safely and reliably for any 
+AOO or accident.  
+• A containment vessel (C/V) shall be provided to prevent fission product release and 
+excessive air ingress into the core in case of a depressurization accident.  
+• The pressure in the pressurized water cooling system (PWCS) shall be controlled so as to 
+be lower than that of the primary helium gas to prevent a large water ingress into the core 
+in case of rupture of a heat transfer tube in the primary pressurized water cooler (PPWC).  
+• The helium gas pressure in the secondary helium cooling system (SHCS) shall be 
+controlled to be slightly higher than that of the primary helium gas to prevent fission 
+product leakage from the primary cooling system (PCS) to the secondary due to a crack in 
+a heat transfer tube in the IHX.  
+• The pressure and heat resisting functions of the structures, where the high pressure and 
+high temperature coolant is contained, are separated to reduce mechanical loads on the 
+high temperature metal structures [2-7].   
+Safe and reliable shutdown of the reactor from any operational condition is achieved 
+with the control rod system. Furthermore, a reserved shutdown system composed of B4C/C 
+4
+
+pellets is provided. The power control and normal reactor shutdown of the HTTR are 
+achieved with 16 pairs of control rods or 15 pairs when the center column of the core is used 
+for an irradiation test. The control rod system can achieve subcriticality from any operational 
+condition and maintain subcriticality under cold core conditions including the postulated 
+event of a pair of control rods stuck in the operational position. The major design 
+specifications of the HTTR are shown in Table 2.1. The reactor outlet coolant temperature at 
+the full power is set at both 850° and 950°C. The reactor operational mode at 850°C is defined 
+as "rated operation" and at 950°C is "high temperature test operation" because operation of 
+the HTTR is not allowed at 950°C for  full life of the initial core. Tests such as the safety 
+demonstration tests and irradiation tests are allowed only in the rated operation mode. The 
+high temperature nuclear process heat utilization system will be operated at the high 
+temperature test operational mode. The design life of permanent structural components in the 
+HTTR plant is based on 20 years with a load factor of 60 % of full power operation.  
+The HTGR has excellent safety capabilities with respect to the accidental release of 
+fission products. Nevertheless, the HTTR is required to have a containment vessel to meet 
+Japanese safety design guidelines for the light water nuclear power plants. 
+2.1.1.3.  HTTR plant layout and cooling system 
+The HTTR is located on JAERI’s Oarai Research Establishment site which is 
+approximately 100 kilometers north of the Tokyo metropolitan area and is near the Pacific 
+Ocean. The plant area is 200 m x 300 m in size. The shortest distance between the HTTR 
+reactor core and site boundary is about 280 m in the southwest direction. As illustrated in 
+Figure 2.1, the HTTR plant arrangement is comprised of the reactor building, spent fuel 
+storage building, a machinery building, cooling towers, exhaust stack, a high temperature 
+process heat utilization system and other auxiliary facilities. The reactor building of 48 m x 50 
+m in size is situated in the central area of the plant. The exhaust stack of 80 m in height is 
+north of the reactor building for the air ventilated from the reactor building to be released to 
+the atmosphere. The heat utilization system will be constructed south of the reactor building 
+[2-8].  
+FIG. 2.1. HTTR plant arrangement. 
+5
+
+During a reactor scram, gas circulators of the MCS are shut to protect the heat transfer 
+tubes of the two pressurized water coolers against overheating. In an AOO and accident 
+condition when forced cooling of the core is available, the ACS automatically starts in 
+response to the reactor scram signal. The VCS functions as a residual heat removal system 
+when forced circulation in the primary cooling system is no longer available due to a rupture 
+of its piping system. It also operates during normal operation to cool the reactor shielding 
+concrete wall.  
+         The MCS consists of an IHX, a primary pressurized water cooler (PPWC), a secondary 
+pressurized water cooler (SPWC) and pressurized water/air cooler. The MCS has two 
+operational modes; “single loaded operation”, and “parallel loaded operation”. The PPWC 
+functions to remove the reactor heat of 30 MW during the single loaded operation, while 
+during parallel load operation the IHX removes 10MW and the PPWC removes 20MW. The 
+SPWC serves the function of removing the heat from the IHX. The heat removed by the 
+PPWC and the SPWC is transported through the pressurized water at 3.5MPa. The 
+pressurized water is then cooled down by the air cooler. In the HTTR reactor plant, the reactor 
+heat of 30 MW is eventually transferred to the atmosphere by the pressurized water and the 
+air cooler. During normal operation, the pressure of the secondary helium is controlled to 
+always be 0.1 MPa higher than that of the primary helium at the IHX heat transfer tubes in 
+order to reduce the pressure load on the tubes and to protect for accidental leakage of 
+radioactive materials into the secondary helium. The water pressure is controlled so that a 
+large amount of water can not ingress into the core with a PPWC tube rupture accident. 
+The auxiliary helium transfers a small fraction of the reactor heat to pressurized water. 
+Eventually, the reactor heat is dissipated to the atmosphere at the auxiliary water/air cooler. 
+The ACS consists of an auxiliary heat exchanger (AHX), two auxiliary helium circulators and 
+an air cooler. At the AHX, the auxiliary helium is cooled by water. During normal operation, 
+a small flow of auxiliary helium (~ 200 kg/h) passes through the AHX to the primary helium 
+purification system so as to remove impurities contained in the reactor coolant. With a reactor 
+scram, while the reactor coolant pressure boundary remains intact, the auxiliary helium 
+cooling system automatically starts and transfers the residual heat from the core to the 
+auxiliary air cooler. The AHX has heat transfer capacity of approximately 3.5MW.  
+       Two vessel cooling systems are provided as protection of the reactor core and the RPV 
+against thermal damage by residual heat after a reactor scram when the ACS cannot, or fails 
+to, cool the core. Each of these systems is capable of controlling temperatures of the core and 
+RPV within safe limits and consists of water-cooled panels surrounding the RPV with two 
+cooling water systems. Cooling tubes with fins form the panels and are arranged so that 
+adjacent tubes do not belong to the same system and a tube failure will not danger the RPV 
+and core. The heat removal rate from the RPV to the panels is designed as 0.6 MW so as to 
+effectively remove heat to meet the requirement for the maximum allowable normal fuel 
+temperature of 1495°C and also 0.3 MW or more with an accident condition where the reactor 
+core is not cooled by the ACS. The VCS is also an engineered safety feature equipped with 
+two independent complete sets which are backed up with an emergency power supply. It is 
+operated even during normal operation in order to cool the biological shielding concrete wall.  
+The IHX is a helically coiled counter flow type heat exchanger. To minimize 
+constraints of axial and radial thermal expansion of the helically coiled heat transfer tubes, a 
+floating hot header with a combination of a central hot gas duct passes through the central 
+space inside the helix bundle. An assembled tube support allows free thermal expansion of a 
+8
+
+helix in the radial direction. The primary helium enters the IHX through the inner pipe of the 
+primary concentric hot gas duct attached to the bottom of the IHX. It flows up outside the 
+tubes thereby transferring nuclear heat of 10 MW to the secondary helium and flows back to 
+the annular space between the inner and outer shells, The secondary helium flows down inside 
+the heat transfer tubes and flows up through the center as hot gas. A double-walled shell with 
+thermal insulation attached to the inside surface of the inner shell provides reliable separation 
+of the heat resisting and pressure retaining functions. Cold helium flowing through the 
+annulus brings uniform temperature distribution throughout the outer shell which serves the 
+function of being the pressure retaining member. 
+2.1.1.4. HTTR core configuration 
+The annular core is one of the promising core types for future HTGRs because of high 
+inherent safety characteristics for loss of coolant accidents [2-2, 2-3, 2-4]. The decay heat 
+removal is enhanced by introduction of the annular core because the heat transfer pass will be 
+shortened due to thinning of the fuel region. As a result, the fuel temperature on a loss of 
+coolant accident can be maintained less than the fuel temperature limit of 1600°C by the 
+vessel cooling system (VCS) surrounding the reactor pressure vessel. The decay heat will be 
+transferred radially through the fuel regions, side reflector blocks and reactor pressure vessel 
+to the cooling panel of the VCS by heat conduction, radiation and convection without any 
+active cooling system. 
+Table 2-1.  Specification of the HTTR 
+Thermal power                                                
+30 MW 
+Outlet coolant temperature              
+950°C 
+Inlet coolant temperature     
+395°C 
+Primary coolant pressure      
+4 MPa 
+Core structure               
+Graphite 
+Equivalent core diameter      
+2.3 m 
+Effective core height         
+2.9 m 
+Average power density        
+2.5 W/cm3
+Fuel                         
+UO2
+ Uranium enrichment      
+3 to 10 wt% 
+ Type of fuel            
+Pin-in-block 
+ Burn-up period (efpd) 
+660 days 
+Coolant material          
+Helium gas 
+Flow direction in core           
+Downward  
+Reflector thickness 
+   Top 
+1.16 m 
+   Side 
+0.99 m 
+   Bottom 
+1.16 m 
+Number of fuel assemblies         
+150 
+Number of fuel columns         
+30 
+Number of pairs of control rods 
+  In core 
+7 
+  In reflector    
+9 
+9
+
+Chapter 3 
+HIGH TEMPERATURE ENGINEERING TEST REACTOR  
+THERMAL HYDRAULIC BENCHMARKS 
+3.1. THERMAL HYDRAULIC BENCHMARK INFORMATION
+This chapter includes a review of Member State investigation into the HTTR related 
+thermal hydraulic benchmark problems of vessel cooling (VC) at 30 MW and the transient 
+behaviour of loss of off-site electric power (LP) at 15 and 30 MW.  
+3.1.1. Description of HTTR Systems Related to Vessel Cooling and Loss of Power 
+Included in this section are specific descriptions of the HTTR systems associated with 
+the vessel cooling and loss of off-site electric power benchmark problems. A description of 
+the general HTTR facility has been provided herein as Section 2.1.1. 
+3.1.1.1 HTTR Vessel Cooling [3-1] 
+This benchmark problem includes predicting the heat removal capacity of the vessel 
+cooling system (VCS) at 30 MW power operation and the temperature profile on the surface 
+of the side panel.  These predictions are to be compared with the actual measured heat 
+removal capacity of the VCS and the associated temperature profile.    Table 3-1 shows 
+reference operation conditions at 30MW power operation. 
+Table 3-1. 30MW operating conditions of the HTTR 
+Coolant temperature at reactor inlet/outlet 
+395°C/850°C
+Mass flow rate 
+12.4kg/s 
+Thermal power 
+30MW 
+Primary coolant pressure 
+4MPa 
+Water inlet temperature of VCS 
+25°C 
+Vessel cooling system description
+The reactor and VCS are installed in the reactor cavity surrounded by the primary 
+radiation shielding.  The VCS consists of upper, side and lower panels.  It has two completely 
+independent sets of cooling systems to assure minimum heat removal to keep fuel and RPV 
+integrity during depressurization accident.  They are designated as “A” and “B” systems. 
+Cooling panels are located on the inner surface of the reactor cavity as shown in Figure 3.1. 
+Figures 3.2 and 3.3 represent the heat transfer schematic and expected cooling panel flow 
+path, respectively. Table 3-2 includes VCS specifications. 
+145
+
+Table 3-5. Thermal radiation reflector plate 
+Panel 
+Numbers 
+Elevation 
+Side panel 
+3 (Carbon steel)  
+1(Stainless steel)  
+From EL.19.025M to EL.27.175M 
+1 (Carbon steel)  
+1 (Stainless steel)  
+From EL.17.35M to EL.19.025M 
+From EL.27.175M to EL.30.99M 
+Lower panel (side) 
+1 (Carbon steel)  
+1 (Stainless steel)  
+From EL.13.40M to EL.16.71M 
+There are four ring plates of 6 mm thickness in reactor cavity.  Their elevations are 
+EL.27.6M, EL.25.45M, EL.22.2M and EL.19.0M.  They separate the reactor cavity into five 
+spaces.  A ring plate is also in the space under the RPV.  Its elevation is 15.15M. 
+The material properties, thermal conductivity and emissivity of components, the 
+correlation of heat transfer coefficient of helium and power distribution in the core are as follows: 
+(1) 2.25Cr-1Mo steel (RPV, standpipe, core support gird, core support plate) 
+Thermal conductivity T < 282.22(C)  
+32.0(kcal/mhC) 
+282.22(C) < T < 676.67(C) 
+-7.861e-3T + 36.245 (kcal/mhC) 
+676.67 (C) < T 
+-1.459e-2T + 44.652 (kcal/mhC) 
+Emissivity 
+0.8 
+(2) Stainless steel (Casing of shielding block, thermal shield, thermal reflector) 
+Thermal conductivity  
+0.0107T + 9.888 (kcal/mhC)  
+Emissivity 
+0.48 
+ (3) Carbon steel (Thermal reflector, ring plate) 
+Table 3-6. Thermal conductivity of Carbon Steel 
+Temperature (C) Thermal 
+conductivity 
+(kcal/mhC) 
+0 
+44.6 
+100 
+43.6 
+200 
+41.4 
+300 
+42.8 
+400 
+36.0 
+149
+
+3.1.1.2 HTTR loss of off-site power event description [3-3]
+The benchmark problems concerning loss of off-site electric power simulation are 
+designated as HTTR-LP (15MW, 30MW). During normal HTTR operation (referred as parallel 
+loaded operation), the intermediate heat exchanger, primary and secondary pressurized water 
+coolers are operated simultaneously. In HTTR-LP (15MW), analytical simulation of transient 
+behavior of the reactor and plant during the loss of off-site electric power from normal operation 
+under 15MW thermal power is evaluated. Similar evaluation of transient behavior of the reactor 
+and plant during the loss of off-site electric power from the normal operation under 30MW 
+thermal power is conducted as HTTR-LP (30MW). In both simulation cases, estimation items are 
+as follows; transition of (1) hot plenum block temperature, (2) reactor inlet coolant temperature, 
+(3) reactor outlet coolant temperature, (4) primary coolant pressure, (5) reactor power, (6) heat 
+removal of auxiliary heat exchanger. Estimation duration is for 10hr. from the beginning of the 
+loss of off-site electric power. 
+        __________________________________________________________           
+(1) Loss of off-site electric power of HTTR caused by failure of 
+power transmission line or HTTR electrical equipment 
+Ļ
+(2) Coast down of all primary and secondary helium circulators as well as water pump 
+for pressurized water cooling system 
+Ļ
+(3) Decrease of flow rate of primary and secondary helium as well as water 
+Ļ  5s after (1) 
+(4) Decrease to 92% of total primary helium flow rate of intermediate heat exchanger 
+Ļ  3.2s after (4) 
+(5) Reactor scram by reactor protection system 
+          Ļ  1s after (5) 
+(6) Initiation of breaking stop of all primary and secondary helium circulators 
+Ļ  50s after (1) 
+(7) Startup of auxiliary cooling system by supplying electricity through emergency power feeder 
+       Ļ  40min after (7) 
+(8) Coast down of one of two auxiliary helium circulators 
+Fig. 3.4. Event scenario for the analyzed transient of loss of off-site electric power from 30MW.
+152
+
+The loss of off-site electric power is caused by failure of the power transmission line or 
+the HTTR electrical equipment. All primary and secondary helium circulators as well as the 
+water pump for the pressurized water cooling system coast down immediately after the loss of 
+off-site electric power. Accordingly, flow rates of primary and secondary helium as well as water 
+reduce.  
+Figure 3.4 depicts the event scenario for the analyzed transient during the loss of off-site 
+electric power from 30MW. The flow rate of primary helium, which is deflected at a hot header 
+and discharged around the heat transfer tubes of the intermediate heat exchanger, decreases to 
+92% of normal flow rate in 5s after the loss of off-site electric power. In 3.2s after 92% flow rate 
+is reached, the reactor is scrammed by the reactor protection system. In 1s after the reactor scram, 
+breaking stop of all the primary and secondary helium circulators is initiated. The auxiliary 
+cooling system starts up in 50s after the loss of off-site electric power by electricity supplied 
+through the emergency power feeder. The auxiliary cooling system mainly consists of an 
+auxiliary heat exchanger, two auxiliary helium circulators, air cooler and two water pumps. 
+Helium flow rate of the auxiliary cooling system reaches about 1.2kg/s in 20s after the startup of 
+the auxiliary cooling system. One of the two auxiliary helium circulators is coasted down in 
+40min after the startup of the auxiliary cooling system to prevent the graphite blocks, composing 
+the reactor core, from overcooling. Then helium flow rate of the auxiliary cooling system 
+decreases to about 0.8kg/s. 
+HTTR plant conditions at 15MW and 30MW 
+Initial conditions at 15MW and 30MW power before startup of auxiliary cooling system 
+are shown in Table 3-11. These include the reactor core (thermal power, reactor inlet and outlet 
+temperatures, primary coolant pressure and flow rate as well as hot plenum block temperature). 
+Tables 3-12, 3-13, 3-14 and 3-15 show the major process conditions (temperature, pressure and 
+flow rate) of the intermediate heat exchanger, primary and secondary pressurized water coolers as 
+well as the air cooler for the pressurized water cooling system, respectively. Helium and water 
+flow rates of the auxiliary cooling system in standby are fixed to 0.036kg/s and 5.5kg/s, 
+respectively, to prevent the auxiliary heat exchanger from the thermal shock. During the standby 
+of the auxiliary cooling system, the two auxiliary helium circulators are not operated and one of 
+the two water pumps for the auxiliary cooling system is driven. Tables 3-16 and 3-17 show the 
+major process conditions (temperature, pressure and flow rate) of the auxiliary heat exchanger 
+and air cooler for the auxiliary cooling system, respectively. 
+Table 3-11. Major process conditions of reactor core
+Items 
+HTTR-LP 
+(15MW) 
+HTTR-LP 
+(30MW) 
+Thermal power 
+15MW 
+30MW 
+Reactor inlet coolant temperature 
+About 241°C 
+395°C
+Reactor outlet coolant temperature 
+About 470°C 
+850°C
+Primary coolant pressure 
+About 3MPa(abs) 
+4MPa(abs) 
+Primary coolant flow rate 
+12.4kg/s 
+12.4kg/s 
+Hot plenum block temperature 
+About 490°C 
+About 890°C
+153
+
+Table 3-12. Process conditions of intermediate heat exchanger
+Items 
+HTTR-LP 
+(15MW) 
+HTTR-LP 
+(30MW) 
+Primary helium inlet temperature 
+About 468°C 
+850°C
+Primary helium outlet temperature 
+About 238°C 
+395°C
+Primary helium pressure 
+About 3MPa(abs) 
+4MPa(abs) 
+Primary helium flow rate 
+4.1kg/s 
+4.1kg/s 
+Secondary helium inlet temperature 
+About 154°C 
+About 241°C
+Secondary helium outlet 
+temperature 
+About 431°C 
+About 783°C
+Secondary helium pressure 
+About 3.1MPa(abs) 
+4.1MPa(abs) 
+Secondary helium flow rate 
+3.6kg/s 
+3.6kg/s 
+Table 3-13. Process conditions of primary pressurized water cooler
+Items 
+HTTR-LP 
+(15MW) 
+HTTR-LP 
+(30MW) 
+Helium inlet temperature 
+About 468°C 
+850°C
+Helium outlet temperature 
+About 242°C 
+395°C
+Helium pressure 
+About 3MPa(abs) 
+4MPa(abs) 
+Helium flow rate 
+8.3kg/s 
+8.3kg/s 
+Water inlet temperature 
+About 89°C 
+About 135°C
+Water outlet temperature 
+About 110°C 
+About 175°C
+Water pressure 
+About 2.6MPa(abs) 
+3.5MPa(abs) 
+Water flow rate 
+115kg/s 
+115kg/s 
+Table 3-14. Process conditions of secondary pressurized water cooler
+Items 
+HTTR-LP 
+(15MW) 
+HTTR-LP 
+(30MW) 
+Helium inlet temperature 
+About 430°C 
+About 782°C
+Helium outlet temperature 
+About 154°C 
+About 240°C
+Helium pressure 
+About 3.1MPa(abs) 
+4.1MPa(abs) 
+Helium flow rate 
+3.6kg/s 
+3.6kg/s 
+Water inlet temperature 
+About 89°C 
+About 135°C
+Water outlet temperature 
+About 110°C 
+About 175°C
+Water pressure 
+About 2.5MPa(abs) 
+3.4MPa(abs) 
+Water flow rate 
+60kg/s 
+60kg/s 
+154
+
+Table 3-15. Process conditions of air cooler for pressurized water cooling system
+Items 
+HTTR-LP 
+(15MW) 
+HTTR-LP 
+(30MW) 
+Water inlet temperature 
+About 110°C 
+About 175°C
+Water outlet temperature 
+About 58°C 
+About 80°C
+Water pressure 
+About 2MPa(abs) 
+3MPa(abs) 
+Water flow rate 
+70kg/s 
+70kg/s 
+Air inlet temperature 
+About 33°C 
+About 33°C
+Air outlet temperature 
+About 58°C 
+About 81°C
+Air pressure 
+0.1MPa(abs) 
+0.1 MPa(abs) 
+Air flow rate 
+605kg/s 
+605kg/s 
+Table 3-16. Process conditions of auxiliary heat exchanger
+Items 
+HTTR-LP 
+(15MW) 
+HTTR-LP 
+(30MW) 
+Helium inlet temperature 
+About 452°C 
+About 812°C
+Helium outlet temperature 
+About 50°C 
+About 62°C
+Helium pressure 
+About 3MPa(abs) 
+4MPa(abs) 
+Helium flow rate 
+0.036kg/s 
+0.036kg/s 
+Water inlet temperature 
+About 35°C 
+About 36°C
+Water outlet temperature 
+About 39°C 
+About 45°C
+Water pressure 
+About 2MPa(abs) 
+About 3MPa(abs) 
+Water flow rate 
+5.5kg/s 
+5.5kg/s 
+Table 3-17. Process conditions of air cooler for auxiliary cooling system
+Items 
+HTTR-LP 
+(15MW) 
+HTTR-LP 
+(30MW) 
+Water inlet temperature 
+About 39°C 
+About 45°C
+Water outlet temperature 
+About 35°C 
+About 36°C
+Water pressure 
+About 1MPa(abs) 
+About 2MPa(abs) 
+Water flow rate 
+5.5kg/s 
+5.5kg/s 
+Air inlet temperature 
+About 33°C 
+About 33°C
+Air outlet temperature 
+About 34°C 
+About 42°C
+Air pressure 
+0.1MPa(abs) 
+0.1 MPa(abs) 
+Air flow rate 
+106.5kg/s 
+106.5kg/s 
+155
+
+3.2 THERMAL HYDRAULIC BENCHMARK ANALYSIS/RESULTS 
+3.2.1. Japan 
+3.2.1.1. HTTR-VC Test and analytical results of heat removal capability [3-1] 
+Heat removal of the Vessel Cooling System (VCS) was calculated using the 
+SSPHEAT code which was developed to analyze the temperature distribution in the in-core
+structure test section (T2) of HENDEL with complicated passages of helium flow [3-2]. The 
+helium flow was simulated by a thermal-flow element, which is a uniaxial element in three-
+dimensional space with the ability to conduct heat and transmit fluid between its nodal points.  
+The element has two parameters, temperature and pressure, at each nodal point.  In the 
+computer code, the model is solved by the finite element method (FEM). 
+Analytical conditions for full power operation are shown in Table 2-18.  Reactor 
+power, reactor inlet temperature and flow rate are 30MW, 395°C and 12.4kg/s, respectively.  
+Heat removal of 0.3MW is minimum requirement for the VCS to keep fuel and RPV integrity 
+at the accident conditions.   
+Table 3-18.  Analytical conditions and result at full power 
+Reactor power 
+30 MW 
+Reactor inlet temperature 
+395 degree C 
+Coolant flow rate in reactor 
+12.4kg/s 
+Cooling water temperature of VCS 
+25 degree C 
+Reactor outlet temperature 
+850 degree C 
+VCS heat removal 
+0.77MW 
+The calculated VCS heat removal at full power of 30MW is 0.77MW.  The analysis 
+shows the VCS satisfies this requirement.  The calculated VCS heat removal is larger than the 
+maximum design value of 0.6MW.  It is because air natural circulation occurs in the side 
+panel and the air transfers heat to cooling tubes through thermal reflector plates which are 
+provided to reduce radiant heat from the reactor.   
+Figure 3.5 shows the temperature profile for the HTTR-VC analysis and actual 
+measurements at 9MW power. In a comparison of test and analytical results at 9 MW 
+operation of HTTR the VCS heat removal at steady state was ~ 0.22MW.  Table 3-19 shows 
+the test and analytical conditions.  Table 3-20 and Figure 3.5 show the comparison of test and 
+analytical results at 9MW power. 
+157
+
+Table 3-19.  Test and analytical condition at 9MW operation 
+Reactor power 
+9 MW 
+Reactor inlet temperature 
+175 degree C 
+Coolant flow rate in reactor 
+12.4kg/s 
+Cooling water temperature of VCS 
+  28.5 degree C 
+Reactor outlet temperature 
+  312 degree C 
+Calculated heat removal with no air circulation in the side panel was 0.13MW and 
+calculated temperatures on the side panel do not agree with the measured temperatures. 
+Calculated heat removal increases to 0.2MW when taking into consideration the air 
+circulation in the side panel and temperature distributions agree well with the measured 
+temperatures as shown in Figure 3.5.  
+Table 3-20. Comparison of test and analytical results  
+at 9MW operation 
+Test 
+0.22 MW 
+Calculation
+(No air circulation in side panel) 
+0.13 MW 
+Calculation
+(Air circulation in side panel) 
+0.20 MW 
+Table 3-21 shows the test condition and result at 30MW operation.  Reactor inlet and 
+outlet temperatures and coolant flow rate are 392°C, 844°C and 12.3kg/s, respectively.  The 
+VCS heat removal reached about 0.81MW which compares favorably with the analytical 
+estimate of 0.77MW.  Figure 3.6 shows the temperature profile on the RPV and side panel.
+Test results showed that RPV temperatures at EL.19-27m are 340~360°C and about 20°C
+lower than the analytical results.  Side panel temperatures also showed that test results are 
+lower than analytical results. 
+Table 3-21.  Test condition and result at 30MW operation
+Reactor power 
+30MW 
+Reactor inlet temperature 
+392°C
+Reactor outlet temperature 
+844°C
+Coolant flow rate 
+12.3kg/s 
+Cooling water temperature of VCS 
+33.2°C
+Test 
+0.81 MW 
+158
+
+At the test from 15 MW operation, all the control rods were inserted simultaneously into the 
+reactor core by gravity within the design criterion of 12 s. At the test from 30 MW operation, 
+the outer nine pairs of the control rods were inserted into the replaceable reflector region of the 
+core within 12 s at first, and 40 min later the other inner seven pairs fell into the fuel region 
+within 12 s. 
+In about 2 s after the reactor scram, braking of all the primary and secondary helium 
+circulators was initiated by flowing electric current from their associated batteries. The 
+braking stop times, when the rotations of the helium circulators became to zero, were 10 s or 
+less after the open of the reactor scram breaker. 
+In about 50 s after the loss of off-site electric power, the auxiliary cooling system and 
+the vessel cooling system started up by supplying electricity from two emergency power 
+feeders. In 40 min after the startup of the auxiliary cooling system, one of the two auxiliary 
+helium circulators stopped by design to reduce thermal stresses of the core graphite 
+components.
+Table 3-22 shows the thermal power, the reactor inlet and outlet coolant 
+temperatures, the primary coolant pressure and flow rate as well as the hot plenum block 
+temperature before the loss of off-site electric power tests from 15 and 30 MW operations. 
+Temperatures of the hot plenum blocks are measured at representative three points. Because 
+no significant temperature difference among the hot plenum blocks appeared, mean 
+temperature among the hot plenum blocks was used. 
+Tables 3-23, 3-24, 3-25 and 3-26 show the temperature, pressure and flow rate of the 
+intermediate heat exchanger (IHX), the primary and secondary pressurized water coolers as 
+well as the air cooler for the pressurized water cooling system before the loss of off-site 
+electric power tests from 15 and 30 MW operations, respectively. 
+Table 3-22.  Conditions of reactor before LP tests
+Items 
+HTTR-LP (15MW) 
+HTTR-LP (30MW) 
+Thermal power 
+15MW 
+30MW 
+Reactor inlet coolant temperature 
+242°C 
+392°C
+Reactor outlet coolant temperature 
+468°C 
+828°C
+Primary coolant pressure 
+2.9MPa(abs) 
+4.0MPa(abs) 
+Primary coolant flow rate 
+12.4kg/s 
+12.4kg/s 
+Hot plenum block temperature 
+391°C 
+677°C
+Table 3-23. Conditions of IHX before LP tests
+Items 
+HTTR-LP (15MW) 
+HTTR-LP (30MW) 
+Primary helium inlet temperature 
+468°C 
+828°C
+Primary helium outlet temperature 
+235°C 
+383°C
+Primary helium pressure 
+2.8MPa(abs) 
+4.0MPa(abs) 
+Primary helium flow rate 
+4.1kg/s 
+4.1kg/s 
+Secondary helium inlet temperature 
+158°C 
+248°C
+Secondary helium outlet temperature 
+420°C 
+751°C
+Secondary helium pressure 
+2.9MPa(abs) 
+4.0MPa(abs) 
+Secondary helium flow rate 
+3.6kg/s 
+3.6kg/s 
+162
+
+Table 3-24. Conditions of primary pressurized water cooler before LP tests
+Items 
+HTTR-LP (15MW) 
+HTTR-LP (30MW) 
+Helium inlet temperature 
+468°C 
+828°C
+Helium outlet temperature 
+235°C 
+390°C
+Helium pressure 
+2.8MPa(abs) 
+4.0MPa(abs) 
+Helium flow rate 
+8.2kg/s 
+8.2kg/s 
+Water inlet temperature 
+79°C 
+120°C
+Water outlet temperature 
+100°C 
+160°C
+Water pressure 
+2.3MPa(abs) 
+3.5MPa(abs) 
+Water flow rate 
+111kg/s 
+113kg/s 
+Table 3-25. Conditions of secondary pressurized water cooler before LP tests
+Items 
+HTTR-LP (15MW) 
+HTTR-LP (30MW) 
+Helium inlet temperature 
+420°C 
+751°C
+Helium outlet temperature 
+152°C 
+243°C
+Helium pressure 
+2.9MPa(abs) 
+4.0MPa(abs) 
+Helium flow rate 
+3.6kg/s 
+3.6kg/s 
+Water inlet temperature 
+79°C 
+120°C
+Water outlet temperature 
+100°C 
+158°C
+Water pressure 
+2.3MPa(abs) 
+3.5MPa(abs) 
+Water flow rate 
+57kg/s 
+59kg/s 
+Table 3-26. Air cooler conditions for pressurized water cooling system before LP tests
+Items 
+HTTR-LP (15MW) 
+HTTR-LP (30MW) 
+Water inlet temperature 
+100°C 
+160°C
+Water outlet temperature 
+45°C 
+66°C
+Water pressure 
+2.2MPa(abs) 
+3.3MPa(abs) 
+Water flow rate 
+65kg/s 
+76kg/s 
+Air inlet temperature 
+7°C 
+8°C
+Air outlet temperature 
+62°C 
+88°C
+Air pressure 
+0.1MPa(abs) 
+0.1MPa(abs) 
+Air flow rate 
+270kg/s 
+370kg/s 
+Tables 3-27 and 3-28 show the temperature, pressure and flow rate of the auxiliary 
+heat exchanger and the air cooler for the auxiliary cooling system before the loss of off-site 
+electric power tests from 15 and 30 MW operations, respectively. The auxiliary cooling 
+system is in standby during the normal operation. During the standby, the two auxiliary 
+helium circulators were not operated, however, a small amount of helium of 0.031 kg/s from 
+the primary helium purification system was provided into the auxiliary cooling system to keep 
+the auxiliary heat exchanger from thermal shock at the startup of the auxiliary cooling system. 
+Furthermore, water pressure of the auxiliary cooling system was regulated through its 
+controlling system, and one of the two water pumps for the auxiliary cooling system was 
+driven. The water flow rate in standby was fixed at 5.6 kg/s. 
+163
+
+Table 3-27. Conditions of auxiliary heat exchanger before LP tests
+Items 
+HTTR-LP (15MW) 
+HTTR-LP (30MW) 
+Helium inlet temperature 
+426°C 
+754°C
+Helium outlet temperature 
+74°C 
+97°C
+Helium pressure 
+2.8MPa(abs) 
+4.0MPa(abs) 
+Helium flow rate 
+0.031kg/s 
+0.031kg/s 
+Water inlet temperature 
+59°C 
+63°C
+Water outlet temperature 
+62°C 
+71°C
+Water pressure 
+1.3MPa(abs) 
+2.3MPa(abs) 
+Water flow rate 
+5.6kg/s 
+5.6kg/s 
+Table 3-28. Conditions of air cooler for auxiliary cooling system before LP tests
+Items 
+HTTR-LP (15MW) 
+HTTR-LP (30MW) 
+Water inlet temperature 
+62°C 
+71°C
+Water outlet temperature 
+59°C 
+63°C
+Water pressure 
+0.5MPa(abs) 
+1.5MPa(abs) 
+Water flow rate 
+5.6kg/s 
+5.7kg/s 
+Air inlet temperature 
+7°C 
+8°C
+Air outlet temperature 
+8°C 
+9°C
+Air pressure 
+0.1MPa(abs) 
+0.1MPa(abs) 
+Air flow rate 
+41kg/s 
+118kg/s 
+Figures 3.9 and 3.10 show transient behaviors of the rotation and the flow rate of the 
+auxiliary helium circulators during the loss of off-site electric power tests from 15 and 30 
+MW operations, respectively. In about 1 s after the startup of the auxiliary cooling system, the 
+rotations of the two auxiliary helium circulators reached about 3000 min-1. This rotation was 
+kept for about 2 s. After that, the rotation of the two auxiliary helium circulators rose up to 
+about 8500 min-1 at the constant rate by the automatic frequency control. In about 14 s after 
+the startup of the auxiliary cooling system, helium flow rates of the auxiliary helium 
+circulators (A) and (B) reached about 0.73 kg/s and about 0.75 kg/s respectively at the test 
+from 15 MW operation, while they achieved about 0.85 kg/s and about 0.89 kg/s at the test 
+from 30 MW operation. In 40 min after the startup of the auxiliary cooling system, helium 
+flow rates of the auxiliary helium circulator decreased to about 0.78 and about 0.87 kg/s at the 
+tests from 15 and 30 MW operations, respectively. On the contrary, all the time after startup 
+of the auxiliary cooling system, water flow rate was fixed at about 20.0 kg/s by operating the 
+two water pumps. 
+Estimation items on the benchmark problems are as follows; transition of (1) hot 
+plenum block temperature, (2) reactor inlet coolant temperature, (3) reactor outlet coolant 
+temperature, (4) primary coolant pressure, (5) reactor power, (6) heat removal of auxiliary 
+heat exchanger. Estimation duration is for 10 hr from the beginning of the loss of off-site 
+electric power. 
+Figures 3.11 and 3.12 show transient behaviors of the temperatures of the hot plenum 
+block, the reactor inlet and outlet coolant during the loss of off-site electric power tests from 
+15 and 30 MW operations, respectively. The hot plenum block temperature decreased 
+continuously after the startup of the auxiliary cooling system. The reactor inlet coolant  
+164
+
+#### tecdoc1382 PDF page 9
+#### tecdoc1382 PDF page 10
+#### tecdoc1382 PDF page 11
+#### tecdoc1382 PDF page 14
+#### tecdoc1382 PDF page 15
+#### tecdoc1382 PDF page 151
+#### tecdoc1382 PDF page 155
+#### tecdoc1382 PDF page 158
+#### tecdoc1382 PDF page 159
+#### tecdoc1382 PDF page 160
+#### tecdoc1382 PDF page 161
+#### tecdoc1382 PDF page 163
+#### tecdoc1382 PDF page 164
+#### tecdoc1382 PDF page 168
+#### tecdoc1382 PDF page 169
+#### tecdoc1382 PDF page 170

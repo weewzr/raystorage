@@ -1,0 +1,20 @@
+id,value,unit,evidence_class,source,role,limitation
+PREFERRED_ARCH,600 MWth reactor + 2 x 176.8 MWth SMR trains,architecture,MODELLED/JAEA-ANCHORED,JAEA GTHTR300C max 370 MW process-heat branch + project Case-6 duty,forward architecture,SMR train replication itself is project-derived not demonstrated GTHTR300C SMR plant
+JAEA_MAX_HEAT,370,MWth,SOURCE DESIGN,JAEA GTHTR300C 2007,closes 353.6 MWth two-train heat allocation,source hydrogen process was IS thermochemical not this SMR flowsheet
+INL_BOAK_OCC,6000,2019 USD/kWe,MODELLED META-ANALYSIS,INL/RPT-23-72972 Table 15,medium advanced-reactor BOAK starting cost,not HTGR-project quote
+INL_BOAK_OPEX,25,2019 USD/MWh,MODELLED META-ANALYSIS,INL/RPT-23-72972 Table 15,medium BOAK OPEX,not HTGR-project quote
+INL_HEAT_ONLY_TURBINE_SHARE,0.09,fraction,MODELLED,INL/RPT-23-72972 non-electric HTGR example,remove energy-conversion cost for heat-only use,top-down ROM adjustment
+INL_HTGR_EFFICIENCY,0.40,fraction,MODELLED,INL/RPT-23-72972 non-electric HTGR example,convert electric-normalized costs to thermal basis,screening conversion
+INL_FOAK_PREMIUM,1.6,multiplier,MODELLED META-ANALYSIS,INL/RPT-23-72972 Table 15,FOAK scenario,range is 1.3-2.1
+INL_LEARNING,0.10,fraction per doubling,MODELLED META-ANALYSIS,INL/RPT-23-72972 Table 15 and heat-only example,10-OAK maturation,range is 5-15 percent; learning is design/execution dependent
+INL_10OAK_OCC,1539.04,2019 USD/kWt,PROJECT-DERIVED FROM MODELLED SOURCE,INL heat-only method with medium values,preferred mature capital input,not observed plant cost
+INL_HEAT_ONLY_OPEX,10,2019 USD/MWth-h,PROJECT-DERIVED FROM MODELLED SOURCE,INL heat-only method with medium value,O&M held constant through learning as source example,not observed HTGR O&M
+DOE_NOAK_REDUCTION,40,percent,PROJECTED,DOE Pathways to Commercial Liftoff Advanced Nuclear,cross-check on maturation magnitude,generic advanced nuclear not HTGR-specific
+DOE_NOAK_REACTORS,10-20,reactors,PROJECTED,DOE Pathways to Commercial Liftoff Advanced Nuclear,roadmap scale to NOAK target,design-specific learning caveat
+DOE_LEARNING,12-15,percent per reactor-to-reactor learning,PROJECTED,DOE Pathways to Commercial Liftoff Advanced Nuclear,roadmap cross-check,not applied to preferred case because INL 10 percent method is used
+IAEA_HTGR200,200,MWth,SOURCE DESIGN,IAEA TECDOC 2075,right-sizing candidate,rejected for project because reported outlet temperature is 850 C below required 925 C source case
+HTR_MODUL_PROCESS,170,MWth,SOURCE DESIGN,IAEA Nuclear Energy Series P1772,right-sizing candidate at 950 C,rejected as single module because 170 MWth < 176.8 MWth duty
+INTEGRATION,69,million USD preliminary anchor,SOURCE PRELIMINARY,IAEA TECDOC 1682,one IHX+secondary-loop anchor per train,underlying price year unresolved; normalization proxy retained from E1
+GDP_2019,103.9745,index 2017=100,AUTHORITATIVE DERIVED,U.S. BEA/FRED 2019 quarterly average,2019 to 2025 normalization,broad GDP deflator not nuclear construction index
+GDP_2025,128.893,index 2017=100,AUTHORITATIVE,U.S. BEA/FRED,2019 to 2025 normalization,broad GDP deflator
+FX,1.2776,SGD/USD,AUTHORITATIVE DATED,project E1 dated conversion,USD to SGD,dated 2026 conversion applied to 2025 price basis

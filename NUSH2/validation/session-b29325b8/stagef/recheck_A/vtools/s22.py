@@ -1,0 +1,6 @@
+vp(1440, 900)
+nav("http://127.0.0.1:18765/index.html#results", 0.5)
+waitfor("document.getElementById('status-text').innerText.startsWith('Solved') ? 1 : 0", 30000)
+sleep(1.2)
+out("l3", ev(r"""(()=>{const t=document.querySelector('#route-results').innerText; const out=[]; const re=/.{0,120}\bL3\b.{0,120}/g; let m; while((m=re.exec(t))&&out.length<8) out.push(m[0].replace(/\s+/g,' ')); return out})()"""))
+out("ladder_table", ev(r"""(()=>{const f=document.querySelector('figure[data-chart=cost-ladder]'); const b=f.querySelector('button'); if(b) b.click(); const t=f.querySelector('table'); return t? t.innerText.slice(0,1500):null})()"""))

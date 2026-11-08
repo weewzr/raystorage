@@ -1,0 +1,1378 @@
+{
+ "a19ef4e33e53323aa": {
+  "summary": "Method 2 is a clean, small module (engine/plant/src/dcf.rs, 528 lines). It prices two plants of equal H2 on whole-year flows at 8% real. Year 0 is the end of construction, and the reactor spends in six buckets at years -5 to 0 (CONSTRUCTION_YEARS 5.5, part year first). Interest during construction (IDC) has no line of its own: it appears only because negative years compound forward at the same rate. Today the DCF and the L5 ledger agree within 0.47% of L5 at every one of 72 points, against a stated limit of 10%. That agreement is close to a tautology, because both methods start from one CostItems set and one rate. The 10% limit therefore cannot catch a grant or IDC error that both methods share. There is no grant model. The only co-funding is a reactor-capital multiplier, rx_mult, that also shrinks IDC. Figures below come from the committed results/Economic_Ledger.csv. I did not run cargo. I reproduced the 25 y and 60 y reactor-term gaps in Python to 4 decimals.",
+  "items": [
+   {
+    "id": "D1",
+    "where": "dcf.rs:4-8, 86-88, 100-102",
+    "kind": "process_assumption",
+    "risk": "low",
+    "finding": "Year 0 is the end of construction, flows fall at year ends, and operation runs from year 1 to the horizon. discount(rate, year: i32) is (1+r)^-year, so negative years compound forward. All flows are real. Years are i32, so -5.5 cannot be represented."
+   },
+   {
+    "id": "D2",
+    "where": "dcf.rs:107-124, 232; parameters.toml:2427",
+    "kind": "process_assumption",
+    "risk": "medium",
+    "finding": "uniform_spend(total, 5.5) gives 0.5/5.5 at year -5 and 1/5.5 at each of -4..0, six buckets. The last bucket sits at year 0 and earns no interest. Only REACTOR_CAP uses it. Licence, power island, capture, IHX, recycle train and the SMR island are single spends at year 0 (dcf.rs:250,252, with_replacement), so they have no construction profile. CONSTRUCTION_YEARS 5.5 is labelled INL NZW09 base case, uniform spend at 8%."
+   },
+   {
+    "id": "D3",
+    "where": "dcf.rs:232 vs economics.rs:232-234, 345",
+    "kind": "calculated",
+    "risk": "high",
+    "finding": "The DCF has no IDC line. At year 0 the reactor PV is capital x 1.20023, which is the bucket compounding at 8%. The ledger IDC line is capital x (f-1) x CRF with f = ((1+r)^N-1)/(rN) = 1.19766, a smooth extension to N = 5.5. They are identical at integer N. This 0.00257 difference is the whole 25 y gap. For BOAK 25 y, RC = 742.77 S$M predicts 0.3093 S$/t against 0.309322 in the CSV. L_economics.tex:48 admits it. The SMR island TCR already carries its own IDC (dcf.rs:9-12)."
+   },
+   {
+    "id": "D4",
+    "where": "dcf.rs:132-154, 206-266",
+    "kind": "process_assumption",
+    "risk": "low",
+    "finding": "Replaced in full every 25 y, with the unused life of the last unit credited straight line at the horizon: SMR island (both plants), CAPTURE_CAP, IHX (k.ihx_life, 25 y at Central) and RECYCLE_TRAIN. At 60 y the flows fall at years 0, 25, 50 and a -0.6c credit at 60. Not replaced: reactor, power island, licence. DECOM is one flow at the horizon (dcf.rs:251). dcf.rs never reads k.decom_rate, so a High-level DCF would differ from the ledger's 3% sinking fund (economics.rs:344). Every caller uses central, so this is latent."
+   },
+   {
+    "id": "D5",
+    "where": "dcf.rs:192; anchored.rs:602; parameters.toml:1674",
+    "kind": "process_assumption",
+    "risk": "low",
+    "finding": "The discount rate is the Model field rate = DISCOUNT 0.08, real, 'project basis, same as IEAGHG'. It is not in CostQuery. CostQuery.r and CostItems.r_charged are reactor MWth, not a rate, which invites mistakes. The same rate discounts costs, H2 (dcf.rs:272-273) and abated tonnes, and sets IDC in the ledger."
+   },
+   {
+    "id": "D6",
+    "where": "dcf.rs:198, 268-275, 346-347",
+    "kind": "calculated",
+    "risk": "low",
+    "finding": "LAC = (NPV_NUSH2 - NPV_SMR) x 1e6 / (a_atm x sum_{y=1..L} (1+r)^-y). LCOH = NPV x 1e6 / (NPV_H2 x 1000). Tonnes are constant from year 1 with no ramp-up. The abatement a_atm comes from emissions(), emissions.rs:45-58, and feeds both L5 (dcf.rs:278) and the DCF. There are 38 .a_atm uses in the repo, so the carbon-balance rebuild reaches the DCF through that one function."
+   },
+   {
+    "id": "D7",
+    "where": "m9_economics.rs:310-332; plant_goldens.rs:94-108; harness.rs:27; results/Economic_Ledger.csv",
+    "kind": "validation_reference",
+    "risk": "medium",
+    "finding": "The only stated tolerance is |gap_rel| <= 0.10 (LAC_GAP_LIMIT, eq L.37). LAC_DCF minus L5 at n = 1.0, 210 MWth, 25/40/60 y, in S$/t (share of L5): FOAK +0.49 (0.18%), +0.80 (0.32%), +0.49 (0.20%); BOAK +0.31 (0.16%), +0.64 (0.37%), +0.33 (0.20%); 10OAK_P47 +0.35 (0.17%), +0.67 (0.36%), +0.37 (0.20%); 10OAK_P46 +0.22 (0.15%), +0.56 (0.42%), +0.25 (0.20%). The largest of all 72 points is 0.47% (10OAK_P46, 40 y, charged at need). At 25 y the gap is all reactor IDC. At 40 and 60 y it adds CAPTURE_CAP, IHX and RECYCLE_TRAIN, from the replacement credit against a perpetual CRF."
+   },
+   {
+    "id": "D8",
+    "where": "economics.rs:244; L_economics.tex:326-331; harness.rs:95-100",
+    "kind": "process_assumption",
+    "risk": "medium",
+    "finding": "The methods are independent only in timing. Both read cost_items, one rate and one tonnage, and the docs state that LAC equals AC at constant flows. The limit is about 20 times looser than any observed gap. A 2-3 S$/t timing error, or a 6% error from a mis-based grant, would pass. A shared error such as a wrong eligible base would leave the gap at zero."
+   },
+   {
+    "id": "D9",
+    "where": "dcf.rs:159-173, 206-266",
+    "kind": "copied_result",
+    "risk": "low",
+    "finding": "The SMR island (IEAGHG TCR, FOM, water and chemicals), the gas, steam and power lines, and the reactor OCC (INL) are literature plant results copied in as cost inputs. They sit on both sides and cancel in LAC (test dcf.rs:498). They reach LCOH, which the LCOH_SOURCE note already flags (export.rs:3355)."
+   },
+   {
+    "id": "D10",
+    "where": "economics.rs:59, 257; sens.rs:1500-1565; parameters.toml:2449, 2460",
+    "kind": "calculated",
+    "risk": "high",
+    "finding": "The existing co-funding is rx_mult. It multiplies reactor capital inside cost_items, before IDC and CRF, so it acts as a pro-rata grant that also removes IDC on the granted share. cofunding_rows solves it by secant to TARGET_MATURE_COST 96 (not 100), only for BOAK at 25 and 60 y. It has no timing, no eligible set and no share grid. Do not reuse it as the grant."
+   },
+   {
+    "id": "G1",
+    "where": "New GRANT CashLine after dcf.rs:233",
+    "kind": "calculated",
+    "risk": "medium",
+    "finding": "Grant at close: one negative flow dated at the earliest point, -whole = -5 (the first bucket's date), for share x eligible nominal CAPEX. Its PV is G x 1.08^5, so the benefit includes interest saved. Progressive: -share x each uniform_spend bucket on the same dates. Both are NusH2 lines, so the NPV gap and LAC pick them up. Grant PV is 0.5 x RC x 1.08^5 against 0.5 x RC x 1.20023 for progressive."
+   },
+   {
+    "id": "G2",
+    "where": "dcf.rs:104-124 plus a new helper beside with_replacement; economics.rs:230-234, 345",
+    "kind": "calculated",
+    "risk": "high",
+    "finding": "Keep IDC separate by taking the eligible base from nominal (undiscounted) spend and reporting IDC as PV minus the nominal sum of each line. In the ledger, IDC on the net-funded amount is: progressive (1-s) x IDC_gross; at close IDC_gross - G x ((1+r)^t_close - 1). If the close date is -5 in the DCF but N = 5.5 in the closed form, the 50% mismatch is about 2.4 to 5.5 S$/t (my estimate: G x (1.08^5.5 - 1.08^5), 1.2% to 2% of L5). The 0.10 limit would not flag it."
+   },
+   {
+    "id": "G3",
+    "where": "economics.rs:85-117, 257; dcf.rs:9-12, 285-330",
+    "kind": "calculated",
+    "risk": "high",
+    "finding": "Grant wrongly applied to interest: (a) a base of capital x 1.2002 over-grants by 20%, worth 11.9 S$/t at 50% for BOAK 25 y, 6.3% of L5, and it would pass the 10% test because both methods share the base; (b) applying the share to a year-0 PV and also dating it at a negative year compounds it twice; (c) including the SMR TCR makes the state pay IDC that IEAGHG already embedded; (d) a grant line with no matching GapTerm breaks gap_terms_sum_to_the_gap (dcf.rs:485) and the REACTOR_CAP_WITH_IDC pairing."
+   },
+   {
+    "id": "G4",
+    "where": "sens.rs:413, 1500; parameters.toml:2449",
+    "kind": "calculated",
+    "risk": "medium",
+    "finding": "The target is 'strictly below S$100/t' but TARGET_COST = 100 is solved to equality (tests assert |cost - target| < 1e-6, m9_economics.rs:159). 'Met' uses <= (wasm solve.rs:679, 864; frontend/app.js:404). LAC is affine in the grant share, so secant is exact. Report the infimum s*, which is the share at LAC = 100, and state LAC < 100 for every larger share. Preview for a reactor-only grant, my estimate from the CSV with a pro-rata IDC: s* is FOAK 25/60 y 0.77/0.71, BOAK 0.62/0.53, 10OAK_P47 0.67/0.59, 10OAK_P46 0.46/0.32. FOAK 25 y is not reached at 75%."
+   },
+   {
+    "id": "T1",
+    "where": "dcf.rs:372-527 (9 tests)",
+    "kind": "validation_reference",
+    "risk": "low",
+    "finding": "Unit tests in dcf.rs: uniform_spend sums to total and has a part-year first bucket (372); the replacement schedule at 25/20/40/50/60 y and zero life error (383); replacement lines on both plants with PV at 1.08 (410); SMR variable scaling 0.85/0.95 (447); annual lines equal the ledger (464); DECOM equals the sinking fund (477); gap terms sum to the gap (485); SMR island common to both plants (498); non-integer life rejected (522)."
+   },
+   {
+    "id": "T2",
+    "where": "m9_economics.rs:123, 175, 225, 310; plant_goldens.rs:94; wasm/src/tests.rs:456, 594, 1199",
+    "kind": "validation_reference",
+    "risk": "medium",
+    "finding": "Integration tests that touch the DCF: levers hit 100 for L5 and DCF (24 checks); mature and co-funding solves hit 96 (rx_mult); step-down bars equal source rows; dcf_family has 4x3x3x2 = 72 points inside 10% with LCOH_NUSH2 > LCOH_SMR; the 12-point dcf_grid test; wasm outputs equal the CSV rows. No test pins the DCF to an independent closed form, to a numeric LAC, or to IDC separately. The 12-point grid has BOAK and FOAK only (export.rs:1104)."
+   }
+  ],
+  "hooks": [
+   {
+    "purpose": "Grant cash-flow lines: at close and progressive, plus a PV-minus-nominal IDC split",
+    "where": "dcf.rs Model::dcf (lines vec 206-266, after REACTOR_CAP at 228-233); new helper beside uniform_spend (107) and with_replacement (132)",
+    "note": "Add GRANT and IDC GapTerms at dcf.rs:301-330 so the sum test stays exact."
+   },
+   {
+    "purpose": "Grant inputs (share 0/25/50/75, timing, eligible set) and eligible nominal CAPEX fields",
+    "where": "economics.rs CostQuery (46-60) and CostItems (85-117), filled in cost_items (244-313)",
+    "note": "Retire rx_mult (59, 257) as the co-funding lever so the grant cannot double count."
+   },
+   {
+    "purpose": "Ledger side: grant credit and IDC on the net-funded amount",
+    "where": "economics.rs Model::ledger (330-352) and idc_factor (232)",
+    "note": "Keep the grant out of Ledger::lines() (145, array of 16) and ladder() so L0 to L5 keeps its meaning. Report 'L5 net of grant' as a separate output."
+   },
+   {
+    "purpose": "Result fields: gross and net LAC, grant PV, IDC PV",
+    "where": "dcf.rs DcfResult (56-84); lib.rs CostPoint (126-137) and cost_point (172-192)"
+   },
+   {
+    "purpose": "Continuous break-even subsidy per stage, life and eligibility set",
+    "where": "sens.rs: replace cofunding_rows (1500) using solve_for (413)",
+    "note": "Currently BOAK only, target 96, no strict inequality. Extend to FOAK, BOAK and both 10OAK routes at 25 and 60 y."
+   },
+   {
+    "purpose": "Printed rows and grids for four shares, two timings, two eligible sets",
+    "where": "export.rs dcf_grid (1102), dcf_block (1116), dcf_family (3364), DCF row emitter (3262-3345)",
+    "note": "dcf_grid skips the 10OAK routes."
+   },
+   {
+    "purpose": "Validation rows and limit",
+    "where": "vv/src/harness.rs dcf_rows (110) and LAC_GAP_LIMIT (27); plant_goldens.rs:94",
+    "note": "Add a tight exact-timing test for the grant, since 0.10 is too loose."
+   },
+   {
+    "purpose": "New parameters",
+    "where": "engine/data/parameters.toml, near DISCOUNT 1674 and CONSTRUCTION_YEARS 2427; read in anchored.rs near 838"
+   },
+   {
+    "purpose": "Browser outputs and the strict 'below 100' check",
+    "where": "wasm/src/solve.rs:679, 850-905, 2165-2194; frontend/app.js:399-404; views.js:45, 860"
+   },
+   {
+    "purpose": "Equation register and derivation text for new grant equations",
+    "where": "math/eq_register.csv rows L.34-L.37 (297-300); math/sections/L_economics.tex:436-480"
+   },
+   {
+    "purpose": "Single source of tonnes for the abatement rebuild",
+    "where": "emissions.rs:45-58 (emissions().a_atm), read at dcf.rs:198"
+   }
+  ],
+  "gaps": [
+   "I did not run the engine. All gap numbers are from the committed results/Economic_Ledger.csv, which could be stale. The reactor-term agreement to 4 decimals (BOAK 25 y and 60 y, FOAK 25 y) supports the CSV for those terms only.",
+   "The break-even shares in G4 and the 2.4 to 5.5 S$/t timing mismatch in G2 are my estimates from CSV values, assuming LAC is affine in the grant share. They are not engine solves.",
+   "I explained the 40 y and 60 y gap terms from CAPTURE_CAP, IHX and RECYCLE_TRAIN deltas. I did not derive them numerically from the replacement credit.",
+   "I did not check the DCF at Low or High level (decom rate, IHX life 12 y, via the as u32 cast). No caller runs it there. The Low/High rows at export.rs:3213-3220 look ledger-only, but I did not open them.",
+   "I did not read the carbon balance behind emissions() (co2_conv baseline). The wasm and frontend uses were located by grep only.",
+   "The whole-year i32 flow type and the integer-life requirement (dcf.rs:185) limit any fractional-year timing."
+  ],
+  "questions": [
+   "Where is financial close dated? The earliest DCF point is year -5. The ledger closed form uses 5.5 y. Choose -5, a new -6 bucket, or f64 years, and make the ledger use the same date.",
+   "Is the grant a share of nominal eligible spend (assumed here), and is the IDC rate the 8% discount rate or a separate financing rate?",
+   "In the alternative eligible set, are replacement units eligible or only the first purchase? Is the SMR island (TCR includes IDC) excluded? Do non-reactor items get a construction profile for progressive payment, since they are now dated at year 0?",
+   "Should reported LAC and LCOH be net of the grant, with a gross figure beside them? Should the break-even be reported as the infimum share with the 'strictly below' statement attached?",
+   "Should a 10% limit remain for subsidised points, or should a tighter limit, such as 1%, be used once timing is harmonised?"
+  ]
+ },
+ "ae87df3d5d2f9884e": {
+  "summary": "The headline CO2 result is not built from the plant's own streams. It comes from an algebraic \"anchored\" carbon ledger (Model::carbon, anchored.rs:934-1030) tied to INL Case 6 numbers (34 MMSCFD gas, 1927 st/d captured, phi 0.775). That ledger feeds Model::emissions (emissions.rs:45) and from there the abatement, the cost ladder, the DCF, the exports and the wasm reply. A real stream-based Level 3 flowsheet exists (flowsheet.rs, FS_ runs) with a carbon ledger that closes to 5e-9 kmol C/h, but it only validates the anchored ledger and never drives a headline number. It disagrees with the anchor by 19.7 percent on the stack carbon (93.9 vs 116.9 kmol C/h) and fails its own gate FS_GATE_M7. Carbon closes in both ledgers by construction, so closure is a bookkeeping check and not evidence of capture performance. Missing carbon is typed as unknown only inside close_carbon; the live ledger cannot hold an unknown. No CO2e quantity exists anywhere in the engine. Source for numbers: results/Integrated_Mass_Balance.csv and results/Validation_Results.csv, plus the code lines cited.",
+  "items": [
+   {
+    "id": "S01_feed",
+    "where": "flowsheet.rs:166-174 NG_MOL_FRACTIONS, :199-212 natural_gas; carbon.rs:72; flowsheet.rs:1635; parameters.toml C_PER_MOL_NG_*",
+    "finding": "Natural gas feed is modelled from the published composition (TEV-953 A-5, TEV-961 A-50), lumped (C6 as 1.2 C5, O2 into N2), and is the only carbon input of CarbonLedger.closure. In the L3 run the gas rate is solved to the H2 basis (FS_B_REC_F 1212.25 kmol C/h). The anchored ledger instead fixes feed = NG_CASE6 x C_PER_MOL (anchored.rs:649), i.e. INL's 34 MMSCFD scaled by s_b (1219.23 kmol C/h).",
+    "kind": "independent_physical_input",
+    "risk": "low"
+   },
+   {
+    "id": "S05_S09_reformer_shift",
+    "where": "flowsheet.rs:948-966 (smr_eq::solve, case5::train); results/Integrated_Mass_Balance.csv FS_B_REC_F",
+    "finding": "Reformer outlet S05 and shift outlets S07 and S09 are calculated (equilibrium reformer, Case 5 shift chain, HTS bed sized on the IEAGHG approach). They are not separate lines of CarbonLedger (the ledger's tube field is S04, the reformer inlet), but each unit's element closure is tested at 1e-9 (m7_flowsheet.rs:31-45). Case 5 set temperatures and pressures are process assumptions, and the flowsheet gives phi = 0.8256 against the anchored 0.775.",
+    "kind": "calculated",
+    "risk": "medium"
+   },
+   {
+    "id": "S11_S12_S19_S20_capture",
+    "where": "flowsheet.rs:526-531 AnchoredMea::solve; parameters.toml:331 ETA_MEA; gates.rs:296-297; carbon.rs:75-80",
+    "finding": "Absorber inlet S11, treated gas S12, CO2 S19 and storage CO2 S20 are modelled, and captured (S20) is a closure output. Captured CO2 is fixed as cap = ETA_MEA (0.90, author design value, decision D25) x S11 CO2, not computed by a column. The column models exist in nush2_units but gate M6 (T02) is recorded as Failed, so MEA capture is a specified input.",
+    "kind": "process_assumption",
+    "risk": "high"
+   },
+   {
+    "id": "S14_S03_recycle_split",
+    "where": "flowsheet.rs:228-232 recycle_fraction, :328, :1121-1135 REC-CRYO; carbon.rs:82-84",
+    "finding": "PSA reject S14 and recycle S03 are modelled, but the recycle share is f = about 0.752, taken from the anchored INL_SEL ledger (Case 6 captured 1927 st/d, Selexol 99 percent, PHI_RECYCLE 0.775). It is applied unchanged although the flowsheet's own phi differs, so this one copied number fixes the stack carbon, the recycle and the tail gas. Recycled and tail-gas carbon are internal and not in the closure outputs.",
+    "kind": "copied_result",
+    "risk": "high"
+   },
+   {
+    "id": "S15_S16_n2_cut_stack",
+    "where": "flowsheet.rs:1161-1190 N2-BURN; carbon.rs:85-86, 91; flowsheet.rs:1642, 1645; m7_flowsheet.rs:236-243",
+    "finding": "The nitrogen-rich cut S15 is modelled and is the plant's only atmospheric carbon outlet; ledger.burned is carbon of S15 and equals S16 stack carbon by complete combustion. Feed N2 leaves only in the cut (n2_cut, tested to 1e-9). Air N2 and excess air are not tracked.",
+    "kind": "calculated",
+    "risk": "medium"
+   },
+   {
+    "id": "S13_product",
+    "where": "flowsheet.rs:1281-1303 psa_boundary; parameters.toml CH4_IN_H2",
+    "finding": "H2 product carbon is CH4 only at 0.1 mol percent (published spec). CO and CO2 carry-over to the product are zero by construction, not computed. The size is 4.46 kmol C/h, 0.37 percent of feed.",
+    "kind": "process_assumption",
+    "risk": "low"
+   },
+   {
+    "id": "S10_condensate",
+    "where": "engine/units/src/flash.rs:1-8, 44-52, 131-160; carbon.rs:88-89, 104-108; sens.rs:1150-1190; emissions.rs:137",
+    "finding": "Condensate CO2 is modelled by the flash drum (Henry, Aronu 2011 Eq 17): 5.28 kmol C/h in FS_B_REC_F, 0.44 percent of feed, and it is in the L3 closure. The anchored headline ledger has no condensate field and no such term in its closure; the CO2 is vented only in the S14 sensitivity (vent_condensate), so the headline captured figure includes it. Dissolved CH4, CO and H2 are held at zero by a stated assumption.",
+    "kind": "calculated",
+    "risk": "medium"
+   },
+   {
+    "id": "absent_streams",
+    "where": "carbon.rs:4-6, 70-93, 100-109, 158-163; flowsheet.rs:54, 685, 1041-1044; emissions.rs:84; parameters.toml:449 TS_BURDEN",
+    "finding": "No stream exists for MEA make-up, degradation or slip (MEA carbon enters only the solvent element closure), for CO2 water and impurities or losses between S19 and S20 (S20 is pure CO2, 100 percent transferred), for transport and storage loss (only the TS_BURDEN 0.025 t/t ratio, author assumption, not verified), for steam or grid supply fuel, or for start-up and flaring. None is held as unknown: CarbonLedger fields are plain f64 and closure() always passes Some, so the None path of close_carbon is exercised only by unit tests. A missing stream would therefore fail the run (unreachable_stream) or be silently omitted, never carried as unknown.",
+    "kind": "process_assumption",
+    "risk": "medium"
+   },
+   {
+    "id": "B1_captured",
+    "where": "emissions.rs:49; anchored.rs:934-1030; props/src/units.rs:54-56; hours = AVAILABILITY 0.85 x 8760",
+    "finding": "Annual captured CO2 = kmol C/h x 44.0095/1000 x hours x s, from the anchored c.cap, not from S20. Boundary: capture based, CO2 delivered to storage, before transport and storage. The anchored value is 359,777 t/y; the flowsheet S20 gives 363,277 t/y.",
+    "kind": "calculated",
+    "risk": "high"
+   },
+   {
+    "id": "B2_residual_direct",
+    "where": "emissions.rs:47-48 (site = burn, atm = burn + exported); anchored.rs:1450-1453",
+    "finding": "Residual direct emissions are the anchored cut carbon at the stack (site) plus tail gas burned elsewhere (atm). The headline atm is 38,309 t/y; the flowsheet S15 gives 30,778 t/y, or 32,509 t/y if condensate CO2 is vented. Utility and supply emissions are not in this boundary.",
+    "kind": "calculated",
+    "risk": "high"
+   },
+   {
+    "id": "B3_baseline_abatement",
+    "where": "emissions.rs:46, 56; anchored.rs:1452, 1456-1457; parameters.toml:275 CO2_CONV_NOCC; drift.rs:24, 244-253",
+    "finding": "Net abatement a_atm = baseline - atm, where the baseline is the TEV-953 Table 2 unabated SMR (3205 st/d x ST x days x s), a published external plant result used as the headline reference. Cho (9.35) and IEAGHG alternates are applied the same way. drift.rs pins the abatement to 578,000 t/y plus or minus 12,000 as a blocking check, which would block any independent rebuild. a_atm feeds dcf.rs:198, lib.rs:177, sens.rs:213 and drift.rs:142.",
+    "kind": "copied_result",
+    "risk": "high"
+   },
+   {
+    "id": "B4_ts_lifecycle_system",
+    "where": "emissions.rs:63-86 (system_adjust K.18, lifecycle_terms K.19); export.rs:2965-3060",
+    "finding": "Net after transport and storage exists only as the lifecycle_burdens view: ts_burden = captured t x 0.025, minus nuclear lifecycle, with the optional upstream credit and K.18 system view. These views are written to Emissions_Ledger.csv and are not carried into the headline cost metric. The ratio, EF_UPSTREAM, EF_NUCLEAR and GRID_EF are all source_status not_verified.",
+    "kind": "process_assumption",
+    "risk": "medium"
+   },
+   {
+    "id": "B5_intensity_reduction_per_kg",
+    "where": "anchored.rs:1451-1453; export.rs:2976, 3052; carbon.rs:123-139",
+    "finding": "plant_capture = captured/(captured + atm), reduction = a_atm/baseline and ci_kg_kg = atm/h2_t_y are all direct and capture based. Abatement per kg H2 exists only as the kg_per_kg_h2 column of Emissions_Ledger.csv (v/h2), for every view, and not as a case_summary key. The flowsheet's own plant capture (captured/feed, capture_pair) differs in denominator and is not exported.",
+    "kind": "calculated",
+    "risk": "low"
+   },
+   {
+    "id": "C_co2_vs_co2e",
+    "where": "props/src/units.rs:54-56; parameters.toml GRID_EF (t/MWh), EF_UPSTREAM (kg/GJ), EF_NUCLEAR (kg/MWh); docs/FINAL_DESIGN_DECISIONS.md:153-155; scripts/build_numbers.py:429",
+    "finding": "The engine has no CO2e type, GWP, methane leakage or non-CO2 gas; every tonne is stoichiometric CO2 (MW 44.0095). Nothing separates kg CO2 from kg CO2e: the lifecycle emission factors carry bare units whose gas basis is not stated, and the docs label net abatement tCO2e/y and abatement cost S$ per tonne CO2e even though the number is CO2 only.",
+    "kind": "not_applicable",
+    "risk": "medium"
+   },
+   {
+    "id": "D_anchored_closure",
+    "where": "anchored.rs:1028; export.rs:2010-2020; wasm/src/solve.rs:2081-2082; frontend/views.js:822-823",
+    "finding": "The carbon residual shown to users is the anchored Carbon.closure, an algebraic identity of how t, r and burn are solved, scaled by s. It prints as 0.000000 for every run and is labelled 'element closure, full species in the FS_ runs'. It can never reveal a physical error.",
+    "kind": "calculated",
+    "risk": "high"
+   },
+   {
+    "id": "D_flowsheet_closure",
+    "where": "carbon.rs:100-110; m7_flowsheet.rs:247-251; flowsheet.rs:193 ELEMENT_TOL; export.rs:2201-2208; flowsheet.rs:1880",
+    "finding": "The flowsheet ledger closure (feed = S20 + S15 + S13 + S10) is asserted in a test at a relative 1e-9 and is not written to any output or checked at run time. The envelope carbon residual (S01 in; S10, S13, S16, S20 out) is exported for FS_ runs only: 5.26e-9 kmol C/h for FS_B_REC_F. That tolerance is on bookkeeping, since every unit is a split.",
+    "kind": "calculated",
+    "risk": "medium"
+   },
+   {
+    "id": "D_anchor_tolerance",
+    "where": "flowsheet.rs:2233, 2285-2345; results/Validation_Results.csv",
+    "finding": "CARBON_ANCHOR_TOL = 2 percent compares the flowsheet with the anchored ledger, not a closure. Four of eight rows fail: tube +4.9 percent, and tail gas, recycled and burned carbon all -19.7 percent. FS_GATE_M7 therefore fails, and the terms gated on it cannot flip.",
+    "kind": "validation_reference",
+    "risk": "high"
+   },
+   {
+    "id": "T01_T02_headline_rule",
+    "where": "terms.rs:72-79; terms.rs:331-332; gates.rs:296-297",
+    "finding": "Under the Headline preset T01 (phi) and T02 (per-pass capture) stay anchored by rule. The T01 gate passes but the flip is withheld because the tail-gas split sits in an external block; T02 fails. Even the Modelled preset can only overwrite PHI_RECYCLE and ETA_MEA, leaving the carbon algebra intact.",
+    "kind": "process_assumption",
+    "risk": "medium"
+   }
+  ],
+  "hooks": [
+   {
+    "purpose": "Plant-own carbon ledger with unknown-aware fields (Option for each stream, transport and storage, MEA loss, CO2e tag) and a run-time closure with tolerance",
+    "where": "carbon.rs: struct CarbonLedger (:70) and CarbonLedger::closure (:100); populate in flowsheet.rs assemble (:1634-1646)",
+    "note": "Keep close_carbon (:43); feed Some/None from real streams so the unknown-not-zero rule can fire."
+   },
+   {
+    "purpose": "Remove the copied recycle split and the fixed capture fraction",
+    "where": "flowsheet.rs: recycle_fraction (:228), FlowsheetSpec::new carbon_recycle (:328), REC-CRYO block in pass (:1121-1135); trait CaptureColumns and capture_for (:1465) with AnchoredMea::solve (:526)",
+    "note": "Add an MEA column implementation of CaptureColumns for a computed capture; tag the cryo split as a process assumption with its own parameter."
+   },
+   {
+    "purpose": "Drive annual emissions from the flowsheet ledger and add named boundaries (direct, capture based, net after T&S, lifecycle)",
+    "where": "emissions.rs: Model::emissions (:45) and Emissions struct (:10); one new constructor from FlowsheetRun",
+    "note": "Single attach point for the consumers dcf.rs:198, lib.rs:177, sens.rs:213, drift.rs:142, export.rs:1020, 1108, 3181 and wasm solve.rs."
+   },
+   {
+    "purpose": "Plant-own unabated counterfactual; demote the TEV-953 baseline to a validation row",
+    "where": "emissions.rs:46 (baseline); parameters.toml CO2_CONV_NOCC; add a check beside carbon_vs_anchor (flowsheet.rs:2285)",
+    "note": "Run the flowsheet without capture and recycle for the same H2."
+   },
+   {
+    "purpose": "Report residual, tolerance, abatement per kg H2, CO2e basis, and subsidy-ready annual abatement",
+    "where": "export.rs: emissions_run (:2965), EMISSIONS_HEADER, CLOSURE_CARBON rows (:2010-2020 anchored, :2201-2208 flowsheet); anchored.rs case_summary keys (:1444-1457); wasm solve.rs:2081",
+    "note": "Replace the anchored closure with the flowsheet closure; add a CARBON_CLOSURE_TOL next to ELEMENT_TOL (flowsheet.rs:193) and surface it in FS_GATE_M7 (:2519)."
+   },
+   {
+    "purpose": "Remove the pinned 578,000 t/y blocking check",
+    "where": "drift.rs: ABATEMENT_REF_T_Y (:24) and the Finding at :244-253",
+    "note": "Convert to a non-blocking validation reference."
+   }
+  ],
+  "gaps": [
+   "I did not build or run cargo. All numbers come from the committed results/*.csv files and the code, and I did not re-run the engine to confirm the CSVs are current.",
+   "I did not read the full bodies of anchored.rs balance (heat and power) or economics.rs, so energy-linked emissions (reboiler gap, grid import) are not audited here.",
+   "I did not trace every frontend panel or PFD label that shows carbon; only views.js:606-614 and 822-847 were checked.",
+   "I did not verify the sources behind NG_CASE6, CO2_CAPTURED_C6 or the TEV documents; I only read the parameter records.",
+   "FS_ runs exist only for the recycle and INL Selexol scenarios (wasm/src/solve.rs:465 message); COMB_H, COMB_N and EXPORT have no stream ledger, and I did not check their anchored algebra beyond reading anchored.rs:983-1024."
+  ],
+  "questions": [
+   "Should the unabated counterfactual be rebuilt from the plant's own feed and H2 output (same NG-fired SMR without capture), with TEV-953, Cho and IEAGHG kept only as validation rows?",
+   "Is the REC-CRYO carbon split, which sits in an external unsimulated block (Q4), to be kept as a tagged process assumption or derived from a cryogenic model?",
+   "Should condensate CO2 be vented in the headline, which is decision S14 and today a sensitivity only?",
+   "Which gas basis (CO2 or CO2e), and which GWP horizon if CO2e, apply to the upstream, nuclear and grid factors and to the abatement cost unit?",
+   "For transport and storage emissions, will you supply a physical input (ship fuel, boil-off, injection energy) or keep a flagged ratio like TS_BURDEN?"
+  ]
+ },
+ "a57f4a86fcb0a6422": {
+  "summary": "Method 1 is compact: Model::cost_items (economics.rs:244-313) builds S$M and S$M/y quantities, Model::ledger (330-352) annualises them into 16 lines, Ledger::ladder (169-178) sums them into L0..L5, and S$/t = ladder x 1e6 / a_atm. A script check of BOAK, 25 y, n=1, 210 MWth reproduces results/Economic_Ledger.csv (reactor S$742.8M, L3 137.7, L5 189.7 S$/t; 60 y L5 165.6). The ledger and DCF share one CostItems set, so only time-value mechanics differ (IDC 0.21%, 60 y replacement 0.17%, by script). The existing co-funding (rx_mult, sens.rs:1494) scales gross reactor capital, so it cannot give grant timing, eligible sets, a separate IDC treatment or a strict-below-100 solve.",
+  "items": [
+   {
+    "id": "E01 reactor overnight capital",
+    "where": "economics.rs:212-217 reactor_capex; OCC_LOW/CENTRAL/HIGH parameters.toml:1824/1836/1850; F_2019USD_TO_2025SGD :1729",
+    "finding": "C_R [S$M] = occ[US$2019/kWt] x 600 MWth x 1e3/1e6 x 1.6195 x stage_mult x (r/600)^n. Central occ 2184 = INL US$6000/kWe x 0.91 x 0.4 (calculated, INL Table 1 and PDF p47). BOAK at 210 MWth, n=1: S$742.8M (script). The deflator is a GDP deflator that the file itself says understates nuclear escalation.",
+    "kind": "process_assumption",
+    "risk": "medium"
+   },
+   {
+    "id": "E02 size scaling and exponents",
+    "where": "economics.rs:216, 224-225; N_LINEAR :1990 (1.0), N_TEAM :1977 (0.6), N_NGNP derived anchored.rs:613-619 (0.3107 from INL PDF p25); REACTOR_COST_REF_SIZE :1966",
+    "finding": "Factor (r/600)^n on capex, and on the staff share of O&M. N_TEAM and the 600 MWth reference are assumed and not_verified. At 210 MWth BOAK reactor capital is S$742.8M, 1130.4M and 1531.5M for n = 1, 0.6, 0.31 (script). The reference size has no effect at n=1.",
+    "kind": "process_assumption",
+    "risk": "medium"
+   },
+   {
+    "id": "E03 FOAK premium",
+    "where": "economics.rs:197-205 stage_mult; FOAK_LOW/CENTRAL/HIGH parameters.toml:1908/1919/1932",
+    "finding": "FOAK multiplier 1.3/1.6/2.1 (INL Table 1, primary) applied to the reactor, and to the power island at central level only. Stage and uncertainty level are coupled inconsistently: power island stage_power is forced to 1.0 at Low/High (economics.rs:276-279), and the IHX FOAK-type premium (IHX_HIGH_MULT 1.6) follows the High level, not the stage (:267-274).",
+    "kind": "process_assumption",
+    "risk": "medium"
+   },
+   {
+    "id": "E04 BOAK learning and the two 10OAK routes",
+    "where": "economics.rs:11-35 Stage, 197-205; lf10 anchored.rs:611; LEARNING :1943, LEARNING_UNITS :1954",
+    "finding": "BOAK = 1.0. 10OAK_P46 = lf10 = 0.9^log2(10) = 0.7047 from BOAK. 10OAK_P47 = FOAK x lf10 = 1.1275 (script). Learning touches only reactor capex (hence IDC) and the central power island. IHX, licence, capture, O&M and construction time do not learn. lib.rs:244, export.rs:1104 and wasm solve.rs:649 evaluate BOAK and FOAK only. Stage::ALL is used in export.rs:3184 (headline run) and :3367.",
+    "kind": "process_assumption",
+    "risk": "medium"
+   },
+   {
+    "id": "E05 construction spend and IDC",
+    "where": "economics.rs:232-234 idc_factor, 345; dcf.rs:107-123 uniform_spend, :230; CONSTRUCTION_YEARS parameters.toml:2427",
+    "finding": "5.5 y uniform spend (INL NZW09 PDF p7). Ledger IDC = C_R(f-1)CRF(life), f = ((1+i)^N-1)/(iN) = 1.1977, at the discount rate and on reactor capital only. The DCF uses year-end buckets (discrete factor 1.2002, +0.21%). All other capital enters at year 0 with no construction period. N is the same for FOAK, BOAK and 10OAK, and there is no separate interest rate.",
+    "kind": "process_assumption",
+    "risk": "medium"
+   },
+   {
+    "id": "E06 reactor O&M",
+    "where": "economics.rs:222-226, 296, ledger :341; OPEX_CENTRAL :1873, OPEX_FUEL_SHARE_HTGR :1897",
+    "finding": "O&M [S$M/y] = 10 US$2019/MWth-h x 1.6195 x hours/1e6 x [0.4438 r + 0.5562 x 600 (r/600)^n]. BOAK gives 25.32 S$M/y at L1. It is the same for all stages and for 25 y and 60 y, and it is charged on operating hours only.",
+    "kind": "process_assumption",
+    "risk": "low"
+   },
+   {
+    "id": "E07 capture capital",
+    "where": "economics.rs:258-264, ledger :337; CAPTURE_K_1A_DTCR_EURM :2275, CAPTURE_K_3_* :2299, CAPTURE_K_LOW_FACTOR :2323",
+    "finding": "C_cap = K x b.cap_t, with K = EUR41.02M x 2.322 / 46.6 t/h = S$2.044M per t/h central (1.737 low, 5.094 high, Case 3 MEA), linear in t/h and annualised at CRF(25). The size comes from the plant balance, but the unit cost is IEAGHG Case 1A aMDEA on syngas, a proxy for MEA. It is a TCR delta, so it includes IDC and owner costs, unlike the overnight nuclear items.",
+    "kind": "process_assumption",
+    "risk": "medium"
+   },
+   {
+    "id": "E08 capture operating cost",
+    "where": "economics.rs:261, ledger :338; CAPTURE_FOM :2335 (0.027, 6% high); CAPTURE_ALLIN :2360",
+    "finding": "Capture fixed O&M = 2.7%/y of gross capture capital, 2.67 S$M/y BOAK, with no CRF. Energy is in the heat and power balance. MEA make-up and other variable O&M are not implemented (register L.14, about S$0.4/t). The all-in US$60/t branch (economics.rs:263) is off and not_verified. A subsidy must not scale capture_capital before line 261.",
+    "kind": "process_assumption",
+    "risk": "medium"
+   },
+   {
+    "id": "E09 compression",
+    "where": "no ledger line; b.e_rows.co2comp feeds e_total (economics.rs:303)",
+    "finding": "CO2 compression has no capital line. It is presumably inside the Case 1A TCR delta (E07), but neither the parameter text nor the L.12 card says so. Compression power only enters through the power island. The only explicit compression capex is the recycle train (E14).",
+    "kind": "process_assumption",
+    "risk": "medium"
+   },
+   {
+    "id": "E10 transport and storage",
+    "where": "economics.rs:295, ledger :340; TS_LOW/CENTRAL/HIGH parameters.toml:1786/1798/1812; export.rs:3099-3104",
+    "finding": "T&S [S$M/y] = tariff x annual captured t (not abated t), L0, one lumped S$60/t (23.2 to 112), identical at 25 y and 60 y. The central is an author tariff (assumed, via_reader), yet the exporter labels it primary. The ERIA basis of about S$56/t is transport with storage extra, so S$60 may under-cover storage.",
+    "kind": "process_assumption",
+    "risk": "medium"
+   },
+   {
+    "id": "E11 power island",
+    "where": "economics.rs:303, 276-279, ledger :346; POWER_ISLAND_ADDBACK :2062",
+    "finding": "Capital = 540 US$2019/kWe x e_total [MWe] x 1.6195 x stage_power, on CRF(life), L4, and it is the add-back of the 9% removed from INL OCC. It is applied to e_total, which includes tail-gas turbine power, so it also proxies that turbine. BOAK: 1.62 S$M/y at 25 y, 1.40 at 60 y, with no replacement and no IDC.",
+    "kind": "calculated",
+    "risk": "low"
+   },
+   {
+    "id": "E12 heat recovery and IHX",
+    "where": "economics.rs:266-274, ledger :342; heatrec.rs (no cost content); IHX_LOOP_COST :2187, IHX_REF_MW :2198, IHX_LIFE_HIGH_H :2264",
+    "finding": "No capital for syngas heat recovery or the tail-gas boiler. Heat enters only as energy (reboiler sources, lost steam at L5). IHX = US$69M (2012) x 128.885/93.1835 x 1.3065 per 170 MW = S$124.7M per 170 MW times (q_proc+q_recyc)/170, 8.36 S$M/y. Both anchors and the deflator are not_verified. Central IHX life is 25 y while the only life datum gives 14.1 y (High). The DCF truncates 14.12 to 14 (dcf.rs:248), the ledger does not.",
+    "kind": "process_assumption",
+    "risk": "medium"
+   },
+   {
+    "id": "E13 recycle train",
+    "where": "economics.rs:280-283, 305, 347; anchored.rs:640-646; RECYCLE_TRAIN_K_TPC_EURM :2372",
+    "finding": "Case A capital = e_rows.purge x [EUR17.0M / (46.6 t/h x 24/ST x 3.32 kW per st/d)] x 1.3 x 2.322, x s, on CRF(25), plus FOM at the central 2.7% (even at High level). 5.89 S$M/y at L4. Register L.23 states no published cost exists. High is Case 2B cryogenic EUR69.6M.",
+    "kind": "process_assumption",
+    "risk": "medium"
+   },
+   {
+    "id": "E14 decommissioning",
+    "where": "economics.rs:300-302, 344; DECOM_CENTRAL :2084, DECOM_KWE_PER_KWT :2108, DECOM_FUND_RATE_HIGH :2119",
+    "finding": "Total = 1000 US$2022/kWe x 0.4 x r_charged x 1.3065 = S$109.7M at 210 MWth, on SFF(8%, life): 1.50 S$M/y at 25 y, 0.09 at 60 y. Only FX is applied, with no escalation from 2022, and likewise for licence (US$2015). At High level the ledger uses a 3% fund but the DCF pays at the horizon and ignores decom_rate (dcf.rs:251).",
+    "kind": "process_assumption",
+    "risk": "low"
+   },
+   {
+    "id": "E15 replacement and 25 y vs 60 y",
+    "where": "economics.rs:332-346; dcf.rs:132-151 with_replacement; ITEM_LIFE_Y parameters.toml:2543",
+    "finding": "Capture, recycle and IHX use CRF(25) in the ledger and replacement at years 25 and 50 with straight-line credit in the DCF. Annualised ratio DCF/ledger is 1.0000 at 25 y and 1.0017 at 60 y (script). Reactor, power island and licence are never replaced, so the 60 y case only lowers CRF from 0.0937 to 0.0808 on unchanged capex (reactor 69.58 to 60.01 S$M/y, about 16.6 S$/t). Neither a 60 y design premium nor mid-life refurbishment is priced.",
+    "kind": "process_assumption",
+    "risk": "high"
+   },
+   {
+    "id": "E16 licence possible double count",
+    "where": "economics.rs:299, 343; LICENCE_CENTRAL parameters.toml:2141, LICENCE_LOW :2130",
+    "finding": "Central adds US$50M x 1.3065 on CRF(life), 6.12 S$M/y at 25 y. LICENCE_LOW's note says INL OCC already holds licensing 0.56% and site permits 0.23%, and the register (L.19) says it overlaps. The central value is a US design-certification proxy.",
+    "kind": "process_assumption",
+    "risk": "low"
+   },
+   {
+    "id": "E17 revenue and energy credits",
+    "where": "economics.rs:57, 77 export_rev=0; 255, 290-292, 308-309, 335, 348-350; GAS_CENTRAL parameters.toml:1762; ELECTRICITY_PRICE :2416; SYSTEM_BOILER_EFF :471",
+    "finding": "No product or CO2 revenue exists. Credits are GAS = -(ng_smr-ng_plant) x price (S$15/GJ FRED LNG 2025, -64.80 S$M/y), BASE_POWER = SMR power x S$0.20/kWh (assumed, not_verified, -6.41) and LOST_STEAM at gas price (+15.23) with no boiler efficiency. At the 0.9 efficiency used in emissions.rs:72, lost steam rises 1.69 S$M/y (2.9 S$/t).",
+    "kind": "process_assumption",
+    "risk": "medium"
+   },
+   {
+    "id": "E18 project life and discount rate",
+    "where": "parameters.toml:1674 DISCOUNT, :1685-1707 LIVES; anchored.rs:453 crf, :466 sff, :477 LIMITS",
+    "finding": "A single real 8% (assumed, same as IEAGHG) drives CRF, SFF, IDC and DCF. Lives are 25, 40 and 60 y, and the ledger/export use 25 and 60 y. There is no tax, debt share, ramp-up or escalation.",
+    "kind": "process_assumption",
+    "risk": "low"
+   },
+   {
+    "id": "E19 how L0 to L5 are built",
+    "where": "economics.rs:145-163 lines(), 169-178 ladder()",
+    "finding": "L0: GAS, REACTOR_CAP, CAPTURE_CAP, CAPTURE_FOM, CAPTURE_ALLIN, TS. L1 adds REACTOR_OM, L2 IHX, L3 LICENCE and DECOM, L4 IDC, POWER_ISLAND and RECYCLE_TRAIN, L5 LOST_STEAM, BASE_POWER and EXPORT_REVENUE, cumulative. BOAK 25 y gives 66.2, 110.0, 124.5, 137.7, 174.5, 189.7 S$/t (results CSV, B_REC_F, n=1, 210 MWth).",
+    "kind": "calculated",
+    "risk": "none"
+   },
+   {
+    "id": "E20 net abatement in S$/t",
+    "where": "emissions.rs:46-58 a_atm; lib.rs:177-190; dcf.rs:158, 278; carbon() anchored.rs:934-1045",
+    "finding": "S$/t = ladder[k] x 1e6 / a_atm, with a_atm = CO2_CONV_NOCC baseline (published) minus tpy(burn+exported) = 578,052 t/y at Case B, constant over life, with no ramp. The DCF divides by a x annuity. carbon() is anchored to INL Case 6 constants (co2_cap_c6, ng_c6, f_c6), so the denominator and the capture size rest on a copied external result, which goal 1 replaces.",
+    "kind": "copied_result",
+    "risk": "high"
+   },
+   {
+    "id": "E21 existing co-funding",
+    "where": "economics.rs:59, 257; sens.rs:1494-1566, :413 solve_for; vv/golden.rs:631,642",
+    "finding": "rx_mult multiplies reactor_capital inside CostItems, so the grant acts pro-rata to spend and cuts annualised capital and IDC together. There is no at-close variant, no eligible items, BOAK only, target 96 (TARGET_MATURE_COST :2460), and an unbracketed secant. rx_mult is also the OCC sensitivity lever, so reuse would mix roles.",
+    "kind": "not_applicable",
+    "risk": "high"
+   },
+   {
+    "id": "E22 status labels",
+    "where": "export.rs:3067-3152 line_meta",
+    "finding": "Source and status strings are hand-typed and do not follow parameters.toml. TS, REACTOR_CAP (N_TEAM and reference size not_verified) and BASE_POWER (price not_verified) print as primary.",
+    "kind": "not_applicable",
+    "risk": "low"
+   }
+  ],
+  "hooks": [
+   {
+    "purpose": "Grant inputs: share (0, 25, 50, 75 percent), eligible set (reactor default or a listed set), timing (at close or progressive)",
+    "where": "economics.rs CostQuery:46-60 and central():63-79",
+    "note": "Leave rx_mult for the OCC sensitivity only. Add matching parameter ids to parameters.toml and LIMITS (anchored.rs:477)."
+   },
+   {
+    "purpose": "Eligible gross capital and grant amount per item, with physical capital unchanged",
+    "where": "Model::cost_items economics.rs:244-313 (CostItems:85-117)",
+    "note": "Keep capture_fom_y (:261) and recycle_fom_y (:305) on gross capital so operating cost stays unchanged."
+   },
+   {
+    "purpose": "Negative GRANT and IDC-saving lines in the ledger, each using the item's own CRF",
+    "where": "Model::ledger economics.rs:330-352; Ledger:121-139 and lines():145-163",
+    "note": "Use crl for reactor, licence and power island, cr25 for capture and recycle, crf(ihx_life) for IHX. lines() is [_;16], consumed by export.rs:3226 and vv/golden.rs, so prefer a separate net-of-grant block after L5 and keep L0 to L5 gross."
+   },
+   {
+    "purpose": "IDC treated separately: at-close versus progressive and an optional financing rate",
+    "where": "Model::idc_factor economics.rs:232-234",
+    "note": "At close compounds over the full period, (1+i)^5.5 = 1.527 at 8%, versus 1.198 for progressive. Compute IDC on the net-of-grant balance, and add a construction profile if non-reactor items are eligible, since they now have none."
+   },
+   {
+    "purpose": "DCF grant inflows",
+    "where": "Model::dcf dcf.rs:182, lines vec :206-262 beside REACTOR_CAP :230; gap_terms :301-318",
+    "note": "Progressive: negated uniform_spend (:107). At close needs a flow at the start of construction, which integer-year flows (i32) cannot place at t=-5.5. Add a GRANT term so the L5 versus DCF gap still closes."
+   },
+   {
+    "purpose": "Continuous break-even subsidy to LAC strictly below S$100/t",
+    "where": "sens.rs cofunding_rows:1494 (registered :1271), solve_for:413",
+    "note": "Use TARGET_COST (:2449) rather than TARGET_MATURE_COST. Use a bracketed root with a strict margin, for L5 and DCF, all four stages and both lives. wasm solve.rs:679 and :864 use <=."
+   },
+   {
+    "purpose": "Four-route by two-life grid and exports",
+    "where": "lib.rs:244 run(), export.rs:1104 dcf_grid, :3153-3260 economic_ledger, :3067 line_meta, wasm solve.rs:649 target_cases",
+    "note": "Widen [Boak, Foak] to Stage::ALL and add grant rows and lines to the CSV."
+   }
+  ],
+  "gaps": [
+   "INL/RPT-23-72972 values (US$6000/kWe, 0.91, 0.4, FOAK table, p46/p47 learning), IEAGHG TCR contents and the IAEA, ERIA and NRC sources were not opened, so every source_status is taken from parameters.toml as written.",
+   "Whether Case 1A TCR delta includes CO2 compression is unverified.",
+   "Price-year escalation for US$2022 decommissioning and US$2015 licence was not quantified, because no GDP deflator values for those years are in the repo.",
+   "The High-level decommissioning mismatch between ledger and DCF is read from code and was not executed, since no cargo run was allowed.",
+   "Frontend and wasm consumers of ledger fields beyond solve.rs:640-900 and 2128-2170, the flowsheet and the sensitivity levers were not audited.",
+   "docs/FINAL_DESIGN_DECISIONS.md D03, D08 to D10 were only skimmed by grep."
+  ],
+  "questions": [
+   "Which items form the alternative eligible set (IHX, power island, capture, recycle train, licence)?",
+   "Should non-reactor capital get a construction-period profile, so that progressive versus at-close timing and IDC apply to it?",
+   "Should IDC use a separate financing rate from the 8% DISCOUNT?",
+   "Should a 60 y case price reactor or power-island replacement or a life premium, since the 25 y versus 60 y difference is currently only the CRF?",
+   "Is strictly below 100 meant as 100 minus a stated margin, or as the infimum share reported with its limit?"
+  ]
+ },
+ "a0830c2f164e90dc8": {
+  "summary": "Audit of parameters and the zero-subsidy baseline, read only. The registry has 231 entries in engine/data/parameters.toml (141 published, 64 assumed, 22 calculated, 4 user_decision) and carries no subsidy, grant or eligibility input. A one-lever co-funding sweep exists (sens.rs:1500) but it is a solve on a multiplier, not a model. The central case is run B_REC_F (Case B, Headline preset status gated_T05, n = 1.0, reactor charged at the 210 MWth rating, gas S$15/GJ). Its 16 L5 and DCF cells, annual abatement and annual H2 are all present in the CSVs except annual H2, which only Final_Design_Basis.csv holds. The L5 ledger lines re-sum to the stored cumulative cost within 5e-6 S$/t for all 92 run groups. A flat extract of every L5 and DCF cell is at C:/Users/Alf/AppData/Local/Temp/claude/f97511ab42c3e41a/dee70430-6901-4bdf-a7a6-7fbb5c9a2058/scratchpad/audit/params-baseline/baseline_all.csv. Rows carry no id column, so the row id used below is the file line number (header is line 1) plus the key run_id, stage, life_y, n, reactor_charged_mwth, level, line_id.",
+  "items": [
+   {
+    "id": "A1",
+    "where": "engine/plant/src/params.rs:15-30, 46-54, 214-270",
+    "finding": "Provenance vocabulary is three closed lists. class: published, assumed, calculated, user_decision. rigour: rigorous, reduced_order, empirical, fixed_assumption, external_boundary. source_status: primary, via_reader, via_old_repo, not_verified. Required fields are id, value, unit, group, class, rigour, source, locator, source_status. Optional fields are low, high, decision (a D-number) and name. An unknown field, bad enum word, duplicate id or empty source or locator is a parse error. In use: 226 of 231 are fixed_assumption, via_old_repo is never used, 27 are not_verified.",
+    "kind": "not_applicable",
+    "risk": "none"
+   },
+   {
+    "id": "A2",
+    "where": "engine/plant/src/anchored.rs:477-500, 523; engine/vv/src/harness.rs:141-148, 322-340; engine/wasm/src/registry.rs:1-50, 433, 461",
+    "finding": "A new parameter needs a [[param]] block, an r.get(...) in Model::build, and for a hard limit an entry in the LIMITS array (only 8 ids are limited today; low and high are never checked against value, and group is free text). If build never reads the id, the PARAMS_COMPLETE row in the validation harness fails. The browser needs a num(...) Spec in wasm registry.rs, whose hard and model ranges are enforced there. Final_Design_Basis.csv prints every registry entry automatically (export.rs:573-600, scope at export.rs:378).",
+    "kind": "process_assumption",
+    "risk": "low"
+   },
+   {
+    "id": "B1",
+    "where": "engine/data/parameters.toml:1673, 2426; economics.rs:232-234",
+    "finding": "DISCOUNT 0.08 (assumed, same as IEAGHG) is the single rate for CRF, the IDC factor and the DCF. CONSTRUCTION_YEARS 5.5 y (published, INL NZW09) is one value for every stage. There is no separate IDC rate, debt share or spend profile. Interest during construction is derived: (1+i)^T minus 1 over iT times reactor capital.",
+    "kind": "process_assumption",
+    "risk": "medium"
+   },
+   {
+    "id": "B2",
+    "where": "engine/data/parameters.toml:1907-1953; anchored.rs:611; economics.rs:11-36, 197-205",
+    "finding": "Maturity: FOAK_LOW/CENTRAL/HIGH 1.3/1.6/2.1 (published INL Table 1). BOAK is the literal 1.0 in stage_mult (economics.rs:202), not a parameter. LEARNING 0.1 per doubling and LEARNING_UNITS 10 give lf10 = 0.9^log2(10) = 0.7047. Stage ids: 10OAK_P46 is learning from BOAK (multiplier lf10), 10OAK_P47 is learning from FOAK (FOAK x lf10). Check: 2184 x lf10 = US$1,539/kWt and x 1.6 = 2,462, as the docs state.",
+    "kind": "validation_reference",
+    "risk": "low"
+   },
+   {
+    "id": "B3",
+    "where": "engine/data/parameters.toml:1684-1706, 2542, 2049, 2437-2459, 1976",
+    "finding": "Lives: LIVES_SHORT/MID/LONG 25/40/60 y (assumed, D08), ITEM_LIFE_Y 25 y for capture, IHX, recycle train and SMR island. Reactor REACTOR_RATED_MWTH 210 (user_decision D03). Size exponents N_LINEAR 1.0, N_TEAM 0.6, N_NGNP 0.3107 (computed at anchored.rs:613-619, not a registry id). Targets TARGET_ABATEMENT 250,000 t/y, TARGET_COST 100, TARGET_MATURE_COST 96 S$/t (user_decision). No horizon or life parameter is stage specific.",
+    "kind": "process_assumption",
+    "risk": "low"
+   },
+   {
+    "id": "C1",
+    "where": "engine/data/parameters.toml (grep subsid|grant|eligib|fund|incent|tax|credit); engine/plant/src/sens.rs:1500-1566; economics.rs:59, 257; Sensitivity_Results.csv:208-219",
+    "finding": "No subsidy, grant or eligibility parameter exists. The only grep hit, DECOM_FUND_RATE_HIGH (toml:2118), is a decommissioning trust return. A one-lever co-funding sweep exists: cofunding_rows solves CostQuery.rx_mult so BOAK, n = 1.0, 210 MWth reaches TARGET_MATURE_COST 96, giving 65.0% of S$742.77M at 25 y and 56.0% at 60 y on L5. It covers BOAK only, reactor capex only, with timing implicit (rx_mult scales capex before IDC). rx_mult is also the generic capex stress lever (vv/src/golden.rs:631, 642), so it should not become the grant field.",
+    "kind": "calculated",
+    "risk": "medium"
+   },
+   {
+    "id": "D1",
+    "where": "economics.rs:232-234, 345; dcf.rs:104-124, 228-233; Economic_Ledger.csv:1455-1458",
+    "finding": "IDC is continuous in the ledger and discrete year buckets in the DCF. At BOAK 25 y the whole L5 to DCF gap of 0.3093 S$/t equals GAP_REACTOR_CAP_WITH_IDC (0.3093). At 60 y the IDC term is 0.2668 of a 0.3328 gap. Grant timing will move this gap, so the gap test needs its own tolerance statement.",
+    "kind": "calculated",
+    "risk": "medium"
+   },
+   {
+    "id": "D2",
+    "where": "economics.rs:345; dcf.rs:236-258",
+    "finding": "Only reactor capital carries IDC in either method. Capture, IHX, licence, power island and recycle train enter at year 0 with no construction interest. An alternative eligible set that includes these items has no IDC to treat separately unless that is added to both methods.",
+    "kind": "process_assumption",
+    "risk": "medium"
+   },
+   {
+    "id": "D3",
+    "where": "engine/data/parameters.toml:1750-1774, 1785-1811; engine/wasm/src/registry.rs:461-480",
+    "finding": "Ranges are stored up to four times. GAS, TS, OCC, FOAK and OPEX _CENTRAL carry low and high equal to the separate _LOW and _HIGH ids (checked by script), and the browser registry holds its own hard and model ranges (gas hard 8 to 25 against engine 10 to 20). They can drift apart.",
+    "kind": "not_applicable",
+    "risk": "low"
+   },
+   {
+    "id": "D4",
+    "where": "dcf.rs:191, 248; anchored.rs:821",
+    "finding": "The DCF truncates item life and IHX life to u32 while the ledger uses real values. Only the High-level IHX life (105,120 h over 7,446 h = 14.1 y) differs, so the central baseline is unaffected.",
+    "kind": "calculated",
+    "risk": "low"
+   },
+   {
+    "id": "D5",
+    "where": "params.rs:314; engine/data/parameters.toml:3-4, 1976, 1761, 403, 40, 391",
+    "finding": "Minor items. A test asserts more than 131 entries against 231 actual. The file header omits the optional name field, and N_TEAM's name embeds the value 0.6. GAS_CENTRAL 15.0 is 'published' but the cited arithmetic gives 14.97. BASELINE_IEAGHG_ROUNDED is read yet 'used by no result'. Two H2 normal densities exist (0.08988 not_verified, 0.08994).",
+    "kind": "not_applicable",
+    "risk": "low"
+   },
+   {
+    "id": "K1",
+    "where": "engine/data/parameters.toml:63, 74, 252, 274; anchored.rs:649-656; emissions.rs:46; Final_Design_Basis.csv:405, 407",
+    "finding": "Case B gas and baseline are INL Case 6 and TEV-953 results scaled by the H2 ratio 0.68328: 23.2316 MMSCFD is 34 x 0.68328, unabated gas 35.872 is 52.5 x 0.68328, and baseline CO2 616,360.6 t/y is 3,205 st/d converted to 9.2098 kg/kg. Abatement is that baseline less the carbon burned in the INL-anchored Model::carbon split. These are copied plant results inside the abatement that item 1 must replace.",
+    "kind": "copied_result",
+    "risk": "high"
+   },
+   {
+    "id": "K2",
+    "where": "engine/data/parameters.toml:354, 330, 2274, 2298, 2334",
+    "finding": "PHI_RECYCLE 0.775 is reconstructed from INL Case 5 stream tables (calculated). ETA_MEA 0.9 is an author design value (assumed). Capture capex per tonne uses IEAGHG Case 1A aMDEA on syngas (ΔTCR EUR41.02M at 46.6 t/h) as central and Case 3 MEA on flue gas as high, so the central cost is not MEA based, although the tonnage multiplied in is the plant's own.",
+    "kind": "copied_result",
+    "risk": "medium"
+   },
+   {
+    "id": "K3",
+    "where": "engine/data/parameters.toml:51, 130-196, 6, 538, 561",
+    "finding": "Valid physical inputs that stay: H2_B 100,000 Nm3/h (SOXAL press releases), natural gas composition C_PER_MOL_NG_*, NG_HHV, EF_NG_LHV, AVAILABILITY 0.85 (author assumption D05). The MEA process conditions LOADING_RICH 0.5, W_MEA 0.3 and P_STRIPPER 2.0 are process assumptions.",
+    "kind": "independent_physical_input",
+    "risk": "none"
+   },
+   {
+    "id": "E1",
+    "where": "results/Economic_Ledger.csv:239, 407, 1292, 1400",
+    "finding": "FOAK, B_REC_F, n 1.0000, 210.00 MWth. 25 y: L5 277.930634 (line 239, BASE_POWER cum_s_per_t), DCF 278.425550 (line 1292, LAC_DCF dcf_value). 60 y: L5 241.696417 (line 407), DCF 242.189271 (line 1400). Final_Design_Basis.csv:253, 256, 338, 341 repeat them.",
+    "kind": "calculated",
+    "risk": "none"
+   },
+   {
+    "id": "E2",
+    "where": "results/Economic_Ledger.csv:491, 659, 1454, 1562",
+    "finding": "BOAK, same key. 25 y: L5 189.749501 (491), DCF 190.058823 (1454). 60 y: L5 165.640188 (659), DCF 165.972967 (1562). Final_Design_Basis.csv:247, 250, 332, 335 repeat them.",
+    "kind": "calculated",
+    "risk": "none"
+   },
+   {
+    "id": "E3",
+    "where": "results/Economic_Ledger.csv:743, 911, 1616, 1724",
+    "finding": "10OAK_P46 (tenth of a kind from BOAK), same key. 25 y: L5 146.347930 (743), DCF 146.565906 (1616). 60 y: L5 128.206332 (911), DCF 128.460325 (1724). Final_Design_Basis.csv has no 10OAK rows (grep 0), so these exist only in the ledger.",
+    "kind": "calculated",
+    "risk": "none"
+   },
+   {
+    "id": "E4",
+    "where": "results/Economic_Ledger.csv:995, 1163, 1778, 1886",
+    "finding": "10OAK_P47 (tenth of a kind from FOAK), same key. 25 y: L5 208.488121 (995), DCF 208.836882 (1778). 60 y: L5 181.802248 (1163), DCF 182.169043 (1886).",
+    "kind": "calculated",
+    "risk": "none"
+   },
+   {
+    "id": "E5",
+    "where": "results/Emissions_Ledger.csv:173; Economic_Ledger.csv col abatement_t_y; Final_Design_Basis.csv:373",
+    "finding": "Annual net abatement 578,051.611700 t/y (B_REC_F, INL_9p21, direct_atm, ABATEMENT). It is the same in every stage, life and exponent. Chosen bounds: Cho 587,436 and IEAGHG 563,745 t/y (Final_Design_Basis.csv:371-372).",
+    "kind": "calculated",
+    "risk": "none"
+   },
+   {
+    "id": "E6",
+    "where": "results/Final_Design_Basis.csv:399; dcf.rs:65, 197",
+    "finding": "Annual H2 66,924.648 t/y (RES_H2_T_Y, case_b). Check: 8,988 kg/h x 7,446 h. Economic_Ledger.csv has no H2 column although DcfResult.annual_h2_t is computed, so this cell lives only in Final_Design_Basis.csv. LCOH rows give S$/kg only.",
+    "kind": "calculated",
+    "risk": "low"
+   },
+   {
+    "id": "E7",
+    "where": "results/Economic_Ledger.csv; export.rs:3283",
+    "finding": "Cells the CSVs do not hold: DCF for Cases A and the other fixed runs (DCF rows exist only for B_REC_F via the positional RUNS[4]); 10OAK for runs other than B_REC_F; the Anchored-preset L5 total. Nothing else in the 16-cell table is missing. Also present but outside the scope: charged-at-need rows (178.49 MWth) and 40 y.",
+    "kind": "not_applicable",
+    "risk": "low"
+   }
+  ],
+  "hooks": [
+   {
+    "purpose": "Declare subsidy, eligibility and timing parameters",
+    "where": "engine/data/parameters.toml (cost group), Model::build at engine/plant/src/anchored.rs:523, LIMITS at anchored.rs:477, Spec records in engine/wasm/src/registry.rs",
+    "note": "Each id must be r.get() in build or PARAMS_COMPLETE fails. Use class user_decision for 0/25/50/75% shares and the eligible set."
+   },
+   {
+    "purpose": "Apply the grant to the one shared cost set",
+    "where": "CostItems (economics.rs:85) and Model::cost_items (economics.rs:244)",
+    "note": "Both methods read this struct. Add a dedicated grant field instead of reusing rx_mult. Zero grant must be bit-identical."
+   },
+   {
+    "purpose": "Ledger side: net capital and separate IDC",
+    "where": "Model::ledger, economics.rs:336 (reactor_capital) and 345 (idc)",
+    "note": "IDC must be computed on the borrowed share for close-paid versus progressive grants."
+   },
+   {
+    "purpose": "DCF side: grant cash flows",
+    "where": "Model::dcf, dcf.rs:228-233 (REACTOR_CAP) and 236-258; uniform_spend at dcf.rs:107",
+    "note": "Close-paid grant falls in the first bucket (year minus 5); progressive grant follows the spend buckets."
+   },
+   {
+    "purpose": "Continuous break-even subsidy strictly below S$100/t",
+    "where": "beside cofunding_rows, sens.rs:1500; solve_for at sens.rs:413 (private)",
+    "note": "TARGET_COST 100 exists; a strictly-below margin parameter is needed. Existing solve targets TARGET_MATURE_COST 96."
+   },
+   {
+    "purpose": "Stage list for the four routes",
+    "where": "Stage::ALL and stage_mult, economics.rs:21 and 197",
+    "note": "FOAK, BOAK, 10OAK_P46 (from BOAK), 10OAK_P47 (from FOAK) already exist."
+   },
+   {
+    "purpose": "Export new columns and subsidy runs",
+    "where": "economic_ledger export.rs:3153 (DCF block at 3283 uses RUNS[4]); results_block export.rs:603; dcf_block export.rs:1116; sensitivity export.rs:3466",
+    "note": "The ledger schema has no subsidy column. Annual H2 would be added to the DCF rows."
+   },
+   {
+    "purpose": "Rebuild abatement from the plant's own stream",
+    "where": "Model::carbon (anchored.rs:934), Model::emissions (emissions.rs:45), build inputs anchored.rs:649-656",
+    "note": "f_c6, p_c, phi_nr, base_inl and ng_c6 are the INL anchors."
+   },
+   {
+    "purpose": "Zero-subsidy regression guards",
+    "where": "engine/vv/data/engine_goldens.json via ledger_grid, engine/vv/src/golden.rs:324 (GOLD_TOL 1e-9 at golden.rs:14); engine/vv/data/freeze_values.json",
+    "note": "Goldens hold the ledger grid; new code must not change them at zero subsidy."
+   },
+   {
+    "purpose": "Register new equations",
+    "where": "math/eq_register.csv (next free id L.38), checked by engine/vv/tests/concept_checks.rs:329-336",
+    "note": "Each engine_fn must resolve to a real item."
+   }
+  ],
+  "gaps": [
+   "Did not open the frontend, wasm solver, flow diagram or tour, and did not build or run cargo, so no baseline number was recomputed from the engine. All figures are read from the CSVs and cross-checked by an independent Python sum of the ledger lines.",
+   "Did not read engine/plant/tests/m9_economics.rs beyond its cofunding assertion at about line 175, nor scripts/build_numbers.py, so other pinned headline numbers may exist.",
+   "Did not read Sensitivity_Results.csv STEPDOWN and MATURE_60Y rows in detail. No sweep varies CONSTRUCTION_YEARS, LEARNING or FOAK.",
+   "Anchored-preset L5 totals and the 178.49 MWth variants were counted but not tabulated. Case A has no DCF rows, so Case A has no DCF baseline.",
+   "Whether copied-result status applies to the E_* power rows, CIRC_*, SYNGAS_CHAIN_* and heat inputs was not examined."
+  ],
+  "questions": [
+   "Is the Headline preset (status gated_T05) with the reactor charged at 210 MWth and n = 1.0 the regression baseline, or should the charged-at-need rows (178.49 MWth) also be locked?",
+   "Should the existing COFUNDING sweep (target 96, BOAK only) be kept beside the new model or replaced by it?",
+   "Should construction interest apply to non-reactor items in the alternative eligible set, which have none today?",
+   "What margin defines strictly below S$100/t for the break-even solve, and is it a registry parameter?",
+   "Does financial close mean the start of the 5.5 y construction, which is year minus 5 in the DCF part-year bucket?"
+  ]
+ },
+ "ad5d97fc0494d4ae5": {
+  "summary": "Answers. (1) Partly yes. Headline abatement A = 578,052 t/y for B_REC_F is baseline 616,361 t/y minus 38,309 t/y to atmosphere (emissions.rs:46-57). The baseline is the INL TEV-953 conventional-SMR result (3205 st/d) scaled by H2 output, so an external plant result sets 93.8% of A. The atmosphere term is computed, but from an algebraic balance whose feed, H2 pair, recycle split and post-shift carbon split are all INL Case 5/6 numbers (anchored.rs:934-1030). (2) The \"own balance, externals only bound it\" description holds only for Cho 9.35 and IEAGHG 8.996 kg/kg; they bound A by +1.6% and -2.5%, and LAC_DCF_25 moves 190.1 to 187.0 or 194.9 S$/t. The central baseline itself is external. (3) Air Liquide appears once, as H2_B (toml:51), and sets only plant scale s_b = 0.6833; it feeds no emission factor. (4) Unverified inputs are listed in items P09 to P13; only RHO_H2_NORMAL touches the headline CO2 figure, and only as scale. (5) Baseline = CO2_CONV_NOCC x ST x operating days x s (emissions.rs:46), which is 9.20977 kg/kg at any availability. Central id INL_9p21; alternatives CHO_9p35 and IEAGHG_9p00 (export.rs:2979-2983, sens.rs:157). Method: a Python replica of the RecF carbon balance (scratch dir audit/provenance-critic) reproduces Emissions_Ledger B_REC_F INL_9p21 to six decimals. Nothing in the repo was changed.",
+  "items": [
+   {
+    "id": "P01",
+    "where": "parameters.toml:274; anchored.rs:655-656; emissions.rs:46",
+    "kind": "copied_result",
+    "risk": "high",
+    "finding": "CO2_CONV_NOCC (INL TEV-953 Table 2, 3205 st/d at 29,000 lb/h H2) is the central baseline, 9.20977 kg/kg. A moves 1.07% per 1% of this value, and it sets every abatement denominator in L3, L5 and the DCF."
+   },
+   {
+    "id": "P02",
+    "where": "parameters.toml:63,18,29; anchored.rs:649-650,941",
+    "kind": "copied_result",
+    "risk": "high",
+    "finding": "NG_CASE6 (34 MMSCFD) and the H2 pair are INL Case 6 results used as the plant's own feed carbon f_c6 and product carbon p_c, and as c.ng in the gas line. Atmosphere emission rises 14% per 1% of NG_CASE6 because it is a small difference of large terms."
+   },
+   {
+    "id": "P03",
+    "where": "parameters.toml:252,354; anchored.rs:935-938,967-969; terms.rs:73",
+    "kind": "copied_result",
+    "risk": "high",
+    "finding": "The recycle split f6 = (t6 - f_c6)/g6 = 0.752 is back-calculated from INL captured CO2 (1927 st/d) and PHI_RECYCLE 0.775 (rebuilt from Case 5 stream tables), then held fixed in RecF. Atmosphere falls 13% per 1% of CO2_CAPTURED_C6. INL_SEL reproduces INL's printed 142 st/d at 143.0 st/d by closure, so that check is circular, and Headline never flips T01."
+   },
+   {
+    "id": "P04",
+    "where": "parameters.toml:330; anchored.rs:968-970",
+    "kind": "process_assumption",
+    "risk": "medium",
+    "finding": "ETA_MEA 0.90 (author design value, decision D25) is the only study-owned number in the capture path. Atmosphere falls 3.0% per 1% of it; no solvent model feeds it in the headline."
+   },
+   {
+    "id": "P05",
+    "where": "flowsheet.rs:228,328,1634,1782; Validation_Results FS_CARBON_VS_ANCHOR_*",
+    "kind": "process_assumption",
+    "risk": "medium",
+    "finding": "A Level 3 stream flowsheet already exists and disagrees: burned carbon 93.9 against anchored 116.9 kmol C/h (fail), recycle and tail gas also fail, gate FS_GATE_M7 fails. Its atmosphere term would be about 30.8 kt/y (A +1.3%). It is not used, and its own recycle split and H2 return are still calibrated to INL."
+   },
+   {
+    "id": "P06",
+    "where": "flowsheet.rs:86-186",
+    "kind": "process_assumption",
+    "risk": "medium",
+    "finding": "INL Case 5/6 set points (NG_IN, REFORMER_IN, S_TO_C 3.00 borrowed from Case 5, 871 C, NG_MOL_FRACTIONS) are hard-coded here, although the parameters.toml header says every input lives in that file."
+   },
+   {
+    "id": "P07",
+    "where": "parameters.toml:367; anchored.rs:834",
+    "kind": "validation_reference",
+    "risk": "low",
+    "finding": "BASELINE_CHO 9.35 kg/kg is a US fleet average from an abstract. It only bounds A (+1.6%) in sens.rs:215-218 and the wasm output."
+   },
+   {
+    "id": "P08",
+    "where": "parameters.toml:379,391,403",
+    "kind": "validation_reference",
+    "risk": "low",
+    "finding": "IEAGHG 0.8091/0.08994 = 8.996 kg/kg is a bound only, under an id named 9p00. It divides by 0.08994 while the plant uses RHO_H2_NORMAL 0.08988, a small internal mismatch. BASELINE_IEAGHG_ROUNDED 9.0 feeds only the A_900 golden key."
+   },
+   {
+    "id": "P09",
+    "where": "parameters.toml:51; anchored.rs:531-532",
+    "kind": "process_assumption",
+    "risk": "medium",
+    "finding": "Air Liquide H2_B (100,000 Nm3/h, 'close to', via_reader) fixes s_b. Absolute Case B tonnes and S$ scale one for one, kg/kg intensities do not move, and S$/t does move because the 210 MWth reactor charge (toml:2049) is independent of s."
+   },
+   {
+    "id": "P10",
+    "where": "parameters.toml:40",
+    "kind": "independent_physical_input",
+    "risk": "low",
+    "finding": "RHO_H2_NORMAL 0.08988 is marked not_verified. It multiplies H2_B, so Case B A changes 1% per 1%."
+   },
+   {
+    "id": "P11",
+    "where": "parameters.toml:415,426,437,448,459; emissions.rs:63-92; wasm solve.rs:810-846",
+    "kind": "process_assumption",
+    "risk": "low",
+    "finding": "GRID_EF, EF_NG_LHV, EF_UPSTREAM (IEA 2026), TS_BURDEN and EF_NUCLEAR are all not_verified. They feed only the system and lifecycle views (527.6 kt/y system, +49.7 kt/y upstream credit) and backup route 3, not headline A or LAC."
+   },
+   {
+    "id": "P12",
+    "where": "parameters.toml:74,687,665,1618,2415; economics.rs:244-300",
+    "kind": "copied_result",
+    "risk": "high",
+    "finding": "The unabated-SMR cost baseline is INL TEV-953: gas pair 52.5 vs 34 MMSCFD gives GAS -S$112/t, export steam 189.2 vs 83.7 MMBtu/h gives LOST_STEAM +S$26/t. Power 6.3 MWe at ELECTRICITY_PRICE 0.2 S$/kWh (not_verified) gives BASE_POWER -S$11.1/t."
+   },
+   {
+    "id": "P13",
+    "where": "parameters.toml:2186-2241,1309-1331,1965,1976,2359,2334",
+    "kind": "process_assumption",
+    "risk": "medium",
+    "finding": "Cost inputs marked not verified: IHX loop (IAEA-TECDOC-1682, plus deflators described as a proxy from an earlier model) gives IHX +S$14.5/t; the high-loss IHX, duct and vessel losses; CAPTURE_FOM. REACTOR_COST_REF_SIZE and N_TEAM act only when n differs from 1, and CAPTURE_ALLIN only in AllIn mode."
+   },
+   {
+    "id": "P14",
+    "where": "export.rs:3067-3150",
+    "kind": "calculated",
+    "risk": "medium",
+    "finding": "Ledger source_status is hand-typed per line, not read from parameters.toml. BASE_POWER is labelled primary although ELECTRICITY_PRICE is not verified, so only IHX shows not_verified (92 rows)."
+   },
+   {
+    "id": "P15",
+    "where": "drift.rs:24,244-255; vv/tests/plant_goldens.rs:59; Validation HEADLINE_ABATEMENT",
+    "kind": "copied_result",
+    "risk": "high",
+    "finding": "The study's earlier 0.578 Mt/y is a blocking drift limit (+/-12 kt/y), a golden assertion and a validation row whose 'literature' value is the old output. A rebuilt abatement will trip all three."
+   },
+   {
+    "id": "P16",
+    "where": "emissions.rs:91-100; comparator.rs:22-36; parameters.toml:308,2578",
+    "kind": "validation_reference",
+    "risk": "low",
+    "finding": "CO2_EMITTED_CONVCC (855 st/d) drives backup route 2, and IEAGHG Case 3 CAC (EUR69.8/t) is published as S$/t comparator rows. Both are copied external results, labelled indicative or sensitivity."
+   },
+   {
+    "id": "P17",
+    "where": "dcf.rs:198; economics.rs:244",
+    "kind": "calculated",
+    "risk": "medium",
+    "finding": "The ledger and the DCF share one CostItems set and the same a_atm denominator. They are independent only in time structure, so any provenance change moves both together."
+   },
+   {
+    "id": "P18",
+    "where": "emissions.rs:62-77; Emissions_Ledger system view",
+    "kind": "calculated",
+    "risk": "medium",
+    "finding": "The INL baseline CO2 includes the conventional plant's export steam and power, but headline A does not debit the lost steam while L5 charges S$26/t for it. The system view is 50.4 kt/y (8.7%) lower. Validation T953-4 compares the baseline with the same number recomputed from the same inputs."
+   }
+  ],
+  "hooks": [
+   {
+    "purpose": "Replace the INL-anchored RecF branch with a feed-driven carbon balance",
+    "where": "anchored.rs Model::carbon (934-1030) and struct Carbon (340)",
+    "note": "Emissions, DCF, sens.rs solve, export emissions_run and wasm solve.rs all read Carbon, so one change flows through."
+   },
+   {
+    "purpose": "Build the unabated baseline from the plant's own reference process at the same H2 output",
+    "where": "emissions.rs Model::emissions line 46; anchored.rs 655-656",
+    "note": "Keep CHO_9p35, IEAGHG_9p00 and INL_9p21 as bounds in export.rs:2979-2983 and sens.rs enum Baseline (157)."
+   },
+   {
+    "purpose": "Tag every input with a provenance class and publish it",
+    "where": "params.rs ParamEntry (17-30), STATUSES (54); parameters.toml; Final_Design_Basis writer (export.rs ~531-594)",
+    "note": "Replace the hand-typed line_meta at export.rs:3067."
+   },
+   {
+    "purpose": "Grant share and timing on reactor capital, with IDC kept separate",
+    "where": "economics.rs CostQuery (46), reactor_capex (212), cost_items (244), ledger (330, IDC line)",
+    "note": "Add the eligible-item set here as well."
+   },
+   {
+    "purpose": "Grant paid at close or progressively in the DCF",
+    "where": "dcf.rs REACTOR_CAP line (230) using uniform_spend"
+   },
+   {
+    "purpose": "Continuous break-even subsidy below S$100/t",
+    "where": "sens.rs cofunding_rows (1500) and solve_for (413)",
+    "note": "Today it solves a reactor-capital multiplier to TARGET_MATURE_COST 96 (toml:2459, anchored.rs:841); TARGET_COST 100 is at toml:2448."
+   },
+   {
+    "purpose": "Re-baseline pinned results",
+    "where": "drift.rs:24,244; vv/tests/plant_goldens.rs:59-70; vv/data/freeze_values.json; vv/src/harness.rs:243"
+   },
+   {
+    "purpose": "Candidate stream-based source for the own balance",
+    "where": "flowsheet.rs FlowsheetSpec::new (328), close_h2_return (1782), CarbonLedger (carbon.rs, built at flowsheet.rs:1634)"
+   }
+  ],
+  "gaps": [
+   "Source PDFs are not in the repo (references/README.md), so no quoted INL, IEAGHG or Cho value was checked against its source; only internal consistency was checked.",
+   "No cargo run. The Python replica covers the RecF carbon balance and baseline only; the heat balance, ledger and DCF were read, not recomputed.",
+   "Not checked whether INL's 3205 st/d includes fuel CO2 for the exported steam, which decides the like-for-like baseline (P18). It needs TEV-953 A-40.",
+   "The units and mea crates (case5.rs, wgs.rs, smr_eq.rs, columns) and the vv benchmarks were not audited for embedded external results.",
+   "Frontend was only grepped for hard-coded CO2 numbers (none found). The PFD, tour text, report and docs numbers were not audited."
+  ],
+  "questions": [
+   "After the rebuild, should NG draw be derived from the 100,000 Nm3/h H2 target, with INL's 34 MMSCFD kept as a validation reference only?",
+   "Which baseline is central once the own SMR reference exists: the engine-built one, or INL 9.21 retained as a reference?",
+   "Should the subsidy break-even use direct abatement (578 kt/y) or the system view that debits lost steam?"
+  ]
+ },
+ "a29222ceeb33a4a71": {
+  "summary": "Read-only audit of exporter, V&V, scripts, register and docs on branch feature/independent-abatement-subsidy (tree clean, no cargo run, nothing written to the repo). Results CSVs come from one command, are frozen by compare_results against committed results/, and are re-read by wasm tests and the site builder. The golden and screening tests encode the copied screening values and will fail by design once abatement is rebuilt from the plant's own stream. build_numbers, the derivations check and Tectonic are local steps that CI never runs. A new table, new parameters and new equations each touch a known list of hard-coded sites, given in items and hooks.",
+  "items": [
+   {
+    "id": "X1",
+    "where": "engine/cli/src/main.rs:30-83; engine/plant/src/export.rs:404-455",
+    "kind": "calculated",
+    "risk": "medium",
+    "finding": "`nush2 export --out DIR` runs vv::harness::run_all first, derives gate states from the GATE_ rows, and aborts when they differ from gates::RECORDED (main.rs:42, gates.rs:295). Then tables_with builds six plant tables and report::csv writes the seventh. Any result change that flips a gate needs a hand edit of RECORDED and a second export."
+   },
+   {
+    "id": "X2",
+    "where": "export.rs:517,1705,2809,2928,3154,3467; vv/src/report.rs:65",
+    "kind": "calculated",
+    "risk": "low",
+    "finding": "Headers: Final_Design_Basis 17 columns, Integrated_Mass_Balance 28, Integrated_Energy_Balance 15, Emissions_Ledger 13, Economic_Ledger 21, Sensitivity_Results 12, Validation_Results 16. The six plant tables end in `status`; Validation ends in an always-empty `commit`. Numbers print at six decimals (export.rs:352) and inputs shortest-exact."
+   },
+   {
+    "id": "X3",
+    "where": "export.rs:46-160,208-236; FINAL_DESIGN_DECISIONS.md:428-445; frontend/views.js:26-37",
+    "kind": "calculated",
+    "risk": "medium",
+    "finding": "Plant status words: input, anchored_port, gated_T05, gated_T01_T05, model_m4/m5/m6, flowsheet_m7, flowsheet_m8, level4_m8, not_run, not_converged. Validation uses pass, fail, reported, not_run plus data_use independent, calibration, same_dataset_disclosed. A table must end in `status` and be built on Headline and Anchored with equal line counts or mark() errors; the word anchored_port (algebraic port of INL cases) needs a new meaning once abatement is rebuilt."
+   },
+   {
+    "id": "X4",
+    "where": "engine/vv/data/engine_goldens.json, freeze_values.json, screening_checks.csv; vv/src/golden.rs:14; vv/tests/plant_goldens.rs:25-92",
+    "kind": "copied_result",
+    "risk": "high",
+    "finding": "Frozen outputs of the earlier screening calculation drive 21 SCREENING_ and 3 GOLD_ validation rows (GOLD_TOL 1e-9) and the cargo tests golden_*, screening_21_checks (len 21), headline_entry_values (66925, 120.8, 23.2, 179.0, 31.0, 578052), headline_cost_pair (137.7, 117.2, 113.1, 95.5, 209.9, 179.5) and sizing_walk. An independent abatement rebuild breaks all of them by design; they must become reported references, not pass gates."
+   },
+   {
+    "id": "X5",
+    "where": "results/Validation_Results.csv; plant_goldens.rs:136-150",
+    "kind": "validation_reference",
+    "risk": "low",
+    "finding": "650 rows: pass 325, reported 251, not_run 42, fail 32; data_use independent 360, same_dataset_disclosed 269, calibration 21. Literature rows may fail without failing cargo test, but only plant_rows must all pass (every_plant_row_passes, len 59)."
+   },
+   {
+    "id": "X6",
+    "where": "scripts/compare_results.py:24-59,111-114",
+    "kind": "calculated",
+    "risk": "high",
+    "finding": "Regression gate: regenerated target/results against committed results/, header and row count equal, text cells equal, numeric cells within max(one unit of the last printed digit, 1e-6 abs, 1e-9 rel); `commit` column ignored. Any changed cell or status word, including a literature row flipping pass to fail, fails until results/ is re-exported and committed. A new CSV missing from results/ fails as `missing`."
+   },
+   {
+    "id": "X7",
+    "where": ".github/workflows/ci.yml:35-41; site.yml:38-61",
+    "kind": "calculated",
+    "risk": "medium",
+    "finding": "CI runs check_clean, fmt, clippy, cargo test --workspace (dev), then release tests, wasm build and check, export plus compare_results, build_site, check_site (plain and --prove) and selftest (normal and reduced motion). It never runs build_numbers.py, derivations_tools.py check or Tectonic."
+   },
+   {
+    "id": "X8",
+    "where": "vv/src/harness.rs:27,110-140; export.rs:1102-1114; Economic_Ledger.csv",
+    "kind": "calculated",
+    "risk": "medium",
+    "finding": "Method agreement gate LAC_DCF_VS_L5 uses LAC_GAP_LIMIT 0.10 on 12 rows (FOAK and BOAK, 25 and 60 y, n 0.31/0.60/1.00, rated 210 MWth). The two tenth-of-a-kind routes are not gated. Observed max |gap| in the ledger is 0.47 percent for all four stages, so the limit is loose and the methods share cost items."
+   },
+   {
+    "id": "X9",
+    "where": "export.rs:3153-3200,3364; economics.rs:11-26; m9_economics.rs:315",
+    "kind": "calculated",
+    "risk": "medium",
+    "finding": "Economic_Ledger holds stages FOAK, BOAK, 10OAK_P46 (from BOAK) and 10OAK_P47 (from FOAK) with lives 25, 40 and 60, but the full stage and life grid exists only for run B_REC_F; other runs get FOAK/BOAK, 25/60. The 40 y lives add 552 rows and the 72-member dcf_family is asserted as 4*3*3*2."
+   },
+   {
+    "id": "X10",
+    "where": "scripts/build_site.py:62,326-390",
+    "kind": "calculated",
+    "risk": "medium",
+    "finding": "COST_ID `[A-Z0-9]+` cannot match `10OAK_P46`, and Final_Design_Basis only holds FOAK and BOAK cost ids (60 ids), so the tenth-of-a-kind routes never reach data/reference.json or the site cost table."
+   },
+   {
+    "id": "X11",
+    "where": "engine/plant/src/sens.rs:1494-1575; build_numbers.py:475-570; derivations_tools.py:972-997; L_economics.tex:388",
+    "kind": "calculated",
+    "risk": "high",
+    "finding": "A co-funding model already exists: cofunding_rows solves CostQuery.rx_mult (economics.rs:59) to TARGET_MATURE_COST for BOAK L5 and DCF at 25 and 60 y. It has no 0/25/50/75 grid, no grant timing and no separate IDC, and its COFUNDING tokens and checks are hard-wired into build_numbers and derivations values (KeyError if the sweep changes)."
+   },
+   {
+    "id": "X12",
+    "where": "engine/data/parameters.toml:2449,2460; scripts/check_site.py:80-92",
+    "kind": "process_assumption",
+    "risk": "medium",
+    "finding": "TARGET_COST 100 and TARGET_MATURE_COST 96 are user_decision inputs. check_site WITHDRAWN bans `S$96`, 106.5, 99.4, 43.5 MMSCFD, 0.585 Mt, 66,927 and S$ 99.0/100.2/111.1/112.4 in site files, so a printed break-even near 100 or the 96 target can trip the site guard."
+   },
+   {
+    "id": "X13",
+    "where": "math/eq_register.csv (299 rows, L.37 at line 300); scripts/derivations_tools.py:1304,1818,1997,50",
+    "kind": "calculated",
+    "risk": "medium",
+    "finding": "Chain: register row (id, tier, engine_fn, test_id, validation) to card `\\begin{eqcard}{L.nn}` with \\Impl and \\Valid{CODE}{eq_l_nn}, to engine `/// eq: L.nn` tag, to test fn `eq_l_nn*`. TAG_LINE, parse_cards and the default scope accept only sections A-L, and `register` needs a private outline not in the repo, so new rows are appended by hand as L.38 onward and `links` then fills engine_fn."
+   },
+   {
+    "id": "X14",
+    "where": "scripts/derivations_tools.py:1996-2146",
+    "kind": "calculated",
+    "risk": "medium",
+    "finding": "`check` passes today (299 cards, 0 problems) and rejects hand-typed result values, the words validated and verified, em dashes and local paths. `check --pass2` is red at baseline: 180 cards have no eq_x_nn test, with 101 more not in a log; each new card needs a named test or it joins the gap."
+   },
+   {
+    "id": "X15",
+    "where": "scripts/build_numbers.py:1-45,54-71,189-209,338-395,427-455,850-917",
+    "kind": "calculated",
+    "risk": "high",
+    "finding": "numbers.json is a pure function of the seven CSVs. Unlisted sensitivity metrics raise BuildError (SENS_UNITS), a token defined twice with a different value raises, ledger_key (338) has no subsidy dimension so subsidized and plain rows would collide, and IDENTITIES pins cross-file equalities. build/ is git-ignored, so --verify and numbers_tokens.csv must be regenerated locally."
+   },
+   {
+    "id": "X16",
+    "where": "README.md:112-116; derivations_tools.py:1-24; math/NUSH2_First_Principles_Derivations.tex:3-64",
+    "kind": "calculated",
+    "risk": "medium",
+    "finding": "Derivations order: build_numbers, links, values (math/generated/values.tex, 708 lines), frame (00_reference_frame.tex), `cd math && tectonic ...tex`, then check with --log and --aux. Tectonic is not on PATH on this machine, so the committed PDF cannot be rebuilt or checked here."
+   },
+   {
+    "id": "X17",
+    "where": "cli/main.rs:57-71; compare_results.py:24; build_numbers.py:54; build_site.py:46; frontend/views.js:48; plant/tests/no_internal_pointers.rs:141",
+    "kind": "calculated",
+    "risk": "high",
+    "finding": "The seven-file list is hard-coded in each of these, and no_internal_pointers asserts exactly 7 CSVs in results/. An eighth scenario-matrix table breaks that test until all sites, the README and FINAL_DESIGN_DECISIONS section 8 are updated."
+   },
+   {
+    "id": "X18",
+    "where": "engine/wasm/src/tests.rs:347,117,895; scripts/build_site.py:77-130; frontend/selftest.js",
+    "kind": "calculated",
+    "risk": "medium",
+    "finding": "wasm tests read committed results/*.csv, so a stale CSV fails cargo test. Every registry control must move a KPI, and selftest checks browser KPIs against KPI_CELLS (headline_parity, case_a_parity, mature_scenario_parity, target_verdicts_agree, tour_* and pfd_* checks, 63 add() calls)."
+   },
+   {
+    "id": "X19",
+    "where": "engine/**/*.rs; README.md:90; site.yml:41",
+    "kind": "calculated",
+    "risk": "low",
+    "finding": "368 #[test] attributes (units 119, plant 88, props 56, mea 55, vv 29, wasm 19, numerics 2, cli 0), equal to the 368 passed recorded in values.tex:706 (109 named eq_x_nn). Command: `cargo test --workspace` (dev) or `cargo test --workspace --release 2>&1 | tee target/test.log` as in CI."
+   },
+   {
+    "id": "X20",
+    "where": "engine/data/parameters.toml; vv/src/harness.rs:325-343; wasm/src/registry.rs:265; plant/src/params.rs:46-54; plant/tests/no_internal_pointers.rs:7-45",
+    "kind": "calculated",
+    "risk": "medium",
+    "finding": "A new parameter needs class, rigour, source and locator, must be read by the model or PARAMS_COMPLETE and params_complete fail, and appears automatically as an `input` row. It needs a SPECS control that moves a KPI (or a FIXED/DROPPED entry) and must avoid the 35 working-note patterns in no_internal_pointers."
+   },
+   {
+    "id": "X21",
+    "where": "docs/VALIDATION_MATRIX.md:9-12; FINAL_DESIGN_DECISIONS.md:365-377,400-407",
+    "kind": "process_assumption",
+    "risk": "medium",
+    "finding": "Rules: tolerances are frozen and a later change adds a new row with its reason; failed rows stay failed. no_stale_numbers is documented as a guard but no code implements it, and no script in the repo fills README.md, the design record tables or report/ and presentation/ (only four published deliverables, built by local builders)."
+   }
+  ],
+  "hooks": [
+   {
+    "purpose": "New scenario-matrix table (FOAK, BOAK, two 10OAK routes, 25 and 60 y, subsidy 0/25/50/75, grant timing)",
+    "where": "export.rs struct Tables (:311), tables_with (:410), a new fn beside economic_ledger (:3153); CLI write list main.rs:57-71",
+    "note": "End with `status`; build on Headline and Anchored or skip mark(); add to X17 file lists."
+   },
+   {
+    "purpose": "Grant timing, IDC treated separately, eligible-item set",
+    "where": "plant/src/dcf.rs Model::dcf (eq L.34-37) and economics.rs CostQuery (:46, rx_mult :59); export.rs dcf_grid (:1102) and dcf_family (:3364)",
+    "note": "Ledger path in sens.rs/economics.rs must take the same inputs so L0-L5 and DCF stay independent."
+   },
+   {
+    "purpose": "Continuous break-even subsidy for LAC below S$100/t",
+    "where": "plant/src/sens.rs cofunding_rows (:1500), solve_for, TARGET_COST (parameters.toml:2449)",
+    "note": "Replace the 96 target logic; update SENS_UNITS (build_numbers.py:431) and derivations values (:972-997)."
+   },
+   {
+    "purpose": "Two-method gate across routes and subsidies",
+    "where": "vv/src/harness.rs dcf_rows (:110), LAC_GAP_LIMIT (:27); plant_goldens.rs eq_l_37 (:98, len 12) and every_plant_row_passes (:138, len 59)",
+    "note": "Add TOAK and subsidy rows as new ids; update the asserted counts and the L.37 text 'twelve grid rows' (L_economics.tex:477)."
+   },
+   {
+    "purpose": "Independent abatement from the plant stream",
+    "where": "export.rs results_block (:603), emissions_run (:2965); vv/src/harness.rs plant_rows (:164), golden.rs, SCREENING_ and GOLD_ rows",
+    "note": "Demote screening rows to reported references; rewrite plant_goldens.rs:25-92 and the headline numbers."
+   },
+   {
+    "purpose": "New equations and tests",
+    "where": "eq_register.csv after L.37; L_economics.tex after the L.37 card; engine `/// eq: L.38`; engine/plant/tests/m9_economics.rs `eq_l_38_*`; derivations_tools.py VALIDATION_LINKS (:1127), values_i_to_l (:717)",
+    "note": "Then run links, values, frame, Tectonic, check."
+   },
+   {
+    "purpose": "Number map and site",
+    "where": "build_numbers.py CSV_COLUMNS (:54), add_* funcs, IDENTITIES (:189), run_checks (:850); build_site.py RESULTS (:46), COST_ID (:62), KPI_CELLS (:77), reference() (:326); frontend/views.js CSV_FILES (:48), ROW_STATUS (:26)",
+    "note": "Fix COST_ID so 10OAK ids and subsidy suffixes parse."
+   },
+   {
+    "purpose": "Gate files and records",
+    "where": "compare_results.py EXPECTED (:24); gates.rs RECORDED (:295); no_internal_pointers.rs:141; FINAL_DESIGN_DECISIONS.md section 8 (:409-550); VALIDATION_MATRIX.md rules (:9-12)",
+    "note": "Append new validation rows, do not edit frozen ones."
+   }
+  ],
+  "gaps": [
+   "No cargo command was run. The 368 test count is a static #[test] count; whether results/ matches the engine at HEAD 8750b09 was not verified (values.tex records tests at commit 0405ff0).",
+   "Regenerate, never hand edit: results/*.csv (nush2 export), build/numbers.json and numbers_tokens.csv (build_numbers.py), math/generated/values.tex, math/sections/00_reference_frame.tex, the eq_register.csv engine_fn column (links), math/NUSH2_First_Principles_Derivations.pdf (Tectonic), _site/. gates.rs RECORDED is a code edit dictated by an export.",
+   "Gates that fail if results change: compare_results; golden_*, screening_21_checks, headline_*, sizing_walk, wasm default_solve_matches_the_published_results; selftest parity checks; check_site only for withdrawn figures.",
+   "Tectonic is absent on this machine, and the report, presentation, README and design-record builders are not in the repo, so they cannot be checked here.",
+   "Only the WITHDRAWN rule table of check_site.py was decoded; TEXT_RULES, POINTER and the frontend, wasm solve, PFD and tour code were not read beyond check names and the KPI lists."
+  ],
+  "questions": [
+   "Should the 40 y life be dropped from Economic_Ledger (552 rows) and the tests, since the redevelopment names only 25 and 60 y?",
+   "Should the scenario matrix be an eighth CSV (touches every X17 site) or extra rows and columns in Economic_Ledger and Sensitivity_Results?",
+   "Do the screening and golden checks become reported validation references, or are they retired?",
+   "Where do the report and deck builders live, and who regenerates report/ and presentation/ after the numbers change?",
+   "What margin defines LAC strictly below S$100/t, and does it replace the S$96 mature target?"
+  ]
+ },
+ "a07b8083510654136": {
+  "summary": "The browser simulator is a thin shell over one wasm reply. A registry call builds the controls, each change triggers a full solve, and every view reads only state.lastOk. Adding co-funding is mostly additive: new SPECS rows, a new block in cost_section, one new view. The real hazards are the self test, the CSV-to-reference build chain, the content guard, and the abatement labels the tour and charts hard-code. A 4 x 4 x 2 matrix is cheap next to the 109 cost_point calls a full solve already makes. A bisection-based break-even would not be. Nothing was built or run; timings below are from the README or inferred from code.",
+  "items": [
+   {
+    "id": "flow",
+    "where": "frontend/app.js:202,262,280; frontend/worker.js",
+    "finding": "The registry (cmd 1) loads once and sets the defaults. Each input change schedules a solve after 200 ms. rpc() posts {schema:1, inputs, kpi_only:false} to one worker, with one solve in flight, latest wins, and a 10 s timeout that restarts the worker. The reply JSON is parsed on the main thread into state.lastOk, and all views read that object only.",
+    "kind": "not_applicable",
+    "risk": "none"
+   },
+   {
+    "id": "registry",
+    "where": "engine/wasm/src/registry.rs:265 (SPECS), :14 (Target), :36 (Kind); frontend/controls.js:229",
+    "finding": "There are 22 controls: 8 enums (basis, tail_gas, heat_basis, stage, life_y, n, charged, occ_level) and 14 numbers. Only Number and Enum kinds exist, so a listed set of eligible items needs a named-set enum or a new Kind. controls.js builds groups, sliders, range text, flags, and the sweep and tornado lists from the registry alone, so a new SPECS row needs no JS.",
+    "kind": "not_applicable",
+    "risk": "none"
+   },
+   {
+    "id": "exposed_inputs",
+    "where": "registry.rs:149-513; engine/data/parameters.toml:2427",
+    "finding": "Maturity is the stage enum: BOAK (default), FOAK, 10OAK_P46 (from BOAK), 10OAK_P47 (from FOAK). Life is 25 (default), 40 or 60 y. Discount defaults to 0.08 (hard 0.03 to 0.12). The others are n (1.0, 0.6, 0.31), charged (rating or required), occ_level, gas_s_gj, ts_s_t, capture_fom and availability. CONSTRUCTION_YEARS (5.5 y) is not exposed and no grant input exists.",
+    "kind": "process_assumption",
+    "risk": "low"
+   },
+   {
+    "id": "reply",
+    "where": "engine/wasm/src/solve.rs:2253,2093; engine/wasm/README.md",
+    "finding": "A solve reply holds schema, engine, status, inputs, violations, flags, messages, kpi (32 ids, the first 24 required), kpi_class, feasibility, targets and engine_fields_missing. A full solve adds units (20), profiles, balances and cost{selected, ledger, ladder, grid, headline}, with streams null. Extra fields are safe. SCHEMA must stay 1 because other values are refused.",
+    "kind": "not_applicable",
+    "risk": "none"
+   },
+   {
+    "id": "cost_load",
+    "where": "solve.rs:2093-2206,643,720; plant/src/lib.rs:237,169",
+    "finding": "A full solve already calls cost_point about 109 times: 2 run() calls with 12 each, 12 in target_cases, 1 selected, and 72 in cost_section (2 charged x 4 stages x 3 lives x 3 n). A kpi_only solve makes about 37. cost.headline (72 rows) and cost.grid (432 rows) already hold L5 and DCF for all four maturity routes at every life.",
+    "kind": "calculated",
+    "risk": "low"
+   },
+   {
+    "id": "cost_estimate",
+    "where": "plant/src/dcf.rs:182-260; plant/src/economics.rs:244",
+    "finding": "A 4 x 4 x 2 matrix is 32 cost_points, and each returns L5 and DCF together. A DCF cell builds about 24 cash lines, roughly 14 of them annual vectors of 25 or 60 entries, using one powi per flow, and calls cost_items three times. Estimate: tens of microseconds per cell and 1 to a few ms for 32, against a measured 30 to 42 ms full solve. The cost sits in the DCF year vectors. Bisection for the break-even would add about 640 cost_points, six times today's load.",
+    "kind": "calculated",
+    "risk": "medium"
+   },
+   {
+    "id": "views",
+    "where": "frontend/views.js:1524-1528,565,1120; frontend/charts.js:171",
+    "finding": "render() runs on every reply and calls the route hook registered by registerRoute. Each mount is rebuilt with replaceChildren, using section(), guard() and frame() plus one chart function. Every chart gets a Show table toggle, roving arrow-key focus and focus tooltips. dumbbell suits L5 against DCF, lineChart with ref suits LAC against subsidy share with the S$100/t line, and barChart suits break-even.",
+    "kind": "not_applicable",
+    "risk": "none"
+   },
+   {
+    "id": "table_source",
+    "where": "frontend/views.js:255,267; scripts/build_site.py:62,379",
+    "finding": "The cost table columns come from data/reference.json cost_headline, built from results CSV ids, and not from the reply. COST_ID uses [A-Z0-9]+ and cannot match 10OAK_P46, so the tenth-of-a-kind routes are silently absent from every table and from the headline parity check, although the reply carries them. A new comparison view should read res.cost directly.",
+    "kind": "calculated",
+    "risk": "medium"
+   },
+   {
+    "id": "pfd",
+    "where": "frontend/pfd.js:340; frontend/panels.js:265; frontend/index.html",
+    "finding": "The drawing needs res.units[id] for 20 [data-unit] groups, each with 7 filled sections, plus registry.units status. It also uses 9 data-bind paths (kpi.rating_mwth, q_process_mwth, h2_product_t_y, co2_captured_t_y, units.htgr/smr/power values, inputs.w_mea) and data/streams.json from the FS_B_REC_F flowsheet. Co-funding adds none of these, so the drawing is safe unless unit item ids change.",
+    "kind": "not_applicable",
+    "risk": "low"
+   },
+   {
+    "id": "tour",
+    "where": "frontend/tour.js:92,465-498,1257",
+    "finding": "There are 13 steps and about 60 reply paths. The closing step reads kpi.abatement_t_y, abatement_cho_t_y, abatement_ieaghg_t_y, co2_atm_t_y, co2_captured_t_y, target_abatement_t_y, balances.carbon.baseline_t_y and targets.abatement.{met,at_or_above_target,feasible}. tourAudit fails any path that is neither finite nor a null listed in engine_fields_missing. The co2 step needs units.co2_storage.results.ts_cost (the TS ledger line).",
+    "kind": "not_applicable",
+    "risk": "high"
+   },
+   {
+    "id": "copied_abatement",
+    "where": "registry.rs:520,808-812; solve.rs:2042; views.js:385,415; tour.js:476-479",
+    "finding": "The headline abatement is labelled INL baseline everywhere, and balances.carbon.baseline_t_y is the unabated SMR baseline, not a stream of this plant. The Cho and IEAGHG variants are also bounds from the literature. Rebuilding from the carbon balance means changing labels and prose in five places. The kpi ids should stay so the tour audit and the required-KPI block keep working.",
+    "kind": "copied_result",
+    "risk": "high"
+   },
+   {
+    "id": "selftest",
+    "where": "frontend/selftest.js:109-1112; scripts/selftest.py; .github/workflows/site.yml:59-61",
+    "finding": "About 34 checks run in headless Chrome: wasm parity against data/reference.json (rel 1e-6), Case A parity, MATURE_60Y parity, target_verdicts_agree, panels, charts_have_marks, visible_text_rules and 12 tour checks. CI runs desktop and --reduced-motion; the --mobile run is manual. The solve budget is 3000 ms in the test and 500 ms recorded for the first solve.",
+    "kind": "validation_reference",
+    "risk": "medium"
+   },
+   {
+    "id": "controls_inert",
+    "where": "frontend/selftest.js:216-247; engine/wasm/src/tests.rs:895",
+    "finding": "Each control is probed alone from defaults and must move one of the 24 required KPIs (the 24th is cost_s_per_t). Eligible-items and grant-timing controls are inert at 0 percent subsidy, and timing may only move DCF, which is not required. Both checks fail unless they probe with a nonzero grant or the grant folds into cost_s_per_t.",
+    "kind": "not_applicable",
+    "risk": "high"
+   },
+   {
+    "id": "build_chain",
+    "where": "scripts/build_site.py:41,84-111,252; scripts/compare_results.py:22; frontend/views.js:48",
+    "finding": "KPI_CELLS maps KPI ids to RES_* and cost row ids. RESULTS, EXPECTED and CSV_FILES each list the seven CSVs. scenario() raises BuildError if the MATURE_60Y rows or their note text are removed, which fails the whole site build. Any exporter renaming must be applied in all of these places.",
+    "kind": "validation_reference",
+    "risk": "high"
+   },
+   {
+    "id": "content_guard",
+    "where": "scripts/check_site.py:57-100; frontend/selftest.js:488-497",
+    "finding": "The guard scans every file in _site, including data/*.json and csv, for withdrawn tokens: S$96, 106.5, 99.4, S$99.0, S$100.2, S$111.1, S$112.4, the word Achieved, and the em dash. One-decimal LAC or break-even values near 100 can hit these by chance. Use Met, not Achieved, and avoid SMR before it is defined.",
+    "kind": "not_applicable",
+    "risk": "medium"
+   },
+   {
+    "id": "target_semantics",
+    "where": "solve.rs:679,864,688,901; frontend/app.js:404; frontend/views.js:317",
+    "finding": "The cost verdict uses <= against 100, and the strings and keys say at or below (at_or_below_target). The new goal is strictly below. Change the Rust comparisons and the text together. The self test compares .met flags only, so it will not catch a mismatch in wording.",
+    "kind": "process_assumption",
+    "risk": "medium"
+   },
+   {
+    "id": "a11y_motion",
+    "where": "frontend/style.css:4,41; tour.css:277; tour.js:24; views.js:1136,538; views.css:266",
+    "finding": "Accessibility: skip link, role=status, focus-visible outlines, table alternatives, roving focus, and light mode only. The tour and PFD honour prefers-reduced-motion. The Results contents links use smooth scrolling unconditionally, and .viz-mark has a 120 ms transition outside the query. The dashboard mount is rebuilt on each solve and only the scenario radios restore focus, so new interactive controls belong in Parameters.",
+    "kind": "not_applicable",
+    "risk": "medium"
+   },
+   {
+    "id": "export_print",
+    "where": "frontend/views.js:1212,1266,1470",
+    "finding": "resultCsv flattens kpi, units, balances, cost.ledger, ladder, headline and targets by explicit loops. A new reply block exports nothing until a loop is added. inputsJson copies registry parameters automatically. buildPrint prints the costTable, a MATURE_60Y line and a hard-coded BOAK, 25 y description.",
+    "kind": "not_applicable",
+    "risk": "low"
+   }
+  ],
+  "hooks": [
+   {
+    "purpose": "Add co-funding inputs: share 0, 25, 50, 75 percent plus a continuous value, eligible set, payment timing, construction years",
+    "where": "engine/wasm/src/registry.rs SPECS (:265) and Target (:14); solve.rs Resolved (:180) and resolve() enum match (:299-340)",
+    "note": "Group 'Co-funding'. Enums are strings. A listed set of eligible items is a named-set enum. Unresponsive controls go in DROPPED (:517)."
+   },
+   {
+    "purpose": "Carry the grant through both methods on the same query",
+    "where": "plant/src/economics.rs CostQuery (:46), cost_items (:244, reactor_capital cap_rx); plant/src/dcf.rs REACTOR_CAP uniform_spend (:232); plant/src/lib.rs cost_point (:169)",
+    "note": "Keep IDC separate (ledger IDC line). Keep the default at 0 so headline parity holds."
+   },
+   {
+    "purpose": "Matrix and break-even output",
+    "where": "engine/wasm/src/solve.rs cost_section (:2093), next to grid and headline",
+    "note": "Add cost.subsidy rows {stage, life_y, share, ac_l5, lac_dcf, breakeven_l5, breakeven_dcf}. Compute on full solves only, never in the kpi_only or sweep path. Prefer an affine solve with one residual check over bisection."
+   },
+   {
+    "purpose": "Strict-below verdict and subsidised cases",
+    "where": "solve.rs target_cases (:643), evaluate (:864), and the targets.cost block (:880)",
+    "note": "Replace <= with < and update the 'basis' and reason strings."
+   },
+   {
+    "purpose": "New KPIs and tiles",
+    "where": "registry.rs KPIS (:769) after cost_s_per_t; kpi_class (solve.rs:707); app.js STRIP (:8); controls.js STICKY (:10)",
+    "note": "Append after index 24 unless REQUIRED_KPIS (:849) is changed deliberately, and update tests.rs REQUIRED."
+   },
+   {
+    "purpose": "Scenario comparison view",
+    "where": "frontend/views.js: new resSubsidy(mount, st, res), a toc entry (:1131), guard() call (:1153), and a dashboard summary after dashCost (:576)",
+    "note": "Use charts.js frame with a unique key, then dumbbell and lineChart with ref, and always the table view. For a separate page add ROUTES in app.js:5 and selftest.js:15, the nav and section in index.html, and registerRoute (views.js:1524)."
+   },
+   {
+    "purpose": "Parity and reference data",
+    "where": "scripts/build_site.py reference() (:326), KPI_CELLS (:84), COST_ID (:62); selftest.js after check 6 (:159-188)",
+    "note": "Extend COST_ID to accept 10OAK_P46. Add subsidy_parity and subsidy_monotone checks. Replace or drop scenario() together with the exporter's MATURE_60Y rows."
+   },
+   {
+    "purpose": "Fix the control probe",
+    "where": "frontend/selftest.js:216-247 and engine/wasm/src/tests.rs:895",
+    "note": "Probe eligible-set and timing with share greater than 0."
+   },
+   {
+    "purpose": "Export and print",
+    "where": "views.js resultCsv (:1212), buildPrint (:1470); new CSV also in build_site.py RESULTS, compare_results.py EXPECTED, views.js CSV_FILES (:48)",
+    "note": ""
+   },
+   {
+    "purpose": "Abatement relabel without breaking the tour",
+    "where": "tour.js :465-498 (nums, text, abatementVerdict); registry.rs :808-812; views.js :385,415",
+    "note": "Keep kpi ids. Run tourAudit and tour_follows_controls after the change."
+   }
+  ],
+  "gaps": [
+   "No wasm module is built (no _site, no target), so the real wasm size against the 3 MB cap and the actual solve timings were not measured. The 30 to 42 ms figure is from engine/wasm/README.md, and the per-cell DCF estimate is inferred from operation counts. native_solve_time_is_recorded (tests.rs:968) would give the full against kpi_only split.",
+   "How emissions.a_atm and emissions.baseline are derived (plant crate) was not read, so the carbon-balance rebuild itself is not audited here.",
+   "selftest.js lines 440-475 and 530-1112 (tour checks) were skimmed by check name, not read line by line. views.css, print.css and units.json were only sampled.",
+   "No browser run was done, so focus loss, the mobile layout and contrast were assessed from code only.",
+   "results/*.csv rows for 10OAK exist only in Economic_Ledger and Sensitivity_Results, and their id format for Final_Design_Basis was not confirmed."
+  ],
+  "questions": [
+   "Is the matrix part of every full solve reply, or should it be a new on-demand command 4, given that sweeps and the live tornado reuse kpi_only solves?",
+   "Should life 40 stay as a control while the matrix uses 25 and 60 y only?",
+   "Is the MATURE_60Y scenario (gas-price stacking) retired by the subsidy model? It is wired into build_site.py, the dashboard radios and two self-test checks.",
+   "Should the strictly-below test apply to both L5 and DCF, as the current rule does, or to one headline method?"
+  ]
+ }
+}

@@ -1,0 +1,1683 @@
+
+
+=== PDF page 1 of 28 ===
+Separation Science and Technology
+ISSN: 0149-6395 (Print) 1520-5754 (Online) Journal homepage: www.tandfonline.com/journals/lsst20
+Adsorption of Oﬀ‐Gases from Steam Methane
+Reforming (H2, CO2, CH4, CO and N2) on Activated
+Carbon
+Carlos A. Grande, Filipe V. S. Lopes, Ana M. Ribeiro, José M. Loureiro & Alírio
+E. Rodrigues
+To cite this article: Carlos A. Grande, Filipe V. S. Lopes, Ana M. Ribeiro, José M. Loureiro & Alírio
+E. Rodrigues (2008) Adsorption of Off‐Gases from Steam Methane Reforming (H2, CO2, CH4,
+CO and N2) on Activated Carbon, Separation Science and Technology, 43:6, 1338-1364, DOI:
+10.1080/01496390801940952
+To link to this article:  https://doi.org/10.1080/01496390801940952
+Published online: 09 Apr 2008.
+Submit your article to this journal 
+Article views: 3624
+View related articles 
+Citing articles: 18 View citing articles 
+Full Terms & Conditions of access and use can be found at
+https://www.tandfonline.com/action/journalInformation?journalCode=lsst20
+
+
+=== PDF page 2 of 28 ===
+Adsorption of Off-Gases from Steam
+Methane Reforming (H2, CO2, CH4, CO and
+N2) on Activated Carbon
+Carlos A. Grande, Filipe V. S. Lopes, Ana M. Ribeiro,
+Jose´ M. Loureiro, and Alı´rio E. Rodrigues
+Faculty of Engineering, Laboratory of Separation and Reaction
+Engineering (LSRE), Associate Laboratory, Department of Chemical
+Engineering, University of Porto, Porto, Portugal
+Abstract: Hydrogen is the energy carrier of the future and could be employed in
+stationary sources for energy production. Commercial sources of hydrogen are
+actually operating employing the steam reforming of hydrocarbons, normally
+methane. Separation of hydrogen from other gases is performed by Pressure Swing
+Adsorption (PSA) units where recovery of high-purity hydrogen does not exceed 80%.
+In this work we report adsorption equilibrium and kinetics of ﬁve pure gases present
+in off-gases from steam reforming of methane for hydrogen production (H2, CO2, CH4,
+CO and N2). Adsorption equilibrium data were collected in activated carbon at 303,
+323, and 343 K between 0-22 bar and was ﬁtted to a Virial isotherm model. Carbon
+dioxide is the most adsorbed gas followed by methane, carbon monoxide, nitrogen,
+and hydrogen. This adsorbent is suitable for selective removal of CO2 and CH4.
+Diffusion of all the gases studied was controlled by micropore resistances. Binary
+(H2-CO2) and ternary (H2-CO2-CH4) breakthrough curves are also reported to
+describe the behavior of the mixtures in a ﬁxed-bed column. With the data reported
+it is possible to completely design a PSA unit for hydrogen puriﬁcation from steam
+reforming natural gas in a wide range of pressures.
+Keywords: Hydrogen, carbon dioxide, pressure swing adsorption, adsorption equili-
+brium, multicomponent breakthrough curves
+Received 26 June 2007, Accepted 27 December 2007
+Address correspondence to Alı´rio E. Rodrigues, Faculty of Engineering, Laboratory
+of Separation and Reaction Engineering (LSRE), Associate Laboratory, Department of
+Chemical Engineering, University of Porto, Porto, Portugal. Tel.: þ 351 22 508 1671;
+Fax: þ351 22 508 1674; E-mail: arodrig@fe.up.pt
+Separation Science and Technology, 43: 1338–1364, 2008
+Copyright # Taylor & Francis Group, LLC
+ISSN 0149-6395 print/1520-5754 online
+DOI: 10.1080/01496390801940952
+1338
+
+
+=== PDF page 3 of 28 ===
+INTRODUCTION
+To avoid unknown consequences in global weather, there is a general
+consensus that the emission of anthropogenic greenhouse gases to atmosphere
+should be reduced signiﬁcantly. This environmental pressure is translated to
+economic penalties to countries included in the Annex B of the Kyoto
+protocol. One of the alternatives to reduce GHG emissions is to capture
+CO2 in the source, namely power plants. The carbon capture process is
+strongly dependent on the power station technology. Actually, three
+different technologies for power generation are being considered (1): post-
+combustion, pre-combustion, and oxyfuel. The CO2 captured should then be
+permanently sequestered (2).
+The pre-combustion process for capture of CO2 consists of a separation
+technique located after a partial combustion of fossil fuels for production of
+hydrogen. The important goal in this process is a carbon dioxide capture
+technique from steam methane reformers (SMR) off-gas. Production of
+hydrogen in centralized units will allow a transition phase where fossil-
+fuels can be employed for its generation and the produced CO2 can be
+locally concentrated for permanent sequestration. Another interesting appli-
+cation of hydrogen is in mobile sources, replacing fossil-fuels where its com-
+bustion release water instead of other greenhouse gases that are actually
+responsible for climate change. If the process to obtain hydrogen is also
+able to concentrate the CO2 formed, storage or other alternatives may be
+employed to avoid its emissions to atmosphere reducing the impact of the
+process to the environment. The development of such a process is the
+main task of the European Research Project HY2SEPS (Hybrid Hydrogen
+Carbon Dioxide Separation Processes), where Pressure Swing Adsorption
+(PSA) technology is combined with a membrane process to achieve this
+goal (3).
+The current technology to separate hydrogen from other gases coming
+from SMR off-gas is PSA (4–9). The gases involved in the PSA unit are:
+hydrogen, carbon dioxide, carbon monoxide, methane and water. If the
+methane employed in the reforming contains nitrogen, this gas will also
+be present in the separation. The PSA unit normally consists of a multi-
+column set up of adsorbers (10): an initial layer removes water, carbon
+dioxide and methane while a second layer of a zeolite removes other com-
+ponents until reaching less than 10 ppm of CO in the product. To increase
+the hydrogen recovery, complex scheduling of the columns is required
+and normally more than eight columns are employed. There is a great
+pressure to increase hydrogen recovery and reduce the unit capital cost,
+indicating that research in both new materials and in the separation
+process is required. Moreover, the CO2-rich stream obtained cannot be
+used for sequestration since it contains signiﬁcant amounts of H2 and
+CH4, that in addition to the required special handling, have also signiﬁcant
+value as fuels.
+Adsorption of Off-Gases from Steam Methane
+1339
+
+
+=== PDF page 4 of 28 ===
+In this work we study the fundamental properties of the different gases
+and in multicomponent mixtures in a commercial sample of activated
+carbon to be employed in PSA units to remove contaminants from SMR
+off-gas, namely CO2, CH4, and CO. We have measured adsorption equili-
+brium and kinetics of all the gases comprising the off-gas SMR mixture in
+dry basis: hydrogen, carbon dioxide, methane, carbon monoxide and
+nitrogen. Note that the data presented in this work has no water, thus this
+component should be removed in a previous step to avoid preferential adsorp-
+tion in the adsorbent. The conditions of the measurements comprise tempera-
+ture range between 303–343 K and a wide range of pressures covering 0–22
+bar for the main components (H2 and CO2). Binary breakthrough experiments
+of H2/CO2 mixtures and ternary breakthrough experiments of H2/CO2/CH4
+mixtures are also presented. The adsorption equilibrium data was analyzed
+employing a Virial isotherm that describes the behavior of the multicompo-
+nent mixture based on the parameters ﬁtted to pure component data.
+EXPERIMENTAL
+Adsorption Equilibrium
+Adsorption equilibrium of pure gases (H2, CO2, CH4, CO, and N2) was
+measured in a magnetic suspension microbalance (Rubotherm, Germany)
+operated in closed system. Two Lucas Schaevitz pressure transducers were
+used to measure the pressure inside the adsorption chamber: one from
+0–1 bar and other from 0–250 bar to acquire data with good accuracy at
+low and high-pressures, respectively. The activation of the activated carbon
+sample was carried out under vacuum (,1027 bar) at 423 K overnight. The
+heating rate to reach this temperature was 1 K/min.
+Adsorption equilibrium isotherms were measured at 303, 323, and 343 K.
+Adsorption and desorption measurements were performed and all the
+isotherms reported were reversible. The value obtained from experimental
+adsorption measurements corresponds to the excess adsorbed phase concen-
+tration. Correction of buoyancy has been taken into account to report the
+absolute amount adsorbed. The buoyancy effect becomes important when
+pressure increases, i.e. when the gas density becomes closer to the density
+of the adsorbed phase (11). As the density of the adsorbed phase cannot be
+measured directly, the absolute amount adsorbed cannot be obtained exper-
+imentally and many approximate methods to calculate it from the excess
+adsorption were published (11–13). In order to take into account the effects
+of buoyancy in all the experimental data measured in this work, we have
+employed the assumption that the density of the adsorbed phase is approxi-
+mated with the density of the liquid at its boiling point at 1 atm (13).
+Employing this equation, the correction of the buoyancy was performed
+C. A. Grande et al.
+1340
+
+
+=== PDF page 5 of 28 ===
+according to the following Equation (14):
+q ¼ Dm þ rg Vs þ Vc
+ð
+Þ
+msMW
+r‘
+r‘  rg
+ð1Þ
+where q is absolute adsorbed phase concentration, (Dm) is the difference of
+weight between one measurement and the previous one, rg is the density
+of the gas phase, r‘ is the density of the adsorbed phase, Vs is the volume of
+the solid adsorbent and Vc is the volume of the cell where the adsorbent is
+located, ms is the mass of adsorbent connected to the microbalance and MW is
+the molecular weight of the gas. In order to determine the volumes that contrib-
+ute to the buoyancy effect (Vs þ Vc), a calibration with helium was performed,
+under the assumption that this gas is not adsorbed (mads ¼ Vads ¼ 0). A constant
+value for liquid phase density (boiling point at 1 atm of pressure), was employed
+for all the temperatures studied (13, 15, 16). Measurements of carbon monoxide
+were performed only at low partial pressures and we have assumed that the
+buoyancy corrections are negligible.
+Adsorption Kinetics
+Adsorption kinetics of pure gases was measured employing two different tech-
+niques. For carbon dioxide we used diluted breakthrough curves: employing a
+very small concentration of CO2 in a diluted stream of an inert gas (helium) we
+can assume that the isotherm is linear, velocity is constant and also that the
+column is at the same temperature (isothermal behaviour). For the case of
+hydrogen, carbon monoxide, and methane, we measured the response to a pulse
+of these gases. Diluted concentrations of these gases were used to measure the dif-
+fusivities in the linear region of the isotherm. By determining the ﬁrst moment
+(stoichiometric time) and the second moment, both equilibrium and kinetic prop-
+erties can be determined. The apparatus employed for these measurements is
+composed of a column where the adsorbent is loaded and a four-way valve
+where two streams are inlet streams: one with the diluted stream with CO2 and
+the other with inert gas for desorption. In the case of pulse experiments, the gas
+is injected into the inert gas stream in the injector very close to the column with
+a gas-tight syringe. The operating conditions and physical properties of both
+systems are reported in Table 1. Note that the column for H2 has to be larger to
+have reliable data of adsorption kinetics since H2 is a gas with little adsorption
+capacity at low partial pressures and very fast kinetics.
+Multicomponent Breakthrough Curves
+In order to verify the adsorption equilibrium obtained by gravimetry and the
+adsorption kinetics of pure components, multicomponent binary H2/CO2
+Adsorption of Off-Gases from Steam Methane
+1341
+
+
+=== PDF page 6 of 28 ===
+and ternary H2/CO2/CH4 breakthrough experiments were performed in a
+ﬁxed bed. Activation of the adsorbent was carried out at 423 K (heating rate
+of 1 K/min) overnight under ﬂow of helium. Carbon dioxide and methane
+concentrations exiting the column were measured by an infrared detector
+each ten seconds (ﬂue gas analyzer, Madur, Austria). In the binary mixture,
+ethane was inserted as a tracer gas to determine ﬂowrate variations. The
+ﬂowrate variations were determined with a ﬂow sensor FLR1006 (Omega,
+USA). The temperature in the column was measured at three points: at
+0.17, 0.43, and 0.68 m from the feed inlet.
+THEORETICAL
+Adsorption Equilibrium
+From the large number of mathematical models available in literature to
+describe adsorption equilibria (17), we have selected the Virial equation
+(18, 19). This model is thermodynamically correct at low and high
+coverages, has analytical expressions for prediction of multicomponent
+behavior, and also is very ﬂexible to ﬁt isotherms with different degrees of
+steepness in a wide range of pressure and temperature conditions. The
+model is obtained by applying the bi-dimensional Virial equation of state to
+the Gibbs isotherm that results in:
+P ¼ q
+KH
+exp 2
+S Aq þ 3
+2S2 Bq2 þ . . .
+
+
+ð2Þ
+Table 1.
+Experimental conditions used on the measurement of the CO2 diluted break-
+throughs and of the CH4, CO and H2 pulses
+Experiments
+Diluted
+breakthrough
+Pulse experiments
+Adsorbate (Ads)
+CO2
+CH4 and CO
+H2
+Mixtures
+0.5% of Ads in He
+—
+—
+Inert gas
+He
+He
+He
+Mass of Adsorbent [kg]
+5.0324  1023
+5.0324  1023
+1.116  1021
+Temperatures [K]
+303, 323, 343
+303, 323, 343
+303
+Pressure [bar]
+1
+1
+1
+Bed height [m]
+0.167
+0.167
+0.254
+Bed volume [m3]
+9.476  1026
+9.476  1026
+2.005  1024
+Pellet porosity, 1p
+0.601
+0.601
+0.601
+Adsorbent density, rp [kg/m3]
+841
+841
+841
+Solid density, rs [kg/m3]
+2110
+2110
+2110
+Bed porosity, 1
+0.392
+0.392
+0.363
+C. A. Grande et al.
+1342
+
+
+=== PDF page 7 of 28 ===
+In this equation, S is the adsorbent speciﬁc surface area, A and B are Virial
+coefﬁcients, and KH is the Henry constant. The Henry constant is related to the
+temperature (T ) through the Van’t Hoff equation:
+KH ¼ K1 exp DH
+RgT
+
+
+ð3Þ
+where K1 is the adsorption constant at inﬁnite temperature, (2DH) is the heat
+of adsorption at zero coverage and Rg is the universal gas constant.
+For most systems the Virial equation can be truncated after the second
+Virial coefﬁcient and the coefﬁcients depend on the temperature through the
+following equations:
+A ¼
+X
+1
+m¼0
+Am
+Tm ;
+B ¼
+X
+1
+m¼0
+Bm
+Tm
+ð4Þ
+Taqvi and LeVan (20) extended the Virial isotherm to multicomponent
+adsorption in a predictive mode as follows:
+Pi ¼ qi
+KHi
+exp 2
+S
+X
+N
+j¼1
+Aijqj þ 3
+2S2
+X
+N
+j¼1
+X
+N
+k¼1
+Bijk qjqk
+ 
+!
+ð5Þ
+with the mixing Virial coefﬁcients (Aij and Bijk) calculated by (21):
+Aij ¼ ðAi þ AjÞ
+2
+ð6Þ
+Bijk ¼ ðBi þ Bj þ BkÞ
+3
+ð7Þ
+The parameters obtained from the ﬁtting of pure gases can be employed in
+the prediction of multicomponent adsorption equilibrium to design a PSA unit.
+The multi-parametric nonlinear ﬁtting was performed using MATLAB
+(The MathWorks, Inc.). The minimization routine uses the Nelder – Mead
+Simplex Method of direct search ( fmins). The error function deﬁned was:
+ERRð%Þ ¼ 100 w
+X
+T
+X
+P
+ðqcal  qexpÞ2 þ ð1  wÞ
+N
+X
+T
+X
+P
+qcal  qexp
+qcal
+
+2
+"
+#
+ð8Þ
+where T is each experimental temperature, P is the pressure, N is the number
+of points of each isotherm, qexp is the experimental adsorbed phase concen-
+tration, and qcal is the calculated adsorbed phase concentration. The term w
+is the weight SOR-ARE parameter (0  w  1). This error function is
+composed by two terms deﬁned as Square of Residuals (22) and Average of
+residuals (17).
+Adsorption of Off-Gases from Steam Methane
+1343
+
+
+=== PDF page 8 of 28 ===
+Adsorption Kinetics
+The analyses of the pulse experiments (CH4, CO, and H2) and of the diluted
+breakthrough curves (CO2) were performed with the analysis of the
+moments (23) where the ﬁrst and second moments are calculated from the
+experimental data by:
+m1 ;
+Ð 1
+0 t:c:dt
+Ð 1
+0 c:dt
+ð9Þ
+s2 ¼
+Ð 1
+0 ðt  m1Þ2  c:dt
+Ð 1
+0 c:dt
+ð10Þ
+The second moment analysis of a pulse or of a diluted breakthrough curve
+can be related with the sum of all diffusional resistances by (Ruthven, 1984):
+s2
+2m2
+1
+¼ Dax
+uiL þ ui
+L
+ 
+1
+1  1
+
+
+Rp
+2kf
+þ
+R2
+p
+81pDp
+þ
+r2
+c
+8KHDc
+ 
+!
+
+1 þ
+1p
+ð1  1pÞKH
+
+2
+ð11Þ
+where the axial dispersion and the ﬁlm mass transfer coefﬁcients were calcu-
+lated according to the following equations:
+Dax ¼ 0:45 þ 0:551
+ð
+ÞDm þ 0:35Rpui
+ð12Þ
+Sh ¼ 2:0 þ 1:1Re0:6Sc1=3
+ð13Þ
+where Sh(¼2Rpkf/Dm) is the Sherwood number and kf is the ﬁlm mass transfer
+coefﬁcient, Re(¼2rguoRp/m) is the Reynolds number and Sc(¼m/rgDm) is the
+Schmidt number.
+The pore diffusivity was calculated with the Bosanquet equation:
+1
+D p;i
+¼ tp
+1
+Dm;i
+þ 1
+Dk;i
+
+
+ð14Þ
+where Dm,i is the molecular diffusivity, Dk,i is Knudsen diffusivity, both for
+component i, and tp is the pore tortuosity. The molecular diffusivity for the
+mixture was approximated with:
+Dm;i ¼
+1  yi
+Pn
+j¼1
+j=i
+ðyi=DijÞ
+ð15Þ
+C. A. Grande et al.
+1344
+
+
+=== PDF page 9 of 28 ===
+where the binary molecular diffusivity Dij was calculated with the Chapman-
+Enskog Equation (24). The Knudsen diffusivity (Dk,i in m2/s) is calculated by:
+Dk;i ¼ 0:97rp
+ﬃﬃﬃﬃﬃﬃﬃ
+Tg
+MW
+r
+ð16Þ
+where rp is the mean pore radius (m) and MW is the molecular weight of the
+adsorbate.
+The micropore diffusion is an activated process with exponential depen-
+dence with temperature according to:
+Dc
+r2
+c
+¼ D0
+c
+r2
+c
+exp  Ea
+RgT
+
+
+ð17Þ
+where Dc
+0/rc
+2 is the limiting diffusivity (divided by rc
+2) at inﬁnite temperature
+and Ea is the activation energy.
+Multicomponent Breakthrough Curves
+A complete mathematical model that describes the dynamic behavior of multi-
+component adsorption in a ﬁxed bed is composed of material, momentum and
+energy balances. The energy balance should be taken into account because
+adsorption is an exothermic process that releases energy and may produce
+non isothermal behaviour of the system. The momentum balance should
+also be included as the velocity varies along the bed.
+The following assumptions were made in order to write the necessary
+conservation equations:
+1.
+Ideal gas behaviour throughout the column, (operation up to 7 bar),
+2.
+No mass, heat or velocity gradients in the radial direction,
+3.
+Axial dispersed plug ﬂow,
+4.
+External mass and heat transfer resistances expressed with the ﬁlm model,
+5.
+Bidispersed adsorbent particle with macropore and micropore mass
+transfer resistances, both expressed with the Linear Driving Force
+(LDF) model,
+6.
+No temperature gradients inside each particle,
+7.
+Constant porosity along the bed.
+A schematic diagram of this adsorption system is shown in Fig. 1 where
+three phases can be distinguished: gas phase, solid phase where adsorption and
+diffusion take place and the column wall where energy may be transferred to
+(or from) the surroundings.
+The gas phase exchanges mass and energy with the solid phase and only
+energy with the column wall. The material balance for each component in the
+Adsorption of Off-Gases from Steam Methane
+1345
+
+
+=== PDF page 10 of 28 ===
+gas phase is given by:
+@
+@z
+1DaxCg;T
+@yi
+@z
+
+
+ @
+@z ðu0Cg;iÞ  1 @Cg;i
+@t
+ ð1  1Þapkf ðCg;i  Cs;iÞ ¼ 0
+ð18Þ
+where z is the axial position, t is the time, 1 is the bed porosity, u0 is the super-
+ﬁcial velocity, Cg,T and Cg,i are respectively the total and component i gas
+phase concentration, yi is the component i molar fraction, Cs,i is the concen-
+tration of component i at the solid surface, Dax is the mass axial dispersion
+coefﬁcient, kf is the ﬁlm mass transfer coefﬁcient and ap is the particle
+speciﬁc area.
+In the momentum balance we have only considered the terms of pressure
+drop and velocity change and are related through the Ergun equation deﬁned as:
+ @P
+@z ¼ 150mð1  1Þ2
+13d2
+p
+u0 þ 1:75ð1  1Þrg
+13dp
+u0
+j
+ju0
+ð19Þ
+where P is the total pressure, m is the gas viscosity, rg is the gas density, and dp
+is the particle diameter.
+The energy balance in the gas phase is:
+@
+@z
+l @Tg
+@z
+
+
+ u0Cg;TCp
+@Tg
+@z þ 1RgTg
+@Cg;T
+@t
+ ð1  1Þaphf ðTg  TpÞ  4hw
+dwi
+ðTg  TwÞ  1Cg;TCv
+@Tg
+@t ¼ 0
+ð20Þ
+with Tg, Tp, and Tw respectively as the gas, particle and wall temperatures; Cv
+and Cp as the gas molar speciﬁc heat at constant volume and pressure respect-
+ively; Rg as the ideal gas constant; dwi as the wall internal diameter, l as the
+heat axial dispersion coefﬁcient. The ﬁlm heat transfer coefﬁcient between the
+gas phase and the particle is represented by hf, while the ﬁlm heat transfer
+coefﬁcient between the gas phase and the wall is represented by hw.
+Figure 1.
+Schematic representation of the adsorption bed.
+C. A. Grande et al.
+1346
+
+
+=== PDF page 11 of 28 ===
+As mentioned above, the particle is considered bidisperse, composed by
+macropores that serve as main transport channels to the micropores (Fig. 1).
+The macropores exchange mass both with the gas phase and the micropores.
+The linear driving force model (LDF) is employed to describe the mass
+transfer rates in the solid phase. This approximation has a large impact on
+the computational time. The material balances in the macropores and in the
+micropores are then given respectively by Equations (21) and (22).
+@Cm;i
+@t
+¼ VmD p;i
+R2
+p
+ðCs;i  Cm;iÞ  rp
+1p
+@qi
+@t
+ð21Þ
+@qi
+@t ¼ VcDc;i
+r2
+c
+ðq
+i  qiÞ
+ð22Þ
+In these equations, rp and 1p are respectively the particle density and
+porosity, Dp,i and Dc,i are the macropore and micropore diffusivity coefﬁ-
+cients, Rp is the particle radius, rc is the “microparticle” radius, Cm;i is the
+averaged concentration in the macropores, qi is the particle averaged
+adsorbed concentration, and qi is the adsorbed concentration in equilibrium
+with Cm;i and Vc are the geometric LDF factors for the macro and micro
+particles respectively.
+As it is assumed that there are no temperature gradients inside a particle,
+the solid phase energy balance is given by:
+ð1  1Þ 1p
+X
+n
+i¼1
+Cm;iCv;i þ rp
+X
+n
+i¼1
+qiCv;ads;i þ rp ^C p;s
+"
+#
+@Tp
+@t
+¼ ð1  1Þ1pRgTp
+@Cm;T
+@t
+þ rb
+X
+n
+i¼1
+ðDHÞi
+@qi
+@t þ ð1  1Þaphf ðTg  TpÞ
+ð23Þ
+where rb is the bulk density of the bed, Cˆ p,s is the solid speciﬁc heat per mass
+unit and (2DH)i is the isosteric heat of adsorption of component i.
+The concentration of each component at the solid surface can be calcu-
+lated with Equation (24) obtained through the ﬂuxes equality at the particle
+surface.
+Cs;i ¼ BiiCg;i þ Cm;i
+1 þ Bii
+ð24Þ
+In this equation Bii is the Biot number of component i deﬁned as:
+Bii ¼
+apkf R2
+p
+1pVmD p;i
+ð25Þ
+Adsorption of Off-Gases from Steam Methane
+1347
+
+
+=== PDF page 12 of 28 ===
+Finally, the energy balance to the column wall considers that it inter-
+changes energy with the gas phase inside the column and with the external
+environment being expressed as:
+rw ^C p;w
+@Tw
+@t ¼ awhwðTg  TwÞ  aw‘UðTw  T1Þ
+ð26Þ
+where T1 is the external temperature, rw is the wall density, Cˆ p,w is the wall
+speciﬁc heat per mass unit, U is the overall heat transfer coefﬁcient, and aw
+and aw‘ are deﬁned by:
+aw ¼
+dwi
+eðdwi þ eÞ ;
+aw‘ ¼
+1
+ðdwi þ eÞ ln dwi þ e=dwi
+ð
+Þ
+ð27Þ
+where e is the wall thickness.
+In order to solve this system of partial differential equations, boundary
+and initial conditions are needed. In the case of ﬁxed bed operation where
+pressure is controlled at the end of the column, starting with a column ﬁlled
+with an inert gas, such conditions are as follows:
+Feed inlet (z ¼ 0)
+u0inletCinlet;i ¼ u0Cg;i  1DaxCg;T
+@yi
+@z
+ð28Þ
+u0inletCinlet;T ¼ u0Cg;T
+ð29Þ
+u0inletCinlet;TCpTinlet ¼ u0Cg;TCpTg  l @Tg
+@z
+ð30Þ
+Product end (z ¼ L)
+@Cg;i
+@z
+¼ 0
+ð31Þ
+P ¼ Pexit
+ð32Þ
+@Tg
+@z ¼ 0
+ð33Þ
+The initial conditions for the ﬁxed bed initially ﬁlled with inert gas are:
+yi ¼ Cm;i ¼ qi ¼ 0
+for i = inert
+ð34Þ
+yinert ¼ 1
+ð35Þ
+Cm;inert ¼ Cg;T
+ð36Þ
+Tg ¼ Tp ¼ Tw ¼ Tinlet
+ð37Þ
+C. A. Grande et al.
+1348
+
+
+=== PDF page 13 of 28 ===
+As can be seen from the model equations, some transport parameters are
+needed. General properties of the gases, like density, viscosity, and thermal
+conductivity were calculated according to Bird et al. (24). The molecular dif-
+fusivity for the mixture and the Knudsen diffusivity were calculated according
+to Equations (14–16), respectively. The axial heat dispersion coefﬁcient, as
+well as, the heat convective coefﬁcient were calculated using the Wakao
+and Funazkri correlations (23, 25, 26):
+1Dax
+Dm
+¼ 20 þ 0:5Sc Re
+ð38Þ
+l
+kg
+¼ 7 þ 0:5Pr Re
+ð39Þ
+Nu ¼ 2:0 þ 1:1Re0:6Pr1=3
+i
+ð40Þ
+The axial mass transfer coefﬁcient calculated by Equation (40) is valid for
+a large range of Reynolds numbers (3 , Re , 10,000) and was employed for
+modeling multicomponent breakthrough curves reported in this work. The
+dimensional Nusselt number is deﬁned as Nu ¼ hf dp/kg.
+The global heat transfer coefﬁcient, U, was calculated according to (27):
+1
+U ¼ 1
+hw
+þ edwi
+lwd‘n
+þ
+dwi
+dwehex
+ð41Þ
+where lw is the wall conductivity, dwe is the external diameter of the column,
+d‘n ¼ (dwe 2 dwi)/ln(dwe/dwi), and hex is the external convective heat transfer
+coefﬁcient. The internal convective heat transfer coefﬁcient hw between gas and
+the wall column can be estimated with the Wasch and Froment correlation (28):
+hwdwi
+kg
+¼ 140 þ 0:013396 d2
+wi
+dpkg
+Re
+ð42Þ
+The external convective heat transfer coefﬁcient was estimated with the
+Churchill and Chu correlation (27):
+hexL
+kg;ex
+¼ 0:68 þ
+0:67Ra1=4
+1 þ 0:492=Pr
+ð
+Þ9=16
+
+4=9
+ð43Þ
+where the sub-index ex represent the properties of the external gas surrounding
+the column. The Rayleigh number is deﬁned by: Ra ¼ GrPr and the Grashof
+number is:
+Gr ¼ gbðTw  T1ÞL3
+na
+ð44Þ
+where g ¼ 9.8 m/s2, n is the kinematic viscosity of the external gas, a is the
+external thermal diffusivity, and b is the thermal expansion coefﬁcient. The
+Adsorption of Off-Gases from Steam Methane
+1349
+
+
+=== PDF page 14 of 28 ===
+properties of the external gas are evaluated at the ﬁlm temperature:
+Tﬁlm ¼ (Tw þ T1)/2.
+This mathematical model has already been used in the simulation of ﬁxed
+bed behaviour and Pressure Swing Adsorption (PSA) applications of different
+mixtures showing very good agreement between predictions and experimental
+data (29–31). The simulations were performed with gPROMS (PSE Enter-
+prise, UK) using the orthogonal collocation on ﬁnite elements as the
+numerical method. The number of elements used was 120 with forth order
+polynomials (three interior collocation points).
+RESULTS AND DISCUSSION
+Adsorption Equilibrium
+The fundamental property to be measured in a material that will be employed
+in an adsorption-based separation process is the adsorption equilibrium
+capacity of each of the pure gases employed. As explained in the Experimental
+section, the excess amount adsorbed is the amount measured experimentally
+and it had to be corrected to take into account the buoyancy effects. The
+absolute amount adsorbed of hydrogen and carbon dioxide at three different
+temperatures (303, 323 and 343 K) are shown in Fig. 2. The isotherms in
+the same temperature range for CH4, CO and N2 are reported in Fig. 3.
+Note that the pressure range measured for CO2 and H2 is much higher than
+for the other gases because these are the main components of the stream
+entering the PSA unit for H2 puriﬁcation. From these experiments we have
+observed the following order of adsorption (from the most adsorbed
+compound to the less adsorbed gas): CO2 . CH4 . CO . N2 . H2. It can
+be also observed that the isotherm of CO2 is non-linear as well as the
+Figure 2.
+Amount of CO2 (a) and H2 (b) adsorbed on activated carbon: experimental
+points at 303 (B), 323 (V) and 343 K (O) and —— virial isotherm ﬁtting.
+C. A. Grande et al.
+1350
+
+
+=== PDF page 15 of 28 ===
+isotherm of CH4, while the isotherms of other components are almost linear in
+the initial portion that corresponds to the concentration of the off-gas SMR
+streams.
+The data obtained in this work for CO2 and H2 are comparable with other
+values reported in literature (32–34).
+The experimental adsorption data were ﬁtted using the Virial isotherm
+with the temperature dependence of the Virial coefﬁcients truncated at the
+second term. The ﬁtting of the model is shown with solid lines in Figs. 2
+and 3. The parameters obtained for all the pure gases are presented in
+Table 2. It can be seen that a good ﬁtting is obtained for all the gases in the
+whole pressure and temperature ranges studied. The Virial model showed
+great ﬂexibility to ﬁt the complete set of adsorption equilibrium data of the
+different gases with the additional advantage of direct prediction of multicom-
+ponent adsorption equilibrium, which is important to improve computation
+time of PSA process simulation. According to the ﬁtting parameters, the
+heat of adsorption of CO2 is much higher than the other gases, while CO
+heat of adsorption is slightly higher than the heat of adsorption of CH4.
+Figure 3.
+Amount of CH4 (a), CO (b) and N2 (c) adsorbed on activated carbon: exper-
+imental points at 303 (B), 323 (V) and 343 K (O) and —— virial isotherm ﬁtting.
+Adsorption of Off-Gases from Steam Methane
+1351
+
+
+=== PDF page 16 of 28 ===
+Adsorption Kinetics
+Pressure Swing Adsorption is a dynamic separation process and thus it is
+important to measure the velocity of diffusion of the gases in the porous
+structure of the adsorbent. In several cases, the resistance to diffusion is so
+important that the PSA is kinetically controlled (35, 36). In this case, we
+have molecules of several sizes and chemical properties, reason why it is
+also very complicated to establish a common protocol, even to measure the
+diffusion process. Several techniques to measure the diffusion process are
+available: Zero Length Column (37), uptake curves (17, 23) and perturbation
+chromatography (either pulse or step changes). Activated carbons are porous
+solids with a somewhat wide distribution of micropore diameters. If ZLC
+experiments are performed in the samples and analyzed using the long time
+response, only the resistance in the smaller micropores will be accounted
+and then results of ZLC and breakthrough curves may give large differences
+(38). For this reason we have employed perturbation chromatography
+methods (39). Due to the hazardous nature of carbon monoxide we have
+employed only pulses. Also according to the higher sensitivity of Flame Ion-
+ization Detector (FID), we have employed very small amounts of CH4 for
+pulse experiments. The diffusion of H2 is extremely fast and its amount
+adsorbed is very small, reason why a much larger column was employed.
+Due to the non-linearity of CO2 equilibrium isotherms and to plausible
+thermal effects associated with the large heat of adsorption, we have
+performed diluted breakthrough curves that ensure that concentrations of
+0.5% are fed constantly to the column.
+The experimental conditions used on the measurement of the carbon
+dioxide diluted breakthroughs and of the methane, carbon monoxide and
+hydrogen pulses are reported in Table 1. The results of the diluted break-
+through curves of carbon dioxide are shown in Fig. 4. Pulse experiments for
+both CH4 and CO are shown in Fig. 5 and for H2 in Fig. 6. It should be
+pointed out that the experimental error associated to the measurement of the
+peak of hydrogen is considerable because of the small difference of thermal
+Table 2.
+Virial adsorption isotherm ﬁtting parameters of CO2, H2, CH4, CO and N2
+on activated carbon
+Comp.
+K1 [mol/
+(kg bar)]
+(–DH)
+[J/mol]
+A0  1025
+[m2/mol]
+A1  1026
+[m2K/mol]
+B0  10211
+[m4/mol2]
+B1  10211
+[m4K/mol2]
+CO2
+9.90  1025
+27 870
+21.140
+79.013
+20.021
+20.416
+H2
+8.20  1023
+3 192
+0.418
+20.001
+0.454
+0.000
+CH4
+1.04  1023
+17 652
+4.616
+2121.43
+20.831
+308.53
+CO
+4.62  1024
+19 100
+14.076
+2422.77
+0.264
+299.25
+N2
+2.54  1023
+11 834
+5.585
+2163.77
+3.385
+2777.67
+C. A. Grande et al.
+1352
+
+
+=== PDF page 17 of 28 ===
+conductivities between helium (inert gas employed for pre-conditioning of the
+column) and hydrogen is small.
+With the results obtained in this set of experiments, the ﬁrst and second
+moments were calculated. The axial dispersion, ﬁlm mass transfer coefﬁcient
+and the macropore diffusivity are calculated from Equations (12–14). To
+estimate the pore diffusivity coefﬁcient by the Bosanquet equation, a tortuos-
+ity factor of 2 was assumed for activated carbon.
+The analyses of the diluted breakthrough curves on activated carbon
+obtained for carbon dioxide are shown in Table 3. The values obtained
+from the methane, carbon monoxide and hydrogen pulse experiments on
+activated carbon are shown in Tables 4 to 6, respectively.
+Figure 4.
+Diluted breakthrough curves of carbon dioxide on activated carbon at 303
+(B), 323 (V) and 343 K (O); 1 bar of total pressure; experimental conditions are
+detailed in Table 2.
+Figure 5.
+Pulse experiments of methane (a) and carbon monoxide (b) on activated
+carbon at 303 (B), 323 (V) and 343 K (O); 1 bar of total pressure; experimental con-
+ditions are detailed in Table 2.
+Adsorption of Off-Gases from Steam Methane
+1353
+
+
+=== PDF page 18 of 28 ===
+According to the full set of experiments it was determined that micropore
+resistances control diffusion for all the gases studied. At 303 K, the faster species
+is CO2 while diffusion of CO is faster at higher temperatures. This indicates
+that the activation energy of diffusion is higher for CO (12.08 kJ/mol) than
+for CO2 (9.75 kJ/mol). For CH4, the larger molecule in this system, the
+energy of activation of micropore diffusion is 25.52 kJ/mol. This order
+does follow the expected order according to the size of the molecules (CO2
+. CO . CH4). Diffusion of hydrogen was very fast in this material. In
+fact, its measurement is very difﬁcult and the value reported in Table 6 is
+indicative of the order of magnitude of the micropore diffusion coefﬁcient:
+in Equation (11) almost 80% of the resistance was in the axial dispersion
+term, being only 20% the resistance within the micropores.
+Figure 6.
+Pulse experiments of hydrogen on activated carbon at 303 (B); 1 bar of
+total pressure; experimental conditions are detailed in Table 2.
+Table 3.
+Diluted breakthrough experimental results obtained for CO2 in activated
+carbon at 303, 323 and 343 K
+Gas: CO2
+303 K
+323 K
+343 K
+Flow rate [m3/s]
+6.25  1027
+6.25  1027
+6.25  1027
+m [s]
+2852
+1570
+1118
+s2[s]
+182133
+59289
+33191
+Dax[m2/s]
+4.03  1025
+4.27  1025
+4.51  1025
+Dm[m2/s]
+5.98  1025
+6.66  1025
+7.37  1025
+Dk[m2/s]
+2.97  1024
+3.07  1024
+3.17  1024
+Dp[m2/s]
+2.49  1025
+2.74  1025
+2.99  1025
+kf [m/s]
+0.1184
+0.1184
+0.1184
+Dc/rc
+2 [s21]
+1.60  1022
+2.30  1022
+2.50  1022
+C. A. Grande et al.
+1354
+
+
+=== PDF page 19 of 28 ===
+Multicomponent Breakthrough Curves
+In a PSA unit, the multicomponent mixture is fed to a set of columns operating
+according to a pre-deﬁned scheduling. Thus, the modelling of ﬁxed-bed
+behavior of the multicomponent mixture in a ﬁxed-bed is essential to deﬁne
+a PSA unit. Initially we have performed a breakthrough curve of a H2/CO2
+mixture and then the ternary H2/CO2/CH4 mixture was employed. The
+operating conditions at which those experiments were performed are shown
+in Table 7.
+The experimental results of the H2/CO2 binary mixture for two different
+temperatures (323 and 343 K) are detailed in Fig. 7. The bed was initially
+ﬁlled with helium and a very fast breakthrough of hydrogen can be
+observed according to the simulations. The typical roll-up of a weak
+adsorbed compound displaced by a more strongly adsorbed species was
+observed for hydrogen. The adsorption of CO2 is accompanied with a
+Table 4.
+Pulse experimental results obtained for CH4 in activated carbon at 303, 323
+and 343 K
+Gas: CH4
+303 K
+323 K
+343 K
+Flow rate [m3/s]
+6.25  1027
+6.25  1027
+6.25  1027
+m [s]
+903.4
+528.0
+322.9
+s2[s]
+52792
+16596
+6030
+Dax[m2/s]
+4.37  1025
+4.64  1025
+4.93  1025
+Dm[m2/s]
+6.96  1025
+7.74  1025
+8.56  1025
+Dk[m2/s]
+4.94  1024
+5.10  1024
+5.25  1024
+Dp[m2/s]
+3.05  1025
+3.36  1025
+3.68  1025
+kf [m/s]
+0.1184
+0.1184
+0.1184
+Dc/rc
+2 [s21]
+5.81  1023
+1.13  1022
+1.89  1022
+Table 5.
+Pulse experimental results obtained for CO in activated carbon at 303, 323
+and 343 K
+Gas: CO
+303 K
+323 K
+343 K
+Flow rate [m3/s]
+5.80  1027
+5.80  1027
+5.80  1027
+m [s]
+185.3
+122.0
+87.02
+s2 [s]
+1687.6
+681. 9
+396.4
+Dax[m2/s]
+3.79  1025
+4.17  1025
+4.56  1025
+Dm[m2/s]
+7.30  1025
+8.12  1025
+8.96  1025
+Dk[m2/s]
+3.73  1024
+3.85  1024
+3.97  1024
+Dp[m2/s]
+3.05  1025
+3.35  1025
+3.66  1025
+kf [m/s]
+0.1184
+0.1184
+0.1184
+Dc/rc
+2 [s21]
+5.18  1022
+8.18  1022
+9.00  1022
+Adsorption of Off-Gases from Steam Methane
+1355
+
+
+=== PDF page 20 of 28 ===
+marked increase in temperature inside the column. Note that the experimental
+value measured at z ¼ 0.68 m corresponds to the temperature of the column
+wall. The prediction of the mathematical model employing information
+obtained from pure component data of adsorption equilibrium and kinetics
+is also shown in Fig. 7 (solid lines). The transport parameters values used in
+the simulations are given in Table 8. A good agreement was observed
+between the experimental data and the predicted concentration history at the
+end of the column. The temperature evolution within the column was also
+well predicted. As mentioned before the thermocouple placed at z ¼ 0.68 m
+from feed inlet is close to the column wall. For this reason, the prediction
+of the column wall temperature is also shown and it can be observed that
+the experimental data is close to the prediction of the column wall temperature
+Table 6.
+Pulse experimental results obtained for
+H2 in activated carbon at 303 K
+Gas: H2
+303 K
+Flow rate [m3/s]
+1.167  1026
+m [s]
+152.2
+s2[s]
+2962.3
+Dax[m2/s]
+6.18  1025
+Dm[m2/s]
+1.61  1024
+Dk[m2/s]
+1.40  1023
+Dp[m2/s]
+2.40  1025
+kf [m/s]
+0.1184
+Dc/rc
+2 [s21]
+5.05  1022
+Table 7.
+Conditions used in binary (H2/CO2) and ternary (H2/CO2/CH4) break-
+through experiments done with the activated carbon
+Breakthrough
+experiments
+Binary exp. I
+Binary exp. II
+Ternary exp. I
+Column length [m]
+0.87
+0.87
+0.87
+Column diameter [m]
+0.021
+0.021
+0.021
+Mass of adsorbent [kg]
+0.1760
+0.1760
+0.1743
+Temperature [K]
+323
+343
+305
+Pressure [bar]
+2.5
+2.5
+2.5
+Mixture ﬂow rate [m3/s]
+15.96  1026
+15.96  1026
+15.84  1026
+Mixture molar fraction
+CO2: 0.176
+CO2: 0.176
+CO2: 0.159
+H2: 0.824
+H2: 0.824
+H2:0.795
+CH4: 0.046
+N2 ﬂow rate [m3/s]
+75.30  1026
+75.30  1026
+75.30  1026
+C2H6 ﬂow rate [m3/s]
+0.30  1026
+0.30  1026
+—
+C. A. Grande et al.
+1356
+
+
+=== PDF page 21 of 28 ===
+Figure 7.
+Binary H2-CO2 breakthrough results (points – experimental; lines – simu-
+lation): a) 323 K experience, b) 343 K experience; 1) CO2 and H2 molar ﬂow rate pro-
+ﬁles, 2) temperature proﬁles at 0.17, 0.43, 0.68 m from the bed inlet and the wall
+temperature Tw at 0.68 m from the bed inlet.
+Table 8.
+Parameters values used in the simulations of the ﬁxed bed experiments
+Breakthrough
+experiments
+Binary exp. I
+Binary exp. II
+Ternary exp. I
+Dp [m2/s]a
+CO2: 4.48  1026
+CO2: 4.94  1026
+CO2: 3.57  1026
+H2: 4.80  1026
+H2: 5.32  1026
+H2: 4.47  1026
+CH4: 3.10  1026
+Dm/rm
+2 [s21]
+CO2: 4.90  1024
+CO2: 6.70  1024
+CO2: 4.20  1024
+H2: 5.05  1022
+H2: 5.05  1022
+H2: 5.05  1022
+CH4: 9.48  1025
+kf [m/s]
+3.98  1022
+4.36  1022
+3.19  1022
+hf [W/m2K]
+164
+169
+154
+hw [W/m2K]
+66.7
+69.6
+62.0
+U [W/m2K]
+31.3
+33.6
+30.25
+avalues at inlet conditions
+Adsorption of Off-Gases from Steam Methane
+1357
+
+
+=== PDF page 22 of 28 ===
+but may be have some inﬂuence of the gas temperature, reason why the exper-
+imental value lays between these two values.
+The experimental results of the ternary H2/CO2/CH4 mixture are
+reported in Fig. 8. The experimental total ﬂow rate history obtained for the
+ternary H2-CO2-CH4breakthrough curve is shown in Fig. 9. In this case,
+hydrogen as the less adsorbed species pass through two plateaus until
+reaching the feed concentration, once the column is in equilibrium with all
+the adsorbates. The roll-up is also observed by methane being displaced by
+CO2, which is strongly adsorbed. The temperature proﬁles within the
+column can also be very well deﬁned, particularly at the end of the column
+where an initial increase in temperature due to methane adsorption can be
+Figure 8.
+Ternary H2-CO2-CH4 breakthrough results (points – experimental; lines –
+simulation): 1) CO2,CH4 and H2 molar ﬂow rate proﬁles, 2) temperature proﬁles at
+0.17, 0.43, 0.68 m from the bed inlet and the wall temperature Tw at 0.68 m from
+the bed inlet.
+Figure 9.
+Total ﬂow rate at the column outlet obtained for the ternary H2-CO2-CH4
+breakthrough curve on activated carbon.
+C. A. Grande et al.
+1358
+
+
+=== PDF page 23 of 28 ===
+observed followed by a stronger peak of CO2 adsorption. In this experiment,
+there was a deviation lower than 10% between the adsorbed amount obtained
+experimentally and the predicted by the mathematical model. This may be due
+to two possible and different reasons. The ﬁrst one is that a small experimental
+error in the determination of methane is very important because of the low
+molar fraction employed in the experiment. The second possibility is that
+the capacity of methane predicted by the multicomponent extension of the
+Virial model is smaller at low partial pressures. As the model predicts a
+lower adsorption capacity for methane, its simulated concentration front
+reaches the end of the column sooner than the experimental. It should be
+mentioned that the model used to predict multicomponent data is based on par-
+ameters estimated from pure component isotherms. Also, the estimation of
+Virial coefﬁcients Aij and Bijk was done by a simple arithmetic average
+obtained from Amagat’s rule instead of a geometric average (20).The dis-
+agreement in the adsorption capacity is also reﬂected as a time-deviation
+and intensity in the prediction of the temperature histories in the column. In
+agreement with the experimental results, two different temperature increases
+are observed: the ﬁrst one due to methane and the second because of CO2
+adsorption.
+According to the experimental results observed it was shown that the
+activated carbon employed can be used for selective removal of CO2 and
+CH4 in off-gases of methane steam reforming (7). The possibility of
+removal of CO and N2 in this adsorbent can also be evaluated.
+CONCLUSIONS
+Adsorption equilibrium and kinetics of ﬁve different pure gases (H2, CO2,
+CH4, CO, and N2) were evaluated in a commercial sample of activated
+carbon to be employed in Pressure Swing Adsorption (PSA) unit for
+hydrogen puriﬁcation. Adsorption properties were measured at 303, 323,
+and 343 K in a pressure range between 0–22 bar. The isotherms were ﬁtted
+with the Virial isotherm model that has direct theoretical extension for the pre-
+diction of multicomponent behavior. This model showed great ﬂexibility to ﬁt
+the complete set of adsorption equilibrium data of the different gases. Adsorp-
+tion kinetics of the pure gases was also measured and in all cases the diffusion
+was controlled within the micropore structure of the activated carbon.
+Diffusion of H2 was very fast and hard to measure by any macroscopic
+technique.
+Binary (H2-CO2) and ternary (H2-CO2-CH4) breakthrough curves were
+measured and simulated to validate the predictions of a mathematical model
+for a ﬁxed bed based on parameters measured for pure components. It was
+observed that for low concentrations of methane, the amount adsorbed
+predicted by the multicomponent extension of the Virial isotherm is slightly
+different from the experimental value.
+Adsorption of Off-Gases from Steam Methane
+1359
+
+
+=== PDF page 24 of 28 ===
+The experimental and simulation results show that the activated carbon
+employed in this study can be used in a PSA unit to selectively remove
+CO2 and CH4 to produce high purity hydrogen stream and also delivering
+H2 -free CO2 stream directly for sequestration, as required by new clean tech-
+nologies to produce fuels and energy.
+NOMENCLATURE
+ap
+particle speciﬁc area (m2 . kg)
+A
+Virial coefﬁcients (m2/mol)
+B
+Virial coefﬁcients (m4/mol2)
+Bii
+mass Biot number of component i
+c
+concentration (mol/kg)
+cg,i
+component i gas phase concentration (mol/kg)
+cg,T
+total gas phase concentration (mol/kg)
+Cp
+gas mixture molar speciﬁc heat at constant pressure (J/mol . K)
+Cm;i
+average concentration of component i in the macropores
+(mol/m3)
+Cˆ p,s
+particle speciﬁc heat at constant pressure [per mass unit]
+(J/kg . K)
+Cm;T
+average total concentration in the macropores (mol/m3)
+Cˆ p,w
+wall speciﬁc heat at constant pressure [per mass unit] (J/kg . K)
+Cs,i
+component i concentration at the solid surface (mol/kg)
+Cv
+gas mixture molar speciﬁc heat at constant volume (J/mol . K)
+Cv,i
+molar speciﬁc heat of component i at constant volume
+(J/mol . K)
+Cv,ads,i
+molar speciﬁc heat of component i in the adsorbed phase at
+constant volume (J/mol . K)
+dp
+particle diameter (m)
+dwe
+wall external diameter (m)
+dwi
+wall internal diameter (m)
+Dax
+axial dispersion coefﬁcient (m2/s)
+Dc
+micropore diffusivity (m2/s)
+Dc
+0
+limiting diffusivity at inﬁnite temperatures (m2/s)
+Dij
+binary molecular diffusivity (m2/s)
+Dm
+molecular diffusivity (m2/s)
+Dp
+macropore diffusivity (m2/s)
+Dk
+Knudsen diffusivity (m2/s)
+e
+wall thickness (m)
+Ea
+activation energy of micropore diffusion (kJ/mol)
+ERR
+error function (%)
+g
+acceleration due to gravity (m/s2)
+Gr
+Grashof number
+hex
+external convective heat transfer coefﬁcient (J/s . m2 . K)
+C. A. Grande et al.
+1360
+
+
+=== PDF page 25 of 28 ===
+hf
+ﬁlm heat transfer coefﬁcient between the gas phase and the
+particle (J/s . m2 . K)
+hw
+ﬁlm heat transfer coefﬁcient between the gas phase and the wall
+(J/s . m2 . K)
+kf
+ﬁlm mass transfer coefﬁcient (m/s)
+kg
+gas conductivity (J/s . m . K)
+KH
+Henry constant (mol/kg . bar)
+K1
+adsorption constant at inﬁnite temperature (mol/kg . bar)
+L
+column length (m)
+mads
+mass of adsorbed gas (kg)
+ms
+mass of adsorbent (kg)
+MW
+molecular weight of the gas (kg/mol)
+N
+number of points of each isotherm
+Nu
+Nusselt number
+P
+pressure (Pa)
+Pr
+Prandt number
+q
+absolute adsorbed phase concentration (mol/kg)
+qcal
+calculated adsorbed phase concentration (mol/kg)
+qexp
+experimental adsorbed phase concentration (mol/kg)
+q¯i
+particle averaged adsorbed concentration (mol/kg)
+qi
+adsorbed concentration in equilibrium with Cm;i (mol/kg)
+rc
+“microparticle” radius (m)
+rp
+mean pore radius (m)
+Rg
+universal gas constant (J/mol . K)
+Rp
+radius of the adsorbent extrudate (m)
+Ra
+Rayleigh number
+Re
+Reynolds number
+S
+adsorbent speciﬁc area (m2 . kg)
+Sc
+Schmidt number
+Sh
+Sherwood number
+t
+time (s)
+T
+temperature (K)
+Tﬁlm
+ﬁlm temperature (K)
+Tg
+gas temperature (K)
+Tp
+particle temperature (K)
+Tw
+wall temperature (K)
+T1
+external temperature (K)
+u0
+superﬁcial velocity (m/s)
+ui
+interstitial velocity (m/s)
+U
+overall heat transfer coefﬁcient (J/s . m2 . K)
+Vads
+volume of adsorbent (m3)
+Vc
+volume of the cell where the adsorbent is located (m3)
+Vs
+volume of the solid adsorbent (m3)
+w
+weight SOR-ARE parameter, 0  w  1
+Adsorption of Off-Gases from Steam Methane
+1361
+
+
+=== PDF page 26 of 28 ===
+yi
+molar fraction of component i
+z
+axial position
+NOTATION
+Greek Letters
+a
+external thermal diffusivity (W/m . K)
+aw
+ratio of the internal surface area to the volume of the column
+wall (m21)
+aw‘
+ratio of the logarithmic mean surface area of the column shell
+to the volume of the column wall (m21)
+b
+thermal expansion coefﬁcient (m/m . K)
+Dm
+difference of weight between two measurements (kg)
+(2DH)
+isosteric heat of adsorption (kJ/mol)
+1
+bed porosity
+1p
+particle porosity
+l
+heat axial dispersion coefﬁcient (J/s . m . K)
+lw
+wall conductivity (J/s . m . K)
+m
+gas viscosity (Pa . s)
+m1
+ﬁrst moment (s)
+n
+kinematic viscosity of the external gas (m2/s)
+rb
+bulk density of the bed (kg/m3)
+rg
+density of the gas phase (kg/m3)
+r‘
+density of the adsorbed phase (kg/m3)
+rp
+adsorbent (particle) density (kg/m3)
+rw
+wall density (kg/m3)
+s2
+second moment (s2)
+tp
+pore tortuosity
+Vc
+geometric LDF factor for micro particles
+Vm
+geometric LDF factor for macro particles
+ACKNOWLEDGMENT
+The authors would like to thank ﬁnancial support from European Project
+HY2SEPS (Hybrid Hydrogen – Carbon Dioxide Separation Systems),
+contract No 019887.
+REFERENCES
+1. CO2 Capture and Storage. VGB Report on the State of the Art (2004). Available at:
+http://www.vgb.org/data/vgborg_/Fachgremien/Umwltschtz/VGB%20Capture
+%20and%20Storage.pdf.
+C. A. Grande et al.
+1362
+
+
+=== PDF page 27 of 28 ===
+2. Gale, J., Bachu, S., Bolland, O., and Xue, Z. (2007) To store or not to store? Inter-
+national Journal Greenhouse Gas Control, 1: 1.
+3. European Research Project HY2SEPS (Hybrid Hydrogen Carbon Dioxide Separ-
+ation Processes) website http://hy2seps.iceht.forth.gr/.
+4. Yang, J. and Lee, C.-H. (1998) Adsorption dynamics of layered bed PSA for H2
+recovery from coke oven gas. AIChE Journal, 44: 1325.
+5. Ahn, H., Lee, C.-H., Seo, B., Yang, J., and Baek, K. (1999) Backﬁll cycle of
+layered bed H2 PSA Process. Adsorption, 5: 419.
+6. Sircar, S., Waldron, W., Rao, M.B., and Anand, M. (1999) Hydrogen production
+by hybrid SMR-PSA-SSF membrane system. Separation and Puriﬁcation Tech-
+nology., 17: 11.
+7. Sircar, S. and Golden, T.C. (2000) Puriﬁcation of hydrogen by pressure swing
+adsorption. Separation Science and Technology, 35: 667.
+8. Esteves, I.A.A.C. and Mota, J.P.B. (2002) Simulation of a new hybrid membrane/
+pressure swing adsorption process for gas separation. Desalination, 148: 275.
+9. Zhou, L., Lu¨, C.-Z., Bian, S.-J., and Zhou, Y.-P. (2002) Pure hydrogen from dry
+gas reﬁneries via a novel pressure swing adsorption process. Industrial & Engin-
+eering Chemistry Research, 41: 5290.
+10. Jee, J.-G., Kim, M.-B., and Lee, C.-H. (2001) Adsorption characteristics of
+hydrogen mixtures in a layered bed: binary, ternary and ﬁve component
+mixtures. Industrial & Engineering Chemistry Research, 40: 868.
+11. Murata, K. and Kaneko, K. (2000) Nano-range interfacial layer upon high-pressure
+adsorption of supercritical gases. Chemical Physics Letters, 321: 342.
+12. Murata, K., Miyawaki, J., and Kaneko, K. (2002) A simple determination method
+of the absolute adsorbed amount for high pressure gas adsorption. Carbon, 40: 425.
+13. Dreisbach, F., Staudt, R., and Keller, J.U. (1999) High pressure adsorption data of
+methane, nitrogen, carbon dioxide and their binary and ternary mixtures on
+activated carbon. Adsorption, 5: 215.
+14. Cavenati, S. (2005) Adsorptive processes for separation of CH4/CO2/N2 mixtures.
+Ph.D. Dissertation, University of Porto: Portugal.
+15. Span, R. and Wagner, W. (1996) A new equation of state for carbon dioxide
+covering the ﬂuid region from the triple-point temperature to 1100 K at
+pressures up to 800 MPa. Journal of Physical and Chemical Reference Data,
+25: 1509.
+16. Weast, R.C. (1973) Handbook of Chemistry and Physics, a Ready-Reference Book
+of Chemical and Physical Data, 54th Edn, The Chemical Rubber Co.
+17. Do, D.D. (1998) Adsorption analysis: equilibria and kinetics. Series on Chemical
+Engineering; Vol. 2, Imperial College Press.
+18. Kiselev, A.V. (1971) Vapor adsorption on zeolites considered as crystalline
+species adsorbents. Molecular Sieve Zeolites-II, ACS series, 102: 37.
+19. Barrer, R.M. (1981) Sorption in porous crystals: equilibria and their interpretation.
+Journal of Chemical Technology and Biotechnology, 31: 71.
+20. Taqvi, S.M. and LeVan, M.D. (1997) Virial Description of two-component adsorp-
+tion on homogeneous and heterogeneous surfaces. Industrial & Engineering
+Chemistry Research, 36: 2197.
+21. Prausnitz, J.M., Lichtenthaler, R.N., and De Azevedo, E.G. (1996) Molecular
+Thermodynamics of Fluid-Phase Equilibria; Prentice Hall: Englewood Cliffs, NJ.
+22. Malek, A. and Farooq, S. (1996) Comparison of isotherm models for hydrocarbon
+adsorption on activated carbon. AIChE Journal, 42: 3191.
+23. Ruthven, D.M. (1984) Principal of Adsorption and Adsorption Processes; John
+Wiley & Sons: New York.
+Adsorption of Off-Gases from Steam Methane
+1363
+
+
+=== PDF page 28 of 28 ===
+24. Bird, R.B., Stewart, W.E., and Lightfoot, E.N. (2002) Transport Phenomena, 2nd
+Edn; Wiley International: Singapore.
+25. Wakao, N. and Funazkri, T. (1978) Effect of ﬂuid dispersion coefﬁcients on
+particle-to-ﬂuid mass transfer coeﬁcients in packed beds. Chemical Engineering
+Science, 33: 1375.
+26. Yang, R.T. (1987) Gas Separation by Adsorption Processes; Butterworths:
+Boston.
+27. Incropera, F.P. and Witt, D.P. D. (1996) Fundamentals of Heat and Mass Transfer,
+4th Edn; John Wiley & Sons: New York.
+28. Wasch, A.P. D. and Froment, G.F. (1972) Heat transfer in packed beds. Chemical
+Engineering Science, 27: 567.
+29. Da Silva, F.A., Silva, J.A., and Rodrigues, A.E. (1999) A general package for the
+simulation of cyclic adsorption processes. Adsorption, 5: 229.
+30. Grande, C.A. and Rodrigues, A.E. (2005) Propane/propylene separation by
+pressure swing adsorption using zeolite 4A. Industrial & Engineering Chemistry
+Research, 44: 8815.
+31. Cavenati, S., Grande, C.A., and Rodrigues, A.E. (2006) Separation of CH4/CO2/
+N2 mixtures by layered pressure swing adsorption for upgrade of natural gas.
+Chemical Engineering Science, 61: 3893.
+32. Siriwardane, R.V., Shen, M.-S., Fisher, E.P., and Poston, J.A. (2001) Adsorption of
+CO2 on molecular sieves and activated carbon. Energy & Fuels, 15: 279.
+33. Siriwardane, R.V., Shen, M.-S., Fisher, E.P., Poston, J.A., and Shamsi, A. (2001)
+Adsorption and desorption of CO2 on solid sorbents, U.S. Department of Energy,
+NETL Publications, (Conference Proceedings on Carbon Sequestration - First
+National Conference on Carbon Sequestration, Session 3B. Capture & Sequestra-
+tion III: Adsorption Studies).
+34. Siriwardane, R.V., Shen, M.-S., and Fisher, E.P. (2005) Adsorption of CO2 on
+zeolites at moderate temperature. Energy & Fuels, 19: 1153.
+35. Jayaraman, A., Chiao, A.S., Padin, J., Yang, R.T., and Munson, C.L. (2002)
+Kinetic separation of methane/carbon dioxide by molecular sieve carbons. Separ-
+ation Science and Technology, 37: 2505.
+36. Marathe, R.P., Mantri, K., Srinivasan, M.P., and Farooq, S. (2004) Effect of ion
+exchange and dehydration temperature on the adsorption and diffusion of gases
+in ETS-4. Industrial & Engineering Chemistry Research, 43: 5281.
+37. Eic, M. and Ruthven, D.M. (1988) New experimental technique for measurement
+of intracrystalline diffusivity. Zeolites, 8: 40.
+38. Grande, C.A. and Rodrigues, A.E. (2004) Adsorption kinetics of propane and
+propylene in zeolite 4A. Chemical Engineering Research and Design, 82: 1604.
+39. Glover, C.J. and Lau, W.R. (1983) Determination of multicomponent sorption
+equilibria using perturbation gas chromatography. AIChE Journal, 29: 73.
+C. A. Grande et al.
+1364

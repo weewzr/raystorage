@@ -1,0 +1,408 @@
+## F.13 R Absorber feed
+   latex : Absorber feed: dry composition after KO, $y_{CO_2}$, $y_{CO}$, $y_{CH_4}$, $y_{H_2}$
+   variables : 1
+   assumptions : None stated
+   source : [P] Case 5 17.7, 0.33, 4.8, 76.3 dry
+   engine_fn : units::cooler::absorber_feed
+   test_id : eq_f_13
+   validation : PUB: within 0.5 mol%
+## H.1 O Gas film
+   latex : Gas film: $N_{CO_2}=k_G(p_{CO_2}-p_i)$
+   variables : mol/m2/s, Pa
+   assumptions : Two-film
+   source : [P] Khan PDF p2
+   engine_fn : units::absorber::flux
+   test_id : eq_h_01
+   validation : ID
+## H.2 O Liquid film
+   latex : Liquid film: $N_{CO_2}=Ek_L^\circ(p_i-p^*)/H$
+   variables : m/s, Pa m3/mol
+   assumptions : Bulk in equilibrium
+   source : [P] Sonderby assumption 1 PDF p3
+   engine_fn : units::absorber::flux
+   test_id : eq_h_02
+   validation : ID
+## H.3 R Interface
+   latex : Interface: $p_i=HC_i$
+   variables : Pa
+   assumptions : Henry
+   source : [T]
+   engine_fn : units::absorber::flux
+   test_id : eq_h_03
+   validation : ID
+## H.4 O Overall
+   latex : Overall: $N_{CO_2}=K_G(p_{CO_2}-p^*)$, $1/K_G=1/k_G+H/(Ek_L^\circ)$
+   variables : Pa
+   assumptions : None stated
+   source : [P] Sonderby Eqs 9, 10 PDF p3
+   engine_fn : units::absorber::k_overall
+   test_id : eq_h_04
+   validation : EXP: Sonderby runs
+## H.5 E Equation
+   latex : $\log_{10}k_2=10.99-2152/T$
+   variables : m3/kmol/s
+   assumptions : Do not mix with Plaza or Dugas sets
+   source : [P] Khan Eq 2
+   engine_fn : units::absorber::k2
+   test_id : eq_h_05
+   validation : PUB: Versteeg Table 10, Part5b Table 1
+## H.6 O Equation
+   latex : $M=D_lk_2C_B/(k_L^\circ)^2$, $E_1=\sqrt M/\tanh\sqrt M$
+   variables : 1
+   assumptions : $C_B$ free MEA
+   source : [P] Khan Eq 4
+   engine_fn : units::absorber::enhancement
+   test_id : eq_h_06
+   validation : ID
+## H.7 O Equation
+   latex : $E_\infty=1+C_BD_B/(bD_lC_i)$
+   variables : 1
+   assumptions : $b=2$
+   source : [P] Khan Eq 4
+   engine_fn : units::absorber::enhancement
+   test_id : eq_h_07
+   validation : PUB: about 11 at 4.74 bar
+## H.8 O Wellek
+   latex : Wellek: $E=1+1/[(1/(E_\infty-1))^{1.35}+(1/(E_1-1))^{1.35}]^{1/1.35}$
+   variables : 1
+   assumptions : Within 3% of van Krevelen fit
+   source : [P] Khan Eq 4
+   engine_fn : units::absorber::enhancement
+   test_id : eq_h_08
+   validation : EXP: Khan Table 1 runs
+## H.9 E Equation
+   latex : $H=10^{5.3-0.035C_{MEA}-1140/T}$
+   variables : Unit not stated, assumed atm L/mol
+   assumptions : Benchmark only against G.23
+   source : [P] Khan Eq 8 PDF p4
+   engine_fn : units::absorber::henry_khan
+   test_id : eq_h_09
+   validation : EXP: Hartono Table 11
+## H.10 E Equation
+   latex : $k_L=2(D_LC_EU_L/\pi S)^{1/2}$, $C_E=0.9$
+   variables : m/s
+   assumptions : $S$ for packing [M17]
+   source : [P] Isa Table 4 Eq 10 PDF p6
+   engine_fn : units::absorber::kl_rocha
+   test_id : eq_h_10
+   validation : EXP via H.4
+## H.11 E Equation
+   latex : $k_G=0.054(D_G/S)[(U_L+U_G)\rho_GS/\mu_G]^{0.8}(\mu_G/D_G\rho_G)^{0.33}$
+   variables : m/s
+   assumptions : $D_G$ [M20]
+   source : [P] Isa Table 4 Eq 11
+   engine_fn : units::absorber::kg_rocha
+   test_id : eq_h_11
+   validation : EXP via H.4
+## H.12 E Area, central
+   latex : Area, central: Billet and Schultes $a_e/a=C_h(U_L\rho_L/a\mu_L)^{0.25}(U_L^2a/g)^{0.1}\times0.85$, $Re_L\ge5$, $C_h=0.554$
+   variables : 1
+   assumptions : Stated to 30 bar. Needs no surface tension
+   source : [P] Isa Table 5 PDF p6
+   engine_fn : units::absorber::area_bs
+   test_id : eq_h_12
+   validation : EXP: Isa Table 8
+## H.13 E Area, alternatives
+   latex : Area, alternatives: Rocha with $F_{SE}=0.25$ or 0.35, Wang, Gualito
+   variables : 1
+   assumptions : Surface tension [M19]
+   source : [P] Isa Table 5; Sonderby PDF p4
+   engine_fn : units::absorber::area_alt
+   test_id : eq_h_13
+   validation : NONE: Sensitivity only
+## H.14 O Gas
+   latex : Gas: $dG/dz=-(N_{CO_2}+N_{H_2O})aA_c$
+   variables : mol/s/m
+   assumptions : IN for H2, CH4, CO. Variable $G$, since Khan's constant flow fails at 18 mol% CO2
+   source : [P] Sonderby Eq 1
+   engine_fn : units::absorber::rhs
+   test_id : eq_h_14
+   validation : EXP
+## H.15 O Equation
+   latex : $dy_{CO_2}/dz=[N_{CO_2}aA_c(y_{CO_2}-1)+N_{H_2O}y_{CO_2}aA_c]/G$
+   variables : 1/m
+   assumptions : None stated
+   source : [P] Sonderby Eq 2
+   engine_fn : units::absorber::rhs
+   test_id : eq_h_15
+   validation : EXP: Sonderby Tables 3 to 6
+## H.16 O Equation
+   latex : $dy_{H_2O}/dz=[N_{H_2O}aA_c(y_{H_2O}-1)+N_{CO_2}y_{H_2O}aA_c]/G$
+   variables : 1/m
+   assumptions : None stated
+   source : [P] Sonderby Eq 3
+   engine_fn : units::absorber::rhs
+   test_id : eq_h_16
+   validation : EXP: Sonderby Tables 3 to 6
+## H.17 O Equation
+   latex : $dL/dz=-N_{H_2O}aA_c$
+   variables : mol/s/m
+   assumptions : CO2-free basis
+   source : [P] Sonderby Eq 4
+   engine_fn : units::absorber::rhs
+   test_id : eq_h_17
+   validation : EXP: Sonderby Tables 3 to 6
+## H.18 O ;
+   latex : $dX_{CO_2}/dz=(N_{H_2O}X_{CO_2}-N_{CO_2})aA_c/L$; $dX_{H_2O}/dz=N_{H_2O}(X_{H_2O}-1)aA_c/L$
+   variables : 1/m
+   assumptions : None stated
+   source : [P] Sonderby Eqs 5, 6
+   engine_fn : units::absorber::rhs
+   test_id : eq_h_18
+   validation : EXP: Sonderby Tables 3 to 6
+## H.19 O Equation
+   latex : $dT_G/dz=-qaA_c/(Gc_{p,G})$
+   variables : K/m
+   assumptions : None stated
+   source : [P] Sonderby Eq 7 PDF p3
+   engine_fn : units::absorber::rhs
+   test_id : eq_h_19
+   validation : EXP: profiles, Sonderby
+## H.20 O terms in , and
+   latex : $dT_L/dz$: terms in $q$, $N_{CO_2}H_{CO_2}+N_{H_2O}H_{H_2O}$ and $(N_{CO_2}c_{p,CO_2}+N_{H_2O}c_{p,H_2O})(T_L-T_G)$, all over $Lc_{p,L}$
+   variables : K/m
+   assumptions : Signs from image
+   source : [P] Sonderby Eq 8
+   engine_fn : units::absorber::rhs
+   test_id : eq_h_20
+   validation : EXP: temperature bulge
+## H.21 O Heat flux
+   latex : Heat flux: $q=h(T_G-T_L)$, $h=k_Gc_G\,c_{p,G}(Sc/Pr)^{2/3}$
+   variables : W/m2
+   assumptions : Chilton-Colburn
+   source : [P] Sonderby Eq 11; [T] analogy
+   engine_fn : units::absorber::heat_flux
+   test_id : eq_h_21
+   validation : ID
+## H.22 O Water flux
+   latex : Water flux: $N_{H_2O}=k_{G,H_2O}(p_{H_2O}-p^*_{H_2O})$
+   variables : mol/m2/s
+   assumptions : Liquid resistance small
+   source : [P] Sonderby assumption 3 PDF p3
+   engine_fn : units::absorber::flux
+   test_id : eq_h_22
+   validation : ID
+## H.23 F Drop
+   latex : Drop: $\Delta p/Z=(\Delta p/Z)_{ref}(F/F_{ref})^2$, $F=u_G\sqrt{\rho_G}$
+   variables : Pa/m
+   assumptions : Scaling from Sonderby Table 5
+   source : [M18] [A]; INL drop 0 psi, TEV-961 A-53
+   engine_fn : units::absorber::dp
+   test_id : eq_h_23
+   validation : NONE at pressure
+## H.24 O Grid
+   latex : Grid: $N$ finite volumes, upwind in each phase
+   variables : m
+   assumptions : $N=50$ and 100 compared
+   source : [T]; Khan s2.5 used forward differences
+   engine_fn : units::absorber::grid
+   test_id : eq_h_24
+   validation : ID: capture change below 0.2%
+## H.25 O Boundary
+   latex : Boundary: gas in at bottom, liquid in at top
+   variables : m
+   assumptions : Two-point problem
+   source : [P] Sonderby PDF p4
+   engine_fn : units::absorber::bc
+   test_id : eq_h_25
+   validation : ID
+## H.26 O Solve
+   latex : Solve: damped Newton on the banded system, $\lVert res\rVert_\infty<10^{-8}$
+   variables : m
+   assumptions : Start from isothermal guess
+   source : [T]
+   engine_fn : numerics::ode::banded_newton
+   test_id : eq_h_26
+   validation : ID, repeat run identical
+## H.27 R Per-pass
+   latex : Per-pass: $\eta_{pp}=(y_{in}n_{in}-y_{out}n_{out})/(y_{in}n_{in})$
+   variables : 1
+   assumptions : None stated
+   source : [P] Vinj24 Eq 20; Kwak Eq 2
+   engine_fn : units::absorber::capture
+   test_id : eq_h_27
+   validation : EXP: Salvinder 85.0 at 10.5 bar; Tan 95% at 5 bar pCO2
+## H.28 R Solvent
+   latex : Solvent: $\dot m_{solv}=\dot n_{CO_2}M_{MEA}/[w(\alpha_{rich}-\alpha_{lean})]$
+   variables : kg/s
+   assumptions : $\alpha_{rich}\le0.50$
+   source : [C]
+   engine_fn : units::absorber::solvent_rate
+   test_id : eq_h_28
+   validation : GOLD: 894 t/h; PUB DICE 1,400 t/h at 70.2 t/h CO2
+## H.29 O Diameter from liquid load, 40
+   latex : Diameter from liquid load, 40 to 100 m3/m2/h
+   variables : m
+   assumptions : L/G 12 to 15 kg/kg
+   source : [C]
+   engine_fn : units::absorber::diameter
+   test_id : eq_h_29
+   validation : PUB: 4 to 6.5 m at Case A
+## H.30 F Co-absorption
+   latex : Co-absorption: zero central. Reference: aMDEA 0.056% H2, 0.137% CH4
+   variables : 1
+   assumptions : [M10]
+   source : [C] from IEAGHG17 streams
+   engine_fn : units::absorber::coabsorb
+   test_id : eq_h_30
+   validation : NONE: Disclosed term
+## H.31 E Listed, not used
+   latex : Listed, not used: Isa index $f$, Eq 42
+   variables : 1
+   assumptions : Fitted to 20 wt%, CH4 carrier
+   source : [P] Isa Eq 42, Table 10
+   engine_fn : none
+   test_id : eq_h_31
+   validation : NONE: Card states why
+## I.1 R CO2 balance
+   latex : CO2 balance: $\dot n_{CO_2}=\dot n_{MEA}(\alpha_{rich}-\alpha_{lean})$
+   variables : mol/s
+   assumptions : SS
+   source : [T]
+   engine_fn : units::stripper::co2_balance
+   test_id : eq_i_01
+   validation : ID
+## I.2 O Desorption driving force
+   latex : Desorption driving force: H.4 with sign reversed
+   variables : mol/m2/s
+   assumptions : Equilibrium limited
+   source : [T]
+   engine_fn : units::stripper::desorb
+   test_id : eq_i_02
+   validation : Scoped, see I.3
+## I.3 O Equilibrium stage
+   latex : Equilibrium stage: $y_{CO_2}p=p^*(T,\alpha)$ on each of $N$ stages
+   variables : Pa
+   assumptions : Fast reaction at 120 C. Kinetics Plaza Eqs 3.46, 3.47 quoted, unused
+   source : [P] Plaza p98; Cownden p11
+   engine_fn : units::stripper::stages
+   test_id : eq_i_03
+   validation : EXP: Morgan K14 to K16 lean loading
+## I.4 O Rich-end pinch
+   latex : Rich-end pinch: $n_{H_2O}/n_{CO_2}=(p-p^*_{CO_2})/p^*_{CO_2}$ at top
+   variables : mol/mol
+   assumptions : Vapour leaves near equilibrium with feed
+   source : [C]
+   engine_fn : units::stripper::steam_ratio
+   test_id : eq_i_04
+   validation : PUB: DICE 0.905
+## I.5 R Lean-end
+   latex : Lean-end: $T_{reb}$ solves $p^*_{CO_2}+p^*_{H_2O}+p^*_{MEA}=p_{strip}$ at $\alpha_{lean}$
+   variables : K
+   assumptions : 2.0 bar
+   source : [D] amine_spec 121.9 C
+   engine_fn : units::stripper::t_reboiler
+   test_id : eq_i_05
+   validation : PUB: DICE 123.2 C, Vinj24 117 to 119.8 C
+## I.6 R Reboiler
+   latex : Reboiler: $\dot Q_{reb}=\sum_{out}\dot nh-\sum_{in}\dot nh$
+   variables : W
+   assumptions : SS
+   source : [T]
+   engine_fn : units::stripper::reboiler
+   test_id : eq_i_06
+   validation : ID
+## I.7 R Condenser
+   latex : Condenser: $\dot Q_{cond}=\dot Q_{H_2O}+\dot Q_{steam}+\dot Q_{CO_2}$
+   variables : W
+   assumptions : None stated
+   source : [P] Vinj24 Eq 24 PDF p13
+   engine_fn : units::stripper::condenser
+   test_id : eq_i_07
+   validation : PUB: DICE 64.4 MMBtu/h
+## I.8 R Reflux
+   latex : Reflux: condensate returned equals water in overhead at $T_{cond}$ less vent water
+   variables : mol/s
+   assumptions : Vent saturated
+   source : [P] Vinj24 Eq 23 PDF p12
+   engine_fn : units::stripper::reflux
+   test_id : eq_i_08
+   validation : ID
+## I.9 R Circulation
+   latex : Circulation: H.28
+   variables : kg/s
+   assumptions : None stated
+   source : [P] Vinj24 Eq 23 PDF p12
+   engine_fn : units::absorber::solvent_rate
+   test_id : eq_i_09
+   validation : GOLD
+## I.10 R Rich-lean exchanger
+   latex : Rich-lean exchanger: $\dot m_rc_p(T_{r,out}-T_{r,in})=\dot m_lc_p(T_{l,in}-T_{l,out})$, approach 10 K
+   variables : W, K
+   assumptions : Equal $c_p$
+   source : [C]; DICE 9.7 K
+   engine_fn : units::regen::rich_lean
+   test_id : eq_i_10
+   validation : PUB: DICE T rich, T lean
+## I.11 R Steam
+   latex : Steam: $\dot m_{st}=\dot Q_{reb}/\Delta h_{cond}$
+   variables : kg/s
+   assumptions : IF97
+   source : [T]
+   engine_fn : units::regen::steam
+   test_id : eq_i_11
+   validation : PUB: DICE 263.3 klb/h
+## I.12 R SRD
+   latex : SRD: $SRD=\dot Q_{reb}/\dot m_{CO_2}$
+   variables : J/kg
+   assumptions : None stated
+   source : [P] Vinj24 Eq 19 PDF p11
+   engine_fn : units::regen::srd
+   test_id : eq_i_12
+   validation : EXP: Vinj24 Table D.19, median 3.75 in 88 to 92% window
+## I.13 O Split
+   latex : Split: $SRD=q_{des}+q_{sens}+q_{strip}$
+   variables : J/kg
+   assumptions : $q_{des}=\Delta h_{abs}/M_{CO_2}$
+   source : [C]
+   engine_fn : units::regen::srd_split
+   test_id : eq_i_13
+   validation : PUB: DICE 1.9, 0.73, 0.97 sum near 3.64; syngas 3.4 to 3.95
+## I.14 F Carried
+   latex : Carried: 3.8, range 3.4 to 4.2
+   variables : GJ/t
+   assumptions : [M12]
+   source : [A]
+   engine_fn : units::regen::srd_input
+   test_id : eq_i_14
+   validation : NONE on syngas
+## I.15 R Stripping intensity
+   latex : Stripping intensity: $RD\cdot3600/\dot m_{rich}$
+   variables : kJ/kg
+   assumptions : None stated
+   source : [P] Vinj24 Eq 16, 17 PDF p11
+   engine_fn : units::regen::intensity
+   test_id : eq_i_15
+   validation : EXP: 200 to 210 kJ/kg optimum
+## I.16 R Reboiler area
+   latex : Reboiler area: $RD=UA_r\Delta T_{LMTD}$
+   variables : W
+   assumptions : None stated
+   source : [P] Vinj24 Eq 22 PDF p11
+   engine_fn : units::regen::reboiler_area
+   test_id : eq_i_16
+   validation : ID
+## I.17 F Source temperature
+   latex : Source temperature: $T_{source}\ge T_{reb}+\Delta T_{min}$, steam near 145 to 153 C
+   variables : K
+   assumptions : None stated
+   source : [P] DICE PDF p192; TEV-961 PDF p81
+   engine_fn : plant::heatrec::check_grade
+   test_id : eq_i_17
+   validation : PUB: syngas above 130 C only
+## I.18 F Listed, not carried
+   latex : Listed, not carried: interheat, total heat unchanged, 3.77 GJ/t
+   variables : GJ/t
+   assumptions : None stated
+   source : [C] Vinj Energy Table 4
+   engine_fn : none
+   test_id : eq_i_18
+   validation : NONE: Card states why
+## J.16 R Reboiler
+   latex : Reboiler: $\dot Q_{reb}=\dot m_{CO_2}SRD$
+   variables : W
+   assumptions : None stated
+   source : I.12
+   engine_fn : units::regen::q_reb
+   test_id : eq_j_16
+   validation : GOLD: 51.0 MW

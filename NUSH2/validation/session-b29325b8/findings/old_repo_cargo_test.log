@@ -1,0 +1,803 @@
+﻿cargo :     Updating crates.io index
+At line:1 char:743
++ ...  $env:CARGO_TERM_COLOR="never"; cargo test --all-targets 2>&1 | Out-F ...
++                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (    Updating crates.io index:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+     Locking 23 packages to latest compatible versions
+   Compiling autocfg v1.5.1
+   Compiling plotters-backend v0.3.7
+   Compiling plotters-svg v0.3.7
+   Compiling num-traits v0.2.19
+   Compiling plotters v0.3.7
+   Compiling nuclear-assisted-smr v0.1.0 (C:\Users\Alf\AppData\Local\Temp\claude\C--Ray-Claude-Ray-Debug-VS-Code\b29325
+b8-d1b9-49cd-bfe6-262261d7ffef\scratchpad\findings\old_repo_model_copy\model)
+warning: unused import: `crate::*`
+ --> src\final_design.rs:1:5
+  |
+1 | use crate::*;
+  |     ^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused imports: `ccs_capex_sgd` and `crf`
+ --> src\e2_attribution.rs:3:25
+  |
+3 | use crate::deployment::{ccs_capex_sgd,crf,JAEA_AVAIL};
+  |                         ^^^^^^^^^^^^^ ^^^
+
+warning: unused import: `final_design`
+ --> src\e2_attribution.rs:4:27
+  |
+4 | use crate::final_design::{final_design, H2_LB_H, CAPTURED_SHORT_T_D, EMITTED_SHORT_T_D, NG_FINAL_MMSCFD, 
+NG_HHV_BTU_SCF, PROCESS_ELEC...
+  |                           ^^^^^^^^^^^^
+
+warning: unused import: `crate::final_design::final_design`
+ --> src\e2b_maturation.rs:5:5
+  |
+5 | use crate::final_design::final_design;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused imports: `ccs_capex_sgd` and `crf`
+ --> src\e2_attribution.rs:3:25
+  |
+3 | use crate::deployment::{ccs_capex_sgd,crf,JAEA_AVAIL};
+  |                         ^^^^^^^^^^^^^ ^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: value assigned to `fa` is never read
+    --> src\lib.rs:4764:50
+     |
+4764 |         if fm>0.0 {hi=mid;b=m;} else {lo=mid;a=m;fa=fm;}
+     |                                                  ^^^^^
+     |
+     = help: maybe it is overwritten before being read?
+     = note: `#[warn(unused_assignments)]` (part of `#[warn(unused)]`) on by default
+
+warning: value assigned to `fa` is never read
+    --> src\lib.rs:5025:50
+     |
+5025 |         if fm>0.0 {hi=mid;b=m;} else {lo=mid;a=m;fa=fm;}
+     |                                                  ^^^^^
+     |
+     = help: maybe it is overwritten before being read?
+
+warning: value assigned to `a` is never read
+    --> src\lib.rs:5259:42
+     |
+5259 |         if fm>0.0{hi=mid;b=m}else{lo=mid;a=m;fa=fm}
+     |                                          ^^^
+     |
+     = help: maybe it is overwritten before being read?
+
+warning: value assigned to `b` is never read
+    --> src\lib.rs:5259:26
+     |
+5259 |         if fm>0.0{hi=mid;b=m}else{lo=mid;a=m;fa=fm}
+     |                          ^^^
+     |
+     = help: maybe it is overwritten before being read?
+
+warning: value assigned to `fa` is never read
+    --> src\lib.rs:5259:46
+     |
+5259 |         if fm>0.0{hi=mid;b=m}else{lo=mid;a=m;fa=fm}
+     |                                              ^^^^^
+     |
+     = help: maybe it is overwritten before being read?
+
+warning: unused variable: `psa`
+    --> src\lib.rs:5435:9
+     |
+5435 |     let psa=psa6_bounded(shifted,0.35);
+     |         ^^^ help: if this is intentional, prefix it with an underscore: `_psa`
+     |
+     = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+warning: value assigned to `fa` is never read
+    --> src\lib.rs:5810:46
+     |
+5810 |         if fm>0.0{hi=mid;b=m}else{lo=mid;a=m;fa=fm}
+     |                                              ^^^^^
+     |
+     = help: maybe it is overwritten before being read?
+
+warning: value assigned to `fa` is never read
+    --> src\lib.rs:6241:46
+     |
+6241 |         if fm>0.0{hi=mid;b=m}else{lo=mid;a=m;fa=fm}
+     |                                              ^^^^^
+     |
+     = help: maybe it is overwritten before being read?
+
+warning: `nuclear-assisted-smr` (lib test) generated 9 warnings (8 duplicates) (run `cargo fix --lib -p 
+nuclear-assisted-smr --tests` to apply 1 suggestion)
+warning: `nuclear-assisted-smr` (lib) generated 12 warnings (run `cargo fix --lib -p nuclear-assisted-smr` to apply 5 
+suggestions)
+warning: unused import: `REFORMER_C`
+ --> src\bin\final_process_schematics.rs:1:122
+  |
+1 | use nuclear_assisted_smr::final_design::{HE_RETURN_C,HE_SUPPLY_C,HEAT_MWTH,H2_MMSCFD,INL_ROT_C,PSA_RECOVERY,REACTOR
+_MWTH,REFORMER_C};
+  |                                                                                                                    
+      ^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: `nuclear-assisted-smr` (bin "final_process_schematics" test) generated 1 warning (run `cargo fix --bin 
+"final_process_schematics" -p nuclear-assisted-smr --tests` to apply 1 suggestion)
+warning: function `jAEA_mockup_temperature_is_consistent_with_finite_ihx_drop` should have a snake case name
+   --> tests\baseline.rs:320:4
+    |
+320 | fn jAEA_mockup_temperature_is_consistent_with_finite_ihx_drop() {
+    |    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: convert the identifier to snake case: 
+`j_aea_mockup_temperature_is_consistent_with_finite_ihx_drop`
+    |
+    = note: `#[warn(non_snake_case)]` (part of `#[warn(nonstandard_style)]`) on by default
+
+warning: `nuclear-assisted-smr` (test "baseline") generated 1 warning
+warning: `nuclear-assisted-smr` (bin "final_process_schematics") generated 1 warning (1 duplicate)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 20.34s
+     Running unittests src\lib.rs (target\debug\deps\nuclear_assisted_smr-1034150f72a6950b.exe)
+
+running 228 tests
+test analytical_recycle_tests::iterative_solver_matches_analytical_fixed_point ... ok
+test analytical_recycle_tests::positive_coefficients_change_inventory_not_fresh_feed_fixed_point ... ok
+test common_basis_tests::common_product_basis_matches_ieaghg_scale ... ok
+test case2a_electric_decomposition_tests::removing_expander_credit_increases_net_load_by_source_generation ... ok
+test case2a_electric_decomposition_tests::source_ledger_reproduces_old_anchor ... ok
+test ccs_topology_closure_tests::furnace_free_topology_has_no_flue_gas_capture_block ... ok
+test ccs_topology_closure_tests::topology_closes_carbon_with_inert_control_purge ... ok
+test case2a_electric_decomposition_tests::recycle_topology_adds_only_post_capture_compression ... ok
+test common_basis_tests::system_boundaries_are_strictly_nested ... ok
+test conventional_temperature_balance_tests::reformer_whb_duty_rises_with_source_outlet_temperature ... ok
+test conventional_temperature_balance_tests::whb_temperature_reconstruction_is_same_order_as_source_steam_sink ... ok
+test conventional_validation_metric_tests::published_radiant_conversion_is_exact ... ok
+test conventional_validation_metric_tests::whb_reconstruction_brackets_source_temperature_uncertainty ... ok
+test converged_heat_service_tests::converged_reaction_delta_is_a_saving_for_source_tail ... ok
+test converged_heat_report::lock_converged_heat_envelope_ranges ... ok
+test converged_heat_service_tests::converged_service_bound_is_ordered_and_physical ... ok
+test converged_heat_service_tests::lower_conversion_changes_inventory_not_net_fixed_point_reaction_conversion ... ok
+test converged_report_values::print_converged_reference_and_full_cost_values ... ok
+test deployment::tests::cost_conversions_reproduce ... ok
+test e1_economics::tests::central_is_one_600mw_module_not_four ... ok
+test e1_economics::tests::dedicated_htgr200_alternative_is_adverse ... ok
+test e1_economics::tests::emissions_denominator_is_unchanged ... ok
+test e1_economics::tests::integration_anchor_replaces_old_allowance_when_used ... ok
+test e1_economics::tests::break_even_sensitivities_are_finite ... ok
+test e1_economics::tests::central_case_fails_cost_threshold ... ok
+test e1_economics::tests::source_integration_replaces_old_allowance_not_stacks ... ok
+test e1_economics::tests::shared_case_is_explicitly_conditional_and_below_threshold_before_omissions ... ok
+test deployment::tests::duty_fits_ihx_and_module ... ok
+test e2_attribution::tests::attribution_closes ... ok
+test e2_attribution::tests::ccs_alone_clears_abatement_threshold ... ok
+test e1_economics::tests::usd_2021_normalization_is_reproducible ... ok
+test e2_attribution::tests::common_h2_service_matches_project ... ok
+test deployment::tests::temperatures_are_source_defined_and_positive ... ok
+test e2_attribution::tests::e1_candidate_cost_is_unchanged ... ok
+test e2_attribution::tests::no_capture_double_count ... ok
+test deployment::tests::full_reactor_burden_is_closed ... ok
+test e2b_maturation::tests::no_coproduct_credit_is_embedded ... ok
+test e2_attribution::tests::nuclear_adds_abatement_but_is_not_majority ... ok
+test e2b_maturation::tests::emissions_scale_only_with_real_h2_trains ... ok
+test e2b_maturation::tests::one_train_does_not_gain_unsupported_credit ... ok
+test e2b_maturation::tests::preferred_is_defined_by_source_method_and_learning ... ok
+test e2b_maturation::tests::e1_gap_is_preserved ... ok
+test deployment::tests::break_even_is_undefined_without_positive_abatement ... ok
+test e3_siting::tests::ema_reference_flow_is_reproducible ... ok
+test e2b_maturation::tests::preferred_passes_both_thresholds ... ok
+test e2b_maturation::tests::foak_two_train_fails_but_boak_and_tenoak_pass ... ok
+test e2b_maturation::tests::three_trains_are_rejected_by_source_heat_branch ... ok
+test e2b_maturation::tests::two_trains_close_heat_branch ... ok
+test e3_siting::tests::e2b_abatement_preserved ... ok
+test e3_siting::tests::captured_co2_scale ... ok
+test e3_siting::tests::two_train_heat_closes ... ok
+test equilibrium_layer_tests::endothermic_smr_equilibrium_constant_rises_with_temperature ... ok
+test equilibrium_layer_tests::exothermic_wgs_equilibrium_constant_falls_with_temperature ... ok
+test equilibrium_layer_tests::published_hts_outlet_is_finite_equilibrium_diagnostic ... ok
+test equilibrium_layer_tests::smr_reaction_quotient_has_expected_pressure_squared_dependence ... ok
+test equilibrium_layer_tests::wgs_reaction_quotient_is_pressure_independent_for_delta_n_zero ... ok
+test final_design::tests::availability_base_reconciles ... ok
+test final_design::tests::availability_sensitivity_is_monotonic ... ok
+test e3_siting::tests::lower_delta_t_requires_more_water ... ok
+test e3_siting::tests::residual_is_capacity_not_duty ... ok
+test e3_siting::tests::two_train_flows_scale_exactly ... ok
+test final_design::tests::availability_threshold_reproduces ... ok
+test deployment::tests::source_temperature_resolve_is_adverse ... ok
+test final_design::tests::ccs_capture_abatement_is_monotonic ... ok
+test final_design::tests::ccs_capture_base_reconciles ... ok
+test final_design::tests::ccs_zero_delivered_endpoint ... ok
+test final_design::tests::cost_ledger_reconciles ... ok
+test final_design::tests::doubled_cost_is_adverse_not_capacity ... ok
+test final_design::tests::electricity_value_does_not_create_unsupported_credit ... ok
+test final_design::tests::final_lifecycle_positive_and_threshold ... ok
+test final_design::tests::final_mass_scale_positive ... ok
+test final_design::tests::gas_backup_penalty_is_monotonic ... ok
+test final_design::tests::gas_backup_base_reconciles ... ok
+test final_design::tests::nishihara_source_variant_identity ... ok
+test final_design::tests::no_unsupported_project_power_claim ... ok
+test final_design::tests::reactor_thermal_capacity_closes ... ok
+test final_design::tests::source_balance_values ... ok
+test final_design::tests::source_temperature_ladder ... ok
+test final_design::tests::zero_value_case_recovers_full_reactor_burden ... ok
+test final_design::tests::inl_helium_state_reproduces_source_flow ... ok
+test gate5_case1a_csv_tests::comparator_csv_preserves_source_and_screening_classes ... ok
+test final_design::tests::lifecycle_ci_units_are_correct ... ok
+test final_design::tests::lifecycle_ledger_reconciles ... ok
+test final_design::tests::modern_cost_sensitivity_is_more_expensive ... ok
+test gate5_experiment03_tests::case1a_passes_scale_without_claiming_singapore_cost_pass ... ok
+test gate5_experiment03_tests::ts_contribution_scales_on_captured_over_avoided_denominator ... ok
+test deployment::tests::doubled_ihx_raises_full_reactor_burden ... ok
+test gate5_figure_data_tests::figure_manifest_preserves_threshold_semantics ... ok
+test deployment::tests::no_finite_abatement_cost_when_abatement_nonpositive ... ok
+test gate5_experiment02_tests::carbon_intensive_auxiliary_corner_reduces_abatement ... ok
+test gate5_materialized_results_tests::driver_csv_has_header_plus_six_rows ... ok
+test gate5_experiment02_tests::higher_heat_and_fixed_cost_worsens_abatement_cost ... ok
+test gate5_experiment02_tests::every_declared_driver_has_a_measurable_effect ... ok
+test gate5_experiment04_tests::binding_classes_partition_the_verified_domain ... ok
+test gate5_figure_data_tests::binding_counts_reconcile_to_64_and_zero_joint_pass ... ok
+test final_design::tests::historical_gate5_still_reproduces ... ok
+test ieaghg_wgs_validation_tests::apparent_equilibrium_temperature_is_bracketed ... ok
+test ieaghg_wgs_validation_tests::apparent_temperature_reproduces_source_reaction_quotient ... ok
+test ieaghg_wgs_validation_tests::source_hts_is_not_assumed_exact_equilibrium ... ok
+test independent_radiant_validation_tests::authoritative_radiant_benchmark_is_not_orders_outside_reconstruction ... ok
+test independent_radiant_validation_tests::independent_radiant_envelope_is_ordered_and_positive ... ok
+test independent_radiant_validation_tests::temperature_corrected_smr_remains_endothermic ... ok
+test gate5_experiment04_tests::binding_summary_retains_nonzero_failure_distance ... ok
+test gate6_lifecycle_decomposition_tests::decomposition_reconciles_exactly_and_preserves_proxy_label ... ok
+test gate6_singapore_scale_csv_tests::generated_scale_preserves_claim_strength_and_storage_reconciliation ... ok
+test inert_and_purge_closure_tests::carbon_closes_when_purge_is_explicit ... ok
+test inert_and_purge_closure_tests::inert_purge_closes_n2_exactly ... ok
+test inert_and_purge_closure_tests::tighter_n2_limit_requires_more_purge ... ok
+test iterative_recycle_tests::fixed_h2_recycle_converges_and_reduces_fresh_ng ... ok
+test iterative_recycle_tests::no_recycle_is_not_a_recycle_fixed_point ... ok
+test iterative_recycle_tests::positive_conversion_changes_inventory_not_fresh_feed_fixed_point ... ok
+test nuclear_heat_integration_review1_tests::ihx_pressure_drop_implies_nonzero_circulator_load ... ok
+test nuclear_heat_integration_review1_tests::temperature_budget_is_explicit_not_assumed ... ok
+test nuclear_heat_integration_review1_tests::validated_radiant_duty_is_below_japan_ihx_benchmark ... ok
+test post_e8_architecture_sizing::tests::benchmark_matches_e2b ... ok
+test post_e8_architecture_sizing::tests::integer_rule_is_feasibility_not_global_optimum ... ok
+test post_e8_architecture_sizing::tests::sensitivities_preserve_same_total_service ... ok
+test post_e8_architecture_sizing::tests::topology_cost_credit_is_not_canonical ... ok
+test psa_carbon_closure::tests::exact_closed_synthetic_case ... ok
+test psa_carbon_closure::tests::missing_tail_gas_never_assumed_zero ... ok
+test psa_carbon_closure::tests::reported_ratio_is_not_a_capture_efficiency ... ok
+test psa_carbon_closure::tests::unclosed_synthetic_case_retains_residual ... ok
+test r3_b01_mass_and_source_validation_tests::once_through_reformer_is_source_compatible_not_exactly_fitted ... ok
+test r3_b01_physical_stream_graph_tests::captured_co2_is_absent_from_downstream_by_exact_amount ... ok
+test r3_b01_physical_stream_graph_tests::prereformer_reduction_preserves_source_elements_with_added_water ... ok
+test r3_b01_mass_and_source_validation_tests::canonical_external_mass_closes ... ok
+test r3_b01_physical_stream_graph_tests::r3_fixed_h2_product_closes ... ok
+test r3_b01_physical_stream_graph_tests::r3_canonical_case_closes_external_elements ... ok
+test r3_b02_heat_cascade_tests::canonical_heat_cascade_has_positive_terminal_approaches ... ok
+test r3_b02_heat_cascade_tests::recovered_heat_is_allocated_once_and_first_law_closes ... ok
+test r3_b02_heat_cascade_tests::worst_screening_reformer_inlet_still_has_feasible_temperature_order ... ok
+test r3_b02_heat_cascade_tests::energy_and_ccs_use_identical_candidate_mdea_duty ... ok
+test r3_b03_forward_lifecycle_economics_tests::abatement_cost_is_forward_identity_not_target_budget ... ok
+test r3_b03_forward_lifecycle_economics_tests::auxiliary_electricity_source_changes_lifecycle_result ... ok
+test r3_b03_forward_lifecycle_economics_tests::lifecycle_contains_all_r3_physical_energy_terms ... ok
+test r3_b03_forward_lifecycle_economics_tests::annual_h2_scale_is_independently_reproduced ... ok
+test deployment::tests::gate5_unchanged ... ok
+test r3_b03_threshold_tests::conservative_auxiliary_emissions_exceed_reference ... ok
+test r3_b03_threshold_tests::threshold_cases_are_forward_results_not_assumed_passes ... ok
+test gate5_synthesis_tests::scatter_has_exactly_64_data_rows ... ok
+test r3_m01_driver_tests::driver_contrasts_change_outputs ... ok
+test gate5_experiment01_tests::experiment_reproduces_verified_domain_topology ... ok
+test r3_m02_comparator_tests::case1a_same_scale_direct_abatement_exceeds_assignment_scale ... ok
+test r3_m02_comparator_tests::case1a_source_cac_decomposition_reconstructs_published_value ... ok
+test r3_m02_comparator_tests::comparator_evidence_is_not_overstated ... ok
+test r3_m03_singapore_scale_tests::deployment_assumptions_are_explicitly_conditional ... ok
+test r3_m01_uncertainty_tests::grid_auxiliary_corner_is_lifecycle_worse_than_low_carbon_corner ... ok
+test r3_m03_singapore_scale_tests::deployment_scale_is_derived_from_corrected_r3_state ... ok
+test r3_m03_singapore_scale_tests::storage_throughput_reconciles_process_and_purge_capture ... ok
+test r3_m04_gate4_adversarial_tests::fg_case1a_source_comparator_exceeds_annual_scale_threshold ... ok
+test r3_m01_uncertainty_tests::reformer_temperature_and_pressure_change_fresh_feed ... ok
+test r3_m04_gate4_adversarial_tests::g_auxiliary_electricity_is_inside_lifecycle_boundary ... ok
+test r3_m04_gate4_adversarial_tests::g_plant_boundary_closes_and_capture_is_removed ... ok
+test gate5_experiment01_tests::nearest_cases_are_actual_domain_members ... ok
+test gate5_synthesis_tests::synthesis_reconciles_binding_partition ... ok
+test radiant_acceptance_five_percent_probe::probe_five_percent_radiant_validation_threshold ... ok
+test r3_m04_gate4_adversarial_tests::h_zero_process_temperature_approach_is_rejected - should panic ... ok
+test radiant_acceptance_numeric_probe::classify_radiant_reference_against_independent_envelope ... ok
+test radiant_acceptance_ten_percent_probe::probe_ten_percent_radiant_validation_threshold ... ok
+test radiant_acceptance_tests::radiant_validation_metrics_are_finite ... ok
+test radiant_acceptance_tighter_classification::radiant_nearest_mismatch_is_below_twenty_percent ... ok
+test recycle_penalty_regression_ranges::recycle_penalties_remain_screening_scale ... ok
+test recycle_penalty_tests::recycle_compression_rises_with_pressure_ratio ... ok
+test gate5_materialized_results_tests::uncertainty_csv_has_header_plus_64_rows ... ok
+test r3_m04_gate4_adversarial_tests::gh_ccs_energy_duty_cannot_diverge ... ok
+test recycle_penalty_tests::recycle_compression_zero_at_unity_pressure_ratio ... ok
+test recycle_penalty_tests::recycle_sensible_heat_is_positive_and_conversion_sensitive ... ok
+test recycle_pressure_topology_tests::source_anchored_topology_requires_post_capture_pressure_lift ... ok
+test recycle_pressure_topology_tests::two_stage_compression_exceeds_capture_stage_alone ... ok
+test review1_closure_tests::converged_external_carbon_closes_exactly ... ok
+test review1_closure_tests::conventional_source_energy_ledger_is_physical ... ok
+test review1_closure_tests::tail_carbon_destination_is_positive_and_finite ... ok
+test review2_b02_candidate_energy_tests::candidate_energy_ledger_is_below_japan_ihx_capacity_screen ... ok
+test review2_b02_candidate_energy_tests::candidate_nuclear_duty_is_residual_not_legacy_midpoint ... ok
+test review2_b02_propagation_tests::canonical_reference_uses_thermo_solver_not_legacy_fraction ... ok
+test review2_b02_candidate_energy_tests::hotter_reformer_inlet_reduces_external_reformer_heat ... ok
+test gate5_synthesis_tests::synthesis_does_not_claim_global_impossibility ... ok
+test review2_b02_candidate_energy_tests::candidate_reformer_enthalpy_balance_closes_exactly ... ok
+test review2_b02_propagation_tests::thermo_lifecycle_uses_solved_fresh_fraction ... ok
+test review2_b03_external_equilibrium_tests::equilibrium_is_continuous_across_h2_dispatch_boundary ... ok
+test review2_b03_external_equilibrium_tests::equilibrium_is_physical_across_reformer_range ... ok
+test review2_b03_external_equilibrium_tests::nist_smr_k_matches_independent_thermochemical_table ... ok
+test review2_b03_property_tests::co2_boundary_is_continuous_to_nist_rounding ... ok
+test review2_b03_property_tests::h2_boundary_is_continuous_to_nist_rounding ... ok
+test review2_b03_property_tests::h2_invalid_high_temperature_rejected - should panic ... ok
+test review2_b03_property_tests::raw_interval_rejects_extrapolation - should panic ... ok
+test review2_b03_property_tests::reformer_temperatures_use_high_h2_interval ... ok
+test review2_fullspecies_foundation_tests::equilibrium_wgs_closes_elements_and_q_over_k ... ok
+test review2_fullspecies_foundation_tests::psa_once_through_recovers_source_recovery_at_zero_sensitivity ... ok
+test review2_b02_propagation_tests::thermo_reference_outputs_are_finite_without_legacy_range_lock ... ok
+test review2_fullspecies_foundation_tests::psa_recovery_degrades_with_added_inert ... ok
+test review2_fullspecies_foundation_tests::source_hts_wgs_extent_reproduces_outlet_species ... ok
+test review2_fullspecies_foundation_tests::wgs_stoichiometry_conserves_all_elements ... ok
+test review2_legacy_retirement_tests::legacy_reduced_prediction_is_explicitly_retired ... ok
+test review2_m01_ccs_duty_tests::source_case2a_scaling_reproduces_source_duties_at_unit_throughput ... ok
+test review2_m01_ccs_duty_tests::candidate_ccs_duties_scale_from_actual_solved_co2 ... ok
+test review2_m01_ccs_duty_tests::low_pressure_tail_compressor_is_not_applied_to_high_pressure_process_co2 ... ok
+test review2_m04_helium_loop_tests::full_loop_circulator_is_bounded_and_nonzero ... ok
+test review2_m04_helium_loop_tests::full_loop_dp_includes_all_component_groups ... ok
+test review2_m04_helium_loop_tests::loop_flow_uses_resolved_candidate_heat_not_old_170mw_benchmark ... ok
+test review2_m05_integrated_propagation_tests::integrated_lifecycle_and_cost_outputs_are_finite_and_physical ... ok
+test review2_m05_integrated_propagation_tests::integrated_screen_is_not_legacy_0737_or_162mw_case ... ok
+test review2_nested_conservation_tests::nested_reaction_steps_conserve_cho_n ... ok
+test review2_nested_conservation_tests::nested_solution_closes_inert_and_product_residuals ... ok
+test review2_nested_recycle_tests::nominal_nested_solver_closes_state_and_product ... ok
+test review2_psa_envelope_tests::ieaghg_recovery_lies_inside_literature_screen ... ok
+test review2_smr_equilibrium_tests::coupled_equilibrium_closes_both_reactions ... ok
+test review2_smr_equilibrium_tests::ieaghg_hot_product_has_finite_thermodynamic_residuals ... ok
+test review2_psa_envelope_tests::all_psa_recovery_cases_converge_and_hold_product ... ok
+test review2_smr_equilibrium_tests::smr_equilibrium_solver_conserves_elements_and_closes_qk ... ok
+test review2_psa_envelope_tests::lower_psa_recovery_requires_no_less_fresh_feed ... ok
+test review2_structural_diagnostics::current_fresh_feed_solution_is_purge_blind ... ok
+test review2_nested_recycle_tests::nested_fresh_feed_responds_to_model_performance ... ok
+test review2_structural_diagnostics::reduced_recycle_accepts_distinct_non_equilibrium_conversion_assumptions ... ok
+test review2_thermo_recycle_tests::thermo_nested_solver_converges_at_reference_temperature_screen ... ok
+test review2_thermo_recycle_tests::thermo_recycle_fresh_feed_responds_to_reformer_temperature ... ok
+test wgs_numeric_interpretation_lock::published_hts_equilibrium_approach_is_moderate_not_orders_of_magnitude ... ok
+test review2_m05_integrated_propagation_tests::integrated_screen_uses_canonical_physical_ledgers ... ok
+test gate5_materialized_results_tests::summary_preserves_zero_joint_pass_result ... ok
+test r3_m01_driver_tests::uncertainty_grid_result_is_explicitly_falsifiable ... ok
+test r3_m01_falsification_classification_tests::current_coupled_design_has_no_joint_cn4252_pass ... ok
+test r3_m01_falsification_classification_tests::threshold_driver_counts_reconcile_with_zero_joint_pass ... ok
+test r3_m01_uncertainty_tests::uncertainty_design_contains_pass_and_fail_regions ... ok
+test r3_m04_gate4_adversarial_tests::h_adverse_threshold_results_are_preserved ... ok
+test r3_m04_gate4_adversarial_tests::g_canonical_results_snapshot_is_self_consistent ... ok
+test review4_manuscript_data_tests::domain_is_64 ... ok
+test review4_manuscript_data_tests::bounds_have_no_sentinel ... ok
+test review4_manuscript_data_tests::magnitude_keeps_zero_pass ... ok
+
+test result: ok. 228 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 3.43s
+
+     Running unittests src\bin\deep_feasibility_tikz.rs (target\debug\deps\deep_feasibility_tikz-b39e4d419c96ce69.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\e1_engineering_economics.rs 
+(target\debug\deps\e1_engineering_economics-f75cc288014c26e8.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\e2_incremental_nuclear_benefit.rs 
+(target\debug\deps\e2_incremental_nuclear_benefit-38f36d7a8fb4218e.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\e2b_architecture_maturation.rs 
+(target\debug\deps\e2b_architecture_maturation-6dba98683730792d.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\e3_jurong_siting.rs (target\debug\deps\e3_jurong_siting-dbfa5fad55348087.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\final_design_availability_csv.rs 
+(target\debug\deps\final_design_availability_csv-6c09b1748bcd5fef.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\final_design_ccs_capture_csv.rs 
+(target\debug\deps\final_design_ccs_capture_csv-7b68158f6dc264f2.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\final_design_ccs_summary.rs 
+(target\debug\deps\final_design_ccs_summary-ba8eb076cf309bb4.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\final_design_cost_ledger_csv.rs 
+(target\debug\deps\final_design_cost_ledger_csv-b29214be5358c170.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\final_design_figures.rs (target\debug\deps\final_design_figures-ba77f1a8c577e651.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\final_design_gas_backup_csv.rs 
+(target\debug\deps\final_design_gas_backup_csv-c63a2fcbfdd3e1f1.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\final_design_heat_figure_tex.rs 
+(target\debug\deps\final_design_heat_figure_tex-6c070e3040442339.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\final_design_lifecycle_ledger_csv.rs 
+(target\debug\deps\final_design_lifecycle_ledger_csv-e9fc2b2924c7c837.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\final_design_reliability_summary.rs 
+(target\debug\deps\final_design_reliability_summary-685a94b4f9cfcbd9.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\final_design_results_csv.rs 
+(target\debug\deps\final_design_results_csv-529d512b02772461.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\final_design_source_balance_csv.rs 
+(target\debug\deps\final_design_source_balance_csv-8a963a3158154002.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\final_design_temperature_csv.rs 
+(target\debug\deps\final_design_temperature_csv-91c1fb1edfcd38f4.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\final_design_visual_data_csv.rs 
+(target\debug\deps\final_design_visual_data_csv-5f0692725dd9b76e.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\final_integrated_process_figure.rs 
+(target\debug\deps\final_integrated_process_figure-3eee6190631bea80.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\final_process_schematics.rs 
+(target\debug\deps\final_process_schematics-c55081098b0d7fbd.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\gate5_binding_counts_csv.rs 
+(target\debug\deps\gate5_binding_counts_csv-f796aeacd694bf78.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\gate5_case1a_comparator_csv.rs 
+(target\debug\deps\gate5_case1a_comparator_csv-df7caa82d7e5f8da.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\gate5_case1a_comparator_table_csv.rs 
+(target\debug\deps\gate5_case1a_comparator_table_csv-bc4a67194872e85d.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\gate5_driver_cost_finite_csv.rs 
+(target\debug\deps\gate5_driver_cost_finite_csv-81d5eb8bcf69498c.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\gate5_driver_csv.rs (target\debug\deps\gate5_driver_csv-9915359490188526.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\gate5_experiment01.rs (target\debug\deps\gate5_experiment01-b078ffd282367725.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\gate5_experiment02.rs (target\debug\deps\gate5_experiment02-30e4fc11a839aa92.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\gate5_experiment03.rs (target\debug\deps\gate5_experiment03-dc401ef3fd17c5ca.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\gate5_experiment04.rs (target\debug\deps\gate5_experiment04-7ce8d573e87a530b.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\gate5_figure_manifest.rs (target\debug\deps\gate5_figure_manifest-64a781713e15229e.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\gate5_results_summary.rs (target\debug\deps\gate5_results_summary-fd49351f1d49fbb8.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\gate5_results_synthesis.rs 
+(target\debug\deps\gate5_results_synthesis-2a0acd7ca8c452d0.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\gate5_threshold_scatter_csv.rs 
+(target\debug\deps\gate5_threshold_scatter_csv-12f429a33455d3fb.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\gate5_threshold_scatter_finite_csv.rs 
+(target\debug\deps\gate5_threshold_scatter_finite_csv-b956dae7208a6c5a.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\gate5_uncertainty_csv.rs (target\debug\deps\gate5_uncertainty_csv-7505fc8dba4e6d53.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\gate6_domain_table_csv.rs 
+(target\debug\deps\gate6_domain_table_csv-a015fce3c60945ec.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\gate6_lifecycle_decomposition_csv.rs 
+(target\debug\deps\gate6_lifecycle_decomposition_csv-96e79d536c1ef3eb.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\gate6_singapore_scale_csv.rs 
+(target\debug\deps\gate6_singapore_scale_csv-19f0ec2f0192658a.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\gate6_threshold_magnitude_csv.rs 
+(target\debug\deps\gate6_threshold_magnitude_csv-6ba35c062da81959.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\gate6_threshold_plot_bounds_csv.rs 
+(target\debug\deps\gate6_threshold_plot_bounds_csv-93e06ab27a538cf8.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\post_e8_architecture_sizing.rs 
+(target\debug\deps\post_e8_architecture_sizing-5268265f8a756752.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\review5_cogeneration_csv.rs 
+(target\debug\deps\review5_cogeneration_csv-11d8e93af7112563.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\review5_cost_ledger_csv.rs 
+(target\debug\deps\review5_cost_ledger_csv-4eaed329490cc446.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\review5_margin_csv.rs (target\debug\deps\review5_margin_csv-49d311a0e05359ae.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\review5_results_csv.rs (target\debug\deps\review5_results_csv-a3d2368bae313720.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\baseline.rs (target\debug\deps\baseline-7cf1e9bbb36628b6.exe)
+
+running 111 tests
+test abatement_cost_uses_incremental_not_total_candidate_cost ... ok
+test base_makeup_fuel_combustion_is_only_part_of_total_direct_co2 ... ok
+test bounded_furnace_service_envelope_is_about_131_to_151_mw ... ok
+test capital_recovery_factor_matches_standard_formula ... ok
+test case1a_screen_requires_large_annual_savings_to_reach_s100 ... ok
+test case1a_singapore_screen_exceeds_assignment_threshold_under_group_a_inputs ... ok
+test case_1a_cn4252_scale_is_about_51_kt_h2_per_year_plant_gate_only ... ok
+test case_1a_reconstructs_ieaghg_avoidance_fraction ... ok
+test ccs_tariff_can_consume_large_fraction_of_annual_budget ... ok
+test capex_only_break_even_is_an_upper_bound_not_a_project_cost ... ok
+test capture_and_avoidance_are_not_identical ... ok
+test cn4252_threshold_implies_25m_sgd_per_year_at_minimum_abatement_scale ... ok
+test case2a_tail_separation_anchor_is_over_six_mwe_before_other_recycle_costs ... ok
+test co2_only_tail_gas_capture_leaves_about_thirty_two_percent_of_tail_carbon ... ok
+test co_and_ch4_leave_a_large_residual_carbon_load_after_pre_psa_co2_removal ... ok
+test cogeneration_allocation_leaves_more_abatement_budget_than_dedicated_reactor ... ok
+test cogeneration_energy_share_expands_common_reactor_cost_headroom_by_three_point_five ... ok
+test complete_ng_feed_preheat_exceeds_methane_only_bound ... ok
+test current_source_backed_furnace_service_floor_exceeds_116_mw ... ok
+test current_htgr_service_envelope_increases_with_reformer_inlet_temperature ... ok
+test each_unit_of_ts_tariff_moves_case1a_cac_by_captured_per_avoided_ratio ... ok
+test direct_heat_lca_proxy_is_lower_than_electric_for_same_service_conversion_chain ... ok
+test eighty_percent_recycle_reduces_standard_reaction_heat_vs_displaced_fresh_methane ... ok
+test eighty_percent_recycle_nearly_replaces_removed_fresh_carbon_throughput ... ok
+test eighty_percent_tail_recycle_has_small_net_standard_reaction_heat_but_large_mdea_heat ... ok
+test feedstock_carbon_equivalent_is_about_seven_point_seven_kg_co2_per_kg_h2 ... ok
+test flue_gas_capture_has_larger_energy_penalty_and_more_plant_gate_abatement ... ok
+test full_shift_sensible_heat_to_170c_is_now_bounded_without_nist_extrapolation ... ok
+test furnace_ng_savings_need_double_digit_sgd_per_gj_to_close_current_gap_alone ... ok
+test furnace_steam_generation_upper_bound_is_about_sixteen_to_seventeen_mw ... ok
+test group_a_like_ccs_leaves_little_room_for_everything_else ... ok
+test gthtr300c_energy_share_allocates_about_twenty_eight_percent_to_process_heat ... ok
+test gthtr300c_ihx_loop_anchor_is_not_negligible_against_narrow_margin ... ok
+test gthtr300c_ihx_only_pumping_is_low_single_digit_mw ... ok
+test gthtr300c_large_scale_ihx_is_same_order_as_project_helium_flow ... ok
+test heat_cascade_sensitivity_spans_full_external_heat_to_full_waste_heat ... ok
+test hp_steam_superheat_is_about_sixteen_mw ... ok
+test hts_section_conserves_c_h_o_with_rounded_source_values ... ok
+test hts_wgs_extent_closes_independently_on_co_co2_h2_and_water ... ok
+test iaea_htgr_source_costs_are_large_relative_to_current_hydrogen_headroom ... ok
+test iapws_region4_tsat_reproduces_normal_boiling_point ... ok
+test iea_global_gas_and_lng_anchors_materially_change_upstream_h2_intensity ... ok
+test ieaghg_base_case_co2_is_about_nine_kg_per_kg_h2 ... ok
+test ieaghg_carbon_balance_closes_from_ng_inputs_to_flue_gas ... ok
+test ieaghg_base_case_specific_ng_reconstructs_published_flows ... ok
+test ieaghg_base_energy_ledger_reconstructs_published_scale ... ok
+test ieaghg_ccs_cases_reproduce_authoritative_incremental_energy_penalties ... ok
+test ieaghg_energy_source_rounding_is_explicit_not_forced ... ok
+test ieaghg_case1a_cac_decomposition_reconstructs_reported_47_point_1 ... ok
+test jAEA_mockup_temperature_is_consistent_with_finite_ihx_drop ... ok
+test inverse_recycle_economics_shows_ccs_can_erase_capital_headroom ... ok
+test ieaghg_non_whb_steam_group_can_cover_less_than_half_mdea_duty_at_most ... ok
+test lng_anchor_materially_raises_matched_lifecycle_intensity ... ok
+test ieaghg_hp_steam_mass_ledger_reconstructs_total_superheated_flow ... ok
+test ieaghg_volume_to_mass_basis_is_self_consistent ... ok
+test loop_pressure_drop_sensitivity_maps_to_parasitic_fraction ... ok
+test makeup_furnace_fuel_is_only_about_fourteen_percent_of_input_carbon ... ok
+test ieaghg_reformer_radiant_duty_converts_to_about_96_mw ... ok
+test matched_direct_and_electric_cases_have_identical_plant_gate_carbon_by_construction ... ok
+test matched_lifecycle_budget_changes_full_cost_gas_boundary ... ok
+test matched_recycle_meets_abatement_scale_across_credible_lifecycle_bracket ... ok
+test maximum_nuclear_heat_price_falls_as_ccs_cost_rises ... ok
+test ninety_percent_matched_feedstock_carbon_capture_leaves_about_point_seven_seven_kg ... ok
+test matched_lifecycle_budget_reopens_part_of_shared_reactor_region ... ok
+test ninety_percent_capture_lifecycle_screen_is_upstream_gas_dominated ... ok
+test ninety_six_mw_requires_large_secondary_helium_flow_for_modest_delta_t ... ok
+test nist_methane_shomate_reproduces_feed_preheat_lower_bound ... ok
+test nuclear_electric_screen_requires_more_reactor_thermal_power_than_process_heat ... ok
+test prereformer_coil_lower_bound_is_positive_and_material ... ok
+test prereformer_to_hts_source_rows_are_not_silently_forced_to_close ... ok
+test preserving_feed_preheat_pushes_mdea_recovery_ceiling_below_thirty_seven_percent ... ok
+test pressure_losses_add_linearly_in_screening_budget ... ok
+test primary_950c_cannot_support_950c_process_with_finite_approach ... ok
+test project_loop_circulator_sensitivity_is_low_single_digit_mw ... ok
+test psa_tail_gas_carries_essentially_all_feedstock_carbon_before_firing ... ok
+test psa_tail_gas_contains_large_internal_fuel_inventory ... ok
+test published_psa_streams_reconstruct_h2_product_flow ... ok
+test published_psa_streams_reconstruct_hydrogen_recovery ... ok
+test quantified_furnace_replacement_services_already_exceed_112_mw ... ok
+test radiant_duty_exceeds_makeup_ng_fuel_lhv_because_tail_gas_is_also_fired ... ok
+test recycle80_matched_lifecycle_recomputes_assignment_budget ... ok
+test recycle80_matched_lifecycle_regenerates_abatement_budget_from_same_case ... ok
+test recycle80_operating_energy_screen_has_expected_economic_direction ... ok
+test reduced_298k_reaction_layer_is_below_published_radiant_duty ... ok
+test recycle_stream_preheat_is_small_and_positive ... ok
+test reduced_reaction_extents_nearly_reproduce_psa_hydrogen ... ok
+test reduced_reaction_extents_reproduce_psa_carbon_species ... ok
+test reduced_standard_reaction_duty_is_positive_and_order_60_mw ... ok
+test reduced_tail_recycle_is_below_carbon_only_displacement_ceiling_for_mid_case ... ok
+test reduced_tail_recycle_respects_physical_monotonicity ... ok
+test reference_plant_abatement_budget_is_tens_of_millions_per_year ... ok
+test reformer_preheater_duty_increases_monotonically_with_inlet_temperature ... ok
+test shared_reactor_full_cost_boundary_requires_favourable_gas_or_ts ... ok
+test report_htgr_service_breakdown_for_ci_artifact ... ok
+test shifted_syngas_has_material_sensible_heat_above_mdea_temperature ... ok
+test singapore_ccs_group_a_can_consume_most_of_100_sgd_per_t_budget ... ok
+test singapore_import_mix_screen_is_between_global_gas_and_lng_anchors ... ok
+test sixty_three_percent_waste_heat_anchor_reduces_mdea_incremental_heat_to_about_fourteen_mw ... ok
+test source_bounded_mdea_and_recycle_heat_are_finite_and_ordered ... ok
+test source_prereformer_stream_steam_to_carbon_is_reconstructed_not_assumed ... ok
+test source_reformer_consumes_water_and_eliminates_heavier_hydrocarbons ... ok
+test source_stream4_to_stream5_closes_after_source_described_water_addition ... ok
+test stoichiometric_bounds_are_correct ... ok
+test stream4_to_stream5_nonclosure_is_explained_by_unreported_water_addition ... ok
+test stream6_water_dewpoint_is_below_a_160c_reboiler_plus_10k_pinch ... ok
+test tail_gas_contains_substantial_combustible_species ... ok
+test tail_gas_recycle_has_material_h2_and_co2_recovery_potential ... ok
+test tail_recycle_can_displace_at_most_about_one_third_of_fresh_feed_carbon ... ok
+test utility_value_functions_preserve_sign_and_units ... ok
+test verified_current_htgr_service_envelope_has_expected_values ... ok
+test zero_other_costs_set_absolute_ccs_tariff_ceiling_near_108_sgd_per_t ... ok
+
+test result: ok. 111 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests\smoke.rs (target\debug\deps\smoke-3428cc4f65575603.exe)
+
+running 1 test
+test research_model_placeholder_compiles ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

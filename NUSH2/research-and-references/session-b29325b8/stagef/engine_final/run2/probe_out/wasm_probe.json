@@ -1,0 +1,82 @@
+{
+ "first_status": "Solved in 374 ms",
+ "load_to_first_solve_s": 0.63,
+ "probe": {
+  "default": {
+   "status": "ok",
+   "feasible": true,
+   "deficit": 0,
+   "unmet_kpi": 0,
+   "ng": 23.231552974345206,
+   "cost_met": false,
+   "sel_met": [
+    false
+   ],
+   "sel_stage": [
+    "BOAK"
+   ],
+   "n_cases": 12,
+   "any_case_met": false,
+   "reason": "Not met at these inputs: L5 189.7 S$/t and DCF 190.1 S$/t against the 100 S$/t target at the selected stage, life, expon",
+   "absorber_pts": 40,
+   "train_T_pts": 13
+  },
+  "rating_100": {
+   "status": "ok",
+   "feasible": false,
+   "deficit": 78.49386390247261,
+   "unmet_kpi": 32.04253314272353,
+   "ng": 23.231552974345206,
+   "cost_met": false,
+   "sel_met": [
+    false
+   ],
+   "sel_stage": [
+    "BOAK"
+   ],
+   "n_cases": 12,
+   "any_case_met": false,
+   "reason": "Not met at these inputs. Infeasible: the process needs 178.5 MWth and the rating is 100.0 MWth, a deficit of 78.5 MWth. ",
+   "absorber_pts": 40,
+   "train_T_pts": 13
+  },
+  "oak10_gas25": {
+   "status": "ok",
+   "feasible": true,
+   "deficit": 0,
+   "unmet_kpi": 0,
+   "ng": 23.231552974345206,
+   "cost_met": true,
+   "sel_met": [
+    true
+   ],
+   "sel_stage": [
+    "10OAK_P46"
+   ],
+   "n_cases": 18,
+   "any_case_met": true,
+   "reason": "Met at these inputs: the plant is feasible and both the L5 ledger and the DCF sit at or below the target at the selected",
+   "absorber_pts": 40,
+   "train_T_pts": 13
+  },
+  "case_a": {
+   "status": "ok",
+   "feasible": false,
+   "deficit": 50.74476797307551,
+   "unmet_kpi": 0,
+   "ng": 34,
+   "cost_met": false,
+   "sel_met": [
+    false
+   ],
+   "sel_stage": [
+    "BOAK"
+   ],
+   "n_cases": 12,
+   "any_case_met": false,
+   "reason": "Not met at these inputs. Infeasible: the process needs 260.7 MWth and the rating is 210.0 MWth, a deficit of 50.7 MWth. ",
+   "absorber_pts": null,
+   "train_T_pts": 13
+  }
+ }
+}

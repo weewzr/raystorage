@@ -1,0 +1,20 @@
+% Hand-written opening of the Reference Frame. The tables after it are generated.
+This section is the language of the whole document. It lists every symbol, every numbered equation and the assumptions and ranges needed to read them. Sections A to L then take each equation in turn.
+
+\paragraph{Basis.} Case B is the headline plant: \U{100{,}000\ Nm^3\ h^{-1}} of hydrogen, or \vMHtwoB~\U{t\ y^{-1}}, with \vQprocB~\U{MW_{th}} of process heat, \vNGB~\U{MMSCFD} of natural gas, a reactor rated \cQrated~\U{MW_{th}} against \vQRB~\U{MW_{th}} required, and \vAbateB~\U{t\ y^{-1}} of direct abatement. Case A, at \U{130\ MMSCFD} of hydrogen, is the INL reference. PSA tail gas is recycled across the plant boundary.
+
+\paragraph{How to read an equation card.} Each card gives the number, the statement, a physical interpretation, the working that fits its tier, the variables with SI units, the assumptions, the source, the implementation reference and the validation method. Implementation references name the planned module in the engine workspace.
+
+\begin{description}[leftmargin=1.2cm,itemsep=1pt,topsep=2pt]
+\item[Tier] R rigorous, meaning first principles or a published model used inside its stated range. O reduced-order. E empirical correlation. F fixed design assumption. X external boundary. A published model used outside its range is tier O and its card says so.
+\item[Evidence] \tagP{} published, with the page given. \tagT{} textbook result, chapter only, page not checked because the book is not in the library. \tagC{} calculated here. \tagA{} assumed. \tagM{n} source missing, listed in Section M.
+\item[Assumption codes] SS steady state. 1D axial only. PF plug flow. IG ideal gas. AD adiabatic. CP constant heat capacity. NKE kinetic and potential energy neglected. IN inert carrier gases in the solvent.
+\item[Validation codes] ID analytic identity in a unit test. GOLD agreement with the screening reference values, which is verification of a port and never validation. PUB comparison with a published calculated value. EXP comparison with measured data. NONE no benchmark exists, and the card says so.
+\item[Page numbers] ``PDF p.'' is the page in the file. ``Printed p.'' is the number on the page.
+\end{description}
+
+\paragraph{Status of this version.} Calculated numbers here are screening values, generated from the reference data of the anchored port and from the small calculations in the tools script. A benchmark stated on a card is the target of its named test. Where this document has computed the comparison itself, the card says ``computed here'' and gives the result. Results of the engine tests are recorded in the validation results file, and no card claims a test outcome.
+
+\paragraph{Symbols that collide in the sources.} $R$ is the gas constant, and reactor rating is $\dot Q_{rated}$. $A$ is area, $f_{av}$ availability and $\mathcal A$ abatement. Every efficiency carries a subscript: $\eta_{pc}$ power conversion, $\eta_{pp}$ per-pass capture, $\eta_{pl}$ plant capture, $\eta_j^{cat}$ catalyst effectiveness, $\eta_{is}$ isentropic, $\eta_m$ motor. $\varepsilon_b$ is bed porosity and $\varepsilon_{HX}$ exchanger effectiveness. $\alpha$ is CO$_2$ loading and $h$ a heat transfer coefficient, although JAERI writes $\alpha$ for the latter. $\phi_c$ is a carbon split and $\varphi_i$ a fugacity coefficient. $\gamma_i$ is an activity coefficient and $\kappa=c_p/c_v$.
+
+\paragraph{Units.} SI at every interface. Kinetics are coded in the published units (bar, kmol, kg of catalyst, hour) and converted at the function boundary, because the Xu and Froment notation mixes them. Conversions used: \U{1\ MMSCFD = 13.83\ mol\ s^{-1}} at \U{60\ ^{\circ}F}, \U{1\ st = 907.185\ kg}, \U{1\ MMBtu\ h^{-1} = 0.29307\ MW}.

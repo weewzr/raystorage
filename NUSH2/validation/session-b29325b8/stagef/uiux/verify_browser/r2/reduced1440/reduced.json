@@ -1,0 +1,47 @@
+[
+ [
+  "start_note_reduced",
+  true,
+  "'13 steps, from fission heat to the hydrogen and CO\u2082 ends; step through at your own pace.'"
+ ],
+ [
+  "scroll_jumps",
+  true,
+  "scrollY before 0, 50 ms after Start 415, 550 ms after 415"
+ ],
+ [
+  "starts_still",
+  true,
+  "state {'ready': False, 'active': True, 'step': 0, 'id': 'fission', 'playing': False, 'ended': False, 'still': True, 'steps': 13, 'flows': 0}, Play hidden True, focus #tour-title"
+ ],
+ [
+  "no_motion_any_step",
+  true,
+  "13 steps by ArrowRight: running animations, tour dashes, named animations, non-zero transitions none; last probe {\"running\": 0, \"running_targets\": [], \"all\": 0, \"flows\": 0, \"still\": true, \"dim_transition\": \"0s\", \"dim_opacity\": \"1\", \"anim_named\": 0, \"trans_nonzero\": 0, \"ghost\": null, \"nuc\": null, \"play_hidden\": true, \"note\": \"13 steps, from fission heat to the hydrogen and CO\\u2082 ends; step through at your own pace.\", \"motion_line\": \"The lit lines keep the drawn arrows that mark the direction of flow.\", \"fill\": \"100%\"}"
+ ],
+ [
+  "no_auto_advance",
+  true,
+  "step 12, after 10 s still 12"
+ ],
+ [
+  "space_does_not_play",
+  true,
+  "playing False after Space"
+ ],
+ [
+  "fission_inset_still_frame",
+  true,
+  "ghost nucleus display inline, solid nucleus display none, running 0, motion line None"
+ ],
+ [
+  "escape_exits_reduced",
+  true,
+  "active False, focus #tour-start"
+ ],
+ [
+  "no_errors_or_bad_requests",
+  true,
+  "{\"errors\": [], \"network\": [], \"hosts\": [\"http://127.0.0.1:52669\"], \"requests\": 23, \"workers\": [\"worker\"], \"server_log_4xx\": []}"
+ ]
+]

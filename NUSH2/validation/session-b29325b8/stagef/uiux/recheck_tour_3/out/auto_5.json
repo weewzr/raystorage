@@ -1,0 +1,4992 @@
+[
+ {
+  "size": "812x375m",
+  "path": "start_mouse",
+  "target": "none",
+  "stepped": true,
+  "steps": [
+   [
+    "primary",
+    4319
+   ],
+   [
+    "secondary",
+    5078
+   ]
+  ],
+  "auto": 2,
+  "calls": [],
+  "drawing_calls": 2,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "path.core"
+  },
+  "hold": {
+   "win": [
+    0,
+    "path.core",
+    0
+   ]
+  },
+  "y0": 400,
+  "max0": 3450,
+  "max1": 3870,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "start_mouse",
+  "target": "card",
+  "stepped": true,
+  "steps": [
+   [
+    "feed",
+    1227
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "p."
+  },
+  "hold": {
+   "win": [
+    0,
+    "#tour-body",
+    2
+   ]
+  },
+  "y0": 959,
+  "max0": 3870,
+  "max1": 3862,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "start_mouse",
+  "target": "drawing",
+  "stepped": true,
+  "steps": [
+   [
+    "shift",
+    1674
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 465,
+  "max0": 3862,
+  "max1": 3000,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "start_mouse",
+  "target": "panel",
+  "stepped": true,
+  "steps": [
+   [
+    "cooling",
+    2221
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "div.chips"
+  },
+  "hold": {
+   "win": [
+    -32,
+    "#pfd-panel",
+    3
+   ]
+  },
+  "y0": 1449,
+  "max0": 3000,
+  "max1": 2580,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "start_mouse",
+  "target": "bottom",
+  "stepped": true,
+  "steps": [
+   [
+    "absorber",
+    1150
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 6,
+  "dside": 0,
+  "ref": {
+   "win": "li."
+  },
+  "hold": {
+   "win": [
+    -0.5,
+    "#pfd-panel",
+    4
+   ]
+  },
+  "y0": 2580,
+  "max0": 2580,
+  "max1": 3428,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "start_mouse",
+  "target": "top",
+  "stepped": true,
+  "steps": [
+   [
+    "psa",
+    1262
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "#statusbar"
+  },
+  "hold": {
+   "win": [
+    0,
+    "#statusbar",
+    0
+   ]
+  },
+  "y0": 0,
+  "max0": 3428,
+  "max1": 2376,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "start_mouse",
+  "target": "mid",
+  "stepped": true,
+  "steps": [
+   [
+    "reject",
+    1500
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 300,
+  "max0": 2376,
+  "max1": 2932,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "start_mouse",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:53701"
+   ],
+   "network": []
+  }
+ },
+ {
+  "size": "812x375m",
+  "path": "start_key",
+  "target": "none",
+  "stepped": true,
+  "steps": [
+   [
+    "primary",
+    3264
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "path.core"
+  },
+  "hold": {
+   "win": [
+    0,
+    "path.core",
+    0
+   ]
+  },
+  "y0": 400,
+  "max0": 3450,
+  "max1": 2940,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "start_key",
+  "target": "card",
+  "stepped": true,
+  "steps": [
+   [
+    "secondary",
+    2204
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "p."
+  },
+  "hold": {
+   "win": [
+    0,
+    "#tour-body",
+    2
+   ]
+  },
+  "y0": 959,
+  "max0": 2940,
+  "max1": 3870,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "start_key",
+  "target": "drawing",
+  "stepped": true,
+  "steps": [
+   [
+    "feed",
+    1190
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 465,
+  "max0": 3870,
+  "max1": 3862,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "start_key",
+  "target": "panel",
+  "stepped": true,
+  "steps": [
+   [
+    "shift",
+    1434
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "div.chips"
+  },
+  "hold": {
+   "win": [
+    -19.5,
+    "#pfd-panel",
+    3
+   ]
+  },
+  "y0": 1468,
+  "max0": 3862,
+  "max1": 3000,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "start_key",
+  "target": "bottom",
+  "stepped": true,
+  "steps": [
+   [
+    "cooling",
+    1724
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": -420,
+  "dside": 0,
+  "ref": {
+   "win": "li."
+  },
+  "hold": {
+   "win": [
+    388,
+    "#pfd-panel",
+    6
+   ]
+  },
+  "y0": 3000,
+  "max0": 3000,
+  "max1": 2580,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "start_key",
+  "target": "top",
+  "stepped": true,
+  "steps": [
+   [
+    "absorber",
+    1318
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "#statusbar"
+  },
+  "hold": {
+   "win": [
+    0,
+    "#statusbar",
+    0
+   ]
+  },
+  "y0": 0,
+  "max0": 2580,
+  "max1": 3428,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "start_key",
+  "target": "mid",
+  "stepped": true,
+  "steps": [
+   [
+    "psa",
+    1392
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 300,
+  "max0": 3428,
+  "max1": 2376,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "start_key",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:50332"
+   ],
+   "network": []
+  }
+ },
+ {
+  "size": "812x375m",
+  "path": "play_mouse",
+  "target": "none",
+  "stepped": true,
+  "steps": [
+   [
+    "primary",
+    1667
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "path.core"
+  },
+  "hold": {
+   "win": [
+    0,
+    "path.core",
+    0
+   ]
+  },
+  "y0": 400,
+  "max0": 3450,
+  "max1": 2940,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "play_mouse",
+  "target": "card",
+  "stepped": true,
+  "steps": [
+   [
+    "secondary",
+    1783
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "p."
+  },
+  "hold": {
+   "win": [
+    0,
+    "#tour-body",
+    2
+   ]
+  },
+  "y0": 959,
+  "max0": 2940,
+  "max1": 3870,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "play_mouse",
+  "target": "drawing",
+  "stepped": true,
+  "steps": [
+   [
+    "feed",
+    1242
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 465,
+  "max0": 3870,
+  "max1": 3862,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "play_mouse",
+  "target": "panel",
+  "stepped": true,
+  "steps": [
+   [
+    "shift",
+    1439
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "div.chips"
+  },
+  "hold": {
+   "win": [
+    -19.5,
+    "#pfd-panel",
+    3
+   ]
+  },
+  "y0": 1468,
+  "max0": 3862,
+  "max1": 3000,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "play_mouse",
+  "target": "bottom",
+  "stepped": true,
+  "steps": [
+   [
+    "cooling",
+    2242
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": -420,
+  "dside": 0,
+  "ref": {
+   "win": "li."
+  },
+  "hold": {
+   "win": [
+    388,
+    "#pfd-panel",
+    6
+   ]
+  },
+  "y0": 3000,
+  "max0": 3000,
+  "max1": 2580,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "play_mouse",
+  "target": "top",
+  "stepped": true,
+  "steps": [
+   [
+    "absorber",
+    1950
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "#statusbar"
+  },
+  "hold": {
+   "win": [
+    0,
+    "#statusbar",
+    0
+   ]
+  },
+  "y0": 0,
+  "max0": 2580,
+  "max1": 3428,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "play_mouse",
+  "target": "mid",
+  "stepped": true,
+  "steps": [
+   [
+    "psa",
+    1591
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 300,
+  "max0": 3428,
+  "max1": 2376,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "play_mouse",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:56500"
+   ],
+   "network": []
+  }
+ },
+ {
+  "size": "812x375m",
+  "path": "play_space",
+  "target": "none",
+  "stepped": true,
+  "steps": [
+   [
+    "primary",
+    1613
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "path.core"
+  },
+  "hold": {
+   "win": [
+    0,
+    "path.core",
+    0
+   ]
+  },
+  "y0": 400,
+  "max0": 3450,
+  "max1": 2940,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "play_space",
+  "target": "card",
+  "stepped": true,
+  "steps": [
+   [
+    "secondary",
+    1340
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "p."
+  },
+  "hold": {
+   "win": [
+    0,
+    "#tour-body",
+    2
+   ]
+  },
+  "y0": 959,
+  "max0": 2940,
+  "max1": 3870,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "play_space",
+  "target": "drawing",
+  "stepped": true,
+  "steps": [
+   [
+    "feed",
+    1242
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 465,
+  "max0": 3870,
+  "max1": 3862,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "play_space",
+  "target": "panel",
+  "stepped": true,
+  "steps": [
+   [
+    "shift",
+    1839
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "div.chips"
+  },
+  "hold": {
+   "win": [
+    -19.5,
+    "#pfd-panel",
+    3
+   ]
+  },
+  "y0": 1468,
+  "max0": 3862,
+  "max1": 3000,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "play_space",
+  "target": "bottom",
+  "stepped": true,
+  "steps": [
+   [
+    "cooling",
+    1377
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": -420,
+  "dside": 0,
+  "ref": {
+   "win": "li."
+  },
+  "hold": {
+   "win": [
+    388,
+    "#pfd-panel",
+    6
+   ]
+  },
+  "y0": 3000,
+  "max0": 3000,
+  "max1": 2580,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "play_space",
+  "target": "top",
+  "stepped": true,
+  "steps": [
+   [
+    "absorber",
+    1524
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "#statusbar"
+  },
+  "hold": {
+   "win": [
+    0,
+    "#statusbar",
+    0
+   ]
+  },
+  "y0": 0,
+  "max0": 2580,
+  "max1": 3428,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "play_space",
+  "target": "mid",
+  "stepped": true,
+  "steps": [
+   [
+    "psa",
+    1561
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 300,
+  "max0": 3428,
+  "max1": 2376,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "play_space",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:49691"
+   ],
+   "network": []
+  }
+ },
+ {
+  "size": "812x375m",
+  "path": "next_mouse",
+  "target": "none",
+  "stepped": true,
+  "steps": [
+   [
+    "feed",
+    2000
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "div.tour-foot"
+  },
+  "hold": {
+   "win": [
+    -7.1,
+    "div.tour-foot",
+    0
+   ]
+  },
+  "y0": 1325,
+  "max0": 3870,
+  "max1": 3862,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "next_mouse",
+  "target": "card",
+  "stepped": true,
+  "steps": [
+   [
+    "shift",
+    1987
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "p."
+  },
+  "hold": {
+   "win": [
+    0,
+    "#tour-body",
+    2
+   ]
+  },
+  "y0": 959,
+  "max0": 3862,
+  "max1": 3000,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "next_mouse",
+  "target": "drawing",
+  "stepped": true,
+  "steps": [
+   [
+    "cooling",
+    1344
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 465,
+  "max0": 3000,
+  "max1": 2580,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "next_mouse",
+  "target": "panel",
+  "stepped": true,
+  "steps": [
+   [
+    "absorber",
+    1236
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "div.chips"
+  },
+  "hold": {
+   "win": [
+    5.5,
+    "#pfd-panel",
+    3
+   ]
+  },
+  "y0": 1417,
+  "max0": 2580,
+  "max1": 3428,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "next_mouse",
+  "target": "bottom",
+  "stepped": true,
+  "steps": [
+   [
+    "psa",
+    1258
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": -1052,
+  "dside": 0,
+  "ref": {
+   "win": "li."
+  },
+  "hold": {
+   "win": [
+    1046.5,
+    "#pfd-panel",
+    4
+   ]
+  },
+  "y0": 3428,
+  "max0": 3428,
+  "max1": 2376,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "next_mouse",
+  "target": "top",
+  "stepped": true,
+  "steps": [
+   [
+    "reject",
+    1360
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "#statusbar"
+  },
+  "hold": {
+   "win": [
+    0,
+    "#statusbar",
+    0
+   ]
+  },
+  "y0": 0,
+  "max0": 2376,
+  "max1": 2932,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "next_mouse",
+  "target": "mid",
+  "stepped": true,
+  "steps": [
+   [
+    "stripper",
+    1390
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 300,
+  "max0": 2932,
+  "max1": 2828,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "next_mouse",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:55755"
+   ],
+   "network": []
+  }
+ },
+ {
+  "size": "812x375m",
+  "path": "next_key",
+  "target": "none",
+  "stepped": true,
+  "steps": [
+   [
+    "secondary",
+    1774
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 19,
+  "dside": 0,
+  "ref": {
+   "win": "p.basis"
+  },
+  "hold": {
+   "win": [
+    -0.5,
+    "#pfd-panel",
+    3
+   ]
+  },
+  "y0": 1485,
+  "max0": 2940,
+  "max1": 3870,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "next_key",
+  "target": "card",
+  "stepped": true,
+  "steps": [
+   [
+    "feed",
+    1249
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "p."
+  },
+  "hold": {
+   "win": [
+    0,
+    "#tour-body",
+    2
+   ]
+  },
+  "y0": 959,
+  "max0": 3870,
+  "max1": 3862,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "next_key",
+  "target": "drawing",
+  "stepped": true,
+  "steps": [
+   [
+    "shift",
+    1467
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 465,
+  "max0": 3862,
+  "max1": 3000,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "next_key",
+  "target": "panel",
+  "stepped": true,
+  "steps": [
+   [
+    "cooling",
+    880
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "div.chips"
+  },
+  "hold": {
+   "win": [
+    -32,
+    "#pfd-panel",
+    3
+   ]
+  },
+  "y0": 1449,
+  "max0": 3000,
+  "max1": 2580,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "next_key",
+  "target": "bottom",
+  "stepped": true,
+  "steps": [
+   [
+    "absorber",
+    1374
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 6,
+  "dside": 0,
+  "ref": {
+   "win": "li."
+  },
+  "hold": {
+   "win": [
+    -0.5,
+    "#pfd-panel",
+    4
+   ]
+  },
+  "y0": 2580,
+  "max0": 2580,
+  "max1": 3428,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "next_key",
+  "target": "top",
+  "stepped": true,
+  "steps": [
+   [
+    "psa",
+    852
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "#statusbar"
+  },
+  "hold": {
+   "win": [
+    0,
+    "#statusbar",
+    0
+   ]
+  },
+  "y0": 0,
+  "max0": 3428,
+  "max1": 2376,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "next_key",
+  "target": "mid",
+  "stepped": true,
+  "steps": [
+   [
+    "reject",
+    1347
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 300,
+  "max0": 2376,
+  "max1": 2932,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "next_key",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:50950"
+   ],
+   "network": []
+  }
+ },
+ {
+  "size": "812x375m",
+  "path": "arrow",
+  "target": "none",
+  "stepped": true,
+  "steps": [
+   [
+    "secondary",
+    2065
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "path.core"
+  },
+  "hold": {
+   "win": [
+    0,
+    "path.core",
+    0
+   ]
+  },
+  "y0": 400,
+  "max0": 2940,
+  "max1": 3870,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "arrow",
+  "target": "card",
+  "stepped": true,
+  "steps": [
+   [
+    "feed",
+    1223
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "p."
+  },
+  "hold": {
+   "win": [
+    0,
+    "#tour-body",
+    2
+   ]
+  },
+  "y0": 959,
+  "max0": 3870,
+  "max1": 3862,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "arrow",
+  "target": "drawing",
+  "stepped": true,
+  "steps": [
+   [
+    "shift",
+    2020
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 465,
+  "max0": 3862,
+  "max1": 3000,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "arrow",
+  "target": "panel",
+  "stepped": true,
+  "steps": [
+   [
+    "cooling",
+    1197
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "div.chips"
+  },
+  "hold": {
+   "win": [
+    -32,
+    "#pfd-panel",
+    3
+   ]
+  },
+  "y0": 1449,
+  "max0": 3000,
+  "max1": 2580,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "arrow",
+  "target": "bottom",
+  "stepped": true,
+  "steps": [
+   [
+    "absorber",
+    1373
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 6,
+  "dside": 0,
+  "ref": {
+   "win": "li."
+  },
+  "hold": {
+   "win": [
+    -0.5,
+    "#pfd-panel",
+    4
+   ]
+  },
+  "y0": 2580,
+  "max0": 2580,
+  "max1": 3428,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "arrow",
+  "target": "top",
+  "stepped": true,
+  "steps": [
+   [
+    "psa",
+    1348
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "#statusbar"
+  },
+  "hold": {
+   "win": [
+    0,
+    "#statusbar",
+    0
+   ]
+  },
+  "y0": 0,
+  "max0": 3428,
+  "max1": 2376,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "arrow",
+  "target": "mid",
+  "stepped": true,
+  "steps": [
+   [
+    "reject",
+    1496
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 300,
+  "max0": 2376,
+  "max1": 2932,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "arrow",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:64141"
+   ],
+   "network": []
+  }
+ },
+ {
+  "size": "812x375m",
+  "path": "barnext_mouse",
+  "target": "none",
+  "stepped": true,
+  "steps": [
+   [
+    "secondary",
+    2046
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "path.core"
+  },
+  "hold": {
+   "win": [
+    0,
+    "path.core",
+    0
+   ]
+  },
+  "y0": 400,
+  "max0": 2940,
+  "max1": 3870,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[next]",
+   "bar button[next]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "barnext_mouse",
+  "target": "card",
+  "stepped": true,
+  "steps": [
+   [
+    "feed",
+    1284
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "p."
+  },
+  "hold": {
+   "win": [
+    0,
+    "#tour-body",
+    2
+   ]
+  },
+  "y0": 959,
+  "max0": 3870,
+  "max1": 3862,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[next]",
+   "bar button[next]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "barnext_mouse",
+  "target": "drawing",
+  "stepped": true,
+  "steps": [
+   [
+    "shift",
+    1412
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 465,
+  "max0": 3862,
+  "max1": 3000,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[next]",
+   "bar button[next]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "barnext_mouse",
+  "target": "panel",
+  "stepped": true,
+  "steps": [
+   [
+    "cooling",
+    1315
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "div.chips"
+  },
+  "hold": {
+   "win": [
+    -32,
+    "#pfd-panel",
+    3
+   ]
+  },
+  "y0": 1449,
+  "max0": 3000,
+  "max1": 2580,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[next]",
+   "bar button[next]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "barnext_mouse",
+  "target": "bottom",
+  "stepped": true,
+  "steps": [
+   [
+    "absorber",
+    1358
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 6,
+  "dside": 0,
+  "ref": {
+   "win": "li."
+  },
+  "hold": {
+   "win": [
+    -0.5,
+    "#pfd-panel",
+    4
+   ]
+  },
+  "y0": 2580,
+  "max0": 2580,
+  "max1": 3428,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[next]",
+   "bar button[next]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "barnext_mouse",
+  "target": "top",
+  "stepped": true,
+  "steps": [
+   [
+    "psa",
+    1340
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "#statusbar"
+  },
+  "hold": {
+   "win": [
+    0,
+    "#statusbar",
+    0
+   ]
+  },
+  "y0": 0,
+  "max0": 3428,
+  "max1": 2376,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[next]",
+   "bar button[next]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "barnext_mouse",
+  "target": "mid",
+  "stepped": true,
+  "steps": [
+   [
+    "reject",
+    1309
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 300,
+  "max0": 2376,
+  "max1": 2932,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[next]",
+   "bar button[next]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "barnext_mouse",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:55204"
+   ],
+   "network": []
+  }
+ },
+ {
+  "size": "812x375m",
+  "path": "replay",
+  "target": "none",
+  "stepped": true,
+  "steps": [
+   [
+    "primary",
+    1842
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "path.core"
+  },
+  "hold": {
+   "win": [
+    0,
+    "path.core",
+    0
+   ]
+  },
+  "y0": 400,
+  "max0": 3450,
+  "max1": 2940,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "replay",
+  "target": "card",
+  "stepped": true,
+  "steps": [
+   [
+    "secondary",
+    1366
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "p."
+  },
+  "hold": {
+   "win": [
+    0,
+    "#tour-body",
+    2
+   ]
+  },
+  "y0": 959,
+  "max0": 2940,
+  "max1": 3870,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "replay",
+  "target": "drawing",
+  "stepped": true,
+  "steps": [
+   [
+    "feed",
+    1149
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 465,
+  "max0": 3870,
+  "max1": 3862,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "replay",
+  "target": "panel",
+  "stepped": true,
+  "steps": [
+   [
+    "shift",
+    1406
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "div.chips"
+  },
+  "hold": {
+   "win": [
+    -19.5,
+    "#pfd-panel",
+    3
+   ]
+  },
+  "y0": 1468,
+  "max0": 3862,
+  "max1": 3000,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "replay",
+  "target": "bottom",
+  "stepped": true,
+  "steps": [
+   [
+    "cooling",
+    1577
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": -420,
+  "dside": 0,
+  "ref": {
+   "win": "li."
+  },
+  "hold": {
+   "win": [
+    388,
+    "#pfd-panel",
+    6
+   ]
+  },
+  "y0": 3000,
+  "max0": 3000,
+  "max1": 2580,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "replay",
+  "target": "top",
+  "stepped": true,
+  "steps": [
+   [
+    "absorber",
+    1313
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "#statusbar"
+  },
+  "hold": {
+   "win": [
+    0,
+    "#statusbar",
+    0
+   ]
+  },
+  "y0": 0,
+  "max0": 2580,
+  "max1": 3428,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "replay",
+  "target": "mid",
+  "stepped": true,
+  "steps": [
+   [
+    "psa",
+    1327
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 300,
+  "max0": 3428,
+  "max1": 2376,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "812x375m",
+  "path": "replay",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:54885"
+   ],
+   "network": []
+  }
+ },
+ {
+  "size": "1024x600",
+  "path": "start_mouse",
+  "target": "none",
+  "stepped": true,
+  "steps": [
+   [
+    "primary",
+    3608
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 413,
+  "max0": 3277,
+  "max1": 2641,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "start_mouse",
+  "target": "card",
+  "stepped": true,
+  "steps": [
+   [
+    "secondary",
+    1340
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "div."
+  },
+  "hold": {
+   "win": [
+    0,
+    "#tour-body",
+    2
+   ]
+  },
+  "y0": 962,
+  "max0": 2641,
+  "max1": 3551,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "start_mouse",
+  "target": "drawing",
+  "stepped": true,
+  "steps": [
+   [
+    "feed",
+    1258
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 478,
+  "max0": 3551,
+  "max1": 3521,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "start_mouse",
+  "target": "panel",
+  "stepped": true,
+  "steps": [
+   [
+    "shift",
+    1421
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "span.p-meta"
+  },
+  "hold": {
+   "win": [
+    -19.5,
+    "#pfd-panel",
+    4
+   ]
+  },
+  "y0": 1447,
+  "max0": 3521,
+  "max1": 2697,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "start_mouse",
+  "target": "bottom",
+  "stepped": true,
+  "steps": [
+   [
+    "cooling",
+    1324
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": -359,
+  "dside": 0,
+  "ref": {
+   "win": "span.vnote"
+  },
+  "hold": {
+   "win": [
+    350,
+    "#pfd-panel",
+    7
+   ]
+  },
+  "y0": 2697,
+  "max0": 2697,
+  "max1": 2338,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "start_mouse",
+  "target": "top",
+  "stepped": true,
+  "steps": [
+   [
+    "absorber",
+    2341
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "p.lede"
+  },
+  "hold": {
+   "win": [
+    0,
+    "p.lede",
+    0
+   ]
+  },
+  "y0": 0,
+  "max0": 2338,
+  "max1": 3124,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "start_mouse",
+  "target": "mid",
+  "stepped": true,
+  "steps": [
+   [
+    "psa",
+    1287
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 300,
+  "max0": 3124,
+  "max1": 2134,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "start_mouse",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:59080"
+   ],
+   "network": []
+  }
+ },
+ {
+  "size": "1024x600",
+  "path": "start_key",
+  "target": "none",
+  "stepped": true,
+  "steps": [
+   [
+    "primary",
+    3646
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 413,
+  "max0": 3277,
+  "max1": 2641,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "start_key",
+  "target": "card",
+  "stepped": true,
+  "steps": [
+   [
+    "secondary",
+    1393
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "div."
+  },
+  "hold": {
+   "win": [
+    0,
+    "#tour-body",
+    2
+   ]
+  },
+  "y0": 962,
+  "max0": 2641,
+  "max1": 3551,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "start_key",
+  "target": "drawing",
+  "stepped": true,
+  "steps": [
+   [
+    "feed",
+    1226
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 478,
+  "max0": 3551,
+  "max1": 3521,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "start_key",
+  "target": "panel",
+  "stepped": true,
+  "steps": [
+   [
+    "shift",
+    1405
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "span.p-meta"
+  },
+  "hold": {
+   "win": [
+    -19.5,
+    "#pfd-panel",
+    4
+   ]
+  },
+  "y0": 1447,
+  "max0": 3521,
+  "max1": 2697,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "start_key",
+  "target": "bottom",
+  "stepped": true,
+  "steps": [
+   [
+    "cooling",
+    1310
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": -359,
+  "dside": 0,
+  "ref": {
+   "win": "span.vnote"
+  },
+  "hold": {
+   "win": [
+    350,
+    "#pfd-panel",
+    7
+   ]
+  },
+  "y0": 2697,
+  "max0": 2697,
+  "max1": 2338,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "start_key",
+  "target": "top",
+  "stepped": true,
+  "steps": [
+   [
+    "absorber",
+    1356
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "p.lede"
+  },
+  "hold": {
+   "win": [
+    0,
+    "p.lede",
+    0
+   ]
+  },
+  "y0": 0,
+  "max0": 2338,
+  "max1": 3124,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "start_key",
+  "target": "mid",
+  "stepped": true,
+  "steps": [
+   [
+    "psa",
+    1298
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 300,
+  "max0": 3124,
+  "max1": 2134,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "start_key",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:50753"
+   ],
+   "network": []
+  }
+ },
+ {
+  "size": "1024x600",
+  "path": "play_mouse",
+  "target": "none",
+  "stepped": true,
+  "steps": [
+   [
+    "primary",
+    1589
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 413,
+  "max0": 3277,
+  "max1": 2641,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "play_mouse",
+  "target": "card",
+  "stepped": true,
+  "steps": [
+   [
+    "secondary",
+    1332
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "div."
+  },
+  "hold": {
+   "win": [
+    0,
+    "#tour-body",
+    2
+   ]
+  },
+  "y0": 962,
+  "max0": 2641,
+  "max1": 3551,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "play_mouse",
+  "target": "drawing",
+  "stepped": true,
+  "steps": [
+   [
+    "feed",
+    1813
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 478,
+  "max0": 3551,
+  "max1": 3521,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "play_mouse",
+  "target": "panel",
+  "stepped": true,
+  "steps": [
+   [
+    "shift",
+    1410
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "span.p-meta"
+  },
+  "hold": {
+   "win": [
+    -19.5,
+    "#pfd-panel",
+    4
+   ]
+  },
+  "y0": 1447,
+  "max0": 3521,
+  "max1": 2697,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "play_mouse",
+  "target": "bottom",
+  "stepped": true,
+  "steps": [
+   [
+    "cooling",
+    1606
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": -359,
+  "dside": 0,
+  "ref": {
+   "win": "span.vnote"
+  },
+  "hold": {
+   "win": [
+    350,
+    "#pfd-panel",
+    7
+   ]
+  },
+  "y0": 2697,
+  "max0": 2697,
+  "max1": 2338,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "play_mouse",
+  "target": "top",
+  "stepped": true,
+  "steps": [
+   [
+    "absorber",
+    1368
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "p.lede"
+  },
+  "hold": {
+   "win": [
+    0,
+    "p.lede",
+    0
+   ]
+  },
+  "y0": 0,
+  "max0": 2338,
+  "max1": 3124,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "play_mouse",
+  "target": "mid",
+  "stepped": true,
+  "steps": [
+   [
+    "psa",
+    1281
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 300,
+  "max0": 3124,
+  "max1": 2134,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "play_mouse",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:52751"
+   ],
+   "network": []
+  }
+ },
+ {
+  "size": "1024x600",
+  "path": "play_space",
+  "target": "none",
+  "stepped": true,
+  "steps": [
+   [
+    "primary",
+    2445
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 413,
+  "max0": 3277,
+  "max1": 2641,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "play_space",
+  "target": "card",
+  "stepped": true,
+  "steps": [
+   [
+    "secondary",
+    1258
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "div."
+  },
+  "hold": {
+   "win": [
+    0,
+    "#tour-body",
+    2
+   ]
+  },
+  "y0": 962,
+  "max0": 2641,
+  "max1": 3551,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "play_space",
+  "target": "drawing",
+  "stepped": true,
+  "steps": [
+   [
+    "feed",
+    1361
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 478,
+  "max0": 3551,
+  "max1": 3521,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "play_space",
+  "target": "panel",
+  "stepped": true,
+  "steps": [
+   [
+    "shift",
+    1424
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "span.p-meta"
+  },
+  "hold": {
+   "win": [
+    -19.5,
+    "#pfd-panel",
+    4
+   ]
+  },
+  "y0": 1447,
+  "max0": 3521,
+  "max1": 2697,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "play_space",
+  "target": "bottom",
+  "stepped": true,
+  "steps": [
+   [
+    "cooling",
+    1563
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": -359,
+  "dside": 0,
+  "ref": {
+   "win": "span.vnote"
+  },
+  "hold": {
+   "win": [
+    350,
+    "#pfd-panel",
+    7
+   ]
+  },
+  "y0": 2697,
+  "max0": 2697,
+  "max1": 2338,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "play_space",
+  "target": "top",
+  "stepped": true,
+  "steps": [
+   [
+    "absorber",
+    1088
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "p.lede"
+  },
+  "hold": {
+   "win": [
+    0,
+    "p.lede",
+    0
+   ]
+  },
+  "y0": 0,
+  "max0": 2338,
+  "max1": 3124,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "play_space",
+  "target": "mid",
+  "stepped": true,
+  "steps": [
+   [
+    "psa",
+    1449
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 300,
+  "max0": 3124,
+  "max1": 2134,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "play_space",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:55397"
+   ],
+   "network": []
+  }
+ },
+ {
+  "size": "1024x600",
+  "path": "next_mouse",
+  "target": "none",
+  "stepped": true,
+  "steps": [
+   [
+    "secondary",
+    1765
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "div."
+  },
+  "hold": {
+   "win": [
+    0,
+    "#tour-body",
+    2
+   ]
+  },
+  "y0": 994,
+  "max0": 2641,
+  "max1": 3551,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "next_mouse",
+  "target": "card",
+  "stepped": true,
+  "steps": [
+   [
+    "feed",
+    1523
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "div."
+  },
+  "hold": {
+   "win": [
+    0,
+    "#tour-body",
+    2
+   ]
+  },
+  "y0": 962,
+  "max0": 3551,
+  "max1": 3521,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "next_mouse",
+  "target": "drawing",
+  "stepped": true,
+  "steps": [
+   [
+    "shift",
+    1018
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 478,
+  "max0": 3521,
+  "max1": 2697,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "next_mouse",
+  "target": "panel",
+  "stepped": true,
+  "steps": [
+   [
+    "cooling",
+    1692
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "span.src"
+  },
+  "hold": {
+   "win": [
+    -9,
+    "#pfd-panel",
+    5
+   ]
+  },
+  "y0": 1427,
+  "max0": 2697,
+  "max1": 2338,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "next_mouse",
+  "target": "bottom",
+  "stepped": true,
+  "steps": [
+   [
+    "absorber",
+    1323
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": -18,
+  "dside": 0,
+  "ref": {
+   "win": "span.p-label"
+  },
+  "hold": {
+   "win": [
+    0.4,
+    "#pfd-panel",
+    4
+   ]
+  },
+  "y0": 2338,
+  "max0": 2338,
+  "max1": 3124,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "next_mouse",
+  "target": "top",
+  "stepped": true,
+  "steps": [
+   [
+    "psa",
+    1277
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "p.lede"
+  },
+  "hold": {
+   "win": [
+    0,
+    "p.lede",
+    0
+   ]
+  },
+  "y0": 0,
+  "max0": 3124,
+  "max1": 2134,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "next_mouse",
+  "target": "mid",
+  "stepped": true,
+  "steps": [
+   [
+    "reject",
+    1424
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 300,
+  "max0": 2134,
+  "max1": 2628,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "next_mouse",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:61511"
+   ],
+   "network": []
+  }
+ },
+ {
+  "size": "1024x600",
+  "path": "next_key",
+  "target": "none",
+  "stepped": true,
+  "steps": [
+   [
+    "secondary",
+    1780
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "div."
+  },
+  "hold": {
+   "win": [
+    0,
+    "#tour-body",
+    2
+   ]
+  },
+  "y0": 994,
+  "max0": 2641,
+  "max1": 3551,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "next_key",
+  "target": "card",
+  "stepped": true,
+  "steps": [
+   [
+    "feed",
+    1339
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "div."
+  },
+  "hold": {
+   "win": [
+    0,
+    "#tour-body",
+    2
+   ]
+  },
+  "y0": 962,
+  "max0": 3551,
+  "max1": 3521,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "next_key",
+  "target": "drawing",
+  "stepped": true,
+  "steps": [
+   [
+    "shift",
+    1532
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 478,
+  "max0": 3521,
+  "max1": 2697,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "next_key",
+  "target": "panel",
+  "stepped": true,
+  "steps": [
+   [
+    "cooling",
+    1543
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "span.src"
+  },
+  "hold": {
+   "win": [
+    -9,
+    "#pfd-panel",
+    5
+   ]
+  },
+  "y0": 1427,
+  "max0": 2697,
+  "max1": 2338,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "next_key",
+  "target": "bottom",
+  "stepped": true,
+  "steps": [
+   [
+    "absorber",
+    1132
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": -18,
+  "dside": 0,
+  "ref": {
+   "win": "span.p-label"
+  },
+  "hold": {
+   "win": [
+    0.4,
+    "#pfd-panel",
+    4
+   ]
+  },
+  "y0": 2338,
+  "max0": 2338,
+  "max1": 3124,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "next_key",
+  "target": "top",
+  "stepped": true,
+  "steps": [
+   [
+    "psa",
+    1684
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "p.lede"
+  },
+  "hold": {
+   "win": [
+    0,
+    "p.lede",
+    0
+   ]
+  },
+  "y0": 0,
+  "max0": 3124,
+  "max1": 2134,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "next_key",
+  "target": "mid",
+  "stepped": true,
+  "steps": [
+   [
+    "reject",
+    1264
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 300,
+  "max0": 2134,
+  "max1": 2628,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "card button[next]",
+   "card button[next]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "next_key",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:64243"
+   ],
+   "network": []
+  }
+ },
+ {
+  "size": "1024x600",
+  "path": "arrow",
+  "target": "none",
+  "stepped": true,
+  "steps": [
+   [
+    "secondary",
+    1720
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 413,
+  "max0": 2641,
+  "max1": 3551,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "arrow",
+  "target": "card",
+  "stepped": true,
+  "steps": [
+   [
+    "feed",
+    1309
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "div."
+  },
+  "hold": {
+   "win": [
+    0,
+    "#tour-body",
+    2
+   ]
+  },
+  "y0": 962,
+  "max0": 3551,
+  "max1": 3521,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "arrow",
+  "target": "drawing",
+  "stepped": true,
+  "steps": [
+   [
+    "shift",
+    1310
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 478,
+  "max0": 3521,
+  "max1": 2697,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "arrow",
+  "target": "panel",
+  "stepped": true,
+  "steps": [
+   [
+    "cooling",
+    1327
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "span.src"
+  },
+  "hold": {
+   "win": [
+    -9,
+    "#pfd-panel",
+    5
+   ]
+  },
+  "y0": 1427,
+  "max0": 2697,
+  "max1": 2338,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "arrow",
+  "target": "bottom",
+  "stepped": true,
+  "steps": [
+   [
+    "absorber",
+    1388
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": -18,
+  "dside": 0,
+  "ref": {
+   "win": "span.p-label"
+  },
+  "hold": {
+   "win": [
+    0.4,
+    "#pfd-panel",
+    4
+   ]
+  },
+  "y0": 2338,
+  "max0": 2338,
+  "max1": 3124,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "arrow",
+  "target": "top",
+  "stepped": true,
+  "steps": [
+   [
+    "psa",
+    934
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "p.lede"
+  },
+  "hold": {
+   "win": [
+    0,
+    "p.lede",
+    0
+   ]
+  },
+  "y0": 0,
+  "max0": 3124,
+  "max1": 2134,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "arrow",
+  "target": "mid",
+  "stepped": true,
+  "steps": [
+   [
+    "reject",
+    1312
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 300,
+  "max0": 2134,
+  "max1": 2628,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "arrow",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:55426"
+   ],
+   "network": []
+  }
+ },
+ {
+  "size": "1024x600",
+  "path": "barnext_mouse",
+  "target": "none",
+  "stepped": true,
+  "steps": [
+   [
+    "secondary",
+    2373
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 413,
+  "max0": 2641,
+  "max1": 3551,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[next]",
+   "bar button[next]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "barnext_mouse",
+  "target": "card",
+  "stepped": true,
+  "steps": [
+   [
+    "feed",
+    1415
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "div."
+  },
+  "hold": {
+   "win": [
+    0,
+    "#tour-body",
+    2
+   ]
+  },
+  "y0": 962,
+  "max0": 3551,
+  "max1": 3521,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[next]",
+   "bar button[next]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "barnext_mouse",
+  "target": "drawing",
+  "stepped": true,
+  "steps": [
+   [
+    "shift",
+    1370
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 478,
+  "max0": 3521,
+  "max1": 2697,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[next]",
+   "bar button[next]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "barnext_mouse",
+  "target": "panel",
+  "stepped": true,
+  "steps": [
+   [
+    "cooling",
+    1300
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "span.src"
+  },
+  "hold": {
+   "win": [
+    -9,
+    "#pfd-panel",
+    5
+   ]
+  },
+  "y0": 1427,
+  "max0": 2697,
+  "max1": 2338,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[next]",
+   "bar button[next]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "barnext_mouse",
+  "target": "bottom",
+  "stepped": true,
+  "steps": [
+   [
+    "absorber",
+    1737
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": -18,
+  "dside": 0,
+  "ref": {
+   "win": "span.p-label"
+  },
+  "hold": {
+   "win": [
+    0.4,
+    "#pfd-panel",
+    4
+   ]
+  },
+  "y0": 2338,
+  "max0": 2338,
+  "max1": 3124,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[next]",
+   "bar button[next]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "barnext_mouse",
+  "target": "top",
+  "stepped": true,
+  "steps": [
+   [
+    "psa",
+    1316
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "p.lede"
+  },
+  "hold": {
+   "win": [
+    0,
+    "p.lede",
+    0
+   ]
+  },
+  "y0": 0,
+  "max0": 3124,
+  "max1": 2134,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[next]",
+   "bar button[next]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "barnext_mouse",
+  "target": "mid",
+  "stepped": true,
+  "steps": [
+   [
+    "reject",
+    1338
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 300,
+  "max0": 2134,
+  "max1": 2628,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[next]",
+   "bar button[next]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "barnext_mouse",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:56690"
+   ],
+   "network": []
+  }
+ },
+ {
+  "size": "1024x600",
+  "path": "replay",
+  "target": "none",
+  "stepped": true,
+  "steps": [
+   [
+    "primary",
+    1902
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 413,
+  "max0": 3277,
+  "max1": 2641,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "replay",
+  "target": "card",
+  "stepped": true,
+  "steps": [
+   [
+    "secondary",
+    1631
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "div."
+  },
+  "hold": {
+   "win": [
+    0,
+    "#tour-body",
+    2
+   ]
+  },
+  "y0": 962,
+  "max0": 2641,
+  "max1": 3551,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "replay",
+  "target": "drawing",
+  "stepped": true,
+  "steps": [
+   [
+    "feed",
+    1298
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 478,
+  "max0": 3551,
+  "max1": 3521,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "replay",
+  "target": "panel",
+  "stepped": true,
+  "steps": [
+   [
+    "shift",
+    1394
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "span.p-meta"
+  },
+  "hold": {
+   "win": [
+    -19.5,
+    "#pfd-panel",
+    4
+   ]
+  },
+  "y0": 1447,
+  "max0": 3521,
+  "max1": 2697,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "replay",
+  "target": "bottom",
+  "stepped": true,
+  "steps": [
+   [
+    "cooling",
+    1322
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": -359,
+  "dside": 0,
+  "ref": {
+   "win": "span.vnote"
+  },
+  "hold": {
+   "win": [
+    350,
+    "#pfd-panel",
+    7
+   ]
+  },
+  "y0": 2697,
+  "max0": 2697,
+  "max1": 2338,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "replay",
+  "target": "top",
+  "stepped": true,
+  "steps": [
+   [
+    "absorber",
+    1267
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "p.lede"
+  },
+  "hold": {
+   "win": [
+    0,
+    "p.lede",
+    0
+   ]
+  },
+  "y0": 0,
+  "max0": 2338,
+  "max1": 3124,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "replay",
+  "target": "mid",
+  "stepped": true,
+  "steps": [
+   [
+    "psa",
+    1290
+   ]
+  ],
+  "auto": 1,
+  "calls": [],
+  "drawing_calls": 1,
+  "other_calls": [],
+  "dy": 0,
+  "dside": 0,
+  "ref": {
+   "win": "rect."
+  },
+  "hold": {
+   "win": [
+    0,
+    "rect.",
+    0
+   ]
+  },
+  "y0": 300,
+  "max0": 3124,
+  "max1": 2134,
+  "side0": 0,
+  "sideMax0": 0,
+  "sideMax1": 0,
+  "focus": [
+   "bar button[play]",
+   "bar button[play]"
+  ]
+ },
+ {
+  "size": "1024x600",
+  "path": "replay",
+  "problems": {
+   "errors": [],
+   "hosts": [
+    "http://127.0.0.1:52175"
+   ],
+   "network": []
+  }
+ }
+]
